@@ -1,0 +1,31 @@
+{
+  "slug": "mit",
+  "name": "Massachusetts Institute of Technology",
+  "country": "United States",
+  "city": "Cambridge",
+  "programs": [
+    { "slug": "eecs-bsc", "title": "Electrical Engineering and Computer Science, BSc", "durationYears": 4, "level": "bachelor", "language": "en" },
+    { "slug": "ai-msc", "title": "Artificial Intelligence, MSc", "durationYears": 2, "level": "master", "language": "en" }
+  ],
+  "tuition": {
+    "currency": "USD",
+    "byProgram": { "eecs-bsc": 60000, "ai-msc": 58000 }
+  },
+  "deadlines": {
+    "eecs-bsc": "2026-11-01",
+    "ai-msc": "2026-12-15"
+  },
+  "requirements": {
+    "language": { "ielts": 7.0, "toefl": 100 },
+    "gpa": 3.8,
+    "exams": ["SAT", "GRE"]
+  },
+  "scholarships": [
+    { "name": "MIT Need-Based Aid", "amountUSD": 50000 }
+  ],
+  "lastChecked": "2026-05-08T08:00:00Z",
+  "sourceUrl": "https://web.mit.edu/admissions",
+  "sourceHash": "sha256:sample-mit",
+  "confidence": "official",
+  "language": "en"
+}

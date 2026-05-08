@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '~/layouts/Base.astro';
+import UniversityCard from '~/components/UniversityCard.astro';
+import Filters from '~/components/Filters.astro';
+
+const entries = await getCollection('universities');
+
+const universities = entries
+  .map((entry) => entry.data)
+  .sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+
+const countries = Array.from(new Set(universities.map((u) => u.country))).sort((a, b) =>
+  a.localeCompare(b, 'ru'),
+);
+
+const levels = Array.from(
+  new Set(universities.flatMap((u) => u.programs.map((p) => p.level))),
+).sort();
+
+const tuitionValues = universities.flatMap((u) => Object.values(u.tuition.byProgram));
+const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
+---
+
+<Base title="StudyRoom — каталог зарубежных университетов">
+  <section class="hero">
+    <div class="container">
+      <h1>Зарубежные университеты — без посредников и устаревших данных</h1>
+      <p class="hero__lead muted">
+        Каталог обновляется автоматически. Цены, дедлайны и программы — на текущий месяц.
+      </p>
+    </div>
+  </section>
+
+  <section class="catalog">
+    <div class="container">
+      <Filters countries={countries} levels={levels} tuitionMax={tuitionMax} />
+
+      <p class="catalog__count">
+        Найдено: <span id="catalog-count">{universities.length}</span> университетов
+      </p>
+
+      <div class="catalog__grid" id="catalog-grid">
+        {universities.map((data) => <UniversityCard data={data} />)}
+      </div>
+
+      <p class="catalog__empty muted" id="catalog-empty" hidden>
+        По заданным фильтрам ничего не нашлось — попробуйте ослабить условия.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import '~/scripts/catalog-filters';
+</script>
+
+<style>
+  .hero {
+    padding: var(--space-10) 0 var(--space-6);
+    background: linear-gradient(180deg, var(--color-primary-soft) 0%, transparent 100%);
+  }
+
+  .hero h1 {
+    max-width: 760px;
+  }
+
+  .hero__lead {
+    margin: 0;
+    max-width: 640px;
+    font-size: 1.1rem;
+  }
+
+  .catalog {
+    padding: var(--space-6) 0 var(--space-10);
+  }
+
+  .catalog__count {
+    margin: 0 0 var(--space-4);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+
+  .catalog__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-5);
+  }
+
+  .catalog__empty {
+    margin-top: var(--space-6);
+    text-align: center;
+  }
+</style>

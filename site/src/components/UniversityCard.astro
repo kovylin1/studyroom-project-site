@@ -1,0 +1,113 @@
+---
+import type { University } from '~/schema/university';
+
+interface Props {
+  data: University;
+}
+
+const { data } = Astro.props;
+
+const tuitionValues = Object.values(data.tuition.byProgram);
+const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
+const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
+const levels = Array.from(new Set(data.programs.map((p) => p.level)));
+const ielts = data.requirements.language?.ielts;
+const hasScholarship = data.scholarships.length > 0;
+
+const cardLevels = levels.join(',');
+---
+
+<article
+  class="card"
+  data-slug={data.slug}
+  data-name={data.name.toLowerCase()}
+  data-country={data.country}
+  data-levels={cardLevels}
+  data-tuition-min={tuitionMin}
+  data-tuition-max={tuitionMax}
+  data-currency={data.tuition.currency}
+  data-ielts={ielts ?? ''}
+  data-scholarship={hasScholarship ? '1' : '0'}
+>
+  <header class="card__header">
+    <h3 class="card__title">{data.name}</h3>
+    <p class="card__location muted">{data.city}, {data.country}</p>
+  </header>
+
+  <ul class="card__meta">
+    <li>
+      <span class="muted">Программы:</span>{' '}
+      {levels.map((level) => <span class="tag">{level}</span>)}
+    </li>
+    <li>
+      <span class="muted">Стоимость:</span>{' '}
+      {tuitionMin === tuitionMax
+        ? `${tuitionMin.toLocaleString('ru-RU')} ${data.tuition.currency}`
+        : `${tuitionMin.toLocaleString('ru-RU')}–${tuitionMax.toLocaleString('ru-RU')} ${data.tuition.currency}`}
+      <span class="muted">/ год</span>
+    </li>
+    {ielts !== undefined && (
+      <li>
+        <span class="muted">IELTS:</span> от {ielts}
+      </li>
+    )}
+    {hasScholarship && (
+      <li>
+        <span class="tag">Есть стипендия</span>
+      </li>
+    )}
+  </ul>
+
+  <footer class="card__footer">
+    <a class="btn btn-primary" href={`/${data.slug}`}>Подробнее</a>
+  </footer>
+</article>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 160ms ease, transform 160ms ease;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .card__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .card__title {
+    margin: 0;
+    font-size: 1.125rem;
+  }
+
+  .card__location {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .card__meta {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-size: 0.95rem;
+  }
+
+  .card__footer {
+    margin-top: auto;
+  }
+</style>

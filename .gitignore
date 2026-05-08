@@ -1,0 +1,26 @@
+# Dependencies / build output
+**/node_modules/
+**/dist/
+**/.astro/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Logs / scraper artefacts
+*.log
+**/logs/
+scraper/run-*.json
+
+# IDE / OS junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Test / coverage
+coverage/
+
+# Local-only memory snapshots (session-specific, not part of the repo)
+memory/

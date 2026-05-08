@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyRoom — парсер универов и автогенерация лендингов</title>
+  <meta name="description" content="Дашборд проекта: пайплайн скрейпинга, схема университета и план работ из Site.md." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <span class="tag">StudyRoom · май 2026</span>
+      <h1>Парсер заграничных универов и автогенерация лендингов</h1>
+      <p>
+        Раз в месяц система скрейпит партнёрские сайты и агрегаторы, нормализует данные в единую
+        схему и автоматически выкатывает лендинги на <strong>studyroom.kz/{slug}</strong>. Ниже —
+        выбранная архитектура, единая схема университета и текущий статус по этапам из
+        <em>inbox/Site.md</em>.
+      </p>
+    </header>
+
+    <section class="section">
+      <h2>Этапы <span class="muted">статус по плану из Site.md</span></h2>
+      <div class="roadmap" id="roadmap"></div>
+    </section>
+
+    <section class="section">
+      <h2>Стек по слоям</h2>
+      <div class="grid cols-2" id="layers"></div>
+    </section>
+
+    <section class="section">
+      <h2>Пайплайн от скрейпа до живого лендинга</h2>
+      <ol class="pipeline" id="pipeline"></ol>
+    </section>
+
+    <section class="section">
+      <h2>Схема <code>University</code> <span class="muted">единая форма данных</span></h2>
+      <div class="card">
+        <table class="schema">
+          <thead>
+            <tr>
+              <th>Поле</th>
+              <th>Тип</th>
+              <th>Пример</th>
+              <th>Заметка</th>
+            </tr>
+          </thead>
+          <tbody id="schema-body"></tbody>
+        </table>
+      </div>
+      <div class="section" style="margin-top: 16px;">
+        <h2>Пример объекта <span class="muted">data/universities/oxford.json</span></h2>
+        <pre class="example" id="schema-example"></pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Что отвергли и почему</h2>
+      <div class="grid cols-3" id="rejected"></div>
+    </section>
+
+    <section class="section">
+      <h2>Точки риска <span class="muted">где можно спотыкнуться</span></h2>
+      <div class="grid cols-2" id="risks"></div>
+    </section>
+
+    <section class="section">
+      <h2>Открытые вопросы <span class="muted">решить до кода</span></h2>
+      <div class="grid cols-2" id="open-questions"></div>
+    </section>
+
+    <section class="section">
+      <h2>Главный tradeoff</h2>
+      <div class="card">
+        <p id="tradeoff"></p>
+      </div>
+    </section>
+
+    <footer class="foot">
+      Источник архитектуры: <code>sources/Site.md</code> (зеркало <code>inbox/Site.md</code>).
+      Сегодняшний разбор по полочкам — <code>OVERVIEW.md</code>. Этот index — навигация по
+      проекту, а не сам сайт StudyRoom. Реальные лендинги поедут на Cloudflare Pages, как только
+      соберём Astro-шаблон.
+    </footer>
+  </div>
+
+  <script src="data/roadmap.js"></script>
+  <script src="data/architecture.js"></script>
+  <script src="data/university-schema.js"></script>
+  <script src="data/risks.js"></script>
+  <script src="data/open-questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from '~/layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('universities');
+  return entries.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'universities'>;
+}
+
+const { entry } = Astro.props;
+const u = entry.data;
+
+const tuitionRows = u.programs.map((program) => ({
+  ...program,
+  tuition: u.tuition.byProgram[program.slug],
+  deadline: u.deadlines[program.slug],
+}));
+
+const lastChecked = new Date(u.lastChecked).toLocaleDateString('ru-RU', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+});
+
+const levelLabels: Record<string, string> = {
+  bachelor: 'Бакалавриат',
+  master: 'Магистратура',
+  phd: 'Аспирантура',
+  foundation: 'Foundation',
+};
+---
+
+<Base title={`${u.name} — StudyRoom`} description={`${u.name}: программы, цены, дедлайны и стипендии. Данные обновлены ${lastChecked}.`}>
+  <section class="landing-hero">
+    <div class="container">
+      <p class="muted"><a href="/">← Каталог</a></p>
+      <h1>{u.name}</h1>
+      <p class="landing-hero__location muted">{u.city}, {u.country}</p>
+      <p class="landing-hero__verified muted">
+        <span class="tag">Проверено: {lastChecked}</span>
+        <a href={u.sourceUrl} target="_blank" rel="noopener">Источник</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="landing-section">
+    <div class="container">
+      <h2>Программы и стоимость</h2>
+      <div class="programs-table-wrap">
+        <table class="programs-table">
+          <thead>
+            <tr>
+              <th>Программа</th>
+              <th>Уровень</th>
+              <th>Длительность</th>
+              <th>Стоимость / год</th>
+              <th>Дедлайн</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tuitionRows.map((row) => (
+              <tr>
+                <td>{row.title}</td>
+                <td>{levelLabels[row.level] ?? row.level}</td>
+                <td>{row.durationYears} лет</td>
+                <td>
+                  {row.tuition !== undefined
+                    ? `${row.tuition.toLocaleString('ru-RU')} ${u.tuition.currency}`
+                    : '—'}
+                </td>
+                <td>{row.deadline ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-section">
+    <div class="container landing-section__grid">
+      <div>
+        <h2>Требования</h2>
+        <ul class="reqs">
+          {u.requirements.language?.ielts !== undefined && (
+            <li><strong>IELTS:</strong> от {u.requirements.language.ielts}</li>
+          )}
+          {u.requirements.language?.toefl !== undefined && (
+            <li><strong>TOEFL:</strong> от {u.requirements.language.toefl}</li>
+          )}
+          {u.requirements.language?.duolingo !== undefined && (
+            <li><strong>Duolingo:</strong> от {u.requirements.language.duolingo}</li>
+          )}
+          {u.requirements.gpa !== undefined && (
+            <li><strong>GPA:</strong> от {u.requirements.gpa}</li>
+          )}
+          {u.requirements.exams.length > 0 && (
+            <li><strong>Экзамены:</strong> {u.requirements.exams.join(', ')}</li>
+          )}
+        </ul>
+      </div>
+
+      <div>
+        <h2>Стипендии</h2>
+        {u.scholarships.length === 0 ? (
+          <p class="muted">Стипендии не указаны.</p>
+        ) : (
+          <ul class="scholarships">
+            {u.scholarships.map((s) => (
+              <li>
+                <strong>{s.name}</strong>
+                {s.amountUSD !== undefined && <span> — до ${s.amountUSD.toLocaleString('ru-RU')}</span>}
+                {s.deadline && <span class="muted"> (до {s.deadline})</span>}
+                {s.url && <a href={s.url} target="_blank" rel="noopener"> ссылка</a>}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-cta">
+    <div class="container">
+      <a class="btn btn-primary" href="https://studyroom.kz" target="_blank" rel="noopener">
+        Записаться на консультацию
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .landing-hero {
+    padding: var(--space-8) 0 var(--space-6);
+    background: linear-gradient(180deg, var(--color-primary-soft) 0%, transparent 100%);
+  }
+
+  .landing-hero__location {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .landing-hero__verified {
+    margin-top: var(--space-3);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: 0.95rem;
+  }
+
+  .landing-section {
+    padding: var(--space-6) 0;
+  }
+
+  .landing-section__grid {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .programs-table-wrap {
+    overflow-x: auto;
+  }
+
+  .programs-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    background: var(--color-bg);
+  }
+
+  .programs-table th,
+  .programs-table td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .programs-table th {
+    background: var(--color-bg-soft);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .programs-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .reqs,
+  .scholarships {
+    margin: 0;
+    padding-left: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .landing-cta {
+    padding: var(--space-8) 0 var(--space-10);
+    text-align: center;
+  }
+</style>
