@@ -7,107 +7,86 @@ interface Props {
 
 const { data } = Astro.props;
 
-const tuitionValues = Object.values(data.tuition.byProgram);
-const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
-const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
+const tuitionValuesAll = Object.values(data.tuition.byProgram).filter((v) => v > 0);
+const tuitionMin = tuitionValuesAll.length ? Math.min(...tuitionValuesAll) : 0;
+const tuitionMax = tuitionValuesAll.length ? Math.max(...tuitionValuesAll) : 0;
 const levels = Array.from(new Set(data.programs.map((p) => p.level)));
+const faculties = Array.from(new Set(data.programs.map((p) => p.faculty).filter((f): f is string => Boolean(f))));
 const ielts = data.requirements.language?.ielts;
 const hasScholarship = data.scholarships.length > 0;
 
 const cardLevels = levels.join(',');
+// Normalize faculty list for filter matching (lowercase, hyphen-separated keywords).
+const facultyKeywords = faculties
+  .map((f) => f.toLowerCase().replace(/[‘’']/g, '').replace(/[^a-zа-яё0-9]+/g, '-'))
+  .join(',');
+
+const levelLabels: Record<string, string> = {
+  foundation: 'Foundation',
+  bachelor: 'Бакалавриат',
+  master: "Pre-Master's",
+  phd: 'Аспирантура',
+};
+
+const initials = data.slug.slice(0, 2).toUpperCase();
+
+const tuitionLabel = tuitionMin === 0
+  ? 'уточняется'
+  : tuitionMin === tuitionMax
+    ? `${tuitionMin.toLocaleString('ru-RU')} ${data.tuition.currency}`
+    : `${tuitionMin.toLocaleString('ru-RU')}–${tuitionMax.toLocaleString('ru-RU')} ${data.tuition.currency}`;
+
+const topFaculties = faculties.slice(0, 3);
+const moreFacultiesCount = Math.max(0, faculties.length - topFaculties.length);
 ---
 
-<article
-  class="card"
+<a
+  class="uni-card"
+  href={`/${data.slug}`}
   data-slug={data.slug}
   data-name={data.name.toLowerCase()}
   data-country={data.country}
   data-levels={cardLevels}
+  data-faculties={facultyKeywords}
   data-tuition-min={tuitionMin}
   data-tuition-max={tuitionMax}
   data-currency={data.tuition.currency}
   data-ielts={ielts ?? ''}
   data-scholarship={hasScholarship ? '1' : '0'}
 >
-  <header class="card__header">
-    <h3 class="card__title">{data.name}</h3>
-    <p class="card__location muted">{data.city}, {data.country}</p>
-  </header>
+  <div class="uni-card__top">
+    <div class="uni-card__logo" aria-hidden="true">{initials}</div>
+    <div class="uni-card__head">
+      <h3 class="uni-card__name">{data.name}</h3>
+      <p class="uni-card__location">{data.city} · {data.country}</p>
+    </div>
+  </div>
 
-  <ul class="card__meta">
+  <div class="uni-card__levels">
+    {levels.map((level) => <span class="tag">{levelLabels[level] ?? level}</span>)}
+    {hasScholarship && <span class="tag tag--neutral">Стипендия</span>}
+  </div>
+
+  <ul class="uni-card__meta">
     <li>
-      <span class="muted">Программы:</span>{' '}
-      {levels.map((level) => <span class="tag">{level}</span>)}
+      <span class="uni-card__meta-key">Стоимость / год:</span>{tuitionLabel}
     </li>
     <li>
-      <span class="muted">Стоимость:</span>{' '}
-      {tuitionMin === tuitionMax
-        ? `${tuitionMin.toLocaleString('ru-RU')} ${data.tuition.currency}`
-        : `${tuitionMin.toLocaleString('ru-RU')}–${tuitionMax.toLocaleString('ru-RU')} ${data.tuition.currency}`}
-      <span class="muted">/ год</span>
+      <span class="uni-card__meta-key">Программ:</span>{data.programs.length}
+      {faculties.length > 0 && (
+        <span class="muted" style="font-size:0.85em;"> · {faculties.length} факультетов</span>
+      )}
     </li>
-    {ielts !== undefined && (
-      <li>
-        <span class="muted">IELTS:</span> от {ielts}
-      </li>
-    )}
-    {hasScholarship && (
-      <li>
-        <span class="tag">Есть стипендия</span>
-      </li>
-    )}
   </ul>
 
-  <footer class="card__footer">
-    <a class="btn btn-primary" href={`/${data.slug}`}>Подробнее</a>
-  </footer>
-</article>
+  {topFaculties.length > 0 && (
+    <div class="uni-card__faculties">
+      {topFaculties.map((f) => <span class="tag tag--neutral uni-card__faculty">{f}</span>)}
+      {moreFacultiesCount > 0 && (
+        <span class="muted" style="font-size:0.8rem;align-self:center;">+{moreFacultiesCount}</span>
+      )}
+    </div>
+  )}
 
-<style>
-  .card {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-    padding: var(--space-5);
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-card);
-    transition: box-shadow 160ms ease, transform 160ms ease;
-  }
-
-  .card:hover {
-    box-shadow: var(--shadow-card-hover);
-    transform: translateY(-2px);
-  }
-
-  .card__header {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-  }
-
-  .card__title {
-    margin: 0;
-    font-size: 1.125rem;
-  }
-
-  .card__location {
-    margin: 0;
-    font-size: 0.9rem;
-  }
-
-  .card__meta {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    font-size: 0.95rem;
-  }
-
-  .card__footer {
-    margin-top: auto;
-  }
-</style>
+  <span class="uni-card__cta">Подробнее</span>
+</a>

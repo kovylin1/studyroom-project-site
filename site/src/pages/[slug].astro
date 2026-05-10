@@ -1,6 +1,14 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Base from '~/layouts/Base.astro';
+import {
+  STUDYROOM_BENEFITS,
+  STUDYROOM_ACTIVITIES,
+  STUDYROOM_FAQ,
+  STUDYROOM_REVIEWS,
+  STUDYROOM_ABOUT,
+  STUDYROOM_CONTACT,
+} from '~/content/studyroom/static';
 
 export async function getStaticPaths() {
   const entries = await getCollection('universities');
@@ -17,11 +25,85 @@ interface Props {
 const { entry } = Astro.props;
 const u = entry.data;
 
-const tuitionRows = u.programs.map((program) => ({
-  ...program,
+interface ProgramRow {
+  slug: string;
+  title: string;
+  level: string;
+  faculty: string;
+  durationYears: number;
+  intakes: string[];
+  tuition: number | undefined;
+  programType: string | undefined;
+  programUrl: string | undefined;
+}
+
+const programRows: ProgramRow[] = u.programs.map((program) => ({
+  slug: program.slug,
+  title: program.title,
+  level: program.level,
+  faculty: program.faculty ?? 'Прочее',
+  durationYears: program.durationYears,
+  intakes: program.intakes ?? [],
   tuition: u.tuition.byProgram[program.slug],
-  deadline: u.deadlines[program.slug],
+  programType: program.programType,
+  programUrl: program.programUrl,
 }));
+
+const programsByFaculty = programRows.reduce<Record<string, ProgramRow[]>>((acc, row) => {
+  if (!acc[row.faculty]) acc[row.faculty] = [];
+  acc[row.faculty].push(row);
+  return acc;
+}, {});
+
+// For each faculty: sort programs by level (pathway first, then foundation->bachelor->master->phd), then by tuition asc.
+const LEVEL_ORDER: Record<string, number> = { foundation: 1, bachelor: 2, master: 3, phd: 4 };
+function sortPrograms(rows: ProgramRow[]): ProgramRow[] {
+  return [...rows].sort((a, b) => {
+    if (a.programType === 'pathway' && b.programType !== 'pathway') return -1;
+    if (b.programType === 'pathway' && a.programType !== 'pathway') return 1;
+    const lvl = (LEVEL_ORDER[a.level] ?? 99) - (LEVEL_ORDER[b.level] ?? 99);
+    if (lvl !== 0) return lvl;
+    return (a.tuition ?? 0) - (b.tuition ?? 0);
+  });
+}
+
+interface FacultyEntry {
+  name: string;
+  slug: string;
+  programs: ProgramRow[];
+  minTuition: number;
+  maxTuition: number;
+  byLevel: Record<string, ProgramRow[]>;
+}
+
+function makeFacultySlug(name: string): string {
+  return name.toLowerCase().replace(/[‘’']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+const facultyEntries: FacultyEntry[] = Object.entries(programsByFaculty)
+  .map(([name, rows]) => {
+    const sorted = sortPrograms(rows);
+    const tuitions = sorted.map((p) => p.tuition).filter((t): t is number => typeof t === 'number' && t > 0);
+    const byLevel: Record<string, ProgramRow[]> = {};
+    for (const p of sorted) {
+      const key = p.programType === 'pathway' ? 'pathway' : p.level;
+      if (!byLevel[key]) byLevel[key] = [];
+      byLevel[key].push(p);
+    }
+    return {
+      name,
+      slug: makeFacultySlug(name),
+      programs: sorted,
+      minTuition: tuitions.length ? Math.min(...tuitions) : 0,
+      maxTuition: tuitions.length ? Math.max(...tuitions) : 0,
+      byLevel,
+    };
+  })
+  .sort((a, b) => b.programs.length - a.programs.length || a.name.localeCompare(b.name, 'ru'));
+
+const tuitionValues = Object.values(u.tuition.byProgram).filter((v) => v > 0);
+const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
+const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
 
 const lastChecked = new Date(u.lastChecked).toLocaleDateString('ru-RU', {
   day: '2-digit',
@@ -35,90 +117,241 @@ const levelLabels: Record<string, string> = {
   phd: 'Аспирантура',
   foundation: 'Foundation',
 };
+
+const levelGroupLabels: Record<string, string> = {
+  pathway: 'Подготовительные курсы Kaplan',
+  foundation: 'Foundation Certificate',
+  bachelor: 'Бакалавриат (Bachelor’s)',
+  master: 'Магистратура (Master’s)',
+  phd: 'PhD',
+};
+
+const levelOrderForRender = ['pathway', 'foundation', 'bachelor', 'master', 'phd'];
+
+function programsCountLabel(n: number): string {
+  if (n % 10 === 1 && n % 100 !== 11) return n + ' программа';
+  if ([2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100)) return n + ' программы';
+  return n + ' программ';
+}
+
+const initials = u.slug.slice(0, 2).toUpperCase();
+
+const tuitionRange =
+  tuitionMin === tuitionMax
+    ? `${tuitionMin.toLocaleString('ru-RU')} ${u.tuition.currency}`
+    : `${tuitionMin.toLocaleString('ru-RU')}–${tuitionMax.toLocaleString('ru-RU')} ${u.tuition.currency}`;
+
+const description = `${u.name} — поступление через StudyRoom. Программы, стоимость и дедлайны обновлены ${lastChecked}.`;
 ---
 
-<Base title={`${u.name} — StudyRoom`} description={`${u.name}: программы, цены, дедлайны и стипендии. Данные обновлены ${lastChecked}.`}>
-  <section class="landing-hero">
-    <div class="container">
-      <p class="muted"><a href="/">← Каталог</a></p>
-      <h1>{u.name}</h1>
-      <p class="landing-hero__location muted">{u.city}, {u.country}</p>
-      <p class="landing-hero__verified muted">
-        <span class="tag">Проверено: {lastChecked}</span>
-        <a href={u.sourceUrl} target="_blank" rel="noopener">Источник</a>
-      </p>
+<Base title={`${u.name} — StudyRoom`} description={description}>
+  <section class="uni-hero">
+    <div class="container uni-hero__inner">
+      <div class="uni-hero__main">
+        <p class="uni-hero__crumb">
+          <a href="/">← Каталог университетов</a>
+        </p>
+        <div class="uni-hero__brand">
+          <div class="uni-hero__logo" aria-hidden="true">{initials}</div>
+          <div>
+            <h1 class="uni-hero__title">{u.name}</h1>
+            <p class="uni-hero__location">{u.city}, {u.country}</p>
+          </div>
+        </div>
+        <p class="uni-hero__lead">
+          Поступление в {u.name} через языковую школу StudyRoom — программы, стоимость и сопровождение
+          поступления.
+        </p>
+        <div class="uni-hero__actions">
+          <a class="btn btn-primary" href="#cta">Записаться на консультацию</a>
+          <a class="btn btn-ghost" href="#programs">Смотреть программы</a>
+        </div>
+        <p class="uni-hero__verified">
+          <span class="tag">Данные обновлены: {lastChecked}</span>
+          <a href={u.sourceUrl} target="_blank" rel="noopener" class="muted">Источник</a>
+        </p>
+      </div>
+      <aside class="uni-hero__facts">
+        <div class="fact">
+          <div class="fact__key">Программ</div>
+          <div class="fact__val">{u.programs.length}</div>
+        </div>
+        <div class="fact">
+          <div class="fact__key">Стоимость / год</div>
+          <div class="fact__val fact__val--sm">{tuitionRange}</div>
+        </div>
+        {u.requirements.language?.ielts !== undefined && (
+          <div class="fact">
+            <div class="fact__key">IELTS от</div>
+            <div class="fact__val">{u.requirements.language.ielts}</div>
+          </div>
+        )}
+        {u.scholarships.length > 0 && (
+          <div class="fact fact--accent">
+            <div class="fact__key">Стипендии</div>
+            <div class="fact__val">{u.scholarships.length}</div>
+          </div>
+        )}
+      </aside>
     </div>
   </section>
 
-  <section class="landing-section">
+  <section class="uni-section uni-section--soft">
     <div class="container">
-      <h2>Программы и стоимость</h2>
-      <div class="programs-table-wrap">
-        <table class="programs-table">
-          <thead>
-            <tr>
-              <th>Программа</th>
-              <th>Уровень</th>
-              <th>Длительность</th>
-              <th>Стоимость / год</th>
-              <th>Дедлайн</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tuitionRows.map((row) => (
-              <tr>
-                <td>{row.title}</td>
-                <td>{levelLabels[row.level] ?? row.level}</td>
-                <td>{row.durationYears} лет</td>
-                <td>
-                  {row.tuition !== undefined
-                    ? `${row.tuition.toLocaleString('ru-RU')} ${u.tuition.currency}`
-                    : '—'}
-                </td>
-                <td>{row.deadline ?? '—'}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div class="section__head">
+        <h2>Почему через StudyRoom</h2>
+      </div>
+      <div class="benefits-grid">
+        {STUDYROOM_BENEFITS.map((b) => (
+          <article class="benefit-card">
+            <div class="benefit-card__num">{b.num}</div>
+            <div class="benefit-card__title">{b.title}</div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="landing-section">
-    <div class="container landing-section__grid">
+  <section id="programs" class="uni-section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Программы по факультетам</h2>
+        <p class="muted">
+          {facultyEntries.length} факультетов · {programRows.length} программ · нажмите на факультет, чтобы открыть полный список
+        </p>
+      </div>
+      <div class="faculty-grid">
+        {facultyEntries.map((fac) => (
+          <article class="faculty-card">
+            <header class="faculty-card__head">
+              <h3 class="faculty-card__name">{fac.name}</h3>
+              <span class="faculty-card__count">{programsCountLabel(fac.programs.length)}</span>
+            </header>
+            {fac.minTuition > 0 && (
+              <p class="faculty-card__price">
+                от <strong>{fac.minTuition.toLocaleString('ru-RU')}</strong>
+                {fac.maxTuition > fac.minTuition && <> · до {fac.maxTuition.toLocaleString('ru-RU')}</>}
+                {' '}{u.tuition.currency}/год
+              </p>
+            )}
+            <ul class="faculty-card__preview">
+              {fac.programs.slice(0, 3).map((row) => (
+                <li>
+                  <span class="tag">{levelLabels[row.level] ?? row.level}</span>
+                  <span class="faculty-card__preview-title">{row.title}</span>
+                </li>
+              ))}
+            </ul>
+            <button
+              type="button"
+              class="btn btn-ghost btn-sm faculty-card__open"
+              data-open-modal={`faculty-${fac.slug}`}
+            >
+              Все программы →
+            </button>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {facultyEntries.map((fac) => (
+    <dialog class="faculty-modal" id={`faculty-${fac.slug}`} aria-labelledby={`faculty-${fac.slug}-title`}>
+      <div class="faculty-modal__box">
+        <header class="faculty-modal__head">
+          <div>
+            <p class="faculty-modal__crumb muted">{u.name} · Факультет</p>
+            <h3 class="faculty-modal__title" id={`faculty-${fac.slug}-title`}>{fac.name}</h3>
+            <p class="muted faculty-modal__sub">{programsCountLabel(fac.programs.length)} в этом факультете</p>
+          </div>
+          <button type="button" class="faculty-modal__close" data-close-modal aria-label="Закрыть">×</button>
+        </header>
+        <div class="faculty-modal__body">
+          {levelOrderForRender.map((lvlKey) => {
+            const list = fac.byLevel[lvlKey];
+            if (!list || list.length === 0) return null;
+            return (
+              <section class="faculty-modal__group">
+                <h4 class="faculty-modal__group-title">
+                  {levelGroupLabels[lvlKey] ?? lvlKey} <span class="muted">· {list.length}</span>
+                </h4>
+                <ul class="faculty-modal__list">
+                  {list.map((row) => (
+                    <li class="faculty-modal__row">
+                      <div class="faculty-modal__row-main">
+                        <strong class="faculty-modal__row-title">{row.title}</strong>
+                        <div class="faculty-modal__row-meta muted">
+                          {row.durationYears} {row.durationYears === 1 ? 'год' : 'лет'}
+                          {row.intakes.length > 0 && <> · старт: {row.intakes.join(' · ')}</>}
+                        </div>
+                      </div>
+                      <div class="faculty-modal__row-side">
+                        <div class="faculty-modal__row-price">
+                          {row.tuition !== undefined && row.tuition > 0
+                            ? <>от <strong>{row.tuition.toLocaleString('ru-RU')}</strong> {u.tuition.currency}/год</>
+                            : <span class="muted">уточняется</span>}
+                        </div>
+                        {row.programUrl && (
+                          <a class="faculty-modal__row-link" href={row.programUrl} target="_blank" rel="noopener">
+                            страница вуза ↗
+                          </a>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
+        </div>
+      </div>
+    </dialog>
+  ))}
+
+  <section class="uni-section uni-section--soft">
+    <div class="container uni-section__split">
       <div>
-        <h2>Требования</h2>
-        <ul class="reqs">
+        <h2>Требования к поступающим</h2>
+        <ul class="reqs-list">
           {u.requirements.language?.ielts !== undefined && (
             <li><strong>IELTS:</strong> от {u.requirements.language.ielts}</li>
           )}
           {u.requirements.language?.toefl !== undefined && (
-            <li><strong>TOEFL:</strong> от {u.requirements.language.toefl}</li>
+            <li><strong>TOEFL iBT:</strong> от {u.requirements.language.toefl}</li>
           )}
           {u.requirements.language?.duolingo !== undefined && (
             <li><strong>Duolingo:</strong> от {u.requirements.language.duolingo}</li>
           )}
           {u.requirements.gpa !== undefined && (
-            <li><strong>GPA:</strong> от {u.requirements.gpa}</li>
+            <li><strong>GPA:</strong> от {u.requirements.gpa} / 4.0</li>
           )}
           {u.requirements.exams.length > 0 && (
             <li><strong>Экзамены:</strong> {u.requirements.exams.join(', ')}</li>
           )}
+          <li class="muted" style="font-size:0.9rem;">
+            Точные требования зависят от программы и могут отличаться. Уточняйте на консультации.
+          </li>
         </ul>
       </div>
 
       <div>
-        <h2>Стипендии</h2>
+        <h2>Стипендии и скидки</h2>
         {u.scholarships.length === 0 ? (
-          <p class="muted">Стипендии не указаны.</p>
+          <p class="muted">
+            На данный момент стипендии не указаны. Уточняйте актуальные программы поддержки на консультации.
+          </p>
         ) : (
-          <ul class="scholarships">
+          <ul class="scholarship-list">
             {u.scholarships.map((s) => (
               <li>
                 <strong>{s.name}</strong>
-                {s.amountUSD !== undefined && <span> — до ${s.amountUSD.toLocaleString('ru-RU')}</span>}
-                {s.deadline && <span class="muted"> (до {s.deadline})</span>}
-                {s.url && <a href={s.url} target="_blank" rel="noopener"> ссылка</a>}
+                {s.amountUSD !== undefined && (
+                  <span class="tag" style="margin-left:8px;">до ${s.amountUSD.toLocaleString('ru-RU')}</span>
+                )}
+                {s.deadline && <span class="muted"> · до {s.deadline}</span>}
+                {s.url && (
+                  <span> · <a href={s.url} target="_blank" rel="noopener">подробнее</a></span>
+                )}
               </li>
             ))}
           </ul>
@@ -127,87 +360,436 @@ const levelLabels: Record<string, string> = {
     </div>
   </section>
 
-  <section class="landing-cta">
+  <section class="uni-section">
     <div class="container">
-      <a class="btn btn-primary" href="https://studyroom.kz" target="_blank" rel="noopener">
-        Записаться на консультацию
-      </a>
+      <div class="section__head">
+        <h2>Что мы делаем для вас</h2>
+        <p class="muted">Сопровождение от первой консультации до зачисления.</p>
+      </div>
+      <div class="activities-grid">
+        {STUDYROOM_ACTIVITIES.map((a) => (
+          <article class="benefit-card">
+            <h3 class="benefit-card__title">{a.title}</h3>
+            <p class="benefit-card__text muted">{a.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="uni-section uni-section--soft">
+    <div class="container">
+      <div class="section__head">
+        <h2>Важно знать перед поездкой</h2>
+      </div>
+      <div class="faq-grid">
+        {STUDYROOM_FAQ.map((item) => (
+          <article class="faq-card">
+            <h3 class="faq-card__title">{item.title}</h3>
+            <p class="muted">{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="uni-section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Отзывы наших студентов</h2>
+      </div>
+      <div class="reviews-grid">
+        {STUDYROOM_REVIEWS.map((r) => (
+          <article class="review-card">
+            <p class="review-card__text">«{r.text}»</p>
+            <div class="review-card__author">
+              <strong>{r.name}</strong>
+              <span class="muted">{r.program}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="uni-section uni-section--soft">
+    <div class="container uni-section__about">
+      <h2>{STUDYROOM_ABOUT.title}</h2>
+      {STUDYROOM_ABOUT.paragraphs.map((p) => <p class="muted">{p}</p>)}
+    </div>
+  </section>
+
+  <section id="cta" class="uni-cta">
+    <div class="container uni-cta__inner">
+      <h2>Запишитесь на бесплатную консультацию</h2>
+      <p>
+        Расскажем про {u.name}, оценим ваши шансы на поступление и составим план подготовки.
+      </p>
+      <div class="uni-cta__actions">
+        <a class="btn btn-primary" href={`tel:${STUDYROOM_CONTACT.phone.replace(/[^+0-9]/g, '')}`}>
+          {STUDYROOM_CONTACT.phone}
+        </a>
+        <a class="btn btn-ghost btn-on-dark" href={`mailto:${STUDYROOM_CONTACT.email}`}>
+          {STUDYROOM_CONTACT.email}
+        </a>
+      </div>
     </div>
   </section>
 </Base>
 
+<script>
+  // Open/close handlers for faculty modals (native <dialog> element).
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement | null;
+    if (!target) return;
+
+    const opener = target.closest<HTMLElement>('[data-open-modal]');
+    if (opener) {
+      const id = opener.dataset.openModal;
+      if (id) {
+        const dlg = document.getElementById(id) as HTMLDialogElement | null;
+        if (dlg && typeof dlg.showModal === 'function') {
+          dlg.showModal();
+        }
+      }
+      return;
+    }
+
+    const closer = target.closest<HTMLElement>('[data-close-modal]');
+    if (closer) {
+      const dlg = closer.closest('dialog') as HTMLDialogElement | null;
+      if (dlg) dlg.close();
+      return;
+    }
+
+    // Click outside modal content closes it.
+    if (target.tagName === 'DIALOG' && (target as HTMLDialogElement).open) {
+      const rect = (target as HTMLElement).getBoundingClientRect();
+      const inDialogContent =
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom;
+      if (!inDialogContent) (target as HTMLDialogElement).close();
+    }
+  });
+</script>
+
 <style>
-  .landing-hero {
-    padding: var(--space-8) 0 var(--space-6);
-    background: linear-gradient(180deg, var(--color-primary-soft) 0%, transparent 100%);
+  .uni-hero {
+    padding: var(--space-10) 0 var(--space-8);
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 0%, var(--color-primary-soft) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 10%, var(--color-primary-mist) 0%, transparent 60%),
+      var(--color-bg);
   }
-
-  .landing-hero__location {
-    margin: 0;
-    font-size: 1.05rem;
-  }
-
-  .landing-hero__verified {
-    margin-top: var(--space-3);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--space-3);
-    font-size: 0.95rem;
-  }
-
-  .landing-section {
-    padding: var(--space-6) 0;
-  }
-
-  .landing-section__grid {
+  .uni-hero__inner {
     display: grid;
-    gap: var(--space-6);
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-8);
+    align-items: end;
   }
-
-  .programs-table-wrap {
-    overflow-x: auto;
+  .uni-hero__crumb { margin: 0 0 var(--space-4); font-size: 0.92rem; }
+  .uni-hero__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
   }
+  .uni-hero__logo {
+    width: 72px; height: 72px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 1.85rem;
+    flex-shrink: 0;
+    letter-spacing: -0.02em;
+  }
+  .uni-hero__title { margin: 0; line-height: 1.1; }
+  .uni-hero__location { margin: 4px 0 0; color: var(--color-text-muted); font-size: 1.05rem; }
+  .uni-hero__lead {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-5);
+    max-width: 560px;
+  }
+  .uni-hero__actions {
+    display: flex; flex-wrap: wrap; gap: var(--space-3);
+    margin-bottom: var(--space-5);
+  }
+  .uni-hero__verified {
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: var(--space-3); margin: 0; font-size: 0.9rem;
+  }
+  .uni-hero__facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    padding: var(--space-5);
+    background: #fff;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-border);
+  }
+  .fact { padding: var(--space-3); background: var(--color-bg-soft); border-radius: 12px; }
+  .fact--accent { background: var(--color-primary-soft); }
+  .fact__key {
+    font-size: 0.75rem; color: var(--color-text-muted);
+    text-transform: uppercase; letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+  .fact__val {
+    font-size: 1.6rem; font-weight: 900; color: var(--color-text); line-height: 1.1;
+  }
+  .fact__val--sm { font-size: 1rem; }
 
-  .programs-table {
-    width: 100%;
-    border-collapse: collapse;
+  .uni-section { padding: var(--space-10) 0; }
+  .uni-section--soft { background: var(--color-bg-soft); }
+  .section__head { text-align: center; margin-bottom: var(--space-8); }
+  .section__head p { margin: 8px 0 0; }
+  .uni-section__split {
+    display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8);
+  }
+  .uni-section__about {
+    max-width: 760px; margin: 0 auto; text-align: center;
+  }
+  .uni-section__about p { font-size: 1.05rem; margin-bottom: var(--space-3); }
+
+  .benefits-grid,
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-4);
+  }
+  .benefit-card {
+    padding: var(--space-5);
+    background: #fff;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
-    overflow: hidden;
-    background: var(--color-bg);
+    display: flex; flex-direction: column; gap: var(--space-2);
   }
+  .uni-section--soft .benefit-card { background: #fff; }
+  .benefit-card__num { font-weight: 900; color: var(--color-primary); font-size: 0.95rem; }
+  .benefit-card__title { font-weight: 700; font-size: 1.05rem; }
+  .benefit-card__text { font-size: 0.95rem; }
 
-  .programs-table th,
-  .programs-table td {
-    padding: var(--space-3) var(--space-4);
-    border-bottom: 1px solid var(--color-border);
-    text-align: left;
-    vertical-align: top;
+  .faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-4);
   }
-
-  .programs-table th {
-    background: var(--color-bg-soft);
-    font-weight: 600;
-    font-size: 0.9rem;
+  .faculty-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
   }
-
-  .programs-table tbody tr:last-child td {
-    border-bottom: none;
+  .faculty-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    border-color: var(--color-primary-soft);
+    transform: translateY(-2px);
   }
-
-  .reqs,
-  .scholarships {
+  .faculty-card__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3);
+    border-bottom: 2px solid var(--color-primary-soft);
+    padding-bottom: var(--space-3);
+  }
+  .faculty-card__name {
     margin: 0;
-    padding-left: var(--space-5);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    flex: 1;
+  }
+  .faculty-card__count {
+    font-size: 0.78rem;
+    color: var(--color-primary-dark);
+    background: var(--color-primary-soft);
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .faculty-card__price { margin: 0; font-size: 0.95rem; }
+  .faculty-card__price strong { color: var(--color-primary-dark); font-size: 1.05rem; }
+  .faculty-card__preview {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
+    flex: 1;
+  }
+  .faculty-card__preview li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: 0.88rem;
+  }
+  .faculty-card__preview-title {
+    flex: 1;
+    line-height: 1.3;
+  }
+  .faculty-card__open { align-self: flex-start; }
+
+  /* Modal */
+  .faculty-modal {
+    border: none;
+    padding: 0;
+    background: transparent;
+    max-width: 920px;
+    width: calc(100% - 32px);
+    border-radius: var(--radius-card);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+  }
+  .faculty-modal::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+  }
+  .faculty-modal__box {
+    background: #fff;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 86vh;
+  }
+  .faculty-modal__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-soft);
+  }
+  .faculty-modal__crumb { margin: 0 0 4px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .faculty-modal__title { margin: 0; font-size: 1.5rem; line-height: 1.2; }
+  .faculty-modal__sub { margin: 4px 0 0; font-size: 0.92rem; }
+  .faculty-modal__close {
+    background: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-pill);
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: background 140ms ease;
+  }
+  .faculty-modal__close:hover { background: var(--color-border); color: var(--color-text); }
+  .faculty-modal__body {
+    overflow-y: auto;
+    padding: var(--space-5) var(--space-6) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  .faculty-modal__group-title {
+    margin: 0 0 var(--space-3);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-primary-soft);
+    padding-bottom: 6px;
+  }
+  .faculty-modal__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; }
+  .faculty-modal__row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+    border-top: 1px dashed var(--color-border);
+  }
+  .faculty-modal__row:first-child { border-top: none; }
+  .faculty-modal__row-main { flex: 1; min-width: 0; }
+  .faculty-modal__row-title { font-size: 0.98rem; line-height: 1.3; display: block; margin-bottom: 4px; }
+  .faculty-modal__row-meta { font-size: 0.85rem; }
+  .faculty-modal__row-side {
+    text-align: right;
+    flex-shrink: 0;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .faculty-modal__row-price { font-size: 0.95rem; }
+  .faculty-modal__row-price strong { color: var(--color-primary-dark); font-size: 1.05rem; }
+  .faculty-modal__row-link { font-size: 0.85rem; color: var(--color-text-muted); }
+  .faculty-modal__row-link:hover { color: var(--color-primary-dark); }
+
+  @media (max-width: 720px) {
+    .faculty-modal__head { padding: var(--space-4); }
+    .faculty-modal__body { padding: var(--space-4); }
+    .faculty-modal__row {
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .faculty-modal__row-side { text-align: left; min-width: 0; }
   }
 
-  .landing-cta {
-    padding: var(--space-8) 0 var(--space-10);
+  .reqs-list,
+  .scholarship-list {
+    margin: 0; padding-left: var(--space-5);
+    display: flex; flex-direction: column; gap: var(--space-2);
+  }
+
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .faq-card {
+    padding: var(--space-5);
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+  }
+  .faq-card__title { font-weight: 700; margin-bottom: var(--space-2); }
+
+  .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .review-card {
+    padding: var(--space-5);
+    background: var(--color-bg-soft);
+    border-radius: var(--radius-card);
+    display: flex; flex-direction: column; gap: var(--space-3);
+  }
+  .review-card__text { font-style: italic; font-size: 1.05rem; margin: 0; }
+  .review-card__author {
+    display: flex; flex-direction: column; gap: 2px; font-size: 0.92rem;
+  }
+
+  .uni-cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: #fff;
+    padding: var(--space-12) 0;
     text-align: center;
+  }
+  .uni-cta__inner { max-width: 720px; margin: 0 auto; }
+  .uni-cta h2 { color: #fff; margin-bottom: var(--space-3); }
+  .uni-cta p { color: rgba(255,255,255,0.9); margin-bottom: var(--space-6); font-size: 1.1rem; }
+  .uni-cta__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; }
+  .btn-on-dark { border-color: rgba(255,255,255,0.5); color: #fff; }
+  .btn-on-dark:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; }
+
+  @media (max-width: 880px) {
+    .uni-hero__inner { grid-template-columns: 1fr; }
+    .uni-hero__facts { grid-template-columns: repeat(4, 1fr); }
+    .uni-section__split,
+    .faq-grid,
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .uni-hero__facts { grid-template-columns: 1fr 1fr; }
+    .uni-hero__brand { flex-direction: column; align-items: flex-start; }
+    .uni-section { padding: var(--space-8) 0; }
   }
 </style>

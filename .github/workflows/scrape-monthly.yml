@@ -1,0 +1,51 @@
+name: Monthly university data refresh
+
+on:
+  schedule:
+    - cron: "0 3 1 * *"
+  workflow_dispatch: {}
+
+jobs:
+  scrape-and-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install scraper deps
+        working-directory: scraper
+        run: npm ci
+
+      - name: Run scraper for all registered universities
+        working-directory: scraper
+        run: npm run scrape -- --all
+
+      - name: Verify Astro site builds with new data
+        working-directory: site
+        run: |
+          npm ci
+          npm run build
+
+      - name: Open PR with diff
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: scrape/monthly-${{ github.run_id }}
+          title: "Scraper: monthly refresh ${{ github.run_id }}"
+          body: |
+            Automated monthly refresh from `npm run scrape -- --all`.
+
+            Review checklist:
+            - Tuition / deadline changes look reasonable (no zeros, no missing currencies)
+            - No university dropped from the list unexpectedly
+            - Astro build is green (CI must pass)
+
+            See `scraper/README.md` for what the scraper updates vs. what stays hand-curated.
+          commit-message: "chore(data): monthly scrape refresh"
+          delete-branch: true

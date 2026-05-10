@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudyRoom — Панель управления скрапером</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <style>
+    :root {
+      --green: #00950f;
+      --green-dark: #007a0c;
+      --green-soft: #e7f6e9;
+      --green-mist: #f3faf4;
+      --text: #111;
+      --text-muted: #555;
+      --text-faint: #888;
+      --border: #e5e5e5;
+      --bg: #fff;
+      --bg-soft: #f7f7f7;
+      --bg-dark: #111;
+      --red: #c43030;
+      --amber: #c47a30;
+      --radius-pill: 999px;
+      --radius-card: 16px;
+      --shadow-card: 0 1px 2px rgba(0,0,0,0.04), 0 6px 18px rgba(0,0,0,0.05);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+      font-size: 16px; line-height: 1.55;
+      color: var(--text); background: var(--bg-soft);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--green-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code, pre { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Menlo, monospace; }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .topbar__brand { font-weight: 900; font-size: 1.25rem; }
+    .topbar__brand span { color: var(--green); }
+    .topbar__hint { font-size: 0.85rem; color: var(--text-muted); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px 64px; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+    @media (max-width: 880px) { .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+    }
+    .card__head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 16px;
+    }
+    .card__title {
+      margin: 0; font-size: 0.85rem;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--text-muted); font-weight: 700;
+    }
+    .card__big {
+      font-size: 2rem; font-weight: 900; line-height: 1.1; margin: 0;
+      letter-spacing: -0.01em;
+    }
+    .card__sub { margin: 8px 0 0; font-size: 0.95rem; color: var(--text-muted); }
+    .card__meta { display: flex; flex-direction: column; gap: 4px; margin: 12px 0 0; font-size: 0.85rem; }
+    .card__meta-row { display: flex; justify-content: space-between; }
+    .card__meta-key { color: var(--text-muted); }
+
+    .source-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.95rem; word-break: break-all;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      border: 2px solid transparent;
+      font: inherit; font-weight: 700; font-size: 1rem;
+      cursor: pointer;
+      transition: background 140ms ease, transform 60ms ease, opacity 140ms ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-primary:hover:not(:disabled) { background: var(--green-dark); }
+    .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-ghost:hover:not(:disabled) { border-color: var(--green); color: var(--green); }
+    .btn-sm { padding: 6px 14px; font-size: 0.8rem; font-weight: 600; }
+
+    .status-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 4px 12px; border-radius: var(--radius-pill);
+      font-size: 0.85rem; font-weight: 600;
+    }
+    .status-pill__dot { width: 8px; height: 8px; border-radius: 50%; }
+    .status-pill--idle { background: var(--bg-soft); color: var(--text-muted); }
+    .status-pill--idle .status-pill__dot { background: var(--text-faint); }
+    .status-pill--running { background: var(--green-soft); color: var(--green-dark); }
+    .status-pill--running .status-pill__dot { background: var(--green); animation: pulse 1.2s infinite; }
+    .status-pill--ok { background: var(--green-soft); color: var(--green-dark); }
+    .status-pill--ok .status-pill__dot { background: var(--green); }
+    .status-pill--fail { background: #fce8e8; color: var(--red); }
+    .status-pill--fail .status-pill__dot { background: var(--red); }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0 0; }
+
+    .table-card { padding: 0; overflow: hidden; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td {
+      padding: 10px 14px; text-align: left;
+      border-bottom: 1px solid var(--border); vertical-align: middle;
+    }
+    th {
+      background: var(--bg-soft);
+      font-weight: 700; font-size: 0.78rem;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+    tr:last-child td { border-bottom: none; }
+    .tier {
+      display: inline-block; padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .tier--partner { background: var(--green-soft); color: var(--green-dark); }
+    .tier--official { background: #fff4cc; color: #6b4d00; }
+    .tier--aggregator { background: var(--bg-soft); color: var(--text-muted); }
+    .checked-fresh { color: var(--green-dark); font-weight: 600; }
+    .checked-stale { color: var(--amber); font-weight: 600; }
+    .checked-never { color: var(--text-faint); font-style: italic; }
+
+    .log-card { padding: 0; }
+    .log-card__head {
+      padding: 16px 20px; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .log {
+      background: #0f0f0f; color: #e6e6e6;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.82rem; line-height: 1.5;
+      padding: 16px 20px;
+      max-height: 360px; overflow-y: auto;
+      white-space: pre-wrap; word-break: break-word;
+      margin: 0;
+    }
+    .log__line { display: block; }
+    .log__line--ok { color: #93e695; }
+    .log__line--fail { color: #ff8a8a; }
+    .log__line--warn { color: #ffd699; }
+    .log__line--meta { color: #888; }
+    .log__empty { padding: 32px; text-align: center; color: var(--text-faint); font-style: italic; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__brand"><span>Study</span>Room — Панель управления</div>
+    <div class="topbar__hint">локальный, порт <code>5174</code></div>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <div class="card">
+        <div class="card__head">
+          <h2 class="card__title">Следующий запуск (по расписанию)</h2>
+          <span id="cron" class="card__title" style="text-transform:none;letter-spacing:0;"></span>
+        </div>
+        <p class="card__big" id="next-run-local">—</p>
+        <p class="card__sub" id="next-run-relative">Загрузка…</p>
+        <div class="card__meta">
+          <div class="card__meta-row"><span class="card__meta-key">UTC:</span><span id="next-run-utc">—</span></div>
+          <div class="card__meta-row"><span class="card__meta-key">Источник:</span><span id="schedule-source">—</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <h2 class="card__title">Источник данных</h2>
+          <span id="source-tier" class="tier tier--partner">PARTNER</span>
+        </div>
+        <p class="card__big" id="source-name">—</p>
+        <a id="source-url" class="source-link" href="#" target="_blank" rel="noopener">—</a>
+        <div class="card__meta">
+          <div class="card__meta-row"><span class="card__meta-key">Университетов в очереди:</span><strong id="registry-count">—</strong></div>
+          <div class="card__meta-row"><span class="card__meta-key">В каталоге сейчас:</span><strong id="catalog-count">—</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom:24px;">
+      <div class="card__head">
+        <h2 class="card__title">Ручной запуск</h2>
+        <span id="run-status" class="status-pill status-pill--idle">
+          <span class="status-pill__dot"></span><span id="run-status-text">Ожидание</span>
+        </span>
+      </div>
+      <p class="card__sub" id="run-summary">Скрапер не запущен. Нажмите кнопку, чтобы обновить данные о всех 16 университетах.</p>
+      <div class="actions">
+        <button id="run-all-btn" class="btn btn-primary">Запустить скрапинг сейчас</button>
+        <span class="card__sub" style="margin:0;">или запустите конкретный университет в таблице ниже ↓</span>
+      </div>
+    </section>
+
+    <section class="card table-card" style="margin-bottom:24px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Слаг</th>
+            <th>Университет</th>
+            <th>Город</th>
+            <th>Тир</th>
+            <th>В каталоге</th>
+            <th>Последняя проверка</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="registry-tbody">
+          <tr><td colspan="7" style="text-align:center;color:var(--text-faint);padding:32px;">Загрузка…</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card log-card">
+      <div class="log-card__head">
+        <h2 class="card__title" style="margin:0;">Лог последнего запуска</h2>
+        <span id="log-summary" class="card__sub" style="margin:0;"></span>
+      </div>
+      <pre id="log-output" class="log"><span class="log__empty">Лог пустой. Запустите скрапер, чтобы увидеть вывод.</span></pre>
+    </section>
+  </main>
+
+  <script>
+    const POLL_INTERVAL_RUNNING_MS = 1500;
+    const POLL_INTERVAL_IDLE_MS = 8000;
+    let pollTimer = null;
+
+    const fmt = {
+      dateLocal(iso) {
+        if (!iso) return '—';
+        return new Date(iso).toLocaleString('ru-RU', {
+          day: '2-digit', month: 'long', year: 'numeric',
+          hour: '2-digit', minute: '2-digit',
+        });
+      },
+      relative(iso) {
+        if (!iso) return '—';
+        const diffMs = new Date(iso) - new Date();
+        const totalMin = Math.round(diffMs / 60000);
+        if (totalMin < 0) return 'в прошлом';
+        if (totalMin < 60) return 'через ' + totalMin + ' мин';
+        const totalHr = Math.round(totalMin / 60);
+        if (totalHr < 24) return 'через ' + totalHr + ' ч';
+        const days = Math.round(totalHr / 24);
+        return 'через ' + days + ' дн';
+      },
+      ago(iso) {
+        if (!iso) return null;
+        const diffMs = new Date() - new Date(iso);
+        const totalMin = Math.round(diffMs / 60000);
+        if (totalMin < 1) return 'только что';
+        if (totalMin < 60) return totalMin + ' мин назад';
+        const totalHr = Math.round(totalMin / 60);
+        if (totalHr < 24) return totalHr + ' ч назад';
+        const days = Math.round(totalHr / 24);
+        return days + ' дн назад';
+      },
+      stalenessClass(iso) {
+        if (!iso) return 'checked-never';
+        const days = (new Date() - new Date(iso)) / (1000 * 60 * 60 * 24);
+        return days <= 35 ? 'checked-fresh' : 'checked-stale';
+      },
+    };
+
+    function classifyLogLine(line) {
+      if (/^\[ok\]/.test(line)) return 'log__line--ok';
+      if (/^\[fail\]|spawn error|fail/i.test(line)) return 'log__line--fail';
+      if (/^\[skip\]|warn/i.test(line)) return 'log__line--warn';
+      if (/^[>=]|^Done:/i.test(line)) return 'log__line--meta';
+      return '';
+    }
+
+    function renderLog(log) {
+      const el = document.getElementById('log-output');
+      if (!log || log.length === 0) {
+        el.innerHTML = '<span class="log__empty">Лог пустой. Запустите скрапер, чтобы увидеть вывод.</span>';
+        return;
+      }
+      el.innerHTML = log.map((entry) => {
+        const cls = classifyLogLine(entry.line);
+        const safe = entry.line.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return '<span class="log__line ' + cls + '">' + safe + '</span>';
+      }).join('\n');
+      el.scrollTop = el.scrollHeight;
+    }
+
+    function renderRunStatus(run) {
+      const pill = document.getElementById('run-status');
+      const txt = document.getElementById('run-status-text');
+      const summary = document.getElementById('run-summary');
+      const btn = document.getElementById('run-all-btn');
+
+      pill.classList.remove('status-pill--idle', 'status-pill--running', 'status-pill--ok', 'status-pill--fail');
+
+      if (run.running) {
+        pill.classList.add('status-pill--running');
+        txt.textContent = 'Идёт скрапинг';
+        const target = run.currentTarget === 'all' ? 'все университеты' : run.currentTarget;
+        summary.textContent = 'Цель: ' + target + '. Запущено ' + fmt.ago(run.startedAt) + '. Пока работает — кнопка отключена.';
+        btn.disabled = true;
+        btn.textContent = 'Идёт скрапинг…';
+      } else if (run.exitCode === null) {
+        pill.classList.add('status-pill--idle');
+        txt.textContent = 'Ожидание';
+        summary.textContent = 'Скрапер не запускался в этой сессии. Нажмите кнопку, чтобы обновить данные.';
+        btn.disabled = false;
+        btn.textContent = 'Запустить скрапинг сейчас';
+      } else if (run.exitCode === 0) {
+        pill.classList.add('status-pill--ok');
+        txt.textContent = 'Успешно';
+        summary.textContent = 'Завершено ' + fmt.ago(run.finishedAt) + '. Цель: ' + (run.currentTarget === 'all' ? 'все' : run.currentTarget) + '. Можно запустить снова.';
+        btn.disabled = false;
+        btn.textContent = 'Запустить ещё раз';
+      } else {
+        pill.classList.add('status-pill--fail');
+        txt.textContent = 'Ошибка (код ' + run.exitCode + ')';
+        summary.textContent = 'Последний запуск завершился с ошибкой ' + fmt.ago(run.finishedAt) + '. Смотрите лог ниже.';
+        btn.disabled = false;
+        btn.textContent = 'Повторить';
+      }
+    }
+
+    function renderRegistry(registry) {
+      const tbody = document.getElementById('registry-tbody');
+      if (!registry || registry.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-faint);padding:32px;">Реестр пуст. Проверьте sources/universities.list.md</td></tr>';
+        return;
+      }
+      tbody.innerHTML = registry.map((row) => {
+        const inCatalog = row.catalog ? 'да' : '—';
+        const checked = row.catalog?.lastChecked;
+        const checkedLabel = checked ? fmt.ago(checked) : 'никогда';
+        const checkedCls = fmt.stalenessClass(checked);
+        return '<tr>' +
+          '<td><code>' + row.slug + '</code></td>' +
+          '<td>' + row.name + '</td>' +
+          '<td>' + row.city + '</td>' +
+          '<td><span class="tier tier--' + row.tier + '">' + row.tier + '</span></td>' +
+          '<td>' + inCatalog + '</td>' +
+          '<td><span class="' + checkedCls + '">' + checkedLabel + '</span></td>' +
+          '<td><button class="btn btn-ghost btn-sm" data-run-slug="' + row.slug + '">обновить</button></td>' +
+          '</tr>';
+      }).join('');
+    }
+
+    function renderSchedule(schedule) {
+      document.getElementById('next-run-local').textContent = fmt.dateLocal(schedule.nextRunUTC);
+      document.getElementById('next-run-relative').textContent = fmt.relative(schedule.nextRunUTC);
+      document.getElementById('next-run-utc').textContent = schedule.nextRunUTC || '—';
+      document.getElementById('schedule-source').innerHTML = '<code>' + (schedule.source || '—') + '</code>';
+      document.getElementById('cron').innerHTML = schedule.cron ? '<code>' + schedule.cron + '</code>' : '—';
+    }
+
+    function renderSource(profile, registryCount, catalogCount) {
+      document.getElementById('source-name').textContent = profile.name || '—';
+      const link = document.getElementById('source-url');
+      link.textContent = profile.baseUrl || '—';
+      link.href = profile.baseUrl || '#';
+      const tierEl = document.getElementById('source-tier');
+      tierEl.className = 'tier tier--' + (profile.tier || 'partner');
+      tierEl.textContent = (profile.tier || 'partner').toUpperCase();
+      document.getElementById('registry-count').textContent = registryCount;
+      document.getElementById('catalog-count').textContent = catalogCount;
+    }
+
+    function renderLogSummary(run) {
+      const el = document.getElementById('log-summary');
+      if (run.running) el.textContent = 'идёт…';
+      else if (run.startedAt && run.finishedAt) {
+        const dur = Math.round((new Date(run.finishedAt) - new Date(run.startedAt)) / 1000);
+        el.textContent = 'длительность ' + dur + 'с';
+      } else el.textContent = '';
+    }
+
+    async function fetchStatus() {
+      try {
+        const res = await fetch('/api/status');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+
+        renderSchedule(data.schedule);
+        const catalogCount = data.registry.filter((r) => r.catalog).length;
+        renderSource(data.sourceProfile, data.registry.length, catalogCount);
+        renderRunStatus(data.run);
+        renderRegistry(data.registry);
+        renderLog(data.run.log);
+        renderLogSummary(data.run);
+
+        const next = data.run.running ? POLL_INTERVAL_RUNNING_MS : POLL_INTERVAL_IDLE_MS;
+        clearTimeout(pollTimer);
+        pollTimer = setTimeout(fetchStatus, next);
+      } catch (err) {
+        console.error('status fetch failed', err);
+        clearTimeout(pollTimer);
+        pollTimer = setTimeout(fetchStatus, POLL_INTERVAL_IDLE_MS);
+      }
+    }
+
+    document.getElementById('run-all-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('run-all-btn');
+      btn.disabled = true;
+      btn.textContent = 'Запускаем…';
+      try {
+        const res = await fetch('/api/run', { method: 'POST' });
+        if (!res.ok) {
+          const body = await res.text();
+          alert('Не удалось запустить: ' + body);
+        }
+      } catch (err) {
+        alert('Сетевая ошибка: ' + err.message);
+      }
+      fetchStatus();
+    });
+
+    document.addEventListener('click', async (e) => {
+      const slug = e.target?.dataset?.runSlug;
+      if (!slug) return;
+      e.target.disabled = true;
+      e.target.textContent = '…';
+      try {
+        const res = await fetch('/api/run-one', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ slug }),
+        });
+        if (!res.ok) {
+          const body = await res.text();
+          alert('Не удалось запустить ' + slug + ': ' + body);
+        }
+      } catch (err) {
+        alert('Сетевая ошибка: ' + err.message);
+      }
+      fetchStatus();
+    });
+
+    fetchStatus();
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+backend:
+  name: github
+  repo: kovylin1/studyroom-project-site
+  branch: main
+  base_url: https://decap-oauth.studyroom.kz
+
+publish_mode: editorial_workflow
+media_folder: site/public/uploads
+public_folder: /uploads
+
+collections:
+  - name: universities
+    label: Университеты
+    label_singular: Университет
+    folder: site/src/content/universities
+    extension: json
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{name}} ({{city}}, {{country}})"
+    fields:
+      - { name: slug, label: Slug, widget: string }
+      - { name: name, label: Название, widget: string }
+      - { name: country, label: Страна, widget: string }
+      - { name: city, label: Город, widget: string }
+      - name: programs
+        label: Программы
+        widget: list
+        fields:
+          - { name: slug, label: Slug, widget: string }
+          - { name: title, label: Название, widget: string }
+          - { name: durationYears, label: Длительность (лет), widget: number, value_type: float }
+          - { name: level, label: Уровень, widget: select, options: ["foundation", "bachelor", "master", "phd"] }
+          - { name: language, label: Язык, widget: string, required: false, default: en }
+      - name: tuition
+        label: Стоимость
+        widget: object
+        fields:
+          - { name: currency, label: Валюта, widget: select, options: ["USD","EUR","GBP","KZT","RUB","CAD","AUD"], default: GBP }
+          - { name: byProgram, label: По программам, widget: object, fields: [] }
+      - name: deadlines
+        label: Дедлайны
+        widget: object
+        fields: []
+      - name: requirements
+        label: Требования
+        widget: object
+        fields:
+          - name: language
+            label: Язык
+            widget: object
+            required: false
+            fields:
+              - { name: ielts, label: IELTS, widget: number, value_type: float, required: false }
+              - { name: toefl, label: TOEFL, widget: number, value_type: int, required: false }
+              - { name: duolingo, label: Duolingo, widget: number, value_type: int, required: false }
+          - { name: gpa, label: GPA, widget: number, value_type: float, required: false }
+          - { name: exams, label: Экзамены, widget: list, default: [] }
+      - name: scholarships
+        label: Стипендии
+        widget: list
+        required: false
+        default: []
+        fields:
+          - { name: name, label: Название, widget: string }
+          - { name: amountUSD, label: Сумма USD, widget: number, required: false }
+          - { name: deadline, label: Дедлайн, widget: string, required: false }
+          - { name: url, label: Ссылка, widget: string, required: false }
+      - { name: lastChecked, label: Дата проверки, widget: datetime }
+      - { name: sourceUrl, label: URL источника, widget: string }
+      - { name: sourceHash, label: Хэш источника, widget: string }
+      - { name: confidence, label: Тип источника, widget: select, options: ["partner", "official", "aggregator"] }
+      - { name: language, label: Язык лендинга, widget: select, options: ["en", "ru", "kz", "mixed"], default: en }

@@ -18,77 +18,61 @@ const levels = Array.from(
   new Set(universities.flatMap((u) => u.programs.map((p) => p.level))),
 ).sort();
 
-const tuitionValues = universities.flatMap((u) => Object.values(u.tuition.byProgram));
+const faculties = Array.from(
+  new Set(
+    universities
+      .flatMap((u) => u.programs.map((p) => p.faculty))
+      .filter((f): f is string => Boolean(f)),
+  ),
+).sort((a, b) => a.localeCompare(b, 'ru'));
+
+const tuitionValues = universities.flatMap((u) => Object.values(u.tuition.byProgram)).filter((v) => v > 0);
 const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
 ---
 
 <Base title="StudyRoom — каталог зарубежных университетов">
-  <section class="hero">
-    <div class="container">
-      <h1>Зарубежные университеты — без посредников и устаревших данных</h1>
-      <p class="hero__lead muted">
-        Каталог обновляется автоматически. Цены, дедлайны и программы — на текущий месяц.
-      </p>
-    </div>
-  </section>
-
-  <section class="catalog">
-    <div class="container">
-      <Filters countries={countries} levels={levels} tuitionMax={tuitionMax} />
-
-      <p class="catalog__count">
-        Найдено: <span id="catalog-count">{universities.length}</span> университетов
-      </p>
-
-      <div class="catalog__grid" id="catalog-grid">
-        {universities.map((data) => <UniversityCard data={data} />)}
+  <form id="catalog-filters" autocomplete="off" onsubmit="return false">
+    <section class="catalog-hero">
+      <div class="container">
+        <div class="catalog-hero__inner">
+          <h1>Найдите свой университет за рубежом</h1>
+          <p class="catalog-hero__lead">
+            Каталог партнёрских университетов StudyRoom. Программы, стоимость и дедлайны — обновляются автоматически каждый месяц.
+          </p>
+          <label class="catalog-hero__search" aria-label="Поиск университета">
+            <span aria-hidden="true">🔎</span>
+            <input
+              type="search"
+              name="q"
+              placeholder="Например, Glasgow или Computer Science"
+              autocomplete="off"
+            />
+            <button type="button" class="btn btn-primary">Найти</button>
+          </label>
+        </div>
       </div>
+    </section>
 
-      <p class="catalog__empty muted" id="catalog-empty" hidden>
-        По заданным фильтрам ничего не нашлось — попробуйте ослабить условия.
-      </p>
-    </div>
-  </section>
+    <section class="catalog">
+      <div class="container">
+        <Filters countries={countries} levels={levels} faculties={faculties} tuitionMax={tuitionMax} />
+
+        <p class="catalog__count">
+          Найдено: <strong id="catalog-count">{universities.length}</strong> университетов
+        </p>
+
+        <div class="catalog__grid" id="catalog-grid">
+          {universities.map((data) => <UniversityCard data={data} />)}
+        </div>
+
+        <p class="catalog__empty muted" id="catalog-empty" hidden>
+          По заданным фильтрам ничего не нашлось — попробуйте ослабить условия.
+        </p>
+      </div>
+    </section>
+  </form>
 </Base>
 
 <script>
   import '~/scripts/catalog-filters';
 </script>
-
-<style>
-  .hero {
-    padding: var(--space-10) 0 var(--space-6);
-    background: linear-gradient(180deg, var(--color-primary-soft) 0%, transparent 100%);
-  }
-
-  .hero h1 {
-    max-width: 760px;
-  }
-
-  .hero__lead {
-    margin: 0;
-    max-width: 640px;
-    font-size: 1.1rem;
-  }
-
-  .catalog {
-    padding: var(--space-6) 0 var(--space-10);
-  }
-
-  .catalog__count {
-    margin: 0 0 var(--space-4);
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-  }
-
-  .catalog__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--space-5);
-  }
-
-  .catalog__empty {
-    margin-top: var(--space-6);
-    text-align: center;
-  }
-</style>

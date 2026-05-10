@@ -30,7 +30,6 @@ export const tuitionSchema = z.object({
   currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD']),
   byProgram: z.record(slug, z.number().nonnegative()),
 });
-export type Tuition = z.infer<typeof tuitionSchema>;
 
 export const requirementsSchema = z.object({
   language: z
@@ -43,7 +42,6 @@ export const requirementsSchema = z.object({
   gpa: z.number().min(0).max(4).optional(),
   exams: z.array(z.string()).default([]),
 });
-export type Requirements = z.infer<typeof requirementsSchema>;
 
 export const scholarshipSchema = z.object({
   name: z.string().min(1),
@@ -51,13 +49,9 @@ export const scholarshipSchema = z.object({
   deadline: isoDate.optional(),
   url: z.string().url().optional(),
 });
-export type Scholarship = z.infer<typeof scholarshipSchema>;
 
 export const confidenceLevel = z.enum(['partner', 'official', 'aggregator']);
-export type ConfidenceLevel = z.infer<typeof confidenceLevel>;
-
 export const landingLanguage = z.enum(['en', 'ru', 'kz', 'mixed']);
-export type LandingLanguage = z.infer<typeof landingLanguage>;
 
 export const universitySchema = z
   .object({
@@ -78,23 +72,21 @@ export const universitySchema = z
   })
   .superRefine((data, ctx) => {
     const programSlugs = new Set(data.programs.map((p) => p.slug));
-
     for (const programSlug of Object.keys(data.tuition.byProgram)) {
       if (!programSlugs.has(programSlug)) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           path: ['tuition', 'byProgram', programSlug],
-          message: `tuition references unknown program slug "${programSlug}"`,
+          message: 'tuition references unknown program slug',
         });
       }
     }
-
     for (const programSlug of Object.keys(data.deadlines)) {
       if (!programSlugs.has(programSlug)) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           path: ['deadlines', programSlug],
-          message: `deadlines reference unknown program slug "${programSlug}"`,
+          message: 'deadlines reference unknown program slug',
         });
       }
     }

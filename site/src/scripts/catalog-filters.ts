@@ -2,6 +2,7 @@ interface CatalogFilterState {
   q: string;
   country: string;
   levels: Set<string>;
+  faculties: Set<string>;
   maxTuition: number | null;
   maxIelts: number | null;
   hasScholarship: boolean;
@@ -21,6 +22,13 @@ function readState(form: HTMLFormElement): CatalogFilterState {
     }
   }
 
+  const faculties = new Set<string>();
+  for (const value of fd.getAll('faculty')) {
+    if (typeof value === 'string' && value.length > 0) {
+      faculties.add(value);
+    }
+  }
+
   const maxTuitionRaw = fd.get('maxTuition');
   const maxIeltsRaw = fd.get('maxIelts');
 
@@ -28,6 +36,7 @@ function readState(form: HTMLFormElement): CatalogFilterState {
     q: String(fd.get('q') ?? '').trim().toLowerCase(),
     country: String(fd.get('country') ?? ''),
     levels,
+    faculties,
     maxTuition: maxTuitionRaw ? Number(maxTuitionRaw) : null,
     maxIelts: maxIeltsRaw ? Number(maxIeltsRaw) : null,
     hasScholarship: fd.get('hasScholarship') === 'on',
@@ -49,6 +58,14 @@ function cardMatches(card: HTMLElement, state: CatalogFilterState): boolean {
   if (state.levels.size > 0) {
     const cardLevels = (card.dataset.levels ?? '').split(',').filter(Boolean);
     const overlap = cardLevels.some((level) => state.levels.has(level));
+    if (!overlap) {
+      return false;
+    }
+  }
+
+  if (state.faculties.size > 0) {
+    const cardFaculties = (card.dataset.faculties ?? '').split(',').filter(Boolean);
+    const overlap = cardFaculties.some((faculty) => state.faculties.has(faculty));
     if (!overlap) {
       return false;
     }
@@ -87,7 +104,7 @@ function applyFilters(form: HTMLFormElement): void {
     return;
   }
 
-  const cards = Array.from(grid.querySelectorAll<HTMLElement>('.card'));
+  const cards = Array.from(grid.querySelectorAll<HTMLElement>('.uni-card'));
   let visible = 0;
   for (const card of cards) {
     const match = cardMatches(card, state);
@@ -121,6 +138,7 @@ function syncUrl(state: CatalogFilterState): void {
   if (state.q) params.set('q', state.q);
   if (state.country) params.set('country', state.country);
   if (state.levels.size > 0) params.set('level', Array.from(state.levels).join(','));
+  if (state.faculties.size > 0) params.set('faculty', Array.from(state.faculties).join(','));
   if (state.maxTuition !== null) params.set('maxTuition', String(state.maxTuition));
   if (state.maxIelts !== null) params.set('maxIelts', String(state.maxIelts));
   if (state.hasScholarship) params.set('hasScholarship', '1');
@@ -144,6 +162,15 @@ function restoreFromUrl(form: HTMLFormElement): void {
 
   const country = params.get('country');
   if (country) setValue('country', country);
+
+  const facultiesParam = params.get('faculty');
+  if (facultiesParam) {
+    const wanted = new Set(facultiesParam.split(',').filter(Boolean));
+    const inputs = form.querySelectorAll<HTMLInputElement>('input[name="faculty"]');
+    for (const input of inputs) {
+      input.checked = wanted.has(input.value);
+    }
+  }
 
   const levels = params.get('level');
   if (levels) {

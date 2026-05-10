@@ -1,0 +1,22 @@
+{
+  "name": "studyroom-scraper",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "StudyRoom — scraper that fetches partner universities (Kaplan first) and writes per-uni JSONs validated by the shared University Zod schema.",
+  "scripts": {
+    "scrape": "tsx src/cli.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
