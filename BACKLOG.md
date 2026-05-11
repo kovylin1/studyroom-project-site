@@ -10,8 +10,19 @@
 
 ## TODO
 
-- **Stage 4 — Real data on remaining 10 Kaplan unis.** Run `npm run scrape -- --all` once Stage 3.1 below extends the scraper, then hand-curate any TBD fields per uni. Currently 6 of 16 partners have catalog entries.
-- **Stage 3.1 — Extend scraper to fetch sub-pages.** Kaplan splits programs into the JS-rendered `/degree-finder/` SPA (needs Playwright) and tuition into `/where-to-study/{college}/fees-and-dates/` (separate fetch). Without these, scraper only refreshes `sourceHash`/`lastChecked`; programs/tuition stay hand-curated.
+- **Stage 11 — Scraper extension to fill Oxford-style landing fields.** The new per-uni template (`site/src/pages/[slug].astro`) renders 13 sections ported from `studyroom-oxford-landing/`. Sections that the scraper needs to populate (currently rendered as `[TBD]` placeholders or stubbed with derived content):
+  - **`description.paragraphs[]`** — short uni biography (year founded, student count, ranking, notable alumni). Scrape from each Kaplan partner page's "About" copy + the official `officialUrl`.
+  - **`hero.bgImage`** + **`hero.cover`** — hero photos. Currently the hero shows the logo on a white card. Pull the partner page's main banner image.
+  - **`gallery.items[]`** — 3 building/campus photos (the section is hidden today; un-hide once data lands). Same source: Kaplan partner pages.
+  - **`dates.items[]`** — per-uni admission deadlines. Today the timeline is a generic UK UCAS cycle from `STUDYROOM_DATES_TIMELINE`. The scraper already pulls per-program ISO deadlines into `u.deadlines`; collapse those into a 4-step timeline.
+  - **`accommodation[]`** — name + price + photo per residence. Currently the section is hidden. Source: Kaplan accommodation page if available.
+  - **`campuses[]`** — colleges/buildings with photos. Currently hidden. Source: Kaplan partner page + Wikipedia.
+  - **`location.{lat,lng,bbox,address}`** — exact coords for OSM/Google embed. Today we use Google Maps name-search embed which is fuzzy. Geocode once via Nominatim.
+  - **`reviews[].{thumbnail,videoUrl,text}`** — real testimonials with consent (StudyRoom-side data, not scraped).
+  - **`scholarships[]`** — currently empty for all 16. Scrape Kaplan + each uni's official scholarships page.
+  - **`requirements.exams[]`** + accurate per-uni IELTS/TOEFL — currently a hardcoded `STANDARD_REQUIREMENTS` (5.5 / 70). Scrape per-uni pathway entry requirements page.
+- **Stage 5.1 — Set up Decap OAuth** (manual, ~10 min). Follow `DECAP_OAUTH.md`: register a GitHub OAuth App, deploy `decap-proxy` Worker on Cloudflare, update `site/public/admin/config.yml` `base_url`.
+- **Stage 6.1 — Connect Cloudflare Pages** (manual, ~5 min). Follow `DEPLOYMENT.md`: connect repo, build cmd `cd site && npm ci && npm run build`, output `site/dist`, attach custom domain.
 - **Stage 5.1 — Set up Decap OAuth** (manual, ~10 min). Follow `DECAP_OAUTH.md`: register a GitHub OAuth App, deploy `decap-proxy` Worker on Cloudflare, update `site/public/admin/config.yml` `base_url`.
 - **Stage 6.1 — Connect Cloudflare Pages** (manual, ~5 min). Follow `DEPLOYMENT.md`: connect repo, build cmd `cd site && npm ci && npm run build`, output `site/dist`, attach custom domain.
 - **Stage 8 — English version (`/en/...`).** Currently RU-only. Either a `/en` route variant or a runtime toggle.
@@ -20,6 +31,8 @@
 
 ## DONE
 
+- 2026-05-11 — Stage 10 (Oxford-style universal landing) — ported 13 sections from `studyroom-oxford-landing/` (hero / benefits / description / programs-by-faculty / dates / activities / requirements + scholarships / important / about / reviews / location / final CTA / footer + chat widget). Shared StudyRoom content lives in `site/src/content/studyroom/static.ts` (extended with `STUDYROOM_DATES_TIMELINE`, `STUDYROOM_FORM`, `STUDYROOM_FOOTER`, `STUDYROOM_CHAT`). Per-uni rewrite uses `site/src/styles/oxford-landing.css` (1414 lines copied verbatim from oxford project) and 4 client-side TS modules in `site/src/scripts/oxford-{reveal,phone-mask,chat,program-card}.ts`. Hero `cover` slot shows the Kaplan logo on a white card (no per-uni hero photos yet — see Stage 11). Programs section groups all programs by faculty (top 6) with expand-to-list interaction matching oxford's `program-card` UX. Forms (inline + final CTA) wired with KZ phone mask + validation. Chat widget hydrates from `STUDYROOM_CHAT`. — evidence: `site/src/pages/[slug].astro` (rewrite), `site/src/styles/oxford-landing.css` (new), `site/src/scripts/oxford-*.ts` (4 new), `site/src/content/studyroom/static.ts` (extended)
+- 2026-05-11 — Logos on catalog + per-uni hero — downloaded all 16 Kaplan partner logos to `site/public/logos/{slug}.png` via one-shot `scraper/download-logos.mjs`; replaced green initials boxes in `UniversityCard.astro` (catalog) and `[slug].astro` hero with `<img>` + onerror→initials fallback; updated `.uni-card__logo` and `.uni-hero__logo` styles in `brand.css`/`[slug].astro` to white box with light border + `object-fit: contain`. Verified live at http://localhost:4321/ — all 16 cards now show real logos. — evidence: `scraper/download-logos.mjs`, `site/public/logos/*.png` (16 files), `site/src/components/UniversityCard.astro`, `site/src/styles/brand.css`
 - 2026-05-10 — Stage 7 (cron) — Monthly scraper cron `0 3 1 * *` opens diff PR via `peter-evans/create-pull-request` — `.github/workflows/scrape-monthly.yml`
 - 2026-05-10 — Stage 6 (deploy guide) — Cloudflare Pages connection + custom domain step-by-step — `DEPLOYMENT.md`
 - 2026-05-10 — Stage 5 (Decap scaffold) — Decap admin at `/admin`, GitHub backend with editorial workflow, full schema fields — `site/public/admin/{index.html,config.yml}` + `DECAP_OAUTH.md`

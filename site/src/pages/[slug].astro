@@ -1,13 +1,27 @@
 ---
+// Per-university landing page.
+// Visual design ported from projects/studyroom-oxford-landing/ (the original
+// hand-tuned Oxford Tilda-style page) and adapted for any of the 16 Kaplan
+// partners by reading from the validated University record.
+//
+// Sections that need per-uni data the scraper hasn't filled yet (hero photos,
+// gallery, accommodation, campuses, video reviews, exact location coords) are
+// marked with `[TBD]` placeholders or hidden entirely. See BACKLOG Stage 11
+// for the full list of fields the scraper extension needs to populate.
+
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Base from '~/layouts/Base.astro';
+import '~/styles/oxford-landing.css';
 import {
   STUDYROOM_BENEFITS,
   STUDYROOM_ACTIVITIES,
   STUDYROOM_FAQ,
   STUDYROOM_REVIEWS,
   STUDYROOM_ABOUT,
-  STUDYROOM_CONTACT,
+  STUDYROOM_DATES_TIMELINE,
+  STUDYROOM_FORM,
+  STUDYROOM_FOOTER,
+  STUDYROOM_CHAT,
 } from '~/content/studyroom/static';
 
 export async function getStaticPaths() {
@@ -25,85 +39,91 @@ interface Props {
 const { entry } = Astro.props;
 const u = entry.data;
 
-interface ProgramRow {
-  slug: string;
-  title: string;
-  level: string;
-  faculty: string;
-  durationYears: number;
-  intakes: string[];
-  tuition: number | undefined;
-  programType: string | undefined;
-  programUrl: string | undefined;
+// ---------- derived view models ----------
+
+interface FacultyGroup {
+  name: string;
+  programs: Array<{
+    slug: string;
+    title: string;
+    level: string;
+    durationYears: number;
+    intakes: string[];
+    tuition: number | undefined;
+    programType: string | undefined;
+    programUrl: string | undefined;
+  }>;
+  minTuition: number;
+  maxTuition: number;
 }
 
-const programRows: ProgramRow[] = u.programs.map((program) => ({
-  slug: program.slug,
-  title: program.title,
-  level: program.level,
-  faculty: program.faculty ?? 'Прочее',
-  durationYears: program.durationYears,
-  intakes: program.intakes ?? [],
-  tuition: u.tuition.byProgram[program.slug],
-  programType: program.programType,
-  programUrl: program.programUrl,
+const LEVEL_LABELS: Record<string, string> = {
+  foundation: 'Foundation',
+  bachelor: 'Бакалавриат',
+  master: "Pre-Master's / Магистратура",
+  phd: 'PhD',
+};
+
+const LEVEL_ORDER: Record<string, number> = {
+  foundation: 1,
+  bachelor: 2,
+  master: 3,
+  phd: 4,
+};
+
+const programRows = u.programs.map((p) => ({
+  slug: p.slug,
+  title: p.title,
+  level: p.level,
+  faculty: p.faculty ?? 'Прочее',
+  durationYears: p.durationYears,
+  intakes: p.intakes ?? [],
+  tuition: u.tuition.byProgram[p.slug],
+  programType: p.programType,
+  programUrl: p.programUrl,
 }));
 
-const programsByFaculty = programRows.reduce<Record<string, ProgramRow[]>>((acc, row) => {
-  if (!acc[row.faculty]) acc[row.faculty] = [];
-  acc[row.faculty].push(row);
-  return acc;
-}, {});
-
-// For each faculty: sort programs by level (pathway first, then foundation->bachelor->master->phd), then by tuition asc.
-const LEVEL_ORDER: Record<string, number> = { foundation: 1, bachelor: 2, master: 3, phd: 4 };
-function sortPrograms(rows: ProgramRow[]): ProgramRow[] {
-  return [...rows].sort((a, b) => {
-    if (a.programType === 'pathway' && b.programType !== 'pathway') return -1;
-    if (b.programType === 'pathway' && a.programType !== 'pathway') return 1;
+const facultyMap = new Map<string, FacultyGroup>();
+for (const r of programRows) {
+  const existing = facultyMap.get(r.faculty);
+  if (existing) {
+    existing.programs.push(r);
+  } else {
+    facultyMap.set(r.faculty, {
+      name: r.faculty,
+      programs: [r],
+      minTuition: 0,
+      maxTuition: 0,
+    });
+  }
+}
+for (const fac of facultyMap.values()) {
+  fac.programs.sort((a, b) => {
     const lvl = (LEVEL_ORDER[a.level] ?? 99) - (LEVEL_ORDER[b.level] ?? 99);
     if (lvl !== 0) return lvl;
     return (a.tuition ?? 0) - (b.tuition ?? 0);
   });
+  const tuitions = fac.programs
+    .map((p) => p.tuition)
+    .filter((t): t is number => typeof t === 'number' && t > 0);
+  fac.minTuition = tuitions.length ? Math.min(...tuitions) : 0;
+  fac.maxTuition = tuitions.length ? Math.max(...tuitions) : 0;
 }
 
-interface FacultyEntry {
-  name: string;
-  slug: string;
-  programs: ProgramRow[];
-  minTuition: number;
-  maxTuition: number;
-  byLevel: Record<string, ProgramRow[]>;
-}
-
-function makeFacultySlug(name: string): string {
-  return name.toLowerCase().replace(/[‘’']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-}
-
-const facultyEntries: FacultyEntry[] = Object.entries(programsByFaculty)
-  .map(([name, rows]) => {
-    const sorted = sortPrograms(rows);
-    const tuitions = sorted.map((p) => p.tuition).filter((t): t is number => typeof t === 'number' && t > 0);
-    const byLevel: Record<string, ProgramRow[]> = {};
-    for (const p of sorted) {
-      const key = p.programType === 'pathway' ? 'pathway' : p.level;
-      if (!byLevel[key]) byLevel[key] = [];
-      byLevel[key].push(p);
-    }
-    return {
-      name,
-      slug: makeFacultySlug(name),
-      programs: sorted,
-      minTuition: tuitions.length ? Math.min(...tuitions) : 0,
-      maxTuition: tuitions.length ? Math.max(...tuitions) : 0,
-      byLevel,
-    };
-  })
-  .sort((a, b) => b.programs.length - a.programs.length || a.name.localeCompare(b.name, 'ru'));
+const faculties = Array.from(facultyMap.values()).sort(
+  (a, b) => b.programs.length - a.programs.length || a.name.localeCompare(b.name, 'ru')
+);
+const topFaculties = faculties.slice(0, 6);
 
 const tuitionValues = Object.values(u.tuition.byProgram).filter((v) => v > 0);
 const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
 const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
+const tuitionRange =
+  tuitionMin === 0
+    ? '[TBD: уточняется]'
+    : tuitionMin === tuitionMax
+      ? `${tuitionMin.toLocaleString('ru-RU')} ${u.tuition.currency}`
+      : `${tuitionMin.toLocaleString('ru-RU')}–${tuitionMax.toLocaleString('ru-RU')} ${u.tuition.currency}`;
 
 const lastChecked = new Date(u.lastChecked).toLocaleDateString('ru-RU', {
   day: '2-digit',
@@ -111,685 +131,574 @@ const lastChecked = new Date(u.lastChecked).toLocaleDateString('ru-RU', {
   year: 'numeric',
 });
 
-const levelLabels: Record<string, string> = {
-  bachelor: 'Бакалавриат',
-  master: 'Магистратура',
-  phd: 'Аспирантура',
-  foundation: 'Foundation',
-};
-
-const levelGroupLabels: Record<string, string> = {
-  pathway: 'Подготовительные курсы Kaplan',
-  foundation: 'Foundation Certificate',
-  bachelor: 'Бакалавриат (Bachelor’s)',
-  master: 'Магистратура (Master’s)',
-  phd: 'PhD',
-};
-
-const levelOrderForRender = ['pathway', 'foundation', 'bachelor', 'master', 'phd'];
-
 function programsCountLabel(n: number): string {
   if (n % 10 === 1 && n % 100 !== 11) return n + ' программа';
   if ([2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100)) return n + ' программы';
   return n + ' программ';
 }
 
-const initials = u.slug.slice(0, 2).toUpperCase();
+// Google Maps embed by name search (no API key needed, works over http/https).
+// Per-uni precise coords would let us swap to the modern `/maps/embed?pb=...`
+// form — that's part of the scraper extension.
+const mapsQuery = encodeURIComponent(`${u.name}, ${u.city}, ${u.country}`);
+const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&output=embed`;
+const mapsOpenUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
 
-const tuitionRange =
-  tuitionMin === tuitionMax
-    ? `${tuitionMin.toLocaleString('ru-RU')} ${u.tuition.currency}`
-    : `${tuitionMin.toLocaleString('ru-RU')}–${tuitionMax.toLocaleString('ru-RU')} ${u.tuition.currency}`;
-
+const heroSubtitle = `${u.city} · ${u.country}`;
 const description = `${u.name} — поступление через StudyRoom. Программы, стоимость и дедлайны обновлены ${lastChecked}.`;
 ---
 
 <Base title={`${u.name} — StudyRoom`} description={description}>
-  <section class="uni-hero">
-    <div class="container uni-hero__inner">
-      <div class="uni-hero__main">
-        <p class="uni-hero__crumb">
-          <a href="/">← Каталог университетов</a>
-        </p>
-        <div class="uni-hero__brand">
-          <div class="uni-hero__logo" aria-hidden="true">{initials}</div>
-          <div>
-            <h1 class="uni-hero__title">{u.name}</h1>
-            <p class="uni-hero__location">{u.city}, {u.country}</p>
-          </div>
-        </div>
-        <p class="uni-hero__lead">
-          Поступление в {u.name} через языковую школу StudyRoom — программы, стоимость и сопровождение
-          поступления.
-        </p>
-        <div class="uni-hero__actions">
-          <a class="btn btn-primary" href="#cta">Записаться на консультацию</a>
-          <a class="btn btn-ghost" href="#programs">Смотреть программы</a>
-        </div>
-        <p class="uni-hero__verified">
-          <span class="tag">Данные обновлены: {lastChecked}</span>
-          <a href={u.sourceUrl} target="_blank" rel="noopener" class="muted">Источник</a>
-        </p>
-      </div>
-      <aside class="uni-hero__facts">
-        <div class="fact">
-          <div class="fact__key">Программ</div>
-          <div class="fact__val">{u.programs.length}</div>
-        </div>
-        <div class="fact">
-          <div class="fact__key">Стоимость / год</div>
-          <div class="fact__val fact__val--sm">{tuitionRange}</div>
-        </div>
-        {u.requirements.language?.ielts !== undefined && (
-          <div class="fact">
-            <div class="fact__key">IELTS от</div>
-            <div class="fact__val">{u.requirements.language.ielts}</div>
-          </div>
-        )}
-        {u.scholarships.length > 0 && (
-          <div class="fact fact--accent">
-            <div class="fact__key">Стипендии</div>
-            <div class="fact__val">{u.scholarships.length}</div>
-          </div>
-        )}
-      </aside>
-    </div>
-  </section>
+  <main>
 
-  <section class="uni-section uni-section--soft">
-    <div class="container">
-      <div class="section__head">
-        <h2>Почему через StudyRoom</h2>
-      </div>
-      <div class="benefits-grid">
-        {STUDYROOM_BENEFITS.map((b) => (
-          <article class="benefit-card">
-            <div class="benefit-card__num">{b.num}</div>
-            <div class="benefit-card__title">{b.title}</div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="programs" class="uni-section">
-    <div class="container">
-      <div class="section__head">
-        <h2>Программы по факультетам</h2>
-        <p class="muted">
-          {facultyEntries.length} факультетов · {programRows.length} программ · нажмите на факультет, чтобы открыть полный список
-        </p>
-      </div>
-      <div class="faculty-grid">
-        {facultyEntries.map((fac) => (
-          <article class="faculty-card">
-            <header class="faculty-card__head">
-              <h3 class="faculty-card__name">{fac.name}</h3>
-              <span class="faculty-card__count">{programsCountLabel(fac.programs.length)}</span>
-            </header>
-            {fac.minTuition > 0 && (
-              <p class="faculty-card__price">
-                от <strong>{fac.minTuition.toLocaleString('ru-RU')}</strong>
-                {fac.maxTuition > fac.minTuition && <> · до {fac.maxTuition.toLocaleString('ru-RU')}</>}
-                {' '}{u.tuition.currency}/год
-              </p>
-            )}
-            <ul class="faculty-card__preview">
-              {fac.programs.slice(0, 3).map((row) => (
-                <li>
-                  <span class="tag">{levelLabels[row.level] ?? row.level}</span>
-                  <span class="faculty-card__preview-title">{row.title}</span>
-                </li>
-              ))}
-            </ul>
-            <button
-              type="button"
-              class="btn btn-ghost btn-sm faculty-card__open"
-              data-open-modal={`faculty-${fac.slug}`}
-            >
-              Все программы →
-            </button>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  {facultyEntries.map((fac) => (
-    <dialog class="faculty-modal" id={`faculty-${fac.slug}`} aria-labelledby={`faculty-${fac.slug}-title`}>
-      <div class="faculty-modal__box">
-        <header class="faculty-modal__head">
-          <div>
-            <p class="faculty-modal__crumb muted">{u.name} · Факультет</p>
-            <h3 class="faculty-modal__title" id={`faculty-${fac.slug}-title`}>{fac.name}</h3>
-            <p class="muted faculty-modal__sub">{programsCountLabel(fac.programs.length)} в этом факультете</p>
+    <!-- 1. Hero -->
+    <section id="hero" class="section hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div>
+          <p class="hero__subtitle">{heroSubtitle}</p>
+          <h1 class="hero__title">{u.name}</h1>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#cta">Записаться на консультацию</a>
+            <a class="btn btn--ghost" href="#programs">Программы обучения</a>
           </div>
-          <button type="button" class="faculty-modal__close" data-close-modal aria-label="Закрыть">×</button>
-        </header>
-        <div class="faculty-modal__body">
-          {levelOrderForRender.map((lvlKey) => {
-            const list = fac.byLevel[lvlKey];
-            if (!list || list.length === 0) return null;
+        </div>
+        <div class="hero__cover hero__cover--logo">
+          <img src={`/logos/${u.slug}.png`} alt={u.name} />
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Benefits -->
+    <section id="benefits" class="section section--soft benefits">
+      <div class="container">
+        <div class="benefits__grid">
+          {STUDYROOM_BENEFITS.map((b) => (
+            <div class="benefit">
+              <span class="benefit__num">{b.num}</span>
+              <h3 class="benefit__title">{b.title}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Description -->
+    <section id="description" class="section description">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="description__title">Об университете</h2>
+        </div>
+        <div class="description__body">
+          <p>
+            <strong>{u.name}</strong> — университет в городе {u.city} ({u.country}). Партнёрский договор
+            со StudyRoom через Kaplan Pathways.
+          </p>
+          <p>
+            На лендинге доступно <strong>{u.programs.length}</strong> программ из <strong>{faculties.length}</strong>
+            факультетов. Стоимость обучения: <strong>{tuitionRange}</strong> в год.
+            Данные обновлены: {lastChecked}.
+          </p>
+          <p>
+            <span class="tbd">[TBD: исторический контекст, год основания, кол-во студентов, рейтинг QS / THE, известные выпускники, исследовательский профиль — заполнит расширенный скрейпер.]</span>
+          </p>
+          {topFaculties.length > 0 && (
+            <>
+              <h3 class="description__pros-title">Основные направления</h3>
+              <ul class="description__pros">
+                {topFaculties.map((f) => (
+                  <li>{f.name} <span class="muted-inline">· {programsCountLabel(f.programs.length)}</span></li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <!-- 3b. Gallery — university photos (oxford-style 1.2fr/1fr mosaic) -->
+    {u.gallery && u.gallery.items.length > 0 && (
+      <section id="gallery" class="section gallery">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="gallery__title">Фото университета</h2>
+            <p class="gallery__subtitle">Как выглядит кампус, в котором будут учиться наши студенты.</p>
+          </div>
+          <div class="gallery__grid">
+            {u.gallery.items.slice(0, 3).map((item, i) => (
+              <figure class={`gallery__tile gallery__tile--${i + 1}`}>
+                <img src={item.img} alt={item.caption ?? ''} loading="lazy" />
+                {item.caption && <figcaption>{item.caption}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- 4. Programs + inline CTA -->
+    <section id="programs" class="section section--soft programs">
+      <div class="container">
+        <div class="section__head">
+          <h2>Программы обучения</h2>
+          <p>{faculties.length} факультетов · {u.programs.length} программ</p>
+        </div>
+
+        <div class="programs__grid">
+          {topFaculties.map((fac, idx) => {
+            const panelId = `program-panel-${idx}`;
             return (
-              <section class="faculty-modal__group">
-                <h4 class="faculty-modal__group-title">
-                  {levelGroupLabels[lvlKey] ?? lvlKey} <span class="muted">· {list.length}</span>
-                </h4>
-                <ul class="faculty-modal__list">
-                  {list.map((row) => (
-                    <li class="faculty-modal__row">
-                      <div class="faculty-modal__row-main">
-                        <strong class="faculty-modal__row-title">{row.title}</strong>
-                        <div class="faculty-modal__row-meta muted">
-                          {row.durationYears} {row.durationYears === 1 ? 'год' : 'лет'}
-                          {row.intakes.length > 0 && <> · старт: {row.intakes.join(' · ')}</>}
-                        </div>
-                      </div>
-                      <div class="faculty-modal__row-side">
-                        <div class="faculty-modal__row-price">
-                          {row.tuition !== undefined && row.tuition > 0
-                            ? <>от <strong>{row.tuition.toLocaleString('ru-RU')}</strong> {u.tuition.currency}/год</>
-                            : <span class="muted">уточняется</span>}
-                        </div>
-                        {row.programUrl && (
-                          <a class="faculty-modal__row-link" href={row.programUrl} target="_blank" rel="noopener">
-                            страница вуза ↗
-                          </a>
+              <article class="card program-card">
+                <div class="program-card__body">
+                  <span class="card__sub">{fac.programs.length} {fac.programs.length === 1 ? 'программа' : 'программ'}</span>
+                  <h3 class="card__title">{fac.name}</h3>
+                  {fac.minTuition > 0 && (
+                    <p class="card__text">
+                      от <strong>{fac.minTuition.toLocaleString('ru-RU')}</strong>
+                      {fac.maxTuition > fac.minTuition && <> · до {fac.maxTuition.toLocaleString('ru-RU')}</>}
+                      {' '}{u.tuition.currency}/год
+                    </p>
+                  )}
+                  <button
+                    class="program-card__toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls={panelId}
+                  >
+                    <span class="program-card__toggle-label">Подробнее</span>
+                    <span class="program-card__toggle-icon" aria-hidden="true"></span>
+                  </button>
+                </div>
+                <div class="program-card__details" id={panelId} role="region" aria-hidden="true">
+                  <div class="program-card__details-inner">
+                    {fac.programs.slice(0, 8).map((p) => (
+                      <p class="card__text">
+                        <strong>{LEVEL_LABELS[p.level] ?? p.level}:</strong> {p.title}
+                        {p.tuition !== undefined && p.tuition > 0 && (
+                          <> — <strong>{p.tuition.toLocaleString('ru-RU')}</strong> {u.tuition.currency}/год</>
                         )}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+                      </p>
+                    ))}
+                    {fac.programs.length > 8 && (
+                      <p class="card__text muted-inline">… и ещё {fac.programs.length - 8} программ</p>
+                    )}
+                    <a class="btn btn--primary" href="#cta">Узнать о поступлении</a>
+                  </div>
+                </div>
+              </article>
             );
           })}
         </div>
-      </div>
-    </dialog>
-  ))}
 
-  <section class="uni-section uni-section--soft">
-    <div class="container uni-section__split">
-      <div>
-        <h2>Требования к поступающим</h2>
-        <ul class="reqs-list">
-          {u.requirements.language?.ielts !== undefined && (
-            <li><strong>IELTS:</strong> от {u.requirements.language.ielts}</li>
-          )}
-          {u.requirements.language?.toefl !== undefined && (
-            <li><strong>TOEFL iBT:</strong> от {u.requirements.language.toefl}</li>
-          )}
-          {u.requirements.language?.duolingo !== undefined && (
-            <li><strong>Duolingo:</strong> от {u.requirements.language.duolingo}</li>
-          )}
-          {u.requirements.gpa !== undefined && (
-            <li><strong>GPA:</strong> от {u.requirements.gpa} / 4.0</li>
-          )}
-          {u.requirements.exams.length > 0 && (
-            <li><strong>Экзамены:</strong> {u.requirements.exams.join(', ')}</li>
-          )}
-          <li class="muted" style="font-size:0.9rem;">
-            Точные требования зависят от программы и могут отличаться. Уточняйте на консультации.
-          </li>
-        </ul>
+        <div class="cta-inline">
+          <h2 class="cta__title">{STUDYROOM_FORM.inlineTitle}</h2>
+          <p class="cta__text">{STUDYROOM_FORM.inlineText}</p>
+          <div class="cta__form-slot"></div>
+        </div>
       </div>
+    </section>
 
-      <div>
-        <h2>Стипендии и скидки</h2>
-        {u.scholarships.length === 0 ? (
-          <p class="muted">
-            На данный момент стипендии не указаны. Уточняйте актуальные программы поддержки на консультации.
-          </p>
-        ) : (
-          <ul class="scholarship-list">
-            {u.scholarships.map((s) => (
-              <li>
-                <strong>{s.name}</strong>
-                {s.amountUSD !== undefined && (
-                  <span class="tag" style="margin-left:8px;">до ${s.amountUSD.toLocaleString('ru-RU')}</span>
-                )}
-                {s.deadline && <span class="muted"> · до {s.deadline}</span>}
-                {s.url && (
-                  <span> · <a href={s.url} target="_blank" rel="noopener">подробнее</a></span>
-                )}
+    <!-- 5. Dates -->
+    <section id="dates" class="section dates">
+      <div class="dates__bg" aria-hidden="true"></div>
+      <div class="container">
+        <h2 class="dates__title">Даты приёма заявок</h2>
+        <div class="dates__timeline">
+          <span class="dates__line" aria-hidden="true"></span>
+          <ol class="dates__items">
+            {STUDYROOM_DATES_TIMELINE.map((d) => (
+              <li class="dates__item">
+                <span class="dates__item-dot" aria-hidden="true"></span>
+                <div class="dates__item-title">{d.title}</div>
+                <p class="dates__item-text">{d.text}</p>
               </li>
             ))}
-          </ul>
-        )}
+          </ol>
+        </div>
+        <p class="dates__note">
+          <span class="tbd">[TBD: точные дедлайны для {u.name} — сверить с {u.sourceUrl} перед запуском.]</span>
+        </p>
+        <div class="dates__cta-row">
+          <a class="btn btn--primary" href="#cta">Запросить актуальные даты</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="uni-section">
+    <!-- 6. Activities -->
+    <section id="activities" class="section section--soft activities">
+      <div class="container">
+        <div class="section__head">
+          <h2>Что мы делаем</h2>
+        </div>
+        <div class="activities__grid">
+          {STUDYROOM_ACTIVITIES.map((a) => (
+            <article class="card">
+              <h3 class="card__title">{a.title}</h3>
+              <p class="card__text">{a.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Requirements + Scholarships (2-column) -->
+    <section id="requirements" class="section requirements">
+      <div class="container">
+        <div class="requirements__row">
+          <div class="requirements__col">
+            <h2 class="requirements__title">Требования к поступающим</h2>
+            <ul class="requirements__list">
+              {u.requirements.language?.ielts !== undefined && (
+                <li class="requirements__item">
+                  <strong class="requirements__label">IELTS:</strong>
+                  <span class="requirements__text"> от {u.requirements.language.ielts}</span>
+                </li>
+              )}
+              {u.requirements.language?.toefl !== undefined && (
+                <li class="requirements__item">
+                  <strong class="requirements__label">TOEFL iBT:</strong>
+                  <span class="requirements__text"> от {u.requirements.language.toefl}</span>
+                </li>
+              )}
+              {u.requirements.language?.duolingo !== undefined && (
+                <li class="requirements__item">
+                  <strong class="requirements__label">Duolingo:</strong>
+                  <span class="requirements__text"> от {u.requirements.language.duolingo}</span>
+                </li>
+              )}
+              {u.requirements.gpa !== undefined && (
+                <li class="requirements__item">
+                  <strong class="requirements__label">GPA:</strong>
+                  <span class="requirements__text"> от {u.requirements.gpa} / 4.0</span>
+                </li>
+              )}
+              {u.requirements.exams.length > 0 && (
+                <li class="requirements__item">
+                  <strong class="requirements__label">Экзамены:</strong>
+                  <span class="requirements__text"> {u.requirements.exams.join(', ')}</span>
+                </li>
+              )}
+              <li class="requirements__item requirements__item--note">
+                <span class="requirements__text">
+                  Точные требования зависят от программы и могут отличаться. Уточняйте на консультации.
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="requirements__col">
+            <h2 class="scholarships__title">Стипендии и скидки</h2>
+            {u.scholarships.length === 0 ? (
+              <p class="scholarships__text">
+                <span class="tbd">[TBD: список стипендий и скидок — заполнит расширенный скрейпер.]</span> На данный
+                момент конкретные программы стипендий не указаны. Уточняйте актуальные опции на бесплатной консультации.
+              </p>
+            ) : (
+              <ul class="requirements__list">
+                {u.scholarships.map((s) => (
+                  <li class="requirements__item">
+                    <strong class="requirements__label">{s.name}</strong>
+                    {s.amountUSD !== undefined && (
+                      <span class="requirements__text"> — до ${s.amountUSD.toLocaleString('ru-RU')}</span>
+                    )}
+                    {s.deadline && <span class="requirements__text"> · до {s.deadline}</span>}
+                    {s.url && (
+                      <span class="requirements__text"> · <a href={s.url} target="_blank" rel="noopener">подробнее</a></span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Important -->
+    <section id="important" class="section section--soft important">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="important__title">Важно знать перед поездкой</h2>
+        </div>
+        <div class="important__grid">
+          {STUDYROOM_FAQ.map((item) => (
+            <article class="card">
+              <h3 class="card__title">{item.title}</h3>
+              <p class="card__text">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. About StudyRoom -->
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="about__title">{STUDYROOM_ABOUT.title}</h2>
+        </div>
+        <div class="about__body description__body">
+          {STUDYROOM_ABOUT.paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Reviews -->
+    <section id="reviews" class="section section--soft reviews">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="reviews__title">Отзывы наших студентов</h2>
+        </div>
+        <div class="reviews__grid">
+          {STUDYROOM_REVIEWS.map((r) => (
+            <article class="review">
+              {r.thumbnail && <img src={r.thumbnail} alt={r.name} />}
+              <div class="review__play" aria-hidden="true"></div>
+              <div class="review__body">
+                <div class="review__name">{r.name}</div>
+                <div class="review__program">{r.program}</div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 12b. Location -->
+    <section id="location" class="section location">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="location__title">Где находится {u.name}</h2>
+          <p class="location__subtitle">{u.city}, {u.country}</p>
+        </div>
+        <div class="location__frame">
+          <iframe
+            class="location__map"
+            title={`Расположение ${u.name} на карте`}
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            src={mapsEmbedUrl}
+          ></iframe>
+        </div>
+        <p class="location__address">
+          {u.name}, {u.city}, {u.country}
+          {' — '}
+          <a class="location__address-link" href={mapsOpenUrl} target="_blank" rel="noopener noreferrer">
+            открыть в Google Maps
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 13. Final CTA -->
+    <section id="cta" class="section">
+      <div class="container">
+        <div class="cta-final">
+          <h2 class="cta__title">{STUDYROOM_FORM.finalTitle}</h2>
+          <p class="cta__text">{STUDYROOM_FORM.finalText}</p>
+          <div class="cta__form-slot"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 14. Footer -->
+  <footer class="site-footer">
     <div class="container">
-      <div class="section__head">
-        <h2>Что мы делаем для вас</h2>
-        <p class="muted">Сопровождение от первой консультации до зачисления.</p>
+      <div class="site-footer__row">
+        <div>
+          <div class="site-footer__copy"></div>
+          <div class="site-footer__legal">{STUDYROOM_FOOTER.legal}</div>
+        </div>
+        <ul class="site-footer__links">
+          {STUDYROOM_FOOTER.links.map((l) => (
+            <li><a href={l.href}>{l.label}</a></li>
+          ))}
+        </ul>
       </div>
-      <div class="activities-grid">
-        {STUDYROOM_ACTIVITIES.map((a) => (
-          <article class="benefit-card">
-            <h3 class="benefit-card__title">{a.title}</h3>
-            <p class="benefit-card__text muted">{a.text}</p>
-          </article>
-        ))}
+      <div class="site-footer__legal" style="margin-top: 24px;">
+        Year: <span id="footer-year"></span>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <section class="uni-section uni-section--soft">
-    <div class="container">
-      <div class="section__head">
-        <h2>Важно знать перед поездкой</h2>
+  <!-- 15. Chat widget -->
+  <div class="chat" data-state="closed">
+    <button class="chat__fab" type="button" aria-label="Открыть чат" aria-expanded="false" aria-controls="chat-panel">
+      <svg class="chat__fab-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-4 4V6a2 2 0 0 1 2-2h-2z" fill="currentColor"/>
+      </svg>
+      <span class="chat__fab-badge" aria-hidden="true">1</span>
+    </button>
+    <aside id="chat-panel" class="chat__panel" role="dialog" aria-modal="false" aria-label="Чат с консультантом" aria-hidden="true">
+      <header class="chat__header">
+        <div class="chat__avatar"></div>
+        <div class="chat__head-info">
+          <div class="chat__head-name"></div>
+          <div class="chat__head-status">
+            <span class="chat__head-dot" aria-hidden="true"></span>
+            <span class="chat__head-status-text">Онлайн</span>
+          </div>
+        </div>
+        <button class="chat__close" type="button" aria-label="Закрыть чат">
+          <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </header>
+      <div class="chat__body">
+        <ol class="chat__messages" aria-live="polite"></ol>
+        <div class="chat__quick"></div>
       </div>
-      <div class="faq-grid">
-        {STUDYROOM_FAQ.map((item) => (
-          <article class="faq-card">
-            <h3 class="faq-card__title">{item.title}</h3>
-            <p class="muted">{item.text}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="uni-section">
-    <div class="container">
-      <div class="section__head">
-        <h2>Отзывы наших студентов</h2>
-      </div>
-      <div class="reviews-grid">
-        {STUDYROOM_REVIEWS.map((r) => (
-          <article class="review-card">
-            <p class="review-card__text">«{r.text}»</p>
-            <div class="review-card__author">
-              <strong>{r.name}</strong>
-              <span class="muted">{r.program}</span>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="uni-section uni-section--soft">
-    <div class="container uni-section__about">
-      <h2>{STUDYROOM_ABOUT.title}</h2>
-      {STUDYROOM_ABOUT.paragraphs.map((p) => <p class="muted">{p}</p>)}
-    </div>
-  </section>
-
-  <section id="cta" class="uni-cta">
-    <div class="container uni-cta__inner">
-      <h2>Запишитесь на бесплатную консультацию</h2>
-      <p>
-        Расскажем про {u.name}, оценим ваши шансы на поступление и составим план подготовки.
-      </p>
-      <div class="uni-cta__actions">
-        <a class="btn btn-primary" href={`tel:${STUDYROOM_CONTACT.phone.replace(/[^+0-9]/g, '')}`}>
-          {STUDYROOM_CONTACT.phone}
-        </a>
-        <a class="btn btn-ghost btn-on-dark" href={`mailto:${STUDYROOM_CONTACT.email}`}>
-          {STUDYROOM_CONTACT.email}
-        </a>
-      </div>
-    </div>
-  </section>
+      <form class="chat__form" novalidate>
+        <input class="chat__input" type="text" name="message" autocomplete="off" required>
+        <button class="chat__send" type="submit" aria-label="Отправить">
+          <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+            <path d="M3 12l18-8-8 18-2-8-8-2z" fill="currentColor"/>
+          </svg>
+        </button>
+      </form>
+    </aside>
+  </div>
 </Base>
 
+<!-- Hand chat + form config to client-side scripts via window globals.
+     Astro's `define:vars` serializes the JSON into the inline script. -->
+<script
+  is:inline
+  define:vars={{
+    chatConfig: STUDYROOM_CHAT,
+    formConfig: STUDYROOM_FORM,
+    footerCopyright: STUDYROOM_FOOTER.copyright,
+  }}
+>
+  window.CHAT = chatConfig;
+  window.__SR_FORM__ = formConfig;
+  window.__SR_FOOTER__ = footerCopyright;
+</script>
+
 <script>
-  // Open/close handlers for faculty modals (native <dialog> element).
-  document.addEventListener('click', (event) => {
-    const target = event.target as HTMLElement | null;
-    if (!target) return;
+  import '~/scripts/oxford-phone-mask';
+  import '~/scripts/oxford-program-card';
+  import '~/scripts/oxford-chat';
+  import '~/scripts/oxford-reveal';
 
-    const opener = target.closest<HTMLElement>('[data-open-modal]');
-    if (opener) {
-      const id = opener.dataset.openModal;
-      if (id) {
-        const dlg = document.getElementById(id) as HTMLDialogElement | null;
-        if (dlg && typeof dlg.showModal === 'function') {
-          dlg.showModal();
-        }
+  // ---------- lead forms (inline + final) ----------
+  type FormCfg = {
+    submit: string;
+    success: string;
+    fields: { name: { label: string; placeholder: string }; phone: { label: string; placeholder: string } };
+    errors: { name: string; phone: string };
+  };
+
+  const formCfg = (window as unknown as { __SR_FORM__?: FormCfg }).__SR_FORM__;
+  const footerCopy = (window as unknown as { __SR_FOOTER__?: string }).__SR_FOOTER__ ?? '';
+
+  function buildForm(slot: Element): void {
+    if (!formCfg) return;
+    const wrap = document.createElement('form');
+    wrap.className = 'form';
+    wrap.setAttribute('novalidate', '');
+
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.name = 'name';
+    nameInput.placeholder = formCfg.fields.name.placeholder;
+    nameInput.setAttribute('aria-label', formCfg.fields.name.label);
+
+    const phoneInput = document.createElement('input');
+    phoneInput.type = 'tel';
+    phoneInput.name = 'phone';
+    phoneInput.placeholder = formCfg.fields.phone.placeholder;
+    phoneInput.setAttribute('aria-label', formCfg.fields.phone.label);
+    phoneInput.setAttribute('autocomplete', 'tel');
+
+    const submit = document.createElement('button');
+    submit.type = 'submit';
+    submit.className = 'btn btn--primary';
+    submit.textContent = formCfg.submit;
+
+    const errLine = document.createElement('div');
+    errLine.className = 'form__error';
+    errLine.setAttribute('role', 'alert');
+    errLine.setAttribute('aria-live', 'polite');
+
+    wrap.append(nameInput, phoneInput, submit, errLine);
+
+    const w = window as unknown as {
+      attachPhoneMask?: (el: HTMLInputElement) => void;
+      isPhoneValid?: (v: string) => boolean;
+    };
+    if (typeof w.attachPhoneMask === 'function') w.attachPhoneMask(phoneInput);
+
+    wrap.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = nameInput.value.trim();
+      const phoneOk =
+        typeof w.isPhoneValid === 'function'
+          ? w.isPhoneValid(phoneInput.value)
+          : phoneInput.value.replace(/\D/g, '').length >= 11;
+
+      let firstError = '';
+      if (!name) {
+        nameInput.setAttribute('aria-invalid', 'true');
+        firstError = formCfg.errors.name;
+      } else {
+        nameInput.removeAttribute('aria-invalid');
       }
-      return;
-    }
+      if (!phoneOk) {
+        phoneInput.setAttribute('aria-invalid', 'true');
+        if (!firstError) firstError = formCfg.errors.phone;
+      } else {
+        phoneInput.removeAttribute('aria-invalid');
+      }
+      errLine.textContent = firstError;
+      if (firstError) return;
 
-    const closer = target.closest<HTMLElement>('[data-close-modal]');
-    if (closer) {
-      const dlg = closer.closest('dialog') as HTMLDialogElement | null;
-      if (dlg) dlg.close();
-      return;
-    }
+      // TODO: wire to real CRM (Telegram bot, email, webhook).
+      const success = document.createElement('div');
+      success.className = 'form__success';
+      success.textContent = formCfg.success;
+      wrap.replaceChildren(success);
+    });
 
-    // Click outside modal content closes it.
-    if (target.tagName === 'DIALOG' && (target as HTMLDialogElement).open) {
-      const rect = (target as HTMLElement).getBoundingClientRect();
-      const inDialogContent =
-        event.clientX >= rect.left &&
-        event.clientX <= rect.right &&
-        event.clientY >= rect.top &&
-        event.clientY <= rect.bottom;
-      if (!inDialogContent) (target as HTMLDialogElement).close();
-    }
+    slot.appendChild(wrap);
+  }
+
+  document.querySelectorAll('.cta__form-slot').forEach(buildForm);
+
+  // ---------- footer year + copyright ----------
+  const year = new Date().getFullYear();
+  const yearEl = document.getElementById('footer-year');
+  if (yearEl) yearEl.textContent = String(year);
+  document.querySelectorAll('.site-footer__copy').forEach((n) => {
+    n.textContent = `© ${year} ${footerCopy}`;
   });
 </script>
 
-<style>
-  .uni-hero {
-    padding: var(--space-10) 0 var(--space-8);
-    background:
-      radial-gradient(ellipse 80% 60% at 20% 0%, var(--color-primary-soft) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 90% 10%, var(--color-primary-mist) 0%, transparent 60%),
-      var(--color-bg);
-  }
-  .uni-hero__inner {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: var(--space-8);
-    align-items: end;
-  }
-  .uni-hero__crumb { margin: 0 0 var(--space-4); font-size: 0.92rem; }
-  .uni-hero__brand {
+<style is:global>
+  /* Per-uni overrides on top of oxford-landing.css.
+     Hero "cover" slot now holds the university logo on a white card,
+     not a 4:5 photo. Center the logo, leave generous padding. */
+  .hero__cover--logo {
+    background: #fff;
     display: flex;
     align-items: center;
-    gap: var(--space-4);
-    margin-bottom: var(--space-4);
-  }
-  .uni-hero__logo {
-    width: 72px; height: 72px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 900; font-size: 1.85rem;
-    flex-shrink: 0;
-    letter-spacing: -0.02em;
-  }
-  .uni-hero__title { margin: 0; line-height: 1.1; }
-  .uni-hero__location { margin: 4px 0 0; color: var(--color-text-muted); font-size: 1.05rem; }
-  .uni-hero__lead {
-    font-size: 1.1rem;
-    color: var(--color-text-muted);
-    margin: 0 0 var(--space-5);
-    max-width: 560px;
-  }
-  .uni-hero__actions {
-    display: flex; flex-wrap: wrap; gap: var(--space-3);
-    margin-bottom: var(--space-5);
-  }
-  .uni-hero__verified {
-    display: flex; flex-wrap: wrap; align-items: center;
-    gap: var(--space-3); margin: 0; font-size: 0.9rem;
-  }
-  .uni-hero__facts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-3);
-    padding: var(--space-5);
-    background: #fff;
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-card);
-    border: 1px solid var(--color-border);
-  }
-  .fact { padding: var(--space-3); background: var(--color-bg-soft); border-radius: 12px; }
-  .fact--accent { background: var(--color-primary-soft); }
-  .fact__key {
-    font-size: 0.75rem; color: var(--color-text-muted);
-    text-transform: uppercase; letter-spacing: 0.04em;
-    margin-bottom: 4px;
-  }
-  .fact__val {
-    font-size: 1.6rem; font-weight: 900; color: var(--color-text); line-height: 1.1;
-  }
-  .fact__val--sm { font-size: 1rem; }
-
-  .uni-section { padding: var(--space-10) 0; }
-  .uni-section--soft { background: var(--color-bg-soft); }
-  .section__head { text-align: center; margin-bottom: var(--space-8); }
-  .section__head p { margin: 8px 0 0; }
-  .uni-section__split {
-    display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8);
-  }
-  .uni-section__about {
-    max-width: 760px; margin: 0 auto; text-align: center;
-  }
-  .uni-section__about p { font-size: 1.05rem; margin-bottom: var(--space-3); }
-
-  .benefits-grid,
-  .activities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-4);
-  }
-  .benefit-card {
-    padding: var(--space-5);
-    background: #fff;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    display: flex; flex-direction: column; gap: var(--space-2);
-  }
-  .uni-section--soft .benefit-card { background: #fff; }
-  .benefit-card__num { font-weight: 900; color: var(--color-primary); font-size: 0.95rem; }
-  .benefit-card__title { font-weight: 700; font-size: 1.05rem; }
-  .benefit-card__text { font-size: 0.95rem; }
-
-  .faculty-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--space-4);
-  }
-  .faculty-card {
-    background: #fff;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    padding: var(--space-5);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
-  }
-  .faculty-card:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    border-color: var(--color-primary-soft);
-    transform: translateY(-2px);
-  }
-  .faculty-card__head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--space-3);
-    border-bottom: 2px solid var(--color-primary-soft);
-    padding-bottom: var(--space-3);
-  }
-  .faculty-card__name {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 700;
-    line-height: 1.25;
-    flex: 1;
-  }
-  .faculty-card__count {
-    font-size: 0.78rem;
-    color: var(--color-primary-dark);
-    background: var(--color-primary-soft);
-    padding: 3px 10px;
-    border-radius: var(--radius-pill);
-    font-weight: 600;
-    white-space: nowrap;
-  }
-  .faculty-card__price { margin: 0; font-size: 0.95rem; }
-  .faculty-card__price strong { color: var(--color-primary-dark); font-size: 1.05rem; }
-  .faculty-card__preview {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    flex: 1;
-  }
-  .faculty-card__preview li {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-2);
-    font-size: 0.88rem;
-  }
-  .faculty-card__preview-title {
-    flex: 1;
-    line-height: 1.3;
-  }
-  .faculty-card__open { align-self: flex-start; }
-
-  /* Modal */
-  .faculty-modal {
-    border: none;
-    padding: 0;
-    background: transparent;
-    max-width: 920px;
-    width: calc(100% - 32px);
-    border-radius: var(--radius-card);
-    box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-  }
-  .faculty-modal::backdrop {
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(3px);
-  }
-  .faculty-modal__box {
-    background: #fff;
-    border-radius: var(--radius-card);
+    justify-content: center;
+    padding: clamp(32px, 6vw, 64px);
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-lg);
+    aspect-ratio: 4 / 5;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    max-height: 86vh;
   }
-  .faculty-modal__head {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: var(--space-4);
-    padding: var(--space-5) var(--space-6);
-    border-bottom: 1px solid var(--color-border);
-    background: var(--color-bg-soft);
-  }
-  .faculty-modal__crumb { margin: 0 0 4px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
-  .faculty-modal__title { margin: 0; font-size: 1.5rem; line-height: 1.2; }
-  .faculty-modal__sub { margin: 4px 0 0; font-size: 0.92rem; }
-  .faculty-modal__close {
+  .hero__cover--logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
     background: transparent;
-    border: none;
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-pill);
-    font-size: 1.6rem;
-    line-height: 1;
-    color: var(--color-text-muted);
-    cursor: pointer;
-    transition: background 140ms ease;
   }
-  .faculty-modal__close:hover { background: var(--color-border); color: var(--color-text); }
-  .faculty-modal__body {
-    overflow-y: auto;
-    padding: var(--space-5) var(--space-6) var(--space-6);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-  }
-  .faculty-modal__group-title {
-    margin: 0 0 var(--space-3);
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-primary-dark);
-    font-weight: 700;
-    border-bottom: 2px solid var(--color-primary-soft);
-    padding-bottom: 6px;
-  }
-  .faculty-modal__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; }
-  .faculty-modal__row {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-4);
-    padding: var(--space-3) 0;
-    border-top: 1px dashed var(--color-border);
-  }
-  .faculty-modal__row:first-child { border-top: none; }
-  .faculty-modal__row-main { flex: 1; min-width: 0; }
-  .faculty-modal__row-title { font-size: 0.98rem; line-height: 1.3; display: block; margin-bottom: 4px; }
-  .faculty-modal__row-meta { font-size: 0.85rem; }
-  .faculty-modal__row-side {
-    text-align: right;
-    flex-shrink: 0;
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .faculty-modal__row-price { font-size: 0.95rem; }
-  .faculty-modal__row-price strong { color: var(--color-primary-dark); font-size: 1.05rem; }
-  .faculty-modal__row-link { font-size: 0.85rem; color: var(--color-text-muted); }
-  .faculty-modal__row-link:hover { color: var(--color-primary-dark); }
-
-  @media (max-width: 720px) {
-    .faculty-modal__head { padding: var(--space-4); }
-    .faculty-modal__body { padding: var(--space-4); }
-    .faculty-modal__row {
-      flex-direction: column;
-      gap: var(--space-2);
-    }
-    .faculty-modal__row-side { text-align: left; min-width: 0; }
-  }
-
-  .reqs-list,
-  .scholarship-list {
-    margin: 0; padding-left: var(--space-5);
-    display: flex; flex-direction: column; gap: var(--space-2);
-  }
-
-  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
-  .faq-card {
-    padding: var(--space-5);
-    background: #fff;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-  }
-  .faq-card__title { font-weight: 700; margin-bottom: var(--space-2); }
-
-  .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
-  .review-card {
-    padding: var(--space-5);
-    background: var(--color-bg-soft);
-    border-radius: var(--radius-card);
-    display: flex; flex-direction: column; gap: var(--space-3);
-  }
-  .review-card__text { font-style: italic; font-size: 1.05rem; margin: 0; }
-  .review-card__author {
-    display: flex; flex-direction: column; gap: 2px; font-size: 0.92rem;
-  }
-
-  .uni-cta {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: #fff;
-    padding: var(--space-12) 0;
-    text-align: center;
-  }
-  .uni-cta__inner { max-width: 720px; margin: 0 auto; }
-  .uni-cta h2 { color: #fff; margin-bottom: var(--space-3); }
-  .uni-cta p { color: rgba(255,255,255,0.9); margin-bottom: var(--space-6); font-size: 1.1rem; }
-  .uni-cta__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; }
-  .btn-on-dark { border-color: rgba(255,255,255,0.5); color: #fff; }
-  .btn-on-dark:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; }
-
-  @media (max-width: 880px) {
-    .uni-hero__inner { grid-template-columns: 1fr; }
-    .uni-hero__facts { grid-template-columns: repeat(4, 1fr); }
-    .uni-section__split,
-    .faq-grid,
-    .reviews-grid { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 560px) {
-    .uni-hero__facts { grid-template-columns: 1fr 1fr; }
-    .uni-hero__brand { flex-direction: column; align-items: flex-start; }
-    .uni-section { padding: var(--space-8) 0; }
-  }
+  .muted-inline { color: var(--text-muted); font-weight: 400; }
 </style>

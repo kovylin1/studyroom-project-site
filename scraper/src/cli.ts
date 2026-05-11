@@ -15,7 +15,7 @@
 import { writeFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { universitySchema, type University, type Program } from './schema.ts';
+import { universitySchema, type University, type Program, type GalleryItem } from './schema.ts';
 import { readRegistry, type RegistryRow } from './registry.ts';
 import { scrapeKaplanUni, type KaplanScrapeResult } from './sources/kaplan.ts';
 import { fetchKaplanFees, facultySlug, type KaplanProgram } from './sources/kaplan-fees.ts';
@@ -30,6 +30,20 @@ import {
   type KaplanDegree,
   type KaplanInstitution,
 } from './sources/kaplan-feed.ts';
+
+// Dynamic import of the JS-only photo downloader (no .d.ts; declared inline).
+interface PhotoDownloader {
+  fetchAndSaveGallery(
+    row: RegistryRow,
+    opts?: { force?: boolean }
+  ): Promise<{ slug: string; items: GalleryItem[]; skipped?: string }>;
+}
+let photoModule: PhotoDownloader | null = null;
+async function loadPhotoModule(): Promise<PhotoDownloader> {
+  if (photoModule) return photoModule;
+  photoModule = (await import('../download-photos.mjs')) as unknown as PhotoDownloader;
+  return photoModule;
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CATALOG_DIR = resolve(__dirname, '../../site/src/content/universities');
@@ -299,6 +313,24 @@ async function processOne(
   const built = buildUniversity(row, main, pathwayPrograms, degreePrograms);
 
   const validated = universitySchema.parse(built);
+
+  // Refresh per-uni gallery photos from Kaplan partner page. Failures are logged
+  // but never break the scrape — the gallery field stays optional in the schema.
+  if (!dryRun) {
+    try {
+      const photos = await loadPhotoModule();
+      const result = await photos.fetchAndSaveGallery(row);
+      if (result.items.length > 0) {
+        validated.gallery = { items: result.items };
+        console.log('[photo] ' + row.slug + ' · ' + result.items.length + ' images');
+      } else if (result.skipped) {
+        console.warn('[photo] ' + row.slug + ' skipped: ' + result.skipped);
+      }
+    } catch (err) {
+      console.warn('[warn]  ' + row.slug + ' photo fetch failed: ' + (err as Error).message);
+    }
+  }
+
   const out = JSON.stringify(validated, null, 2) + '\n';
 
   if (dryRun) {

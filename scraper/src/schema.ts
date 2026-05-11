@@ -50,6 +50,17 @@ export const scholarshipSchema = z.object({
   url: z.string().url().optional(),
 });
 
+export const galleryItemSchema = z.object({
+  img: z.string().min(1),
+  caption: z.string().optional(),
+});
+export type GalleryItem = z.infer<typeof galleryItemSchema>;
+
+export const gallerySchema = z.object({
+  items: z.array(galleryItemSchema).default([]),
+});
+export type Gallery = z.infer<typeof gallerySchema>;
+
 export const confidenceLevel = z.enum(['partner', 'official', 'aggregator']);
 export const landingLanguage = z.enum(['en', 'ru', 'kz', 'mixed']);
 
@@ -64,6 +75,7 @@ export const universitySchema = z
     deadlines: z.record(slug, isoDate),
     requirements: requirementsSchema,
     scholarships: z.array(scholarshipSchema).default([]),
+    gallery: gallerySchema.optional(),
     lastChecked: isoDate,
     sourceUrl: z.string().url(),
     sourceHash: z.string().min(1),
