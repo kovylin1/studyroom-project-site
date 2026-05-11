@@ -17,6 +17,7 @@ const PORT = Number(process.env.PORT ?? 5174);
 const PROJECT_ROOT = resolve(__dirname, '..');
 const SCRAPER_DIR = resolve(PROJECT_ROOT, 'scraper');
 const REGISTRY_FILE = resolve(PROJECT_ROOT, 'sources/universities.list.md');
+const AGGREGATORS_FILE = resolve(PROJECT_ROOT, 'sources/aggregators.md');
 const CATALOG_DIR = resolve(PROJECT_ROOT, 'site/src/content/universities');
 const CRON_FILE = resolve(PROJECT_ROOT, '.github/workflows/scrape-monthly.yml');
 
@@ -36,7 +37,45 @@ function pushLog(line) {
   if (state.log.length > 500) state.log.shift();
 }
 
-async function readRegistry() {
+async function readAggregators() {
+  try {
+    const raw = await readFile(AGGREGATORS_FILE, 'utf8');
+    const aggregators = [];
+    const sections = raw.split(/^## /m).slice(1);
+    for (const section of sections) {
+      const slugMatch = section.match(/^`?([a-z0-9-]+)`?/);
+      if (!slugMatch) continue;
+      const slug = slugMatch[1];
+      const baseUrlMatch = section.match(/\*\*Base URL:\*\*\s*`?(https?:\/\/[^`\s)]+)`?/i);
+      const baseUrl = baseUrlMatch ? baseUrlMatch[1] : null;
+      let host = '';
+      try { host = baseUrl ? new URL(baseUrl).hostname.replace(/^www\./, '') : ''; } catch {}
+      const tierMatch = section.match(/Confidence tier in our schema:\*\*\s*`?([a-z]+)`?/i);
+      const name = slug
+        .split('-')
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ');
+      aggregators.push({ slug, name, baseUrl, host, tier: tierMatch ? tierMatch[1] : 'aggregator' });
+    }
+    return aggregators;
+  } catch {
+    return [];
+  }
+}
+
+function resolveAggregatorSlug(urlCell, aggregators) {
+  if (!urlCell || aggregators.length === 0) return null;
+  const urls = urlCell.match(/https?:\/\/[^\s,)]+/g) || [];
+  for (const u of urls) {
+    let host = '';
+    try { host = new URL(u).hostname.replace(/^www\./, ''); } catch { continue; }
+    const match = aggregators.find((a) => a.host && (host === a.host || host.endsWith('.' + a.host)));
+    if (match) return match.slug;
+  }
+  return null;
+}
+
+async function readRegistry(aggregators) {
   try {
     const raw = await readFile(REGISTRY_FILE, 'utf8');
     const rows = [];
@@ -44,10 +83,11 @@ async function readRegistry() {
       if (!line.startsWith('|')) continue;
       const cells = line.split('|').map((c) => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1);
       if (cells.length < 8) continue;
-      const [slug, name, country, city, tier] = cells;
+      const [slug, name, country, city, tier, officialUrl, aggregatorUrlCell] = cells;
       if (slug === 'slug' || slug.startsWith('---')) continue;
       if (tier !== 'partner' && tier !== 'official' && tier !== 'aggregator') continue;
-      rows.push({ slug, name, country, city, tier });
+      const aggregatorSlug = resolveAggregatorSlug(aggregatorUrlCell, aggregators);
+      rows.push({ slug, name, country, city, tier, officialUrl: officialUrl || null, aggregatorSlug });
     }
     return rows;
   } catch {
@@ -156,8 +196,22 @@ function readJsonBody(req) {
   });
 }
 
+function setCors(res) {
+  res.setHeader('access-control-allow-origin', '*');
+  res.setHeader('access-control-allow-methods', 'GET, POST, OPTIONS');
+  res.setHeader('access-control-allow-headers', 'content-type');
+  res.setHeader('access-control-max-age', '600');
+}
+
 const server = createServer(async (req, res) => {
   try {
+    setCors(res);
+
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204);
+      return res.end();
+    }
+
     if (req.method === 'GET' && (req.url === '/' || req.url === '/index.html')) {
       const html = await readFile(resolve(__dirname, 'public/index.html'), 'utf8');
       res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
@@ -165,15 +219,22 @@ const server = createServer(async (req, res) => {
     }
 
     if (req.method === 'GET' && req.url === '/api/status') {
-      const [registry, catalog, cron] = await Promise.all([
-        readRegistry(),
+      const [catalog, cron, aggregators] = await Promise.all([
         readCatalog(),
         readCronExpression(),
+        readAggregators(),
       ]);
+      const registry = await readRegistry(aggregators);
       const merged = registry.map((row) => ({
         ...row,
         catalog: catalog[row.slug] ?? null,
       }));
+      const defaultProfile = aggregators[0] ?? {
+        slug: 'kaplan-pathways',
+        name: 'Kaplan Pathways',
+        baseUrl: 'https://www.kaplanpathways.com/',
+        tier: 'partner',
+      };
       const payload = {
         run: {
           running: state.running,
@@ -189,10 +250,11 @@ const server = createServer(async (req, res) => {
           source: '.github/workflows/scrape-monthly.yml',
         },
         sourceProfile: {
-          name: 'Kaplan Pathways',
-          baseUrl: 'https://www.kaplanpathways.com/',
-          tier: 'partner',
+          name: defaultProfile.name,
+          baseUrl: defaultProfile.baseUrl,
+          tier: defaultProfile.tier,
         },
+        aggregators,
         registry: merged,
       };
       res.writeHead(200, { 'content-type': 'application/json; charset=utf-8' });

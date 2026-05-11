@@ -64,6 +64,23 @@ export const gallerySchema = z.object({
 });
 export type Gallery = z.infer<typeof gallerySchema>;
 
+export const accommodationItemSchema = z.object({
+  name: z.string().min(1),
+  price: z.string().optional(),
+  oldPrice: z.string().optional(),
+  text: z.string().optional(),
+  img: z.string().optional(),
+});
+export type AccommodationItem = z.infer<typeof accommodationItemSchema>;
+
+export const campusItemSchema = z.object({
+  title: z.string().min(1),
+  sub: z.string().optional(),
+  text: z.string().optional(),
+  img: z.string().optional(),
+});
+export type CampusItem = z.infer<typeof campusItemSchema>;
+
 export const confidenceLevel = z.enum(['partner', 'official', 'aggregator']);
 export type ConfidenceLevel = z.infer<typeof confidenceLevel>;
 
@@ -82,6 +99,8 @@ export const universitySchema = z
     requirements: requirementsSchema,
     scholarships: z.array(scholarshipSchema).default([]),
     gallery: gallerySchema.optional(),
+    accommodation: z.array(accommodationItemSchema).optional(),
+    campuses: z.array(campusItemSchema).optional(),
     lastChecked: isoDate,
     sourceUrl: z.string().url(),
     sourceHash: z.string().min(1),

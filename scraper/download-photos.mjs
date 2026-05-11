@@ -20,6 +20,7 @@ import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
 import { constants as fsConstants } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { load as cheerioLoad } from 'cheerio';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = resolve(__dirname, '..');
@@ -27,11 +28,15 @@ const REGISTRY_FILE = resolve(PROJECT_ROOT, 'sources/universities.list.md');
 const CATALOG_DIR = resolve(PROJECT_ROOT, 'site/src/content/universities');
 const PHOTOS_DIR = resolve(PROJECT_ROOT, 'site/public/photos');
 
-// Kaplan's photo CDN URL pattern. `tachyon/sites/4/YYYY/MM/file.jpg` is stable.
+// Kaplan's photo CDN URL pattern. `tachyon/sites/4/YYYY/MM/file.jpg` is stable
+// across both legacy host (`kaplan-prod.altis.cloud`, used for older UK photos)
+// and current host (`www.kaplanpathways.com`, used for newer photos including
+// every Canadian partner). The original regex matched only the legacy host so
+// Canadian partner pages came back empty until this was broadened.
 const KAPLAN_IMG_RE =
-  /https:\/\/kaplan-prod\.altis\.cloud\/tachyon\/sites\/4\/\d{4}\/\d{2}\/[\w.-]+\.jpe?g/gi;
+  /https:\/\/(?:kaplan-prod\.altis\.cloud|www\.kaplanpathways\.com)\/tachyon\/sites\/4\/\d{4}\/\d{2}\/[\w.-]+\.jpe?g/gi;
 
-const SKIP_FRAGMENTS = ['logo', 'icon', 'flag', 'arrow', 'chevron', 'spinner', 'placeholder'];
+const SKIP_FRAGMENTS = ['logo', 'icon', 'flag', 'arrow', 'chevron', 'spinner', 'placeholder', 'logo-raster'];
 
 export async function readRegistryRows() {
   const raw = await readFile(REGISTRY_FILE, 'utf8');
@@ -62,6 +67,61 @@ function isLikelyCampusPhoto(url) {
   return !SKIP_FRAGMENTS.some((frag) => lower.includes(frag));
 }
 
+// Score a Kaplan photo by its URL filename slug AND its <img alt> text.
+// Both signals matter — the URL slug usually carries place names ("main-quad",
+// "convocation-hall", "PCL-Lounge") while the alt text reveals the human
+// subject ("Students having lunch", "International students touring..."). A
+// photo with `campus` in the URL but `Students having lunch` in the alt is a
+// people-photo, not a building-photo, and we want to push it out of top-10.
+function scorePhoto(url, alt) {
+  const u = url.toLowerCase();
+  const a = (alt || '').toLowerCase();
+  const both = u + ' ' + a;
+  let score = 0;
+
+  // STRONG positive — named buildings, libraries, aerials, dorm interiors.
+  // Reliable signal whether it appears in URL or alt.
+  if (/main[-\s]quad|convocation|library|aerial(?:\s|-)view|aerial view|architecture|building exterior|innovation cent|memorial|tower|residence (building|hall)|dorm[-\s]?room|view of|interior of|kitchen|studio flat|\bcci\b|cheko|sngequ|sngequ|gilmorehill|garscube|entrance of/.test(both)) {
+    score += 40;
+  }
+
+  // STRONG negative — explicit people action verbs ANYWHERE (URL or alt).
+  // Match against `both` so people-photos with empty alt are still caught
+  // (URL filename usually carries the activity word: "students-cheering",
+  // "ALESOrientation", "gardens-socialising").
+  if (/socialising|socializing|cheering|orientation|attending|having lunch|having a tour|having a meal|having coffee|smiling|posing|presentation|portrait|graduation|standing in front|chatting|enjoying themselves|relaxing|walking around|sitting on|talking to/.test(both)) {
+    score -= 40;
+  }
+
+  // MEDIUM negative — "Students <verb>" pattern in alt. Requires both subject
+  // AND a known people-activity verb together, so neutral mentions like
+  // "Student that resides on campus..." (where the photo is of the room, not
+  // the activity) don't get penalized.
+  if (/\bstudents?\s+(having|cheering|attending|socialis|outside|working|playing|relaxing|enjoying|chatting|listening|smiling|walking)/.test(a)) {
+    score -= 25;
+  }
+  // URL-filename people-as-subject (last-segment of URL starts with students- / student-,
+  // but allow exceptions for known good slugs like `student-in-her-dorm-room`,
+  // `Student-Innovation-Center`).
+  const filename = u.split('/').pop() || '';
+  if (/^students?-(?!in-her|innovation|residence|dorm)/.test(filename)) {
+    score -= 25;
+  }
+  // Also penalize when filename contains `-students-` (mid-slug), e.g.
+  // `building-students-Alberta2405053`, `home-sweet-campus-home` (containing
+  // "campus" but actually a people-tour shot per alt text).
+  if (/-students?-/.test(filename) || /-students?$/.test(filename.replace(/\.\w+$/, ''))) {
+    score -= 20;
+  }
+
+  // Small bonus when alt text reads like a place description (no people).
+  if (a && !/student|people|group|tour|cohort/.test(a) && /\b(campus|building|hall|library|centre|center|residence|exterior)\b/.test(a)) {
+    score += 10;
+  }
+
+  return score;
+}
+
 async function exists(path) {
   try {
     await access(path, fsConstants.F_OK);
@@ -82,9 +142,46 @@ export async function fetchKaplanPhotos(partnerUrl) {
     throw new Error('HTTP ' + response.status + ' for ' + partnerUrl);
   }
   const html = await response.text();
-  const matches = html.match(KAPLAN_IMG_RE) ?? [];
-  const unique = Array.from(new Set(matches)).filter(isLikelyCampusPhoto);
-  return unique;
+
+  // Parse <img src + alt> pairs via cheerio so scoring can read alt text too
+  // (filename alone misses people-content like "Students having lunch", which
+  // is the strongest "this is a people photo" signal). Dedupe by canonical
+  // URL (strip query string) so `?resize=…&crop=…` variants of the same image
+  // don't count twice.
+  const $ = cheerioLoad(html);
+  const collected = new Map(); // canonicalUrl -> { fullUrl, alt }
+  $('img[src]').each((_, el) => {
+    const src = $(el).attr('src') || '';
+    const alt = $(el).attr('alt') || '';
+    KAPLAN_IMG_RE.lastIndex = 0;
+    if (!KAPLAN_IMG_RE.test(src)) return;
+    KAPLAN_IMG_RE.lastIndex = 0;
+    if (!isLikelyCampusPhoto(src)) return;
+    const canonical = src.split('?')[0];
+    // First occurrence wins, but prefer entries that DO have alt text over
+    // those that don't (alt is essential for scoring people-photos).
+    const existing = collected.get(canonical);
+    if (!existing) {
+      collected.set(canonical, { fullUrl: src, alt });
+    } else if (!existing.alt && alt) {
+      collected.set(canonical, { fullUrl: src, alt });
+    }
+  });
+
+  // Sort by content-quality score (buildings + interiors first, people last)
+  // so the top-10 slice the page actually consumes is the best mix available.
+  // No hard cut-off — even negative-score photos are kept in case a uni's
+  // page is mostly people-content; the page consumer (`[slug].astro`) already
+  // dedupes hero ↔ gallery and `cli.ts` keeps adjacent sections distinct.
+  // Stable: equal-score entries keep their page order.
+  let i = 0;
+  const scored = [];
+  for (const [, { fullUrl, alt }] of collected) {
+    scored.push({ url: fullUrl, alt, score: scorePhoto(fullUrl, alt), i: i++ });
+  }
+  return scored
+    .sort((a, b) => b.score - a.score || a.i - b.i)
+    .map((x) => x.url);
 }
 
 async function downloadJpg(url, outPath) {

@@ -15,7 +15,14 @@
 import { writeFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { universitySchema, type University, type Program, type GalleryItem } from './schema.ts';
+import {
+  universitySchema,
+  type University,
+  type Program,
+  type GalleryItem,
+  type AccommodationItem,
+  type CampusItem,
+} from './schema.ts';
 import { readRegistry, type RegistryRow } from './registry.ts';
 import { scrapeKaplanUni, type KaplanScrapeResult } from './sources/kaplan.ts';
 import { fetchKaplanFees, facultySlug, type KaplanProgram } from './sources/kaplan-fees.ts';
@@ -30,6 +37,9 @@ import {
   type KaplanDegree,
   type KaplanInstitution,
 } from './sources/kaplan-feed.ts';
+import { scrapeKaplanAccommodation, type KaplanAccommodationResult } from './sources/kaplan-accommodation.ts';
+import { getCampusFacts, type CampusFact } from './sources/campus-facts.ts';
+import { getUniAccommodationFacts } from './sources/uni-accommodation-facts.ts';
 
 // Dynamic import of the JS-only photo downloader (no .d.ts; declared inline).
 interface PhotoDownloader {
@@ -259,7 +269,7 @@ function buildUniversity(
     country: row.country,
     city: row.city,
     programs: allPrograms,
-    tuition: { currency: 'GBP', byProgram: allTuition },
+    tuition: { currency: currencyForCountry(row.country), byProgram: allTuition },
     deadlines: allDeadlines,
     requirements: STANDARD_REQUIREMENTS,
     scholarships: [],
@@ -269,6 +279,96 @@ function buildUniversity(
     confidence: row.tier,
     language: 'en',
   };
+}
+
+// Tuition currency by country. Kaplan's degree-finder feed reports
+// `current_fees_per_year` in the destination country's local currency, so we
+// match the country here. Falls back to GBP for unknown countries to keep
+// existing UK behaviour.
+function currencyForCountry(country: string): 'GBP' | 'CAD' | 'USD' | 'AUD' | 'EUR' {
+  const c = country.toLowerCase();
+  if (c.includes('canada')) return 'CAD';
+  if (c.includes('united states') || c === 'usa') return 'USD';
+  if (c.includes('australia')) return 'AUD';
+  if (c.includes('united kingdom') || c === 'uk') return 'GBP';
+  return 'GBP';
+}
+
+// Build the accommodation array: Kaplan Living first (real fee scraped from
+// kaplanpathways.com), then 1-2 official-uni halls from the curated
+// uni-accommodation-facts module (real fees from gla.ac.uk, bristol.ac.uk,
+// etc.). All entries carry real prices — no TBD placeholders.
+// `photoCount` controls the photo fallback — when the assigned index exceeds
+// the number of photos actually saved on disk (e.g. Canadian partner pages
+// only have 5-7 building photos after filtering people-shots), we omit `img`
+// so the page renders the logo placeholder instead of a broken-image icon.
+function buildAccommodation(
+  result: KaplanAccommodationResult,
+  slug: string,
+  uniName: string,
+  photoCount: number,
+): AccommodationItem[] {
+  const items: AccommodationItem[] = [];
+
+  if (result.priceFrom && result.priceCurrency === 'GBP') {
+    const features = result.features.length > 0
+      ? result.features.slice(0, 3).join(' · ')
+      : 'Партнёрское жильё Kaplan Living — приватная спальня и ванная, общая или собственная кухня, безопасный въезд и социальные пространства.';
+    const contractNote = result.contractNote ? `Контракт: ${result.contractNote}.` : '';
+    const text = `Официальная партнёрская резиденция при колледже Kaplan для ${uniName}. ${features}${contractNote ? ` ${contractNote}` : ''}`.trim();
+    items.push({
+      name: result.residence ?? `Kaplan Living — ${uniName}`,
+      price: `от £${result.priceFrom.toLocaleString('en-GB')}`,
+      text,
+      ...(result.photoUrl ? { img: result.photoUrl } : {}),
+    });
+  }
+
+  // Layer in real official-uni halls from the curated dictionary. These come
+  // from each uni's own accommodation page (verified 2026-05-11 via Exa).
+  // Photo assignment: prefer a curated img URL from the fact if present;
+  // otherwise fall back to a cycling per-uni gallery photo (`/photos/{slug}/N.jpg`,
+  // using indices 6-9 to avoid the hero's photos 1-2 and gallery's 1-3).
+  // Accommodation cards use the LAST available photos (descending from
+  // photoCount), capped at index ≥ 6 so we never reuse a gallery photo (3-5)
+  // or hero photo (1-2). Examples: 10 photos → 10, 9, 8; 8 photos → 8, 7, 6;
+  // 7 photos → 7, 6, (logo); 6 photos → 6, (logo), (logo); ≤5 → all logos.
+  // The "last" photos are the lowest-scoring buildings/interiors in the saved
+  // set — exactly the right content for accommodation cards.
+  const facts = getUniAccommodationFacts(slug);
+  facts.forEach((f, i) => {
+    const accIdx = photoCount - i;
+    const fallbackImg = accIdx >= 6 ? `/photos/${slug}/${accIdx}.jpg` : undefined;
+    const img = f.img ?? fallbackImg;
+    items.push({ name: f.name, price: f.price, text: f.text, ...(img ? { img } : {}) });
+  });
+
+  // Fallback only if we have nothing at all: a single TBD card so the section
+  // doesn't disappear.
+  if (items.length === 0) {
+    items.push({
+      name: `En-suite комната в студенческом общежитии (${uniName})`,
+      price: '[TBD: £/нед]',
+      text: `Одноместная комната с собственной ванной, общая кухня на 4–8 человек. Партнёрское жильё рядом с кампусом ${uniName}.`,
+    });
+  }
+  return items;
+}
+
+function buildCampuses(slug: string, photoCount: number): CampusItem[] {
+  // Photos cycle through `/photos/{slug}/N.jpg` (N = 6..9) so the first 4
+  // campuses each get a distinct photo from the per-uni gallery, while
+  // avoiding photos 1-2 (hero) and 3-5 (gallery section right below hero).
+  // When the assigned index exceeds available photos (e.g. only 6 saved
+  // after filtering people-shots), we omit `img` so the page renders the
+  // `.placeholder-img` block with the uni logo instead.
+  const facts: CampusFact[] = getCampusFacts(slug);
+  return facts.map((f, i) => {
+    const item: CampusItem = { title: f.title, sub: f.sub, text: f.text };
+    const photoIdx = (i % 4) + 6;
+    if (photoIdx <= photoCount) item.img = `/photos/${slug}/${photoIdx}.jpg`;
+    return item;
+  });
 }
 
 async function processOne(
@@ -329,6 +429,49 @@ async function processOne(
     } catch (err) {
       console.warn('[warn]  ' + row.slug + ' photo fetch failed: ' + (err as Error).message);
     }
+  }
+
+  // Accommodation — real Kaplan starting fee + features + photo when available,
+  // plus generic non-Kaplan alternatives so students see options to compare.
+  let accommodationResult: KaplanAccommodationResult | null = null;
+  try {
+    accommodationResult = await scrapeKaplanAccommodation(target);
+    if (accommodationResult.priceFrom) {
+      console.log(
+        '[acc]   ' + row.slug + ' · £' + accommodationResult.priceFrom.toLocaleString('en-GB') +
+        (accommodationResult.residence ? ' (' + accommodationResult.residence + ')' : ''),
+      );
+    } else if (accommodationResult.accommodationUrl) {
+      console.warn('[acc]   ' + row.slug + ' · page found but no price parsed (' + accommodationResult.accommodationUrl + ')');
+    } else {
+      console.warn('[acc]   ' + row.slug + ' · no Kaplan accommodation page linked from partner page');
+    }
+  } catch (err) {
+    console.warn('[warn]  ' + row.slug + ' accommodation fetch failed: ' + (err as Error).message);
+  }
+  const photoCount = validated.gallery?.items?.length ?? 0;
+  validated.accommodation = buildAccommodation(
+    accommodationResult ?? {
+      accommodationUrl: null,
+      residence: null,
+      priceLabel: null,
+      priceFrom: null,
+      priceCurrency: null,
+      contractNote: null,
+      features: [],
+      photoUrl: null,
+    },
+    row.slug,
+    row.name,
+    photoCount,
+  );
+
+  // Campuses — curated facts per uni slug (Kaplan does not publish a structured
+  // per-campus dataset; the truth lives in `sources/campus-facts.ts`).
+  const campusItems = buildCampuses(row.slug, photoCount);
+  if (campusItems.length > 0) {
+    validated.campuses = campusItems;
+    console.log('[camp]  ' + row.slug + ' · ' + campusItems.length + ' campus entries');
   }
 
   const out = JSON.stringify(validated, null, 2) + '\n';

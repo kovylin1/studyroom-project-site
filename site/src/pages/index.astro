@@ -55,7 +55,26 @@ const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
 
     <section class="catalog">
       <div class="container">
-        <Filters countries={countries} levels={levels} faculties={faculties} tuitionMax={tuitionMax} />
+        <div class="catalog-filters-wrap">
+          <div class="catalog-filters-bar">
+            <button
+              id="catalog-filters-toggle"
+              class="btn btn-ghost btn-sm catalog-filters-bar__toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="catalog-filters-panel"
+            >
+              <span>Фильтры</span>
+              <span id="catalog-filters-count" class="catalog-filters-bar__count" hidden></span>
+              <span aria-hidden="true" class="catalog-filters-bar__chev">▾</span>
+            </button>
+            <button type="reset" form="catalog-filters" class="btn btn-ghost btn-sm">Сбросить</button>
+            <span id="catalog-filters-result" class="catalog-filters-bar__result muted"></span>
+          </div>
+          <div id="catalog-filters-panel" class="catalog-filters-panel" data-open="false">
+            <Filters countries={countries} levels={levels} faculties={faculties} tuitionMax={tuitionMax} />
+          </div>
+        </div>
 
         <p class="catalog__count">
           Найдено: <strong id="catalog-count">{universities.length}</strong> университетов
@@ -72,6 +91,60 @@ const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
     </section>
   </form>
 </Base>
+
+<style is:global>
+  /* ---------- catalog filter pulldown (mirrors /manager UX) ---------- */
+  .catalog-filters-wrap {
+    margin-bottom: 16px;
+  }
+  .catalog-filters-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+  }
+  .catalog-filters-bar__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .catalog-filters-bar__chev {
+    font-size: 0.7rem;
+    transition: transform 200ms ease;
+  }
+  .catalog-filters-bar__toggle[aria-expanded="true"] .catalog-filters-bar__chev {
+    transform: rotate(180deg);
+  }
+  .catalog-filters-bar__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 6px;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+  .catalog-filters-bar__result {
+    margin-left: auto;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  .catalog-filters-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 280ms ease, border-color 280ms ease, margin 280ms ease;
+    border-radius: var(--radius-card);
+  }
+  .catalog-filters-panel[data-open="true"] {
+    max-height: 1200px; /* generous upper bound for the full filterbar height */
+    margin-top: 4px;
+  }
+</style>
 
 <script>
   import '~/scripts/catalog-filters';

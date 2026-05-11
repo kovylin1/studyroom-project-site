@@ -12,6 +12,10 @@ const FORM_ID = 'catalog-filters';
 const GRID_ID = 'catalog-grid';
 const EMPTY_ID = 'catalog-empty';
 const COUNT_ID = 'catalog-count';
+const PANEL_ID = 'catalog-filters-panel';
+const TOGGLE_ID = 'catalog-filters-toggle';
+const BADGE_ID = 'catalog-filters-count';
+const RESULT_ID = 'catalog-filters-result';
 
 function readState(form: HTMLFormElement): CatalogFilterState {
   const fd = new FormData(form);
@@ -95,6 +99,42 @@ function cardMatches(card: HTMLElement, state: CatalogFilterState): boolean {
   return true;
 }
 
+function countActiveFilters(state: CatalogFilterState, form: HTMLFormElement): number {
+  let n = 0;
+  // The hero search input is "q" — count it only if a filter (it lives in the
+  // hero, not the pulldown, but the badge should reflect ALL active filters).
+  if (state.q) n += 1;
+  if (state.country) n += 1;
+  if (state.levels.size > 0) n += 1;
+  if (state.faculties.size > 0) n += 1;
+  // Treat the tuition slider as "active" only when it's not at the default max.
+  const rangeEl = form.elements.namedItem('maxTuition');
+  if (rangeEl instanceof HTMLInputElement && state.maxTuition !== null) {
+    const max = Number(rangeEl.max);
+    if (Number.isFinite(max) && state.maxTuition < max) n += 1;
+  }
+  if (state.maxIelts !== null) n += 1;
+  if (state.hasScholarship) n += 1;
+  return n;
+}
+
+function updateBadge(activeCount: number, visible: number, total: number): void {
+  const badge = document.getElementById(BADGE_ID);
+  if (badge) {
+    if (activeCount === 0) {
+      badge.hidden = true;
+      badge.textContent = '';
+    } else {
+      badge.hidden = false;
+      badge.textContent = String(activeCount);
+    }
+  }
+  const result = document.getElementById(RESULT_ID);
+  if (result) {
+    result.textContent = total === 0 ? '' : `${visible} из ${total}`;
+  }
+}
+
 function applyFilters(form: HTMLFormElement): void {
   const state = readState(form);
   const grid = document.getElementById(GRID_ID);
@@ -123,6 +163,18 @@ function applyFilters(form: HTMLFormElement): void {
 
   syncRangeOutput(form);
   syncUrl(state);
+  updateBadge(countActiveFilters(state, form), visible, cards.length);
+}
+
+function wireToggle(): void {
+  const btn = document.getElementById(TOGGLE_ID);
+  const panel = document.getElementById(PANEL_ID);
+  if (!btn || !panel) return;
+  btn.addEventListener('click', () => {
+    const isOpen = panel.dataset.open === 'true';
+    panel.dataset.open = isOpen ? 'false' : 'true';
+    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  });
 }
 
 function syncRangeOutput(form: HTMLFormElement): void {
@@ -202,6 +254,19 @@ function init(): void {
 
   restoreFromUrl(form);
   applyFilters(form);
+  wireToggle();
+
+  // If the URL restored an active filter (e.g. ?country=... opened via share),
+  // open the pulldown so the user sees what's already filtering the grid.
+  const initialState = readState(form);
+  if (countActiveFilters(initialState, form) > 0) {
+    const panel = document.getElementById(PANEL_ID);
+    const btn = document.getElementById(TOGGLE_ID);
+    if (panel && btn) {
+      panel.dataset.open = 'true';
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
 
   form.addEventListener('input', () => applyFilters(form));
   form.addEventListener('change', () => applyFilters(form));

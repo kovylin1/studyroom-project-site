@@ -1,0 +1,912 @@
+---
+import Base from '~/layouts/Base.astro';
+
+const CONTROL_DEFAULT_URL = 'http://localhost:5174';
+---
+
+<Base
+  title="Управление каталогом — StudyRoom"
+  description="Внутренняя страница менеджера: ручной запуск скрапера и статус последнего обновления."
+>
+  <section class="manager">
+    <div class="container">
+      <header class="manager__head">
+        <div>
+          <p class="manager__eyebrow">Менеджер · внутренний инструмент</p>
+          <h1 class="manager__title">Обновление каталога</h1>
+          <p class="manager__lead">
+            Запускайте скрапер вручную, отслеживайте статус и смотрите лог. Расписание
+            по&nbsp;умолчанию — раз в&nbsp;месяц через GitHub Actions.
+          </p>
+        </div>
+        <div class="manager__health" id="health">
+          <span class="status-pill status-pill--idle">
+            <span class="status-pill__dot"></span>
+            <span id="health-text">Подключение…</span>
+          </span>
+          <span class="manager__health-url">
+            API: <code id="health-url">{CONTROL_DEFAULT_URL}</code>
+            <button id="health-edit" class="link-btn" type="button">изменить</button>
+          </span>
+        </div>
+      </header>
+
+      <div id="offline-banner" class="banner banner--warn" hidden>
+        <strong>Панель управления не отвечает.</strong>
+        Запустите её локально: <code>cd control &amp;&amp; npm start</code>. По&nbsp;умолчанию слушает
+        <code>http://localhost:5174</code>.
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <header class="card__head">
+            <h2 class="card__title">Следующий запуск</h2>
+            <span id="cron-pill" class="card__title card__title--mono"></span>
+          </header>
+          <p class="card__big" id="next-run-local">—</p>
+          <p class="card__sub" id="next-run-relative">Ждём данные…</p>
+          <dl class="meta">
+            <div><dt>UTC</dt><dd id="next-run-utc">—</dd></div>
+            <div><dt>Источник</dt><dd id="schedule-source">—</dd></div>
+          </dl>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h2 class="card__title">Источник данных</h2>
+            <span id="source-tier" class="tier tier--partner">PARTNER</span>
+          </header>
+          <p class="card__big" id="source-name">—</p>
+          <a id="source-url" class="card__link" href="#" target="_blank" rel="noopener">—</a>
+          <dl class="meta">
+            <div><dt>В реестре</dt><dd><strong id="registry-count">—</strong></dd></div>
+            <div><dt>В каталоге сейчас</dt><dd><strong id="catalog-count">—</strong></dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <article class="card manager__run">
+        <header class="card__head">
+          <h2 class="card__title">Ручной запуск</h2>
+          <span id="run-status" class="status-pill status-pill--idle">
+            <span class="status-pill__dot"></span>
+            <span id="run-status-text">Ожидание</span>
+          </span>
+        </header>
+        <p class="card__sub" id="run-summary">
+          Скрапер ещё не запускался. Нажмите кнопку — обновятся все 16&nbsp;университетов.
+        </p>
+        <div class="manager__actions">
+          <button id="run-all-btn" class="btn btn-primary" type="button">
+            Запустить скрапинг сейчас
+          </button>
+          <span class="muted manager__hint">
+            или нажмите «обновить» в строке таблицы ниже, чтобы пересобрать один университет.
+          </span>
+        </div>
+      </article>
+
+      <article class="card card--flush">
+        <div class="filterbar-mini">
+          <label class="filterbar-mini__search">
+            <span aria-hidden="true" class="filterbar-mini__search-icon">🔍</span>
+            <input
+              id="filter-search"
+              type="search"
+              placeholder="Поиск по слагу или названию…"
+              autocomplete="off"
+            />
+          </label>
+          <button
+            id="filter-toggle"
+            class="btn btn-ghost btn-sm filterbar-mini__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="filter-panel"
+          >
+            <span>Фильтры</span>
+            <span id="filter-count" class="filterbar-mini__count" hidden></span>
+            <span aria-hidden="true" class="filterbar-mini__chev">▾</span>
+          </button>
+          <button id="filter-reset" class="btn btn-ghost btn-sm" type="button">Сбросить</button>
+          <span id="filter-result-count" class="filterbar-mini__result muted"></span>
+        </div>
+
+        <div id="filter-panel" class="filter-panel" data-open="false">
+          <div class="filter-panel__inner">
+            <div class="filter-panel__group">
+              <span class="filter-panel__label">Агрегатор</span>
+              <div class="filter-panel__chips" id="filter-aggregator-chips">
+                <button class="chip chip--active" type="button" data-filter="aggregator" data-value="">Все</button>
+              </div>
+            </div>
+
+            <div class="filter-panel__group">
+              <span class="filter-panel__label">Тир</span>
+              <div class="filter-panel__chips">
+                <button class="chip" type="button" data-filter="tier" data-value="partner">partner</button>
+                <button class="chip" type="button" data-filter="tier" data-value="official">official</button>
+                <button class="chip" type="button" data-filter="tier" data-value="aggregator">aggregator</button>
+              </div>
+            </div>
+
+            <div class="filter-panel__group">
+              <span class="filter-panel__label">Страна</span>
+              <select id="filter-country" class="filter-panel__select">
+                <option value="">Все</option>
+              </select>
+            </div>
+
+            <div class="filter-panel__group">
+              <span class="filter-panel__label">В каталоге</span>
+              <div class="filter-panel__chips">
+                <button class="chip chip--active" type="button" data-filter="status" data-value="">Все</button>
+                <button class="chip" type="button" data-filter="status" data-value="in">Да</button>
+                <button class="chip" type="button" data-filter="status" data-value="out">Нет</button>
+              </div>
+            </div>
+
+            <div class="filter-panel__group">
+              <span class="filter-panel__label">Свежесть</span>
+              <div class="filter-panel__chips">
+                <button class="chip chip--active" type="button" data-filter="freshness" data-value="">Все</button>
+                <button class="chip" type="button" data-filter="freshness" data-value="fresh">Свежие (&le;35д)</button>
+                <button class="chip" type="button" data-filter="freshness" data-value="stale">Устарели</button>
+                <button class="chip" type="button" data-filter="freshness" data-value="never">Никогда</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="manager__table">
+            <thead>
+              <tr>
+                <th>Слаг</th>
+                <th>Университет</th>
+                <th>Город</th>
+                <th>Тир</th>
+                <th>Агрегатор</th>
+                <th>В каталоге</th>
+                <th>Последняя проверка</th>
+                <th aria-label="Действие"></th>
+              </tr>
+            </thead>
+            <tbody id="registry-tbody">
+              <tr>
+                <td colspan="8" class="table-loading">Загрузка реестра…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card card--flush log-card">
+        <header class="log-card__head">
+          <h2 class="card__title">Лог последнего запуска</h2>
+          <span id="log-summary" class="muted log-card__summary"></span>
+        </header>
+        <pre id="log-output" class="log"><span class="log__empty">Лог пустой. Запустите скрапер, чтобы увидеть вывод.</span></pre>
+      </article>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .manager { padding: 56px 0 96px; background: var(--color-bg-soft); min-height: calc(100vh - 200px); }
+  .manager__head {
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 24px;
+    flex-wrap: wrap; margin-bottom: 32px;
+  }
+  .manager__eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--color-primary-dark);
+  }
+  .manager__title { margin: 0 0 8px; font-size: clamp(28px, 4vw, 40px); }
+  .manager__lead { margin: 0; max-width: 640px; color: var(--color-text-muted); }
+  .manager__health { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+  .manager__health-url { font-size: 0.8rem; color: var(--color-text-muted); }
+  .manager__health-url code {
+    font-family: ui-monospace, 'Cascadia Mono', 'JetBrains Mono', Menlo, monospace;
+    background: var(--color-bg); padding: 1px 6px; border-radius: 6px; border: 1px solid var(--color-border);
+  }
+  .link-btn {
+    background: none; border: none; padding: 0 0 0 6px; color: var(--color-primary-dark);
+    font: inherit; font-size: 0.8rem; cursor: pointer; text-decoration: underline;
+  }
+  .link-btn:hover { color: var(--color-primary); }
+
+  .banner {
+    padding: 14px 18px; border-radius: var(--radius-card); margin-bottom: 24px;
+    border: 1px solid; font-size: 0.92rem;
+  }
+  .banner--warn { background: #fff4cc; border-color: #f1d782; color: #5a4200; }
+  .banner code {
+    background: rgba(0,0,0,0.06); padding: 1px 6px; border-radius: 6px;
+    font-family: ui-monospace, 'Cascadia Mono', 'JetBrains Mono', Menlo, monospace;
+  }
+
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+  @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    box-shadow: var(--shadow-card);
+  }
+  .card--flush { padding: 0; overflow: hidden; margin-bottom: 24px; }
+  .card__head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 16px; gap: 16px;
+  }
+  .card__title {
+    margin: 0; font-size: 0.78rem;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--color-text-muted); font-weight: 700;
+  }
+  .card__title--mono {
+    text-transform: none; letter-spacing: 0; font-weight: 500;
+    font-family: ui-monospace, 'Cascadia Mono', 'JetBrains Mono', Menlo, monospace;
+  }
+  .card__big {
+    margin: 0; font-size: 1.9rem; font-weight: 900; line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .card__sub { margin: 8px 0 0; color: var(--color-text-muted); }
+  .card__link {
+    display: inline-block; margin-top: 6px;
+    font-size: 0.95rem; word-break: break-all;
+  }
+
+  .meta { margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .meta > div { display: flex; justify-content: space-between; font-size: 0.85rem; gap: 12px; }
+  .meta dt { color: var(--color-text-muted); margin: 0; }
+  .meta dd { margin: 0; text-align: right; }
+
+  .manager__run { margin-bottom: 24px; }
+  .manager__actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 16px; }
+  .manager__hint { font-size: 0.88rem; max-width: 480px; }
+
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 14px; border-radius: var(--radius-pill);
+    font-size: 0.82rem; font-weight: 600;
+  }
+  .status-pill__dot { width: 8px; height: 8px; border-radius: 50%; }
+  .status-pill--idle { background: var(--color-bg-soft); color: var(--color-text-muted); }
+  .status-pill--idle .status-pill__dot { background: var(--color-text-faint); }
+  .status-pill--running { background: var(--color-primary-soft); color: var(--color-primary-dark); }
+  .status-pill--running .status-pill__dot { background: var(--color-primary); animation: pulse 1.2s infinite; }
+  .status-pill--ok { background: var(--color-primary-soft); color: var(--color-primary-dark); }
+  .status-pill--ok .status-pill__dot { background: var(--color-primary); }
+  .status-pill--fail { background: #fce8e8; color: #c43030; }
+  .status-pill--fail .status-pill__dot { background: #c43030; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  /* ---------- compact filter bar + rolldown ---------- */
+  .filterbar-mini {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    padding: 14px 16px; border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+  .filterbar-mini__search {
+    flex: 1 1 240px; min-width: 200px;
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 12px;
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    transition: border-color 140ms ease, box-shadow 140ms ease;
+  }
+  .filterbar-mini__search:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-soft);
+  }
+  .filterbar-mini__search input {
+    flex: 1; border: none; outline: none; background: transparent;
+    font: inherit; font-size: 0.88rem; color: var(--color-text);
+    padding: 4px 0;
+  }
+  .filterbar-mini__search input::-webkit-search-cancel-button { cursor: pointer; }
+  .filterbar-mini__search-icon { font-size: 0.85rem; opacity: 0.6; }
+
+  .filterbar-mini__toggle {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 14px;
+  }
+  .filterbar-mini__chev {
+    font-size: 0.7rem; transition: transform 200ms ease;
+  }
+  .filterbar-mini__toggle[aria-expanded="true"] .filterbar-mini__chev {
+    transform: rotate(180deg);
+  }
+  .filterbar-mini__count {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 18px; height: 18px; padding: 0 6px;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary); color: #fff;
+    font-size: 0.7rem; font-weight: 700;
+  }
+  .filterbar-mini__result {
+    margin-left: auto; font-size: 0.8rem; white-space: nowrap;
+  }
+
+  .filter-panel {
+    max-height: 0; overflow: hidden;
+    transition: max-height 260ms ease, border-color 260ms ease;
+    border-bottom: 1px solid transparent;
+    background: var(--color-bg-soft);
+  }
+  .filter-panel[data-open="true"] {
+    max-height: 600px;
+    border-bottom-color: var(--color-border);
+  }
+  .filter-panel__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px 24px;
+    padding: 16px 20px 20px;
+  }
+  .filter-panel__group { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .filter-panel__label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--color-text-muted);
+  }
+  .filter-panel__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .filter-panel__select {
+    padding: 6px 10px; border: 1px solid var(--color-border);
+    border-radius: 10px; background: var(--color-bg);
+    font: inherit; font-size: 0.85rem; color: var(--color-text);
+    outline: none; max-width: 100%;
+  }
+  .filter-panel__select:focus { border-color: var(--color-primary); }
+
+  .chip {
+    display: inline-flex; align-items: center;
+    padding: 4px 12px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    border-radius: var(--radius-pill);
+    font: inherit; font-size: 0.78rem; font-weight: 500;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+    white-space: nowrap;
+  }
+  .chip:hover:not(.chip--active) { border-color: var(--color-primary); color: var(--color-primary); }
+  .chip--active {
+    background: var(--color-primary-soft);
+    border-color: var(--color-primary);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+  }
+
+  .table-wrap { overflow-x: auto; }
+  .manager__table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  .manager__table th, .manager__table td {
+    padding: 12px 16px; text-align: left;
+    border-bottom: 1px solid var(--color-border); vertical-align: middle;
+  }
+  .manager__table th {
+    background: var(--color-bg-soft);
+    font-weight: 700; font-size: 0.74rem;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+  .manager__table tr:last-child td { border-bottom: none; }
+  .manager__table code {
+    font-family: ui-monospace, 'Cascadia Mono', 'JetBrains Mono', Menlo, monospace;
+    font-size: 0.86rem;
+  }
+  .table-loading {
+    text-align: center; color: var(--color-text-faint); padding: 32px;
+  }
+
+  .tier {
+    display: inline-block; padding: 2px 9px;
+    border-radius: var(--radius-pill);
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .tier--partner { background: var(--color-primary-soft); color: var(--color-primary-dark); }
+  .tier--official { background: #fff4cc; color: #6b4d00; }
+  .tier--aggregator { background: var(--color-bg-soft); color: var(--color-text-muted); }
+  .checked-fresh { color: var(--color-primary-dark); font-weight: 600; }
+  .checked-stale { color: #c47a30; font-weight: 600; }
+  .checked-never { color: var(--color-text-faint); font-style: italic; }
+
+  .log-card__head {
+    padding: 16px 20px; border-bottom: 1px solid var(--color-border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .log-card__summary { font-size: 0.85rem; }
+  .log {
+    background: #0f0f0f; color: #e6e6e6;
+    font-family: ui-monospace, 'Cascadia Mono', 'JetBrains Mono', Menlo, monospace;
+    font-size: 0.82rem; line-height: 1.5;
+    padding: 16px 20px;
+    max-height: 380px; overflow-y: auto;
+    white-space: pre-wrap; word-break: break-word;
+    margin: 0;
+  }
+  .log__line { display: block; }
+  .log__line--ok { color: #93e695; }
+  .log__line--fail { color: #ff8a8a; }
+  .log__line--warn { color: #ffd699; }
+  .log__line--meta { color: #888; }
+  .log__empty { padding: 24px 0; text-align: center; color: #888; font-style: italic; display: block; }
+</style>
+
+<script define:vars={{ controlDefaultUrl: CONTROL_DEFAULT_URL }}>
+  const STORAGE_KEY = 'studyroom.manager.controlUrl';
+  const POLL_INTERVAL_RUNNING_MS = 1500;
+  const POLL_INTERVAL_IDLE_MS = 8000;
+  const POLL_INTERVAL_OFFLINE_MS = 5000;
+
+  let pollTimer = null;
+  let isOnline = false;
+  let lastRegistry = [];
+  let lastAggregators = [];
+  const filters = {
+    search: '',
+    aggregator: '',
+    tiers: new Set(),
+    country: '',
+    status: '',
+    freshness: '',
+  };
+
+  function getControlUrl() {
+    try {
+      return localStorage.getItem(STORAGE_KEY) || controlDefaultUrl;
+    } catch {
+      return controlDefaultUrl;
+    }
+  }
+
+  function setControlUrl(url) {
+    try {
+      if (url) localStorage.setItem(STORAGE_KEY, url);
+      else localStorage.removeItem(STORAGE_KEY);
+    } catch {}
+    document.getElementById('health-url').textContent = getControlUrl();
+  }
+
+  const fmt = {
+    dateLocal(iso) {
+      if (!iso) return '—';
+      return new Date(iso).toLocaleString('ru-RU', {
+        day: '2-digit', month: 'long', year: 'numeric',
+        hour: '2-digit', minute: '2-digit',
+      });
+    },
+    relative(iso) {
+      if (!iso) return '—';
+      const diffMs = new Date(iso) - new Date();
+      const totalMin = Math.round(diffMs / 60000);
+      if (totalMin < 0) return 'в прошлом';
+      if (totalMin < 60) return 'через ' + totalMin + ' мин';
+      const totalHr = Math.round(totalMin / 60);
+      if (totalHr < 24) return 'через ' + totalHr + ' ч';
+      const days = Math.round(totalHr / 24);
+      return 'через ' + days + ' дн';
+    },
+    ago(iso) {
+      if (!iso) return null;
+      const diffMs = new Date() - new Date(iso);
+      const totalMin = Math.round(diffMs / 60000);
+      if (totalMin < 1) return 'только что';
+      if (totalMin < 60) return totalMin + ' мин назад';
+      const totalHr = Math.round(totalMin / 60);
+      if (totalHr < 24) return totalHr + ' ч назад';
+      const days = Math.round(totalHr / 24);
+      return days + ' дн назад';
+    },
+    stalenessClass(iso) {
+      if (!iso) return 'checked-never';
+      const days = (new Date() - new Date(iso)) / (1000 * 60 * 60 * 24);
+      return days <= 35 ? 'checked-fresh' : 'checked-stale';
+    },
+  };
+
+  function classifyLogLine(line) {
+    if (/^\[ok\]/.test(line)) return 'log__line--ok';
+    if (/^\[fail\]|spawn error|fail/i.test(line)) return 'log__line--fail';
+    if (/^\[skip\]|warn/i.test(line)) return 'log__line--warn';
+    if (/^[>=]|^Done:/i.test(line)) return 'log__line--meta';
+    return '';
+  }
+
+  function escapeHtml(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function renderLog(log) {
+    const el = document.getElementById('log-output');
+    if (!log || log.length === 0) {
+      el.innerHTML = '<span class="log__empty">Лог пустой. Запустите скрапер, чтобы увидеть вывод.</span>';
+      return;
+    }
+    el.innerHTML = log.map((entry) => {
+      const cls = classifyLogLine(entry.line);
+      return '<span class="log__line ' + cls + '">' + escapeHtml(entry.line) + '</span>';
+    }).join('\n');
+    el.scrollTop = el.scrollHeight;
+  }
+
+  function renderRunStatus(run) {
+    const pill = document.getElementById('run-status');
+    const txt = document.getElementById('run-status-text');
+    const summary = document.getElementById('run-summary');
+    const btn = document.getElementById('run-all-btn');
+
+    pill.className = 'status-pill';
+
+    if (run.running) {
+      pill.classList.add('status-pill--running');
+      txt.textContent = 'Идёт скрапинг';
+      const target = run.currentTarget === 'all' ? 'все университеты' : run.currentTarget;
+      summary.textContent = 'Цель: ' + target + '. Запущено ' + fmt.ago(run.startedAt) + '. Кнопки отключены до завершения.';
+      btn.disabled = true;
+      btn.textContent = 'Идёт скрапинг…';
+    } else if (run.exitCode === null) {
+      pill.classList.add('status-pill--idle');
+      txt.textContent = 'Ожидание';
+      summary.textContent = 'Скрапер не запускался в этой сессии. Нажмите кнопку — обновятся все 16 университетов.';
+      btn.disabled = !isOnline;
+      btn.textContent = 'Запустить скрапинг сейчас';
+    } else if (run.exitCode === 0) {
+      pill.classList.add('status-pill--ok');
+      txt.textContent = 'Успешно';
+      summary.textContent = 'Завершено ' + fmt.ago(run.finishedAt) + '. Цель: ' + (run.currentTarget === 'all' ? 'все' : run.currentTarget) + '. Можно запустить снова.';
+      btn.disabled = !isOnline;
+      btn.textContent = 'Запустить ещё раз';
+    } else {
+      pill.classList.add('status-pill--fail');
+      txt.textContent = 'Ошибка (код ' + run.exitCode + ')';
+      summary.textContent = 'Последний запуск завершился с ошибкой ' + fmt.ago(run.finishedAt) + '. Смотрите лог ниже.';
+      btn.disabled = !isOnline;
+      btn.textContent = 'Повторить';
+    }
+  }
+
+  function rowFreshness(row) {
+    const iso = row.catalog && row.catalog.lastChecked;
+    if (!iso) return 'never';
+    const days = (new Date() - new Date(iso)) / (1000 * 60 * 60 * 24);
+    return days <= 35 ? 'fresh' : 'stale';
+  }
+
+  function rowMatchesFilters(row) {
+    if (filters.search) {
+      const q = filters.search.toLowerCase();
+      if (!row.slug.toLowerCase().includes(q) && !row.name.toLowerCase().includes(q)) return false;
+    }
+    if (filters.aggregator && row.aggregatorSlug !== filters.aggregator) return false;
+    if (filters.tiers.size > 0 && !filters.tiers.has(row.tier)) return false;
+    if (filters.country && row.country !== filters.country) return false;
+    if (filters.status === 'in' && !row.catalog) return false;
+    if (filters.status === 'out' && row.catalog) return false;
+    if (filters.freshness && rowFreshness(row) !== filters.freshness) return false;
+    return true;
+  }
+
+  function aggregatorLabel(slug) {
+    if (!slug) return '—';
+    const found = lastAggregators.find((a) => a.slug === slug);
+    return found ? found.name : slug;
+  }
+
+  function renderRegistry(registry) {
+    lastRegistry = registry || [];
+    const tbody = document.getElementById('registry-tbody');
+    if (lastRegistry.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="8" class="table-loading">Реестр пуст. Проверьте sources/universities.list.md</td></tr>';
+      updateResultCount(0, 0);
+      return;
+    }
+    const filtered = lastRegistry.filter(rowMatchesFilters);
+    if (filtered.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="8" class="table-loading">Ничего не найдено. Попробуйте сбросить фильтры.</td></tr>';
+      updateResultCount(0, lastRegistry.length);
+      return;
+    }
+    tbody.innerHTML = filtered.map((row) => {
+      const inCatalog = row.catalog ? 'да' : '—';
+      const checked = row.catalog && row.catalog.lastChecked;
+      const checkedLabel = checked ? fmt.ago(checked) : 'никогда';
+      const checkedCls = fmt.stalenessClass(checked);
+      const disabledAttr = isOnline ? '' : ' disabled';
+      const aggLabel = aggregatorLabel(row.aggregatorSlug);
+      const aggCell = row.aggregatorSlug
+        ? '<span class="tier tier--' + escapeHtml(lastAggregators.find((a) => a.slug === row.aggregatorSlug)?.tier || 'aggregator') + '">' + escapeHtml(aggLabel) + '</span>'
+        : '<span class="muted">—</span>';
+      return '<tr>' +
+        '<td><code>' + escapeHtml(row.slug) + '</code></td>' +
+        '<td>' + escapeHtml(row.name) + '</td>' +
+        '<td>' + escapeHtml(row.city) + '</td>' +
+        '<td><span class="tier tier--' + escapeHtml(row.tier) + '">' + escapeHtml(row.tier) + '</span></td>' +
+        '<td>' + aggCell + '</td>' +
+        '<td>' + inCatalog + '</td>' +
+        '<td><span class="' + checkedCls + '">' + checkedLabel + '</span></td>' +
+        '<td><button class="btn btn-ghost btn-sm" data-run-slug="' + escapeHtml(row.slug) + '"' + disabledAttr + '>обновить</button></td>' +
+        '</tr>';
+    }).join('');
+    updateResultCount(filtered.length, lastRegistry.length);
+  }
+
+  function updateResultCount(shown, total) {
+    const el = document.getElementById('filter-result-count');
+    if (!el) return;
+    el.textContent = total === 0 ? '' : (shown === total ? total + ' из ' + total : shown + ' из ' + total);
+  }
+
+  function countActiveFilters() {
+    let n = 0;
+    if (filters.search) n++;
+    if (filters.aggregator) n++;
+    if (filters.tiers.size > 0) n++;
+    if (filters.country) n++;
+    if (filters.status) n++;
+    if (filters.freshness) n++;
+    return n;
+  }
+
+  function refreshFilterCountBadge() {
+    const n = countActiveFilters();
+    const badge = document.getElementById('filter-count');
+    if (!badge) return;
+    if (n === 0) {
+      badge.hidden = true;
+      badge.textContent = '';
+    } else {
+      badge.hidden = false;
+      badge.textContent = String(n);
+    }
+  }
+
+  function applyFiltersAndRerender() {
+    refreshFilterCountBadge();
+    renderRegistry(lastRegistry);
+  }
+
+  function syncAggregatorChips(aggregators) {
+    lastAggregators = aggregators || [];
+    const container = document.getElementById('filter-aggregator-chips');
+    if (!container) return;
+    const existing = new Set(Array.from(container.querySelectorAll('.chip')).map((c) => c.dataset.value));
+    for (const agg of lastAggregators) {
+      if (existing.has(agg.slug)) continue;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'chip';
+      btn.dataset.filter = 'aggregator';
+      btn.dataset.value = agg.slug;
+      btn.textContent = agg.name;
+      container.appendChild(btn);
+    }
+  }
+
+  function syncCountryOptions(registry) {
+    const select = document.getElementById('filter-country');
+    if (!select) return;
+    const countries = Array.from(new Set((registry || []).map((r) => r.country))).sort((a, b) => a.localeCompare(b, 'ru'));
+    const current = filters.country;
+    const existing = new Set(Array.from(select.options).map((o) => o.value));
+    for (const c of countries) {
+      if (existing.has(c)) continue;
+      const opt = document.createElement('option');
+      opt.value = c; opt.textContent = c;
+      select.appendChild(opt);
+    }
+    if (current) select.value = current;
+  }
+
+  function renderSchedule(schedule) {
+    document.getElementById('next-run-local').textContent = fmt.dateLocal(schedule.nextRunUTC);
+    document.getElementById('next-run-relative').textContent = fmt.relative(schedule.nextRunUTC);
+    document.getElementById('next-run-utc').textContent = schedule.nextRunUTC || '—';
+    document.getElementById('schedule-source').innerHTML = '<code>' + escapeHtml(schedule.source || '—') + '</code>';
+    document.getElementById('cron-pill').innerHTML = schedule.cron ? '<code>' + escapeHtml(schedule.cron) + '</code>' : '—';
+  }
+
+  function renderSource(profile, registryCount, catalogCount) {
+    document.getElementById('source-name').textContent = profile.name || '—';
+    const link = document.getElementById('source-url');
+    link.textContent = profile.baseUrl || '—';
+    link.href = profile.baseUrl || '#';
+    const tierEl = document.getElementById('source-tier');
+    tierEl.className = 'tier tier--' + (profile.tier || 'partner');
+    tierEl.textContent = (profile.tier || 'partner').toUpperCase();
+    document.getElementById('registry-count').textContent = registryCount;
+    document.getElementById('catalog-count').textContent = catalogCount;
+  }
+
+  function renderLogSummary(run) {
+    const el = document.getElementById('log-summary');
+    if (run.running) el.textContent = 'идёт…';
+    else if (run.startedAt && run.finishedAt) {
+      const dur = Math.round((new Date(run.finishedAt) - new Date(run.startedAt)) / 1000);
+      el.textContent = 'длительность ' + dur + ' с';
+    } else el.textContent = '';
+  }
+
+  function setHealth(state) {
+    const pill = document.querySelector('#health .status-pill');
+    const txt = document.getElementById('health-text');
+    const banner = document.getElementById('offline-banner');
+    pill.className = 'status-pill';
+    if (state === 'online') {
+      isOnline = true;
+      pill.classList.add('status-pill--ok');
+      txt.textContent = 'Панель управления онлайн';
+      banner.hidden = true;
+    } else {
+      isOnline = false;
+      pill.classList.add('status-pill--fail');
+      txt.textContent = 'Панель управления оффлайн';
+      banner.hidden = false;
+      document.getElementById('run-all-btn').disabled = true;
+    }
+  }
+
+  async function fetchStatus() {
+    const url = getControlUrl();
+    try {
+      const res = await fetch(url + '/api/status', { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      setHealth('online');
+
+      renderSchedule(data.schedule);
+      const catalogCount = data.registry.filter((r) => r.catalog).length;
+      renderSource(data.sourceProfile, data.registry.length, catalogCount);
+      renderRunStatus(data.run);
+      syncAggregatorChips(data.aggregators || []);
+      syncCountryOptions(data.registry);
+      renderRegistry(data.registry);
+      renderLog(data.run.log);
+      renderLogSummary(data.run);
+
+      const next = data.run.running ? POLL_INTERVAL_RUNNING_MS : POLL_INTERVAL_IDLE_MS;
+      clearTimeout(pollTimer);
+      pollTimer = setTimeout(fetchStatus, next);
+    } catch (err) {
+      console.warn('manager status fetch failed', err);
+      setHealth('offline');
+      clearTimeout(pollTimer);
+      pollTimer = setTimeout(fetchStatus, POLL_INTERVAL_OFFLINE_MS);
+    }
+  }
+
+  async function postJson(path, body) {
+    const url = getControlUrl();
+    const res = await fetch(url + path, {
+      method: 'POST',
+      headers: body ? { 'content-type': 'application/json' } : undefined,
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error('HTTP ' + res.status + ': ' + text);
+    }
+    return res.json();
+  }
+
+  document.getElementById('run-all-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('run-all-btn');
+    btn.disabled = true;
+    btn.textContent = 'Запускаем…';
+    try {
+      await postJson('/api/run', null);
+    } catch (err) {
+      alert('Не удалось запустить: ' + err.message);
+    }
+    fetchStatus();
+  });
+
+  document.addEventListener('click', async (e) => {
+    const target = e.target;
+    if (!target || !(target instanceof HTMLElement)) return;
+    const slug = target.dataset?.runSlug;
+    if (!slug) return;
+    target.disabled = true;
+    const original = target.textContent;
+    target.textContent = '…';
+    try {
+      await postJson('/api/run-one', { slug });
+    } catch (err) {
+      alert('Не удалось запустить ' + slug + ': ' + err.message);
+      target.disabled = false;
+      target.textContent = original;
+    }
+    fetchStatus();
+  });
+
+  document.getElementById('health-edit').addEventListener('click', () => {
+    const current = getControlUrl();
+    const next = prompt('URL панели управления (control-panel API):', current);
+    if (next === null) return;
+    const trimmed = next.trim().replace(/\/$/, '');
+    if (trimmed && !/^https?:\/\//.test(trimmed)) {
+      alert('URL должен начинаться с http:// или https://');
+      return;
+    }
+    setControlUrl(trimmed || null);
+    fetchStatus();
+  });
+
+  function debounce(fn, wait) {
+    let t;
+    return function (...args) {
+      clearTimeout(t);
+      t = setTimeout(() => fn.apply(this, args), wait);
+    };
+  }
+
+  document.getElementById('filter-search').addEventListener(
+    'input',
+    debounce((e) => {
+      filters.search = e.target.value.trim();
+      applyFiltersAndRerender();
+    }, 120),
+  );
+
+  document.getElementById('filter-toggle').addEventListener('click', () => {
+    const btn = document.getElementById('filter-toggle');
+    const panel = document.getElementById('filter-panel');
+    const isOpen = panel.dataset.open === 'true';
+    panel.dataset.open = isOpen ? 'false' : 'true';
+    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  });
+
+  document.getElementById('filter-country').addEventListener('change', (e) => {
+    filters.country = e.target.value;
+    applyFiltersAndRerender();
+  });
+
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) return;
+    if (!target.classList.contains('chip')) return;
+    const kind = target.dataset.filter;
+    const value = target.dataset.value || '';
+    if (!kind) return;
+
+    if (kind === 'tier') {
+      if (filters.tiers.has(value)) filters.tiers.delete(value);
+      else filters.tiers.add(value);
+      target.classList.toggle('chip--active');
+    } else {
+      filters[kind] = value;
+      const group = target.parentElement;
+      if (group) {
+        group.querySelectorAll('.chip').forEach((c) => c.classList.remove('chip--active'));
+      }
+      target.classList.add('chip--active');
+    }
+    applyFiltersAndRerender();
+  });
+
+  document.getElementById('filter-reset').addEventListener('click', () => {
+    filters.search = '';
+    filters.aggregator = '';
+    filters.tiers.clear();
+    filters.country = '';
+    filters.status = '';
+    filters.freshness = '';
+
+    document.getElementById('filter-search').value = '';
+    document.getElementById('filter-country').value = '';
+    document.querySelectorAll('#filter-panel .chip').forEach((chip) => {
+      chip.classList.toggle('chip--active', chip.dataset.value === '');
+    });
+    applyFiltersAndRerender();
+  });
+
+  document.getElementById('health-url').textContent = getControlUrl();
+  fetchStatus();
+</script>

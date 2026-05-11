@@ -1,6 +1,9 @@
-# Universities — Kaplan UK partners (Stage 0)
+# Universities — Kaplan partners (Stage 0)
 
-> **Source:** https://www.kaplanpathways.com/where-to-study/uk-universities/ (16 partners as of 2026-05-10)
+> **Sources:**
+> - UK (16): https://www.kaplanpathways.com/where-to-study/uk-universities/ (as of 2026-05-10)
+> - Canada (2): https://www.kaplanpathways.com/where-to-study/canadian-universities/ (as of 2026-05-11)
+>
 > Stage 3 scraper reads this file via `--all`. Slug must be URL-friendly (lowercase, hyphens, ASCII).
 > Tier `partner` = StudyRoom contract via Kaplan; data trumps everything else.
 
@@ -22,6 +25,8 @@
 | westminster | University of Westminster | United Kingdom | London | partner | https://www.westminster.ac.uk/ | https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-westminster/ | |
 | york | University of York | United Kingdom | York | partner | https://www.york.ac.uk/ | https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-york/ | Russell Group |
 | uwe-bristol | UWE Bristol | United Kingdom | Bristol | partner | https://www.uwe.ac.uk/ | https://www.kaplanpathways.com/where-to-study/uk-universities/uwe-bristol/ | Univ. of West of England |
+| alberta | University of Alberta | Canada | Edmonton | partner | https://www.ualberta.ca/ | https://www.kaplanpathways.com/where-to-study/canadian-universities/university-of-alberta/ | Top 5 Canadian university, U15 group |
+| victoria | University of Victoria | Canada | Victoria | partner | https://www.uvic.ca/ | https://www.kaplanpathways.com/where-to-study/canadian-universities/university-of-victoria/ | British Columbia, on Vancouver Island |
 
 ## Stage status
 

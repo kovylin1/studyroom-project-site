@@ -183,16 +183,35 @@ const mapsOpenUrl = coords
 const heroSubtitle = `${u.city} · ${u.country}`;
 const description = `${u.name} — поступление через StudyRoom. Программы, стоимость и дедлайны обновлены ${lastChecked}.`;
 
-// Hero photos (from gallery): photo 1 → blurred backdrop, photo 2 → sharp square.
-// Faculty cards draw from the rest of the gallery (skipping the 2 hero shots) so
-// no card repeats a photo already shown in the hero, and each card gets a
-// distinct photo when enough are available. Falls back gracefully if the uni
-// has fewer than expected photos.
+// Split a "$79 [TBD] $200"-style or "[TBD: £/нед]"-style price into the
+// visible price text plus a TBD badge flag — mirrors oxford-landing's
+// `withTBD()` helper. Used by accommodation cards below.
+function priceParts(price: string | undefined): { text: string; tbd: boolean } {
+  if (!price) return { text: '', tbd: false };
+  const wholeTbd = price.match(/^\s*\[TBD(?::\s*(.*?))?\]\s*$/);
+  if (wholeTbd) return { text: (wholeTbd[1] ?? '').trim(), tbd: true };
+  const inline = price.match(/^(.*?)\s*\[TBD(?::\s*.*?)?\]\s*(.*)$/);
+  if (inline) return { text: `${inline[1]} ${inline[2]}`.replace(/\s+/g, ' ').trim(), tbd: true };
+  return { text: price, tbd: false };
+}
+
+// Photo allocation strategy (avoids repetition across visually-adjacent
+// sections). With ~10 photos per uni:
+//   Hero (top of page):                photos 1, 2
+//   Gallery (right under hero):        photos 3, 4, 5  — see slice(HERO_SKIP)
+//   Faculty / programs cards:          photos 6+      — see FACULTY_SKIP
+//   Campus cards (cli.ts):             photos 6-9
+//   Accommodation cards (cli.ts):      photos 10, 9, 8
+// Faculty cards share the 6-10 pool with campus + accommodation, but those
+// sections are separated by several content blocks so the repetition is
+// far less noticeable than hero ↔ gallery side-by-side.
 const galleryPhotos = u.gallery?.items?.map((it) => it.img) ?? [];
 const heroBgPhoto = galleryPhotos[0];
 const heroCoverPhoto = galleryPhotos[1] ?? galleryPhotos[0];
 const HERO_SKIP = 2;
+const FACULTY_SKIP = 5; // skip hero (1-2) + gallery tiles (3-5)
 const facultyPool =
+  galleryPhotos.length > FACULTY_SKIP ? galleryPhotos.slice(FACULTY_SKIP) :
   galleryPhotos.length > HERO_SKIP ? galleryPhotos.slice(HERO_SKIP) : galleryPhotos;
 function facultyPhoto(i: number): string | undefined {
   if (facultyPool.length === 0) return undefined;
@@ -277,24 +296,33 @@ function facultyPhoto(i: number): string | undefined {
     </section>
 
     <!-- 3b. Gallery — university photos (oxford-style 1.2fr/1fr mosaic) -->
-    {u.gallery && u.gallery.items.length > 0 && (
-      <section id="gallery" class="section gallery">
-        <div class="container">
-          <div class="section__head">
-            <h2 class="gallery__title">Фото университета</h2>
-            <p class="gallery__subtitle">Как выглядит кампус, в котором будут учиться наши студенты.</p>
+    {u.gallery && u.gallery.items.length > 0 && (() => {
+      // Skip the 2 hero photos so the gallery shows DIFFERENT tiles below the
+      // hero. Falls back to "all photos" only when the uni has fewer than 3
+      // gallery items (in which case duplication is unavoidable but rare).
+      const galleryTiles = u.gallery.items.length > HERO_SKIP
+        ? u.gallery.items.slice(HERO_SKIP, HERO_SKIP + 3)
+        : u.gallery.items.slice(0, 3);
+      if (galleryTiles.length === 0) return null;
+      return (
+        <section id="gallery" class="section gallery">
+          <div class="container">
+            <div class="section__head">
+              <h2 class="gallery__title">Фото университета</h2>
+              <p class="gallery__subtitle">Как выглядит кампус, в котором будут учиться наши студенты.</p>
+            </div>
+            <div class="gallery__grid">
+              {galleryTiles.map((item, i) => (
+                <figure class={`gallery__tile gallery__tile--${i + 1}`}>
+                  <img src={item.img} alt={item.caption ?? ''} loading="lazy" />
+                  {item.caption && <figcaption>{item.caption}</figcaption>}
+                </figure>
+              ))}
+            </div>
           </div>
-          <div class="gallery__grid">
-            {u.gallery.items.slice(0, 3).map((item, i) => (
-              <figure class={`gallery__tile gallery__tile--${i + 1}`}>
-                <img src={item.img} alt={item.caption ?? ''} loading="lazy" />
-                {item.caption && <figcaption>{item.caption}</figcaption>}
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
+        </section>
+      );
+    })()}
 
     <!-- 4. Programs + inline CTA -->
     <section id="programs" class="section section--soft programs">
@@ -349,11 +377,51 @@ function facultyPhoto(i: number): string | undefined {
                       </p>
                     ))}
                     {fac.programs.length > 8 && (
-                      <p class="card__text muted-inline">… и ещё {fac.programs.length - 8} программ</p>
+                      <button
+                        class="programs-modal__open btn btn--ghost btn--sm"
+                        type="button"
+                        data-modal-target={`programs-modal-${idx}`}
+                      >
+                        Подробнее · ещё {fac.programs.length - 8} {fac.programs.length - 8 === 1 ? 'программа' : 'программ'}
+                      </button>
                     )}
                     <a class="btn btn--primary" href="#cta">Узнать о поступлении</a>
                   </div>
                 </div>
+                {fac.programs.length > 8 && (
+                  <dialog class="programs-modal" id={`programs-modal-${idx}`} aria-labelledby={`programs-modal-title-${idx}`}>
+                    <div class="programs-modal__inner">
+                      <header class="programs-modal__head">
+                        <div>
+                          <p class="programs-modal__eyebrow">{u.name}</p>
+                          <h3 class="programs-modal__title" id={`programs-modal-title-${idx}`}>{fac.name}</h3>
+                          <p class="programs-modal__sub">{fac.programs.length} {fac.programs.length === 1 ? 'программа' : 'программ'} · все направления факультета</p>
+                        </div>
+                        <button class="programs-modal__close" type="button" aria-label="Закрыть">
+                          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" />
+                          </svg>
+                        </button>
+                      </header>
+                      <ul class="programs-modal__list">
+                        {fac.programs.map((p) => (
+                          <li class="programs-modal__row">
+                            <span class={`programs-modal__level programs-modal__level--${p.level}`}>
+                              {LEVEL_LABELS[p.level] ?? p.level}
+                            </span>
+                            <span class="programs-modal__title-cell">{p.title}</span>
+                            {p.tuition !== undefined && p.tuition > 0 && (
+                              <span class="programs-modal__price">
+                                {p.tuition.toLocaleString('ru-RU')} {u.tuition.currency}/год
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                      <a class="btn btn--primary programs-modal__cta" href="#cta">Узнать о поступлении</a>
+                    </div>
+                  </dialog>
+                )}
               </article>
             );
           })}
@@ -481,6 +549,75 @@ function facultyPhoto(i: number): string | undefined {
         </div>
       </div>
     </section>
+
+    {u.accommodation && u.accommodation.length > 0 && (
+      <section id="accommodation" class="section section--soft accommodation">
+        <div class="container">
+          <div class="section__head">
+            <h2>Размещение</h2>
+          </div>
+          <div class="accommodation__grid">
+            {u.accommodation.map((item) => {
+              const p = priceParts(item.price);
+              return (
+                <article class="card">
+                  {item.img ? (
+                    <img class="card__img" src={item.img} alt={item.name} loading="lazy" />
+                  ) : (
+                    <div class="card__img placeholder-img" aria-hidden="true">
+                      <img src={`/logos/${u.slug}.png`} alt="" loading="lazy" />
+                    </div>
+                  )}
+                  <div class="card__body">
+                    <h3 class="card__title">{item.name}</h3>
+                    {(item.price || item.oldPrice) && (
+                      <div>
+                        {item.price && (
+                          <span class="card__price">
+                            {p.text || '—'}
+                            {p.tbd && <span class="tbd">TBD</span>}
+                          </span>
+                        )}
+                        {item.oldPrice && <span class="card__price-old">{item.oldPrice}</span>}
+                      </div>
+                    )}
+                    {item.text && <p class="card__text">{item.text}</p>}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {u.campuses && u.campuses.length > 0 && (
+      <section id="campuses" class="section campuses campuses--centered">
+        <div class="container">
+          <div class="section__head">
+            <h2>Кампусы университета</h2>
+          </div>
+          <div class="campuses__grid">
+            {u.campuses.map((item) => (
+              <article class="card campus-card">
+                {item.img ? (
+                  <img class="campus-card__img" src={item.img} alt={item.title} loading="lazy" />
+                ) : (
+                  <div class="campus-card__img placeholder-img" aria-hidden="true">
+                    <img src={`/logos/${u.slug}.png`} alt="" loading="lazy" />
+                  </div>
+                )}
+                <div class="campus-card__body">
+                  {item.sub && <span class="card__sub">{item.sub}</span>}
+                  <h3 class="card__title">{item.title}</h3>
+                  {item.text && <p class="card__text">{item.text}</p>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
 
     <!-- 10. Important -->
     <section id="important" class="section section--soft important">
@@ -651,6 +788,7 @@ function facultyPhoto(i: number): string | undefined {
 <script>
   import '~/scripts/oxford-phone-mask';
   import '~/scripts/oxford-program-card';
+  import '~/scripts/oxford-program-modal';
   import '~/scripts/oxford-chat';
   import '~/scripts/oxford-reveal';
 
@@ -772,4 +910,191 @@ function facultyPhoto(i: number): string | undefined {
     background: transparent;
   }
   .muted-inline { color: var(--text-muted); font-weight: 400; }
+
+  /* Center-align campus card text — opt-in via .campuses--centered on the section. */
+  .campuses--centered .campus-card__body { align-items: center; text-align: center; }
+  .campuses--centered .campus-card__body .card__sub { align-self: center; }
+  /* Horizontally center the campus card row regardless of count (1, 2, 3 or 4 cards),
+     and match the size of the accommodation cards (~380px wide via repeat(3, 1fr)
+     in oxford-landing.css). Using flex with a generous basis so 3 cards fill the
+     row at desktop while 1-2 cards stay centered with breathing room. */
+  .campuses--centered .campuses__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+  .campuses--centered .campuses__grid > .campus-card {
+    flex: 1 1 320px;
+    max-width: 400px;
+    min-width: 280px;
+  }
+  /* When there are 4 cards (Westminster, Queen Mary, Nottingham, UWE),
+     allow tighter packing to keep 4 per row instead of wrapping awkwardly. */
+  .campuses--centered .campuses__grid:has(> .campus-card:nth-child(4)) > .campus-card {
+    flex: 1 1 240px;
+    max-width: 300px;
+    min-width: 220px;
+  }
+  @media (max-width: 1000px) {
+    .campuses--centered .campuses__grid > .campus-card { flex: 1 1 calc(50% - 24px); max-width: none; min-width: 0; }
+  }
+  @media (max-width: 600px) {
+    .campuses--centered .campuses__grid > .campus-card { flex: 1 1 100%; }
+  }
+
+  /* ---------- programs modal (faculty with >8 programs) ---------- */
+  .programs-modal__open {
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+  .programs-modal {
+    border: none;
+    border-radius: 20px;
+    padding: 0;
+    width: min(720px, 92vw);
+    max-height: 88vh;
+    overflow: hidden;
+    background: var(--bg, #fff);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+  }
+  .programs-modal::backdrop {
+    background: rgba(15, 22, 30, 0.55);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+  .programs-modal__inner {
+    display: flex;
+    flex-direction: column;
+    max-height: 88vh;
+  }
+  .programs-modal__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 28px 16px;
+    border-bottom: 1px solid var(--border, #e5e5e5);
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+  }
+  .programs-modal__eyebrow {
+    margin: 0 0 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted, #555);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+  .programs-modal__title {
+    margin: 0 0 6px;
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text, #111);
+  }
+  .programs-modal__sub {
+    margin: 0;
+    color: var(--text-muted, #555);
+    font-size: 0.92rem;
+  }
+  .programs-modal__close {
+    flex: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid var(--border, #e5e5e5);
+    background: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text, #111);
+    transition: background 120ms ease, border-color 120ms ease;
+  }
+  .programs-modal__close:hover {
+    background: var(--bg-soft, #f7f7f7);
+    border-color: var(--text, #111);
+  }
+  .programs-modal__list {
+    list-style: none;
+    margin: 0;
+    padding: 8px 28px 20px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .programs-modal__row {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    align-items: baseline;
+    gap: 12px 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-soft, #efefef);
+    font-size: 0.95rem;
+  }
+  .programs-modal__row:last-child { border-bottom: none; }
+  .programs-modal__level {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--green-50, #e7f6e9);
+    color: var(--green-dark, #007a0c);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .programs-modal__level--master,
+  .programs-modal__level--phd {
+    background: #fff4cc;
+    color: #6b4d00;
+  }
+  .programs-modal__level--foundation {
+    background: #e8efff;
+    color: #1d4f9a;
+  }
+  .programs-modal__title-cell {
+    color: var(--text, #111);
+    word-break: break-word;
+  }
+  .programs-modal__price {
+    color: var(--text, #111);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .programs-modal__cta {
+    align-self: flex-start;
+    margin: 0 28px 24px;
+  }
+  @media (max-width: 600px) {
+    .programs-modal__head,
+    .programs-modal__list { padding-left: 18px; padding-right: 18px; }
+    .programs-modal__cta { margin-left: 18px; margin-right: 18px; }
+    .programs-modal__row {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+    .programs-modal__price { justify-self: flex-start; }
+  }
+
+  /* Accommodation + campuses photo-placeholder (used when scraper hasn't filled real photos yet). */
+  .placeholder-img {
+    background: linear-gradient(135deg, var(--bg-soft) 0%, #e8eef4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .placeholder-img img {
+    width: 56%;
+    max-width: 180px;
+    height: auto;
+    opacity: 0.78;
+    object-fit: contain;
+    filter: grayscale(0.15);
+  }
 </style>
