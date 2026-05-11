@@ -115,7 +115,10 @@ export async function fetchAndSaveGallery(row, opts = {}) {
     return { slug: row.slug, items: [], skipped: 'no images on page' };
   }
 
-  const picked = urls.slice(0, 3);
+  // Up to 10 unique campus photos per uni — enough to give the hero (2) and
+  // up to 6 faculty cards distinct images without repeats. Pages with fewer
+  // available photos just yield fewer items; consumer (slug page) cycles.
+  const picked = urls.slice(0, 10);
   const slugDir = resolve(PHOTOS_DIR, row.slug);
   await mkdir(slugDir, { recursive: true });
 

@@ -137,15 +137,67 @@ function programsCountLabel(n: number): string {
   return n + ' программ';
 }
 
-// Google Maps embed by name search (no API key needed, works over http/https).
-// Per-uni precise coords would let us swap to the modern `/maps/embed?pb=...`
-// form — that's part of the scraper extension.
-const mapsQuery = encodeURIComponent(`${u.name}, ${u.city}, ${u.country}`);
-const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&output=embed`;
-const mapsOpenUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+// Map embed via OpenStreetMap. Google Maps' `maps.google.com/?q=…&output=embed`
+// silently fails in many contexts (file://, no API key, occasional region blocks),
+// so we use OSM which has no key requirement and works on any origin. Coords are
+// hardcoded per slug — accurate to the main campus building. Future scraper
+// extension can geocode from sourceUrl + city, then store on University.location.
+const UNI_COORDS: Record<string, { lat: number; lng: number }> = {
+  'asu-london': { lat: 51.5097, lng: -0.0871 },
+  'birmingham': { lat: 52.4508, lng: -1.9305 },
+  'bournemouth': { lat: 50.7426, lng: -1.8973 },
+  'brighton': { lat: 50.8629, lng: -0.0879 },
+  'bristol': { lat: 51.4585, lng: -2.6019 },
+  'city-london': { lat: 51.5275, lng: -0.1019 },
+  'cranfield': { lat: 52.0716, lng: -0.6259 },
+  'essex': { lat: 51.8780, lng: 0.9442 },
+  'glasgow': { lat: 55.8721, lng: -4.2880 },
+  'liverpool': { lat: 53.4060, lng: -2.9657 },
+  'nottingham': { lat: 52.9382, lng: -1.1972 },
+  'nottingham-trent': { lat: 52.9530, lng: -1.1495 },
+  'queen-mary-london': { lat: 51.5246, lng: -0.0405 },
+  'uwe-bristol': { lat: 51.5009, lng: -2.5470 },
+  'westminster': { lat: 51.5174, lng: -0.1444 },
+  'york': { lat: 53.9460, lng: -1.0538 },
+};
+
+const coords = UNI_COORDS[u.slug];
+// Small bbox around the marker (≈city-level zoom). OSM embed needs both.
+const BBOX_PAD_LAT = 0.012;
+const BBOX_PAD_LNG = 0.024;
+const bbox = coords
+  ? [
+      (coords.lng - BBOX_PAD_LNG).toFixed(4),
+      (coords.lat - BBOX_PAD_LAT).toFixed(4),
+      (coords.lng + BBOX_PAD_LNG).toFixed(4),
+      (coords.lat + BBOX_PAD_LAT).toFixed(4),
+    ].join(',')
+  : null;
+const mapsEmbedUrl = coords
+  ? `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${coords.lat},${coords.lng}`
+  : null;
+const mapsOpenUrl = coords
+  ? `https://www.google.com/maps/?q=${coords.lat},${coords.lng}`
+  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${u.name}, ${u.city}, ${u.country}`)}`;
 
 const heroSubtitle = `${u.city} · ${u.country}`;
 const description = `${u.name} — поступление через StudyRoom. Программы, стоимость и дедлайны обновлены ${lastChecked}.`;
+
+// Hero photos (from gallery): photo 1 → blurred backdrop, photo 2 → sharp square.
+// Faculty cards draw from the rest of the gallery (skipping the 2 hero shots) so
+// no card repeats a photo already shown in the hero, and each card gets a
+// distinct photo when enough are available. Falls back gracefully if the uni
+// has fewer than expected photos.
+const galleryPhotos = u.gallery?.items?.map((it) => it.img) ?? [];
+const heroBgPhoto = galleryPhotos[0];
+const heroCoverPhoto = galleryPhotos[1] ?? galleryPhotos[0];
+const HERO_SKIP = 2;
+const facultyPool =
+  galleryPhotos.length > HERO_SKIP ? galleryPhotos.slice(HERO_SKIP) : galleryPhotos;
+function facultyPhoto(i: number): string | undefined {
+  if (facultyPool.length === 0) return undefined;
+  return facultyPool[i % facultyPool.length];
+}
 ---
 
 <Base title={`${u.name} — StudyRoom`} description={description}>
@@ -153,7 +205,11 @@ const description = `${u.name} — поступление через StudyRoom. 
 
     <!-- 1. Hero -->
     <section id="hero" class="section hero">
-      <div class="hero__bg" aria-hidden="true"></div>
+      <div
+        class="hero__bg"
+        aria-hidden="true"
+        style={heroBgPhoto ? `background-image:url("${heroBgPhoto}")` : undefined}
+      ></div>
       <div class="container hero__inner">
         <div>
           <p class="hero__subtitle">{heroSubtitle}</p>
@@ -163,9 +219,13 @@ const description = `${u.name} — поступление через StudyRoom. 
             <a class="btn btn--ghost" href="#programs">Программы обучения</a>
           </div>
         </div>
-        <div class="hero__cover hero__cover--logo">
-          <img src={`/logos/${u.slug}.png`} alt={u.name} />
-        </div>
+        {heroCoverPhoto ? (
+          <img class="hero__cover" src={heroCoverPhoto} alt={`Кампус ${u.name}`} loading="eager" />
+        ) : (
+          <div class="hero__cover hero__cover--logo">
+            <img src={`/logos/${u.slug}.png`} alt={u.name} />
+          </div>
+        )}
       </div>
     </section>
 
@@ -247,8 +307,17 @@ const description = `${u.name} — поступление через StudyRoom. 
         <div class="programs__grid">
           {topFaculties.map((fac, idx) => {
             const panelId = `program-panel-${idx}`;
+            const facImg = facultyPhoto(idx);
             return (
               <article class="card program-card">
+                {facImg && (
+                  <img
+                    class="program-card__img"
+                    src={facImg}
+                    alt={`${u.name} — ${fac.name}`}
+                    loading="lazy"
+                  />
+                )}
                 <div class="program-card__body">
                   <span class="card__sub">{fac.programs.length} {fac.programs.length === 1 ? 'программа' : 'программ'}</span>
                   <h3 class="card__title">{fac.name}</h3>
@@ -470,16 +539,18 @@ const description = `${u.name} — поступление через StudyRoom. 
           <h2 class="location__title">Где находится {u.name}</h2>
           <p class="location__subtitle">{u.city}, {u.country}</p>
         </div>
-        <div class="location__frame">
-          <iframe
-            class="location__map"
-            title={`Расположение ${u.name} на карте`}
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen
-            src={mapsEmbedUrl}
-          ></iframe>
-        </div>
+        {mapsEmbedUrl && (
+          <div class="location__frame">
+            <iframe
+              class="location__map"
+              title={`Расположение ${u.name} на карте`}
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              src={mapsEmbedUrl}
+            ></iframe>
+          </div>
+        )}
         <p class="location__address">
           {u.name}, {u.city}, {u.country}
           {' — '}
