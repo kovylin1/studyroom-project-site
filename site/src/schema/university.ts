@@ -27,7 +27,7 @@ export const programSchema = z.object({
 export type Program = z.infer<typeof programSchema>;
 
 export const tuitionSchema = z.object({
-  currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD']),
+  currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD']),
   byProgram: z.record(slug, z.number().nonnegative()),
 });
 export type Tuition = z.infer<typeof tuitionSchema>;
@@ -47,7 +47,10 @@ export type Requirements = z.infer<typeof requirementsSchema>;
 
 export const scholarshipSchema = z.object({
   name: z.string().min(1),
-  amountUSD: z.number().nonnegative().optional(),
+  nameRu: z.string().min(1).optional(),
+  amount: z.string().min(1).optional(),
+  description: z.string().min(1).optional(),
+  descriptionRu: z.string().min(1).optional(),
   deadline: isoDate.optional(),
   url: z.string().url().optional(),
 });
@@ -63,6 +66,14 @@ export const gallerySchema = z.object({
   items: z.array(galleryItemSchema).default([]),
 });
 export type Gallery = z.infer<typeof gallerySchema>;
+
+export const photoSetsSchema = z.object({
+  general: z.array(galleryItemSchema).optional(),
+  studentsFaculty: z.array(galleryItemSchema).optional(),
+  campuses: z.array(galleryItemSchema).optional(),
+  accommodation: z.array(galleryItemSchema).optional(),
+});
+export type PhotoSets = z.infer<typeof photoSetsSchema>;
 
 export const accommodationItemSchema = z.object({
   name: z.string().min(1),
@@ -80,6 +91,14 @@ export const campusItemSchema = z.object({
   img: z.string().optional(),
 });
 export type CampusItem = z.infer<typeof campusItemSchema>;
+
+export const descriptionSchema = z.object({
+  paragraphs: z.array(z.string().min(1)).default([]),
+  keyFacts: z.array(z.string().min(1)).default([]),
+  paragraphsRu: z.array(z.string().min(1)).optional(),
+  keyFactsRu: z.array(z.string().min(1)).optional(),
+});
+export type Description = z.infer<typeof descriptionSchema>;
 
 export const confidenceLevel = z.enum(['partner', 'official', 'aggregator']);
 export type ConfidenceLevel = z.infer<typeof confidenceLevel>;
@@ -101,6 +120,8 @@ export const universitySchema = z
     gallery: gallerySchema.optional(),
     accommodation: z.array(accommodationItemSchema).optional(),
     campuses: z.array(campusItemSchema).optional(),
+    description: descriptionSchema.optional(),
+    photoSets: photoSetsSchema.optional(),
     lastChecked: isoDate,
     sourceUrl: z.string().url(),
     sourceHash: z.string().min(1),

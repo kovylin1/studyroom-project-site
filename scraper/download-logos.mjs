@@ -32,6 +32,21 @@ const LOGOS = {
   'westminster':        'https://www.kaplanpathways.com/tachyon/sites/4/2023/03/logo-uni-raster-westminster.png',
   'york':               'https://www.kaplanpathways.com/tachyon/sites/4/2023/03/logo-raster-uni-york.png',
   'uwe-bristol':        'https://www.kaplanpathways.com/tachyon/sites/4/2023/03/logo-uni-raster-uwe-bristol.png',
+  // Canada
+  'alberta':            'https://www.kaplanpathways.com/tachyon/sites/4/2024/05/logo-raster-uni-alberta.png',
+  'victoria':           'https://www.kaplanpathways.com/tachyon/sites/4/2025/02/logo-uni-uvic.png',
+  // USA
+  'arizona-state':      'https://www.kaplanpathways.com/tachyon/sites/4/2023/03/logo-raster-uni-asu.png',
+  'pace':               'https://www.kaplanpathways.com/tachyon/sites/4/2023/03/logo-raster-uni-pace.png',
+  'simmons':            'https://www.kaplanpathways.com/tachyon/sites/4/2023/03/logo-raster-uni-simmons.png',
+  'uconn':              'https://www.kaplanpathways.com/tachyon/sites/4/2023/03/logo-raster-uni-uconn.png',
+  'oregon':             'https://www.kaplanpathways.com/tachyon/sites/4/2024/06/logo-raster-uni-oregon.png',
+  // Australia
+  'adelaide':           'https://www.kaplanpathways.com/tachyon/sites/4/2025/08/logo-raster-uni-adelaide.png',
+  'murdoch':            'https://www.kaplanpathways.com/tachyon/sites/4/2023/03/logo-raster-uni-murdoch.png',
+  'newcastle-au':       'https://www.kaplanpathways.com/tachyon/sites/4/2025/09/logo-raster-uni-newcastle.png',
+  // New Zealand
+  'massey':             'https://www.kaplanpathways.com/tachyon/sites/4/2023/05/logo-raster-uni-massey.png',
 };
 
 async function downloadOne(slug, url) {

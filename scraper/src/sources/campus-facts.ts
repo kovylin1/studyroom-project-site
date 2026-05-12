@@ -12,6 +12,9 @@ export interface CampusFact {
   title: string;
   sub: string;
   text: string;
+  // Optional override for the campus card photo. When unset, `buildCampuses`
+  // in cli.ts falls back to a cycling per-uni gallery photo (`/photos/{slug}/N.jpg`).
+  img?: string;
 }
 
 const CAMPUS_FACTS: Record<string, CampusFact[]> = {
@@ -294,11 +297,170 @@ const CAMPUS_FACTS: Record<string, CampusFact[]> = {
       title: 'Main Campus (Gordon Head)',
       sub: 'Главный кампус',
       text: 'Единый кампус UVic в районе Gordon Head на острове Ванкувер — окружён лесом и в 15 минутах от океана. Здесь все факультеты, библиотека McPherson, спорткомплекс CARSA и студенческие резиденции, включая новые здания Cheko’nien House и Sngequ House.',
+      img: '/photos/victoria/campuses/main-gordon-head.jpg',
     },
     {
       title: 'Downtown Victoria',
       sub: 'Бизнес и право (центр)',
       text: 'Постдипломные программы Peter B. Gustavson School of Business и юридической школы проходят также в зданиях в центре Виктории — рядом с гаванью и Парламентом BC. Удобно для летних бизнес-программ.',
+      img: '/photos/victoria/campuses/downtown.jpg',
+    },
+  ],
+
+  'arizona-state': [
+    {
+      title: 'Tempe Campus',
+      sub: 'Главный кампус',
+      text: 'Крупнейший кампус ASU в Тампе, Аризона — более 50,000 студентов. Здесь Sun Devil Stadium, библиотека Hayden, основные программы бакалавриата (Engineering, Business, Liberal Arts, Sciences). Активная студенческая жизнь, тёплый климат круглый год.',
+    },
+    {
+      title: 'Downtown Phoenix Campus',
+      sub: 'Здоровье, журналистика, право',
+      text: 'Городской кампус в центре Феникса — Walter Cronkite School of Journalism, College of Health Solutions, Sandra Day O’Connor College of Law, College of Public Service. Прямой Light Rail до Tempe.',
+    },
+    {
+      title: 'West Valley Campus',
+      sub: 'Glendale, гуманитарные науки',
+      text: 'Кампус в Глендейле, Аризона — гуманитарные и интердисциплинарные программы. Открытое озеро, меньше студентов, более тесное сообщество. New College of Interdisciplinary Arts and Sciences.',
+    },
+    {
+      title: 'Polytechnic Campus',
+      sub: 'Mesa, прикладные технологии',
+      text: 'Кампус в Месе — прикладные технологии, инженерия, авиация (Ira A. Fulton Schools of Engineering). Hands-on labs, теплицы, авиационная база. Для тех, кто хочет практический фокус.',
+    },
+  ],
+
+  pace: [
+    {
+      title: 'NYC Campus (Lower Manhattan)',
+      sub: 'Финансовый район Манхэттена',
+      text: 'Городской кампус в самом сердце Нью-Йорка — One Pace Plaza у Brooklyn Bridge. Здесь Lubin School of Business, Dyson College, Pace Law School. Доступ к Wall Street, технологическим компаниям, медиа.',
+    },
+    {
+      title: 'Westchester Campus (Pleasantville)',
+      sub: 'Пригородный кампус',
+      text: 'Зелёный кампус в Pleasantville, 30 миль к северу от Манхэттена — 200 акров, традиционная атмосфера колледжа. Общежития, столовая, спортивные команды Pace Setters. Прямой поезд Metro-North до NYC.',
+    },
+  ],
+
+  simmons: [
+    {
+      title: 'Academic Campus (Fenway)',
+      sub: 'Главный кампус (Boston)',
+      text: 'Главный академический кампус в районе Fenway — рядом с Бостонским симфоническим, MFA, Fenway Park (Red Sox). Здесь все лекционные корпуса, библиотека Beatley, лаборатории, столовая. 2 мили от центра Бостона.',
+    },
+    {
+      title: 'Residence Campus',
+      sub: 'Жилая зона',
+      text: 'Закрытая жилая зона из 9 общежитий вокруг частного quadrangle — отдельно от академического кампуса, 5 минут пешком. 24-часовая охрана, фитнес, lounges. Создана как защищённое сообщество для первокурсниц.',
+    },
+  ],
+
+  uconn: [
+    {
+      title: 'Storrs Main Campus',
+      sub: 'Главный кампус',
+      text: 'Главный кампус UConn в северо-восточном Коннектикуте — 4,400 акров, 700+ зданий. Husky basketball, Center for Science Discovery. Все бакалаврские программы и большинство магистратуры. Между Boston и NYC.',
+    },
+    {
+      title: 'Stamford Campus',
+      sub: 'Бизнес и цифровые технологии',
+      text: 'Городской кампус в центре Стамфорда, 35 миль от NYC — программы Business, Digital Media & Design, Financial Technology. Карьерные связи с Уолл-стрит и медиа-индустрией.',
+    },
+    {
+      title: 'Hartford Campus',
+      sub: 'Столица штата',
+      text: 'Кампус в Хартфорде — Public Policy, Political Science, Social Work, Communication. Рядом с законодательным собранием Коннектикута, страховыми компаниями и культурной зоной.',
+    },
+    {
+      title: 'Avery Point Campus',
+      sub: 'Прибрежные науки',
+      text: 'Кампус на берегу Long Island Sound в Гротоне — Marine Sciences, Coastal Studies. Исследовательский флот, океанографические лаборатории. Уникальная локация для морских специальностей.',
+    },
+  ],
+
+  oregon: [
+    {
+      title: 'Eugene Main Campus',
+      sub: 'Главный кампус',
+      text: 'Главный кампус в Юджине, Орегон — 295 акров парковой зоны на реке Willamette. Knight Library, Autzen Stadium (Ducks football), Jaqua Center. Все бакалаврские программы. Зелёный, дождливый, идеален для outdoor-активностей.',
+    },
+    {
+      title: 'Portland Campus',
+      sub: 'Постдипломный кампус',
+      text: 'Кампус в White Stag Block в центре Портленда — программы Architecture, Product Design, Sports Marketing, MBA. Карьерные связи с Nike, Intel, Wieden+Kennedy.',
+    },
+  ],
+
+  adelaide: [
+    {
+      title: 'North Terrace City Campus',
+      sub: 'Главный кампус',
+      text: 'Главный кампус в самом центре Аделаиды на North Terrace — здания XIX века, парки, музеи рядом. Здесь Humanities, Sciences, Business, Engineering. Шаговая доступность от площадей, кафе, городского транспорта.',
+    },
+    {
+      title: 'Waite Campus (Urrbrae)',
+      sub: 'Сельское хозяйство и виноделие',
+      text: 'Кампус в 8 км от центра — один из крупнейших исследовательских центров аграрных наук в Южном полушарии. Здесь виноделие, агрономия, биология растений, экология. Виноградники прямо на территории.',
+    },
+    {
+      title: 'Roseworthy Campus',
+      sub: 'Ветеринария и агрономия',
+      text: 'Кампус в 50 км к северу от Аделаиды — единственная в Южной Австралии ветеринарная школа. Также животноводство, селекционное растениеводство. Roseworthy Residential College предлагает catered проживание прямо на месте.',
+    },
+  ],
+
+  murdoch: [
+    {
+      title: 'Perth South Street Campus',
+      sub: 'Главный кампус',
+      text: 'Главный кампус в южном Перте — 227 гектаров с природным заповедником. Ветеринарная клиника, теле- и радиостудии (Curtin Stadium и Murdoch Media), солнечная электростанция. Murdoch railway station прямо на кампусе.',
+    },
+    {
+      title: 'Mandurah Campus',
+      sub: 'Региональный кампус',
+      text: 'Региональный кампус в 70 км к югу от Перта — социальные науки, медсестринское дело, образование. Меньшее сообщество студентов, идеален для тех, кто предпочитает прибрежную атмосферу.',
+    },
+  ],
+
+  'newcastle-au': [
+    {
+      title: 'Callaghan Campus',
+      sub: 'Главный кампус',
+      text: 'Главный кампус в Callaghan, Новый Южный Уэльс — 140 гектаров эвкалиптовых лесов, в 12 км от центра Ньюкасла. Большинство бакалаврских и постдипломных программ, on-campus жильё, библиотека Auchmuty, спортивный центр.',
+    },
+    {
+      title: 'NUspace City Campus',
+      sub: 'Городской кампус',
+      text: 'Современный городской кампус в центре Ньюкасла (Hunter Street) — программы Business, Law, Design, Creative Industries. Прямая связь с Callaghan через светопоезд.',
+    },
+    {
+      title: 'Ourimbah Campus',
+      sub: 'Central Coast',
+      text: 'Кампус на полпути между Сиднеем и Ньюкаслом — программы Nursing, Education, Business, Communication. Природное окружение и небольшое студенческое сообщество.',
+    },
+    {
+      title: 'Sydney Central Campus',
+      sub: 'Постдипломный кампус',
+      text: 'Кампус в Sydney CBD (Charles Street) для постдипломных программ Business, Health, Education. Удобно для работающих профессионалов.',
+    },
+  ],
+
+  massey: [
+    {
+      title: 'Auckland Campus (Albany)',
+      sub: 'Главный кампус для иностранных студентов',
+      text: 'Современный кампус Massey в северном пригороде Окленда (Albany) — программы Business, Aviation, Sciences, Design. 14,000+ студентов, новые корпуса, рядом с торговым центром Westfield Albany.',
+    },
+    {
+      title: 'Manawatū Campus (Palmerston North)',
+      sub: 'Исторический главный кампус',
+      text: 'Главный исторический кампус Massey в Палмерстон-Норт — крупнейший по площади. Здесь сельское хозяйство, ветеринария (одна из 2 в Новой Зеландии), авиация, food science, образование.',
+    },
+    {
+      title: 'Wellington Campus',
+      sub: 'Креативные искусства',
+      text: 'Кампус в столице Новой Зеландии — College of Creative Arts (Toi Rauwhārangi): design, music, fine arts, communication. В здании бывшей Dominion Museum, рядом с правительственными зданиями.',
     },
   ],
 };

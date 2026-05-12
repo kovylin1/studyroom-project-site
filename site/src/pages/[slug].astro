@@ -60,9 +60,18 @@ interface FacultyGroup {
 const LEVEL_LABELS: Record<string, string> = {
   foundation: 'Foundation',
   bachelor: 'Бакалавриат',
-  master: "Pre-Master's / Магистратура",
+  master: 'Магистратура',
   phd: 'PhD',
 };
+
+// Pill label combines level + programType. The master+pathway combo is a
+// 1-year prep course (Pre-Master's), not an actual master's degree — keep
+// them visually distinct so the title list reads correctly. Shorter than
+// "Pre-Master's / Магистратура" so the modal pill fits its 120px column.
+function levelLabel(level: string, programType?: string): string {
+  if (level === 'master' && programType === 'pathway') return "Pre-Master's";
+  return LEVEL_LABELS[level] ?? level;
+}
 
 const LEVEL_ORDER: Record<string, number> = {
   foundation: 1,
@@ -217,6 +226,27 @@ function facultyPhoto(i: number): string | undefined {
   if (facultyPool.length === 0) return undefined;
   return facultyPool[i % facultyPool.length];
 }
+
+// Per-uni faculty image overrides. Used when the generic gallery-pool fallback
+// would show an off-topic photo for a thematic faculty card. Keyed by uni slug
+// then by faculty name (must match the value written by the scraper into
+// `programs[].faculty`). When no override is present, `facultyPhoto(idx)` is
+// used instead.
+const FACULTY_IMAGE_OVERRIDES: Record<string, Record<string, string>> = {
+  victoria: {
+    'Engineering and Computer Science': '/photos/victoria/faculties/engineering.jpg',
+    'Science': '/photos/victoria/faculties/science.jpg',
+    'Humanities': '/photos/victoria/faculties/humanities.jpg',
+    'Social Sciences': '/photos/victoria/faculties/social-sciences.jpg',
+    'Fine Arts': '/photos/victoria/faculties/fine-arts.jpg',
+    'Business': '/photos/victoria/faculties/business.jpg',
+    'Health Sciences': '/photos/victoria/faculties/health.jpg',
+    'Education': '/photos/victoria/faculties/education.jpg',
+  },
+};
+function facultyImage(facultyName: string, idx: number): string | undefined {
+  return FACULTY_IMAGE_OVERRIDES[u.slug]?.[facultyName] ?? facultyPhoto(idx);
+}
 ---
 
 <Base title={`${u.name} — StudyRoom`} description={description}>
@@ -278,9 +308,36 @@ function facultyPhoto(i: number): string | undefined {
             факультетов. Стоимость обучения: <strong>{tuitionRange}</strong> в год.
             Данные обновлены: {lastChecked}.
           </p>
-          <p>
-            <span class="tbd">[TBD: исторический контекст, год основания, кол-во студентов, рейтинг QS / THE, известные выпускники, исследовательский профиль — заполнит расширенный скрейпер.]</span>
-          </p>
+          {(() => {
+            // Prefer Russian translation when present (curated in
+            // scraper/src/sources/description-translations.ts); fall back to
+            // English scraped paragraphs; fall back to a TBD placeholder.
+            const paras = u.description?.paragraphsRu?.length
+              ? u.description.paragraphsRu
+              : u.description?.paragraphs ?? [];
+            const facts = u.description?.keyFactsRu?.length
+              ? u.description.keyFactsRu
+              : u.description?.keyFacts ?? [];
+            return (
+              <>
+                {paras.length ? (
+                  paras.map((para) => <p>{para}</p>)
+                ) : (
+                  <p>
+                    <span class="tbd">[TBD: исторический контекст, год основания, кол-во студентов, рейтинг QS / THE, известные выпускники, исследовательский профиль — заполнит расширенный скрейпер.]</span>
+                  </p>
+                )}
+                {facts.length ? (
+                  <>
+                    <h3 class="description__pros-title">Рейтинги и факты</h3>
+                    <ul class="description__pros">
+                      {facts.map((f) => <li>{f}</li>)}
+                    </ul>
+                  </>
+                ) : null}
+              </>
+            );
+          })()}
           {topFaculties.length > 0 && (
             <>
               <h3 class="description__pros-title">Основные направления</h3>
@@ -335,7 +392,7 @@ function facultyPhoto(i: number): string | undefined {
         <div class="programs__grid">
           {topFaculties.map((fac, idx) => {
             const panelId = `program-panel-${idx}`;
-            const facImg = facultyPhoto(idx);
+            const facImg = facultyImage(fac.name, idx);
             return (
               <article class="card program-card">
                 {facImg && (
@@ -370,7 +427,7 @@ function facultyPhoto(i: number): string | undefined {
                   <div class="program-card__details-inner">
                     {fac.programs.slice(0, 8).map((p) => (
                       <p class="card__text">
-                        <strong>{LEVEL_LABELS[p.level] ?? p.level}:</strong> {p.title}
+                        <strong>{levelLabel(p.level, p.programType)}:</strong> {p.title}
                         {p.tuition !== undefined && p.tuition > 0 && (
                           <> — <strong>{p.tuition.toLocaleString('ru-RU')}</strong> {u.tuition.currency}/год</>
                         )}
@@ -407,7 +464,7 @@ function facultyPhoto(i: number): string | undefined {
                         {fac.programs.map((p) => (
                           <li class="programs-modal__row">
                             <span class={`programs-modal__level programs-modal__level--${p.level}`}>
-                              {LEVEL_LABELS[p.level] ?? p.level}
+                              {levelLabel(p.level, p.programType)}
                             </span>
                             <span class="programs-modal__title-cell">{p.title}</span>
                             {p.tuition !== undefined && p.tuition > 0 && (
@@ -530,16 +587,22 @@ function facultyPhoto(i: number): string | undefined {
                 момент конкретные программы стипендий не указаны. Уточняйте актуальные опции на бесплатной консультации.
               </p>
             ) : (
-              <ul class="requirements__list">
+              <ul class="scholarships__list">
                 {u.scholarships.map((s) => (
-                  <li class="requirements__item">
-                    <strong class="requirements__label">{s.name}</strong>
-                    {s.amountUSD !== undefined && (
-                      <span class="requirements__text"> — до ${s.amountUSD.toLocaleString('ru-RU')}</span>
+                  <li class="scholarships__item">
+                    <div class="scholarships__head">
+                      <strong class="scholarships__name">{s.nameRu ?? s.name}</strong>
+                      {s.amount && <span class="scholarships__amount">{s.amount}</span>}
+                    </div>
+                    {(s.descriptionRu ?? s.description) && (
+                      <p class="scholarships__desc">{s.descriptionRu ?? s.description}</p>
                     )}
-                    {s.deadline && <span class="requirements__text"> · до {s.deadline}</span>}
-                    {s.url && (
-                      <span class="requirements__text"> · <a href={s.url} target="_blank" rel="noopener">подробнее</a></span>
+                    {(s.deadline || s.url) && (
+                      <p class="scholarships__meta">
+                        {s.deadline && <span>дедлайн до {s.deadline}</span>}
+                        {s.deadline && s.url && <span aria-hidden="true"> · </span>}
+                        {s.url && <a href={s.url} target="_blank" rel="noopener">подробнее</a>}
+                      </p>
                     )}
                   </li>
                 ))}
@@ -1027,7 +1090,7 @@ function facultyPhoto(i: number): string | undefined {
   }
   .programs-modal__row {
     display: grid;
-    grid-template-columns: 120px 1fr auto;
+    grid-template-columns: minmax(120px, max-content) 1fr auto;
     align-items: baseline;
     gap: 12px 16px;
     padding: 12px 0;
@@ -1096,5 +1159,48 @@ function facultyPhoto(i: number): string | undefined {
     opacity: 0.78;
     object-fit: contain;
     filter: grayscale(0.15);
+  }
+
+  /* Categorical photo-set grids (Stage 11 pilot). */
+  .photo-set .section__head p { color: var(--text-muted); }
+  .photo-set__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .photo-set__tile {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #f0f3f7;
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--border-soft, #e9eef0);
+  }
+  .photo-set__tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .photo-set__tile:hover img { transform: scale(1.04); }
+  .photo-set__tile figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 8px 12px;
+    font-size: 12.5px;
+    color: #fff;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .photo-set__tile:hover figcaption { opacity: 1; }
+  @media (max-width: 600px) {
+    .photo-set__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   }
 </style>

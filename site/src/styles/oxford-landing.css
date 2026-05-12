@@ -630,6 +630,64 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin: 0;
 }
 
+.scholarships__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.scholarships__item {
+  position: relative;
+  padding: 16px 18px 18px;
+  border: 1px solid var(--border-soft, #e9eef0);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+.scholarships__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.scholarships__name {
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text);
+}
+.scholarships__amount {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--green-50, #e7f6e9);
+  color: var(--green-dark, #007a0c);
+  font-size: 13.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.scholarships__desc {
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0;
+}
+.scholarships__meta {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 8px 0 0;
+}
+.scholarships__meta a {
+  color: var(--green-dark, #007a0c);
+  text-decoration: none;
+  font-weight: 600;
+}
+.scholarships__meta a:hover { text-decoration: underline; }
+
 @media (max-width: 900px) {
   .requirements__row { grid-template-columns: 1fr; gap: var(--gap-lg); }
 }

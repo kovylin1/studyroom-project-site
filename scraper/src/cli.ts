@@ -22,6 +22,7 @@ import {
   type GalleryItem,
   type AccommodationItem,
   type CampusItem,
+  type Description,
 } from './schema.ts';
 import { readRegistry, type RegistryRow } from './registry.ts';
 import { scrapeKaplanUni, type KaplanScrapeResult } from './sources/kaplan.ts';
@@ -40,6 +41,22 @@ import {
 import { scrapeKaplanAccommodation, type KaplanAccommodationResult } from './sources/kaplan-accommodation.ts';
 import { getCampusFacts, type CampusFact } from './sources/campus-facts.ts';
 import { getUniAccommodationFacts } from './sources/uni-accommodation-facts.ts';
+import { getDescriptionTranslation } from './sources/description-translations.ts';
+import { BASELINE_KAPLAN_SCHOLARSHIPS, getUniScholarships, type ScholarshipFact } from './sources/uni-scholarships.ts';
+import { classifyFaculty } from './sources/program-faculty-classifier.ts';
+
+// Unis where the Kaplan global award-faculty map returns "Прочее" for every
+// program and we need to reclassify by program-title pattern. UK and Canada
+// (except Victoria) are covered by Kaplan's feed; USA partially; AU/NZ not at
+// all (those have only 1 placeholder program each, so the classifier is moot).
+const NEEDS_LOCAL_FACULTY_CLASSIFIER = new Set([
+  'victoria',
+  'arizona-state',
+  'pace',
+  'simmons',
+  'uconn',
+  'oregon',
+]);
 
 // Dynamic import of the JS-only photo downloader (no .d.ts; declared inline).
 interface PhotoDownloader {
@@ -88,6 +105,14 @@ const INTAKE_TO_DEADLINE: Record<string, string> = {
 const STANDARD_REQUIREMENTS = {
   language: { ielts: 5.5, toefl: 70 },
   exams: [] as string[],
+};
+
+// Hand-curated Kaplan Living card photo per slug, used when the auto-scraped
+// Kaplan accommodation-page photo isn't representative (e.g. kitchen shot
+// instead of a bedroom). Local paths under site/public/photos/. Empty entries
+// fall through to the scraped photoUrl.
+const KAPLAN_LIVING_IMG_OVERRIDE: Record<string, string> = {
+  glasgow: '/photos/glasgow/accommodation-cards/kaplan-living.jpg',
 };
 
 function pathwaySlugFor(p: KaplanProgram): string {
@@ -272,7 +297,7 @@ function buildUniversity(
     tuition: { currency: currencyForCountry(row.country), byProgram: allTuition },
     deadlines: allDeadlines,
     requirements: STANDARD_REQUIREMENTS,
-    scholarships: [],
+    scholarships: buildScholarships(row.slug),
     lastChecked: main.fetchedAt,
     sourceUrl: main.sourceUrl,
     sourceHash: main.sourceHash,
@@ -285,11 +310,12 @@ function buildUniversity(
 // `current_fees_per_year` in the destination country's local currency, so we
 // match the country here. Falls back to GBP for unknown countries to keep
 // existing UK behaviour.
-function currencyForCountry(country: string): 'GBP' | 'CAD' | 'USD' | 'AUD' | 'EUR' {
+function currencyForCountry(country: string): 'GBP' | 'CAD' | 'USD' | 'AUD' | 'EUR' | 'NZD' {
   const c = country.toLowerCase();
   if (c.includes('canada')) return 'CAD';
   if (c.includes('united states') || c === 'usa') return 'USD';
   if (c.includes('australia')) return 'AUD';
+  if (c.includes('new zealand') || c === 'nz') return 'NZD';
   if (c.includes('united kingdom') || c === 'uk') return 'GBP';
   return 'GBP';
 }
@@ -316,11 +342,15 @@ function buildAccommodation(
       : 'Партнёрское жильё Kaplan Living — приватная спальня и ванная, общая или собственная кухня, безопасный въезд и социальные пространства.';
     const contractNote = result.contractNote ? `Контракт: ${result.contractNote}.` : '';
     const text = `Официальная партнёрская резиденция при колледже Kaplan для ${uniName}. ${features}${contractNote ? ` ${contractNote}` : ''}`.trim();
+    // Per-slug override for the Kaplan Living card photo. Kaplan partner-page
+    // photo discovery picks a kitchen/lounge shot; for some unis we want a
+    // bedroom or specific room shot pulled from kaplanliving.com instead.
+    const kaplanLivingImg = KAPLAN_LIVING_IMG_OVERRIDE[slug] ?? result.photoUrl ?? undefined;
     items.push({
       name: result.residence ?? `Kaplan Living — ${uniName}`,
       price: `от £${result.priceFrom.toLocaleString('en-GB')}`,
       text,
-      ...(result.photoUrl ? { img: result.photoUrl } : {}),
+      ...(kaplanLivingImg ? { img: kaplanLivingImg } : {}),
     });
   }
 
@@ -355,6 +385,40 @@ function buildAccommodation(
   return items;
 }
 
+// Build the scholarship list for a uni. Every uni gets the universal Kaplan
+// scholarships (Early Bird + Academic Achievement) plus any uni-specific
+// entries hand-curated in `sources/uni-scholarships.ts`. Each entry carries
+// both EN + RU names + descriptions; the page picks Russian when present.
+type Scholarship = NonNullable<University['scholarships']>[number];
+function buildScholarships(slug: string): Scholarship[] {
+  const all: ScholarshipFact[] = [...BASELINE_KAPLAN_SCHOLARSHIPS, ...getUniScholarships(slug)];
+  return all.map((s): Scholarship => {
+    const out: Scholarship = { name: s.name };
+    if (s.nameRu) out.nameRu = s.nameRu;
+    if (s.amount) out.amount = s.amount;
+    if (s.description) out.description = s.description;
+    if (s.descriptionRu) out.descriptionRu = s.descriptionRu;
+    if (s.url) out.url = s.url;
+    return out;
+  });
+}
+
+// Build the per-uni biography from what `scrapeKaplanUni` already extracted +
+// hand-curated Russian translations from `sources/description-translations.ts`.
+// Returns `undefined` when the page yielded nothing usable so the field stays
+// absent on the University record (the page template already falls back to a
+// generic auto-generated paragraph in that case).
+function buildDescription(main: KaplanScrapeResult, slug: string): Description | undefined {
+  const paragraphs = main.descriptionParagraphs ?? [];
+  const keyFacts = main.keyFacts ?? [];
+  if (paragraphs.length === 0 && keyFacts.length === 0) return undefined;
+  const translation = getDescriptionTranslation(slug);
+  const result: Description = { paragraphs, keyFacts };
+  if (translation.paragraphsRu?.length) result.paragraphsRu = translation.paragraphsRu;
+  if (translation.keyFactsRu?.length) result.keyFactsRu = translation.keyFactsRu;
+  return result;
+}
+
 function buildCampuses(slug: string, photoCount: number): CampusItem[] {
   // Photos cycle through `/photos/{slug}/N.jpg` (N = 6..9) so the first 4
   // campuses each get a distinct photo from the per-uni gallery, while
@@ -365,8 +429,15 @@ function buildCampuses(slug: string, photoCount: number): CampusItem[] {
   const facts: CampusFact[] = getCampusFacts(slug);
   return facts.map((f, i) => {
     const item: CampusItem = { title: f.title, sub: f.sub, text: f.text };
-    const photoIdx = (i % 4) + 6;
-    if (photoIdx <= photoCount) item.img = `/photos/${slug}/${photoIdx}.jpg`;
+    // Prefer a curated img URL from the fact (set per-uni in campus-facts.ts
+    // for unis that have specific campus photos available); fall back to a
+    // cycling gallery photo when not.
+    if (f.img) {
+      item.img = f.img;
+    } else {
+      const photoIdx = (i % 4) + 6;
+      if (photoIdx <= photoCount) item.img = `/photos/${slug}/${photoIdx}.jpg`;
+    }
     return item;
   });
 }
@@ -410,6 +481,19 @@ async function processOne(
 
   const pathwayPrograms = buildPathwayPrograms(pathways);
   const degreePrograms = buildDegreePrograms(degrees, awardFacultyMap);
+
+  // Per-uni faculty override. Kaplan's global award-faculty map doesn't cover
+  // some unis (Victoria, all 5 US partners), so every program ends up in
+  // "Прочее" by default and the per-faculty modal collapses to a single
+  // bucket. For listed unis, reclassify by program-title pattern so the page
+  // shows real faculty groupings.
+  if (NEEDS_LOCAL_FACULTY_CLASSIFIER.has(row.slug)) {
+    degreePrograms.programs = degreePrograms.programs.map((p) => ({
+      ...p,
+      faculty: classifyFaculty(p.title),
+    }));
+  }
+
   const built = buildUniversity(row, main, pathwayPrograms, degreePrograms);
 
   const validated = universitySchema.parse(built);
@@ -472,6 +556,18 @@ async function processOne(
   if (campusItems.length > 0) {
     validated.campuses = campusItems;
     console.log('[camp]  ' + row.slug + ' · ' + campusItems.length + ' campus entries');
+  }
+
+  // Description — Kaplan partner page "About this university" paragraphs +
+  // facts (scraped earlier in `scrapeKaplanUni`), merged with hand-curated
+  // Russian translations from `sources/description-translations.ts`.
+  const description = buildDescription(main, row.slug);
+  if (description) {
+    validated.description = description;
+    const ruParas = description.paragraphsRu?.length ?? 0;
+    const ruFacts = description.keyFactsRu?.length ?? 0;
+    console.log('[desc]  ' + row.slug + ' · ' + description.paragraphs.length + ' paragraphs (+' +
+      ruParas + ' ru), ' + description.keyFacts.length + ' facts (+' + ruFacts + ' ru)');
   }
 
   const out = JSON.stringify(validated, null, 2) + '\n';
