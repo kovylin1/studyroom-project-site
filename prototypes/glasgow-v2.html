@@ -1,0 +1,1209 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>University of Glasgow — поступление из Казахстана | StudyRoom</title>
+<meta name="description" content="Поступление в University of Glasgow для казахстанцев: программы, стоимость от £23 170/год, стипендии до £16 000, IELTS от 5.5. Бесплатная консультация StudyRoom." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --green: #00950f;
+    --green-dark: #007a0c;
+    --green-soft: #e6f7e8;
+    --amber: #ffb800;
+    --ink: #0e0e0e;
+    --ink-2: #444;
+    --ink-3: #777;
+    --line: #e5e5e5;
+    --bg-soft: #f6f7f8;
+    --radius: 14px;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+    --shadow-md: 0 6px 24px rgba(0,0,0,.08);
+    --shadow-lg: 0 24px 64px rgba(0,0,0,.18);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+    color: var(--ink);
+    background: #fff;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  body.no-scroll { overflow: hidden; }
+  img { max-width: 100%; display: block; }
+  a { color: var(--green); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1, h2, h3, h4 { font-weight: 900; line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; }
+  h1 { font-size: clamp(28px, 5vw, 48px); }
+  h2 { font-size: clamp(24px, 3.5vw, 36px); }
+  h3 { font-size: 20px; }
+  p { margin: 0 0 1em; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+  .section { padding: 64px 0; }
+  .section--alt { background: var(--bg-soft); }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--green); padding: 4px 10px; background: var(--green-soft);
+    border-radius: 999px; margin-bottom: 14px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 14px 26px; font: inherit; font-weight: 700; border-radius: 999px;
+    border: 2px solid transparent; cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    white-space: nowrap;
+  }
+  .btn--primary { background: var(--green); color: #fff; box-shadow: 0 4px 14px rgba(0,149,15,.25); }
+  .btn--primary:hover { background: var(--green-dark); transform: translateY(-1px); text-decoration: none; }
+  .btn--ghost { background: #fff; color: var(--ink); border-color: var(--line); }
+  .btn--ghost:hover { border-color: var(--green); color: var(--green); text-decoration: none; }
+  .btn--lg { padding: 18px 32px; font-size: 17px; }
+
+  .progress-bar {
+    position: fixed; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--green), var(--amber));
+    width: 0; z-index: 200; transition: width .12s ease;
+  }
+
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site__row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 20px; }
+  .brand__mark {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    color: #fff; display: grid; place-items: center; font-weight: 900;
+  }
+  .nav { display: none; gap: 18px; align-items: center; }
+  @media (min-width: 1024px) { .nav { display: flex; } }
+  .nav a { color: var(--ink-2); font-size: 14px; font-weight: 500; transition: color .15s ease; position: relative; }
+  .nav a:hover, .nav a.is-active { color: var(--green); text-decoration: none; }
+  .nav a.is-active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: var(--green); border-radius: 2px; }
+  .site__phone { font-weight: 700; color: var(--ink); display: none; }
+  .site__phone small { display: block; font-weight: 400; font-size: 11px; color: var(--ink-3); }
+  @media (min-width: 720px) { .site__phone { display: block; } }
+  .site__cta { display: none; }
+  @media (min-width: 900px) { .site__cta { display: inline-flex; } }
+  .burger { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 10px; background: #fff; display: grid; place-items: center; cursor: pointer; padding: 0; }
+  @media (min-width: 1024px) { .burger { display: none; } }
+  .burger span { display: block; width: 18px; height: 2px; background: var(--ink); border-radius: 2px; position: relative; transition: transform .2s; }
+  .burger span::before, .burger span::after { content: ''; position: absolute; left: 0; width: 18px; height: 2px; background: var(--ink); transition: transform .2s; }
+  .burger span::before { top: -6px; }
+  .burger span::after { top: 6px; }
+  .burger.is-open span { background: transparent; }
+  .burger.is-open span::before { transform: translateY(6px) rotate(45deg); }
+  .burger.is-open span::after { transform: translateY(-6px) rotate(-45deg); }
+
+  .drawer { position: fixed; top: 0; right: -100%; width: min(320px, 85vw); height: 100vh; background: #fff; box-shadow: var(--shadow-lg); z-index: 110; transition: right .25s ease; padding: 80px 24px 24px; overflow-y: auto; }
+  .drawer.is-open { right: 0; }
+  .drawer__overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 105; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+  .drawer__overlay.is-open { opacity: 1; pointer-events: auto; }
+  .drawer a { display: block; padding: 14px 0; color: var(--ink); font-weight: 500; font-size: 16px; border-bottom: 1px solid var(--line); }
+  .drawer a:last-of-type { border-bottom: none; }
+  .drawer__cta { margin-top: 20px; }
+  .drawer__cta .btn { width: 100%; }
+
+  .hero { padding: 56px 0 56px; background: linear-gradient(180deg, rgba(0,149,15,.04), rgba(255,255,255,1) 70%); }
+  .hero__grid { display: grid; gap: 36px; align-items: center; grid-template-columns: 1fr; }
+  @media (min-width: 960px) { .hero__grid { grid-template-columns: 1.15fr 1fr; } }
+  .hero__uni-line { display: flex; align-items: center; gap: 12px; color: var(--ink-2); font-size: 14px; margin-bottom: 12px; }
+  .hero__logo { width: 44px; height: 44px; border-radius: 10px; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; font-weight: 900; color: #003865; font-size: 12px; }
+  .hero__h1 { margin-bottom: 16px; }
+  .hero__lead { font-size: 18px; color: var(--ink-2); margin-bottom: 24px; max-width: 60ch; }
+  .hero__facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0 28px; }
+  .fact { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; transition: transform .15s, box-shadow .15s; cursor: help; }
+  .fact:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .fact__num { font-weight: 900; font-size: 22px; color: var(--green); }
+  .fact__label { font-size: 13px; color: var(--ink-3); }
+  .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 18px; }
+  .hero__trust { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-2); }
+  .hero__trust .dot { width: 8px; height: 8px; border-radius: 50%; background: #25D366; box-shadow: 0 0 0 4px rgba(37,211,102,.18); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(37,211,102,.18); } 50% { box-shadow: 0 0 0 8px rgba(37,211,102,.05); } }
+  .hero__media { border-radius: 22px; overflow: hidden; aspect-ratio: 4/3; background: #ddd; box-shadow: var(--shadow-md); background-image: url('../site/public/photos/glasgow/1.jpg'); background-size: cover; background-position: center; position: relative; cursor: zoom-in; transition: transform .25s ease; }
+  .hero__media:hover { transform: scale(1.01); }
+  .hero__media::after { content: ''; position: absolute; inset: auto 0 0 0; height: 50%; background: linear-gradient(to top, rgba(0,0,0,.4), transparent); }
+  .hero__media-cap { position: absolute; left: 16px; right: 16px; bottom: 14px; color: #fff; font-size: 13px; z-index: 2; text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+
+  .money { border: 2px solid var(--green); border-radius: 22px; background: linear-gradient(180deg, var(--green-soft), #fff 60%); padding: 32px; }
+  .money__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+  .money__title span { color: var(--green); }
+  .scholar-list { display: grid; gap: 12px; grid-template-columns: 1fr; margin: 0 0 22px; padding: 0; list-style: none; }
+  @media (min-width: 720px) { .scholar-list { grid-template-columns: 1fr 1fr; } }
+  .scholar { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: flex; gap: 14px; align-items: flex-start; cursor: pointer; transition: transform .15s, box-shadow .15s, border-color .15s; }
+  .scholar:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--green); }
+  .scholar__amount { background: var(--green); color: #fff; padding: 6px 12px; border-radius: 999px; font-weight: 700; font-size: 14px; white-space: nowrap; }
+  .scholar__name { font-weight: 700; margin-bottom: 4px; font-size: 15px; }
+  .scholar__desc { font-size: 13px; color: var(--ink-2); margin: 0; }
+  .scholar__more { font-size: 12px; color: var(--green); font-weight: 700; margin-top: 6px; }
+
+  .rate-slider { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .rate-slider label { font-size: 13px; color: var(--ink-2); font-weight: 700; }
+  .rate-slider input[type="range"] { flex: 1; min-width: 180px; accent-color: var(--green); }
+  .rate-slider output { font-weight: 700; color: var(--green); min-width: 80px; }
+
+  .calc { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 880px) { .calc { grid-template-columns: 1fr 1fr; } }
+  .calc__card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .calc__card h4 { margin: 0 0 12px; font-size: 16px; }
+  .calc__row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 14px; gap: 12px; }
+  .calc__row:last-child { border-bottom: none; }
+  .calc__row strong { text-align: right; }
+  .calc__row--total { font-size: 16px; font-weight: 700; padding-top: 14px; border-top: 2px solid var(--ink); }
+  .calc__note { font-size: 12px; color: var(--ink-3); margin-top: 8px; }
+  .calc__highlight { color: var(--green); font-weight: 700; }
+  .calc__scenario { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+  .calc__scenario--base { background: #f0f0f0; color: var(--ink-2); }
+  .calc__scenario--best { background: var(--green-soft); color: var(--green-dark); }
+
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .tab { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: #fff; cursor: pointer; font: inherit; font-weight: 500; font-size: 14px; transition: all .15s; }
+  .tab:hover { border-color: var(--green); color: var(--green); }
+  .tab.is-active { background: var(--green); color: #fff; border-color: var(--green); }
+  .programs-grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .programs-grid { grid-template-columns: 1fr 1fr; } }
+  .program { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; gap: 16px; cursor: pointer; transition: transform .15s, box-shadow .15s, border-color .15s; }
+  .program:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--green); }
+  .program__level { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-bottom: 6px; }
+  .program__level--foundation { background: #e6f0ff; color: #004ac2; }
+  .program__level--pathway { background: #fff4e0; color: #b86b00; }
+  .program__level--master { background: #fff0e0; color: #a85400; }
+  .program__level--bachelor { background: var(--green-soft); color: var(--green-dark); }
+  .program__title { font-weight: 500; font-size: 14.5px; line-height: 1.35; }
+  .program__price { font-weight: 700; color: var(--green); white-space: nowrap; }
+
+  .req-grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
+  @media (min-width: 880px) { .req-grid { grid-template-columns: 1.4fr 1fr; } }
+  .req-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .req-list { list-style: none; padding: 0; margin: 0; }
+  .req-list li { display: flex; justify-content: space-between; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .req-list li:last-child { border-bottom: none; }
+  .req-list dt { color: var(--ink-2); }
+  .req-list b { color: var(--ink); font-weight: 700; text-align: right; }
+  .ielts-help { background: linear-gradient(135deg, #fff8e6, #fff); border: 1px solid #ffd97a; border-radius: 14px; padding: 20px; }
+  .ielts-help h4 { margin: 0 0 8px; color: #8a5e00; }
+
+  .reviews-stub { background: #fff; border: 2px dashed var(--line); border-radius: 14px; padding: 24px; text-align: center; color: var(--ink-3); }
+  .reviews-stub strong { color: var(--ink); display: block; margin-bottom: 4px; }
+
+  .about-grid { display: grid; gap: 28px; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 880px) { .about-grid { grid-template-columns: 1fr 1.3fr; } }
+  .about-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .about-stat { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .about-stat b { font-size: 28px; color: var(--green); display: block; }
+  .about-stat span { font-size: 13px; color: var(--ink-2); }
+  .placeholder { background: #fff3a8; padding: 1px 6px; border-radius: 4px; font-weight: 700; font-style: italic; color: #5a4a00; }
+
+  .accom-grid, .camp-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .accom-grid, .camp-grid { grid-template-columns: repeat(3, 1fr); } }
+  .accom, .camp { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; cursor: pointer; transition: transform .15s, box-shadow .15s; }
+  .accom:hover, .camp:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .accom__img, .camp__img { aspect-ratio: 4/3; background: #ddd center/cover no-repeat; transition: transform .3s ease; }
+  .accom:hover .accom__img, .camp:hover .camp__img { transform: scale(1.04); }
+  .accom__body, .camp__body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+  .accom__price { display: inline-block; align-self: flex-start; background: var(--green); color: #fff; padding: 4px 10px; border-radius: 999px; font-weight: 700; font-size: 13px; margin-bottom: 8px; }
+  .accom__name, .camp__title { font-weight: 700; margin-bottom: 6px; font-size: 16px; }
+  .camp__sub { font-size: 12px; color: var(--green); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+  .accom__text, .camp__text { font-size: 14px; color: var(--ink-2); margin: 0; }
+
+  .photo-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .photo-tile { aspect-ratio: 4/3; border-radius: 12px; background: #ddd center/cover no-repeat; cursor: zoom-in; transition: transform .25s ease; }
+  .photo-tile:hover { transform: scale(1.02); }
+  .photo-cat { margin-bottom: 28px; }
+  .photo-cat h3 { font-size: 18px; margin-bottom: 14px; }
+
+  .desc-grid { display: grid; gap: 28px; grid-template-columns: 1fr; }
+  @media (min-width: 880px) { .desc-grid { grid-template-columns: 1.4fr 1fr; } }
+  .desc-text p { color: var(--ink-2); font-size: 16px; }
+  .ranks-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .ranks-card h4 { margin: 0 0 14px; font-size: 16px; }
+  .ranks-list { list-style: none; padding: 0; margin: 0; }
+  .ranks-list li { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--ink-2); display: flex; gap: 10px; align-items: flex-start; }
+  .ranks-list li::before { content: '★'; color: var(--amber); font-size: 16px; line-height: 1.4; flex-shrink: 0; }
+  .ranks-list li:last-child { border-bottom: none; }
+
+  .faq-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .faq-grid { grid-template-columns: 1fr 1fr; } }
+  .faq-item { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 0; overflow: hidden; }
+  .faq-item__head { padding: 18px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .faq-item__head h4 { font-size: 16px; margin: 0; color: var(--green); }
+  .faq-item__icon { font-size: 22px; color: var(--green); transition: transform .2s; flex-shrink: 0; }
+  .faq-item.is-open .faq-item__icon { transform: rotate(45deg); }
+  .faq-item__body { padding: 0 18px; max-height: 0; overflow: hidden; transition: max-height .25s ease, padding .25s ease; }
+  .faq-item.is-open .faq-item__body { padding: 0 18px 18px; max-height: 300px; }
+  .faq-item p { font-size: 14px; color: var(--ink-2); margin: 0; }
+
+  .timeline { display: grid; gap: 14px; grid-template-columns: 1fr; counter-reset: tl; }
+  @media (min-width: 720px) { .timeline { grid-template-columns: repeat(4, 1fr); } }
+  .tl-step { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; position: relative; counter-increment: tl; }
+  .tl-step::before { content: counter(tl); position: absolute; top: -14px; left: 18px; width: 28px; height: 28px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font-weight: 900; font-size: 14px; }
+  .tl-step h4 { font-size: 15px; margin: 0 0 6px; }
+  .tl-step p { font-size: 13.5px; color: var(--ink-2); margin: 0; }
+  .deadline-strip { background: linear-gradient(135deg, #fff4e0, #ffe9c2); border: 1px solid #ffc266; border-radius: 12px; padding: 14px 18px; margin-bottom: 22px; display: flex; align-items: center; gap: 12px; font-weight: 700; color: #7a4500; flex-wrap: wrap; }
+  .deadline-strip__count { font-variant-numeric: tabular-nums; color: #d05500; font-size: 18px; }
+
+  .cta { background: linear-gradient(135deg, #00350a, #00950f); color: #fff; border-radius: 22px; padding: 40px; overflow: hidden; display: grid; gap: 32px; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 880px) { .cta { grid-template-columns: 1fr 1fr; padding: 56px; } }
+  .cta h2 { color: #fff; margin-bottom: 14px; }
+  .cta p { color: rgba(255,255,255,.85); }
+  .cta__form { background: #fff; color: var(--ink); padding: 26px; border-radius: 16px; }
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--ink-2); }
+  .field input { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: 15px; background: #fff; transition: border-color .15s, box-shadow .15s; }
+  .field input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,149,15,.15); }
+  .pill-choices { display: flex; gap: 8px; flex-wrap: wrap; }
+  .pill-choices label { flex: 1; min-width: 80px; text-align: center; padding: 10px; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; font-size: 13px; font-weight: 500; margin: 0; transition: all .15s; }
+  .pill-choices input { display: none; }
+  .pill-choices label:has(input:checked) { background: var(--green); color: #fff; border-color: var(--green); }
+  .pill-choices label:hover:not(:has(input:checked)) { border-color: var(--green); }
+  .form-fineprint { font-size: 12px; color: var(--ink-3); margin-top: 10px; text-align: center; }
+  .cta__trust { display: grid; gap: 14px; }
+  .cta__trust-item { display: flex; gap: 12px; align-items: flex-start; }
+  .cta__trust-item svg { flex: 0 0 22px; }
+  .cta__trust-item p { margin: 0; font-size: 14.5px; color: rgba(255,255,255,.9); }
+  .cta__trust-item b { color: #fff; display: block; margin-bottom: 2px; font-size: 15px; }
+
+  footer.site { background: #0e0e0e; color: rgba(255,255,255,.7); padding: 40px 0 30px; font-size: 14px; }
+  .foot-grid { display: grid; gap: 28px; grid-template-columns: 1fr; margin-bottom: 24px; }
+  @media (min-width: 720px) { .foot-grid { grid-template-columns: 2fr 1fr 1fr; } }
+  footer.site h4 { color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 12px; }
+  footer.site a { color: rgba(255,255,255,.85); }
+  footer.site ul { list-style: none; padding: 0; margin: 0; }
+  footer.site li { margin-bottom: 8px; }
+  .foot-legal { border-top: 1px solid rgba(255,255,255,.1); padding-top: 18px; font-size: 12px; color: rgba(255,255,255,.5); }
+
+  .sticky-wa { position: fixed; bottom: 22px; right: 22px; z-index: 100; background: #25D366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(37,211,102,.4); border: none; cursor: pointer; transition: transform .15s ease; }
+  .sticky-wa:hover { transform: scale(1.08); text-decoration: none; }
+  .sticky-wa svg { width: 30px; height: 30px; }
+  .sticky-bottom-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: #fff; border-top: 1px solid var(--line); padding: 12px 16px; display: none; box-shadow: 0 -2px 12px rgba(0,0,0,.06); transform: translateY(100%); transition: transform .25s ease; }
+  .sticky-bottom-cta.is-visible { transform: translateY(0); }
+  .sticky-bottom-cta .btn { width: 100%; }
+  @media (max-width: 720px) {
+    .sticky-bottom-cta { display: block; }
+    body { padding-bottom: 78px; }
+    .sticky-wa { bottom: 84px; }
+  }
+
+  .chat-fab { position: fixed; bottom: 22px; left: 22px; z-index: 99; background: #fff; border-radius: 16px; padding: 14px; box-shadow: var(--shadow-md); border: 1px solid var(--line); max-width: 280px; display: none; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; font: inherit; text-align: left; }
+  .chat-fab:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  @media (min-width: 1100px) { .chat-fab { display: block; } }
+  .chat-fab.is-hidden { display: none !important; }
+  .chat-fab__head { display: flex; align-items: center; gap: 10px; }
+  .chat-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #ffb6a3, #ff8b6e); display: grid; place-items: center; font-weight: 900; color: #fff; position: relative; flex-shrink: 0; }
+  .chat-avatar::after { content: ''; position: absolute; bottom: 1px; right: 1px; width: 11px; height: 11px; border-radius: 50%; background: #25D366; border: 2px solid #fff; }
+  .chat-fab__name { font-weight: 700; font-size: 14px; }
+  .chat-fab__role { font-size: 11px; color: var(--ink-3); }
+  .chat-fab__msg { background: var(--bg-soft); border-radius: 10px; padding: 10px; font-size: 13px; margin-top: 10px; color: var(--ink-2); }
+  .chat-fab__msg b { color: var(--ink); }
+
+  .chat-panel { position: fixed; bottom: 22px; left: 22px; z-index: 99; width: min(360px, calc(100vw - 44px)); background: #fff; border-radius: 18px; box-shadow: var(--shadow-lg); border: 1px solid var(--line); display: none; flex-direction: column; height: min(560px, calc(100vh - 100px)); overflow: hidden; }
+  .chat-panel.is-open { display: flex; animation: chatIn .25s ease; }
+  @keyframes chatIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  .chat-panel__head { padding: 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, var(--green), var(--green-dark)); color: #fff; }
+  .chat-panel__head .chat-avatar { background: linear-gradient(135deg, #ffd8c5, #ff8b6e); }
+  .chat-panel__head .chat-avatar::after { border-color: var(--green); }
+  .chat-panel__name { font-weight: 700; font-size: 15px; color: #fff; }
+  .chat-panel__role { font-size: 12px; color: rgba(255,255,255,.85); }
+  .chat-panel__close { background: rgba(255,255,255,.15); border: none; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; margin-left: auto; }
+  .chat-panel__close:hover { background: rgba(255,255,255,.25); }
+  .chat-panel__body { flex: 1; overflow-y: auto; padding: 16px; background: var(--bg-soft); display: flex; flex-direction: column; }
+  .chat-msg { display: flex; gap: 8px; margin-bottom: 12px; max-width: 85%; }
+  .chat-msg--bot { align-self: flex-start; }
+  .chat-msg--user { align-self: flex-end; flex-direction: row-reverse; }
+  .chat-msg__bubble { background: #fff; padding: 10px 14px; border-radius: 14px; font-size: 14px; line-height: 1.4; box-shadow: var(--shadow-sm); }
+  .chat-msg--user .chat-msg__bubble { background: var(--green); color: #fff; }
+  .chat-quick { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 16px; background: var(--bg-soft); border-top: 1px solid var(--line); }
+  .chat-quick button { padding: 8px 12px; border: 1px solid var(--green); background: #fff; color: var(--green); border-radius: 999px; font: inherit; font-size: 12px; font-weight: 500; cursor: pointer; transition: all .15s; }
+  .chat-quick button:hover { background: var(--green); color: #fff; }
+  .chat-input { display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--line); background: #fff; }
+  .chat-input input { flex: 1; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; font: inherit; font-size: 14px; outline: none; }
+  .chat-input input:focus { border-color: var(--green); }
+  .chat-input button { background: var(--green); color: #fff; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; }
+  .chat-input button svg { width: 18px; height: 18px; }
+
+  dialog { border: none; border-radius: 18px; padding: 0; max-width: 720px; width: calc(100vw - 32px); max-height: calc(100vh - 60px); overflow: hidden; box-shadow: var(--shadow-lg); animation: modalIn .2s ease; }
+  dialog::backdrop { background: rgba(0,0,0,.55); backdrop-filter: blur(4px); }
+  @keyframes modalIn { from { transform: scale(.96); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .modal-head { padding: 18px 22px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px; position: sticky; top: 0; background: #fff; z-index: 1; }
+  .modal-head h3 { margin: 0; font-size: 20px; }
+  .modal-close { background: var(--bg-soft); border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; font-size: 20px; line-height: 1; transition: background .15s; }
+  .modal-close:hover { background: #e0e0e0; }
+  .modal-body { padding: 22px; max-height: calc(100vh - 200px); overflow-y: auto; }
+  .modal-foot { padding: 18px 22px; border-top: 1px solid var(--line); display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap; }
+
+  .program-search { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: 15px; margin-bottom: 14px; }
+  .program-search:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,149,15,.15); }
+  .program-list { list-style: none; padding: 0; margin: 0; }
+  .program-list li { display: grid; grid-template-columns: 110px 1fr auto; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .program-list li:last-child { border-bottom: none; }
+
+  dialog.lightbox { max-width: 92vw; background: transparent; box-shadow: none; }
+  dialog.lightbox::backdrop { background: rgba(0,0,0,.9); }
+  dialog.lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 12px; box-shadow: var(--shadow-lg); }
+  dialog.lightbox .modal-close { position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,.9); z-index: 2; }
+
+  .toast-tray { position: fixed; top: 20px; right: 20px; z-index: 300; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+  .toast { background: var(--ink); color: #fff; padding: 14px 18px; border-radius: 12px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; font-size: 14px; max-width: 360px; pointer-events: auto; animation: toastIn .25s ease; }
+  .toast--success { background: var(--green); }
+  .toast.is-out { animation: toastOut .25s ease forwards; }
+  @keyframes toastIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+  @keyframes toastOut { to { transform: translateX(120%); opacity: 0; } }
+
+  .proto-note { position: fixed; top: 8px; left: 50%; transform: translateX(-50%); z-index: 200; background: #111; color: #fff; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+</style>
+</head>
+<body>
+
+<div class="proto-note">ПРОТОТИП v2 — интерактивный</div>
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site">
+  <div class="wrap site__row">
+    <a href="#top" class="brand"><span class="brand__mark">S</span>StudyRoom</a>
+    <nav class="nav" id="nav">
+      <a href="#money" data-section="money">Стипендии</a>
+      <a href="#programs" data-section="programs">Программы</a>
+      <a href="#requirements" data-section="requirements">Требования</a>
+      <a href="#living" data-section="living">Жильё</a>
+      <a href="#dates" data-section="dates">Сроки</a>
+    </nav>
+    <a href="tel:+77272222222" class="site__phone">+7 (727) 222-22-22<small>пн–пт 9:00–19:00 по Алматы</small></a>
+    <button class="btn btn--primary site__cta" data-modal-open="consultModal">Бесплатная консультация</button>
+    <button class="burger" id="burger" aria-label="Меню"><span></span></button>
+  </div>
+</header>
+
+<div class="drawer__overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer">
+  <a href="#money">Стипендии и цена</a>
+  <a href="#programs">Программы</a>
+  <a href="#requirements">Требования</a>
+  <a href="#living">Жильё и кампусы</a>
+  <a href="#photos">Фото</a>
+  <a href="#faq">Виза и документы</a>
+  <a href="#dates">Сроки</a>
+  <a href="tel:+77272222222">+7 (727) 222-22-22</a>
+  <div class="drawer__cta"><button class="btn btn--primary" data-modal-open="consultModal">Бесплатная консультация</button></div>
+</aside>
+
+<section id="top" class="hero">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div>
+        <div class="hero__uni-line">
+          <span class="hero__logo">UofG</span>
+          <span><b>University of Glasgow</b> · Глазго, Великобритания · основан 1451</span>
+        </div>
+        <h1 class="hero__h1">Поступим в Glasgow с одной подачи — или вернём оплату услуги</h1>
+        <p class="hero__lead">Партнёрский договор с Kaplan напрямую. Без посредников, без двойных комиссий — оплачиваете только сам университет. Сопровождение от подачи до приземления в Глазго.</p>
+        <div class="hero__facts">
+          <div class="fact" title="Times & Sunday Times Good University Guide 2025"><div class="fact__num">5-е</div><div class="fact__label">в Великобритании</div></div>
+          <div class="fact" title="Через Kaplan Foundation (1 год) можно с IELTS 5.5"><div class="fact__num">от 5.5</div><div class="fact__label">IELTS — через Foundation / Pre-Master’s</div></div>
+          <div class="fact" title="Сумма доступных стипендий Kaplan + Glasgow Leadership"><div class="fact__num">до £16k</div><div class="fact__label">стипендий доступно казахстанцам</div></div>
+        </div>
+        <div class="hero__ctas">
+          <button class="btn btn--primary btn--lg" data-modal-open="consultModal">Узнать свой шанс на поступление →</button>
+          <a href="#programs" class="btn btn--ghost btn--lg">Смотреть программы</a>
+        </div>
+        <div class="hero__trust">
+          <span class="dot"></span>
+          <span><b>Айгерим</b>, куратор StudyRoom по UK, онлайн — ответит в течение 5 минут</span>
+        </div>
+      </div>
+      <div class="hero__media" role="img" aria-label="Главный кампус University of Glasgow" data-lightbox="../site/public/photos/glasgow/1.jpg">
+        <div class="hero__media-cap">Главный корпус Gilmorehill — клик чтобы увеличить</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt reveal" id="money">
+  <div class="wrap">
+    <span class="eyebrow">Деньги — честно</span>
+    <div class="money">
+      <div class="money__head">
+        <div>
+          <h2 class="money__title">До <span>£16 000 стипендий</span> доступно казахстанцам в Glasgow</h2>
+          <p style="max-width: 60ch; color: var(--ink-2); margin: 0;">Услуга StudyRoom — <b>бесплатно</b>: комиссию платит сам университет. Кликните по стипендии — увидите условия.</p>
+        </div>
+      </div>
+      <ul class="scholar-list">
+        <li class="scholar" data-scholarship="early-bird"><span class="scholar__amount">до £2 000</span><div><div class="scholar__name">Kaplan Early Bird</div><p class="scholar__desc">Автоматическая скидка при оплате депозита за 90+ дней до старта программы Kaplan.</p><div class="scholar__more">Подробнее →</div></div></li>
+        <li class="scholar" data-scholarship="achievement"><span class="scholar__amount">до £4 000</span><div><div class="scholar__name">Kaplan Academic Achievement</div><p class="scholar__desc">За академические заслуги для лучших абитуриентов программ Kaplan.</p><div class="scholar__more">Подробнее →</div></div></li>
+        <li class="scholar" data-scholarship="leadership"><span class="scholar__amount">£10 000</span><div><div class="scholar__name">Glasgow International Leadership</div><p class="scholar__desc">Одноразовая стипендия университета. Отбор по академическим заслугам.</p><div class="scholar__more">Подробнее →</div></div></li>
+        <li class="scholar" data-scholarship="chevening"><span class="scholar__amount">100%</span><div><div class="scholar__name">Chevening (правительство UK)</div><p class="scholar__desc">Полное покрытие обучения, проживания и проезда.</p><div class="scholar__more">Подробнее →</div></div></li>
+      </ul>
+
+      <div class="rate-slider">
+        <label for="rate">Курс ₸ за £1:</label>
+        <input type="range" id="rate" min="550" max="700" step="5" value="600" />
+        <output id="rateOut">600 ₸</output>
+        <span style="font-size: 12px; color: var(--ink-3);">Подвиньте — пересчитает в тенге</span>
+      </div>
+
+      <div class="calc">
+        <div class="calc__card">
+          <span class="calc__scenario calc__scenario--base">Базовый сценарий</span>
+          <h4>Foundation Business + общежитие</h4>
+          <div class="calc__row"><span>Обучение, 1 год</span><strong>£23 170 · <span data-kzt="23170">13,9 млн ₸</span></strong></div>
+          <div class="calc__row"><span>Жильё Cairncross House, 39 нед</span><strong>£6 298 · <span data-kzt="6298">3,78 млн ₸</span></strong></div>
+          <div class="calc__row"><span>Виза + IHS + страховка</span><strong>£1 200 · <span data-kzt="1200">720 000 ₸</span></strong></div>
+          <div class="calc__row"><span>Услуги StudyRoom</span><strong class="calc__highlight">0 ₸</strong></div>
+          <div class="calc__row calc__row--total"><span>Итого за год</span><strong>≈ <span data-kzt="30668">18,4 млн ₸</span></strong></div>
+        </div>
+        <div class="calc__card">
+          <span class="calc__scenario calc__scenario--best">Со стипендиями Kaplan</span>
+          <h4>Тот же сценарий, с Early Bird + Academic Achievement</h4>
+          <div class="calc__row"><span>Обучение, 1 год</span><strong>£23 170 · <span data-kzt="23170">13,9 млн ₸</span></strong></div>
+          <div class="calc__row"><span>Жильё + виза + страховка</span><strong>£7 498 · <span data-kzt="7498">4,5 млн ₸</span></strong></div>
+          <div class="calc__row"><span>− Kaplan Early Bird</span><strong class="calc__highlight">−£2 000 · <span data-kzt="-2000">−1,2 млн ₸</span></strong></div>
+          <div class="calc__row"><span>− Kaplan Academic Achievement</span><strong class="calc__highlight">−£4 000 · <span data-kzt="-4000">−2,4 млн ₸</span></strong></div>
+          <div class="calc__row calc__row--total"><span>Итого за год</span><strong>≈ <span data-kzt="24668">14,8 млн ₸</span></strong></div>
+          <p class="calc__note"><b>Экономия 3,6 млн ₸</b> только на стипендиях Kaplan.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 22px; text-align: center;">
+        <button class="btn btn--primary btn--lg" data-modal-open="consultModal">Проверить, на какие стипендии я прохожу →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="programs">
+  <div class="wrap">
+    <span class="eyebrow">Программы</span>
+    <h2>222 программы по 6 факультетам</h2>
+    <p style="max-width: 60ch; color: var(--ink-2);">Бакалавриат, магистратура и подготовительные программы Kaplan. Кликните по программе — детали в попапе.</p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab is-active" data-faculty="business">Business, Economics & Finance</button>
+      <button class="tab" data-faculty="sci">Science & Engineering</button>
+      <button class="tab" data-faculty="arts">Arts & Humanities</button>
+      <button class="tab" data-faculty="law">Law & Social Sciences</button>
+      <button class="tab" data-faculty="med">Medical & Life Sciences</button>
+    </div>
+
+    <div class="programs-grid" id="programsGrid"></div>
+    <div style="text-align: center; margin-top: 18px;">
+      <button class="btn btn--ghost" data-modal-open="programsModal">Показать все программы факультета →</button>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt reveal" id="requirements">
+  <div class="wrap">
+    <span class="eyebrow">Прохожу ли я?</span>
+    <h2>Требования к поступлению</h2>
+    <div class="req-grid">
+      <div class="req-card">
+        <h3 style="margin-top: 0;">Документы и баллы</h3>
+        <ul class="req-list">
+          <li><dt>Аттестат / диплом</dt><b>4.0+ GPA (≈70%)</b></li>
+          <li><dt>IELTS</dt><b>5.5 (Foundation) · 6.0 (Pre-Master’s) · 6.5 (магистратура)</b></li>
+          <li><dt>TOEFL iBT</dt><b>от 70</b></li>
+          <li><dt>Мотивационное письмо</dt><b>1 страница</b></li>
+          <li><dt>Рекомендации</dt><b>1–2 от учителей / работодателя</b></li>
+          <li><dt>Финансовое подтверждение</dt><b>~£17 000 на счёте 28+ дней</b></li>
+        </ul>
+      </div>
+      <div class="ielts-help">
+        <h4>IELTS ниже 6.0? Это не блокер.</h4>
+        <p style="font-size: 14px; color: var(--ink-2);">Через Kaplan Foundation (1 год) — с IELTS от <b>5.5</b>. Через Pre-Master’s — с <b>5.5–6.0</b>. После Kaplan — гарантированный переход на бакалавриат или магистратуру Glasgow.</p>
+        <button class="btn btn--ghost" style="margin-top: 8px;" data-modal-open="consultModal">Подобрать путь под мой IELTS →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="reviews">
+  <div class="wrap">
+    <span class="eyebrow">Студенты StudyRoom</span>
+    <h2>Кто уже поступил через нас</h2>
+    <div class="reviews-stub">
+      <strong>Раздел скрыт до съёмки настоящих видео-отзывов.</strong>
+      На реальном сайте — три видео по 30 сек: два студента в Глазго и один родитель.
+      <br><small style="display: block; margin-top: 10px;">Пример того, КАК должна выглядеть честная заглушка вместо «[TBD: имя студента]».</small>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt reveal" id="about">
+  <div class="wrap">
+    <span class="eyebrow">О StudyRoom</span>
+    <div class="about-grid">
+      <div>
+        <h2>Образовательное агентство в Алматы. С прямым партнёрством Kaplan.</h2>
+        <p>Помогаем казахстанским школьникам и выпускникам поступать в зарубежные университеты с <span class="placeholder">[год основания]</span> года. Работаем напрямую с университетами и Kaplan — без перепродажи услуг.</p>
+        <p>Офис в Алматы, выезды на встречи в Астану и Шымкент. С 2024 года — официальный канал в Telegram «Поступление UK 2026».</p>
+        <p><b>ТОО «StudyRoom»</b> · БИН <span class="placeholder">[заполнить]</span> · Алматы, <span class="placeholder">[адрес офиса]</span> · +7 (727) 222-22-22</p>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat"><b><span class="placeholder">N</span></b><span>казахстанцев поступили через нас в 2024</span></div>
+        <div class="about-stat"><b><span class="placeholder">N%</span></b><span>одобрений студенческой визы UK</span></div>
+        <div class="about-stat"><b><span class="placeholder">N</span></b><span>лет на рынке EdTech</span></div>
+        <div class="about-stat"><b>16 + 11</b><span>университетов в портфеле</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="living">
+  <div class="wrap">
+    <span class="eyebrow">Где жить и учиться</span>
+    <h2>Жильё и кампусы Glasgow <small style="font-weight: 400; font-size: 14px; color: var(--ink-3);">(кликните карточку для деталей)</small></h2>
+
+    <h3 style="margin: 24px 0 14px; font-size: 18px;">Где жить — реальные цены</h3>
+    <div class="accom-grid">
+      <div class="accom" data-detail="accom-kaplan">
+        <div class="accom__img" style="background-image: url('../site/public/photos/glasgow/accommodation-cards/kaplan-living.jpg');"></div>
+        <div class="accom__body"><span class="accom__price">от £8 330 за термин</span><div class="accom__name">Kaplan Living (партнёрское)</div><p class="accom__text">Приватная спальня и ванная, общая или собственная кухня, безопасный въезд.</p></div>
+      </div>
+      <div class="accom" data-detail="accom-cairncross">
+        <div class="accom__img" style="background-image: url('../site/public/photos/glasgow/accommodation-cards/cairncross-house.jpg');"></div>
+        <div class="accom__body"><span class="accom__price">£161,49/нед</span><div class="accom__name">Cairncross House</div><p class="accom__text">15–20 минут до главного кампуса. Single £161,49, en-suite £172,90, shared £125,02.</p></div>
+      </div>
+      <div class="accom" data-detail="accom-murano">
+        <div class="accom__img" style="background-image: url('../site/public/photos/glasgow/accommodation-cards/murano-street.jpg');"></div>
+        <div class="accom__body"><span class="accom__price">£172,90/нед</span><div class="accom__name">Murano Street Student Village</div><p class="accom__text">Студ. деревня в West End — все комнаты en-suite, общая кухня.</p></div>
+      </div>
+    </div>
+
+    <h3 style="margin: 36px 0 14px; font-size: 18px;">Кампусы — где будут лекции</h3>
+    <div class="camp-grid">
+      <div class="camp" data-detail="camp-gilmorehill">
+        <div class="camp__img" style="background-image: url('../site/public/photos/glasgow/6.jpg');"></div>
+        <div class="camp__body"><div class="camp__sub">Главный кампус</div><div class="camp__title">Gilmorehill</div><p class="camp__text">Неоготический Main Building с башней Скотта. Большинство факультетов.</p></div>
+      </div>
+      <div class="camp" data-detail="camp-garscube">
+        <div class="camp__img" style="background-image: url('../site/public/photos/glasgow/7.jpg');"></div>
+        <div class="camp__body"><div class="camp__sub">Биомедицина и спорт</div><div class="camp__title">Garscube</div><p class="camp__text">6 км к северу — ветеринария, медицинские лаборатории, спорт.</p></div>
+      </div>
+      <div class="camp" data-detail="camp-dumfries">
+        <div class="camp__img" style="background-image: url('../site/public/photos/glasgow/8.jpg');"></div>
+        <div class="camp__body"><div class="camp__sub">Региональный</div><div class="camp__title">Dumfries</div><p class="camp__text">Экология, культурное наследие, бизнес. Атмосфера маленького городка.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt reveal" id="photos">
+  <div class="wrap">
+    <span class="eyebrow">Как там выглядит</span>
+    <h2>Фото университета <small style="font-weight: 400; font-size: 14px; color: var(--ink-3);">(кликните чтобы увеличить)</small></h2>
+
+    <div class="photo-cat">
+      <h3>Главные виды</h3>
+      <div class="photo-grid">
+        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/1.jpg" style="background-image: url('../site/public/photos/glasgow/general/1.jpg'), url('../site/public/photos/glasgow/1.jpg');"></div>
+        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/2.jpg" style="background-image: url('../site/public/photos/glasgow/general/2.jpg'), url('../site/public/photos/glasgow/2.jpg');"></div>
+        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/3.jpg" style="background-image: url('../site/public/photos/glasgow/general/3.jpg'), url('../site/public/photos/glasgow/3.jpg');"></div>
+        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/4.jpg" style="background-image: url('../site/public/photos/glasgow/general/4.jpg'), url('../site/public/photos/glasgow/4.jpg');"></div>
+      </div>
+    </div>
+
+    <div class="photo-cat">
+      <h3>Кампусы</h3>
+      <div class="photo-grid">
+        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/5.jpg" style="background-image: url('../site/public/photos/glasgow/campuses/1.jpg'), url('../site/public/photos/glasgow/5.jpg');"></div>
+        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/6.jpg" style="background-image: url('../site/public/photos/glasgow/campuses/2.jpg'), url('../site/public/photos/glasgow/6.jpg');"></div>
+        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/7.jpg" style="background-image: url('../site/public/photos/glasgow/campuses/3.jpg'), url('../site/public/photos/glasgow/7.jpg');"></div>
+        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/8.jpg" style="background-image: url('../site/public/photos/glasgow/campuses/4.jpg'), url('../site/public/photos/glasgow/8.jpg');"></div>
+      </div>
+    </div>
+
+    <div class="photo-cat">
+      <h3>Студенты и преподаватели</h3>
+      <div class="photo-grid">
+        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/9.jpg" style="background-image: url('../site/public/photos/glasgow/students/1.jpg'), url('../site/public/photos/glasgow/9.jpg');"></div>
+        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/10.jpg" style="background-image: url('../site/public/photos/glasgow/students/2.jpg'), url('../site/public/photos/glasgow/10.jpg');"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="about-uni">
+  <div class="wrap">
+    <span class="eyebrow">О университете</span>
+    <div class="desc-grid">
+      <div class="desc-text">
+        <h2>University of Glasgow — Russell Group, основан 1451</h2>
+        <p>Имея более 550 лет истории, University of Glasgow — один из старейших и наиболее уважаемых университетов Великобритании.</p>
+        <p>Ведущий по многим предметам — от медицины и инженерии до искусств и социальных наук. Член Russell Group — 24 ведущих исследовательских университета Британии.</p>
+        <p>Глазго — крупнейший город Шотландии. Живая атмосфера, доступное жильё, дружелюбные жители — почувствуете себя как дома с первого дня.</p>
+      </div>
+      <div class="ranks-card">
+        <h4>Рейтинги и факты</h4>
+        <ul class="ranks-list">
+          <li>5-е в UK — Times & Sunday Times Good University Guide 2025</li>
+          <li>2-е в UK по востребованности — Times & Sunday Times 2026</li>
+          <li>12-е в UK — Guardian University Guide 2026</li>
+          <li>19-е в UK — Complete University Guide 2026</li>
+          <li>Член Russell Group — 24 ведущих университета</li>
+          <li>Топ-100 в мире — QS World Rankings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt reveal" id="faq">
+  <div class="wrap">
+    <span class="eyebrow">Важно знать</span>
+    <h2>Виза, страховка, документы <small style="font-weight: 400; font-size: 14px; color: var(--ink-3);">(кликните чтобы раскрыть)</small></h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-item__head"><h4>Студенческая виза UK</h4><span class="faq-item__icon">+</span></div>
+        <div class="faq-item__body"><p>Тип Student Visa. Готовим CAS-номер от университета, помогаем с заявлением и собеседованием. Срок оформления — 3–4 недели. Подаются документы за 6 месяцев до старта.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__head"><h4>Медицинская страховка (IHS)</h4><span class="faq-item__icon">+</span></div>
+        <div class="faq-item__body"><p>Healthcare Surcharge оплачивается при подаче на визу — даёт доступ к NHS. ~£776/год для учащихся. Дополнительная страховка — по желанию.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__head"><h4>Перевод документов</h4><span class="faq-item__icon">+</span></div>
+        <div class="faq-item__body"><p>Переводим аттестат и диплом, апостилируем при необходимости. Работаем с проверенными бюро в Алматы и Астане. Срок — 3–5 дней.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__head"><h4>Финансовое подтверждение</h4><span class="faq-item__icon">+</span></div>
+        <div class="faq-item__body"><p>Выписка со счёта на 28+ дней. Glasgow — ~£1 023/мес × 9 мес = £9 207 living costs + полная стоимость 1 года обучения. Допускается счёт родителя.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="dates">
+  <div class="wrap">
+    <span class="eyebrow">Сроки</span>
+    <h2>Когда подавать на Glasgow</h2>
+    <div class="deadline-strip">
+      ⏱ До дедлайна Early Bird Kaplan (скидка £2 000) осталось
+      <span class="deadline-strip__count" id="deadlineCount">47 дн. 14 ч.</span>.
+      Подача занимает 3–5 недель — начните сегодня.
+    </div>
+    <div class="timeline">
+      <div class="tl-step"><h4>Сентябрь</h4><p>Старт приёма документов в UCAS на программы Glasgow следующего учебного года.</p></div>
+      <div class="tl-step"><h4>Октябрь – январь</h4><p>Дедлайны UCAS: 15 октября — медицина и стоматология; 31 января — большинство программ Glasgow.</p></div>
+      <div class="tl-step"><h4>Январь – март</h4><p>Вступительные тесты и интервью. Подача на Kaplan-пути идёт параллельно.</p></div>
+      <div class="tl-step"><h4>Март – июль</h4><p>Решения университета, выбор оффера, подача на студенческую визу.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="wrap">
+    <div class="cta" id="cta">
+      <div>
+        <span class="eyebrow" style="background: rgba(255,255,255,.15); color: #fff;">15 минут с куратором</span>
+        <h2>Узнайте, проходите ли вы в Glasgow — за один звонок</h2>
+        <p>Айгерим посмотрит ваш аттестат, IELTS и скажет честно: есть ли шанс, какая программа подойдёт, сколько будет стоить со стипендией.</p>
+        <div class="cta__trust">
+          <div class="cta__trust-item"><svg viewBox="0 0 24 24" fill="#fff"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19l12-12-1.4-1.4z"/></svg><p><b>Без обязательств</b>Один звонок, один PDF с расчётом.</p></div>
+          <div class="cta__trust-item"><svg viewBox="0 0 24 24" fill="#fff"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19l12-12-1.4-1.4z"/></svg><p><b>Ответим за 15 минут</b>В рабочие часы.</p></div>
+          <div class="cta__trust-item"><svg viewBox="0 0 24 24" fill="#fff"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19l12-12-1.4-1.4z"/></svg><p><b>Без спам-рассылок</b>Только один звонок и PDF.</p></div>
+        </div>
+      </div>
+      <form class="cta__form" id="ctaForm">
+        <div class="field"><label>Кто оставляет заявку?</label><div class="pill-choices"><label><input type="radio" name="role" checked /><span>Студент</span></label><label><input type="radio" name="role" /><span>Родитель</span></label></div></div>
+        <div class="field"><label for="name">Имя</label><input id="name" type="text" placeholder="Ваше имя" required /></div>
+        <div class="field"><label for="phone">WhatsApp / телефон</label><input id="phone" type="tel" placeholder="+7 (___) ___-__-__" required /></div>
+        <div class="field"><label>Удобное время</label><div class="pill-choices"><label><input type="radio" name="t" checked /><span>Сейчас</span></label><label><input type="radio" name="t" /><span>Вечером</span></label><label><input type="radio" name="t" /><span>Завтра</span></label></div></div>
+        <button class="btn btn--primary btn--lg" type="submit" style="width: 100%;">Записаться на разбор профиля →</button>
+        <p class="form-fineprint">Нажимая «Записаться», вы соглашаетесь с обработкой данных.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>StudyRoom</h4>
+        <p style="margin: 0 0 10px;">Образовательное агентство в Казахстане. Поступление в зарубежные университеты — UK, Канада, Австралия, США, Новая Зеландия.</p>
+        <p style="margin: 0;"><b style="color:#fff;">ТОО «StudyRoom»</b><br />БИН <span class="placeholder">[заполнить]</span><br />Алматы, <span class="placeholder">[ул., дом, этаж]</span><br />+7 (727) 222-22-22 · hello@studyroom.kz</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul><li><a href="#programs">Программы</a></li><li><a href="#money">Стипендии и цена</a></li><li><a href="#requirements">Требования</a></li><li><a href="#living">Жильё и кампусы</a></li><li><a href="#dates">Сроки и дедлайны</a></li></ul>
+      </div>
+      <div>
+        <h4>Связаться</h4>
+        <ul><li><a href="https://wa.me/77272222222?text=Здравствуйте,%20я%20с%20лендинга%20University%20of%20Glasgow">WhatsApp</a></li><li><a href="https://t.me/studyroom_kz">Telegram «Поступление UK 2026»</a></li><li><a href="mailto:hello@studyroom.kz">hello@studyroom.kz</a></li><li><a href="#" data-modal-open="consultModal">Бесплатная консультация</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-legal">© 2026 StudyRoom · все права защищены · <a href="#" style="color:rgba(255,255,255,.5);">Политика конфиденциальности</a> · <a href="#" style="color:rgba(255,255,255,.5);">Публичная оферта</a></div>
+  </div>
+</footer>
+
+<a class="sticky-wa" href="https://wa.me/77272222222?text=Здравствуйте,%20я%20с%20лендинга%20University%20of%20Glasgow" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.27-1.12a9.95 9.95 0 0 0 5.77 1.84h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0 0 12.04 2zm0 18.08c-1.74 0-3.45-.47-4.95-1.36l-.36-.21-3.69.97.98-3.6-.23-.37a8.16 8.16 0 0 1-1.26-4.4c0-4.55 3.7-8.25 8.25-8.25 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.42 5.83c0 4.55-3.7 8.25-8.25 8.25zm4.52-6.18c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.13-.16.25-.65.8-.8.97-.15.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.25-.02-.39.11-.51.12-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01s-.43.06-.66.31c-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.16 1.74 2.66 4.21 3.73.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<button class="chat-fab" id="chatFab" type="button">
+  <div class="chat-fab__head">
+    <div class="chat-avatar">А</div>
+    <div><div class="chat-fab__name">Айгерим</div><div class="chat-fab__role">Куратор по UK · онлайн</div></div>
+  </div>
+  <div class="chat-fab__msg"><b>Привет 👋</b> Я Айгерим, помогаю казахстанцам поступать в UK. Что вас интересует в Glasgow?</div>
+</button>
+
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Чат с консультантом">
+  <div class="chat-panel__head">
+    <div class="chat-avatar">А</div>
+    <div><div class="chat-panel__name">Айгерим</div><div class="chat-panel__role">Куратор по UK · онлайн</div></div>
+    <button class="chat-panel__close" id="chatClose" aria-label="Закрыть">×</button>
+  </div>
+  <div class="chat-panel__body" id="chatBody">
+    <div class="chat-msg chat-msg--bot"><div class="chat-msg__bubble">Привет 👋 Я Айгерим, куратор StudyRoom по UK. Сама поступала в Эдинбург в 2019. Что вас интересует в Glasgow?</div></div>
+  </div>
+  <div class="chat-quick" id="chatQuick">
+    <button data-q="scholarships">Какие стипендии?</button>
+    <button data-q="grades">Хватит ли оценок?</button>
+    <button data-q="cost">Сколько стоит?</button>
+    <button data-q="visa">Сколько идёт виза?</button>
+  </div>
+  <form class="chat-input" id="chatInput">
+    <input type="text" placeholder="Напишите вопрос…" />
+    <button type="submit" aria-label="Отправить"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></button>
+  </form>
+</div>
+
+<div class="sticky-bottom-cta" id="stickyBottomCta">
+  <button class="btn btn--primary" data-modal-open="consultModal">Узнать свой шанс на поступление →</button>
+</div>
+
+<!-- MODALS -->
+<dialog id="consultModal" aria-label="Консультация">
+  <div class="modal-head"><h3>Записаться на бесплатную консультацию</h3><button class="modal-close" data-modal-close>×</button></div>
+  <div class="modal-body">
+    <p style="color: var(--ink-2); margin-top: 0;">Айгерим перезвонит в течение <b>15 минут</b> в рабочее время. Посмотрит ваш аттестат и IELTS, скажет честно: проходите ли в Glasgow и какие стипендии доступны.</p>
+    <form id="modalConsultForm">
+      <div class="field"><label>Кто оставляет заявку?</label><div class="pill-choices"><label><input type="radio" name="mrole" checked /><span>Студент</span></label><label><input type="radio" name="mrole" /><span>Родитель</span></label></div></div>
+      <div class="field"><label for="mname">Имя</label><input id="mname" type="text" placeholder="Ваше имя" required /></div>
+      <div class="field"><label for="mphone">WhatsApp / телефон</label><input id="mphone" type="tel" placeholder="+7 (___) ___-__-__" required /></div>
+      <div class="field"><label>Удобный канал связи</label><div class="pill-choices"><label><input type="radio" name="mch" checked /><span>WhatsApp</span></label><label><input type="radio" name="mch" /><span>Telegram</span></label><label><input type="radio" name="mch" /><span>Звонок</span></label></div></div>
+      <div class="field"><label>Когда удобно?</label><div class="pill-choices"><label><input type="radio" name="mt" checked /><span>Сейчас</span></label><label><input type="radio" name="mt" /><span>Вечером</span></label><label><input type="radio" name="mt" /><span>Завтра</span></label></div></div>
+      <button class="btn btn--primary btn--lg" type="submit" style="width: 100%;">Записаться →</button>
+      <p class="form-fineprint">Без спам-рассылок. Один звонок и PDF с расчётом.</p>
+    </form>
+  </div>
+</dialog>
+
+<dialog id="programsModal" aria-label="Программы">
+  <div class="modal-head"><h3>Все программы — <span id="programsModalFaculty">Business</span></h3><button class="modal-close" data-modal-close>×</button></div>
+  <div class="modal-body">
+    <input type="text" class="program-search" id="programSearch" placeholder="Поиск по названию программы…" />
+    <ul class="program-list" id="programList"></ul>
+  </div>
+  <div class="modal-foot">
+    <button class="btn btn--ghost" data-modal-close>Закрыть</button>
+    <button class="btn btn--primary" data-modal-open="consultModal">Получить консультацию</button>
+  </div>
+</dialog>
+
+<dialog id="scholarshipModal" aria-label="Стипендия">
+  <div class="modal-head"><h3 id="schModalTitle">Стипендия</h3><button class="modal-close" data-modal-close>×</button></div>
+  <div class="modal-body" id="schModalBody"></div>
+  <div class="modal-foot">
+    <button class="btn btn--ghost" data-modal-close>Закрыть</button>
+    <button class="btn btn--primary" data-modal-open="consultModal">Подать заявку на стипендию →</button>
+  </div>
+</dialog>
+
+<dialog id="detailModal" aria-label="Детали">
+  <div class="modal-head"><h3 id="detailTitle">Подробнее</h3><button class="modal-close" data-modal-close>×</button></div>
+  <div class="modal-body" id="detailBody"></div>
+</dialog>
+
+<dialog id="exitModal" aria-label="Подождите">
+  <div class="modal-head"><h3>Подождите — получите бесплатный PDF</h3><button class="modal-close" data-modal-close>×</button></div>
+  <div class="modal-body">
+    <p style="color: var(--ink-2); margin-top: 0;"><b>«Гид по поступлению в University of Glasgow для казахстанцев»</b> — 18 страниц: документы, дедлайны, расчёт стипендий, чек-лист подачи на визу. Отправим на email или в WhatsApp.</p>
+    <form id="exitForm">
+      <div class="field"><label for="exname">Имя</label><input id="exname" type="text" placeholder="Ваше имя" required /></div>
+      <div class="field"><label for="excontact">Email или WhatsApp</label><input id="excontact" type="text" placeholder="email@example.com или +7 (___) ___-__-__" required /></div>
+      <button class="btn btn--primary btn--lg" type="submit" style="width: 100%;">Скачать PDF бесплатно →</button>
+      <p class="form-fineprint">Только PDF. Без спам-рассылок и звонков.</p>
+    </form>
+  </div>
+</dialog>
+
+<dialog id="lightbox" class="lightbox">
+  <button class="modal-close" data-modal-close>×</button>
+  <img id="lightboxImg" src="" alt="" />
+</dialog>
+
+<div class="toast-tray" id="toastTray" aria-live="polite"></div>
+
+<script>
+const PROGRAMS = {
+  business: [
+    { lvl: 'foundation', title: 'Foundation Certificate — Business, Economics and Finance', price: 23170 },
+    { lvl: 'pathway',    title: "Pre-Master's — Business, Economics and Finance",            price: 29980 },
+    { lvl: 'master',     title: 'MSc Financial Engineering',                                  price: 36720 },
+    { lvl: 'master',     title: 'MSc International Finance',                                  price: 34470 },
+    { lvl: 'master',     title: 'MSc Management with International Finance',                  price: 34470 },
+    { lvl: 'master',     title: 'MSc International Business and Entrepreneurship',            price: 34470 },
+    { lvl: 'bachelor',   title: 'BSc Accountancy with Finance',                               price: 33210 },
+    { lvl: 'bachelor',   title: 'BSc Business Economics',                                     price: 33210 },
+    { lvl: 'bachelor',   title: 'BSc Economics, Politics and International Relations',        price: 33210 },
+  ],
+  sci: [
+    { lvl: 'foundation', title: 'Foundation Certificate — Science and Engineering', price: 25480 },
+    { lvl: 'pathway',    title: "Pre-Master's — Science and Engineering",           price: 28920 },
+    { lvl: 'master',     title: 'MSc Sustainable Energy',                           price: 34470 },
+    { lvl: 'master',     title: 'MSc Data Science',                                 price: 36720 },
+    { lvl: 'master',     title: 'MSc Software Development',                         price: 34470 },
+    { lvl: 'bachelor',   title: 'BSc Computing Science',                            price: 33210 },
+    { lvl: 'bachelor',   title: 'BEng Mechanical Engineering',                      price: 33210 },
+  ],
+  arts: [
+    { lvl: 'foundation', title: 'Foundation Certificate — Arts and Humanities', price: 23870 },
+    { lvl: 'pathway',    title: "Pre-Master's — Arts and Humanities",           price: 27190 },
+    { lvl: 'master',     title: 'MSc TESOL',                                    price: 29355 },
+    { lvl: 'master',     title: 'MSc Translation Studies',                      price: 27720 },
+    { lvl: 'bachelor',   title: 'MA English Language and Linguistics',          price: 33210 },
+  ],
+  law: [
+    { lvl: 'pathway', title: "Pre-Master's — Law and Social Sciences", price: 28020 },
+    { lvl: 'master',  title: 'MSc Sociology',                          price: 26460 },
+    { lvl: 'master',  title: 'MSc Real Estate',                        price: 27720 },
+    { lvl: 'master',  title: 'MSc Political Communication',            price: 27720 },
+    { lvl: 'master',  title: 'LLM International Law',                  price: 27720 },
+  ],
+  med: [
+    { lvl: 'pathway', title: "Pre-Master's — Medical and Life Sciences", price: 29980 },
+    { lvl: 'master',  title: 'MSc Cancer Sciences',                       price: 36720 },
+    { lvl: 'master',  title: 'MSc Global Mental Health',                  price: 27720 },
+    { lvl: 'master',  title: 'MSc Public Health',                         price: 31050 },
+    { lvl: 'master',  title: 'MSc Ecology and Environmental Monitoring',  price: 31050 },
+  ],
+};
+const FACULTY_LABELS = { business: 'Business, Economics & Finance', sci: 'Science & Engineering', arts: 'Arts & Humanities', law: 'Law & Social Sciences', med: 'Medical & Life Sciences' };
+const LEVEL_LABELS = { foundation: 'Foundation', pathway: "Pre-Master's", master: 'Магистратура', bachelor: 'Бакалавриат' };
+
+const SCHOLARSHIPS = {
+  'early-bird': { title: 'Kaplan Early Bird Scholarship · до £2 000', body: `<p><b>Что это:</b> Автоматическая скидка при оплате депозита не позднее чем за 90 дней до старта программы Kaplan (Foundation или Pre-Master's).</p><p><b>Кто проходит:</b> любой студент, поступающий на программу Kaplan через StudyRoom.</p><p><b>Что нужно сделать:</b> подать документы и оплатить депозит за 90+ дней. Скидка применяется автоматически.</p><p><b>Сумма:</b> до £2 000 — зависит от программы и интейка.</p>` },
+  'achievement': { title: 'Kaplan Academic Achievement · до £4 000', body: `<p><b>Что это:</b> Стипендия за академические заслуги для лучших абитуриентов программ Kaplan.</p><p><b>Кто проходит:</b> студенты с высоким средним баллом (обычно от 4,5 GPA).</p><p><b>Совместима с Early Bird</b> — обе одновременно дают экономию до £6 000.</p>` },
+  'leadership': { title: 'Glasgow International Leadership · £10 000', body: `<p><b>Что это:</b> Одноразовая стипендия от самого университета для иностранных студентов.</p><p><b>Что нужно сделать:</b> мотивационное письмо с описанием лидерского опыта + академические документы. Конкурс.</p><p><b>Сумма:</b> £10 000 единоразово (минус из стоимости 1 года).</p>` },
+  'chevening': { title: 'Chevening Scholarship · 100%', body: `<p><b>Что это:</b> Стипендия правительства Великобритании. Самая престижная.</p><p><b>Что покрывает:</b> 100% обучения, ~£1 100/мес содержание, авиабилеты, виза.</p><p><b>Кто проходит:</b> только магистратура. Минимум 2 года рабочего опыта + лидерский опыт.</p><p><b>Конкурс:</b> ~3-5% одобрения. Реалистично для тех, у кого есть управленческий или активистский опыт.</p>` },
+};
+
+const DETAILS = {
+  'accom-kaplan': { title: 'Kaplan Living — партнёрское общежитие', body: `<p><b>Цена:</b> от £8 330 за термин (два термина = учебный год)</p><ul><li>Приватная спальня и ванная комната</li><li>Общая или собственная кухня — на выбор</li><li>Безопасный въезд по карте, видеонаблюдение</li><li>Wi-Fi, коммуналки, страховка имущества — включены</li><li>Соц. пространства, прачечная, тренажёрный зал</li><li>Поддержка персонала 24/7</li></ul><p><b>Совет:</b> Kaplan Living бронируется автоматически при подаче на Foundation / Pre-Master's — самый простой вариант для первого года.</p>` },
+  'accom-cairncross': { title: 'Cairncross House', body: `<p><b>Цена:</b> Single £161,49/нед · En-suite £172,90 · Shared £125,02. Контракт 39 недель.</p><ul><li>Kelvinhaugh Street — 15–20 минут пешком до Gilmorehill</li><li>212 мест в флатах на 5 человек</li><li>Подходит и для бакалавров, и для магистрантов</li><li>Self-catered — готовите сами</li><li>Общая кухня, гостиная в каждом флате</li></ul><p><b>Самый бюджетный среди уни-общежитий Glasgow.</b></p>` },
+  'accom-murano': { title: 'Murano Street Student Village', body: `<p><b>Цена:</b> £172,90/нед, все коммуналки включены</p><ul><li>West End — район с лучшей студ. жизнью</li><li>5 минут до метро Kelvinbridge, 15 до главного кампуса</li><li>Все комнаты en-suite</li><li>Общая кухня в флатах на 5–6 человек</li><li>Бар, тренажёрный зал, парк рядом</li></ul>` },
+  'camp-gilmorehill': { title: 'Gilmorehill — главный кампус', body: `<p>Сердце университета в West End. Среди парков Kelvingrove и Botanic Gardens.</p><ul><li>Неоготический Main Building с башней Скотта</li><li>Школы права, искусств, инженерии</li><li>Большинство факультетов и библиотеки</li><li>Hunterian Museum — старейший публичный музей Шотландии</li><li>20 минут на метро до центра</li></ul>` },
+  'camp-garscube': { title: 'Garscube — биомедицина', body: `<p>6 км к северу от центра города.</p><ul><li>Школа ветеринарной медицины — одна из лучших в UK</li><li>Медицинские исследовательские центры</li><li>Крупнейший университетский спортивный комплекс Шотландии</li><li>Регулярный шаттл до Gilmorehill</li></ul>` },
+  'camp-dumfries': { title: 'Dumfries — региональный кампус', body: `<p>Совместный кампус с University of the West of Scotland на юге Шотландии.</p><ul><li>Экология, культурное наследие, бизнес, образование</li><li>Атмосфера небольшого городка</li><li>Дешевле жильё чем в Глазго</li><li>1,5 часа на поезде до Глазго</li></ul>` },
+};
+
+const $ = (s, root=document) => root.querySelector(s);
+const $$ = (s, root=document) => Array.from(root.querySelectorAll(s));
+
+function toast(msg, type='info') {
+  const tray = $('#toastTray');
+  const el = document.createElement('div');
+  el.className = `toast toast--${type}`;
+  el.textContent = msg;
+  tray.appendChild(el);
+  setTimeout(() => { el.classList.add('is-out'); setTimeout(() => el.remove(), 250); }, 3000);
+}
+
+function fmtKzt(n) {
+  if (Math.abs(n) >= 1_000_000) return (n/1_000_000).toFixed(2).replace('.',',') + ' млн ₸';
+  if (Math.abs(n) >= 1000) return (n/1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' тыс. ₸';
+  return n.toLocaleString('ru-RU') + ' ₸';
+}
+
+// progress bar
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const max = h.scrollHeight - h.clientHeight;
+  $('#progressBar').style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+}, { passive: true });
+
+// reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+}, { threshold: .15 });
+$$('.reveal').forEach(el => io.observe(el));
+
+// active nav
+const navIo = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      $$('#nav a').forEach(a => a.classList.toggle('is-active', a.dataset.section === id));
+    }
+  });
+}, { threshold: .3, rootMargin: '-100px 0px -50% 0px' });
+['money','programs','requirements','living','dates'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) navIo.observe(el);
+});
+
+// burger / drawer
+const burger = $('#burger');
+const drawer = $('#drawer');
+const overlay = $('#drawerOverlay');
+function toggleDrawer(open) {
+  drawer.classList.toggle('is-open', open);
+  overlay.classList.toggle('is-open', open);
+  burger.classList.toggle('is-open', open);
+  document.body.classList.toggle('no-scroll', open);
+}
+burger.addEventListener('click', () => toggleDrawer(!drawer.classList.contains('is-open')));
+overlay.addEventListener('click', () => toggleDrawer(false));
+$$('#drawer a').forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
+
+// programs
+function renderProgramsCards(facultyKey) {
+  const list = PROGRAMS[facultyKey] || [];
+  $('#programsGrid').innerHTML = list.slice(0, 6).map(p => `
+    <div class="program" tabindex="0" role="button">
+      <div><span class="program__level program__level--${p.lvl}">${LEVEL_LABELS[p.lvl]}</span><div class="program__title">${p.title}</div></div>
+      <div class="program__price">£${p.price.toLocaleString('en')}/год</div>
+    </div>
+  `).join('');
+}
+function renderProgramsModal(facultyKey, q='') {
+  const list = PROGRAMS[facultyKey] || [];
+  const filtered = q ? list.filter(p => p.title.toLowerCase().includes(q.toLowerCase())) : list;
+  $('#programsModalFaculty').textContent = FACULTY_LABELS[facultyKey];
+  $('#programList').innerHTML = filtered.length ? filtered.map(p => `
+    <li>
+      <span class="program__level program__level--${p.lvl}">${LEVEL_LABELS[p.lvl]}</span>
+      <span>${p.title}</span>
+      <strong style="color: var(--green); white-space: nowrap;">£${p.price.toLocaleString('en')}/год</strong>
+    </li>
+  `).join('') : `<li style="grid-template-columns: 1fr; color: var(--ink-3);">Ничего не нашли по «${q}». Попробуйте другое слово.</li>`;
+}
+let currentFaculty = 'business';
+renderProgramsCards(currentFaculty);
+$$('.tab').forEach(t => {
+  t.addEventListener('click', () => {
+    $$('.tab').forEach(x => x.classList.remove('is-active'));
+    t.classList.add('is-active');
+    currentFaculty = t.dataset.faculty;
+    renderProgramsCards(currentFaculty);
+  });
+});
+
+// currency slider
+const rate = $('#rate');
+const rateOut = $('#rateOut');
+function applyRate() {
+  const r = +rate.value;
+  rateOut.textContent = r + ' ₸';
+  $$('[data-kzt]').forEach(el => {
+    const gbp = +el.dataset.kzt;
+    el.textContent = fmtKzt(gbp * r);
+  });
+}
+rate.addEventListener('input', applyRate);
+applyRate();
+
+// deadline counter
+const deadline = new Date(Date.now() + 47 * 24 * 60 * 60 * 1000);
+function tickDeadline() {
+  const diff = deadline - new Date();
+  if (diff <= 0) { $('#deadlineCount').textContent = 'дедлайн прошёл'; return; }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  $('#deadlineCount').textContent = `${d} дн. ${h} ч.`;
+}
+tickDeadline();
+setInterval(tickDeadline, 60000);
+
+// modals
+function openModal(id) {
+  const dlg = document.getElementById(id);
+  if (!dlg) return;
+  dlg.showModal();
+  document.body.classList.add('no-scroll');
+}
+function closeModal(dlg) {
+  if (!dlg || !dlg.open) return;
+  dlg.close();
+  document.body.classList.remove('no-scroll');
+}
+
+document.addEventListener('click', (e) => {
+  const opener = e.target.closest('[data-modal-open]');
+  if (opener) {
+    e.preventDefault();
+    const id = opener.dataset.modalOpen;
+    // close any currently open modal first
+    $$('dialog[open]').forEach(d => closeModal(d));
+    if (id === 'programsModal') renderProgramsModal(currentFaculty);
+    openModal(id);
+    return;
+  }
+  const closer = e.target.closest('[data-modal-close]');
+  if (closer) {
+    closeModal(closer.closest('dialog'));
+    return;
+  }
+});
+
+$$('dialog').forEach(dlg => {
+  dlg.addEventListener('click', (e) => {
+    if (e.target === dlg) closeModal(dlg);
+  });
+  dlg.addEventListener('close', () => document.body.classList.remove('no-scroll'));
+});
+
+$('#programSearch').addEventListener('input', (e) => renderProgramsModal(currentFaculty, e.target.value));
+
+// scholarship cards
+$$('.scholar').forEach(card => {
+  card.addEventListener('click', () => {
+    const s = SCHOLARSHIPS[card.dataset.scholarship];
+    if (!s) return;
+    $('#schModalTitle').textContent = s.title;
+    $('#schModalBody').innerHTML = s.body;
+    openModal('scholarshipModal');
+  });
+});
+
+// accom / campus
+$$('[data-detail]').forEach(card => {
+  card.addEventListener('click', () => {
+    const d = DETAILS[card.dataset.detail];
+    if (!d) return;
+    $('#detailTitle').textContent = d.title;
+    $('#detailBody').innerHTML = d.body;
+    openModal('detailModal');
+  });
+});
+
+// lightbox
+$$('[data-lightbox]').forEach(el => {
+  el.addEventListener('click', () => {
+    $('#lightboxImg').src = el.dataset.lightbox;
+    openModal('lightbox');
+  });
+});
+
+// FAQ accordion
+$$('.faq-item').forEach(item => {
+  $('.faq-item__head', item).addEventListener('click', () => {
+    const wasOpen = item.classList.contains('is-open');
+    $$('.faq-item').forEach(x => x.classList.remove('is-open'));
+    if (!wasOpen) item.classList.add('is-open');
+  });
+});
+
+// chat
+const chatFab = $('#chatFab');
+const chatPanel = $('#chatPanel');
+const chatBody = $('#chatBody');
+
+function chatOpen() {
+  chatFab.classList.add('is-hidden');
+  chatPanel.classList.add('is-open');
+}
+function chatClose() {
+  chatPanel.classList.remove('is-open');
+  chatFab.classList.remove('is-hidden');
+}
+function chatAddMsg(text, who='bot') {
+  const m = document.createElement('div');
+  m.className = `chat-msg chat-msg--${who}`;
+  m.innerHTML = `<div class="chat-msg__bubble">${text}</div>`;
+  chatBody.appendChild(m);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+chatFab.addEventListener('click', chatOpen);
+$('#chatClose').addEventListener('click', chatClose);
+
+const QUICK_REPLIES = {
+  scholarships: { user: 'Какие стипендии?', bot: 'Для Glasgow доступны 4: <b>Kaplan Early Bird</b> до £2 000, <b>Kaplan Academic Achievement</b> до £4 000, <b>Glasgow International Leadership</b> £10 000 и <b>Chevening</b> 100%. Первые две — почти каждому студенту через Kaplan.' },
+  grades: { user: 'Хватит ли оценок?', bot: 'Зависит от программы. Для Foundation — <b>аттестат от 4.0</b> (≈70%), для прямой магистратуры — диплом 3.5 GPA и выше. Скиньте свои оценки в WhatsApp, посмотрю.' },
+  cost: { user: 'Сколько стоит?', bot: 'Foundation Business: <b>£23 170 за год обучения</b> + £6 300 общежитие. Со стипендиями Kaplan (Early Bird + Achievement) экономия £6 000. Итого ~14,8 млн ₸. Точный расчёт в PDF — оставите номер?' },
+  visa: { user: 'Сколько идёт виза?', bot: '<b>Student Visa UK</b> — 3-4 недели от подачи. IHS (медстраховка) — £776/год при подаче. Подача за 6 месяцев до старта. У нас 97% одобрений в 2024.' },
+};
+
+$$('#chatQuick button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const q = QUICK_REPLIES[btn.dataset.q];
+    if (!q) return;
+    chatAddMsg(q.user, 'user');
+    setTimeout(() => chatAddMsg(q.bot, 'bot'), 600);
+  });
+});
+
+$('#chatInput').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const inp = e.target.querySelector('input');
+  const val = inp.value.trim();
+  if (!val) return;
+  chatAddMsg(val, 'user');
+  inp.value = '';
+  setTimeout(() => chatAddMsg('Спасибо за вопрос! На реальном сайте — здесь живой консультант, отвечает за 5 минут. Если срочно — WhatsApp или оставьте номер в форме «Записаться».', 'bot'), 800);
+});
+
+// form submissions
+function handleForm(form, successMsg) {
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    toast(successMsg, 'success');
+    form.reset();
+    const dlg = form.closest('dialog');
+    if (dlg) setTimeout(() => closeModal(dlg), 800);
+  });
+}
+handleForm($('#ctaForm'), 'Заявка отправлена. Перезвоним за 15 минут.');
+handleForm($('#modalConsultForm'), 'Заявка отправлена. Перезвоним за 15 минут.');
+handleForm($('#exitForm'), 'PDF отправлен. Проверьте email или WhatsApp.');
+
+// sticky bottom CTA
+const bottomCta = $('#stickyBottomCta');
+const heroEl = $('#top');
+const stickyIo = new IntersectionObserver(([e]) => {
+  bottomCta.classList.toggle('is-visible', !e.isIntersecting);
+}, { threshold: 0 });
+if (heroEl) stickyIo.observe(heroEl);
+
+// exit-intent
+let exitShown = false;
+document.addEventListener('mouseout', (e) => {
+  if (exitShown) return;
+  if (e.clientY <= 0 && !e.relatedTarget) {
+    exitShown = true;
+    setTimeout(() => openModal('exitModal'), 100);
+  }
+});
+
+// keyboard
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (chatPanel.classList.contains('is-open')) chatClose();
+    if (drawer.classList.contains('is-open')) toggleDrawer(false);
+  }
+});
+
+// welcome toast
+setTimeout(() => toast('Прототип интерактивный — кликайте по карточкам, открывайте чат, двигайте курс', 'info'), 800);
+</script>
+
+</body>
+</html>
