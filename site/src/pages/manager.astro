@@ -843,6 +843,9 @@ const CONTROL_DEFAULT_URL = '';
       isStaticMode = data.isStaticSnapshot === true || !url;
       setHealth(isStaticMode ? 'static' : 'online');
 
+      // Populate lastRegistry first so renderRunStatus() can use the real
+      // count when composing the idle-state summary line.
+      lastRegistry = data.registry || [];
       renderSchedule(data.schedule);
       const catalogCount = data.registry.filter((r) => r.catalog).length;
       renderSource(data.sourceProfile, data.registry.length, catalogCount);
@@ -1218,7 +1221,10 @@ const CONTROL_DEFAULT_URL = '';
     applyFiltersAndRerender();
   });
 
-  document.getElementById('health-url').textContent = getControlUrl();
+  // Initial label: empty default URL = static snapshot. Match the fallback
+  // used by setControlUrl() so reload doesn't blank the field.
+  document.getElementById('health-url').textContent =
+    getControlUrl() || '/api/status.json (снимок)';
   fetchStatus();
   refreshVerifySummary();
 </script>
