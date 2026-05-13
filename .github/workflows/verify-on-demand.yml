@@ -1,0 +1,50 @@
+name: Verify catalog accuracy
+
+# On-demand verification triggered from the manager page (or manually via
+# the Actions UI). Samples 5 programs per university, checks each
+# programUrl is alive + page title still matches the stored title, then
+# commits site/public/api/verify.json back to main.
+#
+# The browser-side trigger uses a fine-grained PAT with "Actions:
+# Read+Write" scope on this repo. After dispatch, the manager page polls
+# the workflow status and pulls the fresh verify.json directly from
+# raw.githubusercontent.com (CORS-allowed) — no Cloudflare redeploy needed.
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install scraper deps
+        working-directory: scraper
+        run: npm ci
+
+      - name: Run verifier across all universities
+        working-directory: scraper
+        run: npm run verify
+
+      - name: Commit verify.json to main
+        run: |
+          git config user.name "studyroom-bot"
+          git config user.email "studyroom-bot@users.noreply.github.com"
+          git add site/public/api/verify.json
+          if git diff --staged --quiet; then
+            echo "verify.json unchanged."
+          else
+            git commit -m "chore(verify): on-demand accuracy check (run ${{ github.run_id }})"
+            git push origin HEAD:main
+          fi

@@ -818,7 +818,8 @@ const CONTROL_DEFAULT_URL = '';
       txt.textContent = 'Снимок данных (только просмотр)';
       banner.hidden = true;
       runBtn.disabled = true;
-      verifyBtn.disabled = true;
+      // Verify still works in static mode via GitHub Actions workflow_dispatch.
+      verifyBtn.disabled = false;
     } else {
       isOnline = false;
       pill.classList.add('status-pill--fail');
@@ -901,19 +902,153 @@ const CONTROL_DEFAULT_URL = '';
     fetchStatus();
   });
 
-  // Verify-button handler. Mirrors the run-all-btn flow: POSTs to the local
-  // control panel's /api/verify, then polls /api/status (which the existing
-  // fetchStatus loop handles). Refreshes the verify summary when finished.
-  const VERIFY_STATIC_HINT =
-    'Проверка актуальности тоже работает только локально. Запустите control-panel ' +
-    '(cd control && npm start) и укажите его URL через «изменить» в шапке.';
+  // Verify-button: two modes —
+  //   • Local control-panel mode: POST /api/verify (existing path).
+  //   • Static-snapshot mode: dispatch the verify-on-demand GitHub workflow
+  //     using a fine-grained PAT stored in localStorage, poll until done,
+  //     pull the fresh verify.json from raw.githubusercontent.com.
+  const GITHUB_REPO = 'kovylin1/studyroom-project-site';
+  const VERIFY_WORKFLOW = 'verify-on-demand.yml';
+  const GITHUB_TOKEN_KEY = 'studyroom.manager.githubToken';
+
+  function getGithubToken() {
+    try {
+      return localStorage.getItem(GITHUB_TOKEN_KEY) || '';
+    } catch {
+      return '';
+    }
+  }
+
+  function promptForGithubToken() {
+    const current = getGithubToken();
+    const next = prompt(
+      'GitHub PAT (fine-grained, scope «Actions: Read and write» на ' + GITHUB_REPO + ').\n\n' +
+      'Создать: https://github.com/settings/personal-access-tokens/new\n\n' +
+      'Пустое значение — удалить токен. Хранится в localStorage этого браузера.',
+      current,
+    );
+    if (next === null) return null;
+    const trimmed = next.trim();
+    try {
+      if (trimmed) localStorage.setItem(GITHUB_TOKEN_KEY, trimmed);
+      else localStorage.removeItem(GITHUB_TOKEN_KEY);
+    } catch {}
+    return trimmed || null;
+  }
+
+  function sleep(ms) {
+    return new Promise((r) => setTimeout(r, ms));
+  }
+
+  async function runRemoteVerify(token) {
+    const btn = document.getElementById('verify-btn');
+    const startTs = new Date();
+
+    const dispatchUrl =
+      'https://api.github.com/repos/' + GITHUB_REPO + '/actions/workflows/' +
+      VERIFY_WORKFLOW + '/dispatches';
+    const dispatchRes = await fetch(dispatchUrl, {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token,
+        Accept: 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+      body: JSON.stringify({ ref: 'main' }),
+    });
+    if (dispatchRes.status === 401) {
+      throw new Error('токен невалидный или истёк (HTTP 401)');
+    }
+    if (dispatchRes.status === 404) {
+      throw new Error(
+        'workflow не найден или у токена нет прав (HTTP 404). Проверьте scope Actions: Read and write.',
+      );
+    }
+    if (dispatchRes.status !== 204) {
+      throw new Error('GitHub API ' + dispatchRes.status + ': ' + (await dispatchRes.text()));
+    }
+
+    btn.textContent = 'Workflow в очереди…';
+
+    const runsUrl =
+      'https://api.github.com/repos/' + GITHUB_REPO + '/actions/workflows/' +
+      VERIFY_WORKFLOW + '/runs?per_page=10';
+    let run = null;
+    for (let i = 0; i < 60; i += 1) {
+      await sleep(10000);
+      try {
+        const r = await fetch(runsUrl, {
+          headers: {
+            Authorization: 'Bearer ' + token,
+            Accept: 'application/vnd.github+json',
+          },
+        });
+        if (!r.ok) continue;
+        const data = await r.json();
+        run = (data.workflow_runs || []).find(
+          (w) => new Date(w.created_at) >= startTs,
+        );
+        if (!run) continue;
+        if (run.status === 'queued') btn.textContent = 'В очереди GitHub…';
+        else if (run.status === 'in_progress') btn.textContent = 'Проверяем (GitHub)…';
+        if (run.status === 'completed') break;
+      } catch {
+        // network blip — keep polling
+      }
+    }
+    if (!run || run.status !== 'completed') {
+      throw new Error('таймаут опроса GitHub (>10 мин). Проверьте Actions UI.');
+    }
+    if (run.conclusion !== 'success') {
+      throw new Error(
+        'workflow завершился с conclusion=' + run.conclusion + '. Подробнее: ' + run.html_url,
+      );
+    }
+
+    btn.textContent = 'Обновляем результаты…';
+    const rawUrl =
+      'https://raw.githubusercontent.com/' + GITHUB_REPO +
+      '/main/site/public/api/verify.json?ts=' + Date.now();
+    const rawRes = await fetch(rawUrl, { cache: 'no-store' });
+    if (rawRes.ok) {
+      try {
+        const data = await rawRes.json();
+        renderVerifySummary(data);
+      } catch {}
+    }
+  }
 
   document.getElementById('verify-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('verify-btn');
+
     if (isStaticMode) {
-      alert(VERIFY_STATIC_HINT);
+      let token = getGithubToken();
+      if (!token) {
+        const proceed = confirm(
+          'Запустить проверку через GitHub Actions?\n\n' +
+          'Нужен fine-grained PAT с правом «Actions: Read and write» на ' +
+          GITHUB_REPO + '. Токен сохранится в localStorage этого браузера.',
+        );
+        if (!proceed) return;
+        token = promptForGithubToken();
+        if (!token) return;
+      }
+      btn.disabled = true;
+      const orig = btn.textContent;
+      btn.textContent = 'Запускаем workflow…';
+      try {
+        await runRemoteVerify(token);
+        btn.textContent = 'Проверить актуальность';
+      } catch (err) {
+        alert('Ошибка проверки: ' + (err && err.message ? err.message : err));
+        btn.textContent = orig;
+      } finally {
+        btn.disabled = false;
+      }
       return;
     }
-    const btn = document.getElementById('verify-btn');
+
     btn.disabled = true;
     const original = btn.textContent;
     btn.textContent = 'Проверяем…';
