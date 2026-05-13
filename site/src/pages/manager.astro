@@ -1,7 +1,12 @@
 ---
 import Base from '~/layouts/Base.astro';
 
-const CONTROL_DEFAULT_URL = 'http://localhost:5174';
+// Default control URL is empty string = relative path. On the public deploy,
+// `${''}/api/status` resolves to `/api/status` and hits the static snapshot
+// baked by `scripts/generate-status.mjs`. Users can override via localStorage
+// to point at the local control panel (e.g. `http://localhost:5174`) when
+// running it to trigger scrapes manually.
+const CONTROL_DEFAULT_URL = '';
 ---
 
 <Base
@@ -25,7 +30,7 @@ const CONTROL_DEFAULT_URL = 'http://localhost:5174';
             <span id="health-text">Подключение…</span>
           </span>
           <span class="manager__health-url">
-            API: <code id="health-url">{CONTROL_DEFAULT_URL}</code>
+            API: <code id="health-url">{CONTROL_DEFAULT_URL || '/api/status.json (снимок)'}</code>
             <button id="health-edit" class="link-btn" type="button">изменить</button>
           </span>
         </div>
@@ -80,10 +85,23 @@ const CONTROL_DEFAULT_URL = 'http://localhost:5174';
           <button id="run-all-btn" class="btn btn-primary" type="button">
             Запустить скрапинг сейчас
           </button>
+          <button id="verify-btn" class="btn btn-secondary" type="button">
+            Проверить актуальность
+          </button>
           <span class="muted manager__hint">
             или нажмите «обновить» в строке таблицы ниже, чтобы пересобрать один университет.
           </span>
         </div>
+        <p class="card__sub manager__verify-summary" id="verify-summary" hidden>
+          <span id="verify-summary-text"></span>
+          <button id="verify-details-toggle" class="link-btn" type="button" hidden>
+            подробности
+          </button>
+        </p>
+        <details id="verify-details" class="manager__verify-details" hidden>
+          <summary class="muted">Точность по университетам</summary>
+          <ul id="verify-details-list" class="manager__verify-list"></ul>
+        </details>
       </article>
 
       <article class="card card--flush">
@@ -269,6 +287,15 @@ const CONTROL_DEFAULT_URL = 'http://localhost:5174';
   .manager__run { margin-bottom: 24px; }
   .manager__actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 16px; }
   .manager__hint { font-size: 0.88rem; max-width: 480px; }
+  .manager__verify-summary { margin-top: 12px; }
+  .manager__verify-details { margin-top: 8px; }
+  .manager__verify-details summary { cursor: pointer; font-size: 0.9rem; }
+  .manager__verify-list { list-style: none; padding: 8px 0 0; margin: 0; display: grid; gap: 4px; }
+  .verify-row { display: flex; justify-content: space-between; gap: 12px; padding: 4px 8px; border-radius: 4px; font-size: 0.9rem; }
+  .verify-row__pct { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .verify-row--ok { background: rgba(34, 139, 34, 0.08); }
+  .verify-row--warn { background: rgba(225, 165, 0, 0.12); }
+  .verify-row--fail { background: rgba(200, 50, 50, 0.12); }
 
   .status-pill {
     display: inline-flex; align-items: center; gap: 8px;
@@ -472,7 +499,9 @@ const CONTROL_DEFAULT_URL = 'http://localhost:5174';
       if (url) localStorage.setItem(STORAGE_KEY, url);
       else localStorage.removeItem(STORAGE_KEY);
     } catch {}
-    document.getElementById('health-url').textContent = getControlUrl();
+    const current = getControlUrl();
+    document.getElementById('health-url').textContent =
+      current || '/api/status.json (снимок)';
   }
 
   const fmt = {
@@ -537,25 +566,52 @@ const CONTROL_DEFAULT_URL = 'http://localhost:5174';
     el.scrollTop = el.scrollHeight;
   }
 
+  let lastRunRunning = false;
+  let lastRunTarget = null;
+
   function renderRunStatus(run) {
     const pill = document.getElementById('run-status');
     const txt = document.getElementById('run-status-text');
     const summary = document.getElementById('run-summary');
     const btn = document.getElementById('run-all-btn');
+    const verifyBtn = document.getElementById('verify-btn');
+    const isVerify = run.currentTarget === 'verify';
+
+    // When a verify run just finished, refresh the snapshot in the UI.
+    if (lastRunRunning && !run.running && lastRunTarget === 'verify') {
+      refreshVerifySummary();
+    }
+    lastRunRunning = !!run.running;
+    lastRunTarget = run.currentTarget;
 
     pill.className = 'status-pill';
 
     if (run.running) {
       pill.classList.add('status-pill--running');
-      txt.textContent = 'Идёт скрапинг';
-      const target = run.currentTarget === 'all' ? 'все университеты' : run.currentTarget;
-      summary.textContent = 'Цель: ' + target + '. Запущено ' + fmt.ago(run.startedAt) + '. Кнопки отключены до завершения.';
-      btn.disabled = true;
-      btn.textContent = 'Идёт скрапинг…';
+      if (isVerify) {
+        txt.textContent = 'Идёт проверка';
+        summary.textContent =
+          'Проверяем актуальность ссылок. Запущено ' + fmt.ago(run.startedAt) + '. Кнопки отключены до завершения.';
+        verifyBtn.disabled = true;
+        verifyBtn.textContent = 'Проверяем…';
+        btn.disabled = true;
+        btn.textContent = 'Запустить скрапинг сейчас';
+      } else {
+        txt.textContent = 'Идёт скрапинг';
+        const target = run.currentTarget === 'all' ? 'все университеты' : run.currentTarget;
+        summary.textContent = 'Цель: ' + target + '. Запущено ' + fmt.ago(run.startedAt) + '. Кнопки отключены до завершения.';
+        btn.disabled = true;
+        btn.textContent = 'Идёт скрапинг…';
+        verifyBtn.disabled = true;
+        verifyBtn.textContent = 'Проверить актуальность';
+      }
     } else if (run.exitCode === null) {
       pill.classList.add('status-pill--idle');
       txt.textContent = 'Ожидание';
-      summary.textContent = 'Скрапер не запускался в этой сессии. Нажмите кнопку — обновятся все 16 университетов.';
+      summary.textContent =
+        'Скрапер не запускался в этой сессии. Нажмите кнопку — обновятся все ' +
+        (lastRegistry.length || '—') +
+        ' университетов.';
       btn.disabled = !isOnline;
       btn.textContent = 'Запустить скрапинг сейчас';
     } else if (run.exitCode === 0) {
@@ -570,6 +626,12 @@ const CONTROL_DEFAULT_URL = 'http://localhost:5174';
       summary.textContent = 'Последний запуск завершился с ошибкой ' + fmt.ago(run.finishedAt) + '. Смотрите лог ниже.';
       btn.disabled = !isOnline;
       btn.textContent = 'Повторить';
+    }
+
+    // Verify-btn shares the same online lock + run lock as the scrape btn.
+    if (!run.running) {
+      verifyBtn.disabled = !isOnline;
+      verifyBtn.textContent = 'Проверить актуальность';
     }
   }
 
@@ -734,32 +796,51 @@ const CONTROL_DEFAULT_URL = 'http://localhost:5174';
     } else el.textContent = '';
   }
 
+  let isStaticMode = false;
+
   function setHealth(state) {
     const pill = document.querySelector('#health .status-pill');
     const txt = document.getElementById('health-text');
     const banner = document.getElementById('offline-banner');
     pill.className = 'status-pill';
+    const runBtn = document.getElementById('run-all-btn');
+    const verifyBtn = document.getElementById('verify-btn');
     if (state === 'online') {
       isOnline = true;
       pill.classList.add('status-pill--ok');
       txt.textContent = 'Панель управления онлайн';
       banner.hidden = true;
+      runBtn.disabled = false;
+      verifyBtn.disabled = false;
+    } else if (state === 'static') {
+      isOnline = true;
+      pill.classList.add('status-pill--idle');
+      txt.textContent = 'Снимок данных (только просмотр)';
+      banner.hidden = true;
+      runBtn.disabled = true;
+      verifyBtn.disabled = true;
     } else {
       isOnline = false;
       pill.classList.add('status-pill--fail');
       txt.textContent = 'Панель управления оффлайн';
       banner.hidden = false;
-      document.getElementById('run-all-btn').disabled = true;
+      runBtn.disabled = true;
+      verifyBtn.disabled = true;
     }
   }
 
   async function fetchStatus() {
     const url = getControlUrl();
+    // Empty url = static-snapshot mode. Cloudflare Pages serves
+    // public/api/status.json at /api/status.json (with extension); the local
+    // control panel exposes /api/status (no extension). Pick the right path.
+    const statusPath = url ? '/api/status' : '/api/status.json';
     try {
-      const res = await fetch(url + '/api/status', { cache: 'no-store' });
+      const res = await fetch(url + statusPath, { cache: 'no-store' });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const data = await res.json();
-      setHealth('online');
+      isStaticMode = data.isStaticSnapshot === true || !url;
+      setHealth(isStaticMode ? 'static' : 'online');
 
       renderSchedule(data.schedule);
       const catalogCount = data.registry.filter((r) => r.catalog).length;
@@ -771,9 +852,13 @@ const CONTROL_DEFAULT_URL = 'http://localhost:5174';
       renderLog(data.run.log);
       renderLogSummary(data.run);
 
-      const next = data.run.running ? POLL_INTERVAL_RUNNING_MS : POLL_INTERVAL_IDLE_MS;
+      // Static-snapshot data never changes between page loads — skip polling
+      // and let the user refresh manually. Live control-panel mode still polls.
       clearTimeout(pollTimer);
-      pollTimer = setTimeout(fetchStatus, next);
+      if (!isStaticMode) {
+        const next = data.run.running ? POLL_INTERVAL_RUNNING_MS : POLL_INTERVAL_IDLE_MS;
+        pollTimer = setTimeout(fetchStatus, next);
+      }
     } catch (err) {
       console.warn('manager status fetch failed', err);
       setHealth('offline');
@@ -796,7 +881,15 @@ const CONTROL_DEFAULT_URL = 'http://localhost:5174';
     return res.json();
   }
 
+  const STATIC_HINT =
+    'Запуск скрапера работает только локально. Запустите control-panel ' +
+    '(cd control && npm start) и укажите его URL через «изменить» в шапке.';
+
   document.getElementById('run-all-btn').addEventListener('click', async () => {
+    if (isStaticMode) {
+      alert(STATIC_HINT);
+      return;
+    }
     const btn = document.getElementById('run-all-btn');
     btn.disabled = true;
     btn.textContent = 'Запускаем…';
@@ -808,11 +901,94 @@ const CONTROL_DEFAULT_URL = 'http://localhost:5174';
     fetchStatus();
   });
 
+  // Verify-button handler. Mirrors the run-all-btn flow: POSTs to the local
+  // control panel's /api/verify, then polls /api/status (which the existing
+  // fetchStatus loop handles). Refreshes the verify summary when finished.
+  const VERIFY_STATIC_HINT =
+    'Проверка актуальности тоже работает только локально. Запустите control-panel ' +
+    '(cd control && npm start) и укажите его URL через «изменить» в шапке.';
+
+  document.getElementById('verify-btn').addEventListener('click', async () => {
+    if (isStaticMode) {
+      alert(VERIFY_STATIC_HINT);
+      return;
+    }
+    const btn = document.getElementById('verify-btn');
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = 'Проверяем…';
+    try {
+      await postJson('/api/verify', null);
+    } catch (err) {
+      alert('Не удалось запустить проверку: ' + err.message);
+      btn.disabled = false;
+      btn.textContent = original;
+    }
+    fetchStatus();
+  });
+
+  async function refreshVerifySummary() {
+    try {
+      const res = await fetch('/api/verify.json?ts=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) return;
+      const data = await res.json();
+      renderVerifySummary(data);
+    } catch {
+      // No verify.json yet — leave summary hidden.
+    }
+  }
+
+  function renderVerifySummary(data) {
+    const summary = document.getElementById('verify-summary');
+    const text = document.getElementById('verify-summary-text');
+    const toggle = document.getElementById('verify-details-toggle');
+    const details = document.getElementById('verify-details');
+    const list = document.getElementById('verify-details-list');
+    if (!data || !Number.isFinite(data.totalSampled) || data.totalSampled === 0) {
+      summary.hidden = true;
+      details.hidden = true;
+      return;
+    }
+    const ago = fmt.ago(data.generatedAt) || '—';
+    text.textContent =
+      'Проверено ' + data.totalSampled + ' программ из ' + (data.reports?.length || 0) +
+      ' университетов. Актуальность: ' + data.overallFreshnessPct + '%. Последняя проверка: ' + ago + '.';
+    summary.hidden = false;
+    toggle.hidden = false;
+    const reports = (data.reports || []).slice().sort((a, b) => a.freshnessPct - b.freshnessPct);
+    list.innerHTML = reports
+      .map((r) => {
+        const cls = r.freshnessPct >= 80 ? 'ok' : r.freshnessPct >= 50 ? 'warn' : 'fail';
+        const issues = [];
+        if (r.dead) issues.push(r.dead + ' битых');
+        if (r.mismatch) issues.push(r.mismatch + ' несовпадений');
+        if (r.errors) issues.push(r.errors + ' ошибок');
+        const tail = issues.length ? ' · ' + issues.join(', ') : '';
+        return '<li class="verify-row verify-row--' + cls + '">' +
+          '<span class="verify-row__name">' + r.name + '</span>' +
+          '<span class="verify-row__pct">' + r.freshnessPct + '% (' + r.alive + '/' + r.sampled + ')' + tail + '</span>' +
+          '</li>';
+      })
+      .join('');
+  }
+
+  document.getElementById('verify-details-toggle').addEventListener('click', (e) => {
+    e.preventDefault();
+    const details = document.getElementById('verify-details');
+    details.hidden = !details.hidden;
+    if (!details.hidden) details.setAttribute('open', '');
+    else details.removeAttribute('open');
+  });
+
   document.addEventListener('click', async (e) => {
     const target = e.target;
     if (!target || !(target instanceof HTMLElement)) return;
     const slug = target.dataset?.runSlug;
     if (!slug) return;
+    if (isStaticMode) {
+      alert(STATIC_HINT);
+      return;
+    }
     target.disabled = true;
     const original = target.textContent;
     target.textContent = '…';
@@ -909,4 +1085,5 @@ const CONTROL_DEFAULT_URL = 'http://localhost:5174';
 
   document.getElementById('health-url').textContent = getControlUrl();
   fetchStatus();
+  refreshVerifySummary();
 </script>

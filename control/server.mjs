@@ -149,7 +149,7 @@ function nextRunFromCron(cron) {
   return candidate.toISOString();
 }
 
-function startScrape(args, target) {
+function spawnNpmScript(scriptName, args, target) {
   if (state.running) return false;
   state.running = true;
   state.startedAt = new Date().toISOString();
@@ -157,9 +157,10 @@ function startScrape(args, target) {
   state.exitCode = null;
   state.log = [];
   state.currentTarget = target;
-  pushLog('> npm run scrape -- ' + args.join(' '));
+  pushLog('> npm run ' + scriptName + (args.length ? ' -- ' + args.join(' ') : ''));
 
-  const child = spawn('npm', ['run', 'scrape', '--', ...args], {
+  const npmArgs = ['run', scriptName, ...(args.length ? ['--', ...args] : [])];
+  const child = spawn('npm', npmArgs, {
     cwd: SCRAPER_DIR,
     shell: process.platform === 'win32',
   });
@@ -178,6 +179,14 @@ function startScrape(args, target) {
     state.exitCode = -1;
   });
   return true;
+}
+
+function startScrape(args, target) {
+  return spawnNpmScript('scrape', args, target);
+}
+
+function startVerify() {
+  return spawnNpmScript('verify', [], 'verify');
 }
 
 function readJsonBody(req) {
@@ -285,6 +294,16 @@ const server = createServer(async (req, res) => {
       const ok = startScrape(['--slug', slug], slug);
       res.writeHead(ok ? 202 : 409, { 'content-type': 'application/json' });
       return res.end(JSON.stringify({ accepted: ok, slug }));
+    }
+
+    if (req.method === 'POST' && req.url === '/api/verify') {
+      if (state.running) {
+        res.writeHead(409, { 'content-type': 'application/json' });
+        return res.end(JSON.stringify({ error: 'already running' }));
+      }
+      const ok = startVerify();
+      res.writeHead(ok ? 202 : 409, { 'content-type': 'application/json' });
+      return res.end(JSON.stringify({ accepted: ok }));
     }
 
     res.writeHead(404, { 'content-type': 'text/plain' });

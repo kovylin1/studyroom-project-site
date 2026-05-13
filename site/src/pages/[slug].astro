@@ -152,6 +152,9 @@ function programsCountLabel(n: number): string {
 // hardcoded per slug — accurate to the main campus building. Future scraper
 // extension can geocode from sourceUrl + city, then store on University.location.
 const UNI_COORDS: Record<string, { lat: number; lng: number }> = {
+  'adelaide': { lat: -34.9206, lng: 138.6044 },
+  'alberta': { lat: 53.5232, lng: -113.5263 },
+  'arizona-state': { lat: 33.4242, lng: -111.9281 },
   'asu-london': { lat: 51.5097, lng: -0.0871 },
   'birmingham': { lat: 52.4508, lng: -1.9305 },
   'bournemouth': { lat: 50.7426, lng: -1.8973 },
@@ -162,10 +165,18 @@ const UNI_COORDS: Record<string, { lat: number; lng: number }> = {
   'essex': { lat: 51.8780, lng: 0.9442 },
   'glasgow': { lat: 55.8721, lng: -4.2880 },
   'liverpool': { lat: 53.4060, lng: -2.9657 },
+  'massey': { lat: -36.7307, lng: 174.6997 },
+  'murdoch': { lat: -32.0682, lng: 115.8366 },
+  'newcastle-au': { lat: -32.8927, lng: 151.7053 },
   'nottingham': { lat: 52.9382, lng: -1.1972 },
   'nottingham-trent': { lat: 52.9530, lng: -1.1495 },
+  'oregon': { lat: 44.0454, lng: -123.0726 },
+  'pace': { lat: 40.7110, lng: -74.0048 },
   'queen-mary-london': { lat: 51.5246, lng: -0.0405 },
+  'simmons': { lat: 42.3406, lng: -71.1006 },
+  'uconn': { lat: 41.8077, lng: -72.2540 },
   'uwe-bristol': { lat: 51.5009, lng: -2.5470 },
+  'victoria': { lat: 48.4634, lng: -123.3117 },
   'westminster': { lat: 51.5174, lng: -0.1444 },
   'york': { lat: 53.9460, lng: -1.0538 },
 };

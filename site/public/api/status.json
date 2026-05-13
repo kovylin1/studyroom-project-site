@@ -1,0 +1,465 @@
+{
+  "run": {
+    "running": false,
+    "startedAt": null,
+    "finishedAt": null,
+    "exitCode": null,
+    "currentTarget": null,
+    "log": []
+  },
+  "schedule": {
+    "cron": "0 3 1 * *",
+    "nextRunUTC": "2026-06-01T03:00:00.000Z",
+    "source": ".github/workflows/scrape-monthly.yml"
+  },
+  "sourceProfile": {
+    "name": "Kaplan Pathways",
+    "baseUrl": "https://www.kaplanpathways.com/",
+    "tier": "partner"
+  },
+  "aggregators": [
+    {
+      "slug": "kaplan-pathways",
+      "name": "Kaplan Pathways",
+      "baseUrl": "https://www.kaplanpathways.com/",
+      "host": "kaplanpathways.com",
+      "tier": "partner"
+    }
+  ],
+  "registry": [
+    {
+      "slug": "asu-london",
+      "name": "ASU London",
+      "country": "United Kingdom",
+      "city": "London",
+      "tier": "partner",
+      "officialUrl": "https://asulondon.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:37:38.223Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/asu-london/",
+        "sourceHash": "sha256:51ff537c8003d0fb",
+        "confidence": "partner",
+        "programsCount": 7
+      }
+    },
+    {
+      "slug": "bournemouth",
+      "name": "Bournemouth University",
+      "country": "United Kingdom",
+      "city": "Bournemouth",
+      "tier": "partner",
+      "officialUrl": "https://www.bournemouth.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:37:47.575Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/bournemouth-university/",
+        "sourceHash": "sha256:6c3660e9627181d1",
+        "confidence": "partner",
+        "programsCount": 135
+      }
+    },
+    {
+      "slug": "city-london",
+      "name": "City St George's, University of London",
+      "country": "United Kingdom",
+      "city": "London",
+      "tier": "partner",
+      "officialUrl": "https://www.city.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:37:53.720Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/city-university-of-london/",
+        "sourceHash": "sha256:19b7a50d58e8a03c",
+        "confidence": "partner",
+        "programsCount": 174
+      }
+    },
+    {
+      "slug": "cranfield",
+      "name": "Cranfield University",
+      "country": "United Kingdom",
+      "city": "Cranfield",
+      "tier": "partner",
+      "officialUrl": "https://www.cranfield.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:37:58.911Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/cranfield-university/",
+        "sourceHash": "sha256:3ba9b62d74a997dc",
+        "confidence": "partner",
+        "programsCount": 42
+      }
+    },
+    {
+      "slug": "nottingham-trent",
+      "name": "Nottingham Trent University",
+      "country": "United Kingdom",
+      "city": "Nottingham",
+      "tier": "partner",
+      "officialUrl": "https://www.ntu.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:38:06.784Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/nottingham-trent-university/",
+        "sourceHash": "sha256:c5a16480d34b8080",
+        "confidence": "partner",
+        "programsCount": 206
+      }
+    },
+    {
+      "slug": "queen-mary-london",
+      "name": "Queen Mary University of London",
+      "country": "United Kingdom",
+      "city": "London",
+      "tier": "partner",
+      "officialUrl": "https://www.qmul.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:38:19.152Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/queen-mary-university-of-london/",
+        "sourceHash": "sha256:f4014fbd77d6ef03",
+        "confidence": "partner",
+        "programsCount": 190
+      }
+    },
+    {
+      "slug": "birmingham",
+      "name": "University of Birmingham",
+      "country": "United Kingdom",
+      "city": "Birmingham",
+      "tier": "partner",
+      "officialUrl": "https://www.birmingham.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:38:28.069Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-birmingham/",
+        "sourceHash": "sha256:d5761574456a7433",
+        "confidence": "partner",
+        "programsCount": 340
+      }
+    },
+    {
+      "slug": "brighton",
+      "name": "University of Brighton",
+      "country": "United Kingdom",
+      "city": "Brighton",
+      "tier": "partner",
+      "officialUrl": "https://www.brighton.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:38:36.848Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-brighton/",
+        "sourceHash": "sha256:1aba8a2aeeb8e36b",
+        "confidence": "partner",
+        "programsCount": 163
+      }
+    },
+    {
+      "slug": "bristol",
+      "name": "University of Bristol",
+      "country": "United Kingdom",
+      "city": "Bristol",
+      "tier": "partner",
+      "officialUrl": "https://www.bristol.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:38:43.640Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-bristol/",
+        "sourceHash": "sha256:1b47bcfabab1c47b",
+        "confidence": "partner",
+        "programsCount": 123
+      }
+    },
+    {
+      "slug": "essex",
+      "name": "University of Essex",
+      "country": "United Kingdom",
+      "city": "Colchester",
+      "tier": "partner",
+      "officialUrl": "https://www.essex.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:38:49.195Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-essex/",
+        "sourceHash": "sha256:b3a1025eab22e990",
+        "confidence": "partner",
+        "programsCount": 558
+      }
+    },
+    {
+      "slug": "glasgow",
+      "name": "University of Glasgow",
+      "country": "United Kingdom",
+      "city": "Glasgow",
+      "tier": "partner",
+      "officialUrl": "https://www.gla.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:38:55.886Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-glasgow/",
+        "sourceHash": "sha256:0f1bc19fe08441b9",
+        "confidence": "partner",
+        "programsCount": 222
+      }
+    },
+    {
+      "slug": "liverpool",
+      "name": "University of Liverpool",
+      "country": "United Kingdom",
+      "city": "Liverpool",
+      "tier": "partner",
+      "officialUrl": "https://www.liverpool.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:39:04.537Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-liverpool/",
+        "sourceHash": "sha256:e6e2d922cf417692",
+        "confidence": "partner",
+        "programsCount": 265
+      }
+    },
+    {
+      "slug": "nottingham",
+      "name": "University of Nottingham",
+      "country": "United Kingdom",
+      "city": "Nottingham",
+      "tier": "partner",
+      "officialUrl": "https://www.nottingham.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:39:11.032Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-nottingham/",
+        "sourceHash": "sha256:71226b3e9e7b20b4",
+        "confidence": "partner",
+        "programsCount": 206
+      }
+    },
+    {
+      "slug": "westminster",
+      "name": "University of Westminster",
+      "country": "United Kingdom",
+      "city": "London",
+      "tier": "partner",
+      "officialUrl": "https://www.westminster.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:39:18.035Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-westminster/",
+        "sourceHash": "sha256:f311ff105e3bca66",
+        "confidence": "partner",
+        "programsCount": 163
+      }
+    },
+    {
+      "slug": "york",
+      "name": "University of York",
+      "country": "United Kingdom",
+      "city": "York",
+      "tier": "partner",
+      "officialUrl": "https://www.york.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:39:24.595Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-york/",
+        "sourceHash": "sha256:623c972a6df03000",
+        "confidence": "partner",
+        "programsCount": 348
+      }
+    },
+    {
+      "slug": "uwe-bristol",
+      "name": "UWE Bristol",
+      "country": "United Kingdom",
+      "city": "Bristol",
+      "tier": "partner",
+      "officialUrl": "https://www.uwe.ac.uk/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:39:33.471Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/uwe-bristol/",
+        "sourceHash": "sha256:8f79c9557083eeb4",
+        "confidence": "partner",
+        "programsCount": 126
+      }
+    },
+    {
+      "slug": "alberta",
+      "name": "University of Alberta",
+      "country": "Canada",
+      "city": "Edmonton",
+      "tier": "partner",
+      "officialUrl": "https://www.ualberta.ca/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:39:39.607Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/canadian-universities/university-of-alberta/",
+        "sourceHash": "sha256:7684381bca5e732b",
+        "confidence": "partner",
+        "programsCount": 105
+      }
+    },
+    {
+      "slug": "victoria",
+      "name": "University of Victoria",
+      "country": "Canada",
+      "city": "Victoria",
+      "tier": "partner",
+      "officialUrl": "https://www.uvic.ca/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:39:42.686Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/canadian-universities/university-of-victoria/",
+        "sourceHash": "sha256:d40d283497c8fd64",
+        "confidence": "partner",
+        "programsCount": 92
+      }
+    },
+    {
+      "slug": "arizona-state",
+      "name": "Arizona State University",
+      "country": "United States",
+      "city": "Phoenix",
+      "tier": "partner",
+      "officialUrl": "https://www.asu.edu/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:39:46.468Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/arizona-state-university/",
+        "sourceHash": "sha256:62302c8d9a629b04",
+        "confidence": "partner",
+        "programsCount": 377
+      }
+    },
+    {
+      "slug": "pace",
+      "name": "Pace University",
+      "country": "United States",
+      "city": "New York",
+      "tier": "partner",
+      "officialUrl": "https://www.pace.edu/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:39:51.114Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/pace-university/",
+        "sourceHash": "sha256:86247403caf305d2",
+        "confidence": "partner",
+        "programsCount": 44
+      }
+    },
+    {
+      "slug": "simmons",
+      "name": "Simmons University",
+      "country": "United States",
+      "city": "Boston",
+      "tier": "partner",
+      "officialUrl": "https://www.simmons.edu/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:39:54.667Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/simmons-university/",
+        "sourceHash": "sha256:af45a99f457d9196",
+        "confidence": "partner",
+        "programsCount": 82
+      }
+    },
+    {
+      "slug": "uconn",
+      "name": "University of Connecticut",
+      "country": "United States",
+      "city": "Storrs",
+      "tier": "partner",
+      "officialUrl": "https://uconn.edu/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:39:57.856Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/university-of-connecticut/",
+        "sourceHash": "sha256:c65ba6a1f4ac1f04",
+        "confidence": "partner",
+        "programsCount": 112
+      }
+    },
+    {
+      "slug": "oregon",
+      "name": "University of Oregon",
+      "country": "United States",
+      "city": "Eugene",
+      "tier": "partner",
+      "officialUrl": "https://www.uoregon.edu/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-12T16:40:02.571Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/university-of-oregon/",
+        "sourceHash": "sha256:53966849876952bd",
+        "confidence": "partner",
+        "programsCount": 72
+      }
+    },
+    {
+      "slug": "adelaide",
+      "name": "Adelaide University",
+      "country": "Australia",
+      "city": "Adelaide",
+      "tier": "partner",
+      "officialUrl": "https://www.adelaide.edu.au/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-13T10:18:02.609Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/adelaide-university/",
+        "sourceHash": "sha256:7d2afa754d48163a",
+        "confidence": "partner",
+        "programsCount": 538
+      }
+    },
+    {
+      "slug": "murdoch",
+      "name": "Murdoch University",
+      "country": "Australia",
+      "city": "Perth",
+      "tier": "partner",
+      "officialUrl": "https://www.murdoch.edu.au/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-13T10:15:26.516Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/murdoch-university/",
+        "sourceHash": "sha256:0b8b11e57f7ef9ff",
+        "confidence": "partner",
+        "programsCount": 46
+      }
+    },
+    {
+      "slug": "newcastle-au",
+      "name": "University of Newcastle, Australia",
+      "country": "Australia",
+      "city": "Newcastle",
+      "tier": "partner",
+      "officialUrl": "https://www.newcastle.edu.au/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-13T10:15:46.059Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/university-of-newcastle/",
+        "sourceHash": "sha256:82a4d9e38498771f",
+        "confidence": "partner",
+        "programsCount": 246
+      }
+    },
+    {
+      "slug": "massey",
+      "name": "Massey University",
+      "country": "New Zealand",
+      "city": "Auckland",
+      "tier": "partner",
+      "officialUrl": "https://www.massey.ac.nz/",
+      "aggregatorSlug": "kaplan-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-13T10:16:52.466Z",
+        "sourceUrl": "https://www.kaplanpathways.com/where-to-study/new-zealand-universities/massey-university/",
+        "sourceHash": "sha256:5eaa42e127cc5a8b",
+        "confidence": "partner",
+        "programsCount": 128
+      }
+    }
+  ],
+  "generatedAt": "2026-05-13T11:00:13.115Z",
+  "isStaticSnapshot": true
+}

@@ -6,6 +6,7 @@
   "description": "StudyRoom — scraper that fetches partner universities (Kaplan first) and writes per-uni JSONs validated by the shared University Zod schema.",
   "scripts": {
     "scrape": "tsx src/cli.ts",
+    "verify": "tsx src/verify.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },

@@ -44,6 +44,33 @@ import { getUniAccommodationFacts } from './sources/uni-accommodation-facts.ts';
 import { getDescriptionTranslation } from './sources/description-translations.ts';
 import { BASELINE_KAPLAN_SCHOLARSHIPS, getUniScholarships, type ScholarshipFact } from './sources/uni-scholarships.ts';
 import { classifyFaculty } from './sources/program-faculty-classifier.ts';
+import {
+  fetchAdelaideInternationalDegrees,
+  fetchAllDegreeFees,
+  mapStudyLevelToProgramLevel as mapAdelaideStudyLevel,
+  parseTimeRequiredYears as parseAdelaideDuration,
+  adelaideSlugFromDegreeCode,
+  type AdelaideDegree,
+} from './sources/adelaide-degrees.ts';
+import {
+  fetchMurdochDegreeUrls,
+  fetchAllMurdochDegrees,
+  murdochSlugFromCode,
+  type MurdochDegree,
+} from './sources/murdoch-degrees.ts';
+import {
+  fetchNewcastleProgramUrls,
+  fetchAllNewcastleDegrees,
+  fetchNewcastleFeesFromCricos,
+  newcastleSlugFromCode,
+  type NewcastleDegree,
+} from './sources/newcastle-degrees.ts';
+import {
+  fetchMasseyQualificationUrls,
+  fetchAllMasseyDegrees,
+  masseySlugFromCode,
+  type MasseyDegree,
+} from './sources/massey-degrees.ts';
 
 // Unis where the Kaplan global award-faculty map returns "Прочее" for every
 // program and we need to reclassify by program-title pattern. UK and Canada
@@ -56,6 +83,31 @@ const NEEDS_LOCAL_FACULTY_CLASSIFIER = new Set([
   'simmons',
   'uconn',
   'oregon',
+  // Adelaide pulls degrees from Funnelback (no faculty field on results) so the
+  // title-based classifier is the only source of faculty for it.
+  'adelaide',
+  // Murdoch's per-uni scraper carries `studyAreas[]` but those areas are
+  // Murdoch-internal taxonomy (e.g. "agricultural-science"); we still want the
+  // same 8-bucket faculty grouping as the rest of the catalog, so we run
+  // titles through the shared classifier.
+  'murdoch',
+  // Newcastle-AU's handbook carries `parent_academic_org` (= college, 5
+  // buckets) which is too coarse for our 8-bucket faculty grouping. Run
+  // titles through the shared classifier so Engineering / Health / Business
+  // etc. split out as expected.
+  'newcastle-au',
+  // Massey carries `qualType` (Master's degree, etc.) but no discipline, so
+  // we infer faculty from the program title.
+  'massey',
+]);
+
+// Unis where the Kaplan feed has no degree data and we fall back to a per-uni
+// official-site scraper.
+const USES_OFFICIAL_DEGREE_SCRAPER = new Set([
+  'adelaide',
+  'murdoch',
+  'newcastle-au',
+  'massey',
 ]);
 
 // Dynamic import of the JS-only photo downloader (no .d.ts; declared inline).
@@ -257,6 +309,182 @@ function buildDegreePrograms(
     programs.push(program);
     byProgramTuition[slug] = Number.isFinite(fee) && fee > 0 ? fee : 0;
     deadlines[slug] = pickDeadline(intakes);
+  }
+
+  return { programs, byProgramTuition, deadlines };
+}
+
+// Adelaide-specific: convert Funnelback-scraped degrees into the same
+// BuiltPrograms shape buildDegreePrograms() returns from the Kaplan feed.
+// Faculty stays "Прочее" here — the NEEDS_LOCAL_FACULTY_CLASSIFIER block in
+// processOne() reclassifies by title afterwards. Adelaide intakes follow
+// Australian academic semesters (March/July), so we map them to ISO deadlines
+// matching the usual 3-month-out international application cutoff.
+function buildAdelaideDegreePrograms(degrees: AdelaideDegree[]): BuiltPrograms {
+  const programs: Program[] = [];
+  const byProgramTuition: Record<string, number> = {};
+  const deadlines: Record<string, string> = {};
+  const seenSlugs = new Set<string>();
+
+  for (const d of degrees) {
+    const urlSlug = d.liveUrl.replace(/\/+$/, '').split('/').pop() ?? d.degreeCode;
+    let slug = adelaideSlugFromDegreeCode(d.degreeCode, urlSlug);
+    let suffix = 2;
+    while (seenSlugs.has(slug)) {
+      slug = adelaideSlugFromDegreeCode(d.degreeCode, urlSlug) + '-' + suffix;
+      suffix += 1;
+    }
+    seenSlugs.add(slug);
+
+    const intakes = d.startMonths.length > 0 ? d.startMonths : undefined;
+    const program: Program = {
+      slug,
+      title: d.shortTitle,
+      durationYears: parseAdelaideDuration(d.timeRequired),
+      level: mapAdelaideStudyLevel(d.studyLevel),
+      language: 'en',
+      faculty: 'Прочее',
+      ...(intakes ? { intakes } : {}),
+      ...(d.liveUrl && /^https?:\/\//.test(d.liveUrl) ? { programUrl: d.liveUrl } : {}),
+      programType: 'degree',
+    };
+    programs.push(program);
+
+    byProgramTuition[slug] = d.tuitionAUD ?? 0;
+    const months = (intakes ?? []).map((m) => m.toLowerCase());
+    if (months.some((m) => m.startsWith('march') || m.startsWith('feb'))) {
+      deadlines[slug] = '2026-12-15';
+    } else if (months.some((m) => m.startsWith('july') || m.startsWith('jun'))) {
+      deadlines[slug] = '2026-05-15';
+    } else if (months.some((m) => m.startsWith('oct') || m.startsWith('sep'))) {
+      deadlines[slug] = '2026-08-15';
+    } else {
+      deadlines[slug] = '2026-09-01';
+    }
+  }
+
+  return { programs, byProgramTuition, deadlines };
+}
+
+// Murdoch — degrees scraped from the per-area study pages on murdoch.edu.au.
+// Faculty stays "Прочее" here; NEEDS_LOCAL_FACULTY_CLASSIFIER reclassifies by
+// title afterwards. Intakes are Trimester/Semester strings; we map the most
+// common ones to the same Murdoch international application calendar (Murdoch
+// admits in Feb, May, Sep across trimesters; Semester 1 / Semester 2 map to
+// Feb and July starts).
+function buildMurdochDegreePrograms(degrees: MurdochDegree[]): BuiltPrograms {
+  const programs: Program[] = [];
+  const byProgramTuition: Record<string, number> = {};
+  const deadlines: Record<string, string> = {};
+
+  for (const d of degrees) {
+    const slug = murdochSlugFromCode(d.code);
+    const intakes = d.intakes.length > 0 ? d.intakes : undefined;
+    const program: Program = {
+      slug,
+      title: d.title,
+      durationYears: d.durationYears,
+      level: d.level,
+      language: 'en',
+      faculty: 'Прочее',
+      ...(intakes ? { intakes } : {}),
+      ...(d.liveUrl && /^https?:\/\//.test(d.liveUrl) ? { programUrl: d.liveUrl } : {}),
+      programType: 'degree',
+    };
+    programs.push(program);
+
+    byProgramTuition[slug] = d.tuitionAUD ?? 0;
+    const i = d.intakes.map((s) => s.toLowerCase());
+    if (i.some((s) => s.includes('1') || s.includes('feb') || s.includes('march'))) {
+      deadlines[slug] = '2026-12-15';
+    } else if (i.some((s) => s.includes('2') || s.includes('june') || s.includes('july'))) {
+      deadlines[slug] = '2026-05-15';
+    } else if (i.some((s) => s.includes('3') || s.includes('sep'))) {
+      deadlines[slug] = '2026-08-15';
+    } else {
+      deadlines[slug] = '2026-09-01';
+    }
+  }
+
+  return { programs, byProgramTuition, deadlines };
+}
+
+// Newcastle (AU) — degrees scraped from handbook.newcastle.edu.au sitemap +
+// per-page __NEXT_DATA__ extraction. No per-program fee data available; we
+// always emit tuition=0 and rely on the landing page to hide the price strip.
+// Intakes are Newcastle's standard Semester 1 (Feb) / Semester 2 (Jul) pair
+// for nearly every program; the deadlines pick the closer of those.
+function buildNewcastleDegreePrograms(degrees: NewcastleDegree[]): BuiltPrograms {
+  const programs: Program[] = [];
+  const byProgramTuition: Record<string, number> = {};
+  const deadlines: Record<string, string> = {};
+  const seenSlugs = new Set<string>();
+
+  for (const d of degrees) {
+    let slug = newcastleSlugFromCode(d.code);
+    let suffix = 2;
+    while (seenSlugs.has(slug)) {
+      slug = newcastleSlugFromCode(d.code) + '-' + suffix;
+      suffix += 1;
+    }
+    seenSlugs.add(slug);
+
+    const intakes = d.intakes.length > 0 ? d.intakes : undefined;
+    const program: Program = {
+      slug,
+      title: d.title,
+      durationYears: d.durationYears,
+      level: d.level,
+      language: 'en',
+      faculty: 'Прочее',
+      ...(intakes ? { intakes } : {}),
+      ...(d.liveUrl && /^https?:\/\//.test(d.liveUrl) ? { programUrl: d.liveUrl } : {}),
+      programType: 'degree',
+    };
+    programs.push(program);
+
+    byProgramTuition[slug] = d.tuitionAUD ?? 0;
+    deadlines[slug] = '2026-11-15';
+  }
+
+  return { programs, byProgramTuition, deadlines };
+}
+
+// Massey (NZ) — qualifications scraped from massey.ac.nz's all-qualifications
+// list. Already filtered to programs open to international students inside
+// the per-uni scraper. Massey runs three intakes per year (Feb / Jul / Nov);
+// we hardcode the Semester 1 / Semester 2 pair, which covers >95% of degrees.
+function buildMasseyDegreePrograms(degrees: MasseyDegree[]): BuiltPrograms {
+  const programs: Program[] = [];
+  const byProgramTuition: Record<string, number> = {};
+  const deadlines: Record<string, string> = {};
+  const seenSlugs = new Set<string>();
+
+  for (const d of degrees) {
+    let slug = masseySlugFromCode(d.code);
+    let suffix = 2;
+    while (seenSlugs.has(slug)) {
+      slug = masseySlugFromCode(d.code) + '-' + suffix;
+      suffix += 1;
+    }
+    seenSlugs.add(slug);
+
+    const intakes = ['Semester 1', 'Semester 2'];
+    const program: Program = {
+      slug,
+      title: d.title,
+      durationYears: d.durationYears,
+      level: d.level,
+      language: 'en',
+      faculty: 'Прочее',
+      intakes,
+      ...(d.liveUrl && /^https?:\/\//.test(d.liveUrl) ? { programUrl: d.liveUrl } : {}),
+      programType: 'degree',
+    };
+    programs.push(program);
+
+    byProgramTuition[slug] = d.tuitionNZD ?? 0;
+    deadlines[slug] = '2026-11-15';
   }
 
   return { programs, byProgramTuition, deadlines };
@@ -480,7 +708,80 @@ async function processOne(
   }
 
   const pathwayPrograms = buildPathwayPrograms(pathways);
-  const degreePrograms = buildDegreePrograms(degrees, awardFacultyMap);
+  let degreePrograms = buildDegreePrograms(degrees, awardFacultyMap);
+
+  // Per-uni official-site scraper override. Kaplan's feed has no AU/NZ degrees,
+  // so for listed unis we discard the (empty) Kaplan-feed result above and
+  // pull the real catalog from the institution's own search API.
+  if (USES_OFFICIAL_DEGREE_SCRAPER.has(row.slug)) {
+    if (row.slug === 'adelaide') {
+      console.log('[adel]  ' + row.slug + ' fetching Funnelback degree list...');
+      const list = await fetchAdelaideInternationalDegrees();
+      console.log('[adel]  ' + row.slug + ' · ' + list.length + ' international degrees, scraping fees...');
+      let lastLog = 0;
+      const withFees = await fetchAllDegreeFees(list, 5, (done, total) => {
+        if (done - lastLog >= 50 || done === total) {
+          console.log('[adel]  fees ' + done + '/' + total);
+          lastLog = done;
+        }
+      });
+      const withFee = withFees.filter((d) => d.tuitionAUD !== null).length;
+      console.log('[adel]  ' + row.slug + ' · ' + withFee + '/' + withFees.length + ' degrees have fee data');
+      degreePrograms = buildAdelaideDegreePrograms(withFees);
+    } else if (row.slug === 'murdoch') {
+      console.log('[murd]  ' + row.slug + ' crawling study-area pages for degree URLs...');
+      const refs = await fetchMurdochDegreeUrls();
+      console.log('[murd]  ' + row.slug + ' · ' + refs.length + ' unique degrees, scraping each page...');
+      let lastLog = 0;
+      const degrees = await fetchAllMurdochDegrees(refs, 5, (done, total) => {
+        if (done - lastLog >= 20 || done === total) {
+          console.log('[murd]  pages ' + done + '/' + total);
+          lastLog = done;
+        }
+      });
+      const withFee = degrees.filter((d) => d.tuitionAUD !== null).length;
+      console.log('[murd]  ' + row.slug + ' · parsed ' + degrees.length + '/' + refs.length + ', ' + withFee + ' with intl fee');
+      degreePrograms = buildMurdochDegreePrograms(degrees);
+    } else if (row.slug === 'newcastle-au') {
+      console.log('[uon]   ' + row.slug + ' fetching handbook sitemap...');
+      const urls = await fetchNewcastleProgramUrls();
+      console.log('[uon]   ' + row.slug + ' · ' + urls.length + ' current-year programs, fetching each...');
+      let lastLog = 0;
+      const degrees = await fetchAllNewcastleDegrees(urls, 8, (done, total) => {
+        if (done - lastLog >= 50 || done === total) {
+          console.log('[uon]   pages ' + done + '/' + total);
+          lastLog = done;
+        }
+      });
+      console.log('[uon]   ' + row.slug + ' · parsed ' + degrees.length + '/' + urls.length + ' (filtered to intl-eligible degrees)');
+      console.log('[uon]   ' + row.slug + ' fetching CRICOS fees for ' + degrees.length + ' programs...');
+      let feeLogLast = 0;
+      const withFees = await fetchNewcastleFeesFromCricos(degrees, 5, (done, total) => {
+        if (done - feeLogLast >= 30 || done === total) {
+          console.log('[uon]   cricos ' + done + '/' + total);
+          feeLogLast = done;
+        }
+      });
+      const feeCount = withFees.filter((d) => d.tuitionAUD !== null).length;
+      console.log('[uon]   ' + row.slug + ' · ' + feeCount + '/' + withFees.length + ' programs with CRICOS fee');
+      degreePrograms = buildNewcastleDegreePrograms(withFees);
+    } else if (row.slug === 'massey') {
+      console.log('[mas]   ' + row.slug + ' fetching CMS sitemap...');
+      const urls = await fetchMasseyQualificationUrls();
+      console.log('[mas]   ' + row.slug + ' · ' + urls.length + ' qualification URLs, fetching each...');
+      let lastLog = 0;
+      const all = await fetchAllMasseyDegrees(urls, 8, (done, total) => {
+        if (done - lastLog >= 50 || done === total) {
+          console.log('[mas]   pages ' + done + '/' + total);
+          lastLog = done;
+        }
+      });
+      const intl = all.filter((d) => d.openToInternational);
+      const withFee = intl.filter((d) => d.tuitionNZD !== null).length;
+      console.log('[mas]   ' + row.slug + ' · ' + intl.length + '/' + all.length + ' intl-eligible, ' + withFee + ' with NZD fee');
+      degreePrograms = buildMasseyDegreePrograms(intl);
+    }
+  }
 
   // Per-uni faculty override. Kaplan's global award-faculty map doesn't cover
   // some unis (Victoria, all 5 US partners), so every program ends up in
