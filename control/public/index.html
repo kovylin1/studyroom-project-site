@@ -112,6 +112,8 @@
     .status-pill--idle .status-pill__dot { background: var(--text-faint); }
     .status-pill--running { background: var(--green-soft); color: var(--green-dark); }
     .status-pill--running .status-pill__dot { background: var(--green); animation: pulse 1.2s infinite; }
+    .status-pill--deploying { background: #fff4cc; color: #6b4d00; }
+    .status-pill--deploying .status-pill__dot { background: var(--amber); animation: pulse 1.2s infinite; }
     .status-pill--ok { background: var(--green-soft); color: var(--green-dark); }
     .status-pill--ok .status-pill__dot { background: var(--green); }
     .status-pill--fail { background: #fce8e8; color: var(--red); }
@@ -210,11 +212,13 @@
           <span class="status-pill__dot"></span><span id="run-status-text">Ожидание</span>
         </span>
       </div>
-      <p class="card__sub" id="run-summary">Скрапер не запущен. Нажмите кнопку, чтобы обновить данные о всех 16 университетах.</p>
+      <p class="card__sub" id="run-summary">Скрапер не запущен. Нажмите «Обновить информацию», чтобы перескрапить все университеты, или «Проверить актуальность», чтобы пройтись по ссылкам и заголовкам.</p>
       <div class="actions">
-        <button id="run-all-btn" class="btn btn-primary">Запустить скрапинг сейчас</button>
+        <button id="run-all-btn" class="btn btn-primary">Обновить информацию</button>
+        <button id="verify-btn" class="btn btn-ghost">Проверить актуальность</button>
         <span class="card__sub" style="margin:0;">или запустите конкретный университет в таблице ниже ↓</span>
       </div>
+      <p class="card__sub" id="deploy-summary" style="margin-top:8px;display:none;"></p>
     </section>
 
     <section class="card table-card" style="margin-bottom:24px;">
@@ -309,39 +313,72 @@
       el.scrollTop = el.scrollHeight;
     }
 
+    function targetLabel(target) {
+      if (target === 'all') return 'все университеты';
+      if (target === 'verify') return 'проверка ссылок';
+      return target ?? '—';
+    }
+
     function renderRunStatus(run) {
       const pill = document.getElementById('run-status');
       const txt = document.getElementById('run-status-text');
       const summary = document.getElementById('run-summary');
-      const btn = document.getElementById('run-all-btn');
+      const runBtn = document.getElementById('run-all-btn');
+      const verifyBtn = document.getElementById('verify-btn');
+      const deployEl = document.getElementById('deploy-summary');
 
-      pill.classList.remove('status-pill--idle', 'status-pill--running', 'status-pill--ok', 'status-pill--fail');
+      pill.classList.remove('status-pill--idle', 'status-pill--running', 'status-pill--deploying', 'status-pill--ok', 'status-pill--fail');
+
+      const isVerify = run.currentTarget === 'verify';
+      const busy = run.running || run.deploying;
 
       if (run.running) {
         pill.classList.add('status-pill--running');
-        txt.textContent = 'Идёт скрапинг';
-        const target = run.currentTarget === 'all' ? 'все университеты' : run.currentTarget;
-        summary.textContent = 'Цель: ' + target + '. Запущено ' + fmt.ago(run.startedAt) + '. Пока работает — кнопка отключена.';
-        btn.disabled = true;
-        btn.textContent = 'Идёт скрапинг…';
+        txt.textContent = isVerify ? 'Идёт проверка' : 'Идёт скрапинг';
+        summary.textContent = 'Цель: ' + targetLabel(run.currentTarget) + '. Запущено ' + fmt.ago(run.startedAt) + '. Кнопки отключены до завершения.';
+        runBtn.textContent = isVerify ? 'Обновить информацию' : 'Идёт скрапинг…';
+        verifyBtn.textContent = isVerify ? 'Идёт проверка…' : 'Проверить актуальность';
+      } else if (run.deploying) {
+        pill.classList.add('status-pill--deploying');
+        txt.textContent = 'Деплой';
+        summary.textContent = 'Скрапинг завершён, заливаем изменения в GitHub → Cloudflare Pages. Кнопки разблокируются после пуша.';
+        runBtn.textContent = 'Обновить информацию';
+        verifyBtn.textContent = 'Проверить актуальность';
       } else if (run.exitCode === null) {
         pill.classList.add('status-pill--idle');
         txt.textContent = 'Ожидание';
-        summary.textContent = 'Скрапер не запускался в этой сессии. Нажмите кнопку, чтобы обновить данные.';
-        btn.disabled = false;
-        btn.textContent = 'Запустить скрапинг сейчас';
+        summary.textContent = 'В этой сессии ещё ничего не запускали. ' + (run.autoPush ? 'Автодеплой включён: после успешного запуска изменения сами уйдут в main и Cloudflare пересоберёт сайт.' : 'Автодеплой выключен (AUTO_PUSH=0) — изменения останутся локально.');
+        runBtn.textContent = 'Обновить информацию';
+        verifyBtn.textContent = 'Проверить актуальность';
       } else if (run.exitCode === 0) {
         pill.classList.add('status-pill--ok');
         txt.textContent = 'Успешно';
-        summary.textContent = 'Завершено ' + fmt.ago(run.finishedAt) + '. Цель: ' + (run.currentTarget === 'all' ? 'все' : run.currentTarget) + '. Можно запустить снова.';
-        btn.disabled = false;
-        btn.textContent = 'Запустить ещё раз';
+        summary.textContent = 'Завершено ' + fmt.ago(run.finishedAt) + '. Цель: ' + targetLabel(run.currentTarget) + '.';
+        runBtn.textContent = 'Обновить ещё раз';
+        verifyBtn.textContent = 'Проверить актуальность';
       } else {
         pill.classList.add('status-pill--fail');
         txt.textContent = 'Ошибка (код ' + run.exitCode + ')';
-        summary.textContent = 'Последний запуск завершился с ошибкой ' + fmt.ago(run.finishedAt) + '. Смотрите лог ниже.';
-        btn.disabled = false;
-        btn.textContent = 'Повторить';
+        summary.textContent = 'Последний запуск (' + targetLabel(run.currentTarget) + ') упал ' + fmt.ago(run.finishedAt) + '. Смотрите лог ниже.';
+        runBtn.textContent = 'Повторить';
+        verifyBtn.textContent = 'Проверить актуальность';
+      }
+
+      runBtn.disabled = busy;
+      verifyBtn.disabled = busy;
+
+      // Deploy outcome line (shown only after deploy has finished).
+      if (run.deployStatus && !run.deploying) {
+        deployEl.style.display = '';
+        if (run.deployStatus === 'ok') {
+          deployEl.innerHTML = '<span style="color:var(--green-dark);font-weight:600;">✓ Запушено в main</span> ' + (run.deployFinishedAt ? fmt.ago(run.deployFinishedAt) : '') + ' — Cloudflare Pages пересоберёт сайт за 1–2 мин.';
+        } else if (run.deployStatus === 'no-changes') {
+          deployEl.innerHTML = '<span style="color:var(--text-muted);">= данные не изменились — пуш не понадобился.</span>';
+        } else if (run.deployStatus === 'fail') {
+          deployEl.innerHTML = '<span style="color:var(--red);font-weight:600;">! Не удалось запушить.</span> Смотрите лог ниже; коммит может остаться локально.';
+        }
+      } else if (!run.deploying) {
+        deployEl.style.display = 'none';
       }
     }
 
@@ -421,20 +458,32 @@
       }
     }
 
-    document.getElementById('run-all-btn').addEventListener('click', async () => {
-      const btn = document.getElementById('run-all-btn');
+    async function triggerEndpoint(url, btn, loadingLabel) {
       btn.disabled = true;
-      btn.textContent = 'Запускаем…';
+      const originalText = btn.textContent;
+      btn.textContent = loadingLabel;
       try {
-        const res = await fetch('/api/run', { method: 'POST' });
+        const res = await fetch(url, { method: 'POST' });
         if (!res.ok) {
           const body = await res.text();
           alert('Не удалось запустить: ' + body);
+          btn.textContent = originalText;
+          btn.disabled = false;
         }
       } catch (err) {
         alert('Сетевая ошибка: ' + err.message);
+        btn.textContent = originalText;
+        btn.disabled = false;
       }
       fetchStatus();
+    }
+
+    document.getElementById('run-all-btn').addEventListener('click', (e) => {
+      triggerEndpoint('/api/run', e.currentTarget, 'Запускаем…');
+    });
+
+    document.getElementById('verify-btn').addEventListener('click', (e) => {
+      triggerEndpoint('/api/verify', e.currentTarget, 'Запускаем…');
     });
 
     document.addEventListener('click', async (e) => {

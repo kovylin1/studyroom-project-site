@@ -21,6 +21,12 @@ const AGGREGATORS_FILE = resolve(PROJECT_ROOT, 'sources/aggregators.md');
 const CATALOG_DIR = resolve(PROJECT_ROOT, 'site/src/content/universities');
 const CRON_FILE = resolve(PROJECT_ROOT, '.github/workflows/scrape-monthly.yml');
 
+// Set AUTO_PUSH=0 to disable git auto-commit+push after a successful run.
+const AUTO_PUSH = process.env.AUTO_PUSH !== '0';
+const GIT_REMOTE = process.env.GIT_REMOTE ?? 'origin';
+const GIT_BRANCH = process.env.GIT_BRANCH ?? 'main';
+const DEPLOY_PATHS = ['site/src/content/universities', 'site/public/api'];
+
 const state = {
   running: false,
   startedAt: null,
@@ -28,6 +34,9 @@ const state = {
   exitCode: null,
   log: [],
   currentTarget: null,
+  deploying: false,
+  deployStatus: null, // 'ok' | 'no-changes' | 'fail' | null
+  deployFinishedAt: null,
 };
 
 function pushLog(line) {
@@ -149,14 +158,77 @@ function nextRunFromCron(cron) {
   return candidate.toISOString();
 }
 
+function runCommand(cmd, args, opts = {}) {
+  return new Promise((resolvePromise, reject) => {
+    pushLog('> ' + cmd + ' ' + args.join(' '));
+    const child = spawn(cmd, args, {
+      cwd: PROJECT_ROOT,
+      shell: process.platform === 'win32',
+      ...opts,
+    });
+    child.stdout.on('data', (c) => c.toString().split('\n').forEach(pushLog));
+    child.stderr.on('data', (c) => c.toString().split('\n').forEach(pushLog));
+    child.on('close', (code) => resolvePromise(code));
+    child.on('error', reject);
+  });
+}
+
+async function gitSyncAndPush(target) {
+  state.deploying = true;
+  state.deployStatus = null;
+  state.deployFinishedAt = null;
+  pushLog('— git sync: staging + commit + push to ' + GIT_REMOTE + '/' + GIT_BRANCH + ' —');
+  try {
+    const addCode = await runCommand('git', ['add', '--', ...DEPLOY_PATHS]);
+    if (addCode !== 0) {
+      pushLog('! git add failed (exit ' + addCode + ')');
+      state.deployStatus = 'fail';
+      return;
+    }
+    const diffCode = await runCommand('git', ['diff', '--staged', '--quiet']);
+    if (diffCode === 0) {
+      pushLog('= no data changes — nothing to push');
+      state.deployStatus = 'no-changes';
+      return;
+    }
+    const msg =
+      target === 'verify'
+        ? 'chore(verify): on-demand accuracy check (manager panel)'
+        : 'chore(data): scrape ' + (target ?? 'all') + ' (manager panel)';
+    const commitCode = await runCommand('git', ['commit', '-m', msg]);
+    if (commitCode !== 0) {
+      pushLog('! git commit failed (exit ' + commitCode + ')');
+      state.deployStatus = 'fail';
+      return;
+    }
+    const pushCode = await runCommand('git', ['push', GIT_REMOTE, 'HEAD:' + GIT_BRANCH]);
+    if (pushCode !== 0) {
+      pushLog('! git push failed (exit ' + pushCode + ') — commit kept locally');
+      state.deployStatus = 'fail';
+      return;
+    }
+    pushLog('= pushed to ' + GIT_REMOTE + '/' + GIT_BRANCH + ' — Cloudflare Pages will rebuild in ~1–2 min');
+    state.deployStatus = 'ok';
+  } catch (err) {
+    pushLog('! git sync error: ' + err.message);
+    state.deployStatus = 'fail';
+  } finally {
+    state.deploying = false;
+    state.deployFinishedAt = new Date().toISOString();
+  }
+}
+
 function spawnNpmScript(scriptName, args, target) {
-  if (state.running) return false;
+  if (state.running || state.deploying) return false;
   state.running = true;
   state.startedAt = new Date().toISOString();
   state.finishedAt = null;
   state.exitCode = null;
   state.log = [];
   state.currentTarget = target;
+  state.deploying = false;
+  state.deployStatus = null;
+  state.deployFinishedAt = null;
   pushLog('> npm run ' + scriptName + (args.length ? ' -- ' + args.join(' ') : ''));
 
   const npmArgs = ['run', scriptName, ...(args.length ? ['--', ...args] : [])];
@@ -166,11 +238,14 @@ function spawnNpmScript(scriptName, args, target) {
   });
   child.stdout.on('data', (chunk) => chunk.toString().split('\n').forEach(pushLog));
   child.stderr.on('data', (chunk) => chunk.toString().split('\n').forEach(pushLog));
-  child.on('close', (code) => {
+  child.on('close', async (code) => {
     state.running = false;
     state.finishedAt = new Date().toISOString();
     state.exitCode = code;
     pushLog('= exit ' + code);
+    if (code === 0 && AUTO_PUSH) {
+      await gitSyncAndPush(target);
+    }
   });
   child.on('error', (err) => {
     pushLog('! spawn error: ' + err.message);
@@ -252,6 +327,10 @@ const server = createServer(async (req, res) => {
           exitCode: state.exitCode,
           currentTarget: state.currentTarget,
           log: state.log,
+          deploying: state.deploying,
+          deployStatus: state.deployStatus,
+          deployFinishedAt: state.deployFinishedAt,
+          autoPush: AUTO_PUSH,
         },
         schedule: {
           cron,
@@ -271,9 +350,9 @@ const server = createServer(async (req, res) => {
     }
 
     if (req.method === 'POST' && req.url === '/api/run') {
-      if (state.running) {
+      if (state.running || state.deploying) {
         res.writeHead(409, { 'content-type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'already running' }));
+        return res.end(JSON.stringify({ error: state.deploying ? 'deploy in progress' : 'already running' }));
       }
       const ok = startScrape(['--all'], 'all');
       res.writeHead(ok ? 202 : 409, { 'content-type': 'application/json' });
@@ -281,9 +360,9 @@ const server = createServer(async (req, res) => {
     }
 
     if (req.method === 'POST' && req.url === '/api/run-one') {
-      if (state.running) {
+      if (state.running || state.deploying) {
         res.writeHead(409, { 'content-type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'already running' }));
+        return res.end(JSON.stringify({ error: state.deploying ? 'deploy in progress' : 'already running' }));
       }
       const body = await readJsonBody(req);
       const slug = String(body.slug ?? '').trim();
@@ -297,9 +376,9 @@ const server = createServer(async (req, res) => {
     }
 
     if (req.method === 'POST' && req.url === '/api/verify') {
-      if (state.running) {
+      if (state.running || state.deploying) {
         res.writeHead(409, { 'content-type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'already running' }));
+        return res.end(JSON.stringify({ error: state.deploying ? 'deploy in progress' : 'already running' }));
       }
       const ok = startVerify();
       res.writeHead(ok ? 202 : 409, { 'content-type': 'application/json' });
