@@ -161,9 +161,12 @@ function nextRunFromCron(cron) {
 function runCommand(cmd, args, opts = {}) {
   return new Promise((resolvePromise, reject) => {
     pushLog('> ' + cmd + ' ' + args.join(' '));
+    // shell: false on purpose — args with spaces (like commit messages) get
+    // mangled when shell: true on Windows. Use this helper only for binaries
+    // that don't need a .cmd shim (git.exe, not npm.cmd).
     const child = spawn(cmd, args, {
       cwd: PROJECT_ROOT,
-      shell: process.platform === 'win32',
+      shell: false,
       ...opts,
     });
     child.stdout.on('data', (c) => c.toString().split('\n').forEach(pushLog));
