@@ -1,0 +1,207 @@
+---
+// PROTOTYPE — side-by-side comparison page for /v2 catalog redesign.
+// Pre-renders all unis as <article hidden>, client script unhides matches
+// from ?ids=<slugs>. Keeps page SEO-indexable as an empty shell.
+
+import { getCollection } from 'astro:content';
+import Base from '~/layouts/Base.astro';
+
+const WHATSAPP_NUMBER = '77000000000';
+
+const CURRENCY_TO_KZT: Record<string, number> = {
+  GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290,
+};
+
+const entries = await getCollection('universities');
+const universities = entries.map((entry) => entry.data);
+
+const levelLabels: Record<string, string> = {
+  foundation: 'Foundation',
+  bachelor: 'Бакалавриат',
+  master: "Pre-Master's",
+  phd: 'Аспирантура',
+};
+
+function formatKzt(value: number): string {
+  if (value === 0) return '—';
+  if (value >= 1_000_000) {
+    const mln = value / 1_000_000;
+    return mln >= 10 ? `${Math.round(mln)} млн ₸` : `${mln.toFixed(1).replace('.', ',')} млн ₸`;
+  }
+  return value.toLocaleString('ru-RU') + ' ₸';
+}
+
+const allRows = universities.map((u) => {
+  const values = Object.values(u.tuition.byProgram).filter((v) => v > 0);
+  const minGbp = values.length ? Math.min(...values) : 0;
+  const maxGbp = values.length ? Math.max(...values) : 0;
+  const rate = CURRENCY_TO_KZT[u.tuition.currency] ?? 500;
+  const faculties = Array.from(
+    new Set(u.programs.map((p) => p.faculty).filter((f): f is string => Boolean(f))),
+  ).filter((f) => f !== 'Прочее');
+  const levels = Array.from(new Set(u.programs.map((p) => p.level)));
+  return {
+    slug: u.slug,
+    name: u.name,
+    country: u.country,
+    city: u.city,
+    minGbp, maxGbp, minKzt: minGbp * rate, maxKzt: maxGbp * rate,
+    currency: u.tuition.currency,
+    programs: u.programs.length,
+    faculties,
+    levels,
+    scholarships: u.scholarships.length,
+    ielts: u.requirements.language?.ielts ?? null,
+    hasScholarship: u.scholarships.length > 0,
+  };
+});
+---
+
+<Base title="Сравнение университетов — StudyRoom">
+  <section class="compare-page">
+    <div class="container">
+      <p class="compare-page__eyebrow">
+        <a href="/v2">← Назад в каталог</a>
+      </p>
+      <h1 class="compare-page__title">Сравнение университетов</h1>
+      <p class="compare-page__lead" id="compare-empty-msg">
+        Выберите 2–3 университета в каталоге (кнопка «к&nbsp;сравнению» на&nbsp;карточке) — здесь
+        появится сравнительная таблица.
+      </p>
+
+      <div class="compare-page__action" id="compare-page-action" hidden>
+        <a id="compare-page-wa" href="#" target="_blank" rel="noopener" class="final-cta__btn">
+          💬 Обсудить выбор с куратором в WhatsApp
+        </a>
+      </div>
+
+      <div class="compare-grid" id="compare-grid">
+        {allRows.map((row) => (
+          <article class="compare-col" data-slug={row.slug} hidden>
+            <header class="compare-col__head">
+              <h2 class="compare-col__name">{row.name}</h2>
+              <p class="compare-col__loc">{row.city} · {row.country}</p>
+            </header>
+
+            <dl class="compare-col__rows">
+              <div><dt>Стоимость / год</dt><dd>
+                {row.minKzt > 0 ? (
+                  <>
+                    <strong>от {formatKzt(row.minKzt)}</strong>
+                    <span class="muted compare-col__sub">~{row.minGbp.toLocaleString('ru-RU')} {row.currency}{row.maxGbp > row.minGbp && ` · до ${row.maxGbp.toLocaleString('ru-RU')}`}</span>
+                  </>
+                ) : <span class="muted">уточняется</span>}
+              </dd></div>
+
+              <div><dt>Программ</dt><dd>{row.programs}</dd></div>
+
+              <div><dt>Уровни</dt><dd>
+                {row.levels.map((l) => <span class="tag">{levelLabels[l] ?? l}</span>)}
+              </dd></div>
+
+              <div><dt>Факультеты</dt><dd>
+                {row.faculties.length > 0
+                  ? <span>{row.faculties.length} ({row.faculties.slice(0, 4).join(', ')}{row.faculties.length > 4 ? ' …' : ''})</span>
+                  : <span class="muted">—</span>}
+              </dd></div>
+
+              <div><dt>IELTS</dt><dd>
+                {row.ielts ? <strong>{row.ielts}</strong> : <span class="muted">уточняется</span>}
+              </dd></div>
+
+              <div><dt>Стипендии</dt><dd>
+                {row.hasScholarship
+                  ? <span class="tag tag--scholarship">🎓 Есть ({row.scholarships})</span>
+                  : <span class="muted">нет в публичных данных</span>}
+              </dd></div>
+            </dl>
+
+            <a href={`/${row.slug}`} class="compare-col__cta">Открыть лендинг →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script define:vars={{ waPhone: WHATSAPP_NUMBER }}>
+  const params = new URLSearchParams(location.search);
+  const ids = (params.get('ids') ?? '').split(',').filter(Boolean);
+  const empty = document.getElementById('compare-empty-msg');
+  const action = document.getElementById('compare-page-action');
+  const wa = document.getElementById('compare-page-wa');
+
+  if (ids.length > 0) {
+    const allCols = document.querySelectorAll('.compare-col');
+    const matched = [];
+    allCols.forEach((col) => {
+      const slug = col.dataset.slug;
+      if (ids.includes(slug)) {
+        col.hidden = false;
+        matched.push({ slug, name: col.querySelector('.compare-col__name')?.textContent ?? slug });
+      }
+    });
+    if (matched.length > 0) {
+      if (empty) empty.hidden = true;
+      if (action) action.hidden = false;
+      if (wa) {
+        const names = matched.map((m) => m.name).join(', ');
+        const text = `Здравствуйте! Сравниваю университеты: ${names}. Помогите выбрать под мой бюджет и баллы.`;
+        wa.href = `https://wa.me/${waPhone}?text=${encodeURIComponent(text)}`;
+      }
+    }
+  }
+</script>
+
+<style is:global>
+  .compare-page { padding: 48px 0 96px; }
+  .compare-page__eyebrow { margin: 0 0 16px; font-size: 0.9rem; }
+  .compare-page__eyebrow a { color: var(--color-text-muted); text-decoration: none; }
+  .compare-page__eyebrow a:hover { color: var(--color-primary-dark); }
+  .compare-page__title { margin: 0 0 12px; font-size: clamp(28px, 4vw, 40px); }
+  .compare-page__lead {
+    margin: 0 0 32px; max-width: 560px; color: var(--color-text-muted);
+  }
+  .compare-page__action { margin-bottom: 32px; }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .compare-col {
+    display: flex; flex-direction: column;
+    padding: 24px 20px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 6px 18px rgba(0,0,0,0.05);
+  }
+  .compare-col__head { margin-bottom: 16px; }
+  .compare-col__name { margin: 0 0 4px; font-size: 1.1rem; }
+  .compare-col__loc { margin: 0; color: var(--color-text-muted); font-size: 0.88rem; }
+
+  .compare-col__rows { display: flex; flex-direction: column; gap: 12px; margin: 0 0 20px; }
+  .compare-col__rows > div {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--color-border);
+  }
+  .compare-col__rows > div:last-child { border-bottom: none; }
+  .compare-col__rows dt {
+    font-size: 0.74rem; color: var(--color-text-muted);
+    text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600;
+  }
+  .compare-col__rows dd {
+    margin: 0; font-size: 0.95rem;
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline;
+  }
+  .compare-col__sub { font-size: 0.78rem; }
+
+  .compare-col__cta {
+    margin-top: auto;
+    color: var(--color-primary-dark); font-weight: 600; font-size: 0.95rem;
+    text-decoration: none;
+  }
+  .compare-col__cta:hover { text-decoration: underline; }
+</style>

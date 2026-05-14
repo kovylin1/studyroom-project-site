@@ -1,0 +1,301 @@
+---
+import type { University } from '~/schema/university';
+
+interface Props {
+  data: University;
+  whatsAppDeepLinkTemplate: (slug: string, name: string) => string;
+}
+
+const { data, whatsAppDeepLinkTemplate } = Astro.props;
+
+// Mirror per-uni landing rates from site/src/pages/[slug].astro:64-66
+const CURRENCY_TO_KZT: Record<string, number> = {
+  GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290,
+};
+
+const tuitionValuesAll = Object.values(data.tuition.byProgram).filter((v) => v > 0);
+const tuitionMinGbp = tuitionValuesAll.length ? Math.min(...tuitionValuesAll) : 0;
+const tuitionMaxGbp = tuitionValuesAll.length ? Math.max(...tuitionValuesAll) : 0;
+const rate = CURRENCY_TO_KZT[data.tuition.currency] ?? 500;
+const tuitionMinKzt = tuitionMinGbp * rate;
+
+function formatKzt(value: number): string {
+  if (value === 0) return 'уточняется';
+  if (value >= 1_000_000) {
+    const mln = (value / 1_000_000);
+    return mln >= 10 ? `от ${Math.round(mln)} млн ₸` : `от ${mln.toFixed(1).replace('.', ',')} млн ₸`;
+  }
+  return `от ${value.toLocaleString('ru-RU')} ₸`;
+}
+
+const levels = Array.from(new Set(data.programs.map((p) => p.level)));
+const faculties = Array.from(
+  new Set(data.programs.map((p) => p.faculty).filter((f): f is string => Boolean(f))),
+).filter((f) => f !== 'Прочее');
+const ielts = data.requirements.language?.ielts;
+const hasScholarship = data.scholarships.length > 0;
+
+const cardLevels = levels.join(',');
+const facultyKeywords = faculties
+  .map((f) => f.toLowerCase().replace(/[‘’']/g, '').replace(/[^a-zа-яё0-9]+/g, '-'))
+  .join(',');
+
+const levelLabels: Record<string, string> = {
+  foundation: 'Foundation',
+  bachelor: 'Бакалавриат',
+  master: "Pre-Master's",
+  phd: 'Аспирантура',
+};
+
+const initials = data.slug.slice(0, 2).toUpperCase();
+const topFaculties = faculties.slice(0, 3);
+const moreFacultiesCount = Math.max(0, faculties.length - topFaculties.length);
+
+// Extended search index for the V2 catalog (UX expert recommendation):
+// name + city + country (with RU synonyms) + faculty list + level labels +
+// scholarship marker + "недорого" if bottom-quartile price.
+const searchIndex = [
+  data.name,
+  data.city,
+  data.country,
+  data.country === 'United Kingdom' ? 'Англия UK Великобритания' : '',
+  data.country === 'Canada' ? 'Канада CA' : '',
+  data.country === 'Australia' ? 'Австралия AU' : '',
+  data.country === 'New Zealand' ? 'Новая Зеландия NZ' : '',
+  data.country === 'United States' ? 'США USA Америка' : '',
+  ...faculties,
+  ...levels.map((l) => levelLabels[l] ?? l),
+  hasScholarship ? 'стипендия со-стипендией' : '',
+  tuitionMinGbp > 0 && tuitionMinGbp < 20000 ? 'недорого дешево бюджетно' : '',
+]
+  .filter(Boolean)
+  .join(' ')
+  .toLowerCase();
+
+const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
+---
+
+<article
+  class="uni-card-v2"
+  data-slug={data.slug}
+  data-name={data.name.toLowerCase()}
+  data-search={searchIndex}
+  data-country={data.country}
+  data-levels={cardLevels}
+  data-faculties={facultyKeywords}
+  data-tuition-min={tuitionMinGbp}
+  data-tuition-max={tuitionMaxGbp}
+  data-currency={data.tuition.currency}
+  data-ielts={ielts ?? ''}
+  data-scholarship={hasScholarship ? '1' : '0'}
+>
+  <label class="uni-card-v2__compare" title="Добавить к сравнению">
+    <input type="checkbox" class="uni-card-v2__compare-input" value={data.slug} />
+    <span class="uni-card-v2__compare-mark" aria-hidden="true"></span>
+    <span class="uni-card-v2__compare-text">к&nbsp;сравнению</span>
+  </label>
+
+  <a class="uni-card-v2__main" href={`/${data.slug}`}>
+    <div class="uni-card-v2__top">
+      <div class="uni-card-v2__logo" aria-hidden="true">
+        <img
+          src={`/logos/${data.slug}.png`}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          data-initials={initials}
+          onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.dataset.initials,className:'uni-card-v2__logo-initials'}))"
+        />
+      </div>
+      <div class="uni-card-v2__head">
+        <h3 class="uni-card-v2__name">{data.name}</h3>
+        <p class="uni-card-v2__location">{data.city} · {data.country}</p>
+      </div>
+    </div>
+
+    <div class="uni-card-v2__price">
+      <span class="uni-card-v2__price-main">{formatKzt(tuitionMinKzt)}/год</span>
+      {tuitionMinGbp > 0 && (
+        <span class="uni-card-v2__price-sub">
+          ~{tuitionMinGbp.toLocaleString('ru-RU')} {data.tuition.currency}
+          {tuitionMaxGbp > tuitionMinGbp && ' · до ' + tuitionMaxGbp.toLocaleString('ru-RU')}
+        </span>
+      )}
+    </div>
+
+    <div class="uni-card-v2__levels">
+      {levels.map((level) => <span class="tag">{levelLabels[level] ?? level}</span>)}
+      {hasScholarship && <span class="tag tag--scholarship">🎓 Стипендия</span>}
+    </div>
+
+    {topFaculties.length > 0 && (
+      <div class="uni-card-v2__faculties">
+        {topFaculties.map((f) => <span class="tag tag--neutral">{f}</span>)}
+        {moreFacultiesCount > 0 && (
+          <span class="muted uni-card-v2__faculties-more">+{moreFacultiesCount}</span>
+        )}
+      </div>
+    )}
+
+    <div class="uni-card-v2__meta">
+      <span>{data.programs.length} программ</span>
+      {faculties.length > 0 && <span class="muted">· {faculties.length} факультетов</span>}
+    </div>
+
+    <span class="uni-card-v2__cta">Подробнее →</span>
+  </a>
+
+  <a
+    class="uni-card-v2__wa"
+    href={whatsAppHref}
+    target="_blank"
+    rel="noopener"
+    data-track="card-whatsapp"
+    data-slug={data.slug}
+  >
+    💬 Спросить про этот вуз
+  </a>
+</article>
+
+<style>
+  .uni-card-v2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  }
+  .uni-card-v2:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.04), 0 12px 28px rgba(0,0,0,0.08);
+    border-color: var(--color-primary);
+  }
+  .uni-card-v2:has(.uni-card-v2__compare-input:checked) {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-soft);
+  }
+
+  .uni-card-v2__compare {
+    position: absolute; top: 12px; right: 12px;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px;
+    background: rgba(255,255,255,0.94);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    font-size: 0.74rem;
+    color: var(--color-text-muted);
+    cursor: pointer; user-select: none; z-index: 2;
+    transition: border-color 140ms ease, color 140ms ease, background 140ms ease;
+  }
+  .uni-card-v2__compare:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary-dark);
+  }
+  .uni-card-v2__compare-input { display: none; }
+  .uni-card-v2__compare-mark {
+    display: inline-block; width: 14px; height: 14px;
+    border: 1.5px solid var(--color-text-faint);
+    border-radius: 4px;
+    transition: background 140ms ease, border-color 140ms ease;
+    position: relative;
+  }
+  .uni-card-v2__compare-input:checked + .uni-card-v2__compare-mark {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  .uni-card-v2__compare-input:checked + .uni-card-v2__compare-mark::after {
+    content: '✓';
+    position: absolute;
+    inset: 0;
+    color: #fff;
+    font-size: 11px;
+    line-height: 11px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+  }
+  .uni-card-v2:has(.uni-card-v2__compare-input:checked) .uni-card-v2__compare {
+    color: var(--color-primary-dark);
+    border-color: var(--color-primary);
+    background: var(--color-primary-soft);
+  }
+
+  .uni-card-v2__main {
+    display: flex; flex-direction: column; gap: 14px;
+    padding: 24px 20px 16px;
+    color: inherit; text-decoration: none; flex: 1;
+  }
+
+  .uni-card-v2__top { display: flex; gap: 14px; align-items: flex-start; }
+  .uni-card-v2__logo {
+    flex-shrink: 0; width: 56px; height: 56px;
+    border-radius: 12px;
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-border);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .uni-card-v2__logo img { max-width: 80%; max-height: 80%; object-fit: contain; }
+  .uni-card-v2__logo-initials {
+    font-weight: 900; color: var(--color-primary-dark); font-size: 1.1rem;
+  }
+  .uni-card-v2__head { flex: 1; min-width: 0; padding-right: 110px; }
+  .uni-card-v2__name {
+    margin: 0 0 4px; font-size: 1.05rem; font-weight: 700; line-height: 1.25;
+  }
+  .uni-card-v2__location {
+    margin: 0; font-size: 0.85rem; color: var(--color-text-muted);
+  }
+
+  .uni-card-v2__price {
+    display: flex; flex-direction: column; gap: 2px;
+    padding: 10px 14px;
+    background: var(--color-primary-soft);
+    border-radius: 10px;
+  }
+  .uni-card-v2__price-main {
+    font-size: 1.15rem; font-weight: 800;
+    color: var(--color-primary-dark);
+    letter-spacing: -0.01em;
+  }
+  .uni-card-v2__price-sub {
+    font-size: 0.78rem; color: var(--color-text-muted);
+  }
+
+  .uni-card-v2__levels { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag--scholarship {
+    background: #fff4cc; color: #6b4d00; font-weight: 600;
+  }
+
+  .uni-card-v2__faculties { display: flex; flex-wrap: wrap; gap: 6px; }
+  .uni-card-v2__faculties-more { font-size: 0.78rem; align-self: center; }
+
+  .uni-card-v2__meta {
+    display: flex; gap: 6px; font-size: 0.85rem; color: var(--color-text);
+  }
+
+  .uni-card-v2__cta {
+    margin-top: auto;
+    color: var(--color-primary-dark);
+    font-weight: 600; font-size: 0.92rem;
+  }
+
+  .uni-card-v2__wa {
+    display: block;
+    padding: 12px 20px;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-soft);
+    color: var(--color-text);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: background 140ms ease, color 140ms ease;
+  }
+  .uni-card-v2__wa:hover {
+    background: #e7f9ed;
+    color: #1da851;
+  }
+</style>

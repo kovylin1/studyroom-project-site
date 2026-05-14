@@ -1,0 +1,334 @@
+---
+// PROTOTYPE — redesigned catalog at /v2 with all Tier 1 + Tier 2 recommendations
+// from docs/council-2026-05-14-catalog-redesign.md. Original / stays untouched
+// until approved. To remove after migration: rm site/src/pages/v2.astro +
+// site/src/components/HeroV2.astro + UniversityCardV2.astro + scripts/catalog-v2.ts.
+
+import { getCollection } from 'astro:content';
+import Base from '~/layouts/Base.astro';
+import HeroV2 from '~/components/HeroV2.astro';
+import UniversityCardV2 from '~/components/UniversityCardV2.astro';
+
+// TODO: replace with real WhatsApp Business number before launch.
+const WHATSAPP_NUMBER = '77000000000';
+const BUILD_DATE = new Date();
+
+const entries = await getCollection('universities');
+const universities = entries
+  .map((entry) => entry.data)
+  .sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+
+const countries = Array.from(new Set(universities.map((u) => u.country))).sort((a, b) =>
+  a.localeCompare(b, 'ru'),
+);
+const levels = Array.from(new Set(universities.flatMap((u) => u.programs.map((p) => p.level)))).sort();
+const faculties = Array.from(
+  new Set(
+    universities
+      .flatMap((u) => u.programs.map((p) => p.faculty))
+      .filter((f): f is string => Boolean(f)),
+  ),
+)
+  .filter((f) => f !== 'Прочее')
+  .sort((a, b) => a.localeCompare(b, 'ru'));
+
+const tuitionValues = universities.flatMap((u) => Object.values(u.tuition.byProgram)).filter((v) => v > 0);
+const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
+const totalPrograms = universities.reduce((acc, u) => acc + u.programs.length, 0);
+
+const levelLabels: Record<string, string> = {
+  foundation: 'Foundation',
+  bachelor: 'Бакалавриат',
+  master: "Pre-Master's",
+  phd: 'Аспирантура',
+};
+
+function facultyKeyword(faculty: string): string {
+  return faculty.toLowerCase().replace(/[‘’']/g, '').replace(/[^a-zа-яё0-9]+/g, '-');
+}
+
+function whatsAppHero(): string {
+  const text = `Здравствуйте! Хочу подобрать университет за рубежом. Подскажите, с чего начать?`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
+function whatsAppCardTemplate(slug: string, name: string): string {
+  const text = `Здравствуйте! Интересует ${name}. Расскажите про программы и стоимость.`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+---
+
+<Base title="StudyRoom — каталог зарубежных университетов (v2 preview)">
+  <form id="catalog-filters-v2" autocomplete="off" onsubmit="return false">
+    <HeroV2
+      totalUniversities={universities.length}
+      totalPrograms={totalPrograms}
+      totalCountries={countries.length}
+      updatedAt={BUILD_DATE}
+      whatsAppDeepLink={whatsAppHero()}
+    />
+
+    <section class="trust-strip">
+      <div class="container">
+        <p class="trust-strip__line">
+          <strong>Прямые партнёры</strong> с университетами через Kaplan Pathways.
+          Цены и&nbsp;дедлайны актуальны: данные перепроверены автоматически
+          в&nbsp;{BUILD_DATE.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' })}.
+          Консультация — <strong>бесплатно</strong>, услуга поступления — fixed&nbsp;fee.
+        </p>
+      </div>
+    </section>
+
+    <section id="catalog" class="catalog">
+      <div class="container">
+        <div class="catalog-filters-wrap">
+          <div class="catalog-filters-bar">
+            <button
+              id="catalog-filters-toggle-v2"
+              class="btn btn-ghost btn-sm catalog-filters-bar__toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="catalog-filters-panel-v2"
+            >
+              <span>Фильтры</span>
+              <span id="catalog-filters-count-v2" class="catalog-filters-bar__count" hidden></span>
+              <span aria-hidden="true" class="catalog-filters-bar__chev">▾</span>
+            </button>
+            <button type="reset" form="catalog-filters-v2" class="btn btn-ghost btn-sm">Сбросить</button>
+            <span id="catalog-filters-result-v2" class="catalog-filters-bar__result muted"></span>
+          </div>
+          <div id="catalog-filters-panel-v2" class="catalog-filters-panel" data-open="false">
+            <div class="filterbar" role="group" aria-label="Фильтры поиска">
+              <div class="filterbar__group filterbar__group--grow">
+                <span class="filterbar__label">Уровень</span>
+                <div class="filterbar__chips">
+                  {levels.map((level) => (
+                    <label class="filterbar__chip">
+                      <input type="checkbox" name="level" value={level} form="catalog-filters-v2" />
+                      <span>{levelLabels[level] ?? level}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {faculties.length > 0 && (
+                <div class="filterbar__group filterbar__group--grow">
+                  <span class="filterbar__label">Факультет</span>
+                  <div class="filterbar__chips">
+                    {faculties.map((faculty) => (
+                      <label class="filterbar__chip">
+                        <input type="checkbox" name="faculty" value={facultyKeyword(faculty)} form="catalog-filters-v2" />
+                        <span>{faculty}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <label class="filterbar__group">
+                <span class="filterbar__label">Страна</span>
+                <select name="country" form="catalog-filters-v2">
+                  <option value="">Все</option>
+                  {countries.map((country) => <option value={country}>{country}</option>)}
+                </select>
+              </label>
+
+              <label class="filterbar__group">
+                <span class="filterbar__label">Стоимость до (GBP/год)</span>
+                <input
+                  type="range"
+                  name="maxTuition"
+                  min="0"
+                  max={tuitionMax}
+                  step="1000"
+                  value={tuitionMax}
+                  form="catalog-filters-v2"
+                />
+                <output name="maxTuitionOut" form="catalog-filters-v2" class="muted" style="font-size:0.85rem;">
+                  {tuitionMax.toLocaleString('ru-RU')}
+                </output>
+              </label>
+
+              <label class="filterbar__group">
+                <span class="filterbar__label">IELTS не выше</span>
+                <input type="number" name="maxIelts" min="0" max="9" step="0.5" placeholder="9" form="catalog-filters-v2" />
+              </label>
+
+              <label class="filterbar__group filterbar__group--inline">
+                <input type="checkbox" name="hasScholarship" form="catalog-filters-v2" />
+                <span>Только со стипендией</span>
+              </label>
+
+              <button type="reset" class="btn btn-ghost btn-sm filterbar__reset" form="catalog-filters-v2">
+                Сбросить
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="catalog__count">
+          Найдено: <strong id="catalog-count-v2">{universities.length}</strong> университетов
+        </p>
+
+        <div class="catalog__grid catalog__grid--v2" id="catalog-grid-v2">
+          {universities.map((data) => (
+            <UniversityCardV2 data={data} whatsAppDeepLinkTemplate={whatsAppCardTemplate} />
+          ))}
+        </div>
+
+        <p class="catalog__empty muted" id="catalog-empty-v2" hidden>
+          По заданным условиям ничего не нашлось — попробуйте «Сбросить» или напишите нам в WhatsApp,
+          подберём вручную.
+        </p>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <h2 class="final-cta__title">Не нашли подходящий университет?</h2>
+        <p class="final-cta__lead">
+          В каталоге — 27 партнёров. У&nbsp;нас есть доступ к&nbsp;ещё 100+ через Kaplan и&nbsp;прямых
+          контактов. Опишите, что ищете — соберём подборку под бюджет и&nbsp;баллы за&nbsp;15&nbsp;минут.
+        </p>
+        <a
+          href={whatsAppHero()}
+          target="_blank"
+          rel="noopener"
+          class="final-cta__btn"
+          data-track="final-whatsapp"
+        >
+          💬 Подобрать вуз в WhatsApp
+        </a>
+      </div>
+    </section>
+  </form>
+
+  <div id="compare-bar" class="compare-bar" hidden>
+    <div class="compare-bar__inner">
+      <div class="compare-bar__info">
+        <strong>К сравнению</strong>
+        <span id="compare-count" class="compare-bar__count">0 / 3</span>
+        <span id="compare-names" class="compare-bar__names muted"></span>
+      </div>
+      <div class="compare-bar__actions">
+        <button id="compare-clear" type="button" class="btn btn-ghost btn-sm">Очистить</button>
+        <a id="compare-cta" class="btn btn-primary btn-sm" href="/compare">Сравнить →</a>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style is:global>
+  .trust-strip {
+    background: var(--color-bg-soft);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 12px 0;
+  }
+  .trust-strip__line {
+    margin: 0; text-align: center;
+    font-size: 0.92rem; color: var(--color-text-muted);
+  }
+  .trust-strip__line strong { color: var(--color-text); }
+
+  .catalog { padding: 32px 0 48px; }
+
+  .catalog-filters-wrap { margin-bottom: 16px; }
+  .catalog-filters-bar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    padding: 12px 0;
+  }
+  .catalog-filters-bar__toggle { display: inline-flex; align-items: center; gap: 6px; }
+  .catalog-filters-bar__chev { font-size: 0.7rem; transition: transform 200ms ease; }
+  .catalog-filters-bar__toggle[aria-expanded="true"] .catalog-filters-bar__chev {
+    transform: rotate(180deg);
+  }
+  .catalog-filters-bar__count {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 18px; height: 18px; padding: 0 6px;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary); color: #fff;
+    font-size: 0.7rem; font-weight: 700;
+  }
+  .catalog-filters-bar__result {
+    margin-left: auto; font-size: 0.85rem; white-space: nowrap;
+  }
+  .catalog-filters-panel {
+    max-height: 0; overflow: hidden;
+    transition: max-height 280ms ease, border-color 280ms ease, margin 280ms ease;
+    border-radius: var(--radius-card);
+  }
+  .catalog-filters-panel[data-open="true"] {
+    max-height: 1200px; margin-top: 4px;
+  }
+
+  .catalog__count {
+    margin: 12px 0 20px; font-size: 0.95rem; color: var(--color-text-muted);
+  }
+  .catalog__count strong { color: var(--color-text); font-weight: 700; }
+  .catalog__grid--v2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .catalog__empty { padding: 32px; text-align: center; }
+
+  .final-cta {
+    margin-top: 48px; padding: 56px 0;
+    background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-bg) 100%);
+    text-align: center; border-top: 1px solid var(--color-border);
+  }
+  .final-cta__title { margin: 0 0 12px; font-size: clamp(22px, 3vw, 32px); }
+  .final-cta__lead {
+    margin: 0 auto 24px; max-width: 540px;
+    color: var(--color-text-muted); line-height: 1.5;
+  }
+  .final-cta__btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 32px; background: #25d366; color: #fff;
+    border-radius: var(--radius-pill); text-decoration: none;
+    font-weight: 700; font-size: 1.05rem;
+    transition: background 140ms ease, transform 60ms ease;
+  }
+  .final-cta__btn:hover { background: #1da851; }
+  .final-cta__btn:active { transform: translateY(1px); }
+
+  .compare-bar {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--color-bg);
+    border-top: 2px solid var(--color-primary);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+    z-index: 50;
+    padding: 12px 0;
+    animation: compare-bar-in 240ms ease-out;
+  }
+  @keyframes compare-bar-in {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+  .compare-bar__inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .compare-bar__info {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    min-width: 0;
+  }
+  .compare-bar__count {
+    display: inline-flex; align-items: center; padding: 2px 10px;
+    background: var(--color-primary-soft); color: var(--color-primary-dark);
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem; font-weight: 700;
+  }
+  .compare-bar__names {
+    font-size: 0.85rem;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    max-width: 480px;
+  }
+  .compare-bar__actions { display: flex; gap: 8px; }
+</style>
+
+<script>
+  import '~/scripts/catalog-v2';
+</script>

@@ -1,0 +1,195 @@
+---
+interface Props {
+  totalUniversities: number;
+  totalPrograms: number;
+  totalCountries: number;
+  updatedAt: Date;
+  whatsAppDeepLink: string;
+}
+
+const { totalUniversities, totalPrograms, totalCountries, updatedAt, whatsAppDeepLink } = Astro.props;
+
+const updatedLabel = updatedAt.toLocaleDateString('ru-RU', {
+  day: 'numeric',
+  month: 'long',
+});
+---
+
+<section class="hero-v2">
+  <div class="container">
+    <p class="hero-v2__eyebrow">StudyRoom · поступление за рубеж</p>
+    <h1 class="hero-v2__title">
+      Поступление в зарубежный вуз —
+      <span class="hero-v2__title-accent">без посредников между вами и приёмной комиссией</span>
+    </h1>
+    <p class="hero-v2__lead">
+      Партнёрский каталог: UK, Австралия, Новая Зеландия, Канада и США. Цены в&nbsp;тенге,
+      актуальные дедлайны, прямые контракты с университетами.
+    </p>
+
+    <div class="hero-v2__kpi-bar" role="list" aria-label="Ключевые цифры каталога">
+      <div class="hero-v2__kpi" role="listitem">
+        <span class="hero-v2__kpi-num">{totalUniversities}</span>
+        <span class="hero-v2__kpi-label">университетов</span>
+      </div>
+      <div class="hero-v2__kpi" role="listitem">
+        <span class="hero-v2__kpi-num">{totalPrograms.toLocaleString('ru-RU')}</span>
+        <span class="hero-v2__kpi-label">программ</span>
+      </div>
+      <div class="hero-v2__kpi" role="listitem">
+        <span class="hero-v2__kpi-num">{totalCountries}</span>
+        <span class="hero-v2__kpi-label">страны</span>
+      </div>
+      <div class="hero-v2__kpi" role="listitem">
+        <span class="hero-v2__kpi-num hero-v2__kpi-num--small">{updatedLabel}</span>
+        <span class="hero-v2__kpi-label">данные обновлены</span>
+      </div>
+    </div>
+
+    <label class="hero-v2__search" aria-label="Поиск университета или программы">
+      <span aria-hidden="true" class="hero-v2__search-icon">🔍</span>
+      <input
+        type="search"
+        name="q"
+        placeholder="Glasgow, Канада, Computer Science, стипендия"
+        autocomplete="off"
+        form="catalog-filters-v2"
+      />
+      <button type="button" class="btn btn-primary hero-v2__search-btn">Найти</button>
+    </label>
+
+    <div class="hero-v2__dual-cta">
+      <a href="#catalog" class="hero-v2__cta-secondary">
+        ↓ Листать каталог
+      </a>
+      <span class="hero-v2__cta-divider" aria-hidden="true">·</span>
+      <a
+        href={whatsAppDeepLink}
+        target="_blank"
+        rel="noopener"
+        class="hero-v2__cta-primary"
+        data-track="hero-whatsapp"
+      >
+        <span class="hero-v2__cta-icon" aria-hidden="true">💬</span>
+        <span>15 мин с куратором в WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-v2 {
+    padding: 56px 0 32px;
+    background:
+      radial-gradient(ellipse at top, rgba(0, 149, 15, 0.06) 0%, transparent 60%),
+      var(--color-bg);
+    text-align: center;
+  }
+
+  .hero-v2__eyebrow {
+    margin: 0 0 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary-dark);
+  }
+
+  .hero-v2__title {
+    margin: 0 auto 16px;
+    font-size: clamp(28px, 4.5vw, 48px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    max-width: 920px;
+  }
+  .hero-v2__title-accent {
+    color: var(--color-primary-dark);
+    display: block;
+    margin-top: 4px;
+  }
+
+  .hero-v2__lead {
+    margin: 0 auto 32px;
+    max-width: 640px;
+    font-size: clamp(15px, 1.4vw, 18px);
+    color: var(--color-text-muted);
+    line-height: 1.55;
+  }
+
+  .hero-v2__kpi-bar {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 720px;
+    margin: 0 auto 32px;
+    padding: 18px 20px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 6px 18px rgba(0,0,0,0.05);
+  }
+  @media (max-width: 640px) {
+    .hero-v2__kpi-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  .hero-v2__kpi {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+  }
+  .hero-v2__kpi-num {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 900;
+    color: var(--color-primary-dark);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .hero-v2__kpi-num--small { font-size: clamp(18px, 2.2vw, 22px); }
+  .hero-v2__kpi-label {
+    font-size: 0.78rem; color: var(--color-text-muted);
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+
+  .hero-v2__search {
+    display: flex; align-items: center; gap: 8px;
+    max-width: 640px; margin: 0 auto 16px;
+    padding: 6px 6px 6px 18px;
+    background: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    transition: border-color 140ms ease, box-shadow 140ms ease;
+  }
+  .hero-v2__search:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px var(--color-primary-soft);
+  }
+  .hero-v2__search-icon { font-size: 1rem; opacity: 0.6; }
+  .hero-v2__search input {
+    flex: 1; border: none; outline: none; background: transparent;
+    font: inherit; font-size: 1rem; color: var(--color-text);
+    padding: 12px 0; min-width: 0;
+  }
+  .hero-v2__search-btn { flex-shrink: 0; }
+
+  .hero-v2__dual-cta {
+    display: inline-flex; align-items: center; gap: 16px;
+    flex-wrap: wrap; justify-content: center; font-size: 0.92rem;
+  }
+  .hero-v2__cta-secondary {
+    color: var(--color-text-muted); text-decoration: none;
+    border-bottom: 1px dashed var(--color-text-faint);
+    padding-bottom: 1px;
+    transition: color 140ms ease, border-color 140ms ease;
+  }
+  .hero-v2__cta-secondary:hover {
+    color: var(--color-primary-dark); border-bottom-color: var(--color-primary);
+  }
+  .hero-v2__cta-divider { color: var(--color-text-faint); }
+  .hero-v2__cta-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 22px; background: #25d366; color: #fff;
+    border-radius: var(--radius-pill); text-decoration: none;
+    font-weight: 600;
+    transition: background 140ms ease, transform 60ms ease;
+  }
+  .hero-v2__cta-primary:hover { background: #1da851; }
+  .hero-v2__cta-primary:active { transform: translateY(1px); }
+  .hero-v2__cta-icon { font-size: 1.1rem; }
+</style>
