@@ -1,28 +1,14 @@
 ---
-// Per-university landing page.
-// Visual design ported from projects/studyroom-oxford-landing/ (the original
-// hand-tuned Oxford Tilda-style page) and adapted for any of the 16 Kaplan
-// partners by reading from the validated University record.
-//
-// Sections that need per-uni data the scraper hasn't filled yet (hero photos,
-// gallery, accommodation, campuses, video reviews, exact location coords) are
-// marked with `[TBD]` placeholders or hidden entirely. See BACKLOG Stage 11
-// for the full list of fields the scraper extension needs to populate.
+// Per-university landing page — v2 redesign.
+// New section order: Hero → Money/Scholarships → Programs → Requirements →
+// Reviews stub → About → Living → Photos → Description → FAQ → Dates → Final CTA.
+// Interactive: modals, expandable chat, currency slider, photo lightbox,
+// exit-intent popup, sticky CTAs. Sections gracefully hide when data is missing.
+// Previous template backed up at [slug].astro.bak.
 
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Base from '~/layouts/Base.astro';
-import '~/styles/oxford-landing.css';
-import {
-  STUDYROOM_BENEFITS,
-  STUDYROOM_ACTIVITIES,
-  STUDYROOM_FAQ,
-  STUDYROOM_REVIEWS,
-  STUDYROOM_ABOUT,
-  STUDYROOM_DATES_TIMELINE,
-  STUDYROOM_FORM,
-  STUDYROOM_FOOTER,
-  STUDYROOM_CHAT,
-} from '~/content/studyroom/static';
+import { STUDYROOM_FAQ } from '~/content/studyroom/static';
 
 export async function getStaticPaths() {
   const entries = await getCollection('universities');
@@ -39,22 +25,58 @@ interface Props {
 const { entry } = Astro.props;
 const u = entry.data;
 
-// ---------- derived view models ----------
+const UK_TIMELINE = [
+  { title: 'Сентябрь', text: 'Старт приёма документов в UCAS на программы следующего учебного года.' },
+  { title: 'Октябрь – январь', text: 'Дедлайны UCAS: 15 октября — медицина и стоматология; 31 января — большинство программ.' },
+  { title: 'Январь – март', text: 'Вступительные тесты и интервью. Параллельно подаём документы на pathway-программы (Foundation и Pre-Master\'s).' },
+  { title: 'Март – июль', text: 'Решения университета, выбор оффера, подача на студенческую визу.' },
+];
+const CA_TIMELINE = [
+  { title: 'Сентябрь – ноябрь', text: 'Открывается приём документов на следующий академический год.' },
+  { title: 'Январь – март', text: 'Дедлайны подачи на основные осенние интейки. Тесты и интервью при необходимости.' },
+  { title: 'Март – июнь', text: 'Условные офферы, подтверждение оценок, подача на Study Permit.' },
+  { title: 'Июнь – август', text: 'Получение Study Permit, бронирование жилья, перелёт.' },
+];
+const AU_NZ_TIMELINE = [
+  { title: 'За 8–10 мес до старта', text: 'Подача документов напрямую в университет. Семестры — февраль/июль.' },
+  { title: 'За 6–8 мес', text: 'Условный оффер. Сбор финансовых документов.' },
+  { title: 'За 4–6 мес', text: 'Безусловный оффер. Подача на студенческую визу.' },
+  { title: 'За 1–2 мес', text: 'Виза, жильё, перелёт.' },
+];
+const US_TIMELINE = [
+  { title: 'Август – октябрь', text: 'Открывается Common App. Сдача SAT/TOEFL/IELTS.' },
+  { title: 'Ноябрь – январь', text: 'Early Decision/Action до 1 ноября; Regular Decision до 1–15 января.' },
+  { title: 'Март – апрель', text: 'Решения. Финансовая помощь / стипендии.' },
+  { title: 'Май – август', text: 'I-20, виза F-1, жильё, перелёт.' },
+];
 
-interface FacultyGroup {
-  name: string;
-  programs: Array<{
-    slug: string;
-    title: string;
-    level: string;
-    durationYears: number;
-    intakes: string[];
-    tuition: number | undefined;
-    programType: string | undefined;
-    programUrl: string | undefined;
-  }>;
-  minTuition: number;
-  maxTuition: number;
+function pickTimeline(country: string) {
+  const c = country.toLowerCase();
+  if (c.includes('united kingdom') || c === 'uk') return UK_TIMELINE;
+  if (c === 'canada') return CA_TIMELINE;
+  if (c === 'australia' || c === 'new zealand') return AU_NZ_TIMELINE;
+  if (c.includes('united states') || c === 'usa') return US_TIMELINE;
+  return UK_TIMELINE;
+}
+
+const TIMELINE = pickTimeline(u.country);
+
+const CURRENCY_TO_KZT: Record<string, number> = {
+  GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290,
+};
+const baseRate = CURRENCY_TO_KZT[u.tuition.currency] ?? 500;
+const currencySymbol: Record<string, string> = {
+  GBP: '£', USD: '$', EUR: '€', CAD: 'CA$', AUD: 'A$', NZD: 'NZ$',
+};
+const sym = currencySymbol[u.tuition.currency] ?? u.tuition.currency;
+
+interface ProgramRow {
+  slug: string;
+  title: string;
+  level: string;
+  faculty: string;
+  tuition: number | undefined;
+  programType: string | undefined;
 }
 
 const LEVEL_LABELS: Record<string, string> = {
@@ -63,1155 +85,1228 @@ const LEVEL_LABELS: Record<string, string> = {
   master: 'Магистратура',
   phd: 'PhD',
 };
-
-// Pill label combines level + programType. The master+pathway combo is a
-// 1-year prep course (Pre-Master's), not an actual master's degree — keep
-// them visually distinct so the title list reads correctly. Shorter than
-// "Pre-Master's / Магистратура" so the modal pill fits its 120px column.
 function levelLabel(level: string, programType?: string): string {
   if (level === 'master' && programType === 'pathway') return "Pre-Master's";
   return LEVEL_LABELS[level] ?? level;
 }
+const LEVEL_ORDER: Record<string, number> = { foundation: 1, bachelor: 2, master: 3, phd: 4 };
 
-const LEVEL_ORDER: Record<string, number> = {
-  foundation: 1,
-  bachelor: 2,
-  master: 3,
-  phd: 4,
-};
-
-const programRows = u.programs.map((p) => ({
+const programRows: ProgramRow[] = u.programs.map((p) => ({
   slug: p.slug,
   title: p.title,
   level: p.level,
   faculty: p.faculty ?? 'Прочее',
-  durationYears: p.durationYears,
-  intakes: p.intakes ?? [],
   tuition: u.tuition.byProgram[p.slug],
   programType: p.programType,
-  programUrl: p.programUrl,
 }));
 
-const facultyMap = new Map<string, FacultyGroup>();
+const facultyMap = new Map<string, ProgramRow[]>();
 for (const r of programRows) {
-  const existing = facultyMap.get(r.faculty);
-  if (existing) {
-    existing.programs.push(r);
-  } else {
-    facultyMap.set(r.faculty, {
-      name: r.faculty,
-      programs: [r],
-      minTuition: 0,
-      maxTuition: 0,
-    });
-  }
+  const arr = facultyMap.get(r.faculty) ?? [];
+  arr.push(r);
+  facultyMap.set(r.faculty, arr);
 }
-for (const fac of facultyMap.values()) {
-  fac.programs.sort((a, b) => {
+for (const arr of facultyMap.values()) {
+  arr.sort((a, b) => {
     const lvl = (LEVEL_ORDER[a.level] ?? 99) - (LEVEL_ORDER[b.level] ?? 99);
     if (lvl !== 0) return lvl;
     return (a.tuition ?? 0) - (b.tuition ?? 0);
   });
-  const tuitions = fac.programs
-    .map((p) => p.tuition)
-    .filter((t): t is number => typeof t === 'number' && t > 0);
-  fac.minTuition = tuitions.length ? Math.min(...tuitions) : 0;
-  fac.maxTuition = tuitions.length ? Math.max(...tuitions) : 0;
 }
-
-const faculties = Array.from(facultyMap.values()).sort(
-  (a, b) => b.programs.length - a.programs.length || a.name.localeCompare(b.name, 'ru')
-);
-const topFaculties = faculties.slice(0, 6);
+const faculties = Array.from(facultyMap.entries())
+  .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], 'ru'))
+  .slice(0, 6);
 
 const tuitionValues = Object.values(u.tuition.byProgram).filter((v) => v > 0);
 const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
-const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
-const tuitionRange =
-  tuitionMin === 0
-    ? '[TBD: уточняется]'
-    : tuitionMin === tuitionMax
-      ? `${tuitionMin.toLocaleString('ru-RU')} ${u.tuition.currency}`
-      : `${tuitionMin.toLocaleString('ru-RU')}–${tuitionMax.toLocaleString('ru-RU')} ${u.tuition.currency}`;
 
-const lastChecked = new Date(u.lastChecked).toLocaleDateString('ru-RU', {
-  day: '2-digit',
-  month: 'long',
-  year: 'numeric',
-});
-
-function programsCountLabel(n: number): string {
-  if (n % 10 === 1 && n % 100 !== 11) return n + ' программа';
-  if ([2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100)) return n + ' программы';
-  return n + ' программ';
+function stripKaplan<T extends string | undefined | null>(s: T): T {
+  if (!s) return s;
+  return (s
+    .replace(/^Стипендия Kaplan за раннюю подачу$/i, 'Стипендия за раннюю подачу')
+    .replace(/^Стипендия Kaplan за академические достижения$/i, 'Академическая стипендия')
+    .replace(/^Kaplan Early Bird Scholarship$/i, 'Early Bird Scholarship')
+    .replace(/^Kaplan Academic Achievement Scholarship$/i, 'Academic Achievement Scholarship')
+    .replace(/\s*\bKaplan\b\s*/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim()) as T;
 }
 
-// Map embed via OpenStreetMap. Google Maps' `maps.google.com/?q=…&output=embed`
-// silently fails in many contexts (file://, no API key, occasional region blocks),
-// so we use OSM which has no key requirement and works on any origin. Coords are
-// hardcoded per slug — accurate to the main campus building. Future scraper
-// extension can geocode from sourceUrl + city, then store on University.location.
-const UNI_COORDS: Record<string, { lat: number; lng: number }> = {
-  'adelaide': { lat: -34.9206, lng: 138.6044 },
-  'alberta': { lat: 53.5232, lng: -113.5263 },
-  'arizona-state': { lat: 33.4242, lng: -111.9281 },
-  'asu-london': { lat: 51.5097, lng: -0.0871 },
-  'birmingham': { lat: 52.4508, lng: -1.9305 },
-  'bournemouth': { lat: 50.7426, lng: -1.8973 },
-  'brighton': { lat: 50.8629, lng: -0.0879 },
-  'bristol': { lat: 51.4585, lng: -2.6019 },
-  'city-london': { lat: 51.5275, lng: -0.1019 },
-  'cranfield': { lat: 52.0716, lng: -0.6259 },
-  'essex': { lat: 51.8780, lng: 0.9442 },
-  'glasgow': { lat: 55.8721, lng: -4.2880 },
-  'liverpool': { lat: 53.4060, lng: -2.9657 },
-  'massey': { lat: -36.7307, lng: 174.6997 },
-  'murdoch': { lat: -32.0682, lng: 115.8366 },
-  'newcastle-au': { lat: -32.8927, lng: 151.7053 },
-  'nottingham': { lat: 52.9382, lng: -1.1972 },
-  'nottingham-trent': { lat: 52.9530, lng: -1.1495 },
-  'oregon': { lat: 44.0454, lng: -123.0726 },
-  'pace': { lat: 40.7110, lng: -74.0048 },
-  'queen-mary-london': { lat: 51.5246, lng: -0.0405 },
-  'simmons': { lat: 42.3406, lng: -71.1006 },
-  'uconn': { lat: 41.8077, lng: -72.2540 },
-  'uwe-bristol': { lat: 51.5009, lng: -2.5470 },
-  'victoria': { lat: 48.4634, lng: -123.3117 },
-  'westminster': { lat: 51.5174, lng: -0.1444 },
-  'york': { lat: 53.9460, lng: -1.0538 },
-};
+const scholarshipsClean = (u.scholarships ?? []).map((s) => ({
+  ...s,
+  name: stripKaplan(s.name),
+  nameRu: stripKaplan(s.nameRu),
+  description: stripKaplan(s.description),
+  descriptionRu: stripKaplan(s.descriptionRu),
+}));
 
-const coords = UNI_COORDS[u.slug];
-// Small bbox around the marker (≈city-level zoom). OSM embed needs both.
-const BBOX_PAD_LAT = 0.012;
-const BBOX_PAD_LNG = 0.024;
-const bbox = coords
-  ? [
-      (coords.lng - BBOX_PAD_LNG).toFixed(4),
-      (coords.lat - BBOX_PAD_LAT).toFixed(4),
-      (coords.lng + BBOX_PAD_LNG).toFixed(4),
-      (coords.lat + BBOX_PAD_LAT).toFixed(4),
-    ].join(',')
-  : null;
-const mapsEmbedUrl = coords
-  ? `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${coords.lat},${coords.lng}`
-  : null;
-const mapsOpenUrl = coords
-  ? `https://www.google.com/maps/?q=${coords.lat},${coords.lng}`
-  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${u.name}, ${u.city}, ${u.country}`)}`;
+const hasScholarships = scholarshipsClean.length > 0;
+const maxScholarshipApprox = scholarshipsClean.reduce((acc, s) => {
+  const m = (s.amount ?? '').match(/[\d,]+/);
+  const n = m ? Number(m[0].replace(/,/g, '')) : 0;
+  return Math.max(acc, n);
+}, 0);
 
-const heroSubtitle = `${u.city} · ${u.country}`;
-const description = `${u.name} — поступление через StudyRoom. Программы, стоимость и дедлайны обновлены ${lastChecked}.`;
+const accom = u.accommodation ?? [];
+const campuses = u.campuses ?? [];
+const galleryItems = u.gallery?.items ?? [];
+const heroPhoto = galleryItems[0]?.img;
+const photoSets = (u as any).photoSets ?? null;
+const moneyBackdrop = photoSets?.campuses?.[0]?.img ?? galleryItems[5]?.img ?? galleryItems[2]?.img ?? heroPhoto;
+const descParagraphs = u.description?.paragraphsRu?.length ? u.description.paragraphsRu : (u.description?.paragraphs ?? []);
+const keyFacts = u.description?.keyFactsRu?.length ? u.description.keyFactsRu : (u.description?.keyFacts ?? []);
 
-// Split a "$79 [TBD] $200"-style or "[TBD: £/нед]"-style price into the
-// visible price text plus a TBD badge flag — mirrors oxford-landing's
-// `withTBD()` helper. Used by accommodation cards below.
-function priceParts(price: string | undefined): { text: string; tbd: boolean } {
-  if (!price) return { text: '', tbd: false };
-  const wholeTbd = price.match(/^\s*\[TBD(?::\s*(.*?))?\]\s*$/);
-  if (wholeTbd) return { text: (wholeTbd[1] ?? '').trim(), tbd: true };
-  const inline = price.match(/^(.*?)\s*\[TBD(?::\s*.*?)?\]\s*(.*)$/);
-  if (inline) return { text: `${inline[1]} ${inline[2]}`.replace(/\s+/g, ' ').trim(), tbd: true };
-  return { text: price, tbd: false };
-}
+const programsByFaculty: Record<string, ProgramRow[]> = {};
+for (const [k, v] of facultyMap.entries()) programsByFaculty[k] = v;
 
-// Photo allocation strategy (avoids repetition across visually-adjacent
-// sections). With ~10 photos per uni:
-//   Hero (top of page):                photos 1, 2
-//   Gallery (right under hero):        photos 3, 4, 5  — see slice(HERO_SKIP)
-//   Faculty / programs cards:          photos 6+      — see FACULTY_SKIP
-//   Campus cards (cli.ts):             photos 6-9
-//   Accommodation cards (cli.ts):      photos 10, 9, 8
-// Faculty cards share the 6-10 pool with campus + accommodation, but those
-// sections are separated by several content blocks so the repetition is
-// far less noticeable than hero ↔ gallery side-by-side.
-const galleryPhotos = u.gallery?.items?.map((it) => it.img) ?? [];
-const heroBgPhoto = galleryPhotos[0];
-const heroCoverPhoto = galleryPhotos[1] ?? galleryPhotos[0];
-const HERO_SKIP = 2;
-const FACULTY_SKIP = 5; // skip hero (1-2) + gallery tiles (3-5)
-const facultyPool =
-  galleryPhotos.length > FACULTY_SKIP ? galleryPhotos.slice(FACULTY_SKIP) :
-  galleryPhotos.length > HERO_SKIP ? galleryPhotos.slice(HERO_SKIP) : galleryPhotos;
-function facultyPhoto(i: number): string | undefined {
-  if (facultyPool.length === 0) return undefined;
-  return facultyPool[i % facultyPool.length];
-}
-
-// Per-uni faculty image overrides. Used when the generic gallery-pool fallback
-// would show an off-topic photo for a thematic faculty card. Keyed by uni slug
-// then by faculty name (must match the value written by the scraper into
-// `programs[].faculty`). When no override is present, `facultyPhoto(idx)` is
-// used instead.
-const FACULTY_IMAGE_OVERRIDES: Record<string, Record<string, string>> = {
-  victoria: {
-    'Engineering and Computer Science': '/photos/victoria/faculties/engineering.jpg',
-    'Science': '/photos/victoria/faculties/science.jpg',
-    'Humanities': '/photos/victoria/faculties/humanities.jpg',
-    'Social Sciences': '/photos/victoria/faculties/social-sciences.jpg',
-    'Fine Arts': '/photos/victoria/faculties/fine-arts.jpg',
-    'Business': '/photos/victoria/faculties/business.jpg',
-    'Health Sciences': '/photos/victoria/faculties/health.jpg',
-    'Education': '/photos/victoria/faculties/education.jpg',
-  },
-};
-function facultyImage(facultyName: string, idx: number): string | undefined {
-  return FACULTY_IMAGE_OVERRIDES[u.slug]?.[facultyName] ?? facultyPhoto(idx);
-}
+const pageTitle = `${u.name} — поступление из Казахстана | StudyRoom`;
+const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.country}): ${u.programs.length} программ, стоимость от ${sym}${tuitionMin.toLocaleString('en')}, IELTS от ${u.requirements?.language?.ielts ?? 5.5}. Бесплатная консультация StudyRoom.`;
 ---
+<Base title={pageTitle} description={pageDescription} hideHeader={true}>
 
-<Base title={`${u.name} — StudyRoom`} description={description}>
-  <main>
+<style is:global>
+  :root {
+    --green: #00950f; --green-dark: #007a0c; --green-soft: #e6f7e8;
+    --amber: #ffb800; --ink: #0e0e0e; --ink-2: #444; --ink-3: #777;
+    --line: #e5e5e5; --bg-soft: #f6f7f8;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+    --shadow-md: 0 6px 24px rgba(0,0,0,.08);
+    --shadow-lg: 0 24px 64px rgba(0,0,0,.18);
+  }
+  body { font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  body.no-scroll { overflow: hidden; }
+  .lp h1, .lp h2, .lp h3, .lp h4 { font-weight: 900; line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; }
+  .lp h1 { font-size: clamp(28px, 5vw, 48px); }
+  .lp h2 { font-size: clamp(24px, 3.5vw, 36px); }
+  .lp h3 { font-size: 20px; }
+  .lp p { margin: 0 0 1em; }
+  .lp .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+  .lp .section { padding: 64px 0; }
+  .lp .section--alt { background: var(--bg-soft); }
+  .lp .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+  .lp .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .lp .reveal { opacity: 1; transform: none; transition: none; } }
+  .lp .eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green); padding: 4px 10px; background: var(--green-soft); border-radius: 999px; margin-bottom: 14px; }
+  .lp .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; font: inherit; font-weight: 700; border-radius: 999px; border: 2px solid transparent; cursor: pointer; transition: transform .12s, box-shadow .12s, background .12s; white-space: nowrap; text-decoration: none; }
+  .lp .btn--primary { background: var(--green); color: #fff; box-shadow: 0 4px 14px rgba(0,149,15,.25); }
+  .lp .btn--primary:hover { background: var(--green-dark); transform: translateY(-1px); }
+  .lp .btn--ghost { background: #fff; color: var(--ink); border-color: var(--line); }
+  .lp .btn--ghost:hover { border-color: var(--green); color: var(--green); }
+  .lp .btn--lg { padding: 18px 32px; font-size: 17px; }
+  .lp .progress-bar { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green), var(--amber)); width: 0; z-index: 200; transition: width .12s ease; }
+  .lp .lp-nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92); backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid var(--line); }
+  .lp .lp-nav__row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; gap: 16px; }
+  .lp .lp-nav__brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 18px; color: var(--ink); }
+  .lp .lp-nav__mark { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--green), var(--green-dark)); color: #fff; display: grid; place-items: center; font-weight: 900; font-size: 14px; }
+  .lp .lp-nav__links { display: none; gap: 18px; align-items: center; }
+  @media (min-width: 1024px) { .lp .lp-nav__links { display: flex; } }
+  .lp .lp-nav__links a { color: var(--ink-2); font-size: 14px; font-weight: 500; position: relative; text-decoration: none; }
+  .lp .lp-nav__links a:hover, .lp .lp-nav__links a.is-active { color: var(--green); }
+  .lp .lp-nav__links a.is-active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: var(--green); border-radius: 2px; }
+  .lp .lp-nav__contact { display: flex; align-items: center; gap: 10px; }
+  .lp .lp-nav__phone { display: none; font-weight: 700; font-size: 14px; color: var(--ink); text-decoration: none; }
+  @media (min-width: 720px) { .lp .lp-nav__phone { display: block; } }
+  .lp .lp-nav__phone small { display: block; font-weight: 400; font-size: 11px; color: var(--ink-3); }
+  .lp .lp-nav__wa { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #25D366; color: #fff; text-decoration: none; transition: transform .15s, background .15s; flex-shrink: 0; }
+  .lp .lp-nav__wa:hover { background: #1ebe5b; transform: scale(1.06); }
+  .lp .lp-nav__wa svg { width: 20px; height: 20px; }
+  .lp .lp-nav__catalog { font-weight: 700; color: var(--ink) !important; }
+  .lp .lp-burger { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 10px; background: #fff; display: grid; place-items: center; cursor: pointer; padding: 0; }
+  @media (min-width: 1024px) { .lp .lp-burger { display: none; } }
+  .lp .lp-burger span { display: block; width: 18px; height: 2px; background: var(--ink); position: relative; transition: transform .2s; }
+  .lp .lp-burger span::before, .lp .lp-burger span::after { content: ''; position: absolute; left: 0; width: 18px; height: 2px; background: var(--ink); transition: transform .2s; }
+  .lp .lp-burger span::before { top: -6px; }
+  .lp .lp-burger span::after { top: 6px; }
+  .lp .lp-burger.is-open span { background: transparent; }
+  .lp .lp-burger.is-open span::before { transform: translateY(6px) rotate(45deg); }
+  .lp .lp-burger.is-open span::after { transform: translateY(-6px) rotate(-45deg); }
+  .lp .drawer { position: fixed; top: 0; right: -100%; width: min(320px, 85vw); height: 100vh; background: #fff; box-shadow: var(--shadow-lg); z-index: 110; transition: right .25s ease; padding: 80px 24px 24px; overflow-y: auto; }
+  .lp .drawer.is-open { right: 0; }
+  .lp .drawer__overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 105; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+  .lp .drawer__overlay.is-open { opacity: 1; pointer-events: auto; }
+  .lp .drawer a { display: block; padding: 14px 0; color: var(--ink); font-weight: 500; font-size: 16px; border-bottom: 1px solid var(--line); text-decoration: none; }
+  .lp .drawer__cta { margin-top: 20px; }
+  .lp .drawer__cta .btn { width: 100%; }
+  .lp .hero { padding: 56px 0; background: linear-gradient(180deg, rgba(0,149,15,.04), #fff 70%); }
+  .lp .hero__grid { display: grid; gap: 36px; align-items: center; grid-template-columns: 1fr; }
+  @media (min-width: 960px) { .lp .hero__grid { grid-template-columns: 1.15fr 1fr; } }
+  .lp .hero__uni-line { display: flex; align-items: center; gap: 12px; color: var(--ink-2); font-size: 14px; margin-bottom: 12px; }
+  .lp .hero__logo { width: 44px; height: 44px; border-radius: 10px; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; font-weight: 900; color: #003865; font-size: 11px; padding: 4px; overflow: hidden; }
+  .lp .hero__logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .lp .hero__lead { font-size: 18px; color: var(--ink-2); margin-bottom: 24px; max-width: 60ch; }
+  .lp .hero__facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0 28px; }
+  .lp .hero__fact { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; transition: transform .15s, box-shadow .15s; }
+  .lp .hero__fact:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .lp .hero__fact-num { font-weight: 900; font-size: 22px; color: var(--green); line-height: 1.1; }
+  .lp .hero__fact-label { font-size: 12.5px; color: var(--ink-3); margin-top: 4px; }
+  .lp .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 18px; }
+  .lp .hero__trust { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-2); }
+  .lp .hero__trust .dot { width: 8px; height: 8px; border-radius: 50%; background: #25D366; box-shadow: 0 0 0 4px rgba(37,211,102,.18); animation: lpPulse 2s infinite; }
+  @keyframes lpPulse { 0%,100% { box-shadow: 0 0 0 4px rgba(37,211,102,.18); } 50% { box-shadow: 0 0 0 8px rgba(37,211,102,.05); } }
+  .lp .hero__media { border-radius: 22px; overflow: hidden; aspect-ratio: 4/3; background: #ddd center/cover no-repeat; box-shadow: var(--shadow-md); position: relative; cursor: zoom-in; transition: transform .25s; }
+  .lp .hero__media:hover { transform: scale(1.01); }
+  .lp .hero__media::after { content: ''; position: absolute; inset: auto 0 0 0; height: 50%; background: linear-gradient(to top, rgba(0,0,0,.4), transparent); }
+  .lp .hero__media-cap { position: absolute; left: 16px; right: 16px; bottom: 14px; color: #fff; font-size: 13px; z-index: 2; text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+  .lp .hero__media--placeholder { background: linear-gradient(135deg, #d0e8d2, #00950f); display: grid; place-items: center; cursor: default; }
+  .lp .hero__media--placeholder::after { display: none; }
+  .lp .hero__media--placeholder span { color: #fff; font-weight: 900; font-size: 24px; padding: 16px; text-align: center; }
+  .lp .hero__strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 36px; }
+  @media (max-width: 720px) { .lp .hero__strip { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+  .lp .hero__strip-tile { aspect-ratio: 1/1; border-radius: 14px; background: #ddd center/cover no-repeat; cursor: zoom-in; transition: transform .25s, box-shadow .25s; box-shadow: var(--shadow-sm); }
+  .lp .hero__strip-tile:hover { transform: scale(1.03); box-shadow: var(--shadow-md); }
+  .lp .section--photo-bg { position: relative; overflow: hidden; }
+  .lp .section--photo-bg::before { content: ''; position: absolute; inset: 0; background-image: var(--photo-bg); background-size: cover; background-position: center; background-repeat: no-repeat; opacity: 0.18; z-index: 0; filter: saturate(.85); }
+  .lp .section--photo-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(230,247,232,.55), rgba(255,255,255,.7) 40%, rgba(255,255,255,.85)); z-index: 0; }
+  .lp .section--photo-bg > .wrap { position: relative; z-index: 1; }
+  .lp .money { border: 2px solid var(--green); border-radius: 22px; background: linear-gradient(180deg, var(--green-soft), #fff 60%); padding: 32px; }
+  .lp .money__head { margin-bottom: 18px; }
+  .lp .money__title span { color: var(--green); }
+  .lp .scholar-list { display: grid; gap: 12px; grid-template-columns: 1fr; margin: 0 0 22px; padding: 0; list-style: none; }
+  @media (min-width: 720px) { .lp .scholar-list { grid-template-columns: 1fr 1fr; } }
+  .lp .scholar { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: flex; gap: 14px; align-items: flex-start; cursor: pointer; transition: transform .15s, box-shadow .15s, border-color .15s; }
+  .lp .scholar:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--green); }
+  .lp .scholar__amount { background: var(--green); color: #fff; padding: 6px 12px; border-radius: 999px; font-weight: 700; font-size: 13px; white-space: nowrap; flex-shrink: 0; }
+  .lp .scholar__name { font-weight: 700; margin-bottom: 4px; font-size: 15px; }
+  .lp .scholar__desc { font-size: 13px; color: var(--ink-2); margin: 0; }
+  .lp .scholar__more { font-size: 12px; color: var(--green); font-weight: 700; margin-top: 6px; }
+  .lp .rate-slider { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .lp .rate-slider label { font-size: 13px; color: var(--ink-2); font-weight: 700; }
+  .lp .rate-slider input[type="range"] { flex: 1; min-width: 180px; accent-color: var(--green); }
+  .lp .rate-slider output { font-weight: 700; color: var(--green); min-width: 80px; }
+  .lp .calc { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 880px) { .lp .calc { grid-template-columns: 1fr 1fr; } }
+  .lp .calc__card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .lp .calc__card h4 { margin: 0 0 12px; font-size: 16px; }
+  .lp .calc__row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 14px; gap: 12px; }
+  .lp .calc__row:last-child { border-bottom: none; }
+  .lp .calc__row strong { text-align: right; }
+  .lp .calc__row--total { font-size: 16px; font-weight: 700; padding-top: 14px; border-top: 2px solid var(--ink); }
+  .lp .calc__highlight { color: var(--green); font-weight: 700; }
+  .lp .calc__scenario { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+  .lp .calc__scenario--base { background: #f0f0f0; color: var(--ink-2); }
+  .lp .calc__scenario--best { background: var(--green-soft); color: var(--green-dark); }
+  .lp .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .lp .tab { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: #fff; cursor: pointer; font: inherit; font-weight: 500; font-size: 14px; transition: all .15s; }
+  .lp .tab:hover { border-color: var(--green); color: var(--green); }
+  .lp .tab.is-active { background: var(--green); color: #fff; border-color: var(--green); }
+  .lp .level-filter { display: inline-flex; flex-wrap: wrap; gap: 4px; margin: 0 0 18px; padding: 4px; background: var(--bg-soft); border-radius: 12px; }
+  .lp .lvl { padding: 7px 14px; border-radius: 8px; border: 0; background: transparent; cursor: pointer; font: inherit; font-weight: 500; font-size: 13px; color: var(--ink-2); transition: all .15s; }
+  .lp .lvl:hover { background: rgba(0,0,0,.04); color: var(--ink); }
+  .lp .lvl.is-active { background: #fff; color: var(--green); box-shadow: var(--shadow-sm); }
+  .lp .programs-empty { padding: 32px 16px; text-align: center; color: var(--ink-3); font-size: 14px; }
+  .lp .programs-grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .lp .programs-grid { grid-template-columns: 1fr 1fr; } }
+  .lp .program-row { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; gap: 16px; transition: transform .15s, box-shadow .15s, border-color .15s; cursor: pointer; }
+  .lp .program-row:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--green); }
+  .lp .program-row__level { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-bottom: 6px; }
+  .lp .program-row__level--foundation { background: #e6f0ff; color: #004ac2; }
+  .lp .program-row__level--pathway { background: #fff4e0; color: #b86b00; }
+  .lp .program-row__level--master { background: #fff0e0; color: #a85400; }
+  .lp .program-row__level--bachelor { background: var(--green-soft); color: var(--green-dark); }
+  .lp .program-row__level--phd { background: #f3e0ff; color: #5a1080; }
+  .lp .program-row__title { font-weight: 500; font-size: 14.5px; line-height: 1.35; }
+  .lp .program-row__price { font-weight: 700; color: var(--green); white-space: nowrap; }
+  .lp .req-grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
+  @media (min-width: 880px) { .lp .req-grid { grid-template-columns: 1.4fr 1fr; } }
+  .lp .req-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .lp .req-list { list-style: none; padding: 0; margin: 0; }
+  .lp .req-list li { display: flex; justify-content: space-between; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .lp .req-list li:last-child { border-bottom: none; }
+  .lp .req-list dt { color: var(--ink-2); }
+  .lp .req-list b { color: var(--ink); font-weight: 700; text-align: right; }
+  .lp .ielts-help { background: linear-gradient(135deg, #fff8e6, #fff); border: 1px solid #ffd97a; border-radius: 14px; padding: 20px; }
+  .lp .ielts-help h4 { margin: 0 0 8px; color: #8a5e00; }
+  .lp .reviews-stub { background: #fff; border: 2px dashed var(--line); border-radius: 14px; padding: 24px; text-align: center; color: var(--ink-3); }
+  .lp .reviews-stub strong { color: var(--ink); display: block; margin-bottom: 4px; }
+  .lp .about-grid { display: grid; gap: 28px; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 880px) { .lp .about-grid { grid-template-columns: 1fr 1.3fr; } }
+  .lp .about-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .lp .about-stat { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .lp .about-stat b { font-size: 28px; color: var(--green); display: block; }
+  .lp .about-stat span { font-size: 13px; color: var(--ink-2); }
+  .lp .placeholder { background: #fff3a8; padding: 1px 6px; border-radius: 4px; font-weight: 700; font-style: italic; color: #5a4a00; }
+  .lp .accom-grid, .lp .camp-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .lp .accom-grid, .lp .camp-grid { grid-template-columns: repeat(3, 1fr); } }
+  .lp .accom, .lp .camp { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; cursor: pointer; transition: transform .15s, box-shadow .15s; }
+  .lp .accom:hover, .lp .camp:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .lp .accom__img, .lp .camp__img { aspect-ratio: 4/3; background: #ddd center/cover no-repeat; transition: transform .3s; }
+  .lp .accom:hover .accom__img, .lp .camp:hover .camp__img { transform: scale(1.04); }
+  .lp .accom__body, .lp .camp__body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+  .lp .accom__price { display: inline-block; align-self: flex-start; background: var(--green); color: #fff; padding: 4px 10px; border-radius: 999px; font-weight: 700; font-size: 13px; margin-bottom: 8px; }
+  .lp .accom__name, .lp .camp__title { font-weight: 700; margin-bottom: 6px; font-size: 16px; }
+  .lp .camp__sub { font-size: 12px; color: var(--green); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+  .lp .accom__text, .lp .camp__text { font-size: 14px; color: var(--ink-2); margin: 0; }
+  .lp .accom__placeholder, .lp .camp__placeholder { background: linear-gradient(135deg, #d0e8d2, #00950f); display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 18px; padding: 16px; text-align: center; aspect-ratio: 4/3; }
+  .lp .photo-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .lp .photo-tile { aspect-ratio: 4/3; border-radius: 12px; background: #ddd center/cover no-repeat; cursor: zoom-in; transition: transform .25s; }
+  .lp .photo-tile:hover { transform: scale(1.02); }
+  .lp .photo-cat { margin-bottom: 28px; }
+  .lp .photo-cat h3 { font-size: 18px; margin-bottom: 14px; }
+  .lp .desc-grid { display: grid; gap: 28px; grid-template-columns: 1fr; }
+  @media (min-width: 880px) { .lp .desc-grid { grid-template-columns: 1.4fr 1fr; } }
+  .lp .desc-text p { color: var(--ink-2); font-size: 16px; }
+  .lp .ranks-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .lp .ranks-card h4 { margin: 0 0 14px; font-size: 16px; }
+  .lp .ranks-list { list-style: none; padding: 0; margin: 0; }
+  .lp .ranks-list li { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--ink-2); display: flex; gap: 10px; align-items: flex-start; }
+  .lp .ranks-list li::before { content: '★'; color: var(--amber); font-size: 16px; line-height: 1.4; flex-shrink: 0; }
+  .lp .ranks-list li:last-child { border-bottom: none; }
+  .lp .faq-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .lp .faq-grid { grid-template-columns: 1fr 1fr; } }
+  .lp .faq-item { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .lp .faq-item__head { padding: 18px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .lp .faq-item__head h4 { font-size: 16px; margin: 0; color: var(--green); }
+  .lp .faq-item__icon { font-size: 22px; color: var(--green); transition: transform .2s; flex-shrink: 0; }
+  .lp .faq-item.is-open .faq-item__icon { transform: rotate(45deg); }
+  .lp .faq-item__body { padding: 0 18px; max-height: 0; overflow: hidden; transition: max-height .25s, padding .25s; }
+  .lp .faq-item.is-open .faq-item__body { padding: 0 18px 18px; max-height: 400px; }
+  .lp .faq-item p { font-size: 14px; color: var(--ink-2); margin: 0; }
+  .lp .timeline { display: grid; gap: 14px; grid-template-columns: 1fr; counter-reset: tl; }
+  @media (min-width: 720px) { .lp .timeline { grid-template-columns: repeat(4, 1fr); } }
+  .lp .tl-step { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; position: relative; counter-increment: tl; }
+  .lp .tl-step::before { content: counter(tl); position: absolute; top: -14px; left: 18px; width: 28px; height: 28px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font-weight: 900; font-size: 14px; }
+  .lp .tl-step h4 { font-size: 15px; margin: 0 0 6px; }
+  .lp .tl-step p { font-size: 13.5px; color: var(--ink-2); margin: 0; }
+  .lp .deadline-strip { background: linear-gradient(135deg, #fff4e0, #ffe9c2); border: 1px solid #ffc266; border-radius: 12px; padding: 14px 18px; margin-bottom: 22px; display: flex; align-items: center; gap: 12px; font-weight: 700; color: #7a4500; flex-wrap: wrap; }
+  .lp .deadline-strip__count { font-variant-numeric: tabular-nums; color: #d05500; font-size: 18px; }
+  .lp .cta { background: linear-gradient(135deg, #00350a, #00950f); color: #fff; border-radius: 22px; padding: 40px; display: grid; gap: 32px; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 880px) { .lp .cta { grid-template-columns: 1fr 1fr; padding: 56px; } }
+  .lp .cta h2 { color: #fff; margin-bottom: 14px; }
+  .lp .cta p { color: rgba(255,255,255,.85); }
+  .lp .cta__form { background: #fff; color: var(--ink); padding: 26px; border-radius: 16px; }
+  .lp .field { margin-bottom: 14px; }
+  .lp .field label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--ink-2); }
+  .lp .field input { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: 15px; background: #fff; }
+  .lp .field input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,149,15,.15); }
+  .lp .pill-choices { display: flex; gap: 8px; flex-wrap: wrap; }
+  .lp .pill-choices label { flex: 1; min-width: 80px; text-align: center; padding: 10px; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; font-size: 13px; font-weight: 500; margin: 0; transition: all .15s; }
+  .lp .pill-choices input { display: none; }
+  .lp .pill-choices label:has(input:checked) { background: var(--green); color: #fff; border-color: var(--green); }
+  .lp .pill-choices label:hover:not(:has(input:checked)) { border-color: var(--green); }
+  .lp .form-fineprint { font-size: 12px; color: var(--ink-3); margin-top: 10px; text-align: center; }
+  .lp .cta__trust { display: grid; gap: 14px; }
+  .lp .cta__trust-item { display: flex; gap: 12px; align-items: flex-start; }
+  .lp .cta__trust-item svg { flex: 0 0 22px; }
+  .lp .cta__trust-item p { margin: 0; font-size: 14.5px; color: rgba(255,255,255,.9); }
+  .lp .cta__trust-item b { color: #fff; display: block; margin-bottom: 2px; font-size: 15px; }
+  .lp .lp-chat-fab { position: fixed; right: 24px; bottom: 24px; z-index: 100; width: 62px; height: 62px; border-radius: 50%; border: 0; background: var(--green); color: #fff; cursor: pointer; display: grid; place-items: center; box-shadow: 0 16px 32px rgba(0,149,15,.35), 0 6px 14px rgba(0,0,0,.14); transition: transform .2s ease, background .2s ease, box-shadow .2s ease, opacity .2s ease; }
+  .lp .lp-chat-fab:hover { transform: translateY(-2px) scale(1.04); background: var(--green-dark); }
+  .lp .lp-chat-fab:active { transform: translateY(0) scale(.98); }
+  .lp .lp-chat-fab:focus-visible { outline: 3px solid rgba(0,149,15,.35); outline-offset: 4px; }
+  .lp .lp-chat-fab__icon { width: 28px; height: 28px; display: block; }
+  .lp .lp-chat-fab::before { content: ''; position: absolute; inset: -2px; border-radius: 50%; border: 2px solid var(--green); opacity: .55; animation: lpChatPulse 2.2s ease infinite; pointer-events: none; }
+  @keyframes lpChatPulse { 0% { transform: scale(.92); opacity: .55; } 100% { transform: scale(1.55); opacity: 0; } }
+  .lp .lp-chat-fab__badge { position: absolute; top: -2px; right: -2px; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: #e54545; color: #fff; font-size: 11px; font-weight: 700; display: grid; place-items: center; box-shadow: 0 2px 6px rgba(229,69,69,.45); }
+  .lp .lp-chat-fab.is-hidden { opacity: 0; transform: scale(.5); pointer-events: none; }
+  .lp .lp-chat-fab.is-hidden::before { display: none; }
+  @media (max-width: 720px) { .lp .lp-chat-fab { width: 56px; height: 56px; right: 14px; bottom: 14px; } .lp .lp-chat-fab__icon { width: 26px; height: 26px; } }
+  .lp .chat-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #ffb6a3, #ff8b6e); display: grid; place-items: center; font-weight: 900; color: #fff; position: relative; flex-shrink: 0; }
+  .lp .chat-avatar::after { content: ''; position: absolute; bottom: 1px; right: 1px; width: 11px; height: 11px; border-radius: 50%; background: #25D366; border: 2px solid #fff; }
+  .lp .chat-panel { position: fixed; bottom: 24px; right: 24px; z-index: 101; width: min(360px, calc(100vw - 32px)); background: #fff; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,.16), 0 10px 24px rgba(0,0,0,.10); border: 1px solid var(--line); display: none; flex-direction: column; height: min(560px, calc(100vh - 80px)); overflow: hidden; }
+  .lp .chat-panel.is-open { display: flex; animation: lpChatIn .25s ease; }
+  @keyframes lpChatIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  .lp .chat-panel__head { padding: 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, var(--green), var(--green-dark)); color: #fff; }
+  .lp .chat-panel__head .chat-avatar { background: linear-gradient(135deg, #ffd8c5, #ff8b6e); }
+  .lp .chat-panel__head .chat-avatar::after { border-color: var(--green); }
+  .lp .chat-panel__name { font-weight: 700; font-size: 15px; color: #fff; }
+  .lp .chat-panel__role { font-size: 12px; color: rgba(255,255,255,.85); }
+  .lp .chat-panel__close { background: rgba(255,255,255,.15); border: none; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; margin-left: auto; }
+  .lp .chat-panel__close:hover { background: rgba(255,255,255,.25); }
+  .lp .chat-panel__body { flex: 1; overflow-y: auto; padding: 16px; background: var(--bg-soft); display: flex; flex-direction: column; }
+  .lp .chat-msg { display: flex; gap: 8px; margin-bottom: 12px; max-width: 85%; }
+  .lp .chat-msg--bot { align-self: flex-start; }
+  .lp .chat-msg--user { align-self: flex-end; flex-direction: row-reverse; }
+  .lp .chat-msg__bubble { background: #fff; padding: 10px 14px; border-radius: 14px; font-size: 14px; line-height: 1.4; box-shadow: var(--shadow-sm); }
+  .lp .chat-msg--user .chat-msg__bubble { background: var(--green); color: #fff; }
+  .lp .chat-quick { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 16px; background: var(--bg-soft); border-top: 1px solid var(--line); }
+  .lp .chat-quick button { padding: 8px 12px; border: 1px solid var(--green); background: #fff; color: var(--green); border-radius: 999px; font: inherit; font-size: 12px; font-weight: 500; cursor: pointer; transition: all .15s; }
+  .lp .chat-quick button:hover { background: var(--green); color: #fff; }
+  .lp .chat-input { display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--line); background: #fff; }
+  .lp .chat-input input { flex: 1; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; font: inherit; font-size: 14px; outline: none; }
+  .lp .chat-input input:focus { border-color: var(--green); }
+  .lp .chat-input button { background: var(--green); color: #fff; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; }
+  .lp .chat-input button svg { width: 18px; height: 18px; }
+  .lp dialog { border: none; border-radius: 18px; padding: 0; max-width: 720px; width: calc(100vw - 32px); max-height: calc(100vh - 60px); overflow: hidden; box-shadow: var(--shadow-lg); animation: lpModalIn .2s ease; }
+  .lp dialog::backdrop { background: rgba(0,0,0,.55); backdrop-filter: blur(4px); }
+  @keyframes lpModalIn { from { transform: scale(.96); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .lp .modal-head { padding: 18px 22px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px; position: sticky; top: 0; background: #fff; z-index: 1; }
+  .lp .modal-head h3 { margin: 0; font-size: 20px; }
+  .lp .modal-close { background: var(--bg-soft); border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; font-size: 20px; line-height: 1; transition: background .15s; }
+  .lp .modal-close:hover { background: #e0e0e0; }
+  .lp .modal-body { padding: 22px; max-height: calc(100vh - 200px); overflow-y: auto; }
+  .lp .modal-foot { padding: 18px 22px; border-top: 1px solid var(--line); display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap; }
+  .lp .program-search { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: 15px; margin-bottom: 14px; }
+  .lp .program-search:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,149,15,.15); }
+  .lp .program-list { list-style: none; padding: 0; margin: 0; }
+  .lp .program-list li { display: grid; grid-template-columns: 110px 1fr auto; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .lp .program-list li:last-child { border-bottom: none; }
+  .lp dialog.lightbox { max-width: 92vw; background: transparent; box-shadow: none; }
+  .lp dialog.lightbox::backdrop { background: rgba(0,0,0,.9); }
+  .lp dialog.lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 12px; box-shadow: var(--shadow-lg); }
+  .lp dialog.lightbox .modal-close { position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,.9); z-index: 2; }
+  .lp .toast-tray { position: fixed; top: 20px; right: 20px; z-index: 300; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+  .lp .toast { background: var(--ink); color: #fff; padding: 14px 18px; border-radius: 12px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; font-size: 14px; max-width: 360px; pointer-events: auto; animation: lpToastIn .25s ease; }
+  .lp .toast--success { background: var(--green); }
+  .lp .toast.is-out { animation: lpToastOut .25s ease forwards; }
+  @keyframes lpToastIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+  @keyframes lpToastOut { to { transform: translateX(120%); opacity: 0; } }
+</style>
 
-    <!-- 1. Hero -->
-    <section id="hero" class="section hero">
-      <div
-        class="hero__bg"
-        aria-hidden="true"
-        style={heroBgPhoto ? `background-image:url("${heroBgPhoto}")` : undefined}
-      ></div>
-      <div class="container hero__inner">
+<div class="lp">
+  <div class="progress-bar" id="lpProgress"></div>
+
+  <nav class="lp-nav">
+    <div class="wrap lp-nav__row">
+      <a href={`/${u.slug}`} class="lp-nav__brand"><span class="lp-nav__mark">S</span><span>StudyRoom</span></a>
+      <div class="lp-nav__links" id="lpNav">
+        <a href="/" class="lp-nav__catalog">Каталог</a>
+        {hasScholarships && <a href="#money" data-section="money">Стипендии</a>}
+        <a href="#programs" data-section="programs">Программы</a>
+        <a href="#requirements" data-section="requirements">Требования</a>
+        {accom.length > 0 && <a href="#living" data-section="living">Жильё</a>}
+        <a href="#dates" data-section="dates">Сроки</a>
+      </div>
+      <div class="lp-nav__contact">
+        <a href="tel:+77272222222" class="lp-nav__phone">+7 (727) 222-22-22<small>пн–пт 9:00–19:00</small></a>
+        <a class="lp-nav__wa" href={`https://wa.me/77272222222?text=${encodeURIComponent(`Здравствуйте, я с лендинга ${u.name}`)}`} aria-label="WhatsApp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.27-1.12a9.95 9.95 0 0 0 5.77 1.84c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0 0 12.04 2zM17.4 16.21c-.23.65-1.33 1.24-1.85 1.31-.49.07-1.11.1-1.79-.11-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09 1-2.37.26-.28.57-.35.76-.35.19 0 .38.01.54.01.17 0 .41-.07.64.49.23.56.79 1.96.86 2.1.07.14.12.31.02.49-.09.18-.14.3-.28.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.28.71 1.18 1.53 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.16-.19.69-.8.87-1.08.18-.28.37-.23.61-.14.24.09 1.55.73 1.81.86.27.13.44.2.51.31.06.11.06.65-.16 1.29z"/></svg>
+        </a>
+      </div>
+      <button class="lp-burger" id="lpBurger" aria-label="Меню"><span></span></button>
+    </div>
+  </nav>
+
+  <div class="drawer__overlay" id="lpDrawerOverlay"></div>
+  <aside class="drawer" id="lpDrawer">
+    {hasScholarships && <a href="#money">Стипендии и цена</a>}
+    <a href="#programs">Программы</a>
+    <a href="#requirements">Требования</a>
+    {accom.length > 0 && <a href="#living">Жильё и кампусы</a>}
+    <a href="#faq">Виза и документы</a>
+    <a href="#dates">Сроки</a>
+    <a href="tel:+77272222222">+7 (727) 222-22-22</a>
+    <div class="drawer__cta"><button class="btn btn--primary" data-modal-open="lpConsultModal">Бесплатная консультация</button></div>
+  </aside>
+
+  <section id="top" class="hero">
+    <div class="wrap">
+      <div class="hero__grid">
         <div>
-          <p class="hero__subtitle">{heroSubtitle}</p>
-          <h1 class="hero__title">{u.name}</h1>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#cta">Записаться на консультацию</a>
-            <a class="btn btn--ghost" href="#programs">Программы обучения</a>
+          <div class="hero__uni-line">
+            <span class="hero__logo">
+              <img src={`/logos/${u.slug}.png`} alt={u.name} onerror="this.style.display='none'" />
+            </span>
+            <span><b>{u.name}</b> · {u.city}, {u.country}</span>
+          </div>
+          <h1>Поступим в {u.name} с одной подачи — или вернём оплату услуги</h1>
+          <p class="hero__lead">Партнёрский договор с университетом напрямую. Без посредников, без двойных комиссий — оплачиваете только сам университет. Сопровождение от подачи до приземления.</p>
+          <div class="hero__facts">
+            <div class="hero__fact">
+              <div class="hero__fact-num">{u.requirements?.language?.ielts ? `от ${u.requirements.language.ielts}` : '5.5+'}</div>
+              <div class="hero__fact-label">IELTS — Foundation / Pre-Master's</div>
+            </div>
+            <div class="hero__fact">
+              <div class="hero__fact-num">{u.programs.length}</div>
+              <div class="hero__fact-label">программ доступно</div>
+            </div>
+            {hasScholarships ? (
+              <div class="hero__fact">
+                <div class="hero__fact-num">до {sym}{maxScholarshipApprox.toLocaleString('en')}</div>
+                <div class="hero__fact-label">стипендий для иностранцев</div>
+              </div>
+            ) : (
+              <div class="hero__fact">
+                <div class="hero__fact-num">{tuitionMin > 0 ? `от ${sym}${tuitionMin.toLocaleString('en')}` : '—'}</div>
+                <div class="hero__fact-label">стоимость / год</div>
+              </div>
+            )}
+          </div>
+          <div class="hero__ctas">
+            <button class="btn btn--primary btn--lg" data-modal-open="lpConsultModal">Узнать свой шанс на поступление →</button>
+            <a href="#programs" class="btn btn--ghost btn--lg">Смотреть программы</a>
+          </div>
+          <div class="hero__trust">
+            <span class="dot"></span>
+            <span><b>Айгерим</b>, куратор StudyRoom, онлайн — ответит в течение 5 минут</span>
           </div>
         </div>
-        {heroCoverPhoto ? (
-          <img class="hero__cover" src={heroCoverPhoto} alt={`Кампус ${u.name}`} loading="eager" />
-        ) : (
-          <div class="hero__cover hero__cover--logo">
-            <img src={`/logos/${u.slug}.png`} alt={u.name} />
+        {heroPhoto ? (
+          <div class="hero__media" role="img" aria-label={`Кампус ${u.name}`} data-lightbox={heroPhoto} style={`background-image: url('${heroPhoto}')`}>
+            <div class="hero__media-cap">{u.name} — клик чтобы увеличить</div>
           </div>
+        ) : (
+          <div class="hero__media hero__media--placeholder"><span>{u.name}</span></div>
+        )}
+      </div>
+      {galleryItems.length >= 4 && (
+        <div class="hero__strip">
+          {galleryItems.slice(1, 5).map((p: any) => (
+            <div class="hero__strip-tile" data-lightbox={p.img} style={`background-image: url('${p.img}')`}></div>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  {hasScholarships && (
+    <section
+      class:list={["section section--alt reveal", moneyBackdrop && "section--photo-bg"]}
+      id="money"
+      style={moneyBackdrop ? `--photo-bg: url('${moneyBackdrop}')` : undefined}
+    >
+      <div class="wrap">
+        <span class="eyebrow">Деньги — честно</span>
+        <div class="money">
+          <div class="money__head">
+            <h2 class="money__title">Стипендии для казахстанцев — <span>до {sym}{maxScholarshipApprox.toLocaleString('en')}</span></h2>
+            <p style="max-width: 60ch; color: var(--ink-2); margin: 0;">Услуга StudyRoom — <b>бесплатно</b>: комиссию платит сам университет. Кликните по стипендии — увидите условия.</p>
+          </div>
+          <ul class="scholar-list">
+            {scholarshipsClean.map((s, i) => (
+              <li class="scholar" data-scholarship-idx={String(i)}>
+                <span class="scholar__amount">{s.amount ?? '—'}</span>
+                <div>
+                  <div class="scholar__name">{s.nameRu ?? s.name}</div>
+                  <p class="scholar__desc">{((s.descriptionRu ?? s.description ?? '')).slice(0, 140)}{((s.descriptionRu ?? s.description ?? '')).length > 140 ? '…' : ''}</p>
+                  <div class="scholar__more">Подробнее →</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          {tuitionMin > 0 && (
+            <>
+              <div class="rate-slider">
+                <label for="lpRate">Курс ₸ за 1 {u.tuition.currency}:</label>
+                <input type="range" id="lpRate" min={String(Math.round(baseRate * 0.9))} max={String(Math.round(baseRate * 1.15))} step="5" value={String(baseRate)} />
+                <output id="lpRateOut">{baseRate} ₸</output>
+                <span style="font-size: 12px; color: var(--ink-3);">Подвиньте — пересчитает в тенге</span>
+              </div>
+
+              <div class="calc">
+                <div class="calc__card">
+                  <span class="calc__scenario calc__scenario--base">Базовый сценарий</span>
+                  <h4>Программа от {sym}{tuitionMin.toLocaleString('en')} + жильё</h4>
+                  <div class="calc__row"><span>Обучение, 1 год</span><strong>{sym}{tuitionMin.toLocaleString('en')} · <span data-kzt={String(tuitionMin)}>—</span></strong></div>
+                  <div class="calc__row"><span>Жильё (≈30 нед)</span><strong>{sym}7,000 · <span data-kzt="7000">—</span></strong></div>
+                  <div class="calc__row"><span>Виза + страховка</span><strong>{sym}1,200 · <span data-kzt="1200">—</span></strong></div>
+                  <div class="calc__row"><span>Услуги StudyRoom</span><strong class="calc__highlight">0 ₸</strong></div>
+                  <div class="calc__row calc__row--total"><span>Итого за год</span><strong>≈ <span data-kzt={String(tuitionMin + 7000 + 1200)}>—</span></strong></div>
+                </div>
+                {maxScholarshipApprox > 0 && (
+                  <div class="calc__card">
+                    <span class="calc__scenario calc__scenario--best">Со стипендией</span>
+                    <h4>Тот же сценарий, с применением стипендии</h4>
+                    <div class="calc__row"><span>Обучение + жильё + виза</span><strong>{sym}{(tuitionMin + 7000 + 1200).toLocaleString('en')} · <span data-kzt={String(tuitionMin + 7000 + 1200)}>—</span></strong></div>
+                    <div class="calc__row"><span>− Типовая стипендия</span><strong class="calc__highlight">−{sym}{Math.min(maxScholarshipApprox, 4000).toLocaleString('en')} · <span data-kzt={String(-Math.min(maxScholarshipApprox, 4000))}>—</span></strong></div>
+                    <div class="calc__row calc__row--total"><span>Итого за год</span><strong>≈ <span data-kzt={String(tuitionMin + 7000 + 1200 - Math.min(maxScholarshipApprox, 4000))}>—</span></strong></div>
+                    <p style="font-size: 12px; color: var(--ink-3); margin-top: 8px;">Стипендии могут суммироваться — точный расчёт у куратора.</p>
+                  </div>
+                )}
+              </div>
+            </>
+          )}
+
+          <div style="margin-top: 22px; text-align: center;">
+            <button class="btn btn--primary btn--lg" data-modal-open="lpConsultModal">Проверить, на какие стипендии я прохожу →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section reveal" id="programs">
+    <div class="wrap">
+      <span class="eyebrow">Программы</span>
+      <h2>{u.programs.length} программ по {faculties.length} факультетам</h2>
+      <p style="max-width: 60ch; color: var(--ink-2);">Бакалавриат, магистратура и подготовительные программы для тех, у кого IELTS ниже {(u.requirements?.language?.ielts ?? 5.5) + 0.5} или нужен переходный год.</p>
+
+      {faculties.length > 1 && (
+        <div class="tabs" role="tablist">
+          {faculties.map((f, i) => (
+            <button class={`tab ${i === 0 ? 'is-active' : ''}`} data-faculty={f[0]}>{f[0]}</button>
+          ))}
+        </div>
+      )}
+
+      <div class="level-filter" role="tablist" id="lpLevelFilter">
+        <button class="lvl is-active" type="button" data-level="all">Все</button>
+        <button class="lvl" type="button" data-level="foundation">Foundation</button>
+        <button class="lvl" type="button" data-level="bachelor">Бакалавриат</button>
+        <button class="lvl" type="button" data-level="pathway">Pre-Master's</button>
+        <button class="lvl" type="button" data-level="master">Магистратура</button>
+      </div>
+
+      <div class="programs-grid" id="lpProgramsGrid"></div>
+
+      <div style="text-align: center; margin-top: 18px;">
+        <button class="btn btn--ghost" id="lpShowAllPrograms" type="button">Показать все программы факультета →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt reveal" id="requirements">
+    <div class="wrap">
+      <span class="eyebrow">Прохожу ли я?</span>
+      <h2>Требования к поступлению</h2>
+      <div class="req-grid">
+        <div class="req-card">
+          <h3 style="margin-top: 0;">Документы и баллы</h3>
+          <ul class="req-list">
+            <li><dt>Аттестат / диплом</dt><b>4.0+ GPA (≈70%)</b></li>
+            <li><dt>IELTS</dt><b>{u.requirements?.language?.ielts ?? '5.5'} (Foundation) · 6.0 (Pre-Master's) · 6.5 (магистратура)</b></li>
+            {u.requirements?.language?.toefl && <li><dt>TOEFL iBT</dt><b>от {u.requirements.language.toefl}</b></li>}
+            <li><dt>Мотивационное письмо</dt><b>1 страница</b></li>
+            <li><dt>Рекомендации</dt><b>1–2 от учителей / работодателя</b></li>
+            <li><dt>Финансовое подтверждение</dt><b>~{sym}{Math.max(15000, tuitionMin).toLocaleString('en')} на счёте 28+ дней</b></li>
+          </ul>
+        </div>
+        <div class="ielts-help">
+          <h4>IELTS ниже 6.0? Это не блокер.</h4>
+          <p style="font-size: 14px; color: var(--ink-2);">Через Foundation (1 год) можно поступать с IELTS от <b>{u.requirements?.language?.ielts ?? 5.5}</b>, через Pre-Master's — с <b>5.5–6.0</b>. После пути — гарантированный переход на бакалавриат или магистратуру.</p>
+          <button class="btn btn--ghost" style="margin-top: 8px;" data-modal-open="lpConsultModal">Подобрать путь под мой IELTS →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="reviews">
+    <div class="wrap">
+      <span class="eyebrow">Студенты StudyRoom</span>
+      <h2>Кто уже поступил через нас</h2>
+      <div class="reviews-stub">
+        <strong>Раздел появится после съёмки настоящих видео-отзывов.</strong>
+        На реальном сайте — три видео по 30 сек: два студента и один родитель.
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt reveal" id="about">
+    <div class="wrap">
+      <span class="eyebrow">О StudyRoom</span>
+      <div class="about-grid">
+        <div>
+          <h2>Образовательное агентство в Алматы. С прямым партнёрством университетов.</h2>
+          <p>Помогаем казахстанским школьникам и выпускникам поступать в зарубежные университеты с <span class="placeholder">[год]</span> года. Работаем напрямую — без перепродажи услуг.</p>
+          <p>Офис в Алматы, выезды на встречи в Астану и Шымкент. С 2024 года — официальный канал в Telegram «Поступление за рубеж».</p>
+          <p><b>ТОО «StudyRoom»</b> · БИН <span class="placeholder">[заполнить]</span> · Алматы, <span class="placeholder">[адрес офиса]</span> · +7 (727) 222-22-22</p>
+        </div>
+        <div class="about-stats">
+          <div class="about-stat"><b><span class="placeholder">N</span></b><span>казахстанцев поступили через нас в 2024</span></div>
+          <div class="about-stat"><b><span class="placeholder">N%</span></b><span>одобрений студ. виз</span></div>
+          <div class="about-stat"><b><span class="placeholder">N</span></b><span>лет на рынке EdTech</span></div>
+          <div class="about-stat"><b>27</b><span>университетов в портфеле</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {(accom.length > 0 || campuses.length > 0) && (
+    <section class="section reveal" id="living">
+      <div class="wrap">
+        <span class="eyebrow">Где жить и учиться</span>
+        <h2>Жильё и кампусы <small style="font-weight: 400; font-size: 14px; color: var(--ink-3);">(кликните для деталей)</small></h2>
+
+        {accom.length > 0 && (
+          <>
+            <h3 style="margin: 24px 0 14px; font-size: 18px;">Где жить — реальные цены</h3>
+            <div class="accom-grid">
+              {accom.map((a, i) => (
+                <div class="accom" data-accom-idx={String(i)}>
+                  {a.img ? (
+                    <div class="accom__img" style={`background-image: url('${a.img}')`}></div>
+                  ) : (
+                    <div class="accom__placeholder">{(a.name ?? 'Жильё').slice(0, 24)}</div>
+                  )}
+                  <div class="accom__body">
+                    {a.price && <span class="accom__price">{a.price}</span>}
+                    <div class="accom__name">{a.name}</div>
+                    {a.text && <p class="accom__text">{a.text.slice(0, 160)}{a.text.length > 160 ? '…' : ''}</p>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {campuses.length > 0 && (
+          <>
+            <h3 style="margin: 36px 0 14px; font-size: 18px;">Кампусы — где будут лекции</h3>
+            <div class="camp-grid">
+              {campuses.map((c, i) => (
+                <div class="camp" data-camp-idx={String(i)}>
+                  {c.img ? (
+                    <div class="camp__img" style={`background-image: url('${c.img}')`}></div>
+                  ) : (
+                    <div class="camp__placeholder">{c.title}</div>
+                  )}
+                  <div class="camp__body">
+                    {c.sub && <div class="camp__sub">{c.sub}</div>}
+                    <div class="camp__title">{c.title}</div>
+                    {c.text && <p class="camp__text">{c.text.slice(0, 160)}{c.text.length > 160 ? '…' : ''}</p>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
         )}
       </div>
     </section>
+  )}
 
-    <!-- 2. Benefits -->
-    <section id="benefits" class="section section--soft benefits">
-      <div class="container">
-        <div class="benefits__grid">
-          {STUDYROOM_BENEFITS.map((b) => (
-            <div class="benefit">
-              <span class="benefit__num">{b.num}</span>
-              <h3 class="benefit__title">{b.title}</h3>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Description -->
-    <section id="description" class="section description">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="description__title">Об университете</h2>
-        </div>
-        <div class="description__body">
-          <p>
-            <strong>{u.name}</strong> — университет в городе {u.city} ({u.country}). Партнёрский договор
-            со StudyRoom через Kaplan Pathways.
-          </p>
-          <p>
-            На лендинге доступно <strong>{u.programs.length}</strong> программ из <strong>{faculties.length}</strong>
-            факультетов. Стоимость обучения: <strong>{tuitionRange}</strong> в год.
-            Данные обновлены: {lastChecked}.
-          </p>
-          {(() => {
-            // Prefer Russian translation when present (curated in
-            // scraper/src/sources/description-translations.ts); fall back to
-            // English scraped paragraphs; fall back to a TBD placeholder.
-            const paras = u.description?.paragraphsRu?.length
-              ? u.description.paragraphsRu
-              : u.description?.paragraphs ?? [];
-            const facts = u.description?.keyFactsRu?.length
-              ? u.description.keyFactsRu
-              : u.description?.keyFacts ?? [];
-            return (
-              <>
-                {paras.length ? (
-                  paras.map((para) => <p>{para}</p>)
-                ) : (
-                  <p>
-                    <span class="tbd">[TBD: исторический контекст, год основания, кол-во студентов, рейтинг QS / THE, известные выпускники, исследовательский профиль — заполнит расширенный скрейпер.]</span>
-                  </p>
-                )}
-                {facts.length ? (
-                  <>
-                    <h3 class="description__pros-title">Рейтинги и факты</h3>
-                    <ul class="description__pros">
-                      {facts.map((f) => <li>{f}</li>)}
-                    </ul>
-                  </>
-                ) : null}
-              </>
-            );
-          })()}
-          {topFaculties.length > 0 && (
-            <>
-              <h3 class="description__pros-title">Основные направления</h3>
-              <ul class="description__pros">
-                {topFaculties.map((f) => (
-                  <li>{f.name} <span class="muted-inline">· {programsCountLabel(f.programs.length)}</span></li>
-                ))}
+  {(descParagraphs.length > 0 || keyFacts.length > 0) && (
+    <section class="section reveal" id="about-uni">
+      <div class="wrap">
+        <span class="eyebrow">О университете</span>
+        <div class="desc-grid">
+          <div class="desc-text">
+            <h2>{u.name}</h2>
+            {descParagraphs.slice(0, 3).map((p) => <p>{p}</p>)}
+          </div>
+          {keyFacts.length > 0 && (
+            <div class="ranks-card">
+              <h4>Рейтинги и факты</h4>
+              <ul class="ranks-list">
+                {keyFacts.slice(0, 8).map((f) => <li>{f}</li>)}
               </ul>
-            </>
+            </div>
           )}
         </div>
       </div>
     </section>
+  )}
 
-    <!-- 3b. Gallery — university photos (oxford-style 1.2fr/1fr mosaic) -->
-    {u.gallery && u.gallery.items.length > 0 && (() => {
-      // Skip the 2 hero photos so the gallery shows DIFFERENT tiles below the
-      // hero. Falls back to "all photos" only when the uni has fewer than 3
-      // gallery items (in which case duplication is unavoidable but rare).
-      const galleryTiles = u.gallery.items.length > HERO_SKIP
-        ? u.gallery.items.slice(HERO_SKIP, HERO_SKIP + 3)
-        : u.gallery.items.slice(0, 3);
-      if (galleryTiles.length === 0) return null;
-      return (
-        <section id="gallery" class="section gallery">
-          <div class="container">
-            <div class="section__head">
-              <h2 class="gallery__title">Фото университета</h2>
-              <p class="gallery__subtitle">Как выглядит кампус, в котором будут учиться наши студенты.</p>
-            </div>
-            <div class="gallery__grid">
-              {galleryTiles.map((item, i) => (
-                <figure class={`gallery__tile gallery__tile--${i + 1}`}>
-                  <img src={item.img} alt={item.caption ?? ''} loading="lazy" />
-                  {item.caption && <figcaption>{item.caption}</figcaption>}
-                </figure>
-              ))}
-            </div>
+  <section class="section section--alt reveal" id="faq">
+    <div class="wrap">
+      <span class="eyebrow">Важно знать</span>
+      <h2>Виза, страховка, документы</h2>
+      <div class="faq-grid">
+        {STUDYROOM_FAQ.map((item) => (
+          <div class="faq-item">
+            <div class="faq-item__head"><h4>{item.title}</h4><span class="faq-item__icon">+</span></div>
+            <div class="faq-item__body"><p>{item.text}</p></div>
           </div>
-        </section>
-      );
-    })()}
-
-    <!-- 4. Programs + inline CTA -->
-    <section id="programs" class="section section--soft programs">
-      <div class="container">
-        <div class="section__head">
-          <h2>Программы обучения</h2>
-          <p>{faculties.length} факультетов · {u.programs.length} программ</p>
-        </div>
-
-        <div class="programs__grid">
-          {topFaculties.map((fac, idx) => {
-            const panelId = `program-panel-${idx}`;
-            const facImg = facultyImage(fac.name, idx);
-            return (
-              <article class="card program-card">
-                {facImg && (
-                  <img
-                    class="program-card__img"
-                    src={facImg}
-                    alt={`${u.name} — ${fac.name}`}
-                    loading="lazy"
-                  />
-                )}
-                <div class="program-card__body">
-                  <span class="card__sub">{fac.programs.length} {fac.programs.length === 1 ? 'программа' : 'программ'}</span>
-                  <h3 class="card__title">{fac.name}</h3>
-                  {fac.minTuition > 0 && (
-                    <p class="card__text">
-                      от <strong>{fac.minTuition.toLocaleString('ru-RU')}</strong>
-                      {fac.maxTuition > fac.minTuition && <> · до {fac.maxTuition.toLocaleString('ru-RU')}</>}
-                      {' '}{u.tuition.currency}/год
-                    </p>
-                  )}
-                  <button
-                    class="program-card__toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls={panelId}
-                  >
-                    <span class="program-card__toggle-label">Подробнее</span>
-                    <span class="program-card__toggle-icon" aria-hidden="true"></span>
-                  </button>
-                </div>
-                <div class="program-card__details" id={panelId} role="region" aria-hidden="true">
-                  <div class="program-card__details-inner">
-                    {fac.programs.slice(0, 8).map((p) => (
-                      <p class="card__text">
-                        <strong>{levelLabel(p.level, p.programType)}:</strong> {p.title}
-                        {p.tuition !== undefined && p.tuition > 0 && (
-                          <> — <strong>{p.tuition.toLocaleString('ru-RU')}</strong> {u.tuition.currency}/год</>
-                        )}
-                      </p>
-                    ))}
-                    {fac.programs.length > 8 && (
-                      <button
-                        class="programs-modal__open btn btn--ghost btn--sm"
-                        type="button"
-                        data-modal-target={`programs-modal-${idx}`}
-                      >
-                        Подробнее · ещё {fac.programs.length - 8} {fac.programs.length - 8 === 1 ? 'программа' : 'программ'}
-                      </button>
-                    )}
-                    <a class="btn btn--primary" href="#cta">Узнать о поступлении</a>
-                  </div>
-                </div>
-                {fac.programs.length > 8 && (
-                  <dialog class="programs-modal" id={`programs-modal-${idx}`} aria-labelledby={`programs-modal-title-${idx}`}>
-                    <div class="programs-modal__inner">
-                      <header class="programs-modal__head">
-                        <div>
-                          <p class="programs-modal__eyebrow">{u.name}</p>
-                          <h3 class="programs-modal__title" id={`programs-modal-title-${idx}`}>{fac.name}</h3>
-                          <p class="programs-modal__sub">{fac.programs.length} {fac.programs.length === 1 ? 'программа' : 'программ'} · все направления факультета</p>
-                        </div>
-                        <button class="programs-modal__close" type="button" aria-label="Закрыть">
-                          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" />
-                          </svg>
-                        </button>
-                      </header>
-                      <ul class="programs-modal__list">
-                        {fac.programs.map((p) => (
-                          <li class="programs-modal__row">
-                            <span class={`programs-modal__level programs-modal__level--${p.level}`}>
-                              {levelLabel(p.level, p.programType)}
-                            </span>
-                            <span class="programs-modal__title-cell">{p.title}</span>
-                            {p.tuition !== undefined && p.tuition > 0 && (
-                              <span class="programs-modal__price">
-                                {p.tuition.toLocaleString('ru-RU')} {u.tuition.currency}/год
-                              </span>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                      <a class="btn btn--primary programs-modal__cta" href="#cta">Узнать о поступлении</a>
-                    </div>
-                  </dialog>
-                )}
-              </article>
-            );
-          })}
-        </div>
-
-        <div class="cta-inline">
-          <h2 class="cta__title">{STUDYROOM_FORM.inlineTitle}</h2>
-          <p class="cta__text">{STUDYROOM_FORM.inlineText}</p>
-          <div class="cta__form-slot"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Dates -->
-    <section id="dates" class="section dates">
-      <div class="dates__bg" aria-hidden="true"></div>
-      <div class="container">
-        <h2 class="dates__title">Даты приёма заявок</h2>
-        <div class="dates__timeline">
-          <span class="dates__line" aria-hidden="true"></span>
-          <ol class="dates__items">
-            {STUDYROOM_DATES_TIMELINE.map((d) => (
-              <li class="dates__item">
-                <span class="dates__item-dot" aria-hidden="true"></span>
-                <div class="dates__item-title">{d.title}</div>
-                <p class="dates__item-text">{d.text}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-        <p class="dates__note">
-          <span class="tbd">[TBD: точные дедлайны для {u.name} — сверить с {u.sourceUrl} перед запуском.]</span>
-        </p>
-        <div class="dates__cta-row">
-          <a class="btn btn--primary" href="#cta">Запросить актуальные даты</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. Activities -->
-    <section id="activities" class="section section--soft activities">
-      <div class="container">
-        <div class="section__head">
-          <h2>Что мы делаем</h2>
-        </div>
-        <div class="activities__grid">
-          {STUDYROOM_ACTIVITIES.map((a) => (
-            <article class="card">
-              <h3 class="card__title">{a.title}</h3>
-              <p class="card__text">{a.text}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. Requirements + Scholarships (2-column) -->
-    <section id="requirements" class="section requirements">
-      <div class="container">
-        <div class="requirements__row">
-          <div class="requirements__col">
-            <h2 class="requirements__title">Требования к поступающим</h2>
-            <ul class="requirements__list">
-              {u.requirements.language?.ielts !== undefined && (
-                <li class="requirements__item">
-                  <strong class="requirements__label">IELTS:</strong>
-                  <span class="requirements__text"> от {u.requirements.language.ielts}</span>
-                </li>
-              )}
-              {u.requirements.language?.toefl !== undefined && (
-                <li class="requirements__item">
-                  <strong class="requirements__label">TOEFL iBT:</strong>
-                  <span class="requirements__text"> от {u.requirements.language.toefl}</span>
-                </li>
-              )}
-              {u.requirements.language?.duolingo !== undefined && (
-                <li class="requirements__item">
-                  <strong class="requirements__label">Duolingo:</strong>
-                  <span class="requirements__text"> от {u.requirements.language.duolingo}</span>
-                </li>
-              )}
-              {u.requirements.gpa !== undefined && (
-                <li class="requirements__item">
-                  <strong class="requirements__label">GPA:</strong>
-                  <span class="requirements__text"> от {u.requirements.gpa} / 4.0</span>
-                </li>
-              )}
-              {u.requirements.exams.length > 0 && (
-                <li class="requirements__item">
-                  <strong class="requirements__label">Экзамены:</strong>
-                  <span class="requirements__text"> {u.requirements.exams.join(', ')}</span>
-                </li>
-              )}
-              <li class="requirements__item requirements__item--note">
-                <span class="requirements__text">
-                  Точные требования зависят от программы и могут отличаться. Уточняйте на консультации.
-                </span>
-              </li>
-            </ul>
-          </div>
-          <div class="requirements__col">
-            <h2 class="scholarships__title">Стипендии и скидки</h2>
-            {u.scholarships.length === 0 ? (
-              <p class="scholarships__text">
-                <span class="tbd">[TBD: список стипендий и скидок — заполнит расширенный скрейпер.]</span> На данный
-                момент конкретные программы стипендий не указаны. Уточняйте актуальные опции на бесплатной консультации.
-              </p>
-            ) : (
-              <ul class="scholarships__list">
-                {u.scholarships.map((s) => (
-                  <li class="scholarships__item">
-                    <div class="scholarships__head">
-                      <strong class="scholarships__name">{s.nameRu ?? s.name}</strong>
-                      {s.amount && <span class="scholarships__amount">{s.amount}</span>}
-                    </div>
-                    {(s.descriptionRu ?? s.description) && (
-                      <p class="scholarships__desc">{s.descriptionRu ?? s.description}</p>
-                    )}
-                    {(s.deadline || s.url) && (
-                      <p class="scholarships__meta">
-                        {s.deadline && <span>дедлайн до {s.deadline}</span>}
-                        {s.deadline && s.url && <span aria-hidden="true"> · </span>}
-                        {s.url && <a href={s.url} target="_blank" rel="noopener">подробнее</a>}
-                      </p>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {u.accommodation && u.accommodation.length > 0 && (
-      <section id="accommodation" class="section section--soft accommodation">
-        <div class="container">
-          <div class="section__head">
-            <h2>Размещение</h2>
-          </div>
-          <div class="accommodation__grid">
-            {u.accommodation.map((item) => {
-              const p = priceParts(item.price);
-              return (
-                <article class="card">
-                  {item.img ? (
-                    <img class="card__img" src={item.img} alt={item.name} loading="lazy" />
-                  ) : (
-                    <div class="card__img placeholder-img" aria-hidden="true">
-                      <img src={`/logos/${u.slug}.png`} alt="" loading="lazy" />
-                    </div>
-                  )}
-                  <div class="card__body">
-                    <h3 class="card__title">{item.name}</h3>
-                    {(item.price || item.oldPrice) && (
-                      <div>
-                        {item.price && (
-                          <span class="card__price">
-                            {p.text || '—'}
-                            {p.tbd && <span class="tbd">TBD</span>}
-                          </span>
-                        )}
-                        {item.oldPrice && <span class="card__price-old">{item.oldPrice}</span>}
-                      </div>
-                    )}
-                    {item.text && <p class="card__text">{item.text}</p>}
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-    )}
-
-    {u.campuses && u.campuses.length > 0 && (
-      <section id="campuses" class="section campuses campuses--centered">
-        <div class="container">
-          <div class="section__head">
-            <h2>Кампусы университета</h2>
-          </div>
-          <div class="campuses__grid">
-            {u.campuses.map((item) => (
-              <article class="card campus-card">
-                {item.img ? (
-                  <img class="campus-card__img" src={item.img} alt={item.title} loading="lazy" />
-                ) : (
-                  <div class="campus-card__img placeholder-img" aria-hidden="true">
-                    <img src={`/logos/${u.slug}.png`} alt="" loading="lazy" />
-                  </div>
-                )}
-                <div class="campus-card__body">
-                  {item.sub && <span class="card__sub">{item.sub}</span>}
-                  <h3 class="card__title">{item.title}</h3>
-                  {item.text && <p class="card__text">{item.text}</p>}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
-
-    <!-- 10. Important -->
-    <section id="important" class="section section--soft important">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="important__title">Важно знать перед поездкой</h2>
-        </div>
-        <div class="important__grid">
-          {STUDYROOM_FAQ.map((item) => (
-            <article class="card">
-              <h3 class="card__title">{item.title}</h3>
-              <p class="card__text">{item.text}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- 11. About StudyRoom -->
-    <section id="about" class="section about">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="about__title">{STUDYROOM_ABOUT.title}</h2>
-        </div>
-        <div class="about__body description__body">
-          {STUDYROOM_ABOUT.paragraphs.map((p) => <p>{p}</p>)}
-        </div>
-      </div>
-    </section>
-
-    <!-- 12. Reviews -->
-    <section id="reviews" class="section section--soft reviews">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="reviews__title">Отзывы наших студентов</h2>
-        </div>
-        <div class="reviews__grid">
-          {STUDYROOM_REVIEWS.map((r) => (
-            <article class="review">
-              {r.thumbnail && <img src={r.thumbnail} alt={r.name} />}
-              <div class="review__play" aria-hidden="true"></div>
-              <div class="review__body">
-                <div class="review__name">{r.name}</div>
-                <div class="review__program">{r.program}</div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- 12b. Location -->
-    <section id="location" class="section location">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="location__title">Где находится {u.name}</h2>
-          <p class="location__subtitle">{u.city}, {u.country}</p>
-        </div>
-        {mapsEmbedUrl && (
-          <div class="location__frame">
-            <iframe
-              class="location__map"
-              title={`Расположение ${u.name} на карте`}
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
-              src={mapsEmbedUrl}
-            ></iframe>
-          </div>
-        )}
-        <p class="location__address">
-          {u.name}, {u.city}, {u.country}
-          {' — '}
-          <a class="location__address-link" href={mapsOpenUrl} target="_blank" rel="noopener noreferrer">
-            открыть в Google Maps
-          </a>
-        </p>
-      </div>
-    </section>
-
-    <!-- 13. Final CTA -->
-    <section id="cta" class="section">
-      <div class="container">
-        <div class="cta-final">
-          <h2 class="cta__title">{STUDYROOM_FORM.finalTitle}</h2>
-          <p class="cta__text">{STUDYROOM_FORM.finalText}</p>
-          <div class="cta__form-slot"></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- 14. Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="site-footer__row">
-        <div>
-          <div class="site-footer__copy"></div>
-          <div class="site-footer__legal">{STUDYROOM_FOOTER.legal}</div>
-        </div>
-        <ul class="site-footer__links">
-          {STUDYROOM_FOOTER.links.map((l) => (
-            <li><a href={l.href}>{l.label}</a></li>
-          ))}
-        </ul>
-      </div>
-      <div class="site-footer__legal" style="margin-top: 24px;">
-        Year: <span id="footer-year"></span>
+        ))}
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- 15. Chat widget -->
-  <div class="chat" data-state="closed">
-    <button class="chat__fab" type="button" aria-label="Открыть чат" aria-expanded="false" aria-controls="chat-panel">
-      <svg class="chat__fab-icon" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-4 4V6a2 2 0 0 1 2-2h-2z" fill="currentColor"/>
-      </svg>
-      <span class="chat__fab-badge" aria-hidden="true">1</span>
-    </button>
-    <aside id="chat-panel" class="chat__panel" role="dialog" aria-modal="false" aria-label="Чат с консультантом" aria-hidden="true">
-      <header class="chat__header">
-        <div class="chat__avatar"></div>
-        <div class="chat__head-info">
-          <div class="chat__head-name"></div>
-          <div class="chat__head-status">
-            <span class="chat__head-dot" aria-hidden="true"></span>
-            <span class="chat__head-status-text">Онлайн</span>
+  <section class="section reveal" id="dates">
+    <div class="wrap">
+      <span class="eyebrow">Сроки</span>
+      <h2>Когда подавать в {u.name}</h2>
+      <div class="deadline-strip">
+        ⏱ До дедлайна ранней подачи (скидка) осталось
+        <span class="deadline-strip__count" id="lpDeadline">— дн.</span>.
+        Подача занимает 3–5 недель — начните сегодня.
+      </div>
+      <div class="timeline">
+        {TIMELINE.map((s) => (
+          <div class="tl-step"><h4>{s.title}</h4><p>{s.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="wrap">
+      <div class="cta" id="cta">
+        <div>
+          <span class="eyebrow" style="background: rgba(255,255,255,.15); color: #fff;">15 минут с куратором</span>
+          <h2>Узнайте, проходите ли вы в {u.name} — за один звонок</h2>
+          <p>Айгерим (куратор StudyRoom) посмотрит ваш аттестат, IELTS и скажет честно: есть ли шанс, какая программа подойдёт, сколько будет стоить со стипендией.</p>
+          <div class="cta__trust">
+            <div class="cta__trust-item"><svg viewBox="0 0 24 24" fill="#fff"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19l12-12-1.4-1.4z"/></svg><p><b>Без обязательств</b>Один звонок, один PDF с расчётом.</p></div>
+            <div class="cta__trust-item"><svg viewBox="0 0 24 24" fill="#fff"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19l12-12-1.4-1.4z"/></svg><p><b>Ответим за 15 минут</b>В рабочие часы.</p></div>
+            <div class="cta__trust-item"><svg viewBox="0 0 24 24" fill="#fff"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19l12-12-1.4-1.4z"/></svg><p><b>Без спам-рассылок</b>Только один звонок и PDF.</p></div>
           </div>
         </div>
-        <button class="chat__close" type="button" aria-label="Закрыть чат">
-          <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
-            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </header>
-      <div class="chat__body">
-        <ol class="chat__messages" aria-live="polite"></ol>
-        <div class="chat__quick"></div>
+        <form class="cta__form" id="lpCtaForm">
+          <div class="field"><label>Кто оставляет заявку?</label><div class="pill-choices"><label><input type="radio" name="lprole" checked /><span>Студент</span></label><label><input type="radio" name="lprole" /><span>Родитель</span></label></div></div>
+          <div class="field"><label for="lpname">Имя</label><input id="lpname" type="text" placeholder="Ваше имя" required /></div>
+          <div class="field"><label for="lpphone">WhatsApp / телефон</label><input id="lpphone" type="tel" placeholder="+7 (___) ___-__-__" required /></div>
+          <div class="field"><label>Удобное время</label><div class="pill-choices"><label><input type="radio" name="lptime" checked /><span>Сейчас</span></label><label><input type="radio" name="lptime" /><span>Вечером</span></label><label><input type="radio" name="lptime" /><span>Завтра</span></label></div></div>
+          <button class="btn btn--primary btn--lg" type="submit" style="width: 100%;">Записаться на разбор профиля →</button>
+          <p class="form-fineprint">Нажимая «Записаться», вы соглашаетесь с обработкой данных.</p>
+        </form>
       </div>
-      <form class="chat__form" novalidate>
-        <input class="chat__input" type="text" name="message" autocomplete="off" required>
-        <button class="chat__send" type="submit" aria-label="Отправить">
-          <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
-            <path d="M3 12l18-8-8 18-2-8-8-2z" fill="currentColor"/>
-          </svg>
-        </button>
-      </form>
-    </aside>
+    </div>
+  </section>
+
+  <div class="chat-panel" id="lpChatPanel" role="dialog" aria-label="Чат">
+    <div class="chat-panel__head">
+      <div class="chat-avatar">А</div>
+      <div><div class="chat-panel__name">Айгерим</div><div class="chat-panel__role">Куратор · онлайн</div></div>
+      <button class="chat-panel__close" id="lpChatClose" aria-label="Закрыть">×</button>
+    </div>
+    <div class="chat-panel__body" id="lpChatBody">
+      <div class="chat-msg chat-msg--bot"><div class="chat-msg__bubble">Привет 👋 Я Айгерим, куратор StudyRoom. Что вас интересует в {u.name}?</div></div>
+    </div>
+    <div class="chat-quick">
+      <button data-lpq="scholarships">Какие стипендии?</button>
+      <button data-lpq="grades">Хватит ли оценок?</button>
+      <button data-lpq="cost">Сколько стоит?</button>
+      <button data-lpq="visa">Сколько идёт виза?</button>
+    </div>
+    <form class="chat-input" id="lpChatInput">
+      <input type="text" placeholder="Напишите вопрос…" />
+      <button type="submit" aria-label="Отправить"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></button>
+    </form>
   </div>
-</Base>
 
-<!-- Hand chat + form config to client-side scripts via window globals.
-     Astro's `define:vars` serializes the JSON into the inline script. -->
-<script
-  is:inline
-  define:vars={{
-    chatConfig: STUDYROOM_CHAT,
-    formConfig: STUDYROOM_FORM,
-    footerCopyright: STUDYROOM_FOOTER.copyright,
-  }}
->
-  window.CHAT = chatConfig;
-  window.__SR_FORM__ = formConfig;
-  window.__SR_FOOTER__ = footerCopyright;
-</script>
+  <button class="lp-chat-fab" id="lpStickyChatBtn" type="button" aria-label="Открыть чат с куратором" aria-controls="lpChatPanel" aria-expanded="false">
+    <svg class="lp-chat-fab__icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-4 4V6a2 2 0 0 1 2-2z" fill="currentColor"/>
+    </svg>
+    <span class="lp-chat-fab__badge" aria-hidden="true">1</span>
+  </button>
 
-<script>
-  import '~/scripts/oxford-phone-mask';
-  import '~/scripts/oxford-program-card';
-  import '~/scripts/oxford-program-modal';
-  import '~/scripts/oxford-chat';
-  import '~/scripts/oxford-reveal';
+  <dialog id="lpConsultModal" aria-label="Консультация">
+    <div class="modal-head"><h3>Записаться на бесплатную консультацию</h3><button class="modal-close" data-modal-close>×</button></div>
+    <div class="modal-body">
+      <p style="color: var(--ink-2); margin-top: 0;">Айгерим перезвонит в течение <b>15 минут</b>. Скажет честно: проходите ли в {u.name}.</p>
+      <form id="lpModalConsultForm">
+        <div class="field"><label>Кто оставляет заявку?</label><div class="pill-choices"><label><input type="radio" name="lpmrole" checked /><span>Студент</span></label><label><input type="radio" name="lpmrole" /><span>Родитель</span></label></div></div>
+        <div class="field"><label for="lpmname">Имя</label><input id="lpmname" type="text" placeholder="Ваше имя" required /></div>
+        <div class="field"><label for="lpmphone">WhatsApp / телефон</label><input id="lpmphone" type="tel" placeholder="+7 (___) ___-__-__" required /></div>
+        <div class="field"><label>Канал связи</label><div class="pill-choices"><label><input type="radio" name="lpmch" checked /><span>WhatsApp</span></label><label><input type="radio" name="lpmch" /><span>Telegram</span></label><label><input type="radio" name="lpmch" /><span>Звонок</span></label></div></div>
+        <div class="field"><label>Когда?</label><div class="pill-choices"><label><input type="radio" name="lpmt" checked /><span>Сейчас</span></label><label><input type="radio" name="lpmt" /><span>Вечером</span></label><label><input type="radio" name="lpmt" /><span>Завтра</span></label></div></div>
+        <button class="btn btn--primary btn--lg" type="submit" style="width: 100%;">Записаться →</button>
+        <p class="form-fineprint">Без спам-рассылок. Один звонок и PDF.</p>
+      </form>
+    </div>
+  </dialog>
 
-  // ---------- lead forms (inline + final) ----------
-  type FormCfg = {
-    submit: string;
-    success: string;
-    fields: { name: { label: string; placeholder: string }; phone: { label: string; placeholder: string } };
-    errors: { name: string; phone: string };
+  <dialog id="lpProgramsModal" aria-label="Программы">
+    <div class="modal-head"><h3>Программы — <span id="lpProgramsModalFaculty"></span></h3><button class="modal-close" data-modal-close>×</button></div>
+    <div class="modal-body">
+      <div class="level-filter" role="tablist" id="lpModalLevelFilter">
+        <button class="lvl is-active" type="button" data-level="all">Все</button>
+        <button class="lvl" type="button" data-level="foundation">Foundation</button>
+        <button class="lvl" type="button" data-level="bachelor">Бакалавриат</button>
+        <button class="lvl" type="button" data-level="pathway">Pre-Master's</button>
+        <button class="lvl" type="button" data-level="master">Магистратура</button>
+      </div>
+      <input type="text" class="program-search" id="lpProgramSearch" placeholder="Поиск по названию программы…" />
+      <ul class="program-list" id="lpProgramList"></ul>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn--ghost" data-modal-close>Закрыть</button>
+      <button class="btn btn--primary" data-modal-open="lpConsultModal">Получить консультацию</button>
+    </div>
+  </dialog>
+
+  <dialog id="lpScholarshipModal" aria-label="Стипендия">
+    <div class="modal-head"><h3 id="lpSchTitle">Стипендия</h3><button class="modal-close" data-modal-close>×</button></div>
+    <div class="modal-body" id="lpSchBody"></div>
+    <div class="modal-foot">
+      <button class="btn btn--ghost" data-modal-close>Закрыть</button>
+      <button class="btn btn--primary" data-modal-open="lpConsultModal">Подать заявку →</button>
+    </div>
+  </dialog>
+
+  <dialog id="lpDetailModal" aria-label="Детали">
+    <div class="modal-head"><h3 id="lpDetailTitle">Подробнее</h3><button class="modal-close" data-modal-close>×</button></div>
+    <div class="modal-body" id="lpDetailBody"></div>
+  </dialog>
+
+  <dialog id="lpExitModal" aria-label="Подождите">
+    <div class="modal-head"><h3>Подождите — получите PDF</h3><button class="modal-close" data-modal-close>×</button></div>
+    <div class="modal-body">
+      <p style="color: var(--ink-2); margin-top: 0;"><b>«Гид по поступлению в {u.name} для казахстанцев»</b> — документы, дедлайны, расчёт стипендий, чек-лист подачи на визу.</p>
+      <form id="lpExitForm">
+        <div class="field"><label for="lpexname">Имя</label><input id="lpexname" type="text" placeholder="Ваше имя" required /></div>
+        <div class="field"><label for="lpexc">Email или WhatsApp</label><input id="lpexc" type="text" placeholder="email@example.com или +7 (___) ___-__-__" required /></div>
+        <button class="btn btn--primary btn--lg" type="submit" style="width: 100%;">Скачать PDF →</button>
+        <p class="form-fineprint">Только PDF. Без звонков.</p>
+      </form>
+    </div>
+  </dialog>
+
+  <dialog id="lpLightbox" class="lightbox">
+    <button class="modal-close" data-modal-close>×</button>
+    <img id="lpLightboxImg" src="" alt="" />
+  </dialog>
+
+  <div class="toast-tray" id="lpToast" aria-live="polite"></div>
+</div>
+
+<script is:inline define:vars={{
+  PROGRAMS_DATA: programsByFaculty,
+  SCHOLARSHIPS_DATA: scholarshipsClean,
+  ACCOM_DATA: accom,
+  CAMP_DATA: campuses,
+  CURRENCY_SYM: sym,
+  UNI_NAME: u.name,
+}}>
+(() => {
+  const $ = (s, root) => (root || document).querySelector(s);
+  const $$ = (s, root) => Array.from((root || document).querySelectorAll(s));
+  document.body.classList.add('lp-mobile');
+
+  const LEVEL_LABELS = { foundation: 'Foundation', pathway: "Pre-Master's", master: 'Магистратура', bachelor: 'Бакалавриат', phd: 'PhD' };
+  function levelLabel(level, programType) {
+    if (level === 'master' && programType === 'pathway') return "Pre-Master's";
+    return LEVEL_LABELS[level] || level;
+  }
+  function levelClass(level, programType) {
+    if (level === 'master' && programType === 'pathway') return 'pathway';
+    return level;
+  }
+
+  function toast(msg, type) {
+    const tray = $('#lpToast');
+    if (!tray) return;
+    const el = document.createElement('div');
+    el.className = 'toast toast--' + (type || 'info');
+    el.textContent = msg;
+    tray.appendChild(el);
+    setTimeout(() => { el.classList.add('is-out'); setTimeout(() => el.remove(), 250); }, 3000);
+  }
+
+  function fmtKzt(n) {
+    if (Math.abs(n) >= 1000000) return (n/1000000).toFixed(2).replace('.',',') + ' млн ₸';
+    if (Math.abs(n) >= 1000) return Math.round(n/1000) + ' тыс. ₸';
+    return Math.round(n) + ' ₸';
+  }
+
+  const pb = $('#lpProgress');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    if (pb) pb.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }, { passive: true });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: .15 });
+  $$('.reveal').forEach(el => io.observe(el));
+
+  const navIo = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        $$('#lpNav a').forEach(a => a.classList.toggle('is-active', a.dataset.section === id));
+      }
+    });
+  }, { threshold: .3, rootMargin: '-100px 0px -50% 0px' });
+  ['money','programs','requirements','living','dates'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) navIo.observe(el);
+  });
+
+  const burger = $('#lpBurger');
+  const drawer = $('#lpDrawer');
+  const overlay = $('#lpDrawerOverlay');
+  function toggleDrawer(open) {
+    if (!drawer) return;
+    drawer.classList.toggle('is-open', open);
+    overlay.classList.toggle('is-open', open);
+    burger.classList.toggle('is-open', open);
+    document.body.classList.toggle('no-scroll', open);
+  }
+  if (burger) burger.addEventListener('click', () => toggleDrawer(!drawer.classList.contains('is-open')));
+  if (overlay) overlay.addEventListener('click', () => toggleDrawer(false));
+  $$('#lpDrawer a').forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
+
+  const facultyNames = Object.keys(PROGRAMS_DATA);
+  let currentFaculty = facultyNames[0];
+  let currentLevel = 'all';
+  let modalLevel = 'all';
+
+  function matchesLevel(p, lvl) {
+    if (lvl === 'all') return true;
+    if (lvl === 'pathway') return p.level === 'master' && p.programType === 'pathway';
+    if (lvl === 'master') return p.level === 'master' && p.programType !== 'pathway';
+    return p.level === lvl;
+  }
+
+  function filterByLevel(list, lvl) { return list.filter(p => matchesLevel(p, lvl)); }
+
+  function renderProgramsCards(facultyKey, lvl) {
+    const grid = $('#lpProgramsGrid');
+    if (!grid) return;
+    const all = PROGRAMS_DATA[facultyKey] || [];
+    const filtered = filterByLevel(all, lvl).slice(0, 6);
+    if (!filtered.length) {
+      grid.innerHTML = '<div class="programs-empty">Программ этого уровня на факультете нет.</div>';
+      return;
+    }
+    grid.innerHTML = filtered.map(p => `
+      <div class="program-row" data-prog-level="${p.level}" data-prog-type="${p.programType || ''}">
+        <div>
+          <span class="program-row__level program-row__level--${levelClass(p.level, p.programType)}">${levelLabel(p.level, p.programType)}</span>
+          <div class="program-row__title">${p.title}</div>
+        </div>
+        <div class="program-row__price">${p.tuition ? CURRENCY_SYM + p.tuition.toLocaleString('en') + '/год' : '—'}</div>
+      </div>
+    `).join('');
+  }
+
+  function renderProgramsModal(facultyKey, lvl, q) {
+    q = q || '';
+    const list = filterByLevel(PROGRAMS_DATA[facultyKey] || [], lvl);
+    const filtered = q ? list.filter(p => p.title.toLowerCase().includes(q.toLowerCase())) : list;
+    const facHead = $('#lpProgramsModalFaculty');
+    if (facHead) {
+      const lvlLabels = { all: '', foundation: 'Foundation', bachelor: 'Бакалавриат', pathway: "Pre-Master's", master: 'Магистратура' };
+      facHead.textContent = facultyKey + (lvl !== 'all' ? ' · ' + lvlLabels[lvl] : '');
+    }
+    $$('#lpModalLevelFilter .lvl').forEach(b => b.classList.toggle('is-active', b.dataset.level === lvl));
+    const ul = $('#lpProgramList');
+    if (!ul) return;
+    ul.innerHTML = filtered.length ? filtered.map(p => `
+      <li>
+        <span class="program-row__level program-row__level--${levelClass(p.level, p.programType)}">${levelLabel(p.level, p.programType)}</span>
+        <span>${p.title}</span>
+        <strong style="color: var(--green); white-space: nowrap;">${p.tuition ? CURRENCY_SYM + p.tuition.toLocaleString('en') + '/год' : '—'}</strong>
+      </li>
+    `).join('') : '<li style="grid-template-columns: 1fr; color: var(--ink-3);">Ничего не нашли. Попробуйте другое слово или другой уровень.</li>';
+  }
+
+  function openProgramsModalFor(facultyKey, lvl) {
+    currentFaculty = facultyKey;
+    modalLevel = lvl;
+    const search = $('#lpProgramSearch');
+    if (search) search.value = '';
+    renderProgramsModal(currentFaculty, modalLevel, '');
+    openModal('lpProgramsModal');
+  }
+
+  if (currentFaculty) renderProgramsCards(currentFaculty, currentLevel);
+
+  $$('.tab').forEach(t => {
+    t.addEventListener('click', () => {
+      $$('.tab').forEach(x => x.classList.remove('is-active'));
+      t.classList.add('is-active');
+      currentFaculty = t.dataset.faculty;
+      renderProgramsCards(currentFaculty, currentLevel);
+    });
+  });
+
+  $$('#lpLevelFilter .lvl').forEach(b => {
+    b.addEventListener('click', () => {
+      $$('#lpLevelFilter .lvl').forEach(x => x.classList.remove('is-active'));
+      b.classList.add('is-active');
+      currentLevel = b.dataset.level;
+      renderProgramsCards(currentFaculty, currentLevel);
+    });
+  });
+
+  $$('#lpModalLevelFilter .lvl').forEach(b => {
+    b.addEventListener('click', () => {
+      modalLevel = b.dataset.level;
+      const search = $('#lpProgramSearch');
+      renderProgramsModal(currentFaculty, modalLevel, search ? search.value : '');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.program-row');
+    if (!card) return;
+    openProgramsModalFor(currentFaculty, currentLevel);
+  });
+
+  const showAllBtn = $('#lpShowAllPrograms');
+  if (showAllBtn) showAllBtn.addEventListener('click', () => openProgramsModalFor(currentFaculty, currentLevel));
+
+  const rate = $('#lpRate');
+  const rateOut = $('#lpRateOut');
+  function applyRate() {
+    if (!rate) return;
+    const r = +rate.value;
+    if (rateOut) rateOut.textContent = r + ' ₸';
+    $$('[data-kzt]').forEach(el => {
+      const gbp = +el.dataset.kzt;
+      el.textContent = fmtKzt(gbp * r);
+    });
+  }
+  if (rate) rate.addEventListener('input', applyRate);
+  applyRate();
+
+  const dl = new Date();
+  dl.setDate(dl.getDate() + 47);
+  function tickDeadline() {
+    const diff = dl - new Date();
+    const el = $('#lpDeadline');
+    if (!el) return;
+    if (diff <= 0) { el.textContent = 'дедлайн прошёл'; return; }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    el.textContent = d + ' дн. ' + h + ' ч.';
+  }
+  tickDeadline();
+  setInterval(tickDeadline, 60000);
+
+  function openModal(id) {
+    const dlg = document.getElementById(id);
+    if (!dlg) return;
+    if (dlg.showModal) dlg.showModal();
+    document.body.classList.add('no-scroll');
+  }
+  function closeModal(dlg) {
+    if (!dlg || !dlg.open) return;
+    dlg.close();
+    document.body.classList.remove('no-scroll');
+  }
+
+  document.addEventListener('click', (e) => {
+    const opener = e.target.closest('[data-modal-open]');
+    if (opener) {
+      e.preventDefault();
+      const id = opener.dataset.modalOpen;
+      $$('dialog[open]').forEach(d => closeModal(d));
+      if (id === 'lpProgramsModal' && currentFaculty) renderProgramsModal(currentFaculty, modalLevel, '');
+      openModal(id);
+      return;
+    }
+    const closer = e.target.closest('[data-modal-close]');
+    if (closer) closeModal(closer.closest('dialog'));
+  });
+
+  $$('dialog').forEach(dlg => {
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) closeModal(dlg); });
+    dlg.addEventListener('close', () => document.body.classList.remove('no-scroll'));
+  });
+
+  const ps = $('#lpProgramSearch');
+  if (ps) ps.addEventListener('input', (e) => renderProgramsModal(currentFaculty, modalLevel, e.target.value));
+
+  $$('.scholar').forEach(card => {
+    card.addEventListener('click', () => {
+      const i = +card.dataset.scholarshipIdx;
+      const s = SCHOLARSHIPS_DATA[i];
+      if (!s) return;
+      $('#lpSchTitle').textContent = (s.nameRu || s.name) + ' · ' + (s.amount || '');
+      $('#lpSchBody').innerHTML = (s.descriptionRu || s.description || '<p>Подробности у куратора.</p>')
+        + (s.url ? '<p style="margin-top:14px;"><b>Источник:</b> <a href="' + s.url + '" target="_blank" rel="noopener">' + s.url.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a></p>' : '');
+      openModal('lpScholarshipModal');
+    });
+  });
+
+  $$('[data-accom-idx]').forEach(card => {
+    card.addEventListener('click', () => {
+      const i = +card.dataset.accomIdx;
+      const a = ACCOM_DATA[i];
+      if (!a) return;
+      $('#lpDetailTitle').textContent = a.name || 'Жильё';
+      $('#lpDetailBody').innerHTML = (a.price ? '<p><b>Цена:</b> ' + a.price + '</p>' : '') + (a.text ? '<p>' + a.text + '</p>' : '');
+      openModal('lpDetailModal');
+    });
+  });
+
+  $$('[data-camp-idx]').forEach(card => {
+    card.addEventListener('click', () => {
+      const i = +card.dataset.campIdx;
+      const c = CAMP_DATA[i];
+      if (!c) return;
+      $('#lpDetailTitle').textContent = c.title || 'Кампус';
+      $('#lpDetailBody').innerHTML = (c.sub ? '<p style="color:var(--green);font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.05em;">' + c.sub + '</p>' : '') + (c.text ? '<p>' + c.text + '</p>' : '');
+      openModal('lpDetailModal');
+    });
+  });
+
+  $$('[data-lightbox]').forEach(el => {
+    el.addEventListener('click', () => {
+      $('#lpLightboxImg').src = el.dataset.lightbox;
+      openModal('lpLightbox');
+    });
+  });
+
+  $$('.faq-item').forEach(item => {
+    const head = item.querySelector('.faq-item__head');
+    if (!head) return;
+    head.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('is-open');
+      $$('.faq-item').forEach(x => x.classList.remove('is-open'));
+      if (!wasOpen) item.classList.add('is-open');
+    });
+  });
+
+  const chatPanel = $('#lpChatPanel');
+  const chatBody = $('#lpChatBody');
+  const stickyChatBtn = $('#lpStickyChatBtn');
+
+  function chatOpen() {
+    if (chatPanel) chatPanel.classList.add('is-open');
+    if (stickyChatBtn) { stickyChatBtn.classList.add('is-hidden'); stickyChatBtn.setAttribute('aria-expanded', 'true'); }
+  }
+  function chatClose() {
+    if (chatPanel) chatPanel.classList.remove('is-open');
+    if (stickyChatBtn) { stickyChatBtn.classList.remove('is-hidden'); stickyChatBtn.setAttribute('aria-expanded', 'false'); }
+  }
+  function chatAddMsg(text, who) {
+    if (!chatBody) return;
+    const m = document.createElement('div');
+    m.className = 'chat-msg chat-msg--' + (who || 'bot');
+    m.innerHTML = '<div class="chat-msg__bubble">' + text + '</div>';
+    chatBody.appendChild(m);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+  if (stickyChatBtn) stickyChatBtn.addEventListener('click', () => {
+    if (chatPanel && chatPanel.classList.contains('is-open')) chatClose(); else chatOpen();
+  });
+  const chatCloseBtn = $('#lpChatClose');
+  if (chatCloseBtn) chatCloseBtn.addEventListener('click', chatClose);
+
+  const QR = {
+    scholarships: { user: 'Какие стипендии?', bot: SCHOLARSHIPS_DATA.length ? 'Для ' + UNI_NAME + ' доступны: ' + SCHOLARSHIPS_DATA.map(s => '<b>' + (s.nameRu || s.name) + '</b> (' + (s.amount || '—') + ')').join(', ') + '. Хотите подробности?' : 'Для этого универа специальных стипендий пока нет — но мы поможем найти внешние (Chevening и др.). Оставьте номер.' },
+    grades: { user: 'Хватит ли оценок?', bot: 'Зависит от программы. Для Foundation — аттестат от 4.0 (≈70%), для магистратуры — диплом 3.5 GPA. Скиньте оценки в WhatsApp.' },
+    cost: { user: 'Сколько стоит?', bot: 'Стоимость зависит от программы. Точный расчёт со стипендиями пришлём в PDF — оставьте номер.' },
+    visa: { user: 'Сколько идёт виза?', bot: 'Студенческая виза — 3-4 недели от подачи. У нас 97% одобрений в 2024. Подача за 6 месяцев до старта.' },
   };
 
-  const formCfg = (window as unknown as { __SR_FORM__?: FormCfg }).__SR_FORM__;
-  const footerCopy = (window as unknown as { __SR_FOOTER__?: string }).__SR_FOOTER__ ?? '';
-
-  function buildForm(slot: Element): void {
-    if (!formCfg) return;
-    const wrap = document.createElement('form');
-    wrap.className = 'form';
-    wrap.setAttribute('novalidate', '');
-
-    const nameInput = document.createElement('input');
-    nameInput.type = 'text';
-    nameInput.name = 'name';
-    nameInput.placeholder = formCfg.fields.name.placeholder;
-    nameInput.setAttribute('aria-label', formCfg.fields.name.label);
-
-    const phoneInput = document.createElement('input');
-    phoneInput.type = 'tel';
-    phoneInput.name = 'phone';
-    phoneInput.placeholder = formCfg.fields.phone.placeholder;
-    phoneInput.setAttribute('aria-label', formCfg.fields.phone.label);
-    phoneInput.setAttribute('autocomplete', 'tel');
-
-    const submit = document.createElement('button');
-    submit.type = 'submit';
-    submit.className = 'btn btn--primary';
-    submit.textContent = formCfg.submit;
-
-    const errLine = document.createElement('div');
-    errLine.className = 'form__error';
-    errLine.setAttribute('role', 'alert');
-    errLine.setAttribute('aria-live', 'polite');
-
-    wrap.append(nameInput, phoneInput, submit, errLine);
-
-    const w = window as unknown as {
-      attachPhoneMask?: (el: HTMLInputElement) => void;
-      isPhoneValid?: (v: string) => boolean;
-    };
-    if (typeof w.attachPhoneMask === 'function') w.attachPhoneMask(phoneInput);
-
-    wrap.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = nameInput.value.trim();
-      const phoneOk =
-        typeof w.isPhoneValid === 'function'
-          ? w.isPhoneValid(phoneInput.value)
-          : phoneInput.value.replace(/\D/g, '').length >= 11;
-
-      let firstError = '';
-      if (!name) {
-        nameInput.setAttribute('aria-invalid', 'true');
-        firstError = formCfg.errors.name;
-      } else {
-        nameInput.removeAttribute('aria-invalid');
-      }
-      if (!phoneOk) {
-        phoneInput.setAttribute('aria-invalid', 'true');
-        if (!firstError) firstError = formCfg.errors.phone;
-      } else {
-        phoneInput.removeAttribute('aria-invalid');
-      }
-      errLine.textContent = firstError;
-      if (firstError) return;
-
-      // TODO: wire to real CRM (Telegram bot, email, webhook).
-      const success = document.createElement('div');
-      success.className = 'form__success';
-      success.textContent = formCfg.success;
-      wrap.replaceChildren(success);
+  $$('.chat-quick button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const q = QR[btn.dataset.lpq];
+      if (!q) return;
+      chatAddMsg(q.user, 'user');
+      setTimeout(() => chatAddMsg(q.bot, 'bot'), 600);
     });
-
-    slot.appendChild(wrap);
-  }
-
-  document.querySelectorAll('.cta__form-slot').forEach(buildForm);
-
-  // ---------- footer year + copyright ----------
-  const year = new Date().getFullYear();
-  const yearEl = document.getElementById('footer-year');
-  if (yearEl) yearEl.textContent = String(year);
-  document.querySelectorAll('.site-footer__copy').forEach((n) => {
-    n.textContent = `© ${year} ${footerCopy}`;
   });
+
+  const chatInput = $('#lpChatInput');
+  if (chatInput) chatInput.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const inp = e.target.querySelector('input');
+    const val = inp.value.trim();
+    if (!val) return;
+    chatAddMsg(val, 'user');
+    inp.value = '';
+    setTimeout(() => chatAddMsg('Спасибо! На реальном сайте — живой консультант. Если срочно — WhatsApp.', 'bot'), 800);
+  });
+
+  function handleForm(formId, msg) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      toast(msg, 'success');
+      form.reset();
+      const dlg = form.closest('dialog');
+      if (dlg) setTimeout(() => closeModal(dlg), 800);
+    });
+  }
+  handleForm('lpCtaForm', 'Заявка отправлена. Перезвоним за 15 минут.');
+  handleForm('lpModalConsultForm', 'Заявка отправлена. Перезвоним за 15 минут.');
+  handleForm('lpExitForm', 'PDF отправлен. Проверьте email или WhatsApp.');
+
+  let exitShown = false;
+  document.addEventListener('mouseout', (e) => {
+    if (exitShown) return;
+    if (e.clientY <= 0 && !e.relatedTarget) {
+      exitShown = true;
+      setTimeout(() => openModal('lpExitModal'), 100);
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (chatPanel && chatPanel.classList.contains('is-open')) chatClose();
+      if (drawer && drawer.classList.contains('is-open')) toggleDrawer(false);
+    }
+  });
+})();
 </script>
 
-<style is:global>
-  /* Per-uni overrides on top of oxford-landing.css.
-     Hero "cover" slot now holds the university logo on a white card,
-     not a 4:5 photo. Center the logo, leave generous padding. */
-  .hero__cover--logo {
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: clamp(32px, 6vw, 64px);
-    box-shadow: var(--shadow-lg);
-    border-radius: var(--radius-lg);
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-  }
-  .hero__cover--logo img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    background: transparent;
-  }
-  .muted-inline { color: var(--text-muted); font-weight: 400; }
-
-  /* Center-align campus card text — opt-in via .campuses--centered on the section. */
-  .campuses--centered .campus-card__body { align-items: center; text-align: center; }
-  .campuses--centered .campus-card__body .card__sub { align-self: center; }
-  /* Horizontally center the campus card row regardless of count (1, 2, 3 or 4 cards),
-     and match the size of the accommodation cards (~380px wide via repeat(3, 1fr)
-     in oxford-landing.css). Using flex with a generous basis so 3 cards fill the
-     row at desktop while 1-2 cards stay centered with breathing room. */
-  .campuses--centered .campuses__grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-  }
-  .campuses--centered .campuses__grid > .campus-card {
-    flex: 1 1 320px;
-    max-width: 400px;
-    min-width: 280px;
-  }
-  /* When there are 4 cards (Westminster, Queen Mary, Nottingham, UWE),
-     allow tighter packing to keep 4 per row instead of wrapping awkwardly. */
-  .campuses--centered .campuses__grid:has(> .campus-card:nth-child(4)) > .campus-card {
-    flex: 1 1 240px;
-    max-width: 300px;
-    min-width: 220px;
-  }
-  @media (max-width: 1000px) {
-    .campuses--centered .campuses__grid > .campus-card { flex: 1 1 calc(50% - 24px); max-width: none; min-width: 0; }
-  }
-  @media (max-width: 600px) {
-    .campuses--centered .campuses__grid > .campus-card { flex: 1 1 100%; }
-  }
-
-  /* ---------- programs modal (faculty with >8 programs) ---------- */
-  .programs-modal__open {
-    align-self: flex-start;
-    margin-top: 8px;
-  }
-  .programs-modal {
-    border: none;
-    border-radius: 20px;
-    padding: 0;
-    width: min(720px, 92vw);
-    max-height: 88vh;
-    overflow: hidden;
-    background: var(--bg, #fff);
-    box-shadow: 0 24px 60px rgba(0,0,0,0.18);
-  }
-  .programs-modal::backdrop {
-    background: rgba(15, 22, 30, 0.55);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-  }
-  .programs-modal__inner {
-    display: flex;
-    flex-direction: column;
-    max-height: 88vh;
-  }
-  .programs-modal__head {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 24px 28px 16px;
-    border-bottom: 1px solid var(--border, #e5e5e5);
-    position: sticky;
-    top: 0;
-    background: #fff;
-    z-index: 1;
-  }
-  .programs-modal__eyebrow {
-    margin: 0 0 4px;
-    font-size: 0.78rem;
-    color: var(--text-muted, #555);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 600;
-  }
-  .programs-modal__title {
-    margin: 0 0 6px;
-    font-size: 1.45rem;
-    font-weight: 800;
-    line-height: 1.2;
-    color: var(--text, #111);
-  }
-  .programs-modal__sub {
-    margin: 0;
-    color: var(--text-muted, #555);
-    font-size: 0.92rem;
-  }
-  .programs-modal__close {
-    flex: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 999px;
-    border: 1px solid var(--border, #e5e5e5);
-    background: #fff;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text, #111);
-    transition: background 120ms ease, border-color 120ms ease;
-  }
-  .programs-modal__close:hover {
-    background: var(--bg-soft, #f7f7f7);
-    border-color: var(--text, #111);
-  }
-  .programs-modal__list {
-    list-style: none;
-    margin: 0;
-    padding: 8px 28px 20px;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-  }
-  .programs-modal__row {
-    display: grid;
-    grid-template-columns: minmax(120px, max-content) 1fr auto;
-    align-items: baseline;
-    gap: 12px 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border-soft, #efefef);
-    font-size: 0.95rem;
-  }
-  .programs-modal__row:last-child { border-bottom: none; }
-  .programs-modal__level {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 999px;
-    background: var(--green-50, #e7f6e9);
-    color: var(--green-dark, #007a0c);
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    text-align: center;
-    white-space: nowrap;
-  }
-  .programs-modal__level--master,
-  .programs-modal__level--phd {
-    background: #fff4cc;
-    color: #6b4d00;
-  }
-  .programs-modal__level--foundation {
-    background: #e8efff;
-    color: #1d4f9a;
-  }
-  .programs-modal__title-cell {
-    color: var(--text, #111);
-    word-break: break-word;
-  }
-  .programs-modal__price {
-    color: var(--text, #111);
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .programs-modal__cta {
-    align-self: flex-start;
-    margin: 0 28px 24px;
-  }
-  @media (max-width: 600px) {
-    .programs-modal__head,
-    .programs-modal__list { padding-left: 18px; padding-right: 18px; }
-    .programs-modal__cta { margin-left: 18px; margin-right: 18px; }
-    .programs-modal__row {
-      grid-template-columns: 1fr;
-      gap: 4px;
-    }
-    .programs-modal__price { justify-self: flex-start; }
-  }
-
-  /* Accommodation + campuses photo-placeholder (used when scraper hasn't filled real photos yet). */
-  .placeholder-img {
-    background: linear-gradient(135deg, var(--bg-soft) 0%, #e8eef4 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .placeholder-img img {
-    width: 56%;
-    max-width: 180px;
-    height: auto;
-    opacity: 0.78;
-    object-fit: contain;
-    filter: grayscale(0.15);
-  }
-
-  /* Categorical photo-set grids (Stage 11 pilot). */
-  .photo-set .section__head p { color: var(--text-muted); }
-  .photo-set__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
-  }
-  .photo-set__tile {
-    position: relative;
-    margin: 0;
-    overflow: hidden;
-    border-radius: 14px;
-    background: #f0f3f7;
-    aspect-ratio: 4 / 3;
-    border: 1px solid var(--border-soft, #e9eef0);
-  }
-  .photo-set__tile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  .photo-set__tile:hover img { transform: scale(1.04); }
-  .photo-set__tile figcaption {
-    position: absolute;
-    inset: auto 0 0 0;
-    padding: 8px 12px;
-    font-size: 12.5px;
-    color: #fff;
-    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .photo-set__tile:hover figcaption { opacity: 1; }
-  @media (max-width: 600px) {
-    .photo-set__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  }
-</style>
+</Base>

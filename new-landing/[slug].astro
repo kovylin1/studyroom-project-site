@@ -28,7 +28,7 @@ const u = entry.data;
 const UK_TIMELINE = [
   { title: 'Сентябрь', text: 'Старт приёма документов в UCAS на программы следующего учебного года.' },
   { title: 'Октябрь – январь', text: 'Дедлайны UCAS: 15 октября — медицина и стоматология; 31 января — большинство программ.' },
-  { title: 'Январь – март', text: 'Вступительные тесты и интервью. Подача на Kaplan-пути идёт параллельно.' },
+  { title: 'Январь – март', text: 'Вступительные тесты и интервью. Параллельно подаём документы на pathway-программы (Foundation и Pre-Master\'s).' },
   { title: 'Март – июль', text: 'Решения университета, выбор оффера, подача на студенческую визу.' },
 ];
 const CA_TIMELINE = [
@@ -120,12 +120,32 @@ const faculties = Array.from(facultyMap.entries())
 const tuitionValues = Object.values(u.tuition.byProgram).filter((v) => v > 0);
 const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
 
-const hasScholarships = (u.scholarships?.length ?? 0) > 0;
-const maxScholarshipApprox = u.scholarships?.reduce((acc, s) => {
+function stripKaplan<T extends string | undefined | null>(s: T): T {
+  if (!s) return s;
+  return (s
+    .replace(/^Стипендия Kaplan за раннюю подачу$/i, 'Стипендия за раннюю подачу')
+    .replace(/^Стипендия Kaplan за академические достижения$/i, 'Академическая стипендия')
+    .replace(/^Kaplan Early Bird Scholarship$/i, 'Early Bird Scholarship')
+    .replace(/^Kaplan Academic Achievement Scholarship$/i, 'Academic Achievement Scholarship')
+    .replace(/\s*\bKaplan\b\s*/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim()) as T;
+}
+
+const scholarshipsClean = (u.scholarships ?? []).map((s) => ({
+  ...s,
+  name: stripKaplan(s.name),
+  nameRu: stripKaplan(s.nameRu),
+  description: stripKaplan(s.description),
+  descriptionRu: stripKaplan(s.descriptionRu),
+}));
+
+const hasScholarships = scholarshipsClean.length > 0;
+const maxScholarshipApprox = scholarshipsClean.reduce((acc, s) => {
   const m = (s.amount ?? '').match(/[\d,]+/);
   const n = m ? Number(m[0].replace(/,/g, '')) : 0;
   return Math.max(acc, n);
-}, 0) ?? 0;
+}, 0);
 
 const accom = u.accommodation ?? [];
 const campuses = u.campuses ?? [];
@@ -142,7 +162,7 @@ for (const [k, v] of facultyMap.entries()) programsByFaculty[k] = v;
 const pageTitle = `${u.name} — поступление из Казахстана | StudyRoom`;
 const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.country}): ${u.programs.length} программ, стоимость от ${sym}${tuitionMin.toLocaleString('en')}, IELTS от ${u.requirements?.language?.ielts ?? 5.5}. Бесплатная консультация StudyRoom.`;
 ---
-<Base title={pageTitle} description={pageDescription}>
+<Base title={pageTitle} description={pageDescription} hideHeader={true}>
 
 <style is:global>
   :root {
@@ -183,11 +203,14 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   .lp .lp-nav__links a { color: var(--ink-2); font-size: 14px; font-weight: 500; position: relative; text-decoration: none; }
   .lp .lp-nav__links a:hover, .lp .lp-nav__links a.is-active { color: var(--green); }
   .lp .lp-nav__links a.is-active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: var(--green); border-radius: 2px; }
+  .lp .lp-nav__contact { display: flex; align-items: center; gap: 10px; }
   .lp .lp-nav__phone { display: none; font-weight: 700; font-size: 14px; color: var(--ink); text-decoration: none; }
   @media (min-width: 720px) { .lp .lp-nav__phone { display: block; } }
   .lp .lp-nav__phone small { display: block; font-weight: 400; font-size: 11px; color: var(--ink-3); }
-  .lp .lp-nav__cta { display: none; }
-  @media (min-width: 900px) { .lp .lp-nav__cta { display: inline-flex; padding: 10px 18px; font-size: 14px; } }
+  .lp .lp-nav__wa { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #25D366; color: #fff; text-decoration: none; transition: transform .15s, background .15s; flex-shrink: 0; }
+  .lp .lp-nav__wa:hover { background: #1ebe5b; transform: scale(1.06); }
+  .lp .lp-nav__wa svg { width: 20px; height: 20px; }
+  .lp .lp-nav__catalog { font-weight: 700; color: var(--ink) !important; }
   .lp .lp-burger { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 10px; background: #fff; display: grid; place-items: center; cursor: pointer; padding: 0; }
   @media (min-width: 1024px) { .lp .lp-burger { display: none; } }
   .lp .lp-burger span { display: block; width: 18px; height: 2px; background: var(--ink); position: relative; transition: transform .2s; }
@@ -262,13 +285,18 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   .lp .calc__scenario { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
   .lp .calc__scenario--base { background: #f0f0f0; color: var(--ink-2); }
   .lp .calc__scenario--best { background: var(--green-soft); color: var(--green-dark); }
-  .lp .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .lp .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
   .lp .tab { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: #fff; cursor: pointer; font: inherit; font-weight: 500; font-size: 14px; transition: all .15s; }
   .lp .tab:hover { border-color: var(--green); color: var(--green); }
   .lp .tab.is-active { background: var(--green); color: #fff; border-color: var(--green); }
+  .lp .level-filter { display: inline-flex; flex-wrap: wrap; gap: 4px; margin: 0 0 18px; padding: 4px; background: var(--bg-soft); border-radius: 12px; }
+  .lp .lvl { padding: 7px 14px; border-radius: 8px; border: 0; background: transparent; cursor: pointer; font: inherit; font-weight: 500; font-size: 13px; color: var(--ink-2); transition: all .15s; }
+  .lp .lvl:hover { background: rgba(0,0,0,.04); color: var(--ink); }
+  .lp .lvl.is-active { background: #fff; color: var(--green); box-shadow: var(--shadow-sm); }
+  .lp .programs-empty { padding: 32px 16px; text-align: center; color: var(--ink-3); font-size: 14px; }
   .lp .programs-grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
   @media (min-width: 720px) { .lp .programs-grid { grid-template-columns: 1fr 1fr; } }
-  .lp .program-row { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; gap: 16px; transition: transform .15s, box-shadow .15s, border-color .15s; }
+  .lp .program-row { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; gap: 16px; transition: transform .15s, box-shadow .15s, border-color .15s; cursor: pointer; }
   .lp .program-row:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--green); }
   .lp .program-row__level { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-bottom: 6px; }
   .lp .program-row__level--foundation { background: #e6f0ff; color: #004ac2; }
@@ -361,25 +389,20 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   .lp .cta__trust-item svg { flex: 0 0 22px; }
   .lp .cta__trust-item p { margin: 0; font-size: 14.5px; color: rgba(255,255,255,.9); }
   .lp .cta__trust-item b { color: #fff; display: block; margin-bottom: 2px; font-size: 15px; }
-  .lp .sticky-wa { position: fixed; bottom: 22px; right: 22px; z-index: 100; background: #25D366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(37,211,102,.4); border: none; cursor: pointer; transition: transform .15s; text-decoration: none; }
-  .lp .sticky-wa:hover { transform: scale(1.08); }
-  .lp .sticky-wa svg { width: 30px; height: 30px; }
-  .lp .sticky-bottom-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: #fff; border-top: 1px solid var(--line); padding: 12px 16px; display: none; box-shadow: 0 -2px 12px rgba(0,0,0,.06); transform: translateY(100%); transition: transform .25s; }
-  .lp .sticky-bottom-cta.is-visible { transform: translateY(0); }
-  .lp .sticky-bottom-cta .btn { width: 100%; }
-  @media (max-width: 720px) { .lp .sticky-bottom-cta { display: block; } body.lp-mobile { padding-bottom: 78px; } .lp .sticky-wa { bottom: 84px; } }
-  .lp .chat-fab { position: fixed; bottom: 22px; left: 22px; z-index: 99; background: #fff; border-radius: 16px; padding: 14px; box-shadow: var(--shadow-md); border: 1px solid var(--line); max-width: 280px; display: none; cursor: pointer; transition: transform .15s, box-shadow .15s; font: inherit; text-align: left; }
-  .lp .chat-fab:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-  @media (min-width: 1100px) { .lp .chat-fab { display: block; } }
-  .lp .chat-fab.is-hidden { display: none !important; }
-  .lp .chat-fab__head { display: flex; align-items: center; gap: 10px; }
+  .lp .lp-chat-fab { position: fixed; right: 24px; bottom: 24px; z-index: 100; width: 62px; height: 62px; border-radius: 50%; border: 0; background: var(--green); color: #fff; cursor: pointer; display: grid; place-items: center; box-shadow: 0 16px 32px rgba(0,149,15,.35), 0 6px 14px rgba(0,0,0,.14); transition: transform .2s ease, background .2s ease, box-shadow .2s ease, opacity .2s ease; }
+  .lp .lp-chat-fab:hover { transform: translateY(-2px) scale(1.04); background: var(--green-dark); }
+  .lp .lp-chat-fab:active { transform: translateY(0) scale(.98); }
+  .lp .lp-chat-fab:focus-visible { outline: 3px solid rgba(0,149,15,.35); outline-offset: 4px; }
+  .lp .lp-chat-fab__icon { width: 28px; height: 28px; display: block; }
+  .lp .lp-chat-fab::before { content: ''; position: absolute; inset: -2px; border-radius: 50%; border: 2px solid var(--green); opacity: .55; animation: lpChatPulse 2.2s ease infinite; pointer-events: none; }
+  @keyframes lpChatPulse { 0% { transform: scale(.92); opacity: .55; } 100% { transform: scale(1.55); opacity: 0; } }
+  .lp .lp-chat-fab__badge { position: absolute; top: -2px; right: -2px; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: #e54545; color: #fff; font-size: 11px; font-weight: 700; display: grid; place-items: center; box-shadow: 0 2px 6px rgba(229,69,69,.45); }
+  .lp .lp-chat-fab.is-hidden { opacity: 0; transform: scale(.5); pointer-events: none; }
+  .lp .lp-chat-fab.is-hidden::before { display: none; }
+  @media (max-width: 720px) { .lp .lp-chat-fab { width: 56px; height: 56px; right: 14px; bottom: 14px; } .lp .lp-chat-fab__icon { width: 26px; height: 26px; } }
   .lp .chat-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #ffb6a3, #ff8b6e); display: grid; place-items: center; font-weight: 900; color: #fff; position: relative; flex-shrink: 0; }
   .lp .chat-avatar::after { content: ''; position: absolute; bottom: 1px; right: 1px; width: 11px; height: 11px; border-radius: 50%; background: #25D366; border: 2px solid #fff; }
-  .lp .chat-fab__name { font-weight: 700; font-size: 14px; }
-  .lp .chat-fab__role { font-size: 11px; color: var(--ink-3); }
-  .lp .chat-fab__msg { background: var(--bg-soft); border-radius: 10px; padding: 10px; font-size: 13px; margin-top: 10px; color: var(--ink-2); }
-  .lp .chat-fab__msg b { color: var(--ink); }
-  .lp .chat-panel { position: fixed; bottom: 22px; left: 22px; z-index: 99; width: min(360px, calc(100vw - 44px)); background: #fff; border-radius: 18px; box-shadow: var(--shadow-lg); border: 1px solid var(--line); display: none; flex-direction: column; height: min(560px, calc(100vh - 100px)); overflow: hidden; }
+  .lp .chat-panel { position: fixed; bottom: 24px; right: 24px; z-index: 101; width: min(360px, calc(100vw - 32px)); background: #fff; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,.16), 0 10px 24px rgba(0,0,0,.10); border: 1px solid var(--line); display: none; flex-direction: column; height: min(560px, calc(100vh - 80px)); overflow: hidden; }
   .lp .chat-panel.is-open { display: flex; animation: lpChatIn .25s ease; }
   @keyframes lpChatIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   .lp .chat-panel__head { padding: 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, var(--green), var(--green-dark)); color: #fff; }
@@ -436,14 +459,19 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     <div class="wrap lp-nav__row">
       <a href={`/${u.slug}`} class="lp-nav__brand"><span class="lp-nav__mark">S</span><span>StudyRoom</span></a>
       <div class="lp-nav__links" id="lpNav">
+        <a href="/" class="lp-nav__catalog">Каталог</a>
         {hasScholarships && <a href="#money" data-section="money">Стипендии</a>}
         <a href="#programs" data-section="programs">Программы</a>
         <a href="#requirements" data-section="requirements">Требования</a>
         {accom.length > 0 && <a href="#living" data-section="living">Жильё</a>}
         <a href="#dates" data-section="dates">Сроки</a>
       </div>
-      <a href="tel:+77272222222" class="lp-nav__phone">+7 (727) 222-22-22<small>пн–пт 9:00–19:00</small></a>
-      <button class="btn btn--primary lp-nav__cta" data-modal-open="lpConsultModal">Консультация</button>
+      <div class="lp-nav__contact">
+        <a href="tel:+77272222222" class="lp-nav__phone">+7 (727) 222-22-22<small>пн–пт 9:00–19:00</small></a>
+        <a class="lp-nav__wa" href={`https://wa.me/77272222222?text=${encodeURIComponent(`Здравствуйте, я с лендинга ${u.name}`)}`} aria-label="WhatsApp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.27-1.12a9.95 9.95 0 0 0 5.77 1.84c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0 0 12.04 2zM17.4 16.21c-.23.65-1.33 1.24-1.85 1.31-.49.07-1.11.1-1.79-.11-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09 1-2.37.26-.28.57-.35.76-.35.19 0 .38.01.54.01.17 0 .41-.07.64.49.23.56.79 1.96.86 2.1.07.14.12.31.02.49-.09.18-.14.3-.28.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.28.71 1.18 1.53 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.16-.19.69-.8.87-1.08.18-.28.37-.23.61-.14.24.09 1.55.73 1.81.86.27.13.44.2.51.31.06.11.06.65-.16 1.29z"/></svg>
+        </a>
+      </div>
       <button class="lp-burger" id="lpBurger" aria-label="Меню"><span></span></button>
     </div>
   </nav>
@@ -454,7 +482,6 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     <a href="#programs">Программы</a>
     <a href="#requirements">Требования</a>
     {accom.length > 0 && <a href="#living">Жильё и кампусы</a>}
-    {galleryItems.length > 0 && <a href="#photos">Фото</a>}
     <a href="#faq">Виза и документы</a>
     <a href="#dates">Сроки</a>
     <a href="tel:+77272222222">+7 (727) 222-22-22</a>
@@ -535,7 +562,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
             <p style="max-width: 60ch; color: var(--ink-2); margin: 0;">Услуга StudyRoom — <b>бесплатно</b>: комиссию платит сам университет. Кликните по стипендии — увидите условия.</p>
           </div>
           <ul class="scholar-list">
-            {u.scholarships.map((s, i) => (
+            {scholarshipsClean.map((s, i) => (
               <li class="scholar" data-scholarship-idx={String(i)}>
                 <span class="scholar__amount">{s.amount ?? '—'}</span>
                 <div>
@@ -602,13 +629,19 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
         </div>
       )}
 
+      <div class="level-filter" role="tablist" id="lpLevelFilter">
+        <button class="lvl is-active" type="button" data-level="all">Все</button>
+        <button class="lvl" type="button" data-level="foundation">Foundation</button>
+        <button class="lvl" type="button" data-level="bachelor">Бакалавриат</button>
+        <button class="lvl" type="button" data-level="pathway">Pre-Master's</button>
+        <button class="lvl" type="button" data-level="master">Магистратура</button>
+      </div>
+
       <div class="programs-grid" id="lpProgramsGrid"></div>
 
-      {faculties[0] && faculties[0][1].length > 6 && (
-        <div style="text-align: center; margin-top: 18px;">
-          <button class="btn btn--ghost" data-modal-open="lpProgramsModal">Показать все программы факультета →</button>
-        </div>
-      )}
+      <div style="text-align: center; margin-top: 18px;">
+        <button class="btn btn--ghost" id="lpShowAllPrograms" type="button">Показать все программы факультета →</button>
+      </div>
     </div>
   </section>
 
@@ -721,54 +754,6 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     </section>
   )}
 
-  {galleryItems.length > 0 && (
-    <section class="section section--alt reveal" id="photos">
-      <div class="wrap">
-        <span class="eyebrow">Как там выглядит</span>
-        <h2>Фото университета <small style="font-weight: 400; font-size: 14px; color: var(--ink-3);">(кликните чтобы увеличить)</small></h2>
-
-        {photoSets?.general?.length > 0 ? (
-          <>
-            <div class="photo-cat">
-              <h3>Главные виды</h3>
-              <div class="photo-grid">
-                {photoSets.general.slice(0, 4).map((p: any) => (
-                  <div class="photo-tile" data-lightbox={p.img} style={`background-image: url('${p.img}')`}></div>
-                ))}
-              </div>
-            </div>
-            {photoSets.campuses?.length > 0 && (
-              <div class="photo-cat">
-                <h3>Кампусы</h3>
-                <div class="photo-grid">
-                  {photoSets.campuses.slice(0, 4).map((p: any) => (
-                    <div class="photo-tile" data-lightbox={p.img} style={`background-image: url('${p.img}')`}></div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {photoSets.studentsFaculty?.length > 0 && (
-              <div class="photo-cat">
-                <h3>Студенты и преподаватели</h3>
-                <div class="photo-grid">
-                  {photoSets.studentsFaculty.slice(0, 4).map((p: any) => (
-                    <div class="photo-tile" data-lightbox={p.img} style={`background-image: url('${p.img}')`}></div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </>
-        ) : (
-          <div class="photo-grid">
-            {galleryItems.slice(0, 8).map((p: any) => (
-              <div class="photo-tile" data-lightbox={p.img} style={`background-image: url('${p.img}')`}></div>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
-  )}
-
   {(descParagraphs.length > 0 || keyFacts.length > 0) && (
     <section class="section reveal" id="about-uni">
       <div class="wrap">
@@ -848,18 +833,6 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     </div>
   </section>
 
-  <a class="sticky-wa" href={`https://wa.me/77272222222?text=${encodeURIComponent(`Здравствуйте, я с лендинга ${u.name}`)}`} aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.27-1.12a9.95 9.95 0 0 0 5.77 1.84c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0 0 12.04 2z"/></svg>
-  </a>
-
-  <button class="chat-fab" id="lpChatFab" type="button">
-    <div class="chat-fab__head">
-      <div class="chat-avatar">А</div>
-      <div><div class="chat-fab__name">Айгерим</div><div class="chat-fab__role">Куратор · онлайн</div></div>
-    </div>
-    <div class="chat-fab__msg"><b>Привет 👋</b> Я Айгерим, помогаю казахстанцам поступать. Что вас интересует в {u.name}?</div>
-  </button>
-
   <div class="chat-panel" id="lpChatPanel" role="dialog" aria-label="Чат">
     <div class="chat-panel__head">
       <div class="chat-avatar">А</div>
@@ -881,9 +854,12 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     </form>
   </div>
 
-  <div class="sticky-bottom-cta" id="lpStickyCta">
-    <button class="btn btn--primary" data-modal-open="lpConsultModal">Узнать свой шанс на поступление →</button>
-  </div>
+  <button class="lp-chat-fab" id="lpStickyChatBtn" type="button" aria-label="Открыть чат с куратором" aria-controls="lpChatPanel" aria-expanded="false">
+    <svg class="lp-chat-fab__icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-4 4V6a2 2 0 0 1 2-2z" fill="currentColor"/>
+    </svg>
+    <span class="lp-chat-fab__badge" aria-hidden="true">1</span>
+  </button>
 
   <dialog id="lpConsultModal" aria-label="Консультация">
     <div class="modal-head"><h3>Записаться на бесплатную консультацию</h3><button class="modal-close" data-modal-close>×</button></div>
@@ -902,8 +878,15 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   </dialog>
 
   <dialog id="lpProgramsModal" aria-label="Программы">
-    <div class="modal-head"><h3>Все программы — <span id="lpProgramsModalFaculty"></span></h3><button class="modal-close" data-modal-close>×</button></div>
+    <div class="modal-head"><h3>Программы — <span id="lpProgramsModalFaculty"></span></h3><button class="modal-close" data-modal-close>×</button></div>
     <div class="modal-body">
+      <div class="level-filter" role="tablist" id="lpModalLevelFilter">
+        <button class="lvl is-active" type="button" data-level="all">Все</button>
+        <button class="lvl" type="button" data-level="foundation">Foundation</button>
+        <button class="lvl" type="button" data-level="bachelor">Бакалавриат</button>
+        <button class="lvl" type="button" data-level="pathway">Pre-Master's</button>
+        <button class="lvl" type="button" data-level="master">Магистратура</button>
+      </div>
       <input type="text" class="program-search" id="lpProgramSearch" placeholder="Поиск по названию программы…" />
       <ul class="program-list" id="lpProgramList"></ul>
     </div>
@@ -950,7 +933,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
 
 <script is:inline define:vars={{
   PROGRAMS_DATA: programsByFaculty,
-  SCHOLARSHIPS_DATA: u.scholarships ?? [],
+  SCHOLARSHIPS_DATA: scholarshipsClean,
   ACCOM_DATA: accom,
   CAMP_DATA: campuses,
   CURRENCY_SYM: sym,
@@ -1028,13 +1011,29 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
 
   const facultyNames = Object.keys(PROGRAMS_DATA);
   let currentFaculty = facultyNames[0];
+  let currentLevel = 'all';
+  let modalLevel = 'all';
 
-  function renderProgramsCards(facultyKey) {
-    const list = (PROGRAMS_DATA[facultyKey] || []).slice(0, 6);
+  function matchesLevel(p, lvl) {
+    if (lvl === 'all') return true;
+    if (lvl === 'pathway') return p.level === 'master' && p.programType === 'pathway';
+    if (lvl === 'master') return p.level === 'master' && p.programType !== 'pathway';
+    return p.level === lvl;
+  }
+
+  function filterByLevel(list, lvl) { return list.filter(p => matchesLevel(p, lvl)); }
+
+  function renderProgramsCards(facultyKey, lvl) {
     const grid = $('#lpProgramsGrid');
     if (!grid) return;
-    grid.innerHTML = list.map(p => `
-      <div class="program-row">
+    const all = PROGRAMS_DATA[facultyKey] || [];
+    const filtered = filterByLevel(all, lvl).slice(0, 6);
+    if (!filtered.length) {
+      grid.innerHTML = '<div class="programs-empty">Программ этого уровня на факультете нет.</div>';
+      return;
+    }
+    grid.innerHTML = filtered.map(p => `
+      <div class="program-row" data-prog-level="${p.level}" data-prog-type="${p.programType || ''}">
         <div>
           <span class="program-row__level program-row__level--${levelClass(p.level, p.programType)}">${levelLabel(p.level, p.programType)}</span>
           <div class="program-row__title">${p.title}</div>
@@ -1044,12 +1043,16 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     `).join('');
   }
 
-  function renderProgramsModal(facultyKey, q) {
+  function renderProgramsModal(facultyKey, lvl, q) {
     q = q || '';
-    const list = PROGRAMS_DATA[facultyKey] || [];
+    const list = filterByLevel(PROGRAMS_DATA[facultyKey] || [], lvl);
     const filtered = q ? list.filter(p => p.title.toLowerCase().includes(q.toLowerCase())) : list;
     const facHead = $('#lpProgramsModalFaculty');
-    if (facHead) facHead.textContent = facultyKey;
+    if (facHead) {
+      const lvlLabels = { all: '', foundation: 'Foundation', bachelor: 'Бакалавриат', pathway: "Pre-Master's", master: 'Магистратура' };
+      facHead.textContent = facultyKey + (lvl !== 'all' ? ' · ' + lvlLabels[lvl] : '');
+    }
+    $$('#lpModalLevelFilter .lvl').forEach(b => b.classList.toggle('is-active', b.dataset.level === lvl));
     const ul = $('#lpProgramList');
     if (!ul) return;
     ul.innerHTML = filtered.length ? filtered.map(p => `
@@ -1058,18 +1061,54 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
         <span>${p.title}</span>
         <strong style="color: var(--green); white-space: nowrap;">${p.tuition ? CURRENCY_SYM + p.tuition.toLocaleString('en') + '/год' : '—'}</strong>
       </li>
-    `).join('') : '<li style="grid-template-columns: 1fr; color: var(--ink-3);">Ничего не нашли. Попробуйте другое слово.</li>';
+    `).join('') : '<li style="grid-template-columns: 1fr; color: var(--ink-3);">Ничего не нашли. Попробуйте другое слово или другой уровень.</li>';
   }
 
-  if (currentFaculty) renderProgramsCards(currentFaculty);
+  function openProgramsModalFor(facultyKey, lvl) {
+    currentFaculty = facultyKey;
+    modalLevel = lvl;
+    const search = $('#lpProgramSearch');
+    if (search) search.value = '';
+    renderProgramsModal(currentFaculty, modalLevel, '');
+    openModal('lpProgramsModal');
+  }
+
+  if (currentFaculty) renderProgramsCards(currentFaculty, currentLevel);
+
   $$('.tab').forEach(t => {
     t.addEventListener('click', () => {
       $$('.tab').forEach(x => x.classList.remove('is-active'));
       t.classList.add('is-active');
       currentFaculty = t.dataset.faculty;
-      renderProgramsCards(currentFaculty);
+      renderProgramsCards(currentFaculty, currentLevel);
     });
   });
+
+  $$('#lpLevelFilter .lvl').forEach(b => {
+    b.addEventListener('click', () => {
+      $$('#lpLevelFilter .lvl').forEach(x => x.classList.remove('is-active'));
+      b.classList.add('is-active');
+      currentLevel = b.dataset.level;
+      renderProgramsCards(currentFaculty, currentLevel);
+    });
+  });
+
+  $$('#lpModalLevelFilter .lvl').forEach(b => {
+    b.addEventListener('click', () => {
+      modalLevel = b.dataset.level;
+      const search = $('#lpProgramSearch');
+      renderProgramsModal(currentFaculty, modalLevel, search ? search.value : '');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.program-row');
+    if (!card) return;
+    openProgramsModalFor(currentFaculty, currentLevel);
+  });
+
+  const showAllBtn = $('#lpShowAllPrograms');
+  if (showAllBtn) showAllBtn.addEventListener('click', () => openProgramsModalFor(currentFaculty, currentLevel));
 
   const rate = $('#lpRate');
   const rateOut = $('#lpRateOut');
@@ -1117,7 +1156,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
       e.preventDefault();
       const id = opener.dataset.modalOpen;
       $$('dialog[open]').forEach(d => closeModal(d));
-      if (id === 'lpProgramsModal' && currentFaculty) renderProgramsModal(currentFaculty);
+      if (id === 'lpProgramsModal' && currentFaculty) renderProgramsModal(currentFaculty, modalLevel, '');
       openModal(id);
       return;
     }
@@ -1131,7 +1170,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   });
 
   const ps = $('#lpProgramSearch');
-  if (ps) ps.addEventListener('input', (e) => renderProgramsModal(currentFaculty, e.target.value));
+  if (ps) ps.addEventListener('input', (e) => renderProgramsModal(currentFaculty, modalLevel, e.target.value));
 
   $$('.scholar').forEach(card => {
     card.addEventListener('click', () => {
@@ -1184,12 +1223,18 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     });
   });
 
-  const chatFab = $('#lpChatFab');
   const chatPanel = $('#lpChatPanel');
   const chatBody = $('#lpChatBody');
+  const stickyChatBtn = $('#lpStickyChatBtn');
 
-  function chatOpen() { if (chatFab) chatFab.classList.add('is-hidden'); if (chatPanel) chatPanel.classList.add('is-open'); }
-  function chatClose() { if (chatPanel) chatPanel.classList.remove('is-open'); if (chatFab) chatFab.classList.remove('is-hidden'); }
+  function chatOpen() {
+    if (chatPanel) chatPanel.classList.add('is-open');
+    if (stickyChatBtn) { stickyChatBtn.classList.add('is-hidden'); stickyChatBtn.setAttribute('aria-expanded', 'true'); }
+  }
+  function chatClose() {
+    if (chatPanel) chatPanel.classList.remove('is-open');
+    if (stickyChatBtn) { stickyChatBtn.classList.remove('is-hidden'); stickyChatBtn.setAttribute('aria-expanded', 'false'); }
+  }
   function chatAddMsg(text, who) {
     if (!chatBody) return;
     const m = document.createElement('div');
@@ -1198,7 +1243,9 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     chatBody.appendChild(m);
     chatBody.scrollTop = chatBody.scrollHeight;
   }
-  if (chatFab) chatFab.addEventListener('click', chatOpen);
+  if (stickyChatBtn) stickyChatBtn.addEventListener('click', () => {
+    if (chatPanel && chatPanel.classList.contains('is-open')) chatClose(); else chatOpen();
+  });
   const chatCloseBtn = $('#lpChatClose');
   if (chatCloseBtn) chatCloseBtn.addEventListener('click', chatClose);
 
@@ -1243,11 +1290,6 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   handleForm('lpCtaForm', 'Заявка отправлена. Перезвоним за 15 минут.');
   handleForm('lpModalConsultForm', 'Заявка отправлена. Перезвоним за 15 минут.');
   handleForm('lpExitForm', 'PDF отправлен. Проверьте email или WhatsApp.');
-
-  const sb = $('#lpStickyCta');
-  const heroEl = $('#top');
-  const sbIo = new IntersectionObserver((entries) => { if (sb) sb.classList.toggle('is-visible', !entries[0].isIntersecting); }, { threshold: 0 });
-  if (heroEl && sb) sbIo.observe(heroEl);
 
   let exitShown = false;
   document.addEventListener('mouseout', (e) => {

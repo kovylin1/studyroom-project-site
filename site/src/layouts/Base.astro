@@ -4,11 +4,13 @@ import '~/styles/brand.css';
 interface Props {
   title: string;
   description?: string;
+  hideHeader?: boolean;
 }
 
 const {
   title,
   description = 'StudyRoom — каталог зарубежных университетов с актуальными ценами и дедлайнами.',
+  hideHeader = false,
 } = Astro.props;
 
 const year = new Date().getFullYear();
@@ -27,20 +29,21 @@ const year = new Date().getFullYear();
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="site-header__inner">
-        <a class="site-header__brand" href="/" aria-label="StudyRoom — главная">
-          <span class="site-header__brand-mark">Study</span><span>Room</span>
-        </a>
-        <nav class="site-header__nav" aria-label="Основная навигация">
-          <a href="/">Каталог</a>
-          <a href="https://studyroom.kz" target="_blank" rel="noopener">studyroom.kz</a>
-          <a class="btn btn-primary btn-sm" href="https://studyroom.kz#contact" target="_blank" rel="noopener">
-            Консультация
+    {!hideHeader && (
+      <header class="site-header">
+        <div class="site-header__inner">
+          <a class="site-header__brand" href="/" aria-label="StudyRoom — главная">
+            <span class="site-header__brand-mark">Study</span><span>Room</span>
           </a>
-        </nav>
-      </div>
-    </header>
+          <nav class="site-header__nav" aria-label="Основная навигация">
+            <a href="/">Каталог</a>
+            <a class="btn btn-primary btn-sm" href="https://studyroom.kz#contact" target="_blank" rel="noopener">
+              Консультация
+            </a>
+          </nav>
+        </div>
+      </header>
+    )}
 
     <main>
       <slot />
