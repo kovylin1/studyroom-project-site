@@ -29,6 +29,11 @@ const CONTROL_DEFAULT_URL = '';
             <span class="status-pill__dot"></span>
             <span id="health-text">Подключение…</span>
           </span>
+          <span class="manager__github" id="github-conn">
+            <span id="github-conn-dot" class="manager__github-dot manager__github-dot--off" aria-hidden="true"></span>
+            <span id="github-conn-text">GitHub не подключён</span>
+            <button id="github-conn-btn" class="link-btn" type="button">подключить</button>
+          </span>
           <span class="manager__health-url">
             API: <code id="health-url">{CONTROL_DEFAULT_URL || '/api/status.json (снимок)'}</code>
             <button id="health-edit" class="link-btn" type="button">изменить</button>
@@ -40,6 +45,12 @@ const CONTROL_DEFAULT_URL = '';
         <strong>Панель управления не отвечает.</strong>
         Запустите её локально: <code>cd control &amp;&amp; npm start</code>. По&nbsp;умолчанию слушает
         <code>http://localhost:5174</code>.
+      </div>
+
+      <div id="static-banner" class="banner banner--info" hidden>
+        <strong>Режим снимка.</strong>
+        Обе кнопки запускают GitHub Actions: данные обновятся через 1–3 минуты и автоматически подтянутся сюда.
+        Нужен fine-grained PAT с правом <code>Actions: Read and write</code> — нажмите «подключить» в шапке.
       </div>
 
       <div class="cards">
@@ -102,6 +113,21 @@ const CONTROL_DEFAULT_URL = '';
           <summary class="muted">Точность по университетам</summary>
           <ul id="verify-details-list" class="manager__verify-list"></ul>
         </details>
+      </article>
+
+      <article id="remote-run" class="card manager__remote-run" hidden>
+        <header class="card__head">
+          <h2 class="card__title">Удалённый запуск (GitHub Actions)</h2>
+          <span id="remote-run-status" class="status-pill status-pill--idle">
+            <span class="status-pill__dot"></span>
+            <span id="remote-run-status-text">—</span>
+          </span>
+        </header>
+        <p class="card__sub" id="remote-run-summary">—</p>
+        <div class="manager__remote-meta">
+          <span>Прошло: <strong id="remote-run-elapsed">0&nbsp;с</strong></span>
+          <a id="remote-run-link" href="#" target="_blank" rel="noopener" hidden>лог GitHub →</a>
+        </div>
       </article>
 
       <article class="card card--flush">
@@ -240,10 +266,34 @@ const CONTROL_DEFAULT_URL = '';
     border: 1px solid; font-size: 0.92rem;
   }
   .banner--warn { background: #fff4cc; border-color: #f1d782; color: #5a4200; }
+  .banner--info { background: var(--color-primary-soft); border-color: var(--color-primary); color: var(--color-primary-dark); }
   .banner code {
     background: rgba(0,0,0,0.06); padding: 1px 6px; border-radius: 6px;
     font-family: ui-monospace, 'Cascadia Mono', 'JetBrains Mono', Menlo, monospace;
   }
+
+  .manager__github {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.8rem; color: var(--color-text-muted);
+  }
+  .manager__github-dot {
+    width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+  }
+  .manager__github-dot--on { background: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-soft); }
+  .manager__github-dot--off { background: var(--color-text-faint); }
+
+  .manager__remote-run {
+    margin-bottom: 24px;
+    border: 1px solid var(--color-primary);
+    background: linear-gradient(180deg, var(--color-primary-soft) 0%, var(--color-bg) 100%);
+  }
+  .manager__remote-meta {
+    display: flex; flex-wrap: wrap; gap: 24px;
+    font-size: 0.9rem; margin-top: 12px;
+    color: var(--color-text-muted);
+  }
+  .manager__remote-meta a { color: var(--color-primary-dark); font-weight: 600; }
+  .manager__remote-meta a:hover { text-decoration: underline; }
 
   .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
   @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
@@ -801,7 +851,8 @@ const CONTROL_DEFAULT_URL = '';
   function setHealth(state) {
     const pill = document.querySelector('#health .status-pill');
     const txt = document.getElementById('health-text');
-    const banner = document.getElementById('offline-banner');
+    const offlineBanner = document.getElementById('offline-banner');
+    const staticBanner = document.getElementById('static-banner');
     pill.className = 'status-pill';
     const runBtn = document.getElementById('run-all-btn');
     const verifyBtn = document.getElementById('verify-btn');
@@ -809,22 +860,25 @@ const CONTROL_DEFAULT_URL = '';
       isOnline = true;
       pill.classList.add('status-pill--ok');
       txt.textContent = 'Панель управления онлайн';
-      banner.hidden = true;
+      offlineBanner.hidden = true;
+      staticBanner.hidden = true;
       runBtn.disabled = false;
       verifyBtn.disabled = false;
     } else if (state === 'static') {
+      // Static-snapshot mode: both buttons now work via GitHub Actions.
       isOnline = true;
-      pill.classList.add('status-pill--idle');
-      txt.textContent = 'Снимок данных (только просмотр)';
-      banner.hidden = true;
-      runBtn.disabled = true;
-      // Verify still works in static mode via GitHub Actions workflow_dispatch.
+      pill.classList.add('status-pill--ok');
+      txt.textContent = 'Снимок данных — запуск через GitHub Actions';
+      offlineBanner.hidden = true;
+      staticBanner.hidden = false;
+      runBtn.disabled = false;
       verifyBtn.disabled = false;
     } else {
       isOnline = false;
       pill.classList.add('status-pill--fail');
       txt.textContent = 'Панель управления оффлайн';
-      banner.hidden = false;
+      offlineBanner.hidden = false;
+      staticBanner.hidden = true;
       runBtn.disabled = true;
       verifyBtn.disabled = true;
     }
@@ -885,34 +939,13 @@ const CONTROL_DEFAULT_URL = '';
     return res.json();
   }
 
-  const STATIC_HINT =
-    'Запуск скрапера работает только локально. Запустите control-panel ' +
-    '(cd control && npm start) и укажите его URL через «изменить» в шапке.';
-
-  document.getElementById('run-all-btn').addEventListener('click', async () => {
-    if (isStaticMode) {
-      alert(STATIC_HINT);
-      return;
-    }
-    const btn = document.getElementById('run-all-btn');
-    btn.disabled = true;
-    btn.textContent = 'Запускаем…';
-    try {
-      await postJson('/api/run', null);
-    } catch (err) {
-      alert('Не удалось запустить: ' + err.message);
-    }
-    fetchStatus();
-  });
-
-  // Verify-button: two modes —
-  //   • Local control-panel mode: POST /api/verify (existing path).
-  //   • Static-snapshot mode: dispatch the verify-on-demand GitHub workflow
-  //     using a fine-grained PAT stored in localStorage, poll until done,
-  //     pull the fresh verify.json from raw.githubusercontent.com.
   const GITHUB_REPO = 'kovylin1/studyroom-project-site';
+  const GITHUB_REF = 'main';
   const VERIFY_WORKFLOW = 'verify-on-demand.yml';
+  const SCRAPE_WORKFLOW = 'scrape-monthly.yml';
   const GITHUB_TOKEN_KEY = 'studyroom.manager.githubToken';
+  const RAW_BASE =
+    'https://raw.githubusercontent.com/' + GITHUB_REPO + '/' + GITHUB_REF;
 
   function getGithubToken() {
     try {
@@ -920,6 +953,25 @@ const CONTROL_DEFAULT_URL = '';
     } catch {
       return '';
     }
+  }
+
+  function setGithubToken(token) {
+    try {
+      if (token) localStorage.setItem(GITHUB_TOKEN_KEY, token);
+      else localStorage.removeItem(GITHUB_TOKEN_KEY);
+    } catch {}
+    refreshGithubConn();
+  }
+
+  function refreshGithubConn() {
+    const dot = document.getElementById('github-conn-dot');
+    const text = document.getElementById('github-conn-text');
+    const btn = document.getElementById('github-conn-btn');
+    const has = !!getGithubToken();
+    dot.classList.toggle('manager__github-dot--on', has);
+    dot.classList.toggle('manager__github-dot--off', !has);
+    text.textContent = has ? 'GitHub подключён' : 'GitHub не подключён';
+    btn.textContent = has ? 'сменить токен' : 'подключить';
   }
 
   function promptForGithubToken() {
@@ -932,10 +984,7 @@ const CONTROL_DEFAULT_URL = '';
     );
     if (next === null) return null;
     const trimmed = next.trim();
-    try {
-      if (trimmed) localStorage.setItem(GITHUB_TOKEN_KEY, trimmed);
-      else localStorage.removeItem(GITHUB_TOKEN_KEY);
-    } catch {}
+    setGithubToken(trimmed);
     return trimmed || null;
   }
 
@@ -943,115 +992,238 @@ const CONTROL_DEFAULT_URL = '';
     return new Promise((r) => setTimeout(r, ms));
   }
 
-  async function runRemoteVerify(token) {
-    const btn = document.getElementById('verify-btn');
-    const startTs = new Date();
+  // ---------- remote-run progress card ----------
 
-    const dispatchUrl =
-      'https://api.github.com/repos/' + GITHUB_REPO + '/actions/workflows/' +
-      VERIFY_WORKFLOW + '/dispatches';
-    const dispatchRes = await fetch(dispatchUrl, {
-      method: 'POST',
-      headers: {
-        Authorization: 'Bearer ' + token,
-        Accept: 'application/vnd.github+json',
-        'Content-Type': 'application/json',
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
-      body: JSON.stringify({ ref: 'main' }),
-    });
-    if (dispatchRes.status === 401) {
-      throw new Error('токен невалидный или истёк (HTTP 401)');
-    }
-    if (dispatchRes.status === 404) {
-      throw new Error(
-        'workflow не найден или у токена нет прав (HTTP 404). Проверьте scope Actions: Read and write.',
-      );
-    }
-    if (dispatchRes.status !== 204) {
-      throw new Error('GitHub API ' + dispatchRes.status + ': ' + (await dispatchRes.text()));
-    }
+  let remoteRunTimer = null;
+  let remoteRunStartTs = null;
 
-    btn.textContent = 'Workflow в очереди…';
+  function showRemoteRun(label, statusText, pillClass) {
+    const card = document.getElementById('remote-run');
+    const sum = document.getElementById('remote-run-summary');
+    const pill = document.getElementById('remote-run-status');
+    const pillText = document.getElementById('remote-run-status-text');
+    card.hidden = false;
+    sum.textContent = label;
+    pill.className = 'status-pill ' + (pillClass || 'status-pill--running');
+    pillText.textContent = statusText;
+  }
 
-    const runsUrl =
-      'https://api.github.com/repos/' + GITHUB_REPO + '/actions/workflows/' +
-      VERIFY_WORKFLOW + '/runs?per_page=10';
-    let run = null;
-    for (let i = 0; i < 60; i += 1) {
-      await sleep(10000);
-      try {
-        const r = await fetch(runsUrl, {
-          headers: {
-            Authorization: 'Bearer ' + token,
-            Accept: 'application/vnd.github+json',
-          },
-        });
-        if (!r.ok) continue;
-        const data = await r.json();
-        run = (data.workflow_runs || []).find(
-          (w) => new Date(w.created_at) >= startTs,
-        );
-        if (!run) continue;
-        if (run.status === 'queued') btn.textContent = 'В очереди GitHub…';
-        else if (run.status === 'in_progress') btn.textContent = 'Проверяем (GitHub)…';
-        if (run.status === 'completed') break;
-      } catch {
-        // network blip — keep polling
-      }
-    }
-    if (!run || run.status !== 'completed') {
-      throw new Error('таймаут опроса GitHub (>10 мин). Проверьте Actions UI.');
-    }
-    if (run.conclusion !== 'success') {
-      throw new Error(
-        'workflow завершился с conclusion=' + run.conclusion + '. Подробнее: ' + run.html_url,
-      );
-    }
-
-    btn.textContent = 'Обновляем результаты…';
-    const rawUrl =
-      'https://raw.githubusercontent.com/' + GITHUB_REPO +
-      '/main/site/public/api/verify.json?ts=' + Date.now();
-    const rawRes = await fetch(rawUrl, { cache: 'no-store' });
-    if (rawRes.ok) {
-      try {
-        const data = await rawRes.json();
-        renderVerifySummary(data);
-      } catch {}
+  function setRemoteRunLink(url) {
+    const a = document.getElementById('remote-run-link');
+    if (url) {
+      a.href = url;
+      a.hidden = false;
+    } else {
+      a.hidden = true;
     }
   }
 
-  document.getElementById('verify-btn').addEventListener('click', async () => {
-    const btn = document.getElementById('verify-btn');
+  function startRemoteRunTimer() {
+    remoteRunStartTs = Date.now();
+    const el = document.getElementById('remote-run-elapsed');
+    if (remoteRunTimer) clearInterval(remoteRunTimer);
+    remoteRunTimer = setInterval(() => {
+      const sec = Math.round((Date.now() - remoteRunStartTs) / 1000);
+      el.innerHTML = sec < 60 ? sec + '&nbsp;с' : Math.floor(sec / 60) + '&nbsp;мин ' + (sec % 60) + '&nbsp;с';
+    }, 1000);
+  }
 
-    if (isStaticMode) {
-      let token = getGithubToken();
-      if (!token) {
-        const proceed = confirm(
-          'Запустить проверку через GitHub Actions?\n\n' +
-          'Нужен fine-grained PAT с правом «Actions: Read and write» на ' +
-          GITHUB_REPO + '. Токен сохранится в localStorage этого браузера.',
-        );
-        if (!proceed) return;
-        token = promptForGithubToken();
-        if (!token) return;
+  function stopRemoteRunTimer() {
+    if (remoteRunTimer) {
+      clearInterval(remoteRunTimer);
+      remoteRunTimer = null;
+    }
+  }
+
+  function hideRemoteRunSoon() {
+    setTimeout(() => {
+      const card = document.getElementById('remote-run');
+      if (card) card.hidden = true;
+    }, 8000);
+  }
+
+  // ---------- generic workflow_dispatch + poll ----------
+
+  async function runRemoteWorkflow({ workflowFile, label, expectedMin }) {
+    const token = getGithubToken();
+    if (!token) {
+      const proceed = confirm(
+        'Запустить через GitHub Actions?\n\nНужен fine-grained PAT с правом «Actions: Read and write» на ' +
+          GITHUB_REPO + '.\nТокен сохранится в localStorage этого браузера.',
+      );
+      if (!proceed) return false;
+      const t = promptForGithubToken();
+      if (!t) return false;
+    }
+    const authToken = getGithubToken();
+    const startTs = new Date();
+
+    showRemoteRun(
+      label + ' — отправляем запрос в GitHub Actions…',
+      'Отправка',
+      'status-pill--running',
+    );
+    setRemoteRunLink(null);
+    startRemoteRunTimer();
+
+    try {
+      const dispatchUrl =
+        'https://api.github.com/repos/' + GITHUB_REPO + '/actions/workflows/' +
+        workflowFile + '/dispatches';
+      const dispatchRes = await fetch(dispatchUrl, {
+        method: 'POST',
+        headers: {
+          Authorization: 'Bearer ' + authToken,
+          Accept: 'application/vnd.github+json',
+          'Content-Type': 'application/json',
+          'X-GitHub-Api-Version': '2022-11-28',
+        },
+        body: JSON.stringify({ ref: GITHUB_REF }),
+      });
+      if (dispatchRes.status === 401) throw new Error('токен невалидный или истёк (HTTP 401)');
+      if (dispatchRes.status === 404) throw new Error('workflow не найден или у токена нет прав (HTTP 404). Проверьте scope «Actions: Read and write».');
+      if (dispatchRes.status !== 204) throw new Error('GitHub API ' + dispatchRes.status + ': ' + (await dispatchRes.text()));
+
+      showRemoteRun(
+        label + ' — workflow поставлен в очередь. Ожидаемое время: ~' + expectedMin + ' мин.',
+        'В очереди',
+        'status-pill--running',
+      );
+
+      // Poll workflow_runs until we find the one we just triggered and it completes.
+      const runsUrl =
+        'https://api.github.com/repos/' + GITHUB_REPO + '/actions/workflows/' +
+        workflowFile + '/runs?per_page=10';
+      let run = null;
+      for (let i = 0; i < 60; i += 1) {
+        await sleep(10000);
+        try {
+          const r = await fetch(runsUrl, {
+            headers: {
+              Authorization: 'Bearer ' + authToken,
+              Accept: 'application/vnd.github+json',
+            },
+          });
+          if (!r.ok) continue;
+          const data = await r.json();
+          run = (data.workflow_runs || []).find((w) => new Date(w.created_at) >= startTs);
+          if (!run) continue;
+          if (run.html_url) setRemoteRunLink(run.html_url);
+          if (run.status === 'queued') {
+            showRemoteRun(label + ' — стоит в очереди GitHub Actions.', 'В очереди', 'status-pill--running');
+          } else if (run.status === 'in_progress') {
+            showRemoteRun(label + ' — workflow выполняется на GitHub.', 'Идёт ' + label.toLowerCase(), 'status-pill--running');
+          }
+          if (run.status === 'completed') break;
+        } catch {
+          // network blip — keep polling
+        }
       }
+      if (!run || run.status !== 'completed') {
+        throw new Error('таймаут опроса GitHub (>10 мин). Откройте лог GitHub и проверьте вручную.');
+      }
+      if (run.conclusion !== 'success') {
+        throw new Error('workflow завершился с conclusion=' + run.conclusion + '. Подробнее: ' + run.html_url);
+      }
+
+      showRemoteRun(
+        label + ' — успешно. Подтягиваем свежие данные с raw.githubusercontent.com…',
+        'Обновление данных',
+        'status-pill--running',
+      );
+      await refreshDataFromRaw();
+
+      stopRemoteRunTimer();
+      showRemoteRun(
+        label + ' — готово. Данные на странице обновлены. Cloudflare пересоберёт сайт ещё ~1 мин.',
+        'Успешно',
+        'status-pill--ok',
+      );
+      hideRemoteRunSoon();
+      return true;
+    } catch (err) {
+      stopRemoteRunTimer();
+      showRemoteRun(
+        (label + ' — ошибка: ' + (err && err.message ? err.message : err)),
+        'Ошибка',
+        'status-pill--fail',
+      );
+      return false;
+    }
+  }
+
+  // After a remote workflow completes, pull fresh status.json + verify.json
+  // directly from the main branch on raw.githubusercontent.com (CORS-allowed,
+  // no Cloudflare cache). Then rerender the page without a reload.
+  async function refreshDataFromRaw() {
+    const ts = Date.now();
+    try {
+      const sRes = await fetch(RAW_BASE + '/site/public/api/status.json?ts=' + ts, { cache: 'no-store' });
+      if (sRes.ok) {
+        const data = await sRes.json();
+        lastRegistry = data.registry || [];
+        renderSchedule(data.schedule);
+        const catalogCount = data.registry.filter((r) => r.catalog).length;
+        renderSource(data.sourceProfile, data.registry.length, catalogCount);
+        syncAggregatorChips(data.aggregators || []);
+        syncCountryOptions(data.registry);
+        renderRegistry(data.registry);
+      }
+    } catch (err) {
+      console.warn('refreshDataFromRaw status.json failed', err);
+    }
+    try {
+      const vRes = await fetch(RAW_BASE + '/site/public/api/verify.json?ts=' + ts, { cache: 'no-store' });
+      if (vRes.ok) renderVerifySummary(await vRes.json());
+    } catch (err) {
+      console.warn('refreshDataFromRaw verify.json failed', err);
+    }
+  }
+
+  // ---------- button handlers ----------
+
+  document.getElementById('run-all-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('run-all-btn');
+    if (isStaticMode) {
       btn.disabled = true;
       const orig = btn.textContent;
       btn.textContent = 'Запускаем workflow…';
-      try {
-        await runRemoteVerify(token);
-        btn.textContent = 'Проверить актуальность';
-      } catch (err) {
-        alert('Ошибка проверки: ' + (err && err.message ? err.message : err));
-        btn.textContent = orig;
-      } finally {
-        btn.disabled = false;
-      }
+      const ok = await runRemoteWorkflow({
+        workflowFile: SCRAPE_WORKFLOW,
+        label: 'Полный скрапинг',
+        expectedMin: 3,
+      });
+      btn.disabled = false;
+      btn.textContent = orig;
+      if (ok) fetchStatus();
       return;
     }
+    btn.disabled = true;
+    btn.textContent = 'Запускаем…';
+    try {
+      await postJson('/api/run', null);
+    } catch (err) {
+      alert('Не удалось запустить: ' + err.message);
+    }
+    fetchStatus();
+  });
 
+  document.getElementById('verify-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('verify-btn');
+    if (isStaticMode) {
+      btn.disabled = true;
+      const orig = btn.textContent;
+      btn.textContent = 'Запускаем workflow…';
+      const ok = await runRemoteWorkflow({
+        workflowFile: VERIFY_WORKFLOW,
+        label: 'Проверка актуальности',
+        expectedMin: 2,
+      });
+      btn.disabled = false;
+      btn.textContent = orig;
+      if (ok) fetchStatus();
+      return;
+    }
     btn.disabled = true;
     const original = btn.textContent;
     btn.textContent = 'Проверяем…';
@@ -1063,6 +1235,10 @@ const CONTROL_DEFAULT_URL = '';
       btn.textContent = original;
     }
     fetchStatus();
+  });
+
+  document.getElementById('github-conn-btn').addEventListener('click', () => {
+    promptForGithubToken();
   });
 
   async function refreshVerifySummary() {
@@ -1124,7 +1300,10 @@ const CONTROL_DEFAULT_URL = '';
     const slug = target.dataset?.runSlug;
     if (!slug) return;
     if (isStaticMode) {
-      alert(STATIC_HINT);
+      alert(
+        'Отдельный скрап одного университета доступен только в локальной панели.\n' +
+        'В режиме снимка нажмите «Запустить скрапинг сейчас» — обновятся все университеты через GitHub Actions.',
+      );
       return;
     }
     target.disabled = true;
@@ -1225,6 +1404,7 @@ const CONTROL_DEFAULT_URL = '';
   // used by setControlUrl() so reload doesn't blank the field.
   document.getElementById('health-url').textContent =
     getControlUrl() || '/api/status.json (снимок)';
+  refreshGithubConn();
   fetchStatus();
   refreshVerifySummary();
 </script>
