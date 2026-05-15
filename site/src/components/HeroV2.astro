@@ -53,7 +53,7 @@ const updatedLabel = updatedAt.toLocaleDateString('ru-RU', {
         name="q"
         placeholder="Glasgow, Канада, Computer Science, стипендия"
         autocomplete="off"
-        form="catalog-filters-v2"
+        form="catalog-filters"
       />
       <button type="button" class="btn btn-primary hero-v2__search-btn">Найти</button>
     </label>
@@ -71,7 +71,7 @@ const updatedLabel = updatedAt.toLocaleDateString('ru-RU', {
         data-track="hero-whatsapp"
       >
         <span class="hero-v2__cta-icon" aria-hidden="true">💬</span>
-        <span>15 мин с куратором в WhatsApp</span>
+        <span>15 мин с куратором</span>
       </a>
     </div>
   </div>
@@ -184,12 +184,12 @@ const updatedLabel = updatedAt.toLocaleDateString('ru-RU', {
   .hero-v2__cta-divider { color: var(--color-text-faint); }
   .hero-v2__cta-primary {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 10px 22px; background: #25d366; color: #fff;
+    padding: 10px 22px; background: var(--color-primary); color: #fff;
     border-radius: var(--radius-pill); text-decoration: none;
     font-weight: 600;
     transition: background 140ms ease, transform 60ms ease;
   }
-  .hero-v2__cta-primary:hover { background: #1da851; }
+  .hero-v2__cta-primary:hover { background: var(--color-primary-dark); color: #fff; }
   .hero-v2__cta-primary:active { transform: translateY(1px); }
   .hero-v2__cta-icon { font-size: 1.1rem; }
 </style>

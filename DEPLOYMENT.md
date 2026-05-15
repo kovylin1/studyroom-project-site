@@ -1,62 +1,98 @@
-# Deployment — Cloudflare Pages
+# Deployment — Cloudflare Pages (manual wrangler push)
 
-> Astro static build, deployed via Cloudflare Pages directly from the GitHub repo.
-> Once set up, every push to `main` triggers a rebuild + deploy.
+> Astro static build, manually deployed to Cloudflare Pages via `wrangler pages deploy`.
+> Cloudflare's GitHub auto-deploy is **not** connected — pushing to `main` does **not** trigger a build.
 
-## One-time setup (you do this in the Cloudflare dashboard)
+## Projects
 
-### 1. Connect the GitHub repo
+| Project | URL | Purpose |
+|---|---|---|
+| `studyroom-project-site` | https://studyroom-project-site.pages.dev | Production — all 27 university landings + catalog |
+| `studyroom-redesign` | https://studyroom-redesign.pages.dev | Preview / staging for redesigns |
+| `studyroom-glasgow-v2` | https://studyroom-glasgow-v2.pages.dev | One-off prototype (legacy) |
 
-1. Log in to https://dash.cloudflare.com/ → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**.
-2. Authorize Cloudflare to access GitHub if prompted.
-3. Select repo: `kovylin1/studyroom-project-site`.
-4. Branch: `main`.
+CF account: `Molodes.1469@gmail.com` (cached at `.wrangler/cache/wrangler-account.json`).
 
-### 2. Build settings (paste exactly)
+## Custom domain
 
-| Setting | Value |
-|---|---|
-| **Framework preset** | Astro |
-| **Build command** | `cd site && npm ci && npm run build` |
-| **Build output directory** | `site/dist` |
-| **Root directory** | _(leave empty — repo root)_ |
-| **Node version** | `20` (set as env var: `NODE_VERSION=20`) |
+`studyroom.kz` is a **separate WordPress site** (`195.49.210.73`, nginx). It is **not** connected to this project. To expose the landings on a real domain, set up `unis.studyroom.kz` (or similar) via the Cloudflare Pages dashboard → Custom domains → CNAME to `studyroom-project-site.pages.dev`.
 
-Click **Save and deploy**. First build takes ~2 minutes.
+## Deploy to production (the actual flow)
 
-### 3. Custom domain
+```bash
+cd site
+rm -rf .astro                              # clean Astro cache (optional but recommended after Zod schema changes)
+npm run build                              # outputs site/dist/
+cd ..
+npx wrangler pages deploy site/dist \
+  --project-name=studyroom-project-site \
+  --branch=main \
+  --commit-dirty=true
+```
 
-After the first successful build:
+Wrangler uploads only changed files (CF caches the rest by hash). A full deploy of 27 landings is typically 2–5 seconds after the build.
 
-1. **Pages project → Custom domains → Set up a custom domain.**
-2. Enter `studyroom.kz` (or a subdomain like `unis.studyroom.kz`).
-3. Cloudflare gives you a CNAME target. Add it at your DNS provider:
-   - Type: `CNAME`
-   - Name: `unis` (or `@` for apex — see Cloudflare's apex CNAME flattening if going apex)
-   - Target: `<your-project>.pages.dev`
-4. Wait 1–5 minutes for DNS + cert provisioning.
+Output ends with:
+```
+🌎 Deploying...
+✨ Deployment complete! Take a peek over at https://<hash>.studyroom-project-site.pages.dev
+```
 
-### 4. Preview branches (optional but recommended)
+The `<hash>` URL is a permanent snapshot of this specific deploy. The latest deploy is always at `https://studyroom-project-site.pages.dev/`.
 
-Cloudflare Pages auto-builds every PR as `https://<commit-sha>.<your-project>.pages.dev`. Use this to review scraper PRs visually before merging — see the Decap workflow below.
+## Deploy to preview / staging
 
-## Verify it works
+For testing a redesign before promoting to prod, deploy to `studyroom-redesign`:
 
-After a deploy completes:
-- `https://<your-project>.pages.dev/` — catalog
-- `https://<your-project>.pages.dev/glasgow/` — University of Glasgow landing
-- `https://<your-project>.pages.dev/liverpool/` — University of Liverpool landing
+```bash
+cd site && npm run build && cd ..
+npx wrangler pages deploy site/dist \
+  --project-name=studyroom-redesign \
+  --branch=preview \
+  --commit-dirty=true
+```
+
+Live at https://studyroom-redesign.pages.dev/ after deploy.
 
 ## Local preview (no Cloudflare)
 
 ```bash
 cd site
-npm install      # one-time
-npm run dev      # http://localhost:4321
-npm run build    # outputs site/dist/
-npm run preview  # serves site/dist/ locally
+npm install            # one-time
+npm run dev            # http://localhost:4321 — live reload
+npm run build          # outputs site/dist/
+npm run preview        # serves site/dist/ locally
 ```
 
-## Rebuild manually (without a code push)
+## Verify a production deploy
 
-In the Cloudflare Pages project: **Deployments → ⋮ → Retry deployment**. Or run the cron workflow from GitHub Actions UI.
+```bash
+curl -s -L https://studyroom-project-site.pages.dev/glasgow | grep -c "lp-chat-fab"
+# Expected: 2 (one CSS rule + one HTML element) → new design active
+```
+
+Sample URLs:
+- https://studyroom-project-site.pages.dev/ — catalog
+- https://studyroom-project-site.pages.dev/glasgow/ — University of Glasgow
+- https://studyroom-project-site.pages.dev/liverpool/ — University of Liverpool
+
+## Rollback
+
+Wrangler keeps every prior deploy as a permanent `<hash>.studyroom-project-site.pages.dev` URL. To roll back:
+
+1. **Dashboard:** Cloudflare → Workers & Pages → `studyroom-project-site` → Deployments → pick a previous deploy → **Rollback**.
+2. **CLI:** rebuild from a previous git commit and redeploy.
+   ```bash
+   git checkout <prev-sha> -- "site/src/pages/[slug].astro"
+   cd site && rm -rf .astro && npm run build && cd ..
+   npx wrangler pages deploy site/dist --project-name=studyroom-project-site --branch=main --commit-dirty=true
+   git checkout HEAD -- "site/src/pages/[slug].astro"   # restore current
+   ```
+
+Local backups of overwritten templates also land in `.backup/<ISO-timestamp>/` when rolling out new landing designs (see `new-landing/TODO.md` workflow).
+
+## Why no GitHub auto-deploy?
+
+`wrangler pages project list` shows `Git Provider: No` for this project — Cloudflare's GitHub integration was never enabled (or was disconnected). Pros: deploys only when explicitly triggered (no surprise pushes from scraper PRs). Cons: every deploy is a manual step.
+
+To switch to auto-deploy on `git push main`, connect the project at Cloudflare dashboard → Pages → `studyroom-project-site` → Settings → Builds & deployments → Configure Git → select `kovylin1/studyroom-project-site`, branch `main`, build command `cd site && npm ci && npm run build`, output dir `site/dist`, Node 20.

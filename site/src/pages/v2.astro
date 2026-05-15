@@ -8,6 +8,7 @@ import { getCollection } from 'astro:content';
 import Base from '~/layouts/Base.astro';
 import HeroV2 from '~/components/HeroV2.astro';
 import UniversityCardV2 from '~/components/UniversityCardV2.astro';
+import Filters from '~/components/Filters.astro';
 
 // TODO: replace with real WhatsApp Business number before launch.
 const WHATSAPP_NUMBER = '77000000000';
@@ -59,7 +60,7 @@ function whatsAppCardTemplate(slug: string, name: string): string {
 ---
 
 <Base title="StudyRoom — каталог зарубежных университетов (v2 preview)">
-  <form id="catalog-filters-v2" autocomplete="off" onsubmit="return false">
+  <form id="catalog-filters" autocomplete="off" onsubmit="return false">
     <HeroV2
       totalUniversities={universities.length}
       totalPrograms={totalPrograms}
@@ -84,99 +85,35 @@ function whatsAppCardTemplate(slug: string, name: string): string {
         <div class="catalog-filters-wrap">
           <div class="catalog-filters-bar">
             <button
-              id="catalog-filters-toggle-v2"
+              id="catalog-filters-toggle"
               class="btn btn-ghost btn-sm catalog-filters-bar__toggle"
               type="button"
               aria-expanded="false"
-              aria-controls="catalog-filters-panel-v2"
+              aria-controls="catalog-filters-panel"
             >
               <span>Фильтры</span>
-              <span id="catalog-filters-count-v2" class="catalog-filters-bar__count" hidden></span>
+              <span id="catalog-filters-count" class="catalog-filters-bar__count" hidden></span>
               <span aria-hidden="true" class="catalog-filters-bar__chev">▾</span>
             </button>
-            <button type="reset" form="catalog-filters-v2" class="btn btn-ghost btn-sm">Сбросить</button>
-            <span id="catalog-filters-result-v2" class="catalog-filters-bar__result muted"></span>
+            <button type="reset" form="catalog-filters" class="btn btn-ghost btn-sm">Сбросить</button>
+            <span id="catalog-filters-result" class="catalog-filters-bar__result muted"></span>
           </div>
-          <div id="catalog-filters-panel-v2" class="catalog-filters-panel" data-open="false">
-            <div class="filterbar" role="group" aria-label="Фильтры поиска">
-              <div class="filterbar__group filterbar__group--grow">
-                <span class="filterbar__label">Уровень</span>
-                <div class="filterbar__chips">
-                  {levels.map((level) => (
-                    <label class="filterbar__chip">
-                      <input type="checkbox" name="level" value={level} form="catalog-filters-v2" />
-                      <span>{levelLabels[level] ?? level}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {faculties.length > 0 && (
-                <div class="filterbar__group filterbar__group--grow">
-                  <span class="filterbar__label">Факультет</span>
-                  <div class="filterbar__chips">
-                    {faculties.map((faculty) => (
-                      <label class="filterbar__chip">
-                        <input type="checkbox" name="faculty" value={facultyKeyword(faculty)} form="catalog-filters-v2" />
-                        <span>{faculty}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <label class="filterbar__group">
-                <span class="filterbar__label">Страна</span>
-                <select name="country" form="catalog-filters-v2">
-                  <option value="">Все</option>
-                  {countries.map((country) => <option value={country}>{country}</option>)}
-                </select>
-              </label>
-
-              <label class="filterbar__group">
-                <span class="filterbar__label">Стоимость до (GBP/год)</span>
-                <input
-                  type="range"
-                  name="maxTuition"
-                  min="0"
-                  max={tuitionMax}
-                  step="1000"
-                  value={tuitionMax}
-                  form="catalog-filters-v2"
-                />
-                <output name="maxTuitionOut" form="catalog-filters-v2" class="muted" style="font-size:0.85rem;">
-                  {tuitionMax.toLocaleString('ru-RU')}
-                </output>
-              </label>
-
-              <label class="filterbar__group">
-                <span class="filterbar__label">IELTS не выше</span>
-                <input type="number" name="maxIelts" min="0" max="9" step="0.5" placeholder="9" form="catalog-filters-v2" />
-              </label>
-
-              <label class="filterbar__group filterbar__group--inline">
-                <input type="checkbox" name="hasScholarship" form="catalog-filters-v2" />
-                <span>Только со стипендией</span>
-              </label>
-
-              <button type="reset" class="btn btn-ghost btn-sm filterbar__reset" form="catalog-filters-v2">
-                Сбросить
-              </button>
-            </div>
+          <div id="catalog-filters-panel" class="catalog-filters-panel" data-open="false">
+            <Filters countries={countries} levels={levels} faculties={faculties} tuitionMax={tuitionMax} />
           </div>
         </div>
 
         <p class="catalog__count">
-          Найдено: <strong id="catalog-count-v2">{universities.length}</strong> университетов
+          Найдено: <strong id="catalog-count">{universities.length}</strong> университетов
         </p>
 
-        <div class="catalog__grid catalog__grid--v2" id="catalog-grid-v2">
+        <div class="catalog__grid catalog__grid--v2" id="catalog-grid">
           {universities.map((data) => (
             <UniversityCardV2 data={data} whatsAppDeepLinkTemplate={whatsAppCardTemplate} />
           ))}
         </div>
 
-        <p class="catalog__empty muted" id="catalog-empty-v2" hidden>
+        <p class="catalog__empty muted" id="catalog-empty" hidden>
           По заданным условиям ничего не нашлось — попробуйте «Сбросить» или напишите нам в WhatsApp,
           подберём вручную.
         </p>
@@ -285,12 +222,12 @@ function whatsAppCardTemplate(slug: string, name: string): string {
   }
   .final-cta__btn {
     display: inline-flex; align-items: center; gap: 10px;
-    padding: 14px 32px; background: #25d366; color: #fff;
+    padding: 14px 32px; background: var(--color-primary); color: #fff;
     border-radius: var(--radius-pill); text-decoration: none;
     font-weight: 700; font-size: 1.05rem;
     transition: background 140ms ease, transform 60ms ease;
   }
-  .final-cta__btn:hover { background: #1da851; }
+  .final-cta__btn:hover { background: var(--color-primary-dark); color: #fff; }
   .final-cta__btn:active { transform: translateY(1px); }
 
   .compare-bar {

@@ -8,14 +8,14 @@ interface FilterState {
   hasScholarship: boolean;
 }
 
-const FORM_ID = 'catalog-filters-v2';
-const GRID_ID = 'catalog-grid-v2';
-const EMPTY_ID = 'catalog-empty-v2';
-const COUNT_ID = 'catalog-count-v2';
-const PANEL_ID = 'catalog-filters-panel-v2';
-const TOGGLE_ID = 'catalog-filters-toggle-v2';
-const BADGE_ID = 'catalog-filters-count-v2';
-const RESULT_ID = 'catalog-filters-result-v2';
+const FORM_ID = 'catalog-filters';
+const GRID_ID = 'catalog-grid';
+const EMPTY_ID = 'catalog-empty';
+const COUNT_ID = 'catalog-count';
+const PANEL_ID = 'catalog-filters-panel';
+const TOGGLE_ID = 'catalog-filters-toggle';
+const BADGE_ID = 'catalog-filters-count';
+const RESULT_ID = 'catalog-filters-result';
 const COMPARE_BAR_ID = 'compare-bar';
 const COMPARE_COUNT_ID = 'compare-count';
 const COMPARE_NAMES_ID = 'compare-names';
