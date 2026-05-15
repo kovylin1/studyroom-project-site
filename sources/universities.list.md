@@ -54,6 +54,12 @@
 | charles-sturt | Charles Sturt University | Australia | Bathurst | aggregator | https://www.csu.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://sydneymelbourne.csu.edu.au/ | Navitas-AU; NSW, regional + Sydney/Melbourne campuses |
 | acap | ACAP University College | Australia | Sydney | aggregator | https://www.acap.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://www.acap.edu.au/ | Navitas-AU; psychology + counselling specialist; Adelaide/Melbourne/Perth/Sydney |
 | sae | SAE University College | Australia | Sydney | aggregator | https://sae.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://sae.edu.au/ | Navitas-AU; creative media — film, audio, animation, games; 6 AU campuses |
+| simon-fraser | Simon Fraser University | Canada | Burnaby | aggregator | https://www.sfu.ca/ | https://www.navitas.com/study/destinations/canada/, https://www.fraseric.ca/ | Navitas-CA; BC, often #1 Maclean's comprehensive — FIC pathway |
+| manitoba | University of Manitoba | Canada | Winnipeg | aggregator | https://umanitoba.ca/ | https://www.navitas.com/study/destinations/canada/, https://www.icmanitoba.ca/ | Navitas-CA; MB, U15 research, oldest in Western Canada (1877) — ICM pathway |
+| toronto-met | Toronto Metropolitan University | Canada | Toronto | aggregator | https://www.torontomu.ca/ | https://www.navitas.com/study/destinations/canada/, https://www.torontomuic.ca/ | Navitas-CA; ON, ex-Ryerson (renamed 2022), downtown Toronto — TMUIC pathway |
+| lethbridge | University of Lethbridge | Canada | Calgary | aggregator | https://www.ulethbridge.ca/ | https://www.navitas.com/study/destinations/canada/, https://www.uicc.ca/ | Navitas-CA; AB, liberal arts + sciences, neuroscience strong — ULIC Calgary pathway |
+| western-ontario | Western University | Canada | London | aggregator | https://www.uwo.ca/ | https://www.navitas.com/study/destinations/canada/, https://www.westernic.ca/ | Navitas-CA; ON, U15, Ivey Business School — WIC pathway. `western-ontario` to disambiguate from `western-sydney` |
+| wilfrid-laurier | Wilfrid Laurier University | Canada | Waterloo | aggregator | https://www.wlu.ca/ | https://www.navitas.com/study/destinations/canada/, https://www.laurieric.ca/ | Navitas-CA; ON, Lazaridis School of Business — WLIC pathway |
 
 ## Stage status
 
