@@ -43,6 +43,17 @@
 | murdoch | Murdoch University | Australia | Perth | official | https://www.murdoch.edu.au/ | https://www.kaplanpathways.com/where-to-study/australian-universities/murdoch-university/ | Western Australia, veterinary + media schools |
 | newcastle-au | University of Newcastle, Australia | Australia | Newcastle | official | https://www.newcastle.edu.au/ | https://www.kaplanpathways.com/where-to-study/australian-universities/university-of-newcastle/ | New South Wales; -au suffix to disambiguate future UK Newcastle |
 | massey | Massey University | New Zealand | Auckland | official | https://www.massey.ac.nz/ | https://www.kaplanpathways.com/where-to-study/new-zealand-universities/massey-university/ | Auckland + Manawatu + Wellington campuses |
+| curtin | Curtin University | Australia | Perth | aggregator | https://www.curtin.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://www.curtincollege.edu.au/ | Navitas-AU; WA, ATN group, mining + engineering |
+| deakin | Deakin University | Australia | Melbourne | aggregator | https://www.deakin.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://www.deakincollege.edu.au/ | Navitas-AU; VIC, Melbourne + Geelong + Warrnambool campuses |
+| edith-cowan | Edith Cowan University | Australia | Perth | aggregator | https://www.ecu.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://www.edithcowancollege.edu.au/ | Navitas-AU; WA, performing arts + nursing focus |
+| griffith | Griffith University | Australia | Brisbane | aggregator | https://www.griffith.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://www.griffithcollege.edu.au/ | Navitas-AU; QLD, Brisbane + Gold Coast |
+| la-trobe | La Trobe University | Australia | Melbourne | aggregator | https://www.latrobe.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://www.latrobecollegeaustralia.edu.au/ | Navitas-AU; VIC, top-10 Australia; Melbourne + Sydney campuses |
+| western-sydney | Western Sydney University | Australia | Sydney | aggregator | https://www.westernsydney.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://internationalcollege.westernsydney.edu.au/ | Navitas-AU; NSW, Parramatta + Sydney City Campus + SIBT |
+| sydney | The University of Sydney | Australia | Sydney | aggregator | https://www.sydney.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://www.taylorssydney.edu.au/ | Navitas-AU; NSW, Go8, sandstone uni — Taylors College pathway |
+| canberra | University of Canberra | Australia | Canberra | aggregator | https://www.canberra.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://www.canberra.edu.au/uc-college | Navitas-AU; ACT, capital — UC College pathway |
+| charles-sturt | Charles Sturt University | Australia | Bathurst | aggregator | https://www.csu.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://sydneymelbourne.csu.edu.au/ | Navitas-AU; NSW, regional + Sydney/Melbourne campuses |
+| acap | ACAP University College | Australia | Sydney | aggregator | https://www.acap.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://www.acap.edu.au/ | Navitas-AU; psychology + counselling specialist; Adelaide/Melbourne/Perth/Sydney |
+| sae | SAE University College | Australia | Sydney | aggregator | https://sae.edu.au/ | https://www.navitas.com/study/destinations/australia/, https://sae.edu.au/ | Navitas-AU; creative media — film, audio, animation, games; 6 AU campuses |
 
 ## Stage status
 

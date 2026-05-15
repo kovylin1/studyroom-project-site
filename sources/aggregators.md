@@ -20,3 +20,24 @@
 - **What it misses or is hard to scrape:** structured per-program tuition (only ranges shown), real-time deadlines (intake dates only)
 - **ToS notes:** robots.txt permissive; data is partner-shared per StudyRoom × Kaplan agreement
 - **Confidence tier in our schema:** `partner` (StudyRoom has contract — Kaplan data trumps third-party sources)
+
+## `navitas-pathways`
+
+- **Base URL:** `https://www.navitas.com/`
+- **Catalog index:** `https://www.navitas.com/study/colleges-campuses/` (flat list of all pathway colleges grouped by destination country)
+- **Per-destination page pattern:** `https://www.navitas.com/study/destinations/{country}/` (curated partner shortlist per country — AU, CA, DE, ID, NL, NZ, SG, LK, AE, UK, USA)
+- **University-mapping note:** Navitas runs a *pathway college* per partner university on its own brand domain (e.g. `curtincollege.edu.au`, `deakincollege.edu.au`, `griffithcollege.edu.au`). We list the **parent university** (Curtin, Deakin, …) in `universities.list.md` and use the pathway-college URL as the `aggregator_url`.
+- **Rendering:** static HTML for college landing/intro/fees pages. No SPA observed across the AU pathway colleges sampled (2026-05-15).
+- **Data spread across sub-pages (typical per pathway college):**
+  - `/` → name, hero image, intro paragraph, partner university name + crest
+  - `/courses/` or `/programs/` → degree list with Foundation/Diploma/Bachelor pathways
+  - `/fees/` → tuition (AUD per year on AU colleges, CAD on CA, EUR on DE, etc.)
+  - `/entry-requirements/` → IELTS/PTE/TOEFL minima per pathway
+  - `/accommodation/` → 1-2 partnered halls or homestay options
+- **Auth required:** no
+- **Rate limits / anti-bot:** none observed in initial 10-request sample
+- **What it provides reliably:** parent uni name, country/city, hero photo, English-language intro prose, pathway program list with intakes, baseline IELTS, Navitas Loyalty Bursary scholarship
+- **What it misses or is hard to scrape:** per-degree tuition for the parent university (Navitas only publishes pathway-college fees), real-time intake deadlines (rolling intakes only)
+- **ToS notes:** robots.txt permissive; partner-college sites carry standard "all rights reserved" — same posture as Kaplan
+- **Confidence tier in our schema:** `aggregator` (Navitas pathway data trumps third-party, but for parent-uni degrees we should cross-check the official uni site)
+
