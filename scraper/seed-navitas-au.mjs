@@ -1,54 +1,28 @@
-// One-shot seeder for Navitas-AU partner universities (v2: full program catalog).
+// Navitas-AU seeder (v3: comprehensive program catalog).
 // Writes site/src/content/universities/{slug}.json for 11 Australian
 // parent universities listed in sources/universities.list.md under
-// `navitas-pathways`. Each uni now ships ~25-35 programs across all
-// major faculties: Foundation Studies + 5-10 Diplomas (pathway college,
-// real published Navitas streams) + 10-20 Bachelor's degrees from the
-// parent uni catalog + 3-8 Master's degrees. Tuition is set by per-uni
+// `navitas-pathways`. Each uni ships a comprehensive program list across
+// all major faculties: Foundation Studies + multiple Diplomas (pathway college,
+// real published Navitas streams) + extensive Bachelor's catalog from the
+// parent uni + comprehensive Master's offering. Tuition is set by per-uni
 // per-faculty fee bands (AUD/year, from published 2024-25 fee schedules).
+//
+// Each uni also ships: extra named scholarships (extraScholarships array),
+// multiple accommodation options (on-campus halls, partner residences,
+// homestay, private rentals), and multiple campuses where the parent uni
+// operates more than one site.
 //
 // Run: node scraper/seed-navitas-au.mjs
 //
-// Idempotent: overwrites the JSON file every run.
+// Idempotent: overwrites the JSON files every run.
 
-import { writeFile, mkdir } from 'node:fs/promises';
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { createHash } from 'node:crypto';
+import { writeAll, isoIntake, NAVITAS_BURSARY_AUD } from './lib/navitas-seeder.mjs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const CONTENT_DIR = resolve(__dirname, '../site/src/content/universities');
+const INTAKE_FEB = isoIntake(2, 15);
+const INTAKE_JUL = isoIntake(7, 1);
 
-const TODAY = new Date().toISOString();
-const NEXT_YEAR = new Date().getUTCFullYear() + 1;
-const INTAKE_FEB = `${NEXT_YEAR}-02-15T00:00:00.000Z`;
-const INTAKE_JUL = `${NEXT_YEAR}-07-01T00:00:00.000Z`;
-const INTAKE_NOV = `${NEXT_YEAR}-11-01T00:00:00.000Z`;
-
-const STANDARD_INTAKES = ['February', 'July', 'November'];
 const DEFAULT_INTAKES = ['February', 'July'];
 
-function slugify(s) {
-  return s
-    .toLowerCase()
-    .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/['‘’]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
-
-/**
- * Per-uni data — fee bands in AUD/year, descriptions, faculties.
- *
- * Each faculty maps to a list of programs. Each program is a tuple:
- *   [title, level, durationYears, feeBandKey?, intakes?]
- * - title: display name
- * - level: 'foundation' | 'bachelor' | 'master' | 'phd'
- * - durationYears: number
- * - feeBandKey: optional override; defaults to faculty key
- * - intakes: optional array; defaults to ['February', 'July']
- */
 const UNIS = [
   {
     slug: 'curtin',
@@ -75,10 +49,17 @@ const UNIS = [
       'bachelor-arts': 33500,
       'bachelor-science': 38900,
       'bachelor-mining': 47900,
+      'bachelor-education': 33500,
+      'bachelor-law': 38900,
+      'bachelor-design': 36500,
+      'bachelor-built-env': 38900,
       'master-business': 36300,
       'master-engineering': 43500,
       'master-health': 40900,
       'master-it': 40700,
+      'master-arts': 34500,
+      'master-education': 35500,
+      'master-law': 41500,
     },
     paragraphs: [
       "Curtin University is Western Australia's largest and most diverse university, with its main campus in Bentley, Perth. Founded in 1966, Curtin sits in the top 1% of universities worldwide (ARWU 2024) and ranks #1 in Australia for Mineral & Mining Engineering (QS 2024).",
@@ -102,27 +83,45 @@ const UNIS = [
       'Основан в 1966',
       'Член группы ATN (Australian Technology Network)',
     ],
+    extraScholarships: [
+      { name: 'Curtin International Scholarship', nameRu: 'Curtin International Scholarship', amount: 'до 25% скидки от tuition', description: 'Merit-based award for new international students entering Curtin Bachelor or Master degrees.', descriptionRu: 'Скидка до 25% от стоимости обучения для новых международных студентов на бакалавриате или магистратуре.', url: 'https://scholarships.curtin.edu.au/' },
+      { name: 'Curtin Excellence Scholarship', nameRu: 'Curtin Excellence Scholarship', amount: 'до AU$10,000', description: 'For high-achieving international students with exceptional academic records.', descriptionRu: 'Для международных студентов с выдающимися академическими результатами.', url: 'https://scholarships.curtin.edu.au/' },
+      { name: 'Curtin Merit Scholarship (Asia)', nameRu: 'Curtin Merit Scholarship (Азия)', amount: 'до AU$6,000', description: 'Regional award for students from selected Asian countries including Kazakhstan.', descriptionRu: 'Региональная скидка для студентов из стран Азии, включая Казахстан.', url: 'https://scholarships.curtin.edu.au/' },
+      { name: 'Vice-Chancellor International Excellence Scholarship', nameRu: 'Vice-Chancellor International Excellence Scholarship', amount: 'до 50% от tuition', description: 'Flagship merit award for outstanding international applicants.', descriptionRu: 'Флагманская стипендия за выдающиеся достижения — до 50% от стоимости обучения.', url: 'https://scholarships.curtin.edu.au/' },
+    ],
     accommodation: [
-      { name: 'Curtin University Campus Accommodation', price: 'от AU$285/нед', text: "St Catherine's, Vickery House, Erica Underwood House — на территории кампуса Бентли, в 5 минутах ходьбы от Curtin College." },
+      { name: 'Erica Underwood House (on-campus)', price: 'от AU$285/нед', text: 'Одно из старейших on-campus общежитий Curtin — комнаты, общая кухня, в 5 минутах от Curtin College.' },
+      { name: 'Vickery House (on-campus)', price: 'от AU$310/нед', text: 'Современная резиденция на территории Bentley campus — одно- и двухместные комнаты, общий лаундж.' },
+      { name: "St Catherine's College (on-campus)", price: 'от AU$365/нед', text: 'Резиденция полупансиона — комната + 19 приёмов пищи в неделю, академические туторы.' },
+      { name: 'UniLodge Curtin Perth (partner)', price: 'от AU$320/нед', text: 'Партнёрская off-campus резиденция в 10 минутах от кампуса — современные студии и shared apartments.' },
       { name: 'Homestay через Curtin College', price: 'от AU$355/нед', text: 'Проживание в принимающей семье — питание и комната включены.' },
+      { name: 'Private rental (share house)', price: 'от AU$220/нед', text: 'Совместное жильё с другими студентами в Bentley / Victoria Park — поддержка housing officer.' },
     ],
     campuses: [
       { title: 'Bentley Main Campus (Perth)', sub: '116 гектар, 9 km от центра Перта', text: 'Основной кампус, где находится Curtin College и большинство факультетов.' },
-      { title: 'Curtin Singapore + Dubai + Malaysia', sub: 'Международные кампусы', text: 'Curtin — один из немногих австралийских университетов с полноценными зарубежными кампусами.' },
+      { title: 'Curtin Perth City Campus', sub: 'В центре Перта (CBD)', text: 'Postgraduate-программы и executive MBA — современное здание в деловом центре.' },
+      { title: 'Curtin Kalgoorlie (WA School of Mines)', sub: '600 км от Перта', text: 'Уникальный кампус — одна из лучших школ горного дела в мире, доступ к настоящим шахтам.' },
+      { title: 'Curtin Singapore', sub: 'Международный кампус', text: 'Бакалавриат и магистратура по бизнесу, IT, инженерии — те же дипломы, что в Перте.' },
+      { title: 'Curtin Dubai + Malaysia + Mauritius', sub: 'Международные кампусы', text: 'Curtin — один из немногих австралийских университетов с полноценными зарубежными кампусами.' },
     ],
     pathwayPrograms: {
       'Foundation Studies': [
-        ['Foundation Studies — pathway to Curtin Bachelor', 'foundation', 1, 'foundation'],
+        ['Foundation Studies — Standard (pathway to Curtin Bachelor)', 'foundation', 1, 'foundation'],
+        ['Foundation Studies — Extended', 'foundation', 1.5, 'foundation'],
+        ['Foundation Studies — Intensive', 'foundation', 0.75, 'foundation'],
       ],
       'Business and Commerce': [
+        ['Diploma of Commerce — Stage 1', 'foundation', 0.83, 'diploma-business'],
         ['Diploma of Commerce — Stage 2', 'foundation', 0.75, 'diploma-business'],
         ['Diploma of Commerce (Extended)', 'foundation', 1, 'diploma-business'],
       ],
       'Built Environment': [
         ['Diploma of Built Environment — Stage 2', 'foundation', 0.75, 'diploma-built-env'],
+        ['Diploma of Built Environment (Extended)', 'foundation', 1, 'diploma-built-env'],
       ],
       'Computing and IT': [
         ['Diploma of Computing and Networking — Stage 2', 'foundation', 0.75, 'diploma-it'],
+        ['Diploma of Computing (Extended)', 'foundation', 1, 'diploma-it'],
       ],
       'Engineering': [
         ['Diploma of Engineering — Stage 2', 'foundation', 0.75, 'diploma-engineering'],
@@ -130,10 +129,12 @@ const UNIS = [
       ],
       'Health Sciences': [
         ['Diploma of Health Sciences — Stage 2', 'foundation', 0.75, 'diploma-health'],
+        ['Diploma of Health Sciences (Extended)', 'foundation', 1, 'diploma-health'],
       ],
       'Arts and Communication': [
         ['Diploma of Mass Communication — Stage 2', 'foundation', 0.75, 'diploma-arts'],
         ['Diploma of Arts — Stage 2', 'foundation', 0.75, 'diploma-arts'],
+        ['Diploma of Creative Industries', 'foundation', 0.75, 'diploma-arts'],
       ],
       'Science': [
         ['Diploma of Science — Stage 2', 'foundation', 0.75, 'diploma-science'],
@@ -142,10 +143,16 @@ const UNIS = [
     },
     bachelorPrograms: {
       'Business and Commerce': [
-        ['Bachelor of Commerce', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Accounting)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Finance)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Economics)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Banking)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Business Law)', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Business Administration', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Marketing', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Accounting', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Logistics and Supply Chain Management)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Human Resource Management)', 'bachelor', 3, 'bachelor-business'],
       ],
       'Engineering': [
         ['Bachelor of Engineering (Civil and Construction)', 'bachelor', 4, 'bachelor-engineering'],
@@ -153,44 +160,105 @@ const UNIS = [
         ['Bachelor of Engineering (Mining)', 'bachelor', 4, 'bachelor-mining'],
         ['Bachelor of Engineering (Electrical and Electronic)', 'bachelor', 4, 'bachelor-engineering'],
         ['Bachelor of Engineering (Chemical)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Petroleum)', 'bachelor', 4, 'bachelor-mining'],
+        ['Bachelor of Engineering (Metallurgical)', 'bachelor', 4, 'bachelor-mining'],
+        ['Bachelor of Engineering (Mechatronic)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Software)', 'bachelor', 4, 'bachelor-engineering'],
       ],
       'Computing and IT': [
         ['Bachelor of Information Technology', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Computer Science', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Cyber Security', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Computing (Computer Science)', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Computing (Software Engineering)', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Computing (Data Science)', 'bachelor', 3, 'bachelor-it'],
       ],
       'Health Sciences': [
         ['Bachelor of Nursing', 'bachelor', 3, 'bachelor-nursing'],
         ['Bachelor of Health Sciences', 'bachelor', 3, 'bachelor-health'],
-        ['Bachelor of Pharmacy', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Pharmacy (Honours)', 'bachelor', 4, 'bachelor-health'],
         ['Bachelor of Physiotherapy', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Occupational Therapy', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Speech Pathology', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Medical Imaging Science', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Public Health', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Health Sciences (Health Promotion)', 'bachelor', 3, 'bachelor-health'],
       ],
       'Arts and Communication': [
         ['Bachelor of Arts (Mass Communication)', 'bachelor', 3, 'bachelor-arts'],
-        ['Bachelor of Design (Interior Architecture)', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Arts (Journalism)', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Arts (Screen Arts)', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Arts (Professional Writing and Publishing)', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Arts (Anthropology and Sociology)', 'bachelor', 3, 'bachelor-arts'],
+      ],
+      'Design and Built Environment': [
+        ['Bachelor of Design (Interior Architecture)', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Design (Graphic Design)', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Design (Photography)', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Architecture', 'bachelor', 3, 'bachelor-built-env'],
+        ['Bachelor of Construction Management (Honours)', 'bachelor', 4, 'bachelor-built-env'],
+        ['Bachelor of Applied Science (Urban and Regional Planning)', 'bachelor', 4, 'bachelor-built-env'],
+        ['Bachelor of Property and Real Estate', 'bachelor', 3, 'bachelor-built-env'],
       ],
       'Science': [
         ['Bachelor of Science (Computer Science)', 'bachelor', 3, 'bachelor-science'],
         ['Bachelor of Science (Geology)', 'bachelor', 3, 'bachelor-science'],
         ['Bachelor of Science (Actuarial Science)', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Science (Mathematics)', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Science (Physics)', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Science (Chemistry)', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Science (Molecular Genetics and Biotechnology)', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Science (Environmental Biology)', 'bachelor', 3, 'bachelor-science'],
+      ],
+      'Education': [
+        ['Bachelor of Education (Primary)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Education (Secondary)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Education (Early Childhood)', 'bachelor', 4, 'bachelor-education'],
+      ],
+      'Law': [
+        ['Bachelor of Laws (LLB)', 'bachelor', 4, 'bachelor-law'],
+        ['Bachelor of Commerce / Bachelor of Laws (double)', 'bachelor', 5, 'bachelor-law'],
       ],
     },
     masterPrograms: {
       'Business and Commerce': [
         ['Master of Business Administration', 'master', 1.5, 'master-business'],
-        ['Master of Commerce', 'master', 2, 'master-business'],
+        ['Master of Commerce (Professional Accounting)', 'master', 2, 'master-business'],
+        ['Master of Commerce (Marketing)', 'master', 2, 'master-business'],
+        ['Master of Commerce (Finance)', 'master', 2, 'master-business'],
         ['Master of Finance', 'master', 2, 'master-business'],
+        ['Master of Human Resource Management', 'master', 2, 'master-business'],
+        ['Master of International Business', 'master', 2, 'master-business'],
       ],
       'Engineering': [
         ['Master of Engineering (Civil)', 'master', 2, 'master-engineering'],
+        ['Master of Engineering (Mining)', 'master', 2, 'master-engineering'],
+        ['Master of Engineering (Petroleum)', 'master', 2, 'master-engineering'],
         ['Master of Project Management', 'master', 2, 'master-engineering'],
+        ['Master of Engineering Management', 'master', 1.5, 'master-engineering'],
       ],
       'Computing and IT': [
         ['Master of Information Technology', 'master', 2, 'master-it'],
         ['Master of Cyber Security', 'master', 2, 'master-it'],
+        ['Master of Predictive Analytics', 'master', 2, 'master-it'],
+        ['Master of Science (Geospatial Intelligence)', 'master', 2, 'master-it'],
       ],
       'Health Sciences': [
         ['Master of Public Health', 'master', 2, 'master-health'],
+        ['Master of Pharmacy', 'master', 2, 'master-health'],
+        ['Master of Nursing Practice', 'master', 2, 'master-health'],
+        ['Master of Clinical Research', 'master', 2, 'master-health'],
+      ],
+      'Arts and Communication': [
+        ['Master of Arts (Strategic Communication)', 'master', 1.5, 'master-arts'],
+        ['Master of Arts (International Relations)', 'master', 1.5, 'master-arts'],
+      ],
+      'Education': [
+        ['Master of Education', 'master', 1.5, 'master-education'],
+        ['Master of Teaching (Primary)', 'master', 2, 'master-education'],
+      ],
+      'Law': [
+        ['Master of Laws (LLM)', 'master', 1, 'master-law'],
       ],
     },
   },
@@ -219,10 +287,17 @@ const UNIS = [
       'bachelor-arts': 34500,
       'bachelor-science': 40400,
       'bachelor-design': 38500,
+      'bachelor-architecture': 41500,
+      'bachelor-law': 38500,
+      'bachelor-education': 34500,
+      'bachelor-sport': 41200,
       'master-business': 38500,
       'master-engineering': 44500,
       'master-health': 42200,
       'master-it': 42500,
+      'master-arts': 35500,
+      'master-education': 35500,
+      'master-law': 42500,
     },
     paragraphs: [
       "Deakin University is one of Australia's top young universities, with campuses in Melbourne (Burwood), Geelong Waurn Ponds, Geelong Waterfront, and Warrnambool. Founded in 1974, Deakin is ranked in the top 1% globally (ARWU 2024) and #1 in Victoria for student experience (QILT 2024).",
@@ -246,21 +321,36 @@ const UNIS = [
       'Основан в 1974',
       '5 звёзд QS Stars 2024 за преподавание',
     ],
+    extraScholarships: [
+      { name: "Deakin Vice-Chancellor's International Scholarship", nameRu: "Deakin Vice-Chancellor's International Scholarship", amount: '100% от tuition', description: 'Flagship full-tuition scholarship for exceptional international applicants.', descriptionRu: 'Флагманская стипендия — 100% оплаты обучения для лучших международных абитуриентов.', url: 'https://www.deakin.edu.au/study/fees-and-scholarships/scholarships' },
+      { name: 'Deakin International Scholarship', nameRu: 'Deakin International Scholarship', amount: 'до 25% скидки от tuition', description: 'Merit-based award for new international Bachelor and Master students.', descriptionRu: 'Скидка до 25% от стоимости обучения для новых международных студентов.', url: 'https://www.deakin.edu.au/study/fees-and-scholarships/scholarships' },
+      { name: 'Deakin STEM Scholarship', nameRu: 'Deakin STEM Scholarship', amount: '20% скидки от tuition', description: 'For international students entering Deakin STEM (Science, Engineering, IT) degrees.', descriptionRu: 'Для международных студентов на программах STEM (наука, инженерия, IT).', url: 'https://www.deakin.edu.au/study/fees-and-scholarships/scholarships' },
+      { name: 'Deakin Asia Scholarship', nameRu: 'Deakin Asia Scholarship', amount: 'AU$5,000 — AU$15,000', description: 'Regional award for students from selected Asian countries.', descriptionRu: 'Региональная скидка для студентов из стран Азии.', url: 'https://www.deakin.edu.au/study/fees-and-scholarships/scholarships' },
+    ],
     accommodation: [
-      { name: 'Deakin Residential Services (Burwood)', price: 'от AU$310/нед', text: 'Студенческие общежития на кампусе Burwood в 14 км от центра Мельбурна — одно- и двухместные комнаты, общая кухня, 24/7 поддержка.' },
+      { name: 'Deakin Residential Services — Burwood', price: 'от AU$310/нед', text: 'Студенческие общежития на кампусе Burwood в 14 км от центра Мельбурна — одно- и двухместные комнаты, общая кухня, 24/7 поддержка.' },
+      { name: 'Deakin Residential Services — Geelong Waurn Ponds', price: 'от AU$285/нед', text: 'On-campus резиденции в Geelong — комнаты, общая кухня, спортзал на территории.' },
+      { name: 'UniLodge @ Deakin (partner)', price: 'от AU$330/нед', text: 'Партнёрская резиденция в Burwood — современные студии и shared apartments.' },
+      { name: 'Scape Melbourne Central (partner)', price: 'от AU$385/нед', text: 'Для студентов, выбирающих жизнь в центре Мельбурна — современная резиденция в CBD.' },
       { name: 'Homestay через Deakin College', price: 'от AU$345/нед', text: 'Австралийская принимающая семья, питание и комната включены.' },
+      { name: 'Private rental (share house)', price: 'от AU$220/нед', text: 'Совместное жильё в Burwood / Box Hill — поддержка housing officer.' },
     ],
     campuses: [
       { title: 'Melbourne Burwood Campus', sub: 'Главный кампус — 14 км от центра Мельбурна', text: 'Здесь учится большинство международных студентов. Deakin College — на этом же кампусе.' },
-      { title: 'Geelong Waurn Ponds + Waterfront', sub: '70 км от Мельбурна', text: 'Инженерия, медицина, морские науки, исследовательские центры.' },
+      { title: 'Geelong Waurn Ponds Campus', sub: '70 км от Мельбурна', text: 'Инженерия, медицина, морские науки, исследовательские центры. Современный кампус с жилыми резиденциями.' },
+      { title: 'Geelong Waterfront Campus', sub: 'В центре Geelong, у залива', text: 'Образование, искусство, бизнес — исторические здания и современные корпуса на берегу.' },
+      { title: 'Warrnambool Campus', sub: '260 км от Мельбурна, на побережье', text: 'Малый региональный кампус — nursing, social work, экологические науки.' },
+      { title: 'Deakin Downtown (CBD)', sub: 'В деловом центре Мельбурна', text: 'Executive MBA и postgraduate-программы — небоскрёб 727 Collins Street.' },
     ],
     pathwayPrograms: {
       'Foundation Studies': [
         ['Foundation Program — pathway to Deakin Bachelor', 'foundation', 1, 'foundation'],
+        ['Foundation Program — Extended', 'foundation', 1.5, 'foundation'],
       ],
       'Business and Commerce': [
         ['Diploma of Business', 'foundation', 0.67, 'diploma-business'],
         ['Diploma of Commerce', 'foundation', 0.67, 'diploma-business'],
+        ['Diploma of Management', 'foundation', 0.67, 'diploma-business'],
       ],
       'Engineering': [
         ['Diploma of Engineering', 'foundation', 1, 'diploma-engineering'],
@@ -277,6 +367,7 @@ const UNIS = [
       ],
       'Design and Architecture': [
         ['Diploma of Design', 'foundation', 0.67, 'diploma-design'],
+        ['Diploma of Architecture', 'foundation', 1, 'diploma-design'],
       ],
       'Science': [
         ['Diploma of Science', 'foundation', 1, 'diploma-science'],
@@ -288,56 +379,109 @@ const UNIS = [
         ['Bachelor of Business', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Marketing', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of International Business', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business (Sport Management)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business (Event Management)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Property and Real Estate', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce / Bachelor of Laws (double)', 'bachelor', 5, 'bachelor-law'],
       ],
       'Engineering': [
-        ['Bachelor of Engineering (Civil)', 'bachelor', 4, 'bachelor-engineering'],
-        ['Bachelor of Engineering (Mechanical)', 'bachelor', 4, 'bachelor-engineering'],
-        ['Bachelor of Engineering (Mechatronics)', 'bachelor', 4, 'bachelor-engineering'],
-        ['Bachelor of Engineering (Software)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Civil) (Honours)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Mechanical) (Honours)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Mechatronics) (Honours)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Software) (Honours)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Electrical and Electronics) (Honours)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Environmental) (Honours)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Construction Management (Honours)', 'bachelor', 4, 'bachelor-engineering'],
       ],
       'Computing and IT': [
         ['Bachelor of Information Technology', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Computer Science', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Cyber Security', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Data Science', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Software Engineering', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Information Systems', 'bachelor', 3, 'bachelor-it'],
       ],
       'Health Sciences': [
         ['Bachelor of Nursing', 'bachelor', 3, 'bachelor-nursing'],
         ['Bachelor of Health Sciences', 'bachelor', 3, 'bachelor-health'],
         ['Bachelor of Public Health and Health Promotion', 'bachelor', 3, 'bachelor-health'],
-        ['Bachelor of Exercise and Sport Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Exercise and Sport Science', 'bachelor', 3, 'bachelor-sport'],
+        ['Bachelor of Nutrition Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Vision Science / Master of Optometry', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Psychological Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Biomedical Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Social Work', 'bachelor', 4, 'bachelor-arts'],
       ],
       'Communication and Media': [
         ['Bachelor of Communication (Public Relations)', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Communication (Journalism)', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Communication (Advertising)', 'bachelor', 3, 'bachelor-arts'],
         ['Bachelor of Film, Television and Animation', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Creative Arts (Animation)', 'bachelor', 3, 'bachelor-arts'],
       ],
       'Design and Architecture': [
         ['Bachelor of Design (Visual Communication)', 'bachelor', 3, 'bachelor-design'],
-        ['Bachelor of Architectural Studies', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Design (Photography)', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Architectural Studies', 'bachelor', 3, 'bachelor-architecture'],
+        ['Bachelor of Design (Digital Technologies)', 'bachelor', 3, 'bachelor-design'],
       ],
       'Science': [
         ['Bachelor of Science', 'bachelor', 3, 'bachelor-science'],
-        ['Bachelor of Biomedical Science', 'bachelor', 3, 'bachelor-science'],
         ['Bachelor of Environmental Science', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Forensic Science', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Marine Science', 'bachelor', 3, 'bachelor-science'],
+      ],
+      'Education': [
+        ['Bachelor of Education (Primary)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Early Childhood Education', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Education (Secondary)', 'bachelor', 4, 'bachelor-education'],
+      ],
+      'Arts and Humanities': [
+        ['Bachelor of Arts', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Criminology', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of International Studies', 'bachelor', 3, 'bachelor-arts'],
+      ],
+      'Law': [
+        ['Bachelor of Laws (LLB)', 'bachelor', 4, 'bachelor-law'],
       ],
     },
     masterPrograms: {
       'Business and Commerce': [
         ['Master of Business Administration (MBA)', 'master', 1.5, 'master-business'],
+        ['Master of Business Administration (International)', 'master', 2, 'master-business'],
         ['Master of Commerce', 'master', 2, 'master-business'],
         ['Master of International Business', 'master', 1.5, 'master-business'],
+        ['Master of Marketing', 'master', 2, 'master-business'],
+        ['Master of Professional Accounting', 'master', 2, 'master-business'],
+        ['Master of Financial Planning', 'master', 1.5, 'master-business'],
       ],
       'Engineering': [
         ['Master of Engineering', 'master', 2, 'master-engineering'],
         ['Master of Construction Management', 'master', 2, 'master-engineering'],
+        ['Master of Engineering (Civil)', 'master', 2, 'master-engineering'],
       ],
       'Computing and IT': [
         ['Master of Information Technology', 'master', 2, 'master-it'],
         ['Master of Data Science', 'master', 2, 'master-it'],
+        ['Master of Cyber Security', 'master', 2, 'master-it'],
+        ['Master of Applied Artificial Intelligence', 'master', 2, 'master-it'],
       ],
       'Health Sciences': [
         ['Master of Public Health', 'master', 2, 'master-health'],
         ['Master of Nursing Practice', 'master', 2, 'master-health'],
+        ['Master of Health Promotion', 'master', 1.5, 'master-health'],
+        ['Master of Clinical Exercise Physiology', 'master', 2, 'master-health'],
+      ],
+      'Education': [
+        ['Master of Teaching (Primary)', 'master', 2, 'master-education'],
+        ['Master of Education', 'master', 1.5, 'master-education'],
+      ],
+      'Arts and Humanities': [
+        ['Master of Arts (International Relations)', 'master', 1.5, 'master-arts'],
+        ['Master of Communication', 'master', 1.5, 'master-arts'],
+      ],
+      'Law': [
+        ['Master of Laws (LLM)', 'master', 1, 'master-law'],
       ],
     },
   },
@@ -366,10 +510,14 @@ const UNIS = [
       'bachelor-arts': 31500,
       'bachelor-science': 34500,
       'bachelor-performing-arts': 35200,
+      'bachelor-education': 31000,
+      'bachelor-psychology': 33500,
       'master-business': 34800,
       'master-engineering': 38000,
       'master-health': 35500,
       'master-it': 35500,
+      'master-arts': 32500,
+      'master-education': 33500,
     },
     paragraphs: [
       'Edith Cowan University (ECU) is a Perth-based public university known for the Western Australian Academy of Performing Arts (WAAPA) — one of the top performing-arts schools in the southern hemisphere — and for nursing, cyber security, and education programs. ECU is rated 5 stars overall by QS (2024).',
@@ -393,32 +541,48 @@ const UNIS = [
       'Основан в 1991',
       'Топ-100 в мире среди молодых вузов (QS Young University 2024)',
     ],
+    extraScholarships: [
+      { name: 'ECU International Stipend Scholarship', nameRu: 'ECU International Stipend Scholarship', amount: 'AU$5,000 — AU$8,000', description: 'Merit-based award for new international undergraduate and postgraduate students.', descriptionRu: 'Скидка для новых международных студентов на бакалавриате и магистратуре.', url: 'https://www.ecu.edu.au/scholarships' },
+      { name: 'ECU Cyber Security Scholarship', nameRu: 'ECU Cyber Security Scholarship', amount: 'до 30% скидки от tuition', description: 'For international students entering ECU Cyber Security degrees.', descriptionRu: 'Для международных студентов на программах по кибербезопасности ECU.', url: 'https://www.ecu.edu.au/scholarships' },
+      { name: 'WAAPA International Excellence Scholarship', nameRu: 'WAAPA International Excellence Scholarship', amount: 'до 25% скидки от tuition', description: 'Audition-based scholarship for international applicants to WAAPA performing-arts programs.', descriptionRu: 'Стипендия по результатам прослушивания для performing-arts программ WAAPA.', url: 'https://www.ecu.edu.au/scholarships' },
+      { name: 'Vice-Chancellor International Scholarship', nameRu: 'Vice-Chancellor International Scholarship', amount: 'до 50% от tuition', description: 'Flagship merit award for exceptional international applicants.', descriptionRu: 'Флагманская скидка — до 50% от стоимости обучения для лучших абитуриентов.', url: 'https://www.ecu.edu.au/scholarships' },
+    ],
     accommodation: [
-      { name: 'ECU Village (Joondalup)', price: 'от AU$235/нед', text: 'On-campus квартиры — на территории кампуса Joondalup, рядом с ECC.' },
+      { name: 'ECU Village Joondalup (on-campus)', price: 'от AU$235/нед', text: 'On-campus квартиры — на территории кампуса Joondalup, рядом с ECC.' },
+      { name: 'ECU Village Mount Lawley (on-campus)', price: 'от AU$245/нед', text: 'On-campus резиденция рядом с WAAPA — для студентов performing arts.' },
+      { name: 'UniLodge Perth (partner)', price: 'от AU$310/нед', text: 'Партнёрская резиденция в центре Перта — современные студии.' },
+      { name: 'Scape Perth (partner)', price: 'от AU$370/нед', text: 'Премиум-резиденция в Perth CBD — для студентов, выбирающих центр.' },
       { name: 'Homestay через ECC', price: 'от AU$330/нед', text: 'Принимающая семья — питание + комната, идеально для адаптации в Перте.' },
+      { name: 'Private rental (share house)', price: 'от AU$215/нед', text: 'Совместное жильё в Joondalup или Mount Lawley.' },
     ],
     campuses: [
       { title: 'Joondalup Campus (Perth)', sub: 'Главный кампус — 25 км от центра Перта', text: 'Основной кампус, ECC и большинство международных программ.' },
       { title: 'Mount Lawley Campus', sub: '7 км от центра Перта', text: 'WAAPA, education, arts and humanities. Студии, концертные залы.' },
+      { title: 'South West Campus (Bunbury)', sub: '175 км от Перта', text: 'Региональный кампус — nursing, education, business.' },
+      { title: 'ECU City Campus (under construction)', sub: 'Yagan Square, центр Перта', text: 'Новый кампус в центре Перта — открытие 2026, бизнес, IT, креативные индустрии.' },
     ],
     pathwayPrograms: {
       'Foundation Studies': [
         ['Foundation Program — pathway to ECU Bachelor', 'foundation', 1, 'foundation'],
+        ['Foundation Program — Extended', 'foundation', 1.5, 'foundation'],
       ],
       'Business and Commerce': [
         ['Diploma of Commerce', 'foundation', 0.67, 'diploma-business'],
+        ['Diploma of Commerce (Extended)', 'foundation', 1, 'diploma-business'],
       ],
       'Hospitality and Tourism': [
         ['Diploma of Hotel Management', 'foundation', 0.67, 'diploma-hotel'],
       ],
       'Computing and IT': [
         ['Diploma of Science (Computing/IT)', 'foundation', 0.67, 'diploma-it'],
+        ['Diploma of Cyber Security', 'foundation', 1, 'diploma-it'],
       ],
       'Engineering': [
         ['Diploma of Science (Engineering)', 'foundation', 0.67, 'diploma-engineering'],
       ],
       'Health Sciences': [
         ['Diploma of Health Science', 'foundation', 0.67, 'diploma-health'],
+        ['Diploma of Nursing (preparation)', 'foundation', 1, 'diploma-health'],
       ],
       'Communication and Media': [
         ['Diploma of Communications & Creative Industries', 'foundation', 0.67, 'diploma-arts'],
@@ -429,49 +593,96 @@ const UNIS = [
         ['Bachelor of Commerce', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Business', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Marketing', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Accounting)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Finance)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Management)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Human Resource Management)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Sport, Recreation and Event Management', 'bachelor', 3, 'bachelor-business'],
       ],
       'Hospitality and Tourism': [
         ['Bachelor of Hospitality and Tourism Management', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Hospitality Management', 'bachelor', 3, 'bachelor-business'],
       ],
       'Engineering': [
-        ['Bachelor of Engineering (Civil)', 'bachelor', 4, 'bachelor-engineering'],
-        ['Bachelor of Engineering (Electrical)', 'bachelor', 4, 'bachelor-engineering'],
-        ['Bachelor of Engineering (Mechanical)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Civil) (Honours)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Electrical and Renewable Energy) (Honours)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Mechanical) (Honours)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Mechatronics) (Honours)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Motorsports) (Honours)', 'bachelor', 4, 'bachelor-engineering'],
       ],
       'Computing and IT': [
         ['Bachelor of Cyber Security', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Computer Science', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Information Technology', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Science (Cyber Security)', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Technology (Computer Science)', 'bachelor', 3, 'bachelor-it'],
       ],
       'Health Sciences': [
         ['Bachelor of Nursing', 'bachelor', 3, 'bachelor-nursing'],
         ['Bachelor of Health Science', 'bachelor', 3, 'bachelor-health'],
         ['Bachelor of Paramedical Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Occupational Therapy', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Speech Pathology', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Medical Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Exercise and Sports Science', 'bachelor', 3, 'bachelor-health'],
+      ],
+      'Psychology and Social Sciences': [
+        ['Bachelor of Psychology and Criminology', 'bachelor', 3, 'bachelor-psychology'],
+        ['Bachelor of Psychological Science', 'bachelor', 3, 'bachelor-psychology'],
+        ['Bachelor of Social Work', 'bachelor', 4, 'bachelor-arts'],
+        ['Bachelor of Criminology and Justice', 'bachelor', 3, 'bachelor-arts'],
       ],
       'Communication and Media': [
         ['Bachelor of Communications', 'bachelor', 3, 'bachelor-arts'],
         ['Bachelor of Creative Industries', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Design (Game Design and Culture)', 'bachelor', 3, 'bachelor-arts'],
       ],
       'Performing Arts (WAAPA)': [
         ['Bachelor of Music (WAAPA)', 'bachelor', 3, 'bachelor-performing-arts'],
         ['Bachelor of Performing Arts (Music Theatre)', 'bachelor', 3, 'bachelor-performing-arts'],
+        ['Bachelor of Performing Arts (Acting)', 'bachelor', 3, 'bachelor-performing-arts'],
+        ['Bachelor of Performing Arts (Dance)', 'bachelor', 3, 'bachelor-performing-arts'],
+        ['Bachelor of Arts (Arts Management)', 'bachelor', 3, 'bachelor-performing-arts'],
+      ],
+      'Education': [
+        ['Bachelor of Education (Primary)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Education (Secondary)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Education (Early Childhood)', 'bachelor', 4, 'bachelor-education'],
       ],
       'Science': [
         ['Bachelor of Science', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Science (Environmental Management)', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Science (Marine and Freshwater Biology)', 'bachelor', 3, 'bachelor-science'],
       ],
     },
     masterPrograms: {
       'Business and Commerce': [
         ['Master of Business Administration (MBA)', 'master', 1.5, 'master-business'],
         ['Master of Professional Accounting', 'master', 2, 'master-business'],
+        ['Master of Project Management', 'master', 2, 'master-business'],
+        ['Master of Finance', 'master', 2, 'master-business'],
+        ['Master of Human Resource Management', 'master', 2, 'master-business'],
       ],
       'Computing and IT': [
         ['Master of Cyber Security', 'master', 2, 'master-it'],
         ['Master of Information Technology', 'master', 2, 'master-it'],
+        ['Master of Computer Science', 'master', 2, 'master-it'],
       ],
       'Health Sciences': [
         ['Master of Nursing', 'master', 2, 'master-health'],
         ['Master of Public Health', 'master', 2, 'master-health'],
+        ['Master of Mental Health Nursing', 'master', 2, 'master-health'],
+      ],
+      'Education': [
+        ['Master of Teaching (Primary)', 'master', 2, 'master-education'],
+        ['Master of Teaching (Secondary)', 'master', 2, 'master-education'],
+        ['Master of Education', 'master', 1.5, 'master-education'],
+      ],
+      'Arts and Communication': [
+        ['Master of Communication', 'master', 1.5, 'master-arts'],
+      ],
+      'Engineering': [
+        ['Master of Engineering', 'master', 2, 'master-engineering'],
       ],
     },
   },
@@ -492,6 +703,7 @@ const UNIS = [
       'diploma-arts': 29500,
       'diploma-hotel': 30200,
       'diploma-design': 30500,
+      'diploma-science': 31500,
       'bachelor-business': 34000,
       'bachelor-engineering': 41500,
       'bachelor-health': 38500,
@@ -500,10 +712,17 @@ const UNIS = [
       'bachelor-arts': 32500,
       'bachelor-design': 36500,
       'bachelor-music': 38500,
+      'bachelor-science': 38500,
+      'bachelor-law': 38500,
+      'bachelor-education': 33000,
+      'bachelor-architecture': 39500,
       'master-business': 36000,
       'master-engineering': 43500,
       'master-health': 39500,
       'master-it': 39500,
+      'master-arts': 34000,
+      'master-law': 39500,
+      'master-education': 34500,
     },
     paragraphs: [
       'Griffith University spans 5 campuses across Queensland — Nathan, Mount Gravatt, Logan, Gold Coast, and South Bank (Queensland Conservatorium). Founded in 1971, Griffith is in the top 2% of universities worldwide (Times Higher Education 2024) and #1 in Queensland for graduate employment.',
@@ -527,17 +746,31 @@ const UNIS = [
       'Основан в 1971',
       '5 звёзд QS 2024 в 8 предметных областях',
     ],
+    extraScholarships: [
+      { name: 'Griffith International Student Academic Excellence Scholarship', nameRu: 'Griffith International Student Academic Excellence Scholarship', amount: '50% скидки от tuition', description: 'Flagship merit award for outstanding international Bachelor and Master applicants.', descriptionRu: 'Флагманская скидка 50% от стоимости обучения для лучших международных абитуриентов.', url: 'https://www.griffith.edu.au/international/scholarships' },
+      { name: 'Griffith International Student Scholarship', nameRu: 'Griffith International Student Scholarship', amount: '20% скидки от tuition', description: 'Merit-based award for new international undergraduate and postgraduate students.', descriptionRu: 'Скидка 20% для новых международных студентов.', url: 'https://www.griffith.edu.au/international/scholarships' },
+      { name: 'Griffith Remarkable Scholarship', nameRu: 'Griffith Remarkable Scholarship', amount: '25% скидки от tuition', description: 'For students from selected countries including Kazakhstan and Central Asia.', descriptionRu: 'Скидка 25% для студентов из отдельных стран, включая Казахстан и Центральную Азию.', url: 'https://www.griffith.edu.au/international/scholarships' },
+      { name: 'Sir Samuel Griffith Scholarship', nameRu: 'Sir Samuel Griffith Scholarship', amount: 'до AU$15,000', description: 'Endowed scholarship for academically outstanding international students.', descriptionRu: 'Именная стипендия для академически выдающихся международных студентов.', url: 'https://www.griffith.edu.au/international/scholarships' },
+    ],
     accommodation: [
-      { name: 'Griffith Residential Services', price: 'от AU$220/нед', text: 'On-campus общежития на Nathan, Gold Coast и Mount Gravatt — комнаты с общей кухней, поддержка resident advisors.' },
+      { name: 'Griffith Residential Services — Nathan', price: 'от AU$220/нед', text: 'On-campus общежития на Nathan campus — комнаты с общей кухней, эукалиптовый лес на территории.' },
+      { name: 'Griffith Residential Services — Gold Coast', price: 'от AU$245/нед', text: 'On-campus резиденции на Gold Coast — современные апартаменты, в 1 км от пляжа.' },
+      { name: 'Griffith University Village (Mount Gravatt)', price: 'от AU$235/нед', text: 'On-campus жильё рядом с Griffith College — комнаты с общей кухней.' },
+      { name: 'Iglu Brisbane (partner)', price: 'от AU$320/нед', text: 'Партнёрская резиденция в Brisbane CBD — современные студии и shared apartments.' },
       { name: 'Homestay через Griffith College', price: 'от AU$340/нед', text: 'Австралийская семья — питание и комната включены, поддержка с адаптацией в Брисбене или на Gold Coast.' },
+      { name: 'Private rental (share house)', price: 'от AU$210/нед', text: 'Совместное жильё в Mt Gravatt / Southport — поддержка housing officer.' },
     ],
     campuses: [
       { title: 'Nathan Campus (Brisbane)', sub: 'Главный кампус — 12 км от центра Брисбена', text: 'Эукалиптовый лес на территории — единственный в Австралии. Бизнес, инженерия, IT.' },
       { title: 'Gold Coast Campus', sub: 'Southport — 1 km от пляжа', text: 'Hotel management, health sciences, медицина. Griffith College также есть здесь.' },
+      { title: 'Mount Gravatt Campus (Brisbane)', sub: '14 км от центра Брисбена', text: 'Главный кампус Griffith College, education, social work, психология.' },
+      { title: 'South Bank Campus (Queensland Conservatorium)', sub: 'В культурном центре Брисбена', text: 'Queensland Conservatorium of Music, Queensland College of Art, film school.' },
+      { title: 'Logan Campus', sub: '30 км от центра Брисбена', text: 'Allied health, nursing, social work — кампус с фокусом на community health.' },
     ],
     pathwayPrograms: {
       'Foundation Studies': [
         ['Foundation Program — pathway to Griffith Bachelor', 'foundation', 1, 'foundation'],
+        ['Foundation Program — Extended', 'foundation', 1.5, 'foundation'],
       ],
       'Business and Commerce': [
         ['Diploma of Commerce', 'foundation', 0.67, 'diploma-business'],
@@ -545,9 +778,11 @@ const UNIS = [
       ],
       'Hospitality and Tourism': [
         ['Diploma of Hotel Management', 'foundation', 0.67, 'diploma-hotel'],
+        ['Diploma of Tourism Management', 'foundation', 0.67, 'diploma-hotel'],
       ],
       'Engineering': [
         ['Diploma of Engineering', 'foundation', 0.83, 'diploma-engineering'],
+        ['Diploma of Engineering (Extended)', 'foundation', 1, 'diploma-engineering'],
       ],
       'Computing and IT': [
         ['Diploma of Information Technology', 'foundation', 0.67, 'diploma-it'],
@@ -560,6 +795,10 @@ const UNIS = [
       ],
       'Arts and Communication': [
         ['Diploma of Arts and Communication', 'foundation', 0.67, 'diploma-arts'],
+        ['Diploma of Criminology and Criminal Justice', 'foundation', 0.67, 'diploma-arts'],
+      ],
+      'Science': [
+        ['Diploma of Science', 'foundation', 0.83, 'diploma-science'],
       ],
     },
     bachelorPrograms: {
@@ -567,52 +806,114 @@ const UNIS = [
         ['Bachelor of Commerce', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Business', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of International Business', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Marketing', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Government and International Relations', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Asian Studies', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business / Bachelor of Laws (double)', 'bachelor', 5, 'bachelor-law'],
       ],
       'Hospitality and Tourism': [
         ['Bachelor of International Tourism and Hotel Management', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business (Event Management)', 'bachelor', 3, 'bachelor-business'],
       ],
       'Engineering': [
         ['Bachelor of Engineering (Civil) Honours', 'bachelor', 4, 'bachelor-engineering'],
         ['Bachelor of Engineering (Mechanical) Honours', 'bachelor', 4, 'bachelor-engineering'],
         ['Bachelor of Engineering (Electrical and Electronic) Honours', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Software) Honours', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Civil and Architectural) Honours', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Environmental) Honours', 'bachelor', 4, 'bachelor-engineering'],
       ],
       'Computing and IT': [
         ['Bachelor of Information Technology', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Computer Science', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Cyber Security', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Data Science', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Information Technology (Applied AI)', 'bachelor', 3, 'bachelor-it'],
       ],
       'Health Sciences': [
         ['Bachelor of Nursing', 'bachelor', 3, 'bachelor-nursing'],
         ['Bachelor of Health Sciences', 'bachelor', 3, 'bachelor-health'],
         ['Bachelor of Public Health', 'bachelor', 3, 'bachelor-health'],
         ['Bachelor of Pharmacy Honours', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Physiotherapy Honours', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Exercise Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Dental Health Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Nutrition and Dietetics', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Medical Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Paramedicine', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Midwifery', 'bachelor', 3, 'bachelor-health'],
       ],
       'Design and Architecture': [
-        ['Bachelor of Architectural Design', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Architectural Design', 'bachelor', 3, 'bachelor-architecture'],
         ['Bachelor of Industrial Design', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Design (Animation)', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Design (Interaction Design)', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Visual Arts (Fine Art)', 'bachelor', 3, 'bachelor-design'],
       ],
-      'Performing Arts': [
-        ['Bachelor of Music (Queensland Conservatorium)', 'bachelor', 3, 'bachelor-music'],
+      'Performing Arts (Queensland Conservatorium)': [
+        ['Bachelor of Music', 'bachelor', 3, 'bachelor-music'],
+        ['Bachelor of Music (Popular Music)', 'bachelor', 3, 'bachelor-music'],
+        ['Bachelor of Musical Theatre', 'bachelor', 3, 'bachelor-music'],
+        ['Bachelor of Acting', 'bachelor', 3, 'bachelor-music'],
       ],
       'Arts and Communication': [
         ['Bachelor of Communication and Journalism', 'bachelor', 3, 'bachelor-arts'],
         ['Bachelor of Criminology and Criminal Justice', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Arts', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Social Science', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Social Work', 'bachelor', 4, 'bachelor-arts'],
+        ['Bachelor of Psychological Science', 'bachelor', 3, 'bachelor-arts'],
+      ],
+      'Education': [
+        ['Bachelor of Education (Primary)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Early Childhood Education', 'bachelor', 4, 'bachelor-education'],
+      ],
+      'Law': [
+        ['Bachelor of Laws (LLB)', 'bachelor', 4, 'bachelor-law'],
+        ['Bachelor of Criminology / Bachelor of Laws (double)', 'bachelor', 5, 'bachelor-law'],
+      ],
+      'Science': [
+        ['Bachelor of Science', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Environmental Science', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Marine Science', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Forensic Science', 'bachelor', 3, 'bachelor-science'],
       ],
     },
     masterPrograms: {
       'Business and Commerce': [
         ['Master of Business Administration (MBA)', 'master', 1.5, 'master-business'],
         ['Master of International Business', 'master', 2, 'master-business'],
+        ['Master of Marketing', 'master', 2, 'master-business'],
+        ['Master of Professional Accounting', 'master', 2, 'master-business'],
+        ['Master of Human Resource Management', 'master', 2, 'master-business'],
+        ['Master of Finance', 'master', 1.5, 'master-business'],
       ],
       'Engineering': [
         ['Master of Engineering Project Management', 'master', 1.5, 'master-engineering'],
+        ['Master of Engineering (Electrical)', 'master', 2, 'master-engineering'],
+        ['Master of Engineering (Civil)', 'master', 2, 'master-engineering'],
       ],
       'Computing and IT': [
         ['Master of Information Technology', 'master', 2, 'master-it'],
         ['Master of Cyber Security', 'master', 2, 'master-it'],
+        ['Master of Data Science', 'master', 2, 'master-it'],
       ],
       'Health Sciences': [
         ['Master of Public Health', 'master', 2, 'master-health'],
+        ['Master of Nursing', 'master', 2, 'master-health'],
+        ['Master of Speech Pathology', 'master', 2, 'master-health'],
+        ['Master of Occupational Therapy', 'master', 2, 'master-health'],
+      ],
+      'Education': [
+        ['Master of Teaching (Primary)', 'master', 2, 'master-education'],
+        ['Master of Education', 'master', 1.5, 'master-education'],
+      ],
+      'Arts and Communication': [
+        ['Master of Arts (International Relations)', 'master', 1.5, 'master-arts'],
+        ['Master of Criminology and Criminal Justice', 'master', 2, 'master-arts'],
+      ],
+      'Law': [
+        ['Master of Laws (LLM)', 'master', 1, 'master-law'],
       ],
     },
   },
@@ -641,10 +942,16 @@ const UNIS = [
       'bachelor-arts': 33500,
       'bachelor-science': 39500,
       'bachelor-biomed': 41500,
+      'bachelor-law': 39500,
+      'bachelor-education': 34000,
+      'bachelor-psychology': 38500,
       'master-business': 37500,
       'master-engineering': 43500,
       'master-health': 40500,
       'master-it': 41500,
+      'master-arts': 34500,
+      'master-education': 35000,
+      'master-law': 41500,
     },
     paragraphs: [
       'La Trobe University is a Melbourne-based university with its main campus in Bundoora and additional campuses in Sydney, Bendigo, Albury-Wodonga, Mildura, and Shepparton. Founded in 1967, La Trobe is in the top 1.6% of universities worldwide (Times Higher Education 2024) and #1 in Victoria for graduate satisfaction (QILT 2024).',
@@ -668,27 +975,43 @@ const UNIS = [
       'Основан в 1967',
       '5 звёзд QS Stars 2024 за преподавание',
     ],
+    extraScholarships: [
+      { name: 'La Trobe Vice-Chancellor Excellence Scholarship', nameRu: 'La Trobe Vice-Chancellor Excellence Scholarship', amount: '25% скидки от tuition', description: 'Merit-based award for outstanding international Bachelor and Master applicants.', descriptionRu: 'Скидка 25% от стоимости обучения для лучших международных абитуриентов.', url: 'https://www.latrobe.edu.au/scholarships' },
+      { name: 'La Trobe International Scholarship', nameRu: 'La Trobe International Scholarship', amount: 'до AU$10,000', description: 'For new international undergraduate and postgraduate students.', descriptionRu: 'Для новых международных студентов на бакалавриате и магистратуре.', url: 'https://www.latrobe.edu.au/scholarships' },
+      { name: 'La Trobe Regional Campus Scholarship', nameRu: 'La Trobe Regional Campus Scholarship', amount: 'AU$5,000', description: 'For international students studying at Bendigo, Albury-Wodonga or other regional campuses.', descriptionRu: 'Для международных студентов на региональных кампусах Bendigo, Albury-Wodonga и др.', url: 'https://www.latrobe.edu.au/scholarships' },
+      { name: 'La Trobe Asia Scholarship', nameRu: 'La Trobe Asia Scholarship', amount: 'до 20% скидки от tuition', description: 'Regional award for students from Central Asia including Kazakhstan.', descriptionRu: 'Региональная скидка для студентов из Центральной Азии, включая Казахстан.', url: 'https://www.latrobe.edu.au/scholarships' },
+    ],
     accommodation: [
-      { name: 'La Trobe Glenn College / Menzies College', price: 'от AU$245/нед', text: 'On-campus резиденции в Bundoora — комнаты с общей кухней, активная студенческая жизнь.' },
+      { name: 'La Trobe Glenn College (on-campus)', price: 'от AU$245/нед', text: 'On-campus резиденция в Bundoora — комнаты с общей кухней, активная студенческая жизнь.' },
+      { name: 'La Trobe Menzies College (on-campus)', price: 'от AU$255/нед', text: 'Историческая резиденция на Bundoora — комнаты, общая столовая, традиции college life.' },
+      { name: 'La Trobe Chisholm College (on-campus)', price: 'от AU$250/нед', text: 'Современная резиденция на Bundoora — апартаменты и shared kitchens.' },
+      { name: 'UniLodge La Trobe (Bundoora)', price: 'от AU$295/нед', text: 'Партнёрская резиденция в Bundoora — современные студии для международных студентов.' },
       { name: 'Homestay через La Trobe College', price: 'от AU$345/нед', text: 'Австралийская семья — питание и комната, поддержка адаптации.' },
+      { name: 'Private rental (share house)', price: 'от AU$215/нед', text: 'Совместное жильё в Bundoora / Preston / Reservoir.' },
     ],
     campuses: [
       { title: 'Melbourne Bundoora Campus', sub: 'Главный кампус — 14 км от центра Мельбурна', text: '235 гектар, 25 000 студентов. La Trobe College — на этом же кампусе.' },
       { title: 'Sydney Campus (CBD)', sub: 'В центре Сиднея', text: 'Современный кампус в деловом центре Сиднея.' },
+      { title: 'Bendigo Campus', sub: '150 км от Мельбурна', text: 'Крупнейший региональный кампус La Trobe — nursing, education, allied health.' },
+      { title: 'Albury-Wodonga Campus', sub: 'На границе Victoria/NSW', text: 'Региональный кампус — business, allied health, экологические науки.' },
+      { title: 'Mildura + Shepparton Campuses', sub: 'Региональные кампусы Victoria', text: 'Малые региональные кампусы — nursing, rural health.' },
     ],
     pathwayPrograms: {
       'Foundation Studies': [
         ['Foundation Studies — pathway to La Trobe Bachelor', 'foundation', 1, 'foundation'],
+        ['Foundation Studies — Extended', 'foundation', 1.5, 'foundation'],
       ],
       'Business and Commerce': [
         ['Diploma of Business', 'foundation', 0.67, 'diploma-business'],
         ['Diploma of Commerce', 'foundation', 0.67, 'diploma-business'],
+        ['Diploma of Accounting and Finance', 'foundation', 0.67, 'diploma-business'],
       ],
       'Engineering': [
         ['Diploma of Engineering', 'foundation', 0.83, 'diploma-engineering'],
       ],
       'Computing and IT': [
         ['Diploma of Information Technology', 'foundation', 0.67, 'diploma-it'],
+        ['Diploma of Cybersecurity', 'foundation', 1, 'diploma-it'],
       ],
       'Health Sciences': [
         ['Diploma of Health Sciences', 'foundation', 0.67, 'diploma-health'],
@@ -708,53 +1031,109 @@ const UNIS = [
         ['Bachelor of Business', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Commerce', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of International Business', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Accounting', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Finance', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business Analytics', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business (Event Management)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business (Sport Management)', 'bachelor', 3, 'bachelor-business'],
       ],
       'Engineering': [
         ['Bachelor of Engineering (Civil) Honours', 'bachelor', 4, 'bachelor-engineering'],
         ['Bachelor of Engineering (Electronic) Honours', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Industrial) Honours', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Mechatronic) Honours', 'bachelor', 4, 'bachelor-engineering'],
       ],
       'Computing and IT': [
         ['Bachelor of Information Technology', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Computer Science', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Cybersecurity', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Data Science', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Information Technology (Cloud Technologies)', 'bachelor', 3, 'bachelor-it'],
       ],
       'Health Sciences': [
         ['Bachelor of Nursing', 'bachelor', 3, 'bachelor-nursing'],
         ['Bachelor of Health Sciences', 'bachelor', 3, 'bachelor-health'],
         ['Bachelor of Public Health', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Paramedicine', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Dental Health Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Speech Pathology Honours', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Occupational Therapy Honours', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Physiotherapy Honours', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Exercise Science and Human Movement', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Social Work', 'bachelor', 4, 'bachelor-arts'],
       ],
       'Biomedical Science': [
         ['Bachelor of Biomedical Science', 'bachelor', 3, 'bachelor-biomed'],
         ['Bachelor of Pharmacy Honours', 'bachelor', 4, 'bachelor-biomed'],
+        ['Bachelor of Biomedicine', 'bachelor', 3, 'bachelor-biomed'],
+        ['Bachelor of Biomedical Science (Medical)', 'bachelor', 3, 'bachelor-biomed'],
       ],
       'Communication and Media': [
         ['Bachelor of Media and Communication', 'bachelor', 3, 'bachelor-arts'],
         ['Bachelor of Journalism', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Digital Media', 'bachelor', 3, 'bachelor-arts'],
+      ],
+      'Psychology': [
+        ['Bachelor of Psychological Science', 'bachelor', 3, 'bachelor-psychology'],
+        ['Bachelor of Psychology Honours', 'bachelor', 4, 'bachelor-psychology'],
       ],
       'Science': [
         ['Bachelor of Science', 'bachelor', 3, 'bachelor-science'],
         ['Bachelor of Agriculture (Honours)', 'bachelor', 4, 'bachelor-science'],
+        ['Bachelor of Animal and Veterinary Bioscience', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Wildlife and Conservation Biology', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Environmental Science', 'bachelor', 3, 'bachelor-science'],
       ],
       'Arts and Humanities': [
         ['Bachelor of Arts', 'bachelor', 3, 'bachelor-arts'],
         ['Bachelor of Politics, Philosophy and Economics', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of International Relations', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Criminology', 'bachelor', 3, 'bachelor-arts'],
+      ],
+      'Education': [
+        ['Bachelor of Education (Primary)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Early Childhood Education', 'bachelor', 4, 'bachelor-education'],
+      ],
+      'Law': [
+        ['Bachelor of Laws (LLB)', 'bachelor', 4, 'bachelor-law'],
+        ['Bachelor of Laws / Bachelor of Business (double)', 'bachelor', 5, 'bachelor-law'],
       ],
     },
     masterPrograms: {
       'Business and Commerce': [
         ['Master of Business Administration (MBA)', 'master', 1.5, 'master-business'],
         ['Master of Commerce', 'master', 2, 'master-business'],
+        ['Master of International Business', 'master', 2, 'master-business'],
+        ['Master of Professional Accounting', 'master', 2, 'master-business'],
+        ['Master of Marketing', 'master', 2, 'master-business'],
+        ['Master of Management', 'master', 1.5, 'master-business'],
       ],
       'Engineering': [
         ['Master of Engineering', 'master', 2, 'master-engineering'],
+        ['Master of Engineering (Civil)', 'master', 2, 'master-engineering'],
       ],
       'Computing and IT': [
         ['Master of Information Technology', 'master', 2, 'master-it'],
         ['Master of Cybersecurity', 'master', 2, 'master-it'],
+        ['Master of Data Science', 'master', 2, 'master-it'],
       ],
       'Health Sciences': [
         ['Master of Public Health', 'master', 2, 'master-health'],
         ['Master of Nursing', 'master', 2, 'master-health'],
+        ['Master of Occupational Therapy Practice', 'master', 2, 'master-health'],
+        ['Master of Speech Pathology', 'master', 2, 'master-health'],
+        ['Master of Physiotherapy', 'master', 2, 'master-health'],
+      ],
+      'Education': [
+        ['Master of Teaching (Primary)', 'master', 2, 'master-education'],
+        ['Master of Education', 'master', 1.5, 'master-education'],
+      ],
+      'Arts and Humanities': [
+        ['Master of International Relations', 'master', 1.5, 'master-arts'],
+        ['Master of Arts (Communication)', 'master', 1.5, 'master-arts'],
+      ],
+      'Law': [
+        ['Master of Laws (LLM)', 'master', 1, 'master-law'],
       ],
     },
   },
@@ -783,10 +1162,17 @@ const UNIS = [
       'bachelor-arts': 31500,
       'bachelor-science': 37500,
       'bachelor-design': 35500,
+      'bachelor-law': 36500,
+      'bachelor-education': 31500,
+      'bachelor-architecture': 38500,
+      'bachelor-medicine': 78500,
       'master-business': 34500,
       'master-engineering': 41500,
       'master-health': 37500,
       'master-it': 38500,
+      'master-arts': 32500,
+      'master-education': 33500,
+      'master-law': 38500,
     },
     paragraphs: [
       'Western Sydney University (WSU) operates 10 campuses across Greater Sydney — Parramatta, Bankstown, Campbelltown, Hawkesbury, Penrith, Sydney City and others. Founded in 1989, WSU is #1 in the world for social, economic and environmental impact (Times Higher Education Impact Rankings 2022 and 2023).',
@@ -810,21 +1196,36 @@ const UNIS = [
       'Основан в 1989',
       '10 кампусов по Большому Сиднею',
     ],
+    extraScholarships: [
+      { name: 'WSU Vice-Chancellor International Scholarship', nameRu: 'WSU Vice-Chancellor International Scholarship', amount: '50% скидки от tuition', description: 'Flagship merit scholarship for outstanding international Bachelor and Master applicants.', descriptionRu: 'Флагманская скидка 50% от стоимости обучения для лучших международных абитуриентов.', url: 'https://www.westernsydney.edu.au/scholarships' },
+      { name: 'WSU Academic Excellence Award', nameRu: 'WSU Academic Excellence Award', amount: '25% скидки от tuition', description: 'Merit-based award for new international undergraduate students.', descriptionRu: 'Скидка 25% для новых международных студентов на бакалавриате.', url: 'https://www.westernsydney.edu.au/scholarships' },
+      { name: 'WSU India and Pakistan Scholarship', nameRu: 'WSU South Asia Scholarship', amount: 'AU$5,000 — AU$15,000', description: 'Regional award for students from South Asian countries.', descriptionRu: 'Региональная скидка для студентов из Южной Азии и Центральной Азии.', url: 'https://www.westernsydney.edu.au/scholarships' },
+      { name: 'WSU Sir Ian Turbott Scholarship', nameRu: 'WSU Sir Ian Turbott Scholarship', amount: 'до AU$20,000', description: 'Endowed scholarship for international Master students.', descriptionRu: 'Именная стипендия для международных студентов магистратуры.', url: 'https://www.westernsydney.edu.au/scholarships' },
+    ],
     accommodation: [
-      { name: 'Western Sydney University Village', price: 'от AU$235/нед', text: 'On-campus резиденции на Parramatta, Hawkesbury, Campbelltown — комнаты с общей кухней, 24/7 поддержка.' },
+      { name: 'Western Sydney University Village — Parramatta', price: 'от AU$245/нед', text: 'On-campus резиденция на Parramatta — комнаты с общей кухней, 24/7 поддержка.' },
+      { name: 'Western Sydney University Village — Hawkesbury', price: 'от AU$235/нед', text: 'On-campus резиденция на Hawkesbury — рядом с факультетами agriculture и health science.' },
+      { name: 'Western Sydney University Village — Campbelltown', price: 'от AU$240/нед', text: 'On-campus резиденция на Campbelltown — рядом с медицинским факультетом.' },
+      { name: 'Iglu Sydney Central (partner)', price: 'от AU$340/нед', text: 'Партнёрская резиденция в Sydney CBD — для студентов кампуса Sydney City.' },
       { name: 'Homestay через WSUIC', price: 'от AU$330/нед', text: 'Австралийская семья — питание и комната, идеально для первых месяцев в Сиднее.' },
+      { name: 'Private rental (share house)', price: 'от AU$220/нед', text: 'Совместное жильё в Parramatta / Westmead — поддержка housing officer.' },
     ],
     campuses: [
       { title: 'Parramatta Campus', sub: 'Главный кампус — 23 км от центра Сиднея', text: 'WSUIC, бизнес, инженерия, IT. Современный кампус с прямым поездом до Central Station.' },
       { title: 'Sydney City Campus', sub: 'В центре Сиднея (CBD)', text: 'Для тех, кто хочет жить и учиться в центре Сиднея.' },
+      { title: 'Campbelltown Campus', sub: '60 км от центра Сиднея', text: 'Школа медицины, allied health, nursing — современный медицинский кампус.' },
+      { title: 'Hawkesbury Campus', sub: 'Richmond, NSW', text: 'Agriculture, environmental science, science — на территории сельскохозяйственного исследовательского центра.' },
+      { title: 'Bankstown + Penrith + Liverpool Campuses', sub: 'Кампусы в Greater Sydney', text: 'Дополнительные кампусы — education, social work, business.' },
     ],
     pathwayPrograms: {
       'Foundation Studies': [
         ['Foundation Studies (Standard / Extended)', 'foundation', 1, 'foundation'],
+        ['Foundation Studies — Intensive', 'foundation', 0.75, 'foundation'],
       ],
       'Business and Commerce': [
         ['Diploma of Business', 'foundation', 0.67, 'diploma-business'],
         ['Diploma of Commerce', 'foundation', 0.67, 'diploma-business'],
+        ['Diploma of Accounting', 'foundation', 0.67, 'diploma-business'],
       ],
       'Engineering': [
         ['Diploma of Engineering', 'foundation', 0.83, 'diploma-engineering'],
@@ -835,6 +1236,7 @@ const UNIS = [
       ],
       'Health Sciences': [
         ['Diploma of Health Science', 'foundation', 0.67, 'diploma-health'],
+        ['Diploma of Nursing (preparation)', 'foundation', 1, 'diploma-health'],
       ],
       'Communication and Media': [
         ['Diploma of Communication', 'foundation', 0.67, 'diploma-arts'],
@@ -851,49 +1253,106 @@ const UNIS = [
         ['Bachelor of Business', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of International Business', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Accounting', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business (Applied Finance)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business (Marketing)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business (Human Resource Management)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business (Sport Management)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business / Bachelor of Laws (double)', 'bachelor', 5, 'bachelor-law'],
       ],
       'Engineering': [
         ['Bachelor of Engineering (Honours) (Civil)', 'bachelor', 4, 'bachelor-engineering'],
         ['Bachelor of Engineering (Honours) (Mechanical)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Honours) (Electrical)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Honours) (Robotics and Mechatronics)', 'bachelor', 4, 'bachelor-engineering'],
         ['Bachelor of Construction Management', 'bachelor', 3, 'bachelor-engineering'],
+        ['Bachelor of Engineering Science', 'bachelor', 3, 'bachelor-engineering'],
       ],
       'Computing and IT': [
         ['Bachelor of Information and Communications Technology', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Computer Science', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Cybersecurity and Behaviour', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Data Science', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Information Systems', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Information and Communications Technology (Mobile Applications)', 'bachelor', 3, 'bachelor-it'],
       ],
       'Health Sciences': [
         ['Bachelor of Nursing', 'bachelor', 3, 'bachelor-nursing'],
         ['Bachelor of Health Science', 'bachelor', 3, 'bachelor-health'],
         ['Bachelor of Psychology', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Medical Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Podiatric Medicine', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Physiotherapy', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Occupational Therapy', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Speech Pathology', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Health Science (Health and Physical Education)', 'bachelor', 3, 'bachelor-health'],
+      ],
+      'Medicine and Dentistry': [
+        ['Doctor of Medicine (BMed/MD)', 'master', 5, 'bachelor-medicine'],
       ],
       'Communication and Media': [
         ['Bachelor of Communication', 'bachelor', 3, 'bachelor-arts'],
         ['Bachelor of Social Science', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Social Work', 'bachelor', 4, 'bachelor-arts'],
+        ['Bachelor of International Studies', 'bachelor', 3, 'bachelor-arts'],
       ],
       'Design and Architecture': [
         ['Bachelor of Industrial Design', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Design (Visual Communication)', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Architectural Design', 'bachelor', 3, 'bachelor-architecture'],
       ],
       'Science': [
         ['Bachelor of Science', 'bachelor', 3, 'bachelor-science'],
         ['Bachelor of Environmental Science', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Forensic Science', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Agriculture and Food Science', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Animal Science', 'bachelor', 3, 'bachelor-science'],
+      ],
+      'Education': [
+        ['Bachelor of Education (Primary)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Early Childhood Studies', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Education (Secondary)', 'bachelor', 4, 'bachelor-education'],
+      ],
+      'Arts and Humanities': [
+        ['Bachelor of Arts', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Criminal and Community Justice', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Policing', 'bachelor', 3, 'bachelor-arts'],
+      ],
+      'Law': [
+        ['Bachelor of Laws (LLB)', 'bachelor', 4, 'bachelor-law'],
       ],
     },
     masterPrograms: {
       'Business and Commerce': [
         ['Master of Business Administration (MBA)', 'master', 1.5, 'master-business'],
         ['Master of Professional Accounting', 'master', 2, 'master-business'],
+        ['Master of Marketing', 'master', 2, 'master-business'],
+        ['Master of Finance', 'master', 1.5, 'master-business'],
+        ['Master of International Business', 'master', 1.5, 'master-business'],
       ],
       'Engineering': [
         ['Master of Engineering Management', 'master', 2, 'master-engineering'],
+        ['Master of Engineering (Civil)', 'master', 2, 'master-engineering'],
       ],
       'Computing and IT': [
         ['Master of Information and Communications Technology', 'master', 2, 'master-it'],
         ['Master of Data Science', 'master', 2, 'master-it'],
+        ['Master of Cyber Security', 'master', 2, 'master-it'],
       ],
       'Health Sciences': [
         ['Master of Public Health', 'master', 2, 'master-health'],
+        ['Master of Nursing', 'master', 2, 'master-health'],
+        ['Master of Physiotherapy', 'master', 2, 'master-health'],
+      ],
+      'Education': [
+        ['Master of Teaching (Primary)', 'master', 2, 'master-education'],
+        ['Master of Education', 'master', 1.5, 'master-education'],
+      ],
+      'Arts and Humanities': [
+        ['Master of Arts (International Relations)', 'master', 1.5, 'master-arts'],
+        ['Master of Communication', 'master', 1.5, 'master-arts'],
+      ],
+      'Law': [
+        ['Master of Laws (LLM)', 'master', 1, 'master-law'],
       ],
     },
   },
@@ -916,12 +1375,20 @@ const UNIS = [
       'bachelor-law': 53500,
       'bachelor-science': 56500,
       'bachelor-medicine': 92500,
+      'bachelor-architecture': 53500,
+      'bachelor-education': 49500,
+      'bachelor-music': 49500,
+      'bachelor-veterinary': 71500,
       'master-business': 58500,
       'master-engineering': 60500,
       'master-health': 56500,
       'master-it': 59500,
       'master-arts': 52500,
       'master-law': 56500,
+      'master-architecture': 56500,
+      'master-medicine': 92500,
+      'master-veterinary': 71500,
+      'master-education': 50500,
     },
     paragraphs: [
       "The University of Sydney is Australia's first university, founded in 1850. A Group of Eight (Go8) sandstone university, Sydney sits at #18 globally (QS World University Rankings 2025) and #1 in Australia for graduate employability (QS Graduate Employability Rankings 2024).",
@@ -945,19 +1412,34 @@ const UNIS = [
       'Более 75 000 студентов',
       'Член Group of Eight (Go8), sandstone-уни',
     ],
+    extraScholarships: [
+      { name: 'Sydney International Scholarship Scheme', nameRu: 'Sydney International Scholarship Scheme', amount: '100% от tuition + стипендия', description: 'Flagship full-tuition + living stipend for top international PhD candidates.', descriptionRu: 'Флагманская стипендия — 100% оплаты обучения + проживание для лучших международных кандидатов PhD.', url: 'https://www.sydney.edu.au/scholarships' },
+      { name: 'Vice-Chancellor International Scholarship', nameRu: 'Vice-Chancellor International Scholarship', amount: 'до AU$40,000', description: 'Merit-based award for outstanding international Bachelor and Master applicants.', descriptionRu: 'Скидка для лучших международных абитуриентов на бакалавриате и магистратуре.', url: 'https://www.sydney.edu.au/scholarships' },
+      { name: 'Sydney Scholars Award', nameRu: 'Sydney Scholars Award', amount: 'AU$10,000 — AU$20,000', description: 'Faculty-based merit awards for high-achieving international students.', descriptionRu: 'Факультетские merit-стипендии для высокоуспевающих международных студентов.', url: 'https://www.sydney.edu.au/scholarships' },
+      { name: 'Sydney Achievers International Scholarship', nameRu: 'Sydney Achievers International Scholarship', amount: 'AU$10,000', description: 'For new international undergraduate students with strong academic records.', descriptionRu: 'Для новых международных студентов бакалавриата с сильным академическим бэкграундом.', url: 'https://www.sydney.edu.au/scholarships' },
+    ],
     accommodation: [
-      { name: 'University of Sydney Student Accommodation', price: 'от AU$385/нед', text: 'Queen Mary Building, Regiment Building, Abercrombie — на кампусе Camperdown. Современные студии и комнаты.' },
+      { name: 'Queen Mary Building (on-campus)', price: 'от AU$385/нед', text: 'Современная резиденция на Camperdown campus — студии и общие апартаменты.' },
+      { name: 'Regiment Building (on-campus)', price: 'от AU$395/нед', text: 'Современная резиденция в Darlington — рядом с главным кампусом.' },
+      { name: 'Abercrombie Student Accommodation (on-campus)', price: 'от AU$405/нед', text: 'On-campus резиденция в Darlington — для бизнес-факультета.' },
+      { name: 'St Pauls / Wesley / Andrews College (residential colleges)', price: 'от AU$520/нед', text: 'Исторические residential colleges Camperdown — полное проживание, формальные обеды, традиции.' },
+      { name: 'Iglu Chatswood / Central / Redfern (partner)', price: 'от AU$385/нед', text: 'Партнёрские резиденции рядом с кампусом и в Sydney CBD.' },
       { name: 'Taylors College Sydney Homestay', price: 'от AU$355/нед', text: 'Австралийская семья в Waterloo / Sydney CBD — питание и комната, идеально для Foundation студентов.' },
+      { name: 'Private rental (share house)', price: 'от AU$280/нед', text: 'Совместное жильё в Newtown / Camperdown / Glebe — поддержка housing officer.' },
     ],
     campuses: [
       { title: 'Camperdown / Darlington Campus', sub: 'Главный кампус — 3 км от центра Сиднея', text: '72 гектара, sandstone-архитектура, Quadrangle, главная библиотека Fisher.' },
       { title: 'Waterloo (Taylors College)', sub: '5 минут от Camperdown', text: 'Отдельный кампус Foundation-программы — современное здание.' },
+      { title: 'Sydney Conservatorium of Music', sub: 'Royal Botanic Gardens, Sydney CBD', text: 'Историческое здание в Royal Botanic Gardens — главный кампус музыкальной школы.' },
+      { title: 'Camden Campus (Veterinary)', sub: '60 км от Сиднея', text: 'Veterinary science campus — 460 гектар с клиниками для лошадей и крупного рогатого скота.' },
+      { title: 'Sydney Medical School (RPA, Westmead)', sub: 'В Royal Prince Alfred Hospital + Westmead', text: 'Клинические кампусы медицинской школы Sydney — внутри партнёрских больниц.' },
     ],
     pathwayPrograms: {
       'Foundation Studies': [
         ['Taylors Foundation — Standard (40 weeks)', 'foundation', 1, 'foundation'],
         ['Taylors Foundation — Extended (60 weeks)', 'foundation', 1.5, 'foundation'],
         ['Taylors Foundation — Intensive (30 weeks)', 'foundation', 0.75, 'foundation'],
+        ['Taylors Foundation — Health Sciences stream', 'foundation', 1, 'foundation'],
       ],
     },
     bachelorPrograms: {
@@ -965,42 +1447,82 @@ const UNIS = [
         ['Bachelor of Commerce', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Economics', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Project Management', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce (Liberal Studies)', 'bachelor', 4, 'bachelor-business'],
+        ['Bachelor of Commerce / Bachelor of Advanced Studies', 'bachelor', 4, 'bachelor-business'],
+        ['Bachelor of Commerce / Bachelor of Laws (double)', 'bachelor', 5, 'bachelor-law'],
       ],
       'Engineering': [
         ['Bachelor of Engineering Honours (Civil)', 'bachelor', 4, 'bachelor-engineering'],
         ['Bachelor of Engineering Honours (Mechanical)', 'bachelor', 4, 'bachelor-engineering'],
         ['Bachelor of Engineering Honours (Aeronautical)', 'bachelor', 4, 'bachelor-engineering'],
         ['Bachelor of Engineering Honours (Electrical)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering Honours (Chemical and Biomolecular)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering Honours (Software)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering Honours (Biomedical)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering Honours (Mechatronic)', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Project Management (Built Environment)', 'bachelor', 3, 'bachelor-engineering'],
       ],
       'Computing and IT': [
         ['Bachelor of Advanced Computing', 'bachelor', 4, 'bachelor-it'],
         ['Bachelor of Information Technology', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Computer Science and Technology', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Information Systems', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Advanced Computing / Bachelor of Science (double)', 'bachelor', 5, 'bachelor-it'],
       ],
       'Health Sciences': [
         ['Bachelor of Nursing', 'bachelor', 3, 'bachelor-nursing'],
         ['Bachelor of Health Sciences', 'bachelor', 3, 'bachelor-health'],
         ['Bachelor of Pharmacy Honours', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Applied Science (Physiotherapy)', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Applied Science (Occupational Therapy)', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Applied Science (Exercise and Sport Science)', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Applied Science (Speech Pathology)', 'bachelor', 4, 'bachelor-health'],
       ],
       'Medicine and Dentistry': [
-        ['Doctor of Medicine (postgraduate)', 'master', 4, 'bachelor-medicine'],
+        ['Doctor of Medicine (postgraduate MD)', 'master', 4, 'bachelor-medicine'],
         ['Bachelor of Oral Health', 'bachelor', 3, 'bachelor-medicine'],
+        ['Bachelor of Science / Doctor of Medicine (combined)', 'bachelor', 7, 'bachelor-medicine'],
+      ],
+      'Veterinary Science': [
+        ['Bachelor of Veterinary Biology / Doctor of Veterinary Medicine', 'bachelor', 6, 'bachelor-veterinary'],
+        ['Bachelor of Veterinary Technology', 'bachelor', 3, 'bachelor-veterinary'],
+        ['Bachelor of Animal and Veterinary Bioscience', 'bachelor', 3, 'bachelor-veterinary'],
       ],
       'Arts and Humanities': [
         ['Bachelor of Arts', 'bachelor', 3, 'bachelor-arts'],
         ['Bachelor of International and Global Studies', 'bachelor', 3, 'bachelor-arts'],
         ['Bachelor of Political, Economic and Social Sciences', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Arts / Bachelor of Advanced Studies', 'bachelor', 4, 'bachelor-arts'],
+        ['Bachelor of Social Work (Honours)', 'bachelor', 4, 'bachelor-arts'],
+        ['Bachelor of Liberal Arts and Science', 'bachelor', 3, 'bachelor-arts'],
+      ],
+      'Education': [
+        ['Bachelor of Education (Primary)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Education (Secondary: Mathematics)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Education (Early Childhood)', 'bachelor', 4, 'bachelor-education'],
       ],
       'Law': [
         ['Bachelor of Laws (LLB)', 'bachelor', 4, 'bachelor-law'],
+        ['Bachelor of Arts / Bachelor of Laws (double)', 'bachelor', 5, 'bachelor-law'],
       ],
       'Science': [
         ['Bachelor of Science', 'bachelor', 3, 'bachelor-science'],
         ['Bachelor of Science (Advanced)', 'bachelor', 4, 'bachelor-science'],
-        ['Bachelor of Veterinary Biology / Doctor of Veterinary Medicine', 'bachelor', 6, 'bachelor-science'],
+        ['Bachelor of Science (Honours)', 'bachelor', 4, 'bachelor-science'],
+        ['Bachelor of Liberal Arts and Science', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Psychology', 'bachelor', 4, 'bachelor-science'],
+        ['Bachelor of Science (Medical Science)', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Science (Marine Science)', 'bachelor', 3, 'bachelor-science'],
       ],
       'Architecture and Design': [
-        ['Bachelor of Design in Architecture', 'bachelor', 3, 'bachelor-arts'],
-        ['Bachelor of Design Computing', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Design in Architecture', 'bachelor', 3, 'bachelor-architecture'],
+        ['Bachelor of Design Computing', 'bachelor', 3, 'bachelor-architecture'],
+      ],
+      'Music (Sydney Conservatorium)': [
+        ['Bachelor of Music (Performance)', 'bachelor', 4, 'bachelor-music'],
+        ['Bachelor of Music (Composition)', 'bachelor', 4, 'bachelor-music'],
+        ['Bachelor of Music Studies', 'bachelor', 3, 'bachelor-music'],
+        ['Bachelor of Music Education', 'bachelor', 4, 'bachelor-music'],
       ],
     },
     masterPrograms: {
@@ -1008,25 +1530,63 @@ const UNIS = [
         ['Master of Business Administration (MBA)', 'master', 1.5, 'master-business'],
         ['Master of Commerce', 'master', 1.5, 'master-business'],
         ['Master of International Business', 'master', 1.5, 'master-business'],
+        ['Master of Professional Accounting', 'master', 1.5, 'master-business'],
+        ['Master of Marketing', 'master', 1.5, 'master-business'],
+        ['Master of Finance', 'master', 1, 'master-business'],
+        ['Master of Economics', 'master', 1.5, 'master-business'],
+        ['Master of Human Resource Management and Industrial Relations', 'master', 1.5, 'master-business'],
       ],
       'Engineering': [
         ['Master of Engineering', 'master', 2, 'master-engineering'],
         ['Master of Project Management', 'master', 1.5, 'master-engineering'],
+        ['Master of Professional Engineering (Civil)', 'master', 3, 'master-engineering'],
+        ['Master of Professional Engineering (Mechanical)', 'master', 3, 'master-engineering'],
+        ['Master of Professional Engineering (Electrical)', 'master', 3, 'master-engineering'],
       ],
       'Computing and IT': [
         ['Master of Information Technology', 'master', 1.5, 'master-it'],
         ['Master of Data Science', 'master', 1.5, 'master-it'],
+        ['Master of Information Technology Management', 'master', 1.5, 'master-it'],
+        ['Master of Cybersecurity', 'master', 2, 'master-it'],
       ],
       'Health Sciences': [
         ['Master of Public Health', 'master', 1.5, 'master-health'],
         ['Master of Nursing', 'master', 2, 'master-health'],
+        ['Master of Pharmacy', 'master', 2, 'master-health'],
+        ['Master of Physiotherapy', 'master', 2, 'master-health'],
+        ['Master of Speech Language Pathology', 'master', 2, 'master-health'],
+      ],
+      'Medicine and Dentistry': [
+        ['Doctor of Medicine (MD)', 'master', 4, 'master-medicine'],
+        ['Master of Dentistry', 'master', 3, 'master-medicine'],
+      ],
+      'Veterinary': [
+        ['Doctor of Veterinary Medicine', 'master', 4, 'master-veterinary'],
+        ['Master of Veterinary Studies', 'master', 1, 'master-veterinary'],
+      ],
+      'Architecture and Design': [
+        ['Master of Architecture', 'master', 2, 'master-architecture'],
+        ['Master of Urban and Regional Planning', 'master', 2, 'master-architecture'],
+        ['Master of Interaction Design and Electronic Arts', 'master', 1.5, 'master-architecture'],
       ],
       'Law': [
         ['Master of Laws (LLM)', 'master', 1, 'master-law'],
+        ['Juris Doctor (JD)', 'master', 3, 'master-law'],
       ],
       'Arts and Humanities': [
         ['Master of International Relations', 'master', 1.5, 'master-arts'],
-        ['Master of Education', 'master', 1.5, 'master-arts'],
+        ['Master of Media Practice', 'master', 1.5, 'master-arts'],
+        ['Master of Strategic Public Relations', 'master', 1, 'master-arts'],
+        ['Master of Political Economy', 'master', 1.5, 'master-arts'],
+      ],
+      'Education': [
+        ['Master of Education', 'master', 1.5, 'master-education'],
+        ['Master of Teaching (Primary)', 'master', 2, 'master-education'],
+        ['Master of Teaching (Secondary)', 'master', 2, 'master-education'],
+      ],
+      'Music': [
+        ['Master of Music (Performance)', 'master', 2, 'master-arts'],
+        ['Master of Music (Conducting)', 'master', 1.5, 'master-arts'],
       ],
     },
   },
@@ -1045,6 +1605,7 @@ const UNIS = [
       'diploma-design': 28200,
       'diploma-health': 29800,
       'diploma-arts': 27500,
+      'diploma-science': 29500,
       'bachelor-business': 33500,
       'bachelor-engineering': 38500,
       'bachelor-health': 37500,
@@ -1053,10 +1614,16 @@ const UNIS = [
       'bachelor-arts': 31500,
       'bachelor-science': 36500,
       'bachelor-design': 35000,
+      'bachelor-law': 36500,
+      'bachelor-sport': 36500,
+      'bachelor-education': 32000,
       'master-business': 35500,
       'master-engineering': 40000,
       'master-health': 38000,
       'master-it': 38500,
+      'master-arts': 33000,
+      'master-law': 39500,
+      'master-education': 34000,
     },
     paragraphs: [
       "University of Canberra (UC) is the capital city's public university, with its main campus in Bruce, Canberra (ACT). UC is rated 5 stars overall (QS Stars 2024) and ranks #1 in Australia for full-time graduate employment in the public sector — a natural advantage given Canberra's government-employer base.",
@@ -1080,23 +1647,39 @@ const UNIS = [
       'Основан в 1990',
       'Столица Австралии — государственные работодатели',
     ],
+    extraScholarships: [
+      { name: 'UC Global Excellence International Scholarship', nameRu: 'UC Global Excellence International Scholarship', amount: 'до 25% скидки от tuition', description: 'Merit-based award for new international Bachelor and Master students.', descriptionRu: 'Скидка до 25% от стоимости обучения для новых международных студентов.', url: 'https://www.canberra.edu.au/future-students/scholarships' },
+      { name: 'UC Vice-Chancellor International Scholarship', nameRu: 'UC Vice-Chancellor International Scholarship', amount: '50% скидки от tuition', description: 'Flagship award for outstanding international applicants.', descriptionRu: 'Флагманская скидка 50% для лучших международных абитуриентов.', url: 'https://www.canberra.edu.au/future-students/scholarships' },
+      { name: 'UC College Pathway Scholarship', nameRu: 'UC College Pathway Scholarship', amount: 'AU$3,000', description: 'For UC College Diploma graduates progressing to a UC Bachelor degree.', descriptionRu: 'Для выпускников UC College Diploma, переходящих на бакалавриат UC.', url: 'https://www.canberra.edu.au/future-students/scholarships' },
+      { name: 'UC Asia Scholarship', nameRu: 'UC Asia Scholarship', amount: 'до AU$10,000', description: 'Regional award for students from Central Asia including Kazakhstan.', descriptionRu: 'Региональная скидка для студентов из Центральной Азии, включая Казахстан.', url: 'https://www.canberra.edu.au/future-students/scholarships' },
+    ],
     accommodation: [
-      { name: 'UC Lodge / UniLodge Canberra', price: 'от AU$285/нед', text: 'On-campus резиденции в Bruce — комнаты с общей кухней, рядом с UC College.' },
+      { name: 'UC Lodge (on-campus)', price: 'от AU$285/нед', text: 'On-campus резиденция в Bruce — комнаты с общей кухней, рядом с UC College.' },
+      { name: 'UC Village (on-campus)', price: 'от AU$295/нед', text: 'Современная on-campus резиденция — апартаменты для международных студентов.' },
+      { name: 'UniLodge Canberra (partner)', price: 'от AU$310/нед', text: 'Партнёрская резиденция в Bruce — студии и shared apartments.' },
+      { name: 'Iglu Canberra City (partner)', price: 'от AU$340/нед', text: 'Партнёрская резиденция в центре Канберры — современные студии.' },
       { name: 'Homestay через UC College', price: 'от AU$330/нед', text: 'Австралийская семья в Канберре — питание и комната.' },
+      { name: 'Private rental (share house)', price: 'от AU$215/нед', text: 'Совместное жильё в Belconnen / Bruce — поддержка housing officer.' },
     ],
     campuses: [
       { title: 'UC Bruce Campus (Canberra)', sub: 'Главный кампус — 8 км от центра Канберры', text: '120 гектар, UC College, главная библиотека, спортивный центр.' },
+      { title: 'UC Hospital Campus (Garran)', sub: '5 км от центра Канберры', text: 'Партнёрский кампус с Canberra Hospital — клинические программы health sciences и nursing.' },
+      { title: 'UC Sydney Campus (CBD)', sub: 'В центре Сиднея', text: 'Современный кампус UC в Sydney CBD — magister-программы по бизнесу и IT.' },
+      { title: 'UC Melbourne Campus', sub: 'В центре Мельбурна', text: 'Сейчас открывается новый кампус UC в Мельбурне.' },
     ],
     pathwayPrograms: {
       'Foundation Studies': [
         ['UC College Foundation Studies', 'foundation', 1, 'foundation'],
+        ['UC College Foundation Studies — Extended', 'foundation', 1.5, 'foundation'],
       ],
       'Business and Commerce': [
         ['Diploma of Business', 'foundation', 0.67, 'diploma-business'],
         ['Diploma of Commerce', 'foundation', 0.67, 'diploma-business'],
+        ['Diploma of Management', 'foundation', 0.67, 'diploma-business'],
       ],
       'Computing and IT': [
         ['Diploma of Information Technology', 'foundation', 0.67, 'diploma-it'],
+        ['Diploma of Software Development', 'foundation', 0.67, 'diploma-it'],
       ],
       'Health Sciences': [
         ['Diploma of Health Sciences', 'foundation', 0.67, 'diploma-health'],
@@ -1107,47 +1690,102 @@ const UNIS = [
       'Design and Architecture': [
         ['Diploma of Design', 'foundation', 0.67, 'diploma-design'],
       ],
+      'Science': [
+        ['Diploma of Science', 'foundation', 0.67, 'diploma-science'],
+      ],
     },
     bachelorPrograms: {
       'Business and Commerce': [
         ['Bachelor of Business Administration', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Commerce', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Marketing Management', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of International Business', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Accounting', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Human Resource Management', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Event and Tourism Management', 'bachelor', 3, 'bachelor-business'],
       ],
       'Computing and IT': [
         ['Bachelor of Information Technology', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Software Engineering', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Cyber Security', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Network Engineering and Cybersecurity', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Information Technology (Data Analytics)', 'bachelor', 3, 'bachelor-it'],
       ],
       'Health Sciences': [
         ['Bachelor of Nursing', 'bachelor', 3, 'bachelor-nursing'],
         ['Bachelor of Physiotherapy', 'bachelor', 4, 'bachelor-health'],
         ['Bachelor of Public Health', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Occupational Therapy', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Pharmacy', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Midwifery', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Medical Imaging', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Psychology', 'bachelor', 4, 'bachelor-health'],
+      ],
+      'Sport and Exercise Science': [
+        ['Bachelor of Sport and Exercise Science', 'bachelor', 3, 'bachelor-sport'],
+        ['Bachelor of Exercise Physiology Practice', 'bachelor', 4, 'bachelor-sport'],
+        ['Bachelor of Sports Management', 'bachelor', 3, 'bachelor-sport'],
       ],
       'Communication and Media': [
         ['Bachelor of Communication and Media', 'bachelor', 3, 'bachelor-arts'],
         ['Bachelor of Journalism', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Communication (Public Relations)', 'bachelor', 3, 'bachelor-arts'],
       ],
       'Design and Architecture': [
-        ['Bachelor of Design', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Design (Graphic Design)', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Design (Interior Architecture)', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Design (Industrial Design)', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Architecture', 'bachelor', 3, 'bachelor-design'],
       ],
       'Science': [
         ['Bachelor of Science', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Forensic Studies', 'bachelor', 3, 'bachelor-science'],
+        ['Bachelor of Environmental Science', 'bachelor', 3, 'bachelor-science'],
       ],
       'Engineering': [
         ['Bachelor of Engineering (Civil and Environmental) Honours', 'bachelor', 4, 'bachelor-engineering'],
+        ['Bachelor of Engineering (Software) Honours', 'bachelor', 4, 'bachelor-engineering'],
+      ],
+      'Education': [
+        ['Bachelor of Education (Primary)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Early Childhood Education', 'bachelor', 4, 'bachelor-education'],
+      ],
+      'Law': [
+        ['Bachelor of Laws (LLB)', 'bachelor', 4, 'bachelor-law'],
+        ['Bachelor of Politics and International Relations / Bachelor of Laws', 'bachelor', 5, 'bachelor-law'],
+      ],
+      'Arts and Humanities': [
+        ['Bachelor of Arts', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Politics and International Relations', 'bachelor', 3, 'bachelor-arts'],
       ],
     },
     masterPrograms: {
       'Business and Commerce': [
         ['Master of Business Administration (MBA)', 'master', 1.5, 'master-business'],
         ['Master of Professional Accounting', 'master', 2, 'master-business'],
+        ['Master of Marketing Management', 'master', 1.5, 'master-business'],
+        ['Master of International Business', 'master', 1.5, 'master-business'],
       ],
       'Computing and IT': [
         ['Master of Information Technology and Systems', 'master', 2, 'master-it'],
+        ['Master of Cyber Security', 'master', 2, 'master-it'],
+        ['Master of Data Science', 'master', 2, 'master-it'],
       ],
       'Health Sciences': [
         ['Master of Public Health', 'master', 2, 'master-health'],
+        ['Master of Physiotherapy', 'master', 2, 'master-health'],
+        ['Master of Nursing (Nurse Practitioner)', 'master', 2, 'master-health'],
+      ],
+      'Communication and Media': [
+        ['Master of Communication', 'master', 1.5, 'master-arts'],
+        ['Master of Strategic Communication', 'master', 1.5, 'master-arts'],
+      ],
+      'Education': [
+        ['Master of Teaching (Primary)', 'master', 2, 'master-education'],
+        ['Master of Education', 'master', 1.5, 'master-education'],
+      ],
+      'Law': [
+        ['Master of Laws (LLM)', 'master', 1, 'master-law'],
       ],
     },
   },
@@ -1163,13 +1801,22 @@ const UNIS = [
       foundation: 24000,
       'diploma-business': 26500,
       'diploma-it': 27500,
+      'diploma-arts': 25500,
       'bachelor-business': 31500,
       'bachelor-it': 33500,
       'bachelor-arts': 29500,
       'bachelor-science': 33500,
       'bachelor-health': 35500,
+      'bachelor-nursing': 33500,
+      'bachelor-agriculture': 33500,
+      'bachelor-education': 30000,
+      'bachelor-theology': 28500,
+      'bachelor-policing': 30500,
       'master-business': 33500,
       'master-it': 34500,
+      'master-health': 35500,
+      'master-arts': 30500,
+      'master-education': 31000,
     },
     paragraphs: [
       "Charles Sturt University (CSU) is Australia's largest regional university with campuses in Albury-Wodonga, Bathurst, Canberra, Dubbo, Goulburn, Orange, Port Macquarie, Wagga Wagga — plus dedicated international campuses in Sydney and Melbourne run as Charles Sturt University Study Centres (Navitas).",
@@ -1193,24 +1840,42 @@ const UNIS = [
       'Основан в 1989',
       'Sydney + Melbourne международные Study Centres',
     ],
+    extraScholarships: [
+      { name: 'CSU International Student Scholarship', nameRu: 'CSU International Student Scholarship', amount: '25% скидки от tuition', description: 'Merit-based award for new international Bachelor and Master students.', descriptionRu: 'Скидка 25% от стоимости обучения для новых международных студентов.', url: 'https://www.csu.edu.au/scholarships' },
+      { name: 'CSU Country Scholarship', nameRu: 'CSU Country Scholarship', amount: 'AU$5,000 — AU$10,000', description: 'Country-specific awards for students from priority international markets.', descriptionRu: 'Стипендии для студентов из приоритетных международных рынков.', url: 'https://www.csu.edu.au/scholarships' },
+      { name: 'CSU Study Centres Pathway Scholarship', nameRu: 'CSU Study Centres Pathway Scholarship', amount: 'AU$3,000', description: 'For Sydney / Melbourne Study Centre students progressing to a CSU degree.', descriptionRu: 'Для студентов Study Centres Sydney / Melbourne, переходящих на CSU degree.', url: 'https://www.csu.edu.au/scholarships' },
+      { name: 'CSU Vice-Chancellor Excellence Scholarship', nameRu: 'CSU Vice-Chancellor Excellence Scholarship', amount: 'до 50% от tuition', description: 'Flagship merit award for outstanding international applicants.', descriptionRu: 'Флагманская стипендия до 50% от стоимости обучения.', url: 'https://www.csu.edu.au/scholarships' },
+    ],
     accommodation: [
       { name: 'Sydney Study Centre — partner residences', price: 'от AU$310/нед', text: 'Студенческие резиденции в Sydney CBD — партнёрские здания в 10-15 минутах ходьбы от Study Centre.' },
+      { name: 'Melbourne Study Centre — partner residences', price: 'от AU$295/нед', text: 'Студенческие резиденции в Melbourne CBD — партнёрские здания рядом с Study Centre.' },
+      { name: 'Scape Sydney (partner)', price: 'от AU$365/нед', text: 'Премиум-резиденция в Sydney CBD — современные студии.' },
+      { name: 'Iglu Brisbane / Melbourne (partner)', price: 'от AU$320/нед', text: 'Партнёрские резиденции в крупных городах — современные студии и shared apartments.' },
       { name: 'Homestay через Study Centre', price: 'от AU$335/нед', text: 'Австралийская семья в Сиднее или Мельбурне — питание и комната.' },
+      { name: 'Private rental (share house)', price: 'от AU$240/нед', text: 'Совместное жильё в Sydney / Melbourne — поддержка housing officer.' },
     ],
     campuses: [
       { title: 'Sydney Study Centre', sub: 'В центре Сиднея (CBD)', text: 'Современный кампус для международных студентов под управлением Navitas. Бизнес, IT, бухучёт.' },
       { title: 'Melbourne Study Centre', sub: 'В центре Мельбурна (CBD)', text: 'Аналогичный кампус в центре Мельбурна.' },
+      { title: 'Bathurst Campus', sub: '200 км от Сиднея, NSW', text: 'Исторический главный кампус CSU — communication, journalism, education.' },
+      { title: 'Wagga Wagga Campus', sub: 'NSW Riverina region', text: 'Крупнейший региональный кампус — agriculture, veterinary, nursing, allied health.' },
+      { title: 'Albury-Wodonga + Orange + Port Macquarie', sub: 'Региональные кампусы NSW/VIC', text: 'Дополнительные региональные кампусы — nursing, business, rural health.' },
     ],
     pathwayPrograms: {
       'Foundation Studies': [
         ['CSU Study Centres Foundation Studies', 'foundation', 1, 'foundation'],
+        ['CSU Foundation Studies — Extended', 'foundation', 1.5, 'foundation'],
       ],
       'Business and Commerce': [
         ['Diploma of Business', 'foundation', 0.67, 'diploma-business'],
         ['Diploma of Commerce', 'foundation', 0.67, 'diploma-business'],
+        ['Diploma of Accounting', 'foundation', 0.67, 'diploma-business'],
       ],
       'Computing and IT': [
         ['Diploma of Information Technology', 'foundation', 0.67, 'diploma-it'],
+      ],
+      'Arts and Communication': [
+        ['Diploma of Communication', 'foundation', 0.67, 'diploma-arts'],
       ],
     },
     bachelorPrograms: {
@@ -1218,27 +1883,81 @@ const UNIS = [
         ['Bachelor of Business (Accounting)', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Business (Management)', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Business (Marketing)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business (Human Resource Management)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business (Finance)', 'bachelor', 3, 'bachelor-business'],
         ['Bachelor of Accounting', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Business Studies (online)', 'bachelor', 3, 'bachelor-business'],
+        ['Bachelor of Commerce', 'bachelor', 3, 'bachelor-business'],
       ],
       'Computing and IT': [
         ['Bachelor of Information Technology', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Computer Science', 'bachelor', 3, 'bachelor-it'],
         ['Bachelor of Cybersecurity', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Information Technology (Cyber Security)', 'bachelor', 3, 'bachelor-it'],
+        ['Bachelor of Data Science', 'bachelor', 3, 'bachelor-it'],
       ],
       'Arts and Humanities': [
         ['Bachelor of Communication (Public Relations)', 'bachelor', 3, 'bachelor-arts'],
+        ['Bachelor of Communication (Journalism)', 'bachelor', 3, 'bachelor-arts'],
         ['Bachelor of Social Work', 'bachelor', 4, 'bachelor-arts'],
+        ['Bachelor of Arts', 'bachelor', 3, 'bachelor-arts'],
       ],
       'Health Sciences': [
-        ['Bachelor of Nursing', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Nursing', 'bachelor', 3, 'bachelor-nursing'],
+        ['Bachelor of Pharmacy', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Medical Science', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Paramedicine', 'bachelor', 3, 'bachelor-health'],
+        ['Bachelor of Physiotherapy', 'bachelor', 4, 'bachelor-health'],
+        ['Bachelor of Occupational Therapy', 'bachelor', 4, 'bachelor-health'],
+      ],
+      'Agriculture and Environment': [
+        ['Bachelor of Agricultural Business Management', 'bachelor', 3, 'bachelor-agriculture'],
+        ['Bachelor of Agricultural Science', 'bachelor', 3, 'bachelor-agriculture'],
+        ['Bachelor of Veterinary Biology / Bachelor of Veterinary Science', 'bachelor', 6, 'bachelor-agriculture'],
+        ['Bachelor of Veterinary Technology', 'bachelor', 3, 'bachelor-agriculture'],
+        ['Bachelor of Equine Science', 'bachelor', 3, 'bachelor-agriculture'],
+        ['Bachelor of Environmental Science and Management', 'bachelor', 3, 'bachelor-science'],
+      ],
+      'Education': [
+        ['Bachelor of Education (Primary)', 'bachelor', 4, 'bachelor-education'],
+        ['Bachelor of Early Childhood and Primary Education', 'bachelor', 4, 'bachelor-education'],
+      ],
+      'Policing and Justice': [
+        ['Bachelor of Policing', 'bachelor', 3, 'bachelor-policing'],
+        ['Bachelor of Criminal Justice', 'bachelor', 3, 'bachelor-policing'],
+      ],
+      'Theology': [
+        ['Bachelor of Theology', 'bachelor', 3, 'bachelor-theology'],
+        ['Bachelor of Ministry', 'bachelor', 3, 'bachelor-theology'],
+      ],
+      'Science': [
+        ['Bachelor of Science', 'bachelor', 3, 'bachelor-science'],
       ],
     },
     masterPrograms: {
       'Business and Commerce': [
         ['Master of Business Administration (MBA)', 'master', 1.5, 'master-business'],
         ['Master of Professional Accounting', 'master', 2, 'master-business'],
-        ['Master of Information Technology', 'master', 2, 'master-it'],
         ['Master of Project Management', 'master', 1.5, 'master-business'],
+        ['Master of Human Resource Management', 'master', 2, 'master-business'],
+        ['Master of Marketing', 'master', 2, 'master-business'],
+      ],
+      'Computing and IT': [
+        ['Master of Information Technology', 'master', 2, 'master-it'],
+        ['Master of Information Systems Security', 'master', 2, 'master-it'],
+        ['Master of Data Science', 'master', 2, 'master-it'],
+      ],
+      'Health Sciences': [
+        ['Master of Nursing', 'master', 2, 'master-health'],
+        ['Master of Public Health', 'master', 2, 'master-health'],
+      ],
+      'Education': [
+        ['Master of Teaching (Primary)', 'master', 2, 'master-education'],
+        ['Master of Education', 'master', 1.5, 'master-education'],
+      ],
+      'Arts and Humanities': [
+        ['Master of Communication', 'master', 1.5, 'master-arts'],
+        ['Master of Social Work', 'master', 2, 'master-arts'],
       ],
     },
   },
@@ -1255,15 +1974,19 @@ const UNIS = [
       'diploma-psychology': 25500,
       'diploma-counselling': 25500,
       'diploma-social-work': 25500,
+      'diploma-criminology': 25500,
+      'diploma-coaching': 25500,
       'bachelor-psychology': 30800,
       'bachelor-counselling': 30800,
       'bachelor-social-work': 30800,
       'bachelor-criminology': 28800,
       'bachelor-coaching': 28800,
+      'bachelor-business': 29800,
       'master-psychology': 33500,
       'master-counselling': 33500,
       'master-social-work': 33500,
       'master-coaching': 31500,
+      'master-criminology': 30500,
     },
     paragraphs: [
       "ACAP University College (Australian College of Applied Professions) is Australia's leading specialist provider of psychology, counselling, social work, and criminology programs. ACAP operates four campuses — Adelaide, Melbourne, Perth, and Sydney — plus a strong online learning portfolio.",
@@ -1287,49 +2010,89 @@ const UNIS = [
       'Основан в 1983',
       'Маленькие классы, прикладной фокус',
     ],
+    extraScholarships: [
+      { name: 'ACAP International Excellence Scholarship', nameRu: 'ACAP International Excellence Scholarship', amount: '25% скидки от tuition', description: 'Merit-based award for international undergraduate and postgraduate students.', descriptionRu: 'Скидка 25% от стоимости обучения для международных студентов.', url: 'https://www.acap.edu.au/scholarships' },
+      { name: 'ACAP Psychology Pathway Scholarship', nameRu: 'ACAP Psychology Pathway Scholarship', amount: 'до AU$5,000', description: 'For international students entering the Bachelor of Psychological Science.', descriptionRu: 'Для международных студентов на программе Bachelor of Psychological Science.', url: 'https://www.acap.edu.au/scholarships' },
+      { name: 'ACAP Counselling Future Leaders Scholarship', nameRu: 'ACAP Counselling Future Leaders Scholarship', amount: '20% скидки от tuition', description: 'For students entering ACAP counselling and applied social science degrees.', descriptionRu: 'Для студентов на программах counselling и applied social science ACAP.', url: 'https://www.acap.edu.au/scholarships' },
+      { name: 'ACAP Equity Scholarship', nameRu: 'ACAP Equity Scholarship', amount: 'AU$3,000', description: 'For international students from under-represented backgrounds entering ACAP degrees.', descriptionRu: 'Для международных студентов из недопредставленных категорий.', url: 'https://www.acap.edu.au/scholarships' },
+    ],
     accommodation: [
-      { name: 'Partner student residences (Sydney CBD)', price: 'от AU$300/нед', text: 'ACAP не имеет собственных общежитий; партнёрские студенческие резиденции в Sydney CBD.' },
+      { name: 'Iglu Sydney Central (partner)', price: 'от AU$330/нед', text: 'Партнёрская резиденция в Sydney CBD — рядом с ACAP Sydney Campus.' },
+      { name: 'Scape Sydney CBD (partner)', price: 'от AU$370/нед', text: 'Премиум-резиденция в Sydney CBD — современные студии.' },
+      { name: 'UniLodge Melbourne (partner)', price: 'от AU$295/нед', text: 'Партнёрская резиденция в Melbourne CBD — для студентов кампуса ACAP Melbourne.' },
+      { name: 'UniLodge Adelaide / Perth (partner)', price: 'от AU$275/нед', text: 'Партнёрские резиденции в Adelaide и Perth — для студентов соответствующих кампусов.' },
       { name: 'Homestay через ACAP', price: 'от AU$335/нед', text: 'Австралийская семья — питание и комната, доступна во всех 4 городах.' },
+      { name: 'Private rental (share house)', price: 'от AU$240/нед', text: 'Совместное жильё рядом с кампусом — поддержка housing officer.' },
     ],
     campuses: [
       { title: 'Sydney Campus', sub: '255 Elizabeth Street, Sydney CBD', text: 'Главный кампус ACAP в центре Сиднея.' },
-      { title: 'Melbourne / Perth / Adelaide Campuses', sub: 'Региональные кампусы', text: 'Те же программы доступны в Мельбурне, Перте и Аделаиде.' },
+      { title: 'Melbourne Campus', sub: '321 Exhibition Street, Melbourne CBD', text: 'Melbourne CBD кампус — те же программы по психологии и counselling.' },
+      { title: 'Brisbane Campus', sub: '46 Edward Street, Brisbane CBD', text: 'Brisbane CBD кампус — программы по counselling и социальной работе.' },
+      { title: 'Perth Campus', sub: 'Perth CBD', text: 'Perth CBD кампус — counselling и social work программы.' },
+      { title: 'Adelaide Campus', sub: 'Adelaide CBD', text: 'Adelaide CBD кампус — программы по психологии и criminology.' },
     ],
     pathwayPrograms: {
       'Psychology and Counselling': [
         ['Diploma of Counselling', 'foundation', 1, 'diploma-counselling'],
         ['Diploma of Psychological Science', 'foundation', 1, 'diploma-psychology'],
+        ['Diploma of Mental Health', 'foundation', 1, 'diploma-counselling'],
       ],
       'Social Work': [
         ['Diploma of Community Services', 'foundation', 1, 'diploma-social-work'],
+        ['Diploma of Youth Work', 'foundation', 1, 'diploma-social-work'],
+      ],
+      'Criminology': [
+        ['Diploma of Criminology and Justice', 'foundation', 1, 'diploma-criminology'],
+      ],
+      'Coaching': [
+        ['Diploma of Coaching', 'foundation', 1, 'diploma-coaching'],
       ],
     },
     bachelorPrograms: {
       'Psychology and Counselling': [
         ['Bachelor of Psychological Science', 'bachelor', 3, 'bachelor-psychology'],
+        ['Bachelor of Psychological Science (Honours)', 'bachelor', 4, 'bachelor-psychology'],
+        ['Bachelor of Counselling', 'bachelor', 3, 'bachelor-counselling'],
         ['Bachelor of Applied Social Science (Counselling)', 'bachelor', 3, 'bachelor-counselling'],
+        ['Bachelor of Applied Social Science (Counselling and Psychology)', 'bachelor', 3, 'bachelor-counselling'],
+        ['Bachelor of Applied Social Science (Counselling and Coaching)', 'bachelor', 3, 'bachelor-counselling'],
       ],
       'Social Work': [
         ['Bachelor of Social Work', 'bachelor', 4, 'bachelor-social-work'],
         ['Bachelor of Applied Social Science', 'bachelor', 3, 'bachelor-social-work'],
+        ['Bachelor of Applied Social Science (Community Services)', 'bachelor', 3, 'bachelor-social-work'],
       ],
       'Criminology and Justice': [
         ['Bachelor of Criminology and Justice', 'bachelor', 3, 'bachelor-criminology'],
+        ['Bachelor of Criminology', 'bachelor', 3, 'bachelor-criminology'],
+        ['Bachelor of Criminology and Police Studies', 'bachelor', 3, 'bachelor-criminology'],
       ],
       'Coaching and Leadership': [
         ['Bachelor of Applied Social Science (Coaching)', 'bachelor', 3, 'bachelor-coaching'],
+        ['Bachelor of Applied Social Science (Coaching Psychology)', 'bachelor', 3, 'bachelor-coaching'],
+      ],
+      'Business and Leadership': [
+        ['Bachelor of Business (Leadership)', 'bachelor', 3, 'bachelor-business'],
       ],
     },
     masterPrograms: {
       'Psychology and Counselling': [
         ['Master of Counselling and Psychotherapy', 'master', 2, 'master-counselling'],
         ['Master of Professional Psychology (5th year)', 'master', 1, 'master-psychology'],
+        ['Master of Clinical Psychology', 'master', 2, 'master-psychology'],
+        ['Master of Applied Psychology', 'master', 2, 'master-psychology'],
+        ['Master of Family Therapy', 'master', 2, 'master-counselling'],
       ],
       'Social Work': [
         ['Master of Social Work (Qualifying)', 'master', 2, 'master-social-work'],
+        ['Master of Social Work', 'master', 2, 'master-social-work'],
       ],
       'Coaching and Leadership': [
         ['Master of Coaching Psychology', 'master', 1.5, 'master-coaching'],
+        ['Master of Leadership Coaching', 'master', 1.5, 'master-coaching'],
+      ],
+      'Criminology': [
+        ['Master of Criminology and Justice', 'master', 1.5, 'master-criminology'],
       ],
     },
   },
@@ -1349,13 +2112,18 @@ const UNIS = [
       'diploma-games': 24500,
       'diploma-design': 24500,
       'diploma-music': 24500,
+      'diploma-web': 24500,
       'bachelor-audio': 27500,
       'bachelor-film': 27500,
       'bachelor-animation': 27500,
       'bachelor-games': 27500,
       'bachelor-design': 27500,
       'bachelor-music': 27500,
+      'bachelor-web': 27500,
+      'bachelor-vfx': 28500,
       'master-creative': 30000,
+      'master-audio': 30000,
+      'master-design': 30000,
     },
     paragraphs: [
       "SAE University College is one of the world's most established creative-media institutions, with 50+ campuses across 23 countries. SAE specialises in film, audio, animation, games, design, and music — taught in industry-spec studios using the same software and hardware used by professional production houses.",
@@ -1379,165 +2147,103 @@ const UNIS = [
       'Основан в 1976 (в Сиднее)',
       'Индустриальные студии — фильм, аудио, анимация, игры',
     ],
+    extraScholarships: [
+      { name: 'SAE International Creative Scholarship', nameRu: 'SAE International Creative Scholarship', amount: '20% скидки от tuition', description: 'Portfolio-based award for international students entering SAE creative-media degrees.', descriptionRu: 'Скидка 20% по результатам портфолио для международных студентов SAE.', url: 'https://sae.edu.au/scholarships' },
+      { name: 'SAE Excellence Scholarship', nameRu: 'SAE Excellence Scholarship', amount: 'до AU$5,000', description: 'Merit-based award for high-achieving international applicants.', descriptionRu: 'Скидка до AU$5,000 для высокоуспевающих международных абитуриентов.', url: 'https://sae.edu.au/scholarships' },
+      { name: 'SAE Women in Audio / Games Scholarship', nameRu: 'SAE Women in Audio / Games Scholarship', amount: '25% скидки от tuition', description: 'Diversity scholarship for female students entering audio production or games development.', descriptionRu: 'Скидка 25% для девушек на программах audio production или games development.', url: 'https://sae.edu.au/scholarships' },
+      { name: 'SAE Future Creators Scholarship', nameRu: 'SAE Future Creators Scholarship', amount: 'до AU$3,000', description: 'For international students with strong portfolios in film, animation, or design.', descriptionRu: 'Для международных студентов с сильным портфолио в film, animation или design.', url: 'https://sae.edu.au/scholarships' },
+    ],
     accommodation: [
-      { name: 'Partner student residences (Sydney CBD)', price: 'от AU$290/нед', text: 'SAE не имеет собственных общежитий; партнёрские резиденции в Sydney / Melbourne / Brisbane.' },
+      { name: 'Iglu Central Sydney (partner)', price: 'от AU$330/нед', text: 'Партнёрская резиденция в Sydney CBD — рядом с SAE Sydney Campus в Chippendale.' },
+      { name: 'UniLodge Melbourne (partner)', price: 'от AU$295/нед', text: 'Партнёрская резиденция в Melbourne CBD — для студентов кампуса SAE Melbourne.' },
+      { name: 'Scape Brisbane (partner)', price: 'от AU$310/нед', text: 'Премиум-резиденция в Brisbane CBD — рядом с SAE Brisbane Campus.' },
+      { name: 'UniLodge Perth / Adelaide (partner)', price: 'от AU$275/нед', text: 'Партнёрские резиденции в Perth и Adelaide.' },
       { name: 'Homestay через SAE', price: 'от AU$320/нед', text: 'Австралийская семья — питание и комната, доступна во всех 6 городах.' },
+      { name: 'Private rental (share house)', price: 'от AU$230/нед', text: 'Совместное жильё рядом с кампусом — поддержка housing officer.' },
     ],
     campuses: [
       { title: 'Sydney Campus', sub: '39 Regent Street, Chippendale', text: 'Главный кампус в Сиднее — рядом с Central Station. Студии аудио, фильма, игр.' },
+      { title: 'Melbourne Campus', sub: '235 Normanby Road, South Melbourne', text: 'Melbourne кампус — фильм, анимация, аудио. Индустриальные студии.' },
+      { title: 'Brisbane Campus', sub: '37 Tribune Street, South Brisbane', text: 'Brisbane кампус — игры, дизайн, аудио. В креативном квартале Брисбена.' },
       { title: 'Byron Bay Campus', sub: 'NSW северное побережье', text: 'Уникальный кампус в Byron Bay — фильм, анимация, музыка в creative-friendly среде.' },
+      { title: 'Perth + Adelaide Campuses', sub: 'Региональные кампусы Австралии', text: 'Кампусы SAE в Перте и Аделаиде — те же программы.' },
     ],
     pathwayPrograms: {
       'Audio': [
         ['Diploma of Audio', 'foundation', 1, 'diploma-audio'],
+        ['Diploma of Audio Production', 'foundation', 1, 'diploma-audio'],
       ],
       'Film and Animation': [
         ['Diploma of Film', 'foundation', 1, 'diploma-film'],
         ['Diploma of Animation', 'foundation', 1, 'diploma-animation'],
+        ['Diploma of Visual Effects', 'foundation', 1, 'diploma-animation'],
       ],
       'Games and Design': [
         ['Diploma of Games (Programming / Art)', 'foundation', 1, 'diploma-games'],
         ['Diploma of Design', 'foundation', 1, 'diploma-design'],
+        ['Diploma of Web Development', 'foundation', 1, 'diploma-web'],
       ],
       'Music': [
         ['Diploma of Music (Production)', 'foundation', 1, 'diploma-music'],
+        ['Diploma of Music (Performance)', 'foundation', 1, 'diploma-music'],
       ],
     },
     bachelorPrograms: {
       'Audio': [
         ['Bachelor of Audio Production', 'bachelor', 3, 'bachelor-audio'],
+        ['Bachelor of Audio Engineering', 'bachelor', 3, 'bachelor-audio'],
+        ['Bachelor of Audio (Live Sound)', 'bachelor', 3, 'bachelor-audio'],
       ],
       'Film and Animation': [
         ['Bachelor of Film Production', 'bachelor', 3, 'bachelor-film'],
+        ['Bachelor of Film (Cinematography)', 'bachelor', 3, 'bachelor-film'],
+        ['Bachelor of Film (Producing)', 'bachelor', 3, 'bachelor-film'],
         ['Bachelor of Animation', 'bachelor', 3, 'bachelor-animation'],
-        ['Bachelor of Animation (Visual Effects)', 'bachelor', 3, 'bachelor-animation'],
+        ['Bachelor of Animation (Visual Effects)', 'bachelor', 3, 'bachelor-vfx'],
+        ['Bachelor of Animation (Motion Graphics)', 'bachelor', 3, 'bachelor-animation'],
       ],
       'Games and Design': [
         ['Bachelor of Games Development (Programming)', 'bachelor', 3, 'bachelor-games'],
         ['Bachelor of Games Development (Art)', 'bachelor', 3, 'bachelor-games'],
+        ['Bachelor of Games Design', 'bachelor', 3, 'bachelor-games'],
         ['Bachelor of Design', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Design (Graphic Design)', 'bachelor', 3, 'bachelor-design'],
+        ['Bachelor of Design (User Experience Design)', 'bachelor', 3, 'bachelor-design'],
       ],
       'Music': [
         ['Bachelor of Music (Production)', 'bachelor', 3, 'bachelor-music'],
+        ['Bachelor of Music (Performance)', 'bachelor', 3, 'bachelor-music'],
         ['Bachelor of Creative Industries', 'bachelor', 3, 'bachelor-music'],
+      ],
+      'Web and Digital Media': [
+        ['Bachelor of Web Development', 'bachelor', 3, 'bachelor-web'],
+        ['Bachelor of Web Design', 'bachelor', 3, 'bachelor-web'],
+        ['Bachelor of Digital Media', 'bachelor', 3, 'bachelor-web'],
       ],
     },
     masterPrograms: {
       'Creative Industries': [
         ['Master of Creative Industries', 'master', 1.5, 'master-creative'],
+        ['Master of Creative Industries (Film)', 'master', 1.5, 'master-creative'],
+        ['Master of Creative Industries (Games)', 'master', 1.5, 'master-creative'],
+      ],
+      'Audio': [
+        ['Master of Audio', 'master', 1.5, 'master-audio'],
+        ['Master of Audio (Production)', 'master', 1.5, 'master-audio'],
+      ],
+      'Design': [
+        ['Master of Design (Animation)', 'master', 1.5, 'master-design'],
+        ['Master of Design', 'master', 1.5, 'master-design'],
       ],
     },
   },
 ];
 
-const NAVITAS_BURSARY = {
-  name: 'Navitas Loyalty Bursary',
-  nameRu: 'Navitas Loyalty Bursary',
-  amount: 'до AU$2,000',
-  description: 'Discount on first-trimester fees for students progressing from a Navitas pathway college to the partner university.',
-  descriptionRu: 'Скидка на оплату первого триместра для студентов, переходящих из pathway-колледжа Navitas в партнёрский университет.',
-  url: 'https://www.navitas.com/study/scholarships/',
-};
-
-function buildProgramsForFacultyGroup(uni, group, programType) {
-  /** @type {Array<{ slug: string; title: string; level: string; durationYears: number; faculty: string; feeBandKey: string; intakes: string[] }>} */
-  const out = [];
-  for (const [faculty, programs] of Object.entries(group)) {
-    for (const [title, level, durationYears, feeBandKey, intakes] of programs) {
-      const slug = `${uni.slug}-${slugify(title).slice(0, 70)}`;
-      out.push({
-        slug,
-        title,
-        level,
-        durationYears,
-        faculty,
-        feeBandKey: feeBandKey || level,
-        intakes: intakes || DEFAULT_INTAKES,
-        programType,
-      });
-    }
-  }
-  return out;
-}
-
-function buildPrograms(uni) {
-  const all = [
-    ...buildProgramsForFacultyGroup(uni, uni.pathwayPrograms, 'pathway'),
-    ...buildProgramsForFacultyGroup(uni, uni.bachelorPrograms, 'degree'),
-    ...buildProgramsForFacultyGroup(uni, uni.masterPrograms, 'degree'),
-  ];
-  // Deduplicate slugs (in case of collisions).
-  const seen = new Set();
-  return all.filter((p) => {
-    if (seen.has(p.slug)) return false;
-    seen.add(p.slug);
-    return true;
-  });
-}
-
-function buildUniversity(uni) {
-  const programs = buildPrograms(uni);
-  const tuitionByProgram = {};
-  const deadlines = {};
-  for (const p of programs) {
-    const fee = uni.feeBand[p.feeBandKey] ?? uni.feeBand[p.level] ?? 0;
-    tuitionByProgram[p.slug] = fee;
-    deadlines[p.slug] = p.level === 'master' ? INTAKE_JUL : INTAKE_FEB;
-  }
-  const sourceHash = `sha256:${createHash('sha256').update(`navitas-${uni.slug}-${TODAY.slice(0, 10)}`).digest('hex').slice(0, 16)}`;
-  return {
-    slug: uni.slug,
-    name: uni.name,
-    country: 'Australia',
-    city: uni.city,
-    programs: programs.map((p) => ({
-      slug: p.slug,
-      title: p.title,
-      durationYears: p.durationYears,
-      level: p.level,
-      language: 'en',
-      faculty: p.faculty,
-      intakes: p.intakes,
-      programUrl: p.programType === 'pathway' ? uni.coursesUrl : uni.officialUrl,
-      programType: p.programType,
-    })),
-    tuition: { currency: 'AUD', byProgram: tuitionByProgram },
-    deadlines,
-    requirements: {
-      language: { ielts: uni.ielts },
-      exams: ['IELTS Academic'],
-    },
-    scholarships: [NAVITAS_BURSARY],
-    accommodation: uni.accommodation,
-    campuses: uni.campuses,
-    description: {
-      paragraphs: uni.paragraphs,
-      paragraphsRu: uni.paragraphsRu,
-      keyFacts: uni.keyFacts,
-      keyFactsRu: uni.keyFactsRu,
-    },
-    lastChecked: TODAY,
-    sourceUrl: uni.navitasUrl,
-    sourceHash,
-    confidence: 'aggregator',
-    language: 'ru',
-  };
-}
-
-async function main() {
-  await mkdir(CONTENT_DIR, { recursive: true });
-  let totalPrograms = 0;
-  for (const uni of UNIS) {
-    const university = buildUniversity(uni);
-    const filePath = resolve(CONTENT_DIR, `${uni.slug}.json`);
-    await writeFile(filePath, JSON.stringify(university, null, 2) + '\n', 'utf8');
-    totalPrograms += university.programs.length;
-    console.log(`[seed] wrote ${uni.slug}.json (${university.programs.length} programs)`);
-  }
-  console.log(`[seed] done · ${UNIS.length} universities · ${totalPrograms} programs total`);
-}
-
-main().catch((err) => {
-  console.error('[seed] FAILED:', err);
-  process.exit(1);
+await writeAll(UNIS, {
+  country: 'Australia',
+  currency: 'AUD',
+  primaryIntake: INTAKE_FEB,
+  secondaryIntake: INTAKE_JUL,
+  defaultIntakes: DEFAULT_INTAKES,
+  scholarship: NAVITAS_BURSARY_AUD,
 });
