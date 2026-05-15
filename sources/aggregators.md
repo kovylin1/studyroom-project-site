@@ -41,3 +41,29 @@
 - **ToS notes:** robots.txt permissive; partner-college sites carry standard "all rights reserved" — same posture as Kaplan
 - **Confidence tier in our schema:** `aggregator` (Navitas pathway data trumps third-party, but for parent-uni degrees we should cross-check the official uni site)
 
+## `oxford-international`
+
+- **Base URL:** `https://www.oxfordinternational.com/`
+- **Catalog index:** `https://www.oxfordinternationaleducationgroup.com/services/academic-partnerships/`
+- **NOT the same as University of Oxford** — Oxford International Education Group (OIEG) is a UK-based pathway aggregator (like Kaplan / Navitas). Their flagship "Oxford International" name is unrelated to the actual University of Oxford. The real University of Oxford takes only direct admissions and is in the catalog as the separate `oxford` entry (tier `partner`).
+- **Pathway centres:** Oxford + London (UK) + Halifax (Canada, "University College Pathway")
+- **Per-destination page pattern:**
+  - UK partners → typically `https://www.oxfordinternational.com/partner/{college-or-uni-slug}/`
+  - Canada partners → `https://www.oxfordinternationalenglish.com/courses/halifax-university-college-pathways/`
+- **Rendering:** static HTML on partner pages. Main domain `oxfordinternational.com` returns HTTP 403 to WebFetch user-agents — use real browser or `curl` with proper UA when fetching. Sub-domains `oxfordinternationaleducationgroup.com`, `oxfordinternationalenglish.com`, `oicolleges.com` are more permissive.
+- **Data spread across sub-pages (per partner):**
+  - Partner page → name, hero, pathway entry requirements, English level needed
+  - Parent uni's own site → real Bachelor / Master programs, tuition (varies by country)
+- **Auth required:** no
+- **Rate limits / anti-bot:** Cloudflare 403 on main domain for unknown UAs
+- **What it provides reliably:** Foundation / Pre-Master entry routes, English-pathway placement, Halifax UCP for Atlantic Canada
+- **What it misses or is hard to scrape:** per-program tuition for partner uni degrees (only pathway fees published)
+- **ToS notes:** robots.txt permissive; partner colleges' own sites carry standard "all rights reserved"
+- **Confidence tier in our schema:** `aggregator`
+- **Known partners (2026-05-15):**
+  - UK (8 partners we track): University of Kent · University of Dundee · Ulster University · University of Bradford · Abertay University · Bangor University · De Montfort University · University of Greenwich. Plus dupes already in catalog via Kaplan: University of Birmingham (`birmingham`), University of Glasgow (`glasgow`)
+  - Canada Halifax UCP (9 degree-granting partners): Saint Mary's · Dalhousie · NSCAD · Mount Saint Vincent · St. Francis Xavier · Acadia · Mount Allison · University of Prince Edward Island · Memorial University of Newfoundland
+  - USA (1 partner): San Francisco State University
+  - Australia (1 partner — already in catalog via Navitas): Edith Cowan University (`edith-cowan`)
+
+

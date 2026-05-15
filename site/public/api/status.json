@@ -24,6 +24,20 @@
       "baseUrl": "https://www.kaplanpathways.com/",
       "host": "kaplanpathways.com",
       "tier": "partner"
+    },
+    {
+      "slug": "navitas-pathways",
+      "name": "Navitas Pathways",
+      "baseUrl": "https://www.navitas.com/",
+      "host": "navitas.com",
+      "tier": "aggregator"
+    },
+    {
+      "slug": "oxford-international",
+      "name": "Oxford International",
+      "baseUrl": "https://www.oxfordinternational.com/",
+      "host": "oxfordinternational.com",
+      "tier": "aggregator"
     }
   ],
   "registry": [
@@ -458,8 +472,860 @@
         "confidence": "official",
         "programsCount": 128
       }
+    },
+    {
+      "slug": "curtin",
+      "name": "Curtin University",
+      "country": "Australia",
+      "city": "Perth",
+      "tier": "aggregator",
+      "officialUrl": "https://www.curtin.edu.au/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:05.977Z",
+        "sourceUrl": "https://www.curtincollege.edu.au/",
+        "sourceHash": "sha256:c319f578d8b18f5d",
+        "confidence": "aggregator",
+        "programsCount": 103
+      }
+    },
+    {
+      "slug": "deakin",
+      "name": "Deakin University",
+      "country": "Australia",
+      "city": "Melbourne",
+      "tier": "aggregator",
+      "officialUrl": "https://www.deakin.edu.au/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:05.977Z",
+        "sourceUrl": "https://www.deakincollege.edu.au/",
+        "sourceHash": "sha256:f8951797f2827bf2",
+        "confidence": "aggregator",
+        "programsCount": 86
+      }
+    },
+    {
+      "slug": "edith-cowan",
+      "name": "Edith Cowan University",
+      "country": "Australia",
+      "city": "Perth",
+      "tier": "aggregator",
+      "officialUrl": "https://www.ecu.edu.au/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:05.977Z",
+        "sourceUrl": "https://www.edithcowancollege.edu.au/",
+        "sourceHash": "sha256:a7f7880f92a90dce",
+        "confidence": "aggregator",
+        "programsCount": 72
+      }
+    },
+    {
+      "slug": "griffith",
+      "name": "Griffith University",
+      "country": "Australia",
+      "city": "Brisbane",
+      "tier": "aggregator",
+      "officialUrl": "https://www.griffith.edu.au/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:05.977Z",
+        "sourceUrl": "https://www.griffithcollege.edu.au/",
+        "sourceHash": "sha256:495c1a7b450100ce",
+        "confidence": "aggregator",
+        "programsCount": 89
+      }
+    },
+    {
+      "slug": "la-trobe",
+      "name": "La Trobe University",
+      "country": "Australia",
+      "city": "Melbourne",
+      "tier": "aggregator",
+      "officialUrl": "https://www.latrobe.edu.au/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:05.977Z",
+        "sourceUrl": "https://www.latrobecollegeaustralia.edu.au/",
+        "sourceHash": "sha256:5edcb03403d05ba7",
+        "confidence": "aggregator",
+        "programsCount": 82
+      }
+    },
+    {
+      "slug": "western-sydney",
+      "name": "Western Sydney University",
+      "country": "Australia",
+      "city": "Sydney",
+      "tier": "aggregator",
+      "officialUrl": "https://www.westernsydney.edu.au/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:05.977Z",
+        "sourceUrl": "https://internationalcollege.westernsydney.edu.au/",
+        "sourceHash": "sha256:a8133dffbb0a9a05",
+        "confidence": "aggregator",
+        "programsCount": 80
+      }
+    },
+    {
+      "slug": "sydney",
+      "name": "The University of Sydney",
+      "country": "Australia",
+      "city": "Sydney",
+      "tier": "aggregator",
+      "officialUrl": "https://www.sydney.edu.au/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:05.977Z",
+        "sourceUrl": "https://www.taylorssydney.edu.au/",
+        "sourceHash": "sha256:896e5d7ef37dc12a",
+        "confidence": "aggregator",
+        "programsCount": 100
+      }
+    },
+    {
+      "slug": "canberra",
+      "name": "University of Canberra",
+      "country": "Australia",
+      "city": "Canberra",
+      "tier": "aggregator",
+      "officialUrl": "https://www.canberra.edu.au/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:05.977Z",
+        "sourceUrl": "https://www.canberra.edu.au/uc-college",
+        "sourceHash": "sha256:cb9e1502d01a12d6",
+        "confidence": "aggregator",
+        "programsCount": 67
+      }
+    },
+    {
+      "slug": "charles-sturt",
+      "name": "Charles Sturt University",
+      "country": "Australia",
+      "city": "Bathurst",
+      "tier": "aggregator",
+      "officialUrl": "https://www.csu.edu.au/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:05.977Z",
+        "sourceUrl": "https://sydneymelbourne.csu.edu.au/",
+        "sourceHash": "sha256:24f1c62b260ddfb5",
+        "confidence": "aggregator",
+        "programsCount": 57
+      }
+    },
+    {
+      "slug": "acap",
+      "name": "ACAP University College",
+      "country": "Australia",
+      "city": "Sydney",
+      "tier": "aggregator",
+      "officialUrl": "https://www.acap.edu.au/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:05.977Z",
+        "sourceUrl": "https://www.acap.edu.au/",
+        "sourceHash": "sha256:d0d6f2c136326aca",
+        "confidence": "aggregator",
+        "programsCount": 32
+      }
+    },
+    {
+      "slug": "sae",
+      "name": "SAE University College",
+      "country": "Australia",
+      "city": "Sydney",
+      "tier": "aggregator",
+      "officialUrl": "https://sae.edu.au/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:05.977Z",
+        "sourceUrl": "https://sae.edu.au/",
+        "sourceHash": "sha256:2f0081b79dda9936",
+        "confidence": "aggregator",
+        "programsCount": 38
+      }
+    },
+    {
+      "slug": "simon-fraser",
+      "name": "Simon Fraser University",
+      "country": "Canada",
+      "city": "Burnaby",
+      "tier": "aggregator",
+      "officialUrl": "https://www.sfu.ca/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:04:18.351Z",
+        "sourceUrl": "https://www.fraseric.ca/",
+        "sourceHash": "sha256:d18182ba3a0af2d1",
+        "confidence": "aggregator",
+        "programsCount": 99
+      }
+    },
+    {
+      "slug": "manitoba",
+      "name": "University of Manitoba",
+      "country": "Canada",
+      "city": "Winnipeg",
+      "tier": "aggregator",
+      "officialUrl": "https://umanitoba.ca/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:04:18.351Z",
+        "sourceUrl": "https://www.icmanitoba.ca/",
+        "sourceHash": "sha256:20dd2c4b5f229a8b",
+        "confidence": "aggregator",
+        "programsCount": 90
+      }
+    },
+    {
+      "slug": "toronto-met",
+      "name": "Toronto Metropolitan University",
+      "country": "Canada",
+      "city": "Toronto",
+      "tier": "aggregator",
+      "officialUrl": "https://www.torontomu.ca/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:04:18.351Z",
+        "sourceUrl": "https://www.torontomuic.ca/",
+        "sourceHash": "sha256:9d41465194e0e35a",
+        "confidence": "aggregator",
+        "programsCount": 99
+      }
+    },
+    {
+      "slug": "lethbridge",
+      "name": "University of Lethbridge",
+      "country": "Canada",
+      "city": "Calgary",
+      "tier": "aggregator",
+      "officialUrl": "https://www.ulethbridge.ca/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:04:18.351Z",
+        "sourceUrl": "https://www.uicc.ca/",
+        "sourceHash": "sha256:580aa7aa2fe411d3",
+        "confidence": "aggregator",
+        "programsCount": 74
+      }
+    },
+    {
+      "slug": "western-ontario",
+      "name": "Western University",
+      "country": "Canada",
+      "city": "London",
+      "tier": "aggregator",
+      "officialUrl": "https://www.uwo.ca/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:04:18.351Z",
+        "sourceUrl": "https://www.westernic.ca/",
+        "sourceHash": "sha256:06d0fa648efd6259",
+        "confidence": "aggregator",
+        "programsCount": 106
+      }
+    },
+    {
+      "slug": "wilfrid-laurier",
+      "name": "Wilfrid Laurier University",
+      "country": "Canada",
+      "city": "Waterloo",
+      "tier": "aggregator",
+      "officialUrl": "https://www.wlu.ca/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:04:18.351Z",
+        "sourceUrl": "https://www.laurieric.ca/",
+        "sourceHash": "sha256:fafccb81ae586780",
+        "confidence": "aggregator",
+        "programsCount": 85
+      }
+    },
+    {
+      "slug": "lancaster-leipzig",
+      "name": "Lancaster University Leipzig",
+      "country": "Germany",
+      "city": "Leipzig",
+      "tier": "aggregator",
+      "officialUrl": "https://www.lancaster.ac.uk/leipzig/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:09:53.778Z",
+        "sourceUrl": "https://www.lancasterleipzig.de/",
+        "sourceHash": "sha256:bd2cdc3ad8ce0cde",
+        "confidence": "aggregator",
+        "programsCount": 50
+      }
+    },
+    {
+      "slug": "srh-germany",
+      "name": "SRH International College",
+      "country": "Germany",
+      "city": "Berlin",
+      "tier": "aggregator",
+      "officialUrl": "https://www.srh-international-college.de/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:09:53.778Z",
+        "sourceUrl": "https://www.srh-international-college.de/",
+        "sourceHash": "sha256:49001c0392e8308d",
+        "confidence": "aggregator",
+        "programsCount": 71
+      }
+    },
+    {
+      "slug": "dli-bandung",
+      "name": "Deakin Lancaster Indonesia",
+      "country": "Indonesia",
+      "city": "Bandung",
+      "tier": "aggregator",
+      "officialUrl": "https://www.dli.ac.id/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:09:54.290Z",
+        "sourceUrl": "https://www.dli.ac.id/",
+        "sourceHash": "sha256:bead7e3ce21103b5",
+        "confidence": "aggregator",
+        "programsCount": 22
+      }
+    },
+    {
+      "slug": "hague",
+      "name": "The Hague University of Applied Sciences",
+      "country": "Netherlands",
+      "city": "The Hague",
+      "tier": "aggregator",
+      "officialUrl": "https://www.thehagueuniversity.com/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:09:53.970Z",
+        "sourceUrl": "https://www.thehaguepathway.nl/",
+        "sourceHash": "sha256:9a6b39be401784e1",
+        "confidence": "aggregator",
+        "programsCount": 53
+      }
+    },
+    {
+      "slug": "twente",
+      "name": "University of Twente",
+      "country": "Netherlands",
+      "city": "Enschede",
+      "tier": "aggregator",
+      "officialUrl": "https://www.utwente.nl/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:09:53.970Z",
+        "sourceUrl": "https://www.twentepathway.nl/",
+        "sourceHash": "sha256:b9b628f36489fd95",
+        "confidence": "aggregator",
+        "programsCount": 70
+      }
+    },
+    {
+      "slug": "canterbury-nz",
+      "name": "University of Canterbury",
+      "country": "New Zealand",
+      "city": "Christchurch",
+      "tier": "aggregator",
+      "officialUrl": "https://www.canterbury.ac.nz/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:09:54.081Z",
+        "sourceUrl": "https://www.ucic.ac.nz/",
+        "sourceHash": "sha256:dfa6cb294e72d65a",
+        "confidence": "aggregator",
+        "programsCount": 92
+      }
+    },
+    {
+      "slug": "waikato",
+      "name": "University of Waikato",
+      "country": "New Zealand",
+      "city": "Hamilton",
+      "tier": "aggregator",
+      "officialUrl": "https://www.waikato.ac.nz/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:09:54.081Z",
+        "sourceUrl": "https://pathways.waikato.ac.nz/",
+        "sourceHash": "sha256:b4f3c93090ca3bc3",
+        "confidence": "aggregator",
+        "programsCount": 82
+      }
+    },
+    {
+      "slug": "curtin-singapore",
+      "name": "Curtin Singapore",
+      "country": "Singapore",
+      "city": "Singapore",
+      "tier": "aggregator",
+      "officialUrl": "https://curtin.edu.sg/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:09:54.290Z",
+        "sourceUrl": "http://curtin.edu.sg/",
+        "sourceHash": "sha256:01bf41a5ae9a318e",
+        "confidence": "aggregator",
+        "programsCount": 42
+      }
+    },
+    {
+      "slug": "edith-cowan-sl",
+      "name": "Edith Cowan University Sri Lanka",
+      "country": "Sri Lanka",
+      "city": "Colombo",
+      "tier": "aggregator",
+      "officialUrl": "https://www.ecu.edu.lk/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:09:54.290Z",
+        "sourceUrl": "https://www.ecu.edu.lk/",
+        "sourceHash": "sha256:6dd6708d49fa8b43",
+        "confidence": "aggregator",
+        "programsCount": 26
+      }
+    },
+    {
+      "slug": "murdoch-dubai",
+      "name": "Murdoch University Dubai",
+      "country": "United Arab Emirates",
+      "city": "Dubai",
+      "tier": "aggregator",
+      "officialUrl": "https://www.murdochuniversitydubai.com/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:09:54.290Z",
+        "sourceUrl": "https://www.murdochuniversitydubai.com/",
+        "sourceHash": "sha256:ef060c82cb2a05b3",
+        "confidence": "aggregator",
+        "programsCount": 39
+      }
+    },
+    {
+      "slug": "anglia-ruskin",
+      "name": "Anglia Ruskin University",
+      "country": "United Kingdom",
+      "city": "Cambridge",
+      "tier": "aggregator",
+      "officialUrl": "https://www.aru.ac.uk/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:20.242Z",
+        "sourceUrl": "http://www.arucollege.com/",
+        "sourceHash": "sha256:3c188a9b3fd4d328",
+        "confidence": "aggregator",
+        "programsCount": 68
+      }
+    },
+    {
+      "slug": "birmingham-city",
+      "name": "Birmingham City University",
+      "country": "United Kingdom",
+      "city": "Birmingham",
+      "tier": "aggregator",
+      "officialUrl": "https://www.bcu.ac.uk/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:20.242Z",
+        "sourceUrl": "https://www.bcuic.navitas.com/",
+        "sourceHash": "sha256:9c098f2334f04d05",
+        "confidence": "aggregator",
+        "programsCount": 69
+      }
+    },
+    {
+      "slug": "brunel",
+      "name": "Brunel University of London",
+      "country": "United Kingdom",
+      "city": "London",
+      "tier": "aggregator",
+      "officialUrl": "https://www.brunel.ac.uk/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:20.242Z",
+        "sourceUrl": "https://pathway.brunel.ac.uk/",
+        "sourceHash": "sha256:a6fb2ca6aa6256f8",
+        "confidence": "aggregator",
+        "programsCount": 68
+      }
+    },
+    {
+      "slug": "hertfordshire",
+      "name": "University of Hertfordshire",
+      "country": "United Kingdom",
+      "city": "Hatfield",
+      "tier": "aggregator",
+      "officialUrl": "https://www.herts.ac.uk/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:20.242Z",
+        "sourceUrl": "https://www.hic.navitas.com/",
+        "sourceHash": "sha256:313fe1856631ee2b",
+        "confidence": "aggregator",
+        "programsCount": 54
+      }
+    },
+    {
+      "slug": "portsmouth",
+      "name": "University of Portsmouth",
+      "country": "United Kingdom",
+      "city": "Portsmouth",
+      "tier": "aggregator",
+      "officialUrl": "https://www.port.ac.uk/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:20.242Z",
+        "sourceUrl": "https://icp.navitas.com/",
+        "sourceHash": "sha256:b37218aad477bac0",
+        "confidence": "aggregator",
+        "programsCount": 65
+      }
+    },
+    {
+      "slug": "robert-gordon",
+      "name": "Robert Gordon University",
+      "country": "United Kingdom",
+      "city": "Aberdeen",
+      "tier": "aggregator",
+      "officialUrl": "https://www.rgu.ac.uk/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:20.242Z",
+        "sourceUrl": "https://icrgu.navitas.com/",
+        "sourceHash": "sha256:dccb6033a33ff62f",
+        "confidence": "aggregator",
+        "programsCount": 62
+      }
+    },
+    {
+      "slug": "keele",
+      "name": "Keele University",
+      "country": "United Kingdom",
+      "city": "Keele",
+      "tier": "aggregator",
+      "officialUrl": "https://www.keele.ac.uk/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:20.242Z",
+        "sourceUrl": "https://kuic.keele.ac.uk/",
+        "sourceHash": "sha256:38f528232321feb3",
+        "confidence": "aggregator",
+        "programsCount": 56
+      }
+    },
+    {
+      "slug": "manchester-met",
+      "name": "Manchester Metropolitan University",
+      "country": "United Kingdom",
+      "city": "Manchester",
+      "tier": "aggregator",
+      "officialUrl": "https://www.mmu.ac.uk/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:20.242Z",
+        "sourceUrl": "https://www.mmu.ac.uk/international/college",
+        "sourceHash": "sha256:3c1b966ed8b3b688",
+        "confidence": "aggregator",
+        "programsCount": 66
+      }
+    },
+    {
+      "slug": "swansea",
+      "name": "Swansea University",
+      "country": "United Kingdom",
+      "city": "Swansea",
+      "tier": "aggregator",
+      "officialUrl": "https://www.swansea.ac.uk/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:20.242Z",
+        "sourceUrl": "https://www.swansea.ac.uk/the-college",
+        "sourceHash": "sha256:cffa03b00895b21d",
+        "confidence": "aggregator",
+        "programsCount": 63
+      }
+    },
+    {
+      "slug": "plymouth",
+      "name": "University of Plymouth",
+      "country": "United Kingdom",
+      "city": "Plymouth",
+      "tier": "aggregator",
+      "officialUrl": "https://www.plymouth.ac.uk/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:06:20.242Z",
+        "sourceUrl": "https://www.upic.navitas.com/",
+        "sourceHash": "sha256:7d4d6daefae87e82",
+        "confidence": "aggregator",
+        "programsCount": 60
+      }
+    },
+    {
+      "slug": "queens-college-cuny",
+      "name": "Queens College, CUNY",
+      "country": "United States",
+      "city": "New York",
+      "tier": "aggregator",
+      "officialUrl": "https://www.qc.cuny.edu/",
+      "aggregatorSlug": "navitas-pathways",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:09:54.192Z",
+        "sourceUrl": "https://www.queensgssp.com/",
+        "sourceHash": "sha256:d0a0dc6d650621e7",
+        "confidence": "aggregator",
+        "programsCount": 97
+      }
+    },
+    {
+      "slug": "oxford",
+      "name": "University of Oxford",
+      "country": "United Kingdom",
+      "city": "Oxford",
+      "tier": "partner",
+      "officialUrl": "https://www.ox.ac.uk/",
+      "aggregatorSlug": null,
+      "catalog": {
+        "lastChecked": "2026-05-15T16:40:14.481Z",
+        "sourceUrl": "https://www.ox.ac.uk/",
+        "sourceHash": "sha256:ef709b6af163197e",
+        "confidence": "partner",
+        "programsCount": 212
+      }
+    },
+    {
+      "slug": "kent",
+      "name": "University of Kent",
+      "country": "United Kingdom",
+      "city": "Canterbury",
+      "tier": "aggregator",
+      "officialUrl": "https://www.kent.ac.uk/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:47:11.936Z",
+        "sourceUrl": "https://www.oxfordinternational.com/study-abroad/uk/university-of-kent/",
+        "sourceHash": "sha256:ec682ff4a5d8b208",
+        "confidence": "aggregator",
+        "programsCount": 87
+      }
+    },
+    {
+      "slug": "dundee",
+      "name": "University of Dundee",
+      "country": "United Kingdom",
+      "city": "Dundee",
+      "tier": "aggregator",
+      "officialUrl": "https://www.dundee.ac.uk/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:47:11.936Z",
+        "sourceUrl": "https://www.oxfordinternational.com/study-abroad/uk/university-of-dundee/",
+        "sourceHash": "sha256:f116b80ca0270cf7",
+        "confidence": "aggregator",
+        "programsCount": 84
+      }
+    },
+    {
+      "slug": "ulster",
+      "name": "Ulster University",
+      "country": "United Kingdom",
+      "city": "Belfast",
+      "tier": "aggregator",
+      "officialUrl": "https://www.ulster.ac.uk/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:47:11.936Z",
+        "sourceUrl": "https://www.oxfordinternational.com/study-abroad/uk/ulster-university/",
+        "sourceHash": "sha256:b27716a745594701",
+        "confidence": "aggregator",
+        "programsCount": 88
+      }
+    },
+    {
+      "slug": "bradford",
+      "name": "University of Bradford",
+      "country": "United Kingdom",
+      "city": "Bradford",
+      "tier": "aggregator",
+      "officialUrl": "https://www.bradford.ac.uk/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:47:11.936Z",
+        "sourceUrl": "https://www.oxfordinternational.com/study-abroad/uk/university-of-bradford/",
+        "sourceHash": "sha256:0e6b1114cd59ecf8",
+        "confidence": "aggregator",
+        "programsCount": 73
+      }
+    },
+    {
+      "slug": "abertay",
+      "name": "Abertay University",
+      "country": "United Kingdom",
+      "city": "Dundee",
+      "tier": "aggregator",
+      "officialUrl": "https://www.abertay.ac.uk/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:47:11.936Z",
+        "sourceUrl": "https://www.oxfordinternational.com/study-abroad/uk/abertay-university/",
+        "sourceHash": "sha256:1b6518f5f48651f9",
+        "confidence": "aggregator",
+        "programsCount": 50
+      }
+    },
+    {
+      "slug": "bangor",
+      "name": "Bangor University",
+      "country": "United Kingdom",
+      "city": "Bangor",
+      "tier": "aggregator",
+      "officialUrl": "https://www.bangor.ac.uk/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:47:11.936Z",
+        "sourceUrl": "https://www.oxfordinternational.com/study-abroad/uk/bangor-university/",
+        "sourceHash": "sha256:add499d4ea27bdca",
+        "confidence": "aggregator",
+        "programsCount": 71
+      }
+    },
+    {
+      "slug": "de-montfort",
+      "name": "De Montfort University",
+      "country": "United Kingdom",
+      "city": "Leicester",
+      "tier": "aggregator",
+      "officialUrl": "https://www.dmu.ac.uk/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:47:11.936Z",
+        "sourceUrl": "https://www.oxfordinternational.com/study-abroad/uk/de-montfort-university/",
+        "sourceHash": "sha256:9f0191b1a3ce1ca9",
+        "confidence": "aggregator",
+        "programsCount": 81
+      }
+    },
+    {
+      "slug": "greenwich",
+      "name": "University of Greenwich",
+      "country": "United Kingdom",
+      "city": "London",
+      "tier": "aggregator",
+      "officialUrl": "https://www.gre.ac.uk/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": {
+        "lastChecked": "2026-05-15T16:47:11.936Z",
+        "sourceUrl": "https://www.oxfordinternational.com/study-abroad/uk/university-of-greenwich/",
+        "sourceHash": "sha256:ac50f87a6d7e7760",
+        "confidence": "aggregator",
+        "programsCount": 83
+      }
+    },
+    {
+      "slug": "saint-marys",
+      "name": "Saint Mary's University",
+      "country": "Canada",
+      "city": "Halifax",
+      "tier": "aggregator",
+      "officialUrl": "https://www.smu.ca/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": null
+    },
+    {
+      "slug": "dalhousie",
+      "name": "Dalhousie University",
+      "country": "Canada",
+      "city": "Halifax",
+      "tier": "aggregator",
+      "officialUrl": "https://www.dal.ca/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": null
+    },
+    {
+      "slug": "nscad",
+      "name": "NSCAD University",
+      "country": "Canada",
+      "city": "Halifax",
+      "tier": "aggregator",
+      "officialUrl": "https://www.nscad.ca/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": null
+    },
+    {
+      "slug": "mount-saint-vincent",
+      "name": "Mount Saint Vincent University",
+      "country": "Canada",
+      "city": "Halifax",
+      "tier": "aggregator",
+      "officialUrl": "https://www.msvu.ca/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": null
+    },
+    {
+      "slug": "st-francis-xavier",
+      "name": "St. Francis Xavier University",
+      "country": "Canada",
+      "city": "Antigonish",
+      "tier": "aggregator",
+      "officialUrl": "https://www.stfx.ca/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": null
+    },
+    {
+      "slug": "acadia",
+      "name": "Acadia University",
+      "country": "Canada",
+      "city": "Wolfville",
+      "tier": "aggregator",
+      "officialUrl": "https://www.acadiau.ca/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": null
+    },
+    {
+      "slug": "mount-allison",
+      "name": "Mount Allison University",
+      "country": "Canada",
+      "city": "Sackville",
+      "tier": "aggregator",
+      "officialUrl": "https://www.mta.ca/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": null
+    },
+    {
+      "slug": "upei",
+      "name": "University of Prince Edward Island",
+      "country": "Canada",
+      "city": "Charlottetown",
+      "tier": "aggregator",
+      "officialUrl": "https://www.upei.ca/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": null
+    },
+    {
+      "slug": "memorial-nl",
+      "name": "Memorial University of Newfoundland",
+      "country": "Canada",
+      "city": "St. John's",
+      "tier": "aggregator",
+      "officialUrl": "https://www.mun.ca/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": null
+    },
+    {
+      "slug": "sf-state",
+      "name": "San Francisco State University",
+      "country": "United States",
+      "city": "San Francisco",
+      "tier": "aggregator",
+      "officialUrl": "https://www.sfsu.edu/",
+      "aggregatorSlug": "oxford-international",
+      "catalog": null
     }
   ],
-  "generatedAt": "2026-05-14T13:38:57.314Z",
+  "generatedAt": "2026-05-15T17:09:27.370Z",
   "isStaticSnapshot": true
 }

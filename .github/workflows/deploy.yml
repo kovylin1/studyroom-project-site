@@ -1,0 +1,48 @@
+name: Deploy site to Cloudflare Pages
+
+# Builds the Astro site and deploys to studyroom-project-site.pages.dev on
+# every push to main. Replaces the Cloudflare-side Git integration, which is
+# unavailable for projects originally created via `wrangler pages deploy`.
+#
+# Pushes made by `scrape-monthly.yml` use GITHUB_TOKEN — by GitHub policy those
+# do NOT trigger this workflow. The cron path keeps its own embedded wrangler
+# deploy step, so there's no double-deploy.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install site deps
+        working-directory: site
+        run: npm ci
+
+      - name: Build Astro site
+        working-directory: site
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        working-directory: site
+        run: |
+          npx --yes wrangler@latest pages deploy dist \
+            --project-name=studyroom-project-site \
+            --branch=main \
+            --commit-dirty=true
