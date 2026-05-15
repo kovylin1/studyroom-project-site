@@ -6,7 +6,7 @@ interface Props {
   tuitionMax: number;
 }
 
-const { countries, levels, faculties, tuitionMax } = Astro.props;
+const { countries, levels, tuitionMax } = Astro.props;
 
 const levelLabels: Record<string, string> = {
   foundation: 'Foundation',
@@ -14,15 +14,19 @@ const levelLabels: Record<string, string> = {
   master: "Pre-Master's",
   phd: 'Аспирантура',
 };
-
-function facultyKeyword(faculty: string): string {
-  return faculty.toLowerCase().replace(/[‘’']/g, '').replace(/[^a-zа-яё0-9]+/g, '-');
-}
 ---
 
 <div class="filterbar" role="group" aria-label="Фильтры поиска">
+  <label class="filterbar__group">
+    <span class="filterbar__label">Страна</span>
+    <select name="country" form="catalog-filters">
+      <option value="">Все</option>
+      {countries.map((country) => <option value={country}>{country}</option>)}
+    </select>
+  </label>
+
   <div class="filterbar__group filterbar__group--grow">
-    <span class="filterbar__label">Уровень</span>
+    <span class="filterbar__label">Программа</span>
     <div class="filterbar__chips">
       {levels.map((level) => (
         <label class="filterbar__chip">
@@ -33,26 +37,9 @@ function facultyKeyword(faculty: string): string {
     </div>
   </div>
 
-  {faculties.length > 0 && (
-    <div class="filterbar__group filterbar__group--grow">
-      <span class="filterbar__label">Факультет</span>
-      <div class="filterbar__chips">
-        {faculties.map((faculty) => (
-          <label class="filterbar__chip">
-            <input type="checkbox" name="faculty" value={facultyKeyword(faculty)} form="catalog-filters" />
-            <span>{faculty}</span>
-          </label>
-        ))}
-      </div>
-    </div>
-  )}
-
   <label class="filterbar__group">
-    <span class="filterbar__label">Страна</span>
-    <select name="country" form="catalog-filters">
-      <option value="">Все</option>
-      {countries.map((country) => <option value={country}>{country}</option>)}
-    </select>
+    <span class="filterbar__label">IELTS не выше</span>
+    <input type="number" name="maxIelts" min="0" max="9" step="0.5" placeholder="9" form="catalog-filters" />
   </label>
 
   <label class="filterbar__group">
@@ -69,16 +56,6 @@ function facultyKeyword(faculty: string): string {
     <output name="maxTuitionOut" form="catalog-filters" class="muted" style="font-size:0.85rem;">
       {tuitionMax.toLocaleString('ru-RU')}
     </output>
-  </label>
-
-  <label class="filterbar__group">
-    <span class="filterbar__label">IELTS не выше</span>
-    <input type="number" name="maxIelts" min="0" max="9" step="0.5" placeholder="9" form="catalog-filters" />
-  </label>
-
-  <label class="filterbar__group filterbar__group--inline">
-    <input type="checkbox" name="hasScholarship" form="catalog-filters" />
-    <span>Только со стипендией</span>
   </label>
 
   <button type="reset" class="btn btn-ghost btn-sm filterbar__reset" form="catalog-filters">
