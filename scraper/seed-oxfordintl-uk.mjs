@@ -91,7 +91,7 @@ const UNIS = [
       { name: 'Turing College (Canterbury On-Campus)', price: 'от £180/нед', text: 'Современная en-suite резиденция в составе нового Turing College.' },
       { name: 'Keynes College (Canterbury On-Campus)', price: 'от £160/нед', text: 'Классические halls of residence с общими кухнями и social spaces.' },
       { name: 'Pier Quays (Medway Campus)', price: 'от £145/нед', text: 'Резиденция на Medway кампусе — рядом с учебными корпусами Chatham Maritime.' },
-      { name: 'Unite Students Riverside (Canterbury)', price: 'от £195/нед', text: 'Партнёрская off-campus резиденция в центре Кентербери — studios и cluster-flats.' },
+      { name: 'Mezzino Riverside (Canterbury)', price: 'от £195/нед', text: 'Off-campus резиденция Mezzino Riverside в центре Кентербери — studios и cluster-flats у реки Stour.' },
       { name: 'Homestay через Oxford International', price: 'от £190/нед', text: 'Английская принимающая семья в Кентербери — питание и комната.' },
     ],
     campuses: [
@@ -542,7 +542,7 @@ const UNIS = [
       { name: 'Coleraine Halls (Coleraine On-Campus)', price: 'от £115/нед', text: 'Townhouse-резиденция на Coleraine кампусе — у атлантического побережья.' },
       { name: 'Magee Halls (Derry On-Campus)', price: 'от £120/нед', text: 'Резиденция на Magee кампусе в Дерри — близко к учебным корпусам.' },
       { name: 'Jordanstown Halls (Sport campus)', price: 'от £125/нед', text: 'Резиденция рядом с UU Sport Centre — приоритет спортивным студентам.' },
-      { name: 'Identity Belfast (Off-Campus)', price: 'от £170/нед', text: 'Партнёрская off-campus резиденция в центре Белфаста.' },
+      { name: 'Vita Student Belfast', price: 'от £170/нед', text: 'Off-campus премиум резиденция Vita Student в центре Белфаста — studios с гостиничным сервисом.' },
       { name: 'Homestay через Oxford International', price: 'от £170/нед', text: 'Принимающая семья в Белфасте — питание и комната.' },
     ],
     campuses: [
@@ -770,9 +770,7 @@ const UNIS = [
     ],
     accommodation: [
       { name: 'The Green (Bradford On-Campus)', price: 'от £130/нед', text: 'Главная резиденция Bradford — eco-friendly building, en-suite комнаты.' },
-      { name: 'Trinity Hall (Bradford On-Campus)', price: 'от £125/нед', text: 'Бюджетная резиденция на кампусе — standard rooms, общие кухни.' },
       { name: 'Bradford Student Village', price: 'от £140/нед', text: 'Студенческая деревня рядом с кампусом — современные studios.' },
-      { name: 'Unite Students Trinity Hall (Bradford)', price: 'от £155/нед', text: 'Партнёрская off-campus резиденция в центре Брэдфорда.' },
       { name: 'Homestay через Oxford International', price: 'от £165/нед', text: 'Принимающая семья в Брэдфорде — питание и комната.' },
     ],
     campuses: [
@@ -1354,8 +1352,8 @@ const UNIS = [
       { name: 'New Wharf Hall (DMU On-Campus)', price: 'от £150/нед', text: 'Современная резиденция на берегу канала — en-suite комнаты, приоритет первокурсникам.' },
       { name: 'Bede Hall (DMU On-Campus)', price: 'от £140/нед', text: 'Резиденция в центре кампуса DMU — рядом с Vijay Patel Building.' },
       { name: 'Liberty Park (Leicester Off-Campus)', price: 'от £165/нед', text: 'Off-campus резиденция с залом и cinema-room — 10 минут до кампуса.' },
-      { name: 'Bowen Square (Leicester)', price: 'от £155/нед', text: 'Студенческая резиденция в центре города — studios и cluster-flats.' },
-      { name: 'IQ The Forum (Leicester)', price: 'от £170/нед', text: 'Премиум резиденция IQ в центре Лестера.' },
+      { name: 'The Summit (Leicester)', price: 'от £155/нед', text: 'Студенческая резиденция The Summit в центре Лестера — studios и cluster-flats для студентов DMU и University of Leicester.' },
+      { name: 'IQ Grosvenor House (Leicester)', price: 'от £170/нед', text: 'Премиум резиденция iQ Student Accommodation Grosvenor House в центре Лестера — studios и en-suite комнаты.' },
       { name: 'Homestay через Oxford International', price: 'от £175/нед', text: 'Английская принимающая семья в Лестере — питание и комната.' },
     ],
     campuses: [
