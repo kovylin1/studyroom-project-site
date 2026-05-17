@@ -6,7 +6,10 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const PHOTOS_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'site/public/photos');
-const SLUGS = ['oxford','kent','dundee','ulster','bradford','abertay','bangor','de-montfort','greenwich'];
+const argv = process.argv.slice(2);
+const SLUGS = argv.includes('--slugs')
+  ? argv[argv.indexOf('--slugs') + 1].split(',').map((s) => s.trim())
+  : null;
 const MAX_BYTES = 2 * 1024 * 1024;
 
 async function processFile(filePath) {
@@ -28,7 +31,8 @@ async function processFile(filePath) {
   console.log('  ' + stem + ext + ' ' + (s.size/1e6).toFixed(1) + 'MB -> ' + (buf.length/1e6).toFixed(1) + 'MB');
 }
 
-for (const slug of SLUGS) {
+const slugList = SLUGS ?? (await readdir(PHOTOS_DIR, { withFileTypes: true })).filter((d) => d.isDirectory()).map((d) => d.name);
+for (const slug of slugList) {
   const slugDir = join(PHOTOS_DIR, slug);
   console.log('=== ' + slug + ' ===');
   let files;
