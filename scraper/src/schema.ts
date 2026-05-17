@@ -10,7 +10,16 @@ const slug = z
   .string()
   .regex(/^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/, 'lowercase alphanumeric + hyphens only');
 
-export const programLevel = z.enum(['bachelor', 'master', 'phd', 'foundation']);
+export const programLevel = z.enum([
+  'high-school',
+  'sixth-form',
+  'foundation',
+  'bachelor',
+  'master',
+  'phd',
+  'english-language',
+  'short-course',
+]);
 export type ProgramLevel = z.infer<typeof programLevel>;
 
 export const programSchema = z.object({
