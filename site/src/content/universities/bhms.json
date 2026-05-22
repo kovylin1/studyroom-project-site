@@ -5,69 +5,229 @@
   "city": "Lucerne",
   "programs": [
     {
-      "slug": "bba-hotel-management",
-      "title": "BBA Hotel Management",
-      "durationYears": 4,
-      "level": "bachelor",
-      "programType": "degree",
-      "intakes": [
-        "February",
-        "August"
-      ],
-      "programUrl": "https://bhms.ch/programs/"
-    },
-    {
-      "slug": "bba-international-business",
-      "title": "BBA International Business",
-      "durationYears": 4,
-      "level": "bachelor",
-      "programType": "degree",
-      "intakes": [
-        "February",
-        "August"
-      ]
-    },
-    {
-      "slug": "mba-hospitality",
-      "title": "MBA in International Hospitality Management",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "February",
-        "August"
-      ]
-    },
-    {
-      "slug": "msc-luxury-hospitality",
-      "title": "MSc Luxury Hospitality and Tourism Management",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "February"
-      ]
-    },
-    {
-      "slug": "foundation-hospitality",
+      "slug": "bhms-foundation-hospitality",
       "title": "Foundation in Hospitality and Business",
       "durationYears": 1,
       "level": "foundation",
       "programType": "pathway",
-      "intakes": [
-        "February",
-        "August"
-      ]
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-pre-university",
+      "title": "Pre-University Programme",
+      "durationYears": 0.5,
+      "level": "foundation",
+      "programType": "pathway",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-preparatory-english",
+      "title": "Preparatory English Programme",
+      "durationYears": 0.5,
+      "level": "english-language",
+      "programType": "pathway",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-summer-programme",
+      "title": "Summer Programme",
+      "durationYears": 0.25,
+      "level": "short-course",
+      "programType": "pathway",
+      "intakes": ["July"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-ba-hotel-hospitality-management",
+      "title": "BA in Hotel & Hospitality Management",
+      "durationYears": 3,
+      "level": "bachelor",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-ba-global-business-management",
+      "title": "BA in Global Business Management",
+      "durationYears": 3,
+      "level": "bachelor",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-ba-culinary-arts",
+      "title": "BA in Culinary Arts",
+      "durationYears": 3,
+      "level": "bachelor",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-ba-culinary-arts-patisserie",
+      "title": "BA in Culinary Arts and Patisserie",
+      "durationYears": 3,
+      "level": "bachelor",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-diploma-pastry-chocolate-bakery",
+      "title": "Diploma in Pastry, Chocolate & Bakery",
+      "durationYears": 1,
+      "level": "bachelor",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-certificate-culinary-pastry",
+      "title": "Certificate in Culinary Arts and Pastry Arts",
+      "durationYears": 0.5,
+      "level": "short-course",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-mba-specialisation",
+      "title": "MBA with Specialisation",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-msc-global-business-management",
+      "title": "MSc in Global Business Management",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-msc-international-hospitality-business",
+      "title": "MSc in International Hospitality Business Management",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-msc-international-tourism-management",
+      "title": "MSc in International Tourism Management",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-msc-wine-beverage-business",
+      "title": "MSc in Wine and Beverage Business Management",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-msc-sports-events-management",
+      "title": "MSc in Business, Sports and Events Management",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-msc-banking-finance",
+      "title": "MSc in Business, Banking and Finance",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-msc-airline-management",
+      "title": "MSc in Business and Airline Management",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-msc-culinary-entrepreneurship",
+      "title": "MSc in Culinary Entrepreneurship",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-pgd-business-hospitality",
+      "title": "Postgraduate Diploma in Business & Hospitality",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-pgd-culinary-arts",
+      "title": "Postgraduate Diploma in Culinary Arts",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
+    },
+    {
+      "slug": "bhms-graduate-certificate-hospitality",
+      "title": "Graduate Certificate in International Hospitality Business Management",
+      "durationYears": 0.5,
+      "level": "master",
+      "programType": "degree",
+      "intakes": ["February", "August"],
+      "programUrl": "https://bhms.ch/programs/"
     }
   ],
   "tuition": {
     "currency": "EUR",
     "byProgram": {
-      "bba-hotel-management": 28000,
-      "bba-international-business": 26000,
-      "mba-hospitality": 38000,
-      "msc-luxury-hospitality": 36000,
-      "foundation-hospitality": 18000
+      "bhms-foundation-hospitality": 18000,
+      "bhms-pre-university": 9000,
+      "bhms-preparatory-english": 8000,
+      "bhms-summer-programme": 4500,
+      "bhms-ba-hotel-hospitality-management": 28000,
+      "bhms-ba-global-business-management": 26000,
+      "bhms-ba-culinary-arts": 27000,
+      "bhms-ba-culinary-arts-patisserie": 27000,
+      "bhms-diploma-pastry-chocolate-bakery": 18000,
+      "bhms-certificate-culinary-pastry": 9000,
+      "bhms-mba-specialisation": 38000,
+      "bhms-msc-global-business-management": 32000,
+      "bhms-msc-international-hospitality-business": 34000,
+      "bhms-msc-international-tourism-management": 32000,
+      "bhms-msc-wine-beverage-business": 32000,
+      "bhms-msc-sports-events-management": 32000,
+      "bhms-msc-banking-finance": 32000,
+      "bhms-msc-airline-management": 32000,
+      "bhms-msc-culinary-entrepreneurship": 34000,
+      "bhms-pgd-business-hospitality": 22000,
+      "bhms-pgd-culinary-arts": 22000,
+      "bhms-graduate-certificate-hospitality": 14000
     }
   },
   "deadlines": {},
