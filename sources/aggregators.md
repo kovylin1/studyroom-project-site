@@ -41,6 +41,26 @@
 - **ToS notes:** robots.txt permissive; partner-college sites carry standard "all rights reserved" — same posture as Kaplan
 - **Confidence tier in our schema:** `aggregator` (Navitas pathway data trumps third-party, but for parent-uni degrees we should cross-check the official uni site)
 
+## `qs-topuniversities`
+
+- **Base URL:** `https://www.topuniversities.com/`
+- **B2B portal (auth-only):** `https://admissions.qs.com/suite/sites/qs-apply` — Appian-hosted agent CRM. No public data. PDF partner list (Dec 25 2025) was the source of truth for our import.
+- **Public catalog:** `https://www.topuniversities.com/universities` — 650+ global partners. **Cloudflare-blocked for plain WebFetch (HTTP 403)** — needs Playwright or browser-realistic UA headers.
+- **Rendering:** `js` — SPA-style profile pages. Use Playwright for any per-uni enrichment.
+- **Data spread across sub-pages (per uni profile on topuniversities.com):**
+  - `/universities/{slug}` → name, country, hero image, "About" prose, rankings strip
+  - `/universities/{slug}/programs` → per-program list with level + duration + tuition + intake (when QS has the partner agreement)
+  - `/universities/{slug}/scholarships` → scholarships
+  - `/find-your-university` → matcher (auth-gated for filters)
+  - **Important:** primary data should be pulled from each uni's OWN official site (.edu / .ac.uk / .edu.au / .ac.nz / .ca / etc.) — topuniversities.com is enrichment only.
+- **Partner network shape:** mix of Russell Group / Go8 / U15 research unis (Sydney, Adelaide, Drexel, UCL, Trinity College Dublin), mid-tier teaching universities, pathway centres (INTO X, NCUK, Kaplan IC, Fraser IC, Wilfrid Laurier IC, MMU IC, Leeds ISC, LJMU ISC, Manchester IC), high schools / sixth forms (Bath Academy, Bishopstrow, Padworth, Queen Ethelburga's, Cardiff Sixth Form, Kings Bournemouth/Brighton/London/Oxford, etc.), language schools (Stafford House, ES Dubai), and specialised institutes (Hult, Bologna BS, LISAA, Atelier de Sevres, Strate, KEDGE Paris).
+- **Auth required:** PDF list — no. Public profile pages — no (but 403-blocked anonymously). Internal CRM — yes.
+- **Rate limits / anti-bot:** Cloudflare bot-block on `topuniversities.com` for headless WebFetch user-agents; resolves with real Playwright/Chromium UA. PDF source has none.
+- **What it provides reliably:** broad partner list with consistent qsLevel (`university` / `college` / `high-school`) per the PDF's column legend. Profile pages have curated description + rankings + hero shot.
+- **What it misses or is hard to scrape:** per-program tuition (highly variable; many show "contact admissions"), real-time deadlines (terms only), pathway-vs-degree fees split. Best filled from the uni's own admissions site.
+- **ToS notes:** PDF is partner-distributed by QS. topuniversities.com `robots.txt` permits `/universities/*` crawl with delay.
+- **Confidence tier in our schema:** `aggregator` — QS is broad but not a contract partner of StudyRoom. Uni's own .edu site trumps QS data when both available.
+
 ## `oxford-international`
 
 - **Base URL:** `https://www.oxfordinternational.com/`
