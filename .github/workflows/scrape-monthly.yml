@@ -67,7 +67,22 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "chore(data): monthly scrape refresh (run ${{ github.run_id }})"
-            git push origin HEAD:main
+            # Retry push with rebase if main moved while the scraper was
+            # running (manual pushes mid-workflow are common during dev).
+            pushed=false
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then
+                pushed=true
+                break
+              fi
+              echo "Push attempt $attempt rejected. Rebasing onto fresh origin/main and retrying..."
+              git pull --rebase origin main
+              sleep 3
+            done
+            if [ "$pushed" = "false" ]; then
+              echo "ERROR: failed to push after 3 attempts."
+              exit 1
+            fi
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
