@@ -1095,7 +1095,10 @@ const CONTROL_DEFAULT_URL = '';
         'https://api.github.com/repos/' + GITHUB_REPO + '/actions/workflows/' +
         workflowFile + '/runs?per_page=10';
       let run = null;
-      for (let i = 0; i < 60; i += 1) {
+      // 120 × 10s = 20 min. Full scrape-monthly pipeline (Kaplan + Navitas
+      // + Oxford International + CATS + site build + commit + Cloudflare
+      // deploy) typically runs 12-15 min; 10 min was cutting too close.
+      for (let i = 0; i < 120; i += 1) {
         await sleep(10000);
         try {
           const r = await fetch(runsUrl, {
@@ -1120,7 +1123,7 @@ const CONTROL_DEFAULT_URL = '';
         }
       }
       if (!run || run.status !== 'completed') {
-        throw new Error('таймаут опроса GitHub (>10 мин). Откройте лог GitHub и проверьте вручную.');
+        throw new Error('таймаут опроса GitHub (>20 мин). Откройте лог GitHub и проверьте вручную.');
       }
       if (run.conclusion !== 'success') {
         throw new Error('workflow завершился с conclusion=' + run.conclusion + '. Подробнее: ' + run.html_url);
