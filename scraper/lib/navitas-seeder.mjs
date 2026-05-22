@@ -1,6 +1,6 @@
 // Shared Navitas seeder helpers. Used by per-country seed-navitas-{xx}.mjs.
 
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -155,12 +155,33 @@ export function buildUniversity(uni, opts) {
   };
 }
 
+// Fields that may have been added by other pipelines (photo discovery,
+// translations) and must NOT be wiped by the seeder. If the existing JSON
+// on disk has any of these populated, we merge them onto the freshly-built
+// university object before writing.
+const PRESERVE_FIELDS = ['gallery', 'photoSets'];
+
 export async function writeAll(unis, opts) {
   await mkdir(CONTENT_DIR, { recursive: true });
   let totalPrograms = 0;
   for (const uni of unis) {
     const university = buildUniversity(uni, opts);
     const filePath = resolve(CONTENT_DIR, `${uni.slug}.json`);
+
+    // Read existing JSON (if any) and copy over preserved fields so other
+    // pipelines (photo discovery, manual edits) don't get clobbered.
+    try {
+      const existingRaw = await readFile(filePath, 'utf8');
+      const existing = JSON.parse(existingRaw);
+      for (const key of PRESERVE_FIELDS) {
+        if (existing[key] != null && university[key] == null) {
+          university[key] = existing[key];
+        }
+      }
+    } catch {
+      // file didn't exist or couldn't parse — skip merge, write fresh
+    }
+
     await writeFile(filePath, JSON.stringify(university, null, 2) + '\n', 'utf8');
     totalPrograms += university.programs.length;
     console.log(`[seed] wrote ${uni.slug}.json (${university.programs.length} programs)`);
