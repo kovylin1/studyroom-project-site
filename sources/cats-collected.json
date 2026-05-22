@@ -1,0 +1,521 @@
+{
+  "_meta": {
+    "aggregator": "cats-global-schools",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/",
+    "tier": "aggregator",
+    "collected_at": "2026-05-16",
+    "agents_used": 11,
+    "schools_covered": 12,
+    "schema_compatibility_warning": "CATS Global Schools is mostly K-12 / Sixth Form / English-language. The existing programLevel enum (bachelor|master|phd|foundation) does not cover A-Level, IB Diploma, GCSE, Year 7-11, US High School Diploma, English-language courses, or summer programmes. Schema extension required before merging into site/src/content/universities/.",
+    "recommended_schema_extension": {
+      "programLevel": "add 'high-school', 'sixth-form', 'english-language', 'short-course'",
+      "programType": "add 'course' alongside existing 'pathway' | 'degree'"
+    },
+    "non_duplicates_confirmed": "bournemouth.json (Bournemouth University via Kaplan) is NOT bournemouth-collegiate-school (CATS) — distinct entities, same city. All 12 CATS slugs are new to the catalog.",
+    "st_michaels_clarification": "Aggregator entry 'St Michael's School and Sixth Form' is the WELSH boarding school in Llanelli (stmikes.co.uk), NOT the Leigh-on-Sea prep school (stmichaels.school). Confirmed via 'and Sixth Form' wording + offers full A-Level catalogue."
+  },
+
+  "bournemouth-collegiate-school": {
+    "name": "Bournemouth Collegiate School",
+    "city": "Bournemouth",
+    "country": "United Kingdom",
+    "official_url": "https://www.bournemouthcollegiateschool.co.uk/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/bournemouth-collegiate-school/",
+    "school_type": "boarding-school-prep-and-senior",
+    "scholarships": [
+      { "name": "Academic Scholarship", "amount": "до 25%", "currency": "GBP", "type": "percent", "eligibility": "All Year 7-11 candidates considered through entrance assessments, interview, and school reports. CAT4 assessment required.", "source_url": "https://www.bournemouthcollegiateschool.co.uk/admissions/scholarships" },
+      { "name": "Music Scholarship", "amount": "до 25%", "currency": "GBP", "type": "percent", "eligibility": "Grade 3+ (Year 7) or Grade 6 (Year 12). Must study Music at GCSE/A Level or contribute fully to music performances.", "source_url": "https://www.bournemouthcollegiateschool.co.uk/admissions/scholarships" },
+      { "name": "Performing Arts Scholarship", "amount": "до 25%", "currency": "GBP", "type": "percent", "eligibility": "Candidates must study GCSE Drama or BTEC Performing Arts Level 2/3 and/or participate in co-curricular performances.", "source_url": "https://www.bournemouthcollegiateschool.co.uk/admissions/scholarships" },
+      { "name": "Sport Scholarship", "amount": "до 25%", "currency": "GBP", "type": "percent", "eligibility": "Assessed in the year of entry through physical testing, fitness assessments, and demonstrated sporting ability and potential.", "source_url": "https://www.bournemouthcollegiateschool.co.uk/admissions/scholarships" },
+      { "name": "Visual Arts Scholarship", "amount": "до 25%", "currency": "GBP", "type": "percent", "eligibility": "Candidates must study Art at GCSE/A Level or contribute to co-curricular art department. Portfolio submission required.", "source_url": "https://www.bournemouthcollegiateschool.co.uk/admissions/scholarships" },
+      { "name": "Means-tested Bursary", "amount": "variable", "currency": "GBP", "type": "variable", "eligibility": "Families must be permanent UK residents. Bursaries are means-tested and reviewed annually.", "source_url": "https://www.bournemouthcollegiateschool.co.uk/admissions/bursaries" }
+    ],
+    "campuses": [
+      { "name": "Senior School", "city": "Southbourne", "address": "College Road, Southbourne, Bournemouth, Dorset, BH5 2DY", "type": "main", "size": "8 acres", "facilities": ["25m indoor swimming pool", "sports hall with badminton courts", "basketball court", "outdoor all-weather astro pitches", "rugby and football pitches", "athletics facilities", "high performance gym", "art and textile classrooms", "photography studio", "design technology workshop with laser cutting and 3D printing", "music recording studios", "boarding houses"], "transport": "Bournemouth town centre 10 min, Bournemouth airport" },
+      { "name": "Prep School", "city": "Lower Parkstone", "address": "40 St. Osmund's Road, Lower Parkstone, Poole, Dorset, BH14 9JY", "type": "junior", "facilities": ["ICT suite with 25 touch screen computers", "library", "sports facilities", "outdoor learning spaces"], "transport": "Poole area, near Bournemouth beaches" }
+    ],
+    "accommodation": [
+      { "name": "Boys Boarding House", "type": "boarding-house", "price": null, "rooms": ["single en-suite", "twin"], "gender": "single-sex-boys", "meals": "full-board", "distance": "on-site", "min_age": 14, "included": ["en-suite bathrooms", "24-hour supervision", "house parents", "laundry facilities", "WiFi", "common rooms", "evening activities", "weekend programs"] },
+      { "name": "Girls Boarding House", "type": "boarding-house", "price": null, "rooms": ["single en-suite", "twin"], "gender": "single-sex-girls", "meals": "full-board", "distance": "on-site", "min_age": 14, "included": ["en-suite bathrooms", "24-hour supervision", "house parents", "laundry facilities", "WiFi", "common rooms", "evening activities", "weekend programs"] }
+    ],
+    "programs": {
+      "high_school": [
+        { "name": "Year 7-9 (Key Stage 3)", "level": "year-7-9", "duration": "3 years", "subjects": ["English Language", "English Literature", "Mathematics", "Science (Biology, Chemistry, Physics)", "Art & Design", "Business Studies", "Computer Science", "Design & Technology", "Drama", "EAL", "Enterprise & Marketing", "French", "Geography", "History", "Music", "Physical Education", "Religious Studies", "Spanish", "Sports Science"], "entry": "Age 11-12, 6+ years schooling, school report", "intakes": ["September"], "tuition": { "value": 18685, "currency": "GBP", "includes": "tuition only" }, "source_url": "https://bournemouthcollegiateschool.co.uk" },
+        { "name": "GCSE Programme (Year 10-11)", "level": "gcse", "duration": "2 years", "subjects": ["Art & Design", "Business Studies", "Combined Science", "Computer Science", "CPE", "Dance", "Design Technology", "Drama", "EAL", "Enterprise & Marketing", "French", "Geography", "History", "Music", "Physical Education", "Religious Studies", "Spanish", "Sports Science", "Triple Science"], "entry": "Age 14-15 (Year 10), 8+ years schooling, good school report", "intakes": ["September"], "tuition": { "value": 18685, "currency": "GBP", "includes": "tuition only" }, "source_url": "https://bournemouthcollegiateschool.co.uk/senior/curriculum-overview-2" }
+      ],
+      "sixth_form": [
+        { "name": "A-Level (2-year)", "qualification": "a-level", "duration": "2 years", "subjects": ["Art & Design", "Biology", "Business Studies", "Chemistry", "Chinese", "Computer Science", "Economics", "English Literature", "Fine Art", "French", "Further Mathematics", "Geography", "German", "History", "Mathematics", "Music", "Music Technology", "Photography", "Physics", "Psychology", "Russian", "Spanish", "Textiles"], "min_age": 16, "max_age": 18, "entry": "Grade 6+ in GCSE or equivalent", "intakes": ["September"], "tuition": null, "source_url": "https://www.bournemouthcollegiateschool.co.uk/sixth-form/" },
+        { "name": "BTEC Performing Arts (Level 3)", "qualification": "btec-l3", "duration": "2 years", "subjects": ["Performing Arts"], "min_age": 16, "max_age": 18, "intakes": ["September"], "tuition": null, "source_url": "https://www.bournemouthcollegiateschool.co.uk/sixth-form/" }
+      ],
+      "foundation": [],
+      "bachelor": [],
+      "master": [],
+      "english_language": [],
+      "summer_short": []
+    }
+  },
+
+  "bosworth-independent-school": {
+    "name": "Bosworth Independent School",
+    "city": "Northampton",
+    "country": "United Kingdom",
+    "official_url": "https://bosworthschool.co.uk/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/bosworth-independent-school/",
+    "school_type": "boarding-school-senior-and-sixth-form",
+    "scholarships": [
+      { "name": "Five 100% A Level Scholarship (Domestic)", "amount": "100%", "currency": "GBP", "type": "percent", "eligibility": "Five fully funded scholarships for domestic students achieving 5 GCSEs at Grade 8+ with none below Grade 6.", "deadline": "September 2026 entry", "source_url": "https://bosworthschool.co.uk/scholarships/" },
+      { "name": "Francis Crick Scholarship (International — South East Asia)", "amount": "100%", "currency": "GBP", "type": "percent", "eligibility": "International students. CAT4 mean score 130+ with stanine 9 required. Granted for duration of studies.", "source_url": "https://bosworthschool.co.uk/scholarships/" },
+      { "name": "Joan Wake Scholarship (International — South East Asia)", "amount": "100%", "currency": "GBP", "type": "percent", "eligibility": "International students. CAT4 mean score 120+ with stanine 8 required. Granted for duration of studies.", "source_url": "https://bosworthschool.co.uk/scholarships/" },
+      { "name": "South East Asia 50% Partial Scholarship", "amount": "50%", "currency": "GBP", "type": "percent", "eligibility": "Five partial-tuition scholarships for South East Asian international students. CAT4 + interview + school reference.", "source_url": "https://bosworthschool.co.uk/scholarships/" },
+      { "name": "NHS Staff Tuition Benefit", "amount": "20%", "currency": "GBP", "type": "percent", "eligibility": "Parents employed by NHS in any capacity. Reviewed annually.", "source_url": "https://bosworthschool.co.uk/scholarships/" },
+      { "name": "HM Armed Forces Tuition Benefit", "amount": "20%", "currency": "GBP", "type": "percent", "eligibility": "Parents serving in HM Armed Forces. Reviewed annually with appropriate service confirmation.", "source_url": "https://bosworthschool.co.uk/scholarships/" },
+      { "name": "Means-tested Bursary", "amount": "variable", "currency": "GBP", "type": "variable", "eligibility": "Families with joint household income < £50,000. Sliding scale. CAT4 mean 120+ stanine 8+ required.", "source_url": "https://bosworthschool.co.uk/scholarships/" }
+    ],
+    "campuses": [
+      { "name": "Senior School and Sixth Form", "city": "Northampton", "address": "The Newton Building, St. George's Avenue, Northampton, NN2 6JB", "type": "main", "year_built": 1915, "year_acquired": 1986, "facilities": ["Newton Building (acquired 2023)", "fully equipped science laboratories", "drama studio", "music classroom and practice rooms", "gymnasium", "dining room", "activity areas", "boarding houses"], "transport": "Northampton town centre" }
+    ],
+    "accommodation": [
+      { "name": "Limetrees", "type": "boarding-house", "price": null, "rooms": ["single", "twin"], "gender": "single-sex-girls", "meals": "full-board", "distance": "on-site", "min_age": 11, "included": ["en-suite rooms", "shared common rooms", "kitchen facilities", "laundry services", "WiFi", "house parents"] },
+      { "name": "Calderfield", "type": "boarding-house", "price": null, "rooms": ["single", "twin"], "gender": "single-sex-boys", "meals": "full-board", "distance": "on-site", "min_age": 11, "included": ["historic house atmosphere", "shared common rooms", "kitchen facilities", "laundry services", "WiFi", "house parents"] },
+      { "name": "Farthings", "type": "boarding-house", "price": null, "rooms": ["single", "twin"], "gender": "single-sex-boys", "meals": "full-board", "distance": "on-site", "min_age": 11, "included": ["en-suite rooms", "shared common rooms", "kitchen facilities", "laundry services", "WiFi", "house parents"] },
+      { "name": "Victoria House", "type": "boarding-house", "price": null, "rooms": ["single", "twin"], "gender": "single-sex-girls", "meals": "full-board", "distance": "on-site", "min_age": 11, "included": ["en-suite rooms", "shared common rooms", "kitchen facilities", "laundry services", "WiFi", "house parents"] },
+      { "name": "St George's", "type": "boarding-house", "price": null, "rooms": ["single", "twin"], "gender": "single-sex-boys", "meals": "full-board", "distance": "on-site", "min_age": 11, "included": ["en-suite rooms", "shared common rooms", "kitchen facilities", "laundry services", "WiFi", "house parents"] },
+      { "name": "Poplars", "type": "boarding-house", "price": null, "rooms": ["single"], "gender": "mixed", "meals": "full-board", "distance": "on-site", "min_age": 18, "included": ["en-suite rooms", "shared common rooms", "kitchen facilities", "laundry services", "WiFi", "house parents"] }
+    ],
+    "programs": {
+      "high_school": [
+        { "name": "Year 7-9 (Key Stage 3)", "level": "year-7-9", "duration": "3 years", "subjects": ["English Language", "English Literature", "Mathematics", "Biology", "Chemistry", "Physics", "Art", "Business Studies", "Drama", "French", "Geography", "History", "Information Technology", "Music", "Physical Education", "PSHE", "Religious Studies", "Spanish"], "entry": "Age 11-12 (Year 7), 6+ years schooling, school report, IELTS 3.5 or equivalent", "intakes": ["September"], "tuition": { "value": 15495, "currency": "GBP", "includes": "tuition only" }, "source_url": "https://bosworthschool.co.uk/course/year-7-8-9/" },
+        { "name": "GCSE Programme (Year 10-11) — 2 Year", "level": "gcse", "duration": "2 years", "subjects": ["English Language", "English Literature", "Mathematics", "Biology", "Chemistry", "Physics", "Art & Design", "Business Studies", "Drama", "French", "Geography", "History", "Information Technology", "IGCSE English as a Second Language", "Music", "Physical Education", "Religious Studies", "Spanish"], "entry": "Age 14+ (Year 10), 9+ years schooling, IELTS 4.0+", "intakes": ["September"], "tuition": { "value": 15495, "currency": "GBP", "includes": "tuition only" }, "source_url": "https://bosworthschool.co.uk/course/gcse/" },
+        { "name": "GCSE Programme (Year 11) — 1 Year Fast Track", "level": "gcse", "duration": "1 year", "subjects": ["English Language", "English Literature", "Mathematics", "Biology", "Chemistry", "Physics", "Art & Design", "Business Studies", "Drama", "French", "Geography", "History", "Information Technology", "IGCSE English as a Second Language", "Music", "Physical Education", "Religious Studies", "Spanish"], "entry": "Age 15+, 9+ years schooling, IELTS 5.0+", "intakes": ["September"], "tuition": { "value": 15495, "currency": "GBP", "includes": "tuition only" }, "source_url": "https://bosworthschool.co.uk/course/gcse/" }
+      ],
+      "sixth_form": [
+        { "name": "A-Level (2-year)", "qualification": "a-level", "duration": "2 years", "subjects": ["Art & Design", "Biology", "Business Studies", "Chemistry", "Computer Science", "Drama & Theatre Studies", "Economics", "English Literature", "French", "Further Mathematics", "Geography", "History", "Mathematics", "Music", "Physics", "Psychology", "Spanish"], "min_age": 16, "max_age": 18, "entry": "Minimum five grade 6 GCSEs (English and Mathematics)", "intakes": ["September"], "tuition": null, "destinations": ["Durham University", "Imperial College London", "University of Warwick"], "source_url": "https://bosworthcollege.com/course/a-level/" }
+      ],
+      "foundation": [
+        { "name": "UFP — Business, Economics, Accounting", "type": "ufp", "duration": "3 terms", "progression_to": "Top UK universities including Queen Mary University of London, University of Bristol, Maastricht University", "entry": "11+ years schooling and good school record, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.bosworthcollege.com" },
+        { "name": "UFP — Biology, Chemistry, Mathematics", "type": "ufp", "duration": "3 terms", "progression_to": "Top UK universities including King's College London", "entry": "11+ years schooling and good school record, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.bosworthcollege.com" },
+        { "name": "UFP — Chemistry, Mathematics, Physics", "type": "ufp", "duration": "3 terms", "progression_to": "Top UK universities including University of Bath", "entry": "11+ years schooling and good school record, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.bosworthcollege.com" }
+      ],
+      "bachelor": [],
+      "master": [],
+      "english_language": [],
+      "summer_short": []
+    }
+  },
+
+  "cats-academy-boston": {
+    "name": "CATS Academy Boston",
+    "city": "Braintree (Boston metro)",
+    "country": "United States",
+    "official_url": "https://www.catsacademyboston.com/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/cats-academy-boston/",
+    "school_type": "boarding-school-us-high-school",
+    "scholarships": [],
+    "campuses": [
+      { "name": "Main Campus", "city": "Braintree", "address": "2001 Washington Street, Braintree, MA 02184, USA", "type": "main", "size": "22-23 acres, 275,000 sq ft academic space", "year_built": 2014, "facilities": ["43 classrooms", "6 language labs", "6 wet science labs", "3 dry science labs", "7 music rooms", "3 art studios", "black box experimental theatre", "business lab", "fashion lab", "basketball court", "competition grade soccer pitch", "gymnasium", "weight room", "medical centre", "professionally-catered dining room", "5 residences with 449 en-suite rooms"], "transport": "Boston 20 min, Logan International Airport 13 mi, Boston Red Line subway" }
+    ],
+    "accommodation": [
+      { "name": "Five Purpose-Built Residences", "type": "residence-hall", "price": { "value": 12000, "currency": "USD", "per": "semester" }, "rooms": ["single en-suite", "shared en-suite"], "gender": "mixed", "meals": "full-board", "distance": "on-site", "min_age": 13, "included": ["en-suite bathrooms", "100% en-suite accommodation", "air conditioning", "house parents", "social areas", "three meals daily on weekdays", "two meals on weekends", "dietary accommodations", "nutrition programs", "safe and secure buildings"] }
+    ],
+    "programs": {
+      "high_school": [
+        { "name": "Grade 8 Preparation", "level": "us-middle-school", "duration": "1 year", "subjects": ["English Literature", "Mathematics (Algebra I)", "Science", "Social Sciences/History", "World Languages", "Arts electives", "Physical Education"], "entry": "Age 13+, completion of US Grade 7 or equivalent, TOEFL 40/IELTS 4.0", "intakes": ["September", "January"], "tuition": { "value": 41200, "currency": "USD", "includes": "tuition only" }, "source_url": "https://www.catsacademyboston.com/academics/high-school-diploma/" },
+        { "name": "Grade 9 (Freshman Year)", "level": "us-high-school-9-10", "duration": "1 year", "subjects": ["English Literature", "Mathematics (Algebra I, Geometry)", "Biology", "Chemistry", "World History", "World Languages", "Arts electives", "Physical Education", "Social Sciences", "ESL electives"], "entry": "Age 14+, completion of US Grade 8 or equivalent, TOEFL 40/IELTS 4.0", "intakes": ["September", "January"], "tuition": { "value": 41200, "currency": "USD", "includes": "tuition only" }, "source_url": "https://www.catsacademyboston.com/admissions/fees/" },
+        { "name": "Grade 10 (Sophomore Year)", "level": "us-high-school-9-10", "duration": "1 year", "subjects": ["English Literature", "Mathematics (Geometry, Algebra II)", "Biology", "Chemistry", "Physics", "US History", "World Languages", "Arts electives", "Physical Education", "Social Sciences", "ESL electives"], "entry": "Age 15+, completion of US Grade 9 or equivalent, TOEFL 50/IELTS 4.5", "intakes": ["September", "January"], "tuition": { "value": 41200, "currency": "USD", "includes": "tuition only" }, "source_url": "https://www.catsacademyboston.com/admissions/fees/" },
+        { "name": "CATS Extra Program (Grades 8-10)", "level": "us-middle-school", "duration": "1 year", "subjects": ["English as Second Language (4 courses)", "Mathematics", "Science", "Social Sciences", "Literature", "Academic mentoring"], "entry": "Age 13-15, Grades 8-10, TOEFL below 40/IELTS below 4.0", "intakes": ["September"], "tuition": { "value": 46200, "currency": "USD", "includes": "tuition only" }, "source_url": "https://www.catsacademyboston.com/academics/signature-programs/cats-extra-program/" }
+      ],
+      "sixth_form": [
+        { "name": "US High School Diploma + AP", "qualification": "us-high-school-diploma", "duration": "1-4 years", "subjects": ["English Literature", "Mathematics", "Science", "Social Sciences/History", "World Languages", "AP Biology", "AP Chemistry", "AP Physics: Electricity and Magnetism", "AP Calculus", "AP Statistics", "AP Computer Science", "AP Economics", "AP United States History", "AP World History", "AP Human Geography", "AP Language and Composition", "AP Literature & Composition", "AP French Language and Culture", "AP Spanish Language and Culture", "AP Spanish Literature and Culture", "Visual Arts", "Performing Arts", "Technology", "Digital Photography", "Video Production and Editing"], "min_age": 13, "max_age": 18, "entry": "TOEFL 65/IELTS 5.5+ for Grade 12; previous academic transcripts", "intakes": ["September", "January"], "tuition": null, "destinations": ["University of Pennsylvania", "Brown University", "New York University", "RISD", "DePauw University"], "source_url": "https://catsacademyboston.com/academics/high-school-diploma/" }
+      ],
+      "foundation": [
+        { "name": "Postgraduate Program", "type": "international-foundation", "duration": "1 year", "progression_to": "US and Canadian universities and colleges", "entry": "High School Diploma or international equivalent, academic transcripts from last two years", "intakes": ["September"], "tuition": null, "source_url": "https://www.catsacademyboston.com/academics/postgraduate-program/" }
+      ],
+      "bachelor": [],
+      "master": [],
+      "english_language": [],
+      "summer_short": []
+    }
+  },
+
+  "worthgate-school": {
+    "name": "The Worthgate School",
+    "city": "Canterbury",
+    "country": "United Kingdom",
+    "official_url": "https://worthgateschool.com/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/the-worthgate-school-canterbury/",
+    "school_type": "boarding-school-international-secondary-and-sixth-form",
+    "scholarships": [
+      { "name": "Sixth Form Academic Domestic Scholarships", "amount": "100%", "currency": "GBP", "type": "percent", "eligibility": "Up to five fully funded scholarships for high-achieving domestic students entering Year 12. Selected via GCSE results, application, interview, and CAT4 assessment.", "deadline": "September 2026 entry", "source_url": "https://worthgateschool.com/scholarships-bursaries/" },
+      { "name": "NHS Staff Tuition Benefit", "amount": "20%", "currency": "GBP", "type": "percent", "eligibility": "Parents employed by NHS in any capacity. Reviewed annually.", "source_url": "https://worthgateschool.com/scholarships-bursaries/" },
+      { "name": "Armed Forces Tuition Benefit", "amount": "20%", "currency": "GBP", "type": "percent", "eligibility": "Parents currently serving in HM Armed Forces. Reviewed annually with appropriate service confirmation.", "source_url": "https://worthgateschool.com/scholarships-bursaries/" }
+    ],
+    "campuses": [
+      { "name": "Main Campus", "city": "Canterbury", "address": "68 New Dover Road, Canterbury, CT1 3LQ", "type": "main", "year_founded": 1997, "facilities": ["boarding houses (6 for ages 14-17, 6 for ages 18+)", "classrooms", "dining facilities", "social spaces", "100+ en-suite rooms"], "size": "220+ single en-suite rooms", "transport": "Canterbury city centre 10 min walk, historic Canterbury" }
+    ],
+    "accommodation": [
+      { "name": "Worthgate Boarding Houses (Ages 14-17)", "type": "boarding-house", "price": null, "rooms": ["single en-suite", "shared"], "gender": "mixed", "meals": "full-board", "distance": "walking distance", "min_age": 14, "included": ["en-suite bathrooms", "WiFi", "laundry facilities", "cleaning services", "house parents", "24-hour supervision", "pastoral care", "onsite kitchens", "halal/vegetarian/vegan options"] },
+      { "name": "Worthgate Boarding Houses (Ages 18+)", "type": "boarding-house", "price": null, "rooms": ["single en-suite", "shared en-suite"], "gender": "mixed", "meals": "self-catered", "distance": "walking distance", "min_age": 18, "included": ["en-suite bathrooms", "WiFi", "laundry facilities", "cleaning services", "house parents", "24-hour supervision", "pastoral care", "open plan kitchen and common area"] }
+    ],
+    "programs": {
+      "high_school": [
+        { "name": "Pre-GCSE (Year 9)", "level": "pre-gcse", "duration": "1 year", "subjects": ["English Language", "English Literature", "Mathematics", "Biology", "Chemistry", "Physics", "Art", "Design & Technology", "Drama", "French", "Geography", "History", "Information Technology", "Music", "Physical Education", "Religious Studies", "Spanish"], "entry": "Age 13-15, 8+ years schooling, intermediate English level", "intakes": ["September", "January"], "tuition": { "value": 35115, "currency": "GBP", "includes": "tuition only" }, "source_url": "https://worthgateschool.com/academic-fees/" },
+        { "name": "GCSE Programme (Year 10-11)", "level": "gcse", "duration": "2 years", "subjects": ["English Language", "English Literature", "Mathematics", "Biology", "Chemistry", "Physics", "Art", "Classics", "Design & Technology", "Drama", "French", "Geography", "History", "Information Technology", "Music", "Physical Education", "Religious Studies", "Spanish"], "entry": "Age 14+, can join Year 10 in September or January, 8+ years schooling, intermediate English for ESL students", "intakes": ["September", "January"], "tuition": { "value": 35115, "currency": "GBP", "includes": "tuition only" }, "source_url": "https://worthgateschool.com/curriculum/gcse/" }
+      ],
+      "sixth_form": [
+        { "name": "A-Level (2-year)", "qualification": "a-level", "duration": "2 years (6 terms)", "subjects": ["Art & Design", "Biology", "Business", "Chemistry", "Chinese", "Computer Science", "Drama & Theatre Studies", "Economics", "English Literature", "French", "Further Mathematics", "Geography", "German", "History", "Mathematics", "Music", "Physics", "Psychology", "Russian", "Sociology", "Spanish"], "min_age": 15, "max_age": 18, "entry": "IELTS 4.5+; 10 years of schooling with good academic record", "intakes": ["September", "January"], "tuition": { "value": 35115, "currency": "GBP", "includes": "International tuition" }, "source_url": "https://worthgateschool.com/curriculum/a-level/" },
+        { "name": "International Baccalaureate Diploma", "qualification": "ib-diploma", "duration": "2 years (6 terms)", "subjects": ["English A: Literature", "English B", "French AB Initio", "Spanish AB Initio", "Business Management", "Economics", "Global Politics", "Psychology", "Biology", "ESS (Environmental Systems & Societies)", "Physics", "Chemistry", "Mathematics AA HL", "Mathematics AA SL", "Mathematics AI SL", "History", "Visual Art", "French"], "min_age": 16, "max_age": 18, "entry": "IELTS 5.5+; good school record", "intakes": ["September", "January"], "tuition": { "value": 35115, "currency": "GBP", "includes": "International tuition" }, "source_url": "https://worthgateschool.com/curriculum/international-baccalaureate-diploma/" }
+      ],
+      "foundation": [
+        { "name": "University Foundation Programme", "type": "ufp", "duration": "3 terms or 2 terms (Fast Track)", "progression_to": "Top UK universities from conditional progression agreements", "entry": "11+ years schooling and good school record, IELTS 5.0+", "intakes": ["September", "January"], "tuition": { "value": 35115, "currency": "GBP", "includes": "Tuition for 2-term programme (2026)" }, "source_url": "https://worthgateschool.com/curriculum/university-foundation-programme/" }
+      ],
+      "bachelor": [],
+      "master": [],
+      "english_language": [],
+      "summer_short": []
+    }
+  },
+
+  "cats-cambridge": {
+    "name": "CATS Cambridge",
+    "city": "Cambridge",
+    "country": "United Kingdom",
+    "official_url": "https://www.catscambridge.com/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/cats-cambridge/",
+    "school_type": "sixth-form-college-with-pre-sixth-form",
+    "scholarships": [],
+    "campuses": [
+      { "name": "Main Campus", "city": "Cambridge", "address": "1 High Street, Chesterton, Cambridge, CB4 1NQ", "type": "sixth-form", "size": "400+ en-suite rooms total", "facilities": ["Elizabeth House (236 en-suite rooms, ages 14-17)", "Darwin House (70 single en-suite + 28 twin en-suite rooms, opening June 2026)", "teaching buildings", "outdoor sports areas", "canteen", "laundry rooms", "library"], "transport": "Cambridge city centre 15 min walk, Cambridge University area" }
+    ],
+    "accommodation": [
+      { "name": "Elizabeth House", "type": "residence-hall", "price": null, "rooms": ["single en-suite"], "gender": "mixed", "meals": "full-board", "distance": "on-site", "min_age": 14, "included": ["en-suite bathroom", "bed", "desk", "wardrobe", "common rooms", "laundry facilities", "house parents", "pastoral care"] },
+      { "name": "Darwin House", "type": "residence-hall", "price": null, "rooms": ["single en-suite", "twin en-suite"], "gender": "mixed", "meals": "full-board", "distance": "50 m from main teaching building", "min_age": 14, "included": ["single or twin en-suite bedrooms", "bed", "desk", "wardrobe", "common rooms", "laundry facilities", "house parents", "pastoral care", "70 single rooms", "28 twin rooms"] }
+    ],
+    "programs": {
+      "high_school": [
+        { "name": "GCSE Programme (Year 10-11)", "level": "gcse", "duration": "2 years", "subjects": ["English Language", "English Literature", "Mathematics", "Biology", "Chemistry", "Physics", "Art & Design", "Business Studies", "Classics", "Computer Science", "Design & Technology", "Drama", "Economics", "French", "Geography", "German", "History", "Information Technology", "Law", "Music", "Physical Education", "Psychology", "Religious Studies", "Spanish"], "entry": "Age 14+, IELTS 4.0+, 8+ years schooling", "intakes": ["September"], "tuition": null, "source_url": "https://www.catscambridge.com/curriculum/gcse/" }
+      ],
+      "sixth_form": [
+        { "name": "A-Level (2-year)", "qualification": "a-level", "duration": "2 years", "subjects": ["Art & Design", "Biology", "Business", "Chemistry", "Chinese", "Economics", "Further Mathematics", "History", "Mathematics", "Physics", "Psychology", "Russian", "Sociology"], "min_age": 15, "max_age": 18, "entry": "IELTS 4.5+; strong academic record", "intakes": ["September"], "tuition": null, "destinations": ["University of Cambridge", "King's College London", "University of Warwick", "University of Edinburgh", "UCL"], "source_url": "https://catscambridge.com/curriculum/a-levels/" }
+      ],
+      "foundation": [
+        { "name": "UFP — Business, Economics, Accounting", "type": "ufp", "duration": "3 terms or 2 terms (Fast Track)", "progression_to": "Top UK universities including University of Manchester, University of Bristol, Maastricht University", "entry": "11+ years schooling and good school record, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.catscambridge.com/curriculum/ufp/" },
+        { "name": "UFP — Biology, Chemistry, Mathematics", "type": "ufp", "duration": "3 terms or 2 terms (Fast Track)", "progression_to": "Top UK universities including University of Manchester", "entry": "11+ years schooling and good school record, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.catscambridge.com/curriculum/ufp/" },
+        { "name": "UFP — Chemistry, Mathematics, Physics", "type": "ufp", "duration": "3 terms or 2 terms (Fast Track)", "progression_to": "Top UK universities including University of Bath", "entry": "11+ years schooling and good school record, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.catscambridge.com/curriculum/ufp/" },
+        { "name": "UFP — Economics, Mathematics, Accounting", "type": "ufp", "duration": "3 terms or 2 terms (Fast Track)", "progression_to": "Top UK universities including University of Bristol", "entry": "11+ years schooling and good school record, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.catscambridge.com/curriculum/ufp/" },
+        { "name": "International Foundation Programme in STEM & Natural Sciences", "type": "international-foundation", "duration": "3 terms", "progression_to": "Top UK universities", "entry": "11+ years schooling and good school record, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.catscambridge.com/curriculum/ufp/" }
+      ],
+      "bachelor": [],
+      "master": [],
+      "english_language": [],
+      "summer_short": [
+        { "name": "Summer Programme — STEM and English for Science 2026", "type": "academic-summer", "campus": "Cambridge", "duration_weeks": 2, "min_english_level": "B2", "price": { "value": 3340, "currency": "GBP", "per": "course" }, "start_dates": ["28 June 2026"], "source_url": "https://www.idp.com/universities-and-colleges/cats-global-summer-school/summer-programme-stem-and-english-for-science-cambridge/PRG-UK-00412319/" }
+      ]
+    }
+  },
+
+  "csvpa-cambridge": {
+    "name": "Cambridge School of Visual & Performing Arts (CSVPA)",
+    "city": "Cambridge",
+    "country": "United Kingdom",
+    "official_url": "https://www.csvpa.com/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/cambridge-school-of-visual-performing-arts/",
+    "school_type": "art-college-foundation-and-degree",
+    "validating_university": "Falmouth University",
+    "scholarships": [
+      { "name": "Full Music Scholarships (Level 4 Music Foundation)", "amount": "100%", "currency": "GBP", "type": "percent", "eligibility": "Talented musicians 18+ with at least 2 A Levels or equivalent Level 3 qualification. UK national or right to study in UK for 2026-27. Includes tuition, accommodation, meals, and weekly one-to-one lessons.", "deadline": "September 2026", "source_url": "https://www.csvpa.com/course/music-foundation/" },
+      { "name": "Jazz Scholarships (NYJO Partnership)", "amount": "100%", "currency": "GBP", "type": "percent", "eligibility": "Two talented jazz musicians supported through National Youth Jazz Orchestra partnership for Level 4 Music Foundation. UK national or right to study in UK.", "deadline": "September 2026", "source_url": "https://www.csvpa.com/stories/news/csvpa-launches-five-full-music-scholarships/" },
+      { "name": "Chevening Scholarship (MA Students Only)", "amount": "variable", "currency": "GBP", "type": "variable", "eligibility": "International students from Chevening-eligible countries pursuing MA programmes. Covers tuition, travel, living costs and allowances.", "source_url": "https://www.csvpa.com/scholarships-course-funding/" },
+      { "name": "Hardship Fund", "amount": "до £500", "currency": "GBP", "type": "fixed", "eligibility": "Students in immediate financial need. Awards typically up to £500/year as free meals, accommodation relief, or cash for travel/supplies.", "source_url": "https://www.csvpa.com/wp-content/uploads/2025/07/CSVPA-Access-and-Participation-Plan-2025-to-2028.pdf" },
+      { "name": "Cost of Living Bursary", "amount": "£3,000", "currency": "GBP", "type": "fixed", "eligibility": "High-potential students from lower quintiles/first-in-family. Awarded at start of study to offset Cambridge living costs.", "source_url": "https://www.csvpa.com/wp-content/uploads/2025/07/CSVPA-Access-and-Participation-Plan-2025-to-2028.pdf" },
+      { "name": "Career Support Awards", "amount": "до £500", "currency": "GBP", "type": "fixed", "eligibility": "Students pursuing internships or employment opportunities to offset associated costs.", "source_url": "https://www.csvpa.com/wp-content/uploads/2025/07/CSVPA-Access-and-Participation-Plan-2025-to-2028.pdf" }
+    ],
+    "campuses": [
+      { "name": "Bridge House Campus", "city": "Cambridge", "address": "14 Round Church Street, Cambridge, CB5 8AD", "type": "main", "facilities": ["graphics studio", "illustration studio", "fine art studio", "fashion studio", "design studio", "dark room", "experimental study spaces", "canteen", "dining room", "student services"], "transport": "Round Church, King's College 5 min walk, Cambridge city centre" },
+      { "name": "Sturton Street Campus", "city": "Cambridge", "address": "Sturton Street, Cambridge", "type": "secondary", "facilities": ["14 individual studios", "7 studios with Harlequin flooring", "theatre space (1800+ sq ft, 100-person capacity)", "integrated sound systems", "bright open café", "communal areas"], "transport": "Cambridge city centre" },
+      { "name": "Graduate Centre (Friar House)", "city": "Cambridge", "address": "Friar House, Cambridge", "type": "secondary", "facilities": ["multiple studios", "workspaces", "iMac workstations", "gaming PCs", "photography studio", "stop-motion animation resources", "student lounge", "fabrication workshops", "fashion atelier", "performance studios", "music rehearsal rooms", "recording studio", "printmaking facilities", "life drawing studio"], "transport": "Cambridge city centre" }
+    ],
+    "accommodation": [
+      { "name": "Varsity House", "type": "residence-hall", "price": null, "rooms": ["single en-suite"], "gender": "mixed", "meals": "full-board", "distance": "7 min cycle ride", "min_age": 18, "included": ["fully supervised", "single en-suite rooms", "WiFi", "professional house parents", "pastoral care"] },
+      { "name": "Batim House", "type": "residence-hall", "price": null, "rooms": ["single en-suite"], "gender": "mixed", "meals": "self-catered", "distance": "7 min cycle ride", "min_age": 18, "included": ["29 single en-suite rooms", "three fully fitted kitchens", "laundry facilities", "two furnished common rooms", "WiFi"] }
+    ],
+    "programs": {
+      "high_school": [],
+      "sixth_form": [],
+      "foundation": [
+        { "name": "Foundation Diploma in Art & Design", "type": "art-foundation", "specialism": "General Foundation with eight pathways", "duration": "3 terms (1 year)", "progression_to": "UAL, Camberwell College of Arts, Chelsea College of Arts, Ruskin School of Art, Istituto Marangoni, Glasgow School of Art, Edinburgh, Leeds, Southampton, Parsons School of Design, Pratt Institute", "entry": "Age 17+, completion of High School or minimum Level 3 qualification (A Level), 3 GCSEs at grade 4/C (incl. Maths and English and one creative arts subject), IELTS 4.5+ (no element under 4.0)", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.csvpa.com/course/foundation-diploma-in-art-design/" },
+        { "name": "Foundation Diploma in Art & Design — Graphics & Illustration", "type": "art-foundation", "specialism": "Graphics & Illustration", "duration": "3 terms (1 year)", "progression_to": "Top Art & Design universities (BA Hons progression with guaranteed acceptance to CSVPA BA courses)", "entry": "Age 17+, 3 GCSEs at grade 4/C, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.csvpa.com/course/foundation-diploma-in-art-design-graphics-illustration/" },
+        { "name": "Foundation Diploma in Art & Design — Fashion", "type": "art-foundation", "specialism": "Fashion", "duration": "3 terms (1 year)", "progression_to": "Top Art & Design universities (BA Hons progression with guaranteed acceptance to CSVPA BA courses)", "entry": "Age 17+, 3 GCSEs at grade 4/C, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.csvpa.com/course/foundation-diploma-in-art-design-fashion/" },
+        { "name": "Foundation Diploma in Art & Design — 3D Design", "type": "art-foundation", "specialism": "3D Design", "duration": "3 terms (1 year)", "progression_to": "Top Art & Design universities (BA Hons progression with guaranteed acceptance to CSVPA BA courses)", "entry": "Age 17+, 3 GCSEs at grade 4/C, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.csvpa.com/course/foundation-diploma-in-art-design/" },
+        { "name": "Drama Foundation — Classical & Contemporary Acting", "type": "art-foundation", "specialism": "Drama — Classical & Contemporary Acting", "duration": "3 terms (1 year)", "progression_to": "Performing Arts universities including Royal Academy of Dramatic Art", "entry": "Age 16+, relevant experience or demonstrable passion for drama, IELTS 4.5+", "intakes": ["September"], "tuition": null, "source_url": "https://www.csvpa.com/foundation-and-extended-diploma/" },
+        { "name": "Drama Foundation — Musical Theatre", "type": "art-foundation", "specialism": "Drama — Musical Theatre", "duration": "3 terms (1 year)", "progression_to": "Performing Arts universities", "entry": "Age 16+, relevant experience or demonstrable passion for musical theatre, IELTS 4.5+", "intakes": ["September"], "tuition": null, "source_url": "https://www.csvpa.com/foundation-and-extended-diploma/" },
+        { "name": "Music Foundation", "type": "art-foundation", "specialism": "Music", "duration": "3 terms (1 year)", "progression_to": "Royal Academy of Music, Royal College of Music, Trinity Laban", "entry": "Age 16+, music background, IELTS 4.5+", "intakes": ["September"], "tuition": null, "source_url": "https://www.csvpa.com/foundation-and-extended-diploma/" }
+      ],
+      "bachelor": [
+        { "name": "BA (Hons) Fashion", "specialism": "Fashion Design", "duration_years": 3, "validating_university": "Falmouth University", "modules": ["Design Process", "Introduction to Technical Skills", "Design Projects", "Technical Skills", "Fashion in Context", "Design for Industry", "Advanced Technical Skills", "Design Innovation", "Theories and Methodologies", "Collection Preparation", "Dissertation", "Collection Realisation", "Professional Portfolio"], "entry": "Age 18+; 72 UCAS points (Foundation Diploma/Extended Diploma/IB/two A Levels); IELTS 5.5+ (no element below 5.5); Portfolio required", "intakes": ["September"], "tuition": { "value": 9250, "currency": "GBP", "per": "year" }, "source_url": "https://csvpa.com/course/ba-hons-fashion/" },
+        { "name": "BA (Hons) Illustration", "specialism": "Illustration", "duration_years": 3, "validating_university": "Falmouth University", "modules": ["Core Practice: Illustration", "Disruptive Exploration", "Creative Expression: Illustration", "Engagement", "Professional Voice: Illustration", "Preparation", "Applied Process: Illustration", "Negotiated Practices", "Positioning Your Practice: Illustration", "Dissertation", "Showcase: Illustration"], "entry": "Age 18+; 72 UCAS points; IELTS 5.5+; Portfolio required", "intakes": ["September"], "tuition": { "value": 9250, "currency": "GBP", "per": "year" }, "source_url": "https://csvpa.com/course/ba-hons-illustration/" },
+        { "name": "BA (Hons) Graphic Design", "specialism": "Graphic Design", "duration_years": 3, "validating_university": "Falmouth University", "entry": "Age 18+; 72 UCAS points; IELTS 5.5+; Portfolio required", "intakes": ["September"], "tuition": { "value": 9250, "currency": "GBP", "per": "year" }, "source_url": "https://csvpa.com/course/ba-hons-graphic-design/" },
+        { "name": "BA (Hons) Visual Communication", "specialism": "Visual Communication", "duration_years": 3, "validating_university": "Falmouth University", "modules": ["Core Practice: Visual Communication", "Disruptive Exploration", "Creative Expression: Visual Communication", "Engagement", "Professional Voice: Visual Communication", "Preparation", "Applied Process: Visual Communication", "Negotiated Practices", "Positioning Your Practice: Visual Communication", "Dissertation", "Showcase: Visual Communication"], "entry": "Age 18+; 72 UCAS points; IELTS 5.5+; Portfolio required", "intakes": ["September"], "tuition": { "value": 9250, "currency": "GBP", "per": "year" }, "source_url": "https://csvpa.com/course/ba-hons-visual-communication/" },
+        { "name": "BA (Hons) Fashion Branding & Creative Communication", "specialism": "Fashion Branding & Creative Communications", "duration_years": 3, "validating_university": "Falmouth University", "entry": "Age 18+; 72 UCAS points; IELTS 5.5+; Portfolio required", "intakes": ["September"], "tuition": { "value": 9250, "currency": "GBP", "per": "year" }, "source_url": "https://csvpa.com/undergraduate/" },
+        { "name": "BA (Hons) Creative Intelligence & Innovation", "specialism": "Creative Intelligence & Innovation", "duration_years": 3, "validating_university": "Falmouth University", "entry": "Age 18+; 72 UCAS points; IELTS 5.5+; Portfolio required", "intakes": ["September"], "tuition": { "value": 9250, "currency": "GBP", "per": "year" }, "source_url": "https://csvpa.com/undergraduate/" }
+      ],
+      "master": [
+        { "name": "MA Fashion: Design", "specialism": "Fashion Design", "duration_years": 1, "validating_university": "Falmouth University", "entry": "Successful completion of an Undergraduate Degree in art & design or related, and/or relevant professional experience. IELTS 6.5+ (no element under 5.5)", "intakes": ["September"], "tuition": { "value": 27795, "currency": "GBP", "per": "year" }, "thesis": "Independent Major Project (40 credits Design Practice module)", "source_url": "https://www.csvpa.com/course/ma-fashion-design/" },
+        { "name": "MA Fashion: Branding & Creative Communication", "specialism": "Fashion - Branding & Creative Communication", "duration_years": 1, "validating_university": "Falmouth University", "entry": "Undergraduate Degree in art & design or related; IELTS 6.5+", "intakes": ["September"], "tuition": { "value": 27795, "currency": "GBP", "per": "year" }, "thesis": "Creative Futures module (20 credits)", "source_url": "https://www.csvpa.com/course/ma-fashion-branding-creative-communication/" },
+        { "name": "MA Visual Communication: Illustration & Animation", "specialism": "Visual Communication - Illustration & Animation", "duration_years": 1, "validating_university": "Falmouth University", "entry": "Undergraduate Degree in art & design or related; IELTS 6.5+", "intakes": ["September"], "tuition": { "value": 27795, "currency": "GBP", "per": "year" }, "thesis": "Final Master's project (20 credits Creative Futures module)", "source_url": "https://www.csvpa.com/course/ma-visual-communication-illustration-animation/" },
+        { "name": "MA Visual Communication: Graphic Design", "specialism": "Visual Communication - Graphic Design", "duration_years": 1, "validating_university": "Falmouth University", "entry": "Undergraduate Degree in art & design or related; IELTS 6.5+", "intakes": ["September"], "tuition": { "value": 27795, "currency": "GBP", "per": "year" }, "thesis": "Independent Major Project (Creative Futures module, 20 credits)", "source_url": "https://www.csvpa.com/course/ma-visual-communication-graphic-design/" },
+        { "name": "MA Art & Design", "specialism": "Art & Design (flexible, interdisciplinary)", "duration_years": 1, "validating_university": "Falmouth University", "entry": "Undergraduate Degree in art & design or related; non-art graduates considered with portfolio; IELTS 6.5+", "intakes": ["September"], "tuition": { "value": 27795, "currency": "GBP", "per": "year" }, "thesis": "Independent Major Project (Research Practice 20 credits, Focusing Practice 40 credits)", "source_url": "https://www.csvpa.com/course/ma-art-design/" }
+      ],
+      "english_language": [],
+      "summer_short": [
+        { "name": "Summer Programme — 3D Design 2026", "type": "art-short-course", "duration_weeks": 1, "min_age": 14, "max_age": 18, "price": { "value": 2050, "currency": "GBP", "per": "course" }, "start_dates": ["05 July 2026"], "source_url": "https://www.idp.com/universities-and-colleges/cats-global-summer-school/summer-programme-3d-design-csvpa/PRG-UK-00412351/" },
+        { "name": "Summer Programme — Games Design 2026", "type": "art-short-course", "duration_weeks": 1, "min_age": 14, "max_age": 18, "price": { "value": 2050, "currency": "GBP", "per": "course" }, "start_dates": ["28 June 2026"], "source_url": "https://www.idp.com/universities-and-colleges/cats-global-summer-school/summer-programme-games-design-csvpa/PRG-UK-00412355/" },
+        { "name": "Summer Programme — Photography 2026", "type": "art-short-course", "duration_weeks": 1, "min_age": 14, "max_age": 18, "price": { "value": 2050, "currency": "GBP", "per": "course" }, "start_dates": ["June 2026"], "source_url": "https://www.idp.com/" },
+        { "name": "Summer Programme — Animation 2026", "type": "art-short-course", "duration_weeks": 1, "min_age": 14, "max_age": 18, "price": { "value": 2050, "currency": "GBP", "per": "course" }, "start_dates": ["June 2026"], "source_url": "https://www.idp.com/" }
+      ]
+    }
+  },
+
+  "cats-college-china": {
+    "name": "CATS College, China",
+    "city": "Shanghai",
+    "country": "China",
+    "official_url": "https://www.catschina.cn/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/cats-college-china/",
+    "school_type": "international-secondary-and-pathway",
+    "scholarships": [],
+    "campuses": [
+      { "name": "Shanghai Campus", "city": "Shanghai", "address": "No. 3039 Pan Jing Road, Bao Shan District, Shanghai, China", "type": "main", "facilities": ["modern classrooms", "dormitories with en-suite rooms", "shared social and common room spaces", "on-campus creek", "large open spaces and greenery", "on-campus convenience store"], "shared_with": "csvpa-china" }
+    ],
+    "accommodation": [
+      { "name": "On-Campus Residence", "type": "residence-hall", "price": null, "rooms": ["double", "four-person dormitory"], "gender": "mixed", "meals": "full-board", "distance": "on-site", "min_age": 15, "included": ["en-suite bathrooms", "air conditioning", "common rooms", "house parents", "24-hour supervision", "on-campus convenience store"] }
+    ],
+    "programs": {
+      "high_school": [
+        { "name": "UFP & A-Level Blended Programme (Grade 10-12)", "level": "year-10-11", "duration": "3 years", "subjects": ["English", "Mathematics", "Physics", "Chemistry", "Biology", "Economics", "History", "Geography", "Psychology", "Sociology", "Business Studies"], "entry": "Completion of Grade 9/Year 9, entrance test (English, Mathematics, interview, psychological assessment)", "intakes": ["September"], "tuition": { "value": 178000, "currency": "CNY", "includes": "tuition only" }, "source_url": "https://www.catschina.cn/" }
+      ],
+      "sixth_form": [
+        { "name": "A-Level (2+1)", "qualification": "a-level", "duration": "3 years (2 in China, 1 in UK)", "min_age": 15, "max_age": 18, "intakes": ["September"], "tuition": null, "destinations": ["Top 100 US universities (73% of graduates 2020)"], "source_url": "https://catsglobalschools.com/our-schools/cats-college-china/" },
+        { "name": "US High School Diploma (2+1)", "qualification": "us-high-school-diploma", "duration": "3 years (2 in China, 1 in US)", "min_age": 15, "max_age": 18, "intakes": ["September"], "tuition": null, "destinations": ["Top 100 US universities"], "source_url": "https://catsglobalschools.com/our-schools/cats-college-china/" }
+      ],
+      "foundation": [
+        { "name": "University Foundation Programme", "type": "ufp", "duration": "3 terms or 2 terms (Fast Track)", "progression_to": "Cambridge, Oxford, LSE, Imperial College London, Durham, Loughborough, UCL, Bath, Warwick, Manchester, Glasgow, York", "entry": "High school Grade 2 (75%+) or Grade 3 (80%+), Age 16.5+, IELTS UKVI equivalent", "intakes": ["September", "January"], "tuition": null, "source_url": "https://www.catschina.cn/cats-ufp/" }
+      ],
+      "bachelor": [],
+      "master": [],
+      "english_language": [],
+      "summer_short": []
+    }
+  },
+
+  "csvpa-china": {
+    "name": "Cambridge School of Visual & Performing Arts, China",
+    "city": "Shanghai",
+    "country": "China",
+    "official_url": "https://www.catschina.cn/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/cambridge-school-of-visual-performing-arts-china/",
+    "school_type": "international-art-secondary-with-pathway",
+    "scholarships": [],
+    "campuses": [
+      { "name": "Shanghai Campus", "city": "Shanghai", "address": "No. 3039 Pan Jing Road, Bao Shan District, Shanghai, China", "type": "main", "facilities": ["art studios", "music teaching rooms", "dance studios", "design workspaces", "dormitories with en-suite rooms", "shared social spaces", "on-campus convenience store", "football field", "basketball court", "tennis court", "fitness gym", "music practice rooms", "dance rehearsal rooms"], "shared_with": "cats-college-china" }
+    ],
+    "accommodation": [
+      { "name": "CSVPA China Accommodation", "type": "residence-hall", "price": null, "rooms": [], "gender": "mixed", "distance": "on-site", "shared_with": "cats-college-china" }
+    ],
+    "programs": {
+      "high_school": [
+        { "name": "Art & Design Programme (Grade 10-11)", "level": "year-10-11", "duration": "2 years", "subjects": ["Fine Art", "Graphic Design", "Fashion Design", "3D Design", "Photography", "Illustration", "Contextual Studies", "English", "Mathematics"], "entry": "Completion of Grade 9, entrance assessments (Art, English, portfolio, interview, psychological assessment)", "intakes": ["September"], "tuition": { "value": 178000, "currency": "CNY", "includes": "tuition only" }, "source_url": "https://catsglobalschools.com/our-schools/cambridge-school-of-visual-performing-arts-csvpa-china/" },
+        { "name": "Drama & Music Programme (Grade 10-12)", "level": "year-10-11", "duration": "2-3 years", "subjects": ["Drama", "Music", "Performance Studies", "Music Theory", "History of Drama & Music", "English", "Academic subjects"], "entry": "Completion of Grade 9, performance audition, English assessment, interview, psychological assessment", "intakes": ["September"], "tuition": { "value": 260000, "currency": "CNY", "includes": "tuition only" }, "source_url": "https://catsglobalschools.com/our-schools/cambridge-school-of-visual-performing-arts-csvpa-china/" }
+      ],
+      "sixth_form": [],
+      "foundation": [
+        { "name": "Foundation Diploma in Art & Design", "type": "art-foundation", "duration": "2 years + 1 year at CSVPA Cambridge or CATS Academy Boston", "progression_to": "CSVPA Cambridge or CATS Academy Boston, then top Art & Design universities", "entry": "Grade 10 or 11 students, artistic ability assessment", "intakes": ["September"], "tuition": null, "source_url": "https://catsglobalschools.com/our-schools/cambridge-school-of-visual-performing-arts-csvpa-china/" },
+        { "name": "Drama Foundation", "type": "art-foundation", "duration": "2 years + 2 years at CSVPA Cambridge or CATS Academy Boston", "progression_to": "CSVPA Cambridge or CATS Academy Boston, then top Performing Arts universities", "entry": "Grade 10 or 11 students, dramatic ability assessment", "intakes": ["September"], "tuition": null, "source_url": "https://catsglobalschools.com/our-schools/cambridge-school-of-visual-performing-arts-csvpa-china/" },
+        { "name": "Music Foundation", "type": "art-foundation", "duration": "2 years + 2 years at CSVPA Cambridge or CATS Academy Boston", "progression_to": "CSVPA Cambridge or CATS Academy Boston, then top Music universities", "entry": "Grade 10 or 11 students, musical ability assessment", "intakes": ["September"], "tuition": null, "source_url": "https://catsglobalschools.com/our-schools/cambridge-school-of-visual-performing-arts-csvpa-china/" }
+      ],
+      "bachelor": [],
+      "master": [
+        { "name": "MA Art & Design", "duration_years": 1, "validating_university": "Falmouth University", "entry": "Undergraduate Degree in art & design or related", "intakes": ["September"], "tuition": null, "note": "Same Falmouth-validated MA suite as CSVPA Cambridge — likely 2+1 study route ending in Cambridge", "source_url": "https://csvpa.onyxcina.com/postgraduate-courses/" },
+        { "name": "MA Fashion: Branding & Creative Communication", "duration_years": 1, "validating_university": "Falmouth University", "intakes": ["September"], "tuition": null, "source_url": "https://csvpa.onyxcina.com/postgraduate-courses/" },
+        { "name": "MA Fashion: Design", "duration_years": 1, "validating_university": "Falmouth University", "intakes": ["September"], "tuition": null, "source_url": "https://csvpa.onyxcina.com/postgraduate-courses/" },
+        { "name": "MA Visual Communication: Graphic Design", "duration_years": 1, "validating_university": "Falmouth University", "intakes": ["September"], "tuition": null, "source_url": "https://csvpa.onyxcina.com/postgraduate-courses/" },
+        { "name": "MA Visual Communication: Illustration & Animation", "duration_years": 1, "validating_university": "Falmouth University", "intakes": ["September"], "tuition": null, "source_url": "https://csvpa.onyxcina.com/postgraduate-courses/" }
+      ],
+      "english_language": [],
+      "summer_short": []
+    }
+  },
+
+  "forest-city-international-school": {
+    "name": "Forest City International School",
+    "city": "Gelang Patah, Johor",
+    "country": "Malaysia",
+    "official_url": "https://cats-fc.org/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/forest-city-international-school/",
+    "school_type": "international-school-k-12",
+    "scholarships": [
+      { "name": "Up to 50% Scholarships", "amount": "до 50%", "currency": "MYR", "type": "percent", "eligibility": "Not specified beyond mention on website. Contact school for details.", "source_url": "https://cats-fc.org/school-fees/" }
+    ],
+    "campuses": [
+      { "name": "Main Campus", "city": "Gelang Patah", "address": "PTD 5093 (PLOT 62), Jalan Forest City 9, Forest City, 81550 Gelang Patah, Johor, Malaysia", "type": "main", "facilities": ["Lower School division", "Upper School division", "boarding facilities", "sports facilities"], "transport": "Johor, Malaysia" }
+    ],
+    "accommodation": [
+      { "name": "Campus Residence (4-person)", "type": "boarding-house", "price": { "value": 30000, "currency": "MYR", "per": "year" }, "rooms": ["four-person shared apartment"], "gender": "mixed", "meals": "full-board", "distance": "on-site", "min_age": 10, "included": ["one-bedroom apartments", "double bedrooms", "shared living area", "two bathrooms", "ensuite bathrooms", "dorm parents", "weekend trips"] },
+      { "name": "Campus Residence (2-person)", "type": "boarding-house", "price": { "value": 43000, "currency": "MYR", "per": "year" }, "rooms": ["two-person shared apartment"], "gender": "mixed", "meals": "full-board", "distance": "on-site", "min_age": 10, "included": ["one-bedroom apartments", "double bedrooms", "shared living area", "two bathrooms", "ensuite bathrooms", "dorm parents", "weekend trips"] },
+      { "name": "Weekly Boarding", "type": "boarding-house", "price": null, "rooms": ["one-bedroom apartments"], "gender": "mixed", "meals": "full-board", "distance": "on-site", "min_age": 10, "included": ["five days per week", "Friday home time"] }
+    ],
+    "programs": {
+      "high_school": [
+        { "name": "Middle School (Grade 7-8)", "level": "year-7-9", "duration": "2 years", "subjects": ["English Language Arts", "Mathematics", "Biology", "Chemistry", "Physics", "World History", "Social Studies", "Physical Education", "Arts", "Music", "Technology", "Foreign Languages"], "entry": "Age 12-14 (Grades 7-8), standard admissions assessment", "intakes": ["August"], "tuition": { "value": 77500, "currency": "MYR", "includes": "tuition + activities + learning resources + catering" }, "source_url": "https://cats-fc.org/school-fees/" },
+        { "name": "High School (Grade 9-12)", "level": "us-high-school-9-10", "duration": "4 years", "subjects": ["English Language Arts", "Mathematics", "Biology", "Chemistry", "Physics", "US History", "World History", "Economics", "Psychology", "Physical Education", "Arts", "Music", "Technology", "Foreign Languages", "AP courses (Grade 10-12)", "A-Level courses", "UFP courses"], "entry": "Age 14-17 (Grades 9-12), standard admissions assessment, transcript review", "intakes": ["August"], "tuition": { "value": 83500, "currency": "MYR", "includes": "tuition + activities + learning resources + catering" }, "source_url": "https://cats-fc.org/curriculum-upper-school/" }
+      ],
+      "sixth_form": [
+        { "name": "AP (Advanced Placement)", "qualification": "ap", "duration": "2 years (Grades 11-12)", "min_age": 16, "max_age": 18, "entry": "Teacher recommendation; academic readiness", "intakes": ["September"], "tuition": null, "source_url": "https://cats-fc.org/curriculum-upper-school/" },
+        { "name": "A-Level", "qualification": "a-level", "duration": "2 years (Grades 11-12)", "min_age": 16, "max_age": 18, "intakes": ["September"], "tuition": null, "source_url": "https://cats-fc.org/curriculum-upper-school/" }
+      ],
+      "foundation": [
+        { "name": "University Foundation Programme", "type": "ufp", "duration": "3 terms or 2 terms (Fast Track)", "progression_to": "Top UK and international universities", "entry": "11+ years schooling and good school record, IELTS 4.5+", "intakes": ["September", "January"], "tuition": null, "source_url": "https://catsglobalschools.com/cats-ufp/" }
+      ],
+      "bachelor": [],
+      "master": [],
+      "english_language": [],
+      "summer_short": []
+    }
+  },
+
+  "guildhouse-school-london": {
+    "name": "Guildhouse School, London",
+    "city": "London",
+    "country": "United Kingdom",
+    "official_url": "https://www.guildhouseschool.com/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/guildhouse-school-london/",
+    "school_type": "sixth-form-college-with-pre-a-level-and-ufp",
+    "scholarships": [],
+    "campuses": [
+      { "name": "Main Campus", "city": "London", "address": "43-45 Bloomsbury Square & 2 Southampton Place, London, WC1A 2RA", "type": "main", "facilities": ["historic regency townhouses", "classrooms", "library", "study tables", "workstations", "digital library", "personal computers", "colour photocopier/printer"], "transport": "Holborn Tube 1 min, Russell Square Tube nearby, Oxford Street 10 min walk, King's Cross St Pancras 2 stops, Euston Station 15 min walk" },
+      { "name": "Premier House Accommodation", "city": "London", "address": "London (10 min walk from school)", "type": "secondary", "facilities": ["ensuite rooms", "24/7 security", "dedicated house parents", "supervised student accommodation"], "transport": "Bloomsbury area" }
+    ],
+    "accommodation": [
+      { "name": "Premier House (Under 18)", "type": "residence-hall", "price": null, "rooms": ["single en-suite", "double en-suite"], "gender": "mixed", "meals": "full-board", "distance": "5 min walk", "min_age": 14, "included": ["130+ en-suite rooms", "24/7 security", "house parents", "WiFi", "laundry services", "cleaning services", "communal kitchen", "full catering", "breakfast/lunch/dinner weekdays", "brunch/supper weekends"] },
+      { "name": "Independent Accommodation (Over 18)", "type": "shared-apartment", "price": null, "rooms": ["single", "double"], "gender": "mixed", "meals": "self-catered", "distance": "variable", "min_age": 18, "included": ["independent living experience", "catered or self-catered options", "preparing for university"] }
+    ],
+    "programs": {
+      "high_school": [
+        { "name": "GCSE Programme (Year 10-11)", "level": "gcse", "duration": "2 years", "subjects": ["English Language", "English Literature", "Mathematics", "Biology", "Chemistry", "Physics", "Art & Design", "Business Studies", "Computer Science", "Economics", "French", "Geography", "History", "Information Technology", "Music", "Physical Education", "Religious Studies", "Spanish"], "entry": "Age 15+ (Year 10), intermediate to advanced English level", "intakes": ["September"], "tuition": null, "source_url": "https://www.guildhouseschool.com/curriculum/" }
+      ],
+      "sixth_form": [
+        { "name": "A-Level (2-year)", "qualification": "a-level", "duration": "2 years (6 terms September start, 5 terms January start)", "subjects": ["Arabic", "Art", "Biology", "Business", "Chemistry", "Chinese", "Economics", "English Literature", "French", "Further Mathematics", "History", "Italian", "Mathematics", "Physics", "Portuguese", "Psychology", "Russian", "Sociology", "Spanish", "Turkish"], "min_age": 15, "max_age": 18, "entry": "10 years of schooling; IELTS 4.5+; good school record", "intakes": ["September", "January"], "tuition": { "value": 37365, "currency": "GBP", "includes": "International tuition" }, "source_url": "https://www.guildhouseschool.com/curriculum/a-levels/" }
+      ],
+      "foundation": [
+        { "name": "University Foundation Programme", "type": "ufp", "duration": "3 terms", "progression_to": "Top UK universities (70% Russell Group acceptance)", "entry": "Age 16.5+, 11+ years schooling, IELTS 4.5+", "intakes": ["September"], "tuition": { "value": 37365, "currency": "GBP", "includes": "Full-time tuition (International rate); EU rate £31,155; UK rate £21,510; Fast-Track Intl £31,150" }, "source_url": "https://www.guildhouseschool.com/curriculum/ufp/" },
+        { "name": "Pre-A Level", "type": "international-foundation", "duration": "3 terms (Sep) or 2 terms (Jan)", "progression_to": "A-Level or UFP", "entry": "Age 15+, 9+ years schooling, IELTS 4.0+", "intakes": ["September", "January"], "tuition": { "value": 37365, "currency": "GBP", "includes": "Full-time tuition (Intl); EU £31,155; UK £21,510" }, "source_url": "https://www.guildhouseschool.com/curriculum/pre-a-level/" }
+      ],
+      "bachelor": [],
+      "master": [],
+      "english_language": [],
+      "summer_short": []
+    }
+  },
+
+  "stafford-house": {
+    "name": "Stafford House",
+    "city": "London (HQ) — multi-city",
+    "country": "United Kingdom",
+    "official_url": "https://staffordhouse.com/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/stafford-house/",
+    "school_type": "english-language-school-multi-city",
+    "scholarships": [],
+    "campuses": [
+      { "name": "London Centre", "city": "London", "address": "2 Southampton Place, London, WC1A 2DA", "type": "language-centre", "size": "300 students, average class size 11 (max 15)", "facilities": ["historic building with character", "light-filled classrooms", "latest technology", "modern air-conditioned classrooms", "spacious canteen", "student lounge", "computer facilities"], "transport": "Bloomsbury, central London" },
+      { "name": "Cambridge Centre", "city": "Cambridge", "address": "15 Round Church Street, Cambridge, CB5 8AD", "type": "language-centre", "facilities": ["modern air-conditioned classrooms", "spacious canteen", "student lounge", "Masters House Residence (single en-suite rooms 16+)"], "transport": "Round Church, King's College Chapel 5 min" },
+      { "name": "Canterbury Centre", "city": "Canterbury", "address": "19 New Dover Road, Canterbury, CT1 3AS", "type": "language-centre", "facilities": ["beautiful spacious building", "modern facilities", "student lounge and kitchen", "outside courtyard", "Holmes House residence (next door)"], "transport": "Canterbury city centre, Kent countryside" },
+      { "name": "Brighton Centre", "city": "Brighton & Hove", "address": "61 Western Road, Brighton and Hove, East Sussex, BN3 1JD", "type": "language-centre", "size": "average class 10 students", "facilities": ["Regency building", "16 classrooms with interactive whiteboards", "student and computer lounge", "self-study room", "outside courtyard", "library"], "transport": "Brighton city centre 10 min walk, seafront few hundred metres" }
+    ],
+    "accommodation": [
+      { "name": "Canterbury Residence", "type": "residence-hall", "price": { "value": 180, "currency": "GBP", "per": "week" }, "campus": "Canterbury", "rooms": ["single"], "gender": "mixed", "meals": "self-catered", "included": ["modern facilities", "WiFi"] },
+      { "name": "Canterbury Homestay", "type": "homestay", "price": { "value": 200, "currency": "GBP", "per": "week" }, "campus": "Canterbury", "rooms": ["single"], "gender": "mixed", "meals": "full-board", "included": ["host family meals"] },
+      { "name": "London Residence", "type": "residence-hall", "price": { "value": 1300, "currency": "GBP", "per": "month" }, "campus": "London", "rooms": ["single"], "gender": "mixed", "meals": "self-catered", "included": ["purpose-built student accommodation Zone 2"] },
+      { "name": "London Homestay", "type": "homestay", "price": { "value": 900, "currency": "GBP", "per": "month" }, "campus": "London", "rooms": ["single"], "gender": "mixed", "meals": "full-board", "included": ["Zone 2 location", "host family meals"] },
+      { "name": "Cambridge Residence (Masters House)", "type": "residence-hall", "price": null, "campus": "Cambridge", "rooms": ["single en-suite"], "gender": "mixed", "meals": "self-catered", "included": ["en-suite bathrooms", "desk", "wardrobe", "modern facilities"] },
+      { "name": "Cambridge Homestay", "type": "homestay", "price": null, "campus": "Cambridge", "rooms": ["single"], "gender": "mixed", "meals": "full-board", "included": ["host family meals", "cultural experience"] }
+    ],
+    "programs": {
+      "high_school": [],
+      "sixth_form": [],
+      "foundation": [],
+      "bachelor": [],
+      "master": [],
+      "english_language": [
+        { "name": "General English Standard", "type": "general-english", "campus": "London", "duration_weeks": "1-52", "hours_per_week": 15, "min_age": 16, "min_english_level": "A1", "price": { "value": 250, "currency": "GBP", "per": "week" }, "start_dates": "Mondays" },
+        { "name": "General English Intensive", "type": "general-english", "campus": "London", "duration_weeks": "1-52", "hours_per_week": 22.5, "min_age": 16, "min_english_level": "A1", "price": { "value": 325, "currency": "GBP", "per": "week" }, "start_dates": "Mondays" },
+        { "name": "General English Super Intensive", "type": "general-english", "campus": "London", "duration_weeks": "1-52", "hours_per_week": 30, "min_age": 16, "min_english_level": "A1", "price": { "value": 335, "currency": "GBP", "per": "week" }, "start_dates": "Mondays" },
+        { "name": "General English Standard", "type": "general-english", "campus": "Cambridge", "duration_weeks": "1-52", "hours_per_week": 15, "min_age": 16, "min_english_level": "A1", "price": { "value": 300, "currency": "GBP", "per": "week" }, "start_dates": "Mondays" },
+        { "name": "General English Intensive", "type": "general-english", "campus": "Cambridge", "duration_weeks": "1-52", "hours_per_week": 22.5, "min_age": 16, "min_english_level": "A1", "price": { "value": 300, "currency": "GBP", "per": "week" }, "start_dates": "Mondays" },
+        { "name": "General English Super Intensive", "type": "general-english", "campus": "Cambridge", "duration_weeks": "1-52", "hours_per_week": 30, "min_age": 16, "min_english_level": "A1", "price": { "value": 315, "currency": "GBP", "per": "week" }, "start_dates": "Mondays" },
+        { "name": "General English Standard", "type": "general-english", "campus": "Canterbury", "duration_weeks": "1-52", "hours_per_week": 15, "min_age": 16, "min_english_level": "A1", "price": { "value": 250, "currency": "GBP", "per": "week" }, "start_dates": "Mondays" },
+        { "name": "General English Intensive", "type": "general-english", "campus": "Canterbury", "duration_weeks": "1-52", "hours_per_week": 22.5, "min_age": 16, "min_english_level": "A1", "price": { "value": 280, "currency": "GBP", "per": "week" }, "start_dates": "Mondays" },
+        { "name": "General English Super Intensive", "type": "general-english", "campus": "Canterbury", "duration_weeks": "1-52", "hours_per_week": 30, "min_age": 16, "min_english_level": "A1", "price": { "value": 305, "currency": "GBP", "per": "week" }, "start_dates": "Mondays" },
+        { "name": "IELTS Preparation Intensive", "type": "ielts-prep", "campus": "London", "hours_per_week": 22.5, "min_age": 16, "min_english_level": "B1", "price": { "value": 325, "currency": "GBP", "per": "week" }, "start_dates": "Mondays" },
+        { "name": "IELTS Preparation Super Intensive", "type": "ielts-prep", "campus": "London", "hours_per_week": 22.5, "min_age": 16, "min_english_level": "B1", "price": { "value": 335, "currency": "GBP", "per": "week" } },
+        { "name": "IELTS Preparation Intensive", "type": "ielts-prep", "campus": "Cambridge", "hours_per_week": 22.5, "min_age": 16, "min_english_level": "B1", "price": { "value": 300, "currency": "GBP", "per": "week" } },
+        { "name": "IELTS Preparation Super Intensive", "type": "ielts-prep", "campus": "Cambridge", "hours_per_week": 30, "min_age": 16, "min_english_level": "B1", "price": { "value": 315, "currency": "GBP", "per": "week" } },
+        { "name": "IELTS Preparation Intensive", "type": "ielts-prep", "campus": "Canterbury", "hours_per_week": 22.5, "min_age": 16, "min_english_level": "B1", "price": { "value": 280, "currency": "GBP", "per": "week" } },
+        { "name": "IELTS Preparation Super Intensive", "type": "ielts-prep", "campus": "Canterbury", "hours_per_week": 30, "min_age": 16, "min_english_level": "B1", "price": { "value": 305, "currency": "GBP", "per": "week" } },
+        { "name": "Cambridge FCE Exam Preparation", "type": "cambridge-exam-prep", "campus": "Cambridge", "hours_per_week": 22.5, "min_age": 16, "min_english_level": "B1", "price": { "value": 300, "currency": "GBP", "per": "week" } },
+        { "name": "Cambridge CAE Exam Preparation", "type": "cambridge-exam-prep", "campus": "Cambridge", "hours_per_week": 22.5, "min_age": 16, "min_english_level": "C1", "price": { "value": 300, "currency": "GBP", "per": "week" } },
+        { "name": "Cambridge FCE Exam Preparation", "type": "cambridge-exam-prep", "campus": "Canterbury", "hours_per_week": 22.5, "min_age": 16, "min_english_level": "B1", "price": { "value": 280, "currency": "GBP", "per": "week" } },
+        { "name": "Cambridge CAE Exam Preparation", "type": "cambridge-exam-prep", "campus": "Canterbury", "hours_per_week": 22.5, "min_age": 16, "min_english_level": "C1", "price": { "value": 280, "currency": "GBP", "per": "week" } },
+        { "name": "Business English Intensive", "type": "business-english", "campus": "London", "hours_per_week": 22.5, "min_age": 18, "min_english_level": "B1", "price": { "value": 325, "currency": "GBP", "per": "week" } },
+        { "name": "Business English Super Intensive", "type": "business-english", "campus": "London", "hours_per_week": 30, "min_age": 18, "min_english_level": "B1", "price": { "value": 345, "currency": "GBP", "per": "week" } },
+        { "name": "Professional Certificate in Business Management Standard", "type": "business-english", "campus": "London", "duration_weeks": "2-4", "hours_per_week": 15, "min_age": 18, "min_english_level": "B2", "price": { "value": 935, "currency": "GBP", "per": "course" }, "start_dates": "June, August, September, November, December, March 2027" },
+        { "name": "Professional Certificate in Business Management Intensive", "type": "business-english", "campus": "London", "duration_weeks": 2, "hours_per_week": 19, "min_age": 18, "min_english_level": "B2", "price": { "value": 1075, "currency": "GBP", "per": "course" } },
+        { "name": "Professional Certificate in Marketing Standard", "type": "business-english", "campus": "London", "duration_weeks": "2-4", "hours_per_week": 15, "min_age": 18, "min_english_level": "B2", "price": { "value": 935, "currency": "GBP", "per": "course" } },
+        { "name": "Professional Certificate in Project Management Standard", "type": "business-english", "campus": "London", "duration_weeks": "2-4", "hours_per_week": 15, "min_age": 18, "min_english_level": "B2", "price": { "value": 935, "currency": "GBP", "per": "course" } },
+        { "name": "CELTA Teacher Training Full-Time", "type": "teacher-training", "campus": "London", "duration_weeks": 4, "hours_per_week": 30, "min_age": 18, "min_english_level": "B2", "price": { "value": 1475, "currency": "GBP", "per": "course" }, "start_dates": "June 8, July 6, August 3, September 7, November 2, 2026" },
+        { "name": "CELTA Teacher Training Part-Time", "type": "teacher-training", "campus": "London", "duration_weeks": "10-12", "hours_per_week": 12, "min_age": 18, "min_english_level": "B2", "price": { "value": 1475, "currency": "GBP", "per": "course" }, "start_dates": "May 30, September 5, 2026" },
+        { "name": "CELTA Teacher Training Full-Time", "type": "teacher-training", "campus": "Cambridge", "duration_weeks": 4, "hours_per_week": 30, "min_age": 18, "min_english_level": "B2", "price": { "value": 1475, "currency": "GBP", "per": "course" }, "start_dates": "August 3, October 19, 2026" },
+        { "name": "CELTA Teacher Training Full-Time", "type": "teacher-training", "campus": "Canterbury", "duration_weeks": 4, "hours_per_week": 30, "min_age": 18, "min_english_level": "B2", "price": { "value": 1475, "currency": "GBP", "per": "course" }, "start_dates": "September 21, 2026" },
+        { "name": "CELTA Teacher Training Online", "type": "teacher-training", "campus": "Online", "duration_weeks": 4, "hours_per_week": 30, "min_age": 18, "min_english_level": "B2", "price": { "value": 1350, "currency": "GBP", "per": "course" }, "start_dates": "July 6, August 3, October 5, 2026" },
+        { "name": "One-to-One English", "type": "one-to-one", "campus": "London", "hours_per_week": 5, "min_age": 16, "min_english_level": "A1", "price": { "value": 107, "currency": "GBP", "per": "week" }, "start_dates": "Flexible, any day" },
+        { "name": "One-to-One English", "type": "one-to-one", "campus": "Cambridge", "hours_per_week": 5, "min_age": 16, "price": { "value": 107, "currency": "GBP", "per": "week" } },
+        { "name": "One-to-One English", "type": "one-to-one", "campus": "Canterbury", "hours_per_week": 5, "min_age": 16, "price": { "value": 107, "currency": "GBP", "per": "week" } }
+      ],
+      "summer_short": [
+        { "name": "Classic English Course (Junior)", "type": "junior-summer", "campus": "Canterbury", "duration_weeks": "1-3", "hours_per_week": 15, "min_age": 11, "max_age": 18, "min_english_level": "A1", "price": { "value": 1340, "currency": "GBP", "per": "week" }, "start_dates": "June 14 - August 23, 2026 (Sundays)", "includes": ["15 hrs lessons/week", "accommodation (residential/homestay)", "meals", "excursions", "activities"] },
+        { "name": "Intensive English Course (Junior)", "type": "junior-summer", "campus": "Canterbury", "duration_weeks": "1-3", "hours_per_week": 23, "min_age": 14, "max_age": 17, "min_english_level": "A1", "price": { "value": 1340, "currency": "GBP", "per": "week" }, "start_dates": "June 21 - August 23, 2026 (Sundays)", "includes": ["23 hrs lessons/week", "accommodation", "meals", "excursions", "activities"] },
+        { "name": "Classic Plus Basketball", "type": "junior-summer", "campus": "Canterbury", "duration_weeks": "1-2", "hours_per_week": 15, "min_age": 12, "max_age": 17, "min_english_level": "A1", "price": { "value": 1480, "currency": "GBP", "per": "week" }, "start_dates": "On request, June-August 2026" },
+        { "name": "Careers in Medicine Programme", "type": "junior-summer", "campus": "Canterbury", "duration_weeks": 2, "hours_per_week": 20, "min_age": 14, "max_age": 17, "min_english_level": "B1", "price": { "value": 1700, "currency": "GBP", "per": "course" }, "start_dates": "June 29 - July 27, 2026" },
+        { "name": "Model United Nations Programme", "type": "junior-summer", "campus": "Canterbury", "duration_weeks": 3, "hours_per_week": 18, "min_age": 14, "max_age": 17, "min_english_level": "B1", "price": { "value": 1445, "currency": "GBP", "per": "week" }, "start_dates": "July 6 - 27, 2026" }
+      ]
+    }
+  },
+
+  "st-michaels-school": {
+    "name": "St Michael's School and Sixth Form",
+    "city": "Llanelli",
+    "country": "United Kingdom",
+    "official_url": "https://www.stmikes.co.uk/",
+    "aggregator_url": "https://catsglobalschools.com/our-schools/st-michaels-school/",
+    "school_type": "boarding-school-prep-senior-and-sixth-form",
+    "scholarships": [
+      { "name": "Academic Scholarships", "amount": "variable", "currency": "GBP", "type": "variable", "eligibility": "Small number of academic scholarships awarded at Headmaster's discretion for Year 7 entry each year.", "source_url": "https://www.stmikes.co.uk/admissions/" }
+    ],
+    "campuses": [
+      { "name": "Main Campus", "city": "Llanelli", "address": "Bryn, Llanelli, Carmarthenshire, SA14 9TU, Wales", "type": "main", "facilities": ["Pre-Prep facilities", "Prep School facilities", "Senior School facilities", "boarding facilities"], "transport": "Llanelli, Wales, Carmarthenshire" }
+    ],
+    "accommodation": [
+      { "name": "Parc House", "type": "boarding-house", "price": null, "rooms": ["single", "double"], "gender": "separate-floors", "meals": "full-board", "distance": "3 km off-campus", "min_age": 14, "included": ["22 students capacity", "male and female zones", "large common room", "supervised study", "school bus transportation"] },
+      { "name": "Tenby House", "type": "boarding-house", "price": null, "rooms": ["single en-suite"], "gender": "mixed", "meals": "full-board", "distance": "on-site", "min_age": 16, "included": ["single en-suite rooms", "Head of Boarding on-site", "24-hour supervision", "pastoral care"] }
+    ],
+    "programs": {
+      "high_school": [],
+      "sixth_form": [
+        { "name": "A-Levels", "qualification": "a-level", "duration": "2 years (Year 12-13)", "subjects": ["Art", "Biology", "Business Studies", "Chemistry", "Computer Science", "Economics", "English", "Extended Project Qualification (EPQ)", "French", "Geography", "History", "Maths", "Further Maths", "Music", "Physical Education", "Physics", "Psychology", "Spanish", "Welsh"], "min_age": 16, "max_age": 18, "entry": "Sixth Form entry contingent on certain GCSE results. International students require minimum IELTS 5.5 (or equivalent) for A-Level study.", "intakes": ["September", "January", "April"], "tuition": { "value": 34590, "currency": "GBP", "includes": "Two-year A-Level programme for international students (day and boarding available)" }, "destinations": ["University of Cambridge", "Top 20 UK Universities", "Medical Schools (Medicine, Dentistry, Veterinary Science)", "University degree courses in competitive fields: Engineering, Pharmacy, Law, Economics"], "source_url": "https://www.stmikes.co.uk/sixth-form-age-16-18/a-levels/" }
+      ],
+      "foundation": [],
+      "bachelor": [],
+      "master": [],
+      "english_language": [],
+      "summer_short": []
+    }
+  }
+}
