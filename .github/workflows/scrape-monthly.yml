@@ -43,6 +43,11 @@ jobs:
 
       - name: Run scraper for all registered universities
         working-directory: scraper
+        # Partial failures (e.g. a single source returning 404) shouldn't
+        # discard the dozens of universities that DID scrape successfully.
+        # The site/build step that follows still validates every JSON via
+        # Zod, so genuinely broken data can't reach `main`.
+        continue-on-error: true
         run: npm run scrape -- --all
 
       - name: Install site deps + build (validates Zod schemas)
