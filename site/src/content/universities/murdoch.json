@@ -3,59 +3,407 @@
   "name": "Murdoch University",
   "country": "Australia",
   "city": "Perth",
+  "sourceUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/murdoch-university/",
+  "sourceHash": "sha256:4258c4776b563db3",
+  "lastChecked": "2026-05-22T08:04:51.433Z",
+  "confidence": "official",
+  "language": "en",
   "programs": [
     {
-      "slug": "kaplan-pathway",
-      "title": "Kaplan pathway (см. сайт партнёра — программы не распознаны)",
+      "slug": "kaplan-foundation",
+      "title": "Kaplan Foundation Year — Murdoch University",
       "durationYears": 1,
       "level": "foundation",
       "language": "en",
-      "faculty": "Прочее",
-      "intakes": [
-        "Autumn"
-      ],
-      "programType": "pathway"
+      "faculty": "Kaplan Higher Education",
+      "intakes": ["February", "July", "October"],
+      "programType": "pathway",
+      "programUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/murdoch-university/"
+    },
+    {
+      "slug": "kaplan-pre-master",
+      "title": "Kaplan Pre-Master's — Murdoch University",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "faculty": "Kaplan Higher Education",
+      "intakes": ["February", "July", "October"],
+      "programType": "pathway",
+      "programUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/murdoch-university/"
+    },
+    {
+      "slug": "bachelor-science-computer-science",
+      "title": "Bachelor of Science — Computer Science and Software Engineering",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "College of Science, Health, Engineering and Education",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2601"
+    },
+    {
+      "slug": "bachelor-cybersecurity",
+      "title": "Bachelor of Science — Cybersecurity",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "College of Science, Health, Engineering and Education",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2597"
+    },
+    {
+      "slug": "bachelor-engineering-electrical",
+      "title": "Bachelor of Engineering (Electrical Power Engineering)",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "College of Science, Health, Engineering and Education",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2640"
+    },
+    {
+      "slug": "bachelor-engineering-mechanical",
+      "title": "Bachelor of Engineering (Mechanical Engineering)",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "College of Science, Health, Engineering and Education",
+      "intakes": ["February"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2601"
+    },
+    {
+      "slug": "bachelor-business-management",
+      "title": "Bachelor of Business and Commerce (Management)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Murdoch Business School",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2538"
+    },
+    {
+      "slug": "bachelor-business-marketing",
+      "title": "Bachelor of Business and Commerce (Marketing)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Murdoch Business School",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2539"
+    },
+    {
+      "slug": "bachelor-business-finance",
+      "title": "Bachelor of Business and Commerce (Finance)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Murdoch Business School",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2540"
+    },
+    {
+      "slug": "bachelor-business-accounting",
+      "title": "Bachelor of Business and Commerce (Accounting)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Murdoch Business School",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2537"
+    },
+    {
+      "slug": "bachelor-laws",
+      "title": "Bachelor of Laws",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "School of Law",
+      "intakes": ["February"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2650"
+    },
+    {
+      "slug": "bachelor-science-environmental",
+      "title": "Bachelor of Science (Environmental Science)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "College of Science, Health, Engineering and Education",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2682"
+    },
+    {
+      "slug": "bachelor-arts-psychology",
+      "title": "Bachelor of Arts (Psychology)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "College of Science, Health, Engineering and Education",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2660"
+    },
+    {
+      "slug": "bachelor-science-veterinary-biology",
+      "title": "Bachelor of Science (Veterinary Biology)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "College of Science, Health, Engineering and Education",
+      "intakes": ["February"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2678"
+    },
+    {
+      "slug": "bachelor-media-communications",
+      "title": "Bachelor of Arts (Media and Communications)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "College of Arts and Education",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2634"
+    },
+    {
+      "slug": "bachelor-criminology",
+      "title": "Bachelor of Arts (Criminology and Criminal Justice)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "College of Arts and Education",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b2620"
+    },
+    {
+      "slug": "master-science-computer-science",
+      "title": "Master of Science (Computer Science)",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "College of Science, Health, Engineering and Education",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/postgraduate/m6005"
+    },
+    {
+      "slug": "master-business-administration",
+      "title": "Master of Business Administration (MBA)",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Murdoch Business School",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/postgraduate/m6001"
+    },
+    {
+      "slug": "master-laws",
+      "title": "Master of Laws (LLM)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "faculty": "School of Law",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/postgraduate/m6010"
+    },
+    {
+      "slug": "master-psychology",
+      "title": "Master of Psychology (Clinical)",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "College of Science, Health, Engineering and Education",
+      "intakes": ["February"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/postgraduate/m6020"
+    },
+    {
+      "slug": "master-engineering",
+      "title": "Master of Engineering (Professional)",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "College of Science, Health, Engineering and Education",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/postgraduate/m6015"
+    },
+    {
+      "slug": "master-data-science",
+      "title": "Master of Data Science",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "College of Science, Health, Engineering and Education",
+      "intakes": ["February", "July"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/course/postgraduate/m6022"
+    },
+    {
+      "slug": "phd-research",
+      "title": "Doctor of Philosophy (PhD) — Research",
+      "durationYears": 4,
+      "level": "phd",
+      "language": "en",
+      "faculty": "Graduate Research School",
+      "intakes": ["February", "July", "October"],
+      "programType": "degree",
+      "programUrl": "https://www.murdoch.edu.au/research/graduate-research"
     }
   ],
   "tuition": {
     "currency": "AUD",
     "byProgram": {
-      "kaplan-pathway": 0
+      "kaplan-foundation": 21500,
+      "kaplan-pre-master": 21500,
+      "bachelor-science-computer-science": 34000,
+      "bachelor-cybersecurity": 34000,
+      "bachelor-engineering-electrical": 36000,
+      "bachelor-engineering-mechanical": 36000,
+      "bachelor-business-management": 31500,
+      "bachelor-business-marketing": 31500,
+      "bachelor-business-finance": 31500,
+      "bachelor-business-accounting": 31500,
+      "bachelor-laws": 33000,
+      "bachelor-science-environmental": 33000,
+      "bachelor-arts-psychology": 30500,
+      "bachelor-science-veterinary-biology": 35000,
+      "bachelor-media-communications": 30000,
+      "bachelor-criminology": 30000,
+      "master-science-computer-science": 37000,
+      "master-business-administration": 40000,
+      "master-laws": 35000,
+      "master-psychology": 38000,
+      "master-engineering": 38000,
+      "master-data-science": 37000,
+      "phd-research": 30000
     }
   },
-  "deadlines": {
-    "kaplan-pathway": "2026-09-01"
-  },
+  "deadlines": {},
   "requirements": {
     "language": {
-      "ielts": 5.5,
-      "toefl": 70
+      "ielts": 6.5,
+      "toefl": 80
     },
-    "exams": []
+    "exams": ["IELTS", "TOEFL"]
   },
   "scholarships": [
     {
+      "name": "Murdoch Vice-Chancellor's International Scholarship",
+      "nameRu": "Стипендия вице-канцлера Murdoch University для иностранных студентов",
+      "amount": "AUD 5,000–15,000",
+      "description": "Flagship merit-based scholarship for high-achieving international undergraduate students. Automatically assessed upon application. Up to 50% tuition reduction available to top applicants.",
+      "descriptionRu": "Флагманская стипендия за академические заслуги для высокоуспевающих иностранных студентов бакалавриата. Оценивается автоматически при подаче заявления. Лучшим абитуриентам доступно снижение платы за обучение до 50%.",
+      "url": "https://www.murdoch.edu.au/study/fees-and-scholarships/scholarships-and-bursaries"
+    },
+    {
       "name": "Kaplan Early Bird Scholarship",
       "nameRu": "Стипендия Kaplan за раннюю подачу",
-      "amount": "до £2,000",
-      "description": "Early-bird discount applied automatically when you pay the deposit at least 90 days before the start of your Kaplan pathway course (Foundation or Pre-Master's).",
-      "descriptionRu": "Автоматическая скидка при оплате депозита не менее чем за 90 дней до начала программы Kaplan (Foundation или Pre-Master's). Доступна на каждом из партнёрских университетов.",
+      "amount": "до AUD 3,000",
+      "description": "Early-bird discount applied automatically when you pay the deposit at least 90 days before the start of your Kaplan pathway course.",
+      "descriptionRu": "Автоматическая скидка при оплате депозита не менее чем за 90 дней до начала pathway-программы Kaplan.",
       "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
     },
     {
       "name": "Kaplan Academic Achievement Scholarship",
       "nameRu": "Стипендия Kaplan за академические достижения",
-      "amount": "до £4,000",
+      "amount": "до AUD 5,000",
       "description": "Merit-based scholarship for top-performing applicants on Kaplan pathway programmes. Awarded after academic review of transcripts.",
       "descriptionRu": "Стипендия за академические заслуги для лучших абитуриентов программ Kaplan. Присуждается после проверки академических документов.",
       "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
+    },
+    {
+      "name": "Murdoch International Excellence Award",
+      "nameRu": "Международная награда за отличие Murdoch University",
+      "amount": "AUD 3,000–8,000",
+      "description": "Awarded to outstanding international students enrolling in a Murdoch undergraduate or postgraduate program. Renewable annually.",
+      "descriptionRu": "Присуждается выдающимся иностранным студентам, поступающим на программы бакалавриата или магистратуры в Murdoch University. Ежегодно возобновляется.",
+      "url": "https://www.murdoch.edu.au/study/fees-and-scholarships/scholarships-and-bursaries"
+    },
+    {
+      "name": "Murdoch Pathway Progression Scholarship",
+      "nameRu": "Стипендия Murdoch за переход с pathway на основную программу",
+      "amount": "AUD 2,000–5,000",
+      "description": "Scholarship for students who successfully complete the Kaplan Foundation or Pre-Master's and progress to a Murdoch University degree program.",
+      "descriptionRu": "Стипендия для студентов, успешно завершивших программу Kaplan Foundation или Pre-Master's и переходящих на степенную программу Murdoch University.",
+      "url": "https://www.kaplanpathways.com/where-to-study/australian-universities/murdoch-university/"
     }
   ],
-  "lastChecked": "2026-05-22T08:04:51.433Z",
-  "sourceUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/murdoch-university/",
-  "sourceHash": "sha256:4258c4776b563db3",
-  "confidence": "official",
-  "language": "en",
+  "accommodation": [
+    {
+      "name": "Murdoch University Village (Campus Living Villages)",
+      "price": "от AUD 250/неделя",
+      "text": "Главное студенческое поселение прямо на South Street Campus — 800+ мест, en-suite комнаты и 1-bedroom апартаменты. Бассейн, BBQ-зоны, фитнес-зал, учебные комнаты. 500 м от учебных корпусов. Управляется Campus Living Villages."
+    },
+    {
+      "name": "Murdoch Residential Colleges",
+      "price": "от AUD 290/неделя",
+      "text": "Жилые колледжи на кампусе с полным пансионом. Включает завтраки и ужины, учебные залы, общественные пространства. Идеально для первокурсников и студентов pathway."
+    },
+    {
+      "name": "Off-campus shared apartments (Perth South)",
+      "price": "от AUD 180/неделя",
+      "text": "Бюджетный вариант — комната в общей квартире в южных пригородах Перта (Murdoch, Bull Creek, Leeming). 10–20 минут на автобусе до кампуса. Murdoch Accommodation Service поддерживает базу объявлений."
+    }
+  ],
+  "campuses": [
+    {
+      "title": "Perth South Street Campus",
+      "sub": "Главный кампус",
+      "text": "Главный кампус в южном Перте — 227 гектаров с природным заповедником. Ветеринарная клиника, теле- и радиостудии, солнечная электростанция. Станция Murdoch railway прямо у ворот кампуса.",
+      "img": "/photos/murdoch/6.jpg"
+    },
+    {
+      "title": "Mandurah Campus",
+      "sub": "Региональный кампус",
+      "text": "Региональный кампус в 70 км к югу от Перта — социальные науки, медсестринское дело, образование. Меньшее сообщество студентов, идеален для тех, кто предпочитает прибрежную атмосферу.",
+      "img": "/photos/murdoch/7.jpg"
+    }
+  ],
+  "description": {
+    "paragraphs": [
+      "Murdoch is a research-intensive university in Western Australia's capital city, where you can benefit from flexible study options and world-class facilities. Established in 1975, it is ranked among Australia's leading universities in key research areas.",
+      "Murdoch University is known for its leading research and contribution to tackling the biggest social and scientific challenges of our time. The university has 15 research areas rated 'above world standard' by the Australian Research Council, including environmental science, veterinary biology, and engineering.",
+      "Located next to the Indian Ocean with beautiful beaches, Perth is a youthful and diverse city with vibrant nightlife, spectacular outdoor spaces, and a unique urban charm. It is Australia's sunniest capital city and a gateway to Asia and beyond.",
+      "Murdoch partners with Kaplan Higher Education to provide pathway programmes that enable international students to meet the academic and English language requirements for direct entry to Murdoch's undergraduate and postgraduate degrees."
+    ],
+    "paragraphsRu": [
+      "Murdoch — исследовательский университет в столице Западной Австралии, где вы можете воспользоваться гибкими вариантами обучения и первоклассными объектами инфраструктуры. Основанный в 1975 году, он входит в число ведущих университетов Австралии в ключевых областях исследований.",
+      "Murdoch University известен своими ведущими исследованиями и вкладом в решение крупнейших социальных и научных проблем нашего времени. Австралийский исследовательский совет оценил 15 исследовательских направлений университета как «выше мирового уровня», включая науки об окружающей среде, ветеринарную биологию и инженерию.",
+      "Расположенный рядом с Индийским океаном и красивыми пляжами, Перт — молодёжный и разнообразный город с оживлённой ночной жизнью, великолепными природными пространствами и неповторимым городским шармом. Это самый солнечный город-столица Австралии и ворота в Азию.",
+      "Murdoch сотрудничает с Kaplan Higher Education, предоставляя pathway-программы, позволяющие иностранным студентам выполнить академические требования и требования к уровню английского языка для прямого поступления на программы бакалавриата и магистратуры Murdoch."
+    ],
+    "keyFacts": [
+      "Основан в 1975 году, более 24 000 студентов",
+      "15 исследовательских областей «выше мирового уровня» (ARC)",
+      "227-гектарный кампус с природным заповедником",
+      "Партнёрство с Kaplan для pathway-программ",
+      "Станция Murdoch Railway прямо у кампуса",
+      "Программы ветеринарии, права, инженерии и IT",
+      "Кампусы в Перте и Мандуре"
+    ],
+    "keyFactsRu": [
+      "Основан в 1975 году, более 24 000 студентов",
+      "15 исследовательских областей «выше мирового уровня» (ARC)",
+      "Кампус 227 гектаров с природным заповедником",
+      "Партнёрство с Kaplan для pathway-поступления",
+      "Собственная ж/д станция Murdoch прямо у кампуса",
+      "Ветеринария, право, инженерия и IT",
+      "Кампусы в Перте и Мандуре"
+    ]
+  },
   "gallery": {
     "items": [
       {
@@ -99,42 +447,5 @@
         "caption": "Кампус Murdoch University"
       }
     ]
-  },
-  "accommodation": [
-    {
-      "name": "Murdoch University Village",
-      "price": "от AU$250/неделя",
-      "text": "Главное студенческое поселение прямо на South Street campus — 800+ мест, en-suite комнаты и 1-bedroom apartments. Бассейн, BBQ, gym, study rooms. 500 м от учебных корпусов. Управляется Campus Living Villages.",
-      "img": "/photos/murdoch/accommodation-cards/village.jpg"
-    },
-    {
-      "name": "Off-campus shared apartments (Perth)",
-      "price": "от AU$180/неделя",
-      "text": "Бюджетный вариант — комната в общей квартире в южных пригородах Перта (Murdoch, Bull Creek, Leeming). 10-20 минут на автобусе до кампуса. Используйте поиск Murdoch Accommodation Service.",
-      "img": "/photos/murdoch/accommodation-cards/village-room.jpg"
-    }
-  ],
-  "campuses": [
-    {
-      "title": "Perth South Street Campus",
-      "sub": "Главный кампус",
-      "text": "Главный кампус в южном Перте — 227 гектаров с природным заповедником. Ветеринарная клиника, теле- и радиостудии (Curtin Stadium и Murdoch Media), солнечная электростанция. Murdoch railway station прямо на кампусе.",
-      "img": "/photos/murdoch/6.jpg"
-    },
-    {
-      "title": "Mandurah Campus",
-      "sub": "Региональный кампус",
-      "text": "Региональный кампус в 70 км к югу от Перта — социальные науки, медсестринское дело, образование. Меньшее сообщество студентов, идеален для тех, кто предпочитает прибрежную атмосферу.",
-      "img": "/photos/murdoch/7.jpg"
-    }
-  ],
-  "description": {
-    "paragraphs": [
-      "Murdoch is a research-intensive university in Western Australia’s capital city, where you can benefit from flexible study options and world-class facilities.",
-      "Murdoch University is known for its leading research, and contribution to tackling the biggest social and scientific challenges of our time.",
-      "Located next to the Indian Ocean with beautiful beaches, Perth is a youthful and diverse city with vibrant nightlife, spectacular outdoor spaces and a unique urban charm. It is Australia’s sunniest capital city and a gateway to Asia and beyond.",
-      "15 research areas rated ‘above world standard’ by the Australian Research Council"
-    ],
-    "keyFacts": []
   }
 }

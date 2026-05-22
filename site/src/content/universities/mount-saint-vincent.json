@@ -3,74 +3,384 @@
   "name": "Mount Saint Vincent University",
   "country": "Canada",
   "city": "Halifax",
+  "sourceUrl": "https://www.msvu.ca/academics/",
+  "sourceHash": "sha256:68b073798ec18b08",
+  "lastChecked": "2026-05-22T08:06:45.486Z",
+  "confidence": "aggregator",
+  "language": "en",
   "programs": [
     {
-      "slug": "kaplan-pathway",
-      "title": "Kaplan pathway (см. сайт партнёра — программы не распознаны)",
+      "slug": "oxford-international-pathway",
+      "title": "Oxford International Pathway to MSVU",
       "durationYears": 1,
       "level": "foundation",
       "language": "en",
-      "faculty": "Прочее",
-      "intakes": [
-        "Autumn"
-      ],
-      "programType": "pathway"
+      "faculty": "Continuing Education",
+      "intakes": ["January", "May", "September"],
+      "programType": "pathway",
+      "programUrl": "https://www.oxfordinternational.com/study-in-canada/mount-saint-vincent-university/"
+    },
+    {
+      "slug": "bachelor-business-administration",
+      "title": "Bachelor of Business Administration",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Professional Studies",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/business-administration/"
+    },
+    {
+      "slug": "bachelor-tourism-hospitality-management",
+      "title": "Bachelor of Tourism and Hospitality Management",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Professional Studies",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/tourism-hospitality-management/"
+    },
+    {
+      "slug": "bachelor-public-relations",
+      "title": "Bachelor of Public Relations",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Professional Studies",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/public-relations/"
+    },
+    {
+      "slug": "bachelor-science-nutrition",
+      "title": "Bachelor of Science in Applied Human Nutrition",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Education and Professional Studies",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/applied-human-nutrition/"
+    },
+    {
+      "slug": "bachelor-arts-psychology",
+      "title": "Bachelor of Arts in Psychology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts and Science",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/psychology/"
+    },
+    {
+      "slug": "bachelor-arts-english",
+      "title": "Bachelor of Arts in English",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts and Science",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/english/"
+    },
+    {
+      "slug": "bachelor-arts-history",
+      "title": "Bachelor of Arts in History",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts and Science",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/history/"
+    },
+    {
+      "slug": "bachelor-arts-political-science",
+      "title": "Bachelor of Arts in Political Science",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts and Science",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/political-science/"
+    },
+    {
+      "slug": "bachelor-arts-sociology",
+      "title": "Bachelor of Arts in Sociology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts and Science",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/sociology/"
+    },
+    {
+      "slug": "bachelor-science-biology",
+      "title": "Bachelor of Science in Biology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts and Science",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/biology/"
+    },
+    {
+      "slug": "bachelor-science-chemistry",
+      "title": "Bachelor of Science in Chemistry",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts and Science",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/chemistry/"
+    },
+    {
+      "slug": "bachelor-arts-religious-studies",
+      "title": "Bachelor of Arts in Religious Studies",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts and Science",
+      "intakes": ["January", "September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bachelor-education",
+      "title": "Bachelor of Education",
+      "durationYears": 2,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Education and Professional Studies",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/education/"
+    },
+    {
+      "slug": "bachelor-arts-child-youth-study",
+      "title": "Bachelor of Arts in Child and Youth Study",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Education and Professional Studies",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/undergraduate-studies/child-youth-study/"
+    },
+    {
+      "slug": "master-arts-womens-gender-studies",
+      "title": "Master of Arts in Women and Gender Studies",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Arts and Science",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/graduate-studies/womens-gender-studies/"
+    },
+    {
+      "slug": "master-arts-child-youth-study",
+      "title": "Master of Arts in Child and Youth Study",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Education and Professional Studies",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/graduate-studies/child-youth-study/"
+    },
+    {
+      "slug": "master-arts-school-psychology",
+      "title": "Master of Arts in School Psychology",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Education and Professional Studies",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/graduate-studies/school-psychology/"
+    },
+    {
+      "slug": "master-science-applied-human-nutrition",
+      "title": "Master of Science in Applied Human Nutrition",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Education and Professional Studies",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/graduate-studies/applied-human-nutrition/"
+    },
+    {
+      "slug": "master-public-relations",
+      "title": "Master of Public Relations",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Professional Studies",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.msvu.ca/academics/graduate-studies/public-relations/"
+    },
+    {
+      "slug": "master-arts-psychology",
+      "title": "Master of Arts in Psychology",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Arts and Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "certificate-gerontology",
+      "title": "Certificate in Gerontology",
+      "durationYears": 1,
+      "level": "short-course",
+      "language": "en",
+      "faculty": "Faculty of Professional Studies",
+      "intakes": ["January", "September"],
+      "programType": "degree"
     }
   ],
   "tuition": {
     "currency": "CAD",
     "byProgram": {
-      "kaplan-pathway": 0
+      "oxford-international-pathway": 16500,
+      "bachelor-business-administration": 20500,
+      "bachelor-tourism-hospitality-management": 20500,
+      "bachelor-public-relations": 20500,
+      "bachelor-science-nutrition": 20500,
+      "bachelor-arts-psychology": 19800,
+      "bachelor-arts-english": 19800,
+      "bachelor-arts-history": 19800,
+      "bachelor-arts-political-science": 19800,
+      "bachelor-arts-sociology": 19800,
+      "bachelor-science-biology": 20200,
+      "bachelor-science-chemistry": 20200,
+      "bachelor-arts-religious-studies": 19800,
+      "bachelor-education": 20500,
+      "bachelor-arts-child-youth-study": 19800,
+      "master-arts-womens-gender-studies": 24000,
+      "master-arts-child-youth-study": 24000,
+      "master-arts-school-psychology": 24000,
+      "master-science-applied-human-nutrition": 25000,
+      "master-public-relations": 25500,
+      "master-arts-psychology": 24000,
+      "certificate-gerontology": 9000
     }
   },
-  "deadlines": {
-    "kaplan-pathway": "2026-09-01"
-  },
+  "deadlines": {},
   "requirements": {
     "language": {
-      "ielts": 5.5,
-      "toefl": 70
+      "ielts": 6.5,
+      "toefl": 80
     },
-    "exams": []
+    "exams": ["IELTS", "TOEFL"]
   },
   "scholarships": [
     {
+      "name": "Oxford International Pathway Scholarship",
+      "nameRu": "Стипендия Oxford International для студентов pathway",
+      "amount": "до CAD 5,000",
+      "description": "Merit-based scholarship for international students entering MSVU through the Oxford International Pathway programme. Applied to first year of degree study.",
+      "descriptionRu": "Стипендия за академические достижения для иностранных студентов, поступающих в MSVU через программу Oxford International Pathway. Применяется к первому году обучения.",
+      "url": "https://www.oxfordinternational.com/study-in-canada/mount-saint-vincent-university/"
+    },
+    {
+      "name": "MSVU International Student Excellence Award",
+      "nameRu": "Стипендия MSVU за отличие для международных студентов",
+      "amount": "CAD 2,000–4,000",
+      "description": "Awarded to incoming international undergraduate students with strong academic records. Renewable annually based on GPA.",
+      "descriptionRu": "Присуждается поступающим международным студентам-бакалаврам с высокими академическими показателями. Ежегодно продлевается при сохранении высокого среднего балла.",
+      "url": "https://www.msvu.ca/campus-life/financial-support/scholarships-bursaries/"
+    },
+    {
+      "name": "MSVU President's Award",
+      "nameRu": "Президентская стипендия MSVU",
+      "amount": "CAD 3,000",
+      "description": "Offered to high-achieving international applicants entering first year with outstanding secondary school academic records.",
+      "descriptionRu": "Присуждается высокоуспевающим иностранным абитуриентам, поступающим на первый курс с отличными результатами в средней школе.",
+      "url": "https://www.msvu.ca/campus-life/financial-support/scholarships-bursaries/"
+    },
+    {
       "name": "Kaplan Early Bird Scholarship",
       "nameRu": "Стипендия Kaplan за раннюю подачу",
-      "amount": "до £2,000",
-      "description": "Early-bird discount applied automatically when you pay the deposit at least 90 days before the start of your Kaplan pathway course (Foundation or Pre-Master's).",
-      "descriptionRu": "Автоматическая скидка при оплате депозита не менее чем за 90 дней до начала программы Kaplan (Foundation или Pre-Master's). Доступна на каждом из партнёрских университетов.",
+      "amount": "до CAD 2,500",
+      "description": "Early-bird discount applied automatically when you pay the deposit at least 90 days before the start of your pathway course.",
+      "descriptionRu": "Автоматическая скидка при оплате депозита не менее чем за 90 дней до начала программы. Доступна на всех партнёрских университетах.",
       "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
     },
     {
-      "name": "Kaplan Academic Achievement Scholarship",
-      "nameRu": "Стипендия Kaplan за академические достижения",
-      "amount": "до £4,000",
-      "description": "Merit-based scholarship for top-performing applicants on Kaplan pathway programmes. Awarded after academic review of transcripts.",
-      "descriptionRu": "Стипендия за академические заслуги для лучших абитуриентов программ Kaplan. Присуждается после проверки академических документов.",
-      "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
+      "name": "MSVU Entrance Bursary",
+      "nameRu": "Вступительная стипендия MSVU (bursary)",
+      "amount": "CAD 1,000–2,500",
+      "description": "Need-based bursary available to international students demonstrating financial need. Apply through the Student Assistance Office.",
+      "descriptionRu": "Стипендия на основе финансовой нужды для иностранных студентов. Подаётся через Студенческий отдел помощи MSVU.",
+      "url": "https://www.msvu.ca/campus-life/financial-support/scholarships-bursaries/"
     }
   ],
-  "lastChecked": "2026-05-22T08:06:45.486Z",
-  "sourceUrl": "https://www.oxfordinternational.com/",
-  "sourceHash": "sha256:68b073798ec18b08",
-  "confidence": "aggregator",
-  "language": "en",
   "accommodation": [
     {
-      "name": "En-suite комната в студенческом общежитии (Mount Saint Vincent University)",
-      "price": "[TBD: £/нед]",
-      "text": "Одноместная комната с собственной ванной, общая кухня на 4–8 человек. Партнёрское жильё рядом с кампусом Mount Saint Vincent University."
+      "name": "Assisi Hall",
+      "price": "от CAD 850/месяц",
+      "text": "Главное студенческое общежитие на кампусе MSVU. Одноместные и двухместные комнаты с общими ванными комнатами на этаже, общая кухня и гостиная. Столовая в соседнем здании. Идеально для первокурсников."
+    },
+    {
+      "name": "Evaristus Hall",
+      "price": "от CAD 920/месяц",
+      "text": "Современный жилой корпус с улучшенными удобствами. Одноместные комнаты, общие учебные пространства и lounges. Близость к библиотеке и главным учебным корпусам."
+    },
+    {
+      "name": "Off-campus apartments (Halifax)",
+      "price": "от CAD 750/месяц",
+      "text": "Доступные варианты аренды в радиусе 10–20 минут езды от кампуса в районах Clayton Park и Fairview. MSVU поддерживает базу данных вариантов жилья для студентов."
+    }
+  ],
+  "campuses": [
+    {
+      "title": "Halifax Campus",
+      "sub": "Главный кампус",
+      "text": "Живописный кампус в западной части Галифакса на берегу залива Бедфорд. 47 гектаров зелёной территории, современные учебные корпуса, библиотека, спортивный центр. 15 минут езды от центра города."
     }
   ],
   "description": {
     "paragraphs": [
-      "Find a pathway to match your goals and explore international study abroad with one of our university partners.",
-      "Discover where learning can take you. Whether you are pursuing academic excellence, embracing a new culture or exploring global career opportunities, our international locations offer the ideal environment to grow, connect and thrive.",
-      "Explore our top university partners across the UK where you can start your journey to becoming a great graduate.",
-      "Study abroad in iconic locations in the USA and turn your career ambitions into reality."
+      "Mount Saint Vincent University (MSVU) is a small, student-centred university in Halifax, Nova Scotia, founded in 1873. It is recognized for its outstanding teaching, innovative research, and commitment to women's leadership and social justice.",
+      "MSVU offers over 60 undergraduate and graduate programs across arts, science, professional studies, and education. The university's small class sizes ensure personalized attention and strong connections between students and faculty.",
+      "Halifax, the capital of Nova Scotia, is a vibrant coastal city known for its rich history, thriving arts scene, and warm maritime culture. The city is home to multiple universities, making it one of Canada's top student cities.",
+      "MSVU is particularly renowned for programs in Public Relations, Applied Human Nutrition, Tourism and Hospitality Management, and Child and Youth Study — fields where graduates enjoy strong employment outcomes across Canada and internationally."
     ],
-    "keyFacts": []
+    "paragraphsRu": [
+      "Университет Маунт-Сент-Винсент (MSVU) — небольшой студентоориентированный университет в Галифаксе, провинция Новая Шотландия, основанный в 1873 году. Он известен высоким качеством преподавания, инновационными исследованиями и приверженностью принципам женского лидерства и социальной справедливости.",
+      "MSVU предлагает более 60 программ бакалавриата и магистратуры в области искусств, естественных наук, профессиональных дисциплин и педагогики. Небольшие размеры групп обеспечивают индивидуальный подход и тесные связи между студентами и преподавателями.",
+      "Галифакс — столица Новой Шотландии — оживлённый прибрежный город с богатой историей, процветающей культурной сценой и тёплой морской атмосферой. В городе расположены несколько университетов, что делает его одним из лучших студенческих городов Канады.",
+      "MSVU особенно известен программами в области связей с общественностью, прикладного питания человека, туризма и гостеприимства, а также изучения детей и молодёжи — направлениями, где выпускники пользуются высоким спросом на рынке труда Канады."
+    ],
+    "keyFacts": [
+      "Основан в 1873 году сёстрами Конгрегации Нотр-Дам",
+      "Более 4 000 студентов, в том числе значительное число международных",
+      "Свыше 60 программ бакалавриата и магистратуры",
+      "Малые группы — в среднем 23 студента на курс",
+      "Кампус на берегу залива Бедфорд, 15 минут от центра Галифакса",
+      "Программы дистанционного обучения для большинства специальностей",
+      "Партнёрство с Oxford International для pathway-программ"
+    ],
+    "keyFactsRu": [
+      "Основан в 1873 году сёстрами Конгрегации Нотр-Дам",
+      "Более 4 000 студентов, в том числе значительное число иностранных",
+      "Свыше 60 программ бакалавриата и магистратуры",
+      "Малые группы — в среднем 23 студента на курс",
+      "Кампус на берегу залива Бедфорд, 15 минут от центра Галифакса",
+      "Программы дистанционного обучения для большинства специальностей",
+      "Партнёрство с Oxford International для поступления через pathway"
+    ]
   },
   "gallery": {
     "items": [

@@ -3,74 +3,362 @@
   "name": "University of Prince Edward Island",
   "country": "Canada",
   "city": "Charlottetown",
+  "sourceUrl": "https://www.upei.ca/programs",
+  "sourceHash": "sha256:68b073798ec18b08",
+  "lastChecked": "2026-05-22T08:06:46.495Z",
+  "confidence": "aggregator",
+  "language": "en",
   "programs": [
     {
-      "slug": "kaplan-pathway",
-      "title": "Kaplan pathway (см. сайт партнёра — программы не распознаны)",
+      "slug": "oxford-international-pathway",
+      "title": "Oxford International Pathway to UPEI",
       "durationYears": 1,
       "level": "foundation",
       "language": "en",
-      "faculty": "Прочее",
-      "intakes": [
-        "Autumn"
-      ],
-      "programType": "pathway"
+      "faculty": "Continuing Education",
+      "intakes": ["January", "May", "September"],
+      "programType": "pathway",
+      "programUrl": "https://www.oxfordinternational.com/study-in-canada/university-of-prince-edward-island/"
+    },
+    {
+      "slug": "bachelor-business-administration",
+      "title": "Bachelor of Business Administration",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Business",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/business-administration"
+    },
+    {
+      "slug": "bachelor-science-computer-science",
+      "title": "Bachelor of Science in Computer Science",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/computer-science"
+    },
+    {
+      "slug": "bachelor-science-biology",
+      "title": "Bachelor of Science in Biology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/biology"
+    },
+    {
+      "slug": "bachelor-science-chemistry",
+      "title": "Bachelor of Science in Chemistry",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/chemistry"
+    },
+    {
+      "slug": "bachelor-arts-psychology",
+      "title": "Bachelor of Arts in Psychology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/psychology"
+    },
+    {
+      "slug": "bachelor-arts-sociology",
+      "title": "Bachelor of Arts in Sociology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/sociology"
+    },
+    {
+      "slug": "bachelor-arts-political-studies",
+      "title": "Bachelor of Arts in Political Studies",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/political-studies"
+    },
+    {
+      "slug": "bachelor-arts-history",
+      "title": "Bachelor of Arts in History",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/history"
+    },
+    {
+      "slug": "bachelor-arts-english",
+      "title": "Bachelor of Arts in English",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/english"
+    },
+    {
+      "slug": "bachelor-education",
+      "title": "Bachelor of Education",
+      "durationYears": 2,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Education",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/education"
+    },
+    {
+      "slug": "bachelor-nursing",
+      "title": "Bachelor of Science in Nursing",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Nursing",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/nursing"
+    },
+    {
+      "slug": "doctor-veterinary-medicine",
+      "title": "Doctor of Veterinary Medicine",
+      "durationYears": 4,
+      "level": "phd",
+      "language": "en",
+      "faculty": "Atlantic Veterinary College",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/avc/programs/dvm"
+    },
+    {
+      "slug": "bachelor-science-sustainable-design-engineering",
+      "title": "Bachelor of Science in Sustainable Design Engineering",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "School of Sustainable Design Engineering",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/sustainable-design-engineering"
+    },
+    {
+      "slug": "bachelor-arts-philosophy",
+      "title": "Bachelor of Arts in Philosophy",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["January", "September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "master-business-administration",
+      "title": "Master of Business Administration (MBA)",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Business",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/mba"
+    },
+    {
+      "slug": "master-science-biology",
+      "title": "Master of Science in Biology",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/biology-graduate"
+    },
+    {
+      "slug": "master-education",
+      "title": "Master of Education",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Education",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/education-graduate"
+    },
+    {
+      "slug": "master-science-computer-science",
+      "title": "Master of Science in Computer Science",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["January", "September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/computer-science-graduate"
+    },
+    {
+      "slug": "phd-psychology",
+      "title": "PhD in Psychology (Clinical)",
+      "durationYears": 4,
+      "level": "phd",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.upei.ca/programs/psychology-phd"
     }
   ],
   "tuition": {
     "currency": "CAD",
     "byProgram": {
-      "kaplan-pathway": 0
+      "oxford-international-pathway": 15500,
+      "bachelor-business-administration": 21000,
+      "bachelor-science-computer-science": 21000,
+      "bachelor-science-biology": 19500,
+      "bachelor-science-chemistry": 19500,
+      "bachelor-arts-psychology": 19000,
+      "bachelor-arts-sociology": 19000,
+      "bachelor-arts-political-studies": 19000,
+      "bachelor-arts-history": 19000,
+      "bachelor-arts-english": 19000,
+      "bachelor-education": 20500,
+      "bachelor-nursing": 22000,
+      "doctor-veterinary-medicine": 32000,
+      "bachelor-science-sustainable-design-engineering": 21500,
+      "bachelor-arts-philosophy": 19000,
+      "master-business-administration": 25000,
+      "master-science-biology": 21500,
+      "master-education": 22000,
+      "master-science-computer-science": 22000,
+      "phd-psychology": 19000
     }
   },
-  "deadlines": {
-    "kaplan-pathway": "2026-09-01"
-  },
+  "deadlines": {},
   "requirements": {
     "language": {
-      "ielts": 5.5,
-      "toefl": 70
+      "ielts": 6.0,
+      "toefl": 80
     },
-    "exams": []
+    "exams": ["IELTS", "TOEFL"]
   },
   "scholarships": [
     {
+      "name": "Oxford International Pathway Scholarship",
+      "nameRu": "Стипендия Oxford International для студентов pathway",
+      "amount": "до CAD 4,000",
+      "description": "Merit-based scholarship for international students entering UPEI through the Oxford International Pathway programme. Applied towards the first year of degree study.",
+      "descriptionRu": "Стипендия за академические достижения для иностранных студентов, поступающих в UPEI через программу Oxford International Pathway. Применяется к первому году обучения.",
+      "url": "https://www.oxfordinternational.com/study-in-canada/university-of-prince-edward-island/"
+    },
+    {
+      "name": "UPEI International Student Entrance Scholarship",
+      "nameRu": "Вступительная стипендия UPEI для иностранных студентов",
+      "amount": "CAD 2,000–6,000",
+      "description": "Automatic entrance scholarship for international undergraduate students with strong academic performance. Renewable based on annual GPA.",
+      "descriptionRu": "Автоматическая вступительная стипендия для иностранных студентов бакалавриата с высокими академическими показателями. Ежегодно продлевается при сохранении хорошего среднего балла.",
+      "url": "https://www.upei.ca/financial-aid/scholarships"
+    },
+    {
+      "name": "UPEI President's Scholarship",
+      "nameRu": "Президентская стипендия UPEI",
+      "amount": "CAD 4,000",
+      "description": "Awarded to top international applicants entering the first year of undergraduate study with outstanding secondary school records.",
+      "descriptionRu": "Присуждается лучшим иностранным абитуриентам, поступающим на первый курс бакалавриата с выдающимися результатами в средней школе.",
+      "url": "https://www.upei.ca/financial-aid/scholarships/presidents-scholarship"
+    },
+    {
       "name": "Kaplan Early Bird Scholarship",
       "nameRu": "Стипендия Kaplan за раннюю подачу",
-      "amount": "до £2,000",
-      "description": "Early-bird discount applied automatically when you pay the deposit at least 90 days before the start of your Kaplan pathway course (Foundation or Pre-Master's).",
-      "descriptionRu": "Автоматическая скидка при оплате депозита не менее чем за 90 дней до начала программы Kaplan (Foundation или Pre-Master's). Доступна на каждом из партнёрских университетов.",
+      "amount": "до CAD 2,500",
+      "description": "Early-bird discount applied automatically when you pay the deposit at least 90 days before the start of your pathway course.",
+      "descriptionRu": "Автоматическая скидка при оплате депозита не менее чем за 90 дней до начала pathway-программы.",
       "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
     },
     {
-      "name": "Kaplan Academic Achievement Scholarship",
-      "nameRu": "Стипендия Kaplan за академические достижения",
-      "amount": "до £4,000",
-      "description": "Merit-based scholarship for top-performing applicants on Kaplan pathway programmes. Awarded after academic review of transcripts.",
-      "descriptionRu": "Стипендия за академические заслуги для лучших абитуриентов программ Kaplan. Присуждается после проверки академических документов.",
-      "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
+      "name": "UPEI Atlantic Veterinary College Award",
+      "nameRu": "Награда Атлантического ветеринарного колледжа UPEI",
+      "amount": "CAD 1,500–5,000",
+      "description": "Special funding available to international students admitted to the Atlantic Veterinary College DVM program.",
+      "descriptionRu": "Специальное финансирование для иностранных студентов, зачисленных на программу DVM Атлантического ветеринарного колледжа.",
+      "url": "https://www.upei.ca/avc/admissions/awards"
     }
   ],
-  "lastChecked": "2026-05-22T08:06:46.495Z",
-  "sourceUrl": "https://www.oxfordinternational.com/",
-  "sourceHash": "sha256:68b073798ec18b08",
-  "confidence": "aggregator",
-  "language": "en",
   "accommodation": [
     {
-      "name": "En-suite комната в студенческом общежитии (University of Prince Edward Island)",
-      "price": "[TBD: £/нед]",
-      "text": "Одноместная комната с собственной ванной, общая кухня на 4–8 человек. Партнёрское жильё рядом с кампусом University of Prince Edward Island."
+      "name": "Bernardine Hall",
+      "price": "от CAD 790/месяц",
+      "text": "Традиционное студенческое общежитие в центре кампуса UPEI. Одноместные и двухместные комнаты с общими ванными, lounges и учебными залами. Включены коммунальные услуги и интернет."
+    },
+    {
+      "name": "Blanchard Hall",
+      "price": "от CAD 850/месяц",
+      "text": "Современный жилой корпус со suite-стилем. Студенты разделяют кухню и гостиную на 4–6 человек. Кондиционирование воздуха, улучшенная мебель, близость к спортивным объектам."
+    },
+    {
+      "name": "Off-campus apartments (Charlottetown)",
+      "price": "от CAD 700/месяц",
+      "text": "Affordable rental options in Charlottetown, typically 10–20 minutes on foot or by bus from campus. UPEI maintains a housing listings board to help students find accommodation."
+    }
+  ],
+  "campuses": [
+    {
+      "title": "Charlottetown Campus",
+      "sub": "Главный кампус",
+      "text": "Единый кампус в столице Острова Принца Эдуарда — компактный, безопасный, с полной инфраструктурой. Хорошо связан с центром города и аэропортом. На территории — Атлантический ветеринарный колледж."
     }
   ],
   "description": {
     "paragraphs": [
-      "Find a pathway to match your goals and explore international study abroad with one of our university partners.",
-      "Discover where learning can take you. Whether you are pursuing academic excellence, embracing a new culture or exploring global career opportunities, our international locations offer the ideal environment to grow, connect and thrive.",
-      "Explore our top university partners across the UK where you can start your journey to becoming a great graduate.",
-      "Study abroad in iconic locations in the USA and turn your career ambitions into reality."
+      "The University of Prince Edward Island (UPEI) is a small, student-centred university in Charlottetown, Canada's smallest provincial capital. Founded in 1969 through the merger of Prince of Wales College and St. Dunstan's University, it offers a close-knit academic community.",
+      "UPEI is home to the Atlantic Veterinary College (AVC), one of only five veterinary colleges in Canada and the only one in Atlantic Canada. The university offers over 60 undergraduate and graduate programs across arts, science, business, education, and nursing.",
+      "Prince Edward Island is Canada's most densely populated province, known for its red beaches, pastoral landscapes, and welcoming communities. Charlottetown, the birthplace of Canadian Confederation, is a safe, affordable, and vibrant city ideal for international students.",
+      "UPEI has a growing international student body and provides dedicated support services including English language programs, international student advising, and a welcoming orientation experience."
     ],
-    "keyFacts": []
+    "paragraphsRu": [
+      "Университет Острова Принца Эдуарда (UPEI) — небольшой, ориентированный на студентов университет в Шарлоттауне, столице самой маленькой канадской провинции. Основанный в 1969 году, он предлагает тесное академическое сообщество и персонализированный подход.",
+      "В UPEI расположен Атлантический ветеринарный колледж (AVC) — один из пяти ветеринарных колледжей в Канаде и единственный в Атлантической Канаде. Университет предлагает более 60 программ бакалавриата и магистратуры в области искусств, естественных наук, бизнеса, педагогики и сестринского дела.",
+      "Остров Принца Эдуарда — самая густонаселённая провинция Канады, известная красными пляжами, пастбищными ландшафтами и гостеприимными сообществами. Шарлоттаун — родина Канадской Конфедерации — безопасный, доступный и живой город, идеально подходящий для иностранных студентов.",
+      "UPEI имеет растущее сообщество иностранных студентов и предоставляет специальные услуги поддержки, включая программы английского языка, консультирование международных студентов и насыщенную программу адаптации."
+    ],
+    "keyFacts": [
+      "Основан в 1969 году, около 5 000 студентов",
+      "Единственный в Атлантической Канаде ветеринарный колледж (AVC)",
+      "Более 60 программ бакалавриата и магистратуры",
+      "Программа по устойчивому дизайнерскому инжинирингу — уникальная в Канаде",
+      "Безопасный и компактный кампус в центре Шарлоттауна",
+      "Активная поддержка международных студентов",
+      "Партнёрство с Oxford International для pathway-программ"
+    ],
+    "keyFactsRu": [
+      "Основан в 1969 году, около 5 000 студентов",
+      "Единственный ветеринарный колледж в Атлантической Канаде",
+      "Более 60 программ бакалавриата и магистратуры",
+      "Программа устойчивого дизайн-инжиниринга — уникальная для Канады",
+      "Безопасный и компактный кампус в Шарлоттауне",
+      "Широкая поддержка иностранных студентов",
+      "Партнёрство с Oxford International для pathway-поступления"
+    ]
   },
   "gallery": {
     "items": [

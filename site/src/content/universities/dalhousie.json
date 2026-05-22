@@ -5,50 +5,305 @@
   "city": "Halifax",
   "programs": [
     {
-      "slug": "kaplan-pathway",
-      "title": "Kaplan pathway (см. сайт партнёра — программы не распознаны)",
+      "slug": "oxford-international-pathway",
+      "title": "Oxford International Pathway (Foundation/Pre-degree)",
       "durationYears": 1,
       "level": "foundation",
       "language": "en",
-      "faculty": "Прочее",
-      "intakes": [
-        "Autumn"
-      ],
-      "programType": "pathway"
+      "faculty": "International Studies",
+      "intakes": ["September", "January"],
+      "programType": "pathway",
+      "programUrl": "https://www.oxfordinternational.com/study-in-canada/dalhousie-university/"
+    },
+    {
+      "slug": "bsc-computer-science",
+      "title": "BSc Computer Science",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Computer Science",
+      "intakes": ["September", "January"],
+      "programType": "degree",
+      "programUrl": "https://www.dal.ca/academics/programs/undergraduate/computer-science.html"
+    },
+    {
+      "slug": "bsc-mathematics-statistics",
+      "title": "BSc Mathematics & Statistics",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-biology",
+      "title": "BSc Biology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-neuroscience",
+      "title": "BSc Neuroscience",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bcomm-commerce",
+      "title": "BCom Commerce",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Rowe School of Business",
+      "intakes": ["September", "January"],
+      "programType": "degree",
+      "programUrl": "https://www.dal.ca/academics/programs/undergraduate/commerce.html"
+    },
+    {
+      "slug": "bcomm-accounting",
+      "title": "BCom Accounting",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Rowe School of Business",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bcomm-finance",
+      "title": "BCom Finance",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Rowe School of Business",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ba-political-science",
+      "title": "BA Political Science",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts and Social Sciences",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ba-psychology",
+      "title": "BA Psychology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts and Social Sciences",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ba-international-development-studies",
+      "title": "BA International Development Studies",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts and Social Sciences",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "beng-civil-engineering",
+      "title": "BEng Civil Engineering",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Engineering",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "beng-electrical-engineering",
+      "title": "BEng Electrical Engineering",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Engineering",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "beng-mechanical-engineering",
+      "title": "BEng Mechanical Engineering",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Engineering",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "benv-environmental-design",
+      "title": "BEnvD Environmental Design Studies",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Architecture and Planning",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-kinesiology",
+      "title": "BSc Kinesiology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Health",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "msc-computer-science",
+      "title": "MSc Computer Science",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Computer Science",
+      "intakes": ["September", "January"],
+      "programType": "degree"
+    },
+    {
+      "slug": "mba",
+      "title": "MBA (Rowe School of Business)",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Rowe School of Business",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.dal.ca/academics/programs/graduate/mba.html"
+    },
+    {
+      "slug": "meng-engineering",
+      "title": "MEng Engineering",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Engineering",
+      "intakes": ["September", "January"],
+      "programType": "degree"
+    },
+    {
+      "slug": "msc-health-informatics",
+      "title": "MSc Health Informatics",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Computer Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "phd-computer-science",
+      "title": "PhD Computer Science",
+      "durationYears": 4,
+      "level": "phd",
+      "language": "en",
+      "faculty": "Faculty of Computer Science",
+      "intakes": ["September", "January"],
+      "programType": "degree"
+    },
+    {
+      "slug": "phd-engineering",
+      "title": "PhD Engineering",
+      "durationYears": 4,
+      "level": "phd",
+      "language": "en",
+      "faculty": "Faculty of Engineering",
+      "intakes": ["September"],
+      "programType": "degree"
     }
   ],
   "tuition": {
     "currency": "CAD",
     "byProgram": {
-      "kaplan-pathway": 0
+      "oxford-international-pathway": 18000,
+      "bsc-computer-science": 28870,
+      "bsc-mathematics-statistics": 27132,
+      "bsc-biology": 27132,
+      "bsc-neuroscience": 27132,
+      "bcomm-commerce": 27132,
+      "bcomm-accounting": 27132,
+      "bcomm-finance": 27132,
+      "ba-political-science": 24878,
+      "ba-psychology": 24878,
+      "ba-international-development-studies": 24878,
+      "beng-civil-engineering": 30162,
+      "beng-electrical-engineering": 30162,
+      "beng-mechanical-engineering": 30162,
+      "benv-environmental-design": 26000,
+      "bsc-kinesiology": 27132,
+      "msc-computer-science": 18000,
+      "mba": 35000,
+      "meng-engineering": 20000,
+      "msc-health-informatics": 18000,
+      "phd-computer-science": 8500,
+      "phd-engineering": 8500
     }
   },
-  "deadlines": {
-    "kaplan-pathway": "2026-09-01"
-  },
+  "deadlines": {},
   "requirements": {
     "language": {
-      "ielts": 5.5,
-      "toefl": 70
+      "ielts": 6.5,
+      "toefl": 90
     },
-    "exams": []
+    "exams": ["IELTS", "TOEFL"]
   },
   "scholarships": [
     {
-      "name": "Kaplan Early Bird Scholarship",
-      "nameRu": "Стипендия Kaplan за раннюю подачу",
-      "amount": "до £2,000",
-      "description": "Early-bird discount applied automatically when you pay the deposit at least 90 days before the start of your Kaplan pathway course (Foundation or Pre-Master's).",
-      "descriptionRu": "Автоматическая скидка при оплате депозита не менее чем за 90 дней до начала программы Kaplan (Foundation или Pre-Master's). Доступна на каждом из партнёрских университетов.",
-      "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
+      "name": "Oxford International Pathway Scholarship",
+      "nameRu": "Стипендия Oxford International Pathway",
+      "amount": "до CAD 5,000",
+      "description": "Partial scholarship for international students enrolling through the Oxford International pathway at Dalhousie University.",
+      "descriptionRu": "Частичная стипендия для иностранных студентов, поступающих через программу Oxford International Pathway в Университет Далхаузи.",
+      "url": "https://www.oxfordinternational.com/scholarships/"
     },
     {
-      "name": "Kaplan Academic Achievement Scholarship",
-      "nameRu": "Стипендия Kaplan за академические достижения",
-      "amount": "до £4,000",
-      "description": "Merit-based scholarship for top-performing applicants on Kaplan pathway programmes. Awarded after academic review of transcripts.",
-      "descriptionRu": "Стипендия за академические заслуги для лучших абитуриентов программ Kaplan. Присуждается после проверки академических документов.",
-      "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
+      "name": "Dalhousie International Entrance Award",
+      "nameRu": "Вступительная стипендия Далхаузи для иностранных студентов",
+      "amount": "CAD 3,000–10,000",
+      "description": "Merit-based entrance awards for international undergraduate students. Renewable annually with satisfactory academic standing.",
+      "descriptionRu": "Вступительные награды на основе заслуг для иностранных студентов-бакалавров. Продлеваются ежегодно при условии удовлетворительной успеваемости.",
+      "url": "https://www.dal.ca/admissions/money_matters/scholarships_awards.html"
+    },
+    {
+      "name": "Sexton Engineering Scholarship",
+      "nameRu": "Инженерная стипендия Сакстона",
+      "amount": "CAD 5,000",
+      "description": "Awarded to outstanding international engineering students entering first year at Dalhousie's Sexton Campus.",
+      "descriptionRu": "Присуждается выдающимся иностранным студентам инженерных специальностей, поступающим на первый курс кампуса Сакстон.",
+      "url": "https://www.dal.ca/admissions/money_matters/"
+    },
+    {
+      "name": "Dalhousie Graduate Scholarship",
+      "nameRu": "Аспирантская стипендия Далхаузи",
+      "amount": "CAD 5,000–15,000",
+      "description": "Merit-based funding for exceptional graduate (master's and doctoral) students across all faculties.",
+      "descriptionRu": "Финансирование для выдающихся аспирантов (магистратура и докторантура) по всем факультетам.",
+      "url": "https://www.dal.ca/admissions/money_matters/scholarships_awards/graduate.html"
+    },
+    {
+      "name": "Nova Scotia Nominee Program Bursary",
+      "nameRu": "Грант программы номинирования Новой Шотландии",
+      "amount": "CAD 2,000",
+      "description": "Financial support for international graduates who commit to living and working in Nova Scotia after graduation.",
+      "descriptionRu": "Финансовая поддержка для иностранных выпускников, планирующих остаться и работать в Новой Шотландии после окончания учёбы.",
+      "url": "https://www.dal.ca/admissions/money_matters/"
     }
   ],
   "lastChecked": "2026-05-22T08:06:44.987Z",
@@ -58,19 +313,69 @@
   "language": "en",
   "accommodation": [
     {
-      "name": "En-suite комната в студенческом общежитии (Dalhousie University)",
-      "price": "[TBD: £/нед]",
-      "text": "Одноместная комната с собственной ванной, общая кухня на 4–8 человек. Партнёрское жильё рядом с кампусом Dalhousie University."
+      "name": "Howe Hall",
+      "price": "от CAD 9,500/год",
+      "text": "Самое большое студенческое общежитие Далхаузи на главном кампусе Studley. Традиционные комнаты с питанием по системе «шведский стол». Популярно среди иностранных первокурсников."
+    },
+    {
+      "name": "LeMarchant Place Apartments",
+      "price": "от CAD 11,000/год",
+      "text": "Современные апартаменты для старшекурсников: полностью оборудованная кухня, стиральная машина, высокоскоростной интернет. В нескольких минутах ходьбы от кампуса Studley."
+    },
+    {
+      "name": "Частное жильё в Галифаксе",
+      "price": "от CAD 9,000/год",
+      "text": "Halifax предлагает широкий выбор аренды рядом с кампусом. Университет ведёт базу проверенных арендодателей. Хорошо развита сеть общественного транспорта."
+    }
+  ],
+  "campuses": [
+    {
+      "title": "Кампус Studley",
+      "sub": "Halifax, Nova Scotia",
+      "text": "Главный кампус Далхаузи с большинством факультетов: искусство, естественные науки, управление, медицина. Расположен в элитном районе Halifax, в 15 минутах ходьбы от океана."
+    },
+    {
+      "title": "Кампус Carleton",
+      "sub": "Halifax, Nova Scotia",
+      "text": "Рядом с кампусом Studley. Здесь располагаются юридический факультет и Школа государственного управления. Исторические здания конца XIX века."
+    },
+    {
+      "title": "Кампус Sexton",
+      "sub": "Halifax, Nova Scotia (Барrington-стрит)",
+      "text": "Инженерный и архитектурный кампус в центре Галифакса. Современные лаборатории, конструкторские мастерские, тесная связь с промышленными партнёрами."
     }
   ],
   "description": {
     "paragraphs": [
-      "Find a pathway to match your goals and explore international study abroad with one of our university partners.",
-      "Discover where learning can take you. Whether you are pursuing academic excellence, embracing a new culture or exploring global career opportunities, our international locations offer the ideal environment to grow, connect and thrive.",
-      "Explore our top university partners across the UK where you can start your journey to becoming a great graduate.",
-      "Study abroad in iconic locations in the USA and turn your career ambitions into reality."
+      "Dalhousie University, founded in 1818, is one of Canada's leading research universities. Located in Halifax, Nova Scotia, Dal is consistently ranked among the top 10 universities in Canada and is recognized globally for its research excellence in ocean sciences, health, law, and engineering.",
+      "The university comprises 13 faculties offering more than 4,000 courses across undergraduate, graduate, and professional programs. Dalhousie's Rowe School of Business, Faculty of Computer Science, and Faculty of Engineering are particularly strong and career-focused.",
+      "Halifax is a dynamic, multicultural maritime city with a booming tech sector, world-class healthcare ecosystem, and a vibrant arts scene. International students at Dalhousie enjoy excellent post-graduation work permit opportunities and clear pathways to Canadian permanent residency.",
+      "The Oxford International pathway program at Dalhousie provides qualified international students a supported bridge into degree programs, with English language instruction and academic skills development integrated throughout."
     ],
-    "keyFacts": []
+    "paragraphsRu": [
+      "Университет Далхаузи, основанный в 1818 году, — один из ведущих исследовательских университетов Канады. Расположен в Галифаксе, Новая Шотландия, и неизменно входит в топ-10 университетов страны, признан на мировом уровне за исследования в области морских наук, здравоохранения, права и инженерного дела.",
+      "В 13 факультетах университета представлено более 4 000 курсов для программ бакалавриата, магистратуры и профессиональных степеней. Особенно высок уровень Школы бизнеса Rowe, Факультета компьютерных наук и Факультета инженерии.",
+      "Галифакс — динамичный, многонациональный приморский город с развивающимся технологическим сектором, первоклассной экосистемой здравоохранения и насыщенной культурной жизнью. Иностранные студенты Далхаузи получают отличные возможности для трудоустройства после окончания учёбы и ясные пути к постоянному проживанию в Канаде.",
+      "Программа Oxford International Pathway в Далхаузи предоставляет иностранным студентам поддерживаемый мостик к программам степеней, включая обучение английскому языку и академическим навыкам."
+    ],
+    "keyFacts": [
+      "Основан в 1818 году",
+      "Около 21 000 студентов, из них 4 000+ иностранных",
+      "Топ-10 университетов Канады (Maclean's, QS)",
+      "13 факультетов, более 4 000 курсов",
+      "Три кампуса в Галифаксе",
+      "Лидер в исследованиях океанских технологий и морского права",
+      "Партнёр программы Oxford International Pathway"
+    ],
+    "keyFactsRu": [
+      "Основан в 1818 году",
+      "Около 21 000 студентов, из них 4 000+ иностранных",
+      "Топ-10 университетов Канады (Maclean's, QS)",
+      "13 факультетов, более 4 000 курсов",
+      "Три кампуса в Галифаксе",
+      "Лидер в исследованиях океанских технологий и морского права",
+      "Партнёр программы Oxford International Pathway"
+    ]
   },
   "gallery": {
     "items": [
@@ -80,7 +385,7 @@
       },
       {
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Goldberg_Computer_Science_Building%2C_Dalhousie_University_%E2%80%93_Halifax%2C_NS_%E2%80%93_%282018-08-26%29.jpg/1280px-Goldberg_Computer_Science_Building%2C_Dalhousie_University_%E2%80%93_Halifax%2C_NS_%E2%80%93_%282018-08-26%29.jpg",
-        "caption": "Goldberg Computer Science Building, Dalhousie University – Halifax, NS –"
+        "caption": "Goldberg Computer Science Building, Dalhousie University"
       },
       {
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Gerard_Hall%2C_Dalhousie_University_%281%29.jpg/1280px-Gerard_Hall%2C_Dalhousie_University_%281%29.jpg",
@@ -104,7 +409,7 @@
       },
       {
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Halifax_Medical_College%2C_Halifax%2C_Nova_Scotia%2C_Canada%2C_ca._1890.jpg/1280px-Halifax_Medical_College%2C_Halifax%2C_Nova_Scotia%2C_Canada%2C_ca._1890.jpg",
-        "caption": "Halifax Medical College, Halifax, Nova Scotia, Canada, ca."
+        "caption": "Halifax Medical College, Halifax, Nova Scotia, Canada"
       }
     ]
   }

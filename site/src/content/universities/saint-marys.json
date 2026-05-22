@@ -5,50 +5,282 @@
   "city": "Halifax",
   "programs": [
     {
-      "slug": "kaplan-pathway",
-      "title": "Kaplan pathway (см. сайт партнёра — программы не распознаны)",
+      "slug": "oxford-international-pathway",
+      "title": "Oxford International Pathway (Foundation/Pre-degree)",
       "durationYears": 1,
       "level": "foundation",
       "language": "en",
-      "faculty": "Прочее",
-      "intakes": [
-        "Autumn"
-      ],
-      "programType": "pathway"
+      "faculty": "International Studies",
+      "intakes": ["September", "January"],
+      "programType": "pathway",
+      "programUrl": "https://www.oxfordinternational.com/study-in-canada/saint-marys-university/"
+    },
+    {
+      "slug": "bcomm-accounting",
+      "title": "BCom Accounting",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Sobey School of Business",
+      "intakes": ["September", "January"],
+      "programType": "degree",
+      "programUrl": "https://www.smu.ca/academics/sobey/undergraduate/"
+    },
+    {
+      "slug": "bcomm-finance",
+      "title": "BCom Finance",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Sobey School of Business",
+      "intakes": ["September", "January"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bcomm-marketing",
+      "title": "BCom Marketing",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Sobey School of Business",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bcomm-management",
+      "title": "BCom Management",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Sobey School of Business",
+      "intakes": ["September", "January"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bcomm-entrepreneurship",
+      "title": "BCom Entrepreneurship & Innovation",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Sobey School of Business",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-computing-science",
+      "title": "BSc Computing Science",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September", "January"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-astronomy",
+      "title": "BSc Astronomy",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-biology",
+      "title": "BSc Biology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-chemistry",
+      "title": "BSc Chemistry",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ba-criminology",
+      "title": "BA Criminology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ba-psychology",
+      "title": "BA Psychology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ba-international-development-studies",
+      "title": "BA International Development Studies",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ba-religious-studies",
+      "title": "BA Religious Studies",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-environmental-science",
+      "title": "BSc Environmental Science",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "mba",
+      "title": "MBA (Sobey School of Business)",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Sobey School of Business",
+      "intakes": ["September", "January"],
+      "programType": "degree",
+      "programUrl": "https://www.smu.ca/academics/sobey/mba/"
+    },
+    {
+      "slug": "mba-cpa",
+      "title": "MBA/CPA Stream",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Sobey School of Business",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "msc-finance",
+      "title": "MSc Finance",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Sobey School of Business",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "msc-computing-science",
+      "title": "MSc Computing Science",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ma-applied-psychology",
+      "title": "MA Applied Psychology",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["September"],
+      "programType": "degree"
     }
   ],
   "tuition": {
     "currency": "CAD",
     "byProgram": {
-      "kaplan-pathway": 0
+      "oxford-international-pathway": 18000,
+      "bcomm-accounting": 24450,
+      "bcomm-finance": 24450,
+      "bcomm-marketing": 24450,
+      "bcomm-management": 24450,
+      "bcomm-entrepreneurship": 24450,
+      "bsc-computing-science": 25280,
+      "bsc-astronomy": 23900,
+      "bsc-biology": 23900,
+      "bsc-chemistry": 23900,
+      "ba-criminology": 22050,
+      "ba-psychology": 22050,
+      "ba-international-development-studies": 22050,
+      "ba-religious-studies": 22050,
+      "bsc-environmental-science": 23900,
+      "mba": 34000,
+      "mba-cpa": 34000,
+      "msc-finance": 28000,
+      "msc-computing-science": 17000,
+      "ma-applied-psychology": 16000
     }
   },
-  "deadlines": {
-    "kaplan-pathway": "2026-09-01"
-  },
+  "deadlines": {},
   "requirements": {
     "language": {
-      "ielts": 5.5,
-      "toefl": 70
+      "ielts": 6.5,
+      "toefl": 90
     },
-    "exams": []
+    "exams": ["IELTS", "TOEFL"]
   },
   "scholarships": [
     {
-      "name": "Kaplan Early Bird Scholarship",
-      "nameRu": "Стипендия Kaplan за раннюю подачу",
-      "amount": "до £2,000",
-      "description": "Early-bird discount applied automatically when you pay the deposit at least 90 days before the start of your Kaplan pathway course (Foundation or Pre-Master's).",
-      "descriptionRu": "Автоматическая скидка при оплате депозита не менее чем за 90 дней до начала программы Kaplan (Foundation или Pre-Master's). Доступна на каждом из партнёрских университетов.",
-      "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
+      "name": "Oxford International Pathway Scholarship",
+      "nameRu": "Стипендия Oxford International Pathway",
+      "amount": "до CAD 5,000",
+      "description": "Partial scholarship for international students enrolling through the Oxford International pathway at Saint Mary's University.",
+      "descriptionRu": "Частичная стипендия для иностранных студентов, поступающих через программу Oxford International Pathway в Университет Святой Марии.",
+      "url": "https://www.oxfordinternational.com/scholarships/"
     },
     {
-      "name": "Kaplan Academic Achievement Scholarship",
-      "nameRu": "Стипендия Kaplan за академические достижения",
-      "amount": "до £4,000",
-      "description": "Merit-based scholarship for top-performing applicants on Kaplan pathway programmes. Awarded after academic review of transcripts.",
-      "descriptionRu": "Стипендия за академические заслуги для лучших абитуриентов программ Kaplan. Присуждается после проверки академических документов.",
-      "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
+      "name": "SMU International Entrance Scholarship",
+      "nameRu": "Вступительная стипендия SMU для иностранных студентов",
+      "amount": "CAD 2,000–8,000",
+      "description": "Awarded automatically to eligible international undergraduate applicants based on academic record at time of admission.",
+      "descriptionRu": "Автоматически присуждается иностранным абитуриентам бакалавриата на основе успеваемости на момент поступления.",
+      "url": "https://www.smu.ca/admissions/scholarships-and-awards.html"
+    },
+    {
+      "name": "Sobey School of Business Merit Award",
+      "nameRu": "Стипендия за заслуги Школы бизнеса Sobey",
+      "amount": "CAD 3,000–6,000",
+      "description": "Merit-based award for incoming international students admitted to Sobey School of Business undergraduate programs.",
+      "descriptionRu": "Стипендия за заслуги для иностранных студентов, поступающих на программы бакалавриата Школы бизнеса Sobey.",
+      "url": "https://www.smu.ca/academics/sobey/"
+    },
+    {
+      "name": "SMU President's Scholarship",
+      "nameRu": "Президентская стипендия SMU",
+      "amount": "CAD 5,000",
+      "description": "Top merit award for the highest-achieving international students in their first year of undergraduate study.",
+      "descriptionRu": "Высшая стипендия за достижения для лучших иностранных студентов первого года бакалавриата.",
+      "url": "https://www.smu.ca/admissions/scholarships-and-awards.html"
+    },
+    {
+      "name": "Atlantic University Sport Bursary",
+      "nameRu": "Спортивный грант атлантических университетов",
+      "amount": "CAD 1,000–4,000",
+      "description": "Athletic bursaries for student-athletes competing in varsity sports at Saint Mary's University.",
+      "descriptionRu": "Спортивные гранты для студентов-спортсменов, выступающих за команды университета.",
+      "url": "https://www.smu.ca/campus-life/athletics/"
     }
   ],
   "lastChecked": "2026-05-22T08:06:44.739Z",
@@ -58,19 +290,59 @@
   "language": "en",
   "accommodation": [
     {
-      "name": "En-suite комната в студенческом общежитии (Saint Mary's University)",
-      "price": "[TBD: £/нед]",
-      "text": "Одноместная комната с собственной ванной, общая кухня на 4–8 человек. Партнёрское жильё рядом с кампусом Saint Mary's University."
+      "name": "Loyola Residence",
+      "price": "от CAD 9,200/год",
+      "text": "Высотное современное общежитие прямо на кампусе SMU. Одноместные и двухместные комнаты, оснащённые кухни на каждом этаже, тренажёрный зал и прачечная. Включено питание по планам столовой."
+    },
+    {
+      "name": "Rice Residence",
+      "price": "от CAD 8,800/год",
+      "text": "Традиционное общежитие рядом с основными академическими корпусами. Уютная атмосфера, сильное сообщество жильцов, активная студенческая жизнь. Отличный выбор для первокурсников."
+    },
+    {
+      "name": "Частное жильё в Галифаксе",
+      "price": "от CAD 8,500/год",
+      "text": "Разнообразные варианты аренды в пешей доступности от кампуса SMU. Галифакс — безопасный, студенческий город с отличным общественным транспортом и доступными ценами на жильё."
+    }
+  ],
+  "campuses": [
+    {
+      "title": "Главный кампус SMU",
+      "sub": "Halifax, Nova Scotia",
+      "text": "Единственный кампус Университета Святой Марии расположен в жилом районе South End Галифакса. Компактная территория с современной инфраструктурой: Центр Сьюбана, Школа бизнеса Sobey, астрономическая обсерватория. До центра города — 20 минут пешком."
     }
   ],
   "description": {
     "paragraphs": [
-      "Find a pathway to match your goals and explore international study abroad with one of our university partners.",
-      "Discover where learning can take you. Whether you are pursuing academic excellence, embracing a new culture or exploring global career opportunities, our international locations offer the ideal environment to grow, connect and thrive.",
-      "Explore our top university partners across the UK where you can start your journey to becoming a great graduate.",
-      "Study abroad in iconic locations in the USA and turn your career ambitions into reality."
+      "Saint Mary's University (SMU) is a public university founded in 1802 in Halifax, Nova Scotia — one of Canada's oldest universities. It is home to the internationally acclaimed Sobey School of Business, consistently ranked among Canada's top business schools.",
+      "SMU serves approximately 7,000 students, including a large international community representing over 100 countries. The university's manageable size ensures close mentorship from faculty and strong career services support for international graduates.",
+      "The Sobey School of Business offers comprehensive undergraduate and MBA programs aligned with CPA Canada requirements, making SMU a top destination for future accountants and finance professionals seeking Canadian credentials.",
+      "Located in Halifax, students benefit from a city with a growing technology and financial services sector, excellent quality of life, and strong immigration pathways for international graduates through the Atlantic Immigration Program (AIP)."
     ],
-    "keyFacts": []
+    "paragraphsRu": [
+      "Университет Святой Марии (SMU) — государственный университет, основанный в 1802 году в Галифаксе, Новая Шотландия, один из старейших в Канаде. Здесь находится всемирно известная Школа бизнеса Sobey — неизменно входящая в число лучших бизнес-школ страны.",
+      "В SMU обучается около 7 000 студентов, в том числе крупная международная студенческая община, представляющая более 100 стран. Небольшой размер университета обеспечивает тесное общение с преподавателями и сильную поддержку в трудоустройстве.",
+      "Школа бизнеса Sobey предлагает комплексные программы бакалавриата и MBA, соответствующие требованиям CPA Canada, что делает SMU лучшим местом для будущих бухгалтеров и финансистов, стремящихся к канадским квалификациям.",
+      "Расположенный в Галифаксе, университет открывает студентам доступ к городу с растущим технологическим и финансовым сектором, высоким качеством жизни и чёткими путями к иммиграции для международных выпускников через Атлантическую иммиграционную программу (AIP)."
+    ],
+    "keyFacts": [
+      "Основан в 1802 году — один из старейших в Канаде",
+      "Около 7 000 студентов, 100+ стран",
+      "Школа бизнеса Sobey — топ бизнес-школ Канады",
+      "MBA программа совместима с CPA Canada",
+      "Обсерватория имени Берка-Гаффни — одна из крупнейших в Восточной Канаде",
+      "Партнёр Atlantic Immigration Program (AIP)",
+      "Партнёр программы Oxford International Pathway"
+    ],
+    "keyFactsRu": [
+      "Основан в 1802 году — один из старейших в Канаде",
+      "Около 7 000 студентов, 100+ стран",
+      "Школа бизнеса Sobey — топ бизнес-школ Канады",
+      "MBA программа совместима с CPA Canada",
+      "Обсерватория имени Берка-Гаффни — одна из крупнейших в Восточной Канаде",
+      "Партнёр Atlantic Immigration Program (AIP)",
+      "Партнёр программы Oxford International Pathway"
+    ]
   },
   "gallery": {
     "items": [
@@ -83,28 +355,20 @@
         "caption": "Reinbolt Hall at St Marys University"
       },
       {
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Knott_Arena%2C_Mount_Saint_Mary%27s_University.jpg/1280px-Knott_Arena%2C_Mount_Saint_Mary%27s_University.jpg",
-        "caption": "Knott Arena, Mount Saint Mary's University"
-      },
-      {
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Saint_Mary%27s_University_%28SMU%29_in_Halifax_%2832404333278%29.jpg/1280px-Saint_Mary%27s_University_%28SMU%29_in_Halifax_%2832404333278%29.jpg",
-        "caption": "Saint Mary's University  in Halifax"
+        "caption": "Saint Mary's University in Halifax"
       },
       {
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Saint_Mary%27s_University_%28SMU%29_in_Halifax_%2846275877021%29.jpg/1280px-Saint_Mary%27s_University_%28SMU%29_in_Halifax_%2846275877021%29.jpg",
-        "caption": "Saint Mary's University  in Halifax"
-      },
-      {
-        "img": "https://upload.wikimedia.org/wikipedia/commons/4/4d/St_Mary%27s_Challenge_Coin-min.jpg",
-        "caption": "St Mary's Challenge Coin-min"
+        "caption": "Saint Mary's University in Halifax"
       },
       {
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/2020_Loyola_Residence_Tower_in_Halifax%2C_Nova_Scotia%2C_Canada_%281%29.jpg/1280px-2020_Loyola_Residence_Tower_in_Halifax%2C_Nova_Scotia%2C_Canada_%281%29.jpg",
-        "caption": "2020 Loyola Residence Tower in Halifax, Nova Scotia, Canada"
+        "caption": "Loyola Residence Tower in Halifax, Nova Scotia, Canada"
       },
       {
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/2020_Loyola_Residence_Tower_in_Halifax%2C_Nova_Scotia%2C_Canada_%282%29.jpg/1280px-2020_Loyola_Residence_Tower_in_Halifax%2C_Nova_Scotia%2C_Canada_%282%29.jpg",
-        "caption": "2020 Loyola Residence Tower in Halifax, Nova Scotia, Canada"
+        "caption": "Loyola Residence Tower in Halifax, Nova Scotia, Canada"
       }
     ]
   }

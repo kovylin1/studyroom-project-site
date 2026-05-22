@@ -5,50 +5,271 @@
   "city": "Antigonish",
   "programs": [
     {
-      "slug": "kaplan-pathway",
-      "title": "Kaplan pathway (см. сайт партнёра — программы не распознаны)",
+      "slug": "oxford-international-pathway",
+      "title": "Oxford International Pathway (Foundation/Pre-degree)",
       "durationYears": 1,
       "level": "foundation",
       "language": "en",
-      "faculty": "Прочее",
-      "intakes": [
-        "Autumn"
-      ],
-      "programType": "pathway"
+      "faculty": "International Studies",
+      "intakes": ["September", "January"],
+      "programType": "pathway",
+      "programUrl": "https://www.oxfordinternational.com/study-in-canada/st-francis-xavier-university/"
+    },
+    {
+      "slug": "bba-business-administration",
+      "title": "BBA Business Administration",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Gerald Schwartz School of Business",
+      "intakes": ["September", "January"],
+      "programType": "degree",
+      "programUrl": "https://www.stfx.ca/academics/schools-faculties/schwartz-school-business"
+    },
+    {
+      "slug": "bba-accounting",
+      "title": "BBA Accounting",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Gerald Schwartz School of Business",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bba-finance",
+      "title": "BBA Finance",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Gerald Schwartz School of Business",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bba-marketing",
+      "title": "BBA Marketing",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Gerald Schwartz School of Business",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-computer-science",
+      "title": "BSc Computer Science",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-biology",
+      "title": "BSc Biology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-chemistry",
+      "title": "BSc Chemistry",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-mathematics",
+      "title": "BSc Mathematics",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bsc-physics",
+      "title": "BSc Physics",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ba-psychology",
+      "title": "BA Psychology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ba-political-science",
+      "title": "BA Political Science",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ba-philosophy",
+      "title": "BA Philosophy",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "ba-sociology",
+      "title": "BA Sociology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bkine-kinesiology",
+      "title": "BKin Kinesiology",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "bn-nursing",
+      "title": "BN Nursing",
+      "durationYears": 4,
+      "level": "bachelor",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "mba",
+      "title": "MBA (Gerald Schwartz School of Business)",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Gerald Schwartz School of Business",
+      "intakes": ["September"],
+      "programType": "degree",
+      "programUrl": "https://www.stfx.ca/academics/schools-faculties/schwartz-school-business/mba"
+    },
+    {
+      "slug": "ma-theology",
+      "title": "MA Theology",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Arts",
+      "intakes": ["September"],
+      "programType": "degree"
+    },
+    {
+      "slug": "msc-biology",
+      "title": "MSc Biology",
+      "durationYears": 2,
+      "level": "master",
+      "language": "en",
+      "faculty": "Faculty of Science",
+      "intakes": ["September"],
+      "programType": "degree"
     }
   ],
   "tuition": {
     "currency": "CAD",
     "byProgram": {
-      "kaplan-pathway": 0
+      "oxford-international-pathway": 18000,
+      "bba-business-administration": 23900,
+      "bba-accounting": 23900,
+      "bba-finance": 23900,
+      "bba-marketing": 23900,
+      "bsc-computer-science": 23900,
+      "bsc-biology": 23900,
+      "bsc-chemistry": 23900,
+      "bsc-mathematics": 23900,
+      "bsc-physics": 23900,
+      "ba-psychology": 22400,
+      "ba-political-science": 22400,
+      "ba-philosophy": 22400,
+      "ba-sociology": 22400,
+      "bkine-kinesiology": 23900,
+      "bn-nursing": 24500,
+      "mba": 30000,
+      "ma-theology": 13000,
+      "msc-biology": 13000
     }
   },
-  "deadlines": {
-    "kaplan-pathway": "2026-09-01"
-  },
+  "deadlines": {},
   "requirements": {
     "language": {
-      "ielts": 5.5,
-      "toefl": 70
+      "ielts": 6.5,
+      "toefl": 86
     },
-    "exams": []
+    "exams": ["IELTS", "TOEFL"]
   },
   "scholarships": [
     {
-      "name": "Kaplan Early Bird Scholarship",
-      "nameRu": "Стипендия Kaplan за раннюю подачу",
-      "amount": "до £2,000",
-      "description": "Early-bird discount applied automatically when you pay the deposit at least 90 days before the start of your Kaplan pathway course (Foundation or Pre-Master's).",
-      "descriptionRu": "Автоматическая скидка при оплате депозита не менее чем за 90 дней до начала программы Kaplan (Foundation или Pre-Master's). Доступна на каждом из партнёрских университетов.",
-      "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
+      "name": "Oxford International Pathway Scholarship",
+      "nameRu": "Стипендия Oxford International Pathway",
+      "amount": "до CAD 5,000",
+      "description": "Partial scholarship for international students enrolling through the Oxford International pathway at StFX University.",
+      "descriptionRu": "Частичная стипендия для иностранных студентов, поступающих через программу Oxford International Pathway в Университет Святого Франциска Ксаверия.",
+      "url": "https://www.oxfordinternational.com/scholarships/"
     },
     {
-      "name": "Kaplan Academic Achievement Scholarship",
-      "nameRu": "Стипендия Kaplan за академические достижения",
-      "amount": "до £4,000",
-      "description": "Merit-based scholarship for top-performing applicants on Kaplan pathway programmes. Awarded after academic review of transcripts.",
-      "descriptionRu": "Стипендия за академические заслуги для лучших абитуриентов программ Kaplan. Присуждается после проверки академических документов.",
-      "url": "https://www.kaplanpathways.com/how-to-apply/fees-and-costs/scholarships-for-international-students/"
+      "name": "StFX International Entrance Award",
+      "nameRu": "Вступительная награда StFX для иностранных студентов",
+      "amount": "CAD 3,000–9,000",
+      "description": "Automatic merit-based award for international undergraduate students based on incoming academic average. Renewable each year.",
+      "descriptionRu": "Автоматическая стипендия для иностранных студентов бакалавриата на основе среднего балла. Продлеваемая ежегодно.",
+      "url": "https://www.stfx.ca/admissions/scholarships-and-awards"
+    },
+    {
+      "name": "Coady International Institute Scholarship",
+      "nameRu": "Стипендия Международного института Коуди",
+      "amount": "CAD 2,000–5,000",
+      "description": "Scholarship linked to StFX's world-renowned Coady Institute, supporting international students with interests in development and social leadership.",
+      "descriptionRu": "Стипендия, связанная со всемирно известным Институтом Коуди StFX, для иностранных студентов с интересами в области развития и социального лидерства.",
+      "url": "https://coady.stfx.ca/"
+    },
+    {
+      "name": "Schwartz School of Business Excellence Award",
+      "nameRu": "Стипендия за превосходство Школы бизнеса Шварца",
+      "amount": "CAD 2,500",
+      "description": "Awarded to high-achieving international business students admitted to the Gerald Schwartz School of Business.",
+      "descriptionRu": "Присуждается успевающим иностранным студентам, принятым в Школу бизнеса имени Джеральда Шварца.",
+      "url": "https://www.stfx.ca/academics/schools-faculties/schwartz-school-business"
+    },
+    {
+      "name": "StFX Athletic Bursary",
+      "nameRu": "Спортивный грант StFX",
+      "amount": "CAD 1,000–3,000",
+      "description": "Bursaries available for international student-athletes competing for StFX varsity teams (X-Men/X-Women).",
+      "descriptionRu": "Гранты для иностранных студентов-спортсменов, выступающих за команды StFX (X-Men/X-Women).",
+      "url": "https://www.stfx.ca/campus-life/athletics"
     }
   ],
   "lastChecked": "2026-05-22T08:06:45.752Z",
@@ -58,19 +279,59 @@
   "language": "en",
   "accommodation": [
     {
-      "name": "En-suite комната в студенческом общежитии (St. Francis Xavier University)",
-      "price": "[TBD: £/нед]",
-      "text": "Одноместная комната с собственной ванной, общая кухня на 4–8 человек. Партнёрское жильё рядом с кампусом St. Francis Xavier University."
+      "name": "MacKinnon Hall",
+      "price": "от CAD 9,000/год",
+      "text": "Одно из главных общежитий StFX на территории кампуса. Традиционный формат: одноместные и двухместные комнаты, общие зоны отдыха, столовая. Популярно среди иностранных первокурсников благодаря насыщенной жизни общежития."
+    },
+    {
+      "name": "Burke Residence",
+      "price": "от CAD 9,500/год",
+      "text": "Современное общежитие для старшекурсников с блочной системой комнат (suite-style). Общая кухня на блок из 4 студентов, улучшенная приватность. Расположено в центре кампуса."
+    },
+    {
+      "name": "Частное жильё в Antigonish",
+      "price": "от CAD 7,000/год",
+      "text": "Небольшой и безопасный город Antigonish предлагает доступную аренду комнат и квартир вблизи кампуса. Университет помогает через жилищный офис. Тихая атмосфера — идеально для сосредоточенной учёбы."
+    }
+  ],
+  "campuses": [
+    {
+      "title": "Главный кампус StFX",
+      "sub": "Antigonish, Nova Scotia",
+      "text": "Живописный кампус площадью 100 акров в центре Antigonish. Все факультеты расположены в шаговой доступности: Школа бизнеса Schwartz, Институт Коуди, спортивный комплекс Oland Centre. Дружное студенческое сообщество и высокий уровень вовлечённости в кампусную жизнь."
     }
   ],
   "description": {
     "paragraphs": [
-      "Find a pathway to match your goals and explore international study abroad with one of our university partners.",
-      "Discover where learning can take you. Whether you are pursuing academic excellence, embracing a new culture or exploring global career opportunities, our international locations offer the ideal environment to grow, connect and thrive.",
-      "Explore our top university partners across the UK where you can start your journey to becoming a great graduate.",
-      "Study abroad in iconic locations in the USA and turn your career ambitions into reality."
+      "St. Francis Xavier University (StFX), founded in 1853 in Antigonish, Nova Scotia, is a mid-sized comprehensive university with a strong emphasis on undergraduate education, community engagement, and social justice.",
+      "StFX is home to the world-renowned Coady International Institute — a pioneer in community development and social leadership education, welcoming professionals from over 130 countries. The Gerald Schwartz School of Business offers AACSB-accredited programs and a growing MBA.",
+      "With approximately 5,000 students, StFX offers a close-knit campus experience characterized by strong student-faculty relationships, vibrant varsity athletics (X-Men/X-Women), and a proud tradition of community involvement rooted in the Antigonish Movement of social and economic reform.",
+      "International students at StFX benefit from dedicated support services, small class sizes, and the university's longstanding commitment to global education. The Oxford International pathway provides a well-supported entry route for students who need academic preparation before degree studies."
     ],
-    "keyFacts": []
+    "paragraphsRu": [
+      "Университет Святого Франциска Ксаверия (StFX), основанный в 1853 году в Antigonish, Новая Шотландия, — средний по размеру комплексный университет с акцентом на бакалаврском образовании, общественной вовлечённости и социальной справедливости.",
+      "В StFX расположен всемирно известный Международный институт Коуди — пионер в области развития общества и воспитания социальных лидеров, принимающий специалистов из более чем 130 стран. Школа бизнеса Джеральда Шварца имеет аккредитацию AACSB.",
+      "С примерно 5 000 студентов StFX предлагает тесное кампусное сообщество: сильная связь студентов и преподавателей, активная спортивная жизнь (X-Men/X-Women) и гордые традиции общественного движения Antigonish.",
+      "Иностранные студенты StFX получают выделенные сервисы поддержки, небольшие группы и давнюю приверженность университета глобальному образованию. Программа Oxford International Pathway — хорошо поддерживаемый путь для подготовки к поступлению на бакалавриат."
+    ],
+    "keyFacts": [
+      "Основан в 1853 году",
+      "Около 5 000 студентов",
+      "Институт Коуди — всемирное признание в социальном лидерстве",
+      "Школа бизнеса Schwartz — аккредитация AACSB",
+      "Antigonish Movement — исторический вклад в социально-экономические реформы",
+      "Студенты из 70+ стран",
+      "Партнёр программы Oxford International Pathway"
+    ],
+    "keyFactsRu": [
+      "Основан в 1853 году",
+      "Около 5 000 студентов",
+      "Институт Коуди — всемирное признание в социальном лидерстве",
+      "Школа бизнеса Schwartz — аккредитация AACSB",
+      "Antigonish Movement — исторический вклад в социально-экономические реформы",
+      "Студенты из 70+ стран",
+      "Партнёр программы Oxford International Pathway"
+    ]
   },
   "gallery": {
     "items": [
@@ -84,7 +345,7 @@
       },
       {
         "img": "https://upload.wikimedia.org/wikipedia/commons/6/61/St._Francis_Xavier_University_Class_Ring_of_1945.jpg",
-        "caption": "St. Francis Xavier University Class Ring of"
+        "caption": "St. Francis Xavier University Class Ring of 1945"
       },
       {
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Antigonish.JPG/1280px-Antigonish.JPG",
