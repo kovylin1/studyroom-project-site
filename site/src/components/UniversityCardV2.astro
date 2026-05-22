@@ -99,11 +99,12 @@ const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
     <div class="uni-card-v2__top">
       <div class="uni-card-v2__logo" aria-hidden="true">
         <img
-          src={`/logos/${data.slug}.png`}
+          src={data.logoUrl ?? `/logos/${data.slug}.png`}
           alt=""
           loading="lazy"
           decoding="async"
           data-initials={initials}
+          referrerpolicy="no-referrer"
           onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.dataset.initials,className:'uni-card-v2__logo-initials'}))"
         />
       </div>

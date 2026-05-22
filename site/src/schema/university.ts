@@ -131,6 +131,7 @@ export const universitySchema = z
     campuses: z.array(campusItemSchema).optional(),
     description: descriptionSchema.optional(),
     photoSets: photoSetsSchema.optional(),
+    logoUrl: z.string().min(1).optional(),
     lastChecked: isoDate,
     sourceUrl: z.string().url(),
     sourceHash: z.string().min(1),
