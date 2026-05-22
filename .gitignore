@@ -27,3 +27,10 @@ memory/
 
 # Wrangler local cache (regenerated on every deploy)
 .wrangler/
+
+# Local backup snapshots (timestamped copies created before risky ops)
+.backup/
+
+# Visual-check screenshot output (regenerated on every QA pass, 10+ MB)
+scraper/visual-check-out/
+
