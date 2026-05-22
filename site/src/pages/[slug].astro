@@ -173,11 +173,12 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     --shadow-md: 0 6px 24px rgba(0,0,0,.08);
     --shadow-lg: 0 24px 64px rgba(0,0,0,.18);
   }
-  body { font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  body { font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   body.no-scroll { overflow: hidden; }
-  .lp h1, .lp h2, .lp h3, .lp h4 { font-weight: 900; line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; }
-  .lp h1 { font-size: clamp(28px, 5vw, 48px); }
-  .lp h2 { font-size: clamp(24px, 3.5vw, 36px); }
+  .lp, .lp * { min-width: 0; }
+  .lp h1, .lp h2, .lp h3, .lp h4 { font-weight: 900; line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; overflow-wrap: break-word; word-wrap: break-word; }
+  .lp h1 { font-size: clamp(26px, 5vw, 48px); }
+  .lp h2 { font-size: clamp(22px, 3.5vw, 36px); }
   .lp h3 { font-size: 20px; }
   .lp p { margin: 0 0 1em; }
   .lp .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
@@ -187,7 +188,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   .lp .reveal.is-visible { opacity: 1; transform: translateY(0); }
   @media (prefers-reduced-motion: reduce) { .lp .reveal { opacity: 1; transform: none; transition: none; } }
   .lp .eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green); padding: 4px 10px; background: var(--green-soft); border-radius: 999px; margin-bottom: 14px; }
-  .lp .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; font: inherit; font-weight: 700; border-radius: 999px; border: 2px solid transparent; cursor: pointer; transition: transform .12s, box-shadow .12s, background .12s; white-space: nowrap; text-decoration: none; }
+  .lp .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; font: inherit; font-weight: 700; border-radius: 999px; border: 2px solid transparent; cursor: pointer; transition: transform .12s, box-shadow .12s, background .12s; text-decoration: none; max-width: 100%; text-align: center; line-height: 1.25; }
   .lp .btn--primary { background: var(--green); color: #fff; box-shadow: 0 4px 14px rgba(0,149,15,.25); }
   .lp .btn--primary:hover { background: var(--green-dark); transform: translateY(-1px); }
   .lp .btn--ghost { background: #fff; color: var(--ink); border-color: var(--line); }
@@ -299,11 +300,15 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   .lp .program-row { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; gap: 16px; transition: transform .15s, box-shadow .15s, border-color .15s; cursor: pointer; }
   .lp .program-row:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--green); }
   .lp .program-row__level { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-bottom: 6px; }
+  .lp .program-row__level--high-school { background: #fff8d6; color: #6b5300; }
+  .lp .program-row__level--sixth-form { background: #ffe8d6; color: #8a3a00; }
   .lp .program-row__level--foundation { background: #e6f0ff; color: #004ac2; }
   .lp .program-row__level--pathway { background: #fff4e0; color: #b86b00; }
   .lp .program-row__level--master { background: #fff0e0; color: #a85400; }
   .lp .program-row__level--bachelor { background: var(--green-soft); color: var(--green-dark); }
   .lp .program-row__level--phd { background: #f3e0ff; color: #5a1080; }
+  .lp .program-row__level--english-language { background: #d6f4ff; color: #00567a; }
+  .lp .program-row__level--short-course { background: #f0f0f0; color: #444; }
   .lp .program-row__title { font-weight: 500; font-size: 14.5px; line-height: 1.35; }
   .lp .program-row__price { font-weight: 700; color: var(--green); white-space: nowrap; }
   .lp .req-grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
@@ -450,6 +455,40 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   .lp .toast.is-out { animation: lpToastOut .25s ease forwards; }
   @keyframes lpToastIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
   @keyframes lpToastOut { to { transform: translateX(120%); opacity: 0; } }
+
+  /* ===== mobile (≤640px) — fix overflow, tighten paddings, wrap long names ===== */
+  @media (max-width: 640px) {
+    .lp .wrap { padding: 0 16px; }
+    .lp .section { padding: 40px 0; }
+    .lp .btn { padding: 12px 18px; font-size: 14px; }
+    .lp .btn--lg { padding: 14px 18px; font-size: 15px; }
+    .lp .cta { padding: 24px 18px !important; border-radius: 18px; gap: 22px; }
+    .lp .cta h2 { font-size: 22px; }
+    .lp .cta p { font-size: 14.5px; }
+    .lp .cta__form { padding: 18px; }
+    .lp .cta__trust-item p { font-size: 14px; }
+    .lp .pill-choices { flex-wrap: wrap; }
+    .lp .pill-choices label { min-width: 0; flex: 1 1 calc(50% - 8px); font-size: 13px; padding: 8px 10px; }
+    .lp .calc { gap: 14px; }
+    .lp .calc__card { padding: 14px; }
+    .lp .calc__row { font-size: 14px; gap: 10px; }
+    .lp .calc__row strong { white-space: normal; word-break: break-word; }
+    .lp .rate-slider { flex-wrap: wrap; gap: 8px; }
+    .lp .rate-slider input[type="range"] { min-width: 0; flex: 1 1 100%; }
+    .lp .scholar { padding: 14px; gap: 10px; }
+    .lp .programs-grid { gap: 10px; }
+    .lp .req-grid, .lp .desc-grid, .lp .about-grid, .lp .faq-grid { gap: 14px; }
+    .lp .accom-grid, .lp .camp-grid { gap: 12px; }
+    .lp .timeline { gap: 10px; }
+    .lp .hero__lead { font-size: 16px; }
+    .lp .hero__strip { gap: 8px; }
+    .lp dialog { width: calc(100vw - 16px); max-height: calc(100vh - 32px); border-radius: 14px; }
+    .lp .modal-body, .lp .modal-head, .lp .modal-foot { padding-left: 16px; padding-right: 16px; }
+    .lp .modal-foot { flex-wrap: wrap; gap: 8px; }
+    .lp .modal-foot .btn { flex: 1 1 100%; }
+    .lp .chat-panel { width: calc(100vw - 16px); right: 8px; }
+    .lp .lp-chat-fab { right: 14px; bottom: 14px; }
+  }
 </style>
 
 <div class="lp">
@@ -631,10 +670,14 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
 
       <div class="level-filter" role="tablist" id="lpLevelFilter">
         <button class="lvl is-active" type="button" data-level="all">Все</button>
+        <button class="lvl" type="button" data-level="high-school">Школа</button>
+        <button class="lvl" type="button" data-level="sixth-form">Sixth Form</button>
         <button class="lvl" type="button" data-level="foundation">Foundation</button>
         <button class="lvl" type="button" data-level="bachelor">Бакалавриат</button>
         <button class="lvl" type="button" data-level="pathway">Pre-Master's</button>
         <button class="lvl" type="button" data-level="master">Магистратура</button>
+        <button class="lvl" type="button" data-level="english-language">Английский</button>
+        <button class="lvl" type="button" data-level="short-course">Короткие</button>
       </div>
 
       <div class="programs-grid" id="lpProgramsGrid"></div>
@@ -882,10 +925,14 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     <div class="modal-body">
       <div class="level-filter" role="tablist" id="lpModalLevelFilter">
         <button class="lvl is-active" type="button" data-level="all">Все</button>
+        <button class="lvl" type="button" data-level="high-school">Школа</button>
+        <button class="lvl" type="button" data-level="sixth-form">Sixth Form</button>
         <button class="lvl" type="button" data-level="foundation">Foundation</button>
         <button class="lvl" type="button" data-level="bachelor">Бакалавриат</button>
         <button class="lvl" type="button" data-level="pathway">Pre-Master's</button>
         <button class="lvl" type="button" data-level="master">Магистратура</button>
+        <button class="lvl" type="button" data-level="english-language">Английский</button>
+        <button class="lvl" type="button" data-level="short-course">Короткие</button>
       </div>
       <input type="text" class="program-search" id="lpProgramSearch" placeholder="Поиск по названию программы…" />
       <ul class="program-list" id="lpProgramList"></ul>
@@ -944,7 +991,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   const $$ = (s, root) => Array.from((root || document).querySelectorAll(s));
   document.body.classList.add('lp-mobile');
 
-  const LEVEL_LABELS = { foundation: 'Foundation', pathway: "Pre-Master's", master: 'Магистратура', bachelor: 'Бакалавриат', phd: 'PhD' };
+  const LEVEL_LABELS = { 'high-school': 'Школа', 'sixth-form': 'Sixth Form', foundation: 'Foundation', pathway: "Pre-Master's", master: 'Магистратура', bachelor: 'Бакалавриат', phd: 'PhD', 'english-language': 'Английский', 'short-course': 'Короткие' };
   function levelLabel(level, programType) {
     if (level === 'master' && programType === 'pathway') return "Pre-Master's";
     return LEVEL_LABELS[level] || level;
