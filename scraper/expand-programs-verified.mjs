@@ -139,7 +139,7 @@ function inferLevel(title){
   if (/\b(phd|dphil)\b/.test(t)) return 'phd';
   if (/\b(msc|mba|emba|meng|mres|mphil|llm|march|mfa|mcomm)\b/.test(t) || /\bmaster\b/.test(t) || /^ma\s/.test(t) || /\sma\s/.test(t)) return 'master';
   if (/\b(foundation|pathway|access)\b/.test(t)) return 'foundation';
-  if (/\b(diploma|certificate)\b/.test(t)) return 'short';
+  if (/\b(diploma|certificate)\b/.test(t)) return 'short-course';
   return 'bachelor';
 }
 
@@ -151,14 +151,12 @@ function inferDuration(level, title){
 }
 
 function inferType(title){
-  if (/\bphd\b/i.test(title)) return 'research';
   if (/\b(foundation|pathway|access)\b/i.test(title)) return 'pathway';
-  if (/\b(diploma|certificate)\b/i.test(title)) return 'short';
   return 'degree';
 }
 
 function makeSlug(uniSlug, title){
-  const base = title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,70);
+  const base = title.toLowerCase().replace(/[^a-z0-9]+/g,'-').slice(0,70).replace(/^-+|-+$/g,'');
   return `${uniSlug}-${base}`;
 }
 
