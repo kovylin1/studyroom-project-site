@@ -4,12 +4,84 @@
   "country": "United Kingdom",
   "city": "London",
   "programs": [
-    { "slug": "foundation-business", "title": "International Foundation Programme – Business & Economics", "durationYears": 1, "level": "foundation", "faculty": "Business", "intakes": ["September", "January"], "programType": "pathway", "programUrl": "https://www.ifg.uk.com/courses/international-foundation-programme/" },
-    { "slug": "foundation-science", "title": "International Foundation Programme – Science & Engineering", "durationYears": 1, "level": "foundation", "faculty": "Science", "intakes": ["September", "January"], "programType": "pathway", "programUrl": "https://www.ifg.uk.com/courses/international-foundation-programme/" },
-    { "slug": "foundation-arts", "title": "International Foundation Programme – Humanities & Social Sciences", "durationYears": 1, "level": "foundation", "faculty": "Arts & Humanities", "intakes": ["September", "January"], "programType": "pathway", "programUrl": "https://www.ifg.uk.com/courses/international-foundation-programme/" },
-    { "slug": "diploma-ug", "title": "International Diploma (Year 1 Equivalent)", "durationYears": 1, "level": "foundation", "faculty": "Academic", "intakes": ["September"], "programType": "pathway", "programUrl": "https://www.ifg.uk.com/courses/international-diploma/" },
-    { "slug": "pre-masters", "title": "Pre-Master's Programme", "durationYears": 1, "level": "foundation", "faculty": "Academic", "intakes": ["September", "January"], "programType": "pathway", "programUrl": "https://www.ifg.uk.com/courses/pre-masters/" },
-    { "slug": "english-language", "title": "English Language Programme", "durationYears": 1, "level": "english-language", "faculty": "Language", "intakes": ["September", "January", "April"], "programType": "pathway", "programUrl": "https://www.ifg.uk.com/courses/english-language/" }
+    {
+      "slug": "foundation-business",
+      "title": "International Foundation Programme – Business & Economics",
+      "durationYears": 1,
+      "level": "foundation",
+      "faculty": "Business",
+      "intakes": [
+        "September",
+        "January"
+      ],
+      "programType": "pathway",
+      "programUrl": "https://www.ifg.uk.com/courses/international-foundation-programme/"
+    },
+    {
+      "slug": "foundation-science",
+      "title": "International Foundation Programme – Science & Engineering",
+      "durationYears": 1,
+      "level": "foundation",
+      "faculty": "Science",
+      "intakes": [
+        "September",
+        "January"
+      ],
+      "programType": "pathway",
+      "programUrl": "https://www.ifg.uk.com/courses/international-foundation-programme/"
+    },
+    {
+      "slug": "foundation-arts",
+      "title": "International Foundation Programme – Humanities & Social Sciences",
+      "durationYears": 1,
+      "level": "foundation",
+      "faculty": "Arts & Humanities",
+      "intakes": [
+        "September",
+        "January"
+      ],
+      "programType": "pathway",
+      "programUrl": "https://www.ifg.uk.com/courses/international-foundation-programme/"
+    },
+    {
+      "slug": "diploma-ug",
+      "title": "International Diploma (Year 1 Equivalent)",
+      "durationYears": 1,
+      "level": "foundation",
+      "faculty": "Academic",
+      "intakes": [
+        "September"
+      ],
+      "programType": "pathway",
+      "programUrl": "https://www.ifg.uk.com/courses/international-diploma/"
+    },
+    {
+      "slug": "pre-masters",
+      "title": "Pre-Master's Programme",
+      "durationYears": 1,
+      "level": "foundation",
+      "faculty": "Academic",
+      "intakes": [
+        "September",
+        "January"
+      ],
+      "programType": "pathway",
+      "programUrl": "https://www.ifg.uk.com/courses/pre-masters/"
+    },
+    {
+      "slug": "english-language",
+      "title": "English Language Programme",
+      "durationYears": 1,
+      "level": "english-language",
+      "faculty": "Language",
+      "intakes": [
+        "September",
+        "January",
+        "April"
+      ],
+      "programType": "pathway",
+      "programUrl": "https://www.ifg.uk.com/courses/english-language/"
+    }
   ],
   "tuition": {
     "currency": "GBP",
@@ -24,19 +96,48 @@
   },
   "deadlines": {},
   "requirements": {
-    "language": { "ielts": 5.0 },
-    "exams": ["IELTS", "TOEFL", "PTE Academic", "Cambridge English"]
+    "language": {
+      "ielts": 5
+    },
+    "exams": [
+      "IELTS",
+      "TOEFL",
+      "PTE Academic",
+      "Cambridge English"
+    ]
   },
   "scholarships": [
-    { "name": "Academic Excellence Scholarship", "nameRu": "Стипендия за академические достижения", "amount": "Up to 20% fees", "description": "Offered to students with outstanding previous academic performance.", "descriptionRu": "Предоставляется студентам с высокими предыдущими академическими результатами." },
-    { "name": "Early Application Discount", "nameRu": "Скидка за раннюю подачу", "amount": "GBP 500", "description": "Discount for students who apply and confirm their place early.", "descriptionRu": "Скидка для студентов, подавших и подтвердивших заявку заблаговременно." }
+    {
+      "name": "Academic Excellence Scholarship",
+      "amount": "Up to 20% fees",
+      "description": "Offered to students with outstanding previous academic performance.",
+      "nameRu": "Стипендия за академические достижения"
+    },
+    {
+      "name": "Early Application Discount",
+      "amount": "GBP 500",
+      "description": "Discount for students who apply and confirm their place early.",
+      "nameRu": "Скидка за раннюю подачу"
+    }
   ],
   "accommodation": [
-    { "name": "IFG Partner Halls of Residence", "price": "GBP 8,000–12,000/year", "text": "Партнёрские студенческие общежития в Лондоне, рекомендованные IFG студентам. Включают питание и зоны общего пользования." },
-    { "name": "Private Accommodation in London", "price": "GBP 10,000–15,000/year", "text": "Частные апартаменты и комнаты в Лондоне — организуются при поддержке IFG через сеть проверенных партнёров." }
+    {
+      "name": "IFG Partner Halls of Residence",
+      "price": "GBP 8,000–12,000/year",
+      "text": "Партнёрские студенческие общежития в Лондоне, рекомендованные IFG студентам. Включают питание и зоны общего пользования."
+    },
+    {
+      "name": "Private Accommodation in London",
+      "price": "GBP 10,000–15,000/year",
+      "text": "Частные апартаменты и комнаты в Лондоне — организуются при поддержке IFG через сеть проверенных партнёров."
+    }
   ],
   "campuses": [
-    { "title": "London Centre", "sub": "London, United Kingdom", "text": "Главный учебный центр IFG в Лондоне, оснащённый современными аудиториями, компьютерными классами и библиотекой. Удобное расположение в одном из крупнейших образовательных центров мира." }
+    {
+      "title": "London Centre",
+      "text": "Главный учебный центр IFG в Лондоне, оснащённый современными аудиториями, компьютерными классами и библиотекой. Удобное расположение в одном из крупнейших образовательных центров мира.",
+      "sub": "London, United Kingdom"
+    }
   ],
   "description": {
     "paragraphs": [
