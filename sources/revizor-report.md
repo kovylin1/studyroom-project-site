@@ -1,0 +1,295 @@
+# Revizor audit — 2026-05-24T04:11:58
+
+**Verdict: CRITICAL**
+
+## Stats
+
+| Metric | Value |
+|---|---|
+| unisChecked | 647 |
+| programsSampled | 1914 |
+| urls200 | 1553 |
+| urls404 | 71 |
+| urlsTimeout | 37 |
+| titleMismatch | 1201 |
+| noProgramUrl | 150 |
+
+Critical findings: 71, warnings: 1227
+
+## CRITICAL (broken links — must fix)
+
+- **aberystwyth**: broken programUrl — BSc Geography → https://www.aber.ac.uk/en/iges/undergraduate/
+- **aberystwyth**: broken programUrl — BSc Psychology → https://www.aber.ac.uk/en/psychology/undergraduate/
+- **aberystwyth**: broken programUrl — LLB Law → https://www.aber.ac.uk/en/law/undergraduate/
+- **acadia**: broken programUrl — Oxford International Pathway (Foundation/Pre-degree) → https://www.oxfordinternational.com/study-in-canada/acadia-university/
+- **atilim**: broken programUrl — MBA → https://www.atilim.edu.tr/en/programs/
+- **atilim**: broken programUrl — Bachelor in Business Administration → https://www.atilim.edu.tr/en/programs/
+- **atilim**: broken programUrl — Bachelor in Law (LLB) → https://www.atilim.edu.tr/en/programs/
+- **bow-valley**: broken programUrl — Health Care Aide Certificate → https://bowvalleycollege.ca/programs
+- **bow-valley**: broken programUrl — Business Administration Diploma → https://bowvalleycollege.ca/programs
+- **bow-valley**: broken programUrl — Information Technology Diploma → https://bowvalleycollege.ca/programs
+- **canadian-tourism-college**: broken programUrl — English for Tourism and Hospitality → https://tourismcollege.com/programs/
+- **canadian-tourism-college**: broken programUrl — Event Management Certificate → https://tourismcollege.com/programs/
+- **canadian-tourism-college**: broken programUrl — Hotel Management Diploma → https://tourismcollege.com/programs/
+- **canberra-sydney**: broken programUrl — Diploma of Information Technology → https://www.canberra.edu.au/future-students/pathways/uc-college
+- **doverbroecks**: broken programUrl — A-Levels Programme → https://www.doverbroecks.com/a-level
+- **dli-bandung**: broken programUrl — Diploma of Business → https://www.dli.ac.id/programmes/
+- **drexel**: broken programUrl — BS Exercise Science → https://drexel.edu/cnhp/undergraduate/
+- **drexel**: broken programUrl — BS Psychology → https://drexel.edu/coas/undergraduate/
+- **florida-international**: broken programUrl — MSc Public Health → https://stempel.fiu.edu/graduate/
+- **florida-international**: broken programUrl — MSc Electrical Engineering → https://cec.fiu.edu/graduate/
+- **goldsmiths**: broken programUrl — BA Design → https://www.gold.ac.uk/undergraduate/programmes/design/
+- **goldsmiths**: broken programUrl — BA Media and Communications → https://www.gold.ac.uk/undergraduate/programmes/media-communications/
+- **hague**: broken programUrl — Year 1 Entry — IT & Computer Science → https://www.thehaguepathway.nl/programmes/
+- **institut-culinaire-france**: broken programUrl — CAP Pâtissier — Reconversion → https://www.institutculinaire.fr/formations/cap-patissier-reconversion
+- **institut-culinaire-france**: broken programUrl — CAP Glacier fabricant — Reconversion → https://www.institutculinaire.fr/formations/cap-glacier-reconversion
+- **institut-culinaire-france**: broken programUrl — Licence professionnelle MACAT — option Arts sucrés → https://www.institutculinaire.fr/formations/licence-pro
+- **kings-bournemouth**: broken programUrl — GCSE Programme → https://www.kingseducation.com/kings-bournemouth/programmes/gcse
+- **kings-bournemouth**: broken programUrl — A Levels → https://www.kingseducation.com/kings-bournemouth/programmes/a-levels
+- **kings-oxford**: broken programUrl — GCSE Programme → https://www.kingseducation.com/kings-oxford/programmes/gcse
+- **kings-oxford**: broken programUrl — A Levels → https://www.kingseducation.com/kings-oxford/programmes/a-levels
+- **kings-oxford**: broken programUrl — Accelerated One-Year A Levels → https://www.kingseducation.com/kings-oxford/programmes/a-levels
+- **lancaster-leipzig**: broken programUrl — International Foundation Year — Engineering → https://www.lancasterleipzig.de/programmes/
+- **lancaster-leipzig**: broken programUrl — BSc (Hons) Business Administration → https://www.lancaster.ac.uk/leipzig/
+- **lancaster-leipzig**: broken programUrl — Pre-Master — Engineering → https://www.lancasterleipzig.de/programmes/
+- **leeds-isc**: broken programUrl — Academic English → https://www.leeds.ac.uk/academic-english/
+- **memorial-nl**: broken programUrl — Bachelor of Science in Biology → https://www.mun.ca/biology/undergraduate/
+- **merrick-prep**: broken programUrl — English for Academic Purposes → https://www.merrickprep.com/programs/
+- **merrick-prep**: broken programUrl — University Preparation Program → https://www.merrickprep.com/programs/
+- **memorial-nl**: broken programUrl — Bachelor of Technology in Ocean Technology → https://www.mun.ca/engineering/undergraduate/ocean-technology/
+- **merrick-prep**: broken programUrl — Ontario Secondary School Diploma (OSSD) → https://www.merrickprep.com/programs/
+- **mount-saint-vincent**: broken programUrl — Bachelor of Science in Chemistry → https://www.msvu.ca/academics/undergraduate-studies/chemistry/
+- **mount-saint-vincent**: broken programUrl — Bachelor of Tourism and Hospitality Management → https://www.msvu.ca/academics/undergraduate-studies/tourism-hospitality-management/
+- **mount-saint-vincent**: broken programUrl — Master of Arts in Women and Gender Studies → https://www.msvu.ca/academics/graduate-studies/womens-gender-studies/
+- **murdoch**: broken programUrl — Bachelor of Business and Commerce (Marketing) → https://www.murdoch.edu.au/course/undergraduate/b2539
+- **murdoch**: broken programUrl — Bachelor of Engineering (Electrical Power Engineering) → https://www.murdoch.edu.au/course/undergraduate/b2640
+- **murdoch**: broken programUrl — Bachelor of Business and Commerce (Accounting) → https://www.murdoch.edu.au/course/undergraduate/b2537
+- **nscad**: broken programUrl — BFA Fine Art → https://nscad.ca/programs/bachelor-of-fine-arts/
+- **oxford-sixth-form**: broken programUrl — A-Levels Programme → https://www.osfc.ac.uk/a-levels
+- **ravensbourne**: broken programUrl — BA (Hons) Fashion Design → https://www.ravensbourne.ac.uk/study/undergraduate/fashion-design
+- **reading**: broken programUrl — LLB Law → https://www.reading.ac.uk/study/undergraduate/law
+- **reading**: broken programUrl — BSc Agriculture → https://www.reading.ac.uk/study/undergraduate/agriculture
+- **rotman-arts-science**: broken programUrl — University Pathway Program → https://rotmanschool.ca/programs/
+- **rotman-arts-science**: broken programUrl — Ontario Secondary School Diploma (OSSD) → https://rotmanschool.ca/programs/
+- **rotman-arts-science**: broken programUrl — English for Academic Purposes → https://rotmanschool.ca/programs/
+- **ravensbourne**: broken programUrl — BA (Hons) Animation → https://www.ravensbourne.ac.uk/study/undergraduate/animation
+- **san-pablo-ceu-madrid**: broken programUrl — Bachelor in Law → https://www.uspceu.com/en/studies/undergraduate
+- **san-raffaele**: broken programUrl — Bachelor in Medicine and Surgery (6-year) → https://www.unisr.it/en/offerta-formativa/medicina-e-chirurgia
+- **sae-dubai**: broken programUrl — Bachelor of Computer Science → https://dubai.sae.edu/courses/computer-science/
+- **sf-state**: broken programUrl — Master of Science in Computer Science → https://cs.sfsu.edu/graduate
+- **south-carolina**: broken programUrl — BS Electrical Engineering → https://sc.edu/study/colleges_schools/cec/index.php
+- **srh-germany**: broken programUrl — Foundation Year — Business → https://www.srh-international-college.de/programmes/
+- **st-andrews-cambridge**: broken programUrl — A-Levels Programme → https://www.standrewscambridge.co.uk/courses/a-levels/
+- **staffordshire**: broken programUrl — Business Management BA (Hons) → https://www.staffs.ac.uk/study/undergraduate
+- **stover-school**: broken programUrl — EFL / English Language Support → https://www.stover.co.uk/international-students/
+- **suny-geneseo**: broken programUrl — BA Political Science → https://www.geneseo.edu/polisci/
+- **ua92**: broken programUrl — BSc (Hons) Digital Marketing → https://ua92.ac.uk/courses/bsc-digital-marketing/
+- **ua92**: broken programUrl — BSc (Hons) Sport Business Management → https://ua92.ac.uk/courses/bsc-sport-business-management/
+- **unbc**: broken programUrl — Bachelor of Science — Mathematics → https://www.unbc.ca/programs/mathematics/
+- **university-canada-west**: broken programUrl — Bachelor of Commerce → https://www.ucanwest.ca/programs/undergraduate/bcomm/
+- **western-ontario**: broken programUrl — UTP Stage 2 — Software Engineering → https://www.westernic.ca/programs/
+- **winnipeg**: broken programUrl — Bachelor of Science — Mathematics → https://www.uwinnipeg.ca/mathematics/
+
+## Warnings (review)
+
+- abat-oliba-barcelona: all sampled programs lack programUrl (unverifiable) (count: 3)
+- abbey-manchester: title mismatch — A-Levels (2-Year) (page: Courses | Abbey Manchester)
+- abbey-manchester: title mismatch — International Foundation Programme — Business (page: Courses | Abbey Manchester)
+- abbey-manchester: title mismatch — International Foundation Programme — Science and Engineering (page: Courses | Abbey Manchester)
+- abertay: title mismatch — MSc International Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- academy-of-learning-career-college-scarborough: title mismatch — Diploma Project Administration (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- 3a-france: title mismatch — MBA — International Cooperation and Humanitarian Action (page: ÉCOLE 3A - Ecole de commerce internationale durable et solidaire)
+- academy-of-learning-career-college-scarborough: title mismatch — Diploma International Hospitality Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- adelphi: title mismatch — BA Latin American Studies (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- abbey-dld-london: title mismatch — Year 9 (page: Welcome to DLD College London | Independent Day &amp; Boarding)
+- academy-of-learning-career-college-scarborough: title mismatch — Diploma Medical Office Assistant (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- abbey-dld-london: title mismatch — British Boarding School Experience (page: Welcome to DLD College London | Independent Day &amp; Boarding)
+- acap: title mismatch — Master of Leadership Coaching (page: ACAP University College)
+- abbey-dld-london: title mismatch — International Foundation Programme (page: Welcome to DLD College London | Independent Day &amp; Boarding)
+- abertay: title mismatch — BA (Hons) Marketing and Business (page: Home | Abertay University)
+- aivancity: title mismatch — Grande Ecole Program 3rd Year Entry (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- abertay: title mismatch — BSc (Hons) Forensic Psychobiology (page: Home | Abertay University)
+- alberta: title mismatch — Diploma Journalism - Photojournalism Major (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- alexander-college: title mismatch — Associate of Arts (Business and Psychology) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- adelphi: title mismatch — BS Public Health (page: Academics | Top Academic Programs in New York | Adelphi University)
+- algoma-university: title mismatch — Bachelor of Computer Science (Honours) with Specialization - Mobile Software Engineering (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- adelphi: title mismatch — BA English (page: Academics | Top Academic Programs in New York | Adelphi University)
+- algoma-university: title mismatch — Bachelor of Computer Science (Honours) with Specialization - Computer Game Technology (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- american-institute-of-applied-sciences-in-switzerland: title mismatch — BSBA Bachelor of Science in Business Administration - Sports Management - Athletic Administration (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- algoma-university: title mismatch — Bachelor of Arts in English (Honours) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- american-collegiate-la: title mismatch — One-Year Pathway Program (page: American Collegiate Los Angeles (LA): Rankings, Cost, Courses)
+- acap: title mismatch — Bachelor of Psychological Science (page: ACAP University College)
+- american-collegiate-la: title mismatch — Pathway to Social Sciences (page: American Collegiate Los Angeles (LA): Rankings, Cost, Courses)
+- american-institute-of-applied-sciences-in-switzerland: title mismatch — BSBA Bachelor of Science in Business Administration - Business Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- alberta: title mismatch — BA, Linguistics with Honors (page: Linguistics)
+- american-collegiate-la: title mismatch — Two-Year Pathway Program (page: American Collegiate Los Angeles (LA): Rankings, Cost, Courses)
+- american-kogod: title mismatch — BA Languages: – Chinese (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- alexander-college: title mismatch — Associate of Arts — General (page: Home &#8211; Alexander College)
+- american-kogod: title mismatch — BS Neuroscience (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- american-university: title mismatch — MBA Global (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- american-institute-of-applied-sciences-in-switzerland: title mismatch — MIBA Master of Science in International Business Administration - International Business Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- amity-university-dubai: title mismatch — Bachelor of Science in Computer Science - Cybersecurity (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- amity-university-dubai: title mismatch — Bachelor of Business Administration - Family Business and Entrepreneurship (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- american-university: title mismatch — MA in Learning Design and Technology - (Online) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- alberta: title mismatch — BSc in Human Ecology, Clothing, Textiles and Material Culture (page: Clothing, Textiles and Material Culture)
+- amity-university-dubai: title mismatch — Master of Science in Forensic Sciences (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- arden: all sampled programs lack programUrl (unverifiable) (count: 3)
+- alexander-college: title mismatch — Associate of Arts — Business (page: Home &#8211; Alexander College)
+- apu-malaysia: title mismatch — Bachelor of Accounting and Finance (Honours) - Accounting Technology (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- apu-malaysia: title mismatch — Bachelor of Accounting and Finance (Honours) - Forex and Investments (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- anglia-ruskin: title mismatch — BSc (Hons) Sports Coaching and Physical Education (page: ARU in Cambridge, Chelmsford and Peterborough)
+- anglia-ruskin: title mismatch — BA (Hons) History (page: ARU in Cambridge, Chelmsford and Peterborough)
+- apu-malaysia: title mismatch — Master of Education in Learning Design and Technology (ODL) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- anglia-ruskin: title mismatch — MA Education (page: ARU in Cambridge, Chelmsford and Peterborough)
+- arizona: title mismatch — MPH Master of Public Health (page: | The University of Arizona)
+- arizona: title mismatch — BS Computer Science (page: | The University of Arizona)
+- aston: title mismatch — BSc (Hons) Cybersecurity with Placement Year (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- atelier-chardon-savard: title mismatch — BA Fashion Design (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- arizona: title mismatch — MS Data Science (page: | The University of Arizona)
+- ashland: title mismatch — International Political Studies — Bachelor of Arts (page: Academic Programs | Ashland)
+- asu-london: title mismatch — BEng (Hons) Global Design Engineering (page: Global Design Engineering)
+- auburn: title mismatch — Materials Engineering (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- atelier-de-sevres: title mismatch — Prepa Art (page: Atelier de sèvres)
+- auburn: title mismatch — MS Animal Sciences – Meat Science Option (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- atelier-de-sevres: title mismatch — International Animation Preparation (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- atelier-de-sevres: title mismatch — Mastere Auteur & Realisateur en Cinema d'Animation (page: Atelier de sèvres)
+- auckland-institute-of-studies: title mismatch — Graduate Diploma in Information Technology - Networks and Security (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- auburn: title mismatch — Communication (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- australia-institute-of-business-and-technology: title mismatch — Diploma of Automotive Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- auckland-institute-of-studies: title mismatch — Master of Information Technology - Software Development (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- aston: title mismatch — BEng (Hons) Mechanical Engineering (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- australian-institute-of-technical-training: title mismatch — Certificate IV in Automotive Mechanical Diagnosis (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- auckland-institute-of-studies: title mismatch — Graduate Diploma in Information Technology - Software Development (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- australia-institute-of-business-and-technology: title mismatch — Graduate Diploma of Management (Learning) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- australian-performing-arts-conservatory: title mismatch — Bachelor of Screen & Stage (Screen Production) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- australian-institute-of-technical-training: title mismatch — Diploma of Hospitality Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- asu-london: title mismatch — Pre-Master's — Business and Social Sciences (page: ASU London)
+- australia-institute-of-business-and-technology: title mismatch — Diploma of Leadership and Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- australian-vocational-training-academy: title mismatch — Graduate Diploma Of Management (Learning) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- asu-london: title mismatch — BSc (Hons) Business and Management (page: Business and Management)
+- australian-performing-arts-conservatory: title mismatch — Bachelor of Screen & Stage (Acting) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- australian-institute-of-technical-training: title mismatch — Certificate IV in Kitchen Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- australian-vocational-training-academy: title mismatch — Advanced Diploma of Information Technology (Telecommunications Network Engineering) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- australian-performing-arts-conservatory: title mismatch — Bachelor of Screen & Stage (Song & Dance) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- bangor: title mismatch — MA History (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- australian-vocational-training-academy: title mismatch — Graduate Diploma of Strategic Leadership (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- baylor-university: title mismatch — Bachelors Religion (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- bangor: title mismatch — BA (Hons) Sociology and Criminology & Criminal Justice (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- bath: title mismatch — Social Policy BSc (Hons) (page: Undergraduate study 2027)
+- bangor: title mismatch — MSc Artificial Intelligence and Data Science (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- baylor-university: title mismatch — Bachelors Education Certification - Physical Education (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- bath: title mismatch — MComp (Hons) Computer Science with Professional Placement or Study Abroad (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- baylor-university: title mismatch — Bachelors Education Certification - Music Education (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- bath: title mismatch — MEng (Hons) Electronic Engineering with Space Science and Technology (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- bcit: title mismatch — Mechanical Engineering Technology Diploma (page: BCIT)
+- basis-mclean: title mismatch — Advanced Placement (AP) Coursework (page: Academics | BASIS Independent Schools)
+- birkbeck: title mismatch — MA Creative Writing (page: Creative Writing)
+- birmingham-dubai: title mismatch — PhD Finance (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- bcit: title mismatch — Sheet Metal Worker Foundation, Certificate, Full-time (2645CERT) (page: BCIT)
+- birmingham-dubai: title mismatch — MSc Clinical Psychology (Dubai) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- bhms: title mismatch — BA in Culinary Arts and Patisserie (page: Study Business, Hospitality &amp; Tourism)
+- birmingham-dubai: title mismatch — MSc Sustainable Energy Engineering (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- birmingham-city: title mismatch — BA (Hons) Business and Management (page: Birmingham City University)
+- basis-mclean: title mismatch — Primary Program (Grades 1–4) (page: BASIS Independent McLean | 2 Years–Grade 12 Private School in VA)
+- bishopstrow: all sampled programs lack programUrl (unverifiable) (count: 3)
+- basis-mclean: title mismatch — Early Learning Program (Ages 2–Kindergarten) (page: BASIS Independent McLean | 2 Years–Grade 12 Private School in VA)
+- bcit: title mismatch — Graduate Certificate Programs (page: BCIT)
+- bournemouth: title mismatch — MRes Bournemouth University Business School (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- bhms: title mismatch — MSc in Wine and Beverage Business Management (page: Study Business, Hospitality &amp; Tourism)
+- bournemouth-collegiate-school: title mismatch — A-Level Photography (page: BCS Sixth Form | Bournemouth Collegiate School)
+- bishop-montgomery: title mismatch — Grade 10 — Sophomore Year (page: Welcome)
+- bosworth-independent-school: title mismatch — Year 7-9 Music (page: Year 7, 8 &amp; 9 Courses | Pre-GCSE | Bosworth School)
+- bournemouth-collegiate-school: title mismatch — Year 7-9 Business Studies (page: Bournemouth Collegiate School)
+- bishop-montgomery: title mismatch — Grade 11 — Junior Year (page: Welcome)
+- bpp-university: title mismatch — MSc Management with Project Management with Professional Development Planning (PDP) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- bhms: title mismatch — MSc in Culinary Entrepreneurship (page: Study Business, Hospitality &amp; Tourism)
+- bournemouth-collegiate-school: title mismatch — GCSE History (page: Senior School Curriculum Overview - BCS)
+- bosworth-independent-school: title mismatch — GCSE Drama (page: GCSE Courses | Bosworth School)
+- bpp-university: title mismatch — LLM Masters of Laws (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- brunel: title mismatch — MSc Physiotherapy (Pre-Registration) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- bradford: title mismatch — MSc Public Health (page: University of Bradford)
+- bradford: title mismatch — MSc Advanced Chemical and Petroleum Engineering (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- brunel: title mismatch — LLB (Hons) Law with Criminal Justice (page: Brunel University of London)
+- bradford: title mismatch — BSc (Hons) Computer Science for Cyber Security (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- budapest-university-of-economics-and-business: title mismatch — MSc Marketing (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- buckinghamshire-new-university: title mismatch — MSc Adult Nursing (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- brunel: title mismatch — MSc Management (page: Brunel University of London)
+- budapest-university-of-economics-and-business: title mismatch — PhD Entrepreneurship and Business (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- c3s-business-school: title mismatch — OTHM Level 5 Diploma in Business Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- buckinghamshire-new-university: title mismatch — BA (Hons) Film Production (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- budapest-university-of-economics-and-business: title mismatch — BSc International Business Economics (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- california-baptist-university: title mismatch — BA Political Science - International Relations (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cal-state-fullerton: title mismatch — BA History (page: California State University, Fullerton)
+- buckinghamshire-new-university: title mismatch — BA (Hons) 3D Games Art (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- c3s-business-school: title mismatch — MBA Global (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cal-state-fullerton: title mismatch — BS Marketing (page: California State University, Fullerton)
+- california-institute-of-advanced-management: title mismatch — MBA in Executive Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- california-miramar-university: title mismatch — Associate of Science in Business Administration (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- california-baptist-university: title mismatch — BSE Engineering - Pre-Law (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- c3s-business-school: title mismatch — MBA with Project Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- california-state-university-east-bay: title mismatch — BS Geography-Regions and Cultures Concentration (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- california-miramar-university: title mismatch — Associate of Science in Sports Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- california-baptist-university: title mismatch — MSN/BSN to Nursing - Family Nurse Practitioner (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cambridge-education-group: title mismatch — International Foundation Studies (Engineering and Science pathway) - (2 Semesters) - University College Cork (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- california-miramar-university: title mismatch — Bachelor of Science in Business Administration (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cal-lutheran: title mismatch — BA Marketing Communication (page: Undergraduate Majors &amp; Minors)
+- california-state-university-east-bay: title mismatch — MBA Business Administration-Strategy & Innovation Concentration (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cambridge-education-group: title mismatch — International Year One (IY1) - Business (2 Semesters)(Kedge Business School) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cal-lutheran: title mismatch — BA Environmental Studies (page: Undergraduate Majors &amp; Minors)
+- california-state-university-east-bay: title mismatch — BS Business Analytics-Information System and Supply Chain Analytics Concentration (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cambridge-education-group: title mismatch — International Year One (IY1) - Engineering and Sciences 2 Semester - London South Bank University (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- canterbury-nz: title mismatch — Bachelor of Arts (Psychology) (page: Top 2 in NZ for employment outcomes | University of Canterbury)
+- canterbury-nz: title mismatch — Bachelor of Commerce (Economics) (page: Top 2 in NZ for employment outcomes | University of Canterbury)
+- canterbury-nz: title mismatch — Bachelor of Science (Astronomy) (page: Top 2 in NZ for employment outcomes | University of Canterbury)
+- cape-breton-university: title mismatch — Master of Artificial Intelligence and Business Analytics (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- canberra-sydney: title mismatch — Master of Communication (page: Homepage)
+- canberra: title mismatch — Bachelor of International Business (page: Homepage)
+- cape-breton-university: title mismatch — Bachelor of Science (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cal-state-fullerton: title mismatch — Ed.D. Educational Leadership (page: California State University, Fullerton)
+- cardenal-herrera-valencia: all sampled programs lack programUrl (unverifiable) (count: 3)
+- canberra: title mismatch — Bachelor of Business Administration (page: Homepage)
+- cape-breton-university: title mismatch — Bachelor of Hospitality and Tourism Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cardiff-met: title mismatch — MBA - Master of Business Administration (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- canadian-university-dubai: title mismatch — Bachelor of Arts in Psychology (page: Programs)
+- canadian-university-dubai: title mismatch — Bachelor of Business Administration in Management (page: Programs)
+- cardiff: title mismatch — PhD Politics and International Relations (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- canterbury-christ-church: title mismatch — BEng Software Engineering (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- carolina-university: title mismatch — Master of Science Computer Science (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- capilano: title mismatch — Motion Picture Arts Diploma (page: Find a Program or Course)
+- cardiff: title mismatch — BSc Computer Science with Security and Forensics (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- canberra-sydney: title mismatch — Bachelor of Human Resource Management (page: Homepage)
+- carolina-university: title mismatch — Bachelor of Arts Criminal Justice (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cardiff-met: title mismatch — BA (Hons) Marketing Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cardiff: title mismatch — MEng Medical Engineering (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- carolina-university: title mismatch — Bachelor of Business Administration - Esports (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- capilano: title mismatch — Bachelor of Business Administration (page: Find a Program or Course)
+- cct-college-dublin: title mismatch — Postgraduate Diploma in Science in Computing (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- ceg-digital: title mismatch — LLM International Corporate and Commercial Law (Online - King's College London) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cardiff-sixth-form: title mismatch — English Language & Study Skills (page: English for Additional Purposes Teacher Cambridge | Cardiff Sixth Form College)
+- cct-college-dublin: title mismatch — MSc in Data Analytics (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cesar-ritz-colleges: title mismatch — Bachelor of Science in Hospitality Business Management (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- ceg-digital: title mismatch — MSc Nursing (Online - University of Central Lancashire) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cct-college-dublin: title mismatch — Bachelor of Business (Honours) (Add-on) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cats-academy-boston: title mismatch — Grade 9-10 Social Sciences (page: Fees - CATS Academy Boston)
+- cardiff-sixth-form: title mismatch — GCSE Programme (page: GCSEs | Sixth Form College Wales | Cardiff Sixth Form College)
+- ceg-digital: title mismatch — MSc Public Health (Online - King's College London) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- chester: title mismatch — MSc Data Analytics and Technologies: Extended (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cats-college-china: title mismatch — University Foundation Programme (page: 英国高中文凭课程 - 剑桥文理与剑桥艺术中国-官方网站)
+- chester: title mismatch — BA (Hons) Counselling Skills and Psychology (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cats-college-china: title mismatch — Grade 10-11 Biology (page: 首页 - 剑桥文理与剑桥艺术中国-官方网站)
+- chester: title mismatch — BSc (Hons) Psychology and Sociology (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cats-college-china: title mismatch — Grade 10-11 Chemistry (page: 首页 - 剑桥文理与剑桥艺术中国-官方网站)
+- cats-cambridge: title mismatch — A-Level Business (page: A Levels - CATS Cambridge)
+- cardiff-sixth-form: title mismatch — Summer Academic Programme (page: Summer 2025 Newsletter | Cardiff Sixth Form College)
+- cats-cambridge: title mismatch — GCSE Physics (page: GCSE - CATS Cambridge)
+- city-london: title mismatch — BSc (Hons) Investment and Financial Risk Management with Placement Year (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cats-cambridge: title mismatch — GCSE Religious Studies (page: GCSE - CATS Cambridge)
+- cesi: title mismatch — Engineering Degree — English Track (Master's level) (page: Programs &#8211; CESI)
+- charles-sturt: title mismatch — Diploma of Accounting (page: Courses - Charles Sturt University Sydney Melbourne Campus)
+- cleveland-state: title mismatch — Health Sciences - Health Promotion (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- college-de-paris: title mismatch — Mastere in Fashion and Luxury Goods Management (Ecole Conte) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- champittet: title mismatch — IB Diploma Programme (page: Coll&#232;ge Champittet, &#233;cole internationale | Nord Anglia)
+- college-of-marin: title mismatch — AS in Machine Technology (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- college-de-paris: title mismatch — Bachelor in Business Administration (Ascencia Malta) (page: Edvoy Edge - Transform Student Recruitment | Partner with Us Today)
+- cleveland-state: title mismatch — MS Biology (page: Cleveland State University Home | Cleveland State University)
+- ...and 1027 more
