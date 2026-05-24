@@ -6,11 +6,11 @@
 |---|---|---|
 | Total universities | 647 | 100% |
 | Programs OK (>=30) | 409 | 63% |
-| Programs LOW (10-29) | 122 | 19% |
-| Programs CRITICAL (<10) | 116 | 18% |
-| Campuses MISSING (<3) | 318 | 49% |
+| Programs LOW (10-29) | 124 | 19% |
+| Programs CRITICAL (<10) | 114 | 18% |
+| Campuses MISSING (<3) | 316 | 49% |
 | Accommodation MISSING (<3) | 647 | 100% |
-| No logo | 86 | 13% |
+| No logo | 83 | 13% |
 | No gallery photos | 8 | 1% |
 | Gallery thin (<4 photos) | 8 | 1% |
 | Campuses without photos | 615 | 95% |
@@ -69,7 +69,7 @@
 | language-studies-international | United Kingdom | 1 | 1 | 0 | undefined | N | 155 |
 | lci-barcelona | Spain | 5 | 1 | 0 | undefined | N | 155 |
 | mater-dei | United States | 8 | 2 | 0 | undefined | N | 155 |
-| merrick-prep | Canada | 3 | 1 | 0 | undefined | N | 155 |
+| merrick-prep | Canada | 1 | 1 | 0 | undefined | N | 155 |
 | mmu-international-college | United Kingdom | 5 | 1 | 0 | undefined | N | 155 |
 | multihexa | Canada | 4 | 1 | 0 | undefined | N | 155 |
 | north-broward-prep | United States | 8 | 2 | 0 | undefined | N | 155 |
@@ -91,13 +91,13 @@
 | icn-creactive-business-school | France | 4 | 2 | 0 | 0 | Y | 150 |
 | srh-haarlem-university-of-applied-sciences | Netherlands | 4 | 1 | 0 | 0 | Y | 150 |
 | abbey-dld-london | United Kingdom | 7 | 2 | 0 | undefined | Y | 140 |
+| aberystwyth | United Kingdom | 9 | 2 | 0 | undefined | Y | 140 |
 | american-institute-of-applied-sciences-in-switzerland | Switzerland | 7 | 1 | 0 | undefined | Y | 140 |
 | atelier-chardon-savard | France | 1 | 1 | 0 | undefined | Y | 140 |
-| atilim | Turkey | 4 | 1 | 0 | undefined | Y | 140 |
 | australian-institute-of-technical-training | Australia | 8 | 1 | 0 | undefined | Y | 140 |
 | australian-performing-arts-conservatory | Australia | 3 | 1 | 0 | undefined | Y | 140 |
 | california-institute-of-advanced-management | United States | 1 | 1 | 0 | undefined | Y | 140 |
-| canadian-tourism-college | Canada | 5 | 2 | 0 | undefined | Y | 140 |
+| canadian-tourism-college | Canada | 1 | 2 | 0 | undefined | Y | 140 |
 | cardiff-sixth-form | United Kingdom | 5 | 1 | 0 | undefined | Y | 140 |
 | cesar-ritz-colleges | Switzerland | 6 | 2 | 0 | undefined | Y | 140 |
 | champittet | Switzerland | 4 | 1 | 0 | undefined | Y | 140 |
@@ -124,7 +124,7 @@
 | language-studies-international | 1 | 1 | 0 | undefined | 155 |
 | lci-barcelona | 5 | 1 | 0 | undefined | 155 |
 | mater-dei | 8 | 2 | 0 | undefined | 155 |
-| merrick-prep | 3 | 1 | 0 | undefined | 155 |
+| merrick-prep | 1 | 1 | 0 | undefined | 155 |
 | mmu-international-college | 5 | 1 | 0 | undefined | 155 |
 | multihexa | 4 | 1 | 0 | undefined | 155 |
 | north-broward-prep | 8 | 2 | 0 | undefined | 155 |
@@ -146,13 +146,13 @@
 | icn-creactive-business-school | 4 | 2 | 0 | 0+L | 150 |
 | srh-haarlem-university-of-applied-sciences | 4 | 1 | 0 | 0+L | 150 |
 | abbey-dld-london | 7 | 2 | 0 | undefined+L | 140 |
+| aberystwyth | 9 | 2 | 0 | undefined+L | 140 |
 | american-institute-of-applied-sciences-in-switzerland | 7 | 1 | 0 | undefined+L | 140 |
 | atelier-chardon-savard | 1 | 1 | 0 | undefined+L | 140 |
-| atilim | 4 | 1 | 0 | undefined+L | 140 |
 | australian-institute-of-technical-training | 8 | 1 | 0 | undefined+L | 140 |
 | australian-performing-arts-conservatory | 3 | 1 | 0 | undefined+L | 140 |
 | california-institute-of-advanced-management | 1 | 1 | 0 | undefined+L | 140 |
-| canadian-tourism-college | 5 | 2 | 0 | undefined+L | 140 |
+| canadian-tourism-college | 1 | 2 | 0 | undefined+L | 140 |
 | cardiff-sixth-form | 5 | 1 | 0 | undefined+L | 140 |
 | cesar-ritz-colleges | 6 | 2 | 0 | undefined+L | 140 |
 | champittet | 4 | 1 | 0 | undefined+L | 140 |
@@ -161,13 +161,14 @@
 | david-game | 7 | 1 | 0 | undefined+L | 140 |
 | dea-canadian-college | 8 | 1 | 0 | undefined+L | 140 |
 | difc-dublin | 9 | 1 | 0 | undefined+L | 140 |
-| doverbroecks | 4 | 1 | 0 | undefined+L | 140 |
+| doverbroecks | 3 | 1 | 0 | undefined+L | 140 |
 | ece-engineering-school | 1 | 1 | 0 | undefined+L | 140 |
 | essca-school-of-management | 1 | 1 | 0 | undefined+L | 140 |
 | health-sciences-university | 1 | 1 | 0 | undefined+L | 140 |
 | him-business-school | 4 | 1 | 0 | undefined+L | 140 |
 | humber-polytechnic | 2 | 1 | 0 | undefined+L | 140 |
 | iesa-arts-and-culture | 5 | 1 | 0 | undefined+L | 140 |
+| institut-culinaire-france | 7 | 1 | 0 | undefined+L | 140 |
 | institut-francais-de-lhotellerie | 3 | 1 | 0 | undefined+L | 140 |
 | istec-business-school | 8 | 1 | 0 | undefined+L | 140 |
 | jibc | 9 | 2 | 0 | undefined+L | 140 |
@@ -176,22 +177,20 @@
 | kennesaw-state-university | 3 | 2 | 0 | undefined+L | 140 |
 | koc-turkey | 7 | 1 | 0 | undefined+L | 140 |
 | lincoln-bishop-university | 7 | 1 | 0 | undefined+L | 140 |
-| marangoni-london | 6 | 1 | 0 | undefined+L | 140 |
 | melbourne-city-institute-of-education | 4 | 1 | 0 | undefined+L | 140 |
 | new-england-college | 3 | 1 | 0 | undefined+L | 140 |
-| oxford-sixth-form | 4 | 1 | 0 | undefined+L | 140 |
+| oxford-sixth-form | 3 | 1 | 0 | undefined+L | 140 |
 | rajiv-gandhi-university-school-of-science-and-technology | 2 | 1 | 0 | undefined+L | 140 |
 | rcsi | 7 | 1 | 0 | undefined+L | 140 |
 | saba-university-school-of-medicine | 2 | 2 | 0 | undefined+L | 140 |
-| sabanci | 6 | 1 | 0 | undefined+L | 140 |
 | salem-university | 3 | 1 | 0 | undefined+L | 140 |
-| san-pablo-ceu-madrid | 6 | 2 | 0 | undefined+L | 140 |
+| san-pablo-ceu-madrid | 5 | 2 | 0 | undefined+L | 140 |
 | sofia-university | 3 | 2 | 0 | undefined+L | 140 |
 | southern-illinois-university-edwardsville | 2 | 1 | 0 | undefined+L | 140 |
-| st-andrews-cambridge | 6 | 1 | 0 | undefined+L | 140 |
+| st-andrews-cambridge | 5 | 1 | 0 | undefined+L | 140 |
 | st-bees | 5 | 1 | 0 | undefined+L | 140 |
 | st-matthews-university-school-of-medicine | 3 | 2 | 0 | undefined+L | 140 |
-| stover-school | 5 | 1 | 0 | undefined+L | 140 |
+| stover-school | 4 | 1 | 0 | undefined+L | 140 |
 | sup-de-pub | 4 | 1 | 0 | undefined+L | 140 |
 | the-university-college-of-enterprise-and-administration | 4 | 1 | 0 | undefined+L | 140 |
 | thomas-jefferson-university | 1 | 1 | 0 | undefined+L | 140 |
@@ -211,10 +210,10 @@
 | es-dubai | 8 | 4 | 0 | undefined+L | 120 |
 | heip-hautes-etudes-internationales-and-politiques | 8 | 5 | 0 | undefined+L | 120 |
 | ichm | 8 | 3 | 0 | undefined+L | 120 |
-| kings-bournemouth | 7 | 3 | 0 | undefined+L | 120 |
+| kings-bournemouth | 4 | 3 | 0 | undefined+L | 120 |
 | kings-brighton | 6 | 3 | 0 | undefined+L | 120 |
 | kings-london | 9 | 3 | 0 | undefined+L | 120 |
-| kings-oxford | 7 | 3 | 0 | undefined+L | 120 |
+| kings-oxford | 4 | 3 | 0 | undefined+L | 120 |
 | lsc-malta | 5 | 5 | 0 | undefined+L | 120 |
 | northern-college-ca | 8 | 5 | 0 | undefined+L | 120 |
 | queen-ethelburgas | 5 | 3 | 0 | undefined+L | 120 |
@@ -222,8 +221,6 @@
 | repton-dubai | 8 | 3 | 0 | undefined+L | 120 |
 | srh-international-college | 9 | 3 | 0 | undefined+L | 120 |
 | trine-university | 4 | 4 | 0 | undefined+L | 120 |
-| windsor | 9 | 4 | 0 | undefined+L | 120 |
-| brock | 10 | 1 | 0 | undefined | 85 |
 | cctb | 19 | 1 | 0 | undefined | 85 |
 | fad-institute-dubai | 15 | 1 | 0 | undefined | 85 |
 | icae | 25 | 1 | 0 | undefined | 85 |
@@ -233,20 +230,20 @@
 | queen-mary-malta | 12 | 1 | 0 | undefined | 85 |
 | saint-marys | 20 | 1 | 0 | undefined | 85 |
 | stirling-rak | 20 | 1 | 0 | undefined | 85 |
-| university-of-huddersfield-london | 14 | 1 | 0 | undefined | 85 |
 | northtec-tai-tokerau-wananga | 13 | 2 | 0 | 0+L | 80 |
 | abat-oliba-barcelona | 28 | 2 | 0 | undefined+L | 70 |
 | abbey-manchester | 10 | 1 | 0 | undefined+L | 70 |
-| aberystwyth | 12 | 2 | 0 | undefined+L | 70 |
 | academy-of-learning-career-college-scarborough | 24 | 1 | 0 | undefined+L | 70 |
-| acadia | 20 | 2 | 0 | undefined+L | 70 |
+| acadia | 19 | 2 | 0 | undefined+L | 70 |
 | amity-university-dubai | 28 | 1 | 0 | undefined+L | 70 |
 | amsterdam-tech | 11 | 1 | 0 | undefined+L | 70 |
 | asu-london | 25 | 1 | 0 | undefined+L | 70 |
 | atelier-de-sevres | 12 | 2 | 0 | undefined+L | 70 |
+| atilim | 22 | 1 | 0 | undefined+L | 70 |
 | auckland-institute-of-studies | 29 | 1 | 0 | undefined+L | 70 |
 | australian-vocational-training-academy | 16 | 1 | 0 | undefined+L | 70 |
 | birkbeck | 29 | 1 | 0 | undefined+L | 70 |
+| brock | 18 | 1 | 0 | undefined+L | 70 |
 | budapest-university-of-economics-and-business | 10 | 1 | 0 | undefined+L | 70 |
 | c3s-business-school | 18 | 1 | 0 | undefined+L | 70 |
 | cape-breton-university | 11 | 1 | 0 | undefined+L | 70 |
@@ -258,7 +255,7 @@
 | csvpa-china | 10 | 1 | 0 | undefined+L | 70 |
 | dave-school | 12 | 1 | 0 | undefined+L | 70 |
 | demont-institute-of-management-and-technology | 16 | 1 | 0 | undefined+L | 70 |
-| dli-bandung | 28 | 2 | 0 | undefined+L | 70 |
+| dli-bandung | 22 | 2 | 0 | undefined+L | 70 |
 | ecole-management-appliquee | 18 | 2 | 0 | undefined+L | 70 |
 | enae | 27 | 1 | 0 | undefined+L | 70 |
 | esc-clermont | 10 | 1 | 0 | undefined+L | 70 |
@@ -273,35 +270,37 @@
 | htmi-international-hotel-and-tourism-institute-switzerland | 14 | 1 | 0 | undefined+L | 70 |
 | ibs-international-business-school | 24 | 2 | 0 | undefined+L | 70 |
 | ibu-canada | 17 | 1 | 0 | undefined+L | 70 |
-| institut-culinaire-france | 10 | 1 | 0 | undefined+L | 70 |
 | international-university-of-monaco | 13 | 1 | 0 | undefined+L | 70 |
 | iqs-institut-quimic-de-sarria | 11 | 1 | 0 | undefined+L | 70 |
 | learn-key-institute | 14 | 2 | 0 | undefined+L | 70 |
 | manchester-architecture | 25 | 1 | 0 | undefined+L | 70 |
+| marangoni-london | 17 | 1 | 0 | undefined+L | 70 |
 | marangoni-milan | 24 | 2 | 0 | undefined+L | 70 |
 | middlesex-university-mauritius | 22 | 1 | 0 | undefined+L | 70 |
 | munich-university-of-digital-technologies-and-applied-scienc | 27 | 1 | 0 | undefined+L | 70 |
+| murdoch | 28 | 2 | 0 | undefined+L | 70 |
 | nci-ireland | 16 | 1 | 0 | undefined+L | 70 |
 | new-european-college | 11 | 1 | 0 | undefined+L | 70 |
 | north-seattle-college | 21 | 1 | 0 | undefined+L | 70 |
 | nuova-accademia-di-belle-arti-naba | 13 | 2 | 0 | undefined+L | 70 |
 | pihms | 13 | 1 | 0 | undefined+L | 70 |
 | porto-business-school | 22 | 1 | 0 | undefined+L | 70 |
-| reading | 24 | 2 | 0 | undefined+L | 70 |
+| reading | 22 | 2 | 0 | undefined+L | 70 |
+| sabanci | 15 | 1 | 0 | undefined+L | 70 |
 | selkirk-college | 10 | 1 | 0 | undefined+L | 70 |
-| sf-state | 22 | 2 | 0 | undefined+L | 70 |
+| sf-state | 21 | 2 | 0 | undefined+L | 70 |
 | st-georges-grenada | 10 | 2 | 0 | undefined+L | 70 |
 | st-michaels-school | 19 | 1 | 0 | undefined+L | 70 |
 | suffolk | 29 | 2 | 0 | undefined+L | 70 |
 | swiss-hotel-management-school | 12 | 2 | 0 | undefined+L | 70 |
 | the-university-of-western-australia | 29 | 1 | 0 | undefined+L | 70 |
-| ucam-catholic-university-of-murcia | 22 | 2 | 0 | undefined+L | 70 |
 | ucam-murcia | 13 | 2 | 0 | undefined+L | 70 |
 | ue-amsterdam | 14 | 2 | 0 | undefined+L | 70 |
 | university-of-california-irvine-division-of-continuing-educa | 18 | 1 | 0 | undefined+L | 70 |
 | warsaw-business | 20 | 2 | 0 | undefined+L | 70 |
 | kcl-online | 16 | 4 | 0 | undefined | 65 |
-| new-zealand-management-academies-nzma | 11 | 7 | 0 | undefined | 65 |
+| lancaster-leipzig | 17 | 5 | 0 | undefined | 65 |
+| new-zealand-management-academies-nzma | 11 | 8 | 0 | undefined | 65 |
 | newcastle-college-au | 11 | 3 | 0 | undefined | 65 |
 | trebas | 14 | 3 | 0 | undefined | 65 |
 | yoobee-college-of-creative-innovation | 17 | 3 | 0 | undefined | 65 |
@@ -328,53 +327,54 @@
 | durham | 15 | 3 | 0 | undefined+L | 50 |
 | esam | 21 | 3 | 0 | undefined+L | 50 |
 | eynesbury | 20 | 5 | 0 | undefined+L | 50 |
-| fachhochschule-des-mittelstands-fhm-university | 18 | 4 | 0 | undefined+L | 50 |
+| fachhochschule-des-mittelstands-fhm-university | 18 | 6 | 0 | undefined+L | 50 |
 | fraser-international-college | 11 | 3 | 0 | undefined+L | 50 |
 | fresenius-university-of-applied-sciences | 27 | 8 | 0 | undefined+L | 50 |
-| goldsmiths | 18 | 3 | 0 | undefined+L | 50 |
+| goldsmiths | 16 | 3 | 0 | undefined+L | 50 |
 | herzing-college | 14 | 5 | 0 | undefined+L | 50 |
 | icd-paris | 17 | 3 | 0 | undefined+L | 50 |
 | inseec-business-school | 12 | 7 | 0 | undefined+L | 50 |
 | into-oklahoma | 24 | 3 | 0 | undefined+L | 50 |
 | ism-germany | 20 | 6 | 0 | undefined+L | 50 |
-| leeds-isc | 12 | 5 | 0 | undefined+L | 50 |
+| leeds-isc | 11 | 5 | 0 | undefined+L | 50 |
 | les-roches-crans-montana | 23 | 5 | 0 | undefined+L | 50 |
 | les-roches-marbella | 23 | 5 | 0 | undefined+L | 50 |
 | lisaa | 26 | 9 | 0 | undefined+L | 50 |
 | luiss | 25 | 4 | 0 | undefined+L | 50 |
-| memorial-nl | 24 | 3 | 0 | undefined+L | 50 |
+| memorial-nl | 22 | 3 | 0 | undefined+L | 50 |
 | mount-allison | 24 | 5 | 0 | undefined+L | 50 |
 | ncuk-isc | 16 | 3 | 0 | undefined+L | 50 |
 | nebrija | 25 | 5 | 0 | undefined+L | 50 |
-| nscad | 26 | 3 | 0 | undefined+L | 50 |
+| nscad | 25 | 3 | 0 | undefined+L | 50 |
 | pascal-cyprus | 10 | 4 | 0 | undefined+L | 50 |
 | reach-community-college | 28 | 3 | 0 | undefined+L | 50 |
 | schiller-international-university | 13 | 4 | 0 | undefined+L | 50 |
-| staffordshire | 26 | 5 | 0 | undefined+L | 50 |
+| staffordshire | 25 | 5 | 0 | undefined+L | 50 |
 | strate-design | 14 | 4 | 0 | undefined+L | 50 |
 | trent | 15 | 5 | 0 | undefined+L | 50 |
 | trinity-western | 17 | 5 | 0 | undefined+L | 50 |
 | ue-university-of-europe-for-applied-sciences | 29 | 5 | 0 | undefined+L | 50 |
+| windsor | 16 | 4 | 0 | undefined+L | 50 |
 | yamanashi-gakuin | 12 | 3 | 0 | undefined+L | 50 |
 | qa-higher-education | 58 | 9 | 0 | 0 | 45 |
 | adler | 33 | 1 | 0 | undefined+L | 40 |
 | amsterdam | 271 | 2 | 0 | undefined+L | 40 |
 | aud | 49 | 1 | 0 | undefined+L | 40 |
 | baylor-university | 118 | 1 | 0 | undefined+L | 40 |
-| bcit | 134 | 2 | 0 | undefined+L | 40 |
+| bcit | 141 | 2 | 0 | undefined+L | 40 |
 | bologna-business-school | 154 | 1 | 0 | undefined+L | 40 |
 | bosworth-independent-school | 57 | 2 | 0 | undefined+L | 40 |
 | bournemouth-collegiate-school | 62 | 2 | 0 | undefined+L | 40 |
-| brunel | 171 | 2 | 0 | undefined+L | 40 |
+| brunel | 193 | 2 | 0 | undefined+L | 40 |
 | california-baptist-university | 355 | 1 | 0 | undefined+L | 40 |
 | canadian-university-dubai | 51 | 1 | 0 | undefined+L | 40 |
-| canberra-sydney | 43 | 2 | 0 | undefined+L | 40 |
+| canberra-sydney | 38 | 2 | 0 | undefined+L | 40 |
 | cardiff-met | 125 | 2 | 0 | undefined+L | 40 |
 | carolina-university | 34 | 1 | 0 | undefined+L | 40 |
 | college-of-marin | 67 | 1 | 0 | undefined+L | 40 |
 | colorado-state-university | 126 | 1 | 0 | undefined+L | 40 |
 | concordia-university-st-paul | 102 | 1 | 0 | undefined+L | 40 |
-| constructor | 50 | 1 | 0 | undefined+L | 40 |
+| constructor | 56 | 1 | 0 | undefined+L | 40 |
 | contra-costa-college | 43 | 1 | 0 | undefined+L | 40 |
 | crandall-university | 38 | 1 | 0 | undefined+L | 40 |
 | curtin-singapore | 67 | 2 | 0 | undefined+L | 40 |
@@ -382,7 +382,7 @@
 | depaul | 300 | 2 | 0 | undefined+L | 40 |
 | diablo-valley-college | 89 | 2 | 0 | undefined+L | 40 |
 | domus-academy | 68 | 2 | 0 | undefined+L | 40 |
-| dublin-city-university | 114 | 1 | 0 | undefined+L | 40 |
+| dublin-city-university | 122 | 1 | 0 | undefined+L | 40 |
 | east-tennessee-state-university | 298 | 1 | 0 | undefined+L | 40 |
 | elmhurst-university | 92 | 1 | 0 | undefined+L | 40 |
 | em-normandie-dubai | 58 | 1 | 0 | undefined+L | 40 |
@@ -409,36 +409,33 @@
 | leeds-trinity-university | 100 | 2 | 0 | undefined+L | 40 |
 | lehigh-university | 99 | 1 | 0 | undefined+L | 40 |
 | leicester | 506 | 2 | 0 | undefined+L | 40 |
-| limerick | 107 | 2 | 0 | undefined+L | 40 |
+| limerick | 129 | 2 | 0 | undefined+L | 40 |
 | lincoln-uk | 207 | 1 | 0 | undefined+L | 40 |
 | liverpool-hope | 184 | 2 | 0 | undefined+L | 40 |
 | ljmu-isc | 203 | 1 | 0 | undefined+L | 40 |
 | los-medanos-college | 65 | 1 | 0 | undefined+L | 40 |
 | loughborough-university | 319 | 2 | 0 | undefined+L | 40 |
 | manchester-met | 66 | 2 | 0 | undefined+L | 40 |
-| missouri-state-university | 120 | 1 | 0 | undefined+L | 40 |
 | mount-saint-vincent-ny | 60 | 2 | 0 | undefined+L | 40 |
 | mt-san-antonio-college | 34 | 1 | 0 | undefined+L | 40 |
 | munich-business-school | 31 | 2 | 0 | undefined+L | 40 |
-| murdoch | 31 | 2 | 0 | undefined+L | 40 |
 | new-york-film-academy | 40 | 2 | 0 | undefined+L | 40 |
 | niagara-falls | 39 | 2 | 0 | undefined+L | 40 |
 | nipissing-university | 61 | 1 | 0 | undefined+L | 40 |
 | northeastern-university | 160 | 2 | 0 | undefined+L | 40 |
-| nova-southeastern-university | 31 | 2 | 0 | undefined+L | 40 |
 | ohio-university | 199 | 1 | 0 | undefined+L | 40 |
 | piedmont-virginia-community-college | 32 | 1 | 0 | undefined+L | 40 |
 | polimi-gsom | 97 | 2 | 0 | undefined+L | 40 |
 | queens-college-cuny | 97 | 1 | 0 | undefined+L | 40 |
-| ravensbourne | 103 | 2 | 0 | undefined+L | 40 |
+| ravensbourne | 102 | 2 | 0 | undefined+L | 40 |
 | regents-university-london | 59 | 1 | 0 | undefined+L | 40 |
 | rensselaer-polytechnic-institute | 47 | 1 | 0 | undefined+L | 40 |
 | rit-dubai | 167 | 2 | 0 | undefined+L | 40 |
 | robert-gordon | 227 | 2 | 0 | undefined+L | 40 |
 | sacred-heart-university | 58 | 1 | 0 | undefined+L | 40 |
-| sae-dubai | 34 | 1 | 0 | undefined+L | 40 |
+| sae-dubai | 33 | 1 | 0 | undefined+L | 40 |
 | san-mateo | 81 | 2 | 0 | undefined+L | 40 |
-| san-raffaele | 74 | 1 | 0 | undefined+L | 40 |
+| san-raffaele | 73 | 1 | 0 | undefined+L | 40 |
 | santa-monica-college | 94 | 0 | 0 | undefined+L | 40 |
 | simmons | 138 | 2 | 0 | undefined+L | 40 |
 | south-seattle-college | 49 | 1 | 0 | undefined+L | 40 |
@@ -449,27 +446,29 @@
 | st-francis-xavier | 186 | 2 | 0 | undefined+L | 40 |
 | st-josephs-university | 45 | 1 | 0 | undefined+L | 40 |
 | st-thomas-university | 31 | 1 | 0 | undefined+L | 40 |
-| strathclyde | 615 | 2 | 0 | undefined+L | 40 |
-| suny-geneseo | 109 | 2 | 0 | undefined+L | 40 |
+| strathclyde | 631 | 2 | 0 | undefined+L | 40 |
+| suny-geneseo | 107 | 2 | 0 | undefined+L | 40 |
 | syracuse-university | 55 | 1 | 0 | undefined+L | 40 |
 | texas-state-university | 259 | 2 | 0 | undefined+L | 40 |
 | the-university-of-akron | 168 | 2 | 0 | undefined+L | 40 |
 | the-university-of-scranton | 60 | 1 | 0 | undefined+L | 40 |
-| toronto-met | 101 | 2 | 0 | undefined+L | 40 |
-| trinity-dublin | 241 | 2 | 0 | undefined+L | 40 |
+| toronto-met | 141 | 2 | 0 | undefined+L | 40 |
+| trinity-dublin | 251 | 2 | 0 | undefined+L | 40 |
 | troy-university | 101 | 1 | 0 | undefined+L | 40 |
 | twente | 74 | 2 | 0 | undefined+L | 40 |
-| ua92 | 40 | 1 | 0 | undefined+L | 40 |
+| ua92 | 38 | 1 | 0 | undefined+L | 40 |
 | ubi-brussels | 35 | 2 | 0 | undefined+L | 40 |
+| ucam-catholic-university-of-murcia | 38 | 2 | 0 | undefined+L | 40 |
 | ucl | 962 | 2 | 0 | undefined+L | 40 |
 | uclan-cyprus | 43 | 1 | 0 | undefined+L | 40 |
 | uea | 125 | 2 | 0 | undefined+L | 40 |
 | umass-boston | 103 | 2 | 0 | undefined+L | 40 |
 | university-at-albany | 106 | 1 | 0 | undefined+L | 40 |
-| university-college-dublin | 343 | 1 | 0 | undefined+L | 40 |
+| university-college-dublin | 370 | 1 | 0 | undefined+L | 40 |
 | university-of-bridgeport | 43 | 1 | 0 | undefined+L | 40 |
 | university-of-cincinnati | 265 | 2 | 0 | undefined+L | 40 |
 | university-of-colorado-denver | 181 | 2 | 0 | undefined+L | 40 |
+| university-of-huddersfield-london | 317 | 2 | 0 | undefined+L | 40 |
 | university-of-huddersfield | 315 | 1 | 0 | undefined+L | 40 |
 | university-of-la-verne | 98 | 1 | 0 | undefined+L | 40 |
 | university-of-louisville | 58 | 1 | 0 | undefined+L | 40 |
@@ -478,7 +477,7 @@
 | university-of-north-carolina-at-wilmington | 186 | 1 | 0 | undefined+L | 40 |
 | university-of-northampton | 177 | 1 | 0 | undefined+L | 40 |
 | university-of-redlands | 64 | 1 | 0 | undefined+L | 40 |
-| university-of-regina | 266 | 1 | 0 | undefined+L | 40 |
+| university-of-regina | 318 | 1 | 0 | undefined+L | 40 |
 | university-of-salford | 60 | 1 | 0 | undefined+L | 40 |
 | university-of-west-alabama | 63 | 1 | 0 | undefined+L | 40 |
 | upei | 157 | 2 | 0 | undefined+L | 40 |
@@ -496,22 +495,20 @@
 | edith-cowan | 74 | 4 | 0 | undefined | 35 |
 | into-partnerships | 598 | 37 | 0 | undefined | 35 |
 | james-cook | 34 | 4 | 0 | undefined | 35 |
-| kaplan-anz | 36 | 6 | 0 | undefined | 35 |
-| lancaster-leipzig | 67 | 5 | 0 | undefined | 35 |
+| kaplan-anz | 318 | 22 | 0 | undefined | 35 |
 | lim-college | 37 | 5 | 0 | undefined | 35 |
 | malvern-international | 37 | 16 | 0 | undefined | 35 |
 | new-england-au | 37 | 3 | 0 | undefined | 35 |
 | newcastle-uk | 35 | 3 | 0 | undefined | 35 |
 | oxford | 212 | 4 | 0 | undefined | 35 |
 | rvc | 30 | 4 | 0 | undefined | 35 |
-| study-group | 89 | 31 | 0 | undefined | 35 |
+| study-group | 94 | 31 | 0 | undefined | 35 |
 | tasmania | 41 | 4 | 0 | undefined | 35 |
 | ue-germany | 148 | 6 | 0 | undefined | 35 |
-| western-ontario | 108 | 4 | 0 | undefined | 35 |
 | wyoming | 33 | 5 | 0 | undefined | 35 |
 | srh-hochschule-berlin | 78 | 5 | 0 | 0+L | 30 |
 | toi-ohomai-institute-of-technology | 51 | 6 | 0 | 0+L | 30 |
-| aberdeen | 105 | 4 | 0 | undefined+L | 20 |
+| aberdeen | 107 | 4 | 0 | undefined+L | 20 |
 | abertay | 73 | 5 | 0 | undefined+L | 20 |
 | acap | 74 | 5 | 0 | undefined+L | 20 |
 | adelaide | 541 | 3 | 0 | undefined+L | 20 |
@@ -521,7 +518,7 @@
 | algoma-university | 45 | 3 | 0 | undefined+L | 20 |
 | american-kogod | 128 | 3 | 0 | undefined+L | 20 |
 | american-university | 55 | 4 | 0 | undefined+L | 20 |
-| anglia-ruskin | 68 | 4 | 0 | undefined+L | 20 |
+| anglia-ruskin | 87 | 4 | 0 | undefined+L | 20 |
 | apu-malaysia | 158 | 5 | 0 | undefined+L | 20 |
 | arden | 119 | 18 | 0 | undefined+L | 20 |
 | arizona-state | 395 | 8 | 0 | undefined+L | 20 |
@@ -537,11 +534,11 @@
 | birmingham-dubai | 155 | 3 | 0 | undefined+L | 20 |
 | birmingham | 449 | 4 | 0 | undefined+L | 20 |
 | bournemouth | 223 | 4 | 0 | undefined+L | 20 |
-| bow-valley | 109 | 5 | 0 | undefined+L | 20 |
+| bow-valley | 95 | 5 | 0 | undefined+L | 20 |
 | bradford | 184 | 5 | 0 | undefined+L | 20 |
 | brighton | 631 | 5 | 0 | undefined+L | 20 |
 | bristol | 124 | 3 | 0 | undefined+L | 20 |
-| bsbi | 137 | 10 | 0 | undefined+L | 20 |
+| bsbi | 146 | 10 | 0 | undefined+L | 20 |
 | buckinghamshire-new-university | 140 | 3 | 0 | undefined+L | 20 |
 | cal-lutheran | 73 | 5 | 0 | undefined+L | 20 |
 | california-state-university-east-bay | 154 | 4 | 0 | undefined+L | 20 |
@@ -555,7 +552,7 @@
 | ceg-digital | 37 | 4 | 0 | undefined+L | 20 |
 | cesi | 57 | 8 | 0 | undefined+L | 20 |
 | charles-sturt | 83 | 12 | 0 | undefined+L | 20 |
-| chester | 817 | 9 | 0 | undefined+L | 20 |
+| chester | 821 | 9 | 0 | undefined+L | 20 |
 | city-london | 301 | 7 | 0 | undefined+L | 20 |
 | claremont-grad | 71 | 3 | 0 | undefined+L | 20 |
 | clark | 95 | 5 | 0 | undefined+L | 20 |
@@ -569,26 +566,26 @@
 | curtin | 124 | 6 | 0 | undefined+L | 20 |
 | dalhousie | 44 | 3 | 0 | undefined+L | 20 |
 | dayton | 150 | 5 | 0 | undefined+L | 20 |
-| de-montfort-dubai | 283 | 3 | 0 | undefined+L | 20 |
-| deakin | 199 | 8 | 0 | undefined+L | 20 |
-| debrecen | 43 | 4 | 0 | undefined+L | 20 |
+| de-montfort-dubai | 295 | 3 | 0 | undefined+L | 20 |
+| deakin | 202 | 8 | 0 | undefined+L | 20 |
+| debrecen | 49 | 4 | 0 | undefined+L | 20 |
 | derby | 160 | 3 | 0 | undefined+L | 20 |
 | drew | 95 | 5 | 0 | undefined+L | 20 |
-| drexel | 58 | 4 | 0 | undefined+L | 20 |
+| drexel | 50 | 4 | 0 | undefined+L | 20 |
 | dundee | 337 | 5 | 0 | undefined+L | 20 |
 | eaim | 67 | 3 | 0 | undefined+L | 20 |
 | edinburgh-napier | 166 | 4 | 0 | undefined+L | 20 |
 | edith-cowan-sl | 331 | 5 | 0 | undefined+L | 20 |
 | essex | 841 | 4 | 0 | undefined+L | 20 |
-| eu-business-school-germany | 82 | 4 | 0 | undefined+L | 20 |
+| eu-business-school-germany | 114 | 4 | 0 | undefined+L | 20 |
 | exeter | 946 | 6 | 0 | undefined+L | 20 |
-| fanshawe-college | 133 | 6 | 0 | undefined+L | 20 |
+| fanshawe-college | 143 | 6 | 0 | undefined+L | 20 |
 | federation-university | 42 | 4 | 0 | undefined+L | 20 |
 | fisher-college | 74 | 5 | 0 | undefined+L | 20 |
 | fiu-business | 123 | 4 | 0 | undefined+L | 20 |
-| florida-international | 39 | 4 | 0 | undefined+L | 20 |
+| florida-international | 35 | 4 | 0 | undefined+L | 20 |
 | fox-temple | 62 | 4 | 0 | undefined+L | 20 |
-| galway | 336 | 3 | 0 | undefined+L | 20 |
+| galway | 384 | 3 | 0 | undefined+L | 20 |
 | gannon | 137 | 4 | 0 | undefined+L | 20 |
 | gbs-dubai | 35 | 3 | 0 | undefined+L | 20 |
 | gbsb-global | 142 | 5 | 0 | undefined+L | 20 |
@@ -600,7 +597,7 @@
 | griffith-ireland | 193 | 3 | 0 | undefined+L | 20 |
 | griffith | 858 | 8 | 0 | undefined+L | 20 |
 | guildhouse-school-london | 40 | 5 | 0 | undefined+L | 20 |
-| hague | 54 | 5 | 0 | undefined+L | 20 |
+| hague | 45 | 5 | 0 | undefined+L | 20 |
 | hartford | 205 | 5 | 0 | undefined+L | 20 |
 | heriot-watt-dubai | 243 | 5 | 0 | undefined+L | 20 |
 | heriot-watt-malaysia | 106 | 4 | 0 | undefined+L | 20 |
@@ -609,7 +606,7 @@
 | hofstra | 233 | 3 | 0 | undefined+L | 20 |
 | hull | 71 | 3 | 0 | undefined+L | 20 |
 | hult | 52 | 7 | 0 | undefined+L | 20 |
-| ibs-budapest | 43 | 3 | 0 | undefined+L | 20 |
+| ibs-budapest | 58 | 3 | 0 | undefined+L | 20 |
 | illinois-state | 314 | 3 | 0 | undefined+L | 20 |
 | into-slu | 31 | 3 | 0 | undefined+L | 20 |
 | into-stirling-uni | 334 | 3 | 0 | undefined+L | 20 |
@@ -629,40 +626,42 @@
 | lancaster-univ | 42 | 5 | 0 | undefined+L | 20 |
 | lancaster | 40 | 5 | 0 | undefined+L | 20 |
 | leeds-beckett | 220 | 3 | 0 | undefined+L | 20 |
-| lethbridge | 75 | 3 | 0 | undefined+L | 20 |
+| lethbridge | 122 | 3 | 0 | undefined+L | 20 |
 | lipscomb | 74 | 5 | 0 | undefined+L | 20 |
 | liu-brooklyn | 89 | 5 | 0 | undefined+L | 20 |
 | liu-post | 144 | 5 | 0 | undefined+L | 20 |
 | liu | 48 | 4 | 0 | undefined+L | 20 |
-| liverpool | 805 | 6 | 0 | undefined+L | 20 |
+| liverpool | 812 | 6 | 0 | undefined+L | 20 |
 | london-met | 299 | 4 | 0 | undefined+L | 20 |
 | london-south-bank | 196 | 3 | 0 | undefined+L | 20 |
 | lsu | 231 | 4 | 0 | undefined+L | 20 |
 | macewan | 35 | 5 | 0 | undefined+L | 20 |
-| manitoba | 91 | 3 | 0 | undefined+L | 20 |
+| manitoba | 100 | 3 | 0 | undefined+L | 20 |
 | marist | 41 | 3 | 0 | undefined+L | 20 |
 | massey | 525 | 5 | 0 | undefined+L | 20 |
 | media-design-germany | 44 | 3 | 0 | undefined+L | 20 |
 | mercer | 30 | 4 | 0 | undefined+L | 20 |
-| metropolitan-budapest | 51 | 4 | 0 | undefined+L | 20 |
+| metropolitan-budapest | 64 | 4 | 0 | undefined+L | 20 |
 | miami-oh | 215 | 6 | 0 | undefined+L | 20 |
 | middlesex-dubai | 245 | 5 | 0 | undefined+L | 20 |
+| missouri-state-university | 277 | 4 | 0 | undefined+L | 20 |
 | monash-university | 182 | 6 | 0 | undefined+L | 20 |
 | montclair-state | 141 | 3 | 0 | undefined+L | 20 |
-| mount-saint-vincent | 73 | 4 | 0 | undefined+L | 20 |
+| mount-saint-vincent | 70 | 4 | 0 | undefined+L | 20 |
 | murdoch-dubai | 47 | 5 | 0 | undefined+L | 20 |
 | murray-state-university | 148 | 6 | 0 | undefined+L | 20 |
-| navitas | 488 | 62 | 0 | undefined+L | 20 |
+| navitas | 488 | 63 | 0 | undefined+L | 20 |
 | new-haven | 34 | 4 | 0 | undefined+L | 20 |
 | newcastle-au | 315 | 4 | 0 | undefined+L | 20 |
-| nicosia-medical | 76 | 4 | 0 | undefined+L | 20 |
+| nicosia-medical | 76 | 5 | 0 | undefined+L | 20 |
 | nicosia | 33 | 3 | 0 | undefined+L | 20 |
 | nmit-nz | 42 | 3 | 0 | undefined+L | 20 |
 | northumbria | 385 | 6 | 0 | undefined+L | 20 |
 | notre-dame-au | 70 | 5 | 0 | undefined+L | 20 |
-| nottingham-ningbo | 291 | 6 | 0 | undefined+L | 20 |
+| nottingham-ningbo | 298 | 6 | 0 | undefined+L | 20 |
 | nottingham-trent | 334 | 7 | 0 | undefined+L | 20 |
 | nottingham | 281 | 5 | 0 | undefined+L | 20 |
+| nova-southeastern-university | 31 | 3 | 0 | undefined+L | 20 |
 | nyit | 79 | 4 | 0 | undefined+L | 20 |
 | ontario-tech | 62 | 5 | 0 | undefined+L | 20 |
 | oregon-state | 365 | 5 | 0 | undefined+L | 20 |
@@ -680,20 +679,20 @@
 | reading-malaysia | 388 | 4 | 0 | undefined+L | 20 |
 | rmit-university | 238 | 3 | 0 | undefined+L | 20 |
 | roehampton | 345 | 5 | 0 | undefined+L | 20 |
-| royal-holloway | 484 | 3 | 0 | undefined+L | 20 |
+| royal-holloway | 490 | 3 | 0 | undefined+L | 20 |
 | sae | 67 | 5 | 0 | undefined+L | 20 |
 | sask-polytechnic | 32 | 4 | 0 | undefined+L | 20 |
-| seneca | 216 | 6 | 0 | undefined+L | 20 |
+| seneca | 248 | 6 | 0 | undefined+L | 20 |
 | sheffield-hallam | 341 | 4 | 0 | undefined+L | 20 |
-| sheridan | 77 | 3 | 0 | undefined+L | 20 |
+| sheridan | 88 | 3 | 0 | undefined+L | 20 |
 | simon-fraser | 104 | 3 | 0 | undefined+L | 20 |
 | soas | 533 | 4 | 0 | undefined+L | 20 |
 | solent | 42 | 3 | 0 | undefined+L | 20 |
-| south-carolina | 46 | 3 | 0 | undefined+L | 20 |
+| south-carolina | 37 | 3 | 0 | undefined+L | 20 |
 | south-east-technological-university | 177 | 3 | 0 | undefined+L | 20 |
 | south-wales | 576 | 10 | 0 | undefined+L | 20 |
 | southeast-missouri-state-university | 157 | 3 | 0 | undefined+L | 20 |
-| srh-germany | 74 | 3 | 0 | undefined+L | 20 |
+| srh-germany | 63 | 3 | 0 | undefined+L | 20 |
 | sruc | 55 | 5 | 0 | undefined+L | 20 |
 | st-lawrence-college | 67 | 3 | 0 | undefined+L | 20 |
 | st-marys-ca | 55 | 3 | 0 | undefined+L | 20 |
@@ -710,8 +709,8 @@
 | temple | 179 | 5 | 0 | undefined+L | 20 |
 | the-university-of-melbourne | 285 | 4 | 0 | undefined+L | 20 |
 | thompson-rivers | 185 | 5 | 0 | undefined+L | 20 |
-| toronto-film-school | 32 | 5 | 0 | undefined+L | 20 |
-| toulouse-business-school | 43 | 3 | 0 | undefined+L | 20 |
+| toronto-film-school | 38 | 5 | 0 | undefined+L | 20 |
+| toulouse-business-school | 67 | 3 | 0 | undefined+L | 20 |
 | towson | 38 | 3 | 0 | undefined+L | 20 |
 | tulane | 48 | 6 | 0 | undefined+L | 20 |
 | tus-shannon | 229 | 3 | 0 | undefined+L | 20 |
@@ -724,8 +723,8 @@
 | uic | 34 | 3 | 0 | undefined+L | 20 |
 | uis | 47 | 3 | 0 | undefined+L | 20 |
 | ulster | 284 | 4 | 0 | undefined+L | 20 |
-| unbc | 79 | 5 | 0 | undefined+L | 20 |
-| university-canada-west | 46 | 3 | 0 | undefined+L | 20 |
+| unbc | 78 | 5 | 0 | undefined+L | 20 |
+| university-canada-west | 43 | 3 | 0 | undefined+L | 20 |
 | university-of-bedfordshire | 270 | 4 | 0 | undefined+L | 20 |
 | university-of-east-london | 294 | 3 | 0 | undefined+L | 20 |
 | university-of-law | 193 | 20 | 0 | undefined+L | 20 |
@@ -743,12 +742,13 @@
 | washington-state | 80 | 9 | 0 | undefined+L | 20 |
 | webster-vienna | 132 | 3 | 0 | undefined+L | 20 |
 | western-new-england | 145 | 4 | 0 | undefined+L | 20 |
+| western-ontario | 97 | 4 | 0 | undefined+L | 20 |
 | western-sydney | 88 | 5 | 0 | undefined+L | 20 |
 | western-washington | 166 | 4 | 0 | undefined+L | 20 |
-| westminster | 324 | 5 | 0 | undefined+L | 20 |
+| westminster | 333 | 5 | 0 | undefined+L | 20 |
 | wilfrid-laurier | 87 | 3 | 0 | undefined+L | 20 |
-| winnipeg | 32 | 4 | 0 | undefined+L | 20 |
-| wittenborg | 116 | 4 | 0 | undefined+L | 20 |
+| winnipeg | 31 | 4 | 0 | undefined+L | 20 |
+| wittenborg | 143 | 4 | 0 | undefined+L | 20 |
 | wollongong-malaysia | 73 | 3 | 0 | undefined+L | 20 |
 | worthgate-school | 76 | 5 | 0 | undefined+L | 20 |
 | wrexham-university | 80 | 3 | 0 | undefined+L | 20 |
