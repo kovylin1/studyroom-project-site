@@ -35,3 +35,18 @@
    run `npm run scrape`. Adelaide/Murdoch/Newcastle/Massey use this pattern.
 
 8. **Terse status:** tables only in the final summary; intermediate updates 1–2 lines.
+
+**Skill `quiet_mode`** — for long pipelines see [QUIET_MODE.md](./QUIET_MODE.md). Trigger phrases: «use skill quiet_mode», «работай тихо», «overnight pipeline», «autonomous bg». Codewords (ПАУК/ПЧЕЛА/БОБР/МУХА/ОРЁЛ/РЕВИЗОР) are part of this skill.
+
+9. **Silent-mode for background tasks (CRITICAL token rule):**
+   When running a long background job (Bash `run_in_background:true`, Agent in background,
+   or a parallel Claude session), **stay silent until completion**.
+   - DO NOT send progress updates ("30% done", "downloading...", "still working").
+   - DO answer the user if they explicitly ask "как там?" / "статус?" / "что по ПАУКу?".
+   - DO report immediately if blocked by: auto-mode classifier rejection, missing creds,
+     schema error that needs human input, or a fatal script crash.
+   - DO send the final summary as a single message when the background job completes.
+   Reason: each chat turn costs ~$0.05–0.30 in LLM tokens; useless progress chatter
+   on a 2-hour scraper run adds up fast. The background script itself costs $0 — keep it that way.
+   How to apply: when you launch a background Bash/Agent, end the response with the
+   launch confirmation. Don't poll or narrate. Wait for the system completion notification.
