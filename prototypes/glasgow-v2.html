@@ -99,6 +99,10 @@
   @media (min-width: 720px) { .site__phone { display: block; } }
   .site__cta { display: none; }
   @media (min-width: 900px) { .site__cta { display: inline-flex; } }
+  .site__wa { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #25D366; color: #fff; flex-shrink: 0; transition: transform .12s ease; }
+  .site__wa:hover { transform: translateY(-1px); text-decoration: none; }
+  .site__wa svg { width: 22px; height: 22px; }
+  @media (min-width: 720px) { .site__wa { display: inline-flex; } }
   .burger { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 10px; background: #fff; display: grid; place-items: center; cursor: pointer; padding: 0; }
   @media (min-width: 1024px) { .burger { display: none; } }
   .burger span { display: block; width: 18px; height: 2px; background: var(--ink); border-radius: 2px; position: relative; transition: transform .2s; }
@@ -295,22 +299,18 @@
   @media (max-width: 720px) {
     .sticky-bottom-cta { display: block; }
     body { padding-bottom: 78px; }
-    .sticky-wa { bottom: 84px; }
+    .chat-fab { bottom: 84px; }
   }
 
-  .chat-fab { position: fixed; bottom: 22px; left: 22px; z-index: 99; background: #fff; border-radius: 16px; padding: 14px; box-shadow: var(--shadow-md); border: 1px solid var(--line); max-width: 280px; display: none; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; font: inherit; text-align: left; }
-  .chat-fab:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-  @media (min-width: 1100px) { .chat-fab { display: block; } }
+  .chat-fab { position: fixed; bottom: 22px; right: 22px; z-index: 100; background: #25D366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(37,211,102,.4); border: none; cursor: pointer; padding: 0; transition: transform .15s ease; }
+  .chat-fab:hover { transform: scale(1.08); }
   .chat-fab.is-hidden { display: none !important; }
-  .chat-fab__head { display: flex; align-items: center; gap: 10px; }
+  .chat-fab svg { width: 30px; height: 30px; }
+  .chat-fab__badge { position: absolute; top: -2px; right: -2px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px; background: #e53935; color: #fff; font-size: 12px; font-weight: 700; line-height: 1; display: grid; place-items: center; border: 2px solid #fff; box-sizing: border-box; }
   .chat-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #ffb6a3, #ff8b6e); display: grid; place-items: center; font-weight: 900; color: #fff; position: relative; flex-shrink: 0; }
   .chat-avatar::after { content: ''; position: absolute; bottom: 1px; right: 1px; width: 11px; height: 11px; border-radius: 50%; background: #25D366; border: 2px solid #fff; }
-  .chat-fab__name { font-weight: 700; font-size: 14px; }
-  .chat-fab__role { font-size: 11px; color: var(--ink-3); }
-  .chat-fab__msg { background: var(--bg-soft); border-radius: 10px; padding: 10px; font-size: 13px; margin-top: 10px; color: var(--ink-2); }
-  .chat-fab__msg b { color: var(--ink); }
 
-  .chat-panel { position: fixed; bottom: 22px; left: 22px; z-index: 99; width: min(360px, calc(100vw - 44px)); background: #fff; border-radius: 18px; box-shadow: var(--shadow-lg); border: 1px solid var(--line); display: none; flex-direction: column; height: min(560px, calc(100vh - 100px)); overflow: hidden; }
+  .chat-panel { position: fixed; bottom: 22px; right: 22px; z-index: 99; width: min(360px, calc(100vw - 44px)); background: #fff; border-radius: 18px; box-shadow: var(--shadow-lg); border: 1px solid var(--line); display: none; flex-direction: column; height: min(560px, calc(100vh - 100px)); overflow: hidden; }
   .chat-panel.is-open { display: flex; animation: chatIn .25s ease; }
   @keyframes chatIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   .chat-panel__head { padding: 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, var(--green), var(--green-dark)); color: #fff; }
@@ -375,6 +375,7 @@
   <div class="wrap site__row">
     <a href="#top" class="brand"><span class="brand__mark">S</span>StudyRoom</a>
     <nav class="nav" id="nav">
+      <a href="/">Каталог</a>
       <a href="#money" data-section="money">Стипендии</a>
       <a href="#programs" data-section="programs">Программы</a>
       <a href="#requirements" data-section="requirements">Требования</a>
@@ -382,18 +383,21 @@
       <a href="#dates" data-section="dates">Сроки</a>
     </nav>
     <a href="tel:+77272222222" class="site__phone">+7 (727) 222-22-22<small>пн–пт 9:00–19:00 по Алматы</small></a>
-    <button class="btn btn--primary site__cta" data-modal-open="consultModal">Бесплатная консультация</button>
+    <a href="https://wa.me/77272222222?text=Здравствуйте,%20я%20с%20лендинга%20University%20of%20Glasgow" class="site__wa" aria-label="Написать в WhatsApp" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.27-1.12a9.95 9.95 0 0 0 5.77 1.84h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0 0 12.04 2zm0 18.08c-1.74 0-3.45-.47-4.95-1.36l-.36-.21-3.69.97.98-3.6-.23-.37a8.16 8.16 0 0 1-1.26-4.4c0-4.55 3.7-8.25 8.25-8.25 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.42 5.83c0 4.55-3.7 8.25-8.25 8.25zm4.52-6.18c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.13-.16.25-.65.8-.8.97-.15.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.25-.02-.39.11-.51.12-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01s-.43.06-.66.31c-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.16 1.74 2.66 4.21 3.73.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.16-.47-.28z"/></svg>
+    </a>
+    <button class="btn btn--primary site__cta" data-modal-open="consultModal">Записаться на консультацию</button>
     <button class="burger" id="burger" aria-label="Меню"><span></span></button>
   </div>
 </header>
 
 <div class="drawer__overlay" id="drawerOverlay"></div>
 <aside class="drawer" id="drawer">
+  <a href="/">Каталог</a>
   <a href="#money">Стипендии и цена</a>
   <a href="#programs">Программы</a>
   <a href="#requirements">Требования</a>
   <a href="#living">Жильё и кампусы</a>
-  <a href="#photos">Фото</a>
   <a href="#faq">Виза и документы</a>
   <a href="#dates">Сроки</a>
   <a href="tel:+77272222222">+7 (727) 222-22-22</a>
@@ -427,6 +431,17 @@
       <div class="hero__media" role="img" aria-label="Главный кампус University of Glasgow" data-lightbox="../site/public/photos/glasgow/1.jpg">
         <div class="hero__media-cap">Главный корпус Gilmorehill — клик чтобы увеличить</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal" id="hero-photos" style="padding: 28px 0 8px;">
+  <div class="wrap">
+    <div class="photo-grid">
+      <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/general/1.jpg" style="background-image: url('../site/public/photos/glasgow/general/1.jpg');"></div>
+      <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/general/2.jpg" style="background-image: url('../site/public/photos/glasgow/general/2.jpg');"></div>
+      <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/general/4.jpg" style="background-image: url('../site/public/photos/glasgow/general/4.jpg');"></div>
+      <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/campuses/2.jpg" style="background-image: url('../site/public/photos/glasgow/campuses/2.jpg');"></div>
     </div>
   </div>
 </section>
@@ -491,11 +506,15 @@
     <p style="max-width: 60ch; color: var(--ink-2);">Бакалавриат, магистратура и подготовительные программы Kaplan. Кликните по программе — детали в попапе.</p>
 
     <div class="tabs" role="tablist">
-      <button class="tab is-active" data-faculty="business">Business, Economics & Finance</button>
-      <button class="tab" data-faculty="sci">Science & Engineering</button>
-      <button class="tab" data-faculty="arts">Arts & Humanities</button>
-      <button class="tab" data-faculty="law">Law & Social Sciences</button>
-      <button class="tab" data-faculty="med">Medical & Life Sciences</button>
+      <button class="tab is-active" data-cat="all">Все</button>
+      <button class="tab" data-cat="school">Школа</button>
+      <button class="tab" data-cat="sixthform">Sixth Form</button>
+      <button class="tab" data-cat="foundation">Foundation</button>
+      <button class="tab" data-cat="bachelor">Бакалавриат</button>
+      <button class="tab" data-cat="premaster">Pre-Master's</button>
+      <button class="tab" data-cat="master">Магистратура</button>
+      <button class="tab" data-cat="english">Английский</button>
+      <button class="tab" data-cat="short">Короткие</button>
     </div>
 
     <div class="programs-grid" id="programsGrid"></div>
@@ -601,41 +620,6 @@
   </div>
 </section>
 
-<section class="section section--alt reveal" id="photos">
-  <div class="wrap">
-    <span class="eyebrow">Как там выглядит</span>
-    <h2>Фото университета <small style="font-weight: 400; font-size: 14px; color: var(--ink-3);">(кликните чтобы увеличить)</small></h2>
-
-    <div class="photo-cat">
-      <h3>Главные виды</h3>
-      <div class="photo-grid">
-        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/1.jpg" style="background-image: url('../site/public/photos/glasgow/general/1.jpg'), url('../site/public/photos/glasgow/1.jpg');"></div>
-        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/2.jpg" style="background-image: url('../site/public/photos/glasgow/general/2.jpg'), url('../site/public/photos/glasgow/2.jpg');"></div>
-        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/3.jpg" style="background-image: url('../site/public/photos/glasgow/general/3.jpg'), url('../site/public/photos/glasgow/3.jpg');"></div>
-        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/4.jpg" style="background-image: url('../site/public/photos/glasgow/general/4.jpg'), url('../site/public/photos/glasgow/4.jpg');"></div>
-      </div>
-    </div>
-
-    <div class="photo-cat">
-      <h3>Кампусы</h3>
-      <div class="photo-grid">
-        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/5.jpg" style="background-image: url('../site/public/photos/glasgow/campuses/1.jpg'), url('../site/public/photos/glasgow/5.jpg');"></div>
-        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/6.jpg" style="background-image: url('../site/public/photos/glasgow/campuses/2.jpg'), url('../site/public/photos/glasgow/6.jpg');"></div>
-        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/7.jpg" style="background-image: url('../site/public/photos/glasgow/campuses/3.jpg'), url('../site/public/photos/glasgow/7.jpg');"></div>
-        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/8.jpg" style="background-image: url('../site/public/photos/glasgow/campuses/4.jpg'), url('../site/public/photos/glasgow/8.jpg');"></div>
-      </div>
-    </div>
-
-    <div class="photo-cat">
-      <h3>Студенты и преподаватели</h3>
-      <div class="photo-grid">
-        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/9.jpg" style="background-image: url('../site/public/photos/glasgow/students/1.jpg'), url('../site/public/photos/glasgow/9.jpg');"></div>
-        <div class="photo-tile" data-lightbox="../site/public/photos/glasgow/10.jpg" style="background-image: url('../site/public/photos/glasgow/students/2.jpg'), url('../site/public/photos/glasgow/10.jpg');"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section reveal" id="about-uni">
   <div class="wrap">
     <span class="eyebrow">О университете</span>
@@ -704,6 +688,16 @@
   </div>
 </section>
 
+<section class="section section--alt reveal" id="map">
+  <div class="wrap">
+    <span class="eyebrow">Где находится</span>
+    <h2>University of Glasgow на карте</h2>
+    <div style="border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-md); margin-top: 8px;">
+      <iframe title="University of Glasgow на карте" src="https://www.google.com/maps?q=University+of+Glasgow,+Glasgow&output=embed" width="100%" height="520" style="border:0; display:block;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
 <section class="section reveal">
   <div class="wrap">
     <div class="cta" id="cta">
@@ -750,16 +744,9 @@
   </div>
 </footer>
 
-<a class="sticky-wa" href="https://wa.me/77272222222?text=Здравствуйте,%20я%20с%20лендинга%20University%20of%20Glasgow" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.27-1.12a9.95 9.95 0 0 0 5.77 1.84h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0 0 12.04 2zm0 18.08c-1.74 0-3.45-.47-4.95-1.36l-.36-.21-3.69.97.98-3.6-.23-.37a8.16 8.16 0 0 1-1.26-4.4c0-4.55 3.7-8.25 8.25-8.25 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.42 5.83c0 4.55-3.7 8.25-8.25 8.25zm4.52-6.18c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.13-.16.25-.65.8-.8.97-.15.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.25-.02-.39.11-.51.12-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01s-.43.06-.66.31c-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.16 1.74 2.66 4.21 3.73.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.16-.47-.28z"/></svg>
-</a>
-
-<button class="chat-fab" id="chatFab" type="button">
-  <div class="chat-fab__head">
-    <div class="chat-avatar">А</div>
-    <div><div class="chat-fab__name">Айгерим</div><div class="chat-fab__role">Куратор по UK · онлайн</div></div>
-  </div>
-  <div class="chat-fab__msg"><b>Привет 👋</b> Я Айгерим, помогаю казахстанцам поступать в UK. Что вас интересует в Glasgow?</div>
+<button class="chat-fab" id="chatFab" type="button" aria-label="Чат с куратором">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+  <span class="chat-fab__badge">1</span>
 </button>
 
 <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Чат с консультантом">
@@ -894,8 +881,14 @@ const PROGRAMS = {
     { lvl: 'master',  title: 'MSc Ecology and Environmental Monitoring',  price: 31050 },
   ],
 };
-const FACULTY_LABELS = { business: 'Business, Economics & Finance', sci: 'Science & Engineering', arts: 'Arts & Humanities', law: 'Law & Social Sciences', med: 'Medical & Life Sciences' };
 const LEVEL_LABELS = { foundation: 'Foundation', pathway: "Pre-Master's", master: 'Магистратура', bachelor: 'Бакалавриат' };
+const CAT_LABELS = { all: 'Все', school: 'Школа', sixthform: 'Sixth Form', foundation: 'Foundation', bachelor: 'Бакалавриат', premaster: "Pre-Master's", master: 'Магистратура', english: 'Английский', short: 'Короткие' };
+const LVL_TO_CAT = { foundation: 'foundation', bachelor: 'bachelor', pathway: 'premaster', master: 'master' };
+const CAT_ORDER = { school: 0, sixthform: 1, foundation: 2, bachelor: 3, premaster: 4, master: 5, english: 6, short: 7, other: 8 };
+const ALL_PROGRAMS = Object.values(PROGRAMS).flat()
+  .map(p => ({ ...p, cat: LVL_TO_CAT[p.lvl] || 'other' }))
+  .sort((a, b) => CAT_ORDER[a.cat] - CAT_ORDER[b.cat]);
+const programsForCat = (cat) => cat === 'all' ? ALL_PROGRAMS : ALL_PROGRAMS.filter(p => p.cat === cat);
 
 const SCHOLARSHIPS = {
   'early-bird': { title: 'Kaplan Early Bird Scholarship · до £2 000', body: `<p><b>Что это:</b> Автоматическая скидка при оплате депозита не позднее чем за 90 дней до старта программы Kaplan (Foundation или Pre-Master's).</p><p><b>Кто проходит:</b> любой студент, поступающий на программу Kaplan через StudyRoom.</p><p><b>Что нужно сделать:</b> подать документы и оплатить депозит за 90+ дней. Скидка применяется автоматически.</p><p><b>Сумма:</b> до £2 000 — зависит от программы и интейка.</p>` },
@@ -973,35 +966,35 @@ overlay.addEventListener('click', () => toggleDrawer(false));
 $$('#drawer a').forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
 
 // programs
-function renderProgramsCards(facultyKey) {
-  const list = PROGRAMS[facultyKey] || [];
-  $('#programsGrid').innerHTML = list.slice(0, 6).map(p => `
+function renderProgramsCards(cat) {
+  const list = programsForCat(cat);
+  $('#programsGrid').innerHTML = list.length ? list.slice(0, 6).map(p => `
     <div class="program" tabindex="0" role="button">
       <div><span class="program__level program__level--${p.lvl}">${LEVEL_LABELS[p.lvl]}</span><div class="program__title">${p.title}</div></div>
       <div class="program__price">£${p.price.toLocaleString('en')}/год</div>
     </div>
-  `).join('');
+  `).join('') : `<p style="grid-column: 1 / -1; color: var(--ink-3); margin: 0;">В этой категории пока нет программ — напишите куратору, подберём индивидуально.</p>`;
 }
-function renderProgramsModal(facultyKey, q='') {
-  const list = PROGRAMS[facultyKey] || [];
+function renderProgramsModal(cat, q='') {
+  const list = programsForCat(cat);
   const filtered = q ? list.filter(p => p.title.toLowerCase().includes(q.toLowerCase())) : list;
-  $('#programsModalFaculty').textContent = FACULTY_LABELS[facultyKey];
+  $('#programsModalFaculty').textContent = CAT_LABELS[cat] || 'Программы';
   $('#programList').innerHTML = filtered.length ? filtered.map(p => `
     <li>
       <span class="program__level program__level--${p.lvl}">${LEVEL_LABELS[p.lvl]}</span>
       <span>${p.title}</span>
       <strong style="color: var(--green); white-space: nowrap;">£${p.price.toLocaleString('en')}/год</strong>
     </li>
-  `).join('') : `<li style="grid-template-columns: 1fr; color: var(--ink-3);">Ничего не нашли по «${q}». Попробуйте другое слово.</li>`;
+  `).join('') : `<li style="grid-template-columns: 1fr; color: var(--ink-3);">Ничего не нашли${q ? ` по «${q}»` : ' в этой категории'}. Попробуйте другую категорию или слово.</li>`;
 }
-let currentFaculty = 'business';
-renderProgramsCards(currentFaculty);
+let currentCat = 'all';
+renderProgramsCards(currentCat);
 $$('.tab').forEach(t => {
   t.addEventListener('click', () => {
     $$('.tab').forEach(x => x.classList.remove('is-active'));
     t.classList.add('is-active');
-    currentFaculty = t.dataset.faculty;
-    renderProgramsCards(currentFaculty);
+    currentCat = t.dataset.cat;
+    renderProgramsCards(currentCat);
   });
 });
 
@@ -1051,7 +1044,7 @@ document.addEventListener('click', (e) => {
     const id = opener.dataset.modalOpen;
     // close any currently open modal first
     $$('dialog[open]').forEach(d => closeModal(d));
-    if (id === 'programsModal') renderProgramsModal(currentFaculty);
+    if (id === 'programsModal') renderProgramsModal(currentCat);
     openModal(id);
     return;
   }
@@ -1069,7 +1062,7 @@ $$('dialog').forEach(dlg => {
   dlg.addEventListener('close', () => document.body.classList.remove('no-scroll'));
 });
 
-$('#programSearch').addEventListener('input', (e) => renderProgramsModal(currentFaculty, e.target.value));
+$('#programSearch').addEventListener('input', (e) => renderProgramsModal(currentCat, e.target.value));
 
 // scholarship cards
 $$('.scholar').forEach(card => {
