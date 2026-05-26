@@ -31,6 +31,10 @@
   - ~~`campuses[]`~~ — DONE 2026-05-11 (curated campus-facts).
 
 ## TODO
+- **Stage 14b — Clean up & re-scrape the ~122 "no-official-site" universities (START 2026-05-27).** Skipped by the under-60 program expansion (waves 1-3) because their catalog JSON has no resolvable official URL. Lists on disk: `sources/under60-wave1.no-site.json` (76), `wave2.no-site.json` (31), `wave3.no-site.json` (15). Two categories:
+  1. **Collab-sourced junk → DELETE (destructive, confirm list first).** Fake non-university entries from collabinternational.com with `country:"International"` and 6 identical bogus programs all titled "Study in Malta" — e.g. `academic-coaching`, `admission-consultancy`, `dcu-successfull-career-services`, `canadian-universities-to-elevate-your-career`, `berk-alyeni`. Show full filtered list before deleting anything.
+  2. **Real universities with junk collab data → find official site + re-scrape.** Same garbage but legit institution, e.g. `aalto-university`, `czech-technical-university`. Need official-URL discovery (WebSearch/Exa — costs tokens), then `node scraper/expand-programs-verified.mjs --worklist=<file>` with `EXPAND_TARGET=1000` like waves 1-3.
+  - Infra ready: `scraper/build-under60-worklist.mjs` (URL resolution) + expander `--worklist`/`EXPAND_TARGET` flags.
 - **Stage 5.1 — Set up Decap OAuth** (manual, ~10 min). Follow `DECAP_OAUTH.md`: register a GitHub OAuth App, deploy `decap-proxy` Worker on Cloudflare, update `site/public/admin/config.yml` `base_url`.
 - **Stage 6.1 — Connect Cloudflare Pages** (manual, ~5 min). Follow `DEPLOYMENT.md`: connect repo, build cmd `cd site && npm ci && npm run build`, output `site/dist`, attach custom domain.
 - **Stage 5.1 — Set up Decap OAuth** (manual, ~10 min). Follow `DECAP_OAUTH.md`: register a GitHub OAuth App, deploy `decap-proxy` Worker on Cloudflare, update `site/public/admin/config.yml` `base_url`.
