@@ -153,6 +153,11 @@ const galleryItems = u.gallery?.items ?? [];
 const heroPhoto = galleryItems[0]?.img;
 const photoSets = (u as any).photoSets ?? null;
 const moneyBackdrop = photoSets?.campuses?.[0]?.img ?? galleryItems[5]?.img ?? galleryItems[2]?.img ?? heroPhoto;
+// Photo for the "О университете" section — pick one not already shown as hero,
+// in the after-hero strip, or as the money backdrop, so it never repeats.
+const usedImgs = new Set([heroPhoto, ...galleryItems.slice(1, 5).map((g: any) => g.img), moneyBackdrop].filter(Boolean));
+const aboutPhoto = [...galleryItems.map((g: any) => g.img), ...campuses.map((c: any) => c.img)]
+  .find((img) => img && !usedImgs.has(img)) ?? null;
 const descParagraphs = u.description?.paragraphsRu?.length ? u.description.paragraphsRu : (u.description?.paragraphs ?? []);
 const keyFacts = u.description?.keyFactsRu?.length ? u.description.keyFactsRu : (u.description?.keyFacts ?? []);
 
@@ -347,6 +352,9 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   .lp .photo-tile:hover { transform: scale(1.02); }
   .lp .photo-cat { margin-bottom: 28px; }
   .lp .photo-cat h3 { font-size: 18px; margin-bottom: 14px; }
+  .lp .about-photo { aspect-ratio: 21/9; border-radius: 18px; margin-bottom: 28px; background: #ddd center/cover no-repeat; box-shadow: var(--shadow-md); cursor: zoom-in; transition: transform .25s; }
+  .lp .about-photo:hover { transform: scale(1.01); }
+  @media (max-width: 720px) { .lp .about-photo { aspect-ratio: 16/9; } }
   .lp .desc-grid { display: grid; gap: 28px; grid-template-columns: 1fr; }
   @media (min-width: 880px) { .lp .desc-grid { grid-template-columns: 1.4fr 1fr; } }
   .lp .desc-text p { color: var(--ink-2); font-size: 16px; }
@@ -804,10 +812,27 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     </section>
   )}
 
+  {accom.length === 0 && campuses.length === 0 && (photoSets?.general?.length ?? 0) > 0 && (
+    <section class="section reveal" id="uni-gallery">
+      <div class="wrap">
+        <span class="eyebrow">Фото университета</span>
+        <h2>{u.name} — фотогалерея</h2>
+        <div class="photo-grid">
+          {photoSets.general.map((p: any) => (
+            <div class="photo-tile" data-lightbox={p.img} style={`background-image: url('${p.img}')`}></div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   {(descParagraphs.length > 0 || keyFacts.length > 0) && (
     <section class="section reveal" id="about-uni">
       <div class="wrap">
         <span class="eyebrow">О университете</span>
+        {aboutPhoto && (
+          <div class="about-photo" data-lightbox={aboutPhoto} style={`background-image: url('${aboutPhoto}')`}></div>
+        )}
         <div class="desc-grid">
           <div class="desc-text">
             <h2>{u.name}</h2>
