@@ -33,6 +33,8 @@ const AGGREGATOR_DOMAINS = ['kaplanpathways.com','navitas.com','topuniversities.
 const TARGET_TOTAL = Number(process.env.EXPAND_TARGET) || 35;
 // When chasing a high target, allow many more candidate fetches per uni.
 const CAND_CAP = TARGET_TOTAL >= 100 ? 800 : 120;
+// slug -> official site URL, injected from --worklist=<file> ([{slug, officialUrl}]).
+let OFFICIAL_OVERRIDE = {};
 
 async function fetchOk(url, timeoutMs=12000){
   try {
@@ -181,6 +183,7 @@ async function processUni(slug){
   let raw;
   try { raw = await fs.readFile(filePath, 'utf8'); } catch { return { slug, status: 'fail-no-file' }; }
   const uni = JSON.parse(raw);
+  if (OFFICIAL_OVERRIDE[slug]) uni.officialUrl = OFFICIAL_OVERRIDE[slug];
   if ((uni.programs?.length||0) >= TARGET_TOTAL) return { slug, status: 'skip-already-target', count: uni.programs.length };
 
   const siteRoot = await findRealSiteRoot(uni);
@@ -235,7 +238,13 @@ async function processUni(slug){
 const args = process.argv.slice(2);
 let slugs = [];
 const batchArg = args.find(a => a.startsWith('--batch='));
-if (batchArg) {
+const worklistArg = args.find(a => a.startsWith('--worklist='));
+if (worklistArg) {
+  const wlPath = path.resolve(worklistArg.split('=')[1]);
+  const wl = JSON.parse((await fs.readFile(wlPath,'utf8')).replace(/^﻿/,''));
+  slugs = wl.map(b => b.slug);
+  for (const b of wl) if (b.officialUrl) OFFICIAL_OVERRIDE[b.slug] = b.officialUrl;
+} else if (batchArg) {
   const letter = batchArg.split('=')[1];
   const batchPath = path.join(SOURCES_DIR, `expand-batch-${letter}.json`);
   const batch = JSON.parse((await fs.readFile(batchPath,'utf8')).replace(/^﻿/,''));
@@ -243,7 +252,7 @@ if (batchArg) {
 } else {
   slugs = args;
 }
-if (!slugs.length) { console.error('usage: <slug> [<slug>...] OR --batch=J'); process.exit(1); }
+if (!slugs.length) { console.error('usage: <slug> [<slug>...] OR --batch=J OR --worklist=<file.json>'); process.exit(1); }
 
 const CONCURRENCY = 4;
 const results = [];
