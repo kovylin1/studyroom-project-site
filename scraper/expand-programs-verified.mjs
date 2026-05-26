@@ -27,9 +27,12 @@ const INDEX_PATHS = [
 
 const PROG_MARKERS = /\b(BSc|BA|BEng|BBA|BS|BCom|BFA|BMus|LLB|MSc|MA|MBA|MEng|MRes|MPhil|MArch|MFA|MComm|EMBA|LLM|MD|BDS|BVSc|PhD|DPhil|Bachelor|Master|Foundation|Diploma|Certificate)\b/i;
 const COURSE_URL_PATTERN = /\/(course|program(?:me)?|degree|undergraduate|postgraduate|bachelor|master)s?(\/|$|-)/i;
-const AGGREGATOR_DOMAINS = ['kaplanpathways.com','navitas.com','topuniversities.com','oxfordinternational.com','catsglobalschools.com','catsadmissions.com'];
+const AGGREGATOR_DOMAINS = ['kaplanpathways.com','navitas.com','topuniversities.com','oxfordinternational.com','catsglobalschools.com','catsadmissions.com','edvoy.com','collabinternational.com','studygroup.com','wikipedia.org','kingseducation.com','globalbanking.ac.uk'];
 
-const TARGET_TOTAL = 35;
+// Default 35 preserves prior behavior; set EXPAND_TARGET=1000 to "take everything".
+const TARGET_TOTAL = Number(process.env.EXPAND_TARGET) || 35;
+// When chasing a high target, allow many more candidate fetches per uni.
+const CAND_CAP = TARGET_TOTAL >= 100 ? 800 : 120;
 
 async function fetchOk(url, timeoutMs=12000){
   try {
@@ -178,7 +181,7 @@ async function processUni(slug){
   let raw;
   try { raw = await fs.readFile(filePath, 'utf8'); } catch { return { slug, status: 'fail-no-file' }; }
   const uni = JSON.parse(raw);
-  if ((uni.programs?.length||0) >= 30) return { slug, status: 'skip-already-30', count: uni.programs.length };
+  if ((uni.programs?.length||0) >= TARGET_TOTAL) return { slug, status: 'skip-already-target', count: uni.programs.length };
 
   const siteRoot = await findRealSiteRoot(uni);
   if (!siteRoot) return { slug, status: 'fail-no-real-site' };
@@ -196,7 +199,7 @@ async function processUni(slug){
   const existingTitles = new Set((uni.programs||[]).map(p=>(p.title||'').toLowerCase()));
   const verified = [];
   const need = TARGET_TOTAL - (uni.programs?.length||0);
-  const cand = [...candidates].slice(0, Math.min(120, need*4));
+  const cand = [...candidates].slice(0, Math.min(CAND_CAP, Math.max(need*4, CAND_CAP)));
 
   for (const url of cand) {
     if (verified.length >= need) break;
