@@ -23,6 +23,8 @@ const AGGREGATORS_FILE = resolve(PROJECT_ROOT, 'sources/aggregators.md');
 const CATALOG_DIR = resolve(SITE_ROOT, 'src/content/universities');
 const CRON_FILE = resolve(PROJECT_ROOT, '.github/workflows/scrape-monthly.yml');
 const OUTPUT_FILE = resolve(SITE_ROOT, 'public/api/status.json');
+const TASK_REGISTRY_FILE = resolve(PROJECT_ROOT, 'scraper/tasks/registry.json');
+const GAPS_FILE = resolve(PROJECT_ROOT, 'scraper/sources/shmel-worklist.json');
 
 async function readAggregators() {
   try {
@@ -162,14 +164,46 @@ function nextRunFromCron(cron) {
   return candidate.toISOString();
 }
 
+async function readDirectors() {
+  try {
+    const raw = await readFile(TASK_REGISTRY_FILE, 'utf8');
+    return JSON.parse(raw).directors || {};
+  } catch { return {}; }
+}
+
+async function readGaps() {
+  try {
+    const raw = await readFile(GAPS_FILE, 'utf8');
+    const { total, byPriority, generated } = JSON.parse(raw);
+    return { total: total || 0, byPriority: byPriority || {}, generatedAt: generated || null };
+  } catch { return null; }
+}
+
 async function main() {
-  const [catalog, cron, aggregators] = await Promise.all([
+  const [catalog, cron, aggregators, directors, gaps] = await Promise.all([
     readCatalog(),
     readCronExpression(),
     readAggregators(),
+    readDirectors(),
+    readGaps(),
   ]);
   const registry = await readRegistry(aggregators);
-  const merged = registry.map((row) => ({ ...row, catalog: catalog[row.slug] ?? null }));
+
+  // Attach gap priority per-uni from worklist
+  let gapBySlug = {};
+  if (gaps) {
+    try {
+      const raw = await readFile(GAPS_FILE, 'utf8');
+      const wl = JSON.parse(raw);
+      for (const item of wl.items || []) gapBySlug[item.slug] = item.priority;
+    } catch {}
+  }
+
+  const merged = registry.map((row) => ({
+    ...row,
+    catalog: catalog[row.slug] ?? null,
+    gapPriority: gapBySlug[row.slug] || null,
+  }));
   const defaultProfile = aggregators[0] ?? {
     slug: 'kaplan-pathways',
     name: 'Kaplan Pathways',
@@ -196,6 +230,8 @@ async function main() {
       tier: defaultProfile.tier,
     },
     aggregators,
+    directors,
+    gaps,
     registry: merged,
     generatedAt: new Date().toISOString(),
     isStaticSnapshot: true,

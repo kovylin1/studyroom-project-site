@@ -1,75 +1,56 @@
-name: Verify catalog accuracy
-
-# On-demand verification triggered from the manager page (or manually via
-# the Actions UI). Samples 5 programs per university, checks each
-# programUrl is alive + page title still matches the stored title, then
-# commits site/public/api/verify.json back to main.
-#
-# The browser-side trigger uses a fine-grained PAT with "Actions:
-# Read+Write" scope on this repo. After dispatch, the manager page polls
-# the workflow status and pulls the fresh verify.json directly from
-# raw.githubusercontent.com (CORS-allowed) — no Cloudflare redeploy needed.
+name: Verify link freshness (on-demand)
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:   # запускается кнопкой "Проверить актуальность" в manager UI
+
+concurrency:
+  group: verify
+  cancel-in-progress: true
 
 jobs:
   verify:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    timeout-minutes: 15
+
     steps:
-      - name: Checkout main
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: |
+            scraper/package-lock.json
+            site/package-lock.json
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
+      - name: Install deps
+        run: cd scraper && npm ci && cd ../site && npm ci
 
-      - name: Install scraper deps
-        working-directory: scraper
-        run: npm ci
+      # Обновляем worklist
+      - name: detect-gaps
+        run: node scraper/detect-gaps.mjs
 
-      - name: Run verifier across all universities
-        working-directory: scraper
-        run: npm run verify
+      # ШМЕЛЬ — топ-50 unis с gap-проблемами
+      - name: shmel (limit 50)
+        run: node scraper/shmel.mjs --limit=50 --concurrency=6
 
-      - name: Commit verify.json to main
-        id: commit
+      # Revizor — link liveness (3 программы на университет)
+      - name: revizor
+        run: node scraper/revizor.mjs
+        continue-on-error: true
+
+      # Генерируем verify.json для manager UI
+      - name: generate verify.json
+        run: node site/scripts/generate-verify.mjs
+
+      # Build чтобы обновить status.json
+      - name: build site
+        run: cd site && npm run build
+
+      - name: commit results
         run: |
-          git config user.name "studyroom-bot"
-          git config user.email "studyroom-bot@users.noreply.github.com"
-          git add site/public/api/verify.json
-          if git diff --staged --quiet; then
-            echo "verify.json unchanged."
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            git commit -m "chore(verify): on-demand accuracy check (run ${{ github.run_id }})"
-            git push origin HEAD:main
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Build site (refreshes dist with new verify.json)
-        if: steps.commit.outputs.changed == 'true'
-        working-directory: site
-        run: |
-          npm ci
-          npm run build
-
-      - name: Deploy to Cloudflare Pages
-        # Same conditional as scrape-monthly.yml: skip when secrets aren't
-        # configured. Repo owners who later connect Cloudflare↔GitHub via the
-        # dashboard get auto-deploy on the push above instead.
-        if: steps.commit.outputs.changed == 'true' && env.CLOUDFLARE_API_TOKEN != ''
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        working-directory: site
-        run: |
-          npx --yes wrangler@latest pages deploy dist \
-            --project-name=studyroom-project-site \
-            --branch=main \
-            --commit-dirty=true
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/public/api/ scraper/sources/
+          git diff --staged --quiet || git commit -m "chore: verify $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push

@@ -47,6 +47,59 @@
       "tier": "aggregator"
     }
   ],
+  "directors": {
+    "pauk": {
+      "name": "ПАУК",
+      "domain": "programs",
+      "fields": [
+        "programs",
+        "tuition.byProgram",
+        "deadlines",
+        "scholarships",
+        "requirements"
+      ],
+      "verifier": "shmel",
+      "script": "scraper/pauk.mjs",
+      "status": "done"
+    },
+    "bobr": {
+      "name": "БОБР",
+      "domain": "campus_accommodation",
+      "fields": [
+        "campuses",
+        "accommodation"
+      ],
+      "verifier": "bobr-verifier",
+      "script": "scraper/bobr.mjs",
+      "status": "done"
+    },
+    "orel": {
+      "name": "ОРЁЛ",
+      "domain": "photos",
+      "fields": [
+        "gallery",
+        "photoSets",
+        "campuses[].img",
+        "accommodation[].img"
+      ],
+      "verifier": "orel-quality",
+      "runsAfter": [
+        "pauk",
+        "bobr"
+      ],
+      "script": "scraper/orel.mjs",
+      "status": "done"
+    }
+  },
+  "gaps": {
+    "total": 804,
+    "byPriority": {
+      "critical": 33,
+      "high": 101,
+      "medium": 670
+    },
+    "generatedAt": "2026-05-28T07:25:30.040Z"
+  },
   "registry": [
     {
       "slug": "asu-london",
@@ -62,7 +115,8 @@
         "sourceHash": "sha256:92f1798aa18ecac5",
         "confidence": "aggregator",
         "programsCount": 25
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bournemouth",
@@ -78,7 +132,8 @@
         "sourceHash": "sha256:7fe2a16124796bcd",
         "confidence": "aggregator",
         "programsCount": 223
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "city-london",
@@ -94,7 +149,8 @@
         "sourceHash": "sha256:28e18b02d65aa11d",
         "confidence": "aggregator",
         "programsCount": 301
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cranfield",
@@ -110,7 +166,8 @@
         "sourceHash": "sha256:9b7eca0e272867e3",
         "confidence": "aggregator",
         "programsCount": 175
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "nottingham-trent",
@@ -126,7 +183,8 @@
         "sourceHash": "sha256:87e5027705a353da",
         "confidence": "aggregator",
         "programsCount": 334
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "queen-mary-london",
@@ -142,7 +200,8 @@
         "sourceHash": "sha256:93044024cd505b04",
         "confidence": "aggregator",
         "programsCount": 390
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "birmingham",
@@ -158,7 +217,8 @@
         "sourceHash": "sha256:28b0f9d073b14ad7",
         "confidence": "aggregator",
         "programsCount": 449
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "brighton",
@@ -174,7 +234,8 @@
         "sourceHash": "sha256:ae8b8d00af7cc4ba",
         "confidence": "aggregator",
         "programsCount": 631
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bristol",
@@ -190,7 +251,8 @@
         "sourceHash": "sha256:7fe3843900d7e153",
         "confidence": "aggregator",
         "programsCount": 124
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "essex",
@@ -206,7 +268,8 @@
         "sourceHash": "sha256:5af0078d3de3be35",
         "confidence": "aggregator",
         "programsCount": 841
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "glasgow",
@@ -222,7 +285,8 @@
         "sourceHash": "sha256:23ae1145086dc91f",
         "confidence": "aggregator",
         "programsCount": 641
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "liverpool",
@@ -238,7 +302,8 @@
         "sourceHash": "sha256:71121ba109ff87c6",
         "confidence": "partner",
         "programsCount": 861
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "nottingham",
@@ -254,7 +319,8 @@
         "sourceHash": "sha256:24964c5ff5ab09f4",
         "confidence": "aggregator",
         "programsCount": 281
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "westminster",
@@ -270,7 +336,8 @@
         "sourceHash": "sha256:c1342d8e348979bc",
         "confidence": "aggregator",
         "programsCount": 333
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "york",
@@ -286,7 +353,8 @@
         "sourceHash": "sha256:d4dfaa2d3d2d434e",
         "confidence": "aggregator",
         "programsCount": 396
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "uwe-bristol",
@@ -302,7 +370,8 @@
         "sourceHash": "sha256:a8579a945adef6eb",
         "confidence": "aggregator",
         "programsCount": 126
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "alberta",
@@ -318,7 +387,8 @@
         "sourceHash": "sha256:b9f8957a85e6f52b",
         "confidence": "aggregator",
         "programsCount": 168
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "victoria",
@@ -334,7 +404,8 @@
         "sourceHash": "sha256:3814b21d6fc6617b",
         "confidence": "aggregator",
         "programsCount": 92
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "arizona-state",
@@ -350,7 +421,8 @@
         "sourceHash": "sha256:8a3b791929434dd5",
         "confidence": "aggregator",
         "programsCount": 395
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "pace",
@@ -366,7 +438,8 @@
         "sourceHash": "sha256:2c1ceecf03652c65",
         "confidence": "aggregator",
         "programsCount": 164
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "simmons",
@@ -382,7 +455,8 @@
         "sourceHash": "sha256:14c0ca5cb5354cc2",
         "confidence": "aggregator",
         "programsCount": 138
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "uconn",
@@ -398,7 +472,8 @@
         "sourceHash": "sha256:59e0f843791666e8",
         "confidence": "aggregator",
         "programsCount": 112
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "oregon",
@@ -414,7 +489,8 @@
         "sourceHash": "sha256:d964737dc06a6672",
         "confidence": "aggregator",
         "programsCount": 72
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "adelaide",
@@ -430,7 +506,8 @@
         "sourceHash": "sha256:f34479167bbbfcd6",
         "confidence": "official",
         "programsCount": 541
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "murdoch",
@@ -446,7 +523,8 @@
         "sourceHash": "sha256:4258c4776b563db3",
         "confidence": "official",
         "programsCount": 28
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "newcastle-au",
@@ -462,7 +540,8 @@
         "sourceHash": "sha256:15b0a4e29538260f",
         "confidence": "official",
         "programsCount": 315
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "massey",
@@ -478,7 +557,8 @@
         "sourceHash": "sha256:0657ae55f21062fe",
         "confidence": "official",
         "programsCount": 525
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "curtin",
@@ -494,7 +574,8 @@
         "sourceHash": "sha256:0d77fd003b49bb6f",
         "confidence": "partner",
         "programsCount": 133
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "deakin",
@@ -510,7 +591,8 @@
         "sourceHash": "sha256:25aa3726c23bc126",
         "confidence": "aggregator",
         "programsCount": 202
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "edith-cowan",
@@ -526,7 +608,8 @@
         "sourceHash": "sha256:05fe4bb35b7b2029",
         "confidence": "aggregator",
         "programsCount": 74
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "griffith",
@@ -542,7 +625,8 @@
         "sourceHash": "sha256:621b8426ffa8ec6d",
         "confidence": "aggregator",
         "programsCount": 858
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "la-trobe",
@@ -558,7 +642,8 @@
         "sourceHash": "sha256:2232569ffee8b6b6",
         "confidence": "aggregator",
         "programsCount": 605
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "western-sydney",
@@ -574,7 +659,8 @@
         "sourceHash": "sha256:e317018e0857f108",
         "confidence": "aggregator",
         "programsCount": 88
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "sydney",
@@ -590,7 +676,8 @@
         "sourceHash": "sha256:cbf18963255fcf14",
         "confidence": "aggregator",
         "programsCount": 541
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "canberra",
@@ -606,7 +693,8 @@
         "sourceHash": "sha256:a56b1bc343599206",
         "confidence": "aggregator",
         "programsCount": 79
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "charles-sturt",
@@ -622,7 +710,8 @@
         "sourceHash": "sha256:bd30d52ffeaa42f4",
         "confidence": "aggregator",
         "programsCount": 83
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "acap",
@@ -638,7 +727,8 @@
         "sourceHash": "sha256:87a49706da3ac252",
         "confidence": "aggregator",
         "programsCount": 74
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "sae",
@@ -654,7 +744,8 @@
         "sourceHash": "sha256:9c6374b1c7f77ff2",
         "confidence": "aggregator",
         "programsCount": 67
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "simon-fraser",
@@ -670,7 +761,8 @@
         "sourceHash": "sha256:2aa358e8e355fae8",
         "confidence": "aggregator",
         "programsCount": 104
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "manitoba",
@@ -686,7 +778,8 @@
         "sourceHash": "sha256:f0834b3515086e35",
         "confidence": "aggregator",
         "programsCount": 100
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "toronto-met",
@@ -702,7 +795,8 @@
         "sourceHash": "sha256:d28d33358ff40589",
         "confidence": "aggregator",
         "programsCount": 141
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lethbridge",
@@ -718,7 +812,8 @@
         "sourceHash": "sha256:c395ca4f5664f030",
         "confidence": "aggregator",
         "programsCount": 122
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "western-ontario",
@@ -734,7 +829,8 @@
         "sourceHash": "sha256:e6f7e01b3a6b2448",
         "confidence": "aggregator",
         "programsCount": 97
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "wilfrid-laurier",
@@ -750,7 +846,8 @@
         "sourceHash": "sha256:2061a155d1c316c9",
         "confidence": "aggregator",
         "programsCount": 87
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lancaster-leipzig",
@@ -766,7 +863,8 @@
         "sourceHash": "sha256:776e87cdd9d16192",
         "confidence": "aggregator",
         "programsCount": 17
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "srh-germany",
@@ -782,7 +880,8 @@
         "sourceHash": "sha256:ac6567f8c5ad09f1",
         "confidence": "aggregator",
         "programsCount": 63
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "dli-bandung",
@@ -798,7 +897,8 @@
         "sourceHash": "sha256:c0edcf5808457e8b",
         "confidence": "aggregator",
         "programsCount": 22
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "hague",
@@ -813,8 +913,9 @@
         "sourceUrl": "https://www.thehaguepathway.nl/",
         "sourceHash": "sha256:caf61e1e6052292c",
         "confidence": "aggregator",
-        "programsCount": 45
-      }
+        "programsCount": 53
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "twente",
@@ -830,7 +931,8 @@
         "sourceHash": "sha256:60faf7eaadce7e94",
         "confidence": "aggregator",
         "programsCount": 74
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "canterbury-nz",
@@ -846,7 +948,8 @@
         "sourceHash": "sha256:d8a520dc747a0d6f",
         "confidence": "aggregator",
         "programsCount": 101
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "waikato",
@@ -862,7 +965,8 @@
         "sourceHash": "sha256:4bfad62ff7b35f2b",
         "confidence": "aggregator",
         "programsCount": 236
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "curtin-singapore",
@@ -878,7 +982,8 @@
         "sourceHash": "sha256:ebc0b40a3d3c369f",
         "confidence": "aggregator",
         "programsCount": 67
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "edith-cowan-sl",
@@ -894,7 +999,8 @@
         "sourceHash": "sha256:9977b7e9211fea5e",
         "confidence": "aggregator",
         "programsCount": 331
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "murdoch-dubai",
@@ -910,7 +1016,8 @@
         "sourceHash": "sha256:3f7d02f3ef0b3b29",
         "confidence": "aggregator",
         "programsCount": 47
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "anglia-ruskin",
@@ -926,7 +1033,8 @@
         "sourceHash": "sha256:3d10665f745f9be1",
         "confidence": "aggregator",
         "programsCount": 87
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "birmingham-city",
@@ -942,7 +1050,8 @@
         "sourceHash": "sha256:5315db3ef592258d",
         "confidence": "aggregator",
         "programsCount": 326
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "brunel",
@@ -958,7 +1067,8 @@
         "sourceHash": "sha256:7b7b4f3bf86ccda3",
         "confidence": "aggregator",
         "programsCount": 193
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "hertfordshire",
@@ -974,7 +1084,8 @@
         "sourceHash": "sha256:27ec4fc4d48d45db",
         "confidence": "aggregator",
         "programsCount": 650
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "portsmouth",
@@ -990,7 +1101,8 @@
         "sourceHash": "sha256:386fc7abfd2037c0",
         "confidence": "aggregator",
         "programsCount": 356
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "robert-gordon",
@@ -1006,7 +1118,8 @@
         "sourceHash": "sha256:3f80e3e60e554d5b",
         "confidence": "aggregator",
         "programsCount": 227
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "keele",
@@ -1022,7 +1135,8 @@
         "sourceHash": "sha256:6bc232d4ca9d460f",
         "confidence": "aggregator",
         "programsCount": 233
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "manchester-met",
@@ -1038,7 +1152,8 @@
         "sourceHash": "sha256:19f6566c900fe562",
         "confidence": "aggregator",
         "programsCount": 66
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "swansea",
@@ -1054,7 +1169,8 @@
         "sourceHash": "sha256:8a00145b112dd349",
         "confidence": "aggregator",
         "programsCount": 603
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "plymouth",
@@ -1070,7 +1186,8 @@
         "sourceHash": "sha256:87cc38fa4da6349d",
         "confidence": "aggregator",
         "programsCount": 454
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "queens-college-cuny",
@@ -1086,7 +1203,8 @@
         "sourceHash": "sha256:62f04dec273bfe63",
         "confidence": "aggregator",
         "programsCount": 97
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "oxford",
@@ -1102,7 +1220,8 @@
         "sourceHash": "sha256:ef709b6af163197e",
         "confidence": "partner",
         "programsCount": 212
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "kent",
@@ -1118,7 +1237,8 @@
         "sourceHash": "sha256:8a6e97507a9ce045",
         "confidence": "aggregator",
         "programsCount": 266
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "dundee",
@@ -1134,7 +1254,8 @@
         "sourceHash": "sha256:184655741b999f7a",
         "confidence": "aggregator",
         "programsCount": 337
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ulster",
@@ -1150,7 +1271,8 @@
         "sourceHash": "sha256:ce51fa3e6764f244",
         "confidence": "aggregator",
         "programsCount": 284
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bradford",
@@ -1166,7 +1288,8 @@
         "sourceHash": "sha256:6f3780e95a2de23d",
         "confidence": "aggregator",
         "programsCount": 184
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "abertay",
@@ -1182,7 +1305,8 @@
         "sourceHash": "sha256:6b21051dee66224b",
         "confidence": "aggregator",
         "programsCount": 73
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bangor",
@@ -1198,7 +1322,8 @@
         "sourceHash": "sha256:a32f315a82b9f9dc",
         "confidence": "aggregator",
         "programsCount": 309
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "de-montfort",
@@ -1214,7 +1339,8 @@
         "sourceHash": "sha256:ea7b2437898061a6",
         "confidence": "aggregator",
         "programsCount": 157
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "greenwich",
@@ -1230,7 +1356,8 @@
         "sourceHash": "sha256:7b4a526b878db13a",
         "confidence": "aggregator",
         "programsCount": 568
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "saint-marys",
@@ -1246,7 +1373,8 @@
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
         "programsCount": 20
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "dalhousie",
@@ -1262,7 +1390,8 @@
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
         "programsCount": 44
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "nscad",
@@ -1278,7 +1407,8 @@
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
         "programsCount": 25
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "mount-saint-vincent",
@@ -1294,7 +1424,8 @@
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
         "programsCount": 70
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "st-francis-xavier",
@@ -1310,7 +1441,8 @@
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
         "programsCount": 186
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "acadia",
@@ -1326,7 +1458,8 @@
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
         "programsCount": 19
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "mount-allison",
@@ -1342,7 +1475,8 @@
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
         "programsCount": 24
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "upei",
@@ -1358,7 +1492,8 @@
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
         "programsCount": 157
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "memorial-nl",
@@ -1374,7 +1509,8 @@
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
         "programsCount": 22
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "sf-state",
@@ -1390,7 +1526,8 @@
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
         "programsCount": 21
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bournemouth-collegiate-school",
@@ -1406,7 +1543,8 @@
         "sourceHash": "sha256:cats-bcs-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 62
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bosworth-independent-school",
@@ -1422,7 +1560,8 @@
         "sourceHash": "sha256:cats-bosworth-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 57
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cats-academy-boston",
@@ -1438,7 +1577,8 @@
         "sourceHash": "sha256:cats-cab-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 53
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "worthgate-school",
@@ -1454,7 +1594,8 @@
         "sourceHash": "sha256:cats-worthgate-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 76
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cats-cambridge",
@@ -1470,7 +1611,8 @@
         "sourceHash": "sha256:cats-catsc-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 43
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "csvpa-cambridge",
@@ -1486,7 +1628,8 @@
         "sourceHash": "sha256:cats-csvpa-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 47
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cats-college-china",
@@ -1502,7 +1645,8 @@
         "sourceHash": "sha256:cats-ccc-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 14
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "csvpa-china",
@@ -1518,7 +1662,8 @@
         "sourceHash": "sha256:cats-csvpac-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 10
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "forest-city-international-school",
@@ -1534,7 +1679,8 @@
         "sourceHash": "sha256:cats-fcis-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 32
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "guildhouse-school-london",
@@ -1550,7 +1696,8 @@
         "sourceHash": "sha256:cats-guildhouse-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 40
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "stafford-house",
@@ -1566,7 +1713,8 @@
         "sourceHash": "sha256:cats-stafford-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 38
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "st-michaels-school",
@@ -1582,7 +1730,8 @@
         "sourceHash": "sha256:cats-stmichaels-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 19
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "northumbria",
@@ -1598,7 +1747,8 @@
         "sourceHash": "sha256:qa-northumbria-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 385
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "oxford-brookes",
@@ -1614,7 +1764,8 @@
         "sourceHash": "sha256:qa-oxford-brookes-2026-05-16",
         "confidence": "aggregator",
         "programsCount": 213
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "solent",
@@ -1629,8 +1780,9 @@
         "sourceUrl": "https://qahighereducation.com/partner-institutions/solent-university/",
         "sourceHash": "sha256:qa-solent-2026-05-16",
         "confidence": "aggregator",
-        "programsCount": 42
-      }
+        "programsCount": 160
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "asc-perth",
@@ -1646,7 +1798,8 @@
         "sourceHash": "sha256:3f8a2c91e74b05d6",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "aut",
@@ -1662,7 +1815,8 @@
         "sourceHash": "sha256:3a7f9c2e5b1d84f6",
         "confidence": "aggregator",
         "programsCount": 31
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "curtin-college",
@@ -1678,7 +1832,8 @@
         "sourceHash": "sha256:b5e3d91a7f2c4086",
         "confidence": "aggregator",
         "programsCount": 28
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "eynesbury",
@@ -1694,7 +1849,8 @@
         "sourceHash": "sha256:9e8f7a6b5c4d3e2f",
         "confidence": "aggregator",
         "programsCount": 20
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "icae",
@@ -1710,7 +1866,8 @@
         "sourceHash": "sha256:a3f91c2e7b4d80f5",
         "confidence": "aggregator",
         "programsCount": 25
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ichm",
@@ -1726,7 +1883,8 @@
         "sourceHash": "sha256:a3f7c219b84e0d52",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "james-cook",
@@ -1742,7 +1900,8 @@
         "sourceHash": "sha256:3a7f92c1d84e5b0f",
         "confidence": "aggregator",
         "programsCount": 34
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "kaplan-business-school",
@@ -1758,7 +1917,8 @@
         "sourceHash": "sha256:a3f1c8e2d74b9f05",
         "confidence": "aggregator",
         "programsCount": 319
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lincoln-nz",
@@ -1774,7 +1934,8 @@
         "sourceHash": "sha256:a3f7c2e1d9b45f08",
         "confidence": "aggregator",
         "programsCount": 54
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "nmit-nz",
@@ -1790,7 +1951,8 @@
         "sourceHash": "sha256:3f9a72c1e84b05d7",
         "confidence": "aggregator",
         "programsCount": 42
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "newcastle-college-au",
@@ -1806,7 +1968,8 @@
         "sourceHash": "sha256:4c8e2f1a9b7d3e5f",
         "confidence": "aggregator",
         "programsCount": 11
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "pihms",
@@ -1822,7 +1985,8 @@
         "sourceHash": "sha256:3a7f2c9d14e85b6f",
         "confidence": "aggregator",
         "programsCount": 13
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "canberra-sydney",
@@ -1838,7 +2002,8 @@
         "sourceHash": "sha256:a3f7c2e91b0d485f",
         "confidence": "aggregator",
         "programsCount": 38
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "new-england-au",
@@ -1854,7 +2019,8 @@
         "sourceHash": "sha256:9a3f1c7b2e840d56",
         "confidence": "aggregator",
         "programsCount": 37
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "notre-dame-au",
@@ -1870,7 +2036,8 @@
         "sourceHash": "sha256:a3f7e2c94d1b80f2",
         "confidence": "aggregator",
         "programsCount": 70
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "otago",
@@ -1886,7 +2053,8 @@
         "sourceHash": "sha256:3a7f91bc4d2e8f05",
         "confidence": "aggregator",
         "programsCount": 609
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "tasmania",
@@ -1902,7 +2070,8 @@
         "sourceHash": "sha256:7f3a9c1d4e8b2f5a",
         "confidence": "aggregator",
         "programsCount": 41
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "victoria-gold-coast",
@@ -1918,7 +2087,8 @@
         "sourceHash": "sha256:4a8c2f1e9b3d7a5c",
         "confidence": "aggregator",
         "programsCount": 121
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "victoria-wellington",
@@ -1934,7 +2104,8 @@
         "sourceHash": "sha256:3f9a7c2e1b84d05f",
         "confidence": "aggregator",
         "programsCount": 495
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "adler",
@@ -1950,7 +2121,8 @@
         "sourceHash": "sha256:3f9a21c4e7b80d56",
         "confidence": "aggregator",
         "programsCount": 33
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "alexander-college",
@@ -1966,7 +2138,8 @@
         "sourceHash": "sha256:a3c9f21d4b7e8f6a",
         "confidence": "aggregator",
         "programsCount": 31
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bow-valley",
@@ -1982,7 +2155,8 @@
         "sourceHash": "sha256:c3f72a1d48e90b35",
         "confidence": "aggregator",
         "programsCount": 95
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "birmingham-international-collegiate",
@@ -1998,7 +2172,8 @@
         "sourceHash": "sha256:d4e85b2c59f01a47",
         "confidence": "aggregator",
         "programsCount": 3
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "bcit",
@@ -2014,7 +2189,8 @@
         "sourceHash": "sha256:e5f96c3d60a12b48",
         "confidence": "aggregator",
         "programsCount": 141
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "brock",
@@ -2030,7 +2206,8 @@
         "sourceHash": "sha256:f6a07d4e71b23c59",
         "confidence": "aggregator",
         "programsCount": 18
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "canadian-tourism-college",
@@ -2046,7 +2223,8 @@
         "sourceHash": "sha256:a7b18e5f62c34d60",
         "confidence": "aggregator",
         "programsCount": 1
-      }
+      },
+      "gapPriority": "critical"
     },
     {
       "slug": "capilano",
@@ -2061,8 +2239,9 @@
         "sourceUrl": "https://www.capilanou.ca/",
         "sourceHash": "sha256:b8c29f6e73d45a61",
         "confidence": "aggregator",
-        "programsCount": 13
-      }
+        "programsCount": 107
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "fraser-international-college",
@@ -2078,7 +2257,8 @@
         "sourceHash": "sha256:c9d30a7f84e56b72",
         "confidence": "aggregator",
         "programsCount": 11
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "herzing-college",
@@ -2094,7 +2274,8 @@
         "sourceHash": "sha256:d0e41b8a95f67c83",
         "confidence": "aggregator",
         "programsCount": 14
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ibu-canada",
@@ -2110,7 +2291,8 @@
         "sourceHash": "sha256:e1f52c9b06a78d94",
         "confidence": "aggregator",
         "programsCount": 17
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "jibc",
@@ -2126,7 +2308,8 @@
         "sourceHash": "sha256:f2a63d0c17b89e05",
         "confidence": "aggregator",
         "programsCount": 9
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lasalle-college",
@@ -2142,7 +2325,8 @@
         "sourceHash": "sha256:a3b74e1d28c96f07",
         "confidence": "aggregator",
         "programsCount": 70
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "macewan",
@@ -2158,7 +2342,8 @@
         "sourceHash": "sha256:b4c85f2e39d07a18",
         "confidence": "aggregator",
         "programsCount": 35
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "merrick-prep",
@@ -2174,7 +2359,8 @@
         "sourceHash": "sha256:c5d96a3f40e18b29",
         "confidence": "aggregator",
         "programsCount": 1
-      }
+      },
+      "gapPriority": "critical"
     },
     {
       "slug": "mount-saint-vincent",
@@ -2190,7 +2376,8 @@
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
         "programsCount": 70
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "multihexa",
@@ -2206,7 +2393,8 @@
         "sourceHash": "sha256:e7f18b5c62a30d41",
         "confidence": "aggregator",
         "programsCount": 4
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "northern-college-ca",
@@ -2222,7 +2410,8 @@
         "sourceHash": "sha256:f8a29c6d73b41e52",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ontario-tech",
@@ -2238,7 +2427,8 @@
         "sourceHash": "sha256:a9b30d7e84c52f63",
         "confidence": "aggregator",
         "programsCount": 62
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "rotman-arts-science",
@@ -2254,7 +2444,8 @@
         "sourceHash": "sha256:b0c41e8a96f53d74",
         "confidence": "aggregator",
         "programsCount": 3
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "sask-polytechnic",
@@ -2269,8 +2460,9 @@
         "sourceUrl": "https://saskpolytech.ca/",
         "sourceHash": "sha256:c1d52f9a07b64e85",
         "confidence": "aggregator",
-        "programsCount": 32
-      }
+        "programsCount": 33
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "seneca",
@@ -2286,7 +2478,8 @@
         "sourceHash": "sha256:d2e63a0b18c75f96",
         "confidence": "aggregator",
         "programsCount": 248
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "sheridan",
@@ -2302,7 +2495,8 @@
         "sourceHash": "sha256:e7d4b2c9f1a83056",
         "confidence": "aggregator",
         "programsCount": 88
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "sobey-smu",
@@ -2318,7 +2512,8 @@
         "sourceHash": "sha256:3f5a7c2d91e84b06",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "sprott-carleton",
@@ -2334,7 +2529,8 @@
         "sourceHash": "sha256:8b2e4f7c03a96d51",
         "confidence": "aggregator",
         "programsCount": 40
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "st-lawrence-college",
@@ -2350,7 +2546,8 @@
         "sourceHash": "sha256:6c8d3a1f59b74e02",
         "confidence": "aggregator",
         "programsCount": 67
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "thompson-rivers",
@@ -2366,7 +2563,8 @@
         "sourceHash": "sha256:4d9f6a2b87c53e10",
         "confidence": "aggregator",
         "programsCount": 185
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "toronto-film-school",
@@ -2382,7 +2580,8 @@
         "sourceHash": "sha256:2a7e5c8b14f96d03",
         "confidence": "aggregator",
         "programsCount": 38
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "trent",
@@ -2398,7 +2597,8 @@
         "sourceHash": "sha256:9f1c6b3d52a87e04",
         "confidence": "aggregator",
         "programsCount": 15
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "trinity-western",
@@ -2414,7 +2614,8 @@
         "sourceHash": "sha256:5e3c8b1a74d62f09",
         "confidence": "aggregator",
         "programsCount": 17
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "university-canada-west",
@@ -2430,7 +2631,8 @@
         "sourceHash": "sha256:7b4d1e9c63f52a08",
         "confidence": "aggregator",
         "programsCount": 43
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "niagara-falls",
@@ -2446,7 +2648,8 @@
         "sourceHash": "sha256:1c3e7f9b85d42a06",
         "confidence": "aggregator",
         "programsCount": 39
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "unbc",
@@ -2462,7 +2665,8 @@
         "sourceHash": "sha256:8e2f5d7b14c96a03",
         "confidence": "aggregator",
         "programsCount": 78
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "windsor",
@@ -2478,7 +2682,8 @@
         "sourceHash": "sha256:6d9c4a2e83b57f01",
         "confidence": "aggregator",
         "programsCount": 16
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "winnipeg",
@@ -2494,7 +2699,8 @@
         "sourceHash": "sha256:3a8d1f5e92c47b06",
         "confidence": "aggregator",
         "programsCount": 31
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "uvic",
@@ -2510,7 +2716,8 @@
         "sourceHash": "sha256:4c7b2a9e65d38f01",
         "confidence": "aggregator",
         "programsCount": 96
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "wilfrid-laurier-international-college",
@@ -2526,7 +2733,8 @@
         "sourceHash": "sha256:9e5c3b7f28a14d06",
         "confidence": "aggregator",
         "programsCount": 3
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "yorkville",
@@ -2542,7 +2750,8 @@
         "sourceHash": "sha256:2f7e4d9c63b81a05",
         "confidence": "aggregator",
         "programsCount": 50
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "adelphi",
@@ -2558,7 +2767,8 @@
         "sourceHash": "sha256:a3f9d2e1c47b08f5",
         "confidence": "aggregator",
         "programsCount": 95
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "american-collegiate-la",
@@ -2574,7 +2784,8 @@
         "sourceHash": "sha256:3a7f2c9e1b4d8f0a",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "american-university",
@@ -2590,7 +2801,8 @@
         "sourceHash": "sha256:a3f7c2d1e9b84501",
         "confidence": "partner",
         "programsCount": 65
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "american-kogod",
@@ -2606,7 +2818,8 @@
         "sourceHash": "sha256:a3f7d291b84c6e50",
         "confidence": "aggregator",
         "programsCount": 128
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ashland",
@@ -2622,7 +2835,8 @@
         "sourceHash": "sha256:a3f9c2e51d7b840f",
         "confidence": "aggregator",
         "programsCount": 239
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "auburn",
@@ -2638,7 +2852,8 @@
         "sourceHash": "sha256:a3f7c92e1b840d56",
         "confidence": "aggregator",
         "programsCount": 440
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "basis-mclean",
@@ -2654,7 +2869,8 @@
         "sourceHash": "sha256:a3f7c2d91e84b056",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bishop-montgomery",
@@ -2670,7 +2886,8 @@
         "sourceHash": "sha256:b3f7a2c19e4d8f05",
         "confidence": "aggregator",
         "programsCount": 9
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cal-lutheran",
@@ -2686,7 +2903,8 @@
         "sourceHash": "sha256:3a7f2c9e1d84b605",
         "confidence": "aggregator",
         "programsCount": 73
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cal-state-fullerton",
@@ -2702,7 +2920,8 @@
         "sourceHash": "sha256:4f9a2c7e1d8b3f6a",
         "confidence": "aggregator",
         "programsCount": 36
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "carmel-catholic",
@@ -2718,7 +2937,8 @@
         "sourceHash": "sha256:a3f7c91d4b2e8f05",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "claremont-grad",
@@ -2734,7 +2954,8 @@
         "sourceHash": "sha256:4a9c1f8e3b72d051",
         "confidence": "aggregator",
         "programsCount": 71
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "clark",
@@ -2750,7 +2971,8 @@
         "sourceHash": "sha256:3f7c9a1d4b82e056",
         "confidence": "aggregator",
         "programsCount": 95
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cleveland-state",
@@ -2766,7 +2988,8 @@
         "sourceHash": "sha256:4a7f2c9e1b83d056",
         "confidence": "aggregator",
         "programsCount": 156
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "san-mateo",
@@ -2782,7 +3005,8 @@
         "sourceHash": "sha256:a3f2e91c7b4d8e05",
         "confidence": "aggregator",
         "programsCount": 81
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cretin-derham-hall",
@@ -2798,7 +3022,8 @@
         "sourceHash": "sha256:3a9f72c1b84e05d2",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "depaul",
@@ -2814,7 +3039,8 @@
         "sourceHash": "sha256:3a7f92c1d4e85b0f",
         "confidence": "aggregator",
         "programsCount": 300
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "drexel",
@@ -2830,7 +3056,8 @@
         "sourceHash": "sha256:d4e8f2a1c9b73e5f",
         "confidence": "aggregator",
         "programsCount": 50
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "drew",
@@ -2846,7 +3073,8 @@
         "sourceHash": "sha256:3f9a1c7d2b84e05f",
         "confidence": "aggregator",
         "programsCount": 95
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "fairmont-prep",
@@ -2862,7 +3090,8 @@
         "sourceHash": "sha256:3f7a1c9e2d84b0f6",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "fisher-college",
@@ -2878,7 +3107,8 @@
         "sourceHash": "sha256:a3f912c84d6e2b07",
         "confidence": "aggregator",
         "programsCount": 74
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "florida-international",
@@ -2894,7 +3124,8 @@
         "sourceHash": "sha256:3f7a21e4b9cd5802",
         "confidence": "aggregator",
         "programsCount": 35
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "fiu-business",
@@ -2910,7 +3141,8 @@
         "sourceHash": "sha256:3f7a9c21d04e8b56",
         "confidence": "aggregator",
         "programsCount": 123
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "fox-temple",
@@ -2926,7 +3158,8 @@
         "sourceHash": "sha256:4a8f2c1e9b7d3f5a",
         "confidence": "aggregator",
         "programsCount": 62
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "gannon",
@@ -2942,7 +3175,8 @@
         "sourceHash": "sha256:9f3c2a71d84e5b0f",
         "confidence": "aggregator",
         "programsCount": 137
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "george-mason",
@@ -2958,7 +3192,8 @@
         "sourceHash": "sha256:3f7a2c91e4b80d5f",
         "confidence": "aggregator",
         "programsCount": 153
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "gonzaga",
@@ -2974,7 +3209,8 @@
         "sourceHash": "sha256:a3f1c9e7b2d45801",
         "confidence": "aggregator",
         "programsCount": 46
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "hofstra",
@@ -2990,7 +3226,8 @@
         "sourceHash": "sha256:a3f7c12e9b4d8f20",
         "confidence": "aggregator",
         "programsCount": 233
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "hult",
@@ -3006,7 +3243,8 @@
         "sourceHash": "sha256:3f7a92b1d4e65c8f",
         "confidence": "aggregator",
         "programsCount": 52
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "illinois-state",
@@ -3022,7 +3260,8 @@
         "sourceHash": "sha256:a3f7c291e84b02d1",
         "confidence": "aggregator",
         "programsCount": 314
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "james-madison",
@@ -3038,7 +3277,8 @@
         "sourceHash": "sha256:4a9f2c1e8b3d7f0a",
         "confidence": "aggregator",
         "programsCount": 67
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "johns-hopkins",
@@ -3054,7 +3294,8 @@
         "sourceHash": "sha256:a3f9c12e5b7d4081",
         "confidence": "aggregator",
         "programsCount": 38
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "justin-siena",
@@ -3070,7 +3311,8 @@
         "sourceHash": "sha256:a3f9e12b74dc5801",
         "confidence": "aggregator",
         "programsCount": 6
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "keck-grad",
@@ -3086,7 +3328,8 @@
         "sourceHash": "sha256:3a7f9c2e1b84d5f0",
         "confidence": "aggregator",
         "programsCount": 59
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lipscomb",
@@ -3102,7 +3345,8 @@
         "sourceHash": "sha256:4a9c2e7f1b83d05e",
         "confidence": "aggregator",
         "programsCount": 74
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "liu",
@@ -3118,7 +3362,8 @@
         "sourceHash": "sha256:a3f7c12e9b4d8501",
         "confidence": "aggregator",
         "programsCount": 48
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "liu-brooklyn",
@@ -3134,7 +3379,8 @@
         "sourceHash": "sha256:a3f9c12d7e841b05",
         "confidence": "aggregator",
         "programsCount": 89
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "liu-post",
@@ -3150,7 +3396,8 @@
         "sourceHash": "sha256:a3f9c2d847e15b06",
         "confidence": "aggregator",
         "programsCount": 144
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lsu",
@@ -3166,7 +3413,8 @@
         "sourceHash": "sha256:3a9f1c7e84d02b56",
         "confidence": "aggregator",
         "programsCount": 231
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lynn",
@@ -3182,7 +3430,8 @@
         "sourceHash": "sha256:a3f7c9e1b4d28f05",
         "confidence": "aggregator",
         "programsCount": 36
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "mater-dei",
@@ -3198,7 +3447,8 @@
         "sourceHash": "sha256:4a9c2e17f3b8d051",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "marist",
@@ -3214,7 +3464,8 @@
         "sourceHash": "sha256:3a7f2e1d9b4c8f05",
         "confidence": "aggregator",
         "programsCount": 41
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "mercer",
@@ -3230,7 +3481,8 @@
         "sourceHash": "sha256:3a7f92b1c8e54d0f",
         "confidence": "aggregator",
         "programsCount": 30
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "miami-oh",
@@ -3246,7 +3498,8 @@
         "sourceHash": "sha256:a3f7c2d84e1b9056",
         "confidence": "aggregator",
         "programsCount": 215
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "montclair-state",
@@ -3262,7 +3515,8 @@
         "sourceHash": "sha256:3f8a2c1d9e47b506",
         "confidence": "aggregator",
         "programsCount": 141
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "mount-saint-vincent-ny",
@@ -3278,7 +3532,8 @@
         "sourceHash": "sha256:4a7f9c2e1b83d056",
         "confidence": "aggregator",
         "programsCount": 60
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "nyit",
@@ -3294,7 +3549,8 @@
         "sourceHash": "sha256:3a9f1c7e4b82d056",
         "confidence": "aggregator",
         "programsCount": 79
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "north-broward-prep",
@@ -3310,7 +3566,8 @@
         "sourceHash": "sha256:a3f7c2d9e1b84052",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "oregon-state",
@@ -3326,7 +3583,8 @@
         "sourceHash": "sha256:b6e0d9c1f4a82e35",
         "confidence": "aggregator",
         "programsCount": 365
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "palm-beach-atlantic",
@@ -3341,8 +3599,9 @@
         "sourceUrl": "https://www.pba.edu/",
         "sourceHash": "sha256:a3f12c9e7b084d51",
         "confidence": "aggregator",
-        "programsCount": 57
-      }
+        "programsCount": 70
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "red-bank-catholic",
@@ -3358,7 +3617,8 @@
         "sourceHash": "sha256:a3f7c9e1b4d20851",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "saint-anthonys",
@@ -3374,7 +3634,8 @@
         "sourceHash": "sha256:a3f7e2c1d9b04e58",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "saint-johns-hs",
@@ -3390,7 +3651,8 @@
         "sourceHash": "sha256:3f9a12b4c7e80d5f",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "suny-geneseo",
@@ -3406,7 +3668,8 @@
         "sourceHash": "sha256:9c4f2a8d1e6b7032",
         "confidence": "aggregator",
         "programsCount": 107
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-slu",
@@ -3422,7 +3685,8 @@
         "sourceHash": "sha256:9c4f7e8b6a2d1f53",
         "confidence": "aggregator",
         "programsCount": 31
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "st-marys-ca",
@@ -3438,7 +3702,8 @@
         "sourceHash": "sha256:9a3c5d2e7b14fa68",
         "confidence": "aggregator",
         "programsCount": 55
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-stony-brook",
@@ -3454,7 +3719,8 @@
         "sourceHash": "sha256:7c4e9a2f8b1d6e35",
         "confidence": "aggregator",
         "programsCount": 127
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "towson",
@@ -3469,8 +3735,9 @@
         "sourceUrl": "https://www.towson.edu/",
         "sourceHash": "sha256:9c4e2b7a1f6d3e85",
         "confidence": "aggregator",
-        "programsCount": 38
-      }
+        "programsCount": 42
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "temple",
@@ -3486,7 +3753,8 @@
         "sourceHash": "sha256:7e3c4f9a2b8d1c5e",
         "confidence": "aggregator",
         "programsCount": 179
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "tamucc",
@@ -3502,7 +3770,8 @@
         "sourceHash": "sha256:8c4a7e2f1b9d3e6a",
         "confidence": "aggregator",
         "programsCount": 121
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "gilbert-school",
@@ -3518,7 +3787,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "village-school",
@@ -3534,7 +3804,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 4
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "dave-school",
@@ -3550,7 +3821,8 @@
         "sourceHash": "sha256:d4a5e7b8c9f1a3e2",
         "confidence": "aggregator",
         "programsCount": 12
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "tulane",
@@ -3565,8 +3837,9 @@
         "sourceUrl": "https://tulane.edu/",
         "sourceHash": "sha256:b7a4e2c91d8f5a36",
         "confidence": "aggregator",
-        "programsCount": 48
-      }
+        "programsCount": 117
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "uab",
@@ -3582,7 +3855,8 @@
         "sourceHash": "sha256:a4f81e7c2d9b6510",
         "confidence": "aggregator",
         "programsCount": 189
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "arizona",
@@ -3598,7 +3872,8 @@
         "sourceHash": "sha256:a71203ed5c8f9b42",
         "confidence": "aggregator",
         "programsCount": 32
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ucf",
@@ -3614,7 +3889,8 @@
         "sourceHash": "sha256:c1f2a8e3b4d5e6f0",
         "confidence": "aggregator",
         "programsCount": 535
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "dayton",
@@ -3630,7 +3906,8 @@
         "sourceHash": "sha256:7b3e9f2a8c1d4e6f",
         "confidence": "aggregator",
         "programsCount": 150
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "hartford",
@@ -3646,7 +3923,8 @@
         "sourceHash": "sha256:a47e2c91b8f0d3e1",
         "confidence": "aggregator",
         "programsCount": 205
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "uic",
@@ -3662,7 +3940,8 @@
         "sourceHash": "sha256:7a2c5e8f9b3d4a16",
         "confidence": "aggregator",
         "programsCount": 34
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "uis",
@@ -3678,7 +3957,8 @@
         "sourceHash": "sha256:7a3e9c2d4b1f8e6a",
         "confidence": "aggregator",
         "programsCount": 47
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "kansas",
@@ -3694,7 +3974,8 @@
         "sourceHash": "sha256:a3f719c2d8e54bb1",
         "confidence": "aggregator",
         "programsCount": 148
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "umass-boston",
@@ -3710,7 +3991,8 @@
         "sourceHash": "sha256:c4f9a7e2b81d6035",
         "confidence": "aggregator",
         "programsCount": 103
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "new-haven",
@@ -3725,8 +4007,9 @@
         "sourceUrl": "https://www.newhaven.edu/",
         "sourceHash": "sha256:a4f8c2e1b9d70356",
         "confidence": "aggregator",
-        "programsCount": 34
-      }
+        "programsCount": 100
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-oklahoma",
@@ -3742,7 +4025,8 @@
         "sourceHash": "sha256:7e2a9c4b8f1d6035",
         "confidence": "aggregator",
         "programsCount": 24
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "utsa",
@@ -3757,8 +4041,9 @@
         "sourceUrl": "https://www.utsa.edu/",
         "sourceHash": "sha256:7e3a91c8d2f60be4",
         "confidence": "aggregator",
-        "programsCount": 33
-      }
+        "programsCount": 340
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "south-carolina",
@@ -3773,8 +4058,9 @@
         "sourceUrl": "https://sc.edu/",
         "sourceHash": "sha256:7c41a9b5d3f0e892",
         "confidence": "aggregator",
-        "programsCount": 37
-      }
+        "programsCount": 46
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "pacific",
@@ -3790,7 +4076,8 @@
         "sourceHash": "sha256:a4f7d9c1b3e58210",
         "confidence": "aggregator",
         "programsCount": 128
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "utah",
@@ -3805,8 +4092,9 @@
         "sourceUrl": "https://www.utah.edu/",
         "sourceHash": "sha256:7a3c9f1d8e2b4567",
         "confidence": "aggregator",
-        "programsCount": 33
-      }
+        "programsCount": 34
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "wyoming",
@@ -3821,8 +4109,9 @@
         "sourceUrl": "https://www.uwyo.edu/",
         "sourceHash": "sha256:7f3a2c9b5d8e4f12",
         "confidence": "aggregator",
-        "programsCount": 33
-      }
+        "programsCount": 38
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "waring-school",
@@ -3838,7 +4127,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 3
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "washington-state",
@@ -3854,7 +4144,8 @@
         "sourceHash": "sha256:7c4a2b8e9f3d1a06",
         "confidence": "aggregator",
         "programsCount": 80
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "western-new-england",
@@ -3870,7 +4161,8 @@
         "sourceHash": "sha256:a7c4f3e1b89d2056",
         "confidence": "aggregator",
         "programsCount": 145
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "woodside-priory",
@@ -3886,7 +4178,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 3
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "windermere-prep",
@@ -3902,7 +4195,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 4
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "western-washington",
@@ -3918,7 +4212,8 @@
         "sourceHash": "sha256:7a9e2c4f1b8d6e35",
         "confidence": "aggregator",
         "programsCount": 166
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "yamanashi-gakuin",
@@ -3934,7 +4229,8 @@
         "sourceHash": "sha256:a7f3c91e5b8d2046",
         "confidence": "aggregator",
         "programsCount": 12
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "apu-malaysia",
@@ -3950,7 +4246,8 @@
         "sourceHash": "sha256:a7c2f3e4b9d1a6f8",
         "confidence": "partner",
         "programsCount": 184
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "heriot-watt-malaysia",
@@ -3966,7 +4263,8 @@
         "sourceHash": "sha256:c4a9f1e8d7b25b3a",
         "confidence": "aggregator",
         "programsCount": 106
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "wollongong-malaysia",
@@ -3982,7 +4280,8 @@
         "sourceHash": "sha256:c2e8a91f3d5b4f76",
         "confidence": "aggregator",
         "programsCount": 73
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "reading-malaysia",
@@ -3998,7 +4297,8 @@
         "sourceHash": "sha256:rdgmy20260518a4f1",
         "confidence": "aggregator",
         "programsCount": 388
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "eaim",
@@ -4014,7 +4314,8 @@
         "sourceHash": "sha256:c4a91f23b78e6d12",
         "confidence": "aggregator",
         "programsCount": 67
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "jcu-singapore",
@@ -4030,7 +4331,8 @@
         "sourceHash": "sha256:8f3a2c1e9d7b4a05",
         "confidence": "aggregator",
         "programsCount": 26
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "abu-dhabi-university",
@@ -4046,7 +4348,8 @@
         "sourceHash": "sha256:adu2026051900000a",
         "confidence": "partner",
         "programsCount": 80
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "aud",
@@ -4062,7 +4365,8 @@
         "sourceHash": "sha256:a7d3f9c2e418b6d5",
         "confidence": "aggregator",
         "programsCount": 49
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "canadian-university-dubai",
@@ -4078,7 +4382,8 @@
         "sourceHash": "sha256:c4d8e2a9b71f5e34",
         "confidence": "aggregator",
         "programsCount": 51
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "de-montfort-dubai",
@@ -4094,7 +4399,8 @@
         "sourceHash": "sha256:c4f2a1e9b7d83e54",
         "confidence": "aggregator",
         "programsCount": 295
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "em-normandie-dubai",
@@ -4110,7 +4416,8 @@
         "sourceHash": "sha256:e1d0ba17c4f29a5b",
         "confidence": "aggregator",
         "programsCount": 58
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "es-dubai",
@@ -4126,7 +4433,8 @@
         "sourceHash": "sha256:e5d7a4b2c1f3a8e9",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "fad-institute-dubai",
@@ -4142,7 +4450,8 @@
         "sourceHash": "sha256:fa9d1c8e2b4710af",
         "confidence": "aggregator",
         "programsCount": 15
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "gbs-dubai",
@@ -4158,7 +4467,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 35
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "heriot-watt-dubai",
@@ -4174,7 +4484,8 @@
         "sourceHash": "sha256:7fc2a9e4d8b13f6e",
         "confidence": "partner",
         "programsCount": 254
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "middlesex-dubai",
@@ -4190,7 +4501,8 @@
         "sourceHash": "sha256:c4a91e7d2b58f3a6",
         "confidence": "partner",
         "programsCount": 249
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "repton-dubai",
@@ -4206,7 +4518,8 @@
         "sourceHash": "sha256:7a3c1b8f4d9e2056",
         "confidence": "aggregator",
         "programsCount": 8
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "rit-dubai",
@@ -4222,7 +4535,8 @@
         "sourceHash": "sha256:7ad4e8f29bc05317",
         "confidence": "aggregator",
         "programsCount": 167
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "sae-dubai",
@@ -4238,7 +4552,8 @@
         "sourceHash": "sha256:7c4e9ab2d8f51b03",
         "confidence": "aggregator",
         "programsCount": 33
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "birmingham-dubai",
@@ -4254,7 +4569,8 @@
         "sourceHash": "sha256:7b3c4d8e9f1a2b6c",
         "confidence": "aggregator",
         "programsCount": 155
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "stirling-rak",
@@ -4270,7 +4586,8 @@
         "sourceHash": "sha256:7a3b9c4d2e8f1056",
         "confidence": "aggregator",
         "programsCount": 20
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "wollongong-dubai",
@@ -4286,7 +4603,8 @@
         "sourceHash": "sha256:4f1c8e7a2b9d5e6f",
         "confidence": "partner",
         "programsCount": 41
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "webster-vienna",
@@ -4302,7 +4620,8 @@
         "sourceHash": "sha256:a3f1b8c2d4e5f609",
         "confidence": "partner",
         "programsCount": 144
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ubi-brussels",
@@ -4318,7 +4637,8 @@
         "sourceHash": "sha256:b4e2c9d1f7a30821",
         "confidence": "aggregator",
         "programsCount": 35
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "pascal-cyprus",
@@ -4334,7 +4654,8 @@
         "sourceHash": "sha256:c1a7f3d92e58b4a6",
         "confidence": "aggregator",
         "programsCount": 10
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "uclan-cyprus",
@@ -4350,7 +4671,8 @@
         "sourceHash": "sha256:c8f72a4b9d1e3f56",
         "confidence": "aggregator",
         "programsCount": 43
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "nicosia",
@@ -4366,7 +4688,8 @@
         "sourceHash": "sha256:c9a4e2f8b1d7a3e0",
         "confidence": "aggregator",
         "programsCount": 33
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "nicosia-medical",
@@ -4382,7 +4705,8 @@
         "sourceHash": "sha256:7d4a2e91b6c8f053",
         "confidence": "aggregator",
         "programsCount": 76
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "xenion",
@@ -4398,7 +4722,8 @@
         "sourceHash": "sha256:c4f7a82d9e1b5364",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "vaasa",
@@ -4414,7 +4739,8 @@
         "sourceHash": "sha256:a3c4d5e6f70819ab",
         "confidence": "aggregator",
         "programsCount": 37
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "3a-france",
@@ -4430,7 +4756,8 @@
         "sourceHash": "sha256:3a0f5ec01e3b91a4",
         "confidence": "aggregator",
         "programsCount": 24
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "aivancity",
@@ -4446,7 +4773,8 @@
         "sourceHash": "sha256:a1c9d4b7e2f86b51",
         "confidence": "aggregator",
         "programsCount": 23
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "atelier-de-sevres",
@@ -4461,8 +4789,9 @@
         "sourceUrl": "https://www.atelierdesevres.com/",
         "sourceHash": "sha256:a7f3c4d92b1e8650",
         "confidence": "aggregator",
-        "programsCount": 12
-      }
+        "programsCount": 15
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cesi",
@@ -4478,7 +4807,8 @@
         "sourceHash": "sha256:c3e51f8a7b2d9405",
         "confidence": "aggregator",
         "programsCount": 57
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cours-florent",
@@ -4494,7 +4824,8 @@
         "sourceHash": "sha256:c0f1e7a3b8d24516",
         "confidence": "aggregator",
         "programsCount": 13
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ecole-management-appliquee",
@@ -4510,7 +4841,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 18
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "esam",
@@ -4526,7 +4858,8 @@
         "sourceHash": "sha256:e5a4c8b91f3d7062",
         "confidence": "aggregator",
         "programsCount": 21
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "icd-paris",
@@ -4542,7 +4875,8 @@
         "sourceHash": "sha256:8c4e2f1a9b3d7e05",
         "confidence": "aggregator",
         "programsCount": 17
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "iesa",
@@ -4558,7 +4892,8 @@
         "sourceHash": "sha256:e5a2b8c1f4d96073",
         "confidence": "aggregator",
         "programsCount": 12
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "imis-paris",
@@ -4574,7 +4909,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 3
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "institut-culinaire-france",
@@ -4590,7 +4926,8 @@
         "sourceHash": "sha256:8a3f72c1e9b4d6a2",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "ipag",
@@ -4606,7 +4943,8 @@
         "sourceHash": "sha256:9c2b41e7d8af6051",
         "confidence": "aggregator",
         "programsCount": 81
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "kedge-paris",
@@ -4622,7 +4960,8 @@
         "sourceHash": "sha256:3a7c9e2f6b8d145e",
         "confidence": "aggregator",
         "programsCount": 32
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lisaa",
@@ -4638,7 +4977,8 @@
         "sourceHash": "sha256:5a8c2e7f9b1d4a3c",
         "confidence": "aggregator",
         "programsCount": 26
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "psb-paris",
@@ -4654,7 +4994,8 @@
         "sourceHash": "sha256:b3f7d9c1e4a82516",
         "confidence": "aggregator",
         "programsCount": 176
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "strate-design",
@@ -4670,7 +5011,8 @@
         "sourceHash": "sha256:c4f7a91d8e6b2350",
         "confidence": "aggregator",
         "programsCount": 14
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "constructor",
@@ -4686,7 +5028,8 @@
         "sourceHash": "sha256:c0a7b3f2d8e91a4b",
         "confidence": "aggregator",
         "programsCount": 56
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "eu-business-school-germany",
@@ -4702,7 +5045,8 @@
         "sourceHash": "sha256:e7b3c9d2f1a8b4e6",
         "confidence": "aggregator",
         "programsCount": 114
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ism-germany",
@@ -4718,7 +5062,8 @@
         "sourceHash": "sha256:7a3e4f8c2b9d1e60",
         "confidence": "aggregator",
         "programsCount": 20
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "iu-germany",
@@ -4734,7 +5079,8 @@
         "sourceHash": "sha256:a3d7e91c4f6b28d0",
         "confidence": "aggregator",
         "programsCount": 52
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "media-design-germany",
@@ -4750,7 +5096,8 @@
         "sourceHash": "sha256:7d3f9c2e1a8b4f56",
         "confidence": "aggregator",
         "programsCount": 44
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "srh-international-college",
@@ -4766,7 +5113,8 @@
         "sourceHash": "sha256:a7f3c2e8b1d495f6",
         "confidence": "aggregator",
         "programsCount": 9
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "metropolitan-budapest",
@@ -4782,7 +5130,8 @@
         "sourceHash": "sha256:e7c3a91b4d2f8a06",
         "confidence": "aggregator",
         "programsCount": 64
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ibs-budapest",
@@ -4798,7 +5147,8 @@
         "sourceHash": "sha256:1bs9b4d3a7e2f6c5",
         "confidence": "partner",
         "programsCount": 62
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "debrecen",
@@ -4814,7 +5164,8 @@
         "sourceHash": "sha256:8d3e7c1f9a4b2e60",
         "confidence": "aggregator",
         "programsCount": 49
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bologna-business-school",
@@ -4830,7 +5181,8 @@
         "sourceHash": "sha256:b0107b7355c4a319",
         "confidence": "aggregator",
         "programsCount": 154
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "domus-academy",
@@ -4846,7 +5198,8 @@
         "sourceHash": "sha256:d0a8c12e7b3f4519",
         "confidence": "partner",
         "programsCount": 70
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "marangoni-milan",
@@ -4862,7 +5215,8 @@
         "sourceHash": "sha256:8c4d2f7e9b1a3e5f",
         "confidence": "aggregator",
         "programsCount": 24
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "john-cabot",
@@ -4878,7 +5232,8 @@
         "sourceHash": "sha256:8a4f2c9e1b6d3a07",
         "confidence": "aggregator",
         "programsCount": 30
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "luiss",
@@ -4894,7 +5249,8 @@
         "sourceHash": "sha256:7c4f9a2e8b1d3f6a",
         "confidence": "aggregator",
         "programsCount": 25
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "polimi-gsom",
@@ -4910,7 +5266,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 97
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "san-raffaele",
@@ -4926,7 +5283,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 73
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "gbs-malta",
@@ -4942,7 +5300,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 26
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lsc-malta",
@@ -4958,7 +5317,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 5
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "queen-mary-malta",
@@ -4973,8 +5333,9 @@
         "sourceUrl": "https://www.qmul.ac.uk/malta/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 12
-      }
+        "programsCount": 114
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "amsterdam-tech",
@@ -4990,7 +5351,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 11
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "amsterdam",
@@ -5006,7 +5368,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 271
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "wittenborg",
@@ -5022,7 +5385,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 143
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "warsaw-business",
@@ -5038,7 +5402,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 20
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "enae",
@@ -5054,7 +5419,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 27
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "esic",
@@ -5070,7 +5436,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 94
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "euroinnova",
@@ -5086,7 +5453,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 10
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "gbsb-global",
@@ -5102,7 +5470,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 142
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "iqs-barcelona",
@@ -5118,7 +5487,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 5
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "lci-barcelona",
@@ -5134,7 +5504,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 5
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "les-roches-marbella",
@@ -5150,7 +5521,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 23
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "porto-business-school",
@@ -5166,7 +5538,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 22
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ucam-murcia",
@@ -5182,7 +5555,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 13
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "abat-oliba-barcelona",
@@ -5198,7 +5572,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 28
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cardenal-herrera-valencia",
@@ -5214,7 +5589,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 29
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "nebrija",
@@ -5230,7 +5606,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 25
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "san-pablo-ceu-madrid",
@@ -5246,7 +5623,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 5
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "bhms",
@@ -5262,7 +5640,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 52
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "champittet",
@@ -5278,7 +5657,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 4
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "eu-business-school-switzerland",
@@ -5294,7 +5674,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 71
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "glion-switzerland",
@@ -5310,7 +5691,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 22
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "les-roches-crans-montana",
@@ -5326,7 +5708,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 23
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "atilim",
@@ -5342,7 +5725,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 22
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "koc-turkey",
@@ -5358,7 +5742,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "sabanci",
@@ -5374,7 +5759,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 15
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "abbey-manchester",
@@ -5390,7 +5776,8 @@
         "sourceHash": "sha256:a3f1c82d4e6b9071",
         "confidence": "aggregator",
         "programsCount": 10
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "abbey-dld-london",
@@ -5406,7 +5793,8 @@
         "sourceHash": "sha256:b7d2e91f3a5c0842",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "abbey-cambridge",
@@ -5422,7 +5810,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 9
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "aberystwyth",
@@ -5438,7 +5827,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 9
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "aston",
@@ -5454,7 +5844,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 212
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bath-academy",
@@ -5470,7 +5861,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 20
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "birkbeck",
@@ -5486,7 +5878,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 29
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bishopstrow",
@@ -5502,7 +5895,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 9
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cardiff",
@@ -5518,7 +5912,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 361
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cardiff-met",
@@ -5534,7 +5929,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 125
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "circle-international",
@@ -5550,7 +5946,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "coventry",
@@ -5566,7 +5963,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 248
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cardiff-sixth-form",
@@ -5582,7 +5980,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 5
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "david-game",
@@ -5598,7 +5997,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "difc-dublin",
@@ -5614,7 +6014,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 9
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "durham",
@@ -5630,7 +6031,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 15
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "doverbroecks",
@@ -5646,7 +6048,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 3
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "edinburgh-napier",
@@ -5662,7 +6065,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 166
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "goldsmiths",
@@ -5678,7 +6082,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 16
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "griffith-ireland",
@@ -5694,7 +6099,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 193
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "heriot-watt",
@@ -5710,7 +6116,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 105
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ifg",
@@ -5726,7 +6133,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 6
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "marangoni-london",
@@ -5742,7 +6150,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 17
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-city-london",
@@ -5758,7 +6167,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 117
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-lancaster",
@@ -5774,7 +6184,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 152
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-london",
@@ -5790,7 +6201,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 115
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-manchester",
@@ -5806,7 +6218,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 118
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-newcastle",
@@ -5822,7 +6235,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 259
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-newton-a-levels",
@@ -5838,7 +6252,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 112
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-queens-belfast",
@@ -5854,7 +6269,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 351
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-stirling",
@@ -5870,7 +6286,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 114
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-uea",
@@ -5886,7 +6303,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 486
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-exeter",
@@ -5902,7 +6320,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 117
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "into-stirling-uni",
@@ -5918,7 +6337,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 334
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "kaplan-international-college",
@@ -5934,7 +6354,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 6
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "kcl-online",
@@ -5950,7 +6371,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 16
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "kings-bournemouth",
@@ -5966,7 +6388,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 4
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "kings-brighton",
@@ -5982,7 +6405,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 6
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "kings-london",
@@ -5998,7 +6422,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 9
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "kings-oxford",
@@ -6014,7 +6439,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 4
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "lancaster",
@@ -6029,8 +6455,9 @@
         "sourceUrl": "https://www.lancaster.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 40
-      }
+        "programsCount": 56
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "leeds-beckett",
@@ -6046,7 +6473,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 220
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "liverpool-hope",
@@ -6062,7 +6490,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 184
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ljmu-isc",
@@ -6078,7 +6507,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 203
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "london-met",
@@ -6094,7 +6524,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 299
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "london-south-bank",
@@ -6110,7 +6541,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 196
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "mmu-international-college",
@@ -6126,7 +6558,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 5
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "manchester-architecture",
@@ -6142,7 +6575,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 25
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "nci-ireland",
@@ -6158,7 +6592,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 16
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "newcastle-uk",
@@ -6174,7 +6609,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 35
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ncuk-isc",
@@ -6190,7 +6626,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 16
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "oxford-international-college",
@@ -6206,7 +6643,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 95
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "oxford-sixth-form",
@@ -6222,7 +6660,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 3
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "padworth",
@@ -6238,7 +6677,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 6
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "proed-uk",
@@ -6254,7 +6694,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 4
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "queen-ethelburgas",
@@ -6270,7 +6711,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 5
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "royal-holloway",
@@ -6286,7 +6728,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 490
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "rvc",
@@ -6302,7 +6745,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 30
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "rcsi",
@@ -6318,7 +6762,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 7
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "roehampton",
@@ -6334,7 +6779,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 345
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ravensbourne",
@@ -6350,7 +6796,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 102
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "sruc",
@@ -6366,7 +6813,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 55
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "sheffield-hallam",
@@ -6382,7 +6830,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 341
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "soas",
@@ -6398,7 +6847,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 533
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "st-andrews-cambridge",
@@ -6414,7 +6864,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 5
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "st-bees",
@@ -6430,7 +6881,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 5
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "stover-school",
@@ -6446,7 +6898,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 4
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "tus-shannon",
@@ -6462,7 +6915,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 229
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "teesside",
@@ -6478,7 +6932,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 452
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "courtauld",
@@ -6494,7 +6949,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 21
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "royal-school-surrey",
@@ -6510,7 +6966,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 3
-      }
+      },
+      "gapPriority": "high"
     },
     {
       "slug": "trinity-dublin",
@@ -6526,7 +6983,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 251
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ua92",
@@ -6542,7 +7000,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 38
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ucc",
@@ -6558,7 +7017,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 207
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ucb",
@@ -6574,7 +7034,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 88
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "ucl",
@@ -6590,7 +7051,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 962
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "uca",
@@ -6606,7 +7068,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 281
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "aberdeen",
@@ -6622,7 +7085,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 107
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "bath",
@@ -6638,7 +7102,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 497
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lancashire",
@@ -6654,7 +7119,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 437
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "chester",
@@ -6670,7 +7136,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 821
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "cumbria",
@@ -6686,7 +7153,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 170
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "derby",
@@ -6702,7 +7170,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 160
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "uea",
@@ -6718,7 +7187,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 125
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "exeter",
@@ -6734,7 +7204,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 946
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "galway",
@@ -6750,7 +7221,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 384
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "hull",
@@ -6766,7 +7238,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 71
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "university-of-law",
@@ -6782,7 +7255,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 193
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lancaster-univ",
@@ -6797,8 +7271,9 @@
         "sourceUrl": "https://www.lancaster.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 42
-      }
+        "programsCount": 58
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "leicester",
@@ -6814,7 +7289,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 506
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "leeds-isc",
@@ -6830,7 +7306,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 11
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "limerick",
@@ -6846,7 +7323,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 129
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "lincoln-uk",
@@ -6862,7 +7340,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 207
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "reading",
@@ -6878,7 +7357,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 22
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "south-wales",
@@ -6894,7 +7374,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 576
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "suffolk",
@@ -6910,7 +7391,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 29
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "sunderland",
@@ -6926,7 +7408,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 316
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "staffordshire",
@@ -6942,7 +7425,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 25
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "stirling",
@@ -6958,7 +7442,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 192
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "strathclyde",
@@ -6974,7 +7459,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 631
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "surrey",
@@ -6990,7 +7476,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 172
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "sussex",
@@ -7006,7 +7493,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 521
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "nottingham-ningbo",
@@ -7022,7 +7510,8 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 298
-      }
+      },
+      "gapPriority": "medium"
     },
     {
       "slug": "st-georges-grenada",
@@ -7038,9 +7527,10 @@
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
         "programsCount": 10
-      }
+      },
+      "gapPriority": "medium"
     }
   ],
-  "generatedAt": "2026-05-26T12:36:03.013Z",
+  "generatedAt": "2026-05-28T07:47:21.624Z",
   "isStaticSnapshot": true
 }

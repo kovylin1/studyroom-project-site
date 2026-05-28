@@ -20,6 +20,9 @@ const programSchema = z.object({
   intakes: z.array(z.string()).optional(),
   programUrl: z.string().url().optional(),
   programType: z.enum(['pathway', 'degree']).optional(),
+  source: z.string().optional(),
+  verifiedBySite: z.boolean().optional(),
+  checkedAt: isoDate.optional(),
 });
 const tuitionSchema = z.object({ currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD']), byProgram: z.record(slug, z.number().nonnegative()) });
 const requirementsSchema = z.object({
@@ -37,8 +40,8 @@ const photoSetsSchema = z.object({
   general: z.array(galleryItemSchema).optional(), studentsFaculty: z.array(galleryItemSchema).optional(),
   campuses: z.array(galleryItemSchema).optional(), accommodation: z.array(galleryItemSchema).optional(),
 });
-const accommodationItemSchema = z.object({ name: z.string().min(1), price: z.string().optional(), oldPrice: z.string().optional(), text: z.string().optional(), img: z.string().optional() });
-const campusItemSchema = z.object({ title: z.string().min(1), sub: z.string().optional(), text: z.string().optional(), img: z.string().optional() });
+const accommodationItemSchema = z.object({ name: z.string().min(1), price: z.string().optional(), oldPrice: z.string().optional(), text: z.string().optional(), img: z.string().optional(), source: z.string().optional(), verifiedBySite: z.boolean().optional(), checkedAt: isoDate.optional() });
+const campusItemSchema = z.object({ title: z.string().min(1), sub: z.string().optional(), text: z.string().optional(), img: z.string().optional(), source: z.string().optional(), verifiedBySite: z.boolean().optional(), checkedAt: isoDate.optional() });
 const descriptionSchema = z.object({
   paragraphs: z.array(z.string().min(1)).default([]), keyFacts: z.array(z.string().min(1)).default([]),
   paragraphsRu: z.array(z.string().min(1)).optional(), keyFactsRu: z.array(z.string().min(1)).optional(),

@@ -49,7 +49,7 @@ const CONTROL_DEFAULT_URL = '';
 
       <div id="static-banner" class="banner banner--info" hidden>
         <strong>Режим снимка.</strong>
-        Обе кнопки запускают GitHub Actions: данные обновятся через 1–3 минуты и автоматически подтянутся сюда.
+        Обе кнопки запускают GitHub Actions: данные подтянутся сюда автоматически по&nbsp;завершении (проверка актуальности — ~2&nbsp;мин, полный скрапинг — до&nbsp;~15&nbsp;мин).
         Нужен fine-grained PAT с правом <code>Actions: Read and write</code> — нажмите «подключить» в шапке.
       </div>
 
@@ -81,6 +81,30 @@ const CONTROL_DEFAULT_URL = '';
         </article>
       </div>
 
+      <article class="card card--directors" id="directors-card">
+        <header class="card__head">
+          <h2 class="card__title">Директора (task hierarchy)</h2>
+          <span id="gaps-pill" class="muted" style="font-size:0.8rem"></span>
+        </header>
+        <div class="directors-grid" id="directors-grid">
+          <div class="director-item" id="dir-pauk">
+            <span class="director-item__name">ПАУК</span>
+            <span class="director-item__domain muted">programs</span>
+            <span class="director-item__pill status-pill status-pill--idle"><span class="status-pill__dot"></span>—</span>
+          </div>
+          <div class="director-item" id="dir-bobr">
+            <span class="director-item__name">БОБР</span>
+            <span class="director-item__domain muted">campuses</span>
+            <span class="director-item__pill status-pill status-pill--idle"><span class="status-pill__dot"></span>—</span>
+          </div>
+          <div class="director-item" id="dir-orel">
+            <span class="director-item__name">ОРЁЛ</span>
+            <span class="director-item__domain muted">photos</span>
+            <span class="director-item__pill status-pill status-pill--idle"><span class="status-pill__dot"></span>—</span>
+          </div>
+        </div>
+      </article>
+
       <article class="card manager__run">
         <header class="card__head">
           <h2 class="card__title">Ручной запуск</h2>
@@ -90,7 +114,7 @@ const CONTROL_DEFAULT_URL = '';
           </span>
         </header>
         <p class="card__sub" id="run-summary">
-          Скрапер ещё не запускался. Нажмите кнопку — обновятся все 16&nbsp;университетов.
+          Скрапер ещё не запускался. Нажмите кнопку — обновятся все университеты каталога.
         </p>
         <div class="manager__actions">
           <button id="run-all-btn" class="btn btn-primary" type="button">
@@ -213,6 +237,7 @@ const CONTROL_DEFAULT_URL = '';
                 <th>Агрегатор</th>
                 <th>В каталоге</th>
                 <th>Последняя проверка</th>
+                <th>Gap</th>
                 <th aria-label="Действие"></th>
               </tr>
             </thead>
@@ -495,6 +520,16 @@ const CONTROL_DEFAULT_URL = '';
   .checked-stale { color: #c47a30; font-weight: 600; }
   .checked-never { color: var(--color-text-faint); font-style: italic; }
 
+  .card--directors { margin-bottom: 24px; }
+  .directors-grid { display: flex; gap: 16px; flex-wrap: wrap; }
+  .director-item { flex: 1 1 160px; display: flex; flex-direction: column; gap: 4px; padding: 14px; background: var(--color-bg-soft); border: 1px solid var(--color-border); border-radius: 12px; }
+  .director-item__name { font-weight: 700; font-size: 1rem; }
+  .director-item__domain { font-size: 0.78rem; }
+  .director-item__pill { margin-top: 8px; font-size: 0.78rem; padding: 3px 10px; }
+  .gap-critical { color: #c43030; font-weight: 700; font-size: 0.8rem; }
+  .gap-high { color: #c47a30; font-weight: 600; font-size: 0.8rem; }
+  .gap-medium { color: var(--color-text-muted); font-size: 0.8rem; }
+
   .log-card__head {
     padding: 16px 20px; border-bottom: 1px solid var(--color-border);
     display: flex; justify-content: space-between; align-items: center;
@@ -744,6 +779,7 @@ const CONTROL_DEFAULT_URL = '';
         '<td>' + aggCell + '</td>' +
         '<td>' + inCatalog + '</td>' +
         '<td><span class="' + checkedCls + '">' + checkedLabel + '</span></td>' +
+        '<td>' + (row.gapPriority ? '<span class="gap-' + escapeHtml(row.gapPriority) + '">' + escapeHtml(row.gapPriority) + '</span>' : '') + '</td>' +
         '<td><button class="btn btn-ghost btn-sm" data-run-slug="' + escapeHtml(row.slug) + '"' + disabledAttr + '>обновить</button></td>' +
         '</tr>';
     }).join('');
@@ -904,6 +940,7 @@ const CONTROL_DEFAULT_URL = '';
       const catalogCount = data.registry.filter((r) => r.catalog).length;
       renderSource(data.sourceProfile, data.registry.length, catalogCount);
       renderRunStatus(data.run);
+      renderDirectors(data.directors, data.gaps);
       syncAggregatorChips(data.aggregators || []);
       syncCountryOptions(data.registry);
       renderRegistry(data.registry);
@@ -1194,7 +1231,7 @@ const CONTROL_DEFAULT_URL = '';
       const ok = await runRemoteWorkflow({
         workflowFile: SCRAPE_WORKFLOW,
         label: 'Полный скрапинг',
-        expectedMin: 3,
+        expectedMin: 15,
       });
       btn.disabled = false;
       btn.textContent = orig;
@@ -1402,6 +1439,24 @@ const CONTROL_DEFAULT_URL = '';
     });
     applyFiltersAndRerender();
   });
+
+  function renderDirectors(directors, gaps) {
+    const STATUS_LABEL = { done: 'Готов', planned: 'Запланирован', 'in-progress': 'В работе' };
+    const STATUS_PILL = { done: 'status-pill--ok', planned: 'status-pill--idle', 'in-progress': 'status-pill--running' };
+    for (const [key, id] of [['pauk','dir-pauk'],['bobr','dir-bobr'],['orel','dir-orel']]) {
+      const d = directors?.[key];
+      if (!d) continue;
+      const pill = document.querySelector('#' + id + ' .director-item__pill');
+      if (!pill) continue;
+      const st = d.status || 'planned';
+      pill.className = 'director-item__pill status-pill ' + (STATUS_PILL[st] || 'status-pill--idle');
+      pill.innerHTML = '<span class="status-pill__dot"></span>' + escapeHtml(STATUS_LABEL[st] || st);
+    }
+    if (gaps) {
+      const el = document.getElementById('gaps-pill');
+      if (el) el.textContent = 'Gaps: ' + (gaps.byPriority?.critical || 0) + ' critical · ' + (gaps.byPriority?.high || 0) + ' high · ' + (gaps.byPriority?.medium || 0) + ' medium';
+    }
+  }
 
   // Initial label: empty default URL = static snapshot. Match the fallback
   // used by setControlUrl() so reload doesn't blank the field.

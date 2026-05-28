@@ -32,6 +32,9 @@ export const programSchema = z.object({
   intakes: z.array(z.string()).optional(),
   programUrl: z.string().url().optional(),
   programType: z.enum(['pathway', 'degree']).optional(),
+  source: z.string().optional(),
+  verifiedBySite: z.boolean().optional(),
+  checkedAt: isoDate.optional(),
 });
 export type Program = z.infer<typeof programSchema>;
 
@@ -94,6 +97,9 @@ export const accommodationItemSchema = z.object({
   oldPrice: z.string().optional(),
   text: z.string().optional(),
   img: z.string().optional(),
+  source: z.string().optional(),
+  verifiedBySite: z.boolean().optional(),
+  checkedAt: isoDate.optional(),
 });
 export type AccommodationItem = z.infer<typeof accommodationItemSchema>;
 
@@ -102,6 +108,9 @@ export const campusItemSchema = z.object({
   sub: z.string().optional(),
   text: z.string().optional(),
   img: z.string().optional(),
+  source: z.string().optional(),
+  verifiedBySite: z.boolean().optional(),
+  checkedAt: isoDate.optional(),
 });
 export type CampusItem = z.infer<typeof campusItemSchema>;
 

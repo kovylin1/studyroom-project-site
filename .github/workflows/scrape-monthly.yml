@@ -1,103 +1,85 @@
-name: Monthly university data refresh
-
-# Runs on the 1st of each month at 03:00 UTC. Scrapes every university in
-# sources/universities.list.md (UK + CA + US + AU + NZ), builds the Astro
-# site, commits the JSON deltas directly to `main`, and deploys to
-# Cloudflare Pages.
-#
-# Required GitHub repo secrets (Settings → Secrets and variables → Actions):
-#   - CLOUDFLARE_API_TOKEN — Cloudflare API token with "Account: Cloudflare
-#     Pages — Edit" permission. Create at
-#     https://dash.cloudflare.com/profile/api-tokens.
-#   - CLOUDFLARE_ACCOUNT_ID — your Cloudflare account ID (visible on any
-#     dashboard page under the right-hand sidebar).
-#
-# Without these, the deploy step is skipped — the data still commits to
-# `main` and Cloudflare's GitHub-auto-deploy (once configured per
-# DEPLOYMENT.md) will pick it up.
+name: Scrape & Deploy (monthly)
 
 on:
   schedule:
-    - cron: "0 3 1 * *"
-  workflow_dispatch: {}
+    - cron: '0 3 1 * *'   # 1-го числа каждого месяца в 03:00 UTC
+  workflow_dispatch:        # ручной запуск из manager UI или GitHub
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
 
 jobs:
-  scrape-and-deploy:
+  scrape-build-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    timeout-minutes: 45
+
     steps:
-      - name: Checkout main
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: |
+            scraper/package-lock.json
+            site/package-lock.json
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
+      - name: Install scraper deps + Playwright
+        run: cd scraper && npm ci && npx playwright install chromium --with-deps
 
-      - name: Install scraper deps
-        working-directory: scraper
-        run: npm ci
+      - name: Install site deps
+        run: cd site && npm ci
 
-      - name: Run scraper for all registered universities
-        working-directory: scraper
-        # Partial failures (e.g. a single source returning 404) shouldn't
-        # discard the dozens of universities that DID scrape successfully.
-        # The site/build step that follows still validates every JSON via
-        # Zod, so genuinely broken data can't reach `main`.
+      # ── Phase 1: ПАУК (programs) ──────────────────────────────────────
+      - name: ПАУК — QAHE collector
+        run: node scraper/scrape-qahe-all.mjs
         continue-on-error: true
-        run: npm run scrape -- --all
 
-      - name: Install site deps + build (validates Zod schemas)
-        working-directory: site
-        run: |
-          npm ci
-          npm run build
-
-      - name: Commit data updates to main
-        id: commit
-        run: |
-          git config user.name "studyroom-bot"
-          git config user.email "studyroom-bot@users.noreply.github.com"
-          git add site/src/content/universities/*.json site/public/api/status.json
-          if git diff --staged --quiet; then
-            echo "No data changes this run."
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            git commit -m "chore(data): monthly scrape refresh (run ${{ github.run_id }})"
-            # Retry push with rebase if main moved while the scraper was
-            # running (manual pushes mid-workflow are common during dev).
-            pushed=false
-            for attempt in 1 2 3; do
-              if git push origin HEAD:main; then
-                pushed=true
-                break
-              fi
-              echo "Push attempt $attempt rejected. Rebasing onto fresh origin/main and retrying..."
-              git pull --rebase origin main
-              sleep 3
-            done
-            if [ "$pushed" = "false" ]; then
-              echo "ERROR: failed to push after 3 attempts."
-              exit 1
-            fi
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Deploy to Cloudflare Pages
-        # Skip the deploy when no data changed OR when Cloudflare secrets
-        # aren't configured. Without secrets, repo owners who've connected
-        # Cloudflare Pages to GitHub via the dashboard still get auto-deploy
-        # on the push above.
-        if: steps.commit.outputs.changed == 'true' && env.CLOUDFLARE_API_TOKEN != ''
+      - name: ПАУК — Edvoy (Playwright)
+        run: node scraper/scrape-edvoy-all.mjs
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        working-directory: site
+          EDVOY_LOGIN: ${{ secrets.EDVOY_LOGIN }}
+          EDVOY_PASS: ${{ secrets.EDVOY_PASS }}
+        continue-on-error: true
+
+      - name: ПАУК — iapro (Playwright)
+        run: node scraper/scrape-iapro-all.mjs
+        env:
+          IAPRO_LOGIN: ${{ secrets.IAPRO_LOGIN }}
+          IAPRO_PASS: ${{ secrets.IAPRO_PASS }}
+        continue-on-error: true
+
+      - name: ПАУК — detect-gaps + merge
         run: |
-          npx --yes wrangler@latest pages deploy dist \
+          node scraper/detect-gaps.mjs
+          node scraper/merge-programs.mjs
+
+      # ── Phase 2: БОБР (campuses + accommodation) ──────────────────────
+      - name: БОБР — campuses + accommodation
+        run: node scraper/bobr.mjs --skip-photos --skip-verifier
+        continue-on-error: true
+
+      # ── Build ──────────────────────────────────────────────────────────
+      - name: Build site
+        run: cd site && npm run build
+
+      # ── Commit catalog + status.json back to repo ─────────────────────
+      - name: Commit catalog updates
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/src/content/universities/ scraper/sources/ site/public/api/
+          git diff --staged --quiet || git commit -m "chore: monthly catalog update $(date -u +%Y-%m-%d)"
+          git push
+
+      # ── Deploy to Cloudflare Pages ─────────────────────────────────────
+      - name: Deploy to Cloudflare Pages
+        run: |
+          cd site && npx wrangler pages deploy dist \
             --project-name=studyroom-project-site \
             --branch=main \
             --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

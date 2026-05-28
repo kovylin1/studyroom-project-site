@@ -1,0 +1,74 @@
+{
+  "_doc": "Task hierarchy manifest for StudyRoom catalog enrichment. Single source of truth for orchestration + future manager UI. See docs/superpowers/specs/2026-05-28-studyroom-task-hierarchy-design.md",
+  "directors": {
+    "pauk": {
+      "name": "ПАУК",
+      "domain": "programs",
+      "fields": ["programs", "tuition.byProgram", "deadlines", "scholarships", "requirements"],
+      "verifier": "shmel",
+      "script": "scraper/pauk.mjs",
+      "status": "done"
+    },
+    "bobr": {
+      "name": "БОБР",
+      "domain": "campus_accommodation",
+      "fields": ["campuses", "accommodation"],
+      "verifier": "bobr-verifier",
+      "script": "scraper/bobr.mjs",
+      "status": "done"
+    },
+    "orel": {
+      "name": "ОРЁЛ",
+      "domain": "photos",
+      "fields": ["gallery", "photoSets", "campuses[].img", "accommodation[].img"],
+      "verifier": "orel-quality",
+      "runsAfter": ["pauk", "bobr"],
+      "script": "scraper/orel.mjs",
+      "status": "done"
+    }
+  },
+  "verifiers": {
+    "shmel": {
+      "name": "ШМЕЛЬ",
+      "director": "pauk",
+      "role": "official-site program ground-truth; reconcile/correct collectors",
+      "scope": "gaps-conflicts-first",
+      "extractsTo": "sources/official-extracts",
+      "script": "scraper/shmel.mjs",
+      "supersedes": "revizor.mjs",
+      "status": "planned"
+    },
+    "bobr-verifier": {
+      "name": "БОБР-верификатор",
+      "director": "bobr",
+      "role": "official campus/accommodation pages vs aggregators",
+      "scope": "gaps-conflicts-first",
+      "status": "planned"
+    },
+    "orel-quality": {
+      "name": "ОРЁЛ-качество",
+      "director": "orel",
+      "role": "photo relevance + quality + dedup",
+      "script": "scraper/orel-photo-quality.mjs",
+      "status": "exists"
+    }
+  },
+  "collectors": [
+    { "slug": "edvoy", "codeword": "ПЧЕЛА", "aggregator": "Edvoy", "url": "https://edge.edvoy.com/#login", "access": "login", "env": ["EDVOY_LOGIN", "EDVOY_PASS"], "domainsFed": ["programs", "campus_accommodation", "photos"], "extractsTo": "sources/edvoy-extracts", "script": "scraper/scrape-edvoy-all.mjs", "scheduleDay": 1, "status": "done" },
+    { "slug": "studygroup", "codeword": "МУХА", "aggregator": "Study Group", "url": "https://agent.studygroup.com/s/", "access": "login", "env": ["SG_LOGIN", "SG_PASS", "SG_URN"], "domainsFed": ["programs"], "extractsTo": "sources/studygroup-extracts", "script": "scraper/scrape-studygroup-all.mjs", "scheduleDay": 2, "status": "paused-resume-api" },
+    { "slug": "kaplan", "codeword": null, "aggregator": "Kaplan Pathways", "url": "https://www.kaplanpathways.com/degree-finder/#/landing", "access": "open", "env": [], "domainsFed": ["programs", "campus_accommodation", "photos"], "extractsTo": "sources/kaplan-extracts", "script": "scraper/src/sources/kaplan-feed.ts", "scheduleDay": 3, "status": "exists" },
+    { "slug": "cats", "codeword": null, "aggregator": "CATS Global Schools", "url": "https://catsglobalschools.com/our-schools/", "drive": "https://drive.google.com/drive/folders/1ybSGuXJwHb0kEqlktpvT6lOFc-vQkZmj", "access": "open", "env": [], "domainsFed": ["programs", "photos"], "extractsTo": "sources/cats-extracts", "script": "scraper/src/expand-cats-programs.mjs", "scheduleDay": 4, "status": "exists" },
+    { "slug": "navitas", "codeword": null, "aggregator": "Navitas", "url": "https://www.navitas.com/study/courses/", "access": "open", "env": [], "domainsFed": ["programs"], "extractsTo": "sources/navitas-extracts", "script": "scraper/seed-navitas-uk.mjs", "scheduleDay": 5, "status": "exists" },
+    { "slug": "oxfordintl", "codeword": null, "aggregator": "Oxford International", "url": "https://www.oxfordinternational.com/search/", "access": "open", "env": [], "domainsFed": ["programs"], "extractsTo": "sources/oxfordintl-extracts", "script": "scraper/seed-oxfordintl-uk.mjs", "scheduleDay": 6, "status": "exists" },
+    { "slug": "qs", "codeword": null, "aggregator": "QS Apply", "url": "https://admissions.qs.com/suite/sites/qs-apply", "access": "login", "env": ["QS_LOGIN", "QS_PASS"], "domainsFed": ["programs"], "extractsTo": "sources/qs-extracts", "script": "scraper/discover-qs-partners.mjs", "scheduleDay": 7, "status": "exists", "note": "partner list to follow from user" },
+    { "slug": "iapro", "codeword": null, "aggregator": "iapro agent portal", "url": "https://iapro.my.site.com/agentportals/login", "access": "login", "env": ["IAPRO_LOGIN", "IAPRO_PASS"], "domainsFed": ["programs", "photos"], "extractsTo": "sources/iapro-extracts", "script": "scraper/scrape-iapro-all.mjs", "scheduleDay": 8, "status": "new", "note": "Salesforce Experience Cloud; ~11 partners in Marketing Hub tab" },
+    { "slug": "qahe", "codeword": null, "aggregator": "QA Higher Education", "url": "https://qahighereducation.com/partner-institutions/", "materials": "https://qahighereducation.com/marketing-materials/", "access": "open+login(materials)", "env": ["QAHE_LOGIN", "QAHE_PASS"], "domainsFed": ["programs", "photos"], "extractsTo": "sources/qahe-extracts", "script": "scraper/scrape-qahe-all.mjs", "scheduleDay": 9, "status": "new", "partners": ["Northumbria", "Ulster", "Oxford Brookes", "Solent"] },
+    { "slug": "gedu", "codeword": null, "aggregator": "GEDU", "url": "https://gedu.global", "access": "open?", "env": [], "domainsFed": ["programs"], "extractsTo": "sources/gedu-extracts", "script": "scraper/scrape-gedu-all.mjs", "scheduleDay": 10, "status": "new" },
+    { "slug": "collab", "codeword": "ВОЛК", "aggregator": "collabinternational", "url": "https://www.collabinternational.com", "access": "open", "env": [], "domainsFed": ["programs"], "extractsTo": "sources/volk-extracts", "script": "scraper/scrape-volk-collab-v3.mjs", "scheduleDay": 11, "status": "exists", "note": "10-vs-11 question: keep or drop?" }
+  ],
+  "openItems": [
+    "SPEED codeword -> which aggregator (or a 12th)?",
+    "collab/ВОЛК in or out (10 vs 11)?",
+    "QA Higher Ed login (assumed elmira email - confirm)"
+  ]
+}

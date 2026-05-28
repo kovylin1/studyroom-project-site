@@ -1,402 +1,114 @@
-// StudyRoom control panel — vanilla Node HTTP server.
+#!/usr/bin/env node
+// control/server.mjs — local control panel API for StudyRoom manager UI.
+// Listens on :5174. Same JSON shape as static status.json + live run state.
+//
+// Usage: cd control && npm start
+//        In manager UI click "изменить" and set: http://localhost:5174
+//
 // Endpoints:
-//   GET  /                  -> dashboard HTML
-//   GET  /api/status        -> JSON: schedule + registry + run state + last log
-//   POST /api/run           -> spawn `npm run scrape -- --all` in ../scraper
-//   POST /api/run-one       -> body { slug } -> spawn `npm run scrape -- --slug <slug>`
-// One concurrent run at a time. State held in memory (resets on restart).
+//   GET  /api/status      — live status JSON
+//   POST /api/run         — run full pauk.mjs pipeline
+//   POST /api/run-one     — run pauk.mjs --slug=X  (body: {slug})
+//   POST /api/verify      — run shmel + generate-verify.mjs
+//   GET  /api/verify.json — serve verify.json snapshot
 
-import { createServer } from 'node:http';
-import { readFile, readdir } from 'node:fs/promises';
-import { spawn } from 'node:child_process';
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import http from 'http';
+import { spawn } from 'child_process';
+import { readFile } from 'fs/promises';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const PORT = Number(process.env.PORT ?? 5174);
-const PROJECT_ROOT = resolve(__dirname, '..');
-const SCRAPER_DIR = resolve(PROJECT_ROOT, 'scraper');
-const REGISTRY_FILE = resolve(PROJECT_ROOT, 'sources/universities.list.md');
-const AGGREGATORS_FILE = resolve(PROJECT_ROOT, 'sources/aggregators.md');
-const CATALOG_DIR = resolve(PROJECT_ROOT, 'site/src/content/universities');
-const CRON_FILE = resolve(PROJECT_ROOT, '.github/workflows/scrape-monthly.yml');
+const ROOT = resolve(__dirname, '..');
+const SCRAPER = resolve(ROOT, 'scraper');
+const SITE = resolve(ROOT, 'site');
+const PORT = 5174;
 
-// Set AUTO_PUSH=0 to disable git auto-commit+push after a successful run.
-const AUTO_PUSH = process.env.AUTO_PUSH !== '0';
-const GIT_REMOTE = process.env.GIT_REMOTE ?? 'origin';
-const GIT_BRANCH = process.env.GIT_BRANCH ?? 'main';
-const DEPLOY_PATHS = ['site/src/content/universities', 'site/public/api'];
+// ── Live run state ────────────────────────────────────────────────────────
+const run = { running: false, startedAt: null, finishedAt: null, exitCode: null, currentTarget: null, log: [] };
 
-const state = {
-  running: false,
-  startedAt: null,
-  finishedAt: null,
-  exitCode: null,
-  log: [],
-  currentTarget: null,
-  deploying: false,
-  deployStatus: null, // 'ok' | 'no-changes' | 'fail' | null
-  deployFinishedAt: null,
-};
-
-function pushLog(line) {
-  const trimmed = line.trimEnd();
-  if (trimmed.length === 0) return;
-  state.log.push({ at: new Date().toISOString(), line: trimmed });
-  if (state.log.length > 500) state.log.shift();
+function resetRun(target) {
+  Object.assign(run, { running: true, startedAt: new Date().toISOString(), finishedAt: null, exitCode: null, currentTarget: target, log: [] });
+}
+function finishRun(code) {
+  Object.assign(run, { running: false, finishedAt: new Date().toISOString(), exitCode: code ?? 1 });
 }
 
-async function readAggregators() {
-  try {
-    const raw = await readFile(AGGREGATORS_FILE, 'utf8');
-    const aggregators = [];
-    const sections = raw.split(/^## /m).slice(1);
-    for (const section of sections) {
-      const slugMatch = section.match(/^`?([a-z0-9-]+)`?/);
-      if (!slugMatch) continue;
-      const slug = slugMatch[1];
-      const baseUrlMatch = section.match(/\*\*Base URL:\*\*\s*`?(https?:\/\/[^`\s)]+)`?/i);
-      const baseUrl = baseUrlMatch ? baseUrlMatch[1] : null;
-      let host = '';
-      try { host = baseUrl ? new URL(baseUrl).hostname.replace(/^www\./, '') : ''; } catch {}
-      const tierMatch = section.match(/Confidence tier in our schema:\*\*\s*`?([a-z]+)`?/i);
-      const name = slug
-        .split('-')
-        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-        .join(' ');
-      aggregators.push({ slug, name, baseUrl, host, tier: tierMatch ? tierMatch[1] : 'aggregator' });
-    }
-    return aggregators;
-  } catch {
-    return [];
+function spawnScript(path, args = []) {
+  const child = spawn('node', [path, ...args], { cwd: ROOT, stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env } });
+  const onData = d => String(d).split('\n').filter(Boolean).forEach(line => {
+    run.log.push({ line: line.trimEnd(), ts: new Date().toISOString() });
+    if (run.log.length > 2000) run.log.shift();
+  });
+  child.stdout.on('data', onData);
+  child.stderr.on('data', onData);
+  return child;
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────
+function cors(res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+}
+function json(res, data, status = 200) {
+  cors(res); res.writeHead(status, { 'Content-Type': 'application/json' }); res.end(JSON.stringify(data));
+}
+async function body(req) {
+  return new Promise(r => { let b = ''; req.on('data', d => b += d); req.on('end', () => { try { r(JSON.parse(b || '{}')); } catch { r({}); } }); });
+}
+async function staticStatus() {
+  try { return JSON.parse(await readFile(resolve(SITE, 'public/api/status.json'), 'utf8')); }
+  catch { return { schedule: {}, sourceProfile: {}, aggregators: [], directors: {}, gaps: null, registry: [] }; }
+}
+
+// ── Server ────────────────────────────────────────────────────────────────
+http.createServer(async (req, res) => {
+  const url = req.url?.split('?')[0];
+  if (req.method === 'OPTIONS') { cors(res); res.writeHead(204); res.end(); return; }
+
+  if (url === '/api/status' && req.method === 'GET') {
+    const base = await staticStatus();
+    return json(res, { ...base, run, isStaticSnapshot: false });
   }
-}
 
-function resolveAggregatorSlug(urlCell, aggregators) {
-  if (!urlCell || aggregators.length === 0) return null;
-  const urls = urlCell.match(/https?:\/\/[^\s,)]+/g) || [];
-  for (const u of urls) {
-    let host = '';
-    try { host = new URL(u).hostname.replace(/^www\./, ''); } catch { continue; }
-    const match = aggregators.find((a) => a.host && (host === a.host || host.endsWith('.' + a.host)));
-    if (match) return match.slug;
+  if (url === '/api/verify.json' && req.method === 'GET') {
+    try { const raw = await readFile(resolve(SITE, 'public/api/verify.json'), 'utf8'); cors(res); res.writeHead(200, { 'Content-Type': 'application/json' }); res.end(raw); }
+    catch { json(res, { error: 'no verify.json yet — run /api/verify first' }, 404); }
+    return;
   }
-  return null;
-}
 
-async function readRegistry(aggregators) {
-  try {
-    const raw = await readFile(REGISTRY_FILE, 'utf8');
-    const rows = [];
-    for (const line of raw.split(/\r?\n/)) {
-      if (!line.startsWith('|')) continue;
-      const cells = line.split('|').map((c) => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1);
-      if (cells.length < 8) continue;
-      const [slug, name, country, city, tier, officialUrl, aggregatorUrlCell] = cells;
-      if (slug === 'slug' || slug.startsWith('---')) continue;
-      if (tier !== 'partner' && tier !== 'official' && tier !== 'aggregator') continue;
-      const aggregatorSlug = resolveAggregatorSlug(aggregatorUrlCell, aggregators);
-      rows.push({ slug, name, country, city, tier, officialUrl: officialUrl || null, aggregatorSlug });
-    }
-    return rows;
-  } catch {
-    return [];
+  if (url === '/api/run' && req.method === 'POST') {
+    if (run.running) return json(res, { error: 'already running' }, 409);
+    resetRun('all');
+    const child = spawnScript(resolve(SCRAPER, 'pauk.mjs'), ['--skip-photos']);
+    child.on('close', finishRun); child.on('error', () => finishRun(1));
+    return json(res, { ok: true });
   }
-}
 
-async function readCatalog() {
-  try {
-    const files = await readdir(CATALOG_DIR);
-    const out = {};
-    for (const f of files) {
-      if (!f.endsWith('.json')) continue;
-      const raw = await readFile(resolve(CATALOG_DIR, f), 'utf8');
-      try {
-        const parsed = JSON.parse(raw);
-        out[parsed.slug] = {
-          lastChecked: parsed.lastChecked,
-          sourceUrl: parsed.sourceUrl,
-          sourceHash: parsed.sourceHash,
-          confidence: parsed.confidence,
-          programsCount: Array.isArray(parsed.programs) ? parsed.programs.length : 0,
-        };
-      } catch {}
-    }
-    return out;
-  } catch {
-    return {};
+  if (url === '/api/run-one' && req.method === 'POST') {
+    const { slug } = await body(req);
+    if (!slug) return json(res, { error: 'slug required' }, 400);
+    if (run.running) return json(res, { error: 'already running' }, 409);
+    resetRun(slug);
+    const child = spawnScript(resolve(SCRAPER, 'pauk.mjs'), ['--slug=' + slug, '--skip-shmel', '--skip-collectors']);
+    child.on('close', finishRun); child.on('error', () => finishRun(1));
+    return json(res, { ok: true });
   }
-}
 
-async function readCronExpression() {
-  try {
-    const raw = await readFile(CRON_FILE, 'utf8');
-    const match = raw.match(/-\s+cron:\s*["']([^"']+)["']/);
-    return match ? match[1] : null;
-  } catch {
-    return null;
-  }
-}
-
-function nextRunFromCron(cron) {
-  // Supports "M H D * *" (e.g. "0 3 1 * *"). Returns ISO UTC, or null.
-  if (!cron) return null;
-  const parts = cron.trim().split(/\s+/);
-  if (parts.length !== 5) return null;
-  const [minStr, hourStr, domStr, monStr, dowStr] = parts;
-  if (monStr !== '*' || dowStr !== '*') return null;
-  const minute = Number(minStr);
-  const hour = Number(hourStr);
-  const dayOfMonth = Number(domStr);
-  if (Number.isNaN(minute) || Number.isNaN(hour) || Number.isNaN(dayOfMonth)) return null;
-
-  const now = new Date();
-  let candidate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), dayOfMonth, hour, minute, 0));
-  if (candidate <= now) {
-    candidate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, dayOfMonth, hour, minute, 0));
-  }
-  return candidate.toISOString();
-}
-
-function runCommand(cmd, args, opts = {}) {
-  return new Promise((resolvePromise, reject) => {
-    pushLog('> ' + cmd + ' ' + args.join(' '));
-    // shell: false on purpose — args with spaces (like commit messages) get
-    // mangled when shell: true on Windows. Use this helper only for binaries
-    // that don't need a .cmd shim (git.exe, not npm.cmd).
-    const child = spawn(cmd, args, {
-      cwd: PROJECT_ROOT,
-      shell: false,
-      ...opts,
+  if (url === '/api/verify' && req.method === 'POST') {
+    if (run.running) return json(res, { error: 'already running' }, 409);
+    resetRun('verify');
+    const shmel = spawnScript(resolve(SCRAPER, 'shmel.mjs'), ['--limit=30', '--concurrency=4']);
+    shmel.on('close', () => {
+      const gv = spawnScript(resolve(SITE, 'scripts/generate-verify.mjs'));
+      gv.on('close', finishRun); gv.on('error', () => finishRun(1));
     });
-    child.stdout.on('data', (c) => c.toString().split('\n').forEach(pushLog));
-    child.stderr.on('data', (c) => c.toString().split('\n').forEach(pushLog));
-    child.on('close', (code) => resolvePromise(code));
-    child.on('error', reject);
-  });
-}
-
-async function gitSyncAndPush(target) {
-  state.deploying = true;
-  state.deployStatus = null;
-  state.deployFinishedAt = null;
-  pushLog('— git sync: staging + commit + push to ' + GIT_REMOTE + '/' + GIT_BRANCH + ' —');
-  try {
-    const addCode = await runCommand('git', ['add', '--', ...DEPLOY_PATHS]);
-    if (addCode !== 0) {
-      pushLog('! git add failed (exit ' + addCode + ')');
-      state.deployStatus = 'fail';
-      return;
-    }
-    const diffCode = await runCommand('git', ['diff', '--staged', '--quiet']);
-    if (diffCode === 0) {
-      pushLog('= no data changes — nothing to push');
-      state.deployStatus = 'no-changes';
-      return;
-    }
-    const msg =
-      target === 'verify'
-        ? 'chore(verify): on-demand accuracy check (manager panel)'
-        : 'chore(data): scrape ' + (target ?? 'all') + ' (manager panel)';
-    const commitCode = await runCommand('git', ['commit', '-m', msg]);
-    if (commitCode !== 0) {
-      pushLog('! git commit failed (exit ' + commitCode + ')');
-      state.deployStatus = 'fail';
-      return;
-    }
-    const pushCode = await runCommand('git', ['push', GIT_REMOTE, 'HEAD:' + GIT_BRANCH]);
-    if (pushCode !== 0) {
-      pushLog('! git push failed (exit ' + pushCode + ') — commit kept locally');
-      state.deployStatus = 'fail';
-      return;
-    }
-    pushLog('= pushed to ' + GIT_REMOTE + '/' + GIT_BRANCH + ' — Cloudflare Pages will rebuild in ~1–2 min');
-    state.deployStatus = 'ok';
-  } catch (err) {
-    pushLog('! git sync error: ' + err.message);
-    state.deployStatus = 'fail';
-  } finally {
-    state.deploying = false;
-    state.deployFinishedAt = new Date().toISOString();
+    shmel.on('error', () => finishRun(1));
+    return json(res, { ok: true });
   }
-}
 
-function spawnNpmScript(scriptName, args, target) {
-  if (state.running || state.deploying) return false;
-  state.running = true;
-  state.startedAt = new Date().toISOString();
-  state.finishedAt = null;
-  state.exitCode = null;
-  state.log = [];
-  state.currentTarget = target;
-  state.deploying = false;
-  state.deployStatus = null;
-  state.deployFinishedAt = null;
-  pushLog('> npm run ' + scriptName + (args.length ? ' -- ' + args.join(' ') : ''));
-
-  const npmArgs = ['run', scriptName, ...(args.length ? ['--', ...args] : [])];
-  const child = spawn('npm', npmArgs, {
-    cwd: SCRAPER_DIR,
-    shell: process.platform === 'win32',
-  });
-  child.stdout.on('data', (chunk) => chunk.toString().split('\n').forEach(pushLog));
-  child.stderr.on('data', (chunk) => chunk.toString().split('\n').forEach(pushLog));
-  child.on('close', async (code) => {
-    state.running = false;
-    state.finishedAt = new Date().toISOString();
-    state.exitCode = code;
-    pushLog('= exit ' + code);
-    if (code === 0 && AUTO_PUSH) {
-      await gitSyncAndPush(target);
-    }
-  });
-  child.on('error', (err) => {
-    pushLog('! spawn error: ' + err.message);
-    state.running = false;
-    state.finishedAt = new Date().toISOString();
-    state.exitCode = -1;
-  });
-  return true;
-}
-
-function startScrape(args, target) {
-  return spawnNpmScript('scrape', args, target);
-}
-
-function startVerify() {
-  return spawnNpmScript('verify', [], 'verify');
-}
-
-function readJsonBody(req) {
-  return new Promise((resolveBody, reject) => {
-    const chunks = [];
-    req.on('data', (c) => chunks.push(c));
-    req.on('end', () => {
-      try {
-        const raw = Buffer.concat(chunks).toString('utf8');
-        resolveBody(raw ? JSON.parse(raw) : {});
-      } catch (err) {
-        reject(err);
-      }
-    });
-    req.on('error', reject);
-  });
-}
-
-function setCors(res) {
-  res.setHeader('access-control-allow-origin', '*');
-  res.setHeader('access-control-allow-methods', 'GET, POST, OPTIONS');
-  res.setHeader('access-control-allow-headers', 'content-type');
-  res.setHeader('access-control-max-age', '600');
-}
-
-const server = createServer(async (req, res) => {
-  try {
-    setCors(res);
-
-    if (req.method === 'OPTIONS') {
-      res.writeHead(204);
-      return res.end();
-    }
-
-    if (req.method === 'GET' && (req.url === '/' || req.url === '/index.html')) {
-      const html = await readFile(resolve(__dirname, 'public/index.html'), 'utf8');
-      res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
-      return res.end(html);
-    }
-
-    if (req.method === 'GET' && req.url === '/api/status') {
-      const [catalog, cron, aggregators] = await Promise.all([
-        readCatalog(),
-        readCronExpression(),
-        readAggregators(),
-      ]);
-      const registry = await readRegistry(aggregators);
-      const merged = registry.map((row) => ({
-        ...row,
-        catalog: catalog[row.slug] ?? null,
-      }));
-      const defaultProfile = aggregators[0] ?? {
-        slug: 'kaplan-pathways',
-        name: 'Kaplan Pathways',
-        baseUrl: 'https://www.kaplanpathways.com/',
-        tier: 'partner',
-      };
-      const payload = {
-        run: {
-          running: state.running,
-          startedAt: state.startedAt,
-          finishedAt: state.finishedAt,
-          exitCode: state.exitCode,
-          currentTarget: state.currentTarget,
-          log: state.log,
-          deploying: state.deploying,
-          deployStatus: state.deployStatus,
-          deployFinishedAt: state.deployFinishedAt,
-          autoPush: AUTO_PUSH,
-        },
-        schedule: {
-          cron,
-          nextRunUTC: nextRunFromCron(cron),
-          source: '.github/workflows/scrape-monthly.yml',
-        },
-        sourceProfile: {
-          name: defaultProfile.name,
-          baseUrl: defaultProfile.baseUrl,
-          tier: defaultProfile.tier,
-        },
-        aggregators,
-        registry: merged,
-      };
-      res.writeHead(200, { 'content-type': 'application/json; charset=utf-8' });
-      return res.end(JSON.stringify(payload));
-    }
-
-    if (req.method === 'POST' && req.url === '/api/run') {
-      if (state.running || state.deploying) {
-        res.writeHead(409, { 'content-type': 'application/json' });
-        return res.end(JSON.stringify({ error: state.deploying ? 'deploy in progress' : 'already running' }));
-      }
-      const ok = startScrape(['--all'], 'all');
-      res.writeHead(ok ? 202 : 409, { 'content-type': 'application/json' });
-      return res.end(JSON.stringify({ accepted: ok }));
-    }
-
-    if (req.method === 'POST' && req.url === '/api/run-one') {
-      if (state.running || state.deploying) {
-        res.writeHead(409, { 'content-type': 'application/json' });
-        return res.end(JSON.stringify({ error: state.deploying ? 'deploy in progress' : 'already running' }));
-      }
-      const body = await readJsonBody(req);
-      const slug = String(body.slug ?? '').trim();
-      if (!/^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(slug)) {
-        res.writeHead(400, { 'content-type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'invalid slug' }));
-      }
-      const ok = startScrape(['--slug', slug], slug);
-      res.writeHead(ok ? 202 : 409, { 'content-type': 'application/json' });
-      return res.end(JSON.stringify({ accepted: ok, slug }));
-    }
-
-    if (req.method === 'POST' && req.url === '/api/verify') {
-      if (state.running || state.deploying) {
-        res.writeHead(409, { 'content-type': 'application/json' });
-        return res.end(JSON.stringify({ error: state.deploying ? 'deploy in progress' : 'already running' }));
-      }
-      const ok = startVerify();
-      res.writeHead(ok ? 202 : 409, { 'content-type': 'application/json' });
-      return res.end(JSON.stringify({ accepted: ok }));
-    }
-
-    res.writeHead(404, { 'content-type': 'text/plain' });
-    res.end('not found');
-  } catch (err) {
-    res.writeHead(500, { 'content-type': 'text/plain' });
-    res.end('server error: ' + err.message);
-  }
-});
-
-server.listen(PORT, () => {
-  console.log('StudyRoom control panel -> http://localhost:' + PORT);
-  console.log('(scraper at ' + SCRAPER_DIR + ')');
+  json(res, { error: 'not found' }, 404);
+}).listen(PORT, () => {
+  console.log('[control] http://localhost:' + PORT + ' — set this in manager UI via "изменить"');
 });
