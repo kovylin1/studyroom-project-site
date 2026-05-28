@@ -18,6 +18,22 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = resolve(__dirname, '..');
 const PROJECT_ROOT = resolve(SITE_ROOT, '..');
+
+// Fallback list — merged with aggregators.md so all partners/aggregators appear
+// even if aggregators.md doesn't have a full entry yet.
+const KNOWN_AGGREGATORS = [
+  { slug: 'kaplan-pathways',    name: 'Kaplan Pathways',      baseUrl: 'https://www.kaplanpathways.com/', host: 'kaplanpathways.com',      tier: 'partner'    },
+  { slug: 'navitas-pathways',   name: 'Navitas',               baseUrl: 'https://www.navitas.com/',        host: 'navitas.com',              tier: 'aggregator' },
+  { slug: 'oxford-international', name: 'Oxford International', baseUrl: 'https://www.oxfordinternational.com/', host: 'oxfordinternational.com', tier: 'aggregator' },
+  { slug: 'qs-topuniversities', name: 'QS Top Universities',   baseUrl: 'https://www.topuniversities.com/', host: 'topuniversities.com',    tier: 'aggregator' },
+  { slug: 'edvoy',              name: 'Edvoy',                 baseUrl: 'https://edvoy.com/',              host: 'edvoy.com',                tier: 'aggregator' },
+  { slug: 'iapro',              name: 'IAPro',                 baseUrl: 'https://iapro.com/',              host: 'iapro.com',                tier: 'aggregator' },
+  { slug: 'qahe',               name: 'QAHE',                  baseUrl: 'https://qahe.org.uk/',            host: 'qahe.org.uk',              tier: 'partner'    },
+  { slug: 'gedu',               name: 'Gedu',                  baseUrl: 'https://gedu.org/',               host: 'gedu.org',                 tier: 'aggregator' },
+  { slug: 'studygroup',         name: 'Study Group',           baseUrl: 'https://www.studygroup.com/',     host: 'studygroup.com',           tier: 'partner'    },
+  { slug: 'cats',               name: 'CATS Colleges',         baseUrl: 'https://www.catscolleges.com/',   host: 'catscolleges.com',         tier: 'partner'    },
+  { slug: 'volk',               name: 'Volk Education',        baseUrl: 'https://volk.education/',         host: 'volk.education',           tier: 'aggregator' },
+];
 const REGISTRY_FILE = resolve(PROJECT_ROOT, 'sources/universities.list.md');
 const AGGREGATORS_FILE = resolve(PROJECT_ROOT, 'sources/aggregators.md');
 const CATALOG_DIR = resolve(SITE_ROOT, 'src/content/universities');
@@ -54,9 +70,12 @@ async function readAggregators() {
         tier: tierMatch ? tierMatch[1] : 'aggregator',
       });
     }
-    return aggregators;
+    // Merge KNOWN_AGGREGATORS as base; entries from aggregators.md override by slug
+    const bySlug = Object.fromEntries(KNOWN_AGGREGATORS.map((a) => [a.slug, a]));
+    for (const a of aggregators) bySlug[a.slug] = a;
+    return Object.values(bySlug);
   } catch {
-    return [];
+    return [...KNOWN_AGGREGATORS];
   }
 }
 

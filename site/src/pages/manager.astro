@@ -91,16 +91,19 @@ const CONTROL_DEFAULT_URL = '';
             <span class="director-item__name">ПАУК</span>
             <span class="director-item__domain muted">programs</span>
             <span class="director-item__pill status-pill status-pill--idle"><span class="status-pill__dot"></span>—</span>
+            <button id="pauk-run-btn" class="btn btn-ghost btn-sm" type="button" style="margin-top:8px">Запустить</button>
           </div>
           <div class="director-item" id="dir-bobr">
             <span class="director-item__name">БОБР</span>
             <span class="director-item__domain muted">campuses</span>
             <span class="director-item__pill status-pill status-pill--idle"><span class="status-pill__dot"></span>—</span>
+            <button id="bobr-run-btn" class="btn btn-ghost btn-sm" type="button" style="margin-top:8px">Запустить</button>
           </div>
           <div class="director-item" id="dir-orel">
             <span class="director-item__name">ОРЁЛ</span>
             <span class="director-item__domain muted">photos</span>
             <span class="director-item__pill status-pill status-pill--idle"><span class="status-pill__dot"></span>—</span>
+            <button id="orel-run-btn" class="btn btn-ghost btn-sm" type="button" style="margin-top:8px">Запустить</button>
           </div>
         </div>
       </article>
@@ -824,7 +827,7 @@ const CONTROL_DEFAULT_URL = '';
     renderRegistry(lastRegistry);
   }
 
-  function syncAggregatorChips(aggregators) {
+  function syncAggregatorChips(aggregators, registry) {
     lastAggregators = aggregators || [];
     const container = document.getElementById('filter-aggregator-chips');
     if (!container) return;
@@ -838,6 +841,19 @@ const CONTROL_DEFAULT_URL = '';
       btn.dataset.value = agg.slug;
       btn.textContent = agg.name;
       container.appendChild(btn);
+      existing.add(agg.slug);
+    }
+    // Add chips for any aggregatorSlug found in registry but not yet listed
+    for (const row of (registry || [])) {
+      if (!row.aggregatorSlug || existing.has(row.aggregatorSlug)) continue;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'chip';
+      btn.dataset.filter = 'aggregator';
+      btn.dataset.value = row.aggregatorSlug;
+      btn.textContent = row.aggregatorSlug;
+      container.appendChild(btn);
+      existing.add(row.aggregatorSlug);
     }
   }
 
@@ -944,7 +960,7 @@ const CONTROL_DEFAULT_URL = '';
       renderSource(data.sourceProfile, data.registry.length, catalogCount);
       renderRunStatus(data.run);
       renderDirectors(data.directors, data.gaps);
-      syncAggregatorChips(data.aggregators || []);
+      syncAggregatorChips(data.aggregators || [], data.registry);
       syncCountryOptions(data.registry);
       renderRegistry(data.registry);
       renderLog(data.run.log);
@@ -983,6 +999,8 @@ const CONTROL_DEFAULT_URL = '';
   const GITHUB_REF = 'main';
   const VERIFY_WORKFLOW = 'verify-on-demand.yml';
   const OREL_WORKFLOW = 'orel-on-demand.yml';
+  const PAUK_WORKFLOW = 'pauk-on-demand.yml';
+  const BOBR_WORKFLOW = 'bobr-on-demand.yml';
   const SCRAPE_WORKFLOW = 'scrape-monthly.yml';
   const GITHUB_TOKEN_KEY = 'studyroom.manager.githubToken';
   const RAW_BASE =
@@ -1209,7 +1227,7 @@ const CONTROL_DEFAULT_URL = '';
         renderSchedule(data.schedule);
         const catalogCount = data.registry.filter((r) => r.catalog).length;
         renderSource(data.sourceProfile, data.registry.length, catalogCount);
-        syncAggregatorChips(data.aggregators || []);
+        syncAggregatorChips(data.aggregators || [], data.registry);
         syncCountryOptions(data.registry);
         renderRegistry(data.registry);
       }
@@ -1280,6 +1298,22 @@ const CONTROL_DEFAULT_URL = '';
     }
     fetchStatus();
   });
+
+  for (const [id, wf, label, mins] of [
+    ['pauk-run-btn', PAUK_WORKFLOW, 'ПАУК (программы)', 30],
+    ['bobr-run-btn', BOBR_WORKFLOW, 'БОБР (кампусы)', 20],
+    ['orel-run-btn', OREL_WORKFLOW, 'ОРЁЛ (фото)', 40],
+  ]) {
+    document.getElementById(id)?.addEventListener('click', async (e) => {
+      const btn = e.currentTarget;
+      btn.disabled = true;
+      const orig = btn.textContent;
+      btn.textContent = 'Запускаем…';
+      await runRemoteWorkflow({ workflowFile: wf, label, expectedMin: mins });
+      btn.disabled = false;
+      btn.textContent = orig;
+    });
+  }
 
   document.getElementById('orel-btn').addEventListener('click', async () => {
     const btn = document.getElementById('orel-btn');
