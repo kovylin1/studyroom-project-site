@@ -525,6 +525,10 @@ const CONTROL_DEFAULT_URL = '';
   .checked-fresh { color: var(--color-primary-dark); font-weight: 600; }
   .checked-stale { color: #c47a30; font-weight: 600; }
   .checked-never { color: var(--color-text-faint); font-style: italic; }
+  .table-link { color: var(--color-text); text-decoration: none; }
+  .table-link:hover { color: var(--color-primary-dark); text-decoration: underline; }
+  .table-link code { transition: color 120ms ease; }
+  .table-link:hover code { color: var(--color-primary-dark); }
 
   .card--directors { margin-bottom: 24px; }
   .directors-grid { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -777,9 +781,11 @@ const CONTROL_DEFAULT_URL = '';
       const aggCell = row.aggregatorSlug
         ? '<span class="tier tier--' + escapeHtml(lastAggregators.find((a) => a.slug === row.aggregatorSlug)?.tier || 'aggregator') + '">' + escapeHtml(aggLabel) + '</span>'
         : '<span class="muted">—</span>';
+      const slugLink = '<a href="/' + escapeHtml(row.slug) + '" target="_blank" rel="noopener" class="table-link"><code>' + escapeHtml(row.slug) + '</code></a>';
+      const nameLink = '<a href="/' + escapeHtml(row.slug) + '" target="_blank" rel="noopener" class="table-link">' + escapeHtml(row.name || '—') + '</a>';
       return '<tr>' +
-        '<td><code>' + escapeHtml(row.slug) + '</code></td>' +
-        '<td>' + escapeHtml(row.name) + '</td>' +
+        '<td>' + slugLink + '</td>' +
+        '<td>' + nameLink + '</td>' +
         '<td>' + escapeHtml(row.city) + '</td>' +
         '<td><span class="tier tier--' + escapeHtml(row.tier) + '">' + escapeHtml(row.tier) + '</span></td>' +
         '<td>' + aggCell + '</td>' +

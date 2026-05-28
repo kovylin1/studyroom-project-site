@@ -56,10 +56,11 @@ function whatsAppCardTemplate(slug: string, name: string): string {
     <section class="trust-strip">
       <div class="container">
         <p class="trust-strip__line">
-          <strong>Прямые партнёры</strong> с университетами через Kaplan Pathways.
-          Цены и&nbsp;дедлайны актуальны: данные перепроверены автоматически
-          в&nbsp;{BUILD_DATE.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' })}.
-          Консультация — <strong>бесплатно</strong>, услуга поступления — fixed&nbsp;fee.
+          <strong>{universities.length}</strong>&nbsp;университетов ·&nbsp;
+          <strong>{countries.length}</strong>&nbsp;{countries.length < 5 ? 'страны' : 'стран'} ·&nbsp;
+          <strong>{totalPrograms.toLocaleString('ru-RU')}</strong>&nbsp;программ.
+          Данные обновлены&nbsp;{BUILD_DATE.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' })}.
+          Консультация — <strong>бесплатно</strong>.
         </p>
       </div>
     </section>
@@ -108,8 +109,8 @@ function whatsAppCardTemplate(slug: string, name: string): string {
       <div class="container">
         <h2 class="final-cta__title">Не нашли подходящий университет?</h2>
         <p class="final-cta__lead">
-          В каталоге — 27 партнёров. У&nbsp;нас есть доступ к&nbsp;ещё 100+ через Kaplan и&nbsp;прямых
-          контактов. Опишите, что ищете — соберём подборку под бюджет и&nbsp;баллы за&nbsp;15&nbsp;минут.
+          В каталоге — {universities.length} университетов из {countries.length} стран.
+          Опишите, что ищете — соберём подборку под бюджет и&nbsp;баллы за&nbsp;15&nbsp;минут.
         </p>
         <a
           href={whatsAppHero()}
