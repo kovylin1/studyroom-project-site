@@ -118,6 +118,9 @@ async function readCatalog() {
       try {
         const parsed = JSON.parse(raw);
         out[parsed.slug] = {
+          name: parsed.name || parsed.slug,
+          country: parsed.country || null,
+          city: parsed.city || null,
           lastChecked: parsed.lastChecked,
           sourceUrl: parsed.sourceUrl,
           sourceHash: parsed.sourceHash,
@@ -187,8 +190,6 @@ async function main() {
     readDirectors(),
     readGaps(),
   ]);
-  const registry = await readRegistry(aggregators);
-
   // Attach gap priority per-uni from worklist
   let gapBySlug = {};
   if (gaps) {
@@ -199,10 +200,23 @@ async function main() {
     } catch {}
   }
 
-  const merged = registry.map((row) => ({
-    ...row,
-    catalog: catalog[row.slug] ?? null,
-    gapPriority: gapBySlug[row.slug] || null,
+  // Build registry from catalog (all 804 JSON files) instead of universities.list.md (437 rows)
+  const merged = Object.entries(catalog).map(([slug, cat]) => ({
+    slug,
+    name: cat.name,
+    country: cat.country,
+    city: cat.city,
+    tier: cat.confidence || 'aggregator',
+    officialUrl: cat.sourceUrl || null,
+    aggregatorSlug: resolveAggregatorSlug(cat.sourceUrl, aggregators),
+    catalog: {
+      lastChecked: cat.lastChecked,
+      sourceUrl: cat.sourceUrl,
+      sourceHash: cat.sourceHash,
+      confidence: cat.confidence,
+      programsCount: cat.programsCount,
+    },
+    gapPriority: gapBySlug[slug] || null,
   }));
   const defaultProfile = aggregators[0] ?? {
     slug: 'kaplan-pathways',
