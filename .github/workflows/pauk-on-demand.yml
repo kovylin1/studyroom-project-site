@@ -1,0 +1,54 @@
+name: ПАУК — обновить программы (on-demand)
+on:
+  workflow_dispatch:
+concurrency:
+  group: pauk
+  cancel-in-progress: true
+jobs:
+  pauk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: |
+            scraper/package-lock.json
+            site/package-lock.json
+      - name: Install scraper deps + Playwright
+        run: cd scraper && npm ci && npx playwright install chromium --with-deps
+      - name: Install site deps
+        run: cd site && npm ci
+      - name: QAHE collector
+        run: node scraper/scrape-qahe-all.mjs
+        continue-on-error: true
+      - name: Edvoy (Playwright)
+        run: node scraper/scrape-edvoy-all.mjs
+        env:
+          EDVOY_LOGIN: ${{ secrets.EDVOY_LOGIN }}
+          EDVOY_PASS: ${{ secrets.EDVOY_PASS }}
+        continue-on-error: true
+      - name: iapro (Playwright)
+        run: node scraper/scrape-iapro-all.mjs
+        env:
+          IAPRO_LOGIN: ${{ secrets.IAPRO_LOGIN }}
+          IAPRO_PASS: ${{ secrets.IAPRO_PASS }}
+        continue-on-error: true
+      - name: detect-gaps + merge
+        run: node scraper/detect-gaps.mjs && node scraper/merge-programs.mjs
+      - name: Build site
+        run: cd site && npm run build
+      - name: Commit + push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/src/content/universities/ scraper/sources/ site/public/api/
+          git diff --staged --quiet || git commit -m "chore: ПАУК update $(date -u +%Y-%m-%d)"
+          git push
+      - name: Deploy
+        run: cd site && npx wrangler pages deploy dist --project-name=studyroom-project-site --branch=main --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
