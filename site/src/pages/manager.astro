@@ -540,6 +540,45 @@ const CONTROL_DEFAULT_URL = '';
   .gap-high { color: #c47a30; font-weight: 600; font-size: 0.8rem; }
   .gap-medium { color: var(--color-text-muted); font-size: 0.8rem; }
 
+  /* ---------- run selector modal ---------- */
+  .run-selector-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    display: flex; align-items: flex-end; justify-content: center;
+  }
+  .run-selector-overlay[hidden] { display: none; }
+  .run-selector-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0.45); backdrop-filter: blur(2px);
+  }
+  .run-selector-sheet {
+    position: relative; z-index: 1;
+    width: 100%; max-width: 540px;
+    background: var(--color-bg);
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
+    padding: 28px 24px 32px;
+    box-shadow: 0 -8px 32px rgba(0,0,0,0.15);
+    animation: slideUp 180ms ease;
+  }
+  @keyframes slideUp { from { transform: translateY(60px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .run-selector__title { margin: 0 0 20px; font-size: 1.1rem; font-weight: 700; }
+  .run-opts { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+  .run-opt {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px; border-radius: 12px; cursor: pointer;
+    border: 1px solid var(--color-border);
+    transition: background 120ms ease, border-color 120ms ease;
+  }
+  .run-opt:hover { background: var(--color-bg-soft); }
+  .run-opt:has(.run-opt__check:checked) {
+    background: var(--color-primary-soft); border-color: var(--color-primary);
+  }
+  .run-opt__check { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--color-primary); }
+  .run-opt__body { display: flex; align-items: center; gap: 8px; flex: 1; flex-wrap: wrap; }
+  .run-opt__label { font-weight: 700; font-size: 0.95rem; }
+  .run-opt__desc { font-size: 0.82rem; flex: 1; }
+  .run-opt__time { font-size: 0.75rem; margin-left: auto; white-space: nowrap; }
+  .run-selector__actions { display: flex; gap: 12px; justify-content: flex-end; }
+
   .log-card__head {
     padding: 16px 20px; border-bottom: 1px solid var(--color-border);
     display: flex; justify-content: space-between; align-items: center;
@@ -1003,11 +1042,12 @@ const CONTROL_DEFAULT_URL = '';
 
   const GITHUB_REPO = 'kovylin1/studyroom-project-site';
   const GITHUB_REF = 'main';
-  const VERIFY_WORKFLOW = 'verify-on-demand.yml';
-  const OREL_WORKFLOW = 'orel-on-demand.yml';
-  const PAUK_WORKFLOW = 'pauk-on-demand.yml';
-  const BOBR_WORKFLOW = 'bobr-on-demand.yml';
-  const SCRAPE_WORKFLOW = 'scrape-monthly.yml';
+  const VERIFY_WORKFLOW     = 'verify-on-demand.yml';
+  const OREL_WORKFLOW       = 'orel-on-demand.yml';
+  const PAUK_WORKFLOW       = 'pauk-on-demand.yml';
+  const BOBR_WORKFLOW       = 'bobr-on-demand.yml';
+  const BUMBLEBEE_WORKFLOW  = 'bumblebee-on-demand.yml';
+  const SCRAPE_WORKFLOW     = 'scrape-monthly.yml';
   const GITHUB_TOKEN_KEY = 'studyroom.manager.githubToken';
   const RAW_BASE =
     'https://raw.githubusercontent.com/' + GITHUB_REPO + '/' + GITHUB_REF;
@@ -1250,30 +1290,8 @@ const CONTROL_DEFAULT_URL = '';
 
   // ---------- button handlers ----------
 
-  document.getElementById('run-all-btn').addEventListener('click', async () => {
-    const btn = document.getElementById('run-all-btn');
-    if (isStaticMode) {
-      btn.disabled = true;
-      const orig = btn.textContent;
-      btn.textContent = 'Запускаем workflow…';
-      const ok = await runRemoteWorkflow({
-        workflowFile: SCRAPE_WORKFLOW,
-        label: 'Полный скрапинг',
-        expectedMin: 15,
-      });
-      btn.disabled = false;
-      btn.textContent = orig;
-      if (ok) fetchStatus();
-      return;
-    }
-    btn.disabled = true;
-    btn.textContent = 'Запускаем…';
-    try {
-      await postJson('/api/run', null);
-    } catch (err) {
-      alert('Не удалось запустить: ' + err.message);
-    }
-    fetchStatus();
+  document.getElementById('run-all-btn').addEventListener('click', () => {
+    openRunSelector();
   });
 
   document.getElementById('verify-btn').addEventListener('click', async () => {
@@ -1510,6 +1528,86 @@ const CONTROL_DEFAULT_URL = '';
       const el = document.getElementById('gaps-pill');
       if (el) el.textContent = 'Gaps: ' + (gaps.byPriority?.critical || 0) + ' critical · ' + (gaps.byPriority?.high || 0) + ' high · ' + (gaps.byPriority?.medium || 0) + ' medium';
     }
+  }
+
+  // ---------- run selector modal ----------
+
+  const RUN_OPTIONS = [
+    { value: 'pauk',      label: 'ПАУК',     desc: 'программы',                   wf: PAUK_WORKFLOW,      mins: 30, defaultOn: true  },
+    { value: 'bobr',      label: 'БОБР',     desc: 'кампусы · жильё',             wf: BOBR_WORKFLOW,      mins: 20, defaultOn: false },
+    { value: 'orel',      label: 'ОРЁЛ',     desc: 'фото',                         wf: OREL_WORKFLOW,      mins: 40, defaultOn: false },
+    { value: 'bumblebee', label: 'БАМБЛБИ',  desc: 'автофикс критических проблем', wf: BUMBLEBEE_WORKFLOW, mins: 30, defaultOn: false },
+    { value: 'revizor',   label: 'РЕВИЗОР',  desc: 'аудит актуальности ссылок',   wf: VERIFY_WORKFLOW,    mins: 5,  defaultOn: false },
+  ];
+
+  function buildRunSelectorHtml() {
+    const opts = RUN_OPTIONS.map((o) =>
+      '<label class="run-opt">' +
+      '<input type="checkbox" class="run-opt__check" value="' + o.value + '"' + (o.defaultOn ? ' checked' : '') + '>' +
+      '<span class="run-opt__body">' +
+        '<span class="run-opt__label">' + o.label + '</span>' +
+        '<span class="run-opt__desc muted">' + o.desc + '</span>' +
+        '<span class="run-opt__time muted">~' + o.mins + ' мин</span>' +
+      '</span>' +
+      '</label>'
+    ).join('');
+    return '<div class="run-selector-overlay" id="run-selector-overlay">' +
+      '<div class="run-selector-backdrop" id="run-selector-backdrop"></div>' +
+      '<div class="run-selector-sheet" role="dialog" aria-modal="true" aria-label="Выбор компонентов">' +
+        '<h3 class="run-selector__title">Что запускаем?</h3>' +
+        '<div class="run-opts" id="run-opts">' + opts + '</div>' +
+        '<div class="run-selector__actions">' +
+          '<button id="run-selector-cancel" class="btn btn-ghost" type="button">Отмена</button>' +
+          '<button id="run-selector-confirm" class="btn btn-primary" type="button">Запустить выбранное</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function openRunSelector() {
+    if (document.getElementById('run-selector-overlay')) {
+      document.getElementById('run-selector-overlay').hidden = false;
+      return;
+    }
+    document.body.insertAdjacentHTML('beforeend', buildRunSelectorHtml());
+    document.getElementById('run-selector-backdrop').addEventListener('click', closeRunSelector);
+    document.getElementById('run-selector-cancel').addEventListener('click', closeRunSelector);
+    document.getElementById('run-selector-confirm').addEventListener('click', confirmRunSelector);
+  }
+
+  function closeRunSelector() {
+    const el = document.getElementById('run-selector-overlay');
+    if (el) el.hidden = true;
+  }
+
+  async function confirmRunSelector() {
+    const checks = document.querySelectorAll('#run-opts .run-opt__check:checked');
+    const selected = Array.from(checks).map((c) => c.value);
+    if (selected.length === 0) { closeRunSelector(); return; }
+
+    closeRunSelector();
+
+    const confirmBtn = document.getElementById('run-selector-confirm');
+    if (!isStaticMode) {
+      // Live mode: trigger via local control panel
+      const runBtn = document.getElementById('run-all-btn');
+      runBtn.disabled = true;
+      runBtn.textContent = 'Запускаем…';
+      try { await postJson('/api/run', { components: selected }); } catch (err) { alert('Ошибка: ' + err.message); }
+      runBtn.disabled = false;
+      runBtn.textContent = 'Запустить скрапинг сейчас';
+      fetchStatus();
+      return;
+    }
+
+    // Static mode: dispatch each selected workflow sequentially
+    for (const val of selected) {
+      const opt = RUN_OPTIONS.find((o) => o.value === val);
+      if (!opt) continue;
+      const ok = await runRemoteWorkflow({ workflowFile: opt.wf, label: opt.label, expectedMin: opt.mins });
+      if (!ok) break;
+    }
+    fetchStatus();
   }
 
   // Initial label: empty default URL = static snapshot. Match the fallback
