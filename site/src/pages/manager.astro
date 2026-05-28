@@ -123,6 +123,9 @@ const CONTROL_DEFAULT_URL = '';
           <button id="verify-btn" class="btn btn-secondary" type="button">
             Проверить актуальность
           </button>
+          <button id="orel-btn" class="btn btn-secondary" type="button">
+            Обновить фото (ОРЁЛ)
+          </button>
           <span class="muted manager__hint">
             или нажмите «обновить» в строке таблицы ниже, чтобы пересобрать один университет.
           </span>
@@ -979,6 +982,7 @@ const CONTROL_DEFAULT_URL = '';
   const GITHUB_REPO = 'kovylin1/studyroom-project-site';
   const GITHUB_REF = 'main';
   const VERIFY_WORKFLOW = 'verify-on-demand.yml';
+  const OREL_WORKFLOW = 'orel-on-demand.yml';
   const SCRAPE_WORKFLOW = 'scrape-monthly.yml';
   const GITHUB_TOKEN_KEY = 'studyroom.manager.githubToken';
   const RAW_BASE =
@@ -1275,6 +1279,16 @@ const CONTROL_DEFAULT_URL = '';
       btn.textContent = original;
     }
     fetchStatus();
+  });
+
+  document.getElementById('orel-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('orel-btn');
+    btn.disabled = true;
+    const orig = btn.textContent;
+    btn.textContent = 'Запускаем ОРЁЛ…';
+    await runRemoteWorkflow({ workflowFile: OREL_WORKFLOW, label: 'Обновление фото (ОРЁЛ)', expectedMin: 30 });
+    btn.disabled = false;
+    btn.textContent = orig;
   });
 
   document.getElementById('github-conn-btn').addEventListener('click', () => {
