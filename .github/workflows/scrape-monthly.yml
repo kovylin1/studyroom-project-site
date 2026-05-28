@@ -12,7 +12,7 @@ concurrency:
 jobs:
   scrape-build-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
 
     steps:
       - uses: actions/checkout@v4
@@ -58,6 +58,11 @@ jobs:
       # ── Phase 2: БОБР (campuses + accommodation) ──────────────────────
       - name: БОБР — campuses + accommodation
         run: node scraper/bobr.mjs --skip-photos --skip-verifier
+        continue-on-error: true
+
+      # ── Phase 3: ОРЁЛ (photos) ────────────────────────────────────────
+      - name: ОРЁЛ — photos
+        run: node scraper/orel.mjs
         continue-on-error: true
 
       # ── Build ──────────────────────────────────────────────────────────
