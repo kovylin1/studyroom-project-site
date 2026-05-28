@@ -1,0 +1,194 @@
+name: Staggered scrape (per-aggregator)
+
+# Один агрегатор каждые ~3 дня. Каждый обновляется ровно 1 раз в месяц.
+# Система не перегружается — 804 университета не парсятся все разом.
+#
+# День месяца → агрегатор:
+#   1  → kaplan-pathways       (partner,   30 дней)
+#   3  → navitas-pathways      (partner,   30 дней)
+#   6  → qahe                  (partner,   30 дней)
+#   9  → studygroup            (partner,   30 дней)
+#   12 → cats                  (partner,   30 дней)
+#   15 → oxford-international  (aggregator, 60 дней)
+#   18 → edvoy                 (aggregator, 60 дней)
+#   21 → iapro                 (aggregator, 60 дней)
+#   24 → qs-topuniversities    (aggregator, 90 дней)
+#   27 → gedu                  (aggregator, 90 дней)
+#   30 → volk                  (aggregator, 90 дней)
+
+on:
+  schedule:
+    - cron: '0 3 1,3,6,9,12,15,18,21,24,27,30 * *'
+  workflow_dispatch:
+    inputs:
+      aggregator:
+        description: 'Агрегатор (пусто = определить по дню месяца)'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - kaplan-pathways
+          - navitas-pathways
+          - qahe
+          - studygroup
+          - cats
+          - oxford-international
+          - edvoy
+          - iapro
+          - qs-topuniversities
+          - gedu
+          - volk
+
+concurrency:
+  group: staggered
+  cancel-in-progress: false
+
+jobs:
+  run-aggregator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Определить агрегатор по дню месяца
+        id: detect
+        run: |
+          AGG="${{ github.event.inputs.aggregator }}"
+          if [ -z "$AGG" ]; then
+            DOM=$(date -u +%-d)
+            case $DOM in
+              1)  AGG="kaplan-pathways" ;;
+              3)  AGG="navitas-pathways" ;;
+              6)  AGG="qahe" ;;
+              9)  AGG="studygroup" ;;
+              12) AGG="cats" ;;
+              15) AGG="oxford-international" ;;
+              18) AGG="edvoy" ;;
+              21) AGG="iapro" ;;
+              24) AGG="qs-topuniversities" ;;
+              27) AGG="gedu" ;;
+              30) AGG="volk" ;;
+              *)
+                echo "Нет агрегатора для дня $DOM — пропуск"
+                echo "aggregator=" >> $GITHUB_OUTPUT
+                exit 0
+                ;;
+            esac
+          fi
+          echo "aggregator=$AGG" >> $GITHUB_OUTPUT
+          echo "Агрегатор: $AGG"
+
+      - uses: actions/checkout@v4
+        if: steps.detect.outputs.aggregator != ''
+
+      - uses: actions/setup-node@v4
+        if: steps.detect.outputs.aggregator != ''
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: |
+            scraper/package-lock.json
+            site/package-lock.json
+
+      - name: Install deps
+        if: steps.detect.outputs.aggregator != ''
+        run: cd scraper && npm ci && cd ../site && npm ci
+
+      - name: Install Playwright (только для Edvoy и IAPro)
+        if: |
+          steps.detect.outputs.aggregator == 'edvoy' ||
+          steps.detect.outputs.aggregator == 'iapro'
+        run: cd scraper && npx playwright install chromium --with-deps
+
+      - name: Запустить коллектор
+        if: steps.detect.outputs.aggregator != ''
+        env:
+          EDVOY_LOGIN: ${{ secrets.EDVOY_LOGIN }}
+          EDVOY_PASS:  ${{ secrets.EDVOY_PASS }}
+          IAPRO_LOGIN: ${{ secrets.IAPRO_LOGIN }}
+          IAPRO_PASS:  ${{ secrets.IAPRO_PASS }}
+        run: |
+          AGG="${{ steps.detect.outputs.aggregator }}"
+          echo "=== Коллектор: $AGG ==="
+          case $AGG in
+            kaplan-pathways)
+              node scraper/scrape-direct-partners-v2.mjs || true
+              ;;
+            navitas-pathways)
+              for region in uk au ca nz us de nl; do
+                node scraper/seed-navitas-${region}.mjs || true
+              done
+              ;;
+            qahe)
+              node scraper/scrape-qahe-all.mjs || true
+              ;;
+            studygroup)
+              node scraper/scrape-studygroup-all.mjs || true
+              ;;
+            cats)
+              echo "⚠ Коллектор CATS не написан — пропуск (TODO)"
+              ;;
+            oxford-international)
+              node scraper/seed-oxfordintl-uk.mjs || true
+              ;;
+            edvoy)
+              node scraper/scrape-edvoy-all.mjs || true
+              ;;
+            iapro)
+              node scraper/scrape-iapro-all.mjs || true
+              ;;
+            qs-topuniversities)
+              node scraper/discover-qs-partners.mjs || true
+              ;;
+            gedu)
+              node scraper/scrape-gedu-all.mjs || true
+              ;;
+            volk)
+              node scraper/scrape-volk-collab-v3.mjs || true
+              ;;
+          esac
+
+      - name: Merge + detect-gaps
+        if: steps.detect.outputs.aggregator != ''
+        run: |
+          node scraper/detect-gaps.mjs    || true
+          node scraper/merge-programs.mjs
+
+      - name: Обновить lastRunAt в aggregator-schedules.json
+        if: steps.detect.outputs.aggregator != ''
+        run: |
+          AGG="${{ steps.detect.outputs.aggregator }}"
+          NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          node -e "
+            const fs = require('fs');
+            const p = 'scraper/sources/aggregator-schedules.json';
+            const d = JSON.parse(fs.readFileSync(p, 'utf8'));
+            if (d['${AGG}']) d['${AGG}'].lastRunAt = '${NOW}';
+            fs.writeFileSync(p, JSON.stringify(d, null, 2) + '\n');
+            console.log('lastRunAt обновлён для', '${AGG}');
+          "
+
+      - name: Build site
+        if: steps.detect.outputs.aggregator != ''
+        run: cd site && npm run build
+
+      - name: Commit + push
+        if: steps.detect.outputs.aggregator != ''
+        run: |
+          AGG="${{ steps.detect.outputs.aggregator }}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/src/content/universities/ scraper/sources/ site/public/api/
+          git diff --staged --quiet || git commit -m "chore: staggered — ${AGG} $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Deploy
+        if: steps.detect.outputs.aggregator != ''
+        run: |
+          cd site && npx wrangler pages deploy dist \
+            --project-name=studyroom-project-site \
+            --branch=main \
+            --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
