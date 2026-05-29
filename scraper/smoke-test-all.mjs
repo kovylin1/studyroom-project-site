@@ -6,6 +6,7 @@
 import { spawn } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
+<<<<<<< HEAD
 import { readFileSync, existsSync } from 'fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -18,6 +19,10 @@ if (existsSync(envFile)) {
     if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
   }
 }
+=======
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+>>>>>>> origin/main
 const log = (...a) => process.stderr.write(`[smoke] ${a.join(' ')}\n`);
 
 const COLLECTORS = [
