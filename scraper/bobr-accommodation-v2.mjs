@@ -25,6 +25,9 @@ const ACCOM_PATHS = [
 const AGG = ['kaplanpathways.com','navitas.com','topuniversities.com','oxfordinternational.com','catsglobalschools.com'];
 const RES_PATTERN = /(hall|residence|house|tower|court|village|college|apartment|lodge|dorm)/i;
 const log = (...a) => console.error('[accom-v2]', new Date().toISOString().slice(11,19), ...a);
+const arg = (p) => (process.argv.find(a => a.startsWith(p)) || '').slice(p.length);
+const LIMIT = parseInt(arg('--limit=') || 'Infinity', 10);
+const SLUG_FILTER = arg('--slug=') || null;
 
 async function fetchOk(url, timeoutMs=8000) {
   try {
@@ -99,7 +102,9 @@ async function scrapeAccomPlaywright(browser, siteRoot) {
 }
 
 const browser = await chromium.launch({ headless: true });
-const files = (await fs.readdir(UNI_DIR)).filter(f => f.endsWith('.json'));
+let files = (await fs.readdir(UNI_DIR)).filter(f => f.endsWith('.json'));
+if (SLUG_FILTER) files = files.filter(f => f === `${SLUG_FILTER}.json`);
+else if (isFinite(LIMIT)) files = files.slice(0, LIMIT);
 log(`scanning ${files.length} unis`);
 let processed = 0, added = 0;
 const CONCURRENCY = 4;

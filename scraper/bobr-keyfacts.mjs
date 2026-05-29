@@ -10,6 +10,9 @@ import { fileURLToPath } from 'node:url';
 
 const CATALOG = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'site/src/content/universities');
 const dry = process.argv.includes('--dry-run');
+const argV = (p) => (process.argv.find(a => a.startsWith(p)) || '').slice(p.length);
+const LIMIT = parseInt(argV('--limit=') || 'Infinity', 10);
+const SLUG_FILTER = argV('--slug=') || null;
 
 const SYM = { GBP:'£', USD:'$', EUR:'€', CAD:'CA$', AUD:'A$', NZD:'NZ$' };
 const LEVEL_LABEL = { foundation:'Foundation', bachelor:'бакалавриат', master:'магистратура', phd:'PhD' };
@@ -60,7 +63,9 @@ function buildFacts(u) {
 }
 
 let touched = 0, skipped = 0;
-const files = (await readdir(CATALOG)).filter(f => f.endsWith('.json'));
+let files = (await readdir(CATALOG)).filter(f => f.endsWith('.json'));
+if (SLUG_FILTER) files = files.filter(f => f === `${SLUG_FILTER}.json`);
+else if (isFinite(LIMIT)) files = files.slice(0, LIMIT);
 for (const f of files) {
   const path = join(CATALOG, f);
   const u = JSON.parse(await readFile(path, 'utf8'));
