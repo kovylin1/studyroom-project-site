@@ -154,6 +154,11 @@ jobs:
           node scraper/detect-gaps.mjs    || true
           node scraper/merge-programs.mjs
 
+      - name: Auto-revizor (только свежеспарсенные)
+        if: steps.detect.outputs.aggregator != ''
+        run: |
+          node scraper/revizor.mjs --aggregator=${{ steps.detect.outputs.aggregator }} || true
+
       - name: Обновить lastRunAt в aggregator-schedules.json
         if: steps.detect.outputs.aggregator != ''
         run: |

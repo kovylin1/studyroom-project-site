@@ -143,6 +143,18 @@ const CONTROL_DEFAULT_URL = '';
           <summary class="muted">Точность по университетам</summary>
           <ul id="verify-details-list" class="manager__verify-list"></ul>
         </details>
+
+        <details id="review-panel" class="manager__review-panel" hidden>
+          <summary id="review-panel-summary" class="manager__review-summary">
+            <span id="review-panel-title">РЕВИЗОР: проблемные кейсы</span>
+            <span id="review-panel-badge" class="status-pill status-pill--warn" hidden></span>
+          </summary>
+          <ul id="review-items-list" class="manager__review-list"></ul>
+          <div class="manager__review-actions" id="review-actions" hidden>
+            <button id="review-apply-btn" class="btn btn-primary" type="button">Применить решения</button>
+            <span class="muted" id="review-apply-hint">Решения сохраняются автоматически при нажатии кнопок</span>
+          </div>
+        </details>
       </article>
 
       <article id="remote-run" class="card manager__remote-run" hidden>
@@ -377,6 +389,26 @@ const CONTROL_DEFAULT_URL = '';
   .verify-row--ok { background: rgba(34, 139, 34, 0.08); }
   .verify-row--warn { background: rgba(225, 165, 0, 0.12); }
   .verify-row--fail { background: rgba(200, 50, 50, 0.12); }
+
+  .manager__review-panel { margin-top: 12px; border: 1px solid var(--border, #e0e0e0); border-radius: 8px; padding: 0; }
+  .manager__review-summary { cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 10px 14px; font-size: 0.95rem; font-weight: 600; list-style: none; }
+  .manager__review-summary::-webkit-details-marker { display: none; }
+  .manager__review-list { list-style: none; padding: 0 0 8px; margin: 0; display: grid; gap: 6px; }
+  .review-item { border-top: 1px solid var(--border, #e0e0e0); padding: 10px 14px; display: grid; gap: 4px; }
+  .review-item--critical { border-left: 3px solid #c83232; }
+  .review-item--warning { border-left: 3px solid #e1a500; }
+  .review-item--decided { opacity: 0.5; }
+  .review-item__head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .review-item__name { font-weight: 600; font-size: 0.9rem; }
+  .review-item__issue { font-size: 0.8rem; color: var(--muted, #666); }
+  .review-item__detail { font-size: 0.82rem; color: var(--muted, #666); }
+  .review-item__actions { display: flex; gap: 8px; margin-top: 6px; }
+  .review-btn { font-size: 0.8rem; padding: 3px 10px; border-radius: 4px; border: 1px solid var(--border, #ccc); background: transparent; cursor: pointer; }
+  .review-btn:hover { background: rgba(0,0,0,0.05); }
+  .review-btn--danger { border-color: #c83232; color: #c83232; }
+  .review-btn--danger:hover { background: rgba(200,50,50,0.08); }
+  .review-btn--active { background: #f0f0f0; font-weight: 600; }
+  .manager__review-actions { padding: 10px 14px; display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--border, #e0e0e0); }
 
   .status-pill {
     display: inline-flex; align-items: center; gap: 8px;
@@ -1042,8 +1074,9 @@ const CONTROL_DEFAULT_URL = '';
 
   const GITHUB_REPO = 'kovylin1/studyroom-project-site';
   const GITHUB_REF = 'main';
-  const VERIFY_WORKFLOW     = 'verify-on-demand.yml';
-  const OREL_WORKFLOW       = 'orel-on-demand.yml';
+  const VERIFY_WORKFLOW        = 'verify-on-demand.yml';
+  const REVIZOR_APPLY_WORKFLOW = 'revizor-apply.yml';
+  const OREL_WORKFLOW          = 'orel-on-demand.yml';
   const PAUK_WORKFLOW       = 'pauk-on-demand.yml';
   const BOBR_WORKFLOW       = 'bobr-on-demand.yml';
   const BUMBLEBEE_WORKFLOW  = 'bumblebee-on-demand.yml';
@@ -1405,6 +1438,154 @@ const CONTROL_DEFAULT_URL = '';
     if (!details.hidden) details.setAttribute('open', '');
     else details.removeAttribute('open');
   });
+
+  // ── РЕВИЗОР decisions panel ──────────────────────────────────────────────
+
+  const REVIEW_API_PATH = 'site/public/api/revizor-review.json';
+  let reviewData = null;
+
+  async function loadReviewData() {
+    try {
+      const ts = Date.now();
+      const res = await fetch('/api/revizor-review.json?ts=' + ts, { cache: 'no-store' });
+      if (!res.ok) return;
+      reviewData = await res.json();
+      renderReviewPanel();
+    } catch {}
+  }
+
+  function issueLabel(issue) {
+    const map = {
+      missing_on_site: 'не найдены на официальном сайте',
+      broken_url: '404 — битая ссылка',
+      tuition_mismatch: 'расхождение стоимости обучения',
+      ielts_changed: 'изменились требования IELTS',
+    };
+    return map[issue] || issue;
+  }
+
+  function decisionActions(item) {
+    const isMismatch = item.issue === 'tuition_mismatch' || item.issue === 'ielts_changed';
+    const decided = item.decision;
+    if (isMismatch) {
+      return [
+        { value: 'update', label: 'Обновить', danger: false },
+        { value: 'ignore', label: 'Игнорировать', danger: false },
+      ].map(a =>
+        `<button class="review-btn${decided === a.value ? ' review-btn--active' : ''}" data-id="${item.id}" data-decision="${a.value}">${a.label}</button>`
+      ).join('');
+    }
+    return [
+      { value: 'delete', label: 'Удалить', danger: true },
+      { value: 'ignore', label: 'Игнорировать', danger: false },
+    ].map(a =>
+      `<button class="review-btn${a.danger ? ' review-btn--danger' : ''}${decided === a.value ? ' review-btn--active' : ''}" data-id="${item.id}" data-decision="${a.value}">${a.label}</button>`
+    ).join('');
+  }
+
+  function renderReviewPanel() {
+    if (!reviewData) return;
+    const panel = document.getElementById('review-panel');
+    const badge = document.getElementById('review-panel-badge');
+    const list = document.getElementById('review-items-list');
+    const actions = document.getElementById('review-actions');
+
+    const pending = (reviewData.items || []).filter(i => !i.applied);
+    if (!pending.length) { panel.hidden = true; return; }
+
+    panel.hidden = false;
+    const undecided = pending.filter(i => i.decision === null).length;
+    badge.textContent = undecided + ' требуют решения';
+    badge.hidden = false;
+
+    list.innerHTML = pending.map(item => {
+      const severity = item.severity === 'critical' ? 'critical' : 'warning';
+      const decided = item.decision !== null ? ' review-item--decided' : '';
+      const programsHtml = (item.programs || []).slice(0, 5).map(p => `<span class="muted">${p.title}</span>`).join(', ');
+      return `<li class="review-item review-item--${severity}${decided}">
+        <div class="review-item__head">
+          <span class="review-item__name">${item.name}</span>
+          <span class="review-item__issue">${issueLabel(item.issue)}</span>
+        </div>
+        ${programsHtml ? `<div class="review-item__detail">${programsHtml}</div>` : ''}
+        ${item.detail ? `<div class="review-item__detail">${item.detail}</div>` : ''}
+        <div class="review-item__actions">${decisionActions(item)}</div>
+      </li>`;
+    }).join('');
+
+    const hasDecided = pending.some(i => i.decision !== null);
+    actions.hidden = !hasDecided;
+  }
+
+  // Сохраняет решение в revizor-review.json через GitHub Contents API
+  async function saveDecision(itemId, decision) {
+    const token = getGithubToken();
+    if (!token) {
+      const proceed = confirm('Нужен GitHub PAT для сохранения решений.');
+      if (!proceed) return;
+      const t = promptForGithubToken();
+      if (!t) return;
+    }
+
+    const item = (reviewData?.items || []).find(i => i.id === itemId);
+    if (!item) return;
+    item.decision = decision;
+    item.decidedAt = new Date().toISOString();
+
+    // Пересчитываем summary
+    const pending = (reviewData.items || []).filter(i => i.decision === null).length;
+    reviewData.summary = { ...reviewData.summary, pending };
+
+    // Загружаем текущий SHA файла (нужен для Contents API)
+    const apiBase = 'https://api.github.com/repos/' + GITHUB_REPO + '/contents/' + REVIEW_API_PATH;
+    try {
+      const shaRes = await fetch(apiBase + '?ref=' + GITHUB_REF, {
+        headers: { Authorization: 'Bearer ' + getGithubToken(), Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
+      });
+      const shaData = shaRes.ok ? await shaRes.json() : {};
+      const sha = shaData.sha;
+
+      const content = btoa(unescape(encodeURIComponent(JSON.stringify(reviewData, null, 2) + '\n')));
+      const putRes = await fetch(apiBase, {
+        method: 'PUT',
+        headers: { Authorization: 'Bearer ' + getGithubToken(), Accept: 'application/vnd.github+json', 'Content-Type': 'application/json', 'X-GitHub-Api-Version': '2022-11-28' },
+        body: JSON.stringify({ message: 'chore: revizor decision ' + decision + ' for ' + item.slug, content, sha, branch: GITHUB_REF }),
+      });
+      if (!putRes.ok) throw new Error('GitHub API ' + putRes.status);
+      renderReviewPanel();
+    } catch (e) {
+      alert('Ошибка сохранения: ' + e.message);
+      item.decision = null; // откат
+      renderReviewPanel();
+    }
+  }
+
+  // Клики по кнопкам решений (event delegation)
+  document.getElementById('review-items-list').addEventListener('click', async (e) => {
+    const btn = e.target.closest('[data-decision]');
+    if (!btn) return;
+    const itemId = btn.dataset.id;
+    const decision = btn.dataset.decision;
+    btn.disabled = true;
+    await saveDecision(itemId, decision);
+    btn.disabled = false;
+  });
+
+  // "Применить решения" → revizor-apply.yml
+  document.getElementById('review-apply-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('review-apply-btn');
+    btn.disabled = true;
+    btn.textContent = 'Запускаем…';
+    try {
+      await runRemoteWorkflow({ workflowFile: REVIZOR_APPLY_WORKFLOW, label: 'РЕВИЗОР Apply', expectedMin: 5 });
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Применить решения';
+    }
+  });
+
+  // Загрузка при старте
+  loadReviewData();
 
   document.addEventListener('click', async (e) => {
     const target = e.target;
