@@ -6,8 +6,23 @@
 import { spawn } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
+<<<<<<< HEAD
+import { readFileSync, existsSync } from 'fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Load .env manually (no dotenv dependency needed)
+const envFile = path.join(__dirname, '.env');
+if (existsSync(envFile)) {
+  for (const line of readFileSync(envFile, 'utf8').split('\n')) {
+    const m = line.match(/^([A-Z_][A-Z0-9_]*)=(.*)$/);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
+  }
+}
+=======
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+>>>>>>> origin/main
 const log = (...a) => process.stderr.write(`[smoke] ${a.join(' ')}\n`);
 
 const COLLECTORS = [

@@ -8,6 +8,12 @@ on:
   schedule:
     - cron: '0 6 1 * *'   # 1-го числа в 06:00 UTC (после staggered дня 1 в 03:00)
   workflow_dispatch:
+<<<<<<< HEAD
+
+permissions:
+  contents: write
+=======
+>>>>>>> origin/main
 
 concurrency:
   group: scrape
