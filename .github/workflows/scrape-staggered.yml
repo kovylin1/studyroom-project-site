@@ -40,6 +40,9 @@ on:
           - gedu
           - volk
 
+permissions:
+  contents: write
+
 concurrency:
   group: staggered
   cancel-in-progress: false

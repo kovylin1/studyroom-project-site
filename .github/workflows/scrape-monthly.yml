@@ -9,6 +9,9 @@ on:
     - cron: '0 6 1 * *'   # 1-го числа в 06:00 UTC (после staggered дня 1 в 03:00)
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 concurrency:
   group: scrape
   cancel-in-progress: false

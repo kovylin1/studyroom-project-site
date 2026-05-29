@@ -3,6 +3,9 @@ name: Verify link freshness (on-demand)
 on:
   workflow_dispatch:   # запускается кнопкой "Проверить актуальность" в manager UI
 
+permissions:
+  contents: write
+
 concurrency:
   group: verify
   cancel-in-progress: true
