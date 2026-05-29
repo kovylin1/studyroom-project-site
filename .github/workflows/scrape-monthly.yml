@@ -1,18 +1,22 @@
-name: Scrape & Deploy (monthly)
+name: Monthly consolidation rebuild
+
+# Запускается 1-го числа каждого месяца — после того как staggered за месяц
+# обновил все агрегаторы. Не скрейпит заново — только merge + rebuild + deploy.
+# Используется также как ручной "пересобрать всё" из manager UI.
 
 on:
   schedule:
-    - cron: '0 3 1 * *'   # 1-го числа каждого месяца в 03:00 UTC
-  workflow_dispatch:        # ручной запуск из manager UI или GitHub
+    - cron: '0 6 1 * *'   # 1-го числа в 06:00 UTC (после staggered дня 1 в 03:00)
+  workflow_dispatch:
 
 concurrency:
   group: scrape
   cancel-in-progress: false
 
 jobs:
-  scrape-build-deploy:
+  rebuild:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v4
@@ -25,60 +29,30 @@ jobs:
             scraper/package-lock.json
             site/package-lock.json
 
-      - name: Install scraper deps + Playwright
-        run: cd scraper && npm ci && npx playwright install chromium --with-deps
+      - name: Install deps
+        run: cd scraper && npm ci && cd ../site && npm ci
 
-      - name: Install site deps
-        run: cd site && npm ci
-
-      # ── Phase 1: ПАУК (programs) ──────────────────────────────────────
-      - name: ПАУК — QAHE collector
-        run: node scraper/scrape-qahe-all.mjs
-        continue-on-error: true
-
-      - name: ПАУК — Edvoy (Playwright)
-        run: node scraper/scrape-edvoy-all.mjs
-        env:
-          EDVOY_LOGIN: ${{ secrets.EDVOY_LOGIN }}
-          EDVOY_PASS: ${{ secrets.EDVOY_PASS }}
-        continue-on-error: true
-
-      - name: ПАУК — iapro (Playwright)
-        run: node scraper/scrape-iapro-all.mjs
-        env:
-          IAPRO_LOGIN: ${{ secrets.IAPRO_LOGIN }}
-          IAPRO_PASS: ${{ secrets.IAPRO_PASS }}
-        continue-on-error: true
-
-      - name: ПАУК — detect-gaps + merge
+      - name: Merge programs + detect gaps
         run: |
-          node scraper/detect-gaps.mjs
+          node scraper/detect-gaps.mjs  || true
           node scraper/merge-programs.mjs
 
-      # ── Phase 2: БОБР (campuses + accommodation) ──────────────────────
-      - name: БОБР — campuses + accommodation
-        run: node scraper/bobr.mjs --skip-photos --skip-verifier
-        continue-on-error: true
+      - name: Generate status + verify snapshots
+        run: |
+          node site/scripts/generate-status.mjs  || true
+          node site/scripts/generate-verify.mjs  || true
 
-      # ── Phase 3: ОРЁЛ (photos) ────────────────────────────────────────
-      - name: ОРЁЛ — photos
-        run: node scraper/orel.mjs
-        continue-on-error: true
-
-      # ── Build ──────────────────────────────────────────────────────────
       - name: Build site
         run: cd site && npm run build
 
-      # ── Commit catalog + status.json back to repo ─────────────────────
-      - name: Commit catalog updates
+      - name: Commit + push
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add site/src/content/universities/ scraper/sources/ site/public/api/
-          git diff --staged --quiet || git commit -m "chore: monthly catalog update $(date -u +%Y-%m-%d)"
+          git add scraper/sources/ site/public/api/
+          git diff --staged --quiet || git commit -m "chore: monthly consolidation $(date -u +%Y-%m-%d)"
           git push
 
-      # ── Deploy to Cloudflare Pages ─────────────────────────────────────
       - name: Deploy to Cloudflare Pages
         run: |
           cd site && npx wrangler pages deploy dist \

@@ -11,6 +11,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { chromium } from 'playwright';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.join(__dirname, 'sources', 'gedu-extracts');
@@ -89,6 +90,36 @@ async function scrapeInstitution(name, url, idx) {
   return { slug, name, programs: programs.length };
 }
 
+async function discoverWithPlaywright() {
+  log('fetch failed — trying Playwright');
+  const browser = await chromium.launch({ headless: true });
+  const ctx = await browser.newContext({ userAgent: UA, viewport: { width: 1366, height: 768 } });
+  const page = await ctx.newPage();
+  const found = [];
+  try {
+    for (const sub of ['/', '/universities/', '/partners/', '/institutions/']) {
+      try {
+        await page.goto(BASE + sub, { waitUntil: 'networkidle', timeout: 20000 });
+        const html = await page.content();
+        const links = extractInstitutionLinks(html, BASE + sub);
+        if (links.length > 0) { found.push(...links); log(`Playwright: ${links.length} links at ${sub}`); break; }
+      } catch {}
+    }
+    // fallback: grab all internal links with education keywords
+    if (!found.length) {
+      const links = await page.$$eval('a[href]', els =>
+        els.map(a => ({ href: a.href, name: a.innerText.trim() }))
+          .filter(l => /university|college|institute|school/i.test(l.name) && l.href.includes('gedu'))
+      );
+      found.push(...links);
+      log(`Playwright fallback: ${found.length} keyword links`);
+    }
+  } finally {
+    await browser.close();
+  }
+  return [...new Map(found.map(l => [l.href, l])).values()];
+}
+
 // ---- main ----
 await fs.mkdir(OUT_DIR, { recursive: true });
 log('discovering GEDU partner institutions');
@@ -103,8 +134,12 @@ for (const sub of ['/', '/universities/', '/partners/', '/institutions/', '/prog
 }
 
 if (institutions.length === 0) {
-  log('WARN: no institution links found — gedu.global may require Playwright (JS-rendered)');
-  console.log(JSON.stringify({ status: 'no-institutions', note: 'may need Playwright — rerun with scrape-gedu-playwright.mjs' }));
+  institutions = await discoverWithPlaywright();
+}
+
+if (institutions.length === 0) {
+  log('WARN: no institutions found even with Playwright');
+  console.log(JSON.stringify({ status: 'no-institutions', note: 'gedu.global returned no institution links' }));
   process.exit(0);
 }
 
