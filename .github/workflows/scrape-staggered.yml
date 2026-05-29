@@ -126,7 +126,7 @@ jobs:
               node scraper/scrape-studygroup-all.mjs || true
               ;;
             cats)
-              echo "⚠ Коллектор CATS не написан — пропуск (TODO)"
+              node scraper/scrape-cats-all.mjs || true
               ;;
             oxford-international)
               node scraper/seed-oxfordintl-uk.mjs || true
@@ -153,6 +153,11 @@ jobs:
         run: |
           node scraper/detect-gaps.mjs    || true
           node scraper/merge-programs.mjs
+
+      - name: Auto-revizor (только свежеспарсенные)
+        if: steps.detect.outputs.aggregator != ''
+        run: |
+          node scraper/revizor.mjs --aggregator=${{ steps.detect.outputs.aggregator }} || true
 
       - name: Обновить lastRunAt в aggregator-schedules.json
         if: steps.detect.outputs.aggregator != ''
