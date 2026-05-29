@@ -92,7 +92,9 @@ async function scrapeInstitution(name, url, idx) {
 
 async function discoverWithPlaywright() {
   log('fetch failed — trying Playwright');
-  const browser = await chromium.launch({ headless: true });
+  let browser;
+  try { browser = await chromium.launch({ headless: true }); }
+  catch { log('WARN: Playwright not installed locally — skipping (works in CI)'); return []; }
   const ctx = await browser.newContext({ userAgent: UA, viewport: { width: 1366, height: 768 } });
   const page = await ctx.newPage();
   const found = [];
