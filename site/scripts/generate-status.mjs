@@ -41,6 +41,7 @@ const CRON_FILE = resolve(PROJECT_ROOT, '.github/workflows/scrape-monthly.yml');
 const OUTPUT_FILE = resolve(SITE_ROOT, 'public/api/status.json');
 const TASK_REGISTRY_FILE = resolve(PROJECT_ROOT, 'scraper/tasks/registry.json');
 const GAPS_FILE = resolve(PROJECT_ROOT, 'scraper/sources/shmel-worklist.json');
+const SCHEDULES_FILE = resolve(PROJECT_ROOT, 'scraper/sources/aggregator-schedules.json');
 
 async function readAggregators() {
   try {
@@ -186,6 +187,19 @@ function nextRunFromCron(cron) {
   return candidate.toISOString();
 }
 
+async function readSchedules() {
+  try {
+    const raw = await readFile(SCHEDULES_FILE, 'utf8');
+    const data = JSON.parse(raw);
+    const out = {};
+    for (const [slug, entry] of Object.entries(data)) {
+      if (slug.startsWith('_')) continue;
+      out[slug] = { lastRunAt: entry.lastRunAt || null, intervalDays: entry.intervalDays || 30 };
+    }
+    return out;
+  } catch { return {}; }
+}
+
 async function readDirectors() {
   try {
     const raw = await readFile(TASK_REGISTRY_FILE, 'utf8');
@@ -202,13 +216,19 @@ async function readGaps() {
 }
 
 async function main() {
-  const [catalog, cron, aggregators, directors, gaps] = await Promise.all([
+  const [catalog, cron, aggregators, directors, gaps, schedules] = await Promise.all([
     readCatalog(),
     readCronExpression(),
     readAggregators(),
     readDirectors(),
     readGaps(),
+    readSchedules(),
   ]);
+  for (const agg of aggregators) {
+    const s = schedules[agg.slug];
+    if (s) { agg.lastRunAt = s.lastRunAt; agg.intervalDays = s.intervalDays; }
+    else { agg.lastRunAt = null; agg.intervalDays = null; }
+  }
   // Attach gap priority per-uni from worklist
   let gapBySlug = {};
   if (gaps) {

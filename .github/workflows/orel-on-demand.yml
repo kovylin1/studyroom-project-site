@@ -3,6 +3,9 @@ name: ОРЁЛ — обновить фото (on-demand)
 on:
   workflow_dispatch:   # только ручной запуск
 
+permissions:
+  contents: write
+
 concurrency:
   group: orel
   cancel-in-progress: true

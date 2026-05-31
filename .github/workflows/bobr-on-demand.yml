@@ -1,6 +1,10 @@
 name: БОБР — обновить кампусы (on-demand)
 on:
   workflow_dispatch:
+
+permissions:
+  contents: write
+
 concurrency:
   group: bobr
   cancel-in-progress: true

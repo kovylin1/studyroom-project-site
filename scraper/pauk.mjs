@@ -7,7 +7,7 @@
 //   4. merge-programs → catalog/*.json (enrichment, never deletes)
 //   5. validate-unis (Zod check)
 //
-// Usage: node scraper/pauk.mjs [--skip-collectors] [--skip-shmel] [--dry-run] [--limit=N] [--headed]
+// Usage: node scraper/pauk.mjs [--skip-collectors] [--skip-shmel] [--dry-run] [--limit=N] [--headed] [--slug SLUG]
 //
 // Flags:
 //   --skip-collectors   use existing extracts, skip scraping
@@ -15,6 +15,7 @@
 //   --dry-run           merge-programs reports but does not write
 //   --limit=N           pass --limit=N to each sub-script (smoke test)
 //   --headed            pass to Playwright collectors (show browser)
+//   --slug SLUG         process only one university (for БАМБЛБИ targeted re-runs)
 
 import { spawn } from 'child_process';
 import path from 'path';
@@ -26,12 +27,15 @@ const SKIP_SHMEL = process.argv.includes('--skip-shmel');
 const DRY_RUN = process.argv.includes('--dry-run');
 const HEADED = process.argv.includes('--headed');
 const LIMIT_ARG = process.argv.find(a => a.startsWith('--limit=')) || '';
+const _slugIdx = process.argv.indexOf('--slug');
+const SLUG_ARG = _slugIdx >= 0 ? process.argv[_slugIdx + 1] : null;
 
 const log = (...a) => process.stderr.write(`[ПАУК] ${new Date().toISOString().slice(11, 19)} ${a.join(' ')}\n`);
 
 function runScript(scriptPath, extraArgs = []) {
   const args = [scriptPath, ...extraArgs];
   if (LIMIT_ARG) args.push(LIMIT_ARG);
+  if (SLUG_ARG && !args.some(a => a.startsWith('--slug'))) args.push(`--slug=${SLUG_ARG}`);
   return new Promise((resolve) => {
     log(`→ ${path.basename(scriptPath)} ${extraArgs.join(' ')}`);
     const child = spawn('node', args, {

@@ -108,6 +108,29 @@ const CONTROL_DEFAULT_URL = '';
         </div>
       </article>
 
+      <article class="card card--agg-schedules" id="agg-schedules-card">
+        <header class="card__head">
+          <h2 class="card__title">Агрегаторы — последний прогон</h2>
+          <span id="agg-overdue-pill" class="muted" style="font-size:0.8rem"></span>
+        </header>
+        <div class="table-wrap">
+          <table class="manager__table agg-table">
+            <thead>
+              <tr>
+                <th>Агрегатор</th>
+                <th>Тир</th>
+                <th>Интервал</th>
+                <th>Последний прогон</th>
+                <th>Статус</th>
+              </tr>
+            </thead>
+            <tbody id="agg-schedules-tbody">
+              <tr><td colspan="5" class="table-loading">Загрузка…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
       <article class="card manager__run">
         <header class="card__head">
           <h2 class="card__title">Ручной запуск</h2>
@@ -563,6 +586,12 @@ const CONTROL_DEFAULT_URL = '';
   .table-link:hover code { color: var(--color-primary-dark); }
 
   .card--directors { margin-bottom: 24px; }
+  .card--agg-schedules { margin-bottom: 24px; padding: 0; overflow: hidden; }
+  .card--agg-schedules .card__head { padding: 16px 20px 0; }
+  .agg-table td, .agg-table th { padding: 10px 16px; }
+  .agg-status--ok { color: var(--color-primary-dark); font-weight: 600; }
+  .agg-status--due { color: #c47a30; font-weight: 600; }
+  .agg-status--never { color: var(--color-text-faint); font-style: italic; }
   .directors-grid { display: flex; gap: 16px; flex-wrap: wrap; }
   .director-item { flex: 1 1 160px; display: flex; flex-direction: column; gap: 4px; padding: 14px; background: var(--color-bg-soft); border: 1px solid var(--color-border); border-radius: 12px; }
   .director-item__name { font-weight: 700; font-size: 1rem; }
@@ -1037,6 +1066,7 @@ const CONTROL_DEFAULT_URL = '';
       renderSource(data.sourceProfile, data.registry.length, catalogCount);
       renderRunStatus(data.run);
       renderDirectors(data.directors, data.gaps);
+      renderAggregatorSchedules(data.aggregators || []);
       syncAggregatorChips(data.aggregators || [], data.registry);
       syncCountryOptions(data.registry);
       renderRegistry(data.registry);
@@ -1233,10 +1263,9 @@ const CONTROL_DEFAULT_URL = '';
         'https://api.github.com/repos/' + GITHUB_REPO + '/actions/workflows/' +
         workflowFile + '/runs?per_page=10';
       let run = null;
-      // 120 × 10s = 20 min. Full scrape-monthly pipeline (Kaplan + Navitas
-      // + Oxford International + CATS + site build + commit + Cloudflare
-      // deploy) typically runs 12-15 min; 10 min was cutting too close.
-      for (let i = 0; i < 120; i += 1) {
+      // 200 × 10s = 33 min. Allows for GitHub queue delay (2-5 min) +
+      // longest workflow (orel: 60 min cap, pauk: 45 min cap). Verify is 30 min.
+      for (let i = 0; i < 200; i += 1) {
         await sleep(10000);
         try {
           const r = await fetch(runsUrl, {
@@ -1261,7 +1290,7 @@ const CONTROL_DEFAULT_URL = '';
         }
       }
       if (!run || run.status !== 'completed') {
-        throw new Error('таймаут опроса GitHub (>20 мин). Откройте лог GitHub и проверьте вручную.');
+        throw new Error('таймаут опроса GitHub (>33 мин). Откройте лог GitHub и проверьте вручную.');
       }
       if (run.conclusion !== 'success') {
         throw new Error('workflow завершился с conclusion=' + run.conclusion + '. Подробнее: ' + run.html_url);
@@ -1306,6 +1335,7 @@ const CONTROL_DEFAULT_URL = '';
         renderSchedule(data.schedule);
         const catalogCount = data.registry.filter((r) => r.catalog).length;
         renderSource(data.sourceProfile, data.registry.length, catalogCount);
+        renderAggregatorSchedules(data.aggregators || []);
         syncAggregatorChips(data.aggregators || [], data.registry);
         syncCountryOptions(data.registry);
         renderRegistry(data.registry);
@@ -1692,6 +1722,51 @@ const CONTROL_DEFAULT_URL = '';
     });
     applyFiltersAndRerender();
   });
+
+  function renderAggregatorSchedules(aggregators) {
+    const tbody = document.getElementById('agg-schedules-tbody');
+    const pill = document.getElementById('agg-overdue-pill');
+    if (!tbody) return;
+    const list = aggregators || [];
+    if (list.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="table-loading">Нет данных</td></tr>';
+      return;
+    }
+    let overdueCount = 0;
+    tbody.innerHTML = list.map((agg) => {
+      const lastRun = agg.lastRunAt;
+      const interval = agg.intervalDays;
+      let statusCls, statusLabel, lastLabel;
+      if (!lastRun) {
+        statusCls = 'agg-status--never';
+        statusLabel = 'никогда';
+        lastLabel = '—';
+      } else {
+        const days = (Date.now() - new Date(lastRun).getTime()) / (1000 * 60 * 60 * 24);
+        lastLabel = fmt.ago(lastRun);
+        if (interval && days > interval) {
+          statusCls = 'agg-status--due';
+          statusLabel = 'просрочен';
+          overdueCount++;
+        } else {
+          statusCls = 'agg-status--ok';
+          statusLabel = 'актуально';
+        }
+      }
+      const tierCls = agg.tier === 'partner' ? 'tier--partner' : agg.tier === 'official' ? 'tier--official' : 'tier--aggregator';
+      return '<tr>' +
+        '<td>' + escapeHtml(agg.name || agg.slug) + '</td>' +
+        '<td><span class="tier ' + tierCls + '">' + escapeHtml(agg.tier || '—') + '</span></td>' +
+        '<td>' + (interval ? interval + ' дн' : '—') + '</td>' +
+        '<td>' + escapeHtml(lastLabel) + '</td>' +
+        '<td><span class="' + statusCls + '">' + statusLabel + '</span></td>' +
+        '</tr>';
+    }).join('');
+    if (pill) {
+      pill.textContent = overdueCount > 0 ? overdueCount + ' просрочено' : 'все актуальны';
+      pill.className = overdueCount > 0 ? 'agg-status--due' : 'agg-status--ok';
+    }
+  }
 
   function renderDirectors(directors, gaps) {
     const STATUS_LABEL = { done: 'Готов', planned: 'Запланирован', 'in-progress': 'В работе' };
