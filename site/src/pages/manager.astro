@@ -74,6 +74,8 @@ const CONTROL_DEFAULT_URL = '';
           </header>
           <p class="card__big" id="source-name">—</p>
           <a id="source-url" class="card__link" href="#" target="_blank" rel="noopener">—</a>
+          <label class="source-select__label" for="source-select">Выбрать агрегатор</label>
+          <select id="source-select" class="filter-panel__select source-select"></select>
           <dl class="meta">
             <div><dt>В реестре</dt><dd><strong id="registry-count">—</strong></dd></div>
             <div><dt>В каталоге сейчас</dt><dd><strong id="catalog-count">—</strong></dd></div>
@@ -434,6 +436,13 @@ const CONTROL_DEFAULT_URL = '';
     font-size: 0.95rem; word-break: break-all;
   }
 
+  .source-select__label {
+    display: block; margin-top: 12px; margin-bottom: 4px;
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+  .source-select { width: 100%; }
+
   .meta { margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
   .meta > div { display: flex; justify-content: space-between; font-size: 0.85rem; gap: 12px; }
   .meta dt { color: var(--color-text-muted); margin: 0; }
@@ -733,6 +742,8 @@ const CONTROL_DEFAULT_URL = '';
   let isOnline = false;
   let lastRegistry = [];
   let lastAggregators = [];
+  let lastSchedule = null;
+  let sourceSelectWired = false;
   const filters = {
     search: '',
     aggregator: '',
@@ -1040,6 +1051,7 @@ const CONTROL_DEFAULT_URL = '';
   }
 
   function renderSchedule(schedule) {
+    lastSchedule = schedule;
     document.getElementById('next-run-local').textContent = fmt.dateLocal(schedule.nextRunUTC);
     document.getElementById('next-run-relative').textContent = fmt.relative(schedule.nextRunUTC);
     document.getElementById('next-run-utc').textContent = schedule.nextRunUTC || '—';
@@ -1057,6 +1069,59 @@ const CONTROL_DEFAULT_URL = '';
     tierEl.textContent = (profile.tier || 'partner').toUpperCase();
     document.getElementById('registry-count').textContent = registryCount;
     document.getElementById('catalog-count').textContent = catalogCount;
+  }
+
+  // Next update date for one aggregator: lastRunAt + intervalDays. If it has never
+  // run, it gets picked up at the next scrape-monthly pass, so fall back to that.
+  function aggregatorNextRun(agg) {
+    if (agg && agg.lastRunAt) {
+      const days = agg.intervalDays || 30;
+      return new Date(new Date(agg.lastRunAt).getTime() + days * 86400000).toISOString();
+    }
+    return lastSchedule ? lastSchedule.nextRunUTC : null;
+  }
+
+  // Drive both cards from the chosen aggregator: identity (right) + next update (left).
+  function applyAggregatorSelection(slug) {
+    const agg = (lastAggregators || []).find((a) => a.slug === slug);
+    if (!agg) return;
+    document.getElementById('source-name').textContent = agg.name || '—';
+    const link = document.getElementById('source-url');
+    link.textContent = agg.baseUrl || '—';
+    link.href = agg.baseUrl || '#';
+    const tierEl = document.getElementById('source-tier');
+    tierEl.className = 'tier tier--' + (agg.tier || 'partner');
+    tierEl.textContent = (agg.tier || 'partner').toUpperCase();
+
+    const nextISO = aggregatorNextRun(agg);
+    const days = agg.intervalDays || 30;
+    document.getElementById('next-run-local').textContent = fmt.dateLocal(nextISO);
+    document.getElementById('next-run-relative').textContent = fmt.relative(nextISO);
+    document.getElementById('next-run-utc').textContent = nextISO || '—';
+    document.getElementById('schedule-source').innerHTML = escapeHtml(
+      agg.lastRunAt ? agg.name + ': каждые ' + days + ' дн.' : agg.name + ': при следующем scrape-monthly',
+    );
+    document.getElementById('cron-pill').innerHTML = agg.lastRunAt
+      ? '<code>+' + days + 'д</code>'
+      : (lastSchedule && lastSchedule.cron ? '<code>' + escapeHtml(lastSchedule.cron) + '</code>' : '—');
+  }
+
+  // Populate the aggregator <select>; preserve the current pick across refreshes.
+  function setupSourceSelector(aggregators) {
+    const sel = document.getElementById('source-select');
+    if (!sel) return;
+    const list = aggregators || [];
+    const prev = sel.value;
+    sel.innerHTML = list
+      .map((a) => '<option value="' + escapeHtml(a.slug) + '">' + escapeHtml(a.name || a.slug) + '</option>')
+      .join('');
+    const initial = list.some((a) => a.slug === prev) ? prev : (list[0] && list[0].slug);
+    if (initial) sel.value = initial;
+    if (!sourceSelectWired) {
+      sel.addEventListener('change', () => applyAggregatorSelection(sel.value));
+      sourceSelectWired = true;
+    }
+    if (initial) applyAggregatorSelection(initial);
   }
 
   function renderLogSummary(run) {
@@ -1129,6 +1194,7 @@ const CONTROL_DEFAULT_URL = '';
       renderDirectors(data.directors, data.gaps);
       renderAggregatorSchedules(data.aggregators || []);
       syncAggregatorChips(data.aggregators || [], data.registry);
+      setupSourceSelector(data.aggregators || []);
       syncCountryOptions(data.registry);
       renderRegistry(data.registry);
       renderLog(data.run.log);
@@ -1399,6 +1465,7 @@ const CONTROL_DEFAULT_URL = '';
         renderSource(data.sourceProfile, data.registry.length, catalogCount);
         renderAggregatorSchedules(data.aggregators || []);
         syncAggregatorChips(data.aggregators || [], data.registry);
+        setupSourceSelector(data.aggregators || []);
         syncCountryOptions(data.registry);
         renderRegistry(data.registry);
       }
