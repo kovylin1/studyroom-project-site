@@ -190,7 +190,7 @@ async function mergeAllSourcesForSlug(slug) {
   const seenSlugs = new Set();
   for (let i = 0; i < programs.length; i++) {
     const p = programs[i];
-    if (!p.slug || !/^[a-z0-9-]+$/.test(p.slug)) {
+    if (!p.slug || !/^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(p.slug)) {
       p.slug = slugify(p.slug || `${slug}-${p.title}-${p.level}`) || `${slugify(slug) || 'uni'}-program-${i}`;
     }
     let safe = p.slug, dn = 2;

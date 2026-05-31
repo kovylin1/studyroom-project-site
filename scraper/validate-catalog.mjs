@@ -28,7 +28,7 @@ function slugify(s) {
     .slice(0, 100);
 }
 
-const SLUG_RE = /^[a-z0-9][a-z0-9-]*$/;
+const SLUG_RE = /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
 async function validateFile(filePath, uniSlug) {
   let raw;
