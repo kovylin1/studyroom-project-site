@@ -125,7 +125,7 @@ function applyExtract(byKey, extract, sourceName, isOfficial, uniSlug) {
     } else {
       // New program from this source
       const durationYears = parseDurationYears(ep.duration ?? ep.durationYears, level);
-      const baseSlug = ep.slug || slugify(`${uniSlug}-${ep.title}-${level}`);
+      const baseSlug = slugify(ep.slug || `${uniSlug}-${ep.title}-${level}`);
       const existingSlugs = new Set([...byKey.values()].map(p => p.slug));
       let finalSlug = baseSlug;
       let n = 2;
