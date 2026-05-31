@@ -1145,7 +1145,7 @@ const CONTROL_DEFAULT_URL = '';
   function promptForGithubToken() {
     const current = getGithubToken();
     const next = prompt(
-      'GitHub PAT (fine-grained, scope «Actions: Read and write» на ' + GITHUB_REPO + ').\n\n' +
+      'GitHub PAT (fine-grained, scopes «Actions: Read and write» + «Contents: Read and write» на ' + GITHUB_REPO + ').\n\n' +
       'Создать: https://github.com/settings/personal-access-tokens/new\n\n' +
       'Пустое значение — удалить токен. Хранится в localStorage этого браузера.',
       current,
@@ -1480,6 +1480,14 @@ const CONTROL_DEFAULT_URL = '';
       const res = await fetch('/api/revizor-review.json?ts=' + ts, { cache: 'no-store' });
       if (!res.ok) return;
       reviewData = await res.json();
+      // Восстанавливаем локальные решения поверх данных с сервера
+      const local = loadDecisionsLocal();
+      for (const item of (reviewData.items || [])) {
+        if (local[item.id] && item.decision === null) {
+          item.decision = local[item.id].decision;
+          item.decidedAt = local[item.id].decidedAt;
+        }
+      }
       renderReviewPanel();
     } catch {}
   }
@@ -1547,46 +1555,65 @@ const CONTROL_DEFAULT_URL = '';
     actions.hidden = !hasDecided;
   }
 
-  // Сохраняет решение в revizor-review.json через GitHub Contents API
-  async function saveDecision(itemId, decision) {
-    const token = getGithubToken();
-    if (!token) {
-      const proceed = confirm('Нужен GitHub PAT для сохранения решений.');
-      if (!proceed) return;
-      const t = promptForGithubToken();
-      if (!t) return;
-    }
+  const DECISIONS_LS_KEY = 'studyroom.revizor.decisions';
 
+  function saveDecisionLocal() {
+    try {
+      const decisions = {};
+      for (const item of (reviewData?.items || [])) {
+        if (item.decision !== null) decisions[item.id] = { decision: item.decision, decidedAt: item.decidedAt };
+      }
+      localStorage.setItem(DECISIONS_LS_KEY, JSON.stringify(decisions));
+    } catch {}
+  }
+
+  function loadDecisionsLocal() {
+    try {
+      return JSON.parse(localStorage.getItem(DECISIONS_LS_KEY) || '{}');
+    } catch { return {}; }
+  }
+
+  // Сохраняет решение — сначала в localStorage, потом пробует GitHub Contents API
+  async function saveDecision(itemId, decision) {
     const item = (reviewData?.items || []).find(i => i.id === itemId);
     if (!item) return;
     item.decision = decision;
     item.decidedAt = new Date().toISOString();
 
-    // Пересчитываем summary
     const pending = (reviewData.items || []).filter(i => i.decision === null).length;
     reviewData.summary = { ...reviewData.summary, pending };
 
-    // Загружаем текущий SHA файла (нужен для Contents API)
+    // Сохраняем локально сразу — решение не потеряется даже без GitHub
+    saveDecisionLocal();
+    renderReviewPanel();
+
+    // Пробуем синхронизировать с GitHub (нужно Contents: Read and write)
+    const token = getGithubToken();
+    if (!token) return; // нет токена — только localStorage, OK
+
     const apiBase = 'https://api.github.com/repos/' + GITHUB_REPO + '/contents/' + REVIEW_API_PATH;
     try {
       const shaRes = await fetch(apiBase + '?ref=' + GITHUB_REF, {
-        headers: { Authorization: 'Bearer ' + getGithubToken(), Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
+        headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
       });
       const shaData = shaRes.ok ? await shaRes.json() : {};
       const sha = shaData.sha;
-
       const content = btoa(unescape(encodeURIComponent(JSON.stringify(reviewData, null, 2) + '\n')));
       const putRes = await fetch(apiBase, {
         method: 'PUT',
-        headers: { Authorization: 'Bearer ' + getGithubToken(), Accept: 'application/vnd.github+json', 'Content-Type': 'application/json', 'X-GitHub-Api-Version': '2022-11-28' },
+        headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json', 'X-GitHub-Api-Version': '2022-11-28' },
         body: JSON.stringify({ message: 'chore: revizor decision ' + decision + ' for ' + item.slug, content, sha, branch: GITHUB_REF }),
       });
-      if (!putRes.ok) throw new Error('GitHub API ' + putRes.status);
-      renderReviewPanel();
+      if (!putRes.ok) {
+        const status = putRes.status;
+        if (status === 403 || status === 404) {
+          console.warn('revizor: нет прав Contents API (нужен scope «Contents: Read and write»). Решение сохранено локально.');
+        } else {
+          console.warn('revizor: GitHub API ' + status + '. Решение сохранено локально.');
+        }
+      }
     } catch (e) {
-      alert('Ошибка сохранения: ' + e.message);
-      item.decision = null; // откат
-      renderReviewPanel();
+      console.warn('revizor: ошибка GitHub API:', e.message, '— решение сохранено локально.');
     }
   }
 
