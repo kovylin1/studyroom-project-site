@@ -1,10 +1,10 @@
 {
-  "generated": "2026-05-31T15:58:21.439Z",
+  "generated": "2026-05-31T16:27:30.090Z",
   "minPrograms": 8,
   "total": 586,
   "byPriority": {
-    "critical": 34,
-    "high": 65,
+    "critical": 36,
+    "high": 63,
     "medium": 487
   },
   "items": [
@@ -131,6 +131,22 @@
       "verified": 0,
       "sources": [],
       "staleDays": 8,
+      "priority": "critical",
+      "reasons": [
+        "only 1 program(s)",
+        "no verifiedBySite",
+        "no source provenance"
+      ],
+      "score": 113
+    },
+    {
+      "slug": "red-bank-catholic",
+      "name": "Red Bank Catholic High School",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Red_Bank_Catholic_High_School",
+      "programs": 1,
+      "verified": 0,
+      "sources": [],
+      "staleDays": 14,
       "priority": "critical",
       "reasons": [
         "only 1 program(s)",
@@ -574,6 +590,22 @@
       "score": 112
     },
     {
+      "slug": "institut-culinaire-france",
+      "name": "Institut Culinaire de France",
+      "sourceUrl": "https://www.institutculinaire.fr/",
+      "programs": 2,
+      "verified": 1,
+      "sources": [
+        "official"
+      ],
+      "staleDays": 14,
+      "priority": "critical",
+      "reasons": [
+        "only 2 program(s)"
+      ],
+      "score": 107
+    },
+    {
       "slug": "birmingham-international-collegiate",
       "name": "Birmingham International Collegiate",
       "sourceUrl": "https://www.birminghamcollegiate.ca/",
@@ -685,22 +717,6 @@
       "reasons": [
         "3 programs (threshold 8)",
         "no verifiedBySite"
-      ],
-      "score": 71
-    },
-    {
-      "slug": "red-bank-catholic",
-      "name": "Red Bank Catholic High School",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Red_Bank_Catholic_High_School",
-      "programs": 3,
-      "verified": 0,
-      "sources": [],
-      "staleDays": 14,
-      "priority": "high",
-      "reasons": [
-        "3 programs (threshold 8)",
-        "no verifiedBySite",
-        "no source provenance"
       ],
       "score": 71
     },
@@ -1466,22 +1482,6 @@
       "score": 67
     },
     {
-      "slug": "institut-culinaire-france",
-      "name": "Institut Culinaire de France",
-      "sourceUrl": "https://www.institutculinaire.fr/",
-      "programs": 3,
-      "verified": 1,
-      "sources": [
-        "official"
-      ],
-      "staleDays": 14,
-      "priority": "high",
-      "reasons": [
-        "3 programs (threshold 8)"
-      ],
-      "score": 66
-    },
-    {
       "slug": "woodside-priory",
       "name": "Woodside Priory School",
       "sourceUrl": "https://www.prioryca.org/",
@@ -1496,6 +1496,22 @@
         "4 programs (threshold 8)"
       ],
       "score": 65
+    },
+    {
+      "slug": "aberystwyth",
+      "name": "Aberystwyth University",
+      "sourceUrl": "https://www.aber.ac.uk/",
+      "programs": 5,
+      "verified": 2,
+      "sources": [
+        "official"
+      ],
+      "staleDays": 9,
+      "priority": "high",
+      "reasons": [
+        "5 programs (threshold 8)"
+      ],
+      "score": 64
     },
     {
       "slug": "kings-bournemouth",
@@ -1544,22 +1560,6 @@
         "5 programs (threshold 8)"
       ],
       "score": 64
-    },
-    {
-      "slug": "aberystwyth",
-      "name": "Aberystwyth University",
-      "sourceUrl": "https://www.aber.ac.uk/",
-      "programs": 6,
-      "verified": 2,
-      "sources": [
-        "official"
-      ],
-      "staleDays": 9,
-      "priority": "high",
-      "reasons": [
-        "6 programs (threshold 8)"
-      ],
-      "score": 63
     },
     {
       "slug": "cardiff-sixth-form",
@@ -3360,7 +3360,7 @@
       "slug": "goldsmiths",
       "name": "Goldsmiths, University of London",
       "sourceUrl": "https://www.gold.ac.uk/",
-      "programs": 12,
+      "programs": 11,
       "verified": 0,
       "sources": [],
       "staleDays": 9,
@@ -3507,7 +3507,7 @@
       "slug": "heriot-watt-dubai",
       "name": "Heriot-Watt University Dubai",
       "sourceUrl": "https://en.wikipedia.org/wiki/Heriot-Watt_University_Dubai",
-      "programs": 253,
+      "programs": 251,
       "verified": 0,
       "sources": [
         "edvoy",
@@ -5046,21 +5046,6 @@
       "score": 36
     },
     {
-      "slug": "pihms",
-      "name": "Pacific International Hotel Management School (PIHMS)",
-      "sourceUrl": "https://www.pihms.ac.nz/",
-      "programs": 13,
-      "verified": 0,
-      "sources": [],
-      "staleDays": 14,
-      "priority": "medium",
-      "reasons": [
-        "no verifiedBySite",
-        "no source provenance"
-      ],
-      "score": 36
-    },
-    {
       "slug": "polimi-gsom",
       "name": "Polimi Graduate School of Management",
       "sourceUrl": "https://www.gsom.polimi.it/",
@@ -5358,7 +5343,7 @@
       "slug": "sf-state",
       "name": "San Francisco State University",
       "sourceUrl": "https://www.sfsu.edu/academics",
-      "programs": 19,
+      "programs": 17,
       "verified": 0,
       "sources": [],
       "staleDays": 9,
@@ -7666,7 +7651,7 @@
       "slug": "cesi",
       "name": "CESI École d'Ingénieurs",
       "sourceUrl": "https://www.cesi.fr/en/",
-      "programs": 80,
+      "programs": 78,
       "verified": 24,
       "sources": [
         "official"
@@ -8450,7 +8435,7 @@
       "slug": "murdoch-dubai",
       "name": "Murdoch University Dubai",
       "sourceUrl": "https://www.murdochuniversitydubai.com/",
-      "programs": 61,
+      "programs": 59,
       "verified": 18,
       "sources": [
         "official"
@@ -8466,7 +8451,7 @@
       "slug": "murdoch",
       "name": "Murdoch University",
       "sourceUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/murdoch-university/",
-      "programs": 28,
+      "programs": 26,
       "verified": 3,
       "sources": [
         "official"
@@ -8687,10 +8672,26 @@
       "score": 31
     },
     {
+      "slug": "pihms",
+      "name": "Pacific International Hotel Management School (PIHMS)",
+      "sourceUrl": "https://www.pihms.ac.nz/",
+      "programs": 14,
+      "verified": 1,
+      "sources": [
+        "official"
+      ],
+      "staleDays": 14,
+      "priority": "medium",
+      "reasons": [
+        "single source: official"
+      ],
+      "score": 31
+    },
+    {
       "slug": "queen-ethelburgas",
       "name": "Queen Ethelburga's College",
       "sourceUrl": "https://www.qe.org/",
-      "programs": 11,
+      "programs": 10,
       "verified": 6,
       "sources": [
         "official"
@@ -8738,7 +8739,7 @@
       "slug": "reading",
       "name": "University of Reading",
       "sourceUrl": "https://www.reading.ac.uk/",
-      "programs": 22,
+      "programs": 21,
       "verified": 4,
       "sources": [
         "official"
@@ -9298,7 +9299,7 @@
       "slug": "canberra",
       "name": "University of Canberra",
       "sourceUrl": "https://www.canberra.edu.au/uc-college",
-      "programs": 77,
+      "programs": 76,
       "verified": 14,
       "sources": [
         "official"
@@ -9442,7 +9443,7 @@
       "slug": "plymouth",
       "name": "University of Plymouth",
       "sourceUrl": "https://www.upic.navitas.com/",
-      "programs": 63,
+      "programs": 62,
       "verified": 4,
       "sources": [
         "official"
@@ -9506,7 +9507,7 @@
       "slug": "swansea",
       "name": "Swansea University",
       "sourceUrl": "https://www.swansea.ac.uk/the-college",
-      "programs": 69,
+      "programs": 68,
       "verified": 6,
       "sources": [
         "official"
