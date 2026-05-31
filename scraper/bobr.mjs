@@ -2,7 +2,7 @@
 // bobr.mjs — БОБР director (campuses + accommodation orchestrator).
 // Pipeline: accommodation merge → campus fill → keyfacts → verifier → photos → validate
 //
-// Usage: node scraper/bobr.mjs [--skip-photos] [--skip-verifier] [--dry-run] [--limit=N]
+// Usage: node scraper/bobr.mjs [--skip-photos] [--skip-verifier] [--dry-run] [--limit=N] [--slug SLUG]
 
 import { spawn } from 'child_process';
 import path from 'path';
@@ -13,11 +13,14 @@ const SKIP_PHOTOS = process.argv.includes('--skip-photos');
 const SKIP_VERIFIER = process.argv.includes('--skip-verifier');
 const DRY_RUN = process.argv.includes('--dry-run');
 const LIMIT_ARG = process.argv.find(a => a.startsWith('--limit=')) || '';
+const _slugIdx = process.argv.indexOf('--slug');
+const SLUG_ARG = _slugIdx >= 0 ? process.argv[_slugIdx + 1] : null;
 const log = (...a) => process.stderr.write(`[БОБР] ${new Date().toISOString().slice(11,19)} ${a.join(' ')}\n`);
 
 function run(script, ...extra) {
   const args = [path.join(__dirname, script), ...extra];
   if (LIMIT_ARG) args.push(LIMIT_ARG);
+  if (SLUG_ARG && !args.some(a => a.startsWith('--slug'))) args.push(`--slug=${SLUG_ARG}`);
   return new Promise((resolve) => {
     log(`→ ${script}`);
     const child = spawn('node', args, { stdio: ['ignore', 'pipe', 'inherit'], env: { ...process.env } });

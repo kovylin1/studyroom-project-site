@@ -20,6 +20,9 @@ on:
         required: false
         default: '20'
 
+permissions:
+  contents: write
+
 concurrency:
   group: bumblebee
   cancel-in-progress: true

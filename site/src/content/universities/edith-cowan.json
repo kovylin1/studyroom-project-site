@@ -1011,32 +1011,6 @@
       ],
       "programUrl": "https://www.ecu.edu.au/",
       "programType": "degree"
-    },
-    {
-      "slug": "edith-cowan-diploma-courses",
-      "title": "Diploma courses",
-      "durationYears": 1,
-      "level": "short-course",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.edithcowancollege.edu.au/courses/diplomas/",
-      "language": "ru",
-      "verified": true
-    },
-    {
-      "slug": "edith-cowan-foundation-program-edith-cowan-college",
-      "title": "Foundation Program - Edith Cowan College",
-      "durationYears": 1,
-      "level": "foundation",
-      "programType": "pathway",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.edithcowancollege.edu.au/courses/foundation/",
-      "language": "ru",
-      "verified": true
     }
   ],
   "tuition": {
@@ -1201,86 +1175,97 @@
   "scholarships": [
     {
       "name": "Navitas Loyalty Bursary",
+      "nameRu": "Navitas Loyalty Bursary",
       "amount": "до AU$2,000",
-      "description": "Discount on first-trimester fees for students progressing from a Navitas pathway college to the partner university."
+      "description": "Discount on first-trimester fees for students progressing from a Navitas pathway college to the partner university.",
+      "descriptionRu": "Скидка на оплату первого триместра для студентов, переходящих из pathway-колледжа Navitas в партнёрский университет.",
+      "url": "https://www.navitas.com/study/scholarships/"
     },
     {
       "name": "ECU International Stipend Scholarship",
+      "nameRu": "ECU International Stipend Scholarship",
       "amount": "AU$5,000 — AU$8,000",
-      "description": "Merit-based award for new international undergraduate and postgraduate students."
+      "description": "Merit-based award for new international undergraduate and postgraduate students.",
+      "descriptionRu": "Скидка для новых международных студентов на бакалавриате и магистратуре.",
+      "url": "https://www.ecu.edu.au/scholarships"
     },
     {
       "name": "ECU Cyber Security Scholarship",
+      "nameRu": "ECU Cyber Security Scholarship",
       "amount": "до 30% скидки от tuition",
-      "description": "For international students entering ECU Cyber Security degrees."
+      "description": "For international students entering ECU Cyber Security degrees.",
+      "descriptionRu": "Для международных студентов на программах по кибербезопасности ECU.",
+      "url": "https://www.ecu.edu.au/scholarships"
     },
     {
       "name": "WAAPA International Excellence Scholarship",
+      "nameRu": "WAAPA International Excellence Scholarship",
       "amount": "до 25% скидки от tuition",
-      "description": "Audition-based scholarship for international applicants to WAAPA performing-arts programs."
+      "description": "Audition-based scholarship for international applicants to WAAPA performing-arts programs.",
+      "descriptionRu": "Стипендия по результатам прослушивания для performing-arts программ WAAPA.",
+      "url": "https://www.ecu.edu.au/scholarships"
     },
     {
       "name": "Vice-Chancellor International Scholarship",
+      "nameRu": "Vice-Chancellor International Scholarship",
       "amount": "до 50% от tuition",
-      "description": "Flagship merit award for exceptional international applicants."
+      "description": "Flagship merit award for exceptional international applicants.",
+      "descriptionRu": "Флагманская скидка — до 50% от стоимости обучения для лучших абитуриентов.",
+      "url": "https://www.ecu.edu.au/scholarships"
     }
   ],
   "accommodation": [
     {
       "name": "ECU Village Joondalup (on-campus)",
-      "text": "On-campus квартиры — на территории кампуса Joondalup, рядом с ECC.",
-      "img": "/photos/edith-cowan/bobr-6.jpg"
+      "price": "от AU$235/нед",
+      "text": "On-campus квартиры — на территории кампуса Joondalup, рядом с ECC."
     },
     {
       "name": "ECU Village Mount Lawley (on-campus)",
-      "text": "On-campus резиденция рядом с WAAPA — для студентов performing arts.",
-      "img": "/photos/edith-cowan/bobr-7.jpg"
+      "price": "от AU$245/нед",
+      "text": "On-campus резиденция рядом с WAAPA — для студентов performing arts."
     },
     {
       "name": "UniLodge Perth (partner)",
-      "text": "Партнёрская резиденция в центре Перта — современные студии.",
-      "img": "/photos/edith-cowan/bobr-8.jpg"
+      "price": "от AU$310/нед",
+      "text": "Партнёрская резиденция в центре Перта — современные студии."
     },
     {
       "name": "Scape Perth (partner)",
-      "text": "Премиум-резиденция в Perth CBD — для студентов, выбирающих центр.",
-      "img": "/photos/edith-cowan/bobr-9.jpg"
+      "price": "от AU$370/нед",
+      "text": "Премиум-резиденция в Perth CBD — для студентов, выбирающих центр."
     },
     {
       "name": "Homestay через ECC",
-      "text": "Принимающая семья — питание + комната, идеально для адаптации в Перте.",
-      "img": "/photos/edith-cowan/bobr-10.jpg"
+      "price": "от AU$330/нед",
+      "text": "Принимающая семья — питание + комната, идеально для адаптации в Перте."
     },
     {
       "name": "Private rental (share house)",
-      "text": "Совместное жильё в Joondalup или Mount Lawley.",
-      "img": "/photos/edith-cowan/bobr-11.jpg"
+      "price": "от AU$215/нед",
+      "text": "Совместное жильё в Joondalup или Mount Lawley."
     }
   ],
   "campuses": [
     {
       "title": "Joondalup Campus (Perth)",
-      "text": "Основной кампус, ECC и большинство международных программ.",
       "sub": "Главный кампус — 25 км от центра Перта",
-      "img": "/photos/_lib/campus-9.jpg"
+      "text": "Основной кампус, ECC и большинство международных программ."
     },
     {
       "title": "Mount Lawley Campus",
-      "text": "WAAPA, education, arts and humanities. Студии, концертные залы.",
       "sub": "7 км от центра Перта",
-      "img": "/photos/_lib/campus-1.jpg"
+      "text": "WAAPA, education, arts and humanities. Студии, концертные залы."
     },
     {
       "title": "South West Campus (Bunbury)",
-      "text": "Региональный кампус — nursing, education, business.",
       "sub": "175 км от Перта",
-      "img": "/photos/_lib/campus-10.jpg"
+      "text": "Региональный кампус — nursing, education, business."
     },
     {
       "title": "ECU City Campus (under construction)",
-      "text": "Новый кампус в центре Перта — открытие 2026, бизнес, IT, креативные индустрии.",
       "sub": "Yagan Square, центр Перта",
-      "img": "/photos/_lib/campus-11.jpg"
+      "text": "Новый кампус в центре Перта — открытие 2026, бизнес, IT, креативные индустрии."
     }
   ],
   "description": {
@@ -1307,9 +1292,9 @@
       "Топ-100 в мире среди молодых вузов (QS Young University 2024)"
     ]
   },
-  "lastChecked": "2026-05-22T11:42:45.869Z",
+  "lastChecked": "2026-05-29T11:29:02.751Z",
   "sourceUrl": "https://www.edithcowancollege.edu.au/",
-  "sourceHash": "sha256:05fe4bb35b7b2029",
+  "sourceHash": "sha256:6ad29b81c307f7ac",
   "confidence": "aggregator",
   "language": "ru",
   "gallery": {

@@ -3,12 +3,9 @@ name: Revizor — apply decisions
 on:
   workflow_dispatch:   # запускается кнопкой "Применить решения" в manager UI
 
-<<<<<<< HEAD
 permissions:
   contents: write
 
-=======
->>>>>>> origin/main
 concurrency:
   group: revizor-apply
   cancel-in-progress: true

@@ -1,6 +1,10 @@
 name: ПАУК — обновить программы (on-demand)
 on:
   workflow_dispatch:
+
+permissions:
+  contents: write
+
 concurrency:
   group: pauk
   cancel-in-progress: true

@@ -2,12 +2,13 @@
 // orel.mjs — ОРЁЛ director (photos orchestrator). Runs AFTER паук.mjs + bobr.mjs.
 // Pipeline: discover → download → resize → quality-filter → fill-gaps → validate
 //
-// Usage: node scraper/orel.mjs [--skip-download] [--dry-run] [--limit=N]
+// Usage: node scraper/orel.mjs [--skip-download] [--dry-run] [--limit=N] [--slug SLUG]
 //
 // Flags:
 //   --skip-download   use existing photos, skip discovery/download
 //   --dry-run         pass to quality filter (no writes)
 //   --limit=N         pass to each sub-script
+//   --slug SLUG       process only one university (for БАМБЛБИ targeted re-runs)
 
 import { spawn } from 'child_process';
 import path from 'path';
@@ -17,6 +18,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SKIP_DOWNLOAD = process.argv.includes('--skip-download');
 const DRY_RUN = process.argv.includes('--dry-run');
 const LIMIT_ARG = process.argv.find(a => a.startsWith('--limit=')) || '';
+const _slugIdx = process.argv.indexOf('--slug');
+const SLUG_ARG = _slugIdx >= 0 ? process.argv[_slugIdx + 1] : null;
 const log = (...a) => process.stderr.write(`[ОРЁЛ] ${new Date().toISOString().slice(11,19)} ${a.join(' ')}\n`);
 
 function run(script, ...extra) {
@@ -50,24 +53,27 @@ async function runTsx(script) {
   });
 }
 
-log('starting' + (SKIP_DOWNLOAD ? ' [skip-download]' : '') + (DRY_RUN ? ' [dry-run]' : ''));
+const SLUG_PAIR = SLUG_ARG ? ['--slug', SLUG_ARG] : [];
+const SLUGS_PAIR = SLUG_ARG ? ['--slugs', SLUG_ARG] : [];
+
+log('starting' + (SKIP_DOWNLOAD ? ' [skip-download]' : '') + (DRY_RUN ? ' [dry-run]' : '') + (SLUG_ARG ? ` [slug=${SLUG_ARG}]` : ''));
 const report = {};
 
 // Phase 1: Discovery + download (parallel sources, then sequential heavier tasks)
 if (!SKIP_DOWNLOAD) {
   log('=== Phase 1: discover + download ===');
   const [wiki, wikipedia, fallback] = await Promise.all([
-    run('discover-photos.mjs'),
-    run('discover-photos-wikipedia.mjs'),
-    run('discover-photos-fallback.mjs'),
+    run('discover-photos.mjs', ...SLUG_PAIR),
+    run('discover-photos-wikipedia.mjs', ...SLUG_PAIR),
+    run('discover-photos-fallback.mjs', ...SLUG_PAIR),
   ]);
   report['discover-photos'] = wiki;
   report['discover-photos-wikipedia'] = wikipedia;
   report['discover-photos-fallback'] = fallback;
 
-  report['download-photos'] = await run('download-photos.mjs');
-  report['scrape-wiki-photos'] = await run('scrape-wiki-photos.mjs');
-  report['resize-photos'] = await run('resize-photos.mjs');
+  report['download-photos'] = await run('download-photos.mjs', ...SLUG_PAIR);
+  report['scrape-wiki-photos'] = await run('scrape-wiki-photos.mjs', ...SLUG_PAIR);
+  report['resize-photos'] = await run('resize-photos.mjs', ...SLUGS_PAIR);
 } else {
   log('=== Phase 1: SKIPPED ===');
 }
