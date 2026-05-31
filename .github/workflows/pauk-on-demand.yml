@@ -42,6 +42,8 @@ jobs:
         continue-on-error: true
       - name: detect-gaps + merge
         run: node scraper/detect-gaps.mjs && node scraper/merge-programs.mjs
+      - name: Validate catalog
+        run: node scraper/validate-catalog.mjs
       - name: Build site
         run: cd site && npm run build
       - name: Commit + push
