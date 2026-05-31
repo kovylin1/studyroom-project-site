@@ -5,18 +5,6 @@
   "city": "London",
   "programs": [
     {
-      "slug": "a-levels",
-      "title": "A-Levels Programme",
-      "durationYears": 2,
-      "level": "sixth-form",
-      "intakes": [
-        "September",
-        "January"
-      ],
-      "programType": "degree",
-      "programUrl": "https://www.davidgamecollege.com/a-levels"
-    },
-    {
       "slug": "one-year-a-levels",
       "title": "One-Year A-Levels",
       "durationYears": 1,
@@ -71,7 +59,10 @@
       ],
       "programUrl": "https://www.davidgamecollege.com/courses/courses-overview/item/27/university-foundation-programme",
       "language": "ru",
-      "verified": true
+      "verified": true,
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-05-31"
     },
     {
       "slug": "david-game-aberystwyth-international-foundation-programmes",
@@ -85,12 +76,20 @@
       "programUrl": "https://www.davidgamecollege.com/courses/courses-overview/item/114/aberystwyth-international-foundation-programmes",
       "language": "ru",
       "verified": true
+    },
+    {
+      "slug": "david-game-foundation-pathways-available-foundation",
+      "title": "Foundation Pathways available:",
+      "durationYears": 1,
+      "level": "foundation",
+      "source": "official",
+      "verifiedBySite": true,
+      "checkedAt": "2026-05-31"
     }
   ],
   "tuition": {
     "currency": "GBP",
     "byProgram": {
-      "a-levels": 26000,
       "one-year-a-levels": 24000,
       "gcse": 24000,
       "foundation-year": 18000,

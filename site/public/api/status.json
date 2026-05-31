@@ -43,7 +43,7 @@
       "host": "oxfordinternational.com",
       "tier": "aggregator",
       "lastRunAt": null,
-      "intervalDays": 60
+      "intervalDays": 30
     },
     {
       "slug": "qs-topuniversities",
@@ -52,7 +52,7 @@
       "host": "topuniversities.com",
       "tier": "aggregator",
       "lastRunAt": null,
-      "intervalDays": 90
+      "intervalDays": 30
     },
     {
       "slug": "edvoy",
@@ -61,7 +61,7 @@
       "host": "edvoy.com",
       "tier": "aggregator",
       "lastRunAt": null,
-      "intervalDays": 60
+      "intervalDays": 30
     },
     {
       "slug": "iapro",
@@ -70,7 +70,7 @@
       "host": "iapro.com",
       "tier": "aggregator",
       "lastRunAt": null,
-      "intervalDays": 60
+      "intervalDays": 30
     },
     {
       "slug": "qahe",
@@ -88,7 +88,7 @@
       "host": "gedu.org",
       "tier": "aggregator",
       "lastRunAt": null,
-      "intervalDays": 90
+      "intervalDays": 30
     },
     {
       "slug": "studygroup",
@@ -115,7 +115,7 @@
       "host": "volk.education",
       "tier": "aggregator",
       "lastRunAt": "2026-05-30T06:28:00Z",
-      "intervalDays": 90
+      "intervalDays": 30
     }
   ],
   "directors": {
@@ -163,13 +163,13 @@
     }
   },
   "gaps": {
-    "total": 803,
+    "total": 586,
     "byPriority": {
-      "critical": 32,
-      "high": 101,
-      "medium": 670
+      "critical": 33,
+      "high": 66,
+      "medium": 487
     },
-    "generatedAt": "2026-05-31T07:25:44.235Z"
+    "generatedAt": "2026-05-31T15:42:21.256Z"
   },
   "registry": [
     {
@@ -202,9 +202,9 @@
         "sourceUrl": "https://www.collabinternational.com/aalto-university",
         "sourceHash": "sha256:collab-mpjremgz",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "aarhus-university",
@@ -219,9 +219,9 @@
         "sourceUrl": "https://www.collabinternational.com/aarhus-university",
         "sourceHash": "sha256:collab-mpjremi2",
         "confidence": "aggregator",
-        "programsCount": 15
+        "programsCount": 22
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "abat-oliba-barcelona",
@@ -236,7 +236,7 @@
         "sourceUrl": "https://www.uao.es/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 28
+        "programsCount": 36
       },
       "gapPriority": "medium"
     },
@@ -253,7 +253,7 @@
         "sourceUrl": "https://www.abbeycambridge.co.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 9
+        "programsCount": 14
       },
       "gapPriority": "medium"
     },
@@ -287,7 +287,7 @@
         "sourceUrl": "https://www.abbeymanchester.co.uk/",
         "sourceHash": "sha256:a3f1c82d4e6b9071",
         "confidence": "aggregator",
-        "programsCount": 10
+        "programsCount": 13
       },
       "gapPriority": "medium"
     },
@@ -304,9 +304,9 @@
         "sourceUrl": "https://www.abdn.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 107
+        "programsCount": 108
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "abertay",
@@ -338,9 +338,9 @@
         "sourceUrl": "https://www.aber.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 9
+        "programsCount": 7
       },
-      "gapPriority": "medium"
+      "gapPriority": "high"
     },
     {
       "slug": "abu-dhabi-university",
@@ -355,9 +355,9 @@
         "sourceUrl": "https://www.adu.ac.ae/",
         "sourceHash": "sha256:adu2026051900000a",
         "confidence": "partner",
-        "programsCount": 80
+        "programsCount": 83
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "ac-badem-university",
@@ -372,9 +372,9 @@
         "sourceUrl": "https://www.collabinternational.com/acibadem-university",
         "sourceHash": "sha256:collab-mpjremjm",
         "confidence": "aggregator",
-        "programsCount": 10
+        "programsCount": 17
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "academic-coaching",
@@ -389,9 +389,9 @@
         "sourceUrl": "https://www.collabinternational.com/academic-coaching",
         "sourceHash": "sha256:collab-mpjremk6",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "academy-of-learning-career-college-scarborough",
@@ -423,7 +423,7 @@
         "sourceUrl": "https://www.oxfordinternational.com/",
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
-        "programsCount": 19
+        "programsCount": 21
       },
       "gapPriority": "medium"
     },
@@ -440,7 +440,7 @@
         "sourceUrl": "https://www.acap.edu.au/",
         "sourceHash": "sha256:a2e1ae3ed52a5bf4",
         "confidence": "aggregator",
-        "programsCount": 32
+        "programsCount": 43
       },
       "gapPriority": "medium"
     },
@@ -457,7 +457,7 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/adelaide-university/",
         "sourceHash": "sha256:f34479167bbbfcd6",
         "confidence": "official",
-        "programsCount": 541
+        "programsCount": 544
       },
       "gapPriority": "medium"
     },
@@ -474,9 +474,9 @@
         "sourceUrl": "https://www.adelphi.edu/",
         "sourceHash": "sha256:a3f9d2e1c47b08f5",
         "confidence": "aggregator",
-        "programsCount": 95
+        "programsCount": 98
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "adler",
@@ -491,7 +491,7 @@
         "sourceUrl": "https://www.adler.edu/",
         "sourceHash": "sha256:3f9a21c4e7b80d56",
         "confidence": "aggregator",
-        "programsCount": 33
+        "programsCount": 35
       },
       "gapPriority": "medium"
     },
@@ -508,9 +508,9 @@
         "sourceUrl": "https://www.collabinternational.com/admission-consultancy",
         "sourceHash": "sha256:collab-mpjremlk",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "advanced-placement-ap-exams",
@@ -525,9 +525,9 @@
         "sourceUrl": "https://www.collabinternational.com/advanced-placement-ap-exams",
         "sourceHash": "sha256:collab-mpjremnb",
         "confidence": "aggregator",
-        "programsCount": 11
+        "programsCount": 18
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "aivancity",
@@ -542,9 +542,9 @@
         "sourceUrl": "https://www.aivancity.ai/",
         "sourceHash": "sha256:a1c9d4b7e2f86b51",
         "confidence": "aggregator",
-        "programsCount": 23
+        "programsCount": 36
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "alberta",
@@ -559,9 +559,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/canadian-universities/university-of-alberta/",
         "sourceHash": "sha256:b9f8957a85e6f52b",
         "confidence": "aggregator",
-        "programsCount": 168
+        "programsCount": 173
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "alexander-college",
@@ -576,9 +576,9 @@
         "sourceUrl": "https://www.alexandercollege.ca/",
         "sourceHash": "sha256:a3c9f21d4b7e8f6a",
         "confidence": "aggregator",
-        "programsCount": 31
+        "programsCount": 32
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "algoma-university",
@@ -644,9 +644,9 @@
         "sourceUrl": "https://kogod.american.edu/",
         "sourceHash": "sha256:a3f7d291b84c6e50",
         "confidence": "aggregator",
-        "programsCount": 128
+        "programsCount": 134
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "american-university-of-greece",
@@ -712,9 +712,9 @@
         "sourceUrl": "https://amsterdam.tech/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 11
+        "programsCount": 15
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "amsterdam",
@@ -729,7 +729,7 @@
         "sourceUrl": "https://www.uva.nl/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 271
+        "programsCount": 272
       },
       "gapPriority": "medium"
     },
@@ -746,7 +746,7 @@
         "sourceUrl": "http://www.arucollege.com/",
         "sourceHash": "sha256:68556cffde95afcb",
         "confidence": "aggregator",
-        "programsCount": 68
+        "programsCount": 71
       },
       "gapPriority": "medium"
     },
@@ -763,7 +763,7 @@
         "sourceUrl": "https://www.aauni.edu/",
         "sourceHash": "sha256:8c7e970c30766aff",
         "confidence": "partner",
-        "programsCount": 12
+        "programsCount": 14
       },
       "gapPriority": "medium"
     },
@@ -780,9 +780,9 @@
         "sourceUrl": "https://www.apu.edu.my/",
         "sourceHash": "sha256:a7c2f3e4b9d1a6f8",
         "confidence": "partner",
-        "programsCount": 184
+        "programsCount": 197
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "arden",
@@ -797,9 +797,9 @@
         "sourceUrl": "https://arden.ac.uk/",
         "sourceHash": "arden-2026-05-14-v1",
         "confidence": "aggregator",
-        "programsCount": 119
+        "programsCount": 129
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "arizona-state",
@@ -814,9 +814,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/arizona-state-university/",
         "sourceHash": "sha256:8a3b791929434dd5",
         "confidence": "aggregator",
-        "programsCount": 395
+        "programsCount": 402
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "arizona",
@@ -882,9 +882,9 @@
         "sourceUrl": "https://www.ashland.edu/",
         "sourceHash": "sha256:a3f9c2e51d7b840f",
         "confidence": "aggregator",
-        "programsCount": 239
+        "programsCount": 240
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "aston-university-london",
@@ -916,9 +916,9 @@
         "sourceUrl": "https://www.aston.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 212
+        "programsCount": 225
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "asu-london",
@@ -933,7 +933,7 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/asu-london/",
         "sourceHash": "sha256:92f1798aa18ecac5",
         "confidence": "aggregator",
-        "programsCount": 25
+        "programsCount": 29
       },
       "gapPriority": "medium"
     },
@@ -967,9 +967,9 @@
         "sourceUrl": "https://www.atelierdesevres.com/",
         "sourceHash": "sha256:a7f3c4d92b1e8650",
         "confidence": "aggregator",
-        "programsCount": 15
+        "programsCount": 20
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "atilim",
@@ -984,7 +984,7 @@
         "sourceUrl": "https://www.atilim.edu.tr",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 22
+        "programsCount": 21
       },
       "gapPriority": "medium"
     },
@@ -1052,7 +1052,7 @@
         "sourceUrl": "https://www.aud.edu/",
         "sourceHash": "sha256:a7d3f9c2e418b6d5",
         "confidence": "aggregator",
-        "programsCount": 49
+        "programsCount": 55
       },
       "gapPriority": "medium"
     },
@@ -1137,7 +1137,7 @@
         "sourceUrl": "https://www.aut.ac.nz/",
         "sourceHash": "sha256:3a7f9c2e5b1d84f6",
         "confidence": "aggregator",
-        "programsCount": 31
+        "programsCount": 36
       },
       "gapPriority": "medium"
     },
@@ -1154,7 +1154,7 @@
         "sourceUrl": "https://www.avila.edu/",
         "sourceHash": "avila-2026-05-14-v1",
         "confidence": "aggregator",
-        "programsCount": 84
+        "programsCount": 89
       },
       "gapPriority": "medium"
     },
@@ -1205,9 +1205,9 @@
         "sourceUrl": "https://www.bathacademy.co.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 20
+        "programsCount": 26
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "bath",
@@ -1222,9 +1222,9 @@
         "sourceUrl": "https://www.bath.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 497
+        "programsCount": 499
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "bau-global",
@@ -1239,9 +1239,9 @@
         "sourceUrl": "https://www.collabinternational.com/bau-global",
         "sourceHash": "sha256:collab-mpjrempj",
         "confidence": "aggregator",
-        "programsCount": 22
+        "programsCount": 29
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "baylor-university",
@@ -1307,9 +1307,9 @@
         "sourceUrl": "https://www.collabinternational.com/berk-alyeni",
         "sourceHash": "sha256:collab-mpjremrv",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "beykent-university",
@@ -1341,9 +1341,9 @@
         "sourceUrl": "https://bhms.ch/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 52
+        "programsCount": 66
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "bilgi-university",
@@ -1358,9 +1358,9 @@
         "sourceUrl": "https://www.collabinternational.com/bilgi-university",
         "sourceHash": "sha256:collab-mpjremtl",
         "confidence": "aggregator",
-        "programsCount": 8
+        "programsCount": 15
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "birkbeck",
@@ -1375,7 +1375,7 @@
         "sourceUrl": "https://www.bbk.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 29
+        "programsCount": 33
       },
       "gapPriority": "medium"
     },
@@ -1392,7 +1392,7 @@
         "sourceUrl": "https://www.bcuic.navitas.com/",
         "sourceHash": "sha256:3192fe9740b68020",
         "confidence": "aggregator",
-        "programsCount": 69
+        "programsCount": 72
       },
       "gapPriority": "medium"
     },
@@ -1443,9 +1443,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-birmingham/",
         "sourceHash": "sha256:28b0f9d073b14ad7",
         "confidence": "aggregator",
-        "programsCount": 449
+        "programsCount": 455
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "bishop-montgomery",
@@ -1494,7 +1494,7 @@
         "sourceUrl": "https://www.bbs.unibo.it/en/",
         "sourceHash": "sha256:b0107b7355c4a319",
         "confidence": "aggregator",
-        "programsCount": 154
+        "programsCount": 156
       },
       "gapPriority": "medium"
     },
@@ -1545,9 +1545,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/bournemouth-university/",
         "sourceHash": "sha256:7fe2a16124796bcd",
         "confidence": "aggregator",
-        "programsCount": 223
+        "programsCount": 227
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "bow-valley",
@@ -1562,9 +1562,9 @@
         "sourceUrl": "https://bowvalleycollege.ca/",
         "sourceHash": "sha256:c3f72a1d48e90b35",
         "confidence": "aggregator",
-        "programsCount": 95
+        "programsCount": 96
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "bpp-university",
@@ -1613,9 +1613,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-brighton/",
         "sourceHash": "sha256:ae8b8d00af7cc4ba",
         "confidence": "aggregator",
-        "programsCount": 631
+        "programsCount": 635
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "bristol",
@@ -1630,9 +1630,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-bristol/",
         "sourceHash": "sha256:7fe3843900d7e153",
         "confidence": "aggregator",
-        "programsCount": 124
+        "programsCount": 128
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "brock",
@@ -1647,9 +1647,9 @@
         "sourceUrl": "https://brocku.ca/",
         "sourceHash": "sha256:f6a07d4e71b23c59",
         "confidence": "aggregator",
-        "programsCount": 18
+        "programsCount": 21
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "brunel",
@@ -1664,7 +1664,7 @@
         "sourceUrl": "https://pathway.brunel.ac.uk/",
         "sourceHash": "sha256:3f6425889529ae10",
         "confidence": "aggregator",
-        "programsCount": 68
+        "programsCount": 74
       },
       "gapPriority": "medium"
     },
@@ -1681,9 +1681,9 @@
         "sourceUrl": "https://www.berlinsbi.com/",
         "sourceHash": "bsbi-2026-05-14-v1",
         "confidence": "partner",
-        "programsCount": 158
+        "programsCount": 168
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "buckinghamshire-new-university",
@@ -1732,9 +1732,9 @@
         "sourceUrl": "https://www.bsb-education.com/",
         "sourceHash": "sha256:direct-mpjti8zp",
         "confidence": "partner",
-        "programsCount": 61
+        "programsCount": 77
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "c3s-business-school",
@@ -1766,7 +1766,7 @@
         "sourceUrl": "https://www.callutheran.edu/",
         "sourceHash": "sha256:3a7f2c9e1d84b605",
         "confidence": "aggregator",
-        "programsCount": 73
+        "programsCount": 74
       },
       "gapPriority": "medium"
     },
@@ -1783,7 +1783,7 @@
         "sourceUrl": "https://www.fullerton.edu/",
         "sourceHash": "sha256:4f9a2c7e1d8b3f6a",
         "confidence": "aggregator",
-        "programsCount": 36
+        "programsCount": 37
       },
       "gapPriority": "medium"
     },
@@ -1936,9 +1936,9 @@
         "sourceUrl": "https://www.collabinternational.com/canadian-universities-to-elevate-your-career",
         "sourceHash": "sha256:collab-mpjremya",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "canadian-university-dubai",
@@ -1953,9 +1953,9 @@
         "sourceUrl": "https://www.cud.ac.ae/",
         "sourceHash": "sha256:c4d8e2a9b71f5e34",
         "confidence": "aggregator",
-        "programsCount": 51
+        "programsCount": 54
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "canberra-sydney",
@@ -1970,7 +1970,7 @@
         "sourceUrl": "https://www.canberra.edu.au/",
         "sourceHash": "sha256:a3f7c2e91b0d485f",
         "confidence": "aggregator",
-        "programsCount": 38
+        "programsCount": 48
       },
       "gapPriority": "medium"
     },
@@ -1987,7 +1987,7 @@
         "sourceUrl": "https://www.canberra.edu.au/uc-college",
         "sourceHash": "sha256:cf8514ea2eff66ba",
         "confidence": "aggregator",
-        "programsCount": 67
+        "programsCount": 79
       },
       "gapPriority": "medium"
     },
@@ -2004,9 +2004,9 @@
         "sourceUrl": "https://www.canterbury.ac.uk/",
         "sourceHash": "canterbury-christ-church-2026-05-14-v1",
         "confidence": "aggregator",
-        "programsCount": 322
+        "programsCount": 325
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "canterbury-nz",
@@ -2021,9 +2021,9 @@
         "sourceUrl": "https://www.ucic.ac.nz/",
         "sourceHash": "sha256:d8a520dc747a0d6f",
         "confidence": "aggregator",
-        "programsCount": 101
+        "programsCount": 106
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "cape-breton-university",
@@ -2055,7 +2055,7 @@
         "sourceUrl": "https://www.capilanou.ca/",
         "sourceHash": "sha256:b8c29f6e73d45a61",
         "confidence": "aggregator",
-        "programsCount": 107
+        "programsCount": 116
       },
       "gapPriority": "medium"
     },
@@ -2089,9 +2089,9 @@
         "sourceUrl": "https://www.cardiffmet.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 125
+        "programsCount": 131
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "cardiff-sixth-form",
@@ -2106,7 +2106,7 @@
         "sourceUrl": "https://www.ccoex.com/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 5
+        "programsCount": 6
       },
       "gapPriority": "high"
     },
@@ -2276,9 +2276,9 @@
         "sourceUrl": "https://www.collabinternational.com/centennial-college",
         "sourceHash": "sha256:collab-mpjremz9",
         "confidence": "aggregator",
-        "programsCount": 26
+        "programsCount": 33
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "cesar-ritz-colleges",
@@ -2310,7 +2310,7 @@
         "sourceUrl": "https://www.cesi.fr/en/",
         "sourceHash": "sha256:c3e51f8a7b2d9405",
         "confidence": "aggregator",
-        "programsCount": 57
+        "programsCount": 81
       },
       "gapPriority": "medium"
     },
@@ -2344,7 +2344,7 @@
         "sourceUrl": "https://sydneymelbourne.csu.edu.au/",
         "sourceHash": "sha256:6be7e4ae01737466",
         "confidence": "aggregator",
-        "programsCount": 57
+        "programsCount": 59
       },
       "gapPriority": "medium"
     },
@@ -2361,9 +2361,9 @@
         "sourceUrl": "https://www.collabinternational.com/charles-university",
         "sourceHash": "sha256:collab-mpjren03",
         "confidence": "aggregator",
-        "programsCount": 10
+        "programsCount": 17
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "chester",
@@ -2378,9 +2378,9 @@
         "sourceUrl": "https://www1.chester.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 821
+        "programsCount": 825
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "circle-international",
@@ -2395,9 +2395,9 @@
         "sourceUrl": "https://www.circleinternational.co.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 8
       },
-      "gapPriority": "high"
+      "gapPriority": "medium"
     },
     {
       "slug": "city-london",
@@ -2412,9 +2412,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/city-university-of-london/",
         "sourceHash": "sha256:28e18b02d65aa11d",
         "confidence": "aggregator",
-        "programsCount": 301
+        "programsCount": 305
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "claremont-grad",
@@ -2446,9 +2446,9 @@
         "sourceUrl": "https://www.clarku.edu/",
         "sourceHash": "sha256:3f7c9a1d4b82e056",
         "confidence": "aggregator",
-        "programsCount": 95
+        "programsCount": 97
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "cleveland-state",
@@ -2548,9 +2548,9 @@
         "sourceUrl": "https://www.cuchicago.edu/",
         "sourceHash": "concordia-chicago-2026-05-14-v1",
         "confidence": "aggregator",
-        "programsCount": 166
+        "programsCount": 168
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "concordia-university-st-paul",
@@ -2599,9 +2599,8 @@
         "sourceUrl": "https://constructor.university/",
         "sourceHash": "sha256:c0a7b3f2d8e91a4b",
         "confidence": "aggregator",
-        "programsCount": 56
-      },
-      "gapPriority": "medium"
+        "programsCount": 62
+      }
     },
     {
       "slug": "contra-costa-college",
@@ -2633,9 +2632,9 @@
         "sourceUrl": "https://www.collabinternational.com/corvinus-university-of-budapest",
         "sourceHash": "sha256:collab-mpjren1t",
         "confidence": "aggregator",
-        "programsCount": 29
+        "programsCount": 36
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "cours-florent",
@@ -2667,7 +2666,7 @@
         "sourceUrl": "https://courtauld.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 21
+        "programsCount": 22
       },
       "gapPriority": "medium"
     },
@@ -2684,9 +2683,9 @@
         "sourceUrl": "https://www.coventry.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 248
+        "programsCount": 250
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "crandall-university",
@@ -2718,9 +2717,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/cranfield-university/",
         "sourceHash": "sha256:9b7eca0e272867e3",
         "confidence": "aggregator",
-        "programsCount": 175
+        "programsCount": 179
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "cretin-derham-hall",
@@ -2735,9 +2734,9 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/Cretin-Derham_Hall",
         "sourceHash": "sha256:3a9f72c1b84e05d2",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 8
       },
-      "gapPriority": "high"
+      "gapPriority": "medium"
     },
     {
       "slug": "csvpa-cambridge",
@@ -2803,9 +2802,9 @@
         "sourceUrl": "https://www.cumbria.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 170
+        "programsCount": 182
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "curtin-college",
@@ -2820,7 +2819,7 @@
         "sourceUrl": "https://www.curtincollege.edu.au/",
         "sourceHash": "sha256:b5e3d91a7f2c4086",
         "confidence": "aggregator",
-        "programsCount": 28
+        "programsCount": 36
       },
       "gapPriority": "medium"
     },
@@ -2837,7 +2836,7 @@
         "sourceUrl": "http://curtin.edu.sg/",
         "sourceHash": "sha256:ebc0b40a3d3c369f",
         "confidence": "aggregator",
-        "programsCount": 67
+        "programsCount": 68
       },
       "gapPriority": "medium"
     },
@@ -2854,7 +2853,7 @@
         "sourceUrl": "https://www.curtindubai.ac.ae/",
         "sourceHash": "sha256:91056c0b004be833",
         "confidence": "partner",
-        "programsCount": 26
+        "programsCount": 35
       },
       "gapPriority": "medium"
     },
@@ -2871,7 +2870,7 @@
         "sourceUrl": "https://www.curtincollege.edu.au/",
         "sourceHash": "sha256:4410292aa2224119",
         "confidence": "aggregator",
-        "programsCount": 103
+        "programsCount": 111
       },
       "gapPriority": "medium"
     },
@@ -2905,7 +2904,7 @@
         "sourceUrl": "https://www.ciu.edu.tr/",
         "sourceHash": "sha256:direct-mpjti92a",
         "confidence": "partner",
-        "programsCount": 5
+        "programsCount": 6
       },
       "gapPriority": "high"
     },
@@ -2922,9 +2921,9 @@
         "sourceUrl": "https://www.collabinternational.com/czech-technical-university",
         "sourceHash": "sha256:collab-mpjren7k",
         "confidence": "aggregator",
-        "programsCount": 8
+        "programsCount": 16
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "czech-university-of-life-sciences",
@@ -2939,9 +2938,9 @@
         "sourceUrl": "https://www.collabinternational.com/czech-university-of-life-sciences",
         "sourceHash": "sha256:collab-mpjren8g",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "dalhousie",
@@ -2956,7 +2955,7 @@
         "sourceUrl": "https://www.oxfordinternational.com/",
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
-        "programsCount": 44
+        "programsCount": 47
       },
       "gapPriority": "medium"
     },
@@ -2990,9 +2989,9 @@
         "sourceUrl": "https://www.collabinternational.com/data-protection-information",
         "sourceHash": "sha256:collab-mpjren8q",
         "confidence": "aggregator",
-        "programsCount": 27
+        "programsCount": 34
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "dave-school",
@@ -3007,7 +3006,7 @@
         "sourceUrl": "https://daveschool.com/",
         "sourceHash": "sha256:d4a5e7b8c9f1a3e2",
         "confidence": "aggregator",
-        "programsCount": 12
+        "programsCount": 21
       },
       "gapPriority": "medium"
     },
@@ -3058,9 +3057,9 @@
         "sourceUrl": "https://www.collabinternational.com/dcu-successfull-career-services",
         "sourceHash": "sha256:collab-mpjren9e",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "de-montfort-dubai",
@@ -3126,7 +3125,7 @@
         "sourceUrl": "https://www.deakincollege.edu.au/",
         "sourceHash": "sha256:e904500df240d53e",
         "confidence": "aggregator",
-        "programsCount": 86
+        "programsCount": 94
       },
       "gapPriority": "medium"
     },
@@ -3194,9 +3193,9 @@
         "sourceUrl": "https://www.derby.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 160
+        "programsCount": 162
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "diablo-valley-college",
@@ -3228,7 +3227,7 @@
         "sourceUrl": "https://www.difc.ie/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 9
+        "programsCount": 35
       },
       "gapPriority": "medium"
     },
@@ -3245,7 +3244,7 @@
         "sourceUrl": "https://www.dli.ac.id/",
         "sourceHash": "sha256:c0edcf5808457e8b",
         "confidence": "aggregator",
-        "programsCount": 22
+        "programsCount": 26
       },
       "gapPriority": "medium"
     },
@@ -3262,9 +3261,9 @@
         "sourceUrl": "https://www.domusacademy.com/",
         "sourceHash": "sha256:d0a8c12e7b3f4519",
         "confidence": "partner",
-        "programsCount": 70
+        "programsCount": 71
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "doverbroecks",
@@ -3296,9 +3295,9 @@
         "sourceUrl": "https://www.drew.edu/",
         "sourceHash": "sha256:3f9a1c7d2b84e05f",
         "confidence": "aggregator",
-        "programsCount": 95
+        "programsCount": 99
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "drexel",
@@ -3313,9 +3312,9 @@
         "sourceUrl": "https://drexel.edu/",
         "sourceHash": "sha256:d4e8f2a1c9b73e5f",
         "confidence": "aggregator",
-        "programsCount": 50
+        "programsCount": 49
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "dublin-city-university",
@@ -3364,9 +3363,9 @@
         "sourceUrl": "https://www.durham.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 15
+        "programsCount": 12
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "eaim",
@@ -3381,7 +3380,7 @@
         "sourceUrl": "https://www.eaim.edu.sg/",
         "sourceHash": "sha256:c4a91f23b78e6d12",
         "confidence": "aggregator",
-        "programsCount": 67
+        "programsCount": 72
       },
       "gapPriority": "medium"
     },
@@ -3432,9 +3431,9 @@
         "sourceUrl": "https://www.collabinternational.com/eastern-mediterranean-university",
         "sourceHash": "sha256:collab-mpjrenav",
         "confidence": "aggregator",
-        "programsCount": 42
+        "programsCount": 49
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "ece-engineering-school",
@@ -3483,9 +3482,9 @@
         "sourceUrl": "https://www.napier.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 166
+        "programsCount": 212
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "edith-cowan-sl",
@@ -3500,9 +3499,9 @@
         "sourceUrl": "https://www.ecu.edu.lk/",
         "sourceHash": "sha256:9977b7e9211fea5e",
         "confidence": "aggregator",
-        "programsCount": 331
+        "programsCount": 336
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "edith-cowan",
@@ -3517,7 +3516,7 @@
         "sourceUrl": "https://www.edithcowancollege.edu.au/",
         "sourceHash": "sha256:6ad29b81c307f7ac",
         "confidence": "aggregator",
-        "programsCount": 72
+        "programsCount": 85
       },
       "gapPriority": "medium"
     },
@@ -3551,7 +3550,7 @@
         "sourceUrl": "https://en.em-normandie.com/internationally-recognised-business-school/dubai-campus",
         "sourceHash": "sha256:e1d0ba17c4f29a5b",
         "confidence": "aggregator",
-        "programsCount": 58
+        "programsCount": 65
       },
       "gapPriority": "medium"
     },
@@ -3568,7 +3567,7 @@
         "sourceUrl": "https://www.enae.es/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 27
+        "programsCount": 32
       },
       "gapPriority": "medium"
     },
@@ -3585,9 +3584,9 @@
         "sourceUrl": "https://www.collabinternational.com/epita-school-of-engineering-and-computer-science",
         "sourceHash": "sha256:collab-mpjrenc5",
         "confidence": "aggregator",
-        "programsCount": 22
+        "programsCount": 30
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "erc-institute-direct-entry",
@@ -3636,7 +3635,7 @@
         "sourceUrl": "https://www.esam-ecoles.com/",
         "sourceHash": "sha256:e5a4c8b91f3d7062",
         "confidence": "aggregator",
-        "programsCount": 21
+        "programsCount": 38
       },
       "gapPriority": "medium"
     },
@@ -3687,9 +3686,9 @@
         "sourceUrl": "https://www.esic.edu/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 94
+        "programsCount": 118
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "essca-school-of-management",
@@ -3721,9 +3720,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-essex/",
         "sourceHash": "sha256:5af0078d3de3be35",
         "confidence": "aggregator",
-        "programsCount": 841
+        "programsCount": 845
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "eu-business-school-germany",
@@ -3755,7 +3754,7 @@
         "sourceUrl": "https://www.euruni.edu/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 71
+        "programsCount": 100
       },
       "gapPriority": "medium"
     },
@@ -3806,7 +3805,7 @@
         "sourceUrl": "https://www.euroinnova.edu.es/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 10
+        "programsCount": 11
       },
       "gapPriority": "medium"
     },
@@ -3823,9 +3822,9 @@
         "sourceUrl": "https://www.collabinternational.com/exam-prep",
         "sourceHash": "sha256:collab-mpjrendt",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "exeter",
@@ -3840,9 +3839,9 @@
         "sourceUrl": "https://www.exeter.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 946
+        "programsCount": 961
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "eynesbury",
@@ -3857,7 +3856,7 @@
         "sourceUrl": "https://www.eynesbury.edu.au/",
         "sourceHash": "sha256:9e8f7a6b5c4d3e2f",
         "confidence": "aggregator",
-        "programsCount": 20
+        "programsCount": 27
       },
       "gapPriority": "medium"
     },
@@ -4010,9 +4009,9 @@
         "sourceUrl": "https://www.fisher.edu/",
         "sourceHash": "sha256:a3f912c84d6e2b07",
         "confidence": "aggregator",
-        "programsCount": 74
+        "programsCount": 78
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "fiu-business",
@@ -4078,9 +4077,9 @@
         "sourceUrl": "https://www.collabinternational.com/fontys-university",
         "sourceHash": "sha256:collab-mpjrenfb",
         "confidence": "aggregator",
-        "programsCount": 65
+        "programsCount": 72
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "forest-city-international-school",
@@ -4112,7 +4111,7 @@
         "sourceUrl": "https://www.fox.temple.edu/",
         "sourceHash": "sha256:4a8f2c1e9b7d3f5a",
         "confidence": "aggregator",
-        "programsCount": 62
+        "programsCount": 68
       },
       "gapPriority": "medium"
     },
@@ -4146,7 +4145,7 @@
         "sourceUrl": "https://www.fraseric.ca/",
         "sourceHash": "sha256:c9d30a7f84e56b72",
         "confidence": "aggregator",
-        "programsCount": 11
+        "programsCount": 20
       },
       "gapPriority": "medium"
     },
@@ -4180,9 +4179,9 @@
         "sourceUrl": "https://www.universityofgalway.ie/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 384
+        "programsCount": 387
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "gannon",
@@ -4199,7 +4198,7 @@
         "confidence": "aggregator",
         "programsCount": 137
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "gbs-dubai",
@@ -4248,9 +4247,9 @@
         "sourceUrl": "https://www.global-business-school.org/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 142
+        "programsCount": 155
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "gedu-global-education",
@@ -4333,9 +4332,9 @@
         "sourceUrl": "https://www.gisma.com/",
         "sourceHash": "gisma-2026-05-14-v1",
         "confidence": "partner",
-        "programsCount": 105
+        "programsCount": 109
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "glasgow-caledonian-university",
@@ -4367,9 +4366,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-glasgow/",
         "sourceHash": "sha256:23ae1145086dc91f",
         "confidence": "aggregator",
-        "programsCount": 641
+        "programsCount": 645
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "glion-switzerland",
@@ -4384,7 +4383,7 @@
         "sourceUrl": "https://www.glion.edu/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 22
+        "programsCount": 30
       },
       "gapPriority": "medium"
     },
@@ -4418,7 +4417,7 @@
         "sourceUrl": "https://edge.edvoy.com/institutions/global-u",
         "sourceHash": "sha256:edvoy-mpirnuq0",
         "confidence": "aggregator",
-        "programsCount": 4
+        "programsCount": 3
       },
       "gapPriority": "high"
     },
@@ -4452,7 +4451,7 @@
         "sourceUrl": "https://www.gold.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 16
+        "programsCount": 14
       },
       "gapPriority": "medium"
     },
@@ -4486,9 +4485,9 @@
         "sourceUrl": "https://www.collabinternational.com/gre-gmat-exams",
         "sourceHash": "sha256:collab-mpjrengc",
         "confidence": "aggregator",
-        "programsCount": 10
+        "programsCount": 17
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "greenwich",
@@ -4537,7 +4536,7 @@
         "sourceUrl": "https://www.griffithcollege.edu.au/",
         "sourceHash": "sha256:d4f9380960404b8c",
         "confidence": "aggregator",
-        "programsCount": 89
+        "programsCount": 99
       },
       "gapPriority": "medium"
     },
@@ -4571,7 +4570,7 @@
         "sourceUrl": "https://www.thehaguepathway.nl/",
         "sourceHash": "sha256:caf61e1e6052292c",
         "confidence": "aggregator",
-        "programsCount": 53
+        "programsCount": 64
       },
       "gapPriority": "medium"
     },
@@ -4724,7 +4723,7 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/Heriot-Watt_University_Dubai",
         "sourceHash": "sha256:7fc2a9e4d8b13f6e",
         "confidence": "partner",
-        "programsCount": 254
+        "programsCount": 253
       },
       "gapPriority": "medium"
     },
@@ -4758,7 +4757,7 @@
         "sourceUrl": "https://www.hw.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 105
+        "programsCount": 107
       },
       "gapPriority": "medium"
     },
@@ -4775,7 +4774,7 @@
         "sourceUrl": "https://www.hic.navitas.com/",
         "sourceHash": "sha256:774c4ba190569cb4",
         "confidence": "aggregator",
-        "programsCount": 54
+        "programsCount": 63
       },
       "gapPriority": "medium"
     },
@@ -4860,9 +4859,9 @@
         "sourceUrl": "https://www.hull.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 71
+        "programsCount": 73
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "hult",
@@ -4877,9 +4876,9 @@
         "sourceUrl": "https://www.hult.edu/",
         "sourceHash": "sha256:3f7a92b1d4e65c8f",
         "confidence": "aggregator",
-        "programsCount": 52
+        "programsCount": 59
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "humber-college",
@@ -4894,9 +4893,9 @@
         "sourceUrl": "https://www.collabinternational.com/humber-college",
         "sourceHash": "sha256:collab-mpjrenhl",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 14
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "humber-polytechnic",
@@ -4928,9 +4927,9 @@
         "sourceUrl": "https://www.ibs-b.hu/",
         "sourceHash": "sha256:1bs9b4d3a7e2f6c5",
         "confidence": "partner",
-        "programsCount": 62
+        "programsCount": 64
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "ibs-international-business-school",
@@ -4962,7 +4961,7 @@
         "sourceUrl": "https://ibu.ca/",
         "sourceHash": "sha256:e1f52c9b06a78d94",
         "confidence": "aggregator",
-        "programsCount": 17
+        "programsCount": 36
       },
       "gapPriority": "medium"
     },
@@ -4996,7 +4995,7 @@
         "sourceUrl": "https://www.icd-ecoles.com/",
         "sourceHash": "sha256:8c4e2f1a9b3d7e05",
         "confidence": "aggregator",
-        "programsCount": 17
+        "programsCount": 39
       },
       "gapPriority": "medium"
     },
@@ -5013,7 +5012,7 @@
         "sourceUrl": "https://www.ichm.edu.au/",
         "sourceHash": "sha256:a3f7c219b84e0d52",
         "confidence": "aggregator",
-        "programsCount": 8
+        "programsCount": 16
       },
       "gapPriority": "medium"
     },
@@ -5081,7 +5080,7 @@
         "sourceUrl": "https://www.iesa.fr/",
         "sourceHash": "sha256:e5a2b8c1f4d96073",
         "confidence": "aggregator",
-        "programsCount": 12
+        "programsCount": 64
       },
       "gapPriority": "medium"
     },
@@ -5115,9 +5114,9 @@
         "sourceUrl": "https://illinoisstate.edu/",
         "sourceHash": "sha256:a3f7c291e84b02d1",
         "confidence": "aggregator",
-        "programsCount": 314
+        "programsCount": 315
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "imis-paris",
@@ -5166,7 +5165,7 @@
         "sourceUrl": "https://www.institutculinaire.fr/",
         "sourceHash": "sha256:8a3f72c1e9b4d6a2",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 5
       },
       "gapPriority": "high"
     },
@@ -5251,9 +5250,9 @@
         "sourceUrl": "https://newinti.edu.my/",
         "sourceHash": "sha256:direct-mpjti96d",
         "confidence": "partner",
-        "programsCount": 87
+        "programsCount": 105
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "into-city-london",
@@ -5438,9 +5437,9 @@
         "sourceUrl": "https://sluintl.com/en",
         "sourceHash": "sha256:9c4f7e8b6a2d1f53",
         "confidence": "aggregator",
-        "programsCount": 31
+        "programsCount": 32
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "into-stirling-uni",
@@ -5523,7 +5522,7 @@
         "sourceUrl": "https://www.ipag.edu/en",
         "sourceHash": "sha256:9c2b41e7d8af6051",
         "confidence": "aggregator",
-        "programsCount": 81
+        "programsCount": 130
       },
       "gapPriority": "medium"
     },
@@ -5591,7 +5590,7 @@
         "sourceUrl": "https://en.ism.de/",
         "sourceHash": "sha256:7a3e4f8c2b9d1e60",
         "confidence": "aggregator",
-        "programsCount": 20
+        "programsCount": 43
       },
       "gapPriority": "medium"
     },
@@ -5608,9 +5607,9 @@
         "sourceUrl": "https://www.collabinternational.com/istanbul-altinbas-university",
         "sourceHash": "sha256:collab-mpjrenii",
         "confidence": "aggregator",
-        "programsCount": 9
+        "programsCount": 16
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "istanbul-aydin-university",
@@ -5625,9 +5624,9 @@
         "sourceUrl": "https://www.collabinternational.com/istanbul-aydin-university",
         "sourceHash": "sha256:collab-mpjrenj9",
         "confidence": "aggregator",
-        "programsCount": 10
+        "programsCount": 17
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "istanbul-gelisim-university",
@@ -5642,9 +5641,9 @@
         "sourceUrl": "https://www.collabinternational.com/istanbul-gelisim-university",
         "sourceHash": "sha256:collab-mpjrenk8",
         "confidence": "aggregator",
-        "programsCount": 8
+        "programsCount": 15
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "istanbul-isik-university",
@@ -5659,9 +5658,9 @@
         "sourceUrl": "https://www.collabinternational.com/istanbul-isik-university",
         "sourceHash": "sha256:collab-mpjrenko",
         "confidence": "aggregator",
-        "programsCount": 8
+        "programsCount": 16
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "istanbul-kultur-university",
@@ -5676,9 +5675,9 @@
         "sourceUrl": "https://www.collabinternational.com/istanbul-kultur-university",
         "sourceHash": "sha256:collab-mpjrenkx",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "istanbul",
@@ -5693,9 +5692,9 @@
         "sourceUrl": "https://www.collabinternational.com/istanbul",
         "sourceHash": "sha256:collab-mpjrenl9",
         "confidence": "partner",
-        "programsCount": 7
+        "programsCount": 14
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "istec-business-school",
@@ -5727,9 +5726,9 @@
         "sourceUrl": "https://www.collabinternational.com/istinye-university",
         "sourceHash": "sha256:collab-mpjrenlz",
         "confidence": "aggregator",
-        "programsCount": 37
+        "programsCount": 45
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "iu-germany",
@@ -5744,9 +5743,9 @@
         "sourceUrl": "https://www.iu.org/",
         "sourceHash": "sha256:a3d7e91c4f6b28d0",
         "confidence": "aggregator",
-        "programsCount": 52
+        "programsCount": 63
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "izmir-economics-university",
@@ -5761,9 +5760,9 @@
         "sourceUrl": "https://www.collabinternational.com/izmir-economics-university",
         "sourceHash": "sha256:collab-mpjrenof",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "jagiellonian-university",
@@ -5778,9 +5777,9 @@
         "sourceUrl": "https://www.collabinternational.com/jagiellonian-university",
         "sourceHash": "sha256:collab-mpjrenow",
         "confidence": "aggregator",
-        "programsCount": 45
+        "programsCount": 52
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "james-cook",
@@ -5846,9 +5845,9 @@
         "sourceUrl": "https://www.jibc.ca/",
         "sourceHash": "sha256:f2a63d0c17b89e05",
         "confidence": "aggregator",
-        "programsCount": 9
+        "programsCount": 11
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "john-cabot",
@@ -5965,9 +5964,9 @@
         "sourceUrl": "https://www.kbs.edu.au/",
         "sourceHash": "sha256:a3f1c8e2d74b9f05",
         "confidence": "aggregator",
-        "programsCount": 319
+        "programsCount": 325
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "kaplan-international-college",
@@ -5982,9 +5981,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": "medium"
     },
     {
       "slug": "kaplan",
@@ -6033,9 +6032,9 @@
         "sourceUrl": "https://www.collabinternational.com/kaunas-university-of-technology",
         "sourceHash": "sha256:collab-mpjrenpj",
         "confidence": "aggregator",
-        "programsCount": 17
+        "programsCount": 25
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "kcl-online",
@@ -6067,9 +6066,9 @@
         "sourceUrl": "https://www.kgi.edu/",
         "sourceHash": "sha256:3a7f9c2e1b84d5f0",
         "confidence": "aggregator",
-        "programsCount": 59
+        "programsCount": 63
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "kedge-business-school",
@@ -6101,9 +6100,9 @@
         "sourceUrl": "https://kedge.edu/",
         "sourceHash": "sha256:3a7c9e2f6b8d145e",
         "confidence": "aggregator",
-        "programsCount": 32
+        "programsCount": 43
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "keele",
@@ -6118,7 +6117,7 @@
         "sourceUrl": "https://kuic.keele.ac.uk/",
         "sourceHash": "sha256:d51d73fe744e6dfc",
         "confidence": "aggregator",
-        "programsCount": 56
+        "programsCount": 64
       },
       "gapPriority": "medium"
     },
@@ -6186,7 +6185,7 @@
         "sourceUrl": "https://www.kingseducation.com/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 4
+        "programsCount": 5
       },
       "gapPriority": "high"
     },
@@ -6203,9 +6202,9 @@
         "sourceUrl": "https://www.kingseducation.com/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 9
       },
-      "gapPriority": "high"
+      "gapPriority": "medium"
     },
     {
       "slug": "kings-hall-college",
@@ -6237,7 +6236,7 @@
         "sourceUrl": "https://www.kingseducation.com/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 9
+        "programsCount": 13
       },
       "gapPriority": "medium"
     },
@@ -6254,7 +6253,7 @@
         "sourceUrl": "https://www.kingseducation.com/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 4
+        "programsCount": 5
       },
       "gapPriority": "high"
     },
@@ -6288,9 +6287,9 @@
         "sourceUrl": "https://www.ku.edu.tr/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 11
       },
-      "gapPriority": "high"
+      "gapPriority": "medium"
     },
     {
       "slug": "ku-leuven",
@@ -6305,9 +6304,9 @@
         "sourceUrl": "https://www.collabinternational.com/ku-leuven",
         "sourceHash": "sha256:collab-mpjrenqw",
         "confidence": "aggregator",
-        "programsCount": 9
+        "programsCount": 16
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "la-trobe",
@@ -6322,7 +6321,7 @@
         "sourceUrl": "https://www.latrobecollegeaustralia.edu.au/",
         "sourceHash": "sha256:3681deb9b567dc54",
         "confidence": "aggregator",
-        "programsCount": 82
+        "programsCount": 83
       },
       "gapPriority": "medium"
     },
@@ -6339,9 +6338,9 @@
         "sourceUrl": "https://www.uclan.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 437
+        "programsCount": 447
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "lancaster-leipzig",
@@ -6356,7 +6355,7 @@
         "sourceUrl": "https://www.lancasterleipzig.de/",
         "sourceHash": "sha256:776e87cdd9d16192",
         "confidence": "aggregator",
-        "programsCount": 17
+        "programsCount": 29
       },
       "gapPriority": "medium"
     },
@@ -6373,7 +6372,7 @@
         "sourceUrl": "https://www.lancaster.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 58
+        "programsCount": 60
       },
       "gapPriority": "medium"
     },
@@ -6390,7 +6389,7 @@
         "sourceUrl": "https://www.lancaster.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 56
+        "programsCount": 58
       },
       "gapPriority": "medium"
     },
@@ -6424,9 +6423,9 @@
         "sourceUrl": "https://www.collabinternational.com/langara-college",
         "sourceHash": "sha256:collab-mpjrenrk",
         "confidence": "aggregator",
-        "programsCount": 8
+        "programsCount": 15
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "language-studies-international",
@@ -6458,9 +6457,9 @@
         "sourceUrl": "https://www.collabinternational.com/lappeenranta-university-of-technology-lut",
         "sourceHash": "sha256:collab-mpjrensb",
         "confidence": "aggregator",
-        "programsCount": 9
+        "programsCount": 17
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "lasalle-college",
@@ -6492,9 +6491,9 @@
         "sourceUrl": "https://www.collabinternational.com/lazarski-university",
         "sourceHash": "sha256:collab-mpjrent3",
         "confidence": "aggregator",
-        "programsCount": 23
+        "programsCount": 30
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "lci-barcelona",
@@ -6560,9 +6559,9 @@
         "sourceUrl": "https://www.leeds.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 11
+        "programsCount": 12
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "leeds-trinity-university",
@@ -6613,7 +6612,7 @@
         "confidence": "aggregator",
         "programsCount": 506
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "les-roches-crans-montana",
@@ -6628,7 +6627,7 @@
         "sourceUrl": "https://lesroches.edu/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 23
+        "programsCount": 36
       },
       "gapPriority": "medium"
     },
@@ -6645,7 +6644,7 @@
         "sourceUrl": "https://lesroches.edu/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 23
+        "programsCount": 36
       },
       "gapPriority": "medium"
     },
@@ -6662,9 +6661,9 @@
         "sourceUrl": "https://www.uicc.ca/",
         "sourceHash": "sha256:c395ca4f5664f030",
         "confidence": "aggregator",
-        "programsCount": 122
+        "programsCount": 125
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "lim-college",
@@ -6679,7 +6678,7 @@
         "sourceUrl": "https://www.limcollege.edu/",
         "sourceHash": "lim-college-2026-05-14-v1",
         "confidence": "aggregator",
-        "programsCount": 37
+        "programsCount": 39
       },
       "gapPriority": "medium"
     },
@@ -6696,9 +6695,9 @@
         "sourceUrl": "https://www.ul.ie/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 129
+        "programsCount": 136
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "lincoln-bishop-university",
@@ -6764,7 +6763,7 @@
         "sourceUrl": "https://www.lipscomb.edu/",
         "sourceHash": "sha256:4a9c2e7f1b83d05e",
         "confidence": "aggregator",
-        "programsCount": 74
+        "programsCount": 79
       },
       "gapPriority": "medium"
     },
@@ -6781,9 +6780,9 @@
         "sourceUrl": "https://www.lisaa.com/en",
         "sourceHash": "sha256:5a8c2e7f9b1d4a3c",
         "confidence": "aggregator",
-        "programsCount": 26
+        "programsCount": 28
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "liu-brooklyn",
@@ -6849,7 +6848,7 @@
         "sourceUrl": "https://www.hope.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 184
+        "programsCount": 186
       },
       "gapPriority": "medium"
     },
@@ -6883,9 +6882,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-liverpool/",
         "sourceHash": "sha256:71121ba109ff87c6",
         "confidence": "partner",
-        "programsCount": 861
+        "programsCount": 866
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "ljmu-isc",
@@ -6900,7 +6899,7 @@
         "sourceUrl": "https://www.ljmu.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 203
+        "programsCount": 209
       },
       "gapPriority": "medium"
     },
@@ -6917,9 +6916,9 @@
         "sourceUrl": "https://www.londonmet.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 299
+        "programsCount": 304
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "london-south-bank",
@@ -7053,9 +7052,9 @@
         "sourceUrl": "https://www.lsu.edu/",
         "sourceHash": "sha256:3a9f1c7e84d02b56",
         "confidence": "aggregator",
-        "programsCount": 231
+        "programsCount": 233
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "luiss",
@@ -7070,7 +7069,7 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/Luiss_University",
         "sourceHash": "sha256:7c4f9a2e8b1d3f6a",
         "confidence": "aggregator",
-        "programsCount": 25
+        "programsCount": 52
       },
       "gapPriority": "medium"
     },
@@ -7121,9 +7120,9 @@
         "sourceUrl": "https://www.collabinternational.com/make-a-comment",
         "sourceHash": "sha256:collab-mpjrenu3",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "malvern-international",
@@ -7155,7 +7154,7 @@
         "sourceUrl": "https://www.msa.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 25
+        "programsCount": 34
       },
       "gapPriority": "medium"
     },
@@ -7189,9 +7188,9 @@
         "sourceUrl": "https://www.icmanitoba.ca/",
         "sourceHash": "sha256:f0834b3515086e35",
         "confidence": "aggregator",
-        "programsCount": 100
+        "programsCount": 108
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "marangoni-london",
@@ -7206,9 +7205,9 @@
         "sourceUrl": "https://www.istitutomarangoni.com/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 17
+        "programsCount": 22
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "marangoni-milan",
@@ -7223,7 +7222,7 @@
         "sourceUrl": "https://www.istitutomarangoni.com/en",
         "sourceHash": "sha256:8c4d2f7e9b1a3e5f",
         "confidence": "aggregator",
-        "programsCount": 24
+        "programsCount": 29
       },
       "gapPriority": "medium"
     },
@@ -7240,7 +7239,7 @@
         "sourceUrl": "https://www.marist.edu/",
         "sourceHash": "sha256:3a7f2e1d9b4c8f05",
         "confidence": "aggregator",
-        "programsCount": 41
+        "programsCount": 44
       },
       "gapPriority": "medium"
     },
@@ -7257,9 +7256,9 @@
         "sourceUrl": "https://www.collabinternational.com/masaryk-university-czech",
         "sourceHash": "sha256:collab-mpjrenuh",
         "confidence": "aggregator",
-        "programsCount": 18
+        "programsCount": 25
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "massey",
@@ -7274,9 +7273,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/new-zealand-universities/massey-university/",
         "sourceHash": "sha256:0657ae55f21062fe",
         "confidence": "official",
-        "programsCount": 525
+        "programsCount": 528
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "master-s-degree-in-dublin-business-school-ireland-the-story-of-our-stu",
@@ -7325,9 +7324,9 @@
         "sourceUrl": "https://www.collabinternational.com/spring-intake-programs-to-consider",
         "sourceHash": "sha256:collab-mpjrenw4",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 14
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "mcdaniel-college-budapest",
@@ -7342,9 +7341,9 @@
         "sourceUrl": "https://www.collabinternational.com/mcdaniel-college-budapest",
         "sourceHash": "sha256:collab-mpjrenxb",
         "confidence": "aggregator",
-        "programsCount": 13
+        "programsCount": 20
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "media-design-germany",
@@ -7359,7 +7358,7 @@
         "sourceUrl": "https://www.mediadesign.de/en/",
         "sourceHash": "sha256:7d3f9c2e1a8b4f56",
         "confidence": "aggregator",
-        "programsCount": 44
+        "programsCount": 54
       },
       "gapPriority": "medium"
     },
@@ -7393,9 +7392,9 @@
         "sourceUrl": "https://www.collabinternational.com/medipol-university",
         "sourceHash": "sha256:collab-mpjrenz0",
         "confidence": "aggregator",
-        "programsCount": 9
+        "programsCount": 17
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "melbourne-city-institute-of-education",
@@ -7427,7 +7426,7 @@
         "sourceUrl": "https://www.mun.ca/academics/",
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
-        "programsCount": 22
+        "programsCount": 20
       },
       "gapPriority": "medium"
     },
@@ -7444,7 +7443,7 @@
         "sourceUrl": "https://www.mercer.edu/",
         "sourceHash": "sha256:3a7f92b1c8e54d0f",
         "confidence": "aggregator",
-        "programsCount": 30
+        "programsCount": 39
       },
       "gapPriority": "medium"
     },
@@ -7478,9 +7477,9 @@
         "sourceUrl": "https://www.metropolitan.hu/en",
         "sourceHash": "sha256:e7c3a91b4d2f8a06",
         "confidence": "aggregator",
-        "programsCount": 64
+        "programsCount": 67
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "miami-oh",
@@ -7512,9 +7511,9 @@
         "sourceUrl": "https://www.mdx.ac.ae/",
         "sourceHash": "sha256:c4a91e7d2b58f3a6",
         "confidence": "partner",
-        "programsCount": 249
+        "programsCount": 253
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "middlesex-university-mauritius",
@@ -7563,9 +7562,9 @@
         "sourceUrl": "https://www.uni-milton.hu/",
         "sourceHash": "sha256:direct-mpjti998",
         "confidence": "partner",
-        "programsCount": 19
+        "programsCount": 20
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "missouri-state-university",
@@ -7614,9 +7613,9 @@
         "sourceUrl": "https://www.modul.ac.at/",
         "sourceHash": "sha256:direct-mpjti99w",
         "confidence": "partner",
-        "programsCount": 25
+        "programsCount": 36
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "monash-university",
@@ -7648,9 +7647,9 @@
         "sourceUrl": "https://www.montclair.edu/",
         "sourceHash": "sha256:3f8a2c1d9e47b506",
         "confidence": "aggregator",
-        "programsCount": 141
+        "programsCount": 144
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "montpellier-business-school",
@@ -7665,9 +7664,9 @@
         "sourceUrl": "https://www.collabinternational.com/montpellier-business-school",
         "sourceHash": "sha256:collab-mpjrenze",
         "confidence": "aggregator",
-        "programsCount": 22
+        "programsCount": 31
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "mount-allison",
@@ -7682,7 +7681,7 @@
         "sourceUrl": "https://www.oxfordinternational.com/",
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
-        "programsCount": 24
+        "programsCount": 26
       },
       "gapPriority": "medium"
     },
@@ -7699,7 +7698,7 @@
         "sourceUrl": "https://mountsaintvincent.edu/",
         "sourceHash": "sha256:4a7f9c2e1b83d056",
         "confidence": "aggregator",
-        "programsCount": 60
+        "programsCount": 65
       },
       "gapPriority": "medium"
     },
@@ -7716,9 +7715,9 @@
         "sourceUrl": "https://www.msvu.ca/academics/",
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
-        "programsCount": 70
+        "programsCount": 73
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "mphii-master-of-philosophy",
@@ -7733,9 +7732,9 @@
         "sourceUrl": "https://www.collabinternational.com/mphii-master-of-philosophy",
         "sourceHash": "sha256:collab-mpjreo16",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 19
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "mt-san-antonio-college",
@@ -7818,7 +7817,7 @@
         "sourceUrl": "https://www.murdochuniversitydubai.com/",
         "sourceHash": "sha256:3f7d02f3ef0b3b29",
         "confidence": "aggregator",
-        "programsCount": 47
+        "programsCount": 61
       },
       "gapPriority": "medium"
     },
@@ -7835,7 +7834,7 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/murdoch-university/",
         "sourceHash": "sha256:4258c4776b563db3",
         "confidence": "official",
-        "programsCount": 28
+        "programsCount": 29
       },
       "gapPriority": "medium"
     },
@@ -7869,9 +7868,9 @@
         "sourceUrl": "https://www.collabinternational.com/naba-milano",
         "sourceHash": "sha256:collab-mpjreo1x",
         "confidence": "aggregator",
-        "programsCount": 13
+        "programsCount": 20
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "nanjing-novo",
@@ -7920,7 +7919,7 @@
         "sourceUrl": "https://www.ncirl.ie/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 16
+        "programsCount": 23
       },
       "gapPriority": "medium"
     },
@@ -7937,7 +7936,7 @@
         "sourceUrl": "https://www.ncuk.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 16
+        "programsCount": 49
       },
       "gapPriority": "medium"
     },
@@ -7971,7 +7970,7 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/University_of_New_England_(Australia)",
         "sourceHash": "sha256:9a3f1c7b2e840d56",
         "confidence": "aggregator",
-        "programsCount": 37
+        "programsCount": 38
       },
       "gapPriority": "medium"
     },
@@ -8022,7 +8021,7 @@
         "sourceUrl": "https://www.newhaven.edu/",
         "sourceHash": "sha256:a4f8c2e1b9d70356",
         "confidence": "aggregator",
-        "programsCount": 100
+        "programsCount": 114
       },
       "gapPriority": "medium"
     },
@@ -8090,7 +8089,7 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/university-of-newcastle/",
         "sourceHash": "sha256:15b0a4e29538260f",
         "confidence": "official",
-        "programsCount": 315
+        "programsCount": 318
       },
       "gapPriority": "medium"
     },
@@ -8124,7 +8123,7 @@
         "sourceUrl": "https://www.ncl.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 35
+        "programsCount": 38
       },
       "gapPriority": "medium"
     },
@@ -8141,9 +8140,9 @@
         "sourceUrl": "https://unfc.ca/",
         "sourceHash": "sha256:1c3e7f9b85d42a06",
         "confidence": "aggregator",
-        "programsCount": 39
+        "programsCount": 53
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "nicosia-medical",
@@ -8158,9 +8157,9 @@
         "sourceUrl": "https://www.unic.ac.cy/med/",
         "sourceHash": "sha256:7d4a2e91b6c8f053",
         "confidence": "aggregator",
-        "programsCount": 76
+        "programsCount": 82
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "nicosia",
@@ -8175,7 +8174,7 @@
         "sourceUrl": "https://www.unic.ac.cy/",
         "sourceHash": "sha256:c9a4e2f8b1d7a3e0",
         "confidence": "aggregator",
-        "programsCount": 33
+        "programsCount": 85
       },
       "gapPriority": "medium"
     },
@@ -8209,7 +8208,7 @@
         "sourceUrl": "https://www.nmit.ac.nz/",
         "sourceHash": "sha256:3f9a72c1e84b05d7",
         "confidence": "aggregator",
-        "programsCount": 42
+        "programsCount": 43
       },
       "gapPriority": "medium"
     },
@@ -8277,7 +8276,7 @@
         "sourceUrl": "https://www.northernc.on.ca/",
         "sourceHash": "sha256:f8a29c6d73b41e52",
         "confidence": "aggregator",
-        "programsCount": 8
+        "programsCount": 9
       },
       "gapPriority": "medium"
     },
@@ -8328,9 +8327,9 @@
         "sourceUrl": "https://qahighereducation.com/partner-institutions/northumbria-university/",
         "sourceHash": "sha256:qa-northumbria-2026-05-16",
         "confidence": "aggregator",
-        "programsCount": 385
+        "programsCount": 387
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "notre-dame-au",
@@ -8345,9 +8344,9 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/University_of_Notre_Dame_Australia",
         "sourceHash": "sha256:a3f7e2c94d1b80f2",
         "confidence": "aggregator",
-        "programsCount": 70
+        "programsCount": 97
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "nottingham-ningbo",
@@ -8362,9 +8361,9 @@
         "sourceUrl": "https://www.nottingham.edu.cn/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 298
+        "programsCount": 299
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "nottingham-trent",
@@ -8379,9 +8378,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/nottingham-trent-university/",
         "sourceHash": "sha256:87e5027705a353da",
         "confidence": "aggregator",
-        "programsCount": 334
+        "programsCount": 338
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "nottingham",
@@ -8396,9 +8395,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-nottingham/",
         "sourceHash": "sha256:24964c5ff5ab09f4",
         "confidence": "aggregator",
-        "programsCount": 281
+        "programsCount": 286
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "nova-southeastern-university",
@@ -8430,7 +8429,7 @@
         "sourceUrl": "https://www.oxfordinternational.com/",
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
-        "programsCount": 25
+        "programsCount": 28
       },
       "gapPriority": "medium"
     },
@@ -8464,9 +8463,9 @@
         "sourceUrl": "https://www.nyit.edu/",
         "sourceHash": "sha256:3a9f1c7e4b82d056",
         "confidence": "aggregator",
-        "programsCount": 79
+        "programsCount": 81
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "ohio-university",
@@ -8515,9 +8514,9 @@
         "sourceUrl": "https://www.collabinternational.com/open-consent-form",
         "sourceHash": "sha256:collab-mpjreo3c",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 14
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "oregon-state",
@@ -8549,7 +8548,7 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/university-of-oregon/",
         "sourceHash": "sha256:d964737dc06a6672",
         "confidence": "aggregator",
-        "programsCount": 72
+        "programsCount": 77
       },
       "gapPriority": "medium"
     },
@@ -8583,9 +8582,9 @@
         "sourceUrl": "https://qahighereducation.com/partner-institutions/oxford-brookes-university/",
         "sourceHash": "sha256:qa-oxford-brookes-2026-05-16",
         "confidence": "aggregator",
-        "programsCount": 213
+        "programsCount": 214
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "oxford-international-college",
@@ -8668,9 +8667,9 @@
         "sourceUrl": "https://www.collabinternational.com/ozyegin-university",
         "sourceHash": "sha256:collab-mpjreo4f",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "pace",
@@ -8685,9 +8684,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/pace-university/",
         "sourceHash": "sha256:2c1ceecf03652c65",
         "confidence": "aggregator",
-        "programsCount": 164
+        "programsCount": 170
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "pacific",
@@ -8702,9 +8701,9 @@
         "sourceUrl": "https://www.pacific.edu/",
         "sourceHash": "sha256:a4f7d9c1b3e58210",
         "confidence": "aggregator",
-        "programsCount": 128
+        "programsCount": 153
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "padworth",
@@ -8736,7 +8735,7 @@
         "sourceUrl": "https://www.pba.edu/",
         "sourceHash": "sha256:a3f12c9e7b084d51",
         "confidence": "aggregator",
-        "programsCount": 70
+        "programsCount": 74
       },
       "gapPriority": "medium"
     },
@@ -8753,9 +8752,9 @@
         "sourceUrl": "https://www.collabinternational.com/partner-request-thank-you",
         "sourceHash": "sha256:collab-mpjreo5f",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "partner-with-us",
@@ -8770,9 +8769,9 @@
         "sourceUrl": "https://www.collabinternational.com/partner-with-us",
         "sourceHash": "sha256:collab-mpjreo5v",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 14
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "pascal-cyprus",
@@ -8787,7 +8786,7 @@
         "sourceUrl": "https://www.pascal.ac.cy/",
         "sourceHash": "sha256:c1a7f3d92e58b4a6",
         "confidence": "aggregator",
-        "programsCount": 10
+        "programsCount": 13
       },
       "gapPriority": "medium"
     },
@@ -8838,7 +8837,7 @@
         "sourceUrl": "https://www.upic.navitas.com/",
         "sourceHash": "sha256:3191e694559aa574",
         "confidence": "aggregator",
-        "programsCount": 60
+        "programsCount": 63
       },
       "gapPriority": "medium"
     },
@@ -8872,9 +8871,9 @@
         "sourceUrl": "https://www.pbs.up.pt/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 22
+        "programsCount": 28
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "portsmouth",
@@ -8889,7 +8888,7 @@
         "sourceUrl": "https://icp.navitas.com/",
         "sourceHash": "sha256:09d28e9d1fe59afb",
         "confidence": "aggregator",
-        "programsCount": 65
+        "programsCount": 67
       },
       "gapPriority": "medium"
     },
@@ -8906,9 +8905,9 @@
         "sourceUrl": "https://www.collabinternational.com/prague-university-of-economics",
         "sourceHash": "sha256:collab-mpjreo6d",
         "confidence": "aggregator",
-        "programsCount": 8
+        "programsCount": 16
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "proed-uk",
@@ -8940,9 +8939,9 @@
         "sourceUrl": "https://www.psbedu.paris/en",
         "sourceHash": "sha256:b3f7d9c1e4a82516",
         "confidence": "aggregator",
-        "programsCount": 176
+        "programsCount": 186
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "pte-scores-for-canada",
@@ -8957,9 +8956,9 @@
         "sourceUrl": "https://www.collabinternational.com/pte-scores-for-canada",
         "sourceHash": "sha256:collab-mpjreo6p",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 14
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "qa-higher-education",
@@ -8991,9 +8990,9 @@
         "sourceUrl": "https://www.qe.org/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 5
+        "programsCount": 11
       },
-      "gapPriority": "high"
+      "gapPriority": "medium"
     },
     {
       "slug": "queen-mary-london",
@@ -9008,9 +9007,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/queen-mary-university-of-london/",
         "sourceHash": "sha256:93044024cd505b04",
         "confidence": "aggregator",
-        "programsCount": 390
+        "programsCount": 394
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "queen-mary-malta",
@@ -9025,7 +9024,7 @@
         "sourceUrl": "https://www.qmul.ac.uk/malta/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 114
+        "programsCount": 148
       },
       "gapPriority": "medium"
     },
@@ -9042,7 +9041,7 @@
         "sourceUrl": "https://www.queensgssp.com/",
         "sourceHash": "sha256:62f04dec273bfe63",
         "confidence": "aggregator",
-        "programsCount": 97
+        "programsCount": 138
       },
       "gapPriority": "medium"
     },
@@ -9093,9 +9092,9 @@
         "sourceUrl": "https://www.ravensbourne.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 102
+        "programsCount": 104
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "rcsi",
@@ -9144,9 +9143,9 @@
         "sourceUrl": "https://www.reading.edu.my/",
         "sourceHash": "sha256:rdgmy20260518a4f1",
         "confidence": "aggregator",
-        "programsCount": 388
+        "programsCount": 390
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "reading",
@@ -9178,7 +9177,7 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/Red_Bank_Catholic_High_School",
         "sourceHash": "sha256:a3f7c9e1b4d20851",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 6
       },
       "gapPriority": "high"
     },
@@ -9263,7 +9262,7 @@
         "sourceUrl": "https://www.rit.edu/dubai/",
         "sourceHash": "sha256:7ad4e8f29bc05317",
         "confidence": "aggregator",
-        "programsCount": 167
+        "programsCount": 173
       },
       "gapPriority": "medium"
     },
@@ -9297,7 +9296,7 @@
         "sourceUrl": "https://icrgu.navitas.com/",
         "sourceHash": "sha256:60838da9976eecc0",
         "confidence": "aggregator",
-        "programsCount": 62
+        "programsCount": 63
       },
       "gapPriority": "medium"
     },
@@ -9331,9 +9330,9 @@
         "sourceUrl": "https://www.roehampton.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 345
+        "programsCount": 348
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "rome-university-of-fine-arts",
@@ -9348,9 +9347,9 @@
         "sourceUrl": "https://www.collabinternational.com/rome-university-of-fine-arts",
         "sourceHash": "sha256:collab-mpjreo76",
         "confidence": "aggregator",
-        "programsCount": 52
+        "programsCount": 59
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "rotman-arts-science",
@@ -9365,9 +9364,9 @@
         "sourceUrl": "https://rotmanschool.com",
         "sourceHash": "sha256:b0c41e8a96f53d74",
         "confidence": "aggregator",
-        "programsCount": 3
+        "programsCount": 2
       },
-      "gapPriority": "high"
+      "gapPriority": "critical"
     },
     {
       "slug": "royal-holloway-direct-entry",
@@ -9399,9 +9398,9 @@
         "sourceUrl": "https://www.royalholloway.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 490
+        "programsCount": 491
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "royal-school-surrey",
@@ -9433,7 +9432,7 @@
         "sourceUrl": "https://www.rvc.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 30
+        "programsCount": 35
       },
       "gapPriority": "medium"
     },
@@ -9467,9 +9466,9 @@
         "sourceUrl": "https://www.sabanciuniv.edu/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 15
+        "programsCount": 20
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "sacred-heart-university",
@@ -9501,7 +9500,7 @@
         "sourceUrl": "https://dubai.sae.edu/",
         "sourceHash": "sha256:7c4e9ab2d8f51b03",
         "confidence": "aggregator",
-        "programsCount": 33
+        "programsCount": 39
       },
       "gapPriority": "medium"
     },
@@ -9518,7 +9517,7 @@
         "sourceUrl": "https://sae.edu.au/",
         "sourceHash": "sha256:e18db3390bf577bb",
         "confidence": "aggregator",
-        "programsCount": 38
+        "programsCount": 64
       },
       "gapPriority": "medium"
     },
@@ -9603,7 +9602,7 @@
         "sourceUrl": "https://www.oxfordinternational.com/",
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
-        "programsCount": 20
+        "programsCount": 23
       },
       "gapPriority": "medium"
     },
@@ -9654,7 +9653,7 @@
         "sourceUrl": "https://www.uspceu.com/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 5
+        "programsCount": 4
       },
       "gapPriority": "high"
     },
@@ -9671,7 +9670,7 @@
         "sourceUrl": "https://www.unisr.it/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 73
+        "programsCount": 75
       },
       "gapPriority": "medium"
     },
@@ -9705,9 +9704,9 @@
         "sourceUrl": "https://saskpolytech.ca/",
         "sourceHash": "sha256:c1d52f9a07b64e85",
         "confidence": "aggregator",
-        "programsCount": 33
+        "programsCount": 35
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "sat-exams",
@@ -9722,9 +9721,9 @@
         "sourceUrl": "https://www.collabinternational.com/sat-exams",
         "sourceHash": "sha256:collab-mpjreoal",
         "confidence": "aggregator",
-        "programsCount": 11
+        "programsCount": 18
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "schiller-international-university",
@@ -9756,9 +9755,9 @@
         "sourceUrl": "https://www.collabinternational.com/scholarships",
         "sourceHash": "sha256:collab-mpjreobh",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "selkirk-college",
@@ -9790,9 +9789,9 @@
         "sourceUrl": "https://www.collabinternational.com/semmelweis-university",
         "sourceHash": "sha256:collab-mpjreoca",
         "confidence": "aggregator",
-        "programsCount": 25
+        "programsCount": 32
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "seneca",
@@ -9807,9 +9806,9 @@
         "sourceUrl": "https://www.senecapolytechnic.ca/",
         "sourceHash": "sha256:d2e63a0b18c75f96",
         "confidence": "aggregator",
-        "programsCount": 248
+        "programsCount": 271
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "seoul-gec",
@@ -9841,9 +9840,9 @@
         "sourceUrl": "https://www.collabinternational.com/services",
         "sourceHash": "sha256:collab-mpjreodb",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "sf-state",
@@ -9858,7 +9857,7 @@
         "sourceUrl": "https://www.sfsu.edu/academics",
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
-        "programsCount": 21
+        "programsCount": 20
       },
       "gapPriority": "medium"
     },
@@ -9877,7 +9876,7 @@
         "confidence": "aggregator",
         "programsCount": 341
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "sheridan-college-institute-of-technology-and-advanced-learning",
@@ -9909,9 +9908,9 @@
         "sourceUrl": "https://www.sheridancollege.ca/",
         "sourceHash": "sha256:e7d4b2c9f1a83056",
         "confidence": "aggregator",
-        "programsCount": 88
+        "programsCount": 89
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "simmons",
@@ -9926,7 +9925,7 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/simmons-university/",
         "sourceHash": "sha256:14c0ca5cb5354cc2",
         "confidence": "aggregator",
-        "programsCount": 138
+        "programsCount": 143
       },
       "gapPriority": "medium"
     },
@@ -9943,7 +9942,7 @@
         "sourceUrl": "https://www.fraseric.ca/",
         "sourceHash": "sha256:2aa358e8e355fae8",
         "confidence": "aggregator",
-        "programsCount": 104
+        "programsCount": 117
       },
       "gapPriority": "medium"
     },
@@ -9977,9 +9976,9 @@
         "sourceUrl": "https://www.soas.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 533
+        "programsCount": 534
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "sobey-smu",
@@ -10028,7 +10027,7 @@
         "sourceUrl": "https://qahighereducation.com/partner-institutions/solent-university/",
         "sourceHash": "sha256:qa-solent-2026-05-16",
         "confidence": "aggregator",
-        "programsCount": 160
+        "programsCount": 163
       },
       "gapPriority": "medium"
     },
@@ -10045,9 +10044,9 @@
         "sourceUrl": "https://sc.edu/",
         "sourceHash": "sha256:7c41a9b5d3f0e892",
         "confidence": "aggregator",
-        "programsCount": 46
+        "programsCount": 48
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "south-east-technological-university",
@@ -10164,9 +10163,9 @@
         "sourceUrl": "https://www.collabinternational.com/southern-denmark-university",
         "sourceHash": "sha256:collab-mpjreoew",
         "confidence": "aggregator",
-        "programsCount": 30
+        "programsCount": 37
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "southern-illinois-university-edwardsville",
@@ -10232,9 +10231,9 @@
         "sourceUrl": "https://www.spjain.org/",
         "sourceHash": "sha256:direct-mpjti9a8",
         "confidence": "partner",
-        "programsCount": 92
+        "programsCount": 109
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "sprott-carleton",
@@ -10249,7 +10248,7 @@
         "sourceUrl": "https://sprott.carleton.ca/",
         "sourceHash": "sha256:8b2e4f7c03a96d51",
         "confidence": "aggregator",
-        "programsCount": 40
+        "programsCount": 46
       },
       "gapPriority": "medium"
     },
@@ -10266,7 +10265,7 @@
         "sourceUrl": "https://www.srh-international-college.de/",
         "sourceHash": "sha256:ac6567f8c5ad09f1",
         "confidence": "aggregator",
-        "programsCount": 63
+        "programsCount": 71
       },
       "gapPriority": "medium"
     },
@@ -10317,7 +10316,7 @@
         "sourceUrl": "https://www.srh-international-college.de/",
         "sourceHash": "sha256:a7f3c2e8b1d495f6",
         "confidence": "aggregator",
-        "programsCount": 9
+        "programsCount": 18
       },
       "gapPriority": "medium"
     },
@@ -10334,9 +10333,9 @@
         "sourceUrl": "https://www.collabinternational.com/srh-university",
         "sourceHash": "sha256:collab-mpjreof6",
         "confidence": "partner",
-        "programsCount": 12
+        "programsCount": 19
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "sruc",
@@ -10351,7 +10350,7 @@
         "sourceUrl": "https://www.sruc.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 55
+        "programsCount": 56
       },
       "gapPriority": "medium"
     },
@@ -10368,9 +10367,9 @@
         "sourceUrl": "https://www.standrewscambridge.co.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 5
+        "programsCount": 15
       },
-      "gapPriority": "high"
+      "gapPriority": "medium"
     },
     {
       "slug": "st-bees",
@@ -10402,9 +10401,9 @@
         "sourceUrl": "https://www.oxfordinternational.com/",
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
-        "programsCount": 186
+        "programsCount": 189
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "st-georges-grenada",
@@ -10419,7 +10418,7 @@
         "sourceUrl": "https://www.sgu.edu/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 10
+        "programsCount": 29
       },
       "gapPriority": "medium"
     },
@@ -10572,7 +10571,7 @@
         "sourceUrl": "https://www.staffs.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 25
+        "programsCount": 42
       },
       "gapPriority": "medium"
     },
@@ -10623,9 +10622,9 @@
         "sourceUrl": "https://www.stir.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 192
+        "programsCount": 195
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "stover-school",
@@ -10640,7 +10639,7 @@
         "sourceUrl": "https://www.stover.co.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 4
+        "programsCount": 3
       },
       "gapPriority": "high"
     },
@@ -10674,9 +10673,9 @@
         "sourceUrl": "https://www.strath.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 631
+        "programsCount": 632
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "study-group",
@@ -10725,9 +10724,9 @@
         "sourceUrl": "https://www.uos.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 29
+        "programsCount": 33
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "sunderland",
@@ -10759,9 +10758,9 @@
         "sourceUrl": "https://www.geneseo.edu/",
         "sourceHash": "sha256:9c4f2a8d1e6b7032",
         "confidence": "aggregator",
-        "programsCount": 107
+        "programsCount": 110
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "sup-de-pub",
@@ -10793,9 +10792,9 @@
         "sourceUrl": "https://www.surrey.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 172
+        "programsCount": 178
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "sussex",
@@ -10810,9 +10809,9 @@
         "sourceUrl": "https://www.sussex.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 521
+        "programsCount": 541
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "swansea",
@@ -10827,7 +10826,7 @@
         "sourceUrl": "https://www.swansea.ac.uk/the-college",
         "sourceHash": "sha256:8a3cd2343e16f83f",
         "confidence": "aggregator",
-        "programsCount": 63
+        "programsCount": 69
       },
       "gapPriority": "medium"
     },
@@ -10878,9 +10877,9 @@
         "sourceUrl": "https://www.collabinternational.com/swps-university",
         "sourceHash": "sha256:collab-mpjreog7",
         "confidence": "aggregator",
-        "programsCount": 18
+        "programsCount": 25
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "sydney-institute-of-business-and-technology",
@@ -10912,7 +10911,7 @@
         "sourceUrl": "https://www.taylorssydney.edu.au/",
         "sourceHash": "sha256:fdeb32bc49becaab",
         "confidence": "aggregator",
-        "programsCount": 100
+        "programsCount": 103
       },
       "gapPriority": "medium"
     },
@@ -10946,9 +10945,9 @@
         "sourceUrl": "https://www.collabinternational.com/szeged-university",
         "sourceHash": "sha256:collab-mpjreogk",
         "confidence": "aggregator",
-        "programsCount": 8
+        "programsCount": 15
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "tamucc",
@@ -10997,9 +10996,9 @@
         "sourceUrl": "https://www.collabinternational.com/technological-university-of-dublin-tu-dublin",
         "sourceHash": "sha256:collab-mpjreoh3",
         "confidence": "aggregator",
-        "programsCount": 50
+        "programsCount": 57
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "ted-university",
@@ -11014,9 +11013,9 @@
         "sourceUrl": "https://www.collabinternational.com/ted-university",
         "sourceHash": "sha256:collab-mpjreoic",
         "confidence": "aggregator",
-        "programsCount": 54
+        "programsCount": 62
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "teesside",
@@ -11048,9 +11047,9 @@
         "sourceUrl": "https://www.temple.edu/",
         "sourceHash": "sha256:7e3c4f9a2b8d1c5e",
         "confidence": "aggregator",
-        "programsCount": 179
+        "programsCount": 183
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "texas-aandm-corpus-christi-university-direct-entry",
@@ -11099,9 +11098,9 @@
         "sourceUrl": "https://www.collabinternational.com/campus-biomedico-university-of-rome",
         "sourceHash": "sha256:collab-mpjreoii",
         "confidence": "aggregator",
-        "programsCount": 18
+        "programsCount": 25
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "the-university-college-of-enterprise-and-administration",
@@ -11286,9 +11285,9 @@
         "sourceUrl": "https://www.tru.ca/",
         "sourceHash": "sha256:4d9f6a2b87c53e10",
         "confidence": "aggregator",
-        "programsCount": 185
+        "programsCount": 186
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "toefl-exam",
@@ -11303,9 +11302,9 @@
         "sourceUrl": "https://www.collabinternational.com/toefl-exam",
         "sourceHash": "sha256:collab-mpjreokh",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 14
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "toefl-vs-ielts",
@@ -11320,9 +11319,9 @@
         "sourceUrl": "https://www.collabinternational.com/toefl-vs-ielts-difference",
         "sourceHash": "sha256:collab-mpjreole",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "toi-ohomai-institute-of-technology",
@@ -11354,9 +11353,9 @@
         "sourceUrl": "https://www.torontofilmschool.ca/",
         "sourceHash": "sha256:2a7e5c8b14f96d03",
         "confidence": "aggregator",
-        "programsCount": 38
+        "programsCount": 43
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "toronto-met",
@@ -11371,9 +11370,9 @@
         "sourceUrl": "https://www.torontomuic.ca/",
         "sourceHash": "sha256:d28d33358ff40589",
         "confidence": "aggregator",
-        "programsCount": 141
+        "programsCount": 149
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "toulouse-business-school",
@@ -11422,9 +11421,9 @@
         "sourceUrl": "https://tsi.lv/",
         "sourceHash": "sha256:direct-mpjti9aj",
         "confidence": "partner",
-        "programsCount": 20
+        "programsCount": 23
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "trebas",
@@ -11507,9 +11506,9 @@
         "sourceUrl": "https://www.tcd.ie/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 251
+        "programsCount": 252
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "trinity-western",
@@ -11524,7 +11523,7 @@
         "sourceUrl": "https://www.twu.ca/",
         "sourceHash": "sha256:5e3c8b1a74d62f09",
         "confidence": "aggregator",
-        "programsCount": 17
+        "programsCount": 20
       },
       "gapPriority": "medium"
     },
@@ -11592,9 +11591,9 @@
         "sourceUrl": "https://www.twentepathway.nl/",
         "sourceHash": "sha256:60faf7eaadce7e94",
         "confidence": "aggregator",
-        "programsCount": 74
+        "programsCount": 80
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "types-of-mba",
@@ -11609,9 +11608,9 @@
         "sourceUrl": "https://www.collabinternational.com/types-of-mba",
         "sourceHash": "sha256:collab-mpjreomf",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 18
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "ua92",
@@ -11626,7 +11625,7 @@
         "sourceUrl": "https://ua92.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 38
+        "programsCount": 60
       },
       "gapPriority": "medium"
     },
@@ -11660,7 +11659,7 @@
         "sourceUrl": "https://www.ubi.edu/",
         "sourceHash": "sha256:b4e2c9d1f7a30821",
         "confidence": "aggregator",
-        "programsCount": 35
+        "programsCount": 44
       },
       "gapPriority": "medium"
     },
@@ -11677,9 +11676,9 @@
         "sourceUrl": "https://www.uca.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 281
+        "programsCount": 292
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "ucam-catholic-university-of-murcia",
@@ -11728,9 +11727,9 @@
         "sourceUrl": "https://www.collabinternational.com/ucat-exam",
         "sourceHash": "sha256:collab-mpjreoo3",
         "confidence": "aggregator",
-        "programsCount": 15
+        "programsCount": 22
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "ucb",
@@ -11745,7 +11744,7 @@
         "sourceUrl": "https://www.ucb.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 88
+        "programsCount": 127
       },
       "gapPriority": "medium"
     },
@@ -11762,9 +11761,9 @@
         "sourceUrl": "https://www.ucc.ie/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 207
+        "programsCount": 210
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "ucf",
@@ -11779,9 +11778,9 @@
         "sourceUrl": "https://www.ucf.edu/",
         "sourceHash": "sha256:c1f2a8e3b4d5e6f0",
         "confidence": "aggregator",
-        "programsCount": 535
+        "programsCount": 542
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "ucl",
@@ -11796,9 +11795,9 @@
         "sourceUrl": "https://www.ucl.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 962
+        "programsCount": 965
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "uclan-cyprus",
@@ -11813,7 +11812,7 @@
         "sourceUrl": "https://www.uclancyprus.ac.cy/",
         "sourceHash": "sha256:c8f72a4b9d1e3f56",
         "confidence": "aggregator",
-        "programsCount": 43
+        "programsCount": 47
       },
       "gapPriority": "medium"
     },
@@ -11830,7 +11829,7 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/university-of-connecticut/",
         "sourceHash": "sha256:59e0f843791666e8",
         "confidence": "aggregator",
-        "programsCount": 112
+        "programsCount": 117
       },
       "gapPriority": "medium"
     },
@@ -11847,9 +11846,9 @@
         "sourceUrl": "https://www.ue-amsterdam.com/",
         "sourceHash": "ue-amsterdam-2026-05-14-v1",
         "confidence": "aggregator",
-        "programsCount": 14
+        "programsCount": 37
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "ue-germany",
@@ -11864,7 +11863,7 @@
         "sourceUrl": "https://www.ue-germany.com/",
         "sourceHash": "ue-germany-2026-05-14-v1",
         "confidence": "aggregator",
-        "programsCount": 148
+        "programsCount": 163
       },
       "gapPriority": "medium"
     },
@@ -11966,9 +11965,9 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/University_of_Massachusetts_Boston",
         "sourceHash": "sha256:c4f9a7e2b81d6035",
         "confidence": "aggregator",
-        "programsCount": 103
+        "programsCount": 104
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "unbc",
@@ -11983,7 +11982,7 @@
         "sourceUrl": "https://www.unbc.ca/",
         "sourceHash": "sha256:8e2f5d7b14c96a03",
         "confidence": "aggregator",
-        "programsCount": 78
+        "programsCount": 77
       },
       "gapPriority": "medium"
     },
@@ -12000,9 +11999,9 @@
         "sourceUrl": "https://www.collabinternational.com/universidad-europea-de-madrid",
         "sourceHash": "sha256:collab-mpjreoot",
         "confidence": "aggregator",
-        "programsCount": 31
+        "programsCount": 39
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "universidade-europeia",
@@ -12034,9 +12033,9 @@
         "sourceUrl": "https://www.collabinternational.com/universitat-politecnica-de-valencia-upv",
         "sourceHash": "sha256:collab-mpjreop8",
         "confidence": "aggregator",
-        "programsCount": 38
+        "programsCount": 46
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "university-at-albany",
@@ -12068,9 +12067,9 @@
         "sourceUrl": "https://www.ucanwest.ca/",
         "sourceHash": "sha256:7b4d1e9c63f52a08",
         "confidence": "aggregator",
-        "programsCount": 43
+        "programsCount": 76
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "university-college-dublin",
@@ -12153,9 +12152,9 @@
         "sourceUrl": "https://www.collabinternational.com/university-of-canada-west",
         "sourceHash": "sha256:collab-mpjreopv",
         "confidence": "aggregator",
-        "programsCount": 6
+        "programsCount": 13
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "university-of-central-lancashire-cyprus",
@@ -12272,9 +12271,9 @@
         "sourceUrl": "https://www.collabinternational.com/university-of-ghent",
         "sourceHash": "sha256:collab-mpjreor3",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 14
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "university-of-greater-manchester",
@@ -12306,9 +12305,9 @@
         "sourceUrl": "https://www.collabinternational.com/university-of-helsinki",
         "sourceHash": "sha256:collab-mpjreor8",
         "confidence": "aggregator",
-        "programsCount": 7
+        "programsCount": 14
       },
-      "gapPriority": "high"
+      "gapPriority": null
     },
     {
       "slug": "university-of-huddersfield-london",
@@ -12408,9 +12407,9 @@
         "sourceUrl": "https://www.law.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 193
+        "programsCount": 200
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "university-of-leeds",
@@ -12544,9 +12543,9 @@
         "sourceUrl": "https://www.unyp.cz/",
         "sourceHash": "sha256:direct-mpjti9ax",
         "confidence": "partner",
-        "programsCount": 19
+        "programsCount": 29
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "university-of-niagara-falls",
@@ -12680,9 +12679,9 @@
         "sourceUrl": "https://www.collabinternational.com/pecs-university",
         "sourceHash": "sha256:collab-mpjreotf",
         "confidence": "aggregator",
-        "programsCount": 20
+        "programsCount": 28
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "university-of-redlands",
@@ -12867,9 +12866,9 @@
         "sourceUrl": "https://www.collabinternational.com/university-of-warsaw",
         "sourceHash": "sha256:collab-mpjreovx",
         "confidence": "aggregator",
-        "programsCount": 37
+        "programsCount": 44
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "university-of-west-alabama",
@@ -12952,9 +12951,9 @@
         "sourceUrl": "https://www.upei.ca/programs",
         "sourceHash": "sha256:68b073798ec18b08",
         "confidence": "aggregator",
-        "programsCount": 157
+        "programsCount": 167
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "utah-tech-university",
@@ -13003,7 +13002,7 @@
         "sourceUrl": "https://www.utsa.edu/",
         "sourceHash": "sha256:7e3a91c8d2f60be4",
         "confidence": "aggregator",
-        "programsCount": 340
+        "programsCount": 341
       },
       "gapPriority": "medium"
     },
@@ -13037,7 +13036,7 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/uwe-bristol/",
         "sourceHash": "sha256:a8579a945adef6eb",
         "confidence": "aggregator",
-        "programsCount": 126
+        "programsCount": 130
       },
       "gapPriority": "medium"
     },
@@ -13054,7 +13053,7 @@
         "sourceUrl": "https://www.uwasa.fi/en",
         "sourceHash": "sha256:a3c4d5e6f70819ab",
         "confidence": "aggregator",
-        "programsCount": 37
+        "programsCount": 42
       },
       "gapPriority": "medium"
     },
@@ -13105,9 +13104,9 @@
         "sourceUrl": "https://www.wgtn.ac.nz/",
         "sourceHash": "sha256:3f9a7c2e1b84d05f",
         "confidence": "aggregator",
-        "programsCount": 495
+        "programsCount": 496
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "victoria",
@@ -13122,7 +13121,7 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/canadian-universities/university-of-victoria/",
         "sourceHash": "sha256:3814b21d6fc6617b",
         "confidence": "aggregator",
-        "programsCount": 92
+        "programsCount": 100
       },
       "gapPriority": "medium"
     },
@@ -13156,9 +13155,9 @@
         "sourceUrl": "https://www.collabinternational.com/visa-application",
         "sourceHash": "sha256:collab-mpjreoy6",
         "confidence": "aggregator",
-        "programsCount": 8
+        "programsCount": 15
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "vizja-university",
@@ -13190,9 +13189,9 @@
         "sourceUrl": "https://pathways.waikato.ac.nz/",
         "sourceHash": "sha256:4bfad62ff7b35f2b",
         "confidence": "aggregator",
-        "programsCount": 236
+        "programsCount": 240
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "waring-school",
@@ -13224,9 +13223,9 @@
         "sourceUrl": "https://www.wsb.edu.pl/en/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 20
+        "programsCount": 33
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "warsaw-university-of-technology",
@@ -13241,9 +13240,9 @@
         "sourceUrl": "https://www.collabinternational.com/warsaw-university-of-technology",
         "sourceHash": "sha256:collab-mpjreoyp",
         "confidence": "aggregator",
-        "programsCount": 33
+        "programsCount": 40
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "washington-state",
@@ -13326,9 +13325,9 @@
         "sourceUrl": "https://webster.ac.at/",
         "sourceHash": "sha256:a3f1b8c2d4e5f609",
         "confidence": "partner",
-        "programsCount": 144
+        "programsCount": 147
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "westcliff-university",
@@ -13394,9 +13393,9 @@
         "sourceUrl": "https://www.westernic.ca/",
         "sourceHash": "sha256:e6f7e01b3a6b2448",
         "confidence": "aggregator",
-        "programsCount": 97
+        "programsCount": 107
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "western-sydney",
@@ -13411,7 +13410,7 @@
         "sourceUrl": "https://internationalcollege.westernsydney.edu.au/",
         "sourceHash": "sha256:d584c4c194228a62",
         "confidence": "aggregator",
-        "programsCount": 80
+        "programsCount": 104
       },
       "gapPriority": "medium"
     },
@@ -13428,9 +13427,9 @@
         "sourceUrl": "https://www.wwu.edu/",
         "sourceHash": "sha256:7a9e2c4f1b8d6e35",
         "confidence": "aggregator",
-        "programsCount": 166
+        "programsCount": 167
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "westminster",
@@ -13445,9 +13444,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-westminster/",
         "sourceHash": "sha256:c1342d8e348979bc",
         "confidence": "aggregator",
-        "programsCount": 333
+        "programsCount": 337
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "wilfrid-laurier-international-college",
@@ -13479,7 +13478,7 @@
         "sourceUrl": "https://www.laurieric.ca/",
         "sourceHash": "sha256:2061a155d1c316c9",
         "confidence": "aggregator",
-        "programsCount": 87
+        "programsCount": 109
       },
       "gapPriority": "medium"
     },
@@ -13547,7 +13546,7 @@
         "sourceUrl": "https://www.uwinnipeg.ca/",
         "sourceHash": "sha256:3a8d1f5e92c47b06",
         "confidence": "aggregator",
-        "programsCount": 31
+        "programsCount": 32
       },
       "gapPriority": "medium"
     },
@@ -13564,9 +13563,9 @@
         "sourceUrl": "https://www.wittenborg.eu/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 143
+        "programsCount": 157
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "wollongong-dubai",
@@ -13581,7 +13580,7 @@
         "sourceUrl": "https://www.uowdubai.ac.ae/",
         "sourceHash": "sha256:4f1c8e7a2b9d5e6f",
         "confidence": "partner",
-        "programsCount": 41
+        "programsCount": 43
       },
       "gapPriority": "medium"
     },
@@ -13598,7 +13597,7 @@
         "sourceUrl": "https://www.uow.edu.my/",
         "sourceHash": "sha256:c2e8a91f3d5b4f76",
         "confidence": "aggregator",
-        "programsCount": 73
+        "programsCount": 88
       },
       "gapPriority": "medium"
     },
@@ -13802,9 +13801,9 @@
         "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/university-of-york/",
         "sourceHash": "sha256:d4dfaa2d3d2d434e",
         "confidence": "aggregator",
-        "programsCount": 396
+        "programsCount": 400
       },
-      "gapPriority": "medium"
+      "gapPriority": null
     },
     {
       "slug": "yorkville",
@@ -13819,7 +13818,7 @@
         "sourceUrl": "https://www.yorkvilleu.ca/",
         "sourceHash": "sha256:2f7e4d9c63b81a05",
         "confidence": "aggregator",
-        "programsCount": 50
+        "programsCount": 57
       },
       "gapPriority": "medium"
     },
@@ -13841,6 +13840,6 @@
       "gapPriority": "high"
     }
   ],
-  "generatedAt": "2026-05-31T07:33:02.427Z",
+  "generatedAt": "2026-05-31T15:42:22.229Z",
   "isStaticSnapshot": true
 }
