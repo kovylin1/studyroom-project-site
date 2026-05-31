@@ -51,10 +51,11 @@ jobs:
 
       - name: Shmel — обновить программы
         run: |
+          # 3a-france исключён: ecole3a.edu стабильно ломает slug generation
           if [ "${{ inputs.scope }}" = "all" ]; then
-            node scraper/shmel.mjs --concurrency=6
+            node scraper/shmel.mjs --concurrency=6 --exclude=3a-france
           else
-            node scraper/shmel.mjs --limit=100 --concurrency=6
+            node scraper/shmel.mjs --limit=100 --concurrency=6 --exclude=3a-france
           fi
         continue-on-error: true
 
