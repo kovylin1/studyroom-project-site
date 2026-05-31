@@ -83,6 +83,7 @@ async function validateFile(filePath, uniSlug) {
 
   for (let i = 0; i < programs.length; i++) {
     const p = programs[i];
+    const oldSlug = p.slug;
 
     // Missing slug
     if (!p.slug) {
@@ -125,6 +126,38 @@ async function validateFile(filePath, uniSlug) {
     }
 
     if (p.slug) seenSlugs.add(p.slug);
+
+    // If we renamed the slug, migrate its tuition.byProgram / deadlines entries so the
+    // pricing/deadline data follows the program instead of being pruned as an orphan below.
+    if (oldSlug && p.slug && oldSlug !== p.slug) {
+      if (u.tuition?.byProgram && oldSlug in u.tuition.byProgram) {
+        u.tuition.byProgram[p.slug] = u.tuition.byProgram[oldSlug];
+        delete u.tuition.byProgram[oldSlug];
+        dirty = true;
+      }
+      if (u.deadlines && oldSlug in u.deadlines) {
+        u.deadlines[p.slug] = u.deadlines[oldSlug];
+        delete u.deadlines[oldSlug];
+        dirty = true;
+      }
+    }
+  }
+
+  // Prune orphaned references: tuition.byProgram / deadlines keyed by a program slug that
+  // no longer exists (e.g. shmel refreshed the program set, or revizor deleted a program).
+  // The Astro schema's superRefine rejects these, so this is the pre-build gate that keeps
+  // both maps consistent with the current programs.
+  const validSlugs = new Set((u.programs || []).map(p => p.slug).filter(Boolean));
+  for (const [label, map] of [['tuition.byProgram', u.tuition?.byProgram], ['deadlines', u.deadlines]]) {
+    if (!map || typeof map !== 'object') continue;
+    for (const key of Object.keys(map)) {
+      if (!validSlugs.has(key)) {
+        log(`PRUNE ${uniSlug}: ${label}["${key}"] → no matching program`);
+        delete map[key];
+        fixed++;
+        dirty = true;
+      }
+    }
   }
 
   if (dirty && FIX) {
