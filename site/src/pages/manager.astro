@@ -146,9 +146,48 @@ const CONTROL_DEFAULT_URL = '';
           <button id="run-all-btn" class="btn btn-primary" type="button">
             Запустить скрапинг сейчас
           </button>
-          <button id="verify-btn" class="btn btn-secondary" type="button">
-            Проверить актуальность
-          </button>
+          <div class="verify-dropdown" id="verify-dropdown">
+            <button id="verify-btn" class="btn btn-secondary verify-dropdown__trigger" type="button" aria-expanded="false" aria-haspopup="true">
+              Проверить актуальность <span class="verify-dropdown__chevron">▾</span>
+            </button>
+            <div id="verify-menu" class="verify-menu" hidden role="menu">
+              <button class="verify-menu-item" type="button" data-verify-scope="critical" role="menuitem">
+                <span class="verify-menu-item__icon">🔍</span>
+                <span class="verify-menu-item__body">
+                  <span class="verify-menu-item__label">Критические</span>
+                  <span class="verify-menu-item__desc">Топ-100 проблемных · ~10 мин</span>
+                </span>
+              </button>
+              <button class="verify-menu-item" type="button" data-verify-scope="all" role="menuitem">
+                <span class="verify-menu-item__icon">📋</span>
+                <span class="verify-menu-item__body">
+                  <span class="verify-menu-item__label">Все (804 вуза)</span>
+                  <span class="verify-menu-item__desc">Полная проверка · ~25 мин</span>
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="verify-dropdown" id="fix-dropdown">
+            <button id="fix-freshness-btn" class="btn btn-secondary verify-dropdown__trigger" type="button" aria-expanded="false" aria-haspopup="true">
+              Исправить <span class="verify-dropdown__chevron">▾</span>
+            </button>
+            <div id="fix-menu" class="verify-menu" hidden role="menu">
+              <button class="verify-menu-item" type="button" data-fix-scope="critical" role="menuitem">
+                <span class="verify-menu-item__icon">⚡</span>
+                <span class="verify-menu-item__body">
+                  <span class="verify-menu-item__label">Критические</span>
+                  <span class="verify-menu-item__desc">Топ-100 · авто-удалить 404 + shmel · ~20 мин</span>
+                </span>
+              </button>
+              <button class="verify-menu-item" type="button" data-fix-scope="all" role="menuitem">
+                <span class="verify-menu-item__icon">🔧</span>
+                <span class="verify-menu-item__body">
+                  <span class="verify-menu-item__label">Все (804 вуза)</span>
+                  <span class="verify-menu-item__desc">Полный ремонт · авто-удалить 404 + shmel · ~40 мин</span>
+                </span>
+              </button>
+            </div>
+          </div>
           <button id="orel-btn" class="btn btn-secondary" type="button">
             Обновить фото (ОРЁЛ)
           </button>
@@ -401,6 +440,26 @@ const CONTROL_DEFAULT_URL = '';
   .meta dd { margin: 0; text-align: right; }
 
   .manager__run { margin-bottom: 24px; }
+  .verify-dropdown { position: relative; display: inline-block; }
+  .verify-dropdown__chevron { font-size: 0.7rem; transition: transform 180ms ease; }
+  .verify-dropdown__trigger[aria-expanded="true"] .verify-dropdown__chevron { transform: rotate(180deg); }
+  .verify-menu {
+    position: absolute; top: calc(100% + 6px); left: 0; z-index: 200;
+    background: var(--color-bg); border: 1px solid var(--color-border);
+    border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    min-width: 240px; overflow: hidden;
+  }
+  .verify-menu-item {
+    display: flex; align-items: flex-start; gap: 10px; width: 100%;
+    padding: 12px 16px; background: none; border: none; cursor: pointer;
+    border-bottom: 1px solid var(--color-border); text-align: left; font: inherit;
+  }
+  .verify-menu-item:last-child { border-bottom: none; }
+  .verify-menu-item:hover { background: var(--color-bg-soft); }
+  .verify-menu-item__icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+  .verify-menu-item__body { display: flex; flex-direction: column; gap: 2px; }
+  .verify-menu-item__label { font-weight: 600; font-size: 0.9rem; }
+  .verify-menu-item__desc { font-size: 0.78rem; color: var(--color-text-muted); }
   .manager__actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 16px; }
   .manager__hint { font-size: 0.88rem; max-width: 480px; }
   .manager__verify-summary { margin-top: 12px; }
@@ -1109,10 +1168,11 @@ const CONTROL_DEFAULT_URL = '';
   const VERIFY_WORKFLOW        = 'verify-on-demand.yml';
   const REVIZOR_APPLY_WORKFLOW = 'revizor-apply.yml';
   const OREL_WORKFLOW          = 'orel-on-demand.yml';
-  const PAUK_WORKFLOW       = 'pauk-on-demand.yml';
-  const BOBR_WORKFLOW       = 'bobr-on-demand.yml';
-  const BUMBLEBEE_WORKFLOW  = 'bumblebee-on-demand.yml';
-  const SCRAPE_WORKFLOW     = 'scrape-monthly.yml';
+  const PAUK_WORKFLOW          = 'pauk-on-demand.yml';
+  const BOBR_WORKFLOW          = 'bobr-on-demand.yml';
+  const BUMBLEBEE_WORKFLOW     = 'bumblebee-on-demand.yml';
+  const SCRAPE_WORKFLOW        = 'scrape-monthly.yml';
+  const FIX_FRESHNESS_WORKFLOW = 'fix-freshness.yml';
   const GITHUB_TOKEN_KEY = 'studyroom.manager.githubToken';
   const RAW_BASE =
     'https://raw.githubusercontent.com/' + GITHUB_REPO + '/' + GITHUB_REF;
@@ -1214,7 +1274,7 @@ const CONTROL_DEFAULT_URL = '';
 
   // ---------- generic workflow_dispatch + poll ----------
 
-  async function runRemoteWorkflow({ workflowFile, label, expectedMin }) {
+  async function runRemoteWorkflow({ workflowFile, label, expectedMin, inputs = {} }) {
     const token = getGithubToken();
     if (!token) {
       const proceed = confirm(
@@ -1248,7 +1308,7 @@ const CONTROL_DEFAULT_URL = '';
           'Content-Type': 'application/json',
           'X-GitHub-Api-Version': '2022-11-28',
         },
-        body: JSON.stringify({ ref: GITHUB_REF }),
+        body: JSON.stringify({ ref: GITHUB_REF, inputs }),
       });
       if (dispatchRes.status === 401) throw new Error('токен невалидный или истёк (HTTP 401)');
       if (dispatchRes.status === 404) throw new Error('workflow не найден или у токена нет прав (HTTP 404). Проверьте scope «Actions: Read and write».');
@@ -1359,32 +1419,80 @@ const CONTROL_DEFAULT_URL = '';
     openRunSelector();
   });
 
-  document.getElementById('verify-btn').addEventListener('click', async () => {
+  // ── Dropdown helpers ─────────────────────────────────────────────────────
+  function toggleMenu(triggerId, menuId) {
+    const trigger = document.getElementById(triggerId);
+    const menu = document.getElementById(menuId);
+    if (!trigger || !menu) return;
+    const open = !menu.hidden;
+    menu.hidden = open;
+    trigger.setAttribute('aria-expanded', String(!open));
+  }
+
+  function closeAllMenus() {
+    [['verify-btn','verify-menu'],['fix-freshness-btn','fix-menu']].forEach(([t,m]) => {
+      const menu = document.getElementById(m);
+      const trigger = document.getElementById(t);
+      if (menu) menu.hidden = true;
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.verify-dropdown')) closeAllMenus();
+  });
+
+  document.getElementById('verify-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu('verify-btn', 'verify-menu');
+    document.getElementById('fix-menu').hidden = true;
+  });
+
+  document.getElementById('verify-menu').addEventListener('click', async (e) => {
+    const item = e.target.closest('[data-verify-scope]');
+    if (!item) return;
+    const scope = item.dataset.verifyScope;
+    closeAllMenus();
     const btn = document.getElementById('verify-btn');
-    if (isStaticMode) {
-      btn.disabled = true;
-      const orig = btn.textContent;
-      btn.textContent = 'Запускаем workflow…';
-      const ok = await runRemoteWorkflow({
-        workflowFile: VERIFY_WORKFLOW,
-        label: 'Проверка актуальности',
-        expectedMin: 2,
-      });
-      btn.disabled = false;
-      btn.textContent = orig;
-      if (ok) fetchStatus();
-      return;
-    }
     btn.disabled = true;
-    const original = btn.textContent;
-    btn.textContent = 'Проверяем…';
-    try {
-      await postJson('/api/verify', null);
-    } catch (err) {
-      alert('Не удалось запустить проверку: ' + err.message);
-      btn.disabled = false;
-      btn.textContent = original;
-    }
+    const orig = btn.innerHTML;
+    btn.innerHTML = 'Проверяем…';
+    const inputs = scope === 'all' ? { scope: 'all' } : { scope: 'critical' };
+    const ok = await runRemoteWorkflow({
+      workflowFile: VERIFY_WORKFLOW,
+      label: 'Проверка актуальности (' + scope + ')',
+      expectedMin: scope === 'all' ? 25 : 10,
+      inputs,
+    });
+    btn.disabled = false;
+    btn.innerHTML = orig;
+    if (ok) fetchStatus();
+  });
+
+  document.getElementById('fix-freshness-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu('fix-freshness-btn', 'fix-menu');
+    document.getElementById('verify-menu').hidden = true;
+  });
+
+  document.getElementById('fix-menu').addEventListener('click', async (e) => {
+    const item = e.target.closest('[data-fix-scope]');
+    if (!item) return;
+    const scope = item.dataset.fixScope;
+    closeAllMenus();
+    const btn = document.getElementById('fix-freshness-btn');
+    btn.disabled = true;
+    const orig = btn.innerHTML;
+    btn.innerHTML = 'Исправляем…';
+    const inputs = { scope };
+    await runRemoteWorkflow({
+      workflowFile: FIX_FRESHNESS_WORKFLOW,
+      label: 'Исправить актуальность (' + scope + ')',
+      expectedMin: scope === 'all' ? 40 : 20,
+      inputs,
+    });
+    btn.disabled = false;
+    btn.innerHTML = orig;
     fetchStatus();
   });
 

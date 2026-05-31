@@ -1,7 +1,14 @@
 name: Verify link freshness (on-demand)
 
 on:
-  workflow_dispatch:   # запускается кнопкой "Проверить актуальность" в manager UI
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: 'Scope'
+        required: false
+        default: 'critical'
+        type: choice
+        options: ['critical', 'all']
 
 permissions:
   contents: write
@@ -29,24 +36,29 @@ jobs:
       - name: Install deps
         run: cd scraper && npm ci && cd ../site && npm ci
 
-      # Обновляем worklist
       - name: detect-gaps
         run: node scraper/detect-gaps.mjs
 
-      # ШМЕЛЬ — топ-50 unis с gap-проблемами
-      - name: shmel (limit 50)
-        run: node scraper/shmel.mjs --limit=50 --concurrency=6
+      - name: shmel
+        run: |
+          if [ "${{ inputs.scope }}" = "all" ]; then
+            node scraper/shmel.mjs --concurrency=6
+          else
+            node scraper/shmel.mjs --limit=50 --concurrency=6
+          fi
 
-      # Revizor — link liveness (3 программы на университет)
       - name: revizor
-        run: node scraper/revizor.mjs
+        run: |
+          if [ "${{ inputs.scope }}" = "all" ]; then
+            node scraper/revizor.mjs
+          else
+            node scraper/revizor.mjs --limit=100
+          fi
         continue-on-error: true
 
-      # Генерируем verify.json для manager UI
       - name: generate verify.json
         run: node site/scripts/generate-verify.mjs
 
-      # Build чтобы обновить status.json
       - name: build site
         run: cd site && npm run build
 
