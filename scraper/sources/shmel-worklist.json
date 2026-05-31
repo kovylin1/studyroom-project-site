@@ -1,10 +1,10 @@
 {
-  "generated": "2026-05-31T15:42:21.256Z",
+  "generated": "2026-05-31T15:58:21.439Z",
   "minPrograms": 8,
   "total": 586,
   "byPriority": {
-    "critical": 33,
-    "high": 66,
+    "critical": 34,
+    "high": 65,
     "medium": 487
   },
   "items": [
@@ -457,6 +457,22 @@
       "score": 112
     },
     {
+      "slug": "stover-school",
+      "name": "Stover School",
+      "sourceUrl": "https://www.stover.co.uk/",
+      "programs": 2,
+      "verified": 0,
+      "sources": [],
+      "staleDays": 9,
+      "priority": "critical",
+      "reasons": [
+        "only 2 program(s)",
+        "no verifiedBySite",
+        "no source provenance"
+      ],
+      "score": 112
+    },
+    {
       "slug": "texas-aandm-corpus-christi-university-direct-entry",
       "name": "Texas A&M Corpus Christi University Direct Entry",
       "sourceUrl": "https://agent.studygroup.com/",
@@ -673,6 +689,22 @@
       "score": 71
     },
     {
+      "slug": "red-bank-catholic",
+      "name": "Red Bank Catholic High School",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Red_Bank_Catholic_High_School",
+      "programs": 3,
+      "verified": 0,
+      "sources": [],
+      "staleDays": 14,
+      "priority": "high",
+      "reasons": [
+        "3 programs (threshold 8)",
+        "no verifiedBySite",
+        "no source provenance"
+      ],
+      "score": 71
+    },
+    {
       "slug": "royal-holloway-direct-entry",
       "name": "Royal Holloway Direct Entry",
       "sourceUrl": "https://agent.studygroup.com",
@@ -718,22 +750,6 @@
       "reasons": [
         "3 programs (threshold 8)",
         "no verifiedBySite"
-      ],
-      "score": 71
-    },
-    {
-      "slug": "stover-school",
-      "name": "Stover School",
-      "sourceUrl": "https://www.stover.co.uk/",
-      "programs": 3,
-      "verified": 0,
-      "sources": [],
-      "staleDays": 9,
-      "priority": "high",
-      "reasons": [
-        "3 programs (threshold 8)",
-        "no verifiedBySite",
-        "no source provenance"
       ],
       "score": 71
     },
@@ -1268,22 +1284,6 @@
       "score": 68
     },
     {
-      "slug": "red-bank-catholic",
-      "name": "Red Bank Catholic High School",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Red_Bank_Catholic_High_School",
-      "programs": 6,
-      "verified": 0,
-      "sources": [],
-      "staleDays": 14,
-      "priority": "high",
-      "reasons": [
-        "6 programs (threshold 8)",
-        "no verifiedBySite",
-        "no source provenance"
-      ],
-      "score": 68
-    },
-    {
       "slug": "washington-university-school-of-law",
       "name": "Washington University School of Law",
       "sourceUrl": "https://edge.edvoy.com/institutions/washington-university-school-of-law",
@@ -1466,6 +1466,22 @@
       "score": 67
     },
     {
+      "slug": "institut-culinaire-france",
+      "name": "Institut Culinaire de France",
+      "sourceUrl": "https://www.institutculinaire.fr/",
+      "programs": 3,
+      "verified": 1,
+      "sources": [
+        "official"
+      ],
+      "staleDays": 14,
+      "priority": "high",
+      "reasons": [
+        "3 programs (threshold 8)"
+      ],
+      "score": 66
+    },
+    {
       "slug": "woodside-priory",
       "name": "Woodside Priory School",
       "sourceUrl": "https://www.prioryca.org/",
@@ -1480,22 +1496,6 @@
         "4 programs (threshold 8)"
       ],
       "score": 65
-    },
-    {
-      "slug": "institut-culinaire-france",
-      "name": "Institut Culinaire de France",
-      "sourceUrl": "https://www.institutculinaire.fr/",
-      "programs": 5,
-      "verified": 1,
-      "sources": [
-        "official"
-      ],
-      "staleDays": 14,
-      "priority": "high",
-      "reasons": [
-        "5 programs (threshold 8)"
-      ],
-      "score": 64
     },
     {
       "slug": "kings-bournemouth",
@@ -1546,6 +1546,22 @@
       "score": 64
     },
     {
+      "slug": "aberystwyth",
+      "name": "Aberystwyth University",
+      "sourceUrl": "https://www.aber.ac.uk/",
+      "programs": 6,
+      "verified": 2,
+      "sources": [
+        "official"
+      ],
+      "staleDays": 9,
+      "priority": "high",
+      "reasons": [
+        "6 programs (threshold 8)"
+      ],
+      "score": 63
+    },
+    {
       "slug": "cardiff-sixth-form",
       "name": "Cardiff Sixth Form College",
       "sourceUrl": "https://www.ccoex.com/",
@@ -1588,22 +1604,6 @@
         "official"
       ],
       "staleDays": 14,
-      "priority": "high",
-      "reasons": [
-        "7 programs (threshold 8)"
-      ],
-      "score": 62
-    },
-    {
-      "slug": "aberystwyth",
-      "name": "Aberystwyth University",
-      "sourceUrl": "https://www.aber.ac.uk/",
-      "programs": 7,
-      "verified": 2,
-      "sources": [
-        "official"
-      ],
-      "staleDays": 9,
       "priority": "high",
       "reasons": [
         "7 programs (threshold 8)"
@@ -3360,7 +3360,7 @@
       "slug": "goldsmiths",
       "name": "Goldsmiths, University of London",
       "sourceUrl": "https://www.gold.ac.uk/",
-      "programs": 14,
+      "programs": 12,
       "verified": 0,
       "sources": [],
       "staleDays": 9,
@@ -4534,7 +4534,7 @@
       "slug": "memorial-nl",
       "name": "Memorial University of Newfoundland",
       "sourceUrl": "https://www.mun.ca/academics/",
-      "programs": 20,
+      "programs": 18,
       "verified": 0,
       "sources": [],
       "staleDays": 9,
@@ -5358,7 +5358,7 @@
       "slug": "sf-state",
       "name": "San Francisco State University",
       "sourceUrl": "https://www.sfsu.edu/academics",
-      "programs": 20,
+      "programs": 19,
       "verified": 0,
       "sources": [],
       "staleDays": 9,
@@ -7442,7 +7442,7 @@
       "slug": "acadia",
       "name": "Acadia University",
       "sourceUrl": "https://www.oxfordinternational.com/",
-      "programs": 21,
+      "programs": 20,
       "verified": 3,
       "sources": [
         "official"
@@ -7666,7 +7666,7 @@
       "slug": "cesi",
       "name": "CESI École d'Ingénieurs",
       "sourceUrl": "https://www.cesi.fr/en/",
-      "programs": 81,
+      "programs": 80,
       "verified": 24,
       "sources": [
         "official"
@@ -7858,8 +7858,8 @@
       "slug": "em-normandie-dubai",
       "name": "EM Normandie Business School — Dubai",
       "sourceUrl": "https://en.em-normandie.com/internationally-recognised-business-school/dubai-campus",
-      "programs": 65,
-      "verified": 11,
+      "programs": 71,
+      "verified": 22,
       "sources": [
         "official"
       ],
@@ -7906,7 +7906,7 @@
       "slug": "eu-business-school-switzerland",
       "name": "EU Business School Switzerland",
       "sourceUrl": "https://www.euruni.edu/",
-      "programs": 100,
+      "programs": 99,
       "verified": 31,
       "sources": [
         "official"
@@ -8418,7 +8418,7 @@
       "slug": "mount-allison",
       "name": "Mount Allison University",
       "sourceUrl": "https://www.oxfordinternational.com/",
-      "programs": 26,
+      "programs": 25,
       "verified": 3,
       "sources": [
         "official"
@@ -8466,7 +8466,7 @@
       "slug": "murdoch",
       "name": "Murdoch University",
       "sourceUrl": "https://www.kaplanpathways.com/where-to-study/australian-universities/murdoch-university/",
-      "programs": 29,
+      "programs": 28,
       "verified": 3,
       "sources": [
         "official"
@@ -8626,7 +8626,7 @@
       "slug": "nscad",
       "name": "NSCAD University",
       "sourceUrl": "https://www.oxfordinternational.com/",
-      "programs": 28,
+      "programs": 27,
       "verified": 3,
       "sources": [
         "official"
@@ -8866,8 +8866,8 @@
       "slug": "sprott-carleton",
       "name": "Sprott School of Business (Carleton University)",
       "sourceUrl": "https://sprott.carleton.ca/",
-      "programs": 46,
-      "verified": 8,
+      "programs": 48,
+      "verified": 10,
       "sources": [
         "official"
       ],
@@ -9266,7 +9266,7 @@
       "slug": "birmingham-city",
       "name": "Birmingham City University",
       "sourceUrl": "https://www.bcuic.navitas.com/",
-      "programs": 72,
+      "programs": 71,
       "verified": 3,
       "sources": [
         "official"
@@ -9298,7 +9298,7 @@
       "slug": "canberra",
       "name": "University of Canberra",
       "sourceUrl": "https://www.canberra.edu.au/uc-college",
-      "programs": 79,
+      "programs": 77,
       "verified": 14,
       "sources": [
         "official"
@@ -9410,7 +9410,7 @@
       "slug": "keele",
       "name": "Keele University",
       "sourceUrl": "https://kuic.keele.ac.uk/",
-      "programs": 64,
+      "programs": 63,
       "verified": 9,
       "sources": [
         "official"
@@ -9458,7 +9458,7 @@
       "slug": "portsmouth",
       "name": "University of Portsmouth",
       "sourceUrl": "https://icp.navitas.com/",
-      "programs": 67,
+      "programs": 66,
       "verified": 5,
       "sources": [
         "official"
@@ -9474,7 +9474,7 @@
       "slug": "robert-gordon",
       "name": "Robert Gordon University",
       "sourceUrl": "https://icrgu.navitas.com/",
-      "programs": 63,
+      "programs": 62,
       "verified": 1,
       "sources": [
         "official"
