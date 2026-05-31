@@ -125,11 +125,13 @@ function applyExtract(byKey, extract, sourceName, isOfficial, uniSlug) {
     } else {
       // New program from this source
       const durationYears = parseDurationYears(ep.duration ?? ep.durationYears, level);
-      const baseSlug = slugify(ep.slug || `${uniSlug}-${ep.title}-${level}`);
+      let baseSlug = slugify(ep.slug || `${uniSlug}-${ep.title}-${level}`);
+      if (!baseSlug) baseSlug = slugify(`${uniSlug}-${level}`) || slugify(uniSlug) || 'program';
       const existingSlugs = new Set([...byKey.values()].map(p => p.slug));
       let finalSlug = baseSlug;
       let n = 2;
       while (existingSlugs.has(finalSlug)) finalSlug = `${baseSlug}-${n++}`;
+      // dedup suffix is always baseSlug + digit — both already valid chars
 
       const newProg = {
         slug: finalSlug,
@@ -183,6 +185,20 @@ async function mergeAllSourcesForSlug(slug) {
   for (const [k, p] of byKey) {
     if (!origKeys.has(k)) programs.push(p);
   }
+
+  // Final-pass: ensure every slug is schema-valid (^[a-z0-9-]+$) and unique
+  const seenSlugs = new Set();
+  for (let i = 0; i < programs.length; i++) {
+    const p = programs[i];
+    if (!p.slug || !/^[a-z0-9-]+$/.test(p.slug)) {
+      p.slug = slugify(p.slug || `${slug}-${p.title}-${p.level}`) || `${slugify(slug) || 'uni'}-program-${i}`;
+    }
+    let safe = p.slug, dn = 2;
+    while (seenSlugs.has(safe)) safe = `${p.slug}-${dn++}`;
+    seenSlugs.add(safe);
+    p.slug = safe;
+  }
+
   catalog.programs = programs;
 
   // Sync: drop orphaned tuition/deadline keys
