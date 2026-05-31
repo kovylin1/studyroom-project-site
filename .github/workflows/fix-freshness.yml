@@ -64,6 +64,26 @@ jobs:
       - name: Validate catalog — авто-фикс slug/дубликаты
         run: node scraper/validate-catalog.mjs
 
+      - name: DEBUG — scan all slugs before build
+        run: |
+          node -e "
+          const fs=require('fs');
+          const dir='site/src/content/universities';
+          const ASTRO=/^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\$/;
+          let bad=0;
+          for(const f of fs.readdirSync(dir)){
+            if(!f.endsWith('.json')) continue;
+            const u=JSON.parse(fs.readFileSync(dir+'/'+f,'utf8'));
+            (u.programs||[]).forEach((p,i)=>{
+              if(!ASTRO.test(p.slug||'')){
+                console.log('BAD',f,'['+i+']',JSON.stringify(p.slug));
+                bad++;
+              }
+            });
+          }
+          console.log('total bad:',bad);
+          " || true
+
       - name: Generate verify.json + status.json
         run: |
           node scraper/detect-gaps.mjs || true
