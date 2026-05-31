@@ -10,9 +10,27 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execFileSync } from 'child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const UNI_DIR = path.resolve(__dirname, '..', 'site', 'src', 'content', 'universities');
+const PROJECT_ROOT = path.resolve(__dirname, '..');
+const UNI_DIR = path.resolve(PROJECT_ROOT, 'site', 'src', 'content', 'universities');
+
+// SAFETY NET helper: pull the last-committed programs[] for a uni from git HEAD.
+// Used when an upstream step (revizor-apply / shmel no-op / bad merge) leaves a
+// university with zero programs — which would break the Astro build (programs.min(1)).
+function restoreProgramsFromGit(uniSlug) {
+  const relPath = `site/src/content/universities/${uniSlug}.json`;
+  try {
+    const raw = execFileSync('git', ['show', `HEAD:${relPath}`], {
+      cwd: PROJECT_ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'],
+    });
+    const prev = JSON.parse(raw);
+    return Array.isArray(prev.programs) && prev.programs.length ? prev.programs : null;
+  } catch {
+    return null;
+  }
+}
 
 const FIX = !process.argv.includes('--no-fix');
 const arg = (p) => (process.argv.find(a => a.startsWith(p)) || '').slice(p.length);
@@ -39,10 +57,27 @@ async function validateFile(filePath, uniSlug) {
   try { u = JSON.parse(raw); }
   catch (e) { return { ok: false, fixed: 0, errors: [`parse error: ${e.message}`] }; }
 
-  const programs = u.programs || [];
+  let programs = u.programs || [];
   const errors = [];
   let fixed = 0;
   let dirty = false;
+
+  // SAFETY NET: a university with zero programs breaks the Astro build (programs.min(1)).
+  // This is the deterministic gate right before build — it catches an emptied entry no
+  // matter which upstream step caused it. Restore the last-committed programs from git
+  // HEAD and flag them brokenLink so the page renders without publishing dead links.
+  if (programs.length === 0) {
+    const restored = restoreProgramsFromGit(uniSlug);
+    if (restored) {
+      u.programs = restored.map(p => ({ ...p, brokenLink: true }));
+      programs = u.programs;
+      fixed += programs.length;
+      dirty = true;
+      log(`RESTORE ${uniSlug}: empty programs → restored ${programs.length} from git HEAD (flagged brokenLink)`);
+    } else {
+      errors.push(`programs: empty and could not restore from git HEAD (build requires >=1)`);
+    }
+  }
 
   const seenSlugs = new Set();
 

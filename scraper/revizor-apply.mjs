@@ -60,10 +60,20 @@ for (const item of decided) {
   if (item.decision === 'delete' && (item.issue === 'missing_on_site' || item.issue === 'broken_url')) {
     const toDelete = new Set((item.programs || []).map(p => p.slug).filter(Boolean));
     const toDeleteTitles = new Set((item.programs || []).map(p => p.title).filter(Boolean));
+    const isTargeted = (p) => toDelete.has(p.slug) || toDeleteTitles.has(p.title);
     const before = (u.programs || []).length;
-    u.programs = (u.programs || []).filter(p => !toDelete.has(p.slug) && !toDeleteTitles.has(p.title));
-    const after = u.programs.length;
-    if (before !== after) {
+    const kept = (u.programs || []).filter(p => !isTargeted(p));
+
+    if (before > 0 && kept.length === 0) {
+      // GUARD: never leave a university with zero programs.
+      // Astro schema requires programs.min(1) → empty array breaks the build;
+      // catalog rule: enrich, don't cut. Keep the targeted programs but flag
+      // brokenLink so the page still renders and the template can degrade the link.
+      u.programs = (u.programs || []).map(p => isTargeted(p) ? { ...p, brokenLink: true } : p);
+      changed = true;
+      log(`${item.slug}: SKIP delete — would empty programs; flagged ${u.programs.length} brokenLink instead`);
+    } else if (kept.length !== before) {
+      u.programs = kept;
       // Clean up tuition.byProgram and deadlines for deleted slugs
       if (u.tuition?.byProgram) {
         for (const s of toDelete) delete u.tuition.byProgram[s];
@@ -72,8 +82,8 @@ for (const item of decided) {
         for (const s of toDelete) delete u.deadlines[s];
       }
       changed = true;
-      stats.deleted += before - after;
-      log(`${item.slug}: deleted ${before - after} programs`);
+      stats.deleted += before - kept.length;
+      log(`${item.slug}: deleted ${before - kept.length} programs`);
     }
   }
 

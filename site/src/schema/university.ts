@@ -35,6 +35,7 @@ export const programSchema = z.object({
   source: z.string().optional(),
   verifiedBySite: z.boolean().optional(),
   checkedAt: isoDate.optional(),
+  brokenLink: z.boolean().optional(),
 });
 export type Program = z.infer<typeof programSchema>;
 
