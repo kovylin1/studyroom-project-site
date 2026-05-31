@@ -29,6 +29,7 @@ const REVIEW_OUT = path.join(PROJECT_ROOT, 'site/public/api/revizor-review.json'
 
 const arg = (p) => (process.argv.find(a => a.startsWith(p)) || '').slice(p.length);
 const DRY_RUN = process.argv.includes('--dry-run');
+const AUTO_APPLY = process.argv.includes('--auto-apply');
 const SLUGS_ARG = arg('--slugs=');
 const AGGREGATOR = arg('--aggregator=');
 const LIMIT = parseInt(arg('--limit=') || 'Infinity', 10);
@@ -343,6 +344,17 @@ try {
 } catch {}
 
 const existingById = new Map((existingReview.items || []).map(i => [i.id, i]));
+// В режиме --auto-apply авто-решаем broken_url без ревью
+if (AUTO_APPLY) {
+  for (const item of reviewItems) {
+    if (item.issue === 'broken_url') {
+      item.decision = 'delete';
+      item.decidedAt = NOW;
+    }
+  }
+  log(`auto-apply: marked ${reviewItems.filter(i => i.decision === 'delete').length} broken_url items for deletion`);
+}
+
 const mergedItems = reviewItems.map(item => {
   const prev = existingById.get(item.id);
   if (prev && prev.decision !== null) {

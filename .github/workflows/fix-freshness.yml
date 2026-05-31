@@ -1,0 +1,88 @@
+name: Исправить актуальность (on-demand)
+
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: 'Scope'
+        required: false
+        default: 'critical'
+        type: choice
+        options: ['critical', 'all']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fix-freshness
+  cancel-in-progress: true
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: |
+            scraper/package-lock.json
+            site/package-lock.json
+
+      - name: Install deps
+        run: cd scraper && npm ci && cd ../site && npm ci
+
+      - name: Revizor — найти и авто-пометить broken URLs
+        run: |
+          if [ "${{ inputs.scope }}" = "all" ]; then
+            node scraper/revizor.mjs --auto-apply
+          else
+            node scraper/revizor.mjs --auto-apply --limit=200
+          fi
+        continue-on-error: true
+
+      - name: Apply — удалить broken_url программы
+        run: node scraper/revizor-apply.mjs
+        continue-on-error: true
+
+      - name: Shmel — обновить программы для проблемных вузов
+        run: |
+          if [ "${{ inputs.scope }}" = "all" ]; then
+            node scraper/shmel.mjs --concurrency=6
+          else
+            node scraper/shmel.mjs --limit=100 --concurrency=6
+          fi
+        continue-on-error: true
+
+      - name: Merge programs
+        run: node scraper/merge-programs.mjs
+
+      - name: Generate verify.json + status.json
+        run: |
+          node scraper/detect-gaps.mjs || true
+          node site/scripts/generate-verify.mjs || true
+
+      - name: Build site
+        run: cd site && npm run build
+
+      - name: Commit + push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/src/content/universities/ site/public/api/ scraper/sources/
+          git diff --staged --quiet || git commit -m "fix: freshness auto-repair $(date -u +%Y-%m-%d) scope=${{ inputs.scope }}"
+          git push
+
+      - name: Deploy
+        run: |
+          cd site && npx wrangler pages deploy dist \
+            --project-name=studyroom-project-site \
+            --branch=main \
+            --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
