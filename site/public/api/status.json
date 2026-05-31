@@ -8,8 +8,8 @@
     "log": []
   },
   "schedule": {
-    "cron": "0 3 1 * *",
-    "nextRunUTC": "2026-06-01T03:00:00.000Z",
+    "cron": "0 6 1 * *",
+    "nextRunUTC": "2026-06-01T06:00:00.000Z",
     "source": ".github/workflows/scrape-monthly.yml"
   },
   "sourceProfile": {
@@ -141,13 +141,13 @@
     }
   },
   "gaps": {
-    "total": 804,
+    "total": 803,
     "byPriority": {
-      "critical": 33,
+      "critical": 32,
       "high": 101,
       "medium": 670
     },
-    "generatedAt": "2026-05-28T07:25:30.040Z"
+    "generatedAt": "2026-05-31T06:17:04.303Z"
   },
   "registry": [
     {
@@ -1302,9 +1302,9 @@
         "sourceUrl": "https://www.beykent.edu.tr/",
         "sourceHash": "sha256:direct-mpjti8yd",
         "confidence": "partner",
-        "programsCount": 2
+        "programsCount": 10
       },
-      "gapPriority": "critical"
+      "gapPriority": null
     },
     {
       "slug": "bhms",
@@ -8612,7 +8612,7 @@
         "sourceUrl": "https://www.osfc.ac.uk/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 3
+        "programsCount": 5
       },
       "gapPriority": "high"
     },
@@ -13593,7 +13593,7 @@
         "sourceUrl": "https://www.prioryca.org/",
         "sourceHash": "sha256:placeholder",
         "confidence": "aggregator",
-        "programsCount": 3
+        "programsCount": 4
       },
       "gapPriority": "high"
     },
@@ -13819,6 +13819,6 @@
       "gapPriority": "high"
     }
   ],
-  "generatedAt": "2026-05-29T10:37:44.307Z",
+  "generatedAt": "2026-05-31T06:23:22.925Z",
   "isStaticSnapshot": true
 }

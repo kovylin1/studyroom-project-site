@@ -1,1602 +1,772 @@
 {
-  "generatedAt": "2026-05-14T13:40:42.218Z",
-  "sampleSize": 5,
-  "totalSampled": 135,
-  "totalAlive": 104,
-  "overallFreshnessPct": 77,
+  "generatedAt": "2026-05-31T06:23:22.359Z",
+  "totalSampled": 90,
+  "overallFreshnessPct": 49,
+  "gapSummary": {
+    "critical": 32,
+    "high": 101,
+    "medium": 670
+  },
   "reports": [
     {
-      "slug": "adelaide",
-      "name": "Adelaide University",
-      "totalPrograms": 538,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
-      "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "au-soilbscie",
-          "title": "Bachelor of Science majoring in Soil Science",
-          "programUrl": "https://adelaide.edu.au/study/degrees/bachelor-of-science-soil-science/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Study Bachelor of Science majoring in Soil Science at Adelaide University - Information for International students | Adelaide University",
-          "durationMs": 2202
-        },
-        {
-          "slug": "au-bmust",
-          "title": "Bachelor of Music Theatre",
-          "programUrl": "https://adelaide.edu.au/study/degrees/bachelor-of-music-theatre/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Study Bachelor of Music Theatre at Adelaide University - Information for International students | Adelaide University",
-          "durationMs": 1958
-        },
-        {
-          "slug": "au-japnbarts",
-          "title": "Bachelor of Arts majoring in Japanese Studies",
-          "programUrl": "https://adelaide.edu.au/study/degrees/bachelor-of-arts-japanese-studies/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Study Bachelor of Arts majoring in Japanese Studies at Adelaide University - Information for International students | Adelaide University",
-          "durationMs": 2210
-        },
-        {
-          "slug": "au-envshscie",
-          "title": "Bachelor of Science (Honours) majoring in Environmental Science",
-          "programUrl": "https://adelaide.edu.au/study/degrees/bachelor-of-science-honours-environmental-science/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Study Bachelor of Science (Honours) majoring in Environmental Science at Adelaide University - Information for International students | Adelaide University",
-          "durationMs": 2351
-        },
-        {
-          "slug": "au-gcbad",
-          "title": "Graduate Certificate in Global Executive Business Administration in Defence and Space",
-          "programUrl": "https://adelaide.edu.au/study/degrees/graduate-certificate-in-global-executive-business-administration-in-defence-and-space/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Study Graduate Certificate in Global Executive Business Administration in Defence and Space at Adelaide University - Information for International students | Adelaide University",
-          "durationMs": 2419
-        }
-      ]
-    },
-    {
-      "slug": "alberta",
-      "name": "University of Alberta",
-      "totalPrograms": 105,
-      "sampled": 5,
-      "alive": 4,
-      "redirect": 0,
-      "dead": 0,
-      "mismatch": 1,
-      "errors": 0,
-      "freshnessPct": 80,
-      "samples": [
-        {
-          "slug": "bachelor-16948",
-          "title": "BA, East Asian Studies with Honors",
-          "programUrl": "https://www.ualberta.ca/undergraduate-programs/bachelor-of-arts-with-honors-east-asian-studies.html",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "East Asian Studies | Undergraduate Programs",
-          "durationMs": 322
-        },
-        {
-          "slug": "master-16913",
-          "title": "BCom, Business Economics and Law",
-          "programUrl": "https://www.ualberta.ca/undergraduate-programs/bachelor-of-commerce-business-economics-and-law.html",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Business Economics and Law | Undergraduate Programs",
-          "durationMs": 424
-        },
-        {
-          "slug": "bachelor-17156",
-          "title": "BSc, Astrophysics",
-          "programUrl": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-science-with-major-astrophysics.html",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Astrophysics | Undergraduate Programs",
-          "durationMs": 268
-        },
-        {
-          "slug": "bachelor-16932",
-          "title": "BSc in Forest Business Management, Forest Business Management",
-          "programUrl": "https://www.ualberta.ca/undergraduate-programs/bachelor-of-science-in-forest-business-management-forest-business-management.html",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Forest Business Management | Undergraduate Programs",
-          "durationMs": 423
-        },
-        {
-          "slug": "bachelor-16950",
-          "title": "BA, Economics with Honors",
-          "programUrl": "https://www.ualberta.ca/undergraduate-programs/bachelor-of-arts-with-honors-economics.html",
-          "httpStatus": 200,
-          "status": "title_mismatch",
-          "pageTitle": "Economics | Undergraduate Programs",
-          "durationMs": 360
-        }
-      ]
-    },
-    {
-      "slug": "arizona-state",
-      "name": "Arizona State University",
-      "totalPrograms": 376,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
-      "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "master-11607",
-          "title": "BS Business Data Analytics",
-          "programUrl": "https://webapp4.asu.edu/programs/t5/majorinfo/ASU00/BABDABS/undergrad/false",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Business Data Analytics - BS | Degree Details | ASU Degree Search",
-          "durationMs": 1803
-        },
-        {
-          "slug": "bachelor-11602",
-          "title": "BA Business (Sustainability)",
-          "programUrl": "https://webapp4.asu.edu/programs/t5/majorinfo/ASU00/BABUSSBA/undergrad/false",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Business (Sustainability) - BA | Degree Details | ASU Degree Search",
-          "durationMs": 2021
-        },
-        {
-          "slug": "bachelor-11795",
-          "title": "BA Global Studies",
-          "programUrl": "https://webapp4.asu.edu/programs/t5/majorinfo/ASU00/LASGSBA/undergrad/false",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Global Studies - BA | Degree Details | ASU Degree Search",
-          "durationMs": 1590
-        },
-        {
-          "slug": "bachelor-12115",
-          "title": "BA Theatre (Acting)",
-          "programUrl": "https://webapp4.asu.edu/programs/t5/majorinfo/ASU00/FATHEABA/undergrad/false",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Theatre (Acting) - BA | Degree Details | ASU Degree Search",
-          "durationMs": 1800
-        },
-        {
-          "slug": "bachelor-11862",
-          "title": "BA International Letters and Cultures (Classical Civilization)",
-          "programUrl": "https://webapp4.asu.edu/programs/t5/majorinfo/ASU00/LASLCVBA/undergrad/false",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "International Letters and Cultures (Classical Civilization) - BA | Degree Details | ASU Degree Search",
-          "durationMs": 1582
-        }
-      ]
-    },
-    {
-      "slug": "asu-london",
-      "name": "ASU London",
-      "totalPrograms": 7,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
-      "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "bachelor-17523",
-          "title": "BEng (Hons) Engineering with Artificial Intelligence",
-          "programUrl": "https://asu-london.ac.uk/courses/undergraduate/engineering-with-artificial-intelligence/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Engineering with Artificial Intelligence - ASU London",
-          "durationMs": 366
-        },
-        {
-          "slug": "bachelor-17732",
-          "title": "BEng (Hons) Engineering with Mechatronics Systems",
-          "programUrl": "https://asu-london.ac.uk/courses/undergraduate/engineering-with-mechatronics-systems/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Engineering with Mechatronics Systems - ASU London",
-          "durationMs": 322
-        },
-        {
-          "slug": "bachelor-17744",
-          "title": "BSc (Hons) Computer Science",
-          "programUrl": "https://asu-london.ac.uk/courses/undergraduate/computer-science/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Computer Science - ASU London",
-          "durationMs": 337
-        },
-        {
-          "slug": "bachelor-15526",
-          "title": "BEng (Hons) Global Design Engineering",
-          "programUrl": "https://asu-london.ac.uk/courses/undergraduate/global-design-engineering/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Global Design Engineering - ASU London",
-          "durationMs": 529
-        },
-        {
-          "slug": "bachelor-17746",
-          "title": "BEng (Hons) Electrical and Electronic Engineering",
-          "programUrl": "https://asu-london.ac.uk/courses/undergraduate/electrical-and-electronic-engineering/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Electrical and Electronic Engineering - ASU London",
-          "durationMs": 496
-        }
-      ]
-    },
-    {
-      "slug": "birmingham",
-      "name": "University of Birmingham",
-      "totalPrograms": 339,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
-      "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "bachelor-12851",
-          "title": "BSc (Hons) Mathematics with Study in Continental Europe",
-          "programUrl": "https://www.birmingham.ac.uk/undergraduate/courses/maths/mathematics-europe.aspx",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Mathematics with Study in Continental Europe BSc - University of Birmingham",
-          "durationMs": 1042
-        },
-        {
-          "slug": "bachelor-2782",
-          "title": "BEng (Hons) Chemical Engineering with Industrial Study",
-          "programUrl": "http://www.birmingham.ac.uk/undergraduate/courses/chemical-engineering/chemical-engineering-industry-beng.aspx",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Chemical Engineering with Industrial Study BEng - University of Birmingham",
-          "durationMs": 1170
-        },
-        {
-          "slug": "bachelor-17470",
-          "title": "BSc (Hons) Business Management with Operations and Supply Chain Management",
-          "programUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/business-and-management-courses/business-management-with-operations-and-supply-chain-management-bsc",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Business Management with Operations and Supply Chain Management BSc - University of Birmingham",
-          "durationMs": 1280
-        },
-        {
-          "slug": "master-2739",
-          "title": "MEng (Hons) Civil Engineering",
-          "programUrl": "http://www.birmingham.ac.uk/undergraduate/courses/civil-engineering/civil-engineering-meng.aspx",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Civil Engineering MEng - University of Birmingham",
-          "durationMs": 1321
-        },
-        {
-          "slug": "bachelor-15639",
-          "title": "BSc (Hons) Physics with Data Science",
-          "programUrl": "https://www.birmingham.ac.uk/undergraduate/courses/physics/physics-data-science-bsc.aspx",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Physics with Data Science BSc - University of Birmingham",
-          "durationMs": 1245
-        }
-      ]
-    },
-    {
-      "slug": "bournemouth",
-      "name": "Bournemouth University",
-      "totalPrograms": 135,
-      "sampled": 5,
-      "alive": 0,
-      "redirect": 0,
-      "dead": 5,
-      "mismatch": 0,
-      "errors": 0,
+      "slug": "aberystwyth",
+      "name": "Aberystwyth University",
       "freshnessPct": 0,
-      "samples": [
-        {
-          "slug": "bachelor-15521",
-          "title": "BA (Hons) Criminology with Law",
-          "programUrl": "https://www.bournemouth.ac.uk/study/courses/ba-hons-criminology-law-foundation-year-option",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 53
-        },
-        {
-          "slug": "bachelor-13609",
-          "title": "BA (Hons) International Business and Management",
-          "programUrl": "https://www.bournemouth.ac.uk/study/courses/ba-hons-international-business-management-0",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 55
-        },
-        {
-          "slug": "master-2313",
-          "title": "MBA Master of Business Administration",
-          "programUrl": "https://www.bournemouth.ac.uk/study/courses/master-business-administration",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 50
-        },
-        {
-          "slug": "bachelor-17074",
-          "title": "BA (Hons) Marketing Communications for Social Change",
-          "programUrl": "https://www.bournemouth.ac.uk/study/courses/ba-hons-marketing-communications-social-change",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 54
-        },
-        {
-          "slug": "master-2319",
-          "title": "MA Post Production Editing",
-          "programUrl": "https://www.bournemouth.ac.uk/study/courses/ma-post-production-editing",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 50
-        }
-      ]
-    },
-    {
-      "slug": "brighton",
-      "name": "University of Brighton",
-      "totalPrograms": 169,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
+      "alive": 0,
+      "sampled": 2,
+      "dead": 2,
       "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "master-18063",
-          "title": "Advanced Manufacturing MSc",
-          "programUrl": "https://www.brighton.ac.uk/courses/study/advanced-manufacturing-msc.aspx",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Advanced Manufacturing MSc (PGCert PGDip)",
-          "durationMs": 1018
-        },
-        {
-          "slug": "bachelor-1781",
-          "title": "Fashion Design with Business Studies BA (Hons)",
-          "programUrl": "https://www.brighton.ac.uk/courses/study/fashion-design-with-business-studies-ba-hons.aspx",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Fashion Design with Business Studies BA(Hons)",
-          "durationMs": 512
-        },
-        {
-          "slug": "master-1757",
-          "title": "Supply Chain Management MSc",
-          "programUrl": "https://www.brighton.ac.uk/courses/study/logistics-and-supply-chain-management-msc-pgcert-pgdip.aspx",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Supply Chain Management MSc (PGCert PGDip)",
-          "durationMs": 3515
-        },
-        {
-          "slug": "bachelor-16435",
-          "title": "Politics, Sexuality and Gender BA (Hons)",
-          "programUrl": "https://www.brighton.ac.uk/courses/study/politics-sexuality-and-gender-ba-hons.aspx",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Politics, Sexuality and Gender BA(Hons)",
-          "durationMs": 4273
-        },
-        {
-          "slug": "bachelor-2341",
-          "title": "Sport Management BSc (Hons)",
-          "programUrl": "https://www.brighton.ac.uk/courses/study/sport-management-bsc-hons.aspx",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Sport Management BSc(Hons)",
-          "durationMs": 1971
-        }
-      ]
+      "errors": 0
     },
     {
-      "slug": "bristol",
-      "name": "University of Bristol",
-      "totalPrograms": 123,
-      "sampled": 5,
-      "alive": 4,
-      "redirect": 0,
+      "slug": "anglia-ruskin",
+      "name": "Anglia Ruskin University",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
       "dead": 1,
       "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 80,
-      "samples": [
-        {
-          "slug": "master-2155",
-          "title": "MSc Environmental Consultancy",
-          "programUrl": "https://courses.uwe.ac.uk/F90012/environmental-consultancy",
-          "httpStatus": 404,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 413
-        },
-        {
-          "slug": "master-2841",
-          "title": "MEng Aerospace Engineering",
-          "programUrl": "https://courses.uwe.ac.uk/H404/aerospace-engineering",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Aerospace Engineering - MEng. - UWE Bristol: Courses",
-          "durationMs": 527
-        },
-        {
-          "slug": "bachelor-2178",
-          "title": "BSc (Hons) Building Surveying",
-          "programUrl": "https://courses.uwe.ac.uk/K230/building-surveying",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Building Surveying - BSc(Hons) - UWE Bristol: Courses",
-          "durationMs": 637
-        },
-        {
-          "slug": "bachelor-2171",
-          "title": "BA (Hons) Business Management and Marketing",
-          "programUrl": "https://courses.uwe.ac.uk/N1N5/business-management-with-marketing",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Business Management and Marketing - BA(Hons) - UWE Bristol: Courses",
-          "durationMs": 698
-        },
-        {
-          "slug": "bachelor-2123",
-          "title": "BSc (Hons) Physiotherapy",
-          "programUrl": "https://courses.uwe.ac.uk/B160/physiotherapy",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Physiotherapy - BSc(Hons) - UWE Bristol: Courses",
-          "durationMs": 746
-        }
-      ]
+      "errors": 0
     },
     {
-      "slug": "city-london",
-      "name": "City St George's, University of London",
-      "totalPrograms": 174,
-      "sampled": 5,
-      "alive": 0,
-      "redirect": 0,
-      "dead": 5,
-      "mismatch": 0,
-      "errors": 0,
+      "slug": "birmingham-city",
+      "name": "Birmingham City University",
       "freshnessPct": 0,
-      "samples": [
-        {
-          "slug": "bachelor-15468",
-          "title": "BEng (Hons) Energy and Sustainability Engineering",
-          "programUrl": "https://www.city.ac.uk/prospective-students/courses/undergraduate/energy-and-sustainability-engineering",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 461
-        },
-        {
-          "slug": "bachelor-17347",
-          "title": "BA (Hons) History",
-          "programUrl": "https://www.citystgeorges.ac.uk/prospective-students/courses/undergraduate/history",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 221
-        },
-        {
-          "slug": "master-16465",
-          "title": "MEng (Hons) Engineering with Business",
-          "programUrl": "https://www.city.ac.uk/prospective-students/courses/undergraduate/engineering-with-business-meng",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 467
-        },
-        {
-          "slug": "master-17416",
-          "title": "MSc Business Analytics",
-          "programUrl": "https://www.bayes.citystgeorges.ac.uk/study/masters/courses/business-analytics",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 1201
-        },
-        {
-          "slug": "bachelor-1550",
-          "title": "BSc (Hons) Economics with Accounting",
-          "programUrl": "http://www.city.ac.uk/study/courses/undergraduate/economics-with-accounting",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 440
-        }
-      ]
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
     },
     {
-      "slug": "cranfield",
-      "name": "Cranfield University",
-      "totalPrograms": 42,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
+      "slug": "canadian-tourism-college",
+      "name": "Canadian Tourism College",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
       "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "master-12158",
-          "title": "MSc Automotive Engineering",
-          "programUrl": "https://www.cranfield.ac.uk/Courses/Taught/Automotive-Engineering",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Automotive Engineering MSc",
-          "durationMs": 781
-        },
-        {
-          "slug": "master-1601",
-          "title": "MSc Logistics and Supply Chain Management",
-          "programUrl": "https://www.cranfield.ac.uk/SOM/Masters-Courses/Logistics-and-Supply-Chain-Management",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Logistics and Supply Chain Management MSc",
-          "durationMs": 561
-        },
-        {
-          "slug": "master-2800",
-          "title": "MSc Aerospace Manufacturing",
-          "programUrl": "https://www.cranfield.ac.uk/Courses/Taught/Aerospace-Manufacturing",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Aerospace Manufacturing MSc",
-          "durationMs": 638
-        },
-        {
-          "slug": "master-1567",
-          "title": "MSc in Thermal Power and Propulsion - Aerospace Propulsion",
-          "programUrl": "https://www.cranfield.ac.uk/courses/taught/aerospace-propulsion-option-thermal-power",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Aerospace Propulsion option - MSc in Thermal Power and Propulsion",
-          "durationMs": 743
-        },
-        {
-          "slug": "master-1566",
-          "title": "MSc Aerospace Dynamics",
-          "programUrl": "https://www.cranfield.ac.uk/Courses/Taught/Aerospace-Dynamics",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Aerospace Dynamics MSc",
-          "durationMs": 739
-        }
-      ]
+      "errors": 0
     },
     {
-      "slug": "essex",
-      "name": "University of Essex",
-      "totalPrograms": 561,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
+      "slug": "david-game",
+      "name": "David Game College London",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
       "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "bachelor-3456",
-          "title": "BA (Hons) History and Sociology",
-          "programUrl": "https://www.essex.ac.uk/courses/ug00197/1/ba-history-and-sociology",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "BA (Hons)  History and Sociology Degree | University of Essex",
-          "durationMs": 755
-        },
-        {
-          "slug": "bachelor-17352",
-          "title": "BA (Hons) Film and Journalism (Including Placement Year)",
-          "programUrl": "https://www.essex.ac.uk/courses/UG01502/1/BA-Film-and-Journalism?coursecode=P567",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "BA (Hons)  Film and Journalism Degree | University of Essex",
-          "durationMs": 803
-        },
-        {
-          "slug": "bachelor-3686",
-          "title": "BA (Hons) Philosophy, Politics and Economics",
-          "programUrl": "https://www.essex.ac.uk/courses/ug00334/1/ba-philosophy-politics-and-economics",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "BA (Hons)  Philosophy, Politics and Economics Degree | University of Essex",
-          "durationMs": 848
-        },
-        {
-          "slug": "bachelor-3772",
-          "title": "BSc (Hons) Financial Economics",
-          "programUrl": "https://www.essex.ac.uk/courses/ug00172/3/bsc-financial-economics",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "BSc (Hons)  Financial Economics Degree | University of Essex",
-          "durationMs": 829
-        },
-        {
-          "slug": "bachelor-3558",
-          "title": "BEng (Hons) Communications Engineering",
-          "programUrl": "https://www.essex.ac.uk/courses/ug00409/1/beng-communications-engineering",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "BEng (Hons)  Communications Engineering Degree | University of Essex",
-          "durationMs": 867
-        }
-      ]
+      "errors": 0
     },
     {
-      "slug": "glasgow",
-      "name": "University of Glasgow",
-      "totalPrograms": 222,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
+      "slug": "drexel",
+      "name": "Drexel University",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
       "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "master-1922",
-          "title": "MA (Hons) Business Economics and Politics",
-          "programUrl": "https://www.gla.ac.uk/undergraduate/degrees/businesseconomics/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "University of Glasgow - Undergraduate study - 2026 Degree programmes A&#8209;Z - Business Economics",
-          "durationMs": 1056
-        },
-        {
-          "slug": "master-15259",
-          "title": "MSc Digital Society",
-          "programUrl": "https://www.gla.ac.uk/postgraduate/taught/digitalsociety/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "University of Glasgow - Postgraduate study - Taught degree programmes A&#8209;Z - Digital Society",
-          "durationMs": 1101
-        },
-        {
-          "slug": "master-17729",
-          "title": "MSc Library and Information Studies",
-          "programUrl": "https://www.gla.ac.uk/postgraduate/taught/library-information-studies/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "University of Glasgow - Postgraduate study - Taught degree programmes A&#8209;Z - Library &amp; Information Studies",
-          "durationMs": 1322
-        },
-        {
-          "slug": "master-1902",
-          "title": "MLitt Environment, Culture & Communication",
-          "programUrl": "https://www.gla.ac.uk/postgraduate/taught/environmentculturecommunication/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "University of Glasgow - Postgraduate study - Taught degree programmes A&#8209;Z - Environment, Culture &amp; Communication (Dumfries Campus)",
-          "durationMs": 1259
-        },
-        {
-          "slug": "master-2989",
-          "title": "MSc Philosophy (Conversion)",
-          "programUrl": "https://www.gla.ac.uk/postgraduate/taught/philosophymlitt/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "University of Glasgow - Postgraduate study - Taught degree programmes A&#8209;Z - Philosophy (Conversion)",
-          "durationMs": 1790
-        }
-      ]
+      "errors": 0
     },
     {
-      "slug": "liverpool",
-      "name": "University of Liverpool",
-      "totalPrograms": 265,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
+      "slug": "durham",
+      "name": "Durham University",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
       "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "master-2012",
-          "title": "MChem (Hons) Medicinal Chemistry with Pharmacology",
-          "programUrl": "https://www.liverpool.ac.uk/study/undergraduate/courses/medicinal-chemistry-with-pharmacology-mchem/overview/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Medicinal Chemistry with Pharmacology MChem (Hons) | Courses | University of Liverpool",
-          "durationMs": 3197
-        },
-        {
-          "slug": "master-17518",
-          "title": "MSc Applied Statistics and Data Science",
-          "programUrl": "https://www.liverpool.ac.uk/courses/applied-statistics-and-data-science-msc",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Applied Statistics and Data Science MSc | Courses | University of Liverpool",
-          "durationMs": 1054
-        },
-        {
-          "slug": "bachelor-2065",
-          "title": "BSc (Hons) Bioveterinary Science",
-          "programUrl": "https://www.liverpool.ac.uk/study/undergraduate/courses/bioveterinary-science-bsc-hons/overview/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Bioveterinary Science BSc (Hons) | September 2026 entry | Courses | University of Liverpool",
-          "durationMs": 3356
-        },
-        {
-          "slug": "bachelor-2467",
-          "title": "BA (Hons) Communication, Media and Politics",
-          "programUrl": "https://www.liverpool.ac.uk/study/undergraduate/courses/politics-ba-hons/overview/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Politics BA (Hons) | September 2026 entry | Courses | University of Liverpool",
-          "durationMs": 3264
-        },
-        {
-          "slug": "master-16372",
-          "title": "MA Music Management",
-          "programUrl": "https://www.liverpool.ac.uk/courses/2023/music-management-ma",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Music Management MA | Courses | University of Liverpool",
-          "durationMs": 1430
-        }
-      ]
+      "errors": 0
     },
     {
-      "slug": "massey",
-      "name": "Massey University",
-      "totalPrograms": 128,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
+      "slug": "florida-international",
+      "name": "Florida International University",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
       "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "ma-udfcm",
-          "title": "Diploma in Facilities Management",
-          "programUrl": "https://www.massey.ac.nz/study/all-qualifications-and-degrees/diploma-in-facilities-management-UDFCM/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Diploma in Facilities Management – DipFM - Massey University",
-          "durationMs": 1414
-        },
-        {
-          "slug": "ma-ubvts",
-          "title": "Bachelor of Veterinary Science",
-          "programUrl": "https://www.massey.ac.nz/study/all-qualifications-and-degrees/bachelor-of-veterinary-science-UBVTS/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Bachelor of Veterinary Science – BVSc - Massey University",
-          "durationMs": 1754
-        },
-        {
-          "slug": "ma-udvsa",
-          "title": "Diploma in Creative Arts",
-          "programUrl": "https://www.massey.ac.nz/study/all-qualifications-and-degrees/diploma-in-creative-arts-UDVSA/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Diploma in Creative Arts – DipCreativeArts - Massey University",
-          "durationMs": 1568
-        },
-        {
-          "slug": "ma-ucvsa",
-          "title": "Certificate in Creative Arts",
-          "programUrl": "https://www.massey.ac.nz/study/all-qualifications-and-degrees/certificate-in-creative-arts-UCVSA/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Certificate in Creative Arts – CertCreativeArt - Massey University",
-          "durationMs": 1203
-        },
-        {
-          "slug": "ma-pmhlm",
-          "title": "Master of Health Service Management",
-          "programUrl": "https://www.massey.ac.nz/study/all-qualifications-and-degrees/master-of-health-service-management-PMHLM/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Master of Health Service Management – MHSM - Massey University",
-          "durationMs": 1891
-        }
-      ]
+      "errors": 0
+    },
+    {
+      "slug": "gannon",
+      "name": "Gannon University",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "gedu-global-education",
+      "name": "GEDU Global Education",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 3,
+      "dead": 3,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "goldsmiths",
+      "name": "Goldsmiths, University of London",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 2,
+      "dead": 2,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "institut-culinaire-france",
+      "name": "Institut Culinaire de France",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 2,
+      "dead": 2,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "kings-bournemouth",
+      "name": "Kings Bournemouth",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 2,
+      "dead": 2,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "kings-oxford",
+      "name": "Kings Oxford",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 2,
+      "dead": 2,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "marangoni-london",
+      "name": "Istituto Marangoni London",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "merrick-prep",
+      "name": "Merrick Preparatory School",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "memorial-nl",
+      "name": "Memorial University of Newfoundland",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "mount-saint-vincent",
+      "name": "Mount Saint Vincent University",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 2,
+      "dead": 2,
+      "mismatch": 0,
+      "errors": 0
     },
     {
       "slug": "murdoch",
       "name": "Murdoch University",
-      "totalPrograms": 46,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
-      "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "mu-m1325",
-          "title": "Master of Clinical Exercise Physiology",
-          "programUrl": "https://www.murdoch.edu.au/course/postgraduate/m1325",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Master of Clinical Exercise Physiology",
-          "durationMs": 1818
-        },
-        {
-          "slug": "mu-b1342",
-          "title": "Bachelor of Communication",
-          "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b1342",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Bachelor of Communication",
-          "durationMs": 1815
-        },
-        {
-          "slug": "mu-b1417",
-          "title": "Bachelor of Nursing",
-          "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b1417",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Bachelor of Nursing",
-          "durationMs": 2050
-        },
-        {
-          "slug": "mu-b1345",
-          "title": "Bachelor of Criminology",
-          "programUrl": "https://www.murdoch.edu.au/course/undergraduate/b1345",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Bachelor of Criminology",
-          "durationMs": 2067
-        },
-        {
-          "slug": "mu-m1391",
-          "title": "Master of Teaching (Secondary)",
-          "programUrl": "https://www.murdoch.edu.au/course/postgraduate/m1391",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Master of Teaching (Secondary)",
-          "durationMs": 2251
-        }
-      ]
-    },
-    {
-      "slug": "newcastle-au",
-      "name": "University of Newcastle, Australia",
-      "totalPrograms": 246,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
-      "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "un-40209",
-          "title": "Bachelor of Arts (Honours)",
-          "programUrl": "https://handbook.newcastle.edu.au/program/2026/40209",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Bachelor of Arts (Honours)",
-          "durationMs": 688
-        },
-        {
-          "slug": "un-40035",
-          "title": "Bachelor of Business/Bachelor of Commerce",
-          "programUrl": "https://handbook.newcastle.edu.au/program/2026/40035",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Bachelor of Business/Bachelor of Commerce",
-          "durationMs": 684
-        },
-        {
-          "slug": "un-50092",
-          "title": "Bachelor of Education (Primary)",
-          "programUrl": "https://handbook.newcastle.edu.au/program/2026/50092",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Bachelor of Education (Primary)",
-          "durationMs": 684
-        },
-        {
-          "slug": "un-50044",
-          "title": "Graduate Certificate in Laboratory Medicine",
-          "programUrl": "https://handbook.newcastle.edu.au/program/2026/50044",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Graduate Certificate in Laboratory Medicine",
-          "durationMs": 681
-        },
-        {
-          "slug": "un-40225",
-          "title": "Bachelor of Education (Primary Studies)",
-          "programUrl": "https://handbook.newcastle.edu.au/program/2026/40225",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Bachelor of Education (Primary Studies)",
-          "durationMs": 686
-        }
-      ]
-    },
-    {
-      "slug": "nottingham-trent",
-      "name": "Nottingham Trent University",
-      "totalPrograms": 205,
-      "sampled": 5,
-      "alive": 0,
-      "redirect": 0,
-      "dead": 5,
-      "mismatch": 0,
-      "errors": 0,
       "freshnessPct": 0,
-      "samples": [
-        {
-          "slug": "bachelor-16386",
-          "title": "BSc (Hons) Film Technology",
-          "programUrl": "https://www.ntu.ac.uk/course/confetti/ug/bsc-hons-film-production-technology",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 537
-        },
-        {
-          "slug": "master-17078",
-          "title": "MSc Digital Finance and Data Analytics",
-          "programUrl": "https://www.ntu.ac.uk/course/nottingham-business-school/pg/msc-digital-finance-and-data-analytics",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 534
-        },
-        {
-          "slug": "bachelor-15223",
-          "title": "BSc (Hons) Computer Science (Artificial Intelligence)",
-          "programUrl": "https://www.ntu.ac.uk/course/science-and-technology/ug/next-year/bsc-computer-science-artificial-intelligence",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 539
-        },
-        {
-          "slug": "bachelor-13334",
-          "title": "BA (Hons) Design for Theatre and Live Performance",
-          "programUrl": "https://www.ntu.ac.uk/course/art-and-design/ug/design-for-theatre-and-live-performance",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 548
-        },
-        {
-          "slug": "bachelor-2959",
-          "title": "BA (Hons) English and Philosophy",
-          "programUrl": "https://www.ntu.ac.uk/course/arts-and-humanities/ug/ba-hons-english-and-philosophy",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 770
-        }
-      ]
-    },
-    {
-      "slug": "nottingham",
-      "name": "University of Nottingham",
-      "totalPrograms": 205,
-      "sampled": 5,
       "alive": 0,
-      "redirect": 0,
-      "dead": 5,
-      "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 0,
-      "samples": [
-        {
-          "slug": "bachelor-2388",
-          "title": "BSc (Hons) Wildlife Conservation",
-          "programUrl": "https://www.ntu.ac.uk/course/animal-rural-and-environmental-sciences/ug/bsc-hons-wildlife-conservation",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 282
-        },
-        {
-          "slug": "bachelor-1653",
-          "title": "LLB (Hons) Law with Psychology",
-          "programUrl": "https://www.ntu.ac.uk/course/nottingham-law-school/ug/llb-hons-law-with-psychology",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 295
-        },
-        {
-          "slug": "master-13336",
-          "title": "MSc Fintech and Financial Markets",
-          "programUrl": "https://www.ntu.ac.uk/course/nottingham-business-school/pg/msc-fintech-and-financial-markets",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 339
-        },
-        {
-          "slug": "master-2677",
-          "title": "MA Luxury Fashion Brand Management",
-          "programUrl": "https://www.ntu.ac.uk/course/art-and-design/pg/ma-luxury-fashion-brand-management",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 306
-        },
-        {
-          "slug": "master-1626",
-          "title": "MSc Cyber Security",
-          "programUrl": "https://www.ntu.ac.uk/course/science-and-technology/pg/msc-cyber-security",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 561
-        }
-      ]
-    },
-    {
-      "slug": "oregon",
-      "name": "University of Oregon",
-      "totalPrograms": 72,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
-      "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "bachelor-16850",
-          "title": "Medieval Studies BA",
-          "programUrl": "https://admissions.uoregon.edu/majors/medieval-studies",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Medieval studies | Admissions",
-          "durationMs": 206
-        },
-        {
-          "slug": "bachelor-16840",
-          "title": "Linguistics BA/BS",
-          "programUrl": "https://admissions.uoregon.edu/majors/linguistics",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Linguistics | Admissions",
-          "durationMs": 192
-        },
-        {
-          "slug": "bachelor-16874",
-          "title": "Romance Languages BA",
-          "programUrl": "https://admissions.uoregon.edu/majors/romance",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Romance languages | Admissions",
-          "durationMs": 293
-        },
-        {
-          "slug": "bachelor-16779",
-          "title": "Asian Studies BA",
-          "programUrl": "https://admissions.uoregon.edu/majors/asian",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Asian studies | Admissions",
-          "durationMs": 293
-        },
-        {
-          "slug": "bachelor-16839",
-          "title": "Latin American Studies BA",
-          "programUrl": "https://admissions.uoregon.edu/majors/latin-american-studies",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Latin American studies | Admissions",
-          "durationMs": 189
-        }
-      ]
-    },
-    {
-      "slug": "pace",
-      "name": "Pace University",
-      "totalPrograms": 44,
-      "sampled": 5,
-      "alive": 4,
-      "redirect": 0,
+      "sampled": 1,
       "dead": 1,
       "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 80,
-      "samples": [
-        {
-          "slug": "master-4315",
-          "title": "BS Health Science",
-          "programUrl": "https://www.pace.edu/academics/undergraduate-students/health-science-bs",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Health Science, BS | Pace University New York",
-          "durationMs": 467
-        },
-        {
-          "slug": "bachelor-4257",
-          "title": "BA English",
-          "programUrl": "https://www.pace.edu/academics/undergraduate-students/english-ba",
-          "httpStatus": 403,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 840
-        },
-        {
-          "slug": "bachelor-4164",
-          "title": "BA Biology",
-          "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/biology-ba",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Biology, BA Program | Pace University New York",
-          "durationMs": 608
-        },
-        {
-          "slug": "master-16627",
-          "title": "BS Game Development",
-          "programUrl": "https://www.pace.edu/program/game-development-bs",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Game Development, BS | Pace University New York",
-          "durationMs": 553
-        },
-        {
-          "slug": "master-13246",
-          "title": "MS Accounting Data Analytics and Technologies",
-          "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/accounting-data-analytics-and-technologies-ms",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Accounting Data Analytics and Technology, MS | Pace University New York",
-          "durationMs": 630
-        }
-      ]
+      "errors": 0
     },
     {
-      "slug": "queen-mary-london",
-      "name": "Queen Mary University of London",
-      "totalPrograms": 190,
-      "sampled": 5,
-      "alive": 4,
-      "redirect": 0,
-      "dead": 0,
-      "mismatch": 1,
-      "errors": 0,
-      "freshnessPct": 80,
-      "samples": [
-        {
-          "slug": "bachelor-13418",
-          "title": "BA (Hons) Geography",
-          "programUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2020/geography-ba/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Geography BA - Queen Mary University of London",
-          "durationMs": 673
-        },
-        {
-          "slug": "bachelor-13561",
-          "title": "BSc (Econ) (Hons) Finance",
-          "programUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2020/finance/",
-          "httpStatus": 200,
-          "status": "title_mismatch",
-          "pageTitle": "Finance - Queen Mary University of London",
-          "durationMs": 607
-        },
-        {
-          "slug": "master-16467",
-          "title": "MSc Global Public Health and Policy",
-          "programUrl": "https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/global-public-health-and-policy-msc/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Global Public Health and Policy MSc - Queen Mary University of London",
-          "durationMs": 458
-        },
-        {
-          "slug": "bachelor-13519",
-          "title": "BEng (Hons) Mechanical Engineering with Industrial Experience",
-          "programUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2020/mechanical-engineering/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Mechanical Engineering - Queen Mary University of London",
-          "durationMs": 352
-        },
-        {
-          "slug": "master-16995",
-          "title": "MSc Advanced Computer Science",
-          "programUrl": "https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/advanced-computer-science-msc/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Advanced Computer Science MSc - Queen Mary University of London",
-          "durationMs": 243
-        }
-      ]
-    },
-    {
-      "slug": "simmons",
-      "name": "Simmons University",
-      "totalPrograms": 82,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
-      "dead": 0,
+      "slug": "nyit",
+      "name": "New York Institute of Technology",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 2,
+      "dead": 2,
       "mismatch": 0,
-      "errors": 0,
-      "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "master-13953",
-          "title": "BS, BSE Engineering (3+2 dual degree)",
-          "programUrl": "https://www.simmons.edu/undergraduate/academics/majors-minors/engineering-3plus2",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Dual Degree in Engineering | Simmons University",
-          "durationMs": 827
-        },
-        {
-          "slug": "master-17606",
-          "title": "MS Library and Information Science: Libraries and Librarianship",
-          "programUrl": "https://www.simmons.edu/graduate/academic-programs/graduate-and-certificate-programs/library-and-information-science-libraries-and-librarianship",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Library and Information Science: Libraries and Librarianship | Simmons University",
-          "durationMs": 2131
-        },
-        {
-          "slug": "master-13927",
-          "title": "BS Information Technology and Cybersecurity",
-          "programUrl": "https://www.simmons.edu/undergraduate/academics/majors-minors/information-technology",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Bachelor of Science in Information Technology and Cybersecurity | Simmons University",
-          "durationMs": 810
-        },
-        {
-          "slug": "master-13910",
-          "title": "BS Chemistry",
-          "programUrl": "https://www.simmons.edu/undergraduate/academics/majors-minors/chemistry",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Bachelor of Science in Chemistry | Simmons University",
-          "durationMs": 1486
-        },
-        {
-          "slug": "master-13944",
-          "title": "BSBA Retail Management",
-          "programUrl": "https://www.simmons.edu/undergraduate/academics/majors-minors/retail-management",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "BSBA in Retail Management | Simmons University",
-          "durationMs": 1388
-        }
-      ]
+      "errors": 0
     },
     {
-      "slug": "uconn",
-      "name": "University of Connecticut",
-      "totalPrograms": 112,
-      "sampled": 5,
-      "alive": 2,
-      "redirect": 0,
+      "slug": "oxford-international-college",
+      "name": "Oxford International College",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
       "dead": 1,
-      "mismatch": 2,
-      "errors": 0,
-      "freshnessPct": 40,
-      "samples": [
-        {
-          "slug": "bachelor-14292",
-          "title": "BA/BS Mathematics - Actuarial Finance",
-          "programUrl": "https://catalog.uconn.edu/undergraduate/liberal-arts-sciences/mathematics-ba-bs/",
-          "httpStatus": 200,
-          "status": "title_mismatch",
-          "pageTitle": "Mathematics (BA or BS) | University of Connecticut Academic Catalog",
-          "durationMs": 243
-        },
-        {
-          "slug": "bachelor-14198",
-          "title": "BA Arabic and Islamic Civilizations",
-          "programUrl": "https://catalog.uconn.edu/undergraduate/liberal-arts-sciences/arabic-islamic-civilizations-ba/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Arabic and Islamic Civilizations (BA) | University of Connecticut Academic Catalog",
-          "durationMs": 244
-        },
-        {
-          "slug": "master-14701",
-          "title": "BS/DPhar Pharmacy Studies - Pre-Professional",
-          "programUrl": "https://catalog.uconn.edu/undergraduate/pharmacy/pharmacy-studies-integrated-bs-pharmd/",
-          "httpStatus": 404,
-          "status": "dead",
-          "pageTitle": null,
-          "durationMs": 470
-        },
-        {
-          "slug": "bachelor-16449",
-          "title": "BA Applied Data Analysis",
-          "programUrl": "https://catalog.uconn.edu/undergraduate/liberal-arts-sciences/applied-data-analysis-ba/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Applied Data Analysis (BA) | University of Connecticut Academic Catalog",
-          "durationMs": 428
-        },
-        {
-          "slug": "master-14227",
-          "title": "BFA Design/Technical Theatre (BFA)",
-          "programUrl": "https://drama.uconn.edu/programs/design-tech/bfa-design-tech/",
-          "httpStatus": 200,
-          "status": "title_mismatch",
-          "pageTitle": "BFA Design &amp; Tech | UConn Dramatic Arts | Dramatic Arts | School of Fine Arts | University of Connecticut",
-          "durationMs": 946
-        }
-      ]
+      "mismatch": 0,
+      "errors": 0
     },
     {
-      "slug": "uwe-bristol",
-      "name": "UWE Bristol",
-      "totalPrograms": 126,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
+      "slug": "porto-business-school",
+      "name": "Porto Business School",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "red-bank-catholic",
+      "name": "Red Bank Catholic High School",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "reading",
+      "name": "University of Reading",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 2,
+      "dead": 2,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "rotman-arts-science",
+      "name": "Rotman Arts and Science School",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "san-pablo-ceu-madrid",
+      "name": "Universidad San Pablo CEU Madrid",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "saint-marys",
+      "name": "Saint Mary's University",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "sf-state",
+      "name": "San Francisco State University",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 3,
+      "dead": 3,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "st-francis-xavier",
+      "name": "St. Francis Xavier University",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "stover-school",
+      "name": "Stover School",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 2,
+      "dead": 2,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "ua92",
+      "name": "University Academy 92",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "university-canada-west",
+      "name": "University Canada West",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 2,
+      "dead": 2,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "abat-oliba-barcelona",
+      "name": "Universitat Abat Oliba CEU Barcelona",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
       "dead": 0,
       "mismatch": 0,
-      "errors": 0,
+      "errors": 0
+    },
+    {
+      "slug": "acadia",
+      "name": "Acadia University",
       "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "master-2111",
-          "title": "MSc Real Estate Management",
-          "programUrl": "https://courses.uwe.ac.uk/KN4112/real-estate-management",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Real Estate Management - MSc - UWE Bristol: Courses",
-          "durationMs": 633
-        },
-        {
-          "slug": "bachelor-2171",
-          "title": "BA (Hons) Business Management and Marketing",
-          "programUrl": "https://courses.uwe.ac.uk/N1N5/business-management-with-marketing",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Business Management and Marketing - BA(Hons) - UWE Bristol: Courses",
-          "durationMs": 634
-        },
-        {
-          "slug": "bachelor-2161",
-          "title": "BSc (Hons) Criminology with Psychology",
-          "programUrl": "https://courses.uwe.ac.uk/M9C8/criminology-with-psychology",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Criminology with Psychology - BSc(Hons) - UWE Bristol: Courses",
-          "durationMs": 654
-        },
-        {
-          "slug": "master-17389",
-          "title": "LLM International Law and Security",
-          "programUrl": "https://courses.uwe.ac.uk/M30C12/international-law-and-security",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "International Law and Security - LLM - UWE Bristol: Courses",
-          "durationMs": 701
-        },
-        {
-          "slug": "bachelor-4056",
-          "title": "BSc (Hons) Nursing (Adult)",
-          "programUrl": "https://courses.uwe.ac.uk/B721/nursing-adult",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Nursing (Adult) - BSc(Hons) - UWE Bristol: Courses",
-          "durationMs": 708
-        }
-      ]
-    },
-    {
-      "slug": "victoria",
-      "name": "University of Victoria",
-      "totalPrograms": 92,
-      "sampled": 5,
-      "alive": 4,
-      "redirect": 0,
-      "dead": 0,
-      "mismatch": 1,
-      "errors": 0,
-      "freshnessPct": 80,
-      "samples": [
-        {
-          "slug": "bachelor-15734",
-          "title": "BA/BSc Anthropology",
-          "programUrl": "https://www.uvic.ca/undergraduate/programs/undergraduate-programs/pages/anthropology.php",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Anthropology - Undergraduate admissions - UVic",
-          "durationMs": 248
-        },
-        {
-          "slug": "master-16009",
-          "title": "MGB Global Business",
-          "programUrl": "https://www.uvic.ca/graduate/programs/graduate-programs/credential-pages/business-cred/global-business-mgb.php",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Global Business (MGB) - Graduate admissions - UVic",
-          "durationMs": 260
-        },
-        {
-          "slug": "master-15936",
-          "title": "MEng Applied Data Science (MADS)",
-          "programUrl": "https://www.uvic.ca/graduate/programs/graduate-programs/credential-pages/electrical-computer-engineering-cred/applied-data-science-meng.php",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Applied Data Science (MEng) - Graduate admissions - UVic",
-          "durationMs": 262
-        },
-        {
-          "slug": "bachelor-15997",
-          "title": "BSc Financial Mathematics and Economics",
-          "programUrl": "https://www.uvic.ca/undergraduate/programs/undergraduate-programs/pages/financial-mathematics-and-economics.php",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Financial Mathematics and Economics - Admissions - UVic",
-          "durationMs": 260
-        },
-        {
-          "slug": "master-17698",
-          "title": "MM Sustainable Finance",
-          "programUrl": "https://www.uvic.ca/graduate/programs/graduate-programs/credential-pages/business-cred/management-mm.php",
-          "httpStatus": 200,
-          "status": "title_mismatch",
-          "pageTitle": "Management (MM) - Graduate admissions - UVic",
-          "durationMs": 248
-        }
-      ]
-    },
-    {
-      "slug": "westminster",
-      "name": "University of Westminster",
-      "totalPrograms": 162,
-      "sampled": 5,
-      "alive": 2,
-      "redirect": 0,
-      "dead": 0,
-      "mismatch": 3,
-      "errors": 0,
-      "freshnessPct": 40,
-      "samples": [
-        {
-          "slug": "master-3375",
-          "title": "MSc Logistics and Supply Chain Management",
-          "programUrl": "https://www.westminster.ac.uk/study/postgraduate",
-          "httpStatus": 200,
-          "status": "title_mismatch",
-          "pageTitle": "Postgraduate | University of Westminster, London",
-          "durationMs": 661
-        },
-        {
-          "slug": "bachelor-3176",
-          "title": "BSc (Hons) Real Estate",
-          "programUrl": "https://www.westminster.ac.uk/study/undergraduate",
-          "httpStatus": 200,
-          "status": "title_mismatch",
-          "pageTitle": "Undergraduate | University of Westminster, London",
-          "durationMs": 653
-        },
-        {
-          "slug": "bachelor-16910",
-          "title": "BSc (Hons) Architecture and Environmental Design",
-          "programUrl": "https://www.westminster.ac.uk/architecture-interiors-and-urban-design-courses/2024-25/september/full-time/architecture-and-environmental-design-bsc-honours",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Architecture and Environmental Design BSc Honours - Courses | University of Westminster, London",
-          "durationMs": 3510
-        },
-        {
-          "slug": "master-15315",
-          "title": "MA Teaching English to Speakers of Other Languages (TESOL)",
-          "programUrl": "https://www.westminster.ac.uk/english-and-creative-writing-courses/2022-23/january/full-time/teaching-english-to-speakers-of-other-languages-ma",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Teaching English to Speakers of Other Languages (TESOL) MA - Courses | University of Westminster, London",
-          "durationMs": 2718
-        },
-        {
-          "slug": "bachelor-12644",
-          "title": "BA (Hons) Photography",
-          "programUrl": "https://www.westminster.ac.uk/study/undergraduate",
-          "httpStatus": 200,
-          "status": "title_mismatch",
-          "pageTitle": "Undergraduate | University of Westminster, London",
-          "durationMs": 688
-        }
-      ]
-    },
-    {
-      "slug": "york",
-      "name": "University of York",
-      "totalPrograms": 348,
-      "sampled": 5,
-      "alive": 5,
-      "redirect": 0,
+      "alive": 1,
+      "sampled": 1,
       "dead": 0,
       "mismatch": 0,
-      "errors": 0,
+      "errors": 0
+    },
+    {
+      "slug": "beijing-novo",
+      "name": "Beijing - NOVO",
       "freshnessPct": 100,
-      "samples": [
-        {
-          "slug": "master-3382",
-          "title": "MA Directing for Film and Television Production",
-          "programUrl": "https://www.york.ac.uk/tfti/study/postgraduate/ftp/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Taught Masters degrees in film and television production - School of Arts and Creative Technologies, University of York",
-          "durationMs": 906
-        },
-        {
-          "slug": "master-2599",
-          "title": "MMath (Hons) Mathematics",
-          "programUrl": "https://www.york.ac.uk/study/undergraduate/courses/mmath-mathematics/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Mathematics (MMath) - Undergraduate, University of York",
-          "durationMs": 515
-        },
-        {
-          "slug": "bachelor-2588",
-          "title": "BSc (Hons) Psychology",
-          "programUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-psychology/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Psychology (BSc) - Undergraduate, University of York",
-          "durationMs": 513
-        },
-        {
-          "slug": "master-17139",
-          "title": "MSc Digital Design with Social Media",
-          "programUrl": "https://www.york.ac.uk/study/postgraduate-taught/courses/msc-digital-design-social-media/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Digital Design with Social Media (MSc) - Postgraduate taught, University of York",
-          "durationMs": 504
-        },
-        {
-          "slug": "bachelor-17665",
-          "title": "BA (Hons) Criminology and Social Psychology",
-          "programUrl": "https://www.york.ac.uk/study/undergraduate/courses/ba-criminology-and-social-psychology/",
-          "httpStatus": 200,
-          "status": "ok",
-          "pageTitle": "Criminology and Social Psychology (BA) - Undergraduate, University of York",
-          "durationMs": 516
-        }
-      ]
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "bishopstrow",
+      "name": "Bishopstrow College",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "cardenal-herrera-valencia",
+      "name": "Universidad CEU Cardenal Herrera",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "cctb",
+      "name": "Canadian College of Technology and Business",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "champittet",
+      "name": "Collège Champittet",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "difc-dublin",
+      "name": "Dublin International Foundation College",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "doverbroecks",
+      "name": "d'Overbroeck's Oxford",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "eastbourne-twin",
+      "name": "Eastbourne - TWIN",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "ecole-management-appliquee",
+      "name": "Ecole de Management Appliquée",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "gilbert-school",
+      "name": "The Gilbert School",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "harbin-novo",
+      "name": "Harbin - NOVO",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "hefei-hfut",
+      "name": "Hefei - HFUT",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "imis-paris",
+      "name": "IMIS — Management of Health Industries",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "iqs-barcelona",
+      "name": "IQS — Institut Químic de Sarrià",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "kcl-online",
+      "name": "King's College London",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "kings-london",
+      "name": "Kings Education London",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "lim-college",
+      "name": "LIM College",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "london-twin",
+      "name": "London - TWIN",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "long-island-university-brooklyn-direct-entry",
+      "name": "Long Island University Brooklyn Direct Entry",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "long-island-university-post-direct-entry",
+      "name": "Long Island University Post Direct Entry",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "lsc-malta",
+      "name": "London School of Commerce Malta",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "nanjing-novo",
+      "name": "Nanjing - NOVO",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "oxford-sixth-form",
+      "name": "Oxford Sixth Form College",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "padworth",
+      "name": "Padworth College",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "proed-uk",
+      "name": "ProEd",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "queen-ethelburgas",
+      "name": "Queen Ethelburga's College",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "rcsi",
+      "name": "Royal College of Surgeons in Ireland (RCSI)",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "royal-holloway-direct-entry",
+      "name": "Royal Holloway Direct Entry",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "saint-johns-hs",
+      "name": "Saint John's High School",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "seoul-gec",
+      "name": "Seoul - GEC",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "singapore-vwa",
+      "name": "Singapore - VWA",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "st-bees",
+      "name": "St Bees School",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "stafford-house",
+      "name": "Stafford House",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "texas-aandm-corpus-christi-university-direct-entry",
+      "name": "Texas A&M Corpus Christi University Direct Entry",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "trebas",
+      "name": "Trebas Institute",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "ue-amsterdam",
+      "name": "University of Applied Sciences Europe — Amsterdam",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "village-school",
+      "name": "The Village School",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "waring-school",
+      "name": "Waring School",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "windermere-prep",
+      "name": "Windermere Preparatory School",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "woodside-priory",
+      "name": "Woodside Priory School",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "xian-eurasia",
+      "name": "Xian - Eurasia",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "zhuhai-bnbu",
+      "name": "Zhuhai - BNBU",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
     }
   ]
 }
