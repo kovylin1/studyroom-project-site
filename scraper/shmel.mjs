@@ -17,6 +17,7 @@ const OUT_DIR = path.join(__dirname, 'sources', 'official-extracts');
 const arg = (prefix) => (process.argv.find(a => a.startsWith(prefix)) || '').slice(prefix.length);
 const LIMIT = parseInt(arg('--limit=') || 'Infinity', 10);
 const SLUG_FILTER = arg('--slug=') || null;
+const EXCLUDE = new Set((arg('--exclude=') || '').split(',').filter(Boolean));
 const CONCURRENCY = parseInt(arg('--concurrency=') || '4', 10);
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36';
@@ -173,8 +174,9 @@ if (SLUG_FILTER) {
   }
 }
 
+if (EXCLUDE.size > 0) worklist = worklist.filter(w => !EXCLUDE.has(w.slug));
 if (isFinite(LIMIT)) worklist = worklist.slice(0, LIMIT);
-log(`processing ${worklist.length} unis (concurrency=${CONCURRENCY})`);
+log(`processing ${worklist.length} unis (concurrency=${CONCURRENCY}${EXCLUDE.size ? ', excluded='+[...EXCLUDE].join(',') : ''})`);
 
 let idx = 0;
 const results = [];
