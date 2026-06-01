@@ -6,10 +6,14 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import * as cheerio from 'cheerio';
 import { chromium } from 'playwright';
+import { scoreFact, qualityOfResidence, passes, MIN_CONFIDENCE } from './lib/confidence.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const UNI_DIR = path.join(PROJECT_ROOT, 'site/src/content/universities');
+const AUDIT_DIR = path.join(PROJECT_ROOT, 'sources/audit');
+const TODAY = new Date().toISOString().slice(0, 10);
+const auditRejected = []; // резиденции < MIN_CONFIDENCE — в аудит, не в каталог
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0';
 const ACCOM_PATHS = [
@@ -116,7 +120,9 @@ async function worker() {
     try {
       const p = path.join(UNI_DIR, f);
       const u = JSON.parse(await fs.readFile(p, 'utf8'));
-      if (u.accommodation?.residences?.length >= 3) { processed++; continue; }
+      // схема и сайт ждут accommodation как МАССИВ; поддерживаем и легаси-форму {residences}
+      const existing = Array.isArray(u.accommodation) ? u.accommodation : (u.accommodation?.residences || []);
+      if (existing.length >= 3) { processed++; continue; }
       const siteRoot = findRealSite(u);
       if (!siteRoot) { processed++; continue; }
       let residences = await scrapeAccomCurl(siteRoot);
@@ -126,13 +132,24 @@ async function worker() {
         for (const r of fromPw) if (!seen.has(r.name.toLowerCase())) residences.push(r);
       }
       if (residences.length > 0) {
-        const existing = u.accommodation?.residences || [];
-        const seen = new Set(existing.map(r => (r.name||'').toLowerCase()));
-        const newOnes = residences.filter(r => { const k = r.name.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
-        u.accommodation = { residences: [...existing, ...newOnes].slice(0, 10) };
-        await fs.writeFile(p, JSON.stringify(u, null, 2) + '\n');
-        added += newOnes.length;
-        process.stderr.write(`[accom-v2] ${u.slug}: +${newOnes.length}\n`);
+        const existNames = new Set(existing.map(r => (r.name||'').toLowerCase()));
+        const accepted = [];
+        for (const r of residences) {
+          const k = r.name.toLowerCase();
+          if (existNames.has(k)) continue; existNames.add(k);
+          // confidence: официальный сайт вуза + живая страница + качество имени
+          const confidence = Math.round(scoreFact({
+            sourceTier: 'official', quality: qualityOfResidence(r.name), corroborated: false, linkLive: true,
+          }) * 100) / 100;
+          if (!passes(confidence)) { auditRejected.push({ slug: u.slug, kind: 'accommodation', name: r.name, confidence }); continue; }
+          accepted.push({ name: r.name, text: r.description || '', source: 'official-site', verifiedBySite: true, confidence, checkedAt: TODAY });
+        }
+        if (accepted.length) {
+          u.accommodation = [...existing, ...accepted].slice(0, 10); // МАССИВ
+          await fs.writeFile(p, JSON.stringify(u, null, 2) + '\n');
+          added += accepted.length;
+          process.stderr.write(`[accom-v2] ${u.slug}: +${accepted.length}\n`);
+        }
       }
       processed++;
     } catch (e) { process.stderr.write(`[accom-v2] ${f}: err ${e.message}\n`); }
@@ -140,5 +157,10 @@ async function worker() {
 }
 await Promise.all(Array.from({length: CONCURRENCY}, () => worker()));
 await browser.close();
-log(`DONE: processed=${processed} accom-added-total=${added}`);
-console.log(JSON.stringify({ processed, added }));
+if (auditRejected.length) {
+  await fs.mkdir(AUDIT_DIR, { recursive: true });
+  await fs.writeFile(path.join(AUDIT_DIR, 'accommodation-lowconf.json'),
+    JSON.stringify({ minConfidence: MIN_CONFIDENCE, generatedAt: TODAY, rejected: auditRejected }, null, 2) + '\n');
+}
+log(`DONE: processed=${processed} accom-added-total=${added} rejected(<${MIN_CONFIDENCE})=${auditRejected.length}`);
+console.log(JSON.stringify({ processed, added, rejected: auditRejected.length }));

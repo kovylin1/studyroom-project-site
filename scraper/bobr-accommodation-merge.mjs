@@ -14,11 +14,15 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import * as cheerio from 'cheerio';
+import { scoreFact, qualityOfResidence, passes, MIN_CONFIDENCE } from './lib/confidence.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const UNI_DIR = path.join(PROJECT_ROOT, 'site/src/content/universities');
 const EDVOY_DIR = path.join(PROJECT_ROOT, 'sources/edvoy-extracts');
+const AUDIT_DIR = path.join(PROJECT_ROOT, 'sources/audit');
+const TODAY = new Date().toISOString().slice(0, 10);
+const auditRejected = []; // факты < MIN_CONFIDENCE — в аудит, не в каталог
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36';
 const ACCOM_PATHS = ['/accommodation','/housing','/halls','/student-life/accommodation','/student-life/housing','/living','/student-housing','/halls-of-residence','/residences','/student/accommodation'];
@@ -169,13 +173,15 @@ async function findRealSiteRoot(uni) {
 }
 
 async function scrapeAccommodation(uni) {
-  if (uni.accommodation && typeof uni.accommodation === 'object' && Object.keys(uni.accommodation).length > 0) return 0;
+  // схема и сайт ждут МАССИВ; поддерживаем легаси-форму {residences}
+  const existing = Array.isArray(uni.accommodation) ? uni.accommodation : (uni.accommodation?.residences || []);
+  if (existing.length > 0) return 0;
   const siteRoot = await findRealSiteRoot(uni);
   if (!siteRoot) return 0;
   const residences = [];
   for (const p of ACCOM_PATHS) {
     const html = await fetchOk(siteRoot + p);
-    if (!html) continue;
+    if (!html) continue; // страница отдала 200 → источник живой
     const $ = cheerio.load(html);
     $('h2, h3, h4').each((_, el) => {
       const t = $(el).text().trim();
@@ -188,9 +194,19 @@ async function scrapeAccommodation(uni) {
   }
   if (!residences.length) return 0;
   const seen = new Set();
-  const unique = residences.filter(r => { const k = r.name.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
-  uni.accommodation = { residences: unique.slice(0, 10) };
-  return unique.length;
+  const accepted = [];
+  for (const r of residences) {
+    const k = r.name.toLowerCase();
+    if (seen.has(k)) continue; seen.add(k);
+    const confidence = Math.round(scoreFact({
+      sourceTier: 'official', quality: qualityOfResidence(r.name), corroborated: false, linkLive: true,
+    }) * 100) / 100;
+    if (!passes(confidence)) { auditRejected.push({ slug: uni.slug, kind: 'accommodation', name: r.name, confidence }); continue; }
+    accepted.push({ name: r.name, text: r.description || '', source: 'official-site', verifiedBySite: true, confidence, checkedAt: TODAY });
+  }
+  if (!accepted.length) return 0;
+  uni.accommodation = accepted.slice(0, 10); // МАССИВ
+  return accepted.length;
 }
 
 // ---- main ----
@@ -308,5 +324,10 @@ if (!noScrape) {
   log(`STAGE 2 accommodation: unis with new accom = ${accomAdded}`);
 }
 
-log('БОБЁР DONE');
-console.log(JSON.stringify({ mergeMatched, mergeNoMatch, mergeFieldChanges, newUniCreated, accomAdded }, null, 2));
+if (auditRejected.length) {
+  await fs.mkdir(AUDIT_DIR, { recursive: true });
+  await fs.writeFile(path.join(AUDIT_DIR, 'accommodation-merge-lowconf.json'),
+    JSON.stringify({ minConfidence: MIN_CONFIDENCE, generatedAt: TODAY, rejected: auditRejected }, null, 2) + '\n');
+}
+log(`БОБЁР DONE — accom rejected(<${MIN_CONFIDENCE})=${auditRejected.length}`);
+console.log(JSON.stringify({ mergeMatched, mergeNoMatch, mergeFieldChanges, newUniCreated, accomAdded, accomRejected: auditRejected.length }, null, 2));
