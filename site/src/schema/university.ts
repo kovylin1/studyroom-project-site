@@ -67,6 +67,10 @@ export const scholarshipSchema = z.object({
   descriptionRu: z.string().min(1).optional(),
   deadline: isoDate.optional(),
   url: z.string().url().optional(),
+  source: z.string().optional(),
+  verifiedBySite: z.boolean().optional(),
+  confidence: z.number().min(0).max(1).optional(),
+  checkedAt: isoDate.optional(),
 });
 export type Scholarship = z.infer<typeof scholarshipSchema>;
 
@@ -97,6 +101,7 @@ export const accommodationItemSchema = z.object({
   img: z.string().optional(),
   source: z.string().optional(),
   verifiedBySite: z.boolean().optional(),
+  confidence: z.number().min(0).max(1).optional(),
   checkedAt: isoDate.optional(),
 });
 export type AccommodationItem = z.infer<typeof accommodationItemSchema>;
@@ -108,6 +113,7 @@ export const campusItemSchema = z.object({
   img: z.string().optional(),
   source: z.string().optional(),
   verifiedBySite: z.boolean().optional(),
+  confidence: z.number().min(0).max(1).optional(),
   checkedAt: isoDate.optional(),
 });
 export type CampusItem = z.infer<typeof campusItemSchema>;
