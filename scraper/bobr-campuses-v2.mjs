@@ -5,10 +5,14 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import * as cheerio from 'cheerio';
+import { scoreFact, qualityOfCampus, passes, MIN_CONFIDENCE } from './lib/confidence.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const UNI_DIR = path.join(PROJECT_ROOT, 'site/src/content/universities');
+const AUDIT_DIR = path.join(PROJECT_ROOT, 'sources/audit');
+const TODAY = new Date().toISOString().slice(0, 10);
+const auditRejected = []; // факты < MIN_CONFIDENCE — не идут в каталог, только сюда
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0';
 const CAMPUS_PATHS = [
@@ -49,10 +53,11 @@ async function scrapeCampuses(uni) {
   const siteRoot = findRealSite(uni);
   if (!siteRoot) return 0;
   const found = [];
-  const seen = new Set((uni.campuses||[]).map(c => (c.title||'').toLowerCase()));
+  const existing = new Set((uni.campuses||[]).map(c => (c.title||'').toLowerCase()));
+  const seen = new Set(existing);
   for (const p of CAMPUS_PATHS) {
     const html = await fetchOk(siteRoot + p);
-    if (!html) continue;
+    if (!html) continue; // страница отдала 200 → источник живой
     const $ = cheerio.load(html);
     $('h2, h3, h4').each((_, el) => {
       const t = $(el).text().trim();
@@ -61,7 +66,13 @@ async function scrapeCampuses(uni) {
       const k = t.toLowerCase();
       if (seen.has(k)) return; seen.add(k);
       const next = $(el).nextAll().slice(0,2).text().trim().slice(0,300);
-      found.push({ title: t, text: next || '', sub: '' });
+      // confidence: официальный сайт вуза + живая страница + качество имени
+      const confidence = Math.round(scoreFact({
+        sourceTier: 'official', quality: qualityOfCampus(t),
+        corroborated: existing.has(k), linkLive: true,
+      }) * 100) / 100;
+      if (!passes(confidence)) { auditRejected.push({ slug: uni.slug, kind: 'campus', title: t, confidence }); return; }
+      found.push({ title: t, text: next || '', sub: '', source: 'official-site', verifiedBySite: true, confidence, checkedAt: TODAY });
     });
     if ((have + found.length) >= 5) break;
   }
@@ -95,5 +106,10 @@ async function worker() {
   }
 }
 await Promise.all(Array.from({length: CONCURRENCY}, () => worker()));
-log(`DONE: processed=${processed} campuses-added-total=${added}`);
-console.log(JSON.stringify({ processed, added }));
+if (auditRejected.length) {
+  await fs.mkdir(AUDIT_DIR, { recursive: true });
+  await fs.writeFile(path.join(AUDIT_DIR, 'campuses-lowconf.json'),
+    JSON.stringify({ minConfidence: MIN_CONFIDENCE, generatedAt: TODAY, rejected: auditRejected }, null, 2) + '\n');
+}
+log(`DONE: processed=${processed} campuses-added-total=${added} rejected(<${MIN_CONFIDENCE})=${auditRejected.length}`);
+console.log(JSON.stringify({ processed, added, rejected: auditRejected.length }));
