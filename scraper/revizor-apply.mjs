@@ -59,8 +59,12 @@ for (const item of decided) {
 
   if (item.decision === 'delete' && (item.issue === 'missing_on_site' || item.issue === 'broken_url')) {
     const toDelete = new Set((item.programs || []).map(p => p.slug).filter(Boolean));
-    const toDeleteTitles = new Set((item.programs || []).map(p => p.title).filter(Boolean));
-    const isTargeted = (p) => toDelete.has(p.slug) || toDeleteTitles.has(p.title);
+    // Только у целевых программ БЕЗ slug матчим по title — иначе две программы
+    // с одинаковым title (но разными slug) удалились бы обе.
+    const toDeleteTitlesNoSlug = new Set(
+      (item.programs || []).filter(p => !p.slug && p.title).map(p => p.title),
+    );
+    const isTargeted = (p) => (p.slug ? toDelete.has(p.slug) : toDeleteTitlesNoSlug.has(p.title));
     const before = (u.programs || []).length;
     const kept = (u.programs || []).filter(p => !isTargeted(p));
 
@@ -75,10 +79,10 @@ for (const item of decided) {
     } else if (kept.length !== before) {
       u.programs = kept;
       // Clean up tuition.byProgram and deadlines for deleted slugs
-      if (u.tuition?.byProgram) {
+      if (u.tuition?.byProgram && typeof u.tuition.byProgram === 'object' && !Array.isArray(u.tuition.byProgram)) {
         for (const s of toDelete) delete u.tuition.byProgram[s];
       }
-      if (u.deadlines) {
+      if (u.deadlines && typeof u.deadlines === 'object' && !Array.isArray(u.deadlines)) {
         for (const s of toDelete) delete u.deadlines[s];
       }
       changed = true;
@@ -102,13 +106,18 @@ for (const item of decided) {
     log(`${item.slug}: updated tuition → ${item.official.currency} ${item.official.value}`);
   }
 
-  if (item.decision === 'update' && item.issue === 'ielts_changed' && item.official) {
-    if (!u.requirements) u.requirements = {};
-    if (!u.requirements.language) u.requirements.language = {};
-    u.requirements.language.ielts = item.official;
-    changed = true;
-    stats.updated++;
-    log(`${item.slug}: updated IELTS → ${item.official}`);
+  if (item.decision === 'update' && item.issue === 'ielts_changed' && item.official != null) {
+    const ielts = Number(item.official);
+    if (!Number.isFinite(ielts) || ielts < 0 || ielts > 9) {
+      log(`${item.slug}: SKIP IELTS update — некорректное значение «${item.official}» (нужно число 0–9)`);
+    } else {
+      if (!u.requirements) u.requirements = {};
+      if (!u.requirements.language) u.requirements.language = {};
+      u.requirements.language.ielts = ielts;
+      changed = true;
+      stats.updated++;
+      log(`${item.slug}: updated IELTS → ${ielts}`);
+    }
   }
 
   if (changed && !DRY_RUN) {
