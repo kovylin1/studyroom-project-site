@@ -14,7 +14,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import * as cheerio from 'cheerio';
-import { scoreFact, qualityOfResidence, passes, MIN_CONFIDENCE } from './lib/confidence.mjs';
+import { scoreFact, qualityOfResidence, qualityOfScholarship, passes, MIN_CONFIDENCE } from './lib/confidence.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, '..');
@@ -111,7 +111,12 @@ function mergeEdvoy(uni, ev) {
     for (const s of ev.scholarships) {
       const name = s.name || s.title || s;
       if (!name || existing.has(name.toLowerCase())) continue;
-      uni.scholarships.push({ name, description: s.description || '', amount: s.amount || '' });
+      // Edvoy = aggregator (0.35); строгий гейт ≥0.85 уводит почти всё в аудит
+      const confidence = Math.round(scoreFact({
+        sourceTier: 'aggregator', quality: qualityOfScholarship(name), corroborated: false, linkLive: false,
+      }) * 100) / 100;
+      if (!passes(confidence)) { auditRejected.push({ slug: uni.slug, kind: 'scholarship', name, source: 'edvoy', confidence }); continue; }
+      uni.scholarships.push({ name, description: s.description || '', amount: s.amount || '', source: 'edvoy', confidence, checkedAt: TODAY });
       existing.add(name.toLowerCase());
       changed++;
     }
@@ -291,7 +296,19 @@ for (const ev of unmatched) {
     lastChecked: new Date().toISOString().slice(0,10),
   };
   if (campuses.length) newUni.campuses = campuses;
-  if (ev.scholarships?.length) newUni.scholarships = ev.scholarships.map(s => ({ name: s.name||s.title||s, description: s.description||'', amount: s.amount||'' }));
+  if (ev.scholarships?.length) {
+    const accepted = [];
+    for (const s of ev.scholarships) {
+      const name = s.name||s.title||s;
+      if (!name) continue;
+      const confidence = Math.round(scoreFact({
+        sourceTier: 'aggregator', quality: qualityOfScholarship(name), corroborated: false, linkLive: false,
+      }) * 100) / 100;
+      if (!passes(confidence)) { auditRejected.push({ slug, kind: 'scholarship', name, source: 'edvoy', confidence }); continue; }
+      accepted.push({ name, description: s.description||'', amount: s.amount||'', source: 'edvoy', confidence, checkedAt: TODAY });
+    }
+    if (accepted.length) newUni.scholarships = accepted;
+  }
   if (ev.logoUrl) newUni.logoUrl = ev.logoUrl;
   if (ev.gallery?.length) newUni.gallery = ev.gallery.slice(0,30);
   if (ev.description) newUni.description = { paragraphs: [ev.description] };
@@ -326,8 +343,10 @@ if (!noScrape) {
 
 if (auditRejected.length) {
   await fs.mkdir(AUDIT_DIR, { recursive: true });
-  await fs.writeFile(path.join(AUDIT_DIR, 'accommodation-merge-lowconf.json'),
+  await fs.writeFile(path.join(AUDIT_DIR, 'bobr-merge-lowconf.json'),
     JSON.stringify({ minConfidence: MIN_CONFIDENCE, generatedAt: TODAY, rejected: auditRejected }, null, 2) + '\n');
 }
-log(`БОБЁР DONE — accom rejected(<${MIN_CONFIDENCE})=${auditRejected.length}`);
-console.log(JSON.stringify({ mergeMatched, mergeNoMatch, mergeFieldChanges, newUniCreated, accomAdded, accomRejected: auditRejected.length }, null, 2));
+const rejAccom = auditRejected.filter(r => r.kind === 'accommodation').length;
+const rejSch = auditRejected.filter(r => r.kind === 'scholarship').length;
+log(`БОБЁР DONE — rejected(<${MIN_CONFIDENCE}): accom=${rejAccom} scholarships=${rejSch}`);
+console.log(JSON.stringify({ mergeMatched, mergeNoMatch, mergeFieldChanges, newUniCreated, accomAdded, rejectedAccom: rejAccom, rejectedScholarships: rejSch }, null, 2));

@@ -8,12 +8,18 @@ import fs from 'fs/promises';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { scoreFact, qualityOfScholarship, passes, MIN_CONFIDENCE } from './lib/confidence.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const UNI_DIR = path.join(ROOT, 'site/src/content/universities');
+const AUDIT_DIR = path.join(ROOT, 'sources/audit');
 const LOG = path.join(ROOT, 'sources/create-missing.log');
 const DRY = process.argv.includes('--dry');
+const TODAY = new Date().toISOString().slice(0, 10);
+// catalog-уровень доверия источника → tier для confidence-скоринга
+const TIER_FROM_CONF = { partner: 'official', official: 'official', aggregator: 'aggregator' };
+const schAudit = []; // стипендии < MIN_CONFIDENCE — в аудит, не в каталог
 
 const SOURCES = [
   { dir: 'sources/edvoy-extracts',          source: 'edvoy',      confidence: 'aggregator' },
@@ -96,14 +102,20 @@ function buildPrograms(ext, uniSlug) {
   return out;
 }
 
-function buildScholarships(ext) {
+function buildScholarships(ext, source, srcConf, slug) {
   if (!Array.isArray(ext.scholarships)) return [];
+  const tier = TIER_FROM_CONF[srcConf] || 'aggregator';
   const seen = new Set(); const out = [];
   for (const s of ext.scholarships) {
     if (!s || !s.name) continue;
     const k = String(s.name).toLowerCase();
     if (seen.has(k)) continue; seen.add(k);
-    const o = { name: String(s.name) };
+    // confidence: доверие источника + качество имени стипендии (без live-проверки → строго)
+    const confidence = Math.round(scoreFact({
+      sourceTier: tier, quality: qualityOfScholarship(s.name), corroborated: false, linkLive: false,
+    }) * 100) / 100;
+    if (!passes(confidence)) { schAudit.push({ slug, kind: 'scholarship', name: String(s.name), source, confidence }); continue; }
+    const o = { name: String(s.name), source, confidence, checkedAt: TODAY };
     if (s.amount && String(s.amount).trim()) o.amount = String(s.amount).trim();
     if (s.description && String(s.description).trim()) o.description = String(s.description).trim();
     if (isUrl(s.url)) o.url = s.url;
@@ -241,7 +253,7 @@ async function loadDir(rel) {
         tuition: { currency: currencyFor(country), byProgram: {} },
         deadlines: {},
         requirements: { exams: [] },
-        scholarships: buildScholarships(ext),
+        scholarships: buildScholarships(ext, source, confidence, baseSlug),
         lastChecked: new Date().toISOString(),
         sourceUrl,
         sourceHash: 'sha256:' + crypto.createHash('sha256').update(baseSlug + '|' + source).digest('hex').slice(0, 16),
@@ -264,6 +276,11 @@ async function loadDir(rel) {
   await log(`RESULT: created=${nCreated} skipDup=${nSkipDup} skipNoProg=${nSkipNoProg} skipNoUrl=${nSkipNoUrl} skipBad=${nSkipBad}`);
   await log('--- created slugs ---');
   for (const s of madeSlugs) await log('  + ' + s);
-  await log(`=== CREATE DONE ${DRY ? '(DRY — nothing written)' : ''} ===`);
-  console.log(JSON.stringify({ created: nCreated, skipDup: nSkipDup, skipNoProg: nSkipNoProg, skipNoUrl: nSkipNoUrl, skipBad: nSkipBad }));
+  if (schAudit.length && !DRY) {
+    await fs.mkdir(AUDIT_DIR, { recursive: true });
+    await fs.writeFile(path.join(AUDIT_DIR, 'scholarships-lowconf.json'),
+      JSON.stringify({ minConfidence: MIN_CONFIDENCE, generatedAt: TODAY, source: 'create-missing', rejected: schAudit }, null, 2) + '\n');
+  }
+  await log(`=== CREATE DONE ${DRY ? '(DRY — nothing written)' : ''} — scholarships rejected(<${MIN_CONFIDENCE})=${schAudit.length} ===`);
+  console.log(JSON.stringify({ created: nCreated, skipDup: nSkipDup, skipNoProg: nSkipNoProg, skipNoUrl: nSkipNoUrl, skipBad: nSkipBad, scholarshipsRejected: schAudit.length }));
 })();

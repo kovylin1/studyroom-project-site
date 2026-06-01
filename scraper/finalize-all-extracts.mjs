@@ -6,10 +6,16 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { spawn } from 'child_process';
+import { scoreFact, qualityOfScholarship, passes, MIN_CONFIDENCE } from './lib/confidence.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const UNI_DIR = path.join(PROJECT_ROOT, 'site/src/content/universities');
+const AUDIT_DIR = path.join(PROJECT_ROOT, 'sources/audit');
+const TODAY = new Date().toISOString().slice(0, 10);
+// edvoy/studygroup/collab — все агрегаторы (0.35); строгий гейт уводит их в аудит
+const TIER_BY_SOURCE = { direct: 'official', collab: 'aggregator', edvoy: 'aggregator', studygroup: 'aggregator' };
+const schAudit = []; // стипендии < MIN_CONFIDENCE — в аудит, не в каталог
 const EDVOY_DIR = path.join(PROJECT_ROOT, 'sources/edvoy-extracts');
 const COLLAB_DIR = path.join(PROJECT_ROOT, 'sources/collab-extracts');
 const SG_DIR = path.join(PROJECT_ROOT, 'sources/studygroup-extracts');
@@ -88,16 +94,24 @@ function mergeFromExtract(uni, ext) {
 
   if (Array.isArray(ext.scholarships) && ext.scholarships.length) {
     if (!Array.isArray(uni.scholarships)) uni.scholarships = [];
-    uni.scholarships = pushUnique(uni.scholarships,
-      ext.scholarships.filter(s => s && s.name).map(s => {
-        const out = { name: s.name };
-        if (s.description && s.description.trim()) out.description = s.description;
-        if (s.amount && s.amount.trim()) out.amount = s.amount;
-        return out;
-      }),
-      s => (s.name||'').toLowerCase()
-    );
-    changes++;
+    const tier = TIER_BY_SOURCE[ext.source] || 'aggregator';
+    const accepted = [];
+    for (const s of ext.scholarships) {
+      if (!s || !s.name) continue;
+      // confidence: доверие источника + качество имени (строго, без live-проверки)
+      const confidence = Math.round(scoreFact({
+        sourceTier: tier, quality: qualityOfScholarship(s.name), corroborated: false, linkLive: false,
+      }) * 100) / 100;
+      if (!passes(confidence)) { schAudit.push({ slug: uniSlug, kind: 'scholarship', name: String(s.name), source: ext.source, confidence }); continue; }
+      const out = { name: s.name, source: ext.source, confidence, checkedAt: TODAY };
+      if (s.description && s.description.trim()) out.description = s.description;
+      if (s.amount && s.amount.trim()) out.amount = s.amount;
+      accepted.push(out);
+    }
+    if (accepted.length) {
+      uni.scholarships = pushUnique(uni.scholarships, accepted, s => (s.name||'').toLowerCase());
+      changes++;
+    }
   }
 
   if (Array.isArray(ext.campuses) && ext.campuses.length) {
@@ -202,7 +216,12 @@ for (const [f, u] of unisMap) {
   await fs.writeFile(path.join(UNI_DIR, f), JSON.stringify(u, null, 2) + '\n');
   writtenCount++;
 }
-await log(`MERGE DONE: matched=${totalMatched}, changes=${totalChanges}, written=${writtenCount}`);
+await log(`MERGE DONE: matched=${totalMatched}, changes=${totalChanges}, written=${writtenCount}, scholarships-rejected(<${MIN_CONFIDENCE})=${schAudit.length}`);
+if (schAudit.length) {
+  await fs.mkdir(AUDIT_DIR, { recursive: true });
+  await fs.writeFile(path.join(AUDIT_DIR, 'scholarships-finalize-lowconf.json'),
+    JSON.stringify({ minConfidence: MIN_CONFIDENCE, generatedAt: TODAY, source: 'finalize', rejected: schAudit }, null, 2) + '\n');
+}
 
 await log('--- AUDIT ---');
 const audit = await run('node', ['scraper/audit-gaps.mjs']);
