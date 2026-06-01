@@ -34,6 +34,7 @@ export const programSchema = z.object({
   programType: z.enum(['pathway', 'degree']).optional(),
   source: z.string().optional(),
   verifiedBySite: z.boolean().optional(),
+  confidence: z.number().min(0).max(1).optional(),
   checkedAt: isoDate.optional(),
   brokenLink: z.boolean().optional(),
 });

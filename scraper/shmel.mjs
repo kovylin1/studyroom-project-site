@@ -8,6 +8,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { scoreProgram, qualityOfTitle, passes, MIN_CONFIDENCE } from './lib/confidence.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CATALOG_DIR = path.join(__dirname, '..', 'site', 'src', 'content', 'universities');
@@ -128,33 +129,49 @@ async function processUni(slug) {
   );
 
   const today = new Date().toISOString().slice(0, 10);
+  const liveByUrl = new Map(linkResults.map(c => [c.url, c.live]));
   const verifiedPrograms = [];
   const newPrograms = [];
+  const lowConfidence = []; // < MIN_CONFIDENCE — не идёт в каталог, только аудит
 
   for (const title of rawTitles) {
     const level = guessLevel(title);
     if (!level) continue;
     const key = `${normalize(title)}|${level}`;
-    if (catalogByKey.has(key)) {
-      const p = catalogByKey.get(key);
+    const corroborated = catalogByKey.has(key);
+    const p = corroborated ? catalogByKey.get(key) : null;
+    const programUrl = p?.programUrl;
+    const linkLive = programUrl ? liveByUrl.get(programUrl) === true : false;
+    const confidence = Math.round(
+      scoreProgram({ sourceTier: 'official', titleQuality: qualityOfTitle(title, level), corroborated, linkLive }) * 100,
+    ) / 100;
+
+    if (!passes(confidence)) {
+      lowConfidence.push({ title, level, confidence, corroborated });
+      continue; // < 85% — не перезаписываем каталог, уходит в аудит
+    }
+
+    if (corroborated) {
       verifiedPrograms.push({
-        slug: p.slug, title, level, verifiedBySite: true, source: 'official', checkedAt: today,
-        ...(p.programUrl ? { programUrl: p.programUrl } : {}),
+        slug: p.slug, title, level, verifiedBySite: true, source: 'official', confidence, checkedAt: today,
+        ...(programUrl ? { programUrl } : {}),
       });
     } else {
-      newPrograms.push({ title, level, verifiedBySite: true, source: 'official', checkedAt: today });
+      newPrograms.push({ title, level, verifiedBySite: true, source: 'official', confidence, checkedAt: today });
     }
   }
 
   const extract = {
     slug, name: catalog.name, source: 'official', sourceUrl,
     scrapedAt: new Date().toISOString(),
+    minConfidence: MIN_CONFIDENCE,
     linkCheck: { checked: linkResults.length, live: liveCt, dead: deadCt, details: linkResults.filter(c => !c.live) },
     programs: [...verifiedPrograms, ...newPrograms],
+    ...(lowConfidence.length ? { lowConfidence } : {}),
   };
 
   await fs.writeFile(path.join(OUT_DIR, `${slug}.json`), JSON.stringify(extract, null, 2) + '\n');
-  return { slug, status: 'ok', progPagesChecked: progLinks.length + 1, titlesFound: rawTitles.size, verified: verifiedPrograms.length, newFound: newPrograms.length, linkCheck: { live: liveCt, dead: deadCt } };
+  return { slug, status: 'ok', progPagesChecked: progLinks.length + 1, titlesFound: rawTitles.size, verified: verifiedPrograms.length, newFound: newPrograms.length, rejected: lowConfidence.length, linkCheck: { live: liveCt, dead: deadCt } };
 }
 
 // ---- main ----
