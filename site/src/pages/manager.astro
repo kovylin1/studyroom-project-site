@@ -121,13 +121,14 @@ const CONTROL_DEFAULT_URL = '';
               <tr>
                 <th>Агрегатор</th>
                 <th>Тир</th>
+                <th>Число / следующее</th>
                 <th>Интервал</th>
                 <th>Последний прогон</th>
                 <th>Статус</th>
               </tr>
             </thead>
             <tbody id="agg-schedules-tbody">
-              <tr><td colspan="5" class="table-loading">Загрузка…</td></tr>
+              <tr><td colspan="6" class="table-loading">Загрузка…</td></tr>
             </tbody>
           </table>
         </div>
@@ -1072,9 +1073,23 @@ const CONTROL_DEFAULT_URL = '';
     document.getElementById('catalog-count').textContent = catalogCount;
   }
 
-  // Next update date for one aggregator: lastRunAt + intervalDays. If it has never
-  // run, it gets picked up at the next scrape-monthly pass, so fall back to that.
+  // Next update date for one aggregator. Primary source: dayOfMonth — fixed
+  // calendar day from scrape-staggered.yml (this month if not yet passed, else
+  // next month) at 03:00 UTC (cron hour). Falls back to lastRunAt+intervalDays,
+  // then to the global scrape-monthly pass.
+  function aggregatorNextRunFromDayOfMonth(dom) {
+    if (!dom) return null;
+    const now = new Date();
+    let candidate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), dom, 3, 0, 0));
+    if (candidate <= now) {
+      candidate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, dom, 3, 0, 0));
+    }
+    return candidate.toISOString();
+  }
   function aggregatorNextRun(agg) {
+    if (agg && agg.dayOfMonth) {
+      return aggregatorNextRunFromDayOfMonth(agg.dayOfMonth);
+    }
     if (agg && agg.lastRunAt) {
       const days = agg.intervalDays || 30;
       return new Date(new Date(agg.lastRunAt).getTime() + days * 86400000).toISOString();
@@ -1100,9 +1115,13 @@ const CONTROL_DEFAULT_URL = '';
     document.getElementById('next-run-relative').textContent = fmt.relative(nextISO);
     document.getElementById('next-run-utc').textContent = nextISO || '—';
     document.getElementById('schedule-source').innerHTML = escapeHtml(
-      agg.lastRunAt ? agg.name + ': каждые ' + days + ' дн.' : agg.name + ': при следующем scrape-monthly',
+      agg.dayOfMonth
+        ? agg.name + ': ' + agg.dayOfMonth + ' число месяца'
+        : agg.lastRunAt ? agg.name + ': каждые ' + days + ' дн.' : agg.name + ': при следующем scrape-monthly',
     );
-    document.getElementById('cron-pill').innerHTML = agg.lastRunAt
+    document.getElementById('cron-pill').innerHTML = agg.dayOfMonth
+      ? '<code>' + agg.dayOfMonth + ' числа</code>'
+      : agg.lastRunAt
       ? '<code>+' + days + 'д</code>'
       : (lastSchedule && lastSchedule.cron ? '<code>' + escapeHtml(lastSchedule.cron) + '</code>' : '—');
   }
@@ -1958,7 +1977,7 @@ const CONTROL_DEFAULT_URL = '';
     if (!tbody) return;
     const list = aggregators || [];
     if (list.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="5" class="table-loading">Нет данных</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="6" class="table-loading">Нет данных</td></tr>';
       return;
     }
     let overdueCount = 0;
@@ -1983,9 +2002,13 @@ const CONTROL_DEFAULT_URL = '';
         }
       }
       const tierCls = agg.tier === 'partner' ? 'tier--partner' : agg.tier === 'official' ? 'tier--official' : 'tier--aggregator';
+      const schedCell = agg.dayOfMonth
+        ? '<strong>' + agg.dayOfMonth + ' число</strong><br><span class="muted">' + escapeHtml(fmt.dateLocal(aggregatorNextRun(agg))) + '</span>'
+        : '<span class="muted">—</span>';
       return '<tr>' +
         '<td>' + escapeHtml(agg.name || agg.slug) + '</td>' +
         '<td><span class="tier ' + tierCls + '">' + escapeHtml(agg.tier || '—') + '</span></td>' +
+        '<td>' + schedCell + '</td>' +
         '<td>' + (interval ? interval + ' дн' : '—') + '</td>' +
         '<td>' + escapeHtml(lastLabel) + '</td>' +
         '<td><span class="' + statusCls + '">' + statusLabel + '</span></td>' +

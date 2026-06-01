@@ -194,7 +194,7 @@ async function readSchedules() {
     const out = {};
     for (const [slug, entry] of Object.entries(data)) {
       if (slug.startsWith('_')) continue;
-      out[slug] = { lastRunAt: entry.lastRunAt || null, intervalDays: entry.intervalDays || 30 };
+      out[slug] = { lastRunAt: entry.lastRunAt || null, intervalDays: entry.intervalDays || 30, dayOfMonth: entry.dayOfMonth ?? null };
     }
     return out;
   } catch { return {}; }
@@ -226,8 +226,8 @@ async function main() {
   ]);
   for (const agg of aggregators) {
     const s = schedules[agg.slug];
-    if (s) { agg.lastRunAt = s.lastRunAt; agg.intervalDays = s.intervalDays; }
-    else { agg.lastRunAt = null; agg.intervalDays = null; }
+    if (s) { agg.lastRunAt = s.lastRunAt; agg.intervalDays = s.intervalDays; agg.dayOfMonth = s.dayOfMonth; }
+    else { agg.lastRunAt = null; agg.intervalDays = null; agg.dayOfMonth = null; }
   }
   // Attach gap priority per-uni from worklist
   let gapBySlug = {};
