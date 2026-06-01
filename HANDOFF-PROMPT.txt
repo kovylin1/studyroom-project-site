@@ -1,0 +1,55 @@
+ПРОМТ ДЛЯ СЛЕДУЮЩЕГО ТЕРМИНАЛА — studyroom-project-site
+=========================================================
+(составлен 2026-06-01, сессия confidence-гейт шаг 2)
+
+СНАЧАЛА прочитай память и статус:
+- D:\Эдгар, (НЕ ТРОЖ ОПАСТНО ДЛЯ ЖИЗНИ)\cursor projects\claude projects\memory\MEMORY.md
+- ...\memory\project_studyroom_status.md   (resume-point этой сессии)
+- правила: ...\claude projects\CLAUDE.md
+Память живёт ТОЛЬКО на D:. На C: ничего не сохранять.
+
+Проект: D:\Эдгар, (НЕ ТРОЖ ОПАСТНО ДЛЯ ЖИЗНИ)\cursor projects\claude projects\projects\studyroom-project-site
+Ветка main. Репо kovylin1/studyroom-project-site. Деплой: push в main -> CF Pages.
+
+--- ЧТО УЖЕ СДЕЛАНО (запушено 2026-06-01) ---
+Confidence-гейт ≥85% (общий модуль scraper/lib/confidence.mjs, MIN=0.85) распространён
+на 3 категории. Формула scoreFact: official .55 / aggregator .35 / inferred .15
++ quality·.30 + corroborated .15 + linkLive .10.
+- Кампусы: bobr-campuses-v2.mjs — гейт (офсайт+живая стр.+качество), отклонённые
+  -> sources/audit/campuses-lowconf.json.
+- Размещение: bobr-accommodation-v2.mjs + bobr-accommodation-merge.mjs — гейт +
+  ФИКС бага формы (писали accommodation={residences:[...]}, схема/[slug].astro ждут
+  МАССИВ [{name,text,...}]; иначе build падал). Аудит: accommodation-*-lowconf.json.
+- Стипендии (вариант A, СТРОГО): create-missing-from-extracts.mjs, finalize-all-extracts.mjs,
+  bobr-accommodation-merge.mjs. Tier: partner/direct->official(0.55), edvoy/studygroup/
+  collab->aggregator(0.35). Партнёрские с хорошим именем=0.85 (в каталог),
+  Edvoy/StudyGroup ~0.65 -> аудит sources/audit/scholarships-*.json.
+- Схема site/src/schema/university.ts: добавлено confidence?:0..1 в scholarship/campus/
+  accommodation схемы. Сборка: 807 стр., exit 0.
+- Баг расписания IAPro (показывал 1 июля вместо 21 июня) — оказался устаревшим деплоем
+  (CI собрался до dayOfMonth-коммита). Код manager.astro корректен. Пофикшено push'ем.
+
+--- СЛЕДУЮЩИЕ ШАГИ (по приоритету) ---
+1. ГЛАВНОЕ (юзер просил «разберём отдельно»): EDVOY и STUDYGROUP стипендии.
+   Сейчас они агрегатор-tier (0.35) и почти все уходят в аудит (sources/audit/scholarships-*.json).
+   Решить с юзером: (а) поднять им tier, (б) добавить live-проверку ссылки (+0.10),
+   (в) ручной разбор аудита и точечный аппрув. НЕ деплоить без слова юзера.
+2. Проверить живой деплой: выбрать IAPro в дропдауне manager — должно показать
+   «21 июня 2026 / 21 число», не 1 июля. Если нет — реальный баг в расписании.
+3. ОТЛОЖЕНО: кампусы из Edvoy-мержа (mergeEdvoy campus-блок в bobr-accommodation-merge.mjs)
+   пока НЕ гейтятся (aggregator не дотягивает до 0.85). Решить заодно с п.1.
+
+--- БЭКЛОГ (из статуса) ---
+- Kaplan Playwright коллектор (как GEDU, с kaplanpathways.com)
+- IAPro — ждём логин/пароль
+- scrape-staggered.yml: читать день из aggregator-schedules.json вместо хардкода bash
+
+--- ПРАВИЛА РАБОТЫ ---
+- По-русски на «ты», коротко, готовый результат + варианты на выбор.
+- Сначала показать баги/план, потом фиксить.
+- Проверять сборку: cd site && npm run build (exit 0, 807 стр.).
+- Каталог: ОБОГАЩАТЬ, НЕ РЕЗАТЬ. Ничего молча не удалять. <0.85 -> аудит, не в каталог.
+- НЕ пушить и НЕ удалять данные из каталога без слова юзера.
+- В конце commit-сообщения: Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
+- БОБР — отдельные кнопки в manager, НЕ в fix-freshness.yml.
+- status.json — генерируемый артефакт (build), в коммиты не тащить.
