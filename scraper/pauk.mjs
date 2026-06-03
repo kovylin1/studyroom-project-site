@@ -117,7 +117,13 @@ report['merge-programs'] = await S('merge-programs.mjs', ...(DRY_RUN ? ['--dry-r
 log('=== Phase 5: validate-unis ===');
 report['validate-unis'] = await runTsx('src/validate-unis.ts');
 
-log('pipeline complete');
-const ok = report['validate-unis']?.bad === 0;
-console.log(JSON.stringify({ pipeline: 'pauk', dryRun: DRY_RUN, ok, steps: report }, null, 2));
+// Любой шаг с ненулевым exit-кодом валит пайплайн — раньше сбой коллектора/shmel/merge
+// глотался (логировался как WARN) и пайплайн рапортовал ok по одной только валидации.
+// edvoy/iapro без кредов в report не попадают, поэтому ложных фейлов не дают.
+const failedSteps = Object.entries(report)
+  .filter(([, v]) => v && typeof v.code === 'number' && v.code !== 0)
+  .map(([k, v]) => ({ step: k, code: v.code }));
+const ok = report['validate-unis']?.bad === 0 && failedSteps.length === 0;
+log(`pipeline complete${failedSteps.length ? ` — FAILED steps: ${failedSteps.map(s => s.step).join(', ')}` : ''}`);
+console.log(JSON.stringify({ pipeline: 'pauk', dryRun: DRY_RUN, ok, failedSteps, steps: report }, null, 2));
 process.exit(ok ? 0 : 1);

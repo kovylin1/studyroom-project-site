@@ -78,7 +78,14 @@ if (!SKIP_PHOTOS) {
 log('=== Phase 4: validate ===');
 report['validate-unis'] = await runTsx('src/validate-unis.ts');
 
-const ok = report['validate-unis']?.bad === 0;
-log('pipeline complete');
-console.log(JSON.stringify({ pipeline: 'bobr', dryRun: DRY_RUN, ok, steps: report }, null, 2));
+// Фото-фаза косметическая — её сбой не должен ронять пайплайн. Всё остальное (коллекторы,
+// keyfacts, verifier, валидация) — критично: раньше exit-код коллектора глотался и пайплайн
+// рапортовал ok даже при падении сбора данных.
+const PHOTO_STEPS = new Set(['bobr-buildlib', 'bobr-pilot', 'bobr-variety', 'bobr-backfill']);
+const failedSteps = Object.entries(report)
+  .filter(([k, v]) => v && typeof v.code === 'number' && v.code !== 0 && !PHOTO_STEPS.has(k))
+  .map(([k, v]) => ({ step: k, code: v.code }));
+const ok = report['validate-unis']?.bad === 0 && failedSteps.length === 0;
+log(`pipeline complete${failedSteps.length ? ` — FAILED steps: ${failedSteps.map(s => s.step).join(', ')}` : ''}`);
+console.log(JSON.stringify({ pipeline: 'bobr', dryRun: DRY_RUN, ok, failedSteps, steps: report }, null, 2));
 process.exit(ok ? 0 : 1);

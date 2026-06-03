@@ -194,7 +194,14 @@ async function phase1Worker() {
         problematicSlugs.add(u.slug);
         continue;
       }
-      const sampled = programs.sort(() => Math.random() - 0.5).slice(0, SAMPLE_PER_UNI);
+      // Детерминированный равномерный сэмпл: раньше programs.sort(()=>Math.random()-0.5)
+      // мутировал u.programs на месте И давал нестабильные 404-флаги между запусками.
+      // Берём элементы с постоянным шагом — стабильно и покрывает разные факультеты.
+      const step = Math.max(1, Math.floor(programs.length / SAMPLE_PER_UNI));
+      const sampled = [];
+      for (let i = 0; i < programs.length && sampled.length < SAMPLE_PER_UNI; i += step) {
+        sampled.push(programs[i]);
+      }
       let noUrlCount = 0;
       for (const prog of sampled) {
         stats.programsSampled++;
