@@ -59,7 +59,7 @@
 **🟡 Скрейпер/инфра:**
 - [x] **Проглоченные exit-коды** — `bobr.mjs`/`pauk.mjs`: сбой data-шага теперь валит пайплайн (`failedSteps` гейтит `ok` + в JSON-отчёте). Фото-фаза bobr остаётся soft. Коммит `99b35eb`.
 - [x] **`revizor.mjs:197` сэмплинг** — `sort(()=>Math.random()-0.5)` (мутация на месте + нестабильные 404) → детерминированный шаговый сэмпл. Коммит `99b35eb`.
-- [ ] Расписание дублируется в 3 местах (cron + bash `case` в `scrape-staggered.yml` + `aggregator-schedules.json`) — читать день из JSON.
+- [x] **Дедуп расписания** — bash-таблица `case $DOM` убрана; шаг detect читает `dayOfMonth` из `aggregator-schedules.json` (единый источник). Маппинг идентичен старому для всех 11 дней. Cron остаётся статичным (YAML не читает JSON), помечен как ручной-синк. Коммит `9911d5c`.
 - [ ] IAPro не работает (нет кредов `IAPRO_LOGIN/PASS`, `exit(1)` проглочен `|| true`).
 - [ ] Kaplan-коллектор не написан (день 1 зовёт `scrape-direct-partners-v2.mjs`, который Kaplan не обрабатывает).
 - [ ] `verify-on-demand.yml` — `shmel`/`generate-verify` без `continue-on-error`.
