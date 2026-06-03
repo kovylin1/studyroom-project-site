@@ -8,7 +8,7 @@
 
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Base from '~/layouts/Base.astro';
-import { STUDYROOM_FAQ } from '~/content/studyroom/static';
+import { STUDYROOM_FAQ, CURRENCY_TO_KZT, CURRENCY_SYMBOL, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
 import { CONTACTS, waLink, telLink, AGENCY, yearsOnMarket } from '~/content/studyroom/contacts';
 
 export async function getStaticPaths() {
@@ -51,6 +51,14 @@ const US_TIMELINE = [
   { title: 'Март – апрель', text: 'Решения. Финансовая помощь / стипендии.' },
   { title: 'Май – август', text: 'I-20, виза F-1, жильё, перелёт.' },
 ];
+// Страна-нейтральный таймлайн для всех остальных стран (Европа, Азия, ОАЭ и т.д.).
+// Завязан на «месяцы до старта», без специфики UCAS/Common App — корректен для любой юрисдикции.
+const GENERIC_TIMELINE = [
+  { title: 'За 10–12 мес до старта', text: 'Подбор программ и университетов, проверка требований и дедлайнов на официальных сайтах.' },
+  { title: 'За 8–10 мес', text: 'Подача документов напрямую в университет, сдача языкового теста (IELTS/TOEFL) и профильных экзаменов.' },
+  { title: 'За 4–6 мес', text: 'Получение оффера, сбор финансовых документов, подача на студенческую визу.' },
+  { title: 'За 1–2 мес', text: 'Виза, бронирование жилья, перелёт.' },
+];
 
 function pickTimeline(country: string) {
   const c = country.toLowerCase();
@@ -58,19 +66,13 @@ function pickTimeline(country: string) {
   if (c === 'canada') return CA_TIMELINE;
   if (c === 'australia' || c === 'new zealand') return AU_NZ_TIMELINE;
   if (c.includes('united states') || c === 'usa') return US_TIMELINE;
-  return UK_TIMELINE;
+  return GENERIC_TIMELINE;
 }
 
 const TIMELINE = pickTimeline(u.country);
 
-const CURRENCY_TO_KZT: Record<string, number> = {
-  GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290,
-};
-const baseRate = CURRENCY_TO_KZT[u.tuition.currency] ?? 500;
-const currencySymbol: Record<string, string> = {
-  GBP: '£', USD: '$', EUR: '€', CAD: 'CA$', AUD: 'A$', NZD: 'NZ$',
-};
-const sym = currencySymbol[u.tuition.currency] ?? u.tuition.currency;
+const baseRate = CURRENCY_TO_KZT[u.tuition.currency] ?? DEFAULT_KZT_RATE;
+const sym = CURRENCY_SYMBOL[u.tuition.currency] ?? u.tuition.currency;
 
 interface ProgramRow {
   slug: string;
@@ -1346,7 +1348,13 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     if (!chatBody) return;
     const m = document.createElement('div');
     m.className = 'chat-msg chat-msg--' + (who || 'bot');
-    m.innerHTML = '<div class="chat-msg__bubble">' + text + '</div>';
+    const bubble = document.createElement('div');
+    bubble.className = 'chat-msg__bubble';
+    // Bot-сообщения собираются из наших данных и намеренно содержат разметку (<b> и т.п.).
+    // Ввод пользователя — только текст, иначе self-XSS через innerHTML.
+    if (who === 'user') bubble.textContent = text;
+    else bubble.innerHTML = text;
+    m.appendChild(bubble);
     chatBody.appendChild(m);
     chatBody.scrollTop = chatBody.scrollHeight;
   }

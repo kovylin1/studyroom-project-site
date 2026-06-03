@@ -9,6 +9,17 @@
 
 import { CONTACTS, waLink, tgLink } from './contacts';
 
+// Single source of truth for currency → KZT conversion, used by the per-uni
+// landing ([slug].astro) and the catalog card (UniversityCardV2.astro).
+// Approximate rates; update here once to keep both views in sync.
+export const CURRENCY_TO_KZT: Record<string, number> = {
+  GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290,
+};
+export const CURRENCY_SYMBOL: Record<string, string> = {
+  GBP: '£', USD: '$', EUR: '€', CAD: 'CA$', AUD: 'A$', NZD: 'NZ$',
+};
+export const DEFAULT_KZT_RATE = 500;
+
 export interface Benefit {
   num: string;
   title: string;

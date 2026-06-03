@@ -1,5 +1,6 @@
 ---
 import type { University } from '~/schema/university';
+import { CURRENCY_TO_KZT, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
 
 interface Props {
   data: University;
@@ -8,15 +9,10 @@ interface Props {
 
 const { data, whatsAppDeepLinkTemplate } = Astro.props;
 
-// Mirror per-uni landing rates from site/src/pages/[slug].astro:64-66
-const CURRENCY_TO_KZT: Record<string, number> = {
-  GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290,
-};
-
 const tuitionValuesAll = Object.values(data.tuition.byProgram).filter((v) => v > 0);
 const tuitionMinGbp = tuitionValuesAll.length ? Math.min(...tuitionValuesAll) : 0;
 const tuitionMaxGbp = tuitionValuesAll.length ? Math.max(...tuitionValuesAll) : 0;
-const rate = CURRENCY_TO_KZT[data.tuition.currency] ?? 500;
+const rate = CURRENCY_TO_KZT[data.tuition.currency] ?? DEFAULT_KZT_RATE;
 const tuitionMinKzt = tuitionMinGbp * rate;
 
 function formatKzt(value: number): string {
