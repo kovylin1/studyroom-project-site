@@ -3,18 +3,10 @@ name: Staggered scrape (per-aggregator)
 # Один агрегатор каждые ~3 дня. Каждый обновляется ровно 1 раз в месяц.
 # Система не перегружается — 804 университета не парсятся все разом.
 #
-# День месяца → агрегатор:
-#   1  → kaplan-pathways       (partner,   30 дней)
-#   3  → navitas-pathways      (partner,   30 дней)
-#   6  → qahe                  (partner,   30 дней)
-#   9  → studygroup            (partner,   30 дней)
-#   12 → cats                  (partner,   30 дней)
-#   15 → oxford-international  (aggregator, 60 дней)
-#   18 → edvoy                 (aggregator, 60 дней)
-#   21 → iapro                 (aggregator, 60 дней)
-#   24 → qs-topuniversities    (aggregator, 90 дней)
-#   27 → gedu                  (aggregator, 90 дней)
-#   30 → volk                  (aggregator, 90 дней)
+# Маппинг «день месяца → агрегатор» — единый источник: scraper/sources/aggregator-schedules.json
+# (поле dayOfMonth). Шаг detect читает его, отдельной bash-таблицы больше нет.
+# ВАЖНО: список дней в cron ниже статичен (YAML не читает JSON) — держать синхронным
+# с dayOfMonth в JSON вручную. Сейчас: 1,3,6,9,12,15,18,21,24,27,30.
 
 on:
   schedule:
@@ -53,36 +45,25 @@ jobs:
     timeout-minutes: 45
 
     steps:
+      - uses: actions/checkout@v4
+
       - name: Определить агрегатор по дню месяца
         id: detect
         run: |
           AGG="${{ github.event.inputs.aggregator }}"
           if [ -z "$AGG" ]; then
             DOM=$(date -u +%-d)
-            case $DOM in
-              1)  AGG="kaplan-pathways" ;;
-              3)  AGG="navitas-pathways" ;;
-              6)  AGG="qahe" ;;
-              9)  AGG="studygroup" ;;
-              12) AGG="cats" ;;
-              15) AGG="oxford-international" ;;
-              18) AGG="edvoy" ;;
-              21) AGG="iapro" ;;
-              24) AGG="qs-topuniversities" ;;
-              27) AGG="gedu" ;;
-              30) AGG="volk" ;;
-              *)
-                echo "Нет агрегатора для дня $DOM — пропуск"
-                echo "aggregator=" >> $GITHUB_OUTPUT
-                exit 0
-                ;;
-            esac
+            # Единый источник дня прогона — dayOfMonth в aggregator-schedules.json.
+            # (Раньше тут дублировалась bash-таблица; теперь читаем JSON через предустановленный node.)
+            AGG=$(node -e "const fs=require('fs');const d=JSON.parse(fs.readFileSync('scraper/sources/aggregator-schedules.json','utf8'));const dom=Number(process.argv[1]);const hit=Object.entries(d).find(([,v])=>v&&v.dayOfMonth===dom);process.stdout.write(hit?hit[0]:'');" "$DOM")
+            if [ -z "$AGG" ]; then
+              echo "Нет агрегатора для дня $DOM — пропуск"
+              echo "aggregator=" >> $GITHUB_OUTPUT
+              exit 0
+            fi
           fi
           echo "aggregator=$AGG" >> $GITHUB_OUTPUT
           echo "Агрегатор: $AGG"
-
-      - uses: actions/checkout@v4
-        if: steps.detect.outputs.aggregator != ''
 
       - uses: actions/setup-node@v4
         if: steps.detect.outputs.aggregator != ''
