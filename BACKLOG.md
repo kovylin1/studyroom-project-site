@@ -57,11 +57,11 @@
 - [ ] 140 JSON с `sourceHash: "sha256:placeholder"` — ломает отслеживание изменений источника.
 
 **🟡 Скрейпер/инфра:**
+- [x] **Проглоченные exit-коды** — `bobr.mjs`/`pauk.mjs`: сбой data-шага теперь валит пайплайн (`failedSteps` гейтит `ok` + в JSON-отчёте). Фото-фаза bobr остаётся soft. Коммит `99b35eb`.
+- [x] **`revizor.mjs:197` сэмплинг** — `sort(()=>Math.random()-0.5)` (мутация на месте + нестабильные 404) → детерминированный шаговый сэмпл. Коммит `99b35eb`.
 - [ ] Расписание дублируется в 3 местах (cron + bash `case` в `scrape-staggered.yml` + `aggregator-schedules.json`) — читать день из JSON.
 - [ ] IAPro не работает (нет кредов `IAPRO_LOGIN/PASS`, `exit(1)` проглочен `|| true`).
 - [ ] Kaplan-коллектор не написан (день 1 зовёт `scrape-direct-partners-v2.mjs`, который Kaplan не обрабатывает).
-- [ ] Проглоченные exit-коды в `bobr.mjs:29-33` / `pauk.mjs:47-53` — сбой коллектора не роняет пайплайн.
-- [ ] `revizor.mjs:197` недетерминированный сэмплинг (`sort(()=>Math.random()-0.5)`) — флаги 404 нестабильны.
 - [ ] `verify-on-demand.yml` — `shmel`/`generate-verify` без `continue-on-error`.
 
 **🟢 Техдолг:**
