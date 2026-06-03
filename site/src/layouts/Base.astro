@@ -5,15 +5,19 @@ interface Props {
   title: string;
   description?: string;
   hideHeader?: boolean;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = 'StudyRoom — каталог зарубежных университетов с актуальными ценами и дедлайнами.',
   hideHeader = false,
+  noindex = false,
 } = Astro.props;
 
 const year = new Date().getFullYear();
+// Абсолютный canonical из текущего URL относительно site (https://studyroom.kz).
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -23,9 +27,17 @@ const year = new Date().getFullYear();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="StudyRoom" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>

@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import { fileURLToPath } from 'node:url';
+import sitemap from '@astrojs/sitemap';
 
 const srcDir = fileURLToPath(new URL('./src', import.meta.url));
 
@@ -9,6 +10,12 @@ export default defineConfig({
   redirects: {
     '/v2': '/',
   },
+  integrations: [
+    sitemap({
+      // Внутренние страницы не индексируем (см. также robots.txt).
+      filter: (page) => !/\/(manager|admin)(\/|$)/.test(page),
+    }),
+  ],
   build: {
     format: 'directory',
   },
