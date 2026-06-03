@@ -45,13 +45,15 @@
 - [ ] Видео-отзывы: залить на YouTube (unlisted), ссылки → в `STUDYROOM_REVIEWS` (`static.ts`), подключить секцию reviews в `[slug].astro` (сейчас `[TBD]`-заглушка; поле `videoUrl` в схеме готово). Не Google Drive для embed.
 - [ ] Настроить env в Cloudflare Pages: `CRM_WEBHOOK_URL` (+ опц. `CRM_TYPE`, `LEAD_NOTIFY_URL`) — без него формы отдают ошибку.
 
+**✅ Сделано в сессии 2026-06-03 (пачка 2, закоммичено, НЕ запушено):**
+- [x] **Таймлайн** — `pickTimeline()` fallback `UK_TIMELINE` → новый `GENERIC_TIMELINE` (нейтральный, «за N мес до старта»). Затрагивало 292/804 вуза (Европа/ОАЭ/Азия видели UCAS-дедлайны). Коммит `aa25ad3`.
+- [x] **Курсы валют** — единый источник `CURRENCY_TO_KZT`/`CURRENCY_SYMBOL`/`DEFAULT_KZT_RATE` в `static.ts`, импорт в `[slug].astro` и `UniversityCardV2.astro`. Коммит `aa25ad3`.
+- [x] **Self-XSS в чате** — ввод юзера через `textContent`, HTML бота сохранён через `innerHTML`. Коммит `aa25ad3`.
+- [x] **SEO** — `@astrojs/sitemap` (`sitemap-index.xml`, 806 url, `manager`/`admin` исключены), `robots.txt`, `favicon.svg` (был 404), `canonical` + `og:url/site_name/locale` + `twitter:card` в `Base.astro`, `noindex` на `manager`. Коммит `78fb056`. **og:image отложен** — нужен дизайн-ассет 1200×630 от владельца.
+- [x] **Маппинг `master`** — `compare.astro:22` + `UniversityCardV2.astro:42`: `"Pre-Master's"` → `"Магистратура"`. 658 вузов с master-программами, лишь 1 — only-pathway. Per-program различие pathway/degree остаётся в `[slug].astro levelLabel()`. Коммит `1f1583d`.
+
 **🟡 Важное (можно автономно, не блок запуска):**
-- [ ] Таймлайн сроков: `pickTimeline()` в `[slug].astro` молча отдаёт UK-дедлайны всем странам вне UK/CA/AU/NZ/US — чинить по странам или прятать для непокрытых.
-- [ ] SEO: нет `sitemap.xml` / `robots.txt` / `canonical` / `og:image`; отсутствует `favicon.svg` (404). Подключить `@astrojs/sitemap`, дополнить `Base.astro`.
-- [ ] Self-XSS в чате `[slug].astro` (ввод через `innerHTML` без экранирования) — экранировать, как в `manager.astro`.
-- [ ] Хардкод требований (IELTS/GPA/финподтверждение) игнорирует `u.requirements.*` — подтянуть из данных.
-- [ ] Курсы валют `CURRENCY_TO_KZT` дублируются в `[slug].astro`/`compare.astro`/`UniversityCardV2.astro` — вынести в один модуль.
-- [ ] Маппинг `master → "Pre-Master's"` в `compare.astro:18` и `UniversityCardV2.astro:46` — обычная магистратура подписана неверно.
+- [ ] Хардкод требований (IELTS/GPA/финподтверждение) в секции `#requirements` `[slug].astro:719–729` игнорирует `u.requirements.*`. Часть — баг (GPA «4.0+» захардкожен, реальный `gpa` есть у 13/804; TOEFL/Duolingo подтягивать условно). Часть — **маркетинговое решение владельца**: тиры «IELTS 6.0 Pre-Master's / 6.5 магистратура» и весь Foundation/Pre-Master's питч — UK-pathway формулировка, показывается всем странам. Решить с владельцем, прежде чем чинить копирайт.
 - [ ] 140 JSON с `sourceHash: "sha256:placeholder"` — ломает отслеживание изменений источника.
 
 **🟡 Скрейпер/инфра:**
