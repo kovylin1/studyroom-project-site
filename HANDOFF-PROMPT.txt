@@ -34,3 +34,14 @@ self-XSS в чате [slug].astro, хардкод требований, дубл
 стейл-логи, status.json в .gitignore.
 
 Полный список с путями — BACKLOG.md, раздел «Launch-readiness audit (2026-06-03)».
+
+=== НЕЗАКРЫТО ИЗ ПРОШЛОЙ СЕССИИ (перенесено из старого handoff, не потерять) ===
+ЗАДАЧА: разобрать стипендии EDVOY и STUDYGROUP, лежащие в аудите (sources/audit/scholarships-*.json).
+Сейчас они agregator-tier (0.35) и почти все не дотянули до гейта 0.85. Варианты:
+  (а) поднять им tier, (б) добавить live-проверку ссылки (+0.10), (в) ручной разбор аудита с точечным аппрувом.
+Заодно решить, гейтить ли кампусы из Edvoy-мержа (mergeEdvoy в bobr-accommodation-merge.mjs — пока НЕ гейтятся).
+ПРОВЕРКА: на живом manager выбрать IAPro в дропдауне — должно быть «21 июня 2026 / 21 число», не 1 июля
+(если нет — реальный баг расписания).
+Контекст confidence-гейта: scraper/lib/confidence.mjs, MIN=0.85, scoreFact = official .55 / aggregator .35
+/ inferred .15 + quality*.30 + corroborated .15 + linkLive .10. В каталог только >=0.85, ниже -> аудит
+sources/audit/*-lowconf.json (обогащать, не резать — ничего не удалять).
