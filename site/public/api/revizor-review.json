@@ -1,63 +1,105 @@
 {
-  "generatedAt": "2026-06-01T08:31:45.669Z",
+  "generatedAt": "2026-06-03T08:13:21.934Z",
   "mode": "auto",
-  "scope": "kaplan-pathways",
+  "scope": "navitas-pathways",
   "summary": {
-    "total": 35,
-    "pending": 29,
+    "total": 43,
+    "pending": 38,
     "ignored": 1,
     "applied": 2
   },
   "items": [
     {
-      "id": "abbey-cambridge||ielts_changed",
-      "slug": "abbey-cambridge",
-      "name": "Abbey College Cambridge",
-      "issue": "ielts_changed",
-      "severity": "warning",
-      "detail": "IELTS в каталоге: 5.5, на сайте: 7.5",
-      "catalog": 5.5,
-      "official": 7.5,
-      "officialUrl": "https://www.abbeycambridge.co.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "id": "aberystwyth||broken_url||BSc Business and Management",
+      "slug": "aberystwyth",
+      "name": "Aberystwyth University",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.aber.ac.uk/en/business/undergraduate/",
+      "programs": [
+        {
+          "title": "BSc Business and Management",
+          "url": "https://www.aber.ac.uk/en/business/undergraduate/"
+        }
+      ],
+      "officialUrl": "https://www.aber.ac.uk",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "adelaide||broken_url||Graduate Certificate in Nursing speciali",
-      "slug": "adelaide",
-      "name": "Adelaide University",
+      "id": "aberystwyth||broken_url||MSc Data Science",
+      "slug": "aberystwyth",
+      "name": "Aberystwyth University",
       "issue": "broken_url",
       "severity": "critical",
-      "detail": "404: https://adelaide.edu.au/study/degrees/graduate-certificate-in-nursing-education/",
+      "detail": "404: https://www.aber.ac.uk/en/cs/postgraduate/",
       "programs": [
         {
-          "title": "Graduate Certificate in Nursing specialising in Education",
-          "url": "https://adelaide.edu.au/study/degrees/graduate-certificate-in-nursing-education/"
+          "title": "MSc Data Science",
+          "url": "https://www.aber.ac.uk/en/cs/postgraduate/"
         }
       ],
-      "officialUrl": "https://adelaide.edu.au",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "officialUrl": "https://www.aber.ac.uk",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "brunel||broken_url||International Foundation Year — Business",
-      "slug": "brunel",
-      "name": "Brunel University of London",
+      "id": "bath||broken_url||MSc Data Science",
+      "slug": "bath",
+      "name": "University of Bath",
       "issue": "broken_url",
       "severity": "critical",
-      "detail": "404: https://pathway.brunel.ac.uk/programmes/",
+      "detail": "404: https://www.bath.ac.uk/courses/postgraduate/data-science/",
       "programs": [
         {
-          "title": "International Foundation Year — Business",
-          "url": "https://pathway.brunel.ac.uk/programmes/"
+          "title": "MSc Data Science",
+          "url": "https://www.bath.ac.uk/courses/postgraduate/data-science/"
         }
       ],
-      "officialUrl": "https://pathway.brunel.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "officialUrl": "https://www.bath.ac.uk",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "bath||broken_url||BA/BSc Architecture",
+      "slug": "bath",
+      "name": "University of Bath",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.bath.ac.uk/courses/undergraduate/architecture/",
+      "programs": [
+        {
+          "title": "BA/BSc Architecture",
+          "url": "https://www.bath.ac.uk/courses/undergraduate/architecture/"
+        }
+      ],
+      "officialUrl": "https://www.bath.ac.uk",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "birmingham||broken_url||MEng (Hons) Materials Science and Engine",
+      "slug": "birmingham",
+      "name": "University of Birmingham",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: http://www.birmingham.ac.uk/undergraduate/courses/metallurgy-materials/materials-engineering-meng.aspx",
+      "programs": [
+        {
+          "title": "MEng (Hons) Materials Science and Engineering",
+          "url": "http://www.birmingham.ac.uk/undergraduate/courses/metallurgy-materials/materials-engineering-meng.aspx"
+        }
+      ],
+      "officialUrl": "http://www.birmingham.ac.uk",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
@@ -76,104 +118,32 @@
         }
       ],
       "officialUrl": "https://tourismcollege.com",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": "delete",
       "decidedAt": "2026-05-31T15:28:04.562Z",
       "applied": true
     },
     {
-      "id": "cesi||broken_url||Executive Post-Graduate Program",
+      "id": "cesi||broken_url||Ingénieur BTP — Bâtiment & Travaux Publi",
       "slug": "cesi",
       "name": "CESI École d'Ingénieurs",
       "issue": "broken_url",
       "severity": "critical",
-      "detail": "404: https://www.cesi.fr/en/our-courses/",
+      "detail": "404: https://www.cesi.fr/en/cesi-engineering-school/",
       "programs": [
         {
-          "title": "Executive Post-Graduate Program",
-          "url": "https://www.cesi.fr/en/our-courses/"
+          "title": "Ingénieur BTP — Bâtiment & Travaux Publics",
+          "url": "https://www.cesi.fr/en/cesi-engineering-school/"
         }
       ],
       "officialUrl": "https://www.cesi.fr",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "difc-dublin||ielts_changed",
-      "slug": "difc-dublin",
-      "name": "Dublin International Foundation College",
-      "issue": "ielts_changed",
-      "severity": "warning",
-      "detail": "IELTS в каталоге: 5, на сайте: 2",
-      "catalog": 5,
-      "official": 2,
-      "officialUrl": "https://www.difc.ie",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
-      "decision": "update",
-      "decidedAt": "2026-05-31T16:34:35.692Z",
-      "applied": false
-    },
-    {
-      "id": "drexel||broken_url||PhD Biomedical Engineering",
-      "slug": "drexel",
-      "name": "Drexel University",
-      "issue": "broken_url",
-      "severity": "critical",
-      "detail": "404: https://drexel.edu/biomed/graduate/phd/",
-      "programs": [
-        {
-          "title": "PhD Biomedical Engineering",
-          "url": "https://drexel.edu/biomed/graduate/phd/"
-        }
-      ],
-      "officialUrl": "https://drexel.edu",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
-      "decision": null,
-      "decidedAt": null,
-      "applied": false
-    },
-    {
-      "id": "durham||broken_url||BSc Computer Science",
-      "slug": "durham",
-      "name": "Durham University",
-      "issue": "broken_url",
-      "severity": "critical",
-      "detail": "404: https://www.durham.ac.uk/study/undergraduate/computer-science/",
-      "programs": [
-        {
-          "title": "BSc Computer Science",
-          "url": "https://www.durham.ac.uk/study/undergraduate/computer-science/"
-        }
-      ],
-      "officialUrl": "https://www.durham.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
-      "decision": null,
-      "decidedAt": null,
-      "applied": false
-    },
-    {
-      "id": "florida-international||broken_url||MSc Criminal Justice",
-      "slug": "florida-international",
-      "name": "Florida International University",
-      "issue": "broken_url",
-      "severity": "critical",
-      "detail": "404: https://case.fiu.edu/graduate/",
-      "programs": [
-        {
-          "title": "MSc Criminal Justice",
-          "url": "https://case.fiu.edu/graduate/"
-        }
-      ],
-      "officialUrl": "https://www.fiu.edu",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
-      "decision": null,
-      "decidedAt": null,
-      "applied": false
-    },
-    {
-      "id": "gannon||broken_url||BS Health Sciences",
+      "id": "gannon||broken_url||BA English",
       "slug": "gannon",
       "name": "Gannon University",
       "issue": "broken_url",
@@ -181,12 +151,12 @@
       "detail": "404: https://www.gannon.edu/academics/",
       "programs": [
         {
-          "title": "BS Health Sciences",
+          "title": "BA English",
           "url": "https://www.gannon.edu/academics/"
         }
       ],
       "officialUrl": "https://www.gannon.edu",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
@@ -205,62 +175,157 @@
         }
       ],
       "officialUrl": "https://www.gold.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "manchester-architecture||missing_on_site",
-      "slug": "manchester-architecture",
-      "name": "Manchester School of Architecture",
+      "id": "goldsmiths||broken_url||BMus Music",
+      "slug": "goldsmiths",
+      "name": "Goldsmiths, University of London",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.gold.ac.uk/undergraduate/programmes/music/",
+      "programs": [
+        {
+          "title": "BMus Music",
+          "url": "https://www.gold.ac.uk/undergraduate/programmes/music/"
+        }
+      ],
+      "officialUrl": "https://www.gold.ac.uk",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "griffith||missing_on_site",
+      "slug": "griffith",
+      "name": "Griffith University",
       "issue": "missing_on_site",
       "severity": "warning",
       "detail": "10 программ каталога не найдены на официальном сайте",
       "programs": [
         {
-          "title": "BA(Hons) Architecture (ARB/RIBA Part 1)",
-          "slug": "ba-architecture"
+          "title": "Foundation Program — pathway to Griffith Bachelor",
+          "slug": "griffith-foundation-program-pathway-to-griffith-bachelor"
         },
         {
-          "title": "BSc Architectural Technology and Practice",
-          "slug": "bsc-architectural-technology"
+          "title": "Foundation Program — Extended",
+          "slug": "griffith-foundation-program-extended"
         },
         {
-          "title": "BA(Hons) Interior Design",
-          "slug": "ba-interior-design"
+          "title": "Diploma of Commerce",
+          "slug": "griffith-diploma-of-commerce"
         },
         {
-          "title": "BA(Hons) Urban Design",
-          "slug": "ba-urban-design"
+          "title": "Diploma of Hotel Management",
+          "slug": "griffith-diploma-of-hotel-management"
         },
         {
-          "title": "MArch Architecture (ARB/RIBA Part 2)",
-          "slug": "march-architecture"
+          "title": "Diploma of Tourism Management",
+          "slug": "griffith-diploma-of-tourism-management"
         },
         {
-          "title": "MSc Advanced Architectural Design",
-          "slug": "msc-architectural-design"
+          "title": "Diploma of Arts and Communication",
+          "slug": "griffith-diploma-of-arts-and-communication"
         },
         {
-          "title": "MSc Urban Design",
-          "slug": "msc-urban-design"
+          "title": "Bachelor of Commerce",
+          "slug": "griffith-bachelor-of-commerce"
         },
         {
-          "title": "MSc Sustainability and Environmental Management in the Built Environment",
-          "slug": "msc-sustainability"
+          "title": "Bachelor of Business",
+          "slug": "griffith-bachelor-of-business"
         },
         {
-          "title": "PhD Architecture",
-          "slug": "phd-architecture"
+          "title": "Bachelor of International Business",
+          "slug": "griffith-bachelor-of-international-business"
         },
         {
-          "title": "Apply - BA (Hons) Architecture – Manchester School of Architecture",
-          "slug": "manchester-architecture-apply-ba-hons-architecture-manchester-school-of-architecture"
+          "title": "Bachelor of Marketing",
+          "slug": "griffith-bachelor-of-marketing"
         }
       ],
-      "officialUrl": "https://www.msa.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "officialUrl": "https://www.griffithcollege.edu.au",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "griffith||broken_url||Diploma of Arts and Communication",
+      "slug": "griffith",
+      "name": "Griffith University",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.griffithcollege.edu.au/courses/",
+      "programs": [
+        {
+          "title": "Diploma of Arts and Communication",
+          "url": "https://www.griffithcollege.edu.au/courses/"
+        }
+      ],
+      "officialUrl": "https://www.griffithcollege.edu.au",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "lancaster-leipzig||broken_url||Pre-Master — Engineering",
+      "slug": "lancaster-leipzig",
+      "name": "Lancaster University Leipzig",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.lancasterleipzig.de/programmes/",
+      "programs": [
+        {
+          "title": "Pre-Master — Engineering",
+          "url": "https://www.lancasterleipzig.de/programmes/"
+        }
+      ],
+      "officialUrl": "https://www.lancasterleipzig.de",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "lancaster-leipzig||broken_url||MSc Marketing Analytics",
+      "slug": "lancaster-leipzig",
+      "name": "Lancaster University Leipzig",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.lancaster.ac.uk/leipzig/",
+      "programs": [
+        {
+          "title": "MSc Marketing Analytics",
+          "url": "https://www.lancaster.ac.uk/leipzig/"
+        }
+      ],
+      "officialUrl": "https://www.lancasterleipzig.de",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "lancaster-leipzig||broken_url||BSc (Hons) Management with Entrepreneurs",
+      "slug": "lancaster-leipzig",
+      "name": "Lancaster University Leipzig",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.lancaster.ac.uk/leipzig/",
+      "programs": [
+        {
+          "title": "BSc (Hons) Management with Entrepreneurship",
+          "url": "https://www.lancaster.ac.uk/leipzig/"
+        }
+      ],
+      "officialUrl": "https://www.lancasterleipzig.de",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
@@ -279,83 +344,110 @@
         }
       ],
       "officialUrl": "https://www.merrickprep.com",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": "delete",
       "decidedAt": "2026-05-31T15:28:04.562Z",
       "applied": true
     },
     {
-      "id": "memorial-nl||broken_url||PhD in Computer Science",
-      "slug": "memorial-nl",
-      "name": "Memorial University of Newfoundland",
+      "id": "mount-allison||broken_url||Oxford International Pathway (Foundation",
+      "slug": "mount-allison",
+      "name": "Mount Allison University",
       "issue": "broken_url",
       "severity": "critical",
-      "detail": "404: https://www.mun.ca/computerscience/graduate/phd/",
+      "detail": "404: https://www.oxfordinternational.com/study-in-canada/mount-allison-university/",
       "programs": [
         {
-          "title": "PhD in Computer Science",
-          "url": "https://www.mun.ca/computerscience/graduate/phd/"
+          "title": "Oxford International Pathway (Foundation/Pre-degree)",
+          "url": "https://www.oxfordinternational.com/study-in-canada/mount-allison-university/"
         }
       ],
-      "officialUrl": "https://www.mun.ca",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "officialUrl": "https://www.mta.ca",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "mount-saint-vincent||broken_url||Master of Science in Applied Human Nutri",
+      "id": "mount-saint-vincent||broken_url||Bachelor of Arts in English",
       "slug": "mount-saint-vincent",
       "name": "Mount Saint Vincent University",
       "issue": "broken_url",
       "severity": "critical",
-      "detail": "404: https://www.msvu.ca/academics/graduate-studies/applied-human-nutrition/",
+      "detail": "404: https://www.msvu.ca/academics/undergraduate-studies/english/",
       "programs": [
         {
-          "title": "Master of Science in Applied Human Nutrition",
-          "url": "https://www.msvu.ca/academics/graduate-studies/applied-human-nutrition/"
+          "title": "Bachelor of Arts in English",
+          "url": "https://www.msvu.ca/academics/undergraduate-studies/english/"
         }
       ],
       "officialUrl": "https://www.msvu.ca",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "murdoch||broken_url||Bachelor of Engineering (Mechanical Engi",
+      "id": "murdoch||broken_url||Master of Science (Computer Science)",
       "slug": "murdoch",
       "name": "Murdoch University",
       "issue": "broken_url",
       "severity": "critical",
-      "detail": "404: https://www.murdoch.edu.au/course/undergraduate/b2601",
+      "detail": "404: https://www.murdoch.edu.au/course/postgraduate/m6005",
       "programs": [
         {
-          "title": "Bachelor of Engineering (Mechanical Engineering)",
-          "url": "https://www.murdoch.edu.au/course/undergraduate/b2601"
+          "title": "Master of Science (Computer Science)",
+          "url": "https://www.murdoch.edu.au/course/postgraduate/m6005"
         }
       ],
       "officialUrl": "https://www.murdoch.edu.au",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "murdoch||broken_url||Bachelor of Arts (Psychology)",
-      "slug": "murdoch",
-      "name": "Murdoch University",
-      "issue": "broken_url",
-      "severity": "critical",
-      "detail": "404: https://www.murdoch.edu.au/course/undergraduate/b2660",
+      "id": "northtec-tai-tokerau-wananga||missing_on_site",
+      "slug": "northtec-tai-tokerau-wananga",
+      "name": "NorthTec Tai Tokerau Wananga",
+      "issue": "missing_on_site",
+      "severity": "warning",
+      "detail": "3 программ каталога не найдены на официальном сайте",
       "programs": [
         {
-          "title": "Bachelor of Arts (Psychology)",
-          "url": "https://www.murdoch.edu.au/course/undergraduate/b2660"
+          "title": "Bachelor of Applied Social Work",
+          "slug": "northtec-tai-tokerau-wananga-bachelor-of-applied-social-work"
+        },
+        {
+          "title": "Bachelor of Applied Social Work - NorthTec",
+          "slug": "northtec-tai-tokerau-wananga-bachelor-of-applied-social-work-northtec"
+        },
+        {
+          "title": "Degree and Diploma Evening - NorthTec",
+          "slug": "northtec-tai-tokerau-wananga-degree-and-diploma-evening-northtec"
         }
       ],
-      "officialUrl": "https://www.murdoch.edu.au",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "officialUrl": "https://www.northtec.ac.nz",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "northtec-tai-tokerau-wananga||broken_url||New Zealand Certificate in Plumbing, Gas",
+      "slug": "northtec-tai-tokerau-wananga",
+      "name": "NorthTec Tai Tokerau Wananga",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.northtec.ac.nz/programmes/new-zealand-certificate-in-plumbing-gasfitting-and-drainlaying-level-3",
+      "programs": [
+        {
+          "title": "New Zealand Certificate in Plumbing, Gasfitting and Drainlaying (Level 3) - NorthTec",
+          "url": "https://www.northtec.ac.nz/programmes/new-zealand-certificate-in-plumbing-gasfitting-and-drainlaying-level-3"
+        }
+      ],
+      "officialUrl": "https://www.northtec.ac.nz",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
@@ -410,45 +502,83 @@
         }
       ],
       "officialUrl": "https://www.northumbria.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "northumbria||broken_url||Nursing Science (Adult) BSc (Hons)",
+      "id": "northumbria||broken_url||Psychology MA",
       "slug": "northumbria",
       "name": "Northumbria University",
       "issue": "broken_url",
       "severity": "critical",
-      "detail": "404: https://www.northumbria.ac.uk/study-at-northumbria/courses/nursing-adult-bsc-hons/",
+      "detail": "404: https://www.northumbria.ac.uk/study-at-northumbria/courses/psychology-ma/",
       "programs": [
         {
-          "title": "Nursing Science (Adult) BSc (Hons)",
-          "url": "https://www.northumbria.ac.uk/study-at-northumbria/courses/nursing-adult-bsc-hons/"
+          "title": "Psychology MA",
+          "url": "https://www.northumbria.ac.uk/study-at-northumbria/courses/psychology-ma/"
         }
       ],
       "officialUrl": "https://www.northumbria.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "oxford-international-college||broken_url||English Language Courses",
-      "slug": "oxford-international-college",
-      "name": "Oxford International College",
+      "id": "nyit||broken_url||MS Physician Assistant Studies",
+      "slug": "nyit",
+      "name": "New York Institute of Technology",
       "issue": "broken_url",
       "severity": "critical",
-      "detail": "404: https://www.oxcoll.com/programmes/english-language/",
+      "detail": "404: https://www.nyit.edu/degrees/physician_assistant_ms",
       "programs": [
         {
-          "title": "English Language Courses",
-          "url": "https://www.oxcoll.com/programmes/english-language/"
+          "title": "MS Physician Assistant Studies",
+          "url": "https://www.nyit.edu/degrees/physician_assistant_ms"
         }
       ],
-      "officialUrl": "https://www.oxcoll.com",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "officialUrl": "https://www.nyit.edu",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "nyit||broken_url||BBA Business Administration — Management",
+      "slug": "nyit",
+      "name": "New York Institute of Technology",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.nyit.edu/degrees/management_bba",
+      "programs": [
+        {
+          "title": "BBA Business Administration — Management",
+          "url": "https://www.nyit.edu/degrees/management_bba"
+        }
+      ],
+      "officialUrl": "https://www.nyit.edu",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "nyit||broken_url||BA Communication Arts",
+      "slug": "nyit",
+      "name": "New York Institute of Technology",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.nyit.edu/degrees/communication_arts_ba",
+      "programs": [
+        {
+          "title": "BA Communication Arts",
+          "url": "https://www.nyit.edu/degrees/communication_arts_ba"
+        }
+      ],
+      "officialUrl": "https://www.nyit.edu",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
@@ -463,7 +593,7 @@
       "catalog": 5.5,
       "official": 1,
       "officialUrl": "https://www.qe.org",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": "update",
       "decidedAt": "2026-05-31T16:34:51.546Z",
       "applied": false
@@ -476,6 +606,10 @@
       "severity": "warning",
       "detail": "10 программ каталога не найдены на официальном сайте",
       "programs": [
+        {
+          "title": "International Foundation Year — Business",
+          "slug": "portsmouth-international-foundation-year-business"
+        },
         {
           "title": "International Foundation Year — Engineering & Computing",
           "slug": "portsmouth-international-foundation-year-engineering-computing"
@@ -511,14 +645,10 @@
         {
           "title": "BSc (Hons) Economics",
           "slug": "portsmouth-bsc-hons-economics"
-        },
-        {
-          "title": "BSc (Hons) Marketing",
-          "slug": "portsmouth-bsc-hons-marketing"
         }
       ],
       "officialUrl": "https://www.port.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": "ignore",
       "decidedAt": "2026-05-31T16:35:00.371Z",
       "applied": false
@@ -539,13 +669,13 @@
         "value": 20000
       },
       "officialUrl": "https://www.port.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": "update",
       "decidedAt": "2026-05-31T16:35:02.286Z",
       "applied": false
     },
     {
-      "id": "portsmouth||broken_url||International Foundation Year — Engineer",
+      "id": "portsmouth||broken_url||International Foundation Year — Health &",
       "slug": "portsmouth",
       "name": "University of Portsmouth",
       "issue": "broken_url",
@@ -553,52 +683,12 @@
       "detail": "404: https://icp.navitas.com/courses/",
       "programs": [
         {
-          "title": "International Foundation Year — Engineering & Computing",
+          "title": "International Foundation Year — Health & Life Sciences",
           "url": "https://icp.navitas.com/courses/"
         }
       ],
       "officialUrl": "https://www.port.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
-      "decision": null,
-      "decidedAt": null,
-      "applied": false
-    },
-    {
-      "id": "ravensbourne||tuition_mismatch",
-      "slug": "ravensbourne",
-      "name": "Ravensbourne University London",
-      "issue": "tuition_mismatch",
-      "severity": "warning",
-      "detail": "Tuition в каталоге: GBP 18000, на сайте: GBP 9500",
-      "catalog": {
-        "value": 18000,
-        "currency": "GBP"
-      },
-      "official": {
-        "currency": "GBP",
-        "value": 9500
-      },
-      "officialUrl": "https://www.ravensbourne.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
-      "decision": null,
-      "decidedAt": null,
-      "applied": false
-    },
-    {
-      "id": "ravensbourne||broken_url||MA Graphic Design",
-      "slug": "ravensbourne",
-      "name": "Ravensbourne University London",
-      "issue": "broken_url",
-      "severity": "critical",
-      "detail": "404: https://www.ravensbourne.ac.uk/study/postgraduate/graphic-design",
-      "programs": [
-        {
-          "title": "MA Graphic Design",
-          "url": "https://www.ravensbourne.ac.uk/study/postgraduate/graphic-design"
-        }
-      ],
-      "officialUrl": "https://www.ravensbourne.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
@@ -617,7 +707,7 @@
         }
       ],
       "officialUrl": "https://en.wikipedia.org",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
@@ -672,64 +762,102 @@
         }
       ],
       "officialUrl": "https://www.reading.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "reading||broken_url||BSc Business and Management",
+      "id": "reading||broken_url||BSc Meteorology",
       "slug": "reading",
       "name": "University of Reading",
       "issue": "broken_url",
       "severity": "critical",
-      "detail": "404: https://www.reading.ac.uk/study/undergraduate/business-and-management",
+      "detail": "404: https://www.reading.ac.uk/study/undergraduate/meteorology",
       "programs": [
         {
-          "title": "BSc Business and Management",
-          "url": "https://www.reading.ac.uk/study/undergraduate/business-and-management"
+          "title": "BSc Meteorology",
+          "url": "https://www.reading.ac.uk/study/undergraduate/meteorology"
         }
       ],
       "officialUrl": "https://www.reading.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "sf-state||broken_url||Bachelor of Arts in Journalism",
-      "slug": "sf-state",
-      "name": "San Francisco State University",
+      "id": "reading||broken_url||MSc Climate Change and Development",
+      "slug": "reading",
+      "name": "University of Reading",
       "issue": "broken_url",
       "severity": "critical",
-      "detail": "404: https://journalism.sfsu.edu/undergraduate",
+      "detail": "404: https://www.reading.ac.uk/study/postgraduate/climate-change-and-development",
       "programs": [
         {
-          "title": "Bachelor of Arts in Journalism",
-          "url": "https://journalism.sfsu.edu/undergraduate"
+          "title": "MSc Climate Change and Development",
+          "url": "https://www.reading.ac.uk/study/postgraduate/climate-change-and-development"
         }
       ],
-      "officialUrl": "https://www.sfsu.edu",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "officialUrl": "https://www.reading.ac.uk",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "sf-state||broken_url||Bachelor of Music",
+      "id": "saint-marys||broken_url||Oxford International Pathway (Foundation",
+      "slug": "saint-marys",
+      "name": "Saint Mary's University",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.oxfordinternational.com/study-in-canada/saint-marys-university/",
+      "programs": [
+        {
+          "title": "Oxford International Pathway (Foundation/Pre-degree)",
+          "url": "https://www.oxfordinternational.com/study-in-canada/saint-marys-university/"
+        }
+      ],
+      "officialUrl": "https://www.smu.ca",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "sf-state||broken_url||Bachelor of Arts in Cinema",
       "slug": "sf-state",
       "name": "San Francisco State University",
       "issue": "broken_url",
       "severity": "critical",
-      "detail": "404: https://music.sfsu.edu/undergraduate",
+      "detail": "404: https://cinema.sfsu.edu/undergraduate",
       "programs": [
         {
-          "title": "Bachelor of Music",
-          "url": "https://music.sfsu.edu/undergraduate"
+          "title": "Bachelor of Arts in Cinema",
+          "url": "https://cinema.sfsu.edu/undergraduate"
         }
       ],
       "officialUrl": "https://www.sfsu.edu",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "sf-state||broken_url||Bachelor of Science in Electrical Engine",
+      "slug": "sf-state",
+      "name": "San Francisco State University",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://engineering.sfsu.edu/ece",
+      "programs": [
+        {
+          "title": "Bachelor of Science in Electrical Engineering",
+          "url": "https://engineering.sfsu.edu/ece"
+        }
+      ],
+      "officialUrl": "https://www.sfsu.edu",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
@@ -750,13 +878,13 @@
         "value": 50000
       },
       "officialUrl": "https://www.sgu.edu",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "swansea||broken_url||International Foundation Year — Engineer",
+      "id": "swansea||broken_url||International Foundation Year — Business",
       "slug": "swansea",
       "name": "Swansea University",
       "issue": "broken_url",
@@ -764,52 +892,124 @@
       "detail": "404: https://www.swansea.ac.uk/the-college/courses/",
       "programs": [
         {
-          "title": "International Foundation Year — Engineering & Computing",
+          "title": "International Foundation Year — Business",
           "url": "https://www.swansea.ac.uk/the-college/courses/"
         }
       ],
       "officialUrl": "https://www.swansea.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
     },
     {
-      "id": "ua92||tuition_mismatch",
-      "slug": "ua92",
-      "name": "University Academy 92",
-      "issue": "tuition_mismatch",
+      "id": "university-canada-west||missing_on_site",
+      "slug": "university-canada-west",
+      "name": "University Canada West",
+      "issue": "missing_on_site",
       "severity": "warning",
-      "detail": "Tuition в каталоге: GBP 15000, на сайте: GBP 5000",
-      "catalog": {
-        "value": 15000,
-        "currency": "GBP"
-      },
-      "official": {
-        "currency": "GBP",
-        "value": 5000
-      },
-      "officialUrl": "https://ua92.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
-      "decision": null,
-      "decidedAt": null,
-      "applied": false
-    },
-    {
-      "id": "ua92||broken_url||MBA Executive",
-      "slug": "ua92",
-      "name": "University Academy 92",
-      "issue": "broken_url",
-      "severity": "critical",
-      "detail": "404: https://ua92.ac.uk/courses/mba/",
+      "detail": "10 программ каталога не найдены на официальном сайте",
       "programs": [
         {
-          "title": "MBA Executive",
-          "url": "https://ua92.ac.uk/courses/mba/"
+          "title": "Bachelor of Business Administration",
+          "slug": "university-canada-west-bba"
+        },
+        {
+          "title": "Bachelor of Arts — Computer Science",
+          "slug": "university-canada-west-computer-science"
+        },
+        {
+          "title": "Bachelor of Arts — Communication",
+          "slug": "university-canada-west-communications"
+        },
+        {
+          "title": "Bachelor of Business Administration — Accounting",
+          "slug": "university-canada-west-bba-accounting"
+        },
+        {
+          "title": "Bachelor of Business Administration — Marketing",
+          "slug": "university-canada-west-bba-marketing"
+        },
+        {
+          "title": "Bachelor of Business Administration — Entrepreneurship",
+          "slug": "university-canada-west-bba-entrepreneurship"
+        },
+        {
+          "title": "Bachelor of Arts — Computer Science with Data Analytics",
+          "slug": "university-canada-west-ba-cs-data"
+        },
+        {
+          "title": "Bachelor of Arts — Digital Media and Communication",
+          "slug": "university-canada-west-ba-digital-media"
+        },
+        {
+          "title": "Master of Business Administration",
+          "slug": "university-canada-west-mba"
+        },
+        {
+          "title": "MBA — Digital Transformation",
+          "slug": "university-canada-west-mba-digital"
         }
       ],
-      "officialUrl": "https://ua92.ac.uk",
-      "checkedAt": "2026-06-01T08:31:45.669Z",
+      "officialUrl": "https://www.ucanwest.ca",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "university-canada-west||broken_url||MBA — Digital Transformation",
+      "slug": "university-canada-west",
+      "name": "University Canada West",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.ucanwest.ca/programs/graduate/mba-digital-transformation/",
+      "programs": [
+        {
+          "title": "MBA — Digital Transformation",
+          "url": "https://www.ucanwest.ca/programs/graduate/mba-digital-transformation/"
+        }
+      ],
+      "officialUrl": "https://www.ucanwest.ca",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "university-canada-west||broken_url||Master of Business Administration",
+      "slug": "university-canada-west",
+      "name": "University Canada West",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.ucanwest.ca/programs/graduate/mba/",
+      "programs": [
+        {
+          "title": "Master of Business Administration",
+          "url": "https://www.ucanwest.ca/programs/graduate/mba/"
+        }
+      ],
+      "officialUrl": "https://www.ucanwest.ca",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "victoria||broken_url||BSc Biochemistry and Chemistry",
+      "slug": "victoria",
+      "name": "University of Victoria",
+      "issue": "broken_url",
+      "severity": "critical",
+      "detail": "404: https://www.uvic.ca/undergraduate/programs/undergraduate-programs/pages/biochemistry-and-chemistry.php",
+      "programs": [
+        {
+          "title": "BSc Biochemistry and Chemistry",
+          "url": "https://www.uvic.ca/undergraduate/programs/undergraduate-programs/pages/biochemistry-and-chemistry.php"
+        }
+      ],
+      "officialUrl": "https://www.uvic.ca",
+      "checkedAt": "2026-06-03T08:13:21.934Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
