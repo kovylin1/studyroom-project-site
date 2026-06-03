@@ -116,19 +116,24 @@ function mergeEdvoy(uni, ev) {
         sourceTier: 'aggregator', quality: qualityOfScholarship(name), corroborated: false, linkLive: false,
       }) * 100) / 100;
       if (!passes(confidence)) { auditRejected.push({ slug: uni.slug, kind: 'scholarship', name, source: 'edvoy', confidence }); continue; }
-      uni.scholarships.push({ name, description: s.description || '', amount: s.amount || '', source: 'edvoy', confidence, checkedAt: TODAY });
+      // схема: amount/description — z.string().min(1).optional() → пустые строки НЕ писать
+      const sch = { name, source: 'edvoy', confidence, checkedAt: TODAY };
+      if (s.description) sch.description = s.description;
+      if (s.amount) sch.amount = s.amount;
+      uni.scholarships.push(sch);
       existing.add(name.toLowerCase());
       changed++;
     }
   }
   if (ev.logoUrl && !uni.logoUrl) { uni.logoUrl = ev.logoUrl; changed++; }
   if (Array.isArray(ev.gallery) && ev.gallery.length) {
-    if (!Array.isArray(uni.gallery)) uni.gallery = [];
-    const existing = new Set(uni.gallery);
+    // схема: gallery = { items: [{ img, caption? }] }, НЕ плоский массив строк
+    if (!uni.gallery || !Array.isArray(uni.gallery.items)) uni.gallery = { items: [] };
+    const existing = new Set(uni.gallery.items.map(it => it.img));
     for (const g of ev.gallery) {
-      const url = typeof g === 'string' ? g : (g.url || g.src || '');
+      const url = typeof g === 'string' ? g : (g.url || g.src || g.img || '');
       if (!url || existing.has(url)) continue;
-      uni.gallery.push(url);
+      uni.gallery.items.push({ img: url });
       existing.add(url);
       changed++;
     }
@@ -143,17 +148,19 @@ function mergeEdvoy(uni, ev) {
       const slug = uni.slug + '-' + title.toLowerCase().replace(/[^a-z0-9]+/g,'-').slice(0,60).replace(/^-+|-+$/g,'');
       if (existingSlugs.has(slug)) continue;
       const level = inferLevel(title, p.courseLevel);
-      uni.programs.push({
+      // схема: programUrl = z.string().url().optional() → пустую строку НЕ писать
+      const prog = {
         slug, title,
         durationYears: inferDuration(level, title),
         level,
         programType: inferType(title),
         intakes: ['September'],
-        programUrl: p.programUrl || p.url || ev.sourceUrl || '',
         language: uni.language || 'en',
-        verified: true,
         source: 'edvoy',
-      });
+      };
+      const purl = p.programUrl || p.url || ev.sourceUrl || '';
+      if (purl) prog.programUrl = purl;
+      uni.programs.push(prog);
       existingTitles.add(title.toLowerCase());
       existingSlugs.add(slug);
       added++;
@@ -261,17 +268,18 @@ for (const ev of unmatched) {
     if (seenSlugs.has(pSlug)) continue;
     seenSlugs.add(pSlug);
     const level = inferLevel(title, p.courseLevel);
-    programs.push({
+    const prog = {
       slug: pSlug, title,
       durationYears: inferDuration(level, title),
       level,
       programType: inferType(title),
       intakes: ['September'],
-      programUrl: p.programUrl || p.url || ev.sourceUrl || '',
       language: 'en',
-      verified: true,
       source: 'edvoy',
-    });
+    };
+    const purl = p.programUrl || p.url || ev.sourceUrl || '';
+    if (purl) prog.programUrl = purl;
+    programs.push(prog);
   }
 
   // Build campuses from ev.campuses
@@ -305,12 +313,21 @@ for (const ev of unmatched) {
         sourceTier: 'aggregator', quality: qualityOfScholarship(name), corroborated: false, linkLive: false,
       }) * 100) / 100;
       if (!passes(confidence)) { auditRejected.push({ slug, kind: 'scholarship', name, source: 'edvoy', confidence }); continue; }
-      accepted.push({ name, description: s.description||'', amount: s.amount||'', source: 'edvoy', confidence, checkedAt: TODAY });
+      const sch = { name, source: 'edvoy', confidence, checkedAt: TODAY };
+      if (s.description) sch.description = s.description;
+      if (s.amount) sch.amount = s.amount;
+      accepted.push(sch);
     }
     if (accepted.length) newUni.scholarships = accepted;
   }
   if (ev.logoUrl) newUni.logoUrl = ev.logoUrl;
-  if (ev.gallery?.length) newUni.gallery = ev.gallery.slice(0,30);
+  if (ev.gallery?.length) {
+    // схема: gallery = { items: [{ img }] }
+    const items = ev.gallery.slice(0,30)
+      .map(g => ({ img: typeof g === 'string' ? g : (g.url || g.src || g.img || '') }))
+      .filter(it => it.img);
+    if (items.length) newUni.gallery = { items };
+  }
   if (ev.description) newUni.description = { paragraphs: [ev.description] };
 
   await fs.writeFile(path.join(UNI_DIR, slug + '.json'), JSON.stringify(newUni, null, 2) + '\n');

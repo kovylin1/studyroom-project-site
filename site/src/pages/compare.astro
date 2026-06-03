@@ -5,8 +5,9 @@
 
 import { getCollection } from 'astro:content';
 import Base from '~/layouts/Base.astro';
+import { CONTACTS } from '~/content/studyroom/contacts';
 
-const WHATSAPP_NUMBER = '77000000000';
+const WHATSAPP_NUMBER = CONTACTS.whatsappNumber;
 
 const CURRENCY_TO_KZT: Record<string, number> = {
   GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290,

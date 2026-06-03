@@ -4,9 +4,10 @@ import Base from '~/layouts/Base.astro';
 import HeroV2 from '~/components/HeroV2.astro';
 import UniversityCardV2 from '~/components/UniversityCardV2.astro';
 import Filters from '~/components/Filters.astro';
+import { CONTACTS } from '~/content/studyroom/contacts';
 
-// TODO: replace with real WhatsApp Business number before launch.
-const WHATSAPP_NUMBER = '77000000000';
+// Единый источник контактов — заполняется в ~/content/studyroom/contacts.ts
+const WHATSAPP_NUMBER = CONTACTS.whatsappNumber;
 const BUILD_DATE = new Date();
 
 const entries = await getCollection('universities');

@@ -31,6 +31,46 @@
   - ~~`campuses[]`~~ — DONE 2026-05-11 (curated campus-facts).
 
 ## TODO
+
+### Launch-readiness audit (2026-06-03) — чеклист по итогам полного аудита сайта+скрейпера
+
+**✅ Сделано в сессии 2026-06-03 (закоммичено):**
+- [x] **#1 Формы шлют лиды в CRM** — `site/functions/api/lead.js` (Cloudflare Pages Function, Bitrix24 `crm.lead.add` по умолчанию / generic-режим), фронт `[slug].astro` шлёт `fetch('/api/lead')` вместо пустого `form.reset()`. Honeypot, валидация, блок кнопки, тост-ошибка. Доп. поле email в CTA/модалку.
+- [x] **#2 Контакты → единый источник** — `site/src/content/studyroom/contacts.ts` (`CONTACTS` + `waLink/tgLink/telLink`). Убран хардкод из `index.astro`, `compare.astro`, `[slug].astro`, `static.ts`.
+- [x] **#3/#4 Статистика лендинга** — `AGENCY` в `contacts.ts`: 2015 / 1000+ / 99% / лет на рынке (авто) / счёт вузов (динамически). Убраны видимые `[год]`/`N%`/«27».
+- [x] **#5 Баги схемы в `scraper/bobr-accommodation-merge.mjs`** — пустые `amount`/`description` стипендий, плоский `gallery`, пустой `programUrl` (все роняли build). Проверено zod.
+
+**🔴 Блокеры запуска — нужны данные владельца:**
+- [ ] Заполнить `contacts.ts`: реальные телефон / WhatsApp / Telegram / email / БИН / адрес.
+- [ ] Видео-отзывы: залить на YouTube (unlisted), ссылки → в `STUDYROOM_REVIEWS` (`static.ts`), подключить секцию reviews в `[slug].astro` (сейчас `[TBD]`-заглушка; поле `videoUrl` в схеме готово). Не Google Drive для embed.
+- [ ] Настроить env в Cloudflare Pages: `CRM_WEBHOOK_URL` (+ опц. `CRM_TYPE`, `LEAD_NOTIFY_URL`) — без него формы отдают ошибку.
+
+**🟡 Важное (можно автономно, не блок запуска):**
+- [ ] Таймлайн сроков: `pickTimeline()` в `[slug].astro` молча отдаёт UK-дедлайны всем странам вне UK/CA/AU/NZ/US — чинить по странам или прятать для непокрытых.
+- [ ] SEO: нет `sitemap.xml` / `robots.txt` / `canonical` / `og:image`; отсутствует `favicon.svg` (404). Подключить `@astrojs/sitemap`, дополнить `Base.astro`.
+- [ ] Self-XSS в чате `[slug].astro` (ввод через `innerHTML` без экранирования) — экранировать, как в `manager.astro`.
+- [ ] Хардкод требований (IELTS/GPA/финподтверждение) игнорирует `u.requirements.*` — подтянуть из данных.
+- [ ] Курсы валют `CURRENCY_TO_KZT` дублируются в `[slug].astro`/`compare.astro`/`UniversityCardV2.astro` — вынести в один модуль.
+- [ ] Маппинг `master → "Pre-Master's"` в `compare.astro:18` и `UniversityCardV2.astro:46` — обычная магистратура подписана неверно.
+- [ ] 140 JSON с `sourceHash: "sha256:placeholder"` — ломает отслеживание изменений источника.
+
+**🟡 Скрейпер/инфра:**
+- [ ] Расписание дублируется в 3 местах (cron + bash `case` в `scrape-staggered.yml` + `aggregator-schedules.json`) — читать день из JSON.
+- [ ] IAPro не работает (нет кредов `IAPRO_LOGIN/PASS`, `exit(1)` проглочен `|| true`).
+- [ ] Kaplan-коллектор не написан (день 1 зовёт `scrape-direct-partners-v2.mjs`, который Kaplan не обрабатывает).
+- [ ] Проглоченные exit-коды в `bobr.mjs:29-33` / `pauk.mjs:47-53` — сбой коллектора не роняет пайплайн.
+- [ ] `revizor.mjs:197` недетерминированный сэмплинг (`sort(()=>Math.random()-0.5)`) — флаги 404 нестабильны.
+- [ ] `verify-on-demand.yml` — `shmel`/`generate-verify` без `continue-on-error`.
+
+**🟢 Техдолг:**
+- [ ] Мёртвый код: `UniversityCard.astro`, `catalog-filters.ts`, 5× `oxford-*.ts` (не импортируются).
+- [ ] Мёртвые скрейпер-скрипты: `overnight-*-orchestrator.mjs` ×4, `scrape-mukha-v*` ×4, `scrape-volk-collab` v1/v2, `scrape-direct-partners.mjs` v1, фото-зоопарк.
+- [ ] Стейл-мусор: `edvoy-scrape.log`, корневой `sources/revizor-flags.json` (дубль), `scraper-*.log` в корне.
+- [ ] `site/public/api/status.json` коммитится и грязнит дерево → в `.gitignore`.
+- [ ] i18n `/en` не начат; `deploy.yml` на `wrangler@latest` (незакреплённая версия).
+
+---
+
 - **Stage 14b — Clean up & re-scrape the ~122 "no-official-site" universities (START 2026-05-27).** Skipped by the under-60 program expansion (waves 1-3) because their catalog JSON has no resolvable official URL. Lists on disk: `sources/under60-wave1.no-site.json` (76), `wave2.no-site.json` (31), `wave3.no-site.json` (15). Two categories:
   1. **Collab-sourced junk → DELETE (destructive, confirm list first).** Fake non-university entries from collabinternational.com with `country:"International"` and 6 identical bogus programs all titled "Study in Malta" — e.g. `academic-coaching`, `admission-consultancy`, `dcu-successfull-career-services`, `canadian-universities-to-elevate-your-career`, `berk-alyeni`. Show full filtered list before deleting anything.
   2. **Real universities with junk collab data → find official site + re-scrape.** Same garbage but legit institution, e.g. `aalto-university`, `czech-technical-university`. Need official-URL discovery (WebSearch/Exa — costs tokens), then `node scraper/expand-programs-verified.mjs --worklist=<file>` with `EXPAND_TARGET=1000` like waves 1-3.

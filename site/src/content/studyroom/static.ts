@@ -7,6 +7,8 @@
 // form copy, footer, chat config. Anything that varies per university lives in the
 // University schema.
 
+import { CONTACTS, waLink, tgLink } from './contacts';
+
 export interface Benefit {
   num: string;
   title: string;
@@ -145,10 +147,10 @@ export const STUDYROOM_ABOUT = {
 } as const;
 
 export const STUDYROOM_CONTACT: ContactInfo = {
-  phone: '+7 (TBD) TBD-TBD-TBD',
-  whatsapp: 'https://wa.me/7TBD',
-  email: 'hello@studyroom.kz',
-  url: 'https://studyroom.kz',
+  phone: CONTACTS.phoneDisplay,
+  whatsapp: waLink(),
+  email: CONTACTS.email,
+  url: CONTACTS.url,
 } as const;
 
 // Generic UK undergraduate admissions timeline (UCAS cycle, year-agnostic).
@@ -194,7 +196,9 @@ export const STUDYROOM_FORM: FormConfig = {
 
 export const STUDYROOM_FOOTER: FooterConfig = {
   copyright: 'StudyRoom — образовательное агентство',
-  legal: '[TBD: реквизиты юрлица / ИП, ИНН, БИН, юридический адрес.]',
+  legal: [CONTACTS.legalName, CONTACTS.bin && `БИН ${CONTACTS.bin}`, CONTACTS.address]
+    .filter(Boolean)
+    .join(' · '),
   links: [
     { label: 'Программы', href: '#programs' },
     { label: 'Требования', href: '#requirements' },
@@ -214,8 +218,8 @@ export const STUDYROOM_CHAT: ChatConfig = {
   greeting:
     'Здравствуйте! Я консультант StudyRoom. Расскажу про поступление, программы, стоимость и документы. Чем могу помочь?',
   quickActions: [
-    { label: 'WhatsApp', href: 'https://wa.me/7TBD', icon: 'whatsapp' },
-    { label: 'Telegram', href: 'https://t.me/TBD', icon: 'telegram' },
+    { label: 'WhatsApp', href: waLink(), icon: 'whatsapp' },
+    { label: 'Telegram', href: tgLink(), icon: 'telegram' },
   ],
   inputPlaceholder: 'Напишите вопрос…',
   autoReply:

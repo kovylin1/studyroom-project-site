@@ -1,55 +1,36 @@
-ПРОМТ ДЛЯ СЛЕДУЮЩЕГО ТЕРМИНАЛА — studyroom-project-site
-=========================================================
-(составлен 2026-06-01, сессия confidence-гейт шаг 2)
-
-СНАЧАЛА прочитай память и статус:
-- D:\Эдгар, (НЕ ТРОЖ ОПАСТНО ДЛЯ ЖИЗНИ)\cursor projects\claude projects\memory\MEMORY.md
-- ...\memory\project_studyroom_status.md   (resume-point этой сессии)
-- правила: ...\claude projects\CLAUDE.md
-Память живёт ТОЛЬКО на D:. На C: ничего не сохранять.
+Работаем над studyroom-project-site. Сначала прочитай память:
+D:\Эдгар, (НЕ ТРОЖ ОПАСТНО ДЛЯ ЖИЗНИ)\cursor projects\claude projects\memory\MEMORY.md
+и статус: ...\memory\project_studyroom_status.md, правила: ...\claude projects\CLAUDE.md.
+Память только на D:, на C: не сохранять. По-русски на «ты», коротко, сначала план/баги — потом фикс.
 
 Проект: D:\Эдгар, (НЕ ТРОЖ ОПАСТНО ДЛЯ ЖИЗНИ)\cursor projects\claude projects\projects\studyroom-project-site
-Ветка main. Репо kovylin1/studyroom-project-site. Деплой: push в main -> CF Pages.
+Ветка main → push в main = автодеплой Cloudflare Pages (deploy.yml). Сборка: cd site && npm run build (exit 0, 807 стр.).
+status.json НЕ коммитить (артефакт). НЕ пушить/НЕ удалять данные каталога без моего слова.
+В конце commit: Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
 
---- ЧТО УЖЕ СДЕЛАНО (запушено 2026-06-01) ---
-Confidence-гейт ≥85% (общий модуль scraper/lib/confidence.mjs, MIN=0.85) распространён
-на 3 категории. Формула scoreFact: official .55 / aggregator .35 / inferred .15
-+ quality·.30 + corroborated .15 + linkLive .10.
-- Кампусы: bobr-campuses-v2.mjs — гейт (офсайт+живая стр.+качество), отклонённые
-  -> sources/audit/campuses-lowconf.json.
-- Размещение: bobr-accommodation-v2.mjs + bobr-accommodation-merge.mjs — гейт +
-  ФИКС бага формы (писали accommodation={residences:[...]}, схема/[slug].astro ждут
-  МАССИВ [{name,text,...}]; иначе build падал). Аудит: accommodation-*-lowconf.json.
-- Стипендии (вариант A, СТРОГО): create-missing-from-extracts.mjs, finalize-all-extracts.mjs,
-  bobr-accommodation-merge.mjs. Tier: partner/direct->official(0.55), edvoy/studygroup/
-  collab->aggregator(0.35). Партнёрские с хорошим именем=0.85 (в каталог),
-  Edvoy/StudyGroup ~0.65 -> аудит sources/audit/scholarships-*.json.
-- Схема site/src/schema/university.ts: добавлено confidence?:0..1 в scholarship/campus/
-  accommodation схемы. Сборка: 807 стр., exit 0.
-- Баг расписания IAPro (показывал 1 июля вместо 21 июня) — оказался устаревшим деплоем
-  (CI собрался до dayOfMonth-коммита). Код manager.astro корректен. Пофикшено push'ем.
+=== СДЕЛАНО в сессии 2026-06-03 (запушено) ===
+Полный аудит сайта+скрейпера → чеклист в BACKLOG.md (раздел «Launch-readiness audit 2026-06-03»).
+Закрыты блокеры запуска #1–#5:
+- #1 Формы → CRM: новый site/functions/api/lead.js (Cloudflare Pages Function; Bitrix24 crm.lead.add
+  по умолчанию, CRM_TYPE=generic для amoCRM/своего вебхука). Фронт [slug].astro шлёт fetch('/api/lead').
+  Honeypot, валидация, тост-ошибка, +email в CTA/модалку.
+- #2 Контакты → единый site/src/content/studyroom/contacts.ts (CONTACTS + waLink/tgLink/telLink).
+  Хардкод убран из index/compare/[slug]/static.ts.
+- #3/#4 Статистика: AGENCY в contacts.ts (2015 / 1000+ / 99% / лет-на-рынке авто / счёт вузов динамически).
+- #5 3 бага схемы в scraper/bobr-accommodation-merge.mjs (пустые amount/description, плоский gallery,
+  пустой programUrl — роняли build). Проверено zod.
 
---- СЛЕДУЮЩИЕ ШАГИ (по приоритету) ---
-1. ГЛАВНОЕ (юзер просил «разберём отдельно»): EDVOY и STUDYGROUP стипендии.
-   Сейчас они агрегатор-tier (0.35) и почти все уходят в аудит (sources/audit/scholarships-*.json).
-   Решить с юзером: (а) поднять им tier, (б) добавить live-проверку ссылки (+0.10),
-   (в) ручной разбор аудита и точечный аппрув. НЕ деплоить без слова юзера.
-2. Проверить живой деплой: выбрать IAPro в дропдауне manager — должно показать
-   «21 июня 2026 / 21 число», не 1 июля. Если нет — реальный баг в расписании.
-3. ОТЛОЖЕНО: кампусы из Edvoy-мержа (mergeEdvoy campus-блок в bobr-accommodation-merge.mjs)
-   пока НЕ гейтятся (aggregator не дотягивает до 0.85). Решить заодно с п.1.
+=== НУЖНО ОТ ВЛАДЕЛЬЦА (разблокирует прод) ===
+1) Заполнить contacts.ts: телефон / WhatsApp / Telegram / email / БИН / адрес.
+2) Видео-отзывы: YouTube (unlisted), ссылки → STUDYROOM_REVIEWS (static.ts), подключить секцию reviews
+   в [slug].astro (сейчас [TBD]; поле videoUrl в схеме готово). НЕ Google Drive.
+3) Cloudflare Pages env: CRM_WEBHOOK_URL (+ опц. CRM_TYPE, LEAD_NOTIFY_URL) — без него формы отдают ошибку.
 
---- БЭКЛОГ (из статуса) ---
-- Kaplan Playwright коллектор (как GEDU, с kaplanpathways.com)
-- IAPro — ждём логин/пароль
-- scrape-staggered.yml: читать день из aggregator-schedules.json вместо хардкода bash
+=== СЛЕДУЮЩИЕ ЗАХОДЫ (автономно, по BACKLOG-чеклисту, пачками) ===
+🟡 важное: таймлайн сроков pickTimeline() (UK-дефолт всем странам), SEO (sitemap/robots/canonical/og/favicon),
+self-XSS в чате [slug].astro, хардкод требований, дубль курсов валют, маппинг master→Pre-Master's.
+🟡 скрейпер: расписание в 3 местах, IAPro/Kaplan, проглоченные exit-коды, рандом-сэмплинг revizor.
+🟢 техдолг: мёртвый код (UniversityCard, catalog-filters, oxford-*.ts), мёртвые скрейпер-скрипты,
+стейл-логи, status.json в .gitignore.
 
---- ПРАВИЛА РАБОТЫ ---
-- По-русски на «ты», коротко, готовый результат + варианты на выбор.
-- Сначала показать баги/план, потом фиксить.
-- Проверять сборку: cd site && npm run build (exit 0, 807 стр.).
-- Каталог: ОБОГАЩАТЬ, НЕ РЕЗАТЬ. Ничего молча не удалять. <0.85 -> аудит, не в каталог.
-- НЕ пушить и НЕ удалять данные из каталога без слова юзера.
-- В конце commit-сообщения: Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
-- БОБР — отдельные кнопки в manager, НЕ в fix-freshness.yml.
-- status.json — генерируемый артефакт (build), в коммиты не тащить.
+Полный список с путями — BACKLOG.md, раздел «Launch-readiness audit (2026-06-03)».

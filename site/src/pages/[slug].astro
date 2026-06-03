@@ -9,20 +9,22 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Base from '~/layouts/Base.astro';
 import { STUDYROOM_FAQ } from '~/content/studyroom/static';
+import { CONTACTS, waLink, telLink, AGENCY, yearsOnMarket } from '~/content/studyroom/contacts';
 
 export async function getStaticPaths() {
   const entries = await getCollection('universities');
   return entries.map((entry) => ({
     params: { slug: entry.data.slug },
-    props: { entry },
+    props: { entry, uniCount: entries.length },
   }));
 }
 
 interface Props {
   entry: CollectionEntry<'universities'>;
+  uniCount: number;
 }
 
-const { entry } = Astro.props;
+const { entry, uniCount } = Astro.props;
 const u = entry.data;
 
 const UK_TIMELINE = [
@@ -460,6 +462,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   .lp .toast-tray { position: fixed; top: 20px; right: 20px; z-index: 300; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
   .lp .toast { background: var(--ink); color: #fff; padding: 14px 18px; border-radius: 12px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; font-size: 14px; max-width: 360px; pointer-events: auto; animation: lpToastIn .25s ease; }
   .lp .toast--success { background: var(--green); }
+  .lp .toast--error { background: #d23b3b; }
   .lp .toast.is-out { animation: lpToastOut .25s ease forwards; }
   @keyframes lpToastIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
   @keyframes lpToastOut { to { transform: translateX(120%); opacity: 0; } }
@@ -521,8 +524,8 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
         <a href="#dates" data-section="dates">Сроки</a>
       </div>
       <div class="lp-nav__contact">
-        <a href="tel:+77272222222" class="lp-nav__phone">+7 (727) 222-22-22<small>пн–пт 9:00–19:00</small></a>
-        <a class="lp-nav__wa" href={`https://wa.me/77272222222?text=${encodeURIComponent(`Здравствуйте, я с лендинга ${u.name}`)}`} aria-label="WhatsApp" target="_blank" rel="noopener">
+        <a href={telLink()} class="lp-nav__phone">{CONTACTS.phoneDisplay}<small>{CONTACTS.workHours}</small></a>
+        <a class="lp-nav__wa" href={waLink(`Здравствуйте, я с лендинга ${u.name}`)} aria-label="WhatsApp" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.27-1.12a9.95 9.95 0 0 0 5.77 1.84c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0 0 12.04 2zM17.4 16.21c-.23.65-1.33 1.24-1.85 1.31-.49.07-1.11.1-1.79-.11-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09 1-2.37.26-.28.57-.35.76-.35.19 0 .38.01.54.01.17 0 .41-.07.64.49.23.56.79 1.96.86 2.1.07.14.12.31.02.49-.09.18-.14.3-.28.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.28.71 1.18 1.53 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.16-.19.69-.8.87-1.08.18-.28.37-.23.61-.14.24.09 1.55.73 1.81.86.27.13.44.2.51.31.06.11.06.65-.16 1.29z"/></svg>
         </a>
       </div>
@@ -538,7 +541,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     {accom.length > 0 && <a href="#living">Жильё и кампусы</a>}
     <a href="#faq">Виза и документы</a>
     <a href="#dates">Сроки</a>
-    <a href="tel:+77272222222">+7 (727) 222-22-22</a>
+    <a href={telLink()}>{CONTACTS.phoneDisplay}</a>
     <div class="drawer__cta"><button class="btn btn--primary" data-modal-open="lpConsultModal">Бесплатная консультация</button></div>
   </aside>
 
@@ -745,15 +748,15 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
       <div class="about-grid">
         <div>
           <h2>Образовательное агентство в Алматы. С прямым партнёрством университетов.</h2>
-          <p>Помогаем казахстанским школьникам и выпускникам поступать в зарубежные университеты с <span class="placeholder">[год]</span> года. Работаем напрямую — без перепродажи услуг.</p>
+          <p>Помогаем казахстанским школьникам и выпускникам поступать в зарубежные университеты с {AGENCY.sinceYear} года. Работаем напрямую — без перепродажи услуг.</p>
           <p>Офис в Алматы, выезды на встречи в Астану и Шымкент. С 2024 года — официальный канал в Telegram «Поступление за рубеж».</p>
-          <p><b>ТОО «StudyRoom»</b> · БИН <span class="placeholder">[заполнить]</span> · Алматы, <span class="placeholder">[адрес офиса]</span> · +7 (727) 222-22-22</p>
+          <p><b>{CONTACTS.legalName}</b>{CONTACTS.bin ? ` · БИН ${CONTACTS.bin}` : ''} · {CONTACTS.address} · {CONTACTS.phoneDisplay}</p>
         </div>
         <div class="about-stats">
-          <div class="about-stat"><b><span class="placeholder">N</span></b><span>казахстанцев поступили через нас в 2024</span></div>
-          <div class="about-stat"><b><span class="placeholder">N%</span></b><span>одобрений студ. виз</span></div>
-          <div class="about-stat"><b><span class="placeholder">N</span></b><span>лет на рынке EdTech</span></div>
-          <div class="about-stat"><b>27</b><span>университетов в портфеле</span></div>
+          <div class="about-stat"><b>{AGENCY.studentsPlaced}</b><span>казахстанцев поступили через нас</span></div>
+          <div class="about-stat"><b>{AGENCY.visaApprovalRate}</b><span>одобрений студ. виз</span></div>
+          <div class="about-stat"><b>{yearsOnMarket()}</b><span>лет на рынке EdTech</span></div>
+          <div class="about-stat"><b>{uniCount}</b><span>университетов в портфеле</span></div>
         </div>
       </div>
     </div>
@@ -916,9 +919,11 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
           </div>
         </div>
         <form class="cta__form" id="lpCtaForm">
+          <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
           <div class="field"><label>Кто оставляет заявку?</label><div class="pill-choices"><label><input type="radio" name="lprole" checked /><span>Студент</span></label><label><input type="radio" name="lprole" /><span>Родитель</span></label></div></div>
           <div class="field"><label for="lpname">Имя</label><input id="lpname" type="text" placeholder="Ваше имя" required /></div>
           <div class="field"><label for="lpphone">WhatsApp / телефон</label><input id="lpphone" type="tel" placeholder="+7 (___) ___-__-__" required /></div>
+          <div class="field"><label for="lpemail">Email <span style="color:var(--ink-2);font-weight:400;">(необязательно)</span></label><input id="lpemail" type="email" placeholder="email@example.com" /></div>
           <div class="field"><label>Удобное время</label><div class="pill-choices"><label><input type="radio" name="lptime" checked /><span>Сейчас</span></label><label><input type="radio" name="lptime" /><span>Вечером</span></label><label><input type="radio" name="lptime" /><span>Завтра</span></label></div></div>
           <button class="btn btn--primary btn--lg" type="submit" style="width: 100%;">Записаться на разбор профиля →</button>
           <p class="form-fineprint">Нажимая «Записаться», вы соглашаетесь с обработкой данных.</p>
@@ -960,9 +965,11 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     <div class="modal-body">
       <p style="color: var(--ink-2); margin-top: 0;">Айгерим перезвонит в течение <b>15 минут</b>. Скажет честно: проходите ли в {u.name}.</p>
       <form id="lpModalConsultForm">
+        <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
         <div class="field"><label>Кто оставляет заявку?</label><div class="pill-choices"><label><input type="radio" name="lpmrole" checked /><span>Студент</span></label><label><input type="radio" name="lpmrole" /><span>Родитель</span></label></div></div>
         <div class="field"><label for="lpmname">Имя</label><input id="lpmname" type="text" placeholder="Ваше имя" required /></div>
         <div class="field"><label for="lpmphone">WhatsApp / телефон</label><input id="lpmphone" type="tel" placeholder="+7 (___) ___-__-__" required /></div>
+        <div class="field"><label for="lpmemail">Email <span style="color:var(--ink-2);font-weight:400;">(необязательно)</span></label><input id="lpmemail" type="email" placeholder="email@example.com" /></div>
         <div class="field"><label>Канал связи</label><div class="pill-choices"><label><input type="radio" name="lpmch" checked /><span>WhatsApp</span></label><label><input type="radio" name="lpmch" /><span>Telegram</span></label><label><input type="radio" name="lpmch" /><span>Звонок</span></label></div></div>
         <div class="field"><label>Когда?</label><div class="pill-choices"><label><input type="radio" name="lpmt" checked /><span>Сейчас</span></label><label><input type="radio" name="lpmt" /><span>Вечером</span></label><label><input type="radio" name="lpmt" /><span>Завтра</span></label></div></div>
         <button class="btn btn--primary btn--lg" type="submit" style="width: 100%;">Записаться →</button>
@@ -1013,6 +1020,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     <div class="modal-body">
       <p style="color: var(--ink-2); margin-top: 0;"><b>«Гид по поступлению в {u.name} для казахстанцев»</b> — документы, дедлайны, расчёт стипендий, чек-лист подачи на визу.</p>
       <form id="lpExitForm">
+        <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
         <div class="field"><label for="lpexname">Имя</label><input id="lpexname" type="text" placeholder="Ваше имя" required /></div>
         <div class="field"><label for="lpexc">Email или WhatsApp</label><input id="lpexc" type="text" placeholder="email@example.com или +7 (___) ___-__-__" required /></div>
         <button class="btn btn--primary btn--lg" type="submit" style="width: 100%;">Скачать PDF →</button>
@@ -1036,6 +1044,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   CAMP_DATA: campuses,
   CURRENCY_SYM: sym,
   UNI_NAME: u.name,
+  UNI_SLUG: u.slug,
 }}>
 (() => {
   const $ = (s, root) => (root || document).querySelector(s);
@@ -1374,15 +1383,74 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
     setTimeout(() => chatAddMsg('Спасибо! На реальном сайте — живой консультант. Если срочно — WhatsApp.', 'bot'), 800);
   });
 
+  const LEAD_ENDPOINT = '/api/lead';
+  const FORM_CONFIG = {
+    lpCtaForm:          { type: 'consultation',       name: 'lpname',   phone: 'lpphone',  email: 'lpemail',  roleName: 'lprole', timeName: 'lptime' },
+    lpModalConsultForm: { type: 'consultation_modal', name: 'lpmname',  phone: 'lpmphone', email: 'lpmemail', roleName: 'lpmrole', channelName: 'lpmch', timeName: 'lpmt' },
+    lpExitForm:         { type: 'guide_pdf',          name: 'lpexname', contact: 'lpexc' },
+  };
+
+  function radioLabel(form, name) {
+    const r = form.querySelector('input[name="' + name + '"]:checked');
+    const lbl = r && r.closest('label');
+    const span = lbl && lbl.querySelector('span');
+    return span ? span.textContent.trim() : '';
+  }
+
   function handleForm(formId, msg) {
     const form = document.getElementById(formId);
     if (!form) return;
-    form.addEventListener('submit', (e) => {
+    const cfg = FORM_CONFIG[formId] || {};
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      toast(msg, 'success');
-      form.reset();
-      const dlg = form.closest('dialog');
-      if (dlg) setTimeout(() => closeModal(dlg), 800);
+
+      // honeypot: бот заполнил скрытое поле — тихо «успех», ничего не шлём
+      const hp = form.querySelector('input[name="company"]');
+      if (hp && hp.value) { form.reset(); toast(msg, 'success'); return; }
+
+      const val = (id) => { const el = id && document.getElementById(id); return el ? el.value.trim() : ''; };
+      let phone = val(cfg.phone), email = val(cfg.email);
+      const contact = val(cfg.contact);
+      if (contact) { if (contact.indexOf('@') >= 0) email = contact; else phone = contact; }
+
+      const payload = {
+        name: val(cfg.name),
+        phone: phone,
+        email: email,
+        formType: cfg.type,
+        uniSlug: typeof UNI_SLUG !== 'undefined' ? UNI_SLUG : '',
+        uniName: typeof UNI_NAME !== 'undefined' ? UNI_NAME : '',
+        pageUrl: location.href,
+        role: cfg.roleName ? radioLabel(form, cfg.roleName) : '',
+        channel: cfg.channelName ? radioLabel(form, cfg.channelName) : '',
+        time: cfg.timeName ? radioLabel(form, cfg.timeName) : '',
+      };
+
+      if (!payload.name || (!payload.phone && !payload.email)) {
+        toast('Заполните имя и телефон', 'error');
+        return;
+      }
+
+      const btn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+      const btnLabel = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Отправляем…'; }
+      try {
+        const res = await fetch(LEAD_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.ok) throw new Error((data && data.error) || ('HTTP ' + res.status));
+        toast(msg, 'success');
+        form.reset();
+        const dlg = form.closest('dialog');
+        if (dlg) setTimeout(() => closeModal(dlg), 800);
+      } catch (err) {
+        toast('Не удалось отправить заявку. Напишите нам в WhatsApp или попробуйте ещё раз.', 'error');
+      } finally {
+        if (btn) { btn.disabled = false; btn.textContent = btnLabel; }
+      }
     });
   }
   handleForm('lpCtaForm', 'Заявка отправлена. Перезвоним за 15 минут.');
