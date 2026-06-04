@@ -11,7 +11,7 @@
 //
 // Usage: EDVOY_LOGIN=... EDVOY_PASS=... node scraper/scrape-edvoy-all.mjs [--headed] [--limit=N]
 
-import { config } from 'dotenv'; config();
+import './lib/load-env.mjs';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';

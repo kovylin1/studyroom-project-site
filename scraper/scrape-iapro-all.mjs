@@ -11,9 +11,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { chromium } from 'playwright';
-import { config } from 'dotenv';
-
-config({ path: path.join(path.dirname(fileURLToPath(import.meta.url)), '.env') });
+import './lib/load-env.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.join(__dirname, 'sources', 'iapro-extracts');
