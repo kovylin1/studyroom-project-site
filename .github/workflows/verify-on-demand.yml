@@ -73,7 +73,12 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add site/public/api/ scraper/sources/
           git diff --staged --quiet || git commit -m "chore: verify $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git push
+          attempt=0
+          until git push; do
+            attempt=$((attempt+1))
+            if [ "$attempt" -ge 3 ]; then echo "::error::git push failed after 3 retries"; exit 1; fi
+            git pull --rebase origin main
+          done
 
       - name: fail if verify.json generation failed
         if: steps.verify.outcome == 'failure'

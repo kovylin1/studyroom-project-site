@@ -99,7 +99,12 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add site/src/content/universities/ site/public/api/ scraper/sources/
           git diff --staged --quiet || git commit -m "fix: freshness auto-repair $(date -u +%Y-%m-%d) scope=${{ inputs.scope }}"
-          git push
+          attempt=0
+          until git push; do
+            attempt=$((attempt+1))
+            if [ "$attempt" -ge 3 ]; then echo "::error::git push failed after 3 retries"; exit 1; fi
+            git pull --rebase origin main
+          done
 
       - name: Deploy
         run: |
