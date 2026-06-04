@@ -54,7 +54,7 @@
 
 **🟡 Важное (можно автономно, не блок запуска):**
 - [ ] Хардкод требований (IELTS/GPA/финподтверждение) в секции `#requirements` `[slug].astro:719–729` игнорирует `u.requirements.*`. Часть — баг (GPA «4.0+» захардкожен, реальный `gpa` есть у 13/804; TOEFL/Duolingo подтягивать условно). Часть — **маркетинговое решение владельца**: тиры «IELTS 6.0 Pre-Master's / 6.5 магистратура» и весь Foundation/Pre-Master's питч — UK-pathway формулировка, показывается всем странам. Решить с владельцем, прежде чем чинить копирайт.
-- [ ] 140 JSON с `sourceHash: "sha256:placeholder"` — ломает отслеживание изменений источника.
+- [x] **140 JSON с `sourceHash: "sha256:placeholder"` (исправлено 2026-06-04, коммит `c578dd0`)** — заменены на детерминированный `sha256(slug|sourceUrl).slice(0,16)` (конвенция `create-missing-from-extracts.mjs`); следующий реальный скрейп перезапишет честным хэшем HTML. `qs-build-prompt.mjs` поправлен: формула вместо «any plausible value». Проверено: 0 плейсхолдеров, 140/140 JSON валидны.
 
 **🟡 Скрейпер/инфра:**
 - [x] **Проглоченные exit-коды** — `bobr.mjs`/`pauk.mjs`: сбой data-шага теперь валит пайплайн (`failedSteps` гейтит `ok` + в JSON-отчёте). Фото-фаза bobr остаётся soft. Коммит `99b35eb`.
@@ -62,7 +62,7 @@
 - [x] **Дедуп расписания** — bash-таблица `case $DOM` убрана; шаг detect читает `dayOfMonth` из `aggregator-schedules.json` (единый источник). Маппинг идентичен старому для всех 11 дней. Cron остаётся статичным (YAML не читает JSON), помечен как ручной-синк. Коммит `9911d5c`.
 - [ ] IAPro не работает (нет кредов `IAPRO_LOGIN/PASS`, `exit(1)` проглочен `|| true`).
 - [ ] Kaplan-коллектор не написан (день 1 зовёт `scrape-direct-partners-v2.mjs`, который Kaplan не обрабатывает).
-- [ ] `verify-on-demand.yml` — `shmel`/`generate-verify` без `continue-on-error`.
+- [x] **`verify-on-demand.yml` (исправлено 2026-06-04)** — `shmel` теперь soft (`continue-on-error`, обогащение опционально); `generate verify.json` soft + финальный гейт-шаг: частичные результаты revizor/shmel коммитятся, но ран помечается failed, если verify.json не сгенерился (паттерн bobr/pauk: не глотать, но и не терять).
 
 **🟢 Техдолг:**
 - [x] **Мёртвый код сайта (7 файлов, удалены 2026-06-04)** — `UniversityCard.astro` (v1, index использует V2), `catalog-filters.ts` (index грузит `catalog-v2`; DOM-id `catalog-filters` — живая форма, не скрипт), 5× `oxford-*.ts` (старый шаблон `[slug].astro` переписан в v2). Каждый проверен: импортеров 0. Build после удаления: 807 стр., exit 0.
