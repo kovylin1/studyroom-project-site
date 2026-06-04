@@ -5,43 +5,54 @@ D:\Эдгар, (НЕ ТРОЖ ОПАСТНО ДЛЯ ЖИЗНИ)\cursor projects\
 
 Проект: D:\Эдгар, (НЕ ТРОЖ ОПАСТНО ДЛЯ ЖИЗНИ)\cursor projects\claude projects\projects\studyroom-project-site
 Ветка main → push в main = автодеплой Cloudflare Pages (deploy.yml). Сборка: cd site && npm run build (exit 0, 807 стр.).
-status.json НЕ коммитить (артефакт). НЕ пушить/НЕ удалять данные каталога без моего слова.
+status.json НЕ коммитить (артефакт; перед rebase можно git checkout -- site/public/api/status.json).
+НЕ пушить/НЕ удалять данные каталога без моего слова. Удаление файлов — только после показа списка и моего «да».
+Перед push: git fetch — CI staggered-scrape пушит сам по числам месяца (rebase поверх, данные каталога не клобить).
 В конце commit: Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
 
-=== СДЕЛАНО в сессии 2026-06-03 (запушено) ===
-Полный аудит сайта+скрейпера → чеклист в BACKLOG.md (раздел «Launch-readiness audit 2026-06-03»).
-Закрыты блокеры запуска #1–#5:
-- #1 Формы → CRM: новый site/functions/api/lead.js (Cloudflare Pages Function; Bitrix24 crm.lead.add
-  по умолчанию, CRM_TYPE=generic для amoCRM/своего вебхука). Фронт [slug].astro шлёт fetch('/api/lead').
-  Honeypot, валидация, тост-ошибка, +email в CTA/модалку.
-- #2 Контакты → единый site/src/content/studyroom/contacts.ts (CONTACTS + waLink/tgLink/telLink).
-  Хардкод убран из index/compare/[slug]/static.ts.
-- #3/#4 Статистика: AGENCY в contacts.ts (2015 / 1000+ / 99% / лет-на-рынке авто / счёт вузов динамически).
-- #5 3 бага схемы в scraper/bobr-accommodation-merge.mjs (пустые amount/description, плоский gallery,
-  пустой programUrl — роняли build). Проверено zod.
+=== СДЕЛАНО в сессиях 2026-06-03/04 (ВСЁ ЗАПУШЕНО) ===
+- Сайт-баги: pickTimeline UK-дефолт → GENERIC_TIMELINE (292/804 вуза видели UCAS-дедлайны);
+  дубль курсов валют → единый CURRENCY_TO_KZT/CURRENCY_SYMBOL/DEFAULT_KZT_RATE в static.ts;
+  self-XSS в чате [slug].astro (ввод юзера → textContent, HTML бота сохранён).
+- SEO: @astrojs/sitemap (sitemap-index.xml, 806 url, manager/admin исключены), robots.txt,
+  favicon.svg (был 404), canonical+og:url/site_name/locale+twitter:card в Base.astro, noindex на manager.
+- master-лейбл: compare.astro + UniversityCardV2 «Pre-Master's» → «Магистратура» (657/658 вузов были подписаны неверно).
+- Скрейпер: bobr.mjs/pauk.mjs — сбой data-шага валит пайплайн (failedSteps гейтит ok, фото-фаза bobr soft);
+  revizor.mjs — рандом-сэмплинг (мутировал u.programs) → детерминированный шаговый.
+- CI: scrape-staggered.yml читает dayOfMonth из aggregator-schedules.json (bash-таблица убрана,
+  checkout поднят перед detect). Cron-дни статичны — ручной синк с JSON.
+- Мёртвый код сайта удалён (7 файлов, −728 строк): UniversityCard.astro (v1), catalog-filters.ts,
+  5× oxford-*.ts. Каждый проверен: 0 импортеров. Build после удаления зелёный.
 
 === НУЖНО ОТ ВЛАДЕЛЬЦА (разблокирует прод) ===
 1) Заполнить contacts.ts: телефон / WhatsApp / Telegram / email / БИН / адрес.
 2) Видео-отзывы: YouTube (unlisted), ссылки → STUDYROOM_REVIEWS (static.ts), подключить секцию reviews
    в [slug].astro (сейчас [TBD]; поле videoUrl в схеме готово). НЕ Google Drive.
 3) Cloudflare Pages env: CRM_WEBHOOK_URL (+ опц. CRM_TYPE, LEAD_NOTIFY_URL) — без него формы отдают ошибку.
+4) og:image — нужен дизайн-ассет 1200×630 (сейчас og без картинки, отложено сознательно).
+5) Хардкод требований в #requirements [slug].astro:719–729 — решение по копирайту: GPA «4.0+» захардкожен
+   (реальный gpa есть у 13/804), тиры «IELTS 6.0 Pre-Master's / 6.5 магистратура» — UK-pathway питч,
+   показывается всем странам. Обсудить, потом чинить.
 
-=== СЛЕДУЮЩИЕ ЗАХОДЫ (автономно, по BACKLOG-чеклисту, пачками) ===
-🟡 важное: таймлайн сроков pickTimeline() (UK-дефолт всем странам), SEO (sitemap/robots/canonical/og/favicon),
-self-XSS в чате [slug].astro, хардкод требований, дубль курсов валют, маппинг master→Pre-Master's.
-🟡 скрейпер: расписание в 3 местах, IAPro/Kaplan, проглоченные exit-коды, рандом-сэмплинг revizor.
-🟢 техдолг: мёртвый код (UniversityCard, catalog-filters, oxford-*.ts), мёртвые скрейпер-скрипты,
-стейл-логи, status.json в .gitignore.
+=== СЛЕДУЮЩИЕ ЗАХОДЫ (автономно, по BACKLOG-чеклисту) ===
+🟡 скрейпер: мёртвые скрипты — ТОЧНО мёртвые (0 ссылок, проверено): overnight-orchestrator.mjs,
+   overnight-v2-orchestrator.mjs, scrape-mukha-v3/v4/v5-apex.mjs, scrape-volk-collab-v2.mjs.
+   ТРЕБУЮТ проверки графа (подстроки v2/v3 + транзитивная мёртвость через overnight-volk-mukha.mjs /
+   smoke-test-all.mjs): scrape-direct-partners.mjs (v1), scrape-volk-collab.mjs (v1), scrape-mukha-api.mjs.
+   Удалять только после показа списка и «да».
+🟡 140 JSON с sourceHash: "sha256:placeholder" — ломает отслеживание изменений источника.
+🟡 verify-on-demand.yml — shmel/generate-verify без continue-on-error.
+🟢 техдолг: стейл-логи (edvoy-scrape.log, scraper-*.log в корне, sources/revizor-flags.json дубль),
+   status.json в .gitignore, deploy.yml wrangler@latest → закрепить версию, i18n /en.
+⏸️ IAPro (ждём креды), Kaplan Playwright-коллектор (как GEDU, с kaplanpathways.com).
 
-Полный список с путями — BACKLOG.md, раздел «Launch-readiness audit (2026-06-03)».
-
-=== НЕЗАКРЫТО ИЗ ПРОШЛОЙ СЕССИИ (перенесено из старого handoff, не потерять) ===
-ЗАДАЧА: разобрать стипендии EDVOY и STUDYGROUP, лежащие в аудите (sources/audit/scholarships-*.json).
-Сейчас они agregator-tier (0.35) и почти все не дотянули до гейта 0.85. Варианты:
-  (а) поднять им tier, (б) добавить live-проверку ссылки (+0.10), (в) ручной разбор аудита с точечным аппрувом.
+=== НЕЗАКРЫТО (перенесено, не потерять) ===
+ЗАДАЧА: разобрать стипендии EDVOY и STUDYGROUP в аудите (sources/audit/scholarships-*.json).
+Сейчас agregator-tier (0.35), почти все не дотянули до гейта 0.85. Варианты:
+  (а) поднять tier, (б) live-проверка ссылки (+0.10), (в) ручной разбор с точечным аппрувом.
 Заодно решить, гейтить ли кампусы из Edvoy-мержа (mergeEdvoy в bobr-accommodation-merge.mjs — пока НЕ гейтятся).
-ПРОВЕРКА: на живом manager выбрать IAPro в дропдауне — должно быть «21 июня 2026 / 21 число», не 1 июля
+ПРОВЕРКА на живом manager: выбрать IAPro в дропдауне — должно быть «21 июня 2026 / 21 число», не 1 июля
 (если нет — реальный баг расписания).
 Контекст confidence-гейта: scraper/lib/confidence.mjs, MIN=0.85, scoreFact = official .55 / aggregator .35
-/ inferred .15 + quality*.30 + corroborated .15 + linkLive .10. В каталог только >=0.85, ниже -> аудит
+/ inferred .15 + quality*.30 + corroborated .15 + linkLive .10. В каталог только >=0.85, ниже → аудит
 sources/audit/*-lowconf.json (обогащать, не резать — ничего не удалять).
