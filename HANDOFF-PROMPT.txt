@@ -7,52 +7,51 @@ D:\Эдгар, (НЕ ТРОЖ ОПАСТНО ДЛЯ ЖИЗНИ)\cursor projects\
 Ветка main → push в main = автодеплой Cloudflare Pages (deploy.yml). Сборка: cd site && npm run build (exit 0, 807 стр.).
 status.json НЕ коммитить (артефакт; перед rebase можно git checkout -- site/public/api/status.json).
 НЕ пушить/НЕ удалять данные каталога без моего слова. Удаление файлов — только после показа списка и моего «да».
-Перед push: git fetch — CI staggered-scrape пушит сам по числам месяца (rebase поверх, данные каталога не клобить).
+Перед push: git fetch — CI staggered-scrape и он-деманд ПАУК пушат сами (rebase поверх, данные каталога не клобить).
 В конце commit: Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
 
-=== СДЕЛАНО в сессиях 2026-06-03/04 (ВСЁ ЗАПУШЕНО) ===
-- Сайт-баги: pickTimeline UK-дефолт → GENERIC_TIMELINE (292/804 вуза видели UCAS-дедлайны);
-  дубль курсов валют → единый CURRENCY_TO_KZT/CURRENCY_SYMBOL/DEFAULT_KZT_RATE в static.ts;
-  self-XSS в чате [slug].astro (ввод юзера → textContent, HTML бота сохранён).
-- SEO: @astrojs/sitemap (sitemap-index.xml, 806 url, manager/admin исключены), robots.txt,
-  favicon.svg (был 404), canonical+og:url/site_name/locale+twitter:card в Base.astro, noindex на manager.
-- master-лейбл: compare.astro + UniversityCardV2 «Pre-Master's» → «Магистратура» (657/658 вузов были подписаны неверно).
-- Скрейпер: bobr.mjs/pauk.mjs — сбой data-шага валит пайплайн (failedSteps гейтит ok, фото-фаза bobr soft);
-  revizor.mjs — рандом-сэмплинг (мутировал u.programs) → детерминированный шаговый.
-- CI: scrape-staggered.yml читает dayOfMonth из aggregator-schedules.json (bash-таблица убрана,
-  checkout поднят перед detect). Cron-дни статичны — ручной синк с JSON.
-- Мёртвый код сайта удалён (7 файлов, −728 строк): UniversityCard.astro (v1), catalog-filters.ts,
-  5× oxford-*.ts. Каждый проверен: 0 импортеров. Build после удаления зелёный.
+=== СДЕЛАНО 2026-06-04 (ВСЁ ЗАПУШЕНО, последний fae5729 + CI-коммиты ПАУКа) ===
+- Мёртвый код: сайт 7 файлов (b8c55d7) + скрейпер 10 файлов по графу (cc4d157).
+- sourceHash: 140 JSON placeholder → sha256(slug|sourceUrl) (c578dd0); qs-build-prompt — формула.
+- verify-on-demand.yml: shmel soft, generate-verify soft + гейт-шаг (b184e95).
+- Конфликт-маркеры PR #18 (06dee90, 29.05) разрешены в 5 файлах (c5c320a).
+- dotenv-фикс (fae5729): scraper/lib/load-env.mjs (ручной .env-лоадер) в edvoy/studygroup/qs/iapro;
+  dotenv НЕ зависимость, его импорт валил коллекторы в CI (маскировал || true).
+- ПАУК ПРОВЕРЕН живым раном 26941327251: Edvoy 408 вузов/44147 программ/0 ошибок, QAHE ок,
+  build+deploy ок. iapro — TimeoutError на логине (нет кредов, известный блокер).
+- Параллельная сессия: push-retry во всех 9 push-воркфлоу (2c18857) — лечит race ПАУК vs revizor-apply.
 
-=== НУЖНО ОТ ВЛАДЕЛЬЦА (разблокирует прод) ===
-1) Заполнить contacts.ts: телефон / WhatsApp / Telegram / email / БИН / адрес.
-2) Видео-отзывы: YouTube (unlisted), ссылки → STUDYROOM_REVIEWS (static.ts), подключить секцию reviews
-   в [slug].astro (сейчас [TBD]; поле videoUrl в схеме готово). НЕ Google Drive.
+=== ЗАДАЧИ НА ЗАВТРА (автономно, по приоритету) ===
+🟡 1. Node.js 20 actions deprecation: CI-аннотация в каждом ране — с 16 ИЮНЯ 2026 GitHub
+   принудительно переведёт actions/checkout@v4 + actions/setup-node@v4 на Node 24.
+   Обновить до checkout@v5 / setup-node@v5 (или проверить совместимость) во ВСЕХ воркфлоу.
+🟡 2. Стипендии EDVOY/STUDYGROUP в аудите (sources/audit/scholarships-*.json): agregator-tier 0.35,
+   не дотянули до гейта 0.85. Варианты: (а) поднять tier, (б) live-проверка ссылки (+0.10),
+   (в) ручной разбор с точечным аппрувом. Заодно решить: гейтить ли кампусы из Edvoy-мержа
+   (mergeEdvoy в bobr-accommodation-merge.mjs — пока НЕ гейтятся). Обогащать, не резать.
+🟡 3. Фото-зоопарк скрейпера: проверить граф мёртвости (download-photos, pilot-photo-sets,
+   discover-logos и пр.) — как с теми 10. Удалять только после показа списка и «да».
+🟢 4. Техдолг: status.json в .gitignore (+git rm --cached); стейл-логи (edvoy-scrape.log,
+   scraper-*.log в корне, sources/revizor-flags.json дубль); deploy.yml wrangler@latest → закрепить.
+🟢 5. ПРОВЕРКА на живом manager: IAPro в дропдауне должен показывать «21 июня 2026 / 21 число»,
+   не 1 июля (если нет — реальный баг расписания).
+⏸️ Kaplan Playwright-коллектор (как GEDU, с kaplanpathways.com); i18n /en.
+
+=== НУЖНО ОТ ВЛАДЕЛЬЦА (разблокирует прод, без изменений) ===
+1) contacts.ts: телефон / WhatsApp / Telegram / email / БИН / адрес.
+2) Видео-отзывы: YouTube (unlisted) → STUDYROOM_REVIEWS (static.ts), секция reviews в [slug].astro.
 3) Cloudflare Pages env: CRM_WEBHOOK_URL (+ опц. CRM_TYPE, LEAD_NOTIFY_URL) — без него формы отдают ошибку.
-4) og:image — нужен дизайн-ассет 1200×630 (сейчас og без картинки, отложено сознательно).
-5) Хардкод требований в #requirements [slug].astro:719–729 — решение по копирайту: GPA «4.0+» захардкожен
-   (реальный gpa есть у 13/804), тиры «IELTS 6.0 Pre-Master's / 6.5 магистратура» — UK-pathway питч,
-   показывается всем странам. Обсудить, потом чинить.
+4) og:image — дизайн-ассет 1200×630.
+5) IAPro: рабочие логин/пароль (текущие секреты есть, но логин-форма Salesforce таймаутит —
+   проверить креды или селекторы).
+6) Хардкод #requirements [slug].astro:719–729: GPA «4.0+» и тиры IELTS — UK-pathway питч на всех
+   странах. Решение по копирайту, потом чинить.
 
-=== СЛЕДУЮЩИЕ ЗАХОДЫ (автономно, по BACKLOG-чеклисту) ===
-🟡 скрейпер: мёртвые скрипты — ТОЧНО мёртвые (0 ссылок, проверено): overnight-orchestrator.mjs,
-   overnight-v2-orchestrator.mjs, scrape-mukha-v3/v4/v5-apex.mjs, scrape-volk-collab-v2.mjs.
-   ТРЕБУЮТ проверки графа (подстроки v2/v3 + транзитивная мёртвость через overnight-volk-mukha.mjs /
-   smoke-test-all.mjs): scrape-direct-partners.mjs (v1), scrape-volk-collab.mjs (v1), scrape-mukha-api.mjs.
-   Удалять только после показа списка и «да».
-🟡 140 JSON с sourceHash: "sha256:placeholder" — ломает отслеживание изменений источника.
-🟡 verify-on-demand.yml — shmel/generate-verify без continue-on-error.
-🟢 техдолг: стейл-логи (edvoy-scrape.log, scraper-*.log в корне, sources/revizor-flags.json дубль),
-   status.json в .gitignore, deploy.yml wrangler@latest → закрепить версию, i18n /en.
-⏸️ IAPro (ждём креды), Kaplan Playwright-коллектор (как GEDU, с kaplanpathways.com).
-
-=== НЕЗАКРЫТО (перенесено, не потерять) ===
-ЗАДАЧА: разобрать стипендии EDVOY и STUDYGROUP в аудите (sources/audit/scholarships-*.json).
-Сейчас agregator-tier (0.35), почти все не дотянули до гейта 0.85. Варианты:
-  (а) поднять tier, (б) live-проверка ссылки (+0.10), (в) ручной разбор с точечным аппрувом.
-Заодно решить, гейтить ли кампусы из Edvoy-мержа (mergeEdvoy в bobr-accommodation-merge.mjs — пока НЕ гейтятся).
-ПРОВЕРКА на живом manager: выбрать IAPro в дропдауне — должно быть «21 июня 2026 / 21 число», не 1 июля
-(если нет — реальный баг расписания).
-Контекст confidence-гейта: scraper/lib/confidence.mjs, MIN=0.85, scoreFact = official .55 / aggregator .35
+=== КОНТЕКСТ ===
+Confidence-гейт: scraper/lib/confidence.mjs, MIN=0.85, scoreFact = official .55 / aggregator .35
 / inferred .15 + quality*.30 + corroborated .15 + linkLive .10. В каталог только >=0.85, ниже → аудит
 sources/audit/*-lowconf.json (обогащать, не резать — ничего не удалять).
+Расписание CI: dayOfMonth в scraper/tasks/aggregator-schedules.json (cron статичен, ручной синк).
+Registry агентов: scraper/tasks/registry.json (ПАУК=pauk.mjs программы, БОБР=bobr.mjs кампусы/жильё,
+ОРЁЛ=orel.mjs фото, РЕВИЗОР=revizor.mjs+revizor-apply, ШМЕЛЬ=shmel.mjs верификатор).
+.env-лоадер коллекторов: scraper/lib/load-env.mjs (не возвращать dotenv — его нет в зависимостях!).
