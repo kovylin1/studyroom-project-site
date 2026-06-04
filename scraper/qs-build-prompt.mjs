@@ -97,7 +97,7 @@ ${pathwayNote}
 - \`requirements.language.ielts\`: 0-9 number. \`requirements.exams\`: string[] (default \`[]\`).
 - \`lastChecked\`: \`"2026-05-18T00:00:00.000Z"\`.
 - \`sourceUrl\`: HTTPS URL (use \`officialUrl\` or Wikipedia URL if no other).
-- \`sourceHash\`: \`"sha256:" + 16 hex chars\` (any plausible value).
+- \`sourceHash\`: \`"sha256:" + sha256(slug + "|" + sourceUrl).slice(0, 16)\` — deterministic, NEVER "placeholder" or random.
 - \`confidence\`: \`"aggregator"\`.
 - \`language\`: \`"ru"\`.
 - OMIT optional fields entirely if unknown — never write \`null\`.
