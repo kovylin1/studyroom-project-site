@@ -65,8 +65,8 @@
 - [ ] `verify-on-demand.yml` — `shmel`/`generate-verify` без `continue-on-error`.
 
 **🟢 Техдолг:**
-- [ ] Мёртвый код: `UniversityCard.astro`, `catalog-filters.ts`, 5× `oxford-*.ts` (не импортируются).
-- [ ] Мёртвые скрейпер-скрипты: `overnight-*-orchestrator.mjs` ×4, `scrape-mukha-v*` ×4, `scrape-volk-collab` v1/v2, `scrape-direct-partners.mjs` v1, фото-зоопарк.
+- [x] **Мёртвый код сайта (7 файлов, удалены 2026-06-04)** — `UniversityCard.astro` (v1, index использует V2), `catalog-filters.ts` (index грузит `catalog-v2`; DOM-id `catalog-filters` — живая форма, не скрипт), 5× `oxford-*.ts` (старый шаблон `[slug].astro` переписан в v2). Каждый проверен: импортеров 0. Build после удаления: 807 стр., exit 0.
+- [ ] Мёртвые скрейпер-скрипты. ТОЧНО мёртвые (0 ссылок, проверено 2026-06-04): `overnight-orchestrator.mjs`, `overnight-v2-orchestrator.mjs`, `scrape-mukha-v3/v4/v5-apex.mjs`, `scrape-volk-collab-v2.mjs`. ТРЕБУЮТ проверки графа (совпадения могут быть подстрокой v2/v3; транзитивная мёртвость через `overnight-volk-mukha.mjs`/`smoke-test-all.mjs`): `scrape-direct-partners.mjs` (v1), `scrape-volk-collab.mjs` (v1), `scrape-mukha-api.mjs`. Фото-зоопарк не проверялся.
 - [ ] Стейл-мусор: `edvoy-scrape.log`, корневой `sources/revizor-flags.json` (дубль), `scraper-*.log` в корне.
 - [ ] `site/public/api/status.json` коммитится и грязнит дерево → в `.gitignore`.
 - [ ] i18n `/en` не начат; `deploy.yml` на `wrangler@latest` (незакреплённая версия).
