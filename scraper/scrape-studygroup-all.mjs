@@ -5,11 +5,7 @@
 //
 // Usage: SG_LOGIN=... SG_PASS=... node scraper/scrape-studygroup-all.mjs
 
-<<<<<<< HEAD
-
-=======
 import { config } from 'dotenv'; config();
->>>>>>> origin/main
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';

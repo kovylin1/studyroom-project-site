@@ -5,11 +5,7 @@
 //
 // Usage: QS_LOGIN=... QS_PASS=... node scraper/discover-qs-partners.mjs [--headed]
 
-<<<<<<< HEAD
-
-=======
 import { config } from 'dotenv'; config();
->>>>>>> origin/main
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
