@@ -203,7 +203,9 @@ async function processInstitution(page, inst) {
   }
   const campuses = [...campusMap.values()];
 
-  const scholarships = [...new Set(programs.map(p => p.scholarshipTag).filter(Boolean))];
+  // scholarshipTag — UI-бейдж курса («Scholarship applied!»), НЕ название стипендии:
+  // имён стипендий Edvoy API не отдаёт. Сохраняем как флаг, junk-строки в каталог не пускаем.
+  const scholarshipsAvailable = programs.some(p => p.scholarshipTag);
   const gallery = Array.isArray(edp.edpContent?.galleryImages) ? edp.edpContent.galleryImages.filter(Boolean) : [];
 
   const out = {
@@ -221,7 +223,8 @@ async function processInstitution(page, inst) {
     rankings: edp.edpContent?.rankings || [],
     keyFacts: edp.keyFacts || [],
     highlights: edp.edpContent?.highlights || [],
-    scholarships,                  // derived from program scholarshipTag
+    scholarships: [],              // имён Edvoy не отдаёт; см. scholarshipsAvailable
+    scholarshipsAvailable,         // хотя бы у одного курса есть scholarshipTag-бейдж
     accommodation: null,           // not exposed by Edvoy institution API (Stays is a separate surface)
     campuses,
     programs,
@@ -232,7 +235,7 @@ async function processInstitution(page, inst) {
   await fs.writeFile(filePath, JSON.stringify(out, null, 2) + '\n');
   return {
     status: 'ok', slug, programs: programs.length, campuses: campuses.length,
-    scholarships: scholarships.length, gallery: gallery.length,
+    scholarships: 0, gallery: gallery.length,
     logo: out.logoUrl ? 1 : 0, banner: out.bannerUrl ? 1 : 0,
   };
 }
