@@ -5,7 +5,7 @@ D:\Эдгар, (НЕ ТРОЖ ОПАСТНО ДЛЯ ЖИЗНИ)\cursor projects\
 
 Проект: D:\Эдгар, (НЕ ТРОЖ ОПАСТНО ДЛЯ ЖИЗНИ)\cursor projects\claude projects\projects\studyroom-project-site
 Ветка main → push в main = автодеплой Cloudflare Pages (deploy.yml). Сборка: cd site && npm run build (exit 0, 807 стр.).
-status.json НЕ коммитить (артефакт; перед rebase можно git checkout -- site/public/api/status.json).
+status.json теперь в .gitignore и НЕ в git (генерится на каждом npm run build) — проблема rebase снята.
 НЕ пушить/НЕ удалять данные каталога без моего слова. Удаление файлов — только после показа списка и моего «да».
 Перед push: git fetch — CI staggered-scrape и он-деманд ПАУК пушат сами (rebase поверх, данные каталога не клобить).
 В конце commit: Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
@@ -42,21 +42,33 @@ status.json НЕ коммитить (артефакт; перед rebase мож�
   build+deploy ок. iapro — TimeoutError на логине (нет кредов, известный блокер).
 - Параллельная сессия: push-retry во всех 9 push-воркфлоу (2c18857) — лечит race ПАУК vs revizor-apply.
 
-=== ЗАДАЧИ НА ЗАВТРА (автономно, по приоритету) ===
-🟡 1. Node.js 20 actions deprecation (дедлайн 16.06): УЖЕ В РАБОТЕ у параллельной сессии —
-   ветка feat/node24-actions-edvoy-scholarship-fix (checkout@v5/setup-node@v5 + edvoy scholarshipTag
-   + junk-стипендии). Проверить её PR/мёрдж, НЕ дублировать.
-🟡 2. Стипендии EDVOY/STUDYGROUP в аудите (sources/audit/scholarships-*.json): agregator-tier 0.35,
-   не дотянули до гейта 0.85. Варианты: (а) поднять tier, (б) live-проверка ссылки (+0.10),
-   (в) ручной разбор с точечным аппрувом. Заодно решить: гейтить ли кампусы из Edvoy-мержа
-   (mergeEdvoy в bobr-accommodation-merge.mjs — пока НЕ гейтятся). Обогащать, не резать.
-🟡 3. Фото-зоопарк скрейпера: проверить граф мёртвости (download-photos, pilot-photo-sets,
-   discover-logos и пр.) — как с теми 10. Удалять только после показа списка и «да».
-🟢 4. Техдолг: status.json в .gitignore (+git rm --cached); стейл-логи (edvoy-scrape.log,
-   scraper-*.log в корне, sources/revizor-flags.json дубль); deploy.yml wrangler@latest → закрепить.
-🟢 5. ПРОВЕРКА на живом manager: IAPro в дропдауне должен показывать «21 июня 2026 / 21 число»,
-   не 1 июля (если нет — реальный баг расписания).
+=== СДЕЛАНО 2026-06-05, сессия 2 (PR #29 f5fc42cf + PR #31 f7e0ffa, ОБА СМЁРДЖЕНЫ) ===
+Все 5 автономных задач 06-04 закрыты:
+- CI Node 24: все 10 воркфлоу checkout@v5 / setup-node@v5 (дедлайн 16.06 снят).
+- Стипендии: КОРЕНЬ — Edvoy API имён НЕ отдаёт; scholarshipTag = UI-бейдж «Scholarship applied!»
+  (57/57 одинаковых). StudyGroup стипендии вообще не собирал. Гейт работал верно. Фикс:
+  scrape-edvoy-all пишет флаг scholarshipsAvailable (не junk-массив), bobr-merge фильтрует
+  junk из стейл-extracts. РЕШЕНИЕ: кампусы Edvoy НЕ гейтить (структурные GraphQL-поля,
+  гейт зарезал бы все — задокументировано в mergeEdvoy). −45 легаси «Scholarship applied!»
+  из каталога (одобрено владельцем). Реальные стипендии = discovery через ШМЕЛЯ (official
+  tier 0.55 проходит гейт) — отдельная фича, в бэклог.
+- Фото-зоопарк: граф по всем 72 скриптам → удалено 28 мёртвых (−10к строк): 6 фото
+  (pilot-photo-sets, download-logos, photos-from-manifests, discover-logos, visual-check,
+  bobr-rehero) + 9 seed-* + 8 overnight-цепочка + 5 старых поколений. ОСТАВЛЕНЫ 6 ручных:
+  qs-build-prompt, smoke-test-all, bobr-serve, bobr-preview, discover-studygroup,
+  bobr-strip-topup (решение владельца: не используется ≠ удалять). Целостность проверена:
+  registry 16/16 OK, синтаксис агентов OK, битая ссылка smoke-test→seed-navitas-au убрана.
+- Техдолг: status.json в .gitignore + untracked (build сам генерит через generate-status.mjs);
+  sources/revizor-flags.json (стейл-дубль 24.05) удалён — канонический scraper/sources/;
+  wrangler@latest → wrangler@4; 4 стейл-лога scraper-*.log из корня стёрты.
+- Проверка №5: бага НЕТ. Живой /api/status.json: iapro dayOfMonth=21; manager.astro
+  aggregatorNextRunFromDayOfMonth(21) при 05.06 → 21 июня 2026. «1 июля» был бы только
+  при отсутствии dayOfMonth.
+
+=== ЗАДАЧИ (по приоритету) ===
+🟡 СОРОКА follow-up A/B/C — см. блок выше (355 кейсов ждут wiring в manager).
 ⏸️ Kaplan Playwright-коллектор (как GEDU, с kaplanpathways.com); i18n /en.
+⏸️ Стипендии с официальных сайтов через ШМЕЛЯ (см. выше).
 
 === НУЖНО ОТ ВЛАДЕЛЬЦА (разблокирует прод, без изменений) ===
 1) contacts.ts: телефон / WhatsApp / Telegram / email / БИН / адрес.
@@ -72,7 +84,7 @@ status.json НЕ коммитить (артефакт; перед rebase мож�
 Confidence-гейт: scraper/lib/confidence.mjs, MIN=0.85, scoreFact = official .55 / aggregator .35
 / inferred .15 + quality*.30 + corroborated .15 + linkLive .10. В каталог только >=0.85, ниже → аудит
 sources/audit/*-lowconf.json (обогащать, не резать — ничего не удалять).
-Расписание CI: dayOfMonth в scraper/tasks/aggregator-schedules.json (cron статичен, ручной синк).
+Расписание CI: dayOfMonth в scraper/sources/aggregator-schedules.json (cron статичен, ручной синк).
 Registry агентов: scraper/tasks/registry.json (ПАУК=pauk.mjs программы, БОБР=bobr.mjs кампусы/жильё,
 ОРЁЛ=orel.mjs фото, РЕВИЗОР=revizor.mjs+revizor-apply, ШМЕЛЬ=shmel.mjs верификатор).
 .env-лоадер коллекторов: scraper/lib/load-env.mjs (не возвращать dotenv — его нет в зависимостях!).
