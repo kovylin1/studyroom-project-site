@@ -22,7 +22,6 @@ const log = (...a) => process.stderr.write(`[smoke] ${a.join(' ')}\n`);
 
 const COLLECTORS = [
   { name: 'navitas-uk',      script: 'seed-navitas-uk.mjs',           args: [],             needsEnv: [] },
-  { name: 'navitas-au',      script: 'seed-navitas-au.mjs',           args: [],             needsEnv: [] },
   { name: 'oxford-intl',     script: 'seed-oxfordintl-uk.mjs',        args: [],             needsEnv: [] },
   { name: 'qahe',            script: 'scrape-qahe-all.mjs',           args: ['--limit=1'],  needsEnv: [] },
   { name: 'cats',            script: 'scrape-cats-all.mjs',           args: ['--dry-run'],  needsEnv: [] },
