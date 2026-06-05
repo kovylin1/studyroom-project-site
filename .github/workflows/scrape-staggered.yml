@@ -45,7 +45,7 @@ jobs:
     timeout-minutes: 45
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Определить агрегатор по дню месяца
         id: detect
@@ -65,7 +65,7 @@ jobs:
           echo "aggregator=$AGG" >> $GITHUB_OUTPUT
           echo "Агрегатор: $AGG"
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         if: steps.detect.outputs.aggregator != ''
         with:
           node-version: '22'
