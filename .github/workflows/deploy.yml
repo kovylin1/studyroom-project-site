@@ -42,7 +42,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         working-directory: site
         run: |
-          npx --yes wrangler@latest pages deploy dist \
+          npx --yes wrangler@4 pages deploy dist \
             --project-name=studyroom-project-site \
             --branch=main \
             --commit-dirty=true
