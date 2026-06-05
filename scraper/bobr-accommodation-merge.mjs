@@ -93,6 +93,9 @@ function inferType(title) {
 
 function mergeEdvoy(uni, ev) {
   let changed = 0;
+  // Кампусы НЕ гейтим (решение 2026-06-05): это структурные поля GraphQL
+  // (campusRef.name), а не эвристический скрейп — junk-риска, под который
+  // построен confidence-гейт, здесь нет; гейт бы зарезал все кампусы (max 0.75).
   if (Array.isArray(ev.campuses) && ev.campuses.length) {
     if (!Array.isArray(uni.campuses)) uni.campuses = [];
     const existing = new Set(uni.campuses.map(c => (c.title || c.name || '').toLowerCase()));
@@ -111,6 +114,8 @@ function mergeEdvoy(uni, ev) {
     for (const s of ev.scholarships) {
       const name = s.name || s.title || s;
       if (!name || existing.has(name.toLowerCase())) continue;
+      // UI-junk из стейл-extracts («Scholarship applied!» и т.п.) — не факт, мимо аудита
+      if (qualityOfScholarship(name) <= 0.2 || /^scholarships?\s+applied!?$/i.test(String(name).trim())) continue;
       // Edvoy = aggregator (0.35); строгий гейт ≥0.85 уводит почти всё в аудит
       const confidence = Math.round(scoreFact({
         sourceTier: 'aggregator', quality: qualityOfScholarship(name), corroborated: false, linkLive: false,
@@ -309,6 +314,8 @@ for (const ev of unmatched) {
     for (const s of ev.scholarships) {
       const name = s.name||s.title||s;
       if (!name) continue;
+      // UI-junk из стейл-extracts — не факт, мимо аудита (см. mergeEdvoy)
+      if (qualityOfScholarship(name) <= 0.2 || /^scholarships?\s+applied!?$/i.test(String(name).trim())) continue;
       const confidence = Math.round(scoreFact({
         sourceTier: 'aggregator', quality: qualityOfScholarship(name), corroborated: false, linkLive: false,
       }) * 100) / 100;
