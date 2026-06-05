@@ -10,6 +10,27 @@ status.json НЕ коммитить (артефакт; перед rebase мож�
 Перед push: git fetch — CI staggered-scrape и он-деманд ПАУК пушат сами (rebase поверх, данные каталога не клобить).
 В конце commit: Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
 
+=== СДЕЛАНО 2026-06-05 (PR #30 СМЁРДЖЕН в main, merge 8a26b99) ===
+- НОВЫЙ агент СОРОКА (scraper/soroka.mjs + scraper/lib/numbers.mjs) — директор достоверных цифр:
+  tuition программ, цены жилья из текста, keyFacts-цифры, IELTS/GPA. Phase 4.5 в pauk.mjs (--skip-soroka).
+- 3 прохода: кросс-сверка extracts ($0; extracts в ДВУХ корнях — scraper/sources И корневой sources)
+  → санити-диапазоны по валюте ($0) → живой офсайт ТОЛЬКО для спорных (кап --max-live=25).
+- Гибрид: авто-применение только official-подтверждённых >=0.85; остальное → кейсы
+  site/public/api/soroka-review.json (формат item = РЕВИЗОР) + sources/audit/soroka-report.json.
+- Прогон 804: 19732 факта, 3129 corroborated (confidence 0.8 в 91 файле), 355 кейсов:
+  64 tuition=0, 280 outliers, 9 mismatch (domus-academy ~18% vs edvoy), 2 IELTS-бага
+  (asc-perth=0, queen-ethelburgas=1). Build 807/exit 0, validate 804/804.
+- Схемы: confidence?:0..1 в program/scholarship/campus/accommodation (scraper schema.ts + validate-unis.ts).
+- Дизайн-спека: docs/superpowers/specs/2026-06-05-soroka-design.md.
+
+=== ЗАДАЧИ СОРОКА follow-up (приоритет на следующую сессию) ===
+🟡 A. Wiring кейсов СОРОКИ в панель manager + revizor-apply (формат уже совместим с РЕВИЗОРОМ;
+   паттерн — блок revizor в manager.astro ~1676+). 355 кейсов ждут ручных решений.
+🟡 B. Разобрать кейсы: 64 tuition=0 (цена не заполнена — добить из extracts/офсайтов),
+   2 IELTS-бага — быстрые фиксы руками.
+🟢 C. Маппинг слагов extract<->catalog: abertay (каталог) vs abertay-university (extract) —
+   такие вузы НЕ кросс-сверяются (та же дыра в merge-programs). Построить alias-карту.
+
 === СДЕЛАНО 2026-06-04 (ВСЁ ЗАПУШЕНО, последний fae5729 + CI-коммиты ПАУКа) ===
 - Мёртвый код: сайт 7 файлов (b8c55d7) + скрейпер 10 файлов по графу (cc4d157).
 - sourceHash: 140 JSON placeholder → sha256(slug|sourceUrl) (c578dd0); qs-build-prompt — формула.
@@ -22,9 +43,9 @@ status.json НЕ коммитить (артефакт; перед rebase мож�
 - Параллельная сессия: push-retry во всех 9 push-воркфлоу (2c18857) — лечит race ПАУК vs revizor-apply.
 
 === ЗАДАЧИ НА ЗАВТРА (автономно, по приоритету) ===
-🟡 1. Node.js 20 actions deprecation: CI-аннотация в каждом ране — с 16 ИЮНЯ 2026 GitHub
-   принудительно переведёт actions/checkout@v4 + actions/setup-node@v4 на Node 24.
-   Обновить до checkout@v5 / setup-node@v5 (или проверить совместимость) во ВСЕХ воркфлоу.
+🟡 1. Node.js 20 actions deprecation (дедлайн 16.06): УЖЕ В РАБОТЕ у параллельной сессии —
+   ветка feat/node24-actions-edvoy-scholarship-fix (checkout@v5/setup-node@v5 + edvoy scholarshipTag
+   + junk-стипендии). Проверить её PR/мёрдж, НЕ дублировать.
 🟡 2. Стипендии EDVOY/STUDYGROUP в аудите (sources/audit/scholarships-*.json): agregator-tier 0.35,
    не дотянули до гейта 0.85. Варианты: (а) поднять tier, (б) live-проверка ссылки (+0.10),
    (в) ручной разбор с точечным аппрувом. Заодно решить: гейтить ли кампусы из Edvoy-мержа
