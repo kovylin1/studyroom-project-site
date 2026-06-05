@@ -5,13 +5,15 @@
 //   2. detect-gaps → sources/shmel-worklist.json
 //   3. shmel (verifier) → sources/official-extracts/
 //   4. merge-programs → catalog/*.json (enrichment, never deletes)
+//   4.5. soroka (СОРОКА, цифры) → soroka-review.json + audit + точечные official-фиксы
 //   5. validate-unis (Zod check)
 //
-// Usage: node scraper/pauk.mjs [--skip-collectors] [--skip-shmel] [--dry-run] [--limit=N] [--headed] [--slug SLUG]
+// Usage: node scraper/pauk.mjs [--skip-collectors] [--skip-shmel] [--skip-soroka] [--dry-run] [--limit=N] [--headed] [--slug SLUG]
 //
 // Flags:
 //   --skip-collectors   use existing extracts, skip scraping
 //   --skip-shmel        skip official site verification step
+//   --skip-soroka       skip numbers verification step (СОРОКА)
 //   --dry-run           merge-programs reports but does not write
 //   --limit=N           pass --limit=N to each sub-script (smoke test)
 //   --headed            pass to Playwright collectors (show browser)
@@ -24,6 +26,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SKIP_COLLECTORS = process.argv.includes('--skip-collectors');
 const SKIP_SHMEL = process.argv.includes('--skip-shmel');
+const SKIP_SOROKA = process.argv.includes('--skip-soroka');
 const DRY_RUN = process.argv.includes('--dry-run');
 const HEADED = process.argv.includes('--headed');
 const LIMIT_ARG = process.argv.find(a => a.startsWith('--limit=')) || '';
@@ -112,6 +115,14 @@ if (!SKIP_SHMEL) {
 // Phase 4: Merge all extracts into catalog
 log('=== Phase 4: merge-programs ===');
 report['merge-programs'] = await S('merge-programs.mjs', ...(DRY_RUN ? ['--dry-run'] : []));
+
+// Phase 4.5: СОРОКА — проверка цифр (tuition, жильё, keyFacts, IELTS)
+if (!SKIP_SOROKA) {
+  log('=== Phase 4.5: soroka ===');
+  report['soroka'] = await S('soroka.mjs', ...(DRY_RUN ? ['--dry-run'] : []));
+} else {
+  log('=== Phase 4.5: soroka SKIPPED ===');
+}
 
 // Phase 5: Zod validate
 log('=== Phase 5: validate-unis ===');
