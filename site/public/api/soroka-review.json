@@ -2,9 +2,9 @@
   "generatedAt": "2026-06-08T08:28:40.635Z",
   "scope": "all",
   "summary": {
-    "total": 773,
-    "pending": 773,
-    "autoResolved": 0
+    "total": 759,
+    "pending": 759,
+    "autoResolved": 14
   },
   "items": [
     {
@@ -5197,9 +5197,9 @@
       "name": "Louisiana State University",
       "issue": "tuition_zero",
       "severity": "warning",
-      "detail": "Tuition «PhD Computer Science» = 0 USD — цена не заполнена",
+      "detail": "Tuition «PhD Computer Science» = 0 USD — цена не заполнена — офсайт: ~12886 USD (не корроборировано, проверить)",
       "catalog": 0,
-      "official": null,
+      "official": 12886,
       "program": "lsu-phd-computer-science",
       "checkedAt": "2026-06-08T08:28:40.635Z",
       "decision": null,
@@ -5212,9 +5212,9 @@
       "name": "Louisiana State University",
       "issue": "tuition_zero",
       "severity": "warning",
-      "detail": "Tuition «PhD Chemistry» = 0 USD — цена не заполнена",
+      "detail": "Tuition «PhD Chemistry» = 0 USD — цена не заполнена — офсайт: ~12886 USD (не корроборировано, проверить)",
       "catalog": 0,
-      "official": null,
+      "official": 12886,
       "program": "lsu-phd-chemistry",
       "checkedAt": "2026-06-08T08:28:40.635Z",
       "decision": null,
@@ -5227,9 +5227,9 @@
       "name": "Louisiana State University",
       "issue": "tuition_zero",
       "severity": "warning",
-      "detail": "Tuition «PhD Engineering» = 0 USD — цена не заполнена",
+      "detail": "Tuition «PhD Engineering» = 0 USD — цена не заполнена — офсайт: ~12886 USD (не корроборировано, проверить)",
       "catalog": 0,
-      "official": null,
+      "official": 12886,
       "program": "lsu-phd-engineering",
       "checkedAt": "2026-06-08T08:28:40.635Z",
       "decision": null,
@@ -6558,10 +6558,10 @@
       "applied": false
     },
     {
-      "id": "portsmouth||tuition_mismatch||portsmouth-beng-hons-electronic-engineering||edvoy",
-      "slug": "portsmouth",
-      "name": "University of Portsmouth",
-      "issue": "tuition_mismatch",
+      "id": "palm-beach-atlantic||tuition_outlier||palm-beach-atlantic-pharmd",
+      "slug": "palm-beach-atlantic",
+      "name": "Palm Beach Atlantic University",
+      "issue": "tuition_outlier",
       "severity": "warning",
       "detail": "«BEng (Hons) Electronic Engineering»: каталог 26897 GBP, edvoy 19200 GBP (29%)",
       "catalog": 26897,
