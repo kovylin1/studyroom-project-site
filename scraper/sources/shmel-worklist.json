@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-08T08:02:49.628Z",
+  "generated": "2026-06-08T08:28:29.908Z",
   "minPrograms": 8,
-  "total": 593,
+  "total": 588,
   "byPriority": {
     "critical": 36,
     "high": 63,
-    "medium": 494
+    "medium": 489
   },
   "items": [
     {
@@ -1674,21 +1674,6 @@
       "score": 38
     },
     {
-      "slug": "3a-france",
-      "name": "École 3A",
-      "sourceUrl": "https://www.ecole3a.edu/",
-      "programs": 24,
-      "verified": 0,
-      "sources": [],
-      "staleDays": 21,
-      "priority": "medium",
-      "reasons": [
-        "no verifiedBySite",
-        "no source provenance"
-      ],
-      "score": 37
-    },
-    {
       "slug": "academy-of-learning-career-college-scarborough",
       "name": "Academy of Learning Career College, Scarborough",
       "sourceUrl": "https://edge.edvoy.com/institutions/academy-of-learning-career-college-scarborough",
@@ -1936,23 +1921,6 @@
       "reasons": [
         "no verifiedBySite",
         "single source: edvoy"
-      ],
-      "score": 37
-    },
-    {
-      "slug": "bcit",
-      "name": "British Columbia Institute of Technology",
-      "sourceUrl": "https://www.bcit.ca/",
-      "programs": 141,
-      "verified": 0,
-      "sources": [
-        "collab"
-      ],
-      "staleDays": 21,
-      "priority": "medium",
-      "reasons": [
-        "no verifiedBySite",
-        "single source: collab"
       ],
       "score": 37
     },
@@ -3242,16 +3210,16 @@
       "slug": "hartford",
       "name": "University of Hartford",
       "sourceUrl": "https://www.hartford.edu/",
-      "programs": 205,
+      "programs": 215,
       "verified": 0,
       "sources": [
-        "edvoy"
+        "edvoy",
+        "kaplan"
       ],
       "staleDays": 21,
       "priority": "medium",
       "reasons": [
-        "no verifiedBySite",
-        "single source: edvoy"
+        "no verifiedBySite"
       ],
       "score": 37
     },
@@ -3354,21 +3322,6 @@
       "reasons": [
         "no verifiedBySite",
         "single source: edvoy"
-      ],
-      "score": 37
-    },
-    {
-      "slug": "herzing-college",
-      "name": "Herzing College",
-      "sourceUrl": "https://www.herzing.ca/",
-      "programs": 14,
-      "verified": 0,
-      "sources": [],
-      "staleDays": 21,
-      "priority": "medium",
-      "reasons": [
-        "no verifiedBySite",
-        "no source provenance"
       ],
       "score": 37
     },
@@ -5865,21 +5818,6 @@
       "score": 37
     },
     {
-      "slug": "uea",
-      "name": "University of East Anglia",
-      "sourceUrl": "https://www.uea.ac.uk/",
-      "programs": 125,
-      "verified": 0,
-      "sources": [],
-      "staleDays": 17,
-      "priority": "medium",
-      "reasons": [
-        "no verifiedBySite",
-        "no source provenance"
-      ],
-      "score": 37
-    },
-    {
       "slug": "uic",
       "name": "University of Illinois Chicago",
       "sourceUrl": "https://www.uic.edu/",
@@ -6340,16 +6278,16 @@
       "slug": "university-of-the-west-of-england",
       "name": "University of the West of England",
       "sourceUrl": "https://edge.edvoy.com/institutions/university-of-the-west-of-england-bristol",
-      "programs": 265,
+      "programs": 274,
       "verified": 0,
       "sources": [
-        "edvoy"
+        "edvoy",
+        "kaplan"
       ],
       "staleDays": 16,
       "priority": "medium",
       "reasons": [
-        "no verifiedBySite",
-        "single source: edvoy"
+        "no verifiedBySite"
       ],
       "score": 37
     },
@@ -6440,16 +6378,16 @@
       "slug": "uvic",
       "name": "University of Victoria",
       "sourceUrl": "https://www.uvic.ca/",
-      "programs": 96,
+      "programs": 113,
       "verified": 0,
       "sources": [
-        "edvoy"
+        "edvoy",
+        "kaplan"
       ],
       "staleDays": 21,
       "priority": "medium",
       "reasons": [
-        "no verifiedBySite",
-        "single source: edvoy"
+        "no verifiedBySite"
       ],
       "score": 37
     },
@@ -7345,6 +7283,22 @@
       "score": 33
     },
     {
+      "slug": "3a-france",
+      "name": "École 3A",
+      "sourceUrl": "https://www.ecole3a.edu/",
+      "programs": 27,
+      "verified": 3,
+      "sources": [
+        "official"
+      ],
+      "staleDays": 21,
+      "priority": "medium",
+      "reasons": [
+        "single source: official"
+      ],
+      "score": 32
+    },
+    {
       "slug": "abat-oliba-barcelona",
       "name": "Universitat Abat Oliba CEU Barcelona",
       "sourceUrl": "https://www.uao.es/",
@@ -7446,22 +7400,6 @@
       "sourceUrl": "https://www.uva.nl/",
       "programs": 272,
       "verified": 1,
-      "sources": [
-        "official"
-      ],
-      "staleDays": 17,
-      "priority": "medium",
-      "reasons": [
-        "single source: official"
-      ],
-      "score": 32
-    },
-    {
-      "slug": "asu-london",
-      "name": "ASU London",
-      "sourceUrl": "https://www.kaplanpathways.com/where-to-study/uk-universities/asu-london/",
-      "programs": 29,
-      "verified": 5,
       "sources": [
         "official"
       ],
@@ -7860,8 +7798,8 @@
       "slug": "eynesbury",
       "name": "Eynesbury College",
       "sourceUrl": "https://www.eynesbury.edu.au/",
-      "programs": 27,
-      "verified": 13,
+      "programs": 28,
+      "verified": 14,
       "sources": [
         "official"
       ],
@@ -7930,6 +7868,22 @@
         "official"
       ],
       "staleDays": 17,
+      "priority": "medium",
+      "reasons": [
+        "single source: official"
+      ],
+      "score": 32
+    },
+    {
+      "slug": "herzing-college",
+      "name": "Herzing College",
+      "sourceUrl": "https://www.herzing.ca/",
+      "programs": 15,
+      "verified": 1,
+      "sources": [
+        "official"
+      ],
+      "staleDays": 21,
       "priority": "medium",
       "reasons": [
         "single source: official"
@@ -8084,8 +8038,8 @@
       "slug": "koc-turkey",
       "name": "Koç University",
       "sourceUrl": "https://www.ku.edu.tr/",
-      "programs": 11,
-      "verified": 4,
+      "programs": 13,
+      "verified": 6,
       "sources": [
         "official"
       ],
@@ -8228,8 +8182,8 @@
       "slug": "manchester-architecture",
       "name": "Manchester School of Architecture",
       "sourceUrl": "https://www.msa.ac.uk/",
-      "programs": 34,
-      "verified": 9,
+      "programs": 39,
+      "verified": 14,
       "sources": [
         "official"
       ],
@@ -8292,8 +8246,8 @@
       "slug": "mercer",
       "name": "Mercer University",
       "sourceUrl": "https://www.mercer.edu/",
-      "programs": 39,
-      "verified": 10,
+      "programs": 41,
+      "verified": 12,
       "sources": [
         "official"
       ],
@@ -8340,8 +8294,8 @@
       "slug": "murdoch-dubai",
       "name": "Murdoch University Dubai",
       "sourceUrl": "https://www.murdochuniversitydubai.com/",
-      "programs": 59,
-      "verified": 18,
+      "programs": 61,
+      "verified": 20,
       "sources": [
         "official"
       ],
@@ -8529,22 +8483,6 @@
       "score": 32
     },
     {
-      "slug": "oregon",
-      "name": "University of Oregon",
-      "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/university-of-oregon/",
-      "programs": 77,
-      "verified": 5,
-      "sources": [
-        "official"
-      ],
-      "staleDays": 17,
-      "priority": "medium",
-      "reasons": [
-        "single source: official"
-      ],
-      "score": 32
-    },
-    {
       "slug": "palm-beach-atlantic",
       "name": "Palm Beach Atlantic University",
       "sourceUrl": "https://www.pba.edu/",
@@ -8612,8 +8550,8 @@
       "slug": "queen-mary-malta",
       "name": "Queen Mary University of London in Malta",
       "sourceUrl": "https://www.qmul.ac.uk/malta/",
-      "programs": 148,
-      "verified": 35,
+      "programs": 149,
+      "verified": 36,
       "sources": [
         "official"
       ],
@@ -8710,22 +8648,6 @@
       "sourceUrl": "https://www.unisr.it/",
       "programs": 75,
       "verified": 2,
-      "sources": [
-        "official"
-      ],
-      "staleDays": 17,
-      "priority": "medium",
-      "reasons": [
-        "single source: official"
-      ],
-      "score": 32
-    },
-    {
-      "slug": "simmons",
-      "name": "Simmons University",
-      "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/simmons-university/",
-      "programs": 143,
-      "verified": 5,
       "sources": [
         "official"
       ],
@@ -8884,8 +8806,8 @@
       "slug": "ubi-brussels",
       "name": "UBI Business School",
       "sourceUrl": "https://www.ubi.edu/",
-      "programs": 44,
-      "verified": 19,
+      "programs": 46,
+      "verified": 21,
       "sources": [
         "official"
       ],
@@ -8929,11 +8851,11 @@
       "score": 32
     },
     {
-      "slug": "uconn",
-      "name": "University of Connecticut",
-      "sourceUrl": "https://www.kaplanpathways.com/where-to-study/us-universities/university-of-connecticut/",
-      "programs": 117,
-      "verified": 5,
+      "slug": "uea",
+      "name": "University of East Anglia",
+      "sourceUrl": "https://www.uea.ac.uk/",
+      "programs": 128,
+      "verified": 3,
       "sources": [
         "official"
       ],
