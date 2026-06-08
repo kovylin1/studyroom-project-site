@@ -10,6 +10,30 @@ status.json теперь в .gitignore и НЕ в git (генерится на �
 Перед push: git fetch — CI staggered-scrape и он-деманд ПАУК пушат сами (rebase поверх, данные каталога не клобить).
 В конце commit: Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
 
+=== СДЕЛАНО 2026-06-08 (PR #32 + #33 + #34 СМЁРДЖЕНЫ в main) — СОРОКА follow-up A/B/C ===
+- A (PR #32): панель /manager стала source-aware — грузит revizor-review.json И
+  soroka-review.json, мёрджит в один список (тег директора в строке), роутит каждое
+  решение в свой файл (per-source localStorage + GitHub PUT). Кнопка «Применить решения»
+  запускает apply-workflow того источника, где есть решения. Новые:
+  scraper/soroka-apply.mjs (зеркало revizor-apply: tuition_mismatch→update,
+  tuition_zero/outlier→delete с guard «не опустошать programs», ielts_implausible→только ignore),
+  .github/workflows/soroka-apply.yml. 355 кейсов теперь кликабельны.
+- B (PR #33): 2 IELTS-бага убраны (asc-perth ielts=0 языковая школа; queen-ethelburgas
+  ielts=1 пансион) — удалили недостоверное поле, не выдумывая. 64 tuition_zero: extracts
+  цен НЕ содержат → решение владельца оставить операторскими кейсами в панели.
+- C (PR #34): alias-карта слагов extract↔catalog. scraper/build-slug-aliases.mjs строит
+  scraper/sources/slug-aliases.json (172 вуза) по нормализ. НАЗВАНИЮ вуза (не подстроке
+  слага). soroka.mjs + merge-programs.mjs перебирают [slug,...алиасы]. Закрыта тихая дыра:
+  bath↔university-of-bath было 0 фактов → стало 13/3 mismatch. Перегенерить:
+  node scraper/build-slug-aliases.mjs.
+
+=== СЛЕДУЮЩЕЕ (вариант 1 — СПРОЕКТИРОВАН, НЕ НАПИСАН) ===
+Расширить liveCheckUni в scraper/soroka.mjs на tuition_zero — live-добор цен с офсайта
+(ШМЕЛЬ цены НЕ парсит, проверено). Полный код-дизайн в памяти:
+memory/project_soroka_tuition_zero_plan.md (новая ветка для tuition_zero + доработка
+soroka-apply.mjs на update для tuition_zero). Прогон по 13 вузам с нулями. $0 LLM.
+Также: 1 полный прогон СОРОКИ (CI/on-demand) подсветит новые кейсы по 172 alias-вузам.
+
 === СДЕЛАНО 2026-06-05 (PR #30 СМЁРДЖЕН в main, merge 8a26b99) ===
 - НОВЫЙ агент СОРОКА (scraper/soroka.mjs + scraper/lib/numbers.mjs) — директор достоверных цифр:
   tuition программ, цены жилья из текста, keyFacts-цифры, IELTS/GPA. Phase 4.5 в pauk.mjs (--skip-soroka).
