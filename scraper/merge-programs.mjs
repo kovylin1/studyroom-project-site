@@ -35,6 +35,13 @@ const SOURCES = [
   { dir: 'volk-extracts', name: 'collab', isOfficial: false },
 ];
 
+// Алиасы слагов (каталог → extract): вузы с расходящимися слагами
+// (abertay ↔ abertay-university) тоже мёрджатся. Генерится build-slug-aliases.mjs.
+let SLUG_ALIASES = {};
+try {
+  SLUG_ALIASES = JSON.parse(await fs.readFile(path.join(SOURCES_DIR, 'slug-aliases.json'), 'utf8')).aliases || {};
+} catch { /* карты ещё нет — работаем без алиасов */ }
+
 function normalize(s) {
   return (s || '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '')
     .replace(/[^a-z0-9]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -165,16 +172,18 @@ async function mergeAllSourcesForSlug(slug) {
   const sourcesUsed = [];
 
   for (const src of SOURCES) {
-    const extractPath = path.join(SOURCES_DIR, src.dir, `${slug}.json`);
-    try {
-      const extract = JSON.parse(await fs.readFile(extractPath, 'utf8'));
-      const { added, enriched } = applyExtract(byKey, extract, src.name, src.isOfficial, slug);
-      if (added + enriched > 0) sourcesUsed.push({ source: src.name, added, enriched });
-      totalAdded += added;
-      totalEnriched += enriched;
-    } catch {
-      /* extract doesn't exist for this source — skip silently */
+    // Точный слаг, затем алиасы (extract под другим именем).
+    const candidates = [slug, ...(SLUG_ALIASES[slug] || [])];
+    let extract = null;
+    for (const c of candidates) {
+      try { extract = JSON.parse(await fs.readFile(path.join(SOURCES_DIR, src.dir, `${c}.json`), 'utf8')); break; }
+      catch { /* нет такого файла — пробуем следующего кандидата */ }
     }
+    if (!extract) continue;
+    const { added, enriched } = applyExtract(byKey, extract, src.name, src.isOfficial, slug);
+    if (added + enriched > 0) sourcesUsed.push({ source: src.name, added, enriched });
+    totalAdded += added;
+    totalEnriched += enriched;
   }
 
   if (totalAdded + totalEnriched === 0) return { added: 0, enriched: 0, sourcesUsed };
