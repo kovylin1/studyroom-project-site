@@ -1259,6 +1259,7 @@ const CONTROL_DEFAULT_URL = '';
   const VERIFY_WORKFLOW        = 'verify-on-demand.yml';
   const REVIZOR_APPLY_WORKFLOW = 'revizor-apply.yml';
   const SOROKA_APPLY_WORKFLOW  = 'soroka-apply.yml';
+  const SOROKA_RUN_WORKFLOW    = 'soroka-on-demand.yml';
   const OREL_WORKFLOW          = 'orel-on-demand.yml';
   const PAUK_WORKFLOW          = 'pauk-on-demand.yml';
   const BOBR_WORKFLOW          = 'bobr-on-demand.yml';
@@ -2159,6 +2160,7 @@ const CONTROL_DEFAULT_URL = '';
     { value: 'orel',      label: 'ОРЁЛ',     desc: 'фото',                         wf: OREL_WORKFLOW,      mins: 40, defaultOn: false },
     { value: 'bumblebee', label: 'БАМБЛБИ',  desc: 'автофикс критических проблем', wf: BUMBLEBEE_WORKFLOW, mins: 30, defaultOn: false },
     { value: 'revizor',   label: 'РЕВИЗОР',  desc: 'аудит актуальности ссылок',   wf: VERIFY_WORKFLOW,    mins: 5,  defaultOn: false },
+    { value: 'soroka',    label: 'СОРОКА',   desc: 'сверка цен и фактов',          wf: SOROKA_RUN_WORKFLOW, mins: 10, defaultOn: false },
   ];
 
   function buildRunSelectorHtml() {
@@ -2229,6 +2231,7 @@ const CONTROL_DEFAULT_URL = '';
       if (!ok) break;
     }
     fetchStatus();
+    loadReviewData(); // подтянуть свежие кейсы аудита (СОРОКА/РЕВИЗОР) без релоада
   }
 
   // Initial label: empty default URL = static snapshot. Match the fallback

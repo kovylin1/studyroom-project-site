@@ -1,0 +1,50 @@
+name: Soroka — on-demand run
+
+on:
+  workflow_dispatch:   # запускается кнопкой "СОРОКА" в модалке "Что запускаем?" (manager UI)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: soroka-run
+  cancel-in-progress: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: |
+            scraper/package-lock.json
+            site/package-lock.json
+
+      - name: Install deps
+        run: cd scraper && npm ci && cd ../site && npm ci
+
+      # Детерминированный кросс-чек цен/фактов: $0, без сети (--skip-live).
+      # Точечный live-добор — отдельно, локально.
+      - name: Run soroka cross-check
+        run: node scraper/soroka.mjs --skip-live
+
+      # Коммитим только обновлённый review.json — провенанс-метаданные каталога
+      # НЕ коммитим (без месячного churn), как в scrape-monthly.yml.
+      - name: Commit review
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/public/api/
+          git diff --staged --quiet || git commit -m "chore: soroka run $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          attempt=0
+          until git push; do
+            attempt=$((attempt+1))
+            if [ "$attempt" -ge 3 ]; then echo "::error::git push failed after 3 retries"; exit 1; fi
+            git pull --rebase origin main
+          done
