@@ -5,6 +5,7 @@
 // site/public/api/soroka-review.json. Оператор проставляет decision в панели
 // manager, этот скрипт их применяет:
 //   decision=update + tuition_mismatch  → ставит official-цену в tuition.byProgram[program]
+//   decision=update + tuition_zero       → ставит цену, найденную live-добором офсайта (case.official)
 //   decision=delete + tuition_zero      → удаляет программу из uni JSON (с guard «не опустошать»)
 //   decision=delete + tuition_outlier   → удаляет программу из uni JSON (с guard «не опустошать»)
 //   decision=ignore                     → только помечает applied=true
@@ -92,8 +93,10 @@ for (const item of decided) {
     }
   }
 
-  // ── update: подставить official-цену из соседнего источника (tuition_mismatch) ──
-  if (item.decision === 'update' && item.issue === 'tuition_mismatch' && item.official != null) {
+  // ── update: подставить official-цену из соседнего источника / live-добора офсайта ──
+  // tuition_mismatch — official из extract; tuition_zero — кандидат, найденный СОРОКОЙ
+  // на офсайте (case.official), оператор подтверждает кнопкой «Обновить» в панели.
+  if (item.decision === 'update' && (item.issue === 'tuition_mismatch' || item.issue === 'tuition_zero') && item.official != null) {
     const target = item.program;
     const value = Number(item.official);
     if (!target) {

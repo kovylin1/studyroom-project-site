@@ -303,6 +303,38 @@ async function liveCheckUni(u, extracts, uniCases, applied) {
 
   let resolved = 0;
   for (const c of uniCases) {
+    // tuition_zero — у нуля нет известного значения для корроборации, поэтому
+    // отдельная ветка: собираем правдоподобные токены офсайта и заполняем цену,
+    // только если одно значение встретилось на ≥2 URL (иначе → подсказка оператору).
+    if (c.issue === 'tuition_zero') {
+      const currency = u.tuition?.currency;
+      const prog = (u.programs || []).find(p => p.slug === c.program);
+      const plaus = tokens.filter(t =>
+        (!t.currency || t.currency === currency) &&
+        tuitionPlausible(t.amount, currency, prog?.level));
+      if (!plaus.length) continue;
+      const groups = [];
+      for (const t of plaus) {
+        const g = groups.find(g => relDiff(g.amount, t.amount) <= CORROBORATE_TOL);
+        if (g) g.urls.add(t.url); else groups.push({ amount: t.amount, urls: new Set([t.url]) });
+      }
+      groups.sort((a, b) => b.urls.size - a.urls.size);
+      const best = groups[0];
+      const corroborated = best.urls.size >= 2;
+      const confidence = round2(scoreFact({ sourceTier: 'official', quality: 1, corroborated, linkLive: true }));
+      if (corroborated && passes(confidence) && c.program) {
+        u.tuition.byProgram[c.program] = best.amount;
+        applied.push({ slug: u.slug, program: c.program, from: 0, to: best.amount, confidence, url: [...best.urls][0], at: NOW });
+        if (prog) { prog.source = [...best.urls][0]; prog.verifiedBySite = true; prog.confidence = confidence; prog.checkedAt = NOW; }
+        c.official = best.amount;
+        c.decision = 'auto-official'; c.decidedAt = NOW; c.applied = true; resolved++;
+      } else {
+        // не корроборировано → кандидат оператору в панель (decision остаётся null)
+        c.official = best.amount;
+        c.detail = (c.detail || '') + ` — офсайт: ~${best.amount} ${currency || ''} (не корроборировано, проверить)`;
+      }
+      continue;
+    }
     if (c.issue !== 'tuition_mismatch' && c.issue !== 'tuition_outlier') continue;
     const currency = u.tuition?.currency;
     const candidates = [c.catalog, c.official].filter(Number.isFinite);
@@ -375,7 +407,7 @@ await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 // Live-фаза: только вузы со спорным tuition, кап MAX_LIVE
 if (!SKIP_LIVE) {
   const disputed = [...dirty.values()]
-    .filter(u => (u.__cases || []).some(c => c.issue === 'tuition_mismatch' || c.issue === 'tuition_outlier'))
+    .filter(u => (u.__cases || []).some(c => c.issue === 'tuition_mismatch' || c.issue === 'tuition_outlier' || c.issue === 'tuition_zero'))
     .slice(0, MAX_LIVE);
   log(`live pass: ${disputed.length} unis (cap ${MAX_LIVE})`);
   let j = 0;
