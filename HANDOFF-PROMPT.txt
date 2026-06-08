@@ -10,6 +10,40 @@ status.json теперь в .gitignore и НЕ в git (генерится на �
 Перед push: git fetch — CI staggered-scrape и он-деманд ПАУК пушат сами (rebase поверх, данные каталога не клобить).
 В конце commit: Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
 
+=== СДЕЛАНО 2026-06-08, СЕССИЯ «ЦЕНЫ» (всё в main, задеплоено) ===
+1) KAPLAN-ПОРТ СМЁРДЖЕН: PR #38 (merge 55cdffe). Ветка feat/kaplan-merge-port влита.
+   PR #35 (docs/handoff-soroka-followup) закрыт как устаревший.
+2) КНОПКА СОРОКА в /manager: коммит 67828ba3. Модалка «Что запускаем?» дёргает
+   soroka-on-demand.yml (workflow_dispatch, Node22) → soroka.mjs --skip-live → коммитит
+   ТОЛЬКО site/public/api/ (review.json), каталог не трогает. Проверено end-to-end (run success).
+   SOROKA_RUN_WORKFLOW в manager.astro:1262.
+3) ЖАЛОБА «цены вдвое занижены» (7000 vs 17000 GBP) — ИСПРАВЛЕНО. Политика владельца:
+   офсайт→потом edvoy; чинить расхождение >25%; абсурд >2.5x («год vs весь курс») НЕ трогать.
+   Применено 124 цены / 29 вузов (push 5651805c): mismatch-источник edvoy, полоса 1.25x–2.5x,
+   decision=update через soroka-apply.mjs. Примеры: arden 13500→17500, nottingham 21150→33800,
+   sunderland 16000→20000, liu-post→39750, uab→28860. Офсайт подтверждающих цифр НЕ дал
+   (ok без resolved) → честный fallback на edvoy. iu-germany MBA (5.72x=86060, полная стоимость)
+   ОСТАВЛЕН в панель. Build 807/exit 0.
+4) LIVE-ВЕРИФИКАЦИЯ (push 2573d6da): полный soroka.mjs --max-live=2000 (97 вузов по офсайтам)
+   → 12 цен подтверждены офсайтом (verifiedBySite/source/confidence ≥0.95): portsmouth +9,
+   oxford-brookes/strathclyde/wittenborg +1. Цены НЕ переписаны — подтверждены существующие.
+5) «НЕТ ЦЕНЫ» (tuition_zero, 64 программы: adelaide 22, newcastle-au 12, massey 6…): источник
+   не отдаёт, офсайт не публикует (no-money-found/no-official-site), live-добор ИСЧЕРПАН.
+   UI-фикс (push 44ded8a8): вместо прочерка «—» показываем «Уточняется» в списке программ
+   и модалке ([slug].astro оба места рендера). Build 807/exit 0.
+
+ВАЖНО про механику цен (СОРОКА): берёт цены с агрегаторов (extracts) И офсайтов, сверяет;
+при расхождении приоритет ОФСАЙТУ вуза. Где офсайт молчит — fallback на агрегатор. Не фабрикует.
+checkedAt-метаданные каталога от live-прогонов НЕ коммитим (churn, не в деплое).
+
+=== ОСТАЛОСЬ (бэклог каталога) ===
+- ~585 кейсов в /manager (tuition_outlier 281 + мелкий mismatch <25% 296 + currency 8) —
+  пограничные, БЕЗ надёжного источника. Разбирать ТОЧЕЧНО в панели, НЕ массовыми live-прогонами
+  (дорого по токенам, потолок офсайтов уже достигнут). Точечный live: node scraper/soroka.mjs --slug=X.
+- Перевод ЛЭНДИНГ-страниц на английский (позже, НЕ весь каталог 804 вузов — i18n ОТМЕНЁН).
+- Ждут владельца (без кода): contacts.ts, видео-отзывы, CRM_WEBHOOK_URL, og:image, IAPro-креды,
+  копирайт #requirements [slug].astro.
+
 === СДЕЛАНО 2026-06-08, СОРОКА ДОБИТА (всё СМЁРДЖЕНО в main) ===
 СОРОКА follow-up A/B/C — PR #32/#33/#34 (панель source-aware, 2 IELTS-фикса, alias-карта 172 вуза).
 - PR #36 (merge 18bab5d) — ВАРИАНТ 1: liveCheckUni добирает цены для tuition_zero с офсайта
