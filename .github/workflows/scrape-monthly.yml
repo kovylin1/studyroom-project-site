@@ -40,6 +40,13 @@ jobs:
           node scraper/detect-gaps.mjs  || true
           node scraper/merge-programs.mjs
 
+      - name: СОРОКА — проверка цифр (cross-check, без live)
+        # Полный кросс-чек цифр каталога после merge. --skip-live: детерминированно,
+        # $0, без флейки-фетчей офсайтов в CI (точечный live — on-demand вручную).
+        # Пишет site/public/api/soroka-review.json (кейсы → панель /manager); шаг
+        # «Commit + push» ниже подхватывает его через `git add site/public/api/`.
+        run: node scraper/soroka.mjs --skip-live  || true
+
       - name: Generate status + verify snapshots
         run: |
           node site/scripts/generate-status.mjs  || true
