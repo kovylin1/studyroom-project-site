@@ -3,83 +3,134 @@
   "name": "Western University",
   "source": "official",
   "sourceUrl": "https://www.westernic.ca/",
-  "scrapedAt": "2026-05-31T15:40:29.726Z",
+  "scrapedAt": "2026-06-08T08:07:58.739Z",
+  "minConfidence": 0.85,
   "linkCheck": {
     "checked": 5,
-    "live": 5,
-    "dead": 0,
-    "details": []
+    "live": 0,
+    "dead": 5,
+    "details": [
+      {
+        "title": "UTP Stage 1 — pathway to Western Year 2",
+        "url": "https://www.westernic.ca/programs/",
+        "live": false,
+        "status": 404
+      },
+      {
+        "title": "UTP Stage 1 — Extended (3-term)",
+        "url": "https://www.westernic.ca/programs/",
+        "live": false,
+        "status": 404
+      },
+      {
+        "title": "UTP Stage 2 — Engineering (Common First Year)",
+        "url": "https://www.westernic.ca/programs/",
+        "live": false,
+        "status": 404
+      },
+      {
+        "title": "UTP Stage 2 — Software Engineering",
+        "url": "https://www.westernic.ca/programs/",
+        "live": false,
+        "status": 404
+      },
+      {
+        "title": "UTP Stage 2 — Management and Organizational Studies",
+        "url": "https://www.westernic.ca/programs/",
+        "live": false,
+        "status": 404
+      }
+    ]
   },
   "programs": [
     {
+      "slug": "western-ontario-international-year-one-iyo-science-foundation",
       "title": "International Year One (IYO): Science",
       "level": "foundation",
       "verifiedBySite": true,
       "source": "official",
-      "checkedAt": "2026-05-31"
+      "confidence": 1,
+      "checkedAt": "2026-06-08"
     },
     {
+      "slug": "western-ontario-international-year-one-iyo-management-and-organizational-studies-foundation",
       "title": "International Year One (IYO): Management and Organizational Studies",
       "level": "foundation",
       "verifiedBySite": true,
       "source": "official",
-      "checkedAt": "2026-05-31"
+      "confidence": 1,
+      "checkedAt": "2026-06-08"
     },
     {
+      "slug": "western-ontario-international-year-one-iyo-social-science-foundation",
       "title": "International Year One (IYO): Social Science",
       "level": "foundation",
       "verifiedBySite": true,
       "source": "official",
-      "checkedAt": "2026-05-31"
+      "confidence": 1,
+      "checkedAt": "2026-06-08"
     },
     {
+      "slug": "western-ontario-completion-of-10-one-term-classes-5-0-courses-in-the-westernic-international-year-on",
       "title": "Completion of 10 one-term classes (5.0 courses) in the WesternIC International Year One: Science program&nbsp;",
       "level": "foundation",
       "verifiedBySite": true,
       "source": "official",
-      "checkedAt": "2026-05-31"
+      "confidence": 0.85,
+      "checkedAt": "2026-06-08"
     },
     {
-      "title": "Completion of 10 one-term classes (5.0 courses) in the WesternIC International Year One: Social Science program&nbsp;&nbsp;",
-      "level": "foundation",
-      "verifiedBySite": true,
-      "source": "official",
-      "checkedAt": "2026-05-31"
-    },
-    {
+      "slug": "western-ontario-professional-master-8217-s-master",
       "title": "Professional Master&#8217;s",
       "level": "master",
       "verifiedBySite": true,
       "source": "official",
-      "checkedAt": "2026-05-31"
+      "confidence": 1,
+      "checkedAt": "2026-06-08"
     },
     {
+      "slug": "western-ontario-master-of-engineering-master",
       "title": "Master of Engineering",
       "level": "master",
       "verifiedBySite": true,
       "source": "official",
-      "checkedAt": "2026-05-31"
+      "confidence": 1,
+      "checkedAt": "2026-06-08"
     },
     {
+      "slug": "western-ontario-professional-master-s-master",
       "title": "Professional Master's",
       "level": "master",
       "verifiedBySite": true,
       "source": "official",
-      "checkedAt": "2026-05-31"
+      "confidence": 1,
+      "checkedAt": "2026-06-08"
     },
     {
+      "slug": "western-ontario-master-of-engineering-meng-master",
       "title": "Master of Engineering (MEng)",
       "level": "master",
       "verifiedBySite": true,
       "source": "official",
-      "checkedAt": "2026-05-31"
+      "confidence": 1,
+      "checkedAt": "2026-06-08"
     },
     {
+      "slug": "western-ontario-welcome-to-the-meng-program-at-western-university-master",
       "title": "Welcome to the MEng Program at Western University!",
       "level": "master",
       "verifiedBySite": true,
       "source": "official",
-      "checkedAt": "2026-05-31"
+      "confidence": 1,
+      "checkedAt": "2026-06-08"
+    }
+  ],
+  "lowConfidence": [
+    {
+      "title": "Completion of 10 one-term classes (5.0 courses) in the WesternIC International Year One: Social Science program&nbsp;&nbsp;",
+      "level": "foundation",
+      "confidence": 0.76,
+      "corroborated": true
     }
   ]
 }
