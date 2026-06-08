@@ -1147,7 +1147,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
           <span class="program-row__level program-row__level--${levelClass(p.level, p.programType)}">${levelLabel(p.level, p.programType)}</span>
           <div class="program-row__title">${p.title}</div>
         </div>
-        <div class="program-row__price">${p.tuition ? CURRENCY_SYM + p.tuition.toLocaleString('en') + '/год' : '—'}</div>
+        <div class="program-row__price">${p.tuition ? CURRENCY_SYM + p.tuition.toLocaleString('en') + '/год' : 'Уточняется'}</div>
       </div>
     `).join('');
   }
@@ -1168,7 +1168,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
       <li>
         <span class="program-row__level program-row__level--${levelClass(p.level, p.programType)}">${levelLabel(p.level, p.programType)}</span>
         <span>${p.title}</span>
-        <strong style="color: var(--green); white-space: nowrap;">${p.tuition ? CURRENCY_SYM + p.tuition.toLocaleString('en') + '/год' : '—'}</strong>
+        <strong style="color: var(--green); white-space: nowrap;">${p.tuition ? CURRENCY_SYM + p.tuition.toLocaleString('en') + '/год' : 'Уточняется'}</strong>
       </li>
     `).join('') : '<li style="grid-template-columns: 1fr; color: var(--ink-3);">Ничего не нашли. Попробуйте другое слово или другой уровень.</li>';
   }
