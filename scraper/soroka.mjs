@@ -39,6 +39,13 @@ const APPLIED_OUT = path.join(AUDIT_DIR, 'soroka-applied.json');
 
 // Каталоги extracts с programs[].tuition (если каталога нет на диске — молча пропускаем).
 const EXTRACT_DIRS = ['edvoy-extracts', 'qahe-extracts', 'gedu-extracts', 'iapro-extracts', 'official-extracts'];
+
+// Карта алиасов слагов (каталог → extract): вузы с расходящимися слагами
+// (abertay ↔ abertay-university) тоже кросс-сверяются. Генерится build-slug-aliases.mjs.
+let SLUG_ALIASES = {};
+try {
+  SLUG_ALIASES = JSON.parse(await fs.readFile(path.join(PROJECT_ROOT, 'scraper/sources/slug-aliases.json'), 'utf8')).aliases || {};
+} catch { /* карты ещё нет — работаем без алиасов */ }
 const AGG_DOMAINS = /edvoy|studygroup|kaplan|navitas|catseducation|qs\.com|topuniversities|collab|wikipedia/i;
 
 const arg = (p) => (process.argv.find(a => a.startsWith(p)) || '').slice(p.length) || null;
@@ -83,8 +90,12 @@ function mapLevel(raw) {
 
 async function loadExtracts(slug) {
   const out = [];
+  // Сначала пробуем точный слаг, затем алиасы (extract под другим именем).
+  const candidates = [slug, ...(SLUG_ALIASES[slug] || [])];
   for (const dir of EXTRACT_DIRS) {
-    const f = SOURCES_ROOTS.map(r => path.join(r, dir, `${slug}.json`)).find(existsSync);
+    const f = candidates
+      .flatMap(c => SOURCES_ROOTS.map(r => path.join(r, dir, `${c}.json`)))
+      .find(existsSync);
     if (!f) continue;
     try {
       const j = JSON.parse(await fs.readFile(f, 'utf8'));
