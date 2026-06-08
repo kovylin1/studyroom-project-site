@@ -91,7 +91,10 @@ function mapLevel(raw) {
 async function loadExtracts(slug) {
   const out = [];
   // Сначала пробуем точный слаг, затем алиасы (extract под другим именем).
-  const candidates = [slug, ...(SLUG_ALIASES[slug] || [])];
+  // Array.isArray — guard от прототипных коллизий слага (вуз «constructor»:
+  // SLUG_ALIASES['constructor'] вернул бы Object.prototype.constructor, не массив).
+  const aliases = SLUG_ALIASES[slug];
+  const candidates = [slug, ...(Array.isArray(aliases) ? aliases : [])];
   for (const dir of EXTRACT_DIRS) {
     const f = candidates
       .flatMap(c => SOURCES_ROOTS.map(r => path.join(r, dir, `${c}.json`)))

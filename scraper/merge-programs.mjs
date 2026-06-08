@@ -173,7 +173,9 @@ async function mergeAllSourcesForSlug(slug) {
 
   for (const src of SOURCES) {
     // Точный слаг, затем алиасы (extract под другим именем).
-    const candidates = [slug, ...(SLUG_ALIASES[slug] || [])];
+    // Array.isArray — guard от прототипных коллизий слага (вуз «constructor»).
+    const aliasList = SLUG_ALIASES[slug];
+    const candidates = [slug, ...(Array.isArray(aliasList) ? aliasList : [])];
     let extract = null;
     for (const c of candidates) {
       try { extract = JSON.parse(await fs.readFile(path.join(SOURCES_DIR, src.dir, `${c}.json`), 'utf8')); break; }
