@@ -1,3 +1,8 @@
+// LEGACY (2026-06-08): прямой Kaplan→каталог коллектор. Заменён на
+// scraper/scrape-kaplan-all.mjs (порт под merge-пайплайн, sources/kaplan-extracts/).
+// НЕ зовётся в CI. Оставлен ради accommodation/scholarships/описаний, которые merge
+// не несёт (домены БОБР/ОРЁЛ). Для обновления программ/цен — новый .mjs-коллектор.
+//
 // CLI: npm run scrape -- --slug glasgow
 //      npm run scrape -- --all
 //
