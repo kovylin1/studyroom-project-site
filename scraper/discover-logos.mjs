@@ -57,6 +57,43 @@ function getOfficialRoot(uni) {
   return null;
 }
 
+// Индекс по extracts: для вузов без офсайта в каталоге достаём официальный
+// домен (поле website) и запасной logoUrl (лого агрегатора) по имени вуза.
+const norm = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '');
+const EXTRACT_DIRS = [
+  path.join(PROJECT_ROOT, 'sources/edvoy-extracts'),
+  path.join(PROJECT_ROOT, 'sources/collab-extracts'),
+  path.join(PROJECT_ROOT, 'sources/studygroup-extracts'),
+  path.join(PROJECT_ROOT, 'sources/direct-partners-extracts'),
+  path.join(__dirname, 'sources/official-extracts'),
+  path.join(__dirname, 'sources/kaplan-extracts'),
+  path.join(__dirname, 'sources/qahe-extracts'),
+];
+
+async function buildExtractIndex() {
+  const map = new Map(); // norm(name) -> { website, logoUrl }
+  for (const dir of EXTRACT_DIRS) {
+    let files;
+    try { files = await fs.readdir(dir); } catch { continue; }
+    for (const f of files) {
+      if (!f.endsWith('.json')) continue;
+      let j;
+      try { j = JSON.parse(await fs.readFile(path.join(dir, f), 'utf8')); } catch { continue; }
+      const key = norm(j.name);
+      if (!key) continue;
+      const website = j.website && /^https?:\/\//.test(j.website) ? j.website : null;
+      const prev = map.get(key);
+      // Предпочитаем запись с website; logoUrl сохраняем как запасной.
+      if (!prev) map.set(key, { website, logoUrl: j.logoUrl || null });
+      else {
+        if (!prev.website && website) prev.website = website;
+        if (!prev.logoUrl && j.logoUrl) prev.logoUrl = j.logoUrl;
+      }
+    }
+  }
+  return map;
+}
+
 async function fetchText(url, ms = 9000) {
   try {
     const ac = new AbortController();
@@ -142,9 +179,10 @@ for (const f of files) {
   targets.push({ f, slug: f.replace('.json', '') });
 }
 const work = isFinite(LIMIT) ? targets.slice(0, LIMIT) : targets;
-log(`targets without logo: ${targets.length}, processing ${work.length}`);
+const EXTRACT_INDEX = await buildExtractIndex();
+log(`targets without logo: ${targets.length}, processing ${work.length}, extract index: ${EXTRACT_INDEX.size}`);
 
-const stats = { found: 0, noSite: 0, noLogo: 0 };
+const stats = { found: 0, fromExtractSite: 0, fromExtractLogo: 0, noSite: 0, noLogo: 0 };
 let idx = 0;
 
 async function worker() {
@@ -153,12 +191,27 @@ async function worker() {
     const fpath = path.join(UNI_DIR, it.f);
     let u;
     try { u = JSON.parse(await fs.readFile(fpath, 'utf8')); } catch { continue; }
-    const root = getOfficialRoot(u);
-    if (!root) { stats.noSite++; log(`- ${it.slug}: no official site`); continue; }
-    const logo = await discoverLogo(root);
+
+    let root = getOfficialRoot(u);
+    const ext = EXTRACT_INDEX.get(norm(u.name));
+    let viaExtract = false;
+    // Нет офсайта в каталоге — берём официальный домен из extracts (website).
+    if (!root && ext?.website) {
+      try { root = new URL(ext.website).origin; viaExtract = true; } catch { /* skip */ }
+    }
+    if (!root && !ext?.logoUrl) { stats.noSite++; log(`- ${it.slug}: no official site`); continue; }
+
+    let logo = root ? await discoverLogo(root) : null;
+    // Запасной вариант — готовый logoUrl агрегатора (edvoy/collab), но только
+    // если это абсолютный http(s)-URL и реально картинка (НЕ относительный путь
+    // вроде live/images/...svg, который на нашем сайте битый).
+    if (!logo && ext?.logoUrl && /^https?:\/\//.test(ext.logoUrl) && await isImage(ext.logoUrl)) {
+      logo = ext.logoUrl; stats.fromExtractLogo++;
+    } else if (logo && viaExtract) stats.fromExtractSite++;
+
     if (!logo) { stats.noLogo++; log(`- ${it.slug}: no logo found (${root})`); continue; }
     stats.found++;
-    log(`✓ ${it.slug}: ${logo}`);
+    log(`✓ ${it.slug}: ${logo}${viaExtract ? ' (via extract site)' : ''}`);
     if (!DRY_RUN) {
       u.logoUrl = logo;
       await fs.writeFile(fpath, JSON.stringify(u, null, 2) + '\n');
