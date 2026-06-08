@@ -212,7 +212,7 @@ const CONTROL_DEFAULT_URL = '';
 
         <details id="review-panel" class="manager__review-panel" hidden>
           <summary id="review-panel-summary" class="manager__review-summary">
-            <span id="review-panel-title">РЕВИЗОР: проблемные кейсы</span>
+            <span id="review-panel-title">Аудит каталога: проблемные кейсы</span>
             <span id="review-panel-badge" class="status-pill status-pill--warn" hidden></span>
           </summary>
           <ul id="review-items-list" class="manager__review-list"></ul>
@@ -1258,6 +1258,7 @@ const CONTROL_DEFAULT_URL = '';
   const GITHUB_REF = 'main';
   const VERIFY_WORKFLOW        = 'verify-on-demand.yml';
   const REVIZOR_APPLY_WORKFLOW = 'revizor-apply.yml';
+  const SOROKA_APPLY_WORKFLOW  = 'soroka-apply.yml';
   const OREL_WORKFLOW          = 'orel-on-demand.yml';
   const PAUK_WORKFLOW          = 'pauk-on-demand.yml';
   const BOBR_WORKFLOW          = 'bobr-on-demand.yml';
@@ -1673,32 +1674,59 @@ const CONTROL_DEFAULT_URL = '';
 
   // ── РЕВИЗОР decisions panel ──────────────────────────────────────────────
 
-  const REVIEW_API_PATH = 'site/public/api/revizor-review.json';
-  let reviewData = null;
+  // Источники кейсов аудита. Формат items идентичен (РЕВИЗОР-схема), поэтому
+  // рендер общий; различаются только файл, apply-workflow и localStorage-ключ.
+  const REVIEW_SRCS = [
+    {
+      key: 'revizor', title: 'РЕВИЗОР',
+      api: '/api/revizor-review.json',
+      contentPath: 'site/public/api/revizor-review.json',
+      workflow: REVIZOR_APPLY_WORKFLOW,
+      lsKey: 'studyroom.revizor.decisions',
+    },
+    {
+      key: 'soroka', title: 'СОРОКА',
+      api: '/api/soroka-review.json',
+      contentPath: 'site/public/api/soroka-review.json',
+      workflow: SOROKA_APPLY_WORKFLOW,
+      lsKey: 'studyroom.soroka.decisions',
+    },
+  ];
+  const srcState = {};   // key → { cfg, data }  (data = полный JSON источника)
+  let reviewData = null; // объединённый вид { items: [...] } для рендера
+
+  const srcOf = (item) => srcState[item && item.__src];
 
   async function loadReviewData() {
-    try {
-      const ts = Date.now();
-      const res = await fetch('/api/revizor-review.json?ts=' + ts, { cache: 'no-store' });
-      if (!res.ok) return;
-      reviewData = await res.json();
-      // Восстанавливаем локальные решения поверх данных с сервера
-      const local = loadDecisionsLocal();
-      // Чистим решения с прошлых запусков: их кейсов больше нет в свежем review.
-      const currentIds = new Set((reviewData.items || []).map(i => i.id));
-      let prunedLocal = false;
-      for (const id of Object.keys(local)) {
-        if (!currentIds.has(id)) { delete local[id]; prunedLocal = true; }
-      }
-      if (prunedLocal) { try { localStorage.setItem(DECISIONS_LS_KEY, JSON.stringify(local)); } catch {} }
-      for (const item of (reviewData.items || [])) {
-        if (local[item.id] && item.decision === null) {
-          item.decision = local[item.id].decision;
-          item.decidedAt = local[item.id].decidedAt;
+    const merged = [];
+    for (const cfg of REVIEW_SRCS) {
+      try {
+        const ts = Date.now();
+        const res = await fetch(cfg.api + '?ts=' + ts, { cache: 'no-store' });
+        if (!res.ok) continue;
+        const data = await res.json();
+        srcState[cfg.key] = { cfg, data };
+        // Восстанавливаем локальные решения поверх данных с сервера
+        const local = loadDecisionsLocal(cfg.lsKey);
+        // Чистим решения с прошлых запусков: их кейсов больше нет в свежем review.
+        const currentIds = new Set((data.items || []).map(i => i.id));
+        let prunedLocal = false;
+        for (const id of Object.keys(local)) {
+          if (!currentIds.has(id)) { delete local[id]; prunedLocal = true; }
         }
-      }
-      renderReviewPanel();
-    } catch {}
+        if (prunedLocal) { try { localStorage.setItem(cfg.lsKey, JSON.stringify(local)); } catch {} }
+        for (const item of (data.items || [])) {
+          item.__src = cfg.key;
+          if (local[item.id] && item.decision === null) {
+            item.decision = local[item.id].decision;
+            item.decidedAt = local[item.id].decidedAt;
+          }
+          merged.push(item);
+        }
+      } catch {}
+    }
+    reviewData = { items: merged };
+    renderReviewPanel();
   }
 
   function issueLabel(issue) {
@@ -1707,27 +1735,33 @@ const CONTROL_DEFAULT_URL = '';
       broken_url: '404 — битая ссылка',
       tuition_mismatch: 'расхождение стоимости обучения',
       ielts_changed: 'изменились требования IELTS',
+      tuition_zero: 'цена обучения не заполнена (0)',
+      tuition_outlier: 'цена обучения вне диапазона',
+      ielts_implausible: 'неправдоподобный балл IELTS',
     };
     return map[issue] || issue;
   }
 
   function decisionActions(item) {
-    const isMismatch = item.issue === 'tuition_mismatch' || item.issue === 'ielts_changed';
     const decided = item.decision;
+    const btn = (a) =>
+      `<button class="review-btn${a.danger ? ' review-btn--danger' : ''}${decided === a.value ? ' review-btn--active' : ''}" data-id="${item.id}" data-decision="${a.value}">${a.label}</button>`;
+    // Кейсы без авто-фикса значения (СОРОКА: неправдоподобный IELTS) — только
+    // «Игнорировать»; реальное значение правится руками (пункт B).
+    if (item.issue === 'ielts_implausible') {
+      return [{ value: 'ignore', label: 'Игнорировать', danger: false }].map(btn).join('');
+    }
+    const isMismatch = item.issue === 'tuition_mismatch' || item.issue === 'ielts_changed';
     if (isMismatch) {
       return [
         { value: 'update', label: 'Обновить', danger: false },
         { value: 'ignore', label: 'Игнорировать', danger: false },
-      ].map(a =>
-        `<button class="review-btn${decided === a.value ? ' review-btn--active' : ''}" data-id="${item.id}" data-decision="${a.value}">${a.label}</button>`
-      ).join('');
+      ].map(btn).join('');
     }
     return [
       { value: 'delete', label: 'Удалить', danger: true },
       { value: 'ignore', label: 'Игнорировать', danger: false },
-    ].map(a =>
-      `<button class="review-btn${a.danger ? ' review-btn--danger' : ''}${decided === a.value ? ' review-btn--active' : ''}" data-id="${item.id}" data-decision="${a.value}">${a.label}</button>`
-    ).join('');
+    ].map(btn).join('');
   }
 
   function renderReviewPanel() {
@@ -1757,7 +1791,7 @@ const CONTROL_DEFAULT_URL = '';
         return `<li class="review-item review-item--${severity}">
           <div class="review-item__head">
             <span class="review-item__name">${item.name}</span>
-            <span class="review-item__issue">${issueLabel(item.issue)}</span>
+            <span class="review-item__issue">${(srcOf(item)?.cfg.title ? srcOf(item).cfg.title + ' · ' : '')}${issueLabel(item.issue)}</span>
           </div>
           ${programsHtml ? `<div class="review-item__detail">${programsHtml}</div>` : ''}
           ${item.detail ? `<div class="review-item__detail">${item.detail}</div>` : ''}
@@ -1769,21 +1803,23 @@ const CONTROL_DEFAULT_URL = '';
     actions.hidden = decidedCount === 0;
   }
 
-  const DECISIONS_LS_KEY = 'studyroom.revizor.decisions';
-
   function saveDecisionLocal() {
     try {
-      const decisions = {};
-      for (const item of (reviewData?.items || [])) {
-        if (item.decision !== null) decisions[item.id] = { decision: item.decision, decidedAt: item.decidedAt };
+      for (const cfg of REVIEW_SRCS) {
+        const st = srcState[cfg.key];
+        if (!st) continue;
+        const decisions = {};
+        for (const item of (st.data.items || [])) {
+          if (item.decision !== null) decisions[item.id] = { decision: item.decision, decidedAt: item.decidedAt };
+        }
+        try { localStorage.setItem(cfg.lsKey, JSON.stringify(decisions)); } catch {}
       }
-      localStorage.setItem(DECISIONS_LS_KEY, JSON.stringify(decisions));
     } catch {}
   }
 
-  function loadDecisionsLocal() {
+  function loadDecisionsLocal(lsKey) {
     try {
-      return JSON.parse(localStorage.getItem(DECISIONS_LS_KEY) || '{}');
+      return JSON.parse(localStorage.getItem(lsKey) || '{}');
     } catch { return {}; }
   }
 
@@ -1794,11 +1830,13 @@ const CONTROL_DEFAULT_URL = '';
   async function saveDecision(itemId, decision, { skipRender = false } = {}) {
     const item = (reviewData?.items || []).find(i => i.id === itemId);
     if (!item) return { synced: false, onlyLocal: true, reason: 'not-found' };
+    const src = srcOf(item);
+    if (!src) return { synced: false, onlyLocal: true, reason: 'no-src' };
     item.decision = decision;
     item.decidedAt = new Date().toISOString();
 
-    const pending = (reviewData.items || []).filter(i => i.decision === null).length;
-    reviewData.summary = { ...reviewData.summary, pending };
+    const pending = (src.data.items || []).filter(i => i.decision === null).length;
+    src.data.summary = { ...src.data.summary, pending };
 
     // Сохраняем локально сразу — решение не потеряется даже без GitHub
     saveDecisionLocal();
@@ -1808,39 +1846,42 @@ const CONTROL_DEFAULT_URL = '';
     const token = getGithubToken();
     if (!token) return { synced: false, onlyLocal: true, reason: 'no-token' };
 
-    const apiBase = 'https://api.github.com/repos/' + GITHUB_REPO + '/contents/' + REVIEW_API_PATH;
+    const tag = src.cfg.key;
+    const apiBase = 'https://api.github.com/repos/' + GITHUB_REPO + '/contents/' + src.cfg.contentPath;
     try {
       const shaRes = await fetch(apiBase + '?ref=' + GITHUB_REF, {
         headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
       });
       if (!shaRes.ok) {
-        console.warn('revizor: не удалось получить SHA файла (' + shaRes.status + '). Решение сохранено локально.');
+        console.warn(tag + ': не удалось получить SHA файла (' + shaRes.status + '). Решение сохранено локально.');
         return { synced: false, onlyLocal: true, reason: 'no-sha-' + shaRes.status };
       }
       const shaData = await shaRes.json();
       const sha = shaData.sha;
       if (!sha) {
-        console.warn('revizor: SHA файла пустой. Решение сохранено локально.');
+        console.warn(tag + ': SHA файла пустой. Решение сохранено локально.');
         return { synced: false, onlyLocal: true, reason: 'empty-sha' };
       }
-      const content = btoa(unescape(encodeURIComponent(JSON.stringify(reviewData, null, 2) + '\n')));
+      // Пишем JSON конкретного источника (без служебного поля __src).
+      const payload = { ...src.data, items: (src.data.items || []).map(({ __src, ...rest }) => rest) };
+      const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2) + '\n')));
       const putRes = await fetch(apiBase, {
         method: 'PUT',
         headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json', 'X-GitHub-Api-Version': '2022-11-28' },
-        body: JSON.stringify({ message: 'chore: revizor decision ' + decision + ' for ' + item.slug, content, sha, branch: GITHUB_REF }),
+        body: JSON.stringify({ message: 'chore: ' + tag + ' decision ' + decision + ' for ' + item.slug, content, sha, branch: GITHUB_REF }),
       });
       if (!putRes.ok) {
         const status = putRes.status;
         if (status === 403 || status === 404) {
-          console.warn('revizor: нет прав Contents API (нужен scope «Contents: Read and write»). Решение сохранено локально.');
+          console.warn(tag + ': нет прав Contents API (нужен scope «Contents: Read and write»). Решение сохранено локально.');
         } else {
-          console.warn('revizor: GitHub API ' + status + '. Решение сохранено локально.');
+          console.warn(tag + ': GitHub API ' + status + '. Решение сохранено локально.');
         }
         return { synced: false, onlyLocal: true, reason: 'put-' + status };
       }
       return { synced: true, onlyLocal: false };
     } catch (e) {
-      console.warn('revizor: ошибка GitHub API:', e.message, '— решение сохранено локально.');
+      console.warn(tag + ': ошибка GitHub API:', e.message, '— решение сохранено локально.');
       return { synced: false, onlyLocal: true, reason: 'network' };
     }
   }
@@ -1915,7 +1956,19 @@ const CONTROL_DEFAULT_URL = '';
     btn.disabled = true;
     btn.textContent = 'Запускаем…';
     try {
-      await runRemoteWorkflow({ workflowFile: REVIZOR_APPLY_WORKFLOW, label: 'РЕВИЗОР Apply', expectedMin: 5 });
+      // Запускаем apply-workflow каждого источника, у которого есть принятые,
+      // но ещё не применённые решения (РЕВИЗОР и/или СОРОКА).
+      const toRun = REVIEW_SRCS.filter(cfg => {
+        const st = srcState[cfg.key];
+        return st && (st.data.items || []).some(i => i.decision !== null && !i.applied);
+      });
+      if (!toRun.length) {
+        showReviewFeedback('Нет решений для применения', 'warn');
+        return;
+      }
+      for (const cfg of toRun) {
+        await runRemoteWorkflow({ workflowFile: cfg.workflow, label: cfg.title + ' Apply', expectedMin: 5 });
+      }
     } finally {
       btn.disabled = false;
       btn.textContent = 'Применить решения';
