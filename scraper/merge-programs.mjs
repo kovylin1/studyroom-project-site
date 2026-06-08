@@ -129,6 +129,12 @@ function applyExtract(byKey, extract, sourceName, isOfficial, uniSlug) {
         if (!p.checkedAt) { p.checkedAt = NOW; changed = true; }
         if (changed) enriched++;
       }
+      // Перенос цены (fill-null): помечаем программу временным _feePerYear,
+      // применяется в mergeAllSourcesForSlug по ФИНАЛЬНОМу слагу. Не перезаписывает.
+      if (typeof ep.feePerYear === 'number' && ep.feePerYear > 0 && p._feePerYear == null) {
+        p._feePerYear = ep.feePerYear;
+        if (ep.currency && !p._currency) p._currency = ep.currency;
+      }
     } else {
       // New program from this source
       const durationYears = parseDurationYears(ep.duration ?? ep.durationYears, level);
@@ -150,6 +156,10 @@ function applyExtract(byKey, extract, sourceName, isOfficial, uniSlug) {
         checkedAt: ep.checkedAt || NOW,
       };
       if (ep.programUrl) newProg.programUrl = ep.programUrl;
+      if (typeof ep.feePerYear === 'number' && ep.feePerYear > 0) {
+        newProg._feePerYear = ep.feePerYear;
+        if (ep.currency) newProg._currency = ep.currency;
+      }
       const intakes = ep.intake ?? ep.intakes;
       if (Array.isArray(intakes) && intakes.length > 0) newProg.intakes = intakes;
 
@@ -188,7 +198,14 @@ async function mergeAllSourcesForSlug(slug) {
     totalEnriched += enriched;
   }
 
-  if (totalAdded + totalEnriched === 0) return { added: 0, enriched: 0, sourcesUsed };
+  // Есть ли ожидающие переносы цены (fill-null) на существующие/новые программы?
+  const existingTuition = catalog.tuition?.byProgram || {};
+  let tuitionPending = false;
+  for (const p of byKey.values()) {
+    if (p._feePerYear != null && existingTuition[p.slug] == null) { tuitionPending = true; break; }
+  }
+
+  if (totalAdded + totalEnriched === 0 && !tuitionPending) return { added: 0, enriched: 0, sourcesUsed };
 
   // Rebuild programs: preserve original order, append new at end
   const origKeys = new Set((catalog.programs || []).map(p => dedupKey(p.title, p.level)));
@@ -211,6 +228,23 @@ async function mergeAllSourcesForSlug(slug) {
   }
 
   catalog.programs = programs;
+
+  // Перенос цены (fill-null) по ФИНАЛЬНОМу слагу + зачистка временных полей.
+  // Не перезаписывает существующие числа; валюта вуза — только если пуста.
+  let pendingCurrency = null;
+  for (const p of programs) {
+    if (p._feePerYear != null) {
+      if (!catalog.tuition) catalog.tuition = {};
+      if (!catalog.tuition.byProgram) catalog.tuition.byProgram = {};
+      if (catalog.tuition.byProgram[p.slug] == null) catalog.tuition.byProgram[p.slug] = p._feePerYear;
+      if (!pendingCurrency && p._currency) pendingCurrency = p._currency;
+    }
+    delete p._feePerYear;
+    delete p._currency;
+  }
+  if (pendingCurrency && catalog.tuition && !catalog.tuition.currency) {
+    catalog.tuition.currency = pendingCurrency;
+  }
 
   // Sync: drop orphaned tuition/deadline keys
   const programSlugs = new Set(programs.map(p => p.slug));

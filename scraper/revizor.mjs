@@ -55,6 +55,14 @@ const AGGREGATOR_DOMAINS = {
   'qs-topuniversities': ['topuniversities.com'],
 };
 
+// Ключи расписания (aggregator-schedules.json) → ключи AGGREGATOR_DOMAINS.
+// Staggered зовёт revizor с ключом расписания (напр. kaplan-pathways), а домены
+// заведены под коротким ключом (kaplan) — иначе скоуп теряется («running on all»).
+const SCHEDULE_TO_DOMAIN_KEY = {
+  'kaplan-pathways': 'kaplan',
+  'navitas-pathways': 'navitas',
+};
+
 const PROG_MARKERS = /\b(BSc|BA|BEng|BBA|BS|BCom|BFA|BMus|LLB|MSc|MA|MBA|MEng|MRes|MPhil|MArch|MFA|LLM|MD|BDS|BVSc|PhD|DPhil|Bachelor|Master|Foundation|Diploma|Certificate|Doctorate)\b/i;
 const FEE_RE = /([£$€])\s*([\d,]{4,7})(?:\s*(?:per year|per annum|\/year|pa\.?|annually))?/gi;
 const IELTS_RE = /IELTS[^\d]*(\d(?:\.\d)?)/i;
@@ -155,7 +163,8 @@ if (SLUGS_ARG) {
   const slugSet = new Set(SLUGS_ARG.split(',').map(s => s.trim()));
   allFiles = allFiles.filter(f => slugSet.has(f.replace('.json', '')));
 } else if (AGGREGATOR) {
-  const domains = AGGREGATOR_DOMAINS[AGGREGATOR] || [];
+  const domainKey = SCHEDULE_TO_DOMAIN_KEY[AGGREGATOR] || AGGREGATOR;
+  const domains = AGGREGATOR_DOMAINS[domainKey] || [];
   if (!domains.length) { log(`WARN: unknown aggregator "${AGGREGATOR}", running on all`); }
   else {
     const unis = await Promise.all(allFiles.map(async f => {

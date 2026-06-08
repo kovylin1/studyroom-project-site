@@ -96,7 +96,7 @@ jobs:
           echo "=== Коллектор: $AGG ==="
           case $AGG in
             kaplan-pathways)
-              node scraper/scrape-direct-partners-v2.mjs || true
+              node scraper/scrape-kaplan-all.mjs || true
               ;;
             navitas-pathways)
               for region in uk au ca nz us de nl; do
