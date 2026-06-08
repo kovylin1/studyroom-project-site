@@ -10,6 +10,55 @@ status.json теперь в .gitignore и НЕ в git (генерится на �
 Перед push: git fetch — CI staggered-scrape и он-деманд ПАУК пушат сами (rebase поверх, данные каталога не клобить).
 В конце commit: Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
 
+=== СДЕЛАНО 2026-06-08, СОРОКА ДОБИТА (всё СМЁРДЖЕНО в main) ===
+СОРОКА follow-up A/B/C — PR #32/#33/#34 (панель source-aware, 2 IELTS-фикса, alias-карта 172 вуза).
+- PR #36 (merge 18bab5d) — ВАРИАНТ 1: liveCheckUni добирает цены для tuition_zero с офсайта
+  (валюта вуза + tuitionPlausible; авто-филл byProgram ТОЛЬКО при корроборации >=2 URL и conf>=0.85,
+  иначе кандидат оператору в панель: case.official, decision=null). soroka-apply.mjs: decision=update
+  разрешён и для tuition_zero. Прогон 13 нулевых: lsu → 3 PhD-кандидата ~12886 USD; остальные
+  no-official-site/no-money-found (офсайты не отдают цен на мелких путях — потолок варианта 1).
+  + ФИКС БАГА: вуз со слагом `constructor` (Constructor Univ) ронял полный прогон —
+  SLUG_ALIASES['constructor'] возвращал Object.prototype.constructor (не массив). Guard Array.isArray
+  в soroka.mjs И merge-programs.mjs. Скоуп-раны (--slug) баг НЕ ловили, только полный проход.
+  + ПОЛНЫЙ ПРОГОН СОРОКИ (804 вуза): 772 кейса в /manager (было 355) — alias-карта закрыла дыры:
+  tuition_mismatch 420 (было ~9), outlier 280, zero 64, currency 8; 4132 corroborated (было 3129).
+  Каталог: только метаданные-провенанс в 97 вузах (данные не тронуты). Build 807/exit 0.
+- PR #37 (merge 51b841b) — СОРОКА ВСТРОЕНА В CI: дыра была — pauk.mjs имеет Phase 4.5 (soroka),
+  но pauk.mjs в CI НИКТО НЕ ЗОВЁТ (воркфлоу гоняют коллекторы+merge напрямую; РЕВИЗОР в staggered
+  есть, СОРОКА нигде). Добавлен шаг СОРОКА в scrape-monthly.yml после merge, --skip-live
+  (детерминированно, $0). review.json пушится через `git add site/public/api/`, catalog-метаданные
+  не коммитятся (без месячного churn). Теперь полный кросс-чек идёт сам 1-го числа. Точечный live — on-demand.
+
+=== СДЕЛАНО 2026-06-08, KAPLAN ПОРТИРОВАН (ветка feat/kaplan-merge-port ЗАПУШЕНА, PR не открыт) ===
+Находка: Kaplan был FOUNDING-коллектором (TS scraper/src/cli.ts, прямая запись в каталог, ~29 вузов),
+но осиротел от merge-пайплайна и CI (слот kaplan-pathways гонял чужой scrape-direct-partners-v2).
+Порт (коммиты ca6d490 спека + b2a40c0 фича):
+- НОВЫЙ scraper/scrape-kaplan-all.mjs: фид `degree_finder_object` (один fetch = вся база Kaplan,
+  БЕЗ Playwright, $0). 25 вузов/4732 программы, у каждой реальная цена+валюта. Матчинг института
+  фида → слаг каталога по токенам имени (токены вуза каталога ⊆ имени института); кампусы (ASU) схлопнуты.
+- merge-programs.mjs РАСШИРЕН: перенос tuition из extracts (fill-null по ФИНАЛЬНОМу слагу через temp-поле
+  _feePerYear, НЕ перезаписывает; валюта вуза — если пуста). Раньше merge цены НЕ нёс вообще. Выгода всем
+  коллекторам. Проверено glasgow: 0 утечек temp-полей, программы целы, существующие цены целы.
+- revizor.mjs: SCHEDULE_TO_DOMAIN_KEY (kaplan-pathways→kaplan, navitas-pathways→navitas). Staggered
+  зовёт ревизор ключом расписания, а домены под коротким ключом — иначе «running on all» (терял скоуп).
+  Проверено: revizor --aggregator=kaplan-pathways аудитит РОВНО 29 Kaplan-вузов.
+- scrape-staggered.yml: слот kaplan-pathways → scrape-kaplan-all.mjs. registry.json: status=done.
+  cli.ts: маркер legacy (НЕ удалён — оставлен ради accommodation/scholarships/описаний, merge их не несёт).
+- Build 807/exit 0 на смёрдженном каталоге. Каталог НЕ коммичен (CI регенерит из kaplan-extracts
+  детерминированно на ближайшем staggered+merge). 25 kaplan-extracts закоммичены. Спека:
+  docs/superpowers/specs/2026-06-08-kaplan-merge-port-design.md.
+СЛЕДУЮЩЕЕ по Kaplan: открыть/смёрджить PR ветки feat/kaplan-merge-port.
+
+=== i18n /en — ОТМЕНЁН (2026-06-08, решение владельца) ===
+Сайт остаётся на ОДНОМ языке (русском). Полный i18n НЕ делаем (804 вуза прозы — слишком много).
+Позже — только перевод ЛЭНДИНГ-страниц на английский. Не предлагать полный i18n снова.
+
+=== СЛЕДУЮЩЕЕ (бэклог СОРОКИ/каталога) ===
+- 772 кейса в /manager ждут ручных решений владельца (apply → soroka-apply.yml кнопкой в панели).
+- Открыть/смёрджить PR feat/kaplan-merge-port (Kaplan порт).
+- Перевод лэндинг-страниц на английский (позже, НЕ весь каталог).
+- Точечный live-добор tuition_zero для конкретных вузов — `node scraper/soroka.mjs --slug=X` (без --skip-live).
+
 === СДЕЛАНО 2026-06-05 (PR #30 СМЁРДЖЕН в main, merge 8a26b99) ===
 - НОВЫЙ агент СОРОКА (scraper/soroka.mjs + scraper/lib/numbers.mjs) — директор достоверных цифр:
   tuition программ, цены жилья из текста, keyFacts-цифры, IELTS/GPA. Phase 4.5 в pauk.mjs (--skip-soroka).
@@ -66,8 +115,8 @@ status.json теперь в .gitignore и НЕ в git (генерится на �
   при отсутствии dayOfMonth.
 
 === ЗАДАЧИ (по приоритету) ===
-🟡 СОРОКА follow-up A/B/C — см. блок выше (355 кейсов ждут wiring в manager).
-⏸️ Kaplan Playwright-коллектор (как GEDU, с kaplanpathways.com); i18n /en.
+🟡 СОРОКА follow-up A/B/C — СДЕЛАНО (см. блок СОРОКА выше); 772 кейса ждут решений владельца.
+✅ Kaplan — ПОРТИРОВАН в merge-пайплайн (см. блок KAPLAN выше). i18n — ОТМЕНЁН.
 ⏸️ Стипендии с официальных сайтов через ШМЕЛЯ (см. выше).
 
 === НУЖНО ОТ ВЛАДЕЛЬЦА (разблокирует прод, без изменений) ===
