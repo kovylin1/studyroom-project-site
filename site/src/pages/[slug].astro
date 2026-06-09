@@ -741,16 +741,22 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
             {u.requirements?.language?.duolingo != null && (
               <li><dt>Duolingo English Test</dt><b>от {u.requirements.language.duolingo}</b></li>
             )}
-            {(u.requirements?.exams ?? []).length > 0 && (
-              <li>
-                <dt>Вступительные экзамены</dt>
-                <b class="req-exams-wrap">
-                  {(u.requirements?.exams ?? []).map((e) => (
-                    <span class="req-exam-chip">{e}</span>
-                  ))}
-                </b>
-              </li>
-            )}
+            {(() => {
+              // exams исторически содержит и языковые тесты — их показываем в строках языка, не как «вступительные экзамены»
+              const entranceExams = (u.requirements?.exams ?? []).filter(
+                (e) => !/^(IELTS|TOEFL|PTE|Duolingo|Cambridge|CAE|CPE|TOEIC)/i.test(e),
+              );
+              return entranceExams.length > 0 && (
+                <li>
+                  <dt>Вступительные экзамены</dt>
+                  <b class="req-exams-wrap">
+                    {entranceExams.map((e) => (
+                      <span class="req-exam-chip">{e}</span>
+                    ))}
+                  </b>
+                </li>
+              );
+            })()}
             <li><dt>Мотивационное письмо</dt><b>1 страница</b></li>
             <li><dt>Рекомендации</dt><b>1–2 от учителей / работодателя</b></li>
             <li><dt>Финансовое подтверждение</dt><b>~{sym}{Math.max(15000, tuitionMin).toLocaleString('en')} на счёте 28+ дней</b></li>
