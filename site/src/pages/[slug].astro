@@ -204,7 +204,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   .lp .btn--ghost:hover { border-color: var(--green); color: var(--green); }
   .lp .btn--lg { padding: 18px 32px; font-size: 17px; }
   .lp .progress-bar { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green), var(--amber)); width: 0; z-index: 200; transition: width .12s ease; }
-  .lp .lp-nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92); backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid var(--line); }
+  .lp .lp-nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); }
   .lp .lp-nav__row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; gap: 16px; }
   .lp .lp-nav__brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 18px; color: var(--ink); }
   .lp .lp-nav__mark { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--green), var(--green-dark)); color: #fff; display: grid; place-items: center; font-weight: 900; font-size: 14px; }
@@ -331,6 +331,7 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   .lp .ielts-help { background: linear-gradient(135deg, #fff8e6, #fff); border: 1px solid #ffd97a; border-radius: 14px; padding: 20px; }
   .lp .ielts-help h4 { margin: 0 0 8px; color: #8a5e00; }
   .lp .req-unconfirmed { color: var(--ink-3); font-weight: 500; font-style: italic; }
+  .lp .req-hint { font-size: 11px; font-weight: 700; color: var(--amber); text-transform: uppercase; letter-spacing: .03em; }
   .lp .req-exams-wrap { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
   .lp .req-exam-chip { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600; color: var(--ink-2); white-space: nowrap; }
   .lp .reviews-stub { background: #fff; border: 2px dashed var(--line); border-radius: 14px; padding: 24px; text-align: center; color: var(--ink-3); }
@@ -720,12 +721,18 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
           <h3 style="margin-top: 0;">Документы и баллы</h3>
           <ul class="req-list">
             <li>
-              <dt>Аттестат / диплом (GPA)</dt>
+              <dt>Аттестат / диплом</dt>
               {u.requirements?.gpa != null ? (
                 <b>{u.requirements.gpa.toFixed(1)} / 4.0 (≈{Math.round(u.requirements.gpa / 4 * 100)}%)</b>
-              ) : (
-                <b class="req-unconfirmed">Уточняется</b>
-              )}
+              ) : (() => {
+                const c = (u.country || '').toLowerCase();
+                let hint = 'аттестат без троек (≈4.0+/5)';
+                if (/kingdom|britain|england|scotland|wales/.test(c)) hint = 'аттестат 4.5+/5 (≈70%+)';
+                else if (/states|usa|america/.test(c)) hint = 'GPA ≈3.0–3.5 / 4.0';
+                else if (/canada/.test(c)) hint = 'аттестат ≈70–80% (B+)';
+                else if (/australia|zealand/.test(c)) hint = 'аттестат ≈70%+';
+                return <b>{hint} <span class="req-hint">ориентир</span></b>;
+              })()}
             </li>
             <li>
               <dt>IELTS</dt>
@@ -1121,11 +1128,22 @@ const pageDescription = `Поступление в ${u.name} (${u.city}, ${u.cou
   }
 
   const pb = $('#lpProgress');
-  window.addEventListener('scroll', () => {
+  if (pb) {
     const h = document.documentElement;
-    const max = h.scrollHeight - h.clientHeight;
-    if (pb) pb.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
-  }, { passive: true });
+    let maxScroll = h.scrollHeight - h.clientHeight;
+    let ticking = false;
+    const recalc = () => { maxScroll = h.scrollHeight - h.clientHeight; };
+    window.addEventListener('resize', recalc, { passive: true });
+    window.addEventListener('load', recalc, { passive: true });
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        pb.style.width = (maxScroll > 0 ? (h.scrollTop / maxScroll) * 100 : 0) + '%';
+        ticking = false;
+      });
+    }, { passive: true });
+  }
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
