@@ -1,0 +1,23 @@
+{
+  "slug": "health-sciences-university",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.hsu.ac.uk",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "wrong",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "keyFactsRu claims '1 программа' but catalog lists ~36 programs",
+    "keyFactsRu claims 'Программы: магистратура' (masters only) but catalog includes bachelor, foundation, phd, short-course levels",
+    "keyFactsRu 'Прямой партнёрский договор — без двойных комиссий' is an unverifiable marketing claim",
+    "Non-program entries scraped as degree programs: 'Duplicate Certificate', 'See All PhD Level Courses At Health Sciences University' (listing page), 'Courses with a Foundation Year' (category page)",
+    "CPD event dates listed as master-level degree programs: '04 March 2026 - Biology of Osteoarthritis', '21 March 2026 - Ergonomics for manual therapists'",
+    "tuition.currency set to 'USD' for a UK university (fees are in GBP)",
+    "All programs marked verified:true despite wrong level/durationYears values (e.g. 'Master of Chiropractic (MChiro) with Foundation Year' level=master programType=pathway durationYears=1)"
+  ],
+  "evidence": "Official site hsu.ac.uk confirmed (formerly AECC University College Bournemouth + University College of Osteopathy London; contact email still info@aecc.ac.uk). PROGRAMS: catalog subject areas (Chiropractic, Osteopathy, Radiography/Radiotherapy, Sport Rehab/Science, OT, Podiatry, SLT, Dietetics, Physiotherapy, PhD) match official nine subject areas and most programUrls resolve to real hsu.ac.uk/course pages = largely accurate, but list is polluted with stale scraped junk (CPD events, listing/category pages, a 'Duplicate Certificate' admin page) and many durationYears/level fields are wrong, so scored 'stale'. PRICES: catalog tuition={} empty with currency USD; official site publishes detailed 2025/26 GBP fees (UG new UK £9,535; International £17,388; MSc Physiotherapy intl £19,294; PhD intl £16,761; Access to HE £1,500) = absent. CAMPUSES: catalog lists only 'HSU Central London Campus' while setting city='Bournemouth'; reality is TWO campuses — Bournemouth (Parkwood Road, BH5 2DF) and London (275 Borough High Street, SE1 1JE) — catalog omits the Bournemouth campus and is internally inconsistent = wrong. SCHOLARSHIPS: catalog has none; official site lists Global Partnership Scholarship (£3,000), Vice-Chancellor's Bursary (£2,500), Maintenance Bursary (£1,800-2,000), Sport Scholarship Scheme, Hugh Gemmell Memorial Scholarship, care-leaver/estranged bursaries = absent. ACCOMMODATION: catalog has none; official site offers accommodation via Student Services (halls of residence + private housing) = absent. Sources: hsu.ac.uk, hsu.ac.uk/student-life/student-finances/tuition-fees-2025-26/, hsu.ac.uk/student-life/student-finances/scholarships-and-bursaries/.",
+  "verifiedPct": 25
+}

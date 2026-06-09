@@ -1,0 +1,23 @@
+{
+  "slug": "institut-culinaire-france",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.institutculinaire.fr/",
+  "scores": {
+    "programs": "accurate",
+    "prices": "absent",
+    "campuses": "stale",
+    "scholarships": "wrong",
+    "accommodation": "unverifiable"
+  },
+  "fabricationFlags": [
+    "Scholarship 'Bourse au mérite ICF (до €2,000)' not found on official site — invented name and amount.",
+    "Scholarship 'Bank Partnership Loan (Société Générale / BNP) до €15,000' not found on official financement-formation page — invented partners and figure.",
+    "Scholarship 'Campus France Scholarship до €10,000' not listed by ICF — generic government program with fabricated specific cap.",
+    "All 4 accommodation entries (LIVIN FRANCE partner, CROUS Bordeaux-Aquitaine, Bassins à Flot Private Studios, Homestay Bordeaux) absent from official site — no housing section exists; partner claims unverifiable/likely fabricated.",
+    "Campus 'nine classrooms' contradicts official 'six classrooms'; '9 классов на 16 человек' vs official '12-16 students max'.",
+    "First program slug 'institut-culinaire-france-bachelor-arts-culinaires-sucr-s-entrepreneuriat' has programUrl pointing to 'bachelor-glacerie-sculpture-entrepreneuriat' which does not match the Bachelor title.",
+    "sourceHash 'sha256:8a3f72c1e9b4d6a2' is truncated/non-standard (16 hex chars, not 64) — not a real SHA-256."
+  ],
+  "evidence": "Official site institutculinaire.fr confirms: Bordeaux campus, 44 rue de la Faïencerie 33000 Bordeaux (MATCHES catalog), opened 2020 (MATCHES 'Founded 2020'), 4,000 m² (MATCHES), 6 HQE training kitchens + 3 pastry + 2 bakery labs (MATCHES lab counts). Programs on official site: Bachelor Arts culinaires sucrés & Entrepreneuriat (3 ans) — MATCHES catalog; plus Licence pro MACAT (1 an), CAP Pâtisserie/Glacier/Boulanger (reconversion & apprenticeship), Certificat de spécialisation Pâtisserie de boutique, Spring/Summer Camp — catalog only lists 2 Bachelor entries (one a near-duplicate), but listed program is correct, so programs=accurate. PRICES: catalog tuition.byProgram is EMPTY {} = absent, while official financement-formation page states Bachelor €13,250 total (€12,000 scolarité + €450 inscription + €800 matériel) and CAP Reconversion €14,750 (€13,500+€450+€800) — data exists officially but catalog omits it. SCHOLARSHIPS: official confirms Apprenticeship/OPCO funding (zero tuition + salary) and Projet de Transition Professionnelle — these match; but 'Bourse au mérite ICF', 'Bank Partnership Loan SG/BNP', and 'Campus France Scholarship' with specific euro caps are NOT on official site = wrong/fabricated. ACCOMMODATION: official site has NO housing info; all 4 entries unverifiable. CAMPUS classroom count (9 vs official 6) is stale/wrong. Fetches: institutculinaire.fr home, /financement-formation, /en/school/bordeaux, plus 1 web search.",
+  "verifiedPct": 45
+}

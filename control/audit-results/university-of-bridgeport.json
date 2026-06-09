@@ -1,0 +1,23 @@
+{
+  "slug": "university-of-bridgeport",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.bridgeport.edu",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "accurate",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "Mislabeled level: graduate programs tagged level='bachelor' (e.g. 'MS Computer Science (STEM)', 'MS Acupuncture', 'PhD Computer Science & Engineering (STEM)' all have level='bachelor'); only the PhD CS entry correctly uses level='phd'.",
+    "Uniform durationYears=3 applied to nearly every program regardless of level; master's degrees that are bridgeport.edu-sourced use durationYears=1 while edvoy-sourced MS/PhD use 3 — inconsistent and unverified placeholder values.",
+    "Uniform intakes=['September'] on all 57 programs; UB actually offers multiple intakes (Fall/Spring) — likely a placeholder, not source-verified.",
+    "Duplicate program listings from two sources (edvoy aggregator vs bridgeport.edu) inflate count: e.g. Accounting, Data Analytics, Analytics MS, AI MS, Marketing, Mathematics, Psychology, Sport Management, Biology appear twice. keyFactsRu claims '43 программ' but file lists 57 entries — neither matches UB's stated 'over 80 programs'.",
+    "programType='degree' applied to a certificate program ('Medical Billing and Coding Certificate', level='short-course') — mislabeled.",
+    "Empty description: description.paragraphs contains only '<p>&nbsp;</p>' — no real content.",
+    "confidence='aggregator' and sourceHash='sha256:edvoy-mpirnutm' indicate primary data is from edvoy aggregator, not the official source."
+  ],
+  "evidence": "Official site confirmed at https://www.bridgeport.edu (126 Park Avenue, Bridgeport, CT 06604). PROGRAMS: catalog lists 57 program entries; the bridgeport.edu-sourced subset (Accounting BS, Analytics MS, AI MS, Biology BA/BS, Counseling MS, Data Analytics BS, Education Masters, English BS, Marketing BS, Mathematics, Medical Billing cert, Medical Sciences MS, Nutrition MS, Psychology, MPH, Sport Management) have valid working programUrl paths under /academics/programs/ and match real offerings. However the larger edvoy-sourced subset carries systematically wrong metadata (all level='bachelor' even for MS/PhD, all durationYears=3, all intakes=September) and points programUrl to edge.edvoy.com aggregator, not UB. UB advertises 'over 80 in-demand programs'; catalog has fewer and with duplicates, so programs are real-but-stale. PRICES: tuition.byProgram is empty {}; official 2025-2026 undergraduate tuition is $16,430/semester ($32,860/yr) + $1,500/sem general fee + $120/sem student gov fee + $200 orientation (~$36,300/yr total); part-time $1,095/credit. None of this is in the catalog -> absent. CAMPUSES: catalog lists one 'Bridgeport Main Campus' which matches UB's single main campus at 126 Park Ave -> accurate. SCHOLARSHIPS: not present in catalog (requirements/deadlines empty); UB offers international academic scholarships $5,000-$20,000/yr (tuition only), auto-considered -> absent from catalog. ACCOMMODATION: not present in catalog at all; UB has on-campus residence halls -> absent. Sources: https://www.bridgeport.edu/academics/programs/ ; https://www.bridgeport.edu/cost-financial-aid/tuition-fees/undergraduate ; https://www.bridgeport.edu/admissions/international/faq (scholarships).",
+  "verifiedPct": 30
+}

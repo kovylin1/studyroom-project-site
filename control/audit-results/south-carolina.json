@@ -1,0 +1,24 @@
+{
+  "slug": "south-carolina",
+  "officialSiteFound": true,
+  "officialUrl": "https://sc.edu",
+  "scores": {
+    "programs": "stale",
+    "prices": "stale",
+    "campuses": "accurate",
+    "scholarships": "accurate",
+    "accommodation": "wrong"
+  },
+  "fabricationFlags": [
+    "accommodation[0] 'Colleges & Schools' is scraped academic-college navigation text (Arts and Sciences, Business, Education...) mislabeled as accommodation — not housing data at all",
+    "accommodation 'Find your home in one of 28 halls' — official Housing site lists '20+ housing options'; the '28 residence halls' figure (repeated in description) is unverified/likely inflated",
+    "campuses[2] 'Columbia Campus' is an empty duplicate stub (no text) of the Columbia Main Campus — scraping artifact",
+    "Two trailing program entries (E.I.M.B.A., Master's Entry to Practice Nursing MSN) marked verifiedBySite:true but carry NO programUrl",
+    "7 programs sourced from edge.edvoy.com aggregator (not official sc.edu) yet flagged verified:true; several have wrong level (e.g. 'MSEM Sport and Entertainment Management' and 'MS in Environmental Health Sciences STEM designated' tagged level:bachelor)",
+    "Mixed language tagging: many programs language:'ru' though titles are English; durationYears inconsistencies (e.g. 3-year US bachelor's, 1-year master's listed as bachelor)",
+    "deadlines hard-coded to 2027-12-01 / 2027-04-01 for all programs (placeholder pattern), not real USC deadlines",
+    "confidence field self-labeled 'aggregator'; sourceHash is an implausibly short truncated sha256"
+  ],
+  "evidence": "Verified against sc.edu live pages/searches (June 2026). Colleges list CONFIRMED accurate: McCausland College of Arts and Sciences, Darla Moore School of Business, College of Nursing, Arnold School of Public Health, College of Hospitality/Retail/Sport Mgmt, College of Information and Communications, School of Music, College of Education, Molinaroli College of Engineering all real (16 colleges incl. Floyd School of Medicine — note: 'School of Medicine Columbia' has been renamed Floyd School of Medicine). PRICES: official 2025-26 non-resident undergrad tuition = $36,976/yr (cost_to_attend page) / ~$37,388 incl. fee increase; catalog uses $36,156 (A&S) and $38,520 (business/nursing) — within a few % but a prior-year/stale snapshot, and the business/nursing premium is plausible. Graduate tuition figures ($45k MBA, $42k MS-IB, $30k MPH/MSN) not directly confirmed, treated as stale. SCHOLARSHIPS: McNair Scholars (full funding, ~$198k/4yr), Horseshoe Scholars ($11,000/yr + in-state tuition rate, ~$142k/4yr), Carolina Scholars all CONFIRMED real Top Scholar awards; catalog amounts reframed but names/intent accurate. CAMPUSES: Columbia main campus (359-acre, Horseshoe, 11 historic buildings) and School of Medicine Greenville both real and accurate; 3rd 'Columbia Campus' entry is empty duplicate. ACCOMMODATION: scored 'wrong' — entry[0] is mislabeled college-navigation text, not housing; '28 halls' figure unverified vs official '20+ housing options'. PROGRAMS scored 'stale' — official faculty programUrls (sc.edu) are valid and colleges exist, but the catalog mixes verified official program pages with edvoy-aggregator entries that have wrong levels, placeholder deadlines, and inconsistent language tags.",
+  "verifiedPct": 60
+}

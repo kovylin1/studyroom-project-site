@@ -1,0 +1,20 @@
+{
+  "slug": "kedge-business-school",
+  "officialSiteFound": true,
+  "officialUrl": "https://student.kedge.edu",
+  "scores": {
+    "programs": "accurate",
+    "prices": "stale",
+    "campuses": "accurate",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "keyFacts array contains serialized garbage '[object Object]' (x7) instead of real fact strings",
+    "All program deadlines hardcoded to 2024-07-01 (stale, past dates)",
+    "Every programUrl points to aggregator edge.edvoy.com, not official kedge.edu",
+    "confidence flagged as 'aggregator'; data sourced from edvoy aggregator not official site"
+  ],
+  "evidence": "Official source student.kedge.edu / kedge.edu confirmed. PROGRAMS: catalog's 18 programs (MSc Marketing, International Business, Data Analytics for Business, Banking & Finance, Corporate Finance, Global Supply Chain Management, International Purchasing & Innovation Management, Sustainable Finance, Arts & Creative Industries, Wine & Spirits Mgmt, Wine & Hospitality Mgmt, International Trade & Logistics, Sport & Event Mgmt, Digital Marketing & Sales, Business Transformation for Sustainability, Auditing & Performance Mgmt, Master in Management Grande Ecole, International BBA) all match real KEDGE catalog programs => accurate. PRICES: systematically low vs official. MSc Marketing catalog 17400 vs official 18000; MSc International Business catalog 17400 vs official 18500; BBA catalog 10750 (plausible, one source 11200). Likely prior-year aggregator figures => stale (currency EUR correct, magnitudes correct). CAMPUSES: catalog lists Bordeaux, Marseille, Paris; official confirms all three as main French campuses (official also has Toulon + associated overseas campuses, omitted but not wrong). City field 'Paris 12 Reuilly' = real Paris campus address => accurate. SCHOLARSHIPS: catalog scholarships=[] (empty) but official lists Excellence, Solidarity, Diversity, Partner, Alumni, Welcome to France, Early Bird discount, Prodigy Finance => absent. ACCOMMODATION: no accommodation field in catalog; official references per-city accommodation (Bordeaux/Marseille/Paris/Toulon) => absent.",
+  "verifiedPct": 60
+}

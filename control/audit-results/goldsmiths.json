@@ -1,0 +1,22 @@
+{
+  "slug": "goldsmiths",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.gold.ac.uk/",
+  "scores": {
+    "programs": "stale",
+    "prices": "wrong",
+    "campuses": "accurate",
+    "scholarships": "wrong",
+    "accommodation": "accurate"
+  },
+  "fabricationFlags": [
+    "Scholarships fabricated: 'Goldsmiths International Scholarship' (GBP 4,000), 'Arts Excellence Award' (GBP 3,000) and 'Postgraduate Masters Scholarship' (GBP 2,500) do not appear anywhere on the official Goldsmiths scholarships finder, international fees-funding page, or scholarships index. Official site only enumerates external awards (Chevening, Marshall, etc.) and a non-itemized scholarships finder tool.",
+    "Tuition figures understated/invented: JSON BMus Music GBP 18,000 vs official GBP 23,000 (2026/27); JSON MSc Data Science GBP 20,000 vs official GBP 22,000. Figures do not match any current official band.",
+    "All programUrl values for core degrees return HTTP 404 (e.g. /undergraduate/programmes/music/ -> real path is /ug/bmus-music/; /postgraduate/programmes/data-science/ -> real path is /pg/msc-data-science-artificial-intelligence/). URLs appear synthesized rather than copied from the live site.",
+    "7 of 11 'programs' entries are not academic programmes at all: a careers 'Career options with a PhD' page, 'PhD/Postgraduate Research careers', a student profile ('Erica, BSc Psychology'), another student profile ('Ting Hsuan, BA Drama and Theatre Arts'), a 'PhD (doctoral) theses' library page, and a 'PhD Research in CISP' page. These are mislabeled as degree programmes with durationYears/level/intakes and marked verified:true, indicating scraped/padded filler.",
+    "MSc title mismatch: JSON 'MSc Data Science' but official programme is 'MSc Data Science and Artificial Intelligence'.",
+    "BMus title mismatch: JSON 'BMus Music' but official title is 'BMus (Hons) Music'."
+  ],
+  "evidence": "Catalog: site/src/content/universities/goldsmiths.json. Official source gold.ac.uk verified via WebSearch+WebFetch (6 calls). PROGRAMS: degree subjects exist but JSON programUrls 404; correct live paths are /ug/bmus-music/ and /pg/msc-data-science-artificial-intelligence/. 7/11 entries are non-programme pages (careers, student profiles, theses) -> stale/padded. PRICES: official BMus Music International full-time = GBP 23,000 (2026/27) vs JSON 18,000; official MSc Data Science & AI International = GBP 22,000 vs JSON 20,000 -> wrong. CAMPUSES: New Cross, London SE14 6NW and 24/7 library confirmed accurate. SCHOLARSHIPS: the three named/amounts in JSON not found on gold.ac.uk/fees-funding/scholarships/ or /international/fees-funding/; site lists only a scholarships-finder tool and external awards -> wrong/fabricated. ACCOMMODATION: halls Loring Hall, Raymont Hall (Brockley, Student Village), Chesterman House, Ewen Henderson Court, Surrey House all confirmed on gold.ac.uk/accommodation/halls/ -> accurate.",
+  "verifiedPct": 40
+}

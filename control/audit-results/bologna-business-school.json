@@ -1,0 +1,24 @@
+{
+  "slug": "bologna-business-school",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.bbs.unibo.it/en/",
+  "scores": {
+    "programs": "stale",
+    "prices": "wrong",
+    "campuses": "accurate",
+    "scholarships": "wrong",
+    "accommodation": "unverifiable"
+  },
+  "fabricationFlags": [
+    "programs[] array is heavily polluted: ~80+ of ~100 entries are NOT degree programs but scraped news articles, blog posts, event pages, Skype Q&A sessions, and 'Virtual Open Day' announcements (several dated 2014), all mislabeled as level=master / programType=degree / language=ru / verified=true (e.g. 'Master Lecture. Samantha Cristoforetti', 'Skype Session - Master in Data Science', 'Master Universitari Full-time - Open Day 22 maggio 2014').",
+    "Many of those scraped entries carry verified=true despite being non-program content — false verification flag.",
+    "Global MBA tuition stated as EUR 36,000; official BBS/unibo source states EUR 35,000 (off by EUR 1,000).",
+    "Scholarship names appear fabricated: 'BBS Merit', 'BBS Women in Business', 'BBS Early Bird', 'BBS Ukrainian Students', 'Italian Government Scholarship (MAECI)', 'Unibo Study Grant' with amounts up to EUR 15k/10k/5k/9k/11k do NOT match the official scholarships page, which lists merit full scholarships (EUR 27,000) and partial (EUR 15,000) per track plus a ChefToChef sponsorship.",
+    "Scholarship amounts use mixed-language formatting ('до €15,000') suggesting templated/auto-generated values rather than sourced figures.",
+    "Accommodation entries (BBS Partner Residences, 'BBS Housing Office', Camplus Bononia, The Social Hub) are not documented on official BBS pages; BBS-specific framing is unverifiable (residences are real Bologna venues but not confirmed as BBS-affiliated).",
+    "All deadlines set to identical placeholder '2027-07-01'.",
+    "confidence field self-declared as 'aggregator' (not primary-sourced)."
+  ],
+  "evidence": "Official site bbs.unibo.it confirmed. Global MBA page (bbs.unibo.it/en/global-mba/) confirms exactly 5 tracks matching catalog (AI and Manufacturing; Design, Fashion and Luxury Goods; Food and Wine; Sustainability and Innovation; Supercars, Superbikes and Motorsports), 12 months, English, full-time — accurate. Homepage confirms 'BBS Multicampus' and Villa Guastavillani in the Bolognese hills — campuses accurate. WebSearch (unibo/BBS sources) gives Global MBA tuition EUR 35,000 vs catalog 36,000. Official scholarships page (bbs.unibo.it/en/scholarships-and-honor-loan/) lists full (EUR 27,000) and partial (EUR 15,000) merit scholarships per track + ChefToChef sponsorship; none of the 6 catalog-named scholarships appear there. Accommodation not present on official pages. The legitimate top ~18 program entries (Global MBA, Professional Masters, Executive Master) are credible, but the array is dominated by mislabeled news/event scrape content.",
+  "verifiedPct": 45
+}

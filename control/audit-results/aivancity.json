@@ -1,0 +1,22 @@
+{
+  "slug": "aivancity",
+  "officialSiteFound": true,
+  "officialUrl": "https://aivancity.ai/en",
+  "scores": {
+    "programs": "wrong",
+    "prices": "wrong",
+    "campuses": "accurate",
+    "scholarships": "stale",
+    "accommodation": "unverifiable"
+  },
+  "fabricationFlags": [
+    "Programs array polluted with ~20 non-program scraped sentence fragments (e.g. 'L'obtention du grade de Master envoie un message clair et structurant :', 'Au-delà de ces blocs de compétences, le Bachelor permet aux étudiants de :', '2026 : Grade de Master, consacrant l'impact global...') flagged source=official verifiedBySite=true",
+    "Multiple duplicate program entries for the same real courses (Grande Ecole, BSc, MSc Data Eng, AI for Business, Generative AI listed 2-3x)",
+    "Aggregator-sourced programs pointing to edge.edvoy.com labeled verified=true (e.g. 'Grande Ecole Program 1st/2nd/3rd/4th Year Entry')",
+    "Scholarships 'Bourse Excellence Internationale', 'Bourse Diversite IA', 'Eiffel Excellence Scholarship' not present on official scholarship page",
+    "Third campus entry 'Aivancity Villejuif Campus' is a thin placeholder duplicate of Paris-Villejuif (no text/sub)",
+    "Program 'language' set to 'ru' on many entries that are English/French tracks"
+  ],
+  "evidence": "Official site https://aivancity.ai/en confirms 6 degree programs (Grande Ecole IAgenieur, BSc Applied AI, MSc Data Engineering & Cloud Computing, MSc Data Management, MSc AI for Business, MSc Generative AI) plus summer schools, and two campuses: Paris-Villejuif (151 Bd Maxime Gorki, 94800) and Nice (4 Bd Carabacel, 06000) — both match the catalog exactly. Official tuition (per search of aivancity.ai) is Grande Ecole 9,500 EUR Y1 / 10,900 Y2 / 12,900 Y3+Master and Bachelor 12,900 EUR, contradicting catalog values of 12,500 (Grande Ecole) and 9,500 (Bachelor); MSc fees are not published officially (unverifiable). The official scholarships page (https://aivancity.ai/en/bourses-et-financement) lists only the AIVANCITY Endowment Fund's up-to-20 full-tuition-waiver scholarships plus loans/work-study — matching the catalog's 'Programme Pilote d'Excellence' and Alternance entries but not the Eiffel/Internationale/Diversite entries; named accommodation residences (CROUS Villejuif, Studea, Nemea) are not on the official site (only generic boarding).",
+  "verifiedPct": 25
+}

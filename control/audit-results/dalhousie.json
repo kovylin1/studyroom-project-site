@@ -1,0 +1,20 @@
+{
+  "slug": "dalhousie",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.dal.ca/",
+  "scores": {
+    "programs": "accurate",
+    "prices": "wrong",
+    "campuses": "accurate",
+    "scholarships": "unverifiable",
+    "accommodation": "accurate"
+  },
+  "fabricationFlags": [
+    "TUITION SEVERELY UNDERSTATED: All undergraduate tuition in catalog is ~25-35% below official 2025-2026 International Tuition Guarantee rates (dal.ca/cdn ITG 2025-2026.pdf). Catalog Computer Science=28870 vs official 39326; Science/Biology=27132 vs official 35842; Arts (ba-*)=24878 vs official 35842; Management/Commerce=27132 vs official 39663; Engineering=30162 vs official 45842. Figures resemble older-year or aggregator estimates, not current official rates.",
+    "SCHOLARSHIPS NOT VERIFIABLE ON OFFICIAL SITE: 'Oxford International Pathway Scholarship', 'Sexton Engineering Scholarship', 'Dalhousie International Entrance Award', 'Nova Scotia Nominee Program Bursary' with the stated amounts were NOT found on dal.ca scholarship pages. Dal's documented entrance awards range ~CAD 1,000-80,000 over 4yr (General Entrance Award Program) and named CS awards (Leacross, WeAreAllCS); the catalog scholarship names/amounts appear fabricated or aggregator-sourced.",
+    "OXFORD INTERNATIONAL PATHWAY is an aggregator/partner program, not a native dal.ca offering; sourceUrl is oxfordinternational.com (confidence:'aggregator' per catalog). Pathway tuition 18000 unverifiable on dal.ca.",
+    "CARLETON CAMPUS description ('Law faculty + School of Public Administration, late-19th-c buildings') is broadly plausible but campus role/buildings not directly confirmed in this audit."
+  ],
+  "evidence": "Official source-of-truth: dal.ca. Tuition verified against official 2025-2026 International Fee Schedule (Guaranteed Tuition Model), https://cdn.dal.ca/content/dam/dalhousie/pdf/admissions/MoneyMatters/ITG%202025-2026.pdf -> Halifax Campus guaranteed annual international UG tuition CAD: Arts & Social Sciences 35,842; Computer Science 39,326; Engineering 45,842; Management 39,663; Science 35,842; Agriculture 29,157. ALL catalog UG prices are materially lower => 'wrong'. PROGRAMS: BCS confirmed at https://www.dal.ca/study/programs/undergraduate/computer-science-bcs.html (Sept & Jan intakes), Commerce/Science/Engineering/Arts and the dal.ca/study/programs/* URLs (verified:true entries) are real official program pages => 'accurate'. CAMPUSES: Studley, Carleton, Sexton all confirmed real Dalhousie campuses (campus-maps & fee schedule reference Studley/Carleton/Sexton) => 'accurate'. ACCOMMODATION: Howe Hall (largest residence, Studley Campus, Coburg Rd) and LeMarchant Place (newest residence, 326 students, Studley) confirmed at dal.ca/life-at-dal/housing/residences/halifax-campus => 'accurate'. SCHOLARSHIPS: named awards/amounts in catalog not located on dal.ca; official awards differ => 'unverifiable'. FACTS: founded 1818, ~21,000 students, 13 faculties, Halifax Nova Scotia all confirmed via dal.ca/about & history => accurate. Fetches used: 5 (residence/tuition 404 retried via search).",
+  "verifiedPct": 60
+}

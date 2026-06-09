@@ -1,0 +1,22 @@
+{
+  "slug": "lancaster",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.lancaster.ac.uk",
+  "scores": {
+    "programs": "stale",
+    "prices": "wrong",
+    "campuses": "wrong",
+    "scholarships": "wrong",
+    "accommodation": "wrong"
+  },
+  "fabricationFlags": [
+    "Tuition fees grossly understated: catalog computer-science-ug=GBP 22,000/yr but official 2026/27 international fee is GBP 30,770/yr; all byProgram values appear invented/stale and far below actual international fees.",
+    "Scholarship names and amounts do not match official source: catalog lists 'Lancaster Excellence Scholarship GBP 3,000', \"Chancellor's Scholarship GBP 5,000\", 'LUMS Scholarship GBP 4,000'; official scholarships page lists Excellence Scholarship (International), Regional Scholarships, India Scholarship, Master's Excellence Scholarship with no such named amounts. Amounts appear fabricated.",
+    "Accommodation array contains a scraped news headline ('Shaping College Life Through Philanthropy' with a dated philanthropy article) instead of any real residence/college; no genuine accommodation option represented.",
+    "Campuses array padded with scraped news/announcement items (e.g. 'University Post Office closure and relocation to ReStore Lancaster', 'Campus access and parking restrictions during Roses 2026', 'Campus & Community Life') that are not campuses; only the first entry (Main Campus, Bailrigg) is a real campus.",
+    "Programs list padded with non-program scraped page titles: 'PhD theses from TEL programme', 'PhD theses from HEREE programme', 'What our PhD graduates say', 'PhD successes', 'PhD Supervisors', 'PhD Students', 'PhD Placements and Internships' etc. are content/listing pages, not enrollable degree programmes; many carry verified:true falsely.",
+    "Many programs marked 'verified': true / 'verifiedBySite': true despite being directory/news pages, overstating verification confidence."
+  ],
+  "evidence": "Official site lancaster.ac.uk confirmed. CS BSc (G400) 2026 course page lists international fee GBP 30,770/yr vs catalog GBP 22,000 - prices wrong. Scholarships page lists Excellence Scholarship (International), Undergraduate/Postgraduate Regional Scholarships, India Scholarship, Master's Excellence Scholarship; none match the three named entries/amounts in catalog - scholarships wrong. Accommodation page offers Graduate College + undergraduate/family/city options; catalog's sole entry is a philanthropy news headline - accommodation wrong. Campus page confirms single Bailrigg collegiate campus; catalog's other 'campus' entries are dated news items - campuses wrong. Core named UG programs (Computer Science, Law, Engineering, Business, Psychology) and MARS BSc exist on official site, but bulk of programs[] are scraped non-degree pages - programs stale. Founded 1964, collegiate system, LUMS triple accreditation, N8 membership in description are plausible/consistent.",
+  "verifiedPct": 25
+}

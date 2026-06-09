@@ -1,0 +1,26 @@
+{
+  "slug": "university-of-north-florida",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.unf.edu/",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "wrong",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "city field set to 'United States' instead of the real city Jacksonville, Florida — placeholder/wrong data",
+    "ALL graduate programs (MS, MBA, MHA, MED, MA, MSCE, MSEE, MACC, MAT) mislabeled level='bachelor' with durationYears=3; e.g. 'MBA GlobalMBA' and 'MS Business Analytics' are graduate degrees, not 3-year bachelor's",
+    "Every program durationYears appears templated (masters all =1, everything else =3) rather than reflecting real program lengths",
+    "Every program intake hardcoded to 'September' only; UNF uses Fall/Spring/Summer terms",
+    "Every programUrl points to aggregator edge.edvoy.com, not any official unf.edu program page; verified:true is unsupported by an official source",
+    "keyFactsRu claims '155 программ' but the programs array contains far fewer entries and is aggregator-sourced",
+    "Single campus with generic placeholder image '/photos/_lib/campus-33.jpg' and no address; real campus is 1 UNF Drive, Jacksonville, FL 32224",
+    "tuition.byProgram is empty {} despite UNF publishing concrete rates (grad non-resident $1,044.27/credit hour; resident $493.53/credit hour, Fall 2025-Summer 2026)",
+    "No scholarships field despite UNF offering the International Student Admissions (ISA) scholarship up to $12,000/year toward out-of-state tuition",
+    "No accommodation/housing field despite UNF Housing & Residence Life operating 7 (soon 8) residence halls"
+  ],
+  "evidence": "Official site confirmed at https://www.unf.edu/ — location Jacksonville, Florida (1 UNF Drive, Jacksonville, FL 32224); catalog city='United States' is wrong (scored campuses=wrong, also reflects fabricated/placeholder campus entry with generic image). PROGRAMS: catalog lists ~150 programs all sourced from aggregator edvoy with programUrl=edge.edvoy.com (none official); program names are plausibly real UNF offerings but metadata is systematically wrong — all graduate degrees tagged level='bachelor', durationYears templated (1 for MBA, 3 for all else), intakes hardcoded to 'September'; could not match to official unf.edu program catalog within fetch budget, so scored 'stale' (titles likely real but unverified against source and metadata corrupted). PRICES: catalog tuition.byProgram={} empty, yet unf.edu/controller graduate-tuition page publishes Fall2025-Summer2026 rates: FL resident $493.53/cr-hr, non-resident $1,044.27/cr-hr — data exists officially but is entirely absent from catalog (prices=absent). SCHOLARSHIPS: none in catalog; unf.edu/intlctr confirms ISA scholarship up to $12,000/yr out-of-state tuition waiver (scholarships=absent). ACCOMMODATION: none in catalog; unf.edu/housing confirms 7-8 residence halls (accommodation=absent). lastChecked=2026-05-23, confidence='aggregator' — consistent with low verification.",
+  "verifiedPct": 15
+}

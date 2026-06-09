@@ -1,0 +1,21 @@
+{
+  "slug": "new-haven",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.newhaven.edu",
+  "scores": {
+    "programs": "stale",
+    "prices": "stale",
+    "campuses": "stale",
+    "scholarships": "wrong",
+    "accommodation": "accurate"
+  },
+  "fabricationFlags": [
+    "Non-program entries scraped as 'programs' and falsely marked verified: 'Sign a Master Promissory Note' (a loan form), 'Master Watercolorist Jeanne Potter Speaks' (2013 news release), 'University of New Haven's Master's in Sport Management Ranked Among Best in the World' (press release), 'Katelyn Beach 25, 26 MBA' (a student name), 'Master of Healthcare Administration Program Outcomes' (sub-page), 'Online Bachelor's Degree Programs:' (category header)",
+    "Program entries carry verified:true / verifiedBySite:true despite being page-titles, not degrees - false verification claims",
+    "Campus list contains scraped page headers as campuses: 'Campus Locations and Maps' and 'ON-CAMPUS OPPORTUNITIES' are not campuses",
+    "Scholarship amounts likely invented: 'Henry C. Lee Scholarship up to $20,000' and 'Tagliatela Engineering Scholarship up to $15,000' not found on official scholarships page; official page lists Merit Based Scholarship $15,000-$33,000, Transfer Scholar Award, Distinguished Scholar Award $15,000-$20,000, Phi Theta Kappa, Honors, Portfolio, Pompea, West Haven",
+    "Riyadh, Saudi Arabia campus (current official additional location) is absent from catalog"
+  ],
+  "evidence": "Official UG tuition 2025-2026 = $47,464/yr (newhaven.edu/about/departments/bursars/tuition/undergraduate-2025-2026.php); catalog lists $45,330 (stale, ~$2,134 low). Official graduate tuition = $1,136/credit hr ~ $20,448/yr at 9 credits (graduate-2025-2026.php); catalog lists $18,900 / MBA $19,800 (stale, too low). Main Campus = 300 Boston Post Road, West Haven, CT 06516 (confirmed); Riyadh campus exists officially but not listed; two 'campus' entries are scraped headers. Residence halls Bixler (traditional corridor), Bergami (suite-style), Celentano (apartment-style), Atwood all confirmed real on newhaven.edu/student-life/living-on-campus/halls; Forest Hills unconfirmed. Colleges (Henry C. Lee, Tagliatela Engineering, Pompea Business, Arts & Sciences, Health Sciences) all real; curated degree titles accurate but program array polluted with ~12 non-degree scraped entries falsely flagged verified. Official scholarship page (financial-aid/undergraduate/scholarships) does not list the per-college amounts in the catalog.",
+  "verifiedPct": 55
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "hull",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.hull.ac.uk/",
+  "scores": {
+    "programs": "stale",
+    "prices": "unverifiable",
+    "campuses": "wrong",
+    "scholarships": "wrong",
+    "accommodation": "accurate"
+  },
+  "fabricationFlags": [
+    "Scholarship 'Wilberforce Scholarship' (до £2,000) not found anywhere on official hull.ac.uk source — appears fabricated.",
+    "Scholarship 'International Scholarship' (до £3,000) does not match official offering; official is an 'International Undergraduate Fee Waiver' of £2,000 — amount and name are wrong.",
+    "Campus 'Hull Campus' is a duplicate/filler entry (Main Campus already covers Hull); no descriptive text, only image.",
+    "Campus 'Hull London Campus' presented as a Hull campus but sourced from edvoy partner listing (university-of-hull-london / QA Higher Education); not an official University of Hull campus on hull.ac.uk.",
+    "Multiple Master's (MA) programs mislabeled as level 'bachelor': hull-ma-international-politics, hull-ma-in-education, hull-ma-leadership-and-management-in-education, hull-ma-social-work, hull-ma-early-childhood-and-education, hull-ma-by-thesis-history, hull-ma-research-digital-media, hull-ma-social-justice-and-community-engagement, hull-ma-in-criminal-justice-and-crime-control, hull-ma-special-educational-needs-disabilities-and-inclusion, hull-ma-teaching-english-to-speakers-of-other-languages, hull-ma-by-thesis-music — data integrity errors.",
+    "~50 programs carry source 'edvoy' (aggregator) rather than official verification, with programType 'degree' marked verified:true despite no official-source check.",
+    "Tuition figures (£14,500 nursing, £15,500 psychology, etc.) appear low/stale vs typical Hull international UG fees and could not be confirmed on official fee pages."
+  ],
+  "evidence": "Official site confirmed at hull.ac.uk. ACCOMMODATION: hull.ac.uk/life-at-hull/accommodation confirms all three catalog entries — Westfield Court (from £135/wk), Taylor Court (from £99/wk), The Courtyard (en-suite) — accurate. SCHOLARSHIPS: official scholarships-and-awards/international-undergraduate-fee-waivers page lists ONLY an 'International Undergraduate Fee Waiver' of £2,000/year; NO 'Wilberforce Scholarship' and no '£3,000 International Scholarship' found — catalog scholarships are wrong/fabricated. PRICES: official UG/PGT fees-and-funding pages redirect international users to a separate international guide and do not expose figures via fetch; catalog tuition (GBP 14,500–19,500) is unverifiable and likely stale. CAMPUSES: Main Campus in Hull is accurate; 'Hull Campus' is a duplicate filler; 'Hull London Campus' derives from edvoy partner listing, not an official Hull campus. PROGRAMS: core degrees (BSc CS, BA Business, LLB Law, BEng, BSc Psychology/Nursing/Biochemistry, MBA, MSc Data Science) are plausible, but ~50 entries are edvoy-aggregator-sourced and unverified against official source, plus 12 MA programs are mislabeled as bachelor level. Founding year 1927, City of Culture 2017, Philip Larkin facts are correct. 6 official-domain fetches + 1 web search used.",
+  "verifiedPct": 30
+}

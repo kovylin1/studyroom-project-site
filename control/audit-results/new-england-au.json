@@ -1,0 +1,22 @@
+{
+  "slug": "new-england-au",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.une.edu.au",
+  "scores": {
+    "programs": "stale",
+    "prices": "stale",
+    "campuses": "accurate",
+    "scholarships": "wrong",
+    "accommodation": "accurate"
+  },
+  "fabricationFlags": [
+    "Fabricated program entry: 'Chris Minns, Premier of New South Wales (Bachelor of Arts)' (slug new-england-au-chris-minns-...). Chris Minns is a UNE ALUMNUS, not a course. Entry is falsely marked source:'official' and verifiedBySite:true with checkedAt 2026-06-08 — fabricated verification metadata.",
+    "Scholarship 'UNE International Excellence Scholarship (до AU$10,000)' not found among UNE's actual named international scholarships.",
+    "Scholarship 'UNE Vice-Chancellor's International Scholarship (до AU$20,000)' does not match reality: UNE's actual VC item is the 'Vice-Chancellor's Scholar Award' (an academic honour for GPA>=6.7, not a AU$20,000 cash award). Amount and nature appear fabricated.",
+    "UNE's primary international financial support (the 'International Bursary' = 20% first-year tuition reduction) is entirely ABSENT from the catalog scholarship list.",
+    "Tuition figures appear estimated: bachelors uniformly clustered at AU$30,000-33,000 (round numbers), while aggregators report a wider/lower range (~AU$19,000-33,900) and BA cited near AU$19,000. Rural medicine AU$62,000 unverified.",
+    "sourceUrl is Wikipedia and confidence is 'aggregator' — content not sourced from official une.edu.au; multiple stat claims (83.2% satisfaction 2019, 82.8% online, salary figures) are aggregator-level, not source-of-truth verified."
+  ],
+  "evidence": "Official site une.edu.au confirmed but returned HTTP 403 to direct fetch; verified via web search of official pages and aggregators. CAMPUSES accurate: official sources confirm Armidale main campus + UNE Sydney (Parramatta CBD) + Tamworth study centre (search.studyaustralia.gov.au, une.edu.au/international/why-choose-une/campuses, Wikipedia). ACCOMMODATION accurate: Robb, Duval, Mary White, Wright are genuine UNE residential colleges. PROGRAMS mostly real (UNE genuinely offers BA, BEd, Nursing, Law, Business, Agricultural Science, Environmental Science, IT, Data Science, MBBS Rural Medicine, PhDs, MBA) but list is contaminated by one fabricated 'Chris Minns' alumnus-as-program entry with false official-verification flags -> scored stale. PRICES partially in range but uniform round numbers and conflicting aggregator figures (avg AU$21,808-33,856; BA cited ~AU$19,000) -> stale. SCHOLARSHIPS wrong: real UNE offerings are the International Bursary (20% fee reduction, official: une.edu.au/.../bursaries), Destination Australia (up to AU$15,000/yr - the only catalog match), RTP/HDR scholarships, Australia Awards; the two headline 'UNE International Excellence' and 'UNE Vice-Chancellor's International Scholarship' AU$ amounts are not corroborated and the VC one conflicts with the real Vice-Chancellor's Scholar Award (an honour).",
+  "verifiedPct": 45
+}

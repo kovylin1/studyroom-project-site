@@ -1,0 +1,23 @@
+{
+  "slug": "university-of-la-verne",
+  "officialSiteFound": true,
+  "officialUrl": "https://laverne.edu",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "stale",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "All graduate/doctoral programs mislabeled level:'bachelor' with durationYears:3 — e.g. 'DBA Doctor of Business Administration', 'PsyD Clinical Psychology', 'EdD Organizational Leadership', 'DPA Doctor of Public Administration', 'MS Data Analytics', 'MHA', 'MPA', 'MA'/'MEd' all tagged bachelor (officially these are master's/doctoral degrees).",
+    "Every program durationYears is uniformly 3 (bachelor) or 1 (master/cert) regardless of real program length — generic placeholder values, not verified per-program durations.",
+    "Every program tagged verified:true source:'edvoy' but programUrl/sourceUrl point to aggregator edge.edvoy.com, NOT the official laverne.edu; confidence field itself admits 'aggregator'.",
+    "Every program shares identical intake ['September'] — La Verne actually has multiple terms/start dates; uniform value is unverified placeholder.",
+    "Description internally contradictory on campus count: states 'eight regional campuses' then 'nine additional locations'; official source describes main campus + ~7 regional campuses.",
+    "keyFactsRu claims '98 программ' and 'Программы: бакалавриат, магистратура' (omits doctorates) while catalog actually contains DBA/PsyD/EdD/DPA doctoral entries — count/level summary inconsistent with own data.",
+    "Acceptance rate stated as 76% in description; multiple official-adjacent sources report ~48-50% — likely stale/wrong."
+  ],
+  "evidence": "Official source confirmed: laverne.edu (direct WebFetch returned HTTP 403; verified via indexed laverne.edu pages). PROGRAMS: La Verne genuinely offers 50+ undergraduate majors, 20+ master's, 5 doctorates, plus certificates — catalog's ~98 named programs are largely plausible and real, but program metadata is systematically corrupted: all master's/doctoral entries carry level:'bachelor' and durationYears:3, making the structured data unreliable (scored 'stale'). PRICES: catalog tuition.byProgram is empty {} despite official published figures — 2025-2026 UG La Verne campus ~$24,275/semester; College of Business graduate master's $955 per semester hour; residence hall room rates $3,230-$5,440/semester (laverne.edu/tuition/*). Scored 'absent'. CAMPUSES: catalog has a single generic 'Main Campus' tile with stock 'bobr-*.jpg' image; description text is self-contradictory (8 vs 9 campuses) and lacks the named regional campuses (Ontario College of Law, Vandenberg, Ventura County) as structured data — 'stale'. SCHOLARSHIPS: no scholarship data in catalog though official site documents merit scholarships for international undergraduates and a Performance Scholarship for arts majors (laverne.edu/admission/international/scholarships/) — 'absent'. ACCOMMODATION: no accommodation/housing data in catalog though official site details residence halls Citrus, Vista La Verne, The Oaks with per-semester rates (laverne.edu/tuition/2025-2026-residence-hall-rates-room-and-board/) — 'absent'. Catalog confidence self-declared 'aggregator', lastChecked 2026-05-23, all data sourced from edvoy aggregator rather than official .edu.",
+  "verifiedPct": 20
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "oregon-state",
+  "officialSiteFound": true,
+  "officialUrl": "https://oregonstate.edu/",
+  "scores": {
+    "programs": "stale",
+    "prices": "accurate",
+    "campuses": "accurate",
+    "scholarships": "wrong",
+    "accommodation": "unverifiable"
+  },
+  "fabricationFlags": [
+    "80+ programs sourced from aggregator 'edvoy' (programUrl=edge.edvoy.com) are marked verified:true but were NOT verified against the official OSU site",
+    "Systematic level mislabeling: programs titled 'MS', 'PhD', 'MA', 'MSB', 'MAC' carry level:'bachelor' (e.g. oregon-state-ms-statistics, oregon-state-phd-computer-science title says PhD but level bachelor)",
+    "durationYears:3 assigned to nearly all edvoy master/PhD programs regardless of actual length; some 'MEng ... ' set to 1 year while identical 'MS ...' set to 3 — inconsistent and unsourced",
+    "language:'ru' set on English-taught US degree programs (all edvoy entries) — incorrect language metadata",
+    "Dubious/likely non-existent degrees at OSU: 'MA Computer Science', 'MA Physics', 'MA Statistics', 'MA Computer Science (Online)' — OSU does not offer MA in these fields",
+    "Scholarship amounts contradict official figures: Provost listed 'до $10,000/год' but official is up to $16,000/yr (or $6,000/yr intl); Finley listed 'до $7,500/год' but official is up to $5,000/yr",
+    "'International Excellence Scholarship' is not a verifiable named OSU/INTO award (closest official name is 'Provost's Scholarship for Excellence')",
+    "Duplicate campus entry: 'Corvallis Campus' stub (no text/sub) duplicates 'Corvallis Main Campus'"
+  ],
+  "evidence": "Official program-prices page (admissions.oregonstate.edu/international/prices-scholarships/program-prices, 2025-26) confirms catalog tuition EXACTLY: IYO/UTP 3-term=$41,110, Graduate Pathway 3-term=$36,500, Pathway MBA 3-term=$48,240, Academic English=$6,800, Direct-Entry MBA=$47,810 (catalog mba=47810). Campuses verified via oregonstate.edu/about: Corvallis main, OSU-Cascades (Bend), Hatfield Marine Science Center (Newport), OSU Portland Center — all 4 match. Scholarships: scholarships.oregonstate.edu and admissions.oregonstate.edu confirm Provost (up to $16k/yr, intl $6k) and Finley (up to $5k/yr) exist but catalog amounts ($10k, $7.5k) are wrong; 'International Excellence Scholarship' name unverified. Accommodation hall names (ILLC, Finley, Halsell, Tebeau) are real OSU residence halls but housing page not fetched directly (403 on WebFetch, not re-fetched). Programs: first ~37 direct/INTO entries are real and well-formed; the remaining 80+ edvoy-sourced entries are systematically mislabeled (level/duration/language) and marked verified:true without official confirmation. admissions/financialaid/budget subdomains returned HTTP 403 to WebFetch; data confirmed via Exa fetch of the same official pages and oregonstate.edu search.",
+  "verifiedPct": 55
+}

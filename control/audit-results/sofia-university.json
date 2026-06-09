@@ -1,0 +1,20 @@
+{
+  "slug": "sofia-university",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.sofia.edu",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "accurate",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "Program metadata wrong: 'MS Computer Science' has level=bachelor (should be master); 'DBA Doctor of Business Administration' has level=bachelor (should be phd/doctoral).",
+    "durationYears appears to be a placeholder value of 3 applied indiscriminately (MBA/MA programs are ~1-2yr, certificates are not 3yr, BA completion is not a full 3yr).",
+    "keyFactsRu states '3 программ' (3 programs) and 'Программы: бакалавриат, магистратура' but the file actually lists 18 programs including PhD/doctoral levels — internal contradiction.",
+    "Several programUrl values point to aggregator edge.edvoy.com instead of the program's real sofia.edu course page (MS CS, MBA, DBA)."
+  ],
+  "evidence": "Official source verified at www.sofia.edu and catalog.sofia.edu. LOCATION: Catalog correctly states Palo Alto, United States (California) — NO US/Bulgaria country confusion; this is the WSCUC-accredited US institution founded 1975 (formerly Institute of Transpersonal Psychology), NOT Sofia University in Bulgaria. CAMPUSES: Both Palo Alto and Costa Mesa, CA confirmed on official site = accurate. PROGRAMS: 18 cataloged programs largely match official academics list (BA Psychology Completion, MA Counseling Psych +Chinese, MA Transpersonal Psych +Chinese/+Korean, MBA +Online/+Chinese, MS Computer Science, DBA +Chinese, PhD Transpersonal Psych +Chinese, plus AI&ML / Ecopsychology / Dream Studies certificates) — content accurate but level/duration metadata is stale/incorrect for multiple entries (see flags), hence 'stale' not 'accurate'. PRICES: catalog tuition.byProgram is empty {}; official catalog.sofia.edu/tuition-and-fees publishes per-credit rates (e.g. BA/BS $410, MACP $663, MATP $718, MBA $670, MSCS $590, DBA $950, PhD $970 per credit) — data exists officially but is entirely absent from the file. SCHOLARSHIPS: no scholarship data in file; official scholarships exist (e.g. Moving Humanity Forward $2,000, Honoring Heroes $3,000, up to $5,000/yr) — absent. ACCOMMODATION: no housing field in file; officially Sofia University provides NO on-campus housing (estimated off-campus room & board ~$8,150/quarter) — absent.",
+  "verifiedPct": 40
+}

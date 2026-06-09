@@ -1,0 +1,22 @@
+{
+  "slug": "university-of-the-west-of-england",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.uwe.ac.uk",
+  "scores": {
+    "programs": "accurate",
+    "prices": "wrong",
+    "campuses": "accurate",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "Currency mislabel: tuition.currency is 'USD' but UWE Bristol bills international students in GBP. Verified official figure for MSci Optometry is GBP 17,000/yr, which matches the catalog's 17000 value -> numbers are GBP amounts incorrectly tagged as USD.",
+    "Suspicious price uniformity: vast majority of ~115 programs set to a flat 17000 (with a few 16250/16750/17250/17500/18000), indicating bulk estimation rather than per-course verification.",
+    "programUrl for nearly all programs points to aggregator edge.edvoy.com institution page, not to official uwe.ac.uk course pages (only Kaplan-sourced entries like Optometry use courses.uwe.ac.uk).",
+    "All programs flagged verified:true source:'edvoy' while many carry verifiedBySite:false -> 'verified' label not backed by official-site confirmation.",
+    "description contains mojibake ('Â£300 million') and unverified marketing claims (acceptance rate 61%, Guardian rank 21st, '265 programs') not confirmed against official source.",
+    "Empty deadlines{} and requirements{} (no language/exam entries) despite UWE publishing IELTS and entry requirements."
+  ],
+  "evidence": "Official site uwe.ac.uk confirmed live. Campuses Frenchay/Glenside/City confirmed via uwe.ac.uk/life/accommodation. MSci Optometry official international fee = GBP 17,000/yr at Glenside, 4 yrs (courses.uwe.ac.uk/B511/optometry) -> matches catalog amount but catalog currency='USD' is wrong. Catalog has NO scholarships section though UWE offers VC's, Millennium, GREAT 2026, Alumni, International Student scholarships (uwe.ac.uk/courses/funding/scholarships-and-bursaries). Catalog has NO accommodation section though UWE halls confirmed real: Purdown View, Student Village, Marketgate. Program names are genuine UWE courses but URLs route to edvoy aggregator. 6 official fetches/searches used.",
+  "verifiedPct": 45
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "debrecen",
+  "officialSiteFound": true,
+  "officialUrl": "https://edu.unideb.hu/",
+  "scores": {
+    "programs": "accurate",
+    "prices": "unverifiable",
+    "campuses": "stale",
+    "scholarships": "accurate",
+    "accommodation": "accurate"
+  },
+  "fabricationFlags": [
+    "Junk/aggregator-scraped program entries not real degree programs: 'Study in Malta', 'Study in Germany', 'Study in Denmark', 'Exam Prep IELTS GRE...', 'GRE - GMAT Exams', 'Make a comment' (all source=collab, verified=false, point to collabinternational.com not official site)",
+    "Tuition figures (e.g. General Medicine EUR 17,800; Dentistry EUR 19,400) cannot be confirmed against official source — official tuition is published only in downloadable PDFs; external search suggested ~USD 16,900 for Medicine, same order of magnitude but not corroborated exactly",
+    "Campus count understated: official site states 8 campuses; catalog lists only 4 (real ones, but incomplete)",
+    "sourceHash 'sha256:8d3e7c1f9a4b2e60' is truncated/placeholder-looking (not a full 64-char SHA-256)",
+    "Most program entries use generic programUrl 'https://edu.unideb.hu/' rather than program-specific pages (real but non-specific)"
+  ],
+  "evidence": "Fetched official edu.unideb.hu home, tuition pages (page.php?id=363, p/tuition-fees), and p/bachelor-programs. Official site confirms: 13 faculties, 80+ English-taught programs, founded 1538, dormitories + private flats, Stipendium Hungaricum + Erasmus scholarships. Official bachelor-programs page lists Business Administration and Management BSc, Commerce and Marketing BSc, Computer Science BSc, Computer Science Engineering BSc, Business Informatics BSc, Mechanical/Electrical/Civil/Chemical/Mechatronics/Vehicle/Environmental Engineering BSc, Engineering Management BSc, Agricultural Engineering BSc, Psychology BA, English and American Studies BA, Biology/Biotechnology/Physics/Mathematics BSc, Nursing and Patient Care BSc, Classical Performing Arts (Music) BA — all matching catalog. Medicine/Dentistry/Pharmacy confirmed as flagship English programs. Tuition amounts not in official HTML (PDF-only); WebSearch corroborated Medicine order-of-magnitude (~USD 16,900). Official states 8 campuses vs 4 listed. Scholarships and accommodation descriptions consistent with official content. Real-stat note: official cites ~34,000 students / 7,700 international / 140 countries vs catalog's ~30,000 / ~6,000 / 100+ — catalog figures are conservative but slightly stale, not wrong.",
+  "verifiedPct": 70
+}

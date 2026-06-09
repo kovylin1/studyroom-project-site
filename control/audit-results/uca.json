@@ -1,0 +1,23 @@
+{
+  "slug": "uca",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.uca.ac.uk/",
+  "scores": {
+    "programs": "stale",
+    "prices": "wrong",
+    "campuses": "wrong",
+    "scholarships": "wrong",
+    "accommodation": "wrong"
+  },
+  "fabricationFlags": [
+    "PRICES: catalog lists per-program international UG fees of GBP 18,500-20,000 (e.g. architecture-ba 20000, fashion-design-ba 19500) plus foundation 14500; official site charges a FLAT international UG fee of GBP 18,000/yr for all 3-year BA/BSc courses (2026/27). Per-program variation is fabricated/inflated.",
+    "CAMPUSES: catalog includes 'UCA Rochester Campus' and the description/keyFacts assert campuses 'Farnham, Canterbury, Epsom, Rochester'. Official campuses are Farnham, Canterbury, Epsom and Maidstone TV Studios. There is NO Rochester campus on uca.ac.uk/campuses. Fabricated campus.",
+    "CAMPUSES: 7 campus entries with duplicated/placeholder titles ('Epsom Campus', 'UCA Farnham Campus', 'Canterbury Campus') padding only 3-4 real locations.",
+    "SCHOLARSHIPS: all 3 listed ('UCA International Scholarship GBP 3,000', 'Creative Excellence Award GBP 2,000', 'Postgraduate Scholarship GBP 2,500') do NOT match any official scholarship name or amount. Real ones: UCA Merit Scholarship GBP 4,500, Creative Development GBP 3,000, Creative Europe, Chevening, Continuing Performance GBP 4,000. Names and amounts appear invented.",
+    "ACCOMMODATION: entries are blog/news snippets ('Stylish student living...', 'Artists in Residence...') not actual halls/accommodation data; no halls names, prices or locations.",
+    "PROGRAMS: program list polluted with non-course entries mis-typed as degrees: news/blog/event pages e.g. 'PhD student Maybelle Peters wins inaugural Womxn of Colour Art Award' (/news/), 'Master the art of studying' (/blogs/), 'PhD Student Conference 2024' (/events/), 'PhD student Simon launches fine art exhibition' (/blogs/), 'Master's student represents UCA at Buckingham Palace reception', plus portfolio-advice pages tagged as programs.",
+    "PROGRAMS: level mislabels - several MA/MArch entries (e.g. 'Human Resource Management MA', 'Make-Up & Hair Design MA', 'Interface & Interactive Design MA', 'Design Innovation & Brand Management MA') tagged level=bachelor; some 1-year masters list durationYears=3."
+  ],
+  "evidence": "Read site/src/content/universities/uca.json (4036 lines). Verified vs official uca.ac.uk: undergraduate fees page (https://www.uca.ac.uk/study-at-uca/fees-finance/undergraduate/) shows flat GBP 18,000/yr international UG fee 2026/27 vs catalog per-program 18,500-20,000. Campuses page (https://www.uca.ac.uk/campuses/) lists Farnham, Canterbury, Epsom, Maidstone TV Studios and explicitly NO Rochester; catalog asserts Rochester. Scholarships page (https://www.uca.ac.uk/study-at-uca/scholarships/) lists Merit GBP 4,500 / Creative Development GBP 3,000 / Creative Europe / Chevening / Continuing Performance GBP 4,000 - none of catalog's 3 fabricated entries match. Program URLs spot-checked real (e.g. /study/courses/ba-graphic-design-farnham/ = BA (Hons) Graphic Design, 3yr Farnham), so course slugs largely accurate but list is padded with news/blog/event/portfolio pages and has level/duration mislabels.",
+  "verifiedPct": 35
+}

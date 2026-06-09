@@ -1,0 +1,22 @@
+{
+  "slug": "california-state-university-east-bay",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.csueastbay.edu/",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "accurate",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "All 154 programs sourced from aggregator 'edvoy' with non-official programUrl (edge.edvoy.com), not csueastbay.edu",
+    "Systematic level error: master's programs (MS/MA/MPA/MBA, e.g. 'MS Computer Science', 'MS Statistics', 'MA Music') tagged level='bachelor'",
+    "Systematic durationYears error: nearly all programs (including 1-2yr master's and 4yr US bachelor's) set to durationYears=3; MBA entries set to 1",
+    "Every program flagged verified=true despite aggregator-only sourcing and incorrect metadata",
+    "All intakes hardcoded to 'September' only; US universities typically also offer Spring/January intake",
+    "confidence field self-declares 'aggregator' (not official source of truth)"
+  ],
+  "evidence": "Official site csueastbay.edu confirmed via search and direct fetch. PROGRAMS: catalog lists 154 programs; titles (CS, MBA Business Admin, Statistics, Nursing, BFA Art, Civil/Computer Engineering, Public Health, Kinesiology) match real CSUEB offerings, so program inventory is plausible, BUT all metadata is aggregator-derived (edvoy) with systematic level/duration/intake errors -> stale. PRICES: catalog tuition.byProgram={} (empty); official fees page (csueastbay.edu/iao/future-students/fees-payments.html) gives clear figures: international undergrad $19,293/yr (I-20 $42,342), graduate $18,081/yr (I-20 $41,130), grad business MBA/MSBA/MSMA $23,859/yr (I-20 $46,908) -> catalog has nothing -> absent. CAMPUSES: catalog lists Hayward (main, real), Concord Center (real), Oakland Center (real), Online (real) -> all genuine CSUEB locations -> accurate. SCHOLARSHIPS: no scholarship data in catalog at all -> absent. ACCOMMODATION: no housing data in catalog (only a gallery image captioned 'housing'); official housing exists (Lassen Hall office, StarRez portal, Live-On 2026-27) but catalog carries none -> absent.",
+  "verifiedPct": 20
+}

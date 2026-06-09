@@ -1,0 +1,21 @@
+{
+  "slug": "3a-france",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.ecole3a.edu/",
+  "scores": {
+    "programs": "stale",
+    "prices": "wrong",
+    "campuses": "stale",
+    "scholarships": "accurate",
+    "accommodation": "unverifiable"
+  },
+  "fabricationFlags": [
+    "Tuition fabricated/invented: catalog lists Bachelor EUR 7,200, MBA EUR 8,500, Fast-Track EUR 8,900, but official financement page shows Bachelor initial EUR 6,500/yr, MBA EUR 9,950 (Y4)/EUR 10,200 (Y5), Fast-Track EUR 6,200. No catalog figure matches the source.",
+    "Program list padded with non-program SEO/blog entries marked verified:true (e.g. 'Qu'est-ce qu'un Master humanitaire ?', 'Qu'est-ce qu'un Master en ESS ?', 'La FAQ de votre MBA...') that are content articles, not degrees; several lack faculty/level/intake fields.",
+    "Several program entries carry source:'official' / verifiedBySite:true / checkedAt:'2026-06-08', yet sourceUrl confidence is 'aggregator' and core programs all point to the generic homepage URL — verification flags appear unsubstantiated.",
+    "campuses array lists only 4 (Lyon, Paris Courbevoie, Bordeaux, Rennes) while the same file's description/keyFacts state 5 campuses including Toulouse, which the official site confirms — internal inconsistency / Toulouse omitted.",
+    "Accommodation: 4 specific named residences (CROUS Lyon, Studea Part-Dieu, Studapart, Homestay via 3A) cannot be confirmed from the official site, which carries no housing content on fetched pages."
+  ],
+  "evidence": "Official site confirmed at https://www.ecole3a.edu/ (campuses Bordeaux, Lyon, Paris/Courbevoie, Rennes, Toulouse; Bachelor 'Coordinateur de projets a impact social et environnemental' and 'Coordination de projets de developpement international et societal'; MBA 'Management de l'Innovation sociale et Finance Responsable', 'International Sustainable Development', 'Cooperation internationale et Action humanitaire'). Tuition from https://www.ecole3a.edu/integrer-3-a/financement: Bachelor EUR 6,500/yr, MBA EUR 9,950/EUR 10,200, Fast-Track EUR 6,200, Alternance employer-funded — none match catalog's 7,200/8,500/8,900. Scholarships confirmed there: Bourse d'honneur 3A, CROUS EUR 108-596/mo, Erasmus EUR 250-500/mo, Alternance full coverage; catalog's 'Social Impact Scholarship' and 'Campus France Eiffel' not found on source. No accommodation content appears on the official pages fetched.",
+  "verifiedPct": 45
+}

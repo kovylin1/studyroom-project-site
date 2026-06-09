@@ -1,0 +1,23 @@
+{
+  "slug": "syracuse-university",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.syracuse.edu",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "wrong",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "All 55 programs titled 'MS' (master's) but tagged level='bachelor' — internally contradictory metadata.",
+    "All programs list durationYears=3, which is wrong for US master's degrees (MS at Syracuse = 30-34 credits, ~1-2 yrs; MS Applied Data Science completable in 1 yr, MS Cybersecurity in 15 months per official site).",
+    "Single campus listed as 'SU New York City Campus' — Syracuse University's main campus is in Syracuse, NY (900 South Crouse Ave, Syracuse, NY 13244), not NYC.",
+    "logoUrl points to oxfordinternational.com (oxford-international-apple-touch-icon.png) — wrong institution / mismatched branding asset.",
+    "Every program programUrl points to edge.edvoy.com aggregator, not any syracuse.edu official page; confidence='aggregator', source='edvoy'.",
+    "keyFactsRu claims '55 программ' and 'Программы: бакалавриат' (bachelor) while all entries are MS master's titles — contradicts program data.",
+    "All programs flagged 'verified':true despite originating only from an aggregator with no official-source corroboration."
+  ],
+  "evidence": "Official site confirmed at syracuse.edu (main campus 900 South Crouse Ave, Syracuse, NY 13244). Program TITLES are broadly real: MS Computer Science, MS Applied Data Science, MS Cybersecurity, and engineering MS degrees (Electrical, Mechanical/Aerospace, Chemical, Civil, Environmental, Biomedical, Engineering Management) all exist via the College of Engineering & Computer Science (ecs.syracuse.edu) and iSchool. However program METADATA is wrong: level='bachelor' contradicts 'MS' titles; durationYears=3 contradicts official credit-based structure (MSCS=30cr; MADS=34cr/~1yr; Cybersecurity=30cr/~15mo). PRICES: catalog tuition.byProgram is empty {}; official 2025-26 graduate tuition is ~$2,015/credit hour (≈$60,450 for a 30-credit program) per syracuse.edu/admissions-aid/tuition-fees — so prices are ABSENT in catalog though verifiable officially. CAMPUSES: catalog lists only 'SU New York City Campus' which is WRONG; the institution is based in Syracuse, NY. SCHOLARSHIPS: no scholarships field in catalog (ABSENT); official site documents extensive aid (82% of students receive support). ACCOMMODATION: no accommodation field in catalog (ABSENT); official housing exists at syracuse.edu/campus-life/living-on-campus. Sources/confidence are aggregator-only (edvoy), and logoUrl references oxfordinternational.com.",
+  "verifiedPct": 40
+}

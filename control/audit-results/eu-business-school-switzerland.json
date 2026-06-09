@@ -1,0 +1,23 @@
+{
+  "slug": "eu-business-school-switzerland",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.euruni.edu/",
+  "scores": {
+    "programs": "stale",
+    "prices": "wrong",
+    "campuses": "wrong",
+    "scholarships": "wrong",
+    "accommodation": "unverifiable"
+  },
+  "fabricationFlags": [
+    "SCHOLARSHIPS FABRICATED: Catalog lists 3 named scholarships (EU Business School Merit Scholarship 'Up to CHF 10,000', Women in Business Award 'CHF 5,000', Early Enrollment Discount 'CHF 2,000'). Official FAQ (euruni.edu/en/FAQs) explicitly states: 'EU Business School is a private institution and does not offer scholarships or financial aid.' These specific amounts/names appear invented and directly contradict the source of truth.",
+    "CAMPUS MADRID INVENTED: description.paragraphs, paragraphsRu, keyFacts and keyFactsRu claim campuses in Geneva, Munich, Barcelona AND Madrid. Official site lists only Geneva, Barcelona, Munich + Digital Campus. Madrid is not an EU Business School campus.",
+    "CAMPUS LIST INCOMPLETE/MISLEADING: campuses[] array lists only Geneva + Munich, omitting Barcelona (a primary, largest campus) and the Digital Campus, while prose simultaneously claims a non-existent Madrid campus.",
+    "SCRAPING-ARTIFACT PSEUDO-PROGRAMS: programs[] is polluted with ~25 non-program entries that are clearly scraped page fragments marked source=official/verifiedBySite=true, e.g. 'Why study your bachelor's at EU', \"Bachelor's: from 180 to 240 ECTS.\", \"Master's & MBA: from 60 to 120 ECTS.\", 'Digital Open Day Bachelor's', 'Foundation & bridging student profile', \"Bachelor's: High School diploma or equivalent.\", and HTML-entity-mangled titles ('Master's&nbsp;&amp;&nbsp;MSc'). These are not academic programs and falsely carry verification flags.",
+    "TUITION CURRENCY MISLABELED: tuition.currency='EUR' but the Geneva-attributed programs (mba-geneva, etc.) are billed by EU in CHF (~CHF 13,250/semester, ~CHF 27,600-37,800/yr for Geneva). EUR figures only apply to Barcelona/Munich/Digital campuses.",
+    "TUITION VALUES UNVERIFIED: The 4 priced program slugs (bba-entrepreneurship, mba-geneva, msc-digital-marketing, msc-finance) have no programUrl and verified flag; flat per-program totals could not be matched to official per-semester fee tables.",
+    "CITY/HQ FRAMING: Catalog frames institution as Geneva-based 'EU Business School Switzerland'; EU is HQ'd in Switzerland and Geneva is a real campus, but the bulk of programs/fees in the source are tied to Barcelona/Munich/Digital, not Switzerland specifically."
+  ],
+  "evidence": "Official site euruni.edu confirmed (WebFetch 403; verified via Exa fetch of euruni.edu/en/About-EU/Who-we-are and Wikipedia, plus Exa search of euruni.edu Tuition-Fees and FAQ pages). ACCURATE: founded 1973 (official 'Our History' timeline); accreditations ACBSP + IACBE (official + Wikipedia, both confirmed; also AACSB member, CEEMAN IQA); 100+/130+ nationalities; English-taught BBA/MBA/MSc; Geneva is a real campus (opened 1987, moved to new district 2025). WRONG: scholarships contradicted by official FAQ ('does not offer scholarships or financial aid'); Madrid campus does not exist (official campuses = Geneva, Barcelona, Munich, Digital); campuses[] array omits Barcelona. STALE/WRONG: tuition currency EUR vs Geneva billed in CHF; study.eu shows Geneva ~CHF 27,600-37,800/yr, Munich/Barcelona/Digital ~EUR 12,900-20,850/yr. programs[] contains many valid euruni.edu program URLs but is heavily polluted with ~25 scraped non-program fragments falsely marked verified. Accommodation (Geneva residence / private apartment) could not be confirmed or denied against official source. lastChecked 2026-05-22; confidence already self-declared 'aggregator'.",
+  "verifiedPct": 45
+}

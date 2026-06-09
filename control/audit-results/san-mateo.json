@@ -1,0 +1,21 @@
+{
+  "slug": "san-mateo",
+  "officialSiteFound": true,
+  "officialUrl": "https://collegeofsanmateo.edu/",
+  "scores": {
+    "programs": "stale",
+    "prices": "unverifiable",
+    "campuses": "accurate",
+    "scholarships": "accurate",
+    "accommodation": "accurate"
+  },
+  "fabricationFlags": [
+    "PROGRAM LEVEL WRONG: 75+ edvoy-sourced programs tagged level='bachelor' and durationYears=3. CSM is a community college (San Mateo County CCD) that grants only AA/AS degrees and certificates, NOT bachelor's degrees. These are 2-year Associate programs mislabeled as 3-year bachelor degrees.",
+    "PRICE STRUCTURE FABRICATED: tuition.byProgram lists flat annual totals ($10,400 for all transfer AAs, $5,200 ESL, $2,600 CNA) but the official source publishes per-unit fees only (non-resident ~$376/unit + $46/unit enrollment = ~$422/unit for 2025-26). Round per-program annual figures appear estimated/derived, not from an official published table.",
+    "DEADLINES PLACEHOLDER: every program deadline set to identical 2027-12-01 — clearly a placeholder, not real application deadlines.",
+    "sourceHash 'sha256:a3f2e91c7b4d8e05' is only 16 hex chars (not a valid 64-char SHA-256) — looks fabricated.",
+    "confidence field = 'aggregator' and edvoy programs cite source='edvoy' yet are marked verified:true — verification claim unsupported by official source."
+  ],
+  "evidence": "Official site collegeofsanmateo.edu confirmed via WebSearch (WebFetch to host returned ECONNREFUSED). CONFIRMED FACTS (match catalog): founded 1922 as San Mateo Junior College; at College Heights location since 1963; 153-acre campus; 13,000+ students (~13,180 in 2022-23); accredited by ACCJC; part of San Mateo County Community College District; motto 'Gateway to Achievement'; 69 AA/AS degree majors + 81 certificate programs; students from 50+ countries; Center for Global Engagement (CGE) runs International Education Program, World Chat/World Gala. English reqs MATCH: IELTS Academic 5.5, TOEFL iBT 56, Duolingo 85. Scholarships MATCH: CSM/SMCCCD Foundation scholarships up to $20,000/year (academic merit, financial need, community involvement). Accommodation MATCH: official homestay placement service via SMCCD for international students (host family, cheaper than Bay Area apartment); off-campus/shared housing realistic. CAMPUS accurate. PRICES: official 2025-26 non-resident tuition ~$376/unit (older listings show $385) + $46/unit enrollment; first-year proof-of-funds ~$32,500. Catalog's per-program flat annual tuition not directly published by official source — plausible-in-range but unverifiable as exact figures, and ESL/CNA per-year numbers cannot be confirmed. PROGRAMS: the 12 hand-curated AA/AS/ESL/certificate entries are realistic and well-formed; the 75+ edvoy-imported entries are real CSM program names but carry WRONG level (bachelor) and duration (3yr) metadata. Sources: collegeofsanmateo.edu, smccd.edu/international/housing, collegeofsanmateo.edu/scholarships, en.wikipedia.org/wiki/College_of_San_Mateo, catalog.collegeofsanmateo.edu, accjc.org/institution/college-of-san-mateo.",
+  "verifiedPct": 62
+}

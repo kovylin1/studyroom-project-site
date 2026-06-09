@@ -1,0 +1,21 @@
+{
+  "slug": "mla-college",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.mla.ac.uk",
+  "scores": {
+    "programs": "stale",
+    "prices": "wrong",
+    "campuses": "accurate",
+    "scholarships": "absent",
+    "accommodation": "unverifiable"
+  },
+  "fabricationFlags": [
+    "DUPLICATE program entry: 'mla-college-msc-sustainable-maritime-operations-master-2-2' appears twice (catalog lines 242-265) with identical slug, title, and tuition.",
+    "Tuition mis-mapping: site states MSc Sustainable Maritime Operations fee = GBP 10,700, but catalog assigns it 7200 and assigns 10700 to MSc Global Sustainable Development. Per-program fee mapping appears shuffled/unreliable.",
+    "Suspicious durations: 0.15 years (~1.8 months) for access courses, PgDip Engineering Management 1.58 years, MSc SMO 'full-time' 1yr vs official 32 months distance-learning. Likely aggregator artifacts, not source-verified.",
+    "programType='degree' on SDG-1 short course is inconsistent with level='short-course' (it is a short course, not a degree).",
+    "All 24 programs carry confidence 0.55, source 'gedu' (aggregator), verifiedBySite=false — none site-confirmed at ingestion."
+  ],
+  "evidence": "Official site mla.ac.uk confirmed (The Merchant, St Andrew Street, Plymouth PL1 2AX, UK) — a Marine/Maritime/Sustainability distance-learning college, degrees validated/awarded by University of Plymouth. /programmes/degrees/ lists every program in the catalog: Access courses, BSc Sustainable Maritime Operations, BSc(Hons) Global Sustainable Development, BSc(Hons) Sustainable Maritime Operations, PgDip Engineering Management, MSc Global Sustainable Development (FT/PT), MSc Sustainable Maritime Operations, MSc Sustainability in Practice, MSc Advanced Hydrography/Meteorology/Navigation/Oceanography for Professionals, MSc Engineering for Marine Professionals, and 5 MBAs (Entrepreneurship & Innovation, Maritime Operations, FinTech, Marketing, Capital Markets & Finance). The SDG-named entries are REAL: site confirms 'SDG ByteSize Short Courses' aligned to SDG-1 through SDG-17 — NOT fabricated marketing. Program set is accurate but stale/aggregator-sourced (verifiedBySite=false, dup entry, dubious durations). Prices: GBP correct; range plausible (site MSc SMO=GBP10,700) but catalog per-program mapping is wrong (SMO listed 7200, GSD listed 10700 — values appear swapped/shuffled). Campus 'Plymouth' accurate. Scholarships: catalog scholarships=[] but site confirms 'Scholarships and Bursaries' exist (no detail) -> absent in catalog. Accommodation: no field in catalog and none on site (distance learning) -> unverifiable/not applicable. Fetches used: degrees index, homepage, fees-finance(404), web search, MSc SMO page = 5.",
+  "verifiedPct": 60
+}

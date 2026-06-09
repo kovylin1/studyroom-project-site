@@ -1,0 +1,22 @@
+{
+  "slug": "sussex",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.sussex.ac.uk/",
+  "scores": {
+    "programs": "accurate",
+    "prices": "wrong",
+    "campuses": "wrong",
+    "scholarships": "unverifiable",
+    "accommodation": "stale"
+  },
+  "fabricationFlags": [
+    "PhD tuition: catalog lists GBP 19,500/yr; official tuition-fees page states international PhD is GBP 23,500 (non-lab) / GBP 27,300 (lab) for 2025/26 -> catalog figure is wrong/stale",
+    "UG and Masters tuition.byProgram values (GBP 20,000-27,000) are flat per-program numbers; official site does NOT publish universal UG/PGT international fees (per-course, currently 'fees not yet set') -> values appear to be aggregator estimates, not sourced from official source",
+    "campuses[]: only 'Falmer Campus' is a real campus; 'Brighton Campus' is not a distinct Sussex campus (the single campus is Falmer near Brighton); 'Media Centre'/'Global engagement', 'School and college visits', 'Campus tours' are scraped website navigation fragments, not campuses",
+    "accommodation 'Falmer House' is the Grade I listed students' union/social building, not a student residence -> likely mislabeled",
+    "scholarship amounts (Sussex International 'up to GBP 3,000', Chancellor's 'up to GBP 5,000') not confirmed on official scholarship pages fetched; official page states 'up to GBP 5,000 of funding in your first year' generically",
+    "confidence field self-declares 'aggregator' and sourceUrl is only the homepage, indicating metadata (fees/scholarships/campuses/accommodation) not verified against official pages despite per-program course URLs being valid"
+  ],
+  "evidence": "Programs: official course page https://www.sussex.ac.uk/study/undergraduate/courses/computer-science-bsc-hons confirms title 'Computer Science BSc (Hons)', '3 years full time'; ~130 catalog UG slugs map to real /study/undergraduate/courses/ URLs. Prices: official https://www.sussex.ac.uk/study/fees-funding/tuition-fees gives PhD international GBP 23,500 non-lab / GBP 27,300 lab (3% annual increase); catalog PhD=19,500 wrong; UG/Masters flat figures unverifiable as official UG course page shows 'fees not yet set'. Scholarships: https://www.sussex.ac.uk/study/fees-funding/undergraduate-scholarships confirms 'up to GBP 5,000 first year' but does not list the three named awards/amounts. Accommodation: https://www.sussex.ac.uk/study/accommodation confirms West Slope (376 ensuite rooms, Autumn 2026); 'East Slope' is a real residence but 'Falmer House' is the students' union building, not accommodation. Campuses: site confirms single Falmer campus near Brighton (Basil Spence, South Downs); other catalog campus entries are nav scrape junk.",
+  "verifiedPct": 40
+}

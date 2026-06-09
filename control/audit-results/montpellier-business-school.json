@@ -1,0 +1,24 @@
+{
+  "slug": "montpellier-business-school",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.mbs-education.com/en/",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "wrong",
+    "scholarships": "stale",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "country/city set to 'International' (wrong): MBS is in Montpellier, France with a Paris campus",
+    "Aggregator-scraped junk entries masquerading as programs: 'Make a comment', 'Bachelors Degree Programs Tuition Fees:', 'Masters Degree Programs Tuition Fees:', 'First-year admission is available to those who have...', 'TAGE Post-Bac scores (BIBA1/BIBA2)...' — these are page fragments/headings, not programs",
+    "Fabricated China-themed programs falsely marked source=official, verifiedBySite=true: 'Master's Education in China', 'Top Universities for Master's Studies in China', 'Popular Master's Programs in China', 'Application Periods and Deadlines for Master Programs in China', 'Scholarship Opportunities for Master's Students in China' — MBS is a French school; no China master programs exist on official site",
+    "Generic 'Study in Malta/Germany/Denmark' bachelor entries unrelated to MBS's single bachelor (International Business Administration)",
+    "Exam-prep entries (IELTS/GRE/GMAT/SAT/TOEFL/UCAT/IMAT) listed as MBS programs — these are collab aggregator services, not MBS offerings",
+    "All programUrl point to collabinternational.com aggregator, not the official mbs-education.com",
+    "durationYears=3 applied indiscriminately to MSc (actually ~1-2yr) and other levels; many 'official' flags contradicted by collab sourceUrl/sourceHash",
+    "logoUrl and sourceHash reference collabinternational.com CDN — confidence field self-declares 'aggregator'"
+  ],
+  "evidence": "Official site montpellier-bs.com 301-redirects to mbs-education.com. Catalog sourceUrl/sourceHash/logo all point to collabinternational.com aggregator (confidence:'aggregator'). REAL programs per official site: Bachelor Programme; Master in Management (Grande Ecole, FT 2025 ranked 12th France); MSc suite (Digital Marketing & Omnichannel Strategy, Luxury Marketing in a Sustainable World, International Business, Supply Chain Management, Big Data & AI for Business, Global Finance, Project Management, Producer & Entertainment Manager); Executive MBA; DBA/Digital DBA. Catalog captures several real MSc names (matched) but is buried in scraped junk and fabricated China-master entries falsely flagged official. CAMPUSES wrong: catalog says country/city='International'; real campuses are Montpellier (2300 Avenue des Moulins, 34080) and Paris (57 Bd Saint-Germain, 75005). PRICES absent in catalog (tuition.byProgram={}); official/secondary sources show Bachelor ~EUR8,600-11,000/yr, Grande Ecole ~EUR13,000-15,500/yr, MSc ~EUR16,900/1yr or EUR26,800/2yr. SCHOLARSHIPS stale/thin: catalog has no scholarship data; official lists MBS Admissions Scholarship up to EUR2,000, CROUS, ERASMUS+, Occitanie Region, honorary/BPI loans, work-study (~50% students partly/fully exempt). ACCOMMODATION absent in catalog; official provides housing/CROUS support pages.",
+  "verifiedPct": 25
+}

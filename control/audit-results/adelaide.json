@@ -1,0 +1,22 @@
+{
+  "slug": "adelaide",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.adelaide.edu.au/",
+  "scores": {
+    "programs": "accurate",
+    "prices": "unverifiable",
+    "campuses": "wrong",
+    "scholarships": "wrong",
+    "accommodation": "stale"
+  },
+  "fabricationFlags": [
+    "SCHOLARSHIPS: Both listed scholarships ('Kaplan Early Bird Scholarship', 'Kaplan Academic Achievement Scholarship') are NOT Adelaide University scholarships. They are third-party Kaplan Pathways products, sourced from kaplanpathways.com (sourceUrl), NOT adelaide.edu.au. Neither found on the official site.",
+    "SCHOLARSHIPS: Amounts denominated in GBP (£2,000 / £4,000) for an Australian university whose fees are in AUD - currency mismatch indicates copied/foreign-source data.",
+    "CAMPUSES: Catalog lists only 3 campuses (North Terrace City, Waite, Roseworthy). Official merged Adelaide University has 7 campuses (Adelaide City, Magill, Mawson Lakes, Waite, Mount Gambier, Roseworthy, Whyalla). Missing 4 campuses.",
+    "CAMPUSES: 'North Terrace City Campus' is the pre-merger University of Adelaide name; the new entity uses 'Adelaide City Campus'. Stale pre-2026 naming.",
+    "PRICES: Many byProgram tuition values are 0 (e.g. au-xgdba, au-dblds, au-gcnur, au-mrphl, au-drphl) - likely placeholder/missing data rather than verified figures.",
+    "keyFactsRu claims exactly '541 программ' which matches the exact program array count - plausible but suspiciously round/auto-generated, unverified against official program search."
+  ],
+  "evidence": "Official site confirmed at adelaide.edu.au. Adelaide University is a REAL new merged entity (University of Adelaide + UniSA), officially opened 29 Jan 2026, ~56,000-70,000 students, Group of Eight member, QS 2026 #82 - matches catalog description.paragraphs (accurate). PROGRAMS: 541 program entries, names and programUrl values use valid official adelaide.edu.au/study/degrees/ URL pattern; plausible for a large merged institution (scored accurate, not individually verified). PRICES: tuition in AUD, ranges A$3,312-A$124,700 plausible for AU international fees, but official fees page did not enumerate figures and many entries are 0 -> unverifiable. CAMPUSES: official site states 7 campuses across SA; catalog lists only 3 using stale pre-merger names -> wrong. SCHOLARSHIPS: catalog's two Kaplan scholarships are third-party pathway products in GBP from kaplanpathways.com, not official Adelaide University scholarships -> wrong/fabricated. ACCOMMODATION: 'Adelaide University Village' single entry, description truncated mid-sentence, not confirmed on official site -> stale. Fetches used: adelaide.edu.au home, fees-and-scholarships, scholarships, scholarships/international (404), + 1 web search on merger.",
+  "verifiedPct": 35
+}

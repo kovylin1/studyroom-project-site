@@ -1,0 +1,22 @@
+{
+  "slug": "st-georges-university",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.sgu.edu/",
+  "scores": {
+    "programs": "accurate",
+    "prices": "wrong",
+    "campuses": "accurate",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "keyFacts array contains 10 literal '[object Object]' strings (serialization bug, no real content)",
+    "Mojibake/encoding corruption in description text (e.g. 'worldâ€™s', 'Studentâ€™s', 'organises')",
+    "All 49 program deadlines hardcoded to identical placeholder date 2023-11-01T00:00:00.000Z (stale, ~2.5 years old vs lastChecked 2026-05)",
+    "Tuition figures inconsistent with official SGU structure: catalog shows flat annual USD (e.g. MD $53,380; BSc ~$32-35k) but official MD is ~$21,692/term preclinical (full MD ~$300k+ total) and Arts&Sciences UG is ~$16,995/year for 2025/26 - aggregator-derived, not official",
+    "scholarships array empty ([]) despite official site documenting multiple scholarships (50th anniversary $50,000, merit-based, need-based bursaries)",
+    "Every program has identical confidence 0.8 and identical checkedAt timestamp; all programUrl point to edvoy.com aggregator, not sgu.edu"
+  ],
+  "evidence": "Official source sgu.edu confirmed. Programs: official Schools of Medicine (MD 4/5/6/7-yr, dual MD/MPH, MD/MSc, Medical PhD), Veterinary Medicine (DVM 4/5/6/7-yr, dual DVM/MBA, DVM/MPH, DVM/MSc, Vet PhD), Arts & Sciences (Accounting, Biology, IT, International Business, Management, Nursing, Postbaccalaureate, Psychology, Sociology, Tourism & Hospitality), Graduate Studies (MPH, PhD, MA Clinical Community Psychology, MBA International Business, MBA Multi-Sector Health Mgmt, MSc, PhD in Management). Catalog's ~50 programs and titles match this set well (specialized PhD concentrations like Virology/Parasitology/Anatomy/Pharmacology plausible under Medical PhD) - PROGRAMS ACCURATE, though all MD/DVM mislabeled level:'phd' and durations approximate. PRICES WRONG: official graduate per-credit MPH $640, MSc/PhD $1,133, MBA $540, PhD flat $8,404 (2025/26); UG Arts&Sciences $16,995/yr; these do not reconcile with catalog's flat annual byProgram USD figures (sourced from Edvoy aggregator, sourceUrl=edge.edvoy.com). CAMPUSES ACCURATE: catalog 'SGU True Blue Campus' matches official primary campus True Blue, Grenada (official also notes UK Northumbria / Canada Waterloo study options not in catalog, so incomplete but not wrong). SCHOLARSHIPS ABSENT: catalog scholarships:[] but official advertises 50th-anniversary $50k scholarship + merit/need-based aid. ACCOMMODATION ABSENT: no accommodation/housing field in catalog; official references on-campus housing but catalog captures none. Data provenance is aggregator (confidence:'aggregator', edvoy.com) not official sgu.edu.",
+  "verifiedPct": 40
+}

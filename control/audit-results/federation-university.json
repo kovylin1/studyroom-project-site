@@ -1,0 +1,22 @@
+{
+  "slug": "federation-university",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.federation.edu.au",
+  "scores": {
+    "programs": "accurate",
+    "prices": "absent",
+    "campuses": "stale",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "City field set to 'Melbourne' but Federation University's headquarters and largest campuses are in Ballarat (Mt Helen, SMB, Camp St); main location mislabeled.",
+    "All program durationYears are templated: every bachelor and short-course = 3 years, every master = 1 year, regardless of actual course length (clear placeholder pattern, not real data).",
+    "All ~190 programs list a single intake 'September'; Australian university intakes are typically February and July, so intake data is fabricated/placeholder.",
+    "tuition.currency set to 'USD' for an Australian university whose official fees are quoted in AUD; combined with empty byProgram this is a wrong/placeholder currency.",
+    "keyFactsRu claims '42 программ' but the programs array contains far more entries (~190); count is inconsistent with actual data.",
+    "Many programUrl values point to the edvoy aggregator (edge.edvoy.com) rather than the official federation.edu.au course page, despite verified:true and an official-looking catalog."
+  ],
+  "evidence": "Official site confirmed at federation.edu.au. PROGRAMS: program titles and the bulk of federation.edu.au programUrls resolve to real course pages (IT, nursing, engineering, education, psychology, VET certificates), so program existence/coverage is accurate; however durationYears and intakes are templated placeholders (all bachelor=3yr/master=1yr; all intake='September'). PRICES: catalog tuition is empty (byProgram:{}) with wrong currency 'USD'; official 2026 international fees are real and in AUD, e.g. Bachelor of Education (Early Childhood & Primary) ~A$31,800/yr and Master of Teaching (Early Childhood) ~A$33,500/yr (source: International Course Summary 2026 and 2026 HEd Intl Tuition Fee Schedule). Catalog prices = absent. CAMPUSES: catalog lists Melbourne, Mt Helen, Berwick, Gippsland. Official locations (federation.edu.au/about/locations): Ballarat (Mt Helen, SMB, Camp St), Berwick (40km from Melbourne CBD), Gippsland/Churchill, Wimmera, and Melbourne City Campus. Mt Helen/Berwick/Gippsland correct, but main city is Ballarat not Melbourne, and SMB/Wimmera are missing = stale. SCHOLARSHIPS: catalog has no scholarships field; official offers VC Award (50% tuition), Merit Scholarship (20%), Federation Pathways Scholarship, Accommodation Bursary (50%), Early Bird Bursary (A$3,000), Paid Placement Support (A$10,000), plus accommodation scholarship up to A$1,000/semester for Mt Helen/Berwick/Gippsland = absent in catalog. ACCOMMODATION: catalog has no accommodation field; official provides Federation-managed on-campus accommodation and an accommodation scholarship = absent in catalog.",
+  "verifiedPct": 20
+}

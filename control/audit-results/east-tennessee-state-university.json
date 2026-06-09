@@ -1,0 +1,22 @@
+{
+  "slug": "east-tennessee-state-university",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.etsu.edu",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "stale",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "city field is \"United States\" (a country, not a city); real location is Johnson City, Tennessee, USA",
+    "Catalog lists 298 programs vs official ETSU figure of ~160+ programs; count inflated by splitting concentrations/tracks into separate program entries",
+    "Systematic wrong 'level': master's programs (MS, MPH, MSN, MHA, MBA-accelerated, MAcc, MAT, MEd, MA, MFA) are labeled level=\"bachelor\"",
+    "Implausible uniformity: nearly all 298 programs have durationYears=3 and intakes=[\"September\"] only; master's would typically be ~2yr and ETSU has multiple intakes",
+    "All programs source=\"edvoy\" aggregator with verified=true and programUrl pointing to edge.edvoy.com, not any official etsu.edu page (no real official verification)",
+    "campuses generic placeholder \"Tennessee Campus\" with stock image /photos/_lib/campus-52.jpg"
+  ],
+  "evidence": "Official source of truth confirmed at etsu.edu, located in Johnson City, TN 37614. PROGRAMS: catalog has 298 entries all sourced from edvoy aggregator (programUrl=edge.edvoy.com), durationYears uniformly 3, intake September only; official site states ETSU offers 160+ programs at bachelor/master/doctoral levels across 11 colleges (etsu.edu/ehome/majors). Core programs (BS Computer Science, MBA, MSN, MPH, MHA) plausibly exist, but level/duration/intake metadata is systematically wrong and program count over-split -> stale. PRICES: catalog tuition={currency:USD, byProgram:{}} is EMPTY; official etsu.edu/international/cost/coa.php gives 2026-27 undergrad tuition+fees $30,686 (total COA $48,160) and graduate tuition+fees $26,942 (total $44,416) -> absent in catalog. CAMPUSES: catalog has single generic 'Tennessee Campus' + city='United States'; real single campus in Johnson City, TN -> imprecise/stale. SCHOLARSHIPS: no scholarships field exists in catalog; official notes limited F/J-visa scholarships incl. International Merit (~up to $12,500/yr) -> absent. ACCOMMODATION: no accommodation field in catalog; official Housing & Residence Life (Johnson City, TN, (423)439-4446) offers on-campus residence halls, ~$5,000/yr housing -> absent. Fetches: etsu.edu/international/cost (200, tuition verified), etsu.edu/students/housing (200, housing verified), web search confirming etsu.edu official + 160+ programs + Johnson City location.",
+  "verifiedPct": 20
+}

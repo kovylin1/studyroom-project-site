@@ -1,0 +1,22 @@
+{
+  "slug": "australian-institute-of-technical-training",
+  "officialSiteFound": true,
+  "officialUrl": "https://aitt.edu.au/",
+  "scores": {
+    "programs": "accurate",
+    "prices": "absent",
+    "campuses": "stale",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "City field is 'Australia' (placeholder, not a real city); official source confirms campus is in Melbourne CBD, VIC 3000.",
+    "All 8 programs are tagged level='short-course' but are actually nationally recognised VET qualifications (Cert III/IV, Diploma, Advanced Diploma); durationYears=1 is uniform/generic and not verified per-program.",
+    "All programs labeled programType='degree' — incorrect; these are VET certificates/diplomas, not degrees.",
+    "Intakes uniformly 'September' for every program — not verified against official source and likely generic.",
+    "keyFactsRu marketing claims ('Прямой партнёрский договор', 'Полное сопровождение StudyRoom') are unverifiable promotional StudyRoom boilerplate.",
+    "Gallery/campus images named 'bobr-*.jpg' are generic placeholders, not verified AITT photos."
+  ],
+  "evidence": "Official site aitt.edu.au confirmed (RTO 21978 / RTO 50834, CRICOS 02868J), located Level 3, 440 Elizabeth Street, Melbourne VIC 3000, founded 2007 — matches description text. courses.com.au provider page lists exactly the same 8 qualifications as the catalog: Diploma & Advanced Diploma of Hospitality Management, Certificate III in Commercial Cookery, Certificate IV in Kitchen Management, Certificate III in Light Vehicle Mechanical Technology, Certificate IV in Automotive Mechanical Diagnosis, Diploma of Automotive Management, Diploma of Community Services. studyaustralia.gov.au confirms Melbourne CBD and 2007. No tuition fees, scholarships, or accommodation published on official site or aggregators (tuition.byProgram empty in catalog = absent; not fabricated). Program titles accurate; metadata (level/type/intakes/duration) generic and partly wrong. City='Australia' is a placeholder.",
+  "verifiedPct": 45
+}

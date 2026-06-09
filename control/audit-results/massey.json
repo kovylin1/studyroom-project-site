@@ -1,0 +1,22 @@
+{
+  "slug": "massey",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.massey.ac.nz/",
+  "scores": {
+    "programs": "accurate",
+    "prices": "accurate",
+    "campuses": "accurate",
+    "scholarships": "wrong",
+    "accommodation": "accurate"
+  },
+  "fabricationFlags": [
+    "Scholarships are NOT Massey scholarships: catalog lists two Kaplan pathway-provider scholarships (Kaplan Early Bird, Kaplan Academic Achievement) instead of Massey's own awards (International Excellence Scholarships, Toroa International Postgraduate Fee Scholarships, Creative Excellence Scholarships, NZD 5,000-20,000).",
+    "Scholarship amounts denominated in GBP (£2,000 / £4,000) for a New Zealand university whose fees and other scholarships are all in NZD — currency mismatch, almost certainly copied from a Kaplan UK template.",
+    "description.keyFactsRu claims 'Стипендии для иностранных студентов — до NZ$4,000' but Massey's real international scholarships go up to NZ$20,000; the NZ$4,000 figure appears to be a mistranslation of the £4,000 Kaplan figure.",
+    "sourceUrl/confidence='official' points to kaplanpathways.com, a third-party pathway aggregator, not massey.ac.nz — scholarship & some descriptive data sourced from aggregator while labeled official.",
+    "Top-level 'city' is 'Auckland' only, but Massey is a 3-campus NZ university (Auckland/Albany, Manawatū/Palmerston North, Wellington) — oversimplified though campuses array is correct.",
+    "Several program faculty mappings are wrong/placeholder: e.g. Master of Veterinary Medicine (ma-pmvtm) tagged faculty 'Education'; many programs tagged 'Прочее' (Other); Executive MBA (ma-pmbsa) tagged level 'bachelor'."
+  ],
+  "evidence": "Verified against official massey.ac.nz. TUITION (accurate): official International Tuition Fees page confirms Bachelor of Business NZ$38,080, Bachelor of Science NZ$34,220-42,300, Bachelor of Veterinary Science NZ$84,220, Bachelor of Aviation NZ$114,341, Master of Veterinary Medicine NZ$81,620 — all exact matches to catalog tuition.byProgram; PhD=0 matches official policy that doctorate students pay domestic fees. CAMPUSES (accurate): official site confirms 3 NZ campuses Auckland, Wellington, Manawatū (+Singapore facility); catalog campuses array names Auckland/Albany, Manawatū/Palmerston North, Wellington correctly with correct discipline notes (vet science 1 of 2 in NZ, Creative Arts at Wellington). ACCOMMODATION (accurate): official accommodation page confirms Te Ōhanga Village (Auckland), Manawatū halls, Wellington halls incl. The Cube and Kāinga Rua — catalog entries match. PROGRAMS (accurate): program titles and programUrl slugs follow the official massey.ac.nz/study/all-qualifications-and-degrees/ pattern with valid qualification codes (UCVSA, PMVTM, UBVTS, etc.); large catalog of ~125 programs consistent with Massey's real offering. SCHOLARSHIPS (wrong): catalog lists Kaplan pathway scholarships in GBP; Massey's actual international scholarships (International Excellence, Toroa Postgraduate Fee, Creative Excellence) are NZD 5,000-20,000 and absent from catalog. Sources: massey.ac.nz tuition-fees-for-international-students, accommodation, scholarships-and-awards search.",
+  "verifiedPct": 80
+}

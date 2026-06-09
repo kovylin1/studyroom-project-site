@@ -1,0 +1,25 @@
+{
+  "slug": "ku-leuven",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.kuleuven.be/english/",
+  "scores": {
+    "programs": "wrong",
+    "prices": "absent",
+    "campuses": "wrong",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "country=\"International\" and city=\"International\" — KU Leuven is in Leuven, Belgium",
+    "Program titles are not KU Leuven programmes: 'Study in Malta', 'Study in Germany', 'Study in Denmark' (wrong-country titles)",
+    "Non-university junk titles scraped from aggregator: 'Make a comment', 'Exam Prep IELTS GRE - GMAT Exams SAT Exams TOEFL Exam UCAT Exam ...', 'GRE - GMAT Exams'",
+    "Multiple program titles reference China ('Master's Education in China', 'Top Universities for Master's Studies in China', etc.) — irrelevant to a Belgian university, yet flagged source=official/verifiedBySite=true (false verification claim)",
+    "All programUrl point to aggregator https://www.collabinternational.com/ku-leuven, none to kuleuven.be",
+    "logoUrl and gallery use collabinternational CDN / placeholder 'bobr' images, not official KU Leuven assets",
+    "sourceUrl is aggregator collabinternational; confidence='aggregator'",
+    "tuition.currency='USD' with empty byProgram — KU Leuven invoices in EUR",
+    "keyFactsRu claims '9 программ' / 'Foundation, бакалавриат' contradicting catalog content and real KU Leuven offering (100+ English Master's across 15 faculties)"
+  ],
+  "evidence": "Official site confirmed at kuleuven.be (English homepage). KU Leuven is located in Leuven, Belgium, with 15 faculties and 100+ English-taught programmes (bachelor/master/advanced master/PhD); also operates multiple campuses incl. Leuven and Brussels. Official tuition (2025-2026): EUR 1,181.40/60cr for EEA, EUR 9,493.90/60cr for non-EEA (icts.kuleuven.be tuition tool; www.kuleuven.be/english/education/student/fees). Scholarships incl. general tuition fee waiver exist (kuleuven.be/scholarships). Housing via kuleuven.be/english/stuvo housing, living cost ~EUR 600-900/month. The catalog file contains NONE of this: programs are aggregator-scraped non-programmes and wrong-country/China titles; country/city='International'; no campuses listed; tuition empty and in USD; no scholarships or accommodation fields. Catalog is fabricated aggregator data with no correspondence to the source of truth. PROGRAMS=wrong (titles are not real KU Leuven programmes), CAMPUSES=wrong (none listed; location falsified as International), PRICES/SCHOLARSHIPS/ACCOMMODATION=absent (no data present in catalog).",
+  "verifiedPct": 0
+}

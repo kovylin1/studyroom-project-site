@@ -1,0 +1,22 @@
+{
+  "slug": "humber-college",
+  "officialSiteFound": true,
+  "officialUrl": "https://humber.ca/international/",
+  "scores": {
+    "programs": "wrong",
+    "prices": "stale",
+    "campuses": "accurate",
+    "scholarships": "wrong",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "country=\"International\" and city=\"International\" — real institution is Humber Polytechnic (formerly Humber College), Toronto, Ontario, Canada",
+    "source=collabinternational aggregator; sourceUrl and all collab programUrls point to collabinternational.com not humber.ca",
+    "Fabricated/junk program titles: \"Study in Malta\", \"Study in Germany\", \"Study in Denmark\", \"Make a comment\", \"The visa process starts with the payment confirmation and acceptance letter.\", \"Exam Prep IELTS GRE - GMAT...\" — none are Humber programs",
+    "Wrong-country program titles: 7 programs reference \"Master's Education in China\" / \"Top Universities for Master's Studies in China\" etc., falsely flagged verifiedBySite=true source=official — China content has no relation to a Canadian polytechnic",
+    "keyFactsRu claims \"7 программ\" while real Humber offers 220+ programs",
+    "Logo/gallery hosted on collabinternational CDN; gallery captions are placeholder \"bobr-*.jpg\" images"
+  ],
+  "evidence": "Real institution is Humber Polytechnic (formerly Humber College), https://humber.ca/international/, with three Toronto campuses — North (205 Humber College Blvd), Lakeshore (3199 Lake Shore Blvd W) and Downtown/IGS (59 Hayden St) — confirmed via humber.ca search; catalog campus claim (Toronto + Orangeville) is in the description prose and broadly matches, so campuses scored accurate. The programs array is almost entirely fabricated (collab junk titles + unrelated 'Master's in China' entries) versus Humber's 220+ real programs (https://humber.ca/international/programs), so programs=wrong. Real scholarships are specific CAD awards (e.g. $1,000 onshore, $1,500 EAP-pathway) per https://humber.ca/international/admissions-financial-aid/scholarships-bursaries, none of which appear in the catalog (tuition object empty, no scholarships listed) — scholarships=wrong, accommodation=absent (Lakeshore Residence opened 2024 per humber.ca, not in catalog). Prices: description prose cites 18,910 CAD/yr undergrad and 16-17,000 CAD certificate/diploma, plausible but undated/unverified against the 403-blocked official tuition page, so prices=stale (tuition.byProgram is empty {}).",
+  "verifiedPct": 20
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "rmit-university",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.rmit.edu.au",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "accurate",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "All ~238 programs share one identical aggregator URL (edge.edvoy.com/institutions/rmit-university) instead of real rmit.edu.au program pages; not verifiable against the official source.",
+    "Every program lists only 'September' as intake. RMIT (Australian university) runs Semester 1 (Feb/Mar) and Semester 2 (Jul) intakes; a uniform September intake across all programs is fabricated/templated.",
+    "tuition.currency is 'USD'. RMIT explicitly quotes all fees in Australian dollars (AUD). Currency label is wrong.",
+    "tuition.byProgram is an empty object {} - no fee figures at all despite RMIT publishing per-program AUD fee schedules.",
+    "durationYears=1 applied uniformly to nearly all masters/diplomas and even to the '3+2' Osteopathy package (which is multi-year); duration field appears templated, not real.",
+    "Juris Doctor classified as level 'bachelor' (it is a postgraduate degree); several level mismatches indicate uncritical templating.",
+    "source='edvoy', confidence='aggregator' - entire record is aggregator-derived, not verified against rmit.edu.au."
+  ],
+  "evidence": "Official site confirmed at rmit.edu.au (search + fetch). Fees page (fees-for-international-students) states verbatim: 'All fees are quoted in Australian dollars ($AUD)' - catalog uses USD with no values (absent/wrong). Campuses in catalog (Melbourne City, Brunswick, Bundoora) all match RMIT's official Locations page (rmit.edu.au/about/our-locations-and-facilities/locations), though the catalog omits Point Cook and the Vietnam (HCMC, Hanoi) campuses - listed ones are accurate. RMIT offers international scholarships (RTP RIFOS, RRITFS, International Tuition Fee Scholarships) and on-campus accommodation (Walert House / UniLodge Bundoora) per official pages, but the catalog contains NO scholarships or accommodation fields (absent). Program titles are plausible and broadly match RMIT's real catalog, but all carry placeholder aggregator URLs, a fabricated uniform September intake, and templated durations - hence 'stale' rather than accurate. keyFactsRu claims '238 программ'.",
+  "verifiedPct": 20
+}

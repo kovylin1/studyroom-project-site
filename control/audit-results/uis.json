@@ -1,0 +1,23 @@
+{
+  "slug": "uis",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.uis.edu/",
+  "scores": {
+    "programs": "stale",
+    "prices": "stale",
+    "campuses": "stale",
+    "scholarships": "wrong",
+    "accommodation": "unverifiable"
+  },
+  "fabricationFlags": [
+    "~15 'programs' are not degree programs: news/blog articles and newsletters miscategorized as level=master degrees (e.g. 'Master the Clock: Time Management for College Students', 'Academic Affairs Newsletter - March 2025', 'Message from the Provost: Academic Affairs Newsletter - March 2026', 'Master's Closure Exercise', 'MBA Interns and Graduate Assistants', 'MBA Program Learning Objectives').",
+    "Several entries sourced from aggregator edvoy.com (source:'edvoy'), not the official site; one ('MS Management of Information Systems') has contradictory level=bachelor with durationYears=3.",
+    "Description claims '49 bachelor's, 51 master's' programs — contradicts official UIS catalog (34-38 bachelor's, 24-34 master's, 1-2 doctoral; ~58 total).",
+    "Enrollment '~4,364 students' does not match official Fall 2024 figure of 4,628 enrolled.",
+    "Campus entry 'Campus Links' contains scraped navigation junk text ('Emergency InfoEmploymentLibraryMapsWebsite Feedback'); 'Illinois Springfield Campus' entry is empty/duplicate.",
+    "sourceHash 'sha256:7a3e9c2d4b1f8e6a' is only 16 hex chars — not a valid SHA-256 (64 chars); likely fabricated.",
+    "Scholarship amounts misstated as annual '/год' caps that do not match official figures."
+  ],
+  "evidence": "Official site uis.edu confirmed. PROGRAMS: real degree titles (BS Accounting, MBA, MS Computer Science, DPA) and the four colleges (Business & Management, Health Science & Technology, Liberal Arts & Social Sciences, Public Affairs & Education) match official catalog.uis.edu. However the 30 real degrees are diluted by ~15 fabricated 'program' entries that are actually news articles, newsletters and CAPE certificates, plus edvoy-aggregator duplicates. Official catalog program counts (catalog.uis.edu/degreesoffered: ~34-38 bachelor / 24-34 master / 1-2 doctoral) contradict the JSON description's '49 bachelor / 51 master'. PRICES: JSON uses flat $24k UG / $26k grad / $28k doctoral with no residency or per-program variation. Official Fall 2026 (registrar/tuition-fees/fall-2026-tuition): non-resident UG $680.00/credit (~$20,400 + fees/yr, ~$24k plausible), non-resident grad $737.25/credit — grad $26k flat is an unverified rough estimate. Tuition is residency/credit-hour based, so flat figures are approximations = stale. SCHOLARSHIPS: names real but amounts wrong — official Star Scholar = $16,000 over 4yr (3.25-3.49 GPA) or $8,000 over 4yr (3.0-3.24), JSON says 'до $7,000/год'; Capital Scholars official $5,000/yr up to full tuition+housing (Chancellor's), JSON says 'до $8,000/год'. CAMPUS: 740-acre Lake Springfield main campus & four colleges accurate; two of three campus entries are junk/empty. ACCOMMODATION: hall names (Lincoln, Founders, Larkin, UIS Apartments) plausible but not verified against current housing pages within fetch budget. Deadlines all set to 2027-07-01 placeholder. lastChecked 2026-05-18, confidence 'aggregator'.",
+  "verifiedPct": 45
+}

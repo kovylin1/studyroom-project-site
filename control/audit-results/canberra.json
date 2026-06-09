@@ -1,0 +1,26 @@
+{
+  "slug": "canberra",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.canberra.edu.au/",
+  "scores": {
+    "programs": "stale",
+    "prices": "wrong",
+    "campuses": "wrong",
+    "scholarships": "wrong",
+    "accommodation": "unverifiable"
+  },
+  "fabricationFlags": [
+    "'Campus Master Plan' listed as a Master-level degree (durationYears 1) — scraper artifact, not a program",
+    "'Bachelor of Business*' and 'Bachelor of Design*' with trailing asterisks — scraped junk titles",
+    "UC Melbourne Campus does not exist on official site — fabricated; UC has Bruce (Canberra), Sydney Hills (Castle Hill), QLD and international locations only",
+    "UC Sydney described as 'Sydney CBD' but official campus is 'Sydney Hills' in Castle Hill, not CBD",
+    "All 5 scholarships fabricated/wrong: catalog lists Navitas Loyalty Bursary, UC Global Excellence (25%), UC Vice-Chancellor (50%), UC College Pathway (AU$3,000), UC Asia (AU$10,000); official ones are Welcome to UCC (15%), UCC Progression Merit (10%)/Excellence (20-30%), UC International High Achiever (20%), UC International Merit (10%), UC International Course Merit (25%)",
+    "Scholarship URL /future-students/scholarships returns HTTP 404",
+    "Pathway programUrl /uc-college/uc-college-courses returns HTTP 404 (real: /uc-college/courses)",
+    "~50 degree programs all use bare homepage programUrl 'https://www.canberra.edu.au/' — no real per-program verification",
+    "Diplomas of Commerce, Management, Software Development not present on official UC College course-fees list",
+    "All accommodation entries have uniform confidence 0.65 and generic /_lib/ stock photos — not verified against official housing source"
+  ],
+  "evidence": "Official course fees (https://www.canberra.edu.au/uc-college/courses/course-fees, 2026): Intl Foundation Studies $29,250 (catalog 24,000); Diploma of Business $34,000 (catalog 28,500); Diploma of Communication $30,500 (catalog 27,500); Diploma of Design $33,000 (catalog 28,200); Diploma of IT $32,000 (catalog 28,800); Diploma of Health $34,000 (catalog 29,800); Diploma of Science $34,500 (catalog 29,500) — every pathway fee understated. Scholarships verified at https://www.canberra.edu.au/uc-college/courses/international-scholarships and .../your-introduction-to-uc-s-international-scholarships — none match catalog. Campuses verified at https://www.canberra.edu.au/about-uc/campus-locations — Bruce real, Sydney = Sydney Hills/Castle Hill (not CBD), no Melbourne campus. Catalog source URLs (pathway courses, scholarships) return 404.",
+  "verifiedPct": 22
+}

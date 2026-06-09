@@ -1,0 +1,23 @@
+{
+  "slug": "johns-hopkins",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.jhu.edu/",
+  "scores": {
+    "programs": "accurate",
+    "prices": "accurate",
+    "campuses": "accurate",
+    "scholarships": "stale",
+    "accommodation": "accurate"
+  },
+  "fabricationFlags": [
+    "Program 'johns-hopkins-mse-civil-engineering' has internally inconsistent metadata: level='bachelor' for an MSE master-level degree, durationYears=3, language='ru', and a non-official aggregator source (edge.edvoy.com) rather than a jhu.edu URL.",
+    "All bachelor programs share a single flat tuition value of 63860 USD and all graduate programs within a school share identical per-program tuition; real JHU graduate tuition varies by program and is often charged per-credit, so these uniform figures are likely modeled/approximated rather than program-specific official numbers.",
+    "All PhD tuition listed as 0 — defensible (JHU PhD programs are typically fully funded) but presented as a hard price rather than 'funded/waived', which could mislead.",
+    "Scholarship 'Hodson Trust Scholarship' described as a full-tuition merit award — JHU largely discontinued large named undergraduate merit scholarships (Hodson) in favor of a need-based-only model; this is likely stale/outdated.",
+    "keyFact 'QS World Ranking #9 (2025)' could not be verified against official source in this audit (JHU's QS rank fluctuates and is often outside top 10); flagged as unverifiable claim presented as fact.",
+    "sourceHash 'sha256:a3f9c12e5b7d4081' is too short (16 hex chars) to be a real SHA-256 digest — likely placeholder/fabricated provenance.",
+    "confidence field is 'aggregator', consistent with edvoy-sourced data rather than direct official verification."
+  ],
+  "evidence": "Verified against official/authoritative sources. apply.jhu.edu/tuition-aid confirms JHU meets 100% of demonstrated financial need for all admitted students (matches 'Need-Based Financial Aid' scholarship entry); $0 parent cost up to $100k income, free tuition up to $200k, ~80% graduate debt-free. Wikipedia (JHU) confirms: founded Feb 22 1876 (first US research university), ~30,210 students fall 2024, 34 Nobel laureates (catalog says '40+' — overstated/stale), Bloomberg School of Public Health #1 (oldest/largest, confirmed). Campuses confirmed: Homewood (undergrad), East Baltimore (medical), SAIS Washington DC, Carey Business School Harbor East — all four match catalog. Undergrad list cross-checks with known Krieger/Whiting majors (Economics, Applied Math & Statistics, International Studies, Cognitive Science, Neuroscience, Molecular & Cellular Biology, Public Health Studies, BME, CS, Studio Art all real JHU majors). Tuition: catalog undergrad $63,860 is consistent with JHU published ~$63,340 (2024-25) / ~$65,300 (2025-26) tuition-only figure (Wikipedia's ~$89k is total cost of attendance incl. room/board, not tuition). Could not load finance.jhu.edu (403) or majors page (404) or collegetuitioncompare (timeout); program-level tuition and the edvoy-sourced MSE entry remain only partially verified.",
+  "verifiedPct": 72
+}

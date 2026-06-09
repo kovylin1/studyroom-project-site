@@ -1,0 +1,22 @@
+{
+  "slug": "los-medanos-college",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.losmedanos.edu/",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "stale",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "All 65 programs labeled level=\"bachelor\" — FALSE. LMC is a public community college; it offers 2-year Associate degrees (AA/AS/AA-T/AS-T) and Certificates of Achievement (CA), NOT bachelor's degrees.",
+    "All programs set durationYears=3 — incorrect. Associate degrees are ~2 years; certificates are typically <2 years. Generic uniform value applied to every program.",
+    "All intakes hardcoded to \"September\" only — LMC operates on a semester system with Fall and Spring (and Summer) enrollment; oversimplified/likely fabricated.",
+    "Every program flagged verified=true while source=\"edvoy\" (aggregator) and programUrl points to a generic Edvoy institution page, not a per-program official URL — false verification claim.",
+    "keyFactsRu states \"65 программ / Программы: бакалавриат\" (bachelor's) — propagates the false bachelor-level claim to user-facing copy.",
+    "Campus image uses generic stock placeholder /photos/_lib/campus-3.jpg rather than an actual LMC campus photo."
+  ],
+  "evidence": "Official site losmedanos.edu confirmed: public community college, Pittsburg Campus (2700 East Leland Rd, Pittsburg CA 94565) plus Brentwood Center (1351 Pioneer Square, Brentwood CA). International Students page (losmedanos.edu/inted): offers Associate Degrees and Certificates of Achievement across most majors — NOT bachelor's degrees, confirming the catalog's level=\"bachelor\" on all 65 programs is wrong. Program TITLES themselves (AS-T Computer Science, AA Recording Arts, CA Fire Technology, ADJ, Nursing, etc.) match real LMC offerings, so program list is substantively real but mislabeled => 'stale'. PRICES: catalog tuition.byProgram is empty {} (absent); official fees (losmedanos.edu/admissions/fees.aspx): resident enrollment $46/unit; nonresident/international $438/unit total ($46 enrollment + $382 tuition + $10 capital outlay); intl cost-of-attendance ~$30,150/yr. CAMPUSES: catalog lists only 'LMC Pittsburg Campus' (correct) but omits Brentwood Center and uses a stock photo => 'stale'. SCHOLARSHIPS: not present in catalog (absent); site has a Foundation/financial-aid section but no scholarship data captured. ACCOMMODATION: not present in catalog (absent); LMC has NO dormitories — only a Diablo Valley Homestay option for international students. lastChecked 2026-05-23, confidence 'aggregator'.",
+  "verifiedPct": 30
+}

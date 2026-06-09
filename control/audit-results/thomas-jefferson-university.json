@@ -1,0 +1,23 @@
+{
+  "slug": "thomas-jefferson-university",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.jefferson.edu",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "stale",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "Program metadata systematically wrong: nearly all MS/MArch/MUD/MFT programs are tagged level=\"bachelor\" (e.g. 'MS User Experience and Interaction Design' level=bachelor durationYears=3; 'DNP - Clinical Practice' level=master).",
+    "durationYears is uniform filler: every program is either 3 or 1 regardless of reality (Bachelor of Architecture is a 5-year BArch shown as 3; one-year graduate certificates shown as 3; MD/PhD shown as 3).",
+    "keyFactsRu contradicts payload: claims '1 программа' and 'Программы: бакалавриат' while the programs array contains ~57 entries across bachelor/master/phd/short-course.",
+    "intakes uniformly 'September' for every program (filler, not per-program verification).",
+    "Lead program sourced from aggregator edvoy (edge.edvoy.com), not the official site; confidence=aggregator.",
+    "description states '242 international students' and '63% acceptance rate' as precise figures with no source - unverifiable specific claims.",
+    "tuition.byProgram is empty {} yet tuition.currency=USD is set, implying pricing data that does not exist."
+  ],
+  "evidence": "Official site jefferson.edu confirmed (200). College of Architecture & the Built Environment programs page confirms BArch, BS Architectural Studies, BS Construction Management, BS Interior Design, BLA, MArch, MS Arch & Design Research, MS Construction Mgmt, MS Historic Preservation, MS Real Estate Development, MS Sustainable Design, Urban Analytics & Geodesign - so the program TITLES and programUrls are largely real, but level/durationYears fields are wrong. Tuition (official cost-of-attendance + research.com/US News): UG full-time tuition ~$44,400, fees ~$1,133, 2026 est. tuition+fees ~$49,250; graduate full-time ~$23,202; total COA w/ room&board ~$65,637. Catalog tuition object is empty -> absent. Scholarships: official + aggregators confirm merit scholarships $4,000-$19,000, 90% of UG receive aid, avg aid $27,176 - catalog has no scholarships field -> absent. Campuses: official confirms East Falls Campus AND Center City Campus (13-acre shared with Jefferson Hospital); catalog lists only East Falls -> stale/incomplete. Accommodation: official East Falls Residential Life confirms 1,600+ on-campus beds (Fortess, Mott, Partridge, Ronson, Scholler Hall, Independence Plaza, townhouses); catalog has no accommodation data -> absent.",
+  "verifiedPct": 35
+}

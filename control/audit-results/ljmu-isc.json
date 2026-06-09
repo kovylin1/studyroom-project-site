@@ -1,0 +1,22 @@
+{
+  "slug": "ljmu-isc",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.ljmuisc.com/",
+  "scores": {
+    "programs": "wrong",
+    "prices": "wrong",
+    "campuses": "accurate",
+    "scholarships": "wrong",
+    "accommodation": "stale"
+  },
+  "fabricationFlags": [
+    "Programs array is contaminated: ~5 legitimate ISC pathway entries (foundation-business, foundation-science, foundation-computing, pre-masters, english-language) followed by ~200 full LJMU university DEGREE programmes (MArch, MSc, BSc, BEng, PhD/Doctorate, LLM) tagged programType 'degree' with programUrl pointing to ljmu.ac.uk/study/courses/... These are the university's own degrees, NOT courses delivered by the International Study Centre. An ISC offers pathway courses only (International Foundation Year, International Year One, Pre-Masters, English Language). Scraping the full university course catalog and presenting it as the ISC offering is a structural misrepresentation.",
+    "Tuition figures do not match official 2026/27 ISC fees: catalog foundation-business 15500 / foundation-science 16000 / foundation-computing 15500 vs official International Foundation Year GBP 16,500 (both Business/Law/Social Studies and Engineering/Computing/Life Sciences routes); catalog pre-masters 13500 vs official Pre-Masters GBP 8,900; catalog english-language 8500 has no matching official flat figure (official English Language Prep is 6wk GBP 2,100 / 10wk GBP 3,500 / 16wk GBP 5,600). 'foundation-computing' is not a distinct official route.",
+    "Scholarship names and amounts appear fabricated: catalog 'LJMU International Scholarship GBP 2,000' and 'ISC Excellence Award GBP 1,500' do not match official scholarships (International Achievement Scholarship GBP 3,000/year for UG and PG, plus an International Study Centre Scholarship of unspecified partial-tuition value).",
+    "Missing legitimate ISC programmes: International Year One is not represented as a pathway entry.",
+    "Intakes likely stale: catalog uses September/January/April; official intake months are October, November, January.",
+    "sourceUrl points to ljmu.ac.uk (the university) rather than the actual ISC site ljmuisc.com (maintained by Study Group); confidence already self-labelled 'aggregator'."
+  ],
+  "evidence": "Official ISC site confirmed at https://www.ljmuisc.com/ (footer: 'Maintained by Study Group'), corroborated by https://www.ljmu.ac.uk/international/thinking-of-applying/pathways-to-ljmu (Study Group pathway). Official pathways: International Foundation Year (Business/Law/Social Studies; Engineering/Computing/Life Sciences), International Year One (Business; Engineering), Pre-Masters (Business/Management/Law; Engineering/Computing), English Language Preparation. Official fees 2026/27 (ljmuisc.com/how-to-apply/fees): IFY GBP 16,500; IY1 GBP 17,500; Pre-Masters GBP 8,900; English Prep GBP 2,100/3,500/5,600. Official scholarships (ljmuisc.com/how-to-apply/scholarships): ISC Scholarship (partial tuition), International Achievement Scholarship GBP 3,000/yr UG and PG. Campus: Liverpool city centre — consistent with catalog ('LJMU City Campus', Liverpool City Centre). Accommodation: official references LJMU/private Liverpool accommodation; catalog entries (LJMU Student Halls, Private Student Accommodation Liverpool) are generic/plausible but unverified against specific official listings, hence stale. Programs and prices materially diverge from source of truth.",
+  "verifiedPct": 22
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "nuova-accademia-di-belle-arti-naba",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.naba.it/en",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "stale",
+    "scholarships": "accurate",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "country/city set to 'Italy' for both fields (city is not a real value)",
+    "Master programs (MA in Social Design, Academic Master in Italian Design, etc.) listed as durationYears=1; official MA/graduate programs are 2 years (Academic Masters are 1 year, so several entries conflate distinct program types)",
+    "All programs point to a generic edvoy aggregator URL, not real per-program naba.it pages",
+    "campus images use generic stock '/photos/_lib/campus-33.jpg' placeholders"
+  ],
+  "evidence": "Official naba.it/en confirms two main campuses Milan (Navigli) and Rome (Ostiense), plus a new London campus for 2026/27 not in catalog. Catalog lists 13 programs all sourced from edvoy aggregator; several real NABA BAs (Painting and Visual Arts, Creative Technologies, Film and Animation, Fashion Marketing Management, Marketing and Management for Creative Business) match official offerings, but program durations for masters are likely wrong (NABA graduate programs are 2 years per naba.it). Tuition is empty (byProgram {}) while official site and aggregators (topuniversities, shiksha) list fees ~EUR 8,900-23,000; scholarships confirmed (Future Talents 50% reduction, International Scholarships at Rome, London up to GBP 5,000). Accommodation exists officially (NABA Housing / MilanHousing) but is absent from catalog.",
+  "verifiedPct": 45
+}

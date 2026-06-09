@@ -1,0 +1,23 @@
+{
+  "slug": "marangoni-milan",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.istitutomarangoni.com/en",
+  "scores": {
+    "programs": "accurate",
+    "prices": "wrong",
+    "campuses": "stale",
+    "scholarships": "unverifiable",
+    "accommodation": "unverifiable"
+  },
+  "fabricationFlags": [
+    "Tuition figures do not match official ranges: catalog lists flat BA=€26,900 / MA=€28,900, but official site states UG first-year €17,600–24,400 and PG €21,500–31,500. The single fixed values appear invented/aggregator-derived (confidence field is 'aggregator').",
+    "Scholarship amounts are stated as fixed euro caps (€15,000, €10,000, €8,000, €5,000, €3,000) but official scholarships are expressed as percentage tuition reductions (up to 50%–100%); the D&G scholarship is a 'Talent Contest DG Beauty' for Fragrances & Cosmetics, not a generic '€15,000 Beauty Scholarship'. 'International Merit Scholarship', 'Talent Award' and 'Early Application Discount' with these exact amounts are not corroborated by official source — likely fabricated.",
+    "Campus addresses 'Via Cerva 24' and 'Via Verri 4' are not confirmed on official pages; sources only locate schools in Quadrilatero della Moda near Via Montenapoleone. Specific street numbers unverified and possibly fabricated.",
+    "Accommodation entries (Camplus Turro, The Student Hotel Lambrate, 'Istituto Marangoni Student Residence Milan Centre') are not listed on the official site and could not be verified as official partner residences.",
+    "sourceHash 'sha256:8c4d2f7e9b1a3e5f' is only 16 hex chars — not a valid SHA-256 (64 chars); fabricated hash.",
+    "Deadlines all uniformly set to 2027-07-01 across every program — placeholder, not source-verified.",
+    "Note: 4 trailing program entries (BA·3 Year, Master of Arts, Master Courses, Global/Luxury Masters) are flagged source='official' verifiedBySite=true — these generic titles do match official course tiers, but duplicate the detailed named programs."
+  ],
+  "evidence": "Official site confirmed at istitutomarangoni.com. /en/fashion-courses lists Fashion Design, Fashion Business, Fashion Communication & Image with BA·3yr, MA, One year, Semester, Preparatory tiers plus Global Master for Luxury Business Professionals — matches catalog program names well (PROGRAMS=accurate). /en/design-courses confirms Interior Design, Product Design, Visual Communication Design, Design Innovation at BA/MA — matches. PRICES=wrong: official UG €17,600–24,400 / PG €21,500–31,500 vs catalog flat €26,900/€28,900. CAMPUSES=stale: schools confirmed in Quadrilatero della Moda near Montenapoleone, Design school is a Cappellini-designed 5-story building, but exact Via Cerva 24 / Via Verri 4 unconfirmed. SCHOLARSHIPS=unverifiable: D&G Beauty scholarship exists but is a % talent contest (deadline 29 Jun 2026), Cassina/AnotheReality/E-Novia branded scholarships exist, but specific fixed-euro amounts and 3 of 5 named awards not corroborated. ACCOMMODATION=unverifiable: no official residence listing found; named third-party residences not confirmed as Marangoni partners. Validation by Manchester Metropolitan University, founding 1935, Galileo Global Education ownership are plausible and consistent with known facts.",
+  "verifiedPct": 40
+}

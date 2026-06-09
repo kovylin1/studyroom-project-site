@@ -1,0 +1,22 @@
+{
+  "slug": "scholarships",
+  "officialSiteFound": false,
+  "officialUrl": "https://www.collabinternational.com/scholarships",
+  "scores": {
+    "programs": "wrong",
+    "prices": "wrong",
+    "campuses": "wrong",
+    "scholarships": "wrong",
+    "accommodation": "wrong"
+  },
+  "fabricationFlags": [
+    "NOT-A-UNIVERSITY: scraped article page",
+    "Source URL is an article/listing titled 'Finding and Applying for Scholarships - Collab International' operated by an education consultancy (ICES Turkey), not an academic institution",
+    "Name 'Scholarships', slug 'scholarships', and city/country both 'International' are not an institution identity",
+    "'programs' are article sections/links, not degree programs (e.g. 'Study in Malta', 'Study in Germany', 'Make a comment', 'Exam Prep IELTS GRE...', 'GRE - GMAT Exams')",
+    "Every program's programUrl points to the same single article page /scholarships",
+    "confidence='aggregator'; description is editorial scholarship-advice copy citing OTHER real universities (Koc, Bilkent, etc.)"
+  ],
+  "evidence": "site/src/content/universities/scholarships.json describes an entity named 'Scholarships' with country/city 'International' and confidence 'aggregator'. Its 'programs' are not degrees but scraped page sections and UI links: 'Study in Malta/Germany/Denmark', 'Make a comment', 'Exam Prep IELTS GRE - GMAT Exams SAT...', 'GRE - GMAT Exams'. All programUrl values point to one URL: https://www.collabinternational.com/scholarships. The description is an article giving generic advice on finding scholarships, attributed to ICES Turkey, and lists real institutions (Koc University, Bilkent University, etc.) as examples. WebFetch of the sourceUrl returned page title 'Finding and Applying for Scholarships - Collab International', operated by Collab International / ICES Turkey, an education consultancy resource page, not a university. tuition.byProgram, deadlines, and requirements are all empty. Conclusion: this catalog entry is a scraped article/listing page wrongly stored as a university. No official university site exists for it.",
+  "verifiedPct": 0
+}

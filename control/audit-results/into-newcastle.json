@@ -1,0 +1,24 @@
+{
+  "slug": "into-newcastle",
+  "officialSiteFound": true,
+  "officialUrl": "https://nclisc.com/en",
+  "scores": {
+    "programs": "wrong",
+    "prices": "wrong",
+    "campuses": "accurate",
+    "scholarships": "wrong",
+    "accommodation": "stale"
+  },
+  "fabricationFlags": [
+    "Cross-institution contamination: of ~190 listed programs, the vast majority link to programUrls of OTHER INTO partner institutions, not Newcastle. Examples: City University London, University of Manchester, Hofstra University, University of Alabama at Birmingham, George Mason University, Queen's University Belfast, University of Stirling, University of Exeter, Lancaster University, University of East Anglia, Illinois State University, University of Western Australia. These cannot belong to INTO Newcastle.",
+    "First program 'International Foundation in Art and Design' links to into-london-bass (London), not Newcastle.",
+    "Hundreds of full Newcastle University degree programs (MB BS Medicine, BDS Dental Surgery, PhD Microbiology, MPharm, etc.) are listed as if offered by the pathway centre, all pointing to a single generic aggregator URL edge.edvoy.com/institutions/newcastle-university (source: 'edvoy'). A pathway provider does not deliver these degrees directly; they are mislabelled aggregator scrape.",
+    "All programs marked verified:true despite pointing to wrong/aggregator URLs.",
+    "sourceUrl https://www.intostudy.com/en/universities/newcastle-university now 307-redirects to https://nclisc.com/en (brand changed to Newcastle University International Study Centre); every intostudy.com/newcastle programUrl is stale.",
+    "confidence field self-declares 'aggregator' yet records carry verified:true.",
+    "Tuition figures (Foundation 17000, Year One 16000, Graduate Diploma 16000, Academic English 10500) match no official 2026/27 figure.",
+    "Scholarship names 'INTO Excellence Scholarship' and 'Newcastle University Progression Award' with amounts GBP 2,000 / 1,500 do not appear on the official site; likely fabricated."
+  ],
+  "evidence": "Official source https://www.intostudy.com/en/universities/newcastle-university redirects (307) to https://nclisc.com/en (Newcastle University International Study Centre). Official programs: Foundation / International Year One / Pre-Master's / Academic English (+Pre-sessional), on Newcastle University campus, with progression into Newcastle degrees in architecture, business, computer science/engineering, science/life sciences, humanities/social sciences. Catalog's first 6 entries broadly match this structure, but the remaining ~180 entries point to other institutions or to a generic edvoy aggregator URL listing full Newcastle degrees the pathway centre does not directly deliver. PRICES: official 2026/27 tuition (nclisc.com/en/tuition-and-scholarships): Intl Foundation GBP 23,500-29,000; Intl Year One GBP 24,500-29,500; Pre-Master's GBP 24,000-29,500; Academic English GBP 6,000-24,000. Catalog values (17000/16000/16000/10500) match none. CAMPUS: official confirms on-campus at Newcastle University, Newcastle upon Tyne - catalog accurate. SCHOLARSHIPS: official lists Regional Scholarship up to GBP 5,000, Newcastle University Progression Scholarship GBP 3,000, Vice-Chancellor's Scholarship GBP 7,000-10,000; catalog lists different names/amounts (GBP 2,000 / 1,500). ACCOMMODATION: official names Joseph Cowen Halls (Platinum/Gold/Silver studios & ensuite, GBP 165-265/week, 2026-27); catalog lists only generic 'INTO Newcastle City Centre Accommodation' and 'Newcastle University Halls' with no specifics and outdated INTO branding.",
+  "verifiedPct": 20
+}

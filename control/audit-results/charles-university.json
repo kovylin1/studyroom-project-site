@@ -1,0 +1,23 @@
+{
+  "slug": "charles-university",
+  "officialSiteFound": true,
+  "officialUrl": "https://cuni.cz/UKEN-1.html",
+  "scores": {
+    "programs": "wrong",
+    "prices": "wrong",
+    "campuses": "stale",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "country=\"International\" and city=\"International\" — real institution is Charles University, Prague, Czech Republic",
+    "Fabricated/non-program titles: \"Study in Malta\", \"Study in Germany\", \"Study in Denmark\", \"Make a comment\", \"Exam Prep IELTS GRE - GMAT Exams SAT Exams TOEFL Exam UCAT Exam ... IMAT\", \"GRE - GMAT Exams\"",
+    "Wrong-country program titles referencing China: \"Master's Education in China\", \"Top Universities for Master's Studies in China\", \"Popular Master's Programs in China\", \"Application Periods and Deadlines for Master Programs in China\", \"Scholarship Opportunities for Master's Students in China\" — marked source=official/verifiedBySite=true but Charles University is in the Czech Republic, not China",
+    "Prices embedded in program titles (EUR 7,600 / 6,500 USD / EUR 2,000) are unverifiable scraped fragments; official tuition is a EUR 40-30,620/yr range with no per-program match",
+    "sourceUrl is aggregator collabinternational.com, not the official cuni.cz domain; confidence=\"aggregator\"",
+    "Gallery contains an unrelated image: 'Charles Walker on high dive ... University of Washington' (wrong Charles / wrong university)",
+    "tuition.byProgram is empty {} and currency set to USD despite CU charging in EUR"
+  ],
+  "evidence": "Official source cuni.cz confirmed (UKEN-1, UKEN-178, UKEN-372). Official offers Undergraduate/Graduate/Postgraduate + Foundation across faculties (Arts, Education, Humanities, Mathematics and Physics, Pharmacy in Hradec Kralove, Medicine in Pilsen, Social Sciences, First Faculty of Medicine, etc.); HQ at Ovocny trh 560/5, Prague 1. Official tuition (UKEN-372): 'EUR 40 up to EUR 30,620 per year depending on programme'; Czech-taught programmes free. Catalog programs do not match any real CU programme — they are scraped aggregator navigation fragments and unrelated China/Malta/Germany/Denmark content. Campuses Prague/Hradec Kralove/Plzen are correctly described in the description paragraph but the structured country/city fields are wrongly 'International'. No scholarship or accommodation data present in catalog though both exist officially.",
+  "verifiedPct": 10
+}

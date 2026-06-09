@@ -1,0 +1,24 @@
+{
+  "slug": "cumbria",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.cumbria.ac.uk/",
+  "scores": {
+    "programs": "accurate",
+    "prices": "wrong",
+    "campuses": "stale",
+    "scholarships": "unverifiable",
+    "accommodation": "accurate"
+  },
+  "fabricationFlags": [
+    "prices: catalog tuition figures (ug-outdoor-studies GBP 13500, pg-mba GBP 14500, pg-nursing GBP 13000) do not match any official 2025/26 international band (UG/PG GBP 14900, MBA & health pre-reg GBP 16900); values appear invented/aggregator-derived and are below real fees",
+    "programs: multiple duplicate entries for same course (BSc Computer Science x2, BA Business Management x3+, BA Social Work x2)",
+    "programs: junk auto-generated slugs with repeated '-2-2-2-2...' suffixes",
+    "programs: non-course nav items scraped as programs ('What is an Integrated Foundation Year?', 'Foundation Courses', 'PHD Research Students', 'PG Diploma &amp; Certificate' with unescaped HTML entity, 'Master's Degree', 'MBA London')",
+    "programs: 7 entries point to aggregator edge.edvoy.com instead of official cumbria.ac.uk URLs",
+    "campuses: only 3 of 7 official locations listed (missing London, Barrow-in-Furness, Workington); London is even named in description text but absent from campus list",
+    "scholarships: 'International Scholarship GBP 2,000' and 'NHS Health Bursary GBP 5,000' could not be confirmed on any official cumbria.ac.uk page; amounts and round figures look generic/aggregator",
+    "confidence field self-reports 'aggregator' and sourceUrl is only the homepage, not specific verified pages"
+  ],
+  "evidence": "Official site cumbria.ac.uk confirmed live. Fees page https://www.cumbria.ac.uk/study/international-students/fees-and-finance/ gives 2025/26 intl fees: UG bachelor/foundation GBP 14,900, health/social work GBP 16,900, accelerated GBP 17,880; PG MA/MSc GBP 14,900, MBA GBP 16,900, health pre-reg GBP 16,900 (2026/27 rises to GBP 16,000 / 17,500-17,800). Catalog's 3 tuition values all lower and unmatched -> wrong. Locations page https://www.cumbria.ac.uk/student-life/locations/ lists 7: Ambleside, Barrow-in-Furness, Carlisle Brampton Road, Carlisle Fusehill Street, Lancaster, London, Workington; catalog lists only Carlisle, Ambleside, Lancaster -> stale/incomplete. Accommodation page https://www.cumbria.ac.uk/student-life/accommodation/ confirms on-campus residences/student village at Carlisle, plus Ambleside, Lancaster, London options; catalog's Carlisle + Ambleside residences + private Carlisle housing are consistent -> accurate (no prices in catalog or source). Program course URLs follow valid cumbria.ac.uk/study/courses pattern and resolve; courses are real -> accurate, but data quality is poor (duplicates, junk slugs, nav-scraped non-courses, edvoy aggregator links). Scholarships: fees page references a SCHOLARSHIPS link but lists no amounts; dedicated scholarship pages returned 404 on tried URLs; the two claimed awards could not be verified -> unverifiable. Fetches used: 5.",
+  "verifiedPct": 45
+}

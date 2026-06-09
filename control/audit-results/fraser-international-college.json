@@ -1,0 +1,23 @@
+{
+  "slug": "fraser-international-college",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.fraseric.ca/",
+  "scores": {
+    "programs": "stale",
+    "prices": "wrong",
+    "campuses": "stale",
+    "scholarships": "wrong",
+    "accommodation": "accurate"
+  },
+  "fabricationFlags": [
+    "Scholarships fabricated: 'FIC Academic Excellence Scholarship' and 'FIC-SFU Pathway Award' do not exist on official site. Real FIC scholarships are entirely different (Future Leaders Scholarship C$4,000, Pathway to Success Award C$3,500, FIC Women in STEM C$2,500, Empowerment Scholarship C$3,000, Navitas Family Bursaries, etc.).",
+    "Tuition wrong by large margin: catalog lists C$19,000 for all pathway programs and C$9,000 for EAP. Official 2025/26 fees: International Year One (UTP Stage II) C$37,655/30cr; Foundation (UTP Stage I) C$27,852; Extended IY1 C$51,581. No standalone EAP program/fee found.",
+    "Fabricated/duplicated program entries: 'University Pathway Program — Arts/Science/Business/Computing/Engineering' with generic durationYears:1 and invented slugs overlap with real UTP Stage II streams; these appear synthesized rather than mapped to official programs.",
+    "Malformed scraped-fragment 'programs' present: e.g. 'Completion of Grade 12 (or equivalent) for entry into Foundation or International Year One courses', '70% Jump Rule/ Extended International Year One', 'International Year One (UTP Stage II) courses' — these are page text fragments, not real distinct programs.",
+    "Campus entries contain garbled scraped text: 'Campus Services' and 'Discovery 1 Building (FIC Building) Services' text is truncated/mangled ('committed to opposingFIC Advising', 'lost and found that keeps items for a period of time').",
+    "requirements.language.ielts:6 and single intake/deadline (2027-03-01) are generic placeholders not verified against official admissions pages.",
+    "confidence field self-declared 'aggregator' yet many program entries are marked source:'official' verifiedBySite:true — verification claims not consistent with content quality."
+  ],
+  "evidence": "Official site fraseric.ca confirmed (8999 Nelson Way, Burnaby BC V5A 4B5; operated by Navitas; pathway to Simon Fraser University; DLI O19239078442). PROGRAMS: real offerings are Foundation (UTP Stage I), International Year One (UTP Stage II) with ~11 transfer streams (Arts & Social Sciences BA, Business Administration BBA, Communication Art & Technology BA, Communication & Business BA, Computing Science BSc, Engineering Science EnSc, Environment BA/BSc/BEnv, Health Sciences BA/BSc, Sciences BSc), Associate Degree (2 yr), Support Programs (Cornerstone/Integrated). Catalog captures the real degree streams but mixes in synthesized 'University Pathway Program' duplicates and scraped fragments — partially accurate, stale. PRICES (fraseric.ca/admissions/fees/): 2025/26 IY1 C$37,655, Foundation C$27,852, Extended IY1 C$51,581, Associate C$37,655/yr, Integrated C$7,625, Cornerstone C$10,819; 2026/27 IY1 C$39,162, Foundation C$28,967. Catalog's flat C$19,000/C$9,000 figures are wrong. CAMPUSES: Burnaby Mountain/SFU location accurate; two of three entries are garbled scrape text — stale. SCHOLARSHIPS (fraseric.ca/admissions/financial-planning/scholarships/): real list = Navitas Family Bursaries (10% tuition), Future Leaders C$4,000, Pathway to Success C$3,500, Women in STEM C$2,500, Sustainability C$2,500, Empowerment C$3,000, Change Makers C$2,500, Quest for Learning C$2,000, plus current-student awards; catalog's two named scholarships do not exist — fabricated/wrong. ACCOMMODATION (fraseric.ca/future-students/accommodation/): official = SFU Residences (on-campus), Vanmates, Homestay (3 providers), GEC Living, Off-Campus. Catalog's three (SFU Residences, Homestay in Burnaby, Private Rental Burnaby/Vancouver) are accurate in substance though missing Vanmates/GEC.",
+  "verifiedPct": 35
+}

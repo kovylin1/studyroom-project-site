@@ -1,0 +1,23 @@
+{
+  "slug": "concordia-university-st-paul",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.csp.edu/",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "accurate",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "City WRONG: catalog says 'South Saint Paul'; official campus is in St. Paul, MN (1282 Concordia Ave, St. Paul, MN 55104). South Saint Paul is a separate municipality.",
+    "Program level mislabeling: nearly all graduate programs tagged level='bachelor' (e.g. 'MS Data Analytics', 'MS Information Technology Management', all MAEd/MA/MS titles, 'EDd Doctorate in Education' as bachelor). Title says master/doctorate but level field contradicts it.",
+    "durationYears=3 applied uniformly to almost every program, including a 1-year MBA, 1-year MFA, and the Doctorate in Physical Therapy (DPT) — implausible/templated value, not real program durations.",
+    "Acceptance rate '68%' stated in description is not published on official csp.edu facts-and-figures page (unverifiable; likely third-party/aggregator figure presented as fact).",
+    "All programs carry verified=true and source='edvoy' (aggregator), yet sourceUrl/programUrl all point to edvoy aggregator, not csp.edu — 'verified' is misleading.",
+    "Description text contains mojibake/encoding corruption (e.g. 'Universityâ€™s', 'â€_x009d_') and a stray unbalanced </p> tag.",
+    "keyFactsRu claims '102 программ' while official site says '100+ academic programs' — specific count 102 unverifiable."
+  ],
+  "evidence": "Official source: csp.edu. Academics page (csp.edu/academics) confirms degree levels BA/BS/BFA, MA/MS/MBA/MFA/EdS, EdD/PhD/DPT and campus in St. Paul, MN. Facts & Figures (csp.edu/why-csp/facts-and-figures) confirms 'Founded in 1893', '100+ Academic programs', students from 39 foreign countries; does NOT publish an acceptance rate. Tuition (csp.edu/tuition-and-financial-aid) gives 2025-26 UG tuition ~$26,400/yr (+~$12,500 room/board), grad $395-525/credit, DPT $885/credit, intl fee $2,400/term UG and $1,200/term grad — catalog tuition object is empty {}. Residence Life page (csp.edu/student-life/residence-life/residence-halls) lists 4 halls (Luther, Wollaeger, Holst 290-bed, Hyatt Village), 500+ students housed — catalog has no accommodation data. Catalog campuses array (1 'CSP Main Campus') matches the single main campus. Programs broadly plausible vs a 100+ program university but metadata (level, durationYears) is systematically wrong and sourced from edvoy aggregator, not the official site.",
+  "verifiedPct": 35
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "institut-francais-de-lhotellerie",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.ifh-paris.com",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "stale",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "keyFactsRu states '3 программ' but the programs array lists 15 entries (internal contradiction)",
+    "Programs array is heavily duplicated: same degrees repeated as EN/FR/ES language variants (e.g. MSc Grande Ecole listed 3x, BBA/Bachelor in Hospitality Management duplicated), inflating apparent program count vs the real distinct catalog",
+    "city set to 'France' (a country, not a city) and campus 'IFH Paris Campus' with no address; real campus is Paris 16e (7 Léo Delibes / 20 rue de l'Amiral Hamelin, Trocadéro 75116)",
+    "tuition.currency is 'USD' but the school bills in EUR; tuition.byProgram is empty {} so no fees are stored despite official published rates",
+    "Several programs cite source 'edvoy' aggregator with programUrl pointing to edge.edvoy.com rather than the official ifh-paris.com page"
+  ],
+  "evidence": "Official site https://ifh-paris.com confirms institution as Institut Français de l'Hôtellerie (IFH), a Paris hospitality grande école located in the 16th arrondissement near Trocadéro/Eiffel Tower (addresses: 7 Léo Delibes 75116 Paris; 20 rue de l'Amiral Hamelin 75116 Paris). PROGRAMS: official offerings are BBA International Hospitality Management (4yr), Bachelor in Hospitality Management (3yr), Bachelor in Hotel & Gastronomy Management work-study (3yr), Bachelor in Events & Luxury Management (3yr), Bachelor in Hospitality & Gastronomy Management work-study (1yr), Master in Hotel & Event Management work-study (2yr), Master Grande Ecole MSc Gastronomy & Hospitality Luxury Management (2yr), plus Summer Institute programs. Catalog covers these real programs but as 15 duplicated multilingual entries; durations also mismatch (catalog BBA durationYears=3 and MSc=1, official BBA=4yr and MSc=2yr) -> stale. PRICES: official published fees (WebSearch, Sep 2026/Feb 2027) BBA International €20,000/yr, EU student €18,000/yr, MSc regular €12,950/yr, MSc short track €16,750 full program; BBA page confirms 'Paris Trocadero' campus and 'rates vary' brochure note. Catalog tuition = {currency:USD, byProgram:{}} -> no data, wrong currency -> absent. CAMPUSES: real campus is Paris (16e/Trocadéro); catalog stores city='France' + generic 'IFH Paris Campus' photo only -> stale. SCHOLARSHIPS: official offers early-bird + merit-based scholarships (combinable); catalog has nothing -> absent. ACCOMMODATION: official offers international student housing/integration support; catalog has nothing -> absent. Fetches used: ifh-paris.com/en (homepage), admissions 404, WebSearch fees/scholarship/accommodation, BBA program page.",
+  "verifiedPct": 22
+}

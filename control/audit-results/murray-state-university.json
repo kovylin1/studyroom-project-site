@@ -1,0 +1,20 @@
+{
+  "slug": "murray-state-university",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.murraystate.edu",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "accurate",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "city field is 'United States' (a country, not a city) — real location is Murray, Kentucky; city/state data is wrong/missing",
+    "All ~148 programs use a generic aggregator programUrl (edge.edvoy.com), not real murraystate.edu program pages; 'verified:true' + 'source:edvoy' overstates verification against the official source",
+    "All programs assigned identical durationYears (bachelor=3, master=1) and identical single intake 'September' — uniform values indicate templated/aggregator data, not official catalog values (US bachelor's are typically 4 years; MSU intakes include Fall/Spring/Summer)",
+    "Several program records mislabel level: 'Mathematics/Pre-MBA Track' and 'Applied Physics/Pre-MBA Track' are tagged level=master though titled BA/BS; multiple EDS (Specialist in Education) entries tagged level=bachelor"
+  ],
+  "evidence": "Catalog source is the edvoy aggregator (sourceUrl edge.edvoy.com, confidence 'aggregator', lastChecked 2026-05-23), not the official site. Official site murraystate.edu confirmed; institution is located in Murray, Kentucky (102 Curris Center) — catalog city='United States' is wrong. CAMPUSES: catalog lists Murray main + Fort Campbell, Hopkinsville, Paducah, Madisonville, Henderson regional campuses; official site confirms regional campuses in Paducah, Hopkinsville, Madisonville, Henderson and Ft. Campbell — exact match, scored accurate. PROGRAMS: the ~148 listed majors (Nursing, Occupational Safety & Health, Computer Science, MPA concentrations, Earth & Environmental Sciences, Veterinary Technology, etc.) are genuinely real MSU offerings, but metadata (durationYears, level mislabels, single intake, aggregator URLs) is templated/inaccurate — scored stale. PRICES: catalog tuition.byProgram is empty {} and deadlines/requirements empty — scored absent. Official 2025-26 international costs (murraystate.edu/admissions/international/Costs.aspx): Bachelor tuition+fees ~$15,672/yr (total COA ~$29,976); Master tuition ~$7,422/yr; Doctoral ~$8,052/yr — none of this is in the catalog. SCHOLARSHIPS: none present in catalog though MSU offers international + transfer scholarships ($1,500-$5,000 tiers) — scored absent. ACCOMMODATION: no housing/accommodation data in catalog — scored absent. No outright invented programs detected, but location data is wrong and program metadata is aggregator-templated.",
+  "verifiedPct": 20
+}

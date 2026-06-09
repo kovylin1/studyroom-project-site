@@ -1,0 +1,26 @@
+{
+  "slug": "aalto-university",
+  "officialSiteFound": true,
+  "officialUrl": "https://www.aalto.fi/en",
+  "scores": {
+    "programs": "wrong",
+    "prices": "absent",
+    "campuses": "absent",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "country=\"International\" (real: Finland)",
+    "city=\"International\" (real: Espoo/Otaniemi, Helsinki region)",
+    "wrong-country program title 'Study in Malta' for a Finnish university",
+    "wrong-country program titles 'Study in Germany', 'Study in Denmark'",
+    "program titles about China ('Master's Education in China', 'Top Universities for Master's Studies in China', etc.) — unrelated to Aalto/Finland yet marked source=official/verifiedBySite=true",
+    "navigation/UI scrape masquerading as program: 'Make a comment'",
+    "exam-prep listing scraped as a degree program: 'Exam Prep IELTS GRE...', 'GRE - GMAT Exams'",
+    "sourceUrl is aggregator collabinternational.com, not the official aalto.fi",
+    "tuition.byProgram is empty {}; campuses [] and accommodation [] empty",
+    "keyFactsRu claims '6 программ' but file lists 13 program entries"
+  ],
+  "evidence": "Official source is Aalto University, Finland (https://www.aalto.fi/en), a research university in Espoo/Otaniemi (Helsinki capital region) — not 'International'. None of the catalog program titles are real Aalto degree programs; they are aggregator/scrape artifacts ('Study in Malta/Germany/Denmark', 'Make a comment', exam-prep names, and unrelated China-focused titles). Real tuition is EUR 12,000/yr (bachelor) and EUR 15,000/yr (master) for non-EU/EEA students with the Aalto University Excellence Scholarship (full tuition-fee waiver), per https://www.aalto.fi/en/international-students/tuition-fees-and-scholarships and https://www.aalto.fi/en/international-students/scholarships-study-right-started-on-or-after-1-august-2025 — none of which appear in the catalog (tuition empty, scholarships/campuses/accommodation arrays empty).",
+  "verifiedPct": 5
+}

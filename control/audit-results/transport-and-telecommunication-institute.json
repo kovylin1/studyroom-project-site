@@ -1,0 +1,23 @@
+{
+  "slug": "transport-and-telecommunication-institute",
+  "officialSiteFound": true,
+  "officialUrl": "https://tsi.lv",
+  "scores": {
+    "programs": "stale",
+    "prices": "absent",
+    "campuses": "wrong",
+    "scholarships": "absent",
+    "accommodation": "absent"
+  },
+  "fabricationFlags": [
+    "Non-program scrape artifacts listed as study programmes: 'XML Sitemap' (programUrl points to courses-sitemap.xml), 'Profesionālā apmācība Archives' (a category archive page), 'PhD School &amp; Postdoc'.",
+    "Sentence fragments stored as program titles: 'Programmes are offered at both bachelor’s and master’s study levels. Choose the one that excites you and click below to learn more!' and 'Bachelor’s students should have completed at least their first year of studies' — these are page text, not programmes.",
+    "All programs hard-coded to durationYears=3 regardless of level. Official site: bachelors are 4 years (180/240 ECTS) except Business and Management (3yr); masters are 1.5-2 years; only PhD is genuinely 3 years. Durations are fabricated/uniform.",
+    "Every program marked verified=true (and several source='llm'), implying confirmation that does not match official data (wrong durations, junk entries).",
+    "tuition.currency = 'USD' is fabricated/wrong — TSI quotes all fees in EUR.",
+    "city = 'Latvia' (country repeated as city) — real campus city is Riga (Lauvas street 2, Riga, LV-1019).",
+    "keyFactsRu claims '19 программ' but list includes ~4 non-program junk entries; real degree-program count differs."
+  ],
+  "evidence": "Official site tsi.lv confirmed (logo, contact +371 67100661, address Lauvas street 2, Riga LV-1019). tsi.lv/study_programmes/ lists real degree programmes: Bachelor (4yr, 240 ECTS): Computer Science (incl. Double Degree AI), Computer Engineering and Electronics, Robotics, Transport and Logistics, Aviation Engineering; Bachelor (3yr, 180 ECTS): Business and Management; Master (1.5-2yr, 90-120 ECTS): Management of Information Systems (incl. Double Degree IT Project Mgmt), Computer Science Software Engineering, Double Degree Data Analytics & AI, Computer Engineering and Electronics, Intelligent Transport and Smart Logistics, Business and Management, Double Degree Aviation Management; PhD (3yr): Telematics and Logistics, Digital Economy and Business. The genuine catalog programs match these reasonably well, so PROGRAMS scored 'stale' (right titles but wrong durations + junk entries needing cleanup) rather than 'wrong'. PRICES: catalog tuition is empty (byProgram {} ) and currency USD; sample programme page (Computer Science) gives EUR figures for 2026/27 — non-EU EUR3900/yr full-time, EU/EEA EUR3300/yr, distance EUR2500/yr; registration fees EUR30-300. So real prices exist in EUR but catalog has none -> 'absent' (plus wrong currency flag). CAMPUSES: catalog city='Latvia'; official city is Riga -> 'wrong'. SCHOLARSHIPS: official pages confirm Latvian State Scholarships EUR500-700/month and TSI grants 50/75/100% tuition discount (tsi.lv/future-students/loyalty-grants/, /scholarships-for-foreign-students/), but catalog has no scholarships field -> 'absent'. ACCOMMODATION: official tsi.lv/campus-life/accommodation/ confirms TSI does not run dorms but partners with Duck Republik, Hotel Janne, Riga Apartment, SHED Co-living, Fuse Stays; catalog has no accommodation field -> 'absent'.",
+  "verifiedPct": 30
+}
