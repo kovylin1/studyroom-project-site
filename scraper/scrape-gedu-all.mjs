@@ -52,7 +52,7 @@ const BRANDS = [
   { domain: 'gbs.ac.ae',           name: 'GBS Dubai',             catalogSlug: 'gbs-dubai',                        country: 'United Arab Emirates',  city: 'Dubai',      feeCurrency: null,  isNew: false }, // AED not in tuition enum
   { domain: 'schiller.edu',        name: 'Schiller International University', catalogSlug: 'schiller-international-university', country: 'United States', city: 'Tampa', feeCurrency: 'USD', isNew: false },
   { domain: 'mla.ac.uk',           name: 'MLA College',           catalogSlug: 'mla-college',                      country: 'United Kingdom',        city: 'Plymouth',   feeCurrency: 'GBP', isNew: true,  restCpt: 'programme' },
-  { domain: 'englishpath.com',     name: 'EnglishPath',           catalogSlug: 'englishpath',                      country: 'United Kingdom',        city: 'Manchester', feeCurrency: 'GBP', isNew: true },
+  { domain: 'englishpath.com',     name: 'EnglishPath',           catalogSlug: 'englishpath',                      country: 'United Kingdom',        city: 'Manchester', feeCurrency: 'GBP', isNew: true, isLanguageSchool: true },
   { domain: 'apac.edu.au',         name: 'APAC',                  catalogSlug: 'apac',                             country: 'Australia',             city: 'Sydney',     feeCurrency: 'AUD', isNew: true },
   { domain: 'ema.education',       name: 'EMA',                   catalogSlug: 'ema',                              country: 'France',                city: 'Paris',      feeCurrency: 'EUR', isNew: true },
 ];
@@ -84,16 +84,28 @@ function guessDuration(text, level) {
     if (u.startsWith('week')) return Math.max(0.1, +(n / 52).toFixed(2)); }
   return DUR_DEFAULT[level] || 1;
 }
-const CUR_SIGN = { '£': 'GBP', '€': 'EUR', '$': 'USD', 'A$': 'AUD' };
+function moneyToCur(tok) {
+  tok = (tok || '').trim();
+  if (/^A\$$/i.test(tok)) return 'AUD';
+  if (tok === '£') return 'GBP'; if (tok === '€') return 'EUR'; if (tok === '$') return 'USD';
+  const up = tok.toUpperCase();
+  return ['GBP', 'EUR', 'USD', 'AUD', 'CAD', 'NZD'].includes(up) ? up : null;
+}
 function extractFee(text, feeCurrency) {
-  if (!feeCurrency) return null;
-  // look for an amount near fee/tuition keywords
-  const re = /(?:tuition|tuition\s+fee|fee[s]?|cost|price|per\s+year|annual)[^£€$\d]{0,40}([£€$])\s?([\d][\d,]{2,7})/i;
-  const m = (text || '').match(re);
-  if (!m) return null;
-  if (CUR_SIGN[m[1]] !== feeCurrency) return null; // currency sign must match brand currency
-  const n = parseInt(m[2].replace(/,/g, ''), 10);
-  return n >= 1000 && n <= 200000 ? n : null;
+  if (!feeCurrency || !text) return null;
+  const FEE_CTX = /(tuition|fee|fees|cost|price|per\s*year|per\s*annum|annual|yearly)/i;
+  // money as "£12,000" / "A$30,000" / "USD 25000"  OR  "25000 GBP"
+  const moneyRe = /(A\$|[£€$]|\b(?:GBP|EUR|USD|AUD|CAD|NZD)\b)\s?([\d][\d,]{2,7})|([\d][\d,]{3,7})\s?(GBP|EUR|USD|AUD|CAD|NZD)\b/gi;
+  for (const m of text.matchAll(moneyRe)) {
+    const ctx = text.slice(Math.max(0, m.index - 60), m.index + 60);
+    if (!FEE_CTX.test(ctx)) continue; // amount must sit in a fee/tuition context
+    const cur = m[1] ? moneyToCur(m[1]) : (m[4] ? moneyToCur(m[4]) : feeCurrency);
+    const n = parseInt((m[2] || m[3] || '').replace(/,/g, ''), 10);
+    if (!n || n < 1000 || n > 200000) continue;
+    if (cur && cur !== feeCurrency) continue; // currency must match brand currency (no mislabelling)
+    return n;
+  }
+  return null;
 }
 function extractOgImage(html) {
   const m = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
@@ -212,11 +224,12 @@ async function harvestViaPages(brand, browser) {
     const html = res.html;
     const titleRaw = (html.match(/<h1[^>]*>([\s\S]{3,200}?)<\/h1>/i) || [])[1] || (html.match(/<title>([^<]+)<\/title>/i) || [])[1] || '';
     const title = clean(titleRaw).replace(/\s*[|\-–]\s*[^|\-–]*$/, '').trim() || clean(titleRaw);
-    if (!title || title.length < 4 || !PROG_MARKERS.test(title) || seenTitle.has(title)) {
+    const looksProg = PROG_MARKERS.test(title) || (brand.isLanguageSchool && /english|ielts|language|course|preparation|academic|foundation/i.test(title));
+    if (!title || title.length < 4 || !looksProg || seenTitle.has(title)) {
       // still mine media/campus from listing-ish pages but skip as program
     } else {
       seenTitle.add(title);
-      const level = guessLevel(title) || 'short-course';
+      const level = guessLevel(title) || (brand.isLanguageSchool ? 'english-language' : 'short-course');
       const fee = extractFee(html, brand.feeCurrency);
       programs.push({ title, level, duration: guessDuration(html, level), intake: [], programUrl: res.finalUrl || urls[i], feePerYear: fee, currency: fee ? brand.feeCurrency : null });
     }
@@ -305,8 +318,10 @@ for (const brand of targets) {
   let cardCreated = false;
   if (brand.isNew && CREATE_CARDS && data.programs.length) {
     const cardPath = path.join(CARDS_DIR, `${brand.catalogSlug}.json`);
-    let exists = false; try { await fs.access(cardPath); exists = true; } catch {}
-    if (exists) { log(`  card exists -> NOT overwriting ${brand.catalogSlug}.json`); }
+    let exists = false, existingGedu = false;
+    try { const cur = JSON.parse(await fs.readFile(cardPath, 'utf8')); exists = true;
+      existingGedu = cur.confidence === 'aggregator' && typeof cur.sourceUrl === 'string' && cur.sourceUrl.includes(brand.domain); } catch {}
+    if (exists && !existingGedu) { log(`  card exists (non-gedu) -> NOT overwriting ${brand.catalogSlug}.json`); }
     else { const card = await buildCard(brand, extract); if (card) { await fs.writeFile(cardPath, JSON.stringify(card, null, 2) + '\n'); cardCreated = true; } }
   }
   const fees = data.programs.filter(p => typeof p.feePerYear === 'number').length;
