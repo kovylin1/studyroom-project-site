@@ -51,7 +51,10 @@ const allRows = universities.map((u) => {
   const ielts = u.requirements?.language?.ielts ?? null;
   const toefl = u.requirements?.language?.toefl ?? null;
   const duolingo = u.requirements?.language?.duolingo ?? null;
-  const exams = u.requirements?.exams ?? [];
+  // exams исторически содержит и языковые тесты — оставляем только реальные вступительные
+  const exams = (u.requirements?.exams ?? []).filter(
+    (e: string) => !/^(IELTS|TOEFL|PTE|Duolingo|Cambridge|CAE|CPE|TOEIC)/i.test(e),
+  );
   return {
     slug: u.slug,
     name: u.name,
