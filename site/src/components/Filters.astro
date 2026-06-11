@@ -1,4 +1,6 @@
 ---
+import { FIELDS } from '~/scripts/fields';
+
 interface Props {
   countries: string[];
   levels: string[];
@@ -32,6 +34,18 @@ const levelLabels: Record<string, string> = {
         <label class="filterbar__chip">
           <input type="checkbox" name="level" value={level} form="catalog-filters" />
           <span>{levelLabels[level] ?? level}</span>
+        </label>
+      ))}
+    </div>
+  </div>
+
+  <div class="filterbar__group filterbar__group--grow">
+    <span class="filterbar__label">Направление</span>
+    <div class="filterbar__chips">
+      {FIELDS.map((field) => (
+        <label class="filterbar__chip">
+          <input type="checkbox" name="field" value={field.id} form="catalog-filters" />
+          <span>{field.label}</span>
         </label>
       ))}
     </div>

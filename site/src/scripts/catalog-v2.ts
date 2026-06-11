@@ -3,6 +3,7 @@ interface FilterState {
   country: string;
   levels: Set<string>;
   faculties: Set<string>;
+  fields: Set<string>;
   maxTuition: number | null;
   maxIelts: number | null;
   hasScholarship: boolean;
@@ -34,11 +35,16 @@ function readState(form: HTMLFormElement): FilterState {
   for (const value of fd.getAll('faculty')) {
     if (typeof value === 'string' && value) faculties.add(value);
   }
+  const fields = new Set<string>();
+  for (const value of fd.getAll('field')) {
+    if (typeof value === 'string' && value) fields.add(value);
+  }
   return {
     q: String(fd.get('q') ?? '').trim().toLowerCase(),
     country: String(fd.get('country') ?? ''),
     levels,
     faculties,
+    fields,
     maxTuition: fd.get('maxTuition') ? Number(fd.get('maxTuition')) : null,
     maxIelts: fd.get('maxIelts') ? Number(fd.get('maxIelts')) : null,
     hasScholarship: fd.get('hasScholarship') === 'on',
@@ -60,6 +66,10 @@ function cardMatches(card: HTMLElement, state: FilterState): boolean {
     const cardFaculties = (card.dataset.faculties ?? '').split(',').filter(Boolean);
     if (!cardFaculties.some((f) => state.faculties.has(f))) return false;
   }
+  if (state.fields.size > 0) {
+    const cardFields = (card.dataset.fields ?? '').split(',').filter(Boolean);
+    if (!cardFields.some((f) => state.fields.has(f))) return false;
+  }
   if (state.maxTuition !== null) {
     const tuitionMin = Number(card.dataset.tuitionMin ?? '0');
     if (tuitionMin > state.maxTuition) return false;
@@ -78,6 +88,7 @@ function countActive(state: FilterState, form: HTMLFormElement): number {
   if (state.country) n++;
   if (state.levels.size > 0) n++;
   if (state.faculties.size > 0) n++;
+  if (state.fields.size > 0) n++;
   const rangeEl = form.elements.namedItem('maxTuition');
   if (rangeEl instanceof HTMLInputElement && state.maxTuition !== null) {
     const max = Number(rangeEl.max);
@@ -137,6 +148,7 @@ function syncUrl(state: FilterState): void {
   if (state.country) params.set('country', state.country);
   if (state.levels.size > 0) params.set('level', Array.from(state.levels).join(','));
   if (state.faculties.size > 0) params.set('faculty', Array.from(state.faculties).join(','));
+  if (state.fields.size > 0) params.set('field', Array.from(state.fields).join(','));
   if (state.maxTuition !== null) params.set('maxTuition', String(state.maxTuition));
   if (state.maxIelts !== null) params.set('maxIelts', String(state.maxIelts));
   if (state.hasScholarship) params.set('hasScholarship', '1');
@@ -161,6 +173,13 @@ function restoreFromUrl(form: HTMLFormElement): void {
   if (faculty) {
     const wanted = new Set(faculty.split(',').filter(Boolean));
     form.querySelectorAll<HTMLInputElement>('input[name="faculty"]').forEach((i) => {
+      i.checked = wanted.has(i.value);
+    });
+  }
+  const field = params.get('field');
+  if (field) {
+    const wanted = new Set(field.split(',').filter(Boolean));
+    form.querySelectorAll<HTMLInputElement>('input[name="field"]').forEach((i) => {
       i.checked = wanted.has(i.value);
     });
   }

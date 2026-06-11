@@ -2,6 +2,7 @@
 import type { University } from '~/schema/university';
 import { CURRENCY_TO_KZT, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
 import { ruSynonymsFor } from '~/scripts/search-synonyms';
+import { fieldsFor, fieldSearchTokens } from '~/scripts/fields';
 
 interface Props {
   data: University;
@@ -74,7 +75,12 @@ const searchBase = [
 
 // Inject Russian aliases for any English subject keyword present, so RU queries
 // ("механическая инженерия") match the English program titles.
-const searchIndex = [searchBase, ...ruSynonymsFor(searchBase)].join(' ');
+const cardFields = fieldsFor(searchBase);
+const searchIndex = [
+  searchBase,
+  ...ruSynonymsFor(searchBase),
+  ...fieldSearchTokens(searchBase),
+].join(' ');
 
 const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
 ---
@@ -87,6 +93,7 @@ const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
   data-country={data.country}
   data-levels={cardLevels}
   data-faculties={facultyKeywords}
+  data-fields={cardFields.join(',')}
   data-tuition-min={tuitionMinGbp}
   data-tuition-max={tuitionMaxGbp}
   data-currency={data.tuition.currency}
