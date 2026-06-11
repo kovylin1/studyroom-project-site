@@ -31,6 +31,11 @@ describe('fieldSearchTokens', () => {
   it('returns nothing when no field matches', () => {
     expect(fieldSearchTokens('basket weaving')).toEqual([]);
   });
+
+  it('injects English short-forms so "cs"/"mba" find the right field', () => {
+    expect(fieldSearchTokens('bsc computer science')).toContain('cs');
+    expect(fieldSearchTokens('bachelor of marketing')).toContain('mba');
+  });
 });
 
 describe('FIELDS table integrity', () => {
