@@ -1,6 +1,7 @@
 ---
 import type { University } from '~/schema/university';
 import { CURRENCY_TO_KZT, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
+import { ruSynonymsFor } from '~/scripts/search-synonyms';
 
 interface Props {
   data: University;
@@ -48,9 +49,11 @@ const topFaculties = faculties.slice(0, 3);
 const moreFacultiesCount = Math.max(0, faculties.length - topFaculties.length);
 
 // Extended search index for the V2 catalog (UX expert recommendation):
-// name + city + country (with RU synonyms) + faculty list + level labels +
-// scholarship marker + "недорого" if bottom-quartile price.
-const searchIndex = [
+// name + city + country (with RU synonyms) + program titles + faculty list +
+// level labels + scholarship marker + "недорого" if bottom-quartile price.
+// Program titles are the critical part: clients search by subject ("mechanical
+// engineering"), which lives in programs[].title, not in the broad faculty name.
+const searchBase = [
   data.name,
   data.city,
   data.country,
@@ -59,6 +62,7 @@ const searchIndex = [
   data.country === 'Australia' ? 'Австралия AU' : '',
   data.country === 'New Zealand' ? 'Новая Зеландия NZ' : '',
   data.country === 'United States' ? 'США USA Америка' : '',
+  ...data.programs.map((p) => p.title),
   ...faculties,
   ...levels.map((l) => levelLabels[l] ?? l),
   hasScholarship ? 'стипендия со-стипендией' : '',
@@ -67,6 +71,10 @@ const searchIndex = [
   .filter(Boolean)
   .join(' ')
   .toLowerCase();
+
+// Inject Russian aliases for any English subject keyword present, so RU queries
+// ("механическая инженерия") match the English program titles.
+const searchIndex = [searchBase, ...ruSynonymsFor(searchBase)].join(' ');
 
 const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
 ---
