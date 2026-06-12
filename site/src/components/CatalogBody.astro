@@ -42,12 +42,12 @@ const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
 const totalPrograms = universities.reduce((acc, u) => acc + u.programs.length, 0);
 
 function whatsAppHero(): string {
-  const text = `Здравствуйте! Хочу подобрать университет за рубежом. Подскажите, с чего начать?`;
+  const text = t('catalog.waHero');
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
 function whatsAppCardTemplate(slug: string, name: string): string {
-  const text = `Здравствуйте! Интересует ${name}. Расскажите про программы и стоимость.`;
+  const text = t('catalog.waCard').replace('{name}', name);
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 

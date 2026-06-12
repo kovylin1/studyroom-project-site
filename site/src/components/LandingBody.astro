@@ -50,7 +50,7 @@ for (const r of programRows) {
   arr.push(r);
   facultyMap.set(r.faculty, arr);
 }
-const numLocale = locale === 'ru' ? 'ru-RU' : 'en';
+const numLocale = locale === 'ru' ? 'ru-RU' : 'en-US';
 for (const arr of facultyMap.values()) {
   arr.sort((a, b) => {
     const lvl = (LEVEL_ORDER[a.level] ?? 99) - (LEVEL_ORDER[b.level] ?? 99);

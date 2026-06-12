@@ -84,6 +84,14 @@ const allRows = universities.map((u) => {
 // Unique countries and levels for filter dropdowns
 const allCountries = Array.from(new Set(allRows.map((r) => r.country))).sort((a, b) => a.localeCompare(b, 'ru'));
 const allLevels = Object.keys(levelLabels);
+
+// Strings consumed inside the inline <script> (DOM is built client-side).
+const SCRIPT_STR = {
+  waTemplate: t('compare.waTemplate'),
+  shown: t('compare.shown'),
+  linkCopied: t('compare.linkCopied'),
+  copyPrompt: t('compare.copyPrompt'),
+};
 ---
 
 <section class="compare-page">
@@ -234,7 +242,7 @@ const allLevels = Object.keys(levelLabels);
   </div>
 </section>
 
-<script define:vars={{ waPhone: WHATSAPP_NUMBER }}>
+<script define:vars={{ waPhone: WHATSAPP_NUMBER, STR: SCRIPT_STR }}>
   // ── helpers ──────────────────────────────────────────────────────────────
   function getIds() {
     return (new URLSearchParams(location.search).get('ids') ?? '').split(',').filter(Boolean);
@@ -258,7 +266,7 @@ const allLevels = Object.keys(levelLabels);
   function updateWa(matched) {
     if (!wa) return;
     const names = matched.map((m) => m.querySelector('.compare-col__name')?.textContent ?? '').join(', ');
-    const text = `Здравствуйте! Сравниваю университеты: ${names}. Помогите выбрать под мой бюджет и баллы.`;
+    const text = STR.waTemplate.replace('{names}', names);
     wa.href = `https://wa.me/${waPhone}?text=${encodeURIComponent(text)}`;
   }
 
@@ -272,7 +280,7 @@ const allLevels = Object.keys(levelLabels);
       if (action) action.hidden = true;
     }
     if (filtersCount) {
-      filtersCount.textContent = cols.length > 0 ? `Показано: ${cols.length}` : '';
+      filtersCount.textContent = cols.length > 0 ? STR.shown.replace('{n}', cols.length) : '';
     }
   }
 
@@ -315,9 +323,9 @@ const allLevels = Object.keys(levelLabels);
     const url = new URL(location.href);
     url.searchParams.set('ids', Array.from(shortlist).join(','));
     navigator.clipboard?.writeText(url.toString()).then(() => {
-      alert('Ссылка на подборку скопирована в буфер!');
+      alert(STR.linkCopied);
     }).catch(() => {
-      prompt('Скопируйте ссылку:', url.toString());
+      prompt(STR.copyPrompt, url.toString());
     });
   });
 
