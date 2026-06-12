@@ -1,0 +1,578 @@
+---
+// Side-by-side comparison body for the catalog.
+// Pre-renders all unis as <article hidden>, client script unhides matches
+// from ?ids=<slugs>. Keeps page SEO-indexable as an empty shell.
+
+import { getCollection } from 'astro:content';
+import { CONTACTS } from '~/content/studyroom/contacts';
+import { useTranslations, localizeUrl, type Locale } from '~/i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const numLocale = locale === 'ru' ? 'ru-RU' : 'en-US';
+
+const WHATSAPP_NUMBER = CONTACTS.whatsappNumber;
+
+const CURRENCY_TO_KZT: Record<string, number> = {
+  GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290,
+};
+
+const entries = await getCollection('universities');
+const universities = entries.map((entry) => entry.data);
+
+const levelLabels: Record<string, string> = {
+  'high-school': t('compare.lvl.highSchool'),
+  'sixth-form': 'Sixth Form',
+  foundation: t('compare.lvl.foundation'),
+  bachelor: t('compare.lvl.bachelor'),
+  master: t('compare.lvl.master'),
+  phd: t('compare.lvl.phd'),
+  'english-language': t('compare.lvl.english'),
+  'short-course': t('compare.lvl.shortCourse'),
+};
+
+function formatKzt(value: number): string {
+  if (value === 0) return '—';
+  if (value >= 1_000_000) {
+    const mln = value / 1_000_000;
+    return mln >= 10 ? `${Math.round(mln)} млн ₸` : `${mln.toFixed(1).replace('.', ',')} млн ₸`;
+  }
+  return value.toLocaleString(numLocale) + ' ₸';
+}
+
+const allRows = universities.map((u) => {
+  const values = Object.values(u.tuition.byProgram).filter((v) => v > 0);
+  const minGbp = values.length ? Math.min(...values) : 0;
+  const maxGbp = values.length ? Math.max(...values) : 0;
+  const rate = CURRENCY_TO_KZT[u.tuition.currency] ?? 500;
+  const faculties = Array.from(
+    new Set(u.programs.map((p) => p.faculty).filter((f): f is string => Boolean(f))),
+  ).filter((f) => f !== 'Прочее');
+  const levels = Array.from(new Set(u.programs.map((p) => p.level)));
+  const gpa = u.requirements?.gpa ?? null;
+  const ielts = u.requirements?.language?.ielts ?? null;
+  const toefl = u.requirements?.language?.toefl ?? null;
+  const duolingo = u.requirements?.language?.duolingo ?? null;
+  // exams исторически содержит и языковые тесты — оставляем только реальные вступительные
+  const exams = (u.requirements?.exams ?? []).filter(
+    (e: string) => !/^(IELTS|TOEFL|PTE|Duolingo|Cambridge|CAE|CPE|TOEIC)/i.test(e),
+  );
+  return {
+    slug: u.slug,
+    name: u.name,
+    country: u.country,
+    city: u.city,
+    minGbp, maxGbp, minKzt: minGbp * rate, maxKzt: maxGbp * rate,
+    currency: u.tuition.currency,
+    programs: u.programs.length,
+    faculties,
+    levels,
+    scholarships: u.scholarships.length,
+    ielts,
+    toefl,
+    duolingo,
+    gpa,
+    exams,
+    hasScholarship: u.scholarships.length > 0,
+  };
+});
+
+// Unique countries and levels for filter dropdowns
+const allCountries = Array.from(new Set(allRows.map((r) => r.country))).sort((a, b) => a.localeCompare(b, 'ru'));
+const allLevels = Object.keys(levelLabels);
+---
+
+<section class="compare-page">
+  <div class="container">
+    <p class="compare-page__eyebrow no-print">
+      <a href={localizeUrl('/', locale)}>{t('compare.back')}</a>
+    </p>
+    <h1 class="compare-page__title">{t('compare.pageTitle')}</h1>
+
+    <!-- FILTERS PANEL -->
+    <div class="filters-panel no-print" id="filters-panel">
+      <div class="filters-panel__title">{t('compare.clientParams')}</div>
+      <div class="filters-grid">
+        <label class="filter-field">
+          <span>{t('compare.ieltsClient')}</span>
+          <input type="number" id="f-ielts" min="0" max="9" step="0.5" placeholder={t('compare.ieltsPlaceholder')} />
+        </label>
+        <label class="filter-field">
+          <span>{t('compare.gpaClient')}</span>
+          <input type="number" id="f-gpa" min="0" max="4" step="0.1" placeholder={t('compare.gpaPlaceholder')} />
+        </label>
+        <label class="filter-field">
+          <span>{t('compare.budgetMax')}</span>
+          <input type="number" id="f-budget" min="0" step="100000" placeholder={t('compare.budgetPlaceholder')} />
+        </label>
+        <label class="filter-field">
+          <span>{t('compare.country')}</span>
+          <select id="f-country">
+            <option value="">{t('compare.allCountries')}</option>
+            {allCountries.map((c) => <option value={c}>{c}</option>)}
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>{t('compare.level')}</span>
+          <select id="f-level">
+            <option value="">{t('compare.allLevels')}</option>
+            {allLevels.map((l) => <option value={l}>{levelLabels[l]}</option>)}
+          </select>
+        </label>
+      </div>
+      <div class="filters-actions">
+        <button class="btn-filter btn-filter--primary" id="btn-apply-filters">{t('compare.applyFilters')}</button>
+        <button class="btn-filter btn-filter--ghost" id="btn-reset-filters">{t('compare.reset')}</button>
+        <span class="filters-count" id="filters-count"></span>
+      </div>
+    </div>
+
+    <!-- SHORTLIST TOOLBAR -->
+    <div class="shortlist-bar no-print" id="shortlist-bar" hidden>
+      <span class="shortlist-bar__count">{t('compare.selected')} <strong id="shortlist-count">0</strong></span>
+      <button class="btn-filter btn-filter--primary" id="btn-share-shortlist">{t('compare.shareShortlist')}</button>
+      <button class="btn-filter btn-filter--ghost" id="btn-print">{t('compare.printPdf')}</button>
+      <button class="btn-filter btn-filter--ghost" id="btn-clear-shortlist">{t('compare.clear')}</button>
+    </div>
+
+    <p class="compare-page__lead" id="compare-empty-msg" set:html={t('compare.emptyMsg')} />
+
+    <div class="compare-page__action" id="compare-page-action" hidden>
+      <a id="compare-page-wa" href="#" target="_blank" rel="noopener" class="final-cta__btn no-print">
+        {t('compare.discussWa')}
+      </a>
+    </div>
+
+    <div class="compare-grid" id="compare-grid">
+      {allRows.map((row) => (
+        <article
+          class="compare-col"
+          data-slug={row.slug}
+          data-ielts={row.ielts ?? ''}
+          data-gpa={row.gpa ?? ''}
+          data-minkzt={row.minKzt}
+          data-country={row.country}
+          data-levels={row.levels.join(',')}
+          hidden
+        >
+          <!-- Shortlist checkbox -->
+          <label class="shortlist-check no-print" title={t('compare.addToShortlist')}>
+            <input type="checkbox" class="shortlist-cb" data-slug={row.slug} />
+            <span class="shortlist-check__box"></span>
+            <span class="shortlist-check__label">{t('compare.inShortlist')}</span>
+          </label>
+
+          <header class="compare-col__head">
+            <h2 class="compare-col__name">{row.name}</h2>
+            <p class="compare-col__loc">{row.city} · {row.country}</p>
+          </header>
+
+          <dl class="compare-col__rows">
+            <div><dt>{t('compare.costPerYear')}</dt><dd>
+              {row.minKzt > 0 ? (
+                <>
+                  <strong>{t('compare.from')} {formatKzt(row.minKzt)}</strong>
+                  <span class="muted compare-col__sub">~{row.minGbp.toLocaleString(numLocale)} {row.currency}{row.maxGbp > row.minGbp && ` · ${t('compare.upTo')} ${row.maxGbp.toLocaleString(numLocale)}`}</span>
+                </>
+              ) : <span class="muted">{t('compare.tbd')}</span>}
+            </dd></div>
+
+            <div><dt>{t('compare.gpaThreshold')}</dt><dd>
+              {row.gpa != null
+                ? <><strong>{row.gpa.toFixed(1)}</strong><span class="muted compare-col__sub">/ 4.0 (≈{Math.round(row.gpa / 4 * 100)}%)</span></>
+                : <span class="muted req-unclear">{t('compare.tbdWarn')}</span>}
+            </dd></div>
+
+            <div><dt>IELTS</dt><dd>
+              {row.ielts != null
+                ? <strong>{row.ielts}</strong>
+                : <span class="muted req-unclear">{t('compare.tbdWarn')}</span>}
+            </dd></div>
+
+            {row.toefl != null && (
+              <div><dt>TOEFL iBT</dt><dd><strong>{row.toefl}</strong></dd></div>
+            )}
+
+            {row.duolingo != null && (
+              <div><dt>Duolingo</dt><dd><strong>{row.duolingo}</strong></dd></div>
+            )}
+
+            {row.exams.length > 0 && (
+              <div><dt>{t('compare.exams')}</dt><dd class="compare-col__exams">
+                {row.exams.map((e) => <span class="tag">{e}</span>)}
+              </dd></div>
+            )}
+
+            <div><dt>{t('compare.programs')}</dt><dd>{row.programs}</dd></div>
+
+            <div><dt>{t('compare.levels')}</dt><dd>
+              {row.levels.map((l) => <span class="tag">{levelLabels[l] ?? l}</span>)}
+            </dd></div>
+
+            <div><dt>{t('compare.faculties')}</dt><dd>
+              {row.faculties.length > 0
+                ? <span>{row.faculties.length} ({row.faculties.slice(0, 4).join(', ')}{row.faculties.length > 4 ? ' …' : ''})</span>
+                : <span class="muted">—</span>}
+            </dd></div>
+
+            <div><dt>{t('compare.scholarships')}</dt><dd>
+              {row.hasScholarship
+                ? <span class="tag tag--scholarship">{t('compare.scholarshipYes')} ({row.scholarships})</span>
+                : <span class="muted">{t('compare.scholarshipNo')}</span>}
+            </dd></div>
+          </dl>
+
+          <a href={localizeUrl(`/${row.slug}`, locale)} class="compare-col__cta no-print">{t('compare.openLanding')}</a>
+          <span class="compare-col__url print-only">{row.slug}</span>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ waPhone: WHATSAPP_NUMBER }}>
+  // ── helpers ──────────────────────────────────────────────────────────────
+  function getIds() {
+    return (new URLSearchParams(location.search).get('ids') ?? '').split(',').filter(Boolean);
+  }
+  function allCols() {
+    return Array.from(document.querySelectorAll('.compare-col'));
+  }
+  function visibleCols() {
+    return allCols().filter((c) => !c.hidden);
+  }
+
+  // ── initial load from ?ids= ───────────────────────────────────────────────
+  const initialIds = getIds();
+  const emptyMsg = document.getElementById('compare-empty-msg');
+  const action = document.getElementById('compare-page-action');
+  const wa = document.getElementById('compare-page-wa');
+  const filtersCount = document.getElementById('filters-count');
+  const shortlistBar = document.getElementById('shortlist-bar');
+  const shortlistCount = document.getElementById('shortlist-count');
+
+  function updateWa(matched) {
+    if (!wa) return;
+    const names = matched.map((m) => m.querySelector('.compare-col__name')?.textContent ?? '').join(', ');
+    const text = `Здравствуйте! Сравниваю университеты: ${names}. Помогите выбрать под мой бюджет и баллы.`;
+    wa.href = `https://wa.me/${waPhone}?text=${encodeURIComponent(text)}`;
+  }
+
+  function showMatched(cols) {
+    if (cols.length > 0) {
+      if (emptyMsg) emptyMsg.hidden = true;
+      if (action) action.hidden = false;
+      updateWa(cols);
+    } else {
+      if (emptyMsg) emptyMsg.hidden = false;
+      if (action) action.hidden = true;
+    }
+    if (filtersCount) {
+      filtersCount.textContent = cols.length > 0 ? `Показано: ${cols.length}` : '';
+    }
+  }
+
+  if (initialIds.length > 0) {
+    const matched = [];
+    allCols().forEach((col) => {
+      if (initialIds.includes(col.dataset.slug)) {
+        col.hidden = false;
+        matched.push(col);
+      }
+    });
+    showMatched(matched);
+  }
+
+  // ── shortlist ─────────────────────────────────────────────────────────────
+  let shortlist = new Set();
+
+  function updateShortlistUI() {
+    if (shortlistCount) shortlistCount.textContent = String(shortlist.size);
+    if (shortlistBar) shortlistBar.hidden = shortlist.size === 0;
+  }
+
+  document.querySelectorAll('.shortlist-cb').forEach((cb) => {
+    cb.addEventListener('change', () => {
+      const slug = cb.dataset.slug;
+      if (cb.checked) shortlist.add(slug);
+      else shortlist.delete(slug);
+      updateShortlistUI();
+    });
+  });
+
+  document.getElementById('btn-clear-shortlist')?.addEventListener('click', () => {
+    shortlist.clear();
+    document.querySelectorAll('.shortlist-cb').forEach((cb) => { cb.checked = false; });
+    updateShortlistUI();
+  });
+
+  document.getElementById('btn-share-shortlist')?.addEventListener('click', () => {
+    if (shortlist.size === 0) return;
+    const url = new URL(location.href);
+    url.searchParams.set('ids', Array.from(shortlist).join(','));
+    navigator.clipboard?.writeText(url.toString()).then(() => {
+      alert('Ссылка на подборку скопирована в буфер!');
+    }).catch(() => {
+      prompt('Скопируйте ссылку:', url.toString());
+    });
+  });
+
+  document.getElementById('btn-print')?.addEventListener('click', () => {
+    window.print();
+  });
+
+  // ── filters ───────────────────────────────────────────────────────────────
+  function applyFilters() {
+    const ieltsVal = parseFloat(document.getElementById('f-ielts').value);
+    const gpaVal = parseFloat(document.getElementById('f-gpa').value);
+    const budgetVal = parseFloat(document.getElementById('f-budget').value);
+    const countryVal = document.getElementById('f-country').value.trim();
+    const levelVal = document.getElementById('f-level').value.trim();
+
+    const hasAnyFilter = !isNaN(ieltsVal) || !isNaN(gpaVal) || !isNaN(budgetVal) || countryVal || levelVal;
+
+    if (!hasAnyFilter) {
+      // no filters — hide all (back to idle state) unless ?ids= is active
+      const ids = getIds();
+      if (ids.length === 0) {
+        allCols().forEach((c) => { c.hidden = true; });
+        showMatched([]);
+      }
+      return;
+    }
+
+    const matched = [];
+    allCols().forEach((col) => {
+      const colIelts = col.dataset.ielts !== '' ? parseFloat(col.dataset.ielts) : null;
+      const colGpa = col.dataset.gpa !== '' ? parseFloat(col.dataset.gpa) : null;
+      const colMinKzt = parseFloat(col.dataset.minkzt || '0');
+      const colCountry = col.dataset.country ?? '';
+      const colLevels = (col.dataset.levels ?? '').split(',');
+
+      let pass = true;
+
+      // IELTS: vuz требует ≤ client's IELTS; if vuz has no data — don't hide, mark as unclear
+      if (!isNaN(ieltsVal) && colIelts !== null) {
+        if (colIelts > ieltsVal) pass = false;
+      }
+
+      // GPA: vuz requires ≤ client's GPA
+      if (!isNaN(gpaVal) && colGpa !== null) {
+        if (colGpa > gpaVal) pass = false;
+      }
+
+      // Budget: vuz min cost ≤ client budget (0 = unknown, keep)
+      if (!isNaN(budgetVal) && colMinKzt > 0) {
+        if (colMinKzt > budgetVal) pass = false;
+      }
+
+      // Country
+      if (countryVal && colCountry !== countryVal) pass = false;
+
+      // Level
+      if (levelVal && !colLevels.includes(levelVal)) pass = false;
+
+      col.hidden = !pass;
+      if (pass) matched.push(col);
+    });
+
+    // Mark unclear ones that passed (no IELTS/GPA data) with warning class
+    allCols().forEach((col) => {
+      if (!col.hidden) {
+        const noIelts = !isNaN(ieltsVal) && col.dataset.ielts === '';
+        const noGpa = !isNaN(gpaVal) && col.dataset.gpa === '';
+        col.classList.toggle('compare-col--unclear', noIelts || noGpa);
+      }
+    });
+
+    showMatched(matched);
+  }
+
+  document.getElementById('btn-apply-filters')?.addEventListener('click', applyFilters);
+  document.getElementById('btn-reset-filters')?.addEventListener('click', () => {
+    document.getElementById('f-ielts').value = '';
+    document.getElementById('f-gpa').value = '';
+    document.getElementById('f-budget').value = '';
+    document.getElementById('f-country').value = '';
+    document.getElementById('f-level').value = '';
+    // restore ?ids= state if present
+    const ids = getIds();
+    allCols().forEach((col) => {
+      col.hidden = ids.length > 0 ? !ids.includes(col.dataset.slug) : true;
+      col.classList.remove('compare-col--unclear');
+    });
+    showMatched(ids.length > 0 ? allCols().filter((c) => !c.hidden) : []);
+  });
+</script>
+
+<style is:global>
+  /* ── page shell ── */
+  .compare-page { padding: 48px 0 96px; }
+  .compare-page__eyebrow { margin: 0 0 16px; font-size: 0.9rem; }
+  .compare-page__eyebrow a { color: var(--color-text-muted); text-decoration: none; }
+  .compare-page__eyebrow a:hover { color: var(--color-primary-dark); }
+  .compare-page__title { margin: 0 0 12px; font-size: clamp(28px, 4vw, 40px); }
+  .compare-page__lead { margin: 0 0 32px; max-width: 560px; color: var(--color-text-muted); }
+  .compare-page__action { margin-bottom: 32px; }
+
+  /* ── filters panel ── */
+  .filters-panel {
+    background: #f6f7f8; border: 1px solid #e5e5e5; border-radius: 14px;
+    padding: 20px 24px; margin-bottom: 24px;
+  }
+  .filters-panel__title {
+    font-weight: 700; font-size: 0.85rem; letter-spacing: .06em;
+    text-transform: uppercase; color: #007a0c; margin-bottom: 14px;
+  }
+  .filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px; margin-bottom: 14px;
+  }
+  .filter-field { display: flex; flex-direction: column; gap: 4px; }
+  .filter-field span { font-size: 0.78rem; font-weight: 600; color: #444; text-transform: uppercase; letter-spacing: .04em; }
+  .filter-field input, .filter-field select {
+    padding: 9px 12px; border: 1px solid #d5d5d5; border-radius: 8px;
+    font-size: 0.93rem; font-family: inherit; background: #fff;
+    transition: border-color .15s;
+  }
+  .filter-field input:focus, .filter-field select:focus {
+    outline: none; border-color: #00950f; box-shadow: 0 0 0 3px rgba(0,149,15,.12);
+  }
+  .filters-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .btn-filter {
+    padding: 9px 20px; border-radius: 999px; font: inherit; font-size: 0.9rem;
+    font-weight: 700; cursor: pointer; border: 2px solid transparent; transition: all .15s;
+  }
+  .btn-filter--primary { background: #00950f; color: #fff; border-color: #00950f; }
+  .btn-filter--primary:hover { background: #007a0c; border-color: #007a0c; }
+  .btn-filter--ghost { background: #fff; color: #0e0e0e; border-color: #e5e5e5; }
+  .btn-filter--ghost:hover { border-color: #00950f; color: #00950f; }
+  .filters-count { font-size: 0.88rem; color: #007a0c; font-weight: 600; }
+
+  /* ── shortlist bar ── */
+  .shortlist-bar {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    background: #e6f7e8; border: 1px solid #a3d9a8; border-radius: 10px;
+    padding: 12px 18px; margin-bottom: 20px;
+  }
+  .shortlist-bar__count { font-weight: 700; font-size: 0.95rem; color: #00350a; }
+
+  /* ── shortlist checkbox ── */
+  .shortlist-check {
+    display: inline-flex; align-items: center; gap: 6px;
+    cursor: pointer; margin-bottom: 10px; user-select: none;
+  }
+  .shortlist-check input { display: none; }
+  .shortlist-check__box {
+    width: 18px; height: 18px; border: 2px solid #ccc; border-radius: 4px;
+    background: #fff; flex-shrink: 0; transition: all .15s; display: grid; place-items: center;
+  }
+  .shortlist-check input:checked + .shortlist-check__box {
+    background: #00950f; border-color: #00950f;
+  }
+  .shortlist-check input:checked + .shortlist-check__box::after {
+    content: '✓'; color: #fff; font-size: 11px; font-weight: 900; line-height: 1;
+  }
+  .shortlist-check__label { font-size: 0.8rem; color: #007a0c; font-weight: 600; }
+
+  /* ── compare grid & cards ── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .compare-col {
+    display: flex; flex-direction: column;
+    padding: 20px 20px 16px;
+    background: var(--color-bg, #fff);
+    border: 1px solid var(--color-border, #e5e5e5);
+    border-radius: var(--radius-card, 14px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 6px 18px rgba(0,0,0,0.05);
+    position: relative;
+  }
+  .compare-col--unclear {
+    border-color: #ffd97a;
+    box-shadow: 0 0 0 2px rgba(255,184,0,.2);
+  }
+  .compare-col__head { margin-bottom: 12px; }
+  .compare-col__name { margin: 0 0 4px; font-size: 1.05rem; }
+  .compare-col__loc { margin: 0; color: var(--color-text-muted, #777); font-size: 0.88rem; }
+
+  .compare-col__rows { display: flex; flex-direction: column; gap: 10px; margin: 0 0 16px; }
+  .compare-col__rows > div {
+    display: flex; flex-direction: column; gap: 3px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--color-border, #e5e5e5);
+  }
+  .compare-col__rows > div:last-child { border-bottom: none; }
+  .compare-col__rows dt {
+    font-size: 0.72rem; color: var(--color-text-muted, #777);
+    text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600;
+  }
+  .compare-col__rows dd {
+    margin: 0; font-size: 0.93rem;
+    display: flex; flex-wrap: wrap; gap: 5px; align-items: baseline;
+  }
+  .compare-col__sub { font-size: 0.76rem; }
+  .compare-col__exams { gap: 4px; }
+
+  .req-unclear { color: #b86b00 !important; font-size: 0.85rem; }
+
+  .compare-col__cta {
+    margin-top: auto;
+    color: var(--color-primary-dark, #007a0c); font-weight: 600; font-size: 0.93rem;
+    text-decoration: none;
+  }
+  .compare-col__cta:hover { text-decoration: underline; }
+
+  .tag {
+    display: inline-block; padding: 2px 8px;
+    background: #f0f0f0; border-radius: 999px;
+    font-size: 0.78rem; font-weight: 600; color: #444;
+  }
+  .tag--scholarship { background: #e6f7e8; color: #007a0c; }
+
+  .muted { color: var(--color-text-muted, #777); }
+
+  .final-cta__btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 32px; background: #00950f; color: #fff;
+    border-radius: 999px; text-decoration: none;
+    font-weight: 700; font-size: 1.05rem;
+    transition: background 140ms ease, transform 60ms ease;
+  }
+  .final-cta__btn:hover { background: #007a0c; color: #fff; }
+  .final-cta__btn:active { transform: translateY(1px); }
+
+  /* ── print styles ── */
+  .print-only { display: none; }
+
+  @media print {
+    .no-print { display: none !important; }
+    .print-only { display: block; font-size: 0.75rem; color: #777; margin-top: 4px; }
+    .compare-page { padding: 0; }
+    .compare-page__title { font-size: 20px; margin-bottom: 8px; }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .compare-col {
+      break-inside: avoid;
+      box-shadow: none;
+      border: 1px solid #ccc;
+      padding: 12px;
+    }
+    .compare-col[hidden] { display: none !important; }
+    body { font-size: 12px; }
+    .compare-col__name { font-size: 0.95rem; }
+    .compare-col__rows dt { font-size: 0.65rem; }
+    .compare-col__rows dd { font-size: 0.85rem; }
+    .tag { font-size: 0.68rem; padding: 1px 5px; }
+  }
+</style>

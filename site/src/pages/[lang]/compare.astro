@@ -1,0 +1,20 @@
+---
+import Base from '~/layouts/Base.astro';
+import CompareBody from '~/components/CompareBody.astro';
+import { getLocalePaths, type Locale } from '~/i18n/utils';
+
+export function getStaticPaths() {
+  return getLocalePaths().map((lang) => ({ params: { lang } }));
+}
+
+const locale = Astro.params.lang as Locale;
+const titleByLocale: Record<Locale, string> = {
+  ru: 'Сравнение университетов — StudyRoom',
+  en: 'Compare universities — StudyRoom',
+  kk: 'Университеттерді салыстыру — StudyRoom',
+};
+---
+
+<Base title={titleByLocale[locale]}>
+  <CompareBody locale={locale} />
+</Base>

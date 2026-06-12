@@ -1,0 +1,39 @@
+---
+// Per-university landing page for prefixed locales (/en/, /kk/).
+import { getCollection } from 'astro:content';
+import Base from '~/layouts/Base.astro';
+import LandingBody from '~/components/LandingBody.astro';
+import { CURRENCY_SYMBOL } from '~/content/studyroom/static';
+import { getLocalePaths, type Locale } from '~/i18n/utils';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('universities');
+  const langs = getLocalePaths();
+  return langs.flatMap((lang) =>
+    entries.map((entry) => ({
+      params: { lang, slug: entry.data.slug },
+      props: { u: entry.data, uniCount: entries.length },
+    })),
+  );
+}
+
+const { u, uniCount } = Astro.props;
+const locale = Astro.params.lang as Locale;
+const sym = CURRENCY_SYMBOL[u.tuition.currency] ?? u.tuition.currency;
+const tuitionValues = Object.values(u.tuition.byProgram).filter((v) => v > 0);
+const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
+
+const titleByLocale: Record<Locale, string> = {
+  ru: `${u.name} — поступление из Казахстана | StudyRoom`,
+  en: `${u.name} — study from Kazakhstan | StudyRoom`,
+  kk: `${u.name} — Қазақстаннан оқуға түсу | StudyRoom`,
+};
+const descByLocale: Record<Locale, string> = {
+  ru: `Поступление в ${u.name} (${u.city}, ${u.country}): ${u.programs.length} программ, стоимость от ${sym}${tuitionMin.toLocaleString('en')}, IELTS от ${u.requirements?.language?.ielts ?? 5.5}. Бесплатная консультация StudyRoom.`,
+  en: `Study at ${u.name} (${u.city}, ${u.country}): ${u.programs.length} programmes, tuition from ${sym}${tuitionMin.toLocaleString('en')}, IELTS from ${u.requirements?.language?.ielts ?? 5.5}. Free StudyRoom consultation.`,
+  kk: `${u.name} оқу орнына түсу (${u.city}, ${u.country}): ${u.programs.length} бағдарлама, құны ${sym}${tuitionMin.toLocaleString('en')} бастап, IELTS ${u.requirements?.language?.ielts ?? 5.5} бастап. Тегін StudyRoom кеңесі.`,
+};
+---
+<Base title={titleByLocale[locale]} description={descByLocale[locale]} hideHeader={true}>
+  <LandingBody u={u} locale={locale} uniCount={uniCount} />
+</Base>
