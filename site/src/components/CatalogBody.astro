@@ -1,0 +1,264 @@
+---
+import { getCollection } from 'astro:content';
+import HeroV2 from '~/components/HeroV2.astro';
+import UniversityCardV2 from '~/components/UniversityCardV2.astro';
+import Filters from '~/components/Filters.astro';
+import { CONTACTS } from '~/content/studyroom/contacts';
+import { useTranslations, localizeUrl, type Locale } from '~/i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const numLocale = locale === 'ru' ? 'ru-RU' : 'en-US';
+
+// Единый источник контактов — заполняется в ~/content/studyroom/contacts.ts
+const WHATSAPP_NUMBER = CONTACTS.whatsappNumber;
+const BUILD_DATE = new Date();
+
+const entries = await getCollection('universities');
+const universities = entries
+  .map((entry) => entry.data)
+  .sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+
+const countries = Array.from(new Set(universities.map((u) => u.country))).sort((a, b) =>
+  a.localeCompare(b, 'ru'),
+);
+const levels = Array.from(new Set(universities.flatMap((u) => u.programs.map((p) => p.level)))).sort();
+const faculties = Array.from(
+  new Set(
+    universities
+      .flatMap((u) => u.programs.map((p) => p.faculty))
+      .filter((f): f is string => Boolean(f)),
+  ),
+)
+  .filter((f) => f !== 'Прочее')
+  .sort((a, b) => a.localeCompare(b, 'ru'));
+
+const tuitionValues = universities.flatMap((u) => Object.values(u.tuition.byProgram)).filter((v) => v > 0);
+const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
+const totalPrograms = universities.reduce((acc, u) => acc + u.programs.length, 0);
+
+function whatsAppHero(): string {
+  const text = t('catalog.waHero');
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
+function whatsAppCardTemplate(slug: string, name: string): string {
+  const text = t('catalog.waCard').replace('{name}', name);
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
+const compareHref = localizeUrl('/compare', locale);
+---
+
+<form id="catalog-filters" autocomplete="off" onsubmit="return false">
+  <HeroV2
+    locale={locale}
+    totalUniversities={universities.length}
+    totalPrograms={totalPrograms}
+    totalCountries={countries.length}
+    updatedAt={BUILD_DATE}
+    whatsAppDeepLink={whatsAppHero()}
+  />
+
+  <section class="trust-strip">
+    <div class="container">
+      <p class="trust-strip__line">
+        <strong>{universities.length}</strong>&nbsp;{t('catalog.universities')} ·&nbsp;
+        <strong>{countries.length}</strong>&nbsp;{t('hero.kpi.countries')} ·&nbsp;
+        <strong>{totalPrograms.toLocaleString(numLocale)}</strong>&nbsp;{t('hero.kpi.programs')}.
+        {t('hero.kpi.updated')}&nbsp;{BUILD_DATE.toLocaleDateString(numLocale, { day: 'numeric', month: 'long' })}.
+        {t('nav.consult')} — <strong>{t('trust.consultFree')}</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section id="catalog" class="catalog">
+    <div class="container">
+      <div class="catalog-filters-wrap">
+        <div class="catalog-filters-bar">
+          <button
+            id="catalog-filters-toggle"
+            class="btn btn-ghost btn-sm catalog-filters-bar__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="catalog-filters-panel"
+          >
+            <span>{t('catalog.filters')}</span>
+            <span id="catalog-filters-count" class="catalog-filters-bar__count" hidden></span>
+            <span aria-hidden="true" class="catalog-filters-bar__chev">▾</span>
+          </button>
+          <button type="reset" form="catalog-filters" class="btn btn-ghost btn-sm">{t('catalog.reset')}</button>
+          <span id="catalog-filters-result" class="catalog-filters-bar__result muted"></span>
+        </div>
+        <div id="catalog-filters-panel" class="catalog-filters-panel" data-open="false">
+          <Filters locale={locale} countries={countries} levels={levels} faculties={faculties} tuitionMax={tuitionMax} />
+        </div>
+      </div>
+
+      <p class="catalog__count">
+        {t('catalog.found')} <strong id="catalog-count">{universities.length}</strong> {t('catalog.universities')}
+      </p>
+
+      <div class="catalog__grid catalog__grid--v2" id="catalog-grid">
+        {universities.map((data) => (
+          <UniversityCardV2 locale={locale} data={data} whatsAppDeepLinkTemplate={whatsAppCardTemplate} />
+        ))}
+      </div>
+
+      <p class="catalog__empty muted" id="catalog-empty" hidden>
+        {t('catalog.empty')}
+      </p>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="final-cta__title">{t('catalog.finalTitle')}</h2>
+      <p class="final-cta__lead" set:html={t('catalog.finalLead')
+        .replace('{universities}', String(universities.length))
+        .replace('{countries}', String(countries.length))} />
+      <a
+        href={whatsAppHero()}
+        target="_blank"
+        rel="noopener"
+        class="final-cta__btn"
+        data-track="final-whatsapp"
+      >
+        {t('catalog.finalCta')}
+      </a>
+    </div>
+  </section>
+</form>
+
+<div id="compare-bar" class="compare-bar" hidden>
+  <div class="compare-bar__inner">
+    <div class="compare-bar__info">
+      <strong>{t('compare.bar.title')}</strong>
+      <span id="compare-count" class="compare-bar__count">0 / 3</span>
+      <span id="compare-names" class="compare-bar__names muted"></span>
+    </div>
+    <div class="compare-bar__actions">
+      <button id="compare-clear" type="button" class="btn btn-ghost btn-sm">{t('compare.bar.clear')}</button>
+      <a id="compare-cta" class="btn btn-primary btn-sm" href={compareHref}>{t('compare.bar.cta')}</a>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .trust-strip {
+    background: var(--color-bg-soft);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 12px 0;
+  }
+  .trust-strip__line {
+    margin: 0; text-align: center;
+    font-size: 0.92rem; color: var(--color-text-muted);
+  }
+  .trust-strip__line strong { color: var(--color-text); }
+
+  .catalog { padding: 32px 0 48px; }
+
+  .catalog-filters-wrap { margin-bottom: 16px; }
+  .catalog-filters-bar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    padding: 12px 0;
+  }
+  .catalog-filters-bar__toggle { display: inline-flex; align-items: center; gap: 6px; }
+  .catalog-filters-bar__chev { font-size: 0.7rem; transition: transform 200ms ease; }
+  .catalog-filters-bar__toggle[aria-expanded="true"] .catalog-filters-bar__chev {
+    transform: rotate(180deg);
+  }
+  .catalog-filters-bar__count {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 18px; height: 18px; padding: 0 6px;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary); color: #fff;
+    font-size: 0.7rem; font-weight: 700;
+  }
+  .catalog-filters-bar__result {
+    margin-left: auto; font-size: 0.85rem; white-space: nowrap;
+  }
+  .catalog-filters-panel {
+    max-height: 0; overflow: hidden;
+    transition: max-height 280ms ease, border-color 280ms ease, margin 280ms ease;
+    border-radius: var(--radius-card);
+  }
+  .catalog-filters-panel[data-open="true"] {
+    max-height: 1200px; margin-top: 4px;
+  }
+
+  .catalog__count {
+    margin: 12px 0 20px; font-size: 0.95rem; color: var(--color-text-muted);
+  }
+  .catalog__count strong { color: var(--color-text); font-weight: 700; }
+  .catalog__grid--v2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .catalog__empty { padding: 32px; text-align: center; }
+
+  .final-cta {
+    margin-top: 48px; padding: 56px 0;
+    background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-bg) 100%);
+    text-align: center; border-top: 1px solid var(--color-border);
+  }
+  .final-cta__title { margin: 0 0 12px; font-size: clamp(22px, 3vw, 32px); }
+  .final-cta__lead {
+    margin: 0 auto 24px; max-width: 540px;
+    color: var(--color-text-muted); line-height: 1.5;
+  }
+  .final-cta__btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 32px; background: var(--color-primary); color: #fff;
+    border-radius: var(--radius-pill); text-decoration: none;
+    font-weight: 700; font-size: 1.05rem;
+    transition: background 140ms ease, transform 60ms ease;
+  }
+  .final-cta__btn:hover { background: var(--color-primary-dark); color: #fff; }
+  .final-cta__btn:active { transform: translateY(1px); }
+
+  .compare-bar {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--color-bg);
+    border-top: 2px solid var(--color-primary);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+    z-index: 50;
+    padding: 12px 0;
+    animation: compare-bar-in 240ms ease-out;
+  }
+  @keyframes compare-bar-in {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+  .compare-bar__inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .compare-bar__info {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    min-width: 0;
+  }
+  .compare-bar__count {
+    display: inline-flex; align-items: center; padding: 2px 10px;
+    background: var(--color-primary-soft); color: var(--color-primary-dark);
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem; font-weight: 700;
+  }
+  .compare-bar__names {
+    font-size: 0.85rem;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    max-width: 480px;
+  }
+  .compare-bar__actions { display: flex; gap: 8px; }
+</style>
+
+<script>
+  import '~/scripts/catalog-v2';
+</script>

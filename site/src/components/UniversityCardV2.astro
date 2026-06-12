@@ -3,13 +3,17 @@ import type { University } from '~/schema/university';
 import { CURRENCY_TO_KZT, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
 import { ruSynonymsFor } from '~/scripts/search-synonyms';
 import { fieldsFor, fieldSearchTokens } from '~/scripts/fields';
+import { useTranslations, localizeUrl, type Locale } from '~/i18n/utils';
 
 interface Props {
+  locale?: Locale;
   data: University;
   whatsAppDeepLinkTemplate: (slug: string, name: string) => string;
 }
 
-const { data, whatsAppDeepLinkTemplate } = Astro.props;
+const { locale = 'ru', data, whatsAppDeepLinkTemplate } = Astro.props;
+
+const t = useTranslations(locale);
 
 const tuitionValuesAll = Object.values(data.tuition.byProgram).filter((v) => v > 0);
 const tuitionMinGbp = tuitionValuesAll.length ? Math.min(...tuitionValuesAll) : 0;
@@ -18,7 +22,7 @@ const rate = CURRENCY_TO_KZT[data.tuition.currency] ?? DEFAULT_KZT_RATE;
 const tuitionMinKzt = tuitionMinGbp * rate;
 
 function formatKzt(value: number): string {
-  if (value === 0) return 'уточняется';
+  if (value === 0) return t('card.priceTbd');
   if (value >= 1_000_000) {
     const mln = (value / 1_000_000);
     return mln >= 10 ? `от ${Math.round(mln)} млн ₸` : `от ${mln.toFixed(1).replace('.', ',')} млн ₸`;
@@ -38,11 +42,19 @@ const facultyKeywords = faculties
   .map((f) => f.toLowerCase().replace(/[‘’']/g, '').replace(/[^a-zа-яё0-9]+/g, '-'))
   .join(',');
 
+// RU labels kept for the hidden search index (searchBase) — not UI.
 const levelLabels: Record<string, string> = {
   foundation: 'Foundation',
   bachelor: 'Бакалавриат',
   master: 'Магистратура',
   phd: 'Аспирантура',
+};
+// Localized labels for the visible level tags.
+const levelLabelsUi: Record<string, string> = {
+  foundation: 'Foundation',
+  bachelor: t('lvl.bachelor'),
+  master: t('lvl.master'),
+  phd: t('lvl.phd'),
 };
 
 const initials = data.slug.slice(0, 2).toUpperCase();
@@ -100,13 +112,13 @@ const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
   data-ielts={ielts ?? ''}
   data-scholarship={hasScholarship ? '1' : '0'}
 >
-  <label class="uni-card-v2__compare" title="Добавить к сравнению">
+  <label class="uni-card-v2__compare" title={t('card.compareAdd')}>
     <input type="checkbox" class="uni-card-v2__compare-input" value={data.slug} />
     <span class="uni-card-v2__compare-mark" aria-hidden="true"></span>
-    <span class="uni-card-v2__compare-text">к&nbsp;сравнению</span>
+    <span class="uni-card-v2__compare-text">{t('card.compare')}</span>
   </label>
 
-  <a class="uni-card-v2__main" href={`/${data.slug}`}>
+  <a class="uni-card-v2__main" href={localizeUrl(`/${data.slug}`, locale)}>
     <div class="uni-card-v2__top">
       <div class="uni-card-v2__logo" aria-hidden="true">
         <img
@@ -126,7 +138,7 @@ const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
     </div>
 
     <div class="uni-card-v2__price">
-      <span class="uni-card-v2__price-main">{formatKzt(tuitionMinKzt)}/год</span>
+      <span class="uni-card-v2__price-main">{formatKzt(tuitionMinKzt)}{t('card.perYear')}</span>
       {tuitionMinGbp > 0 && (
         <span class="uni-card-v2__price-sub">
           ~{tuitionMinGbp.toLocaleString('ru-RU')} {data.tuition.currency}
@@ -136,8 +148,8 @@ const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
     </div>
 
     <div class="uni-card-v2__levels">
-      {levels.map((level) => <span class="tag">{levelLabels[level] ?? level}</span>)}
-      {hasScholarship && <span class="tag tag--scholarship">🎓 Стипендия</span>}
+      {levels.map((level) => <span class="tag">{levelLabelsUi[level] ?? level}</span>)}
+      {hasScholarship && <span class="tag tag--scholarship">{t('card.scholarship')}</span>}
     </div>
 
     {topFaculties.length > 0 && (
@@ -150,11 +162,11 @@ const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
     )}
 
     <div class="uni-card-v2__meta">
-      <span>{data.programs.length} программ</span>
-      {faculties.length > 0 && <span class="muted">· {faculties.length} факультетов</span>}
+      <span>{data.programs.length} {t('card.programs')}</span>
+      {faculties.length > 0 && <span class="muted">· {faculties.length} {t('card.faculties')}</span>}
     </div>
 
-    <span class="uni-card-v2__cta">Подробнее →</span>
+    <span class="uni-card-v2__cta">{t('card.more')}</span>
   </a>
 
   <a
@@ -165,7 +177,7 @@ const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
     data-track="card-whatsapp"
     data-slug={data.slug}
   >
-    💬 Спросить про этот вуз
+    {t('card.ask')}
   </a>
 </article>
 

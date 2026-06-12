@@ -1,5 +1,7 @@
 ---
 import '~/styles/brand.css';
+import { getLocaleFromUrl, useTranslations, locales, localizeUrl } from '~/i18n/utils';
+import LangSwitcher from '~/components/LangSwitcher.astro';
 
 interface Props {
   title: string;
@@ -8,9 +10,13 @@ interface Props {
   noindex?: boolean;
 }
 
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+const ogLocale = { ru: 'ru_RU', en: 'en_US', kk: 'kk_KZ' }[locale];
+
 const {
   title,
-  description = 'StudyRoom — каталог зарубежных университетов с актуальными ценами и дедлайнами.',
+  description = t('meta.description'),
   hideHeader = false,
   noindex = false,
 } = Astro.props;
@@ -21,20 +27,24 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : As
 ---
 
 <!doctype html>
-<html lang="ru">
+<html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {Astro.site && locales.map((loc) => (
+      <link rel="alternate" hreflang={loc} href={new URL(localizeUrl(Astro.url.pathname, loc), Astro.site).href} />
+    ))}
+    {Astro.site && <link rel="alternate" hreflang="x-default" href={new URL(localizeUrl(Astro.url.pathname, 'ru'), Astro.site).href} />}
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="StudyRoom" />
-    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale" content={ogLocale} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -44,13 +54,14 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : As
     {!hideHeader && (
       <header class="site-header">
         <div class="site-header__inner">
-          <a class="site-header__brand" href="/" aria-label="StudyRoom — главная">
+          <a class="site-header__brand" href={localizeUrl('/', locale)} aria-label={t('brand.aria.home')}>
             <span class="site-header__brand-mark">Study</span><span>Room</span>
           </a>
-          <nav class="site-header__nav" aria-label="Основная навигация">
-            <a href="/">Каталог</a>
+          <nav class="site-header__nav" aria-label="StudyRoom">
+            <a href={localizeUrl('/', locale)}>{t('nav.catalog')}</a>
+            <LangSwitcher />
             <a class="btn btn-primary btn-sm" href="https://studyroom.kz#contact" target="_blank" rel="noopener">
-              Консультация
+              {t('nav.consult')}
             </a>
           </nav>
         </div>
@@ -64,13 +75,11 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : As
     <footer class="site-footer">
       <div class="container">
         <div class="site-footer__brand">StudyRoom</div>
-        <p class="muted" style="color:#cfcfcf;margin:0;">
-          Каталог собирается автоматически и проверяется вручную перед публикацией.
-        </p>
+        <p class="muted" style="color:#cfcfcf;margin:0;">{t('footer.tagline')}</p>
         <div class="site-footer__legal">
-          © {year} StudyRoom. Данные о программах и стоимости актуализируются раз в месяц.
+          © {year} StudyRoom. {t('footer.legal')}
           <span style="margin-left: 8px; opacity: 0.5;">·</span>
-          <a href="/manager" style="color: #cfcfcf; margin-left: 4px;">Управление</a>
+          <a href="/manager" style="color: #cfcfcf; margin-left: 4px;">{t('footer.manage')}</a>
         </div>
       </div>
     </footer>

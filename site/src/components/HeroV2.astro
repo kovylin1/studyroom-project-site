@@ -1,5 +1,8 @@
 ---
+import { useTranslations, type Locale } from '~/i18n/utils';
+
 interface Props {
+  locale?: Locale;
   totalUniversities: number;
   totalPrograms: number;
   totalCountries: number;
@@ -7,9 +10,19 @@ interface Props {
   whatsAppDeepLink: string;
 }
 
-const { totalUniversities, totalPrograms, totalCountries, updatedAt, whatsAppDeepLink } = Astro.props;
+const {
+  locale = 'ru',
+  totalUniversities,
+  totalPrograms,
+  totalCountries,
+  updatedAt,
+  whatsAppDeepLink,
+} = Astro.props;
 
-const updatedLabel = updatedAt.toLocaleDateString('ru-RU', {
+const t = useTranslations(locale);
+const numLocale = locale === 'ru' ? 'ru-RU' : 'en-US';
+
+const updatedLabel = updatedAt.toLocaleDateString(numLocale, {
   day: 'numeric',
   month: 'long',
 });
@@ -17,32 +30,29 @@ const updatedLabel = updatedAt.toLocaleDateString('ru-RU', {
 
 <section class="hero-v2">
   <div class="container">
-    <p class="hero-v2__eyebrow">StudyRoom · поступление за рубеж</p>
+    <p class="hero-v2__eyebrow">{t('hero.eyebrow')}</p>
     <h1 class="hero-v2__title">
-      Поступление в зарубежный вуз —
-      <span class="hero-v2__title-accent">без посредников между вами и приёмной комиссией</span>
+      {t('hero.title.l1')}
+      <span class="hero-v2__title-accent">{t('hero.title.l2')}</span>
     </h1>
-    <p class="hero-v2__lead">
-      Партнёрский каталог: UK, Австралия, Новая Зеландия, Канада и США. Цены в&nbsp;тенге,
-      актуальные дедлайны, прямые контракты с университетами.
-    </p>
+    <p class="hero-v2__lead">{t('hero.lead')}</p>
 
     <div class="hero-v2__kpi-bar" role="list" aria-label="Ключевые цифры каталога">
       <div class="hero-v2__kpi" role="listitem">
         <span class="hero-v2__kpi-num">{totalUniversities}</span>
-        <span class="hero-v2__kpi-label">университетов</span>
+        <span class="hero-v2__kpi-label">{t('hero.kpi.universities')}</span>
       </div>
       <div class="hero-v2__kpi" role="listitem">
-        <span class="hero-v2__kpi-num">{totalPrograms.toLocaleString('ru-RU')}</span>
-        <span class="hero-v2__kpi-label">программ</span>
+        <span class="hero-v2__kpi-num">{totalPrograms.toLocaleString(numLocale)}</span>
+        <span class="hero-v2__kpi-label">{t('hero.kpi.programs')}</span>
       </div>
       <div class="hero-v2__kpi" role="listitem">
         <span class="hero-v2__kpi-num">{totalCountries}</span>
-        <span class="hero-v2__kpi-label">страны</span>
+        <span class="hero-v2__kpi-label">{t('hero.kpi.countries')}</span>
       </div>
       <div class="hero-v2__kpi" role="listitem">
         <span class="hero-v2__kpi-num hero-v2__kpi-num--small">{updatedLabel}</span>
-        <span class="hero-v2__kpi-label">данные обновлены</span>
+        <span class="hero-v2__kpi-label">{t('hero.kpi.updated')}</span>
       </div>
     </div>
 
@@ -51,16 +61,16 @@ const updatedLabel = updatedAt.toLocaleDateString('ru-RU', {
       <input
         type="search"
         name="q"
-        placeholder="Glasgow, Канада, Computer Science, стипендия"
+        placeholder={t('hero.search.placeholder')}
         autocomplete="off"
         form="catalog-filters"
       />
-      <button type="button" class="btn btn-primary hero-v2__search-btn">Найти</button>
+      <button type="button" class="btn btn-primary hero-v2__search-btn">{t('hero.search.btn')}</button>
     </label>
 
     <div class="hero-v2__dual-cta">
       <a href="#catalog" class="hero-v2__cta-secondary">
-        ↓ Листать каталог
+        {t('hero.cta.scroll')}
       </a>
       <span class="hero-v2__cta-divider" aria-hidden="true">·</span>
       <a
@@ -71,7 +81,7 @@ const updatedLabel = updatedAt.toLocaleDateString('ru-RU', {
         data-track="hero-whatsapp"
       >
         <span class="hero-v2__cta-icon" aria-hidden="true">💬</span>
-        <span>15 мин с куратором</span>
+        <span>{t('hero.cta.consult')}</span>
       </a>
     </div>
   </div>
