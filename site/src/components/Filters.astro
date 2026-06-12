@@ -1,34 +1,39 @@
 ---
 import { FIELDS } from '~/scripts/fields';
+import { useTranslations, type Locale } from '~/i18n/utils';
 
 interface Props {
+  locale?: Locale;
   countries: string[];
   levels: string[];
   faculties: string[];
   tuitionMax: number;
 }
 
-const { countries, levels, tuitionMax } = Astro.props;
+const { locale = 'ru', countries, levels, tuitionMax } = Astro.props;
+
+const t = useTranslations(locale);
+const numLocale = locale === 'ru' ? 'ru-RU' : 'en-US';
 
 const levelLabels: Record<string, string> = {
   foundation: 'Foundation',
-  bachelor: 'Бакалавриат',
-  master: "Pre-Master's",
-  phd: 'Аспирантура',
+  bachelor: t('lvl.bachelor'),
+  master: t('lvl.master'),
+  phd: t('lvl.phd'),
 };
 ---
 
-<div class="filterbar" role="group" aria-label="Фильтры поиска">
+<div class="filterbar" role="group" aria-label={t('catalog.filters')}>
   <label class="filterbar__group">
-    <span class="filterbar__label">Страна</span>
+    <span class="filterbar__label">{t('filters.country')}</span>
     <select name="country" form="catalog-filters">
-      <option value="">Все</option>
+      <option value="">{t('filters.all')}</option>
       {countries.map((country) => <option value={country}>{country}</option>)}
     </select>
   </label>
 
   <div class="filterbar__group filterbar__group--grow">
-    <span class="filterbar__label">Программа</span>
+    <span class="filterbar__label">{t('filters.program')}</span>
     <div class="filterbar__chips">
       {levels.map((level) => (
         <label class="filterbar__chip">
@@ -40,7 +45,7 @@ const levelLabels: Record<string, string> = {
   </div>
 
   <div class="filterbar__group filterbar__group--grow">
-    <span class="filterbar__label">Направление</span>
+    <span class="filterbar__label">{t('filters.faculty')}</span>
     <div class="filterbar__chips">
       {FIELDS.map((field) => (
         <label class="filterbar__chip">
@@ -52,12 +57,12 @@ const levelLabels: Record<string, string> = {
   </div>
 
   <label class="filterbar__group">
-    <span class="filterbar__label">IELTS не выше</span>
+    <span class="filterbar__label">{t('filters.ieltsMax')}</span>
     <input type="number" name="maxIelts" min="0" max="9" step="0.5" placeholder="9" form="catalog-filters" />
   </label>
 
   <label class="filterbar__group">
-    <span class="filterbar__label">Стоимость до (GBP/год)</span>
+    <span class="filterbar__label">{t('filters.priceMax')}</span>
     <input
       type="range"
       name="maxTuition"
@@ -68,11 +73,11 @@ const levelLabels: Record<string, string> = {
       form="catalog-filters"
     />
     <output name="maxTuitionOut" form="catalog-filters" class="muted" style="font-size:0.85rem;">
-      {tuitionMax.toLocaleString('ru-RU')}
+      {tuitionMax.toLocaleString(numLocale)}
     </output>
   </label>
 
   <button type="reset" class="btn btn-ghost btn-sm filterbar__reset" form="catalog-filters">
-    Сбросить
+    {t('catalog.reset')}
   </button>
 </div>
