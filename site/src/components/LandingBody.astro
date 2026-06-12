@@ -60,7 +60,7 @@ for (const arr of facultyMap.values()) {
 }
 const faculties = Array.from(facultyMap.entries())
   .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], numLocale))
-  .slice(0, 6);
+  .slice(0, 24);
 
 const tuitionValues = Object.values(u.tuition.byProgram).filter((v) => v > 0);
 const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
@@ -1175,7 +1175,7 @@ const SCRIPT_STR = {
     const grid = $('#lpProgramsGrid');
     if (!grid) return;
     const all = PROGRAMS_DATA[facultyKey] || [];
-    const filtered = filterByLevel(all, lvl).slice(0, 6);
+    const filtered = filterByLevel(all, lvl).slice(0, 12);
     if (!filtered.length) {
       grid.innerHTML = '<div class="programs-empty">' + STR.programsEmpty + '</div>';
       return;
