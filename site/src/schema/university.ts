@@ -123,6 +123,8 @@ export const descriptionSchema = z.object({
   keyFacts: z.array(z.string().min(1)).default([]),
   paragraphsRu: z.array(z.string().min(1)).optional(),
   keyFactsRu: z.array(z.string().min(1)).optional(),
+  paragraphsKk: z.array(z.string().min(1)).optional(),
+  keyFactsKk: z.array(z.string().min(1)).optional(),
 });
 export type Description = z.infer<typeof descriptionSchema>;
 
