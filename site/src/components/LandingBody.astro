@@ -102,13 +102,16 @@ const usedImgs = new Set([heroPhoto, ...galleryItems.slice(1, 5).map((g: any) =>
 const aboutPhoto = [...galleryItems.map((g: any) => g.img), ...campuses.map((c: any) => c.img)]
   .find((img) => img && !usedImgs.has(img)) ?? null;
 
-// University prose by locale (ru → *Ru first; en/kk → EN first, ru fallback).
-const descParagraphs = locale === 'ru'
-  ? (u.description?.paragraphsRu?.length ? u.description.paragraphsRu : (u.description?.paragraphs ?? []))
-  : (u.description?.paragraphs?.length ? u.description.paragraphs : (u.description?.paragraphsRu ?? []));
-const keyFacts = locale === 'ru'
-  ? (u.description?.keyFactsRu?.length ? u.description.keyFactsRu : (u.description?.keyFacts ?? []))
-  : (u.description?.keyFacts?.length ? u.description.keyFacts : (u.description?.keyFactsRu ?? []));
+// University prose by locale: ru → *Ru; kk → *Kk then EN then ru; en → EN then ru.
+const d = u.description;
+const descParagraphs =
+  locale === 'ru' ? (d?.paragraphsRu?.length ? d.paragraphsRu : (d?.paragraphs ?? []))
+  : locale === 'kk' ? (d?.paragraphsKk?.length ? d.paragraphsKk : (d?.paragraphs?.length ? d.paragraphs : (d?.paragraphsRu ?? [])))
+  : (d?.paragraphs?.length ? d.paragraphs : (d?.paragraphsRu ?? []));
+const keyFacts =
+  locale === 'ru' ? (d?.keyFactsRu?.length ? d.keyFactsRu : (d?.keyFacts ?? []))
+  : locale === 'kk' ? (d?.keyFactsKk?.length ? d.keyFactsKk : (d?.keyFacts?.length ? d.keyFacts : (d?.keyFactsRu ?? [])))
+  : (d?.keyFacts?.length ? d.keyFacts : (d?.keyFactsRu ?? []));
 
 const programsByFaculty: Record<string, ProgramRow[]> = {};
 for (const [k, v] of facultyMap.entries()) programsByFaculty[k] = v;
