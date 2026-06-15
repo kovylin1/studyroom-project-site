@@ -60,7 +60,7 @@ for (const arr of facultyMap.values()) {
 }
 const faculties = Array.from(facultyMap.entries())
   .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], numLocale))
-  .slice(0, 24);
+  .slice(0, 48);
 
 const tuitionValues = Object.values(u.tuition.byProgram).filter((v) => v > 0);
 const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
