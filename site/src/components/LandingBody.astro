@@ -31,6 +31,10 @@ interface ProgramRow {
   faculty: string;
   tuition: number | undefined;
   programType: string | undefined;
+  durationYears: number | undefined;
+  language: string | undefined;
+  intakes: string[] | undefined;
+  programUrl: string | undefined;
 }
 
 const LEVEL_ORDER: Record<string, number> = { foundation: 1, bachelor: 2, master: 3, phd: 4 };
@@ -42,6 +46,10 @@ const programRows: ProgramRow[] = u.programs.map((p) => ({
   faculty: p.faculty ?? t('lp.misc.otherFaculty'),
   tuition: u.tuition.byProgram[p.slug],
   programType: p.programType,
+  durationYears: p.durationYears,
+  language: p.language,
+  intakes: p.intakes,
+  programUrl: p.programUrl,
 }));
 
 const facultyMap = new Map<string, ProgramRow[]>();
@@ -102,6 +110,35 @@ const usedImgs = new Set([heroPhoto, ...galleryItems.slice(1, 5).map((g: any) =>
 const aboutPhoto = [...galleryItems.map((g: any) => g.img), ...campuses.map((c: any) => c.img)]
   .find((img) => img && !usedImgs.has(img)) ?? null;
 
+// Real application deadlines (schema field u.deadlines: programSlug → ISO date), parsed from
+// official sources / aggregators. Group upcoming ones by date, drive the countdown from the nearest.
+const nowMs = Date.now();
+const upcomingByDate = new Map<string, number>();
+for (const iso of Object.values(u.deadlines ?? {})) {
+  const ts = Date.parse(iso as string);
+  if (Number.isNaN(ts) || ts < nowMs) continue;
+  const key = new Date(ts).toISOString().slice(0, 10);
+  upcomingByDate.set(key, (upcomingByDate.get(key) ?? 0) + 1);
+}
+const deadlineLocale = locale === 'ru' ? 'ru-RU' : locale === 'kk' ? 'kk-KZ' : 'en-GB';
+const deadlineGroups = [...upcomingByDate.entries()]
+  .sort((a, b) => a[0].localeCompare(b[0]))
+  .slice(0, 8)
+  .map(([date, count]) => ({
+    iso: date,
+    label: new Date(date + 'T00:00:00').toLocaleDateString(deadlineLocale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }),
+    count,
+  }));
+const nextDeadlineIso = deadlineGroups.length ? deadlineGroups[0].iso : null;
+
+// Hero logo: prefer the curated local PNG (~27 unis), fall back to the parsed u.logoUrl
+// (remote, 667 unis) when the local file is missing. Only trust absolute http(s) URLs.
+const heroLogoFallback = u.logoUrl && /^https?:\/\//.test(u.logoUrl) ? u.logoUrl : '';
+
 // University prose by locale: ru → *Ru; kk → *Kk then EN then ru; en → EN then ru.
 const d = u.description;
 const descParagraphs =
@@ -129,6 +166,8 @@ const SCRIPT_STR = {
   lvlAll: t('lp.programs.lvlAll'),
   tbd: t('lp.programs.tbd'),
   perYear: t('lp.programs.perYear'),
+  yearsWord: t('lp.programs.yearsWord'),
+  intakesWord: t('lp.programs.intakesWord'),
   programsEmpty: t('lp.programs.empty'),
   programsNotFound: t('lp.programs.notFound'),
   housingFallback: t('lp.living.housingFallback'),
@@ -303,6 +342,11 @@ const SCRIPT_STR = {
   .lp .program-row__level--english-language { background: #d6f4ff; color: #00567a; }
   .lp .program-row__level--short-course { background: #f0f0f0; color: #444; }
   .lp .program-row__title { font-weight: 500; font-size: 14.5px; line-height: 1.35; }
+  a.program-row__title { color: inherit; text-decoration: none; }
+  a.program-row__title:hover { color: var(--green); text-decoration: underline; }
+  .lp .program-row__meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+  .lp .program-row__chip { font-size: 11.5px; line-height: 1; color: var(--ink-3); background: var(--surface-2, #f4f5f4); border: 1px solid var(--line); border-radius: 999px; padding: 4px 8px; white-space: nowrap; }
+  .lp .program-row__chip--intake { color: #7a4500; background: #fff4e0; border-color: #ffd591; }
   .lp .program-row__price { font-weight: 700; color: var(--green); white-space: nowrap; }
   .lp .req-grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
   @media (min-width: 880px) { .lp .req-grid { grid-template-columns: 1.4fr 1fr; } }
@@ -374,6 +418,13 @@ const SCRIPT_STR = {
   .lp .tl-step p { font-size: 13.5px; color: var(--ink-2); margin: 0; }
   .lp .deadline-strip { background: linear-gradient(135deg, #fff4e0, #ffe9c2); border: 1px solid #ffc266; border-radius: 12px; padding: 14px 18px; margin-bottom: 22px; display: flex; align-items: center; gap: 12px; font-weight: 700; color: #7a4500; flex-wrap: wrap; }
   .lp .deadline-strip__count { font-variant-numeric: tabular-nums; color: #d05500; font-size: 18px; }
+  .lp .deadline-list__head { font-size: 16px; margin: 0 0 12px; }
+  .lp .deadline-list { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 8px; grid-template-columns: 1fr; }
+  @media (min-width: 680px) { .lp .deadline-list { grid-template-columns: 1fr 1fr; } }
+  .lp .deadline-list__item { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--surface-1, #fff); border: 1px solid var(--line, #e6e6e6); border-radius: 10px; padding: 10px 14px; }
+  .lp .deadline-list__date { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .lp .deadline-list__count { font-size: 13px; color: var(--ink-3); white-space: nowrap; }
+  .lp .deadline-list__note { font-size: 12.5px; color: var(--ink-3); margin: 0 0 20px; }
   .lp .cta { background: linear-gradient(135deg, #00350a, #00950f); color: #fff; border-radius: 22px; padding: 40px; display: grid; gap: 32px; grid-template-columns: 1fr; align-items: center; }
   @media (min-width: 880px) { .lp .cta { grid-template-columns: 1fr 1fr; padding: 56px; } }
   .lp .cta h2 { color: #fff; margin-bottom: 14px; }
@@ -540,7 +591,7 @@ const SCRIPT_STR = {
         <div>
           <div class="hero__uni-line">
             <span class="hero__logo">
-              <img src={`/logos/${u.slug}.png`} alt={u.name} onerror="this.style.display='none'" />
+              <img src={`/logos/${u.slug}.png`} alt={u.name} data-fallback={heroLogoFallback} onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback){this.src=this.dataset.fallback;}else{this.style.display='none';}" />
             </span>
             <span><b>{u.name}</b> · {u.city}, {u.country}</span>
           </div>
@@ -906,10 +957,24 @@ const SCRIPT_STR = {
       <span class="eyebrow">{t('lp.dates.eyebrow')}</span>
       <h2>{fill('lp.dates.title', { uni: u.name })}</h2>
       <div class="deadline-strip">
-        {t('lp.dates.deadlinePre')}
+        {nextDeadlineIso ? t('lp.dates.realDeadlinePre') : t('lp.dates.deadlinePre')}
         <span class="deadline-strip__count" id="lpDeadline">{t('lp.dates.deadlineDays')}</span>.
         {t('lp.dates.deadlinePost')}
       </div>
+      {deadlineGroups.length > 0 && (
+        <>
+          <h3 class="deadline-list__head">{t('lp.dates.realHeading')}</h3>
+          <ul class="deadline-list">
+            {deadlineGroups.map((g) => (
+              <li class="deadline-list__item">
+                <span class="deadline-list__date">{g.label}</span>
+                <span class="deadline-list__count">{g.count} {t('lp.dates.programsWord')}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="deadline-list__note">{t('lp.dates.realNote')}</p>
+        </>
+      )}
       <div class="timeline">
         {TIMELINE.map((s) => (
           <div class="tl-step"><h4>{s.title}</h4><p>{s.text}</p></div>
@@ -1077,6 +1142,7 @@ const SCRIPT_STR = {
   CURRENCY_SYM: sym,
   UNI_NAME: u.name,
   UNI_SLUG: u.slug,
+  NEXT_DEADLINE: nextDeadlineIso,
   STR: SCRIPT_STR,
 }}>
 (() => {
@@ -1174,6 +1240,20 @@ const SCRIPT_STR = {
 
   function filterByLevel(list, lvl) { return list.filter(p => matchesLevel(p, lvl)); }
 
+  function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+  function progMeta(p) {
+    const bits = [];
+    if (p.durationYears) bits.push('<span class="program-row__chip">' + p.durationYears + ' ' + STR.yearsWord + '</span>');
+    if (p.language) bits.push('<span class="program-row__chip">' + esc(p.language) + '</span>');
+    if (p.intakes && p.intakes.length) bits.push('<span class="program-row__chip program-row__chip--intake">' + STR.intakesWord + ' ' + esc(p.intakes.slice(0, 3).join(', ')) + '</span>');
+    return bits.length ? '<div class="program-row__meta">' + bits.join('') + '</div>' : '';
+  }
+  function progTitle(p) {
+    return p.programUrl
+      ? '<a class="program-row__title" href="' + esc(p.programUrl) + '" target="_blank" rel="noopener">' + p.title + '</a>'
+      : '<div class="program-row__title">' + p.title + '</div>';
+  }
+
   function renderProgramsCards(facultyKey, lvl) {
     const grid = $('#lpProgramsGrid');
     if (!grid) return;
@@ -1187,7 +1267,8 @@ const SCRIPT_STR = {
       <div class="program-row" data-prog-level="${p.level}" data-prog-type="${p.programType || ''}">
         <div>
           <span class="program-row__level program-row__level--${levelClass(p.level, p.programType)}">${levelLabel(p.level, p.programType)}</span>
-          <div class="program-row__title">${p.title}</div>
+          ${progTitle(p)}
+          ${progMeta(p)}
         </div>
         <div class="program-row__price">${p.tuition ? CURRENCY_SYM + p.tuition.toLocaleString('en') + STR.perYear : STR.tbd}</div>
       </div>
@@ -1209,7 +1290,7 @@ const SCRIPT_STR = {
     ul.innerHTML = filtered.length ? filtered.map(p => `
       <li>
         <span class="program-row__level program-row__level--${levelClass(p.level, p.programType)}">${levelLabel(p.level, p.programType)}</span>
-        <span>${p.title}</span>
+        <span>${p.programUrl ? `<a href="${esc(p.programUrl)}" target="_blank" rel="noopener">${p.title}</a>` : p.title}${progMeta(p)}</span>
         <strong style="color: var(--green); white-space: nowrap;">${p.tuition ? CURRENCY_SYM + p.tuition.toLocaleString('en') + STR.perYear : STR.tbd}</strong>
       </li>
     `).join('') : '<li style="grid-template-columns: 1fr; color: var(--ink-3);">' + STR.programsNotFound + '</li>';
@@ -1275,8 +1356,11 @@ const SCRIPT_STR = {
   if (rate) rate.addEventListener('input', applyRate);
   applyRate();
 
-  const dl = new Date();
-  dl.setDate(dl.getDate() + 47);
+  const dl = NEXT_DEADLINE ? new Date(NEXT_DEADLINE + 'T00:00:00') : (() => {
+    const d = new Date();
+    d.setDate(d.getDate() + 47);
+    return d;
+  })();
   function tickDeadline() {
     const diff = dl - new Date();
     const el = $('#lpDeadline');
