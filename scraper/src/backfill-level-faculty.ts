@@ -25,6 +25,12 @@ const CATALOG = resolve(HERE, '../../site/src/content/universities');
 const WRITE = process.argv.includes('--write');
 const FALLBACK_FACULTY = 'Прочее';
 
+// Faculty "holes" worth re-classifying. Besides empty/`Прочее`, several sources
+// (Liverpool/Glasgow/Nottingham feeds) stamp the English sentinel `Other`,
+// which the first backfill pass skipped — so hundreds of classifiable titles
+// (Archaeology, Biochemistry, Computing Science…) stayed unbucketed.
+const FACULTY_HOLES = new Set(['', 'Прочее', 'Other', 'General', 'Общий']);
+
 const files = readdirSync(CATALOG).filter((f) => f.endsWith('.json'));
 
 let filesChanged = 0;
@@ -62,7 +68,7 @@ for (const file of files) {
     }
 
     // FACULTY — fill only holes.
-    if (!p.faculty || p.faculty === FALLBACK_FACULTY) {
+    if (FACULTY_HOLES.has((p.faculty ?? '').trim())) {
       const f = classifyFaculty(p.title ?? '');
       if (f && f !== p.faculty) {
         p.faculty = f;
