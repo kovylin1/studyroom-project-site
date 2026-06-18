@@ -295,7 +295,10 @@ function buildDegreePrograms(
     const slug = degreeSlugFor(d, level);
     const fee = Number.parseFloat(d.current_fees_per_year);
     const intakes = parseIntakes(d.degree_intake_dates);
-    const faculty = inferDegreeFaculty(d, awardFacultyMap) ?? 'Прочее';
+    // Kaplan's award-faculty map covers UK/CA well, US partially, AU/NZ not at
+    // all. When it has no entry, classify by program title instead of dumping
+    // into "Прочее" — otherwise the per-faculty modal collapses to one bucket.
+    const faculty = inferDegreeFaculty(d, awardFacultyMap) ?? classifyFaculty(d.program_name);
 
     const program: Program = {
       slug,

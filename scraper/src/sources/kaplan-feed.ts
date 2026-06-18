@@ -5,6 +5,7 @@
 // duration, intake months, and program URLs.
 
 import { normalizeFaculty } from './kaplan-fees.ts';
+import { inferLevelFromTitle } from './infer-level.ts';
 
 const FEED_PAGE = 'https://www.kaplanpathways.com/degree-finder/';
 
@@ -129,11 +130,11 @@ export function inferDegreeFaculty(degree: KaplanDegree, awardMap: Map<number, s
 }
 
 export function mapDegreeLevel(degree: KaplanDegree): 'foundation' | 'bachelor' | 'master' | 'phd' {
-  const name = (degree.program_name ?? '').toLowerCase();
-  if (/\bphd\b|doctoral/.test(name)) return 'phd';
-  if (/\bmsc\b|\bma\b|\bmba\b|\bllm\b|master/.test(name)) return 'master';
-  if (/\bbsc\b|\bba\b|\bbeng\b|\bllb\b|bachelor|undergraduate/.test(name)) return 'bachelor';
-  if (/foundation|pathway/.test(name)) return 'foundation';
+  // Title is the strongest signal — recognises UK + US + AU/NZ degree codes
+  // (BS/BA/BSE/MS/MFA… not just BSc/MSc). See infer-level.ts.
+  const fromTitle = inferLevelFromTitle(degree.program_name ?? '');
+  if (fromTitle) return fromTitle;
+  // Title gave no confident signal — fall back to Kaplan's numeric level code.
   const lvl = degree.program_level;
   if (lvl === 150) return 'master';
   if (lvl === 30) return 'phd';
