@@ -169,6 +169,7 @@ const SCRIPT_STR = {
   yearsWord: t('lp.programs.yearsWord'),
   intakesWord: t('lp.programs.intakesWord'),
   programsEmpty: t('lp.programs.empty'),
+  showAllCount: t('lp.programs.showAllCount'),
   programsNotFound: t('lp.programs.notFound'),
   housingFallback: t('lp.living.housingFallback'),
   campusFallback: t('lp.living.campusFallback'),
@@ -741,7 +742,7 @@ const SCRIPT_STR = {
       <div class="programs-grid" id="lpProgramsGrid"></div>
 
       <div style="text-align: center; margin-top: 18px;">
-        <button class="btn btn--ghost" id="lpShowAllPrograms" type="button">{t('lp.programs.showAll')}</button>
+        <button class="btn btn--primary btn--lg" id="lpShowAllPrograms" type="button">{t('lp.programs.showAll')}</button>
       </div>
     </div>
   </section>
@@ -1258,12 +1259,26 @@ const SCRIPT_STR = {
     const grid = $('#lpProgramsGrid');
     if (!grid) return;
     const all = PROGRAMS_DATA[facultyKey] || [];
-    const filtered = filterByLevel(all, lvl).slice(0, 12);
-    if (!filtered.length) {
+    const CAP = 12;
+    const matched = filterByLevel(all, lvl);
+    const shown = matched.slice(0, CAP);
+    // Surface the full count: when the grid is truncated, the "show all" button
+    // names how many more there are and opens the searchable modal. Hidden when
+    // nothing is hidden, so it never lies about completeness.
+    const showAllBtn = $('#lpShowAllPrograms');
+    if (showAllBtn) {
+      if (matched.length > CAP) {
+        showAllBtn.textContent = STR.showAllCount.replace('{count}', String(matched.length));
+        showAllBtn.hidden = false;
+      } else {
+        showAllBtn.hidden = true;
+      }
+    }
+    if (!shown.length) {
       grid.innerHTML = '<div class="programs-empty">' + STR.programsEmpty + '</div>';
       return;
     }
-    grid.innerHTML = filtered.map(p => `
+    grid.innerHTML = shown.map(p => `
       <div class="program-row" data-prog-level="${p.level}" data-prog-type="${p.programType || ''}">
         <div>
           <span class="program-row__level program-row__level--${levelClass(p.level, p.programType)}">${levelLabel(p.level, p.programType)}</span>
