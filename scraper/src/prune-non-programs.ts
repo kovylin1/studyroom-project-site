@@ -64,10 +64,39 @@ const RULES: Rule[] = [
     reason: 'credential-string',
     test: (t) => /^(high school diploma|secondary school (diploma|certificate)|bachelor['’]?s degree \(\d|master['’]?s degree \(\d|a-?levels?$)/i.test(t.trim()),
   },
+  // Scraped UI chrome ("Make a comment", "Contact - <programme>", "To
+  // bachelor's degrees") and country SEO landings ("Study in Malta") that a few
+  // feeds dragged in as fake programmes — flagged by interns as лишние.
+  { reason: 'ui-chrome', test: (t) => /^make a comment$/i.test(t.trim()) },
+  { reason: 'contact-subpage', test: (t) => /^contact\s*[-–]\s*/i.test(t.trim()) },
+  { reason: 'nav-junk', test: (t) => /^to (bachelor|master|doctora\w*|phd)['’]?s?\s+degrees?$/i.test(t.trim()) },
+  { reason: 'seo-country', test: (t) => /^study in [a-z][a-z .'-]+$/i.test(t.trim()) },
+  // Bare exam/test listings ("GRE - GMAT Exams") — services, not degrees.
+  { reason: 'test-prep', test: (t) => /^(gre|gmat|sat|act|gre\s*-\s*gmat)\b[a-z /&-]*\bexams?$/i.test(t.trim()) },
+  // Marketing blurb sold as a programme.
+  { reason: 'marketing', test: (t) => /^guaranteed entry to /i.test(t.trim()) },
+  // Generic pathway placeholders with no subject ("Bachelor's preparation",
+  // "Doctorate admission"). Subject-bearing prep ("IELTS Preparation",
+  // "Pre-Master in Law") is NOT matched — the level word must stand alone.
+  {
+    reason: 'generic-pathway',
+    test: (t) => /^(bachelor|master|doctorate|doctoral|phd|undergraduate|postgraduate)['’]?s?\s+(preparation|admission)$/i.test(t.trim()),
+  },
 ];
 
+// Decode the few HTML entities the feeds left in titles so the rules above match
+// on clean text ("Bachelor&#8217;s admission" → "Bachelor's admission").
+function decodeEntities(s: string): string {
+  return s
+    .replace(/&#8217;|&#8216;|&#039;|&#39;/g, '’')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function classifyJunk(title: string): string | null {
-  const t = (title ?? '').trim();
+  const t = decodeEntities(title ?? '');
   if (!t) return null;
   for (const r of RULES) if (r.test(t)) return r.reason;
   return null;

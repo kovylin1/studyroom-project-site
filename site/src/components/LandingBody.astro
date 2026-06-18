@@ -67,8 +67,19 @@ for (const arr of facultyMap.values()) {
     return (a.tuition ?? 0) - (b.tuition ?? 0);
   });
 }
+// The catch-all bucket ("Прочее"/"Other"/…) is uninformative, so it always sorts
+// last regardless of size — real named faculties stay on the left where they read.
+const OTHER_FACULTY_LABELS = new Set(
+  ['Прочее', 'Other', 'General', 'Общий', t('lp.misc.otherFaculty')].map((s) => s.toLowerCase())
+);
+const isOtherFaculty = (name: string) => OTHER_FACULTY_LABELS.has(name.trim().toLowerCase());
 const faculties = Array.from(facultyMap.entries())
-  .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], numLocale))
+  .sort((a, b) => {
+    const ao = isOtherFaculty(a[0]) ? 1 : 0;
+    const bo = isOtherFaculty(b[0]) ? 1 : 0;
+    if (ao !== bo) return ao - bo;
+    return b[1].length - a[1].length || a[0].localeCompare(b[0], numLocale);
+  })
   .slice(0, 48);
 
 const tuitionValues = Object.values(u.tuition.byProgram).filter((v) => v > 0);
@@ -328,6 +339,8 @@ const SCRIPT_STR = {
   .lp .tab { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: #fff; cursor: pointer; font: inherit; font-weight: 500; font-size: 14px; transition: all .15s; }
   .lp .tab:hover { border-color: var(--green); color: var(--green); }
   .lp .tab.is-active { background: var(--green); color: #fff; border-color: var(--green); }
+  .lp .tab__count { display: inline-block; min-width: 18px; padding: 0 5px; margin-left: 4px; border-radius: 999px; background: var(--bg-soft); color: var(--ink-3); font-size: 11px; font-weight: 600; line-height: 17px; text-align: center; }
+  .lp .tab.is-active .tab__count { background: rgba(255,255,255,.25); color: #fff; }
   .lp .level-filter { display: inline-flex; flex-wrap: wrap; gap: 4px; margin: 0 0 18px; padding: 4px; background: var(--bg-soft); border-radius: 12px; }
   .lp .lvl { padding: 7px 14px; border-radius: 8px; border: 0; background: transparent; cursor: pointer; font: inherit; font-weight: 500; font-size: 13px; color: var(--ink-2); transition: all .15s; }
   .lp .lvl:hover { background: rgba(0,0,0,.04); color: var(--ink); }
@@ -729,7 +742,7 @@ const SCRIPT_STR = {
       {faculties.length > 1 && (
         <div class="tabs" role="tablist">
           {faculties.map((f, i) => (
-            <button class={`tab ${i === 0 ? 'is-active' : ''}`} data-faculty={f[0]}>{f[0]}</button>
+            <button class={`tab ${i === 0 ? 'is-active' : ''}`} data-faculty={f[0]}>{f[0]} <span class="tab__count">{f[1].length}</span></button>
           ))}
         </div>
       )}
@@ -1266,7 +1279,7 @@ const SCRIPT_STR = {
     const grid = $('#lpProgramsGrid');
     if (!grid) return;
     const all = PROGRAMS_DATA[facultyKey] || [];
-    const CAP = 12;
+    const CAP = 24;
     const matched = filterByLevel(all, lvl);
     const shown = matched.slice(0, CAP);
     // Surface the full count: when the grid is truncated, the "show all" button
