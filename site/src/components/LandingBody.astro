@@ -7,6 +7,7 @@ import { STUDYROOM_FAQ, CURRENCY_TO_KZT, CURRENCY_SYMBOL, DEFAULT_KZT_RATE } fro
 import { CONTACTS, waLink, telLink, AGENCY, yearsOnMarket } from '~/content/studyroom/contacts';
 import { useTranslations, type Locale } from '~/i18n/utils';
 import { pickTimeline } from '~/i18n/timelines';
+import LangSwitcher from '~/components/LangSwitcher.astro';
 
 interface Props {
   u: CollectionEntry<'universities'>['data'];
@@ -238,6 +239,10 @@ const SCRIPT_STR = {
   .lp .lp-nav__links a:hover, .lp .lp-nav__links a.is-active { color: var(--green); }
   .lp .lp-nav__links a.is-active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: var(--green); border-radius: 2px; }
   .lp .lp-nav__contact { display: flex; align-items: center; gap: 10px; }
+  .lp .lp-nav__lang { display: none; }
+  @media (min-width: 1024px) { .lp .lp-nav__lang { display: inline-flex; } }
+  .lp .drawer__lang { display: flex; justify-content: center; padding: 4px 0; }
+  @media (min-width: 1024px) { .lp .drawer__lang { display: none; } }
   .lp .lp-nav__phone { display: none; font-weight: 700; font-size: 14px; color: var(--ink); text-decoration: none; }
   @media (min-width: 720px) { .lp .lp-nav__phone { display: block; } }
   .lp .lp-nav__phone small { display: block; font-weight: 400; font-size: 11px; color: var(--ink-3); }
@@ -565,6 +570,7 @@ const SCRIPT_STR = {
         <a href="#dates" data-section="dates">{t('lp.nav.dates')}</a>
       </div>
       <div class="lp-nav__contact">
+        <span class="lp-nav__lang"><LangSwitcher /></span>
         <a href={telLink()} class="lp-nav__phone">{CONTACTS.phoneDisplay}<small>{CONTACTS.workHours}</small></a>
         <a class="lp-nav__wa" href={waLink(fill('lp.misc.waGreeting', { uni: u.name }))} aria-label="WhatsApp" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.27-1.12a9.95 9.95 0 0 0 5.77 1.84c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0 0 12.04 2zM17.4 16.21c-.23.65-1.33 1.24-1.85 1.31-.49.07-1.11.1-1.79-.11-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09 1-2.37.26-.28.57-.35.76-.35.19 0 .38.01.54.01.17 0 .41-.07.64.49.23.56.79 1.96.86 2.1.07.14.12.31.02.49-.09.18-.14.3-.28.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.28.71 1.18 1.53 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.16-.19.69-.8.87-1.08.18-.28.37-.23.61-.14.24.09 1.55.73 1.81.86.27.13.44.2.51.31.06.11.06.65-.16 1.29z"/></svg>
@@ -583,6 +589,7 @@ const SCRIPT_STR = {
     <a href="#faq">{t('lp.nav.visaDocs')}</a>
     <a href="#dates">{t('lp.nav.dates')}</a>
     <a href={telLink()}>{CONTACTS.phoneDisplay}</a>
+    <div class="drawer__lang"><LangSwitcher /></div>
     <div class="drawer__cta"><button class="btn btn--primary" data-modal-open="lpConsultModal">{t('lp.nav.freeConsult')}</button></div>
   </aside>
 
