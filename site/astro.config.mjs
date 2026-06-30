@@ -14,6 +14,7 @@ export default defineConfig({
   },
   redirects: {
     '/v2': '/',
+    '/university-of-the-west-of-england': '/uwe-bristol', // merged duplicate → uwe-bristol (2026-06-24)
   },
   integrations: [
     sitemap({

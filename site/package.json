@@ -6,7 +6,8 @@
   "description": "StudyRoom — catalog hub + per-university landings (Astro). Schema in Stage 1, app in Stage 2.",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/generate-status.mjs && astro build",
+    "gate": "node ../scraper/audit-catalog.mjs --gate",
+    "build": "node ../scraper/audit-catalog.mjs --gate && node scripts/generate-status.mjs && astro build",
     "generate:status": "node scripts/generate-status.mjs",
     "preview": "astro preview",
     "check": "astro check",
