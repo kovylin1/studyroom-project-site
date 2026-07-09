@@ -1,84 +1,31 @@
 {
-  "generatedAt": "2026-07-06T07:08:47.116Z",
+  "generatedAt": "2026-07-09T06:39:03.944Z",
   "mode": "auto",
-  "scope": "qahe",
+  "scope": "studygroup",
   "summary": {
-    "total": 2,
-    "pending": 2,
+    "total": 1,
+    "pending": 1,
     "ignored": 0,
     "applied": 0
   },
   "items": [
     {
-      "id": "northumbria||missing_on_site",
-      "slug": "northumbria",
-      "name": "Northumbria University",
-      "issue": "missing_on_site",
+      "id": "aberdeen||tuition_mismatch",
+      "slug": "aberdeen",
+      "name": "University of Aberdeen",
+      "issue": "tuition_mismatch",
       "severity": "warning",
-      "detail": "10 программ каталога не найдены на официальном сайте",
-      "programs": [
-        {
-          "title": "Nursing Science (Adult) BSc (Hons)",
-          "slug": "northumbria-bsc-nursing-adult"
-        },
-        {
-          "title": "Nursing Science (Mental Health) BSc (Hons)",
-          "slug": "northumbria-bsc-nursing-mental-health"
-        },
-        {
-          "title": "Nursing Science (Child) BSc (Hons)",
-          "slug": "northumbria-bsc-nursing-child"
-        },
-        {
-          "title": "Law LLM",
-          "slug": "northumbria-llm-law"
-        },
-        {
-          "title": "Psychology MA",
-          "slug": "northumbria-ma-psychology"
-        },
-        {
-          "title": "English Language Studies MA",
-          "slug": "northumbria-ma-english-language"
-        },
-        {
-          "title": "History MA",
-          "slug": "northumbria-ma-history"
-        },
-        {
-          "title": "International Foundation Programme — Business and Law",
-          "slug": "northumbria-ifp-business-law"
-        },
-        {
-          "title": "International Foundation Programme — Computing",
-          "slug": "northumbria-ifp-computing"
-        },
-        {
-          "title": "International Foundation Programme — Engineering",
-          "slug": "northumbria-ifp-engineering"
-        }
-      ],
-      "officialUrl": "https://www.northumbria.ac.uk",
-      "checkedAt": "2026-07-06T07:08:47.116Z",
-      "decision": null,
-      "decidedAt": null,
-      "applied": false
-    },
-    {
-      "id": "northumbria||broken_url||Accounting BSc (Hons)",
-      "slug": "northumbria",
-      "name": "Northumbria University",
-      "issue": "broken_url",
-      "severity": "critical",
-      "detail": "404: https://www.northumbria.ac.uk/study-at-northumbria/courses/accounting-bsc-hons/",
-      "programs": [
-        {
-          "title": "Accounting BSc (Hons)",
-          "url": "https://www.northumbria.ac.uk/study-at-northumbria/courses/accounting-bsc-hons/"
-        }
-      ],
-      "officialUrl": "https://www.northumbria.ac.uk",
-      "checkedAt": "2026-07-06T07:08:47.116Z",
+      "detail": "Tuition в каталоге: GBP 18400, на сайте: GBP 6000",
+      "catalog": {
+        "value": 18400,
+        "currency": "GBP"
+      },
+      "official": {
+        "currency": "GBP",
+        "value": 6000
+      },
+      "officialUrl": "https://www.abdn.ac.uk",
+      "checkedAt": "2026-07-09T06:39:03.944Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
