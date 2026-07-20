@@ -25,6 +25,7 @@ import {
   ieltsPlausible, toeflPlausible, gpaPlausible, extractKeyFactNumbers,
   keyFactPlausible, relDiff, CORROBORATE_TOL, MISMATCH_TOL,
 } from './lib/numbers.mjs';
+import { AGG_DOMAINS, resolveOfficialSite } from './lib/official-site.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.join(__dirname, '..');
@@ -46,7 +47,6 @@ let SLUG_ALIASES = {};
 try {
   SLUG_ALIASES = JSON.parse(await fs.readFile(path.join(PROJECT_ROOT, 'scraper/sources/slug-aliases.json'), 'utf8')).aliases || {};
 } catch { /* карты ещё нет — работаем без алиасов */ }
-const AGG_DOMAINS = /edvoy|studygroup|kaplan|navitas|catseducation|qs\.com|topuniversities|collab|wikipedia/i;
 
 const arg = (p) => (process.argv.find(a => a.startsWith(p)) || '').slice(p.length) || null;
 const SLUG_FILTER = arg('--slug=');
@@ -259,21 +259,13 @@ function checkRequirements(u, cases, stats) {
 
 // ── Живая проверка офсайта (только спорные tuition) ──────────────────────────
 
-function officialRoot(u, extracts) {
-  const edvoy = extracts.find(e => e.source === 'edvoy');
-  const site = edvoy?.data?.website;
-  if (site) return site;
-  try {
-    if (u.sourceUrl && !AGG_DOMAINS.test(new URL(u.sourceUrl).hostname)) return u.sourceUrl;
-  } catch { /* ignore */ }
-  return null;
-}
+// Резолв офсайта — общий с БОБРом модуль lib/official-site.mjs (см. resolveOfficialSite).
 
 const FEE_LINK_RE = /\b(fees?|tuition|funding|costs?|finance)\b/i;
 const FEE_PATHS = ['', '/fees', '/tuition-fees', '/fees-and-funding', '/study/fees', '/international/fees'];
 
 async function liveCheckUni(u, extracts, uniCases, applied) {
-  const root = officialRoot(u, extracts);
+  const root = resolveOfficialSite(u, extracts);
   if (!root) return { status: 'no-official-site' };
   const base = root.replace(/\/+$/, '');
   const tokens = [];
