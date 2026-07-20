@@ -44,8 +44,8 @@ async function fetchKaplanFeed() {
 function mapDegreeLevel(degree) {
   const name = (degree.program_name ?? '').toLowerCase();
   if (/\bphd\b|doctoral/.test(name)) return 'phd';
-  if (/\bmsc\b|\bma\b|\bmba\b|\bllm\b|master/.test(name)) return 'master';
-  if (/\bbsc\b|\bba\b|\bbeng\b|\bllb\b|bachelor|undergraduate/.test(name)) return 'bachelor';
+  if (/\bmsc\b|\bms\b|\bma\b|\bmba\b|\bmeng\b|\bmfa\b|\bmph\b|\bllm\b|master/.test(name)) return 'master';
+  if (/\bbsc\b|\bbs\b|\bbse\b|\bba\b|\bbfa\b|\bbsn\b|\bbis\b|\bbeng\b|\bllb\b|bachelor|undergraduate/.test(name)) return 'bachelor';
   if (/foundation|pathway/.test(name)) return 'foundation';
   const lvl = degree.program_level;
   if (lvl === 150) return 'master';
