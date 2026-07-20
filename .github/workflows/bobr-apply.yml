@@ -1,0 +1,49 @@
+name: Bobr — apply decisions
+
+on:
+  workflow_dispatch:   # запускается кнопкой "Применить решения" в manager UI
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bobr-apply
+  cancel-in-progress: true
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: |
+            scraper/package-lock.json
+            site/package-lock.json
+
+      - name: Install deps
+        run: cd scraper && npm ci && cd ../site && npm ci
+
+      - name: Apply bobr decisions
+        run: node scraper/bobr-apply.mjs
+
+      - name: Build site
+        run: cd site && npm run build
+
+      - name: Commit results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/src/content/universities/ site/public/api/bobr-review.json
+          git diff --staged --quiet || git commit -m "chore: bobr apply $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          attempt=0
+          until git push; do
+            attempt=$((attempt+1))
+            if [ "$attempt" -ge 3 ]; then echo "::error::git push failed after 3 retries"; exit 1; fi
+            git pull --rebase origin main
+          done
