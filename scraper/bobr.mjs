@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 // bobr.mjs — БОБР director (campuses + accommodation orchestrator).
-// Pipeline: accommodation merge → campus fill → keyfacts → verifier → photos → validate
+// Pipeline: accommodation merge → campus fill → keyfacts → audit → photos → validate
 //
-// Usage: node scraper/bobr.mjs [--skip-photos] [--skip-verifier] [--dry-run] [--limit=N] [--slug SLUG]
+// Usage: node scraper/bobr.mjs [--skip-photos] [--skip-audit] [--dry-run] [--limit=N] [--slug SLUG]
+//        (--skip-verifier принимается как алиас --skip-audit ради старых вызовов)
 
 import { spawn } from 'child_process';
 import path from 'path';
@@ -10,7 +11,8 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SKIP_PHOTOS = process.argv.includes('--skip-photos');
-const SKIP_VERIFIER = process.argv.includes('--skip-verifier');
+// --skip-verifier — историческое имя того же флага (осталось в старых вызовах CI).
+const SKIP_AUDIT = process.argv.includes('--skip-audit') || process.argv.includes('--skip-verifier');
 const DRY_RUN = process.argv.includes('--dry-run');
 const LIMIT_ARG = process.argv.find(a => a.startsWith('--limit=')) || '';
 const _slugIdx = process.argv.indexOf('--slug');
@@ -58,11 +60,11 @@ report['bobr-accommodation-v2'] = await run('bobr-accommodation-v2.mjs');
 report['bobr-campuses-v2'] = await run('bobr-campuses-v2.mjs');
 report['bobr-keyfacts'] = await run('bobr-keyfacts.mjs', ...(DRY_RUN ? ['--dry-run'] : []));
 
-if (!SKIP_VERIFIER) {
-  log('=== Phase 2: verifier ===');
-  report['bobr-verifier'] = await run('bobr-verifier.mjs', ...(DRY_RUN ? ['--dry-run'] : []));
+if (!SKIP_AUDIT) {
+  log('=== Phase 2: audit ===');
+  report['bobr-audit'] = await run('bobr-audit.mjs', ...(DRY_RUN ? ['--dry-run'] : []));
 } else {
-  log('=== Phase 2: verifier SKIPPED ===');
+  log('=== Phase 2: audit SKIPPED ===');
 }
 
 if (!SKIP_PHOTOS) {
