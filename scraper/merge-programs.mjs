@@ -10,6 +10,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { canonicalizeFaculty } from './lib/canonicalize-faculty.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SOURCES_DIR = path.join(__dirname, 'sources');
@@ -135,6 +136,10 @@ function applyExtract(byKey, extract, sourceName, isOfficial, uniSlug) {
         p._feePerYear = ep.feePerYear;
         if (ep.currency && !p._currency) p._currency = ep.currency;
       }
+      if (p.faculty == null) {
+        const fc = canonicalizeFaculty(ep.faculty, ep.title);
+        if (fc) p.faculty = fc;
+      }
     } else {
       // New program from this source
       const durationYears = parseDurationYears(ep.duration ?? ep.durationYears, level);
@@ -155,6 +160,8 @@ function applyExtract(byKey, extract, sourceName, isOfficial, uniSlug) {
         verifiedBySite: isOfficial,
         checkedAt: ep.checkedAt || NOW,
       };
+      const newFaculty = canonicalizeFaculty(ep.faculty, ep.title);
+      if (newFaculty) newProg.faculty = newFaculty;
       if (ep.programUrl) newProg.programUrl = ep.programUrl;
       if (typeof ep.feePerYear === 'number' && ep.feePerYear > 0) {
         newProg._feePerYear = ep.feePerYear;

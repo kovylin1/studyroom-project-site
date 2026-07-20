@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "note": "SSOT канонической таксономии факультетов. rules — упорядоченный список; первое совпадение по строке факультета (или по названию программы при пустом/мусорном faculty) выигрывает. Порядок важен: узкие/приоритетные области идут раньше пересекающихся.",
+  "canonical": [
+    "Бизнес",
+    "Инженерия и IT",
+    "Наука",
+    "Здоровье и медицина",
+    "Искусство и дизайн",
+    "Гуманитарные и языки",
+    "Социальные науки",
+    "Право",
+    "Образование",
+    "Подготовка (Foundation)",
+    "Short Courses"
+  ],
+  "placeholders": ["", "прочее", "(null/none)", "school", "other", "general", "n/a", "-", "faculty", "college", "department"],
+  "deferToTitle": "arts and sciences|liberal arts|liberal studies|integrative sciences and arts|interdisciplinary studies|general studies",
+  "rules": [
+    { "canonical": "Short Courses", "pattern": "short\\s*course" },
+    { "canonical": "Подготовка (Foundation)", "pattern": "foundation|pathway|pre-?\\s*master|pre-?\\s*sessional|\\ba-?levels?\\b|\\bgcse\\b|sixth form|key stage|\\byear\\s*(7|8|9|10|11|12|13)\\b|access to (he|higher)|international year one|pre-?\\s*university|preparatory|english language prep" },
+    { "canonical": "Право", "pattern": "\\blaws?\\b|\\blegal\\b|justice|barrister|solicitor|jurisprud|criminal law" },
+    { "canonical": "Здоровье и медицина", "pattern": "health|medic(al|ine)|\\bmedicine\\b|nursing|dentist|dental|pharmac|clinical|nutrition|midwif|physiother|veterin|psychiatr|biomedic|kinesiolog|optometr|occupational therap|speech and language|public health" },
+    { "canonical": "Образование", "pattern": "education|teaching|pedagog|\\btesol\\b|early childhood|teacher training" },
+    { "canonical": "Бизнес", "pattern": "business|\\bmanagement\\b|commerce|marketing|account(ing|ancy)|\\bfinance\\b|financial|\\bmba\\b|banking|carey|bayes|entrepreneur|supply chain|logistics|hospitality|tourism|real estate|actuar|human resource" },
+    { "canonical": "Инженерия и IT", "pattern": "engineer|comput|computing|informat|software|\\bict\\b|\\bit\\b|technolog|electr(ical|onic)|mechanic|aerospace|aeronaut|manufactur|\\bdata (science|analytic)|cyber|robotic|telecommunic|automot|materials science|artificial intelligence" },
+    { "canonical": "Гуманитарные и языки", "pattern": "humanit|\\blanguages?\\b|linguist|literatur|\\bhistor(y|ies|ical)|\\bcultur|philosoph|classic|theolog|religio" },
+    { "canonical": "Социальные науки", "pattern": "social|politic|sociolog|econom|government|psycholog|criminolog|international relation|\\bpublic\\b|anthropolog|geograph|communicat|journalis|\\bmedia\\b|global affairs|development studies|international studies|public service|public policy" },
+    { "canonical": "Искусство и дизайн", "pattern": "\\bfine arts?\\b|\\barts?\\b|design|creative|\\bmusic|\\bfilm\\b|theatre|theater|fashion|architect|drama|performing|paint|sculpt|photograph|\\bdance|animation|visual art" },
+    { "canonical": "Наука", "pattern": "science|\\bsciences\\b|physic|chemi|biolog|\\bmaths?\\b|mathematic|environ|natural|geolog|astro|agricultur|life scien|earth scien|marine|zoolog|botan|ecolog|statistic|neuroscien|forensic" }
+  ]
+}
