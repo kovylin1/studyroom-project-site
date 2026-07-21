@@ -70,3 +70,22 @@ test('битый буфер не роняет процесс', async () => {
   assert.equal(r.width, null);
   assert.ok(r.sha1, 'sha1 считается всегда — он не зависит от декодирования');
 });
+
+test('насыщенность: серый квадрат даёт 0, цветной — заметно больше', async () => {
+  const { saturation } = await import('./photo-fingerprint.mjs');
+  const sharp = (await import('sharp')).default;
+  const grey = await sharp({ create: { width: 64, height: 64, channels: 3, background: { r: 120, g: 120, b: 120 } } }).jpeg().toBuffer();
+  const red = await sharp({ create: { width: 64, height: 64, channels: 3, background: { r: 220, g: 20, b: 20 } } }).jpeg().toBuffer();
+  assert.ok(await saturation(grey) < 0.03, 'серое должно быть ниже порога архива');
+  assert.ok(await saturation(red) > 0.5, 'красное должно быть заведомо цветным');
+});
+
+test('отпечаток несёт насыщенность, а нечитаемое даёт sat = null', async () => {
+  const { fingerprint } = await import('./photo-fingerprint.mjs');
+  const sharp = (await import('sharp')).default;
+  const img = await sharp({ create: { width: 40, height: 40, channels: 3, background: { r: 10, g: 200, b: 90 } } }).png().toBuffer();
+  const fp = await fingerprint(img);
+  assert.ok(typeof fp.sat === 'number' && fp.sat > 0.5);
+  const bad = await fingerprint(Buffer.from('это не картинка'));
+  assert.equal(bad.sat, null, 'не декодировалось — «не знаю», а не 0');
+});

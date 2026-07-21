@@ -29,25 +29,52 @@ async function dhashOf(buf) {
 }
 
 /**
+ * Средняя насыщенность цвета, 0..1. Ноль — чистое чёрно-белое.
+ *
+ * Нужна, чтобы отличить архивный снимок от современной съёмки кампуса.
+ * У adelaide через все проверки прошло фото 1905 года: большое, не пережатое,
+ * с лицензией и автором — придраться было не к чему, кроме того, что оно ч/б.
+ * Замер 76 кандидатов: ровно 2 лежат ниже 0.03 (0.0000 и 0.0004), следующий
+ * идёт с 0.0477 — разрыв чистый, поэтому порог берём с запасом.
+ */
+export async function saturation(buf) {
+  const { data, info } = await sharp(buf)
+    .resize(160, 160, { fit: 'inside' })
+    .removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  if (info.channels < 3) return 0;             // одноканальное — заведомо ч/б
+  let sum = 0;
+  const n = info.width * info.height;
+  for (let i = 0; i < data.length; i += info.channels) {
+    const mx = Math.max(data[i], data[i + 1], data[i + 2]);
+    const mn = Math.min(data[i], data[i + 1], data[i + 2]);
+    sum += mx === 0 ? 0 : (mx - mn) / mx;
+  }
+  return n ? sum / n : 0;
+}
+
+/**
  * Отпечаток изображения.
  * @param {Buffer} buf содержимое файла
- * @returns {Promise<{sha1:string, dhash:string|null, width:number|null, height:number|null, bytes:number}>}
- *   Нечитаемое изображение даёт dhash/width/height = null; sha1 считается всегда,
+ * @returns {Promise<{sha1:string, dhash:string|null, width:number|null, height:number|null, bytes:number, sat:number|null}>}
+ *   Нечитаемое изображение даёт dhash/width/height/sat = null; sha1 считается всегда,
  *   он не зависит от декодирования.
  */
 export async function fingerprint(buf) {
   const sha1 = crypto.createHash('sha1').update(buf).digest('hex');
   try {
     const meta = await sharp(buf).metadata();
+    let sat = null;
+    try { sat = await saturation(buf); } catch { /* цвет не измерился — не выдумываем */ }
     return {
       sha1,
       dhash: await dhashOf(buf),
       width: meta.width ?? null,
       height: meta.height ?? null,
       bytes: buf.length,
+      sat,
     };
   } catch {
-    return { sha1, dhash: null, width: null, height: null, bytes: buf.length };
+    return { sha1, dhash: null, width: null, height: null, bytes: buf.length, sat: null };
   }
 }
 
