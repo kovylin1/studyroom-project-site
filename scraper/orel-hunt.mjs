@@ -162,8 +162,18 @@ function imageUrlsFrom(html, pageUrl) {
 async function wikidataEntity(name, officialUrl) {
   const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, '').toLowerCase(); } catch { return null; } };
   const ourHost = host(officialUrl);
-  const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-  for (const hit of await wikidataSearch(name)) {
+  // Ведущий артикль срезаем: у нас в каталоге «The University of Melbourne»,
+  // в Wikidata метка «University of Melbourne». Совпадение по названию не
+  // срабатывало, а офсайт у этого вуза null, поэтому запасная проверка по
+  // адресу тоже молчала — вуз выпадал целиком. Замер: таких 18, без кандидатов
+  // из них 14 (Melbourne, UNSW, Sydney, Akron и другие).
+  const norm = (s) => String(s || '').toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ').replace(/^the /, '').trim();
+  // Ищем БЕЗ ведущего артикля: по запросу «The University of Sydney» Wikidata
+  // отдаёт статьи про кохлеарные импланты, а сам вуз в восьмёрку не попадает.
+  // Сверку тождества ниже это не ослабляет — она по-прежнему строгая.
+  const query = String(name || '').replace(/^\s*the\s+/i, '');
+  for (const hit of await wikidataSearch(query)) {
     // Дешёвая проверка ПЕРВОЙ, до запроса карточки сущности: и однофамильцев
     // отсекает, и не создаёт лишней нагрузки на Wikidata.
     const labelMatches = norm(hit.label) === norm(name);
