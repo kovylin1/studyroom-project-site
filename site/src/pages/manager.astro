@@ -1260,6 +1260,7 @@ const CONTROL_DEFAULT_URL = '';
   const REVIZOR_APPLY_WORKFLOW = 'revizor-apply.yml';
   const SOROKA_APPLY_WORKFLOW  = 'soroka-apply.yml';
   const BOBR_APPLY_WORKFLOW    = 'bobr-apply.yml';
+  const OREL_APPLY_WORKFLOW    = 'orel-apply.yml';
   const SOROKA_RUN_WORKFLOW    = 'soroka-on-demand.yml';
   const OREL_WORKFLOW          = 'orel-on-demand.yml';
   const PAUK_WORKFLOW          = 'pauk-on-demand.yml';
@@ -1700,6 +1701,13 @@ const CONTROL_DEFAULT_URL = '';
       workflow: BOBR_APPLY_WORKFLOW,
       lsKey: 'studyroom.bobr.decisions',
     },
+    {
+      key: 'orel', title: 'ОРЁЛ',
+      api: '/api/orel-review.json',
+      contentPath: 'site/public/api/orel-review.json',
+      workflow: OREL_APPLY_WORKFLOW,
+      lsKey: 'studyroom.orel.decisions',
+    },
   ];
   const srcState = {};   // key → { cfg, data }  (data = полный JSON источника)
   let reviewData = null; // объединённый вид { items: [...] } для рендера
@@ -1747,8 +1755,29 @@ const CONTROL_DEFAULT_URL = '';
       tuition_zero: 'цена обучения не заполнена (0)',
       tuition_outlier: 'цена обучения вне диапазона',
       ielts_implausible: 'неправдоподобный балл IELTS',
+      orel_needs_eyes: 'фото найдено — нужен просмотр глазами',
     };
     return map[issue] || issue;
+  }
+
+  // Кейс ОРЛА показывает САМО ФОТО: решить «здание это или реклама» по тексту
+  // нельзя. В пилоте мимо всех фильтров прошли рекламная плашка, ИИ-портрет
+  // и SVG-логотип — каждый раз это было видно только глазами.
+  function candidateHtml(item) {
+    const c = item.candidate;
+    if (!c || !c.img) return '';
+    const esc = (s) => String(s == null ? '' : s)
+      .replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+    const lic = c.imgLicense === 'official-site' ? 'офсайт вуза' : esc(c.imgLicense || 'лицензия неизвестна');
+    const author = c.imgAuthor ? esc(c.imgAuthor) : 'автор неизвестен';
+    const src = c.imgSource
+      ? `<a href="${esc(c.imgSource)}" target="_blank" rel="noopener">источник</a>`
+      : 'источник не указан';
+    return `<div class="review-item__detail" style="display:flex;gap:12px;align-items:flex-start;margin-top:6px">
+      <img src="${esc(c.img)}" alt="" loading="lazy"
+           style="width:200px;height:134px;object-fit:cover;border-radius:6px;background:#eee;flex:none">
+      <span class="muted">${lic} · ${author} · ${src}<br>${c.width || '?'}×${c.height || '?'}</span>
+    </div>`;
   }
 
   function decisionActions(item) {
@@ -1804,6 +1833,7 @@ const CONTROL_DEFAULT_URL = '';
           </div>
           ${programsHtml ? `<div class="review-item__detail">${programsHtml}</div>` : ''}
           ${item.detail ? `<div class="review-item__detail">${item.detail}</div>` : ''}
+          ${candidateHtml(item)}
           <div class="review-item__actions">${decisionActions(item)}</div>
         </li>`;
       }).join('');

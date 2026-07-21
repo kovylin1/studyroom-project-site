@@ -36,6 +36,8 @@ const SLUG_FILTER = arg('--slug=') || null;
 const WORKLIST = arg('--worklist=') || null;
 const CONCURRENCY = parseInt(arg('--concurrency=') || '4', 10);
 const DRY_RUN = process.argv.includes('--dry-run');
+// Офсайт как источник — только по явному требованию, см. комментарий у шага 2.
+const WITH_OFFICIAL = process.argv.includes('--with-official');
 
 const NOW = new Date().toISOString();
 const TODAY = NOW.slice(0, 10);
@@ -261,8 +263,13 @@ async function main() {
       await consider(c.url, { imgSource: c.source, imgLicense: c.license, imgAuthor: c.author });
     }
 
-    // 2. Офсайт добором — и только со страниц про кампус.
-    if (found.length < WANT_PER_UNI) {
+    // 2. Офсайт добором — ВЫКЛЮЧЕН по умолчанию (решение владельца 2026-07-21).
+    //    Замер пилота 3 глазами: Wikimedia 4 годных из 5, офсайт 2 из 6, при этом
+    //    офсайт давал 26 кандидатов из 31 — то есть худший источник тащил объём.
+    //    Мимо фильтров проходят люди на первом плане, ИИ-сток (fresenius публикует
+    //    сгенерированные портреты у себя) и векторная графика. Отличить это от
+    //    здания без просмотра нельзя. Включается флагом --with-official.
+    if (WITH_OFFICIAL && found.length < WANT_PER_UNI) {
       if (official && !isAggHost(official)) {
         for (const p of SITE_PATHS) {
           if (found.length >= WANT_PER_UNI) break;

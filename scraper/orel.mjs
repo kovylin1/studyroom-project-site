@@ -78,14 +78,29 @@ if (!SKIP_DOWNLOAD) {
   log('=== Phase 1: SKIPPED ===');
 }
 
-// Phase 2: Quality filter + dedup (ОРЁЛ verifier)
-log('=== Phase 2: quality filter ===');
-report['orel-photo-quality'] = await run('orel-photo-quality.mjs');
-
-// Phase 3: Fill gaps with library photos (from bobr-buildlib)
-log('=== Phase 3: fill gaps ===');
+// Phase 2: Fill gaps with library photos (from bobr-buildlib)
+// ИДЁТ ПЕРЕД ОРЛОМ: добивка создаёт новые ссылки на фото, и если пустить её
+// после, эти фото останутся без пометки imgKind до следующего прогона.
+log('=== Phase 2: fill gaps ===');
 report['bobr-variety'] = await run('bobr-variety.mjs');
 report['bobr-backfill'] = await run('bobr-backfill.mjs');
+
+// Phase 3: достоверность фото — пометить, найти замену, применить 1:1.
+// Порядок внутри фазы обязателен: hunt отбирает по реестру, который строит
+// audit, а apply перепроверяет по нему же.
+//
+// --dry-run пробрасывается в КАЖДУЮ фазу поимённо. Именно непроброшенный флаг
+// был багом bobr.mjs: «сухой» прогон создал файл вуза и изменил ещё 99.
+log('=== Phase 3: достоверность фото (ОРЁЛ) ===');
+// Скрипты ОРЛА читают слаг ТОЛЬКО в форме --slug=X, а SLUG_PAIR выше — это
+// форма «--slug X» для старых скриптов. Перепутать их значит молча обойти
+// весь каталог там, где просили один вуз.
+const DRY = DRY_RUN ? ['--dry-run'] : [];
+const SLUG_EQ = SLUG_ARG ? [`--slug=${SLUG_ARG}`] : [];
+report['orel-audit'] = await run('orel-audit.mjs', ...DRY, ...SLUG_EQ);
+report['orel-hunt'] = await run('orel-hunt.mjs', ...DRY, ...SLUG_EQ);
+report['orel-apply'] = await run('orel-apply.mjs', ...DRY, ...SLUG_EQ);
+report['orel-preview'] = await run('orel-preview.mjs');
 
 // Phase 4: Validate Zod
 log('=== Phase 4: validate ===');
