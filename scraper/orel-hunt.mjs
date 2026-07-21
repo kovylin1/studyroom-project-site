@@ -19,7 +19,7 @@ import { resolveOfficialSite, AGG_DOMAINS } from './lib/official-site.mjs';
 import { fingerprint, hamming } from './lib/photo-fingerprint.mjs';
 import {
   wikidataSearch, wikidataEntityById, commonsFiles, commonsCategoryFiles,
-  ThrottledError, wikiStats,
+  ThrottledError, wikiStats, wikiFetchBuffer, isWikimediaHost,
 } from './lib/wikimedia.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -44,7 +44,14 @@ const TODAY = NOW.slice(0, 10);
 const log = (...a) => process.stderr.write(`[МОТЫЛЁК] ${new Date().toISOString().slice(11, 19)} ${a.join(' ')}\n`);
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36';
-const MIN_SIDE = 800;          // короткая сторона, px
+// Короткая сторона. Было 800 — замер кандидатов пилота 3 показал, что вокруг
+// этой границы живёт мусор: glasgow отдал полосу 2000x857 весом 93 КБ.
+// Карточка вуза и галерея показывают фото крупно, 900 — нижняя честная планка.
+const MIN_SIDE = 900;
+// Байт на пиксель. Отличает нормальный JPEG от пережатого до артефактов:
+// у glasgow-SVG вышло 0.001, у пережатых офсайтовых кадров 0.056–0.098,
+// у нормальных снимков Wikimedia 0.2–0.5. Порог взят по этому замеру.
+const MIN_BPP = 0.10;
 const WANT_PER_UNI = 5;        // сколько подтверждённых фото хотим набрать
 const DHASH_NEAR = 6;          // ближе этого расстояния считаем «та же картинка»
 // ТОЛЬКО страницы про кампус. Главная и общие страницы отдают в og:image
@@ -67,6 +74,8 @@ function acceptable(fp, url) {
   if (PERSON_NAME.test(url)) return { ok: false, why: 'похоже на портрет человека' };
   if (!fp.width || !fp.height) return { ok: false, why: 'не декодируется' };
   if (Math.min(fp.width, fp.height) < MIN_SIDE) return { ok: false, why: `мелкое ${fp.width}x${fp.height}` };
+  const bpp = fp.bytes / (fp.width * fp.height);
+  if (bpp < MIN_BPP) return { ok: false, why: `пережато ${bpp.toFixed(3)} байт/пиксель` };
   const ratio = fp.width / fp.height;
   // Галерея и шапка карточки горизонтальные: вертикальный кадр ломает вёрстку.
   if (ratio < 0.9) return { ok: false, why: `вертикальное ${fp.width}x${fp.height}` };
@@ -215,6 +224,10 @@ async function main() {
   log(`вузов к обходу: ${slugs.length}${DRY_RUN ? ' (сухой прогон)' : ''}`);
 
   const candidates = [];
+  // Отпечатки принятых В ЭТОМ ПРОГОНЕ. Реестр знает только то, что уже лежит
+  // в каталоге, поэтому два вуза в одном прогоне могли получить одну картинку
+  // из общей Commons-категории — и мы бы своими руками завели новый сток.
+  const takenThisRun = [];
   const stats = { withCandidates: 0, noOfficialSite: 0, nothingFound: 0, rejected: 0, throttledUnis: 0 };
 
   const runOne = async (slug) => {
@@ -229,7 +242,10 @@ async function main() {
     /** Общая проверка кандидата: годен, не чужой, не повтор внутри прогона. */
     const consider = async (url, meta) => {
       if (found.length >= WANT_PER_UNI) return;
-      const buf = await fetchBuf(url);
+      // Картинки Wikimedia качаем через ту же очередь, что и её API: иначе
+      // upload.wikimedia.org отвечает 429, а обычный fetchBuf выдаёт это за
+      // «картинки нет». Ровно этот недочёт срезал покрытие пилота 4 с 5 до 4.
+      const buf = isWikimediaHost(url) ? await wikiFetchBuffer(url) : await fetchBuf(url);
       if (!buf) return;
       const fp = await fingerprint(buf);
       const verdict = acceptable(fp, url);
@@ -241,9 +257,15 @@ async function main() {
         (d.sha1 === fp.sha1 || hamming(d.dhash, fp.dhash) <= DHASH_NEAR) &&
         [...d.slugs].some(s => s !== slug));
       if (clash) { stats.rejected++; return; }
-      // Повтор внутри текущего прогона.
+      // Повтор внутри этого вуза.
       if (seenHere.some(d => hamming(d, fp.dhash) <= DHASH_NEAR)) return;
+      // Повтор с ДРУГИМ вузом этого же прогона — иначе сами создадим новый сток.
+      if (takenThisRun.some(t => t.slug !== slug && hamming(t.dhash, fp.dhash) <= DHASH_NEAR)) {
+        stats.rejected++;
+        return;
+      }
       seenHere.push(fp.dhash);
+      takenThisRun.push({ slug, dhash: fp.dhash });
       found.push({ buf, fp, url, ...meta });
     };
 

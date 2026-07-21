@@ -90,6 +90,52 @@ export async function wikiFetchJson(url, { fetchImpl = fetch, retries = MAX_RETR
   return null;
 }
 
+/** Хост принадлежит Wikimedia — значит и качать оттуда надо через очередь. */
+export const isWikimediaHost = (u) => {
+  try { return /(^|\.)wikimedia\.org$|(^|\.)wikipedia\.org$/.test(new URL(u).hostname); }
+  catch { return false; }
+};
+
+/**
+ * Скачивание САМОЙ КАРТИНКИ с Wikimedia — тоже через очередь и с уважением 429.
+ *
+ * Отдельная функция появилась потому, что первую починку я сделал наполовину:
+ * запросы к api.php поставил в очередь, а загрузку файлов с upload.wikimedia.org
+ * оставил как есть. Замер показал 429 на скачивании — и обычный `if (!r.ok)
+ * return null` снова выдавал лимит за «картинки нет», ровно как раньше.
+ *
+ * @returns {Promise<Buffer|null>} null — картинки действительно нет
+ * @throws {ThrottledError} лимит не отпустил за отведённые попытки
+ */
+export async function wikiFetchBuffer(url, { fetchImpl = fetch, retries = MAX_RETRIES, timeoutMs = 30000 } = {}) {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    const res = await schedule(async () => {
+      wikiStats.requests++;
+      const ac = new AbortController();
+      const t = setTimeout(() => ac.abort(), timeoutMs);
+      try { return await fetchImpl(url, { headers: { 'user-agent': WIKI_UA }, signal: ac.signal, redirect: 'follow' }); }
+      finally { clearTimeout(t); }
+    });
+
+    if (res.status === 429) {
+      wikiStats.throttled++;
+      const hinted = parseInt(res.headers?.get?.('retry-after') || '', 10);
+      const waitS = Number.isFinite(hinted) && hinted >= 0 ? hinted : Math.min(60, 2 ** attempt * 5);
+      if (attempt === retries) throw new ThrottledError(url, waitS);
+      wikiStats.waitedMs += waitS * 1000;
+      await sleep(waitS * 1000);
+      continue;
+    }
+
+    if (!res.ok) { wikiStats.failed++; return null; }
+    const ct = res.headers?.get?.('content-type') || '';
+    if (!ct.startsWith('image/') || ct.includes('svg')) return null;
+    const buf = Buffer.from(await res.arrayBuffer());
+    return buf.length > 200 ? buf : null;
+  }
+  return null;
+}
+
 /** Титулы, разбитые на пачки по пределу MediaWiki. */
 export function chunkTitles(titles, size = MAX_TITLES_PER_CALL) {
   const uniq = [...new Set(titles.filter(Boolean))];
@@ -131,7 +177,7 @@ export async function commonsFiles(titles, opts = {}) {
   const out = [];
   for (const batch of chunkTitles(titles)) {
     const url = `${COMMONS}?action=query&format=json&formatversion=2&prop=imageinfo`
-      + `&iiprop=url|extmetadata&iiurlwidth=1600&titles=${encodeURIComponent(batch.join('|'))}`;
+      + `&iiprop=url|extmetadata&iiurlwidth=2400&titles=${encodeURIComponent(batch.join('|'))}`;
     const j = await wikiFetchJson(url, opts);
     if (j) out.push(...parseImageInfo(j));
   }
@@ -146,7 +192,7 @@ export async function commonsCategoryFiles(category, { limit = 40, ...opts } = {
   const url = `${COMMONS}?action=query&format=json&formatversion=2`
     + `&generator=categorymembers&gcmtype=file&gcmlimit=${limit}`
     + `&gcmtitle=${encodeURIComponent('Category:' + category)}`
-    + `&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1600`;
+    + `&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=2400`;
   const j = await wikiFetchJson(url, opts);
   return j ? parseImageInfo(j) : [];
 }
