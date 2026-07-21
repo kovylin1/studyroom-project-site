@@ -55,9 +55,13 @@ log('starting — ' + (DRY_RUN ? 'DRY RUN' : 'LIVE'));
 const report = {};
 
 log('=== Phase 1: campuses + accommodation ===');
-report['bobr-accommodation-merge'] = await run('bobr-accommodation-merge.mjs', ...(DRY_RUN ? ['--no-scrape'] : []));
-report['bobr-accommodation-v2'] = await run('bobr-accommodation-v2.mjs');
-report['bobr-campuses-v2'] = await run('bobr-campuses-v2.mjs');
+// --dry-run пробрасывается в КАЖДУЮ фазу, которая пишет в каталог.
+// Раньше merge получал только --no-scrape (он глушит сеть, но не запись),
+// а v2-коллекторы не получали ничего — и «сухой» прогон правил каталог.
+const dry = DRY_RUN ? ['--dry-run'] : [];
+report['bobr-accommodation-merge'] = await run('bobr-accommodation-merge.mjs', ...(DRY_RUN ? ['--no-scrape', '--dry-run'] : []));
+report['bobr-accommodation-v2'] = await run('bobr-accommodation-v2.mjs', ...dry);
+report['bobr-campuses-v2'] = await run('bobr-campuses-v2.mjs', ...dry);
 report['bobr-keyfacts'] = await run('bobr-keyfacts.mjs', ...(DRY_RUN ? ['--dry-run'] : []));
 
 if (!SKIP_AUDIT) {
