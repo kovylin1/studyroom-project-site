@@ -39,6 +39,11 @@ const arg = (p) => (process.argv.find(a => a.startsWith(p)) || '').slice(p.lengt
 const SLUG_FILTER = arg('--slug=') || null;
 const DRY_RUN = process.argv.includes('--dry-run');
 const AUTO_ONLY = process.argv.includes('--auto-only');
+// --no-auto: НИЧЕГО не применять автоматически, всё отправить оператору в панель.
+// Нужен потому, что порог автозамены (Wikimedia + лицензия + автор) пропускает
+// исторические снимки: у adelaide так прошло архивное фото 1905 года с конной
+// процессией — провенанс идеальный, а на карточке вуза ему не место.
+const NO_AUTO = process.argv.includes('--no-auto');
 
 const NOW = new Date().toISOString();
 const TODAY = NOW.slice(0, 10);
@@ -119,7 +124,9 @@ async function main() {
       const onDisk = await fs.access(path.join(PUBLIC, cand.img.replace(/^\//, '')))
         .then(() => true).catch(() => false);
       const others = [...(slugsBySha.get(cand.sha1) || [])].filter(s => s !== slug);
-      const verdict = autoEligible(cand, { onDisk, clashSlugs: others });
+      const verdict = NO_AUTO
+        ? { ok: false, why: 'режим «только кейсы» — решает оператор' }
+        : autoEligible(cand, { onDisk, clashSlugs: others });
 
       if (!verdict.ok) {
         stats.skipped++;
