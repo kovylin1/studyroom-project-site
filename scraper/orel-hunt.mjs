@@ -369,6 +369,27 @@ async function main() {
     return;
   }
   await fs.mkdir(path.dirname(CANDIDATES_OUT), { recursive: true });
+
+  // ТОЧЕЧНЫЙ прогон не имеет права стирать чужие результаты. Догон по 16 вузам
+  // уже снёс 1225 кандидатов массового прогона — спасла только резервная копия,
+  // сделанная руками. Та же болезнь была у СОРОКИ, поэтому лечим в коде:
+  // обойдённые вузы обновляем, всех прочих переносим как есть.
+  const scoped = Boolean(WORKLIST || SLUG_FILTER || Number.isFinite(LIMIT));
+  if (scoped) {
+    const touched = new Set(slugs);
+    let prev = [];
+    try {
+      prev = JSON.parse(await fs.readFile(CANDIDATES_OUT, 'utf8')).candidates || [];
+    } catch { /* первого прогона ещё не было */ }
+    const kept = prev.filter(c => !touched.has(c.slug));
+    if (kept.length) {
+      report.candidates = [...kept, ...candidates];
+      report.stats.withCandidates = new Set(report.candidates.map(c => c.slug)).size;
+      report.scope = `частичный: ${slugs.length} вузов, перенесено чужих кандидатов ${kept.length}`;
+      log(`частичный прогон: перенесено ${kept.length} кандидатов по вузам вне списка`);
+    }
+  }
+
   await fs.writeFile(CANDIDATES_OUT, JSON.stringify(report, null, 1) + '\n');
   log(`готово. кандидатов ${candidates.length} у ${stats.withCandidates} вузов из ${slugs.length}. ${JSON.stringify(stats)}`);
 }
