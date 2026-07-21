@@ -41,8 +41,11 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/
 const MIN_SIDE = 800;          // короткая сторона, px
 const WANT_PER_UNI = 5;        // сколько подтверждённых фото хотим набрать
 const DHASH_NEAR = 6;          // ближе этого расстояния считаем «та же картинка»
-const SITE_PATHS = ['', '/about', '/about-us', '/campus', '/campuses', '/our-campus',
-  '/student-life', '/life', '/gallery', '/about/campus'];
+// ТОЛЬКО страницы про кампус. Главная и общие страницы отдают в og:image
+// последнюю новость вуза — пилот 2026-07-21 принёс оттуда рекламную плашку
+// «ranked #1» и иллюстрацию к медновости. Подробности: sources/audit/orel-pilot-eyeball.md
+const SITE_PATHS = ['/campus', '/campuses', '/our-campus', '/about/campus',
+  '/about/campuses', '/campus-life', '/visit', '/about/our-campus', '/facilities'];
 
 // Не-фотографии отсекаем по имени файла: логотипы, гербы, карты, иконки.
 const JUNK_NAME = /(logo|icon|favicon|sprite|crest|seal|coat[-_ ]?of[-_ ]?arms|\bmap\b|banner|badge|placeholder|avatar|button|arrow|spinner|loader|pixel|blank)/i;
@@ -116,23 +119,40 @@ function imageUrlsFrom(html, pageUrl) {
   return [...new Set(out)].filter(u => /^https?:/.test(u) && !JUNK_NAME.test(u));
 }
 
-/** Wikidata → сущность вуза с проверками из discover-official-sites: P31 и совпадение label. */
-async function wikidataEntity(name) {
-  const search = `https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&language=en&limit=5&search=${encodeURIComponent(name)}`;
+/**
+ * Wikidata → сущность вуза. Две независимые проверки тождества:
+ *   (а) адрес офсайта в Wikidata (P856) совпадает с нашим — сильная проверка,
+ *       переживает любые расхождения в написании названия;
+ *   (б) точное совпадение label — запасная, когда офсайт неизвестен.
+ * Плюс P31 обязан быть учебным заведением — иначе auburn уводит на спортклуб
+ * (эта защита взята из discover-official-sites.mjs, проверена на 59 адресах).
+ */
+async function wikidataEntity(name, officialUrl) {
+  const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, '').toLowerCase(); } catch { return null; } };
+  const ourHost = host(officialUrl);
+  const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const search = `https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&language=en&limit=8&search=${encodeURIComponent(name)}`;
   try {
-    const r = await fetch(search, { headers: { 'user-agent': UA } });
-    const j = await r.json();
-    const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    const j = await (await fetch(search, { headers: { 'user-agent': UA } })).json();
     for (const hit of j.search || []) {
-      if (norm(hit.label) !== norm(name)) continue;   // однофамильцы отсекаются
+      // Дешёвая проверка ПЕРВОЙ, до запроса карточки сущности: и однофамильцев
+      // отсекает, и не создаёт лишней нагрузки на Wikidata.
+      const labelMatches = norm(hit.label) === norm(name);
+      if (!labelMatches && !ourHost) continue;
+
       const er = await fetch(`https://www.wikidata.org/wiki/Special:EntityData/${hit.id}.json`, { headers: { 'user-agent': UA } });
-      const ej = await er.json();
-      const ent = ej.entities?.[hit.id];
-      const p31 = (ent?.claims?.P31 || []).map(c => c.mainsnak?.datavalue?.value?.id);
+      const ent = (await er.json()).entities?.[hit.id];
+      if (!ent) continue;
+
       // Q3918 университет, Q38723 вуз, Q189004 колледж, Q9826 школа, Q2385804 учебное заведение
       const EDU = ['Q3918', 'Q38723', 'Q189004', 'Q9826', 'Q2385804', 'Q875538', 'Q4671277'];
+      const p31 = (ent.claims?.P31 || []).map(c => c.mainsnak?.datavalue?.value?.id);
       if (!p31.some(id => EDU.includes(id))) continue;
-      return ent;
+
+      // Проверки независимы: достаточно любой.
+      if (labelMatches) return ent;
+      const theirHost = host(ent.claims?.P856?.[0]?.mainsnak?.datavalue?.value);
+      if (ourHost && theirHost && ourHost === theirHost) return ent;
     }
   } catch { /* сеть подвела — не выдумываем */ }
   return null;
@@ -160,22 +180,22 @@ async function commonsFile(title) {
   } catch { return null; }
 }
 
-async function wikimediaCandidates(uni) {
-  const ent = await wikidataEntity(uni.name);
+async function wikimediaCandidates(uni, officialUrl) {
+  const ent = await wikidataEntity(uni.name, officialUrl);
   if (!ent) return [];
   const titles = [];
   const p18 = ent.claims?.P18?.[0]?.mainsnak?.datavalue?.value;
-  if (p18) titles.push('File:' + p18);
+  if (p18) titles.push('File:' + p18);   // главное изображение сущности — почти всегда здание
   const cat = ent.claims?.P373?.[0]?.mainsnak?.datavalue?.value;
   if (cat) {
     try {
-      const api = `https://commons.wikimedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtype=file&cmlimit=12&cmtitle=${encodeURIComponent('Category:' + cat)}`;
+      const api = `https://commons.wikimedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtype=file&cmlimit=40&cmtitle=${encodeURIComponent('Category:' + cat)}`;
       const j = await (await fetch(api, { headers: { 'user-agent': UA } })).json();
       for (const m of j.query?.categorymembers || []) titles.push(m.title);
     } catch { /* пропускаем */ }
   }
   const out = [];
-  for (const t of titles.slice(0, 12)) {
+  for (const t of titles.slice(0, 40)) {
     const f = await commonsFile(t);
     if (f) out.push({ url: f.url, source: f.descriptionUrl, license: f.license, author: f.author });
   }
@@ -239,27 +259,29 @@ async function main() {
       found.push({ buf, fp, url, ...meta });
     };
 
-    // 1. Офсайт.
-    if (official && !isAggHost(official)) {
-      for (const p of SITE_PATHS) {
-        if (found.length >= WANT_PER_UNI) break;
-        const pageUrl = new URL(p, official).href;
-        const html = await fetchText(pageUrl);
-        if (!html) continue;
-        for (const img of imageUrlsFrom(html, pageUrl).slice(0, 15)) {
-          if (found.length >= WANT_PER_UNI) break;
-          await consider(img, { imgSource: pageUrl, imgLicense: 'official-site', imgAuthor: null });
-        }
-      }
-    } else {
-      stats.noOfficialSite++;
+    // 1. Wikimedia — ОСНОВНОЙ источник. В Commons-категорию вуза загружают
+    //    именно снимки зданий; офсайт же оптимизирован под новости.
+    //    Порядок выбран не из теории, а по результату пилота (6 брака из 7).
+    for (const c of await wikimediaCandidates(uni, official)) {
+      if (found.length >= WANT_PER_UNI) break;
+      await consider(c.url, { imgSource: c.source, imgLicense: c.license, imgAuthor: c.author });
     }
 
-    // 2. Wikimedia добором.
+    // 2. Офсайт добором — и только со страниц про кампус.
     if (found.length < WANT_PER_UNI) {
-      for (const c of await wikimediaCandidates(uni)) {
-        if (found.length >= WANT_PER_UNI) break;
-        await consider(c.url, { imgSource: c.source, imgLicense: c.license, imgAuthor: c.author });
+      if (official && !isAggHost(official)) {
+        for (const p of SITE_PATHS) {
+          if (found.length >= WANT_PER_UNI) break;
+          const pageUrl = new URL(p, official).href;
+          const html = await fetchText(pageUrl);
+          if (!html) continue;
+          for (const img of imageUrlsFrom(html, pageUrl).slice(0, 15)) {
+            if (found.length >= WANT_PER_UNI) break;
+            await consider(img, { imgSource: pageUrl, imgLicense: 'official-site', imgAuthor: null });
+          }
+        }
+      } else {
+        stats.noOfficialSite++;
       }
     }
 
