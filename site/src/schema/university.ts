@@ -74,9 +74,29 @@ export const scholarshipSchema = z.object({
 });
 export type Scholarship = z.infer<typeof scholarshipSchema>;
 
+/**
+ * Происхождение фото (ОРЁЛ, срез 3). Общий фрагмент для галереи, кампусов и жилья.
+ *
+ * imgKind: verified — подтверждено офсайтом или Wikimedia (заполнены imgSource+imgLicense);
+ *          shared   — та же картинка есть у других вузов;
+ *          stock    — общая стоковая библиотека или картинка у пяти и более вузов;
+ *          unknown  — своё по отпечатку, но происхождение неизвестно;
+ *          real     — легаси-значение до среза 3, оставлено ради совместимости.
+ *
+ * Все поля опциональные: непроверенные карточки не должны ронять build.
+ */
+export const photoProvenanceFields = {
+  imgKind: z.enum(['verified', 'stock', 'shared', 'unknown', 'real']).optional(),
+  imgSource: z.string().url().optional(),
+  imgLicense: z.string().optional(),
+  imgAuthor: z.string().optional(),
+  imgCheckedAt: isoDate.optional(),
+};
+
 export const galleryItemSchema = z.object({
   img: z.string().min(1),
   caption: z.string().optional(),
+  ...photoProvenanceFields,
 });
 export type GalleryItem = z.infer<typeof galleryItemSchema>;
 
@@ -99,11 +119,11 @@ export const accommodationItemSchema = z.object({
   oldPrice: z.string().optional(),
   text: z.string().optional(),
   img: z.string().optional(),
-  imgKind: z.enum(['stock', 'real']).optional(),
   source: z.string().optional(),
   verifiedBySite: z.boolean().optional(),
   confidence: z.number().min(0).max(1).optional(),
   checkedAt: isoDate.optional(),
+  ...photoProvenanceFields,
 });
 export type AccommodationItem = z.infer<typeof accommodationItemSchema>;
 
@@ -112,11 +132,11 @@ export const campusItemSchema = z.object({
   sub: z.string().optional(),
   text: z.string().optional(),
   img: z.string().optional(),
-  imgKind: z.enum(['stock', 'real']).optional(),
   source: z.string().optional(),
   verifiedBySite: z.boolean().optional(),
   confidence: z.number().min(0).max(1).optional(),
   checkedAt: isoDate.optional(),
+  ...photoProvenanceFields,
 });
 export type CampusItem = z.infer<typeof campusItemSchema>;
 
