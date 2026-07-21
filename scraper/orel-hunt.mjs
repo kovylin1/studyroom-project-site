@@ -91,9 +91,16 @@ async function fetchBuf(url, ms = 20000) {
     const r = await fetch(url, { headers: { 'user-agent': UA }, signal: ac.signal, redirect: 'follow' });
     if (!r.ok) return null;
     const ct = r.headers.get('content-type') || '';
-    if (!ct.startsWith('image/')) return null;
+    // image/svg+xml проходил проверку «начинается с image/», и векторная графика
+    // попадала в галерею под именем .jpg: у glasgow так пролез логотип-SVG,
+    // причём sharp его отрисовал и отпечаток выглядел как у фотографии 1792x1792.
+    if (!ct.startsWith('image/') || ct.includes('svg')) return null;
     const buf = Buffer.from(await r.arrayBuffer());
-    return buf.length > 200 ? buf : null;
+    if (buf.length <= 200) return null;
+    // Заголовок надёжнее content-type: сервер может соврать про тип.
+    const head = buf.subarray(0, 5).toString('latin1');
+    if (head.startsWith('<?xml') || head.startsWith('<svg')) return null;
+    return buf;
   } catch { return null; } finally { clearTimeout(t); }
 }
 
