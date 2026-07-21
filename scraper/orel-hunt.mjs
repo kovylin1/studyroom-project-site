@@ -17,6 +17,10 @@ import { fileURLToPath } from 'url';
 import * as cheerio from 'cheerio';
 import { resolveOfficialSite, AGG_DOMAINS } from './lib/official-site.mjs';
 import { fingerprint, hamming } from './lib/photo-fingerprint.mjs';
+import {
+  wikidataSearch, wikidataEntityById, commonsFiles, commonsCategoryFiles,
+  ThrottledError, wikiStats,
+} from './lib/wikimedia.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, '..');
@@ -131,75 +135,50 @@ async function wikidataEntity(name, officialUrl) {
   const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, '').toLowerCase(); } catch { return null; } };
   const ourHost = host(officialUrl);
   const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-  const search = `https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&language=en&limit=8&search=${encodeURIComponent(name)}`;
-  try {
-    const j = await (await fetch(search, { headers: { 'user-agent': UA } })).json();
-    for (const hit of j.search || []) {
-      // Дешёвая проверка ПЕРВОЙ, до запроса карточки сущности: и однофамильцев
-      // отсекает, и не создаёт лишней нагрузки на Wikidata.
-      const labelMatches = norm(hit.label) === norm(name);
-      if (!labelMatches && !ourHost) continue;
+  for (const hit of await wikidataSearch(name)) {
+    // Дешёвая проверка ПЕРВОЙ, до запроса карточки сущности: и однофамильцев
+    // отсекает, и не создаёт лишней нагрузки на Wikidata.
+    const labelMatches = norm(hit.label) === norm(name);
+    if (!labelMatches && !ourHost) continue;
 
-      const er = await fetch(`https://www.wikidata.org/wiki/Special:EntityData/${hit.id}.json`, { headers: { 'user-agent': UA } });
-      const ent = (await er.json()).entities?.[hit.id];
-      if (!ent) continue;
+    const ent = await wikidataEntityById(hit.id);
+    if (!ent) continue;
 
-      // Q3918 университет, Q38723 вуз, Q189004 колледж, Q9826 школа, Q2385804 учебное заведение
-      const EDU = ['Q3918', 'Q38723', 'Q189004', 'Q9826', 'Q2385804', 'Q875538', 'Q4671277'];
-      const p31 = (ent.claims?.P31 || []).map(c => c.mainsnak?.datavalue?.value?.id);
-      if (!p31.some(id => EDU.includes(id))) continue;
+    // Q3918 университет, Q38723 вуз, Q189004 колледж, Q9826 школа, Q2385804 учебное заведение
+    const EDU = ['Q3918', 'Q38723', 'Q189004', 'Q9826', 'Q2385804', 'Q875538', 'Q4671277'];
+    const p31 = (ent.claims?.P31 || []).map(c => c.mainsnak?.datavalue?.value?.id);
+    if (!p31.some(id => EDU.includes(id))) continue;
 
-      // Проверки независимы: достаточно любой.
-      if (labelMatches) return ent;
-      const theirHost = host(ent.claims?.P856?.[0]?.mainsnak?.datavalue?.value);
-      if (ourHost && theirHost && ourHost === theirHost) return ent;
-    }
-  } catch { /* сеть подвела — не выдумываем */ }
+    // Проверки независимы: достаточно любой.
+    if (labelMatches) return ent;
+    const theirHost = host(ent.claims?.P856?.[0]?.mainsnak?.datavalue?.value);
+    if (ourHost && theirHost && ourHost === theirHost) return ent;
+  }
   return null;
 }
 
-/** Метаданные файла Commons: лицензия и автор обязательны, без них брать нельзя. */
-async function commonsFile(title) {
-  const api = `https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1600&titles=${encodeURIComponent(title)}`;
-  try {
-    const r = await fetch(api, { headers: { 'user-agent': UA } });
-    const j = await r.json();
-    const page = Object.values(j.query?.pages || {})[0];
-    const ii = page?.imageinfo?.[0];
-    if (!ii) return null;
-    const meta = ii.extmetadata || {};
-    const strip = (s) => String(s || '').replace(/<[^>]+>/g, '').trim();
-    const license = strip(meta.LicenseShortName?.value);
-    const author = strip(meta.Artist?.value);
-    if (!license) return null;                 // без лицензии не используем
-    return {
-      url: ii.thumburl || ii.url,
-      descriptionUrl: ii.descriptionurl,
-      license, author: author || null,
-    };
-  } catch { return null; }
-}
-
+/**
+ * Кандидаты из Wikimedia. Раньше здесь уходил 41 отдельный запрос на вуз,
+ * и Wikimedia отвечала 429 на большинство из них; ответ терялся в catch и
+ * выглядел как «фото нет». Теперь категория и метаданные берутся пачками —
+ * два запроса вместо сорока одного.
+ */
 async function wikimediaCandidates(uni, officialUrl) {
   const ent = await wikidataEntity(uni.name, officialUrl);
   if (!ent) return [];
-  const titles = [];
+
+  const files = [];
+  // P18 — главное изображение сущности, почти всегда здание. Оно первое.
   const p18 = ent.claims?.P18?.[0]?.mainsnak?.datavalue?.value;
-  if (p18) titles.push('File:' + p18);   // главное изображение сущности — почти всегда здание
+  if (p18) files.push(...await commonsFiles(['File:' + p18]));
+
   const cat = ent.claims?.P373?.[0]?.mainsnak?.datavalue?.value;
-  if (cat) {
-    try {
-      const api = `https://commons.wikimedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtype=file&cmlimit=40&cmtitle=${encodeURIComponent('Category:' + cat)}`;
-      const j = await (await fetch(api, { headers: { 'user-agent': UA } })).json();
-      for (const m of j.query?.categorymembers || []) titles.push(m.title);
-    } catch { /* пропускаем */ }
-  }
-  const out = [];
-  for (const t of titles.slice(0, 40)) {
-    const f = await commonsFile(t);
-    if (f) out.push({ url: f.url, source: f.descriptionUrl, license: f.license, author: f.author });
-  }
-  return out;
+  if (cat) files.push(...await commonsCategoryFiles(cat, { limit: 40 }));
+
+  const seen = new Set();
+  return files
+    .filter(f => f.url && !seen.has(f.title) && seen.add(f.title))
+    .map(f => ({ url: f.url, source: f.descriptionUrl, license: f.license, author: f.author }));
 }
 
 async function main() {
@@ -227,7 +206,7 @@ async function main() {
   log(`вузов к обходу: ${slugs.length}${DRY_RUN ? ' (сухой прогон)' : ''}`);
 
   const candidates = [];
-  const stats = { withCandidates: 0, noOfficialSite: 0, nothingFound: 0, rejected: 0 };
+  const stats = { withCandidates: 0, noOfficialSite: 0, nothingFound: 0, rejected: 0, throttledUnis: 0 };
 
   const runOne = async (slug) => {
     let uni;
@@ -262,7 +241,15 @@ async function main() {
     // 1. Wikimedia — ОСНОВНОЙ источник. В Commons-категорию вуза загружают
     //    именно снимки зданий; офсайт же оптимизирован под новости.
     //    Порядок выбран не из теории, а по результату пилота (6 брака из 7).
-    for (const c of await wikimediaCandidates(uni, official)) {
+    let wiki = [];
+    try {
+      wiki = await wikimediaCandidates(uni, official);
+    } catch (e) {
+      // Лимит — не «фото нет». Считаем отдельно, иначе отчёт соврёт.
+      if (e instanceof ThrottledError) { stats.throttledUnis++; log(`${slug}: ЛИМИТ Wikimedia, пропуск`); }
+      else throw e;
+    }
+    for (const c of wiki) {
       if (found.length >= WANT_PER_UNI) break;
       await consider(c.url, { imgSource: c.source, imgLicense: c.license, imgAuthor: c.author });
     }
@@ -314,7 +301,13 @@ async function main() {
     }
   }));
 
-  const report = { generatedAt: NOW, dryRun: DRY_RUN, requested: slugs.length, stats, candidates };
+  // Состояние сети — часть отчёта. Без него «нашли мало» не отличить от
+  // «нас тормозили», а именно на этом прошлый заход потерял три прогона.
+  const net = { ...wikiStats, waitedSec: Math.round(wikiStats.waitedMs / 1000) };
+  log(`Wikimedia: запросов ${net.requests}, торможений ${net.throttled}, ждали ${net.waitedSec}с, неудачных ответов ${net.failed}`);
+  if (net.throttled) log(`ВНИМАНИЕ: лимит срабатывал ${net.throttled} раз — покрытие могло пострадать, не считайте его окончательным`);
+
+  const report = { generatedAt: NOW, dryRun: DRY_RUN, requested: slugs.length, stats, network: net, candidates };
   if (DRY_RUN) {
     log(`СУХОЙ ПРОГОН — файлы и список не пишем. ${JSON.stringify(stats)}`);
     return;
@@ -324,4 +317,11 @@ async function main() {
   log(`готово. кандидатов ${candidates.length} у ${stats.withCandidates} вузов из ${slugs.length}. ${JSON.stringify(stats)}`);
 }
 
-main().catch(e => { log('ФАТАЛЬНО:', e.message); process.exit(1); });
+// Экспорт ради замеров: пробник импортирует НАСТОЯЩИЕ функции, а не их копию —
+// копия расходится с оригиналом ровно там, где ищешь ошибку.
+export { wikidataEntity, wikimediaCandidates, acceptable };
+
+// main() запускается только при прямом вызове из командной строки.
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch(e => { log('ФАТАЛЬНО:', e.message); process.exit(1); });
+}
