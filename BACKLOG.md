@@ -107,6 +107,53 @@
 
 ## DONE
 
+- 2026-07-21 — **СРЕЗ 3 (фото/галерея, ОРЁЛ) — половина: пометка сделана, регрессия поиска закрыта.**
+  Ветка `feat/orel-photo-fidelity` (в main НЕ влита, финальный merge за владельцем).
+  Замер опроверг отчёт среза 2: «2309 карточек помечены stock» покрывало лишь 54% объёма —
+  `mark-stock-photos.mjs` знал один признак (путь `/photos/_lib/`) и не обходил галерею.
+  Факты по 807 файлам: 7074 ссылки на фото, уникальных по содержимому (sha1) — 2854, т.е.
+  **4287 ссылок (61%) ведут на картинку другого вуза**; у 235 вузов ВСЯ галерея чужая;
+  одна картинка стоит в галерее у 64 вузов. Провенанса не было ни у одного из 2854 изображений.
+  Сделано: `lib/photo-fingerprint.mjs` (sha1 + перцептивный dHash), `lib/photo-classify.mjs`
+  (verified/stock/shared/unknown), `orel-audit.mjs` (реестр `sources/photo-registry.json` + пометка,
+  НИЧЕГО не удаляет), поля `img*` в Zod-схеме, подписи «Иллюстративное фото» в `LandingBody.astro`
+  (728 страниц), `prune-orphan-photos.mjs` (диск 1.5→1.1 ГБ, 1152 осиротевших файла).
+  **Все 7074 фото классифицированы** (stock 3647, unknown 2787, shared 640, verified 0 — провенанса
+  взять было неоткуда). Тесты 50/50, validate 807/0, build 2428 стр. exit 0, идемпотентно.
+  **Регрессия МОТЫЛЬКА закрыта замером:** три прогона подряд отчитывались «Wikimedia-кандидатов 0»,
+  и откат кода результат не возвращал. Причина — **HTTP 429**: 40 запросов к Commons пачкой дают
+  32 отказа с `Retry-After: 19`, а общий `catch { return null }` делал лимит неотличимым от
+  «файла нет». Штраф накопительный, поэтому чинили код, а тормозил счётчик на стороне Wikimedia;
+  прежняя проверка «Wikidata отвечает штатно» проходила ровно потому, что это был ОДИН запрос.
+  Лечение — `lib/wikimedia.mjs`: общая очередь (~1 запрос/с), уважение `Retry-After` с повтором,
+  `ThrottledError` вместо молчаливой пустоты, пакетные запросы (2 запроса на вуз вместо 41),
+  счётчики торможений в отчёте прогона. Замер после: acadia 0→41 кандидат, cranfield 0→40,
+  bristol 41, торможений 0, автор известен у 41 из 41. Коммит `5da07082`.
+  **НЕ СДЕЛАНО (переходит дальше):** сама замена фото, `orel-preview.mjs`, `orel-apply.mjs`,
+  вкладка ОРЁЛ в `manager.astro`. Спека: `docs/superpowers/specs/2026-07-21-photo-gallery-fidelity-design.md`,
+  план: `docs/superpowers/plans/2026-07-21-orel-photo-fidelity.md`,
+  визуальные проверки: `sources/audit/orel-pilot-eyeball.md`.
+
+- 2026-07-21 — **СРЕЗ 2 (достоверность жилья и кампусов, БОБР) — PR #51 смёрджен в main** (merge
+  `354deda7`, автодеплой Cloudflare success). Замер опроверг посылки спеки среза 1: жильё есть
+  у 430 вузов (не ~29), кампусы у 668, а в extract-источниках домена почти нет — «merge несёт
+  accommodation/campuses» переносить нечего. Настоящая проблема оказалась в недостоверности:
+  `source` у 2 карточек из 1401, `verifiedBySite` у 0, 974 карточки (70%) — русский текст,
+  написанный вручную, **102 цены у 18 вузов захардкожены литералами** повторяющейся «лесенкой»
+  £140–195/нед (нарушение правила «не фабриковать»). `bobr-verifier.mjs` существовал, но был
+  выключен флагом `--skip-verifier` и всё равно сверял бы с агрегатором. Сделано:
+  `lib/official-site.mjs` (SSOT резолва офсайта), `lib/accommodation-match.mjs`, `bobr-audit.mjs`,
+  `bobr-apply.mjs` + workflow, `mark-stock-photos.mjs`, вкладка БОБР в manager; `bobr-verifier.mjs`
+  удалён. Прогон 807 вузов, 0 ошибок: **404 карточки подтверждены офсайтом, 1529 кейсов ждут
+  владельца в /manager** (not_found 879, no_page 415, no_official_site 235). Из каталога ничего
+  не удалено — решение владельца. Тесты 27/27, build 2428 стр. exit 0, validate 807/0.
+  Спека: `docs/superpowers/specs/2026-07-20-accommodation-campuses-fidelity-audit-design.md`.
+
+- 2026-07-20 — **СРЕЗ 1 (канонические факультеты) — PR #50 смёрджен в main.**
+  `lib/canonicalize-faculty.mjs` (чистая функция raw+title→канон|null, идемпотентна) +
+  `backfill-faculties.mjs`. Прогон: **1677→12 значений, 74018 программ, 807 файлов**. Встроено
+  в `merge-programs.mjs`, поэтому будущие скрейпы сразу дают канон. Build 2428 страниц, exit 0.
+
 - 2026-05-15 — `/v2` promoted to the main `/` route. User decision: "Это будет основной сайт". (1) `site/src/pages/index.astro` overwritten with the v2 layout (HeroV2 + KPI bar + trust-strip + UniversityCardV2 grid + compare bar + final-cta + `<Filters />` panel) — net `+170 / -334` lines vs the old hero+`UniversityCard` shell. Title cleaned from "(v2 preview)" to plain "StudyRoom — каталог зарубежных университетов". Form id stays `catalog-filters` so the `<Filters />` component (the "old filter" — chip toggle, country select, GBP-tuition range, IELTS cap, scholarship toggle) drops in untouched and `catalog-v2.ts` script binds to the same canonical ids. (2) `site/src/pages/v2.astro` removed via `git rm` since its content now lives at `/`. (3) `site/astro.config.mjs` gained `redirects: { '/v2': '/' }` so the previous-session URL pattern (`/v2/?maxTuition=124000`) keeps resolving — Astro emits `dist/v2/index.html` with `<meta http-equiv="refresh" content="0;url=/">` + `<link rel="canonical" href="https://studyroom.kz/">` + `robots=noindex`. Query strings are NOT preserved through the meta-refresh, but the URL doesn't 404. Old `UniversityCard.astro` + `catalog-filters.ts` are now dead code (only `/` used them) but left in-tree as a small cleanup follow-up. Built locally (41 pages, 73s) and deployed via `npx wrangler pages deploy dist --project-name=studyroom-project-site --branch=main --commit-dirty=true` — preview at https://f3e54677.studyroom-project-site.pages.dev, alias `studyroom-project-site.pages.dev/` smoke-tested 200 (new layout), `/v2` smoke-tested 200 with the expected meta-refresh redirect to `/`. — evidence: `site/src/pages/index.astro` (rewrite), `site/astro.config.mjs` (`redirects` key), `git rm site/src/pages/v2.astro`. Commit `0a3abdd` on `main`.
 
 - 2026-05-15 — `/v2` catalog prototype recoloured to brand green + original filter restored. Previous session shipped `/v2` with WhatsApp-tinted CTAs (`#25d366` / `#1da851`) on the hero/card/final CTA buttons and an inline bespoke filter block — neither matched the per-uni landings. Fix: (1) every `background: #25d366` / `#1da851` (3 sites — `HeroV2.astro` primary CTA, `UniversityCardV2.astro` `__wa` hover, `v2.astro` `.final-cta__btn` + the same rule mirrored into `compare.astro`) swapped to `var(--color-primary)` / `var(--color-primary-dark)` (`#00950f` / `#007a0c` from `brand.css`, identical to `oxford-landing.css :root --green`). (2) `v2.astro` reverted its 80-line inline `<div class="filterbar">…</div>` chip+range+slider markup to a single `<Filters countries levels faculties tuitionMax />` invocation — same component the canonical `/` uses, so v2 inherits the chip toggle behaviour, GBP-tuition range, IELTS cap and scholarship toggle from one place. (3) The custom `-v2`-suffixed DOM ids (`catalog-filters-v2`, `catalog-grid-v2`, `catalog-filters-toggle-v2`, …) were renamed to the canonical ids so the in-page form, `Filters.astro`'s field `form="catalog-filters"`, `catalog-v2.ts`'s id constants and the new `HeroV2.astro` search input all bind to the same `<form id="catalog-filters">`. `HeroV2.astro`'s WhatsApp CTA label tightened from "15 мин с куратором в WhatsApp" to "15 мин с куратором" to keep the dual-CTA row balanced. `compare.astro` gained the matching `.final-cta__btn` block (was missing — page rendered an unstyled link). DEPLOYMENT.md rewritten to document the actual manual `wrangler pages deploy` flow + the 3 Pages projects (`studyroom-project-site`, `studyroom-redesign`, `studyroom-glasgow-v2`) since Cloudflare's GitHub auto-deploy is **not** connected. Built locally (`site/dist`, 42 pages, 88s) and deployed to production with `npx wrangler pages deploy dist --project-name=studyroom-project-site --branch=main --commit-dirty=true` — preview at https://0bc25d0a.studyroom-project-site.pages.dev, alias https://studyroom-project-site.pages.dev/v2/?maxTuition=124000 served the same build. — evidence: `site/src/components/HeroV2.astro` (CTA + search form id), `site/src/components/UniversityCardV2.astro` (WA hover), `site/src/pages/v2.astro` (filter inlining removed, ids renamed, CTA recolour), `site/src/pages/compare.astro` (`.final-cta__btn` block added), `site/src/scripts/catalog-v2.ts` (id constants), `DEPLOYMENT.md` rewrite. Commit `993ca84` on `main`.
