@@ -160,7 +160,7 @@ async function worker() {
 }
 await Promise.all(Array.from({length: CONCURRENCY}, () => worker()));
 await browser.close();
-if (auditRejected.length) {
+if (auditRejected.length && !DRY_RUN) {
   await fs.mkdir(AUDIT_DIR, { recursive: true });
   await fs.writeFile(path.join(AUDIT_DIR, 'accommodation-lowconf.json'),
     JSON.stringify({ minConfidence: MIN_CONFIDENCE, generatedAt: TODAY, rejected: auditRejected }, null, 2) + '\n');
