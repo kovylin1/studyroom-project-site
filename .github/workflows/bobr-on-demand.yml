@@ -24,7 +24,7 @@ jobs:
       - name: Install deps
         run: cd scraper && npm ci && cd ../site && npm ci
       - name: БОБР — campuses + accommodation
-        run: node scraper/bobr.mjs --skip-photos --skip-verifier
+        run: node scraper/bobr.mjs --skip-photos
         continue-on-error: true
       - name: Build site
         run: cd site && npm run build

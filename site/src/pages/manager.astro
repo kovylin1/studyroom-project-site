@@ -1259,6 +1259,7 @@ const CONTROL_DEFAULT_URL = '';
   const VERIFY_WORKFLOW        = 'verify-on-demand.yml';
   const REVIZOR_APPLY_WORKFLOW = 'revizor-apply.yml';
   const SOROKA_APPLY_WORKFLOW  = 'soroka-apply.yml';
+  const BOBR_APPLY_WORKFLOW    = 'bobr-apply.yml';
   const SOROKA_RUN_WORKFLOW    = 'soroka-on-demand.yml';
   const OREL_WORKFLOW          = 'orel-on-demand.yml';
   const PAUK_WORKFLOW          = 'pauk-on-demand.yml';
@@ -1691,6 +1692,13 @@ const CONTROL_DEFAULT_URL = '';
       contentPath: 'site/public/api/soroka-review.json',
       workflow: SOROKA_APPLY_WORKFLOW,
       lsKey: 'studyroom.soroka.decisions',
+    },
+    {
+      key: 'bobr', title: 'БОБР',
+      api: '/api/bobr-review.json',
+      contentPath: 'site/public/api/bobr-review.json',
+      workflow: BOBR_APPLY_WORKFLOW,
+      lsKey: 'studyroom.bobr.decisions',
     },
   ];
   const srcState = {};   // key → { cfg, data }  (data = полный JSON источника)

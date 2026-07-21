@@ -26,6 +26,9 @@ const log = (...a) => console.error('[campuses]', new Date().toISOString().slice
 const arg = (p) => (process.argv.find(a => a.startsWith(p)) || '').slice(p.length);
 const LIMIT = parseInt(arg('--limit=') || 'Infinity', 10);
 const SLUG_FILTER = arg('--slug=') || null;
+// --dry-run: собираем и отчитываемся, но в каталог НЕ пишем.
+// Раньше флага не было вовсе — «сухой» прогон bobr.mjs молча правил каталог.
+const DRY_RUN = process.argv.includes('--dry-run');
 
 async function fetchOk(url, timeoutMs=8000) {
   try {
@@ -97,7 +100,7 @@ async function worker() {
       const u = JSON.parse(await fs.readFile(p, 'utf8'));
       const n = await scrapeCampuses(u);
       if (n > 0) {
-        await fs.writeFile(p, JSON.stringify(u, null, 2) + '\n');
+        if (!DRY_RUN) await fs.writeFile(p, JSON.stringify(u, null, 2) + '\n');
         added += n;
         process.stderr.write(`[campuses] ${u.slug}: +${n}\n`);
       }
@@ -106,7 +109,7 @@ async function worker() {
   }
 }
 await Promise.all(Array.from({length: CONCURRENCY}, () => worker()));
-if (auditRejected.length) {
+if (auditRejected.length && !DRY_RUN) {
   await fs.mkdir(AUDIT_DIR, { recursive: true });
   await fs.writeFile(path.join(AUDIT_DIR, 'campuses-lowconf.json'),
     JSON.stringify({ minConfidence: MIN_CONFIDENCE, generatedAt: TODAY, rejected: auditRejected }, null, 2) + '\n');

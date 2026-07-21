@@ -228,6 +228,9 @@ async function scrapeAccommodation(uni) {
 
 // ---- main ----
 const noScrape = process.argv.includes('--no-scrape');
+// --no-scrape отключает только сетевой сбор, но НЕ запись — раньше bobr.mjs слал
+// его вместо --dry-run, и «сухой» прогон создавал файлы вузов в каталоге.
+const DRY_RUN = process.argv.includes('--dry-run');
 
 log('loading unis + edvoy extracts');
 const unis = await loadAllUnis();
@@ -242,7 +245,7 @@ for (const ev of edvoy) {
   if (!match) { mergeNoMatch++; unmatched.push(ev); continue; }
   const changed = mergeEdvoy(match.data, ev);
   if (changed) {
-    await fs.writeFile(path.join(UNI_DIR, match.file), JSON.stringify(match.data, null, 2) + '\n');
+    if (!DRY_RUN) await fs.writeFile(path.join(UNI_DIR, match.file), JSON.stringify(match.data, null, 2) + '\n');
     mergeFieldChanges += changed;
     mergeMatched++;
   }
@@ -337,8 +340,8 @@ for (const ev of unmatched) {
   }
   if (ev.description) newUni.description = { paragraphs: [ev.description] };
 
-  await fs.writeFile(path.join(UNI_DIR, slug + '.json'), JSON.stringify(newUni, null, 2) + '\n');
-  newUniCreated++;
+  if (!DRY_RUN) await fs.writeFile(path.join(UNI_DIR, slug + '.json'), JSON.stringify(newUni, null, 2) + '\n');
+  newUniCreated++;   // в dry-run счётчик показывает, сколько вузов было БЫ создано
 }
 log(`STAGE 1.5 new unis created: ${newUniCreated}`);
 
@@ -354,7 +357,7 @@ if (!noScrape) {
       try {
         const n = await scrapeAccommodation(u.data);
         if (n > 0) {
-          await fs.writeFile(path.join(UNI_DIR, u.file), JSON.stringify(u.data, null, 2) + '\n');
+          if (!DRY_RUN) await fs.writeFile(path.join(UNI_DIR, u.file), JSON.stringify(u.data, null, 2) + '\n');
           accomAdded++;
           process.stderr.write(`[bobr-accom] ${u.slug}: +${n} residences\n`);
         }
