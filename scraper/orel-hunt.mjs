@@ -270,12 +270,14 @@ async function main() {
       const fp = await fingerprint(buf);
       const verdict = acceptable(fp, url);
       if (!verdict.ok) { stats.rejected++; return; }
-      // Уже есть у ЭТОГО вуза — не дублируем.
-      if (knownBySlug.get(slug)?.has(fp.sha1)) return;
-      // Стоит у ДРУГОГО вуза — это тот самый сток, который мы вычищаем.
+      // Совпадение с ЛЮБЫМ фото каталога — не берём.
+      //
+      // Раньше проверка была половинчатой: точное совпадение sha1 ловилось
+      // только у своего вуза, а по dHash отсекались лишь картинки ДРУГИХ вузов.
+      // Похожий кадр того же вуза проходил насквозь — замер 1242 кандидатов
+      // нашёл 139 таких повторов, 135 из них дубли собственных фото вуза.
       const clash = allDhash.find(d =>
-        (d.sha1 === fp.sha1 || hamming(d.dhash, fp.dhash) <= DHASH_NEAR) &&
-        [...d.slugs].some(s => s !== slug));
+        d.sha1 === fp.sha1 || hamming(d.dhash, fp.dhash) <= DHASH_NEAR);
       if (clash) { stats.rejected++; return; }
       // Повтор внутри этого вуза.
       if (seenHere.some(d => hamming(d, fp.dhash) <= DHASH_NEAR)) return;

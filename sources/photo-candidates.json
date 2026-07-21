@@ -3,11 +3,15 @@
  "dryRun": false,
  "requested": 1,
  "stats": {
-  "withCandidates": 289,
+  "withCandidates": 284,
   "noOfficialSite": 0,
   "nothingFound": 0,
   "rejected": 1,
-  "throttledUnis": 0
+  "throttledUnis": 0,
+  "filteredOut": {
+   "blackAndWhite": 3,
+   "duplicateOfCatalog": 139
+  }
  },
  "network": {
   "requests": 10,
@@ -669,19 +673,6 @@
   },
   {
    "slug": "washington-state",
-   "img": "/photos/washington-state/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Bryan_Hall.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Bryan_Hall.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Iidxplus",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "76c5a5a92295820ef588eb2d1ad60ec9567289a2",
-   "dhash": "070f0f1f1e0f1f0d",
-   "width": 1725,
-   "height": 1152
-  },
-  {
-   "slug": "washington-state",
    "img": "/photos/washington-state/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/7/75/Horizon_WSU_CRJ-700.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Horizon_WSU_CRJ-700.jpg",
@@ -1124,19 +1115,6 @@
   },
   {
    "slug": "south-wales",
-   "img": "/photos/south-wales/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/5/5c/University_of_South_Wales%2C_Newport_city_centre_campus.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_South_Wales,_Newport_city_centre_campus.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Pwimageglow",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "2d1d73608bdd7fd5672f7f0f388e1e410b49f476",
-   "dhash": "1f2360cc86a6a629",
-   "width": 1600,
-   "height": 939
-  },
-  {
-   "slug": "south-wales",
    "img": "/photos/south-wales/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/3/3e/City_Campus%2C_Newport%2C_from_footbridge.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:City_Campus,_Newport,_from_footbridge.jpg",
@@ -1189,19 +1167,6 @@
   },
   {
    "slug": "charles-sturt",
-   "img": "/photos/charles-sturt/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/5/57/CSU_South_Wagga_Campus_-_Kay_Hull_Veterinary_Teaching_Hospital_1.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:CSU_South_Wagga_Campus_-_Kay_Hull_Veterinary_Teaching_Hospital_1.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Bidgee",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "e3b1cdb6efc3ce5622ddf749e1b90012c6d2e8cc",
-   "dhash": "059b1939393b270f",
-   "width": 3282,
-   "height": 2272
-  },
-  {
-   "slug": "charles-sturt",
    "img": "/photos/charles-sturt/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/94/BrokenHillCharlesSturtUniversity.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:BrokenHillCharlesSturtUniversity.JPG",
@@ -1228,19 +1193,6 @@
   },
   {
    "slug": "charles-sturt",
-   "img": "/photos/charles-sturt/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Charles_Sturt_University_Bathurst_campus.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Charles_Sturt_University_Bathurst_campus.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Content Charles Sturt",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "08752c2eeedf88567a28700e04ef38397acdfb3b",
-   "dhash": "7d3e26ed989e7d33",
-   "width": 1900,
-   "height": 1267
-  },
-  {
-   "slug": "charles-sturt",
    "img": "/photos/charles-sturt/hunt-5.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Charles_Sturt_University_Albury-Wodonga_campus.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Charles_Sturt_University_Albury-Wodonga_campus.jpg",
@@ -1264,19 +1216,6 @@
    "dhash": "7d4d4f77191e9b7f",
    "width": 1248,
    "height": 927
-  },
-  {
-   "slug": "griffith",
-   "img": "/photos/griffith/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/4/40/Griffith_University_Nathan_Campus.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Griffith_University_Nathan_Campus.jpg",
-   "imgLicense": "CC BY 2.0",
-   "imgAuthor": "Tate Johnson from Australia",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "8e488d476c29cd892aa77fa09e52d36c0168e93b",
-   "dhash": "f6b69481adec7f5f",
-   "width": 3648,
-   "height": 2736
   },
   {
    "slug": "griffith",
@@ -1462,19 +1401,6 @@
   },
   {
    "slug": "chester",
-   "img": "/photos/chester/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/9d/University_of_Chester.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Chester.jpg",
-   "imgLicense": "CC BY-SA 2.0",
-   "imgAuthor": "secretlondon123",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "d31f66366dbc8dec1dbd032868a2d480ab1e3c94",
-   "dhash": "350f3323331e0707",
-   "width": 2946,
-   "height": 2208
-  },
-  {
-   "slug": "chester",
    "img": "/photos/chester/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/5/57/University_of_Chester_Senate_House.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Chester_Senate_House.jpg",
@@ -1498,19 +1424,6 @@
    "dhash": "5c1d18c6cd999d9c",
    "width": 3264,
    "height": 2448
-  },
-  {
-   "slug": "chester",
-   "img": "/photos/chester/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/University_of_Chester_Riverside_Campus_%283%29.JPG/3840px-University_of_Chester_Riverside_Campus_%283%29.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Chester_Riverside_Campus_(3).JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Rept0n1x",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "13132d820d9804a8433fd10536de79900d872488",
-   "dhash": "4e4747470727d303",
-   "width": 3840,
-   "height": 2880
   },
   {
    "slug": "hult",
@@ -1563,19 +1476,6 @@
    "dhash": "d7d6c6663377e584",
    "width": 3819,
    "height": 2512
-  },
-  {
-   "slug": "la-trobe",
-   "img": "/photos/la-trobe/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/La_Trobe_University.jpg/3840px-La_Trobe_University.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:La_Trobe_University.jpg",
-   "imgLicense": "CC BY-SA 2.0",
-   "imgAuthor": "Phil Lees",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "b78e942071bc2f43b928302e8731cae6f567f70e",
-   "dhash": "190fcf4908811b1b",
-   "width": 3840,
-   "height": 2571
   },
   {
    "slug": "la-trobe",
@@ -1735,19 +1635,6 @@
   },
   {
    "slug": "western-sydney",
-   "img": "/photos/western-sydney/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Uws_campbelltown_autumn.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Uws_campbelltown_autumn.jpg",
-   "imgLicense": "CC BY 3.0",
-   "imgAuthor": "Sciencefreak109",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "30b287bbaa57ca387c98006c767ed15c61af82d0",
-   "dhash": "f058d8928b090a0a",
-   "width": 2048,
-   "height": 1536
-  },
-  {
-   "slug": "western-sydney",
    "img": "/photos/western-sydney/hunt-5.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/4/4a/UWS_Penrith_aerial.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:UWS_Penrith_aerial.jpg",
@@ -1836,32 +1723,6 @@
    "dhash": "b050540e0e86c010",
    "width": 3332,
    "height": 2505
-  },
-  {
-   "slug": "northumbria",
-   "img": "/photos/northumbria/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Northumbria_University_SK07_HMO.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Northumbria_University_SK07_HMO.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "John4521 at English Wikipedia",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "81c1fd070f051c327849d09be43dfc763800bcd5",
-   "dhash": "3f67ceea8af37d17",
-   "width": 2048,
-   "height": 1536
-  },
-  {
-   "slug": "northumbria",
-   "img": "/photos/northumbria/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Newcastle_Civic_Centre%2C_31st_July_1963.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Newcastle_Civic_Centre,_31st_July_1963.jpg",
-   "imgLicense": "No restrictions",
-   "imgAuthor": "TWAM - Tyne &amp; Wear Archives &amp; Museums",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "94d127adccd44759c4c719e7e1fef28a54aef6b0",
-   "dhash": "3c306c1a9f363d4a",
-   "width": 1086,
-   "height": 913
   },
   {
    "slug": "northumbria",
@@ -2057,32 +1918,6 @@
    "dhash": "68283366e49ca1e3",
    "width": 3840,
    "height": 2016
-  },
-  {
-   "slug": "canterbury-christ-church",
-   "img": "/photos/canterbury-christ-church/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Canterbury_Christ_Church_University_-_Augustine_House_%26_Hall_-_April_2026.jpg/3840px-Canterbury_Christ_Church_University_-_Augustine_House_%26_Hall_-_April_2026.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Canterbury_Christ_Church_University_-_Augustine_House_%26_Hall_-_April_2026.jpg",
-   "imgLicense": "CC BY 4.0",
-   "imgAuthor": "Celsoazevedo",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "32caa2f5fc010c27d6d585ab23730644fdb352ea",
-   "dhash": "35090810103a808c",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "dayton",
-   "img": "/photos/dayton/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/c/cb/UniversityofDayton.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:UniversityofDayton.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Namtrofk",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "be0c2bde93fa4893deae47d9861a4b36f77c95d7",
-   "dhash": "27070f537b7d6507",
-   "width": 1280,
-   "height": 960
   },
   {
    "slug": "dayton",
@@ -2330,32 +2165,6 @@
    "dhash": "0c334f6c73630d01",
    "width": 2048,
    "height": 1536
-  },
-  {
-   "slug": "coventry",
-   "img": "/photos/coventry/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/0/01/Coventry_University.jpeg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Coventry_University.jpeg",
-   "imgLicense": "CC BY 2.5",
-   "imgAuthor": null,
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "5a2bbf510e529db50cf76ed3d1667434e2962dc4",
-   "dhash": "1fe5457251c9c9a5",
-   "width": 2048,
-   "height": 1536
-  },
-  {
-   "slug": "coventry",
-   "img": "/photos/coventry/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Coventry_University.JPG/3840px-Coventry_University.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Coventry_University.JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Sashataylor",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "ab580c489569292b26f7cd1134946f52f7b0b3a1",
-   "dhash": "f754450d0d03075f",
-   "width": 3840,
-   "height": 2560
   },
   {
    "slug": "coventry",
@@ -2723,19 +2532,6 @@
   },
   {
    "slug": "arizona",
-   "img": "/photos/arizona/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Colleges_and_Universities_-_University_of_Arizona_-_Student_Army_Training_Corps_at_work_in_electrical_laboratory_-_NARA_-_26428612.jpg/3840px-Colleges_and_Universities_-_University_of_Arizona_-_Student_Army_Training_Corps_at_work_in_electrical_laboratory_-_NARA_-_26428612.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Colleges_and_Universities_-_University_of_Arizona_-_Student_Army_Training_Corps_at_work_in_electrical_laboratory_-_NARA_-_26428612.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Unknown authorUnknown author or not provided",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "0d71e2ad74d4b878541cfad8b9bc5bf0ab453b94",
-   "dhash": "0e0e0e0e170f0f1f",
-   "width": 3840,
-   "height": 2572
-  },
-  {
-   "slug": "arizona",
    "img": "/photos/arizona/hunt-5.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Arizona_Suburban.jpg/3840px-Arizona_Suburban.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Arizona_Suburban.jpg",
@@ -2746,19 +2542,6 @@
    "dhash": "1a6425e6b413cc34",
    "width": 3840,
    "height": 2560
-  },
-  {
-   "slug": "palm-beach-atlantic",
-   "img": "/photos/palm-beach-atlantic/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/3/34/Pbau_staduents_%28cropped%29.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Pbau_staduents_(cropped).jpg",
-   "imgLicense": "CC BY 4.0",
-   "imgAuthor": "Ccasey11",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "24d81eadd7f0f07565a9544d6f009a8c741cc610",
-   "dhash": "97250bc860c11ca0",
-   "width": 2448,
-   "height": 2136
   },
   {
    "slug": "palm-beach-atlantic",
@@ -2905,32 +2688,6 @@
   },
   {
    "slug": "trent",
-   "img": "/photos/trent/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/b/be/Fog_on_Otonabee_River_at_Trent_University.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Fog_on_Otonabee_River_at_Trent_University.jpg",
-   "imgLicense": "CC BY-SA 2.0",
-   "imgAuthor": "Rick Harris from Whitby, Ontario, Canada",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "3c4c191f10dbb96253cb3ac1c9913fe3c3f20a72",
-   "dhash": "3672727763f37163",
-   "width": 2816,
-   "height": 1852
-  },
-  {
-   "slug": "trent",
-   "img": "/photos/trent/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Ptbo_trent_view.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Ptbo_trent_view.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "(WT-shared) Shaund",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "48bbaa7a5d733df07c3216f727fe98fa0efaf6fa",
-   "dhash": "ff3fc7e525a5c7ff",
-   "width": 2400,
-   "height": 1600
-  },
-  {
-   "slug": "trent",
    "img": "/photos/trent/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/6/6d/The_Trent_Athletics_Excalibur_sword_in_winter.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:The_Trent_Athletics_Excalibur_sword_in_winter.jpg",
@@ -2952,19 +2709,6 @@
    "imgCheckedAt": "2026-07-21",
    "sha1": "d1a7ef4a0bc077ed72c3170a1849fec1c5e9b5c5",
    "dhash": "0719030511c09210",
-   "width": 1800,
-   "height": 1200
-  },
-  {
-   "slug": "trent",
-   "img": "/photos/trent/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Ron_Thom_-_Trent_University_Bata_Library_201-15.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Ron_Thom_-_Trent_University_Bata_Library_201-15.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Djanssen",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "281539a84261ba6f71562baf6dec88061709aea1",
-   "dhash": "1313132725232533",
    "width": 1800,
    "height": 1200
   },
@@ -3006,19 +2750,6 @@
    "dhash": "37d94f2666e2f267",
    "width": 3840,
    "height": 2479
-  },
-  {
-   "slug": "wyoming",
-   "img": "/photos/wyoming/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Matthew_Shepard_Memorial_Bench_-_University_of_Wyoming_Campus_in_Laramie_%2853744557182%29.jpg/3840px-Matthew_Shepard_Memorial_Bench_-_University_of_Wyoming_Campus_in_Laramie_%2853744557182%29.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Matthew_Shepard_Memorial_Bench_-_University_of_Wyoming_Campus_in_Laramie_(53744557182).jpg",
-   "imgLicense": "CC BY 2.0",
-   "imgAuthor": "Tony Webster",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "f2210119628abfbeadcdbc076cf75ce32af58834",
-   "dhash": "2cac26f6a6886024",
-   "width": 3840,
-   "height": 2560
   },
   {
    "slug": "wyoming",
@@ -3256,19 +2987,6 @@
   },
   {
    "slug": "gannon",
-   "img": "/photos/gannon/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Erie%2C_PA_-_20190921_-_17.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Erie,_PA_-_20190921_-_17.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Andre Carrotflower",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "fa86f5f729cd6264da87cd52de67db8ba0672736",
-   "dhash": "7fc8c1c1cbc9c90f",
-   "width": 2875,
-   "height": 2156
-  },
-  {
-   "slug": "gannon",
    "img": "/photos/gannon/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Environaut.jpg/3840px-Environaut.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Environaut.jpg",
@@ -3424,32 +3142,6 @@
    "height": 2880
   },
   {
-   "slug": "metropolitan-budapest",
-   "img": "/photos/metropolitan-budapest/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/8/86/Budapesti_Metropolitan_Egyetem%2C_2018_Zugl%C3%B3.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Budapesti_Metropolitan_Egyetem,_2018_Zugl%C3%B3.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Globetrotter19",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "0dbbb7909f171cc08dceb4529db99e3e2ca7de7f",
-   "dhash": "7fde9e0f0f5f5b8f",
-   "width": 2272,
-   "height": 1704
-  },
-  {
-   "slug": "metropolitan-budapest",
-   "img": "/photos/metropolitan-budapest/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/4/43/Budapest_Metropolitan_University%2C_2018_Zugl%C3%B3.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Budapest_Metropolitan_University,_2018_Zugl%C3%B3.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Globetrotter19",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "e86afe3a73d00ef9ce3747ffd72aa7093d45dc74",
-   "dhash": "6c34604b67b312bf",
-   "width": 2032,
-   "height": 1496
-  },
-  {
    "slug": "oxford-brookes",
    "img": "/photos/oxford-brookes/hunt-1.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/The_Vines%2C_Oxford.JPG/3840px-The_Vines%2C_Oxford.JPG",
@@ -3490,19 +3182,6 @@
   },
   {
    "slug": "teesside",
-   "img": "/photos/teesside/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/The_Curve%2C_Teesside_University%27s_landmark_teaching_building.JPG/3840px-The_Curve%2C_Teesside_University%27s_landmark_teaching_building.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:The_Curve,_Teesside_University%27s_landmark_teaching_building.JPG",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "LTees",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "0abf0a433f974eaff8b2faedfaa314c1b172fb61",
-   "dhash": "333cda5a1a989a04",
-   "width": 3840,
-   "height": 2560
-  },
-  {
-   "slug": "teesside",
    "img": "/photos/teesside/hunt-4.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Teesside_University_dance_students_at_Temenos%2C_close_to_the_Middlesbrough_campus.JPG/3840px-Teesside_University_dance_students_at_Temenos%2C_close_to_the_Middlesbrough_campus.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Teesside_University_dance_students_at_Temenos,_close_to_the_Middlesbrough_campus.JPG",
@@ -3526,19 +3205,6 @@
    "dhash": "0032361a7b73736b",
    "width": 3840,
    "height": 2560
-  },
-  {
-   "slug": "tasmania",
-   "img": "/photos/tasmania/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/d/d2/University_of_Tasmania_UTAS.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Tasmania_UTAS.jpg",
-   "imgLicense": "CC BY 2.0",
-   "imgAuthor": "James Morris from Sydney, Australia",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "865b3c68140c2fc68e9537db07d141e006a32c50",
-   "dhash": "0c09cc16378d3f1f",
-   "width": 1280,
-   "height": 960
   },
   {
    "slug": "tasmania",
@@ -3710,19 +3376,6 @@
    "height": 2383
   },
   {
-   "slug": "trinity-western",
-   "img": "/photos/trinity-western/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/5/54/CanIL_building.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:CanIL_building.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "ModernMajorGeneral (talk) (Uploads)",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "f123f1158449389531b579e87eea06b33c26b8ed",
-   "dhash": "84c14c4e4b49494d",
-   "width": 2048,
-   "height": 1536
-  },
-  {
    "slug": "western-new-england",
    "img": "/photos/western-new-england/hunt-1.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/2/26/Fleishman-WNEC-Baseball.jpg",
@@ -3854,19 +3507,6 @@
   },
   {
    "slug": "western-washington",
-   "img": "/photos/western-washington/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Western_Gallery_and_Fine_Arts_Building.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Western_Gallery_and_Fine_Arts_Building.JPG",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Evanseric15",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "9a7658d54543377b60062f8703ea20782bd3bf66",
-   "dhash": "075f1a1f9d1d17ff",
-   "width": 2048,
-   "height": 1536
-  },
-  {
-   "slug": "western-washington",
    "img": "/photos/western-washington/hunt-5.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Arntzen_Hall.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Arntzen_Hall.JPG",
@@ -3877,19 +3517,6 @@
    "dhash": "0111131bdbdbcb37",
    "width": 2048,
    "height": 1536
-  },
-  {
-   "slug": "abu-dhabi-university",
-   "img": "/photos/abu-dhabi-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Abu_Dhabi_University_2013_03_13_%288582690399%29.jpg/3840px-Abu_Dhabi_University_2013_03_13_%288582690399%29.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Abu_Dhabi_University_2013_03_13_(8582690399).jpg",
-   "imgLicense": "CC BY 2.0",
-   "imgAuthor": "lam_chihang",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "998a698c79b1166a55878b1526aa9dccc49fbb91",
-   "dhash": "2c4e9e377ae2e665",
-   "width": 3840,
-   "height": 2560
   },
   {
    "slug": "abu-dhabi-university",
@@ -3958,32 +3585,6 @@
   },
   {
    "slug": "waikato",
-   "img": "/photos/waikato/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/University_of_Waikato_village_green.jpg/3840px-University_of_Waikato_village_green.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Waikato_village_green.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Waikato Wordwizard",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "53ce52d03569f5b2d1aee605e5be084cf05c6be8",
-   "dhash": "800e3ebc04060602",
-   "width": 3840,
-   "height": 2511
-  },
-  {
-   "slug": "waikato",
-   "img": "/photos/waikato/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Gallagher_Academy_of_Performing_Arts.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Gallagher_Academy_of_Performing_Arts.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Waikato Wordwizard",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "5eb2217e9f0938edae1c7c0fdad59df7fba1074d",
-   "dhash": "a6cfefcfed3db667",
-   "width": 3000,
-   "height": 2000
-  },
-  {
-   "slug": "waikato",
    "img": "/photos/waikato/hunt-5.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/University_of_Waikato_%289540243739%29.jpg/3840px-University_of_Waikato_%289540243739%29.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Waikato_(9540243739).jpg",
@@ -4007,71 +3608,6 @@
    "dhash": "6d612326313d9979",
    "width": 3150,
    "height": 2178
-  },
-  {
-   "slug": "alexander-college",
-   "img": "/photos/alexander-college/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Alexander_College_Burnaby_.jpg/3840px-Alexander_College_Burnaby_.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Alexander_College_Burnaby_.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Otisamantha",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "da7b367b7a19340517471a90cf6517a6f467361a",
-   "dhash": "27471b11b511d959",
-   "width": 3840,
-   "height": 2560
-  },
-  {
-   "slug": "alexander-college",
-   "img": "/photos/alexander-college/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Alexander_College_Vancouver.jpg/3840px-Alexander_College_Vancouver.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Alexander_College_Vancouver.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Otisamantha",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "cc85fd51029786a9d650b9b5193d435e674a6b05",
-   "dhash": "dc797c19b97d4b3f",
-   "width": 3840,
-   "height": 2560
-  },
-  {
-   "slug": "alexander-college",
-   "img": "/photos/alexander-college/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Alexander_College_Vancouver_Campus.jpg/3840px-Alexander_College_Vancouver_Campus.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Alexander_College_Vancouver_Campus.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "AlexanderCollegeCanada",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "6803682bf3ab1d1fcae264989a9a1f3176433a05",
-   "dhash": "f9f97df979fafb27",
-   "width": 3840,
-   "height": 2560
-  },
-  {
-   "slug": "alexander-college",
-   "img": "/photos/alexander-college/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Alexander_College_Burnaby_Campus_.jpg/3840px-Alexander_College_Burnaby_Campus_.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Alexander_College_Burnaby_Campus_.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "AlexanderCollegeCanada",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "c9dc1f629c866f93979a9eed570745fab5f84dbb",
-   "dhash": "274f1b31b43594b0",
-   "width": 3840,
-   "height": 2560
-  },
-  {
-   "slug": "alexander-college",
-   "img": "/photos/alexander-college/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Alexander_College_Burnaby_Campus.jpg/3840px-Alexander_College_Burnaby_Campus.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Alexander_College_Burnaby_Campus.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Deesebticon",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "442ffa4a05317888bd8e0a5f3248c7d673bf6927",
-   "dhash": "092315999909011d",
-   "width": 3840,
-   "height": 2565
   },
   {
    "slug": "birkbeck",
@@ -4137,19 +3673,6 @@
    "dhash": "b4f23323f13b3a7d",
    "width": 3840,
    "height": 2880
-  },
-  {
-   "slug": "galway",
-   "img": "/photos/galway/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/National_University_of_Galway%2C_Ireland.jpg/3840px-National_University_of_Galway%2C_Ireland.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:National_University_of_Galway,_Ireland.jpg",
-   "imgLicense": "CC BY 2.0",
-   "imgAuthor": "Martie Swart",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "aacde70a50b91a72bd22e1c0d0399bf8745f6fea",
-   "dhash": "1733b2baa84c4d4d",
-   "width": 3840,
-   "height": 3132
   },
   {
    "slug": "galway",
@@ -4634,19 +4157,6 @@
   },
   {
    "slug": "sheffield-hallam",
-   "img": "/photos/sheffield-hallam/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/3/32/Church_House%2C_Sheffield.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Church_House,_Sheffield.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Warofdreams",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "05f895f25264ca763ef9dcf1baa92fafbab749e5",
-   "dhash": "ccc1c0a683c72122",
-   "width": 3264,
-   "height": 2448
-  },
-  {
-   "slug": "sheffield-hallam",
    "img": "/photos/sheffield-hallam/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/99/Coleridge_Oldfield_After_Dark_11031988.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Coleridge_Oldfield_After_Dark_11031988.JPG",
@@ -4668,32 +4178,6 @@
    "imgCheckedAt": "2026-07-21",
    "sha1": "c1cb1dc8853792f00cd161b047899c271ffd5024",
    "dhash": "cb5bcbcfcba36b1b",
-   "width": 3648,
-   "height": 2736
-  },
-  {
-   "slug": "sheffield-hallam",
-   "img": "/photos/sheffield-hallam/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/0/06/40_Collegiate_Crescent%2C_Sheffield.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:40_Collegiate_Crescent,_Sheffield.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Mick Knapton",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "8cac9915f18e5be59a9b8b160f1410f6acb9c17f",
-   "dhash": "74f6f7bb9f9f5779",
-   "width": 3648,
-   "height": 2736
-  },
-  {
-   "slug": "sheffield-hallam",
-   "img": "/photos/sheffield-hallam/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/7/72/32_Collegiate_Crescent%2C_Sheffield.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:32_Collegiate_Crescent,_Sheffield.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Mick Knapton",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "14c85b20e0979408d20a673145678f6e5cb5a934",
-   "dhash": "29268c8d8995b918",
    "width": 3648,
    "height": 2736
   },
@@ -4907,19 +4391,6 @@
   },
   {
    "slug": "twente",
-   "img": "/photos/twente/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Het_Ding.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Het_Ding.JPG",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Handige Harrie",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "4e02cc724a475edcc3f54e9b97765433cffa3f58",
-   "dhash": "375fbafbcb2d64cd",
-   "width": 2316,
-   "height": 1828
-  },
-  {
-   "slug": "twente",
    "img": "/photos/twente/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/1/15/Universiteit_Twente_beestjes_achter_Langezijds.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Universiteit_Twente_beestjes_achter_Langezijds.jpg",
@@ -5047,19 +4518,6 @@
    "dhash": "1f0f1f6e0f1ec685",
    "width": 1789,
    "height": 1224
-  },
-  {
-   "slug": "tamucc",
-   "img": "/photos/tamucc/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/2/21/Texas_A%26M_University_Corpus_Christi_Performing_Arts_Center_2.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Texas_A%26M_University_Corpus_Christi_Performing_Arts_Center_2.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Holzman Moss Bottino Architecture",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "d44486680dbb0bb8e10b9cb14ff5cf9f1f6e0db7",
-   "dhash": "333799db79178d61",
-   "width": 2100,
-   "height": 1680
   },
   {
    "slug": "tamucc",
@@ -5245,19 +4703,6 @@
   },
   {
    "slug": "aston",
-   "img": "/photos/aston/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Aston_uni_campus1.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Aston_uni_campus1.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Johand2222",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "604008e0c5f048888631e4c395ce74497e4c4be2",
-   "dhash": "94d9eb6339199f9f",
-   "width": 3264,
-   "height": 2448
-  },
-  {
-   "slug": "aston",
    "img": "/photos/aston/hunt-5.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/b/be/Aston_University_Student_Village_Phase_II_-_James_Watt_Queensway_%286312902028%29.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Aston_University_Student_Village_Phase_II_-_James_Watt_Queensway_(6312902028).jpg",
@@ -5268,19 +4713,6 @@
    "dhash": "80cc8c0cc4e6e7cd",
    "width": 2592,
    "height": 1944
-  },
-  {
-   "slug": "bath",
-   "img": "/photos/bath/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Climbing.wall.bath.university.arp.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Climbing.wall.bath.university.arp.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Arpingstone",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "5790d1e654c64389d86cdc3829a79f3ba62d251a",
-   "dhash": "6c5850f94943c3f3",
-   "width": 2211,
-   "height": 1564
   },
   {
    "slug": "bath",
@@ -5307,19 +4739,6 @@
    "dhash": "706063db997c66ec",
    "width": 3264,
    "height": 2448
-  },
-  {
-   "slug": "bath",
-   "img": "/photos/bath/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Amenity_building_university_of_Bath1.jpg/3840px-Amenity_building_university_of_Bath1.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Amenity_building_university_of_Bath1.jpg",
-   "imgLicense": "CC BY 2.0",
-   "imgAuthor": "seier+seier",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "c3aa6580b69b6eb7797c0fb126c9e1db4afcaa11",
-   "dhash": "f8e5e1188896041a",
-   "width": 3840,
-   "height": 3840
   },
   {
    "slug": "bath",
@@ -5388,19 +4807,6 @@
   },
   {
    "slug": "edinburgh-napier",
-   "img": "/photos/edinburgh-napier/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Craiglockhart_Hydropathic_old_and_new_buildings.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Craiglockhart_Hydropathic_old_and_new_buildings.JPG",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Brideshead",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "5ea012985d1b20bdf12243b075a859d689c1a14b",
-   "dhash": "c6160f663538b525",
-   "width": 2576,
-   "height": 1932
-  },
-  {
-   "slug": "edinburgh-napier",
    "img": "/photos/edinburgh-napier/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/96/Craiglockhart_Hydropathic_main_view.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Craiglockhart_Hydropathic_main_view.JPG",
@@ -5450,32 +4856,6 @@
    "dhash": "190181d1dacc0003",
    "width": 1600,
    "height": 1200
-  },
-  {
-   "slug": "james-madison",
-   "img": "/photos/james-madison/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/d/dc/James_Madison_University_2.jpeg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:James_Madison_University_2.jpeg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Alma mater",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "1c157d8ca54ff374ccfddb26393aef6151922352",
-   "dhash": "150f69ccc7d18d0f",
-   "width": 1280,
-   "height": 960
-  },
-  {
-   "slug": "james-madison",
-   "img": "/photos/james-madison/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/d/d4/East_Campus_Steam_Plant_%28JMU%29.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:East_Campus_Steam_Plant_(JMU).jpg",
-   "imgLicense": "CC BY-SA 2.5",
-   "imgAuthor": "Ben Schumin",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "850c62ea569138d014674f02cdf48a9e068eb4eb",
-   "dhash": "0d0dd20333262282",
-   "width": 2272,
-   "height": 1704
   },
   {
    "slug": "james-madison",
@@ -5593,19 +4973,6 @@
    "dhash": "00d8d8d8ccf06064",
    "width": 3840,
    "height": 2578
-  },
-  {
-   "slug": "griffith-ireland",
-   "img": "/photos/griffith-ireland/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Griffith_College_Dublin_campus_green.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Griffith_College_Dublin_campus_green.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Griffith College",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "714a885f750356b980274646f1989766f129eb4c",
-   "dhash": "ff2f03080d1f0f07",
-   "width": 2187,
-   "height": 1453
   },
   {
    "slug": "griffith-ireland",
@@ -5773,19 +5140,6 @@
    "imgCheckedAt": "2026-07-21",
    "sha1": "f0ff3a34f31449ac280f8204a521e69fb2b58406",
    "dhash": "646d2e12b1891307",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "mercer",
-   "img": "/photos/mercer/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Mercer_University_%28Atlanta%29.jpg/3840px-Mercer_University_%28Atlanta%29.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Mercer_University_(Atlanta).jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Gulbenk",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "eeb8e2b354b5648efb16f73a84cd7e38ac2a0fd0",
-   "dhash": "b0a888895b1a4f83",
    "width": 3840,
    "height": 2880
   },
@@ -6285,32 +5639,6 @@
   },
   {
    "slug": "aberystwyth",
-   "img": "/photos/aberystwyth/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/2/25/Aberystwyth_Old_University_Building.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Aberystwyth_Old_University_Building.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Eos12",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "9d532c046e4346b9e246cd016d4390ba0acfbecc",
-   "dhash": "787b39e8ec6e4f67",
-   "width": 3008,
-   "height": 2000
-  },
-  {
-   "slug": "aberystwyth",
-   "img": "/photos/aberystwyth/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Aberystwyth_University_Computer_Science_Department.png",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Aberystwyth_University_Computer_Science_Department.png",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Keironoshea",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "90b20ba1958e0df62f3378d1d0e6801ecbf1d5d7",
-   "dhash": "87a7bfbfdfded6c4",
-   "width": 3504,
-   "height": 2336
-  },
-  {
-   "slug": "aberystwyth",
    "img": "/photos/aberystwyth/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Aber_87568_Pantycelyn.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Aber_87568_Pantycelyn.JPG",
@@ -6332,19 +5660,6 @@
    "imgCheckedAt": "2026-07-21",
    "sha1": "50f5fabbaa454e2af60716d72cc4837741f4eb64",
    "dhash": "bcbcdcc8c8c8c0a4",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "aberystwyth",
-   "img": "/photos/aberystwyth/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Aberystwyth_University_-_Penglais_Campus.jpg/3840px-Aberystwyth_University_-_Penglais_Campus.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Aberystwyth_University_-_Penglais_Campus.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "PKwicipics",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "3adec57d943ed1f8c0ce3a65ed3ae933b47c626b",
-   "dhash": "3f576ddf8f9939e8",
    "width": 3840,
    "height": 2880
   },
@@ -6555,32 +5870,6 @@
    "dhash": "e586d2d3939afced",
    "width": 3840,
    "height": 2880
-  },
-  {
-   "slug": "lsu",
-   "img": "/photos/lsu/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Time_capsule_%281976%29%2C_Louisiana_State_University%2C_Baton_Rouge%2C_Louisiana.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Time_capsule_(1976),_Louisiana_State_University,_Baton_Rouge,_Louisiana.jpg",
-   "imgLicense": "CC BY 3.0",
-   "imgAuthor": "davidpinter",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "114f9885ce98ec4e9667fdbe4f8768a343bba91f",
-   "dhash": "8c0e3b2b4f33138f",
-   "width": 3717,
-   "height": 2462
-  },
-  {
-   "slug": "lynn",
-   "img": "/photos/lynn/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lynn_University_Boca_Raton_Entrance.jpg/3840px-Lynn_University_Boca_Raton_Entrance.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Lynn_University_Boca_Raton_Entrance.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Handrieu",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "547daef0594ea7f4695a6150229d3c050fbbba4a",
-   "dhash": "7f3d1d657d7f3982",
-   "width": 3840,
-   "height": 1793
   },
   {
    "slug": "london-met",
@@ -6844,19 +6133,6 @@
   },
   {
    "slug": "st-francis-xavier",
-   "img": "/photos/st-francis-xavier/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/1/1d/St._Francis_Xavier_University.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:St._Francis_Xavier_University.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Brendanriley",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "04df2dbc654b56d75b3c23d631306e74275068f9",
-   "dhash": "0111333333e24ecd",
-   "width": 2816,
-   "height": 2112
-  },
-  {
-   "slug": "st-francis-xavier",
    "img": "/photos/st-francis-xavier/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Lower_Campus.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Lower_Campus.jpg",
@@ -6880,19 +6156,6 @@
    "dhash": "3e7c783020122440",
    "width": 3072,
    "height": 2304
-  },
-  {
-   "slug": "st-francis-xavier",
-   "img": "/photos/st-francis-xavier/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/St.F.X._Campus_in_Winter.jpg/3840px-St.F.X._Campus_in_Winter.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:St.F.X._Campus_in_Winter.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Brendanriley",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "c15f4db4f29536b8f29e4d75e9e21083a00ca202",
-   "dhash": "2008cc3d2e8c890c",
-   "width": 3840,
-   "height": 1276
   },
   {
    "slug": "st-francis-xavier",
@@ -7220,19 +6483,6 @@
    "height": 2048
   },
   {
-   "slug": "upei",
-   "img": "/photos/upei/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Campus_V_%284333018357%29.jpg/3840px-Campus_V_%284333018357%29.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Campus_V_(4333018357).jpg",
-   "imgLicense": "CC BY-SA 2.0",
-   "imgAuthor": "Martin Cathrae from Charlottetown, PE, Canada",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "0c63f6a5743d2f708010a84bd070b036a9eb37df",
-   "dhash": "f9b5bdbcff160f0f",
-   "width": 3840,
-   "height": 2560
-  },
-  {
    "slug": "university-of-the-west-of-scotland",
    "img": "/photos/university-of-the-west-of-scotland/hunt-1.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/2/2d/University_of_the_West_of_Scotland_engineering_building_-_geograph.org.uk_-_3080469.jpg",
@@ -7299,19 +6549,6 @@
   },
   {
    "slug": "vaasa",
-   "img": "/photos/vaasa/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Vaasalainen_teekkari_vappuna_2007.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Vaasalainen_teekkari_vappuna_2007.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "MPorciusCato",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "53e31c9777d9c7bc3d57926237fb76485cd3d0ed",
-   "dhash": "252726a7c3cdfb3d",
-   "width": 2592,
-   "height": 1944
-  },
-  {
-   "slug": "vaasa",
    "img": "/photos/vaasa/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/2/21/Vaasa_Post_glacial_rebound_marks.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Vaasa_Post_glacial_rebound_marks.JPG",
@@ -7337,32 +6574,6 @@
    "height": 2883
   },
   {
-   "slug": "vaasa",
-   "img": "/photos/vaasa/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Fabriikki%2C_Vaasa_University.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Fabriikki,_Vaasa_University.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Christian Bertell",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "4836c0bd0121d2c6afe2b4a717cc6bce0e6302a9",
-   "dhash": "2d64a18b8be9a1ad",
-   "width": 1600,
-   "height": 1200
-  },
-  {
-   "slug": "vaasa",
-   "img": "/photos/vaasa/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/University_of_Vaasa_sign_2018.jpg/3840px-University_of_Vaasa_sign_2018.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Vaasa_sign_2018.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Santeri Viinamäki",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "5beb57d76fe1744eca18e0e8775d4a366d657634",
-   "dhash": "173333131d98841c",
-   "width": 3840,
-   "height": 2883
-  },
-  {
    "slug": "brock",
    "img": "/photos/brock/hunt-1.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Brock_University_%287990168355%29.jpg",
@@ -7374,19 +6585,6 @@
    "dhash": "4f69270e0f361c3b",
    "width": 3008,
    "height": 2000
-  },
-  {
-   "slug": "brock",
-   "img": "/photos/brock/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/5/55/Brock_University_campus.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Brock_University_campus.JPG",
-   "imgLicense": "Public domain",
-   "imgAuthor": "No machine-readable author provided. Terfili assumed (based on copyright claims).",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "fe0f15ab10b6d2b6518de1e13b68813657525181",
-   "dhash": "bfe46b4f0e879fff",
-   "width": 2816,
-   "height": 2112
   },
   {
    "slug": "brock",
@@ -7413,19 +6611,6 @@
    "dhash": "793d3b36bd3c3e2f",
    "width": 2304,
    "height": 1728
-  },
-  {
-   "slug": "brock",
-   "img": "/photos/brock/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Brock_University_statue_of_its_namesake.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Brock_University_statue_of_its_namesake.JPG",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Natty10000",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "670a2a8c68aa10fe0895187dfd49acaddbba261b",
-   "dhash": "c969696d63717979",
-   "width": 2592,
-   "height": 1936
   },
   {
    "slug": "uea",
@@ -7569,19 +6754,6 @@
    "dhash": "bef8aeaacec68288",
    "width": 2112,
    "height": 1312
-  },
-  {
-   "slug": "columbia-college",
-   "img": "/photos/columbia-college/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Columbia_College%2C_New-York_%28NYPL_Hades-118436-54562%29.tif/lossy-page1-3840px-Columbia_College%2C_New-York_%28NYPL_Hades-118436-54562%29.tif.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Columbia_College,_New-York_(NYPL_Hades-118436-54562).tif",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Scan by NYPL",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "53ba8b4e79798e67954dba861942c2b39caec958",
-   "dhash": "33ecd0e0f070a4bc",
-   "width": 3840,
-   "height": 3336
   },
   {
    "slug": "columbia-college",
@@ -7819,19 +6991,6 @@
   },
   {
    "slug": "saint-marys",
-   "img": "/photos/saint-marys/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Loyola_Residence_Building.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Loyola_Residence_Building.JPG",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Theyab 07 at English Wikipedia",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "474a4912d8d28fd97730fc8296dfbf42c242242a",
-   "dhash": "c7c1d9d9d9d9d888",
-   "width": 2592,
-   "height": 1944
-  },
-  {
-   "slug": "saint-marys",
    "img": "/photos/saint-marys/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Saint_Mary%27s_University_%28SMU%29_in_Halifax_%2846275877021%29.jpg/3840px-Saint_Mary%27s_University_%28SMU%29_in_Halifax_%2846275877021%29.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Saint_Mary%27s_University_(SMU)_in_Halifax_(46275877021).jpg",
@@ -8024,19 +7183,6 @@
    "dhash": "33e3a090efe692e9",
    "width": 2048,
    "height": 1536
-  },
-  {
-   "slug": "university-of-bedfordshire",
-   "img": "/photos/university-of-bedfordshire/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/GOC_Leagrave_to_Harpenden_074_University_of_Bedfordshire_%288570460321%29.jpg/3840px-GOC_Leagrave_to_Harpenden_074_University_of_Bedfordshire_%288570460321%29.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:GOC_Leagrave_to_Harpenden_074_University_of_Bedfordshire_(8570460321).jpg",
-   "imgLicense": "CC BY-SA 2.0",
-   "imgAuthor": "Peter O'Connor aka anemoneprojectors from Stevenage, United Kingdom",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "37f75587d739418cac4cfc183afe8feaf8662edd",
-   "dhash": "bb6f4c9c32607370",
-   "width": 3840,
-   "height": 2880
   },
   {
    "slug": "university-of-wolverhampton",
@@ -8520,19 +7666,6 @@
    "height": 1834
   },
   {
-   "slug": "centennial-college",
-   "img": "/photos/centennial-college/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/2/26/Centennial_College_Ashtonbee_Campus%2C_Toronto.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Centennial_College_Ashtonbee_Campus,_Toronto.jpg",
-   "imgLicense": "CC BY 4.0",
-   "imgAuthor": "Magnolia677",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "c01e90cd00bfdf38498cf5507ed7c30bfa944744",
-   "dhash": "050f4d0f0f0f1717",
-   "width": 3306,
-   "height": 3211
-  },
-  {
    "slug": "eu-business-school",
    "img": "/photos/eu-business-school/hunt-1.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/3/3e/European_University_Campus_Yvorne.jpg",
@@ -8585,58 +7718,6 @@
    "height": 1920
   },
   {
-   "slug": "eu-business-school",
-   "img": "/photos/eu-business-school/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/8/88/Paul_Bulcke_-_Learning_From_Leaders_-_EU_Business_School.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Paul_Bulcke_-_Learning_From_Leaders_-_EU_Business_School.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Domadictel",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "e18e52c6428761f5f9aaecbe2aa58f0f8b215114",
-   "dhash": "07c7c787cbcb6d09",
-   "width": 3238,
-   "height": 2059
-  },
-  {
-   "slug": "glion-switzerland",
-   "img": "/photos/glion-switzerland/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/L%27%C3%A9cole_h%C3%B4teli%C3%A8re_de_Glion.jpg/3840px-L%27%C3%A9cole_h%C3%B4teli%C3%A8re_de_Glion.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:L%27%C3%A9cole_h%C3%B4teli%C3%A8re_de_Glion.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Whgler",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "e1185f08dcff64caaba05094660b154e06a1af35",
-   "dhash": "c030c06643a10e67",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "glion-switzerland",
-   "img": "/photos/glion-switzerland/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Glion_Institute_of_Higher_Education_2021.jpg/3840px-Glion_Institute_of_Higher_Education_2021.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Glion_Institute_of_Higher_Education_2021.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Whgler",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "110f0c7ded7cb8e5d22d94ee101f63d7d66592a0",
-   "dhash": "4181b1191e4a9180",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "glion-switzerland",
-   "img": "/photos/glion-switzerland/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/L05_283_%C2%BBGlion_Institute_of_Higher_Education%C2%AB.jpg/3840px-L05_283_%C2%BBGlion_Institute_of_Higher_Education%C2%AB.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:L05_283_%C2%BBGlion_Institute_of_Higher_Education%C2%AB.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Falk2",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "d0cbbd863687e7f6b785272f6d0a788ab536be55",
-   "dhash": "3f1f1b7ef3dd1377",
-   "width": 3840,
-   "height": 2560
-  },
-  {
    "slug": "glion-switzerland",
    "img": "/photos/glion-switzerland/hunt-4.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/L05_282_Glion.jpg/3840px-L05_282_Glion.jpg",
@@ -8648,32 +7729,6 @@
    "dhash": "ef3f33a78d23218c",
    "width": 3840,
    "height": 2560
-  },
-  {
-   "slug": "southeast-missouri-state-university",
-   "img": "/photos/southeast-missouri-state-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Colleges_and_Universities_-_Miscellaneous_-_Band_of_Missouri_State_Normal_Unit._Student_Army_Training_Corps%2C_Cape_Girardeau%2C_Missouri_-_NARA_-_26431042.jpg/3840px-Colleges_and_Universities_-_Miscellaneous_-_Band_of_Missouri_State_Normal_Unit._Student_Army_Training_Corps%2C_Cape_Girardeau%2C_Missouri_-_NARA_-_26431042.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Colleges_and_Universities_-_Miscellaneous_-_Band_of_Missouri_State_Normal_Unit._Student_Army_Training_Corps,_Cape_Girardeau,_Missouri_-_NARA_-_26431042.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Unknown authorUnknown author or not provided",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "730fabe227e8706b9b7c1301921cf18326c793cf",
-   "dhash": "3f3e767470727a0f",
-   "width": 3840,
-   "height": 2508
-  },
-  {
-   "slug": "nova-southeastern-university",
-   "img": "/photos/nova-southeastern-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/1/19/Nova_Southeastern_University_Psychology_Building.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Nova_Southeastern_University_Psychology_Building.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "taken by:User:Butnotthehippo",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "9ea45576e983f5d91ccd0b5f02dc89c1ed569186",
-   "dhash": "e063a32786860806",
-   "width": 1632,
-   "height": 1224
   },
   {
    "slug": "nova-southeastern-university",
@@ -8739,19 +7794,6 @@
    "dhash": "9ecce6d064f26c60",
    "width": 3840,
    "height": 2880
-  },
-  {
-   "slug": "rmit-university",
-   "img": "/photos/rmit-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/RMIT_University_Building_01.jpg/3840px-RMIT_University_Building_01.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:RMIT_University_Building_01.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Donaldytong",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "bd9f3097890490e95fdf32d1eec89d1a9f4316af",
-   "dhash": "800044cdbaaed614",
-   "width": 3840,
-   "height": 2365
   },
   {
    "slug": "rmit-university",
@@ -8872,32 +7914,6 @@
   },
   {
    "slug": "state-university-of-new-york-at-oswego",
-   "img": "/photos/state-university-of-new-york-at-oswego/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/New_York_-_Sheldon_Hall_-_20240227141145.jpg/3840px-New_York_-_Sheldon_Hall_-_20240227141145.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:New_York_-_Sheldon_Hall_-_20240227141145.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "LoganTheHammer",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "0d578f92489d8c626e23707fcf3244a13ffbd267",
-   "dhash": "3c7736260c4c4d5f",
-   "width": 3840,
-   "height": 2560
-  },
-  {
-   "slug": "state-university-of-new-york-at-oswego",
-   "img": "/photos/state-university-of-new-york-at-oswego/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/2/20/Sheldon_Hall_-_State_University_of_New_York_at_Oswego.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Sheldon_Hall_-_State_University_of_New_York_at_Oswego.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Lordvaluemart",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "f51117aee7661b7fefc5b6d8b2049a628129e30d",
-   "dhash": "9f9d0d2c2c1c55c7",
-   "width": 3264,
-   "height": 2448
-  },
-  {
-   "slug": "state-university-of-new-york-at-oswego",
    "img": "/photos/state-university-of-new-york-at-oswego/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Oswego_State_Downtown_-_fmr_First_National_Bank_of_Oswego%2C_Marine_Midland_Bank_West_Side_Branch_-_Oswego%2C_New_York_-_20210221.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Oswego_State_Downtown_-_fmr_First_National_Bank_of_Oswego,_Marine_Midland_Bank_West_Side_Branch_-_Oswego,_New_York_-_20210221.jpg",
@@ -8989,32 +8005,6 @@
   },
   {
    "slug": "wrexham-university",
-   "img": "/photos/wrexham-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Glynd%C5%B5r_University%2C_Wrexham_%283%29.JPG/3840px-Glynd%C5%B5r_University%2C_Wrexham_%283%29.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Glynd%C5%B5r_University,_Wrexham_(3).JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Rept0n1x",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "d465830690fb4279611f63861f91feca73e97b8c",
-   "dhash": "88c880a6666b0303",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "wrexham-university",
-   "img": "/photos/wrexham-university/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Glynd%C5%B5r_University%2C_Wrexham_%284%29.JPG/3840px-Glynd%C5%B5r_University%2C_Wrexham_%284%29.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Glynd%C5%B5r_University,_Wrexham_(4).JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Rept0n1x",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "9de642ce031c2a32275d34e64acd58eab1f4a923",
-   "dhash": "2c09199f1907e00b",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "wrexham-university",
    "img": "/photos/wrexham-university/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Glynd%C5%B5r_University%2C_Wrexham_%285%29.JPG/3840px-Glynd%C5%B5r_University%2C_Wrexham_%285%29.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Glynd%C5%B5r_University,_Wrexham_(5).JPG",
@@ -9064,32 +8054,6 @@
    "dhash": "08030f1b33270707",
    "width": 2048,
    "height": 1536
-  },
-  {
-   "slug": "kennesaw-state-university",
-   "img": "/photos/kennesaw-state-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Kennesaw_State_Social_Science_Building.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Kennesaw_State_Social_Science_Building.jpg",
-   "imgLicense": "CC BY 3.0",
-   "imgAuthor": "Thejerm",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "b04f62afa685e07efe1cfe04d8f31a615e9552ed",
-   "dhash": "133aaeab6bcbcb30",
-   "width": 3400,
-   "height": 2248
-  },
-  {
-   "slug": "kennesaw-state-university",
-   "img": "/photos/kennesaw-state-university/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/a/af/Kennesaw_State_Burruss_Building.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Kennesaw_State_Burruss_Building.jpg",
-   "imgLicense": "CC BY 3.0",
-   "imgAuthor": "Thejerm",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "ec2c0cc31bdb228104a972e956200776edead43d",
-   "dhash": "068b537337363636",
-   "width": 3287,
-   "height": 1363
   },
   {
    "slug": "kennesaw-state-university",
@@ -9236,19 +8200,6 @@
   },
   {
    "slug": "northeastern-university",
-   "img": "/photos/northeastern-university/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Northeastern_University_-_air_conditioner.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Northeastern_University_-_air_conditioner.JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "myself (User:Piotrus)",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "d96198d81ded16ff17515d7041d2ffcabb3a6cd3",
-   "dhash": "4f8e9db5b4273e1e",
-   "width": 3264,
-   "height": 2448
-  },
-  {
-   "slug": "northeastern-university",
    "img": "/photos/northeastern-university/hunt-5.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Northeastern_University%2C_Boston%2C_MA..jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Northeastern_University,_Boston,_MA..jpg",
@@ -9259,19 +8210,6 @@
    "dhash": "06c6470d0e663e03",
    "width": 1200,
    "height": 900
-  },
-  {
-   "slug": "saba-university-school-of-medicine",
-   "img": "/photos/saba-university-school-of-medicine/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/c/c3/American_Medical_College_in_Saba.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:American_Medical_College_in_Saba.jpg",
-   "imgLicense": "CC BY 2.0",
-   "imgAuthor": "Serge Melki",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "04da15d09d437f91c628d9608234feea4f75bc8a",
-   "dhash": "1f175d1c0793e6a6",
-   "width": 1280,
-   "height": 960
   },
   {
    "slug": "saba-university-school-of-medicine",
@@ -9327,32 +8265,6 @@
   },
   {
    "slug": "glasgow-caledonian-university",
-   "img": "/photos/glasgow-caledonian-university/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DSCN3182_View_from_roof_of_Glasgow_College_of_Building_and_Printing.jpg/3840px-DSCN3182_View_from_roof_of_Glasgow_College_of_Building_and_Printing.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:DSCN3182_View_from_roof_of_Glasgow_College_of_Building_and_Printing.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "AlasdairW",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "478fb3f233f5a425416fec8c7a552501bf37a621",
-   "dhash": "3c1c3f4fcc3d3c2c",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "glasgow-caledonian-university",
-   "img": "/photos/glasgow-caledonian-university/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/DSCN3194_View_from_roof_of_Glasgow_College_of_Building_and_Printing.jpg/3840px-DSCN3194_View_from_roof_of_Glasgow_College_of_Building_and_Printing.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:DSCN3194_View_from_roof_of_Glasgow_College_of_Building_and_Printing.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "AlasdairW",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "e4eb9f6fa9d3a2743427dadd86b501ab582f570f",
-   "dhash": "c6e2ee0f1b9b3b35",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "glasgow-caledonian-university",
    "img": "/photos/glasgow-caledonian-university/hunt-5.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Former_Heatherbank_Museum_of_Social_Work_%28geograph_6435958_by_Richard_Sutcliffe%29.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Former_Heatherbank_Museum_of_Social_Work_(geograph_6435958_by_Richard_Sutcliffe).jpg",
@@ -9392,19 +8304,6 @@
   },
   {
    "slug": "sofia-university",
-   "img": "/photos/sofia-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Sofia_University_panorama_2.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Sofia_University_panorama_2.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "MrPanyGoff",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "22a3346712c83e6926b037d6ccf4551e9e97c2d9",
-   "dhash": "2030584ccab3bb1b",
-   "width": 2762,
-   "height": 1107
-  },
-  {
-   "slug": "sofia-university",
    "img": "/photos/sofia-university/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Alma-Alter-noticeboard.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Alma-Alter-noticeboard.jpg",
@@ -9415,32 +8314,6 @@
    "dhash": "59d8b482e8acaea2",
    "width": 2048,
    "height": 1360
-  },
-  {
-   "slug": "sofia-university",
-   "img": "/photos/sofia-university/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/8/87/Sofia_-_NPMG_-_2.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Sofia_-_NPMG_-_2.jpg",
-   "imgLicense": "CC BY 3.0",
-   "imgAuthor": "Georgi Hristozov",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "8ca1ea842ee3eb1cc76baed1a41ceab0809c846a",
-   "dhash": "c34189c4e1b3a3a7",
-   "width": 3264,
-   "height": 2448
-  },
-  {
-   "slug": "sofia-university",
-   "img": "/photos/sofia-university/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Sofia_Rayon_Slatina_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%97%D0%BB%D0%B0%D1%82%D0%B8%D0%BD%D0%B0_004.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Sofia_Rayon_Slatina_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%97%D0%BB%D0%B0%D1%82%D0%B8%D0%BD%D0%B0_004.JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Apostoloff",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "4e673959fc511f2b16ab8a89eaad7bfd16435f9c",
-   "dhash": "f7ebebcbcfc7d7c5",
-   "width": 2256,
-   "height": 1504
   },
   {
    "slug": "sofia-university",
@@ -9600,32 +8473,6 @@
   },
   {
    "slug": "university-of-colorado-denver",
-   "img": "/photos/university-of-colorado-denver/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/University_of_CO_Denver%2C_Denver%2C_CO_IMG_5509.JPG/3840px-University_of_CO_Denver%2C_Denver%2C_CO_IMG_5509.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_CO_Denver,_Denver,_CO_IMG_5509.JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Billy Hathorn",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "99cdb7966614e9ae137e1885bd8050f06d767a08",
-   "dhash": "387a3f1b3f0b071f",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "university-of-colorado-denver",
-   "img": "/photos/university-of-colorado-denver/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/1/16/St_Cajetan_Catholic_Church%2C_University_of_Colorado_Denver.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:St_Cajetan_Catholic_Church,_University_of_Colorado_Denver.jpg",
-   "imgLicense": "CC0",
-   "imgAuthor": "Drorzm",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "d42beba0166c9264be857ae9ab41dc23fe672175",
-   "dhash": "922f25d35b6d397c",
-   "width": 2560,
-   "height": 1920
-  },
-  {
-   "slug": "university-of-colorado-denver",
    "img": "/photos/university-of-colorado-denver/hunt-4.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Aurariacampus1.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Aurariacampus1.jpg",
@@ -9652,32 +8499,6 @@
   },
   {
    "slug": "southern-utah-university",
-   "img": "/photos/southern-utah-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/3/34/Southern_Utah_University.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Southern_Utah_University.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Iain.dalton",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "eaefc6cfd973d10456d22201aa7ada01a4f74467",
-   "dhash": "bfe7e1118fcf8f83",
-   "width": 3264,
-   "height": 2448
-  },
-  {
-   "slug": "southern-utah-university",
-   "img": "/photos/southern-utah-university/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Southern_Utah_University_2.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Southern_Utah_University_2.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": null,
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "6ad0cca11f8ab84c386b16416697ab88f7271949",
-   "dhash": "0823242c3c2d2c79",
-   "width": 1500,
-   "height": 997
-  },
-  {
-   "slug": "southern-utah-university",
    "img": "/photos/southern-utah-university/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/SUU_Campus_%E2%80%94_Carillon_Bell.JPG/3840px-SUU_Campus_%E2%80%94_Carillon_Bell.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:SUU_Campus_%E2%80%94_Carillon_Bell.JPG",
@@ -9701,19 +8522,6 @@
    "dhash": "0f676761790f0b0b",
    "width": 2048,
    "height": 1362
-  },
-  {
-   "slug": "university-of-massachusetts-lowell",
-   "img": "/photos/university-of-massachusetts-lowell/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bioplastics_Development_Center_-_University_of_Massachusetts_Lowell_-_DSC00107.JPG/3840px-Bioplastics_Development_Center_-_University_of_Massachusetts_Lowell_-_DSC00107.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Bioplastics_Development_Center_-_University_of_Massachusetts_Lowell_-_DSC00107.JPG",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Daderot",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "31a623f963ff0053e1a07b77a132aa56f13b0683",
-   "dhash": "276fcdcf8a939138",
-   "width": 3840,
-   "height": 2880
   },
   {
    "slug": "university-of-massachusetts-lowell",
@@ -9925,19 +8733,6 @@
   },
   {
    "slug": "college-of-marin",
-   "img": "/photos/college-of-marin/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/College_of_marin_campus1.jpg/3840px-College_of_marin_campus1.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:College_of_marin_campus1.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Plasticboob",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "556fbf61f63ec635776df2c782706211bac07307",
-   "dhash": "6ded999844c7dc3e",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "college-of-marin",
    "img": "/photos/college-of-marin/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Testing_room.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Testing_room.jpg",
@@ -9959,19 +8754,6 @@
    "imgCheckedAt": "2026-07-21",
    "sha1": "4244dea08359d094fc28dcc407af8ef0f92fca1e",
    "dhash": "989c9d85e4c79b36",
-   "width": 2576,
-   "height": 1932
-  },
-  {
-   "slug": "college-of-marin",
-   "img": "/photos/college-of-marin/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/f/f1/College_of_Marin_campus_outside.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:College_of_Marin_campus_outside.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "I_love_rpgs",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "53cadae45f9153c8faa1c86a5bda43b63130c288",
-   "dhash": "27d3d8c971c98a36",
    "width": 2576,
    "height": 1932
   },
@@ -10052,19 +8834,6 @@
    "dhash": "137373172327e35b",
    "width": 2448,
    "height": 1632
-  },
-  {
-   "slug": "james-cook",
-   "img": "/photos/james-cook/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/5/52/JCU_Entrance.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:JCU_Entrance.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Nielg",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "ea496d831337cfd0d1ab05dbd7859c22044d5af0",
-   "dhash": "916345c7362cecf3",
-   "width": 3072,
-   "height": 2304
   },
   {
    "slug": "james-cook",
@@ -10198,19 +8967,6 @@
   },
   {
    "slug": "loughborough-university",
-   "img": "/photos/loughborough-university/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Cedar_of_Lebanon_at_Loughborough_University.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Cedar_of_Lebanon_at_Loughborough_University.JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Ian3055",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "e498003a5906364ecf56d8eb0a765bb3a226c94a",
-   "dhash": "37076ebad11d0f19",
-   "width": 3072,
-   "height": 2304
-  },
-  {
-   "slug": "loughborough-university",
    "img": "/photos/loughborough-university/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/96/Chemistry_dept.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Chemistry_dept.jpg",
@@ -10315,19 +9071,6 @@
   },
   {
    "slug": "lehigh-university",
-   "img": "/photos/lehigh-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/SpaceBeadsSRM_026.jpg/3840px-SpaceBeadsSRM_026.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:SpaceBeadsSRM_026.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "National Institute of Standards and Technology",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "a56fb07a0755e3b7af47c0420cccec556bf4e7d3",
-   "dhash": "747e9cadaeb6e1f2",
-   "width": 3840,
-   "height": 3138
-  },
-  {
-   "slug": "lehigh-university",
    "img": "/photos/lehigh-university/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/6/68/Entrance_to_Sayre_Park%2C_home_of_ten_fraternities_at_Lehigh_University%2C_Bethlehem%2C_Pa_%2866165%29.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Entrance_to_Sayre_Park,_home_of_ten_fraternities_at_Lehigh_University,_Bethlehem,_Pa_(66165).jpg",
@@ -10377,19 +9120,6 @@
    "dhash": "1e1212d092337313",
    "width": 2784,
    "height": 1848
-  },
-  {
-   "slug": "queens-university-belfast",
-   "img": "/photos/queens-university-belfast/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Lanyon_Building%2C_Queen%27s_University%2C_Belfast.jpg/3840px-Lanyon_Building%2C_Queen%27s_University%2C_Belfast.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Lanyon_Building,_Queen%27s_University,_Belfast.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Nick Birse",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "7bc0ef2a89739698b094fcf621d6c086fa400ad4",
-   "dhash": "191b37266466ca1b",
-   "width": 3840,
-   "height": 2161
   },
   {
    "slug": "queens-university-belfast",
@@ -10887,19 +9617,6 @@
   },
   {
    "slug": "thomas-jefferson-university",
-   "img": "/photos/thomas-jefferson-university/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Jefferson_University_Scott_Memorial_LIbrary.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Jefferson_University_Scott_Memorial_LIbrary.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Beyond My Ken",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "16ef8019d038f38cc24c11a3f372f71bc6aad783",
-   "dhash": "1970e482b2b3b1f9",
-   "width": 3158,
-   "height": 2448
-  },
-  {
-   "slug": "thomas-jefferson-university",
    "img": "/photos/thomas-jefferson-university/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/90/Flying_bull_%284402440548%29.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Flying_bull_(4402440548).jpg",
@@ -11134,19 +9851,6 @@
   },
   {
    "slug": "university-of-bridgeport",
-   "img": "/photos/university-of-bridgeport/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/a/ae/University_of_Bridgeport_Bryant_Hall.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Bridgeport_Bryant_Hall.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Matthewsteiger",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "a91b3e442678af435e8e50a1304226adb91b9627",
-   "dhash": "9b03311897934703",
-   "width": 2048,
-   "height": 1536
-  },
-  {
-   "slug": "university-of-bridgeport",
    "img": "/photos/university-of-bridgeport/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/e/e0/WahlstromLibrary.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:WahlstromLibrary.jpg",
@@ -11173,45 +9877,6 @@
   },
   {
    "slug": "university-of-la-verne",
-   "img": "/photos/university-of-la-verne/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Founders_Hall%2C_University_of_La_Verne.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Founders_Hall,_University_of_La_Verne.jpg",
-   "imgLicense": "CC BY 2.0",
-   "imgAuthor": "Phu \"Son\" Nguyen from CA, USA",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "8617417858ea9b9bea5c505e500c405646990251",
-   "dhash": "2f7df9d9b333777f",
-   "width": 1280,
-   "height": 960
-  },
-  {
-   "slug": "university-of-la-verne",
-   "img": "/photos/university-of-la-verne/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Third_St%2C_University_of_La_Verne.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Third_St,_University_of_La_Verne.jpg",
-   "imgLicense": "CC BY 2.0",
-   "imgAuthor": "Phu \"Son\" Nguyen from CA, USA",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "ef40bc3ff6b81f3a800766385dc0a6c96ee16659",
-   "dhash": "05150d1d7c193124",
-   "width": 1280,
-   "height": 960
-  },
-  {
-   "slug": "university-of-la-verne",
-   "img": "/photos/university-of-la-verne/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/6/67/Tents_next_to_Football_Field%2C_University_of_La_Verne.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Tents_next_to_Football_Field,_University_of_La_Verne.jpg",
-   "imgLicense": "CC BY 2.0",
-   "imgAuthor": "Phu \"Son\" Nguyen from CA, USA",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "bcbb4a19d5f190ff741a578d566fc20dbf770f22",
-   "dhash": "0341c7c3071f0327",
-   "width": 1280,
-   "height": 960
-  },
-  {
-   "slug": "university-of-la-verne",
    "img": "/photos/university-of-la-verne/hunt-4.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/d/df/Red_curves_and_lines_in_blue_sky.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Red_curves_and_lines_in_blue_sky.jpg",
@@ -11222,19 +9887,6 @@
    "dhash": "6c78d8f8fe7d2d0d",
    "width": 2048,
    "height": 1154
-  },
-  {
-   "slug": "university-of-la-verne",
-   "img": "/photos/university-of-la-verne/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/University_of_La_Verne.jpg/3840px-University_of_La_Verne.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_La_Verne.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Dylang140",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "9e2236855caee0615ec63f605fa11625e8eb8a14",
-   "dhash": "f0e09874e4fcf0e0",
-   "width": 3840,
-   "height": 2880
   },
   {
    "slug": "university-of-north-carolina-at-greensboro",
@@ -11433,19 +10085,6 @@
   },
   {
    "slug": "university-of-redlands",
-   "img": "/photos/university-of-redlands/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/1/1b/University_of_Redlands_Administration_Bldg_5-17-14a_%2814358877537%29.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Redlands_Administration_Bldg_5-17-14a_(14358877537).jpg",
-   "imgLicense": "CC BY-SA 2.0",
-   "imgAuthor": "inkknife_2000 (7.5 million views +)",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "58dbc668abe770c96456cef260bf3d251f1ad876",
-   "dhash": "3d3361c828c8b81a",
-   "width": 2260,
-   "height": 1199
-  },
-  {
-   "slug": "university-of-redlands",
    "img": "/photos/university-of-redlands/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/8/89/Armacost_Library.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Armacost_Library.JPG",
@@ -11498,32 +10137,6 @@
   },
   {
    "slug": "university-of-greater-manchester",
-   "img": "/photos/university-of-greater-manchester/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/6/65/Eagle_Entrance_University_of_Bolton.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Eagle_Entrance_University_of_Bolton.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Keshpatel (talk)",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "dc16224e11d27e5c79a5e081ba26e451339f4af9",
-   "dhash": "1f31b19201271939",
-   "width": 1778,
-   "height": 1181
-  },
-  {
-   "slug": "university-of-greater-manchester",
-   "img": "/photos/university-of-greater-manchester/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Eagle_Library_Aisle_Bolton.jpg/3840px-Eagle_Library_Aisle_Bolton.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Eagle_Library_Aisle_Bolton.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Keshpatel (talk)",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "2bce383475952f7df7b223390a37113f0c7451d1",
-   "dhash": "8f0f0353291d8585",
-   "width": 3840,
-   "height": 2550
-  },
-  {
-   "slug": "university-of-greater-manchester",
    "img": "/photos/university-of-greater-manchester/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Bolton_One_-_geograph.org.uk_-_3252451.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Bolton_One_-_geograph.org.uk_-_3252451.jpg",
@@ -11547,19 +10160,6 @@
    "dhash": "03a7bd4357330c00",
    "width": 3840,
    "height": 2556
-  },
-  {
-   "slug": "university-of-greater-manchester",
-   "img": "/photos/university-of-greater-manchester/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Library_Bolton_Uni.jpg/3840px-Library_Bolton_Uni.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Library_Bolton_Uni.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "UniOfBolton",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "27a7267e36d60e6f801b1bdc4766164cf851b44c",
-   "dhash": "7565152d27342427",
-   "width": 3840,
-   "height": 2534
   },
   {
    "slug": "university-of-tulsa",
@@ -11654,19 +10254,6 @@
   },
   {
    "slug": "william-paterson-university",
-   "img": "/photos/william-paterson-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/f/f7/William_Paterson_University.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:William_Paterson_University.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "NHRHS2010",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "d8b9b1defd83959664072e68e4ed366974f61e20",
-   "dhash": "93530f1d9f06060e",
-   "width": 3072,
-   "height": 2304
-  },
-  {
-   "slug": "william-paterson-university",
    "img": "/photos/william-paterson-university/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/7/75/1600ValleyRd.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:1600ValleyRd.jpg",
@@ -11703,19 +10290,6 @@
    "dhash": "810111151414c102",
    "width": 3072,
    "height": 2304
-  },
-  {
-   "slug": "william-paterson-university",
-   "img": "/photos/william-paterson-university/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/2021-09-24_15_38_44_View_east_along_Passaic_County_Route_504_%28Pompton_Road%29_from_the_pedestrian_overpass_at_William_Paterson_University_in_Wayne_Township%2C_Passaic_County%2C_New_Jersey.jpg/3840px-thumbnail.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:2021-09-24_15_38_44_View_east_along_Passaic_County_Route_504_(Pompton_Road)_from_the_pedestrian_overpass_at_William_Paterson_University_in_Wayne_Township,_Passaic_County,_New_Jersey.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Famartin",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "03c9ebe27939523d8683b9f193cecfbda7d13495",
-   "dhash": "d6562e6e3c6cbf9e",
-   "width": 3840,
-   "height": 2880
   },
   {
    "slug": "aarhus-university",
@@ -11823,19 +10397,6 @@
   },
   {
    "slug": "aalto-university",
-   "img": "/photos/aalto-university/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Aalto_Egyetem%2C_a_Teknologf%C3%B6reningen_hallgat%C3%B3i_szervezet_%C3%A9p%C3%BClete._Fortepan_100643.jpg/3840px-Aalto_Egyetem%2C_a_Teknologf%C3%B6reningen_hallgat%C3%B3i_szervezet_%C3%A9p%C3%BClete._Fortepan_100643.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Aalto_Egyetem,_a_Teknologf%C3%B6reningen_hallgat%C3%B3i_szervezet_%C3%A9p%C3%BClete._Fortepan_100643.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "FOTO:Fortepan — ID 100643: Adományozó/Donor: Ormos Imre Alapítvány. archive copy at the Wayback Machine",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "54d3b2f6d1b45dbd4745ed30f4c8e7f57099cf6a",
-   "dhash": "9b99adaeaeaeaf1c",
-   "width": 3840,
-   "height": 2481
-  },
-  {
-   "slug": "aalto-university",
    "img": "/photos/aalto-university/hunt-5.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/e/e6/K%C3%B6ydenveto.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:K%C3%B6ydenveto.jpg",
@@ -11846,19 +10407,6 @@
    "dhash": "13139012372f1f03",
    "width": 1697,
    "height": 1059
-  },
-  {
-   "slug": "abertay",
-   "img": "/photos/abertay/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Abertay_Kidd_building.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Abertay_Kidd_building.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Ydam",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "d81b3894349fd72f3afab77f8358d186255d3766",
-   "dhash": "dfdb9b9b9baf4fdf",
-   "width": 2048,
-   "height": 1536
   },
   {
    "slug": "abertay",
@@ -11885,19 +10433,6 @@
    "dhash": "97cf070c6c14349b",
    "width": 3840,
    "height": 2956
-  },
-  {
-   "slug": "bradford",
-   "img": "/photos/bradford/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/93/University_of_Bradford_Richmond_24_April_2017_01.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Bradford_Richmond_24_April_2017_01.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Chemical Engineer",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "1d53fb1d9f3bdcbe973fbbf462395abcb9cf70bb",
-   "dhash": "cc4c17b6b634040e",
-   "width": 3264,
-   "height": 1840
   },
   {
    "slug": "bradford",
@@ -12145,19 +10680,6 @@
    "dhash": "49359d981c172399",
    "width": 2000,
    "height": 1339
-  },
-  {
-   "slug": "de-montfort",
-   "img": "/photos/de-montfort/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/5/54/De_Montfort_University_Campus_Centre.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:De_Montfort_University_Campus_Centre.jpg",
-   "imgLicense": "CC BY-SA 2.0",
-   "imgAuthor": "David Williams",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "1649609f6d0f6d093bca911c5f9dfd986fc9a12e",
-   "dhash": "f9f8f57993d29983",
-   "width": 1600,
-   "height": 1200
   },
   {
    "slug": "de-montfort",
@@ -12485,19 +11007,6 @@
    "height": 2560
   },
   {
-   "slug": "hertfordshire",
-   "img": "/photos/hertfordshire/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/University_of_Hertfordshire_building_1.jpg/3840px-University_of_Hertfordshire_building_1.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Hertfordshire_building_1.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "569e8a0d905c1e723406a6f47517b4f5ae43b5e1",
-   "dhash": "007587b17c7f3b0f",
-   "width": 3840,
-   "height": 2560
-  },
-  {
    "slug": "humber-polytechnic",
    "img": "/photos/humber-polytechnic/hunt-1.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Greg_Wells_in_studio.jpg/3840px-Greg_Wells_in_studio.jpg",
@@ -12629,19 +11138,6 @@
   },
   {
    "slug": "kent",
-   "img": "/photos/kent/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Kent_Business_School_-_UKC.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Kent_Business_School_-_UKC.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "St BC (talk)",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "f895a33a261c0ef233b00e5a39ba3cede6511a5a",
-   "dhash": "00908822914c3c0c",
-   "width": 2048,
-   "height": 1536
-  },
-  {
-   "slug": "kent",
    "img": "/photos/kent/hunt-4.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/1/19/Marlowe_Building_-_UKC.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Marlowe_Building_-_UKC.JPG",
@@ -12691,19 +11187,6 @@
    "dhash": "2cdedb23353392de",
    "width": 3840,
    "height": 2462
-  },
-  {
-   "slug": "manchester-met",
-   "img": "/photos/manchester-met/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/2/29/ABC_Weekend_TV_studios_in_Didsbury_Manchester.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:ABC_Weekend_TV_studios_in_Didsbury_Manchester.jpg",
-   "imgLicense": "Public domain",
-   "imgAuthor": "No machine-readable author provided. Redvers assumed (based on copyright claims).",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "857309a4a51395adb8dddec5d58ae4cb21120be9",
-   "dhash": "3979f9cded692eff",
-   "width": 1618,
-   "height": 1056
   },
   {
    "slug": "manchester-met",
@@ -12889,19 +11372,6 @@
   },
   {
    "slug": "otago",
-   "img": "/photos/otago/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/a/a9/University_of_Otago.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Otago.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Ulrich Lange, Dunedin, New Zealand",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "4fd7bbd4255e860fa4dbc6155785b2c54caceffe",
-   "dhash": "10e90d2fa3274d13",
-   "width": 2048,
-   "height": 1536
-  },
-  {
-   "slug": "otago",
    "img": "/photos/otago/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/95/Cumberland_Cards.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Cumberland_Cards.jpg",
@@ -13016,19 +11486,6 @@
    "dhash": "5f33f9ff796b797b",
    "width": 3264,
    "height": 2176
-  },
-  {
-   "slug": "red-bank-catholic",
-   "img": "/photos/red-bank-catholic/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Red_Bank_Catholic_Peter%27s_Place_entrance.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Red_Bank_Catholic_Peter%27s_Place_entrance.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Ed698170",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "d78f79ff886a2ef118af0165fac922067d388671",
-   "dhash": "337073733c4011ec",
-   "width": 2016,
-   "height": 1512
   },
   {
    "slug": "red-bank-catholic",
@@ -13162,19 +11619,6 @@
   },
   {
    "slug": "robert-gordon",
-   "img": "/photos/robert-gordon/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/3/38/RGU_entrance_on_Schoolhill.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:RGU_entrance_on_Schoolhill.JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Jackofhearts101",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "4175a80200b4756ce83a79a0ad809a8b1fe3d537",
-   "dhash": "0ecefc6cecfc7076",
-   "width": 1687,
-   "height": 1687
-  },
-  {
-   "slug": "robert-gordon",
    "img": "/photos/robert-gordon/hunt-4.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/3/34/RGU_City_Centre_campus.PNG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:RGU_City_Centre_campus.PNG",
@@ -13198,19 +11642,6 @@
    "dhash": "064e031313164a1a",
    "width": 2816,
    "height": 2112
-  },
-  {
-   "slug": "portsmouth",
-   "img": "/photos/portsmouth/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/University_of_Portsmouth_Dennis_Sciama_building.JPG/3840px-University_of_Portsmouth_Dennis_Sciama_building.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Portsmouth_Dennis_Sciama_building.JPG",
-   "imgLicense": "CC BY 3.0",
-   "imgAuthor": "Editor5807",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "ff2f893e20fb67d82272e0d0987b2c4bbb723ca6",
-   "dhash": "3399ce8389034607",
-   "width": 3840,
-   "height": 2880
   },
   {
    "slug": "portsmouth",
@@ -13344,19 +11775,6 @@
   },
   {
    "slug": "umass-boston",
-   "img": "/photos/umass-boston/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Campus_Center%2C_UMass_Boston_-_IMG_9236.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Campus_Center,_UMass_Boston_-_IMG_9236.JPG",
-   "imgLicense": "Public domain",
-   "imgAuthor": "Daderot",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "8d2790c3ce1935d280d05bd6ee572172a417e1f1",
-   "dhash": "6162715854614a98",
-   "width": 3264,
-   "height": 2448
-  },
-  {
-   "slug": "umass-boston",
    "img": "/photos/umass-boston/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Campus_Center%2C_UMass_Boston_-_IMG_9238.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Campus_Center,_UMass_Boston_-_IMG_9238.JPG",
@@ -13447,19 +11865,6 @@
    "height": 1520
   },
   {
-   "slug": "ulster",
-   "img": "/photos/ulster/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/7/74/Ulster_University_Jordanstown_Library_Exterior.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Ulster_University_Jordanstown_Library_Exterior.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "01Chris02",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "f60cf851b02ee412ba3060f908d03611cab4b404",
-   "dhash": "675b3a260b4b45a7",
-   "width": 2688,
-   "height": 1520
-  },
-  {
    "slug": "the-university-of-queensland",
    "img": "/photos/the-university-of-queensland/hunt-1.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/99/Edu_AEB_Photo_PB_0802.jpg",
@@ -13539,19 +11944,6 @@
   },
   {
    "slug": "university-of-nebraska-omaha",
-   "img": "/photos/university-of-nebraska-omaha/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/e/e5/University_of_Nebraska-Omaha_campus.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Nebraska-Omaha_campus.JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Beatmastermatt",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "149355b2cc09578a81c4d6ad8f7f428399b10811",
-   "dhash": "4f4fcc8c370b0305",
-   "width": 3264,
-   "height": 2448
-  },
-  {
-   "slug": "university-of-nebraska-omaha",
    "img": "/photos/university-of-nebraska-omaha/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/4/40/KahnAdditionPhoto-Exterior.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:KahnAdditionPhoto-Exterior.jpg",
@@ -13575,19 +11967,6 @@
    "dhash": "3f3f79d496445713",
    "width": 3840,
    "height": 1274
-  },
-  {
-   "slug": "university-of-nebraska-omaha",
-   "img": "/photos/university-of-nebraska-omaha/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/UNO_Gene_Eppley_Administration_Building.jpg/3840px-UNO_Gene_Eppley_Administration_Building.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:UNO_Gene_Eppley_Administration_Building.jpg",
-   "imgLicense": "CC BY 4.0",
-   "imgAuthor": "Jared Winkler",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "9a1fe765c5f3c5602f2c5b3003ee2b00e2d71d34",
-   "dhash": "01071f0f0f0f0f17",
-   "width": 3840,
-   "height": 1870
   },
   {
    "slug": "university-of-wisconsin-stout",
@@ -13733,58 +12112,6 @@
    "height": 2160
   },
   {
-   "slug": "woosong-university",
-   "img": "/photos/woosong-university/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Woosong_University_East_Campus_20190608_A01.jpg/3840px-Woosong_University_East_Campus_20190608_A01.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Woosong_University_East_Campus_20190608_A01.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "*Youngjin",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "e3c1929ac925f412e5884f2a0c75cb9bb000a3f0",
-   "dhash": "462d2d1919981c18",
-   "width": 3840,
-   "height": 2560
-  },
-  {
-   "slug": "woosong-university",
-   "img": "/photos/woosong-university/hunt-3.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Woosong_University_East_Campus_20190608_A02.jpg/3840px-Woosong_University_East_Campus_20190608_A02.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Woosong_University_East_Campus_20190608_A02.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "*Youngjin",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "8512e6d2f30a76d64de19cf0dfca0542aa1de080",
-   "dhash": "64e1db9a99194907",
-   "width": 3840,
-   "height": 2560
-  },
-  {
-   "slug": "woosong-university",
-   "img": "/photos/woosong-university/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Woosong_University_West_Campus_20190608_A04.jpg/3840px-Woosong_University_West_Campus_20190608_A04.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Woosong_University_West_Campus_20190608_A04.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "*Youngjin",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "38b01d36f138286f09e496fd8ecd453bf1d5c988",
-   "dhash": "411038383879791d",
-   "width": 3840,
-   "height": 2560
-  },
-  {
-   "slug": "woosong-university",
-   "img": "/photos/woosong-university/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Woosong_University_West_Campus_20190608_A03.jpg/3840px-Woosong_University_West_Campus_20190608_A03.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Woosong_University_West_Campus_20190608_A03.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "*Youngjin",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "2347f131b0557d1978be6e64573d794b28561abb",
-   "dhash": "7bf76e3e92969267",
-   "width": 3840,
-   "height": 2560
-  },
-  {
    "slug": "warsaw-university-of-technology",
    "img": "/photos/warsaw-university-of-technology/hunt-1.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Gmach_G%C5%82%C3%B3wny_Politechniki_Warszawskiej_2018.jpg/3840px-Gmach_G%C5%82%C3%B3wny_Politechniki_Warszawskiej_2018.jpg",
@@ -13851,32 +12178,6 @@
   },
   {
    "slug": "xi-an-jiaotong-liverpool-university",
-   "img": "/photos/xi-an-jiaotong-liverpool-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/South_Campus_of_XJTLU.jpg/3840px-South_Campus_of_XJTLU.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:South_Campus_of_XJTLU.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "SCJiang",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "b6d70844a49f833bff44cc7522ee4f4a4bdfe1e8",
-   "dhash": "8f73cfc8d8deded8",
-   "width": 3840,
-   "height": 2560
-  },
-  {
-   "slug": "xi-an-jiaotong-liverpool-university",
-   "img": "/photos/xi-an-jiaotong-liverpool-university/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/90/XJTLU_campus_2013.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:XJTLU_campus_2013.JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Goyah",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "512438cf0092bb40e24f869e08a32d323e9b114c",
-   "dhash": "5f6ba723440c3f5f",
-   "width": 3743,
-   "height": 2546
-  },
-  {
-   "slug": "xi-an-jiaotong-liverpool-university",
    "img": "/photos/xi-an-jiaotong-liverpool-university/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/4/4c/XJTLU_Admin_Lib.JPG",
    "imgSource": "https://commons.wikimedia.org/wiki/File:XJTLU_Admin_Lib.JPG",
@@ -13887,45 +12188,6 @@
    "dhash": "0060e26208492960",
    "width": 3570,
    "height": 2419
-  },
-  {
-   "slug": "xi-an-jiaotong-liverpool-university",
-   "img": "/photos/xi-an-jiaotong-liverpool-university/hunt-4.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XJTLU_campus_entrance_2013.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:XJTLU_campus_entrance_2013.JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Goyah",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "b74b48caf3c04e01f362a9e3be9a7dbe48fcf7f2",
-   "dhash": "250cc4e6a6268ca5",
-   "width": 3828,
-   "height": 2608
-  },
-  {
-   "slug": "xi-an-jiaotong-liverpool-university",
-   "img": "/photos/xi-an-jiaotong-liverpool-university/hunt-5.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Xi%27an_Jiaotong-Liverpool_University.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Xi%27an_Jiaotong-Liverpool_University.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Zhou Guanhuai",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "3cadcb23cf21dc1a95f11be03255e48060b20670",
-   "dhash": "3b1bff756d7d168f",
-   "width": 2272,
-   "height": 1704
-  },
-  {
-   "slug": "lincoln-bishop-university",
-   "img": "/photos/lincoln-bishop-university/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/2/23/Bishop_Grosseteste.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Bishop_Grosseteste.JPG",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Tyssul",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "8cc13bf5f2a23d9c2cd9c225a3e4b2dea81c50cb",
-   "dhash": "e1e2e1b3b63c378c",
-   "width": 2228,
-   "height": 1469
   },
   {
    "slug": "selkirk-college",
@@ -14186,19 +12448,6 @@
    "dhash": "2349dbcbcb4bcd8c",
    "width": 3840,
    "height": 2560
-  },
-  {
-   "slug": "university-of-pecs",
-   "img": "/photos/university-of-pecs/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Hungary_Pecs_2005_June_076University.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Hungary_Pecs_2005_June_076University.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Csörföly Dániel",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "6a354ad2440d3312815ac4ac1fce63b64f5f2f0e",
-   "dhash": "dc312b0c0d17170c",
-   "width": 1200,
-   "height": 900
   },
   {
    "slug": "university-of-pecs",
@@ -14475,19 +12724,6 @@
   },
   {
    "slug": "university-of-huddersfield",
-   "img": "/photos/university-of-huddersfield/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Queensgate_and_the_University_of_Huddersfield_%28April_2010%29_001.jpg/3840px-Queensgate_and_the_University_of_Huddersfield_%28April_2010%29_001.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Queensgate_and_the_University_of_Huddersfield_(April_2010)_001.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Mtaylor848",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "5bf779a0f0a972055fccae0a79a4e8d3af399742",
-   "dhash": "786c2c34ea76e4cd",
-   "width": 3840,
-   "height": 2571
-  },
-  {
-   "slug": "university-of-huddersfield",
    "img": "/photos/university-of-huddersfield/hunt-2.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Huddersfield_University_Queensgate_Campus_-_geograph.org.uk_-_3958338.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Huddersfield_University_Queensgate_Campus_-_geograph.org.uk_-_3958338.jpg",
@@ -14743,19 +12979,6 @@
    "imgCheckedAt": "2026-07-21",
    "sha1": "27d7ac206a7f2e3a2430349b55cdfb2538ff85f7",
    "dhash": "e3d6d3f3e183c3bf",
-   "width": 3840,
-   "height": 2880
-  },
-  {
-   "slug": "utah-tech-university",
-   "img": "/photos/utah-tech-university/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Dixie_Hillside_D_in_St_George_Utah.jpg/3840px-Dixie_Hillside_D_in_St_George_Utah.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:Dixie_Hillside_D_in_St_George_Utah.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Einbierbitte",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "9d0b852555cb68143d61be80f2f3d8061cbdef78",
-   "dhash": "363b4a0e0a9ecf4c",
    "width": 3840,
    "height": 2880
   },
@@ -15031,19 +13254,6 @@
    "dhash": "6d874ee6667c766e",
    "width": 3840,
    "height": 2560
-  },
-  {
-   "slug": "kaunas-university-of-technology",
-   "img": "/photos/kaunas-university-of-technology/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/2/25/KTU_maisto_institutas.JPG",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:KTU_maisto_institutas.JPG",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Bearas",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "1a051a82c21e82718aa28ca21eeb8b9fd802da8d",
-   "dhash": "070d0d3d3d3a0605",
-   "width": 2816,
-   "height": 2112
   },
   {
    "slug": "kaunas-university-of-technology",
@@ -15697,19 +13907,6 @@
   },
   {
    "slug": "santa-monica-college",
-   "img": "/photos/santa-monica-college/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/1/1a/SantaMonicaCollegeBoardwalk.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:SantaMonicaCollegeBoardwalk.jpg",
-   "imgLicense": "CC BY-SA 2.0",
-   "imgAuthor": "Michael Oh",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "09e20c5aada1851466da32f38e5d1bb96ffe9b1d",
-   "dhash": "070885e4650e9e9e",
-   "width": 2592,
-   "height": 1728
-  },
-  {
-   "slug": "santa-monica-college",
    "img": "/photos/santa-monica-college/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Santa_MonicaCollege_Boardwalk2.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:Santa_MonicaCollege_Boardwalk2.jpg",
@@ -15970,32 +14167,6 @@
   },
   {
    "slug": "massey",
-   "img": "/photos/massey/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/New_Zealand_-_Massey_University_-_8736.jpg/3840px-New_Zealand_-_Massey_University_-_8736.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:New_Zealand_-_Massey_University_-_8736.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Jorge Royan",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "ab6304286e43eeef8af7efc8d6c0b8e64678d1c2",
-   "dhash": "91c7e7eae356c686",
-   "width": 3840,
-   "height": 2545
-  },
-  {
-   "slug": "massey",
-   "img": "/photos/massey/hunt-2.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/New_Zealand_-_Massey_University_-_8744.jpg/3840px-New_Zealand_-_Massey_University_-_8744.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:New_Zealand_-_Massey_University_-_8744.jpg",
-   "imgLicense": "CC BY-SA 3.0",
-   "imgAuthor": "Jorge Royan",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "db3b8cd4826aa19ff213589a605c9b694e27cd88",
-   "dhash": "0fcfd334314bca4f",
-   "width": 3840,
-   "height": 2560
-  },
-  {
-   "slug": "massey",
    "img": "/photos/massey/hunt-3.jpg",
    "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/9/9e/First_Maori_Studies_PhDs_200_Graduation_ceremony.jpg",
    "imgSource": "https://commons.wikimedia.org/wiki/File:First_Maori_Studies_PhDs_200_Graduation_ceremony.jpg",
@@ -16032,19 +14203,6 @@
    "dhash": "383dbb1b39385934",
    "width": 3840,
    "height": 2560
-  },
-  {
-   "slug": "oxford",
-   "img": "/photos/oxford/hunt-1.jpg",
-   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/1_oxford_aerial_panorama_2016.jpg/3840px-1_oxford_aerial_panorama_2016.jpg",
-   "imgSource": "https://commons.wikimedia.org/wiki/File:1_oxford_aerial_panorama_2016.jpg",
-   "imgLicense": "CC BY-SA 4.0",
-   "imgAuthor": "Chensiyuan",
-   "imgCheckedAt": "2026-07-21",
-   "sha1": "ae8a654df244af4d58341e613bdcea8e5c3a058e",
-   "dhash": "89b3ad3d279bcec6",
-   "width": 3840,
-   "height": 1289
   },
   {
    "slug": "oxford",
