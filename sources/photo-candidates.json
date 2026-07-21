@@ -1,12 +1,20 @@
 {
- "generatedAt": "2026-07-21T03:09:59.243Z",
+ "generatedAt": "2026-07-21T06:20:31.142Z",
  "dryRun": false,
  "requested": 30,
  "stats": {
-  "withCandidates": 6,
+  "withCandidates": 10,
   "noOfficialSite": 6,
-  "nothingFound": 24,
-  "rejected": 206
+  "nothingFound": 20,
+  "rejected": 208,
+  "throttledUnis": 0
+ },
+ "network": {
+  "requests": 111,
+  "throttled": 0,
+  "waitedMs": 0,
+  "failed": 0,
+  "waitedSec": 0
  },
  "candidates": [
   {
@@ -77,6 +85,19 @@
   {
    "slug": "essex",
    "img": "/photos/essex/hunt-1.jpg",
+   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/University_of_Essex_-_Albert_Sloman_Library.png/1920px-University_of_Essex_-_Albert_Sloman_Library.png",
+   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Essex_-_Albert_Sloman_Library.png",
+   "imgLicense": "CC BY-SA 3.0",
+   "imgAuthor": "Goosta",
+   "imgCheckedAt": "2026-07-21",
+   "sha1": "d737a40971e01dc231e0acc054609262c5ba09de",
+   "dhash": "1828dcd8fcfc4c45",
+   "width": 1920,
+   "height": 1278
+  },
+  {
+   "slug": "essex",
+   "img": "/photos/essex/hunt-2.jpg",
    "fetchedFrom": "http://www.essex.ac.uk/-/media/header-images/study/international/ask-us-anything.png?mw=300",
    "imgSource": "http://www.essex.ac.uk/visit",
    "imgLicense": "official-site",
@@ -89,7 +110,7 @@
   },
   {
    "slug": "essex",
-   "img": "/photos/essex/hunt-2.jpg",
+   "img": "/photos/essex/hunt-3.jpg",
    "fetchedFrom": "http://www.essex.ac.uk/-/media/header-images/2022/10/open-day-visitors_1000x1000.jpg?mw=300",
    "imgSource": "http://www.essex.ac.uk/visit",
    "imgLicense": "official-site",
@@ -102,7 +123,7 @@
   },
   {
    "slug": "essex",
-   "img": "/photos/essex/hunt-3.jpg",
+   "img": "/photos/essex/hunt-4.jpg",
    "fetchedFrom": "http://www.essex.ac.uk/-/media/header-images/2026/june/complete-university-guide-2027.jpg?mw=300",
    "imgSource": "http://www.essex.ac.uk/visit",
    "imgLicense": "official-site",
@@ -115,7 +136,7 @@
   },
   {
    "slug": "essex",
-   "img": "/photos/essex/hunt-4.jpg",
+   "img": "/photos/essex/hunt-5.jpg",
    "fetchedFrom": "http://www.essex.ac.uk/-/media/header-images/2026/july/commonwealth-games-header.jpg?mw=300",
    "imgSource": "http://www.essex.ac.uk/visit",
    "imgLicense": "official-site",
@@ -127,17 +148,17 @@
    "height": 1000
   },
   {
-   "slug": "essex",
-   "img": "/photos/essex/hunt-5.jpg",
-   "fetchedFrom": "http://www.essex.ac.uk/-/media/header-images/2025/january/the-minories.jpg?mw=300",
-   "imgSource": "http://www.essex.ac.uk/visit",
-   "imgLicense": "official-site",
-   "imgAuthor": null,
+   "slug": "bristol",
+   "img": "/photos/bristol/hunt-1.jpg",
+   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/University_of_Bristol.jpg/1920px-University_of_Bristol.jpg",
+   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Bristol.jpg",
+   "imgLicense": "CC0",
+   "imgAuthor": "Simon Cobb",
    "imgCheckedAt": "2026-07-21",
-   "sha1": "d7a9f16c44bee1cabf7fb3a96c8c2b3692b5bba1",
-   "dhash": "30c8c19393951595",
-   "width": 1000,
-   "height": 1000
+   "sha1": "6ff841a2a86f446c3df577bde9e4e9e37944723f",
+   "dhash": "cec6330b4b4b0b61",
+   "width": 1920,
+   "height": 1280
   },
   {
    "slug": "glasgow",
@@ -164,6 +185,19 @@
    "dhash": "0000092949d83672",
    "width": 2000,
    "height": 857
+  },
+  {
+   "slug": "adelaide",
+   "img": "/photos/adelaide/hunt-1.jpg",
+   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/1905_Prosh_Procession.jpg/1920px-1905_Prosh_Procession.jpg",
+   "imgSource": "https://commons.wikimedia.org/wiki/File:1905_Prosh_Procession.jpg",
+   "imgLicense": "Public domain",
+   "imgAuthor": "Unknown authorUnknown author",
+   "imgCheckedAt": "2026-07-21",
+   "sha1": "56f80e7816e6cf098556531cb9854844fb4ce037",
+   "dhash": "7434785b11f39a98",
+   "width": 1920,
+   "height": 1217
   },
   {
    "slug": "palm-beach-atlantic",
@@ -294,6 +328,32 @@
    "dhash": "0f375e12ef8d0d4c",
    "width": 1000,
    "height": 1000
+  },
+  {
+   "slug": "acadia",
+   "img": "/photos/acadia/hunt-1.jpg",
+   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Acadia_University_1.jpg/1920px-Acadia_University_1.jpg",
+   "imgSource": "https://commons.wikimedia.org/wiki/File:Acadia_University_1.jpg",
+   "imgLicense": "CC BY 2.0",
+   "imgAuthor": "Ryan Stevens",
+   "imgCheckedAt": "2026-07-21",
+   "sha1": "9ea60573ee0bb5eed1134b06031c42e82799f809",
+   "dhash": "f0ced4d4d5575555",
+   "width": 1920,
+   "height": 1440
+  },
+  {
+   "slug": "westminster",
+   "img": "/photos/westminster/hunt-1.jpg",
+   "fetchedFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/University_of_Westminster_Foyer.jpg/1920px-University_of_Westminster_Foyer.jpg",
+   "imgSource": "https://commons.wikimedia.org/wiki/File:University_of_Westminster_Foyer.jpg",
+   "imgLicense": "CC BY 3.0",
+   "imgAuthor": "Big Rock Cat / Sabotage1 at en.wikipedia",
+   "imgCheckedAt": "2026-07-21",
+   "sha1": "88a395285cd8e0b1899e26de21ab4dd8687b44f4",
+   "dhash": "96b6f0b272684d55",
+   "width": 1920,
+   "height": 1358
   },
   {
    "slug": "adelphi",
