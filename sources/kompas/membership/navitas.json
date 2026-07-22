@@ -3,7 +3,7 @@
     "aggregator": "navitas",
     "label": "Navitas",
     "source": "https://www.navitas.com/study/colleges-campuses/",
-    "collectedAt": "2026-07-22T10:19:37.129Z",
+    "collectedAt": "2026-07-22T11:44:24.526Z",
     "rule": "all",
     "notes": [
       "Живой состав сети на 2026-07-22. До этой сессии локально было известно только 10 британских вузов из seed-navitas-uk.mjs.",
@@ -13,9 +13,10 @@
     ],
     "counts": {
       "colleges": 72,
-      "matchedToCatalog": 55,
-      "uniqueUniversities": 35,
-      "unmatched": 17
+      "matchedToCatalog": 69,
+      "uniqueUniversities": 40,
+      "noCardByReview": 3,
+      "unresolved": 0
     }
   },
   "colleges": [
@@ -96,15 +97,12 @@
       "college": "Brunel University London Pathway College",
       "collegeUrl": "https://pathway.brunel.ac.uk",
       "collegeCountry": "United Kingdom",
-      "derivedUniversityName": "Brunel University London Pathway College",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:Brunel University London Pathway College=no-match",
-        "strip-suffix:Brunel University London=no-match",
-        "strip-suffix+strip-campus:Brunel University=no-match"
-      ]
+      "derivedUniversityName": "Brunel University of London",
+      "catalogSlug": "brunel",
+      "catalogName": "Brunel University of London",
+      "matchMethod": "manual",
+      "manualReason": "Источник пишет «Brunel University London», каталог — «Brunel University of London»: расходится предлог.",
+      "triedCandidates": []
     },
     {
       "college": "Charles Sturt University Melbourne",
@@ -136,13 +134,12 @@
       "college": "Christchurch College of English",
       "collegeUrl": "https://www.ccel.co.nz",
       "collegeCountry": "New Zealand",
-      "derivedUniversityName": "Christchurch College of English",
+      "derivedUniversityName": null,
       "catalogSlug": null,
       "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:Christchurch College of English=no-match"
-      ]
+      "matchMethod": "manual/no-card",
+      "manualReason": "Языковая школа в Новой Зеландии, самостоятельного вуза за ней нет — карточки в каталоге нет.",
+      "triedCandidates": []
     },
     {
       "college": "Curtin College",
@@ -317,13 +314,12 @@
       "college": "Hawthorn-Melbourne",
       "collegeUrl": "https://www.hawthornenglish.edu.au",
       "collegeCountry": "Australia",
-      "derivedUniversityName": "Hawthorn-Melbourne",
+      "derivedUniversityName": null,
       "catalogSlug": null,
       "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:Hawthorn-Melbourne=no-match"
-      ]
+      "matchMethod": "manual/no-card",
+      "manualReason": "Языковой центр в Мельбурне — карточки в каталоге нет.",
+      "triedCandidates": []
     },
     {
       "college": "Hertfordshire International College",
@@ -420,27 +416,23 @@
       "college": "La Trobe College Australia English Centre",
       "collegeUrl": "https://www.latrobecollegeaustralia.edu.au/study-options/english",
       "collegeCountry": "Australia",
-      "derivedUniversityName": "La Trobe College Australia English Centre",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:La Trobe College Australia English Centre=no-match",
-        "strip-suffix:La Trobe College Australia=no-match"
-      ]
+      "derivedUniversityName": "La Trobe University",
+      "catalogSlug": "la-trobe",
+      "catalogName": "La Trobe University",
+      "matchMethod": "manual",
+      "manualReason": "Языковой центр при La Trobe College — тот же вуз.",
+      "triedCandidates": []
     },
     {
       "college": "La Trobe University Sydney Campus",
       "collegeUrl": "https://www.latrobe.edu.au/sydney",
       "collegeCountry": "Australia",
-      "derivedUniversityName": "La Trobe University Sydney Campus",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:La Trobe University Sydney Campus=no-match",
-        "as-is+strip-campus:La Trobe University Sydney=no-match"
-      ]
+      "derivedUniversityName": "La Trobe University",
+      "catalogSlug": "la-trobe",
+      "catalogName": "La Trobe University",
+      "matchMethod": "manual",
+      "manualReason": "Сиднейский кампус того же вуза.",
+      "triedCandidates": []
     },
     {
       "college": "Lancaster University Leipzig",
@@ -482,40 +474,34 @@
       "college": "Navitas English Perth Campus",
       "collegeUrl": "https://www.navitasenglish.edu.au/school/perth",
       "collegeCountry": "Australia",
-      "derivedUniversityName": "Navitas English Perth Campus",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:Navitas English Perth Campus=no-match",
-        "as-is+strip-campus:Navitas English Perth=no-match"
-      ]
+      "derivedUniversityName": "Navitas",
+      "catalogSlug": "navitas",
+      "catalogName": "Navitas",
+      "matchMethod": "manual",
+      "manualReason": "Языковая школа самой сети; в каталоге есть карточка «Navitas».",
+      "triedCandidates": []
     },
     {
       "college": "Navitas English Sydney Campus",
       "collegeUrl": "https://www.navitasenglish.edu.au/school/sydney",
       "collegeCountry": "Australia",
-      "derivedUniversityName": "Navitas English Sydney Campus",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:Navitas English Sydney Campus=no-match",
-        "as-is+strip-campus:Navitas English Sydney=no-match"
-      ]
+      "derivedUniversityName": "Navitas",
+      "catalogSlug": "navitas",
+      "catalogName": "Navitas",
+      "matchMethod": "manual",
+      "manualReason": "Языковая школа самой сети; в каталоге есть карточка «Navitas».",
+      "triedCandidates": []
     },
     {
       "college": "Queens College Global Student Success Program",
       "collegeUrl": "https://www.queensgssp.com",
       "collegeCountry": null,
-      "derivedUniversityName": "Queens College Global Student Success Program",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:Queens College Global Student Success Program=no-match",
-        "strip-suffix:Queens College=no-match"
-      ]
+      "derivedUniversityName": "Queens College, CUNY",
+      "catalogSlug": "queens-college-cuny",
+      "catalogName": "Queens College, CUNY",
+      "matchMethod": "manual",
+      "manualReason": "queensgssp.com — это программа при Queens College, CUNY (Нью-Йорк). НЕ путать с Queen’s University Belfast.",
+      "triedCandidates": []
     },
     {
       "college": "SAE Auckland",
@@ -534,66 +520,56 @@
       "college": "SAE Institute Atlanta",
       "collegeUrl": "https://usa.sae.edu",
       "collegeCountry": null,
-      "derivedUniversityName": "SAE Institute Atlanta",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:SAE Institute Atlanta=no-match",
-        "as-is+strip-campus:SAE Institute=no-match"
-      ]
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "manual",
+      "manualReason": "Кампус SAE в США. В каталоге одна карточка бренда «SAE University College» (Австралия) — вопрос владельцу: одна карточка на бренд или отдельные по странам.",
+      "triedCandidates": []
     },
     {
       "college": "SAE Institute Chicago",
       "collegeUrl": "https://usa.sae.edu",
       "collegeCountry": null,
-      "derivedUniversityName": "SAE Institute Chicago",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:SAE Institute Chicago=no-match",
-        "as-is+strip-campus:SAE Institute=no-match"
-      ]
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "manual",
+      "manualReason": "Кампус SAE в США, см. выше.",
+      "triedCandidates": []
     },
     {
       "college": "SAE Institute of Technology Miami",
       "collegeUrl": "https://usa.sae.edu",
       "collegeCountry": null,
-      "derivedUniversityName": "SAE Institute of Technology Miami",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:SAE Institute of Technology Miami=no-match",
-        "as-is+strip-campus:SAE Institute of Technology=no-match"
-      ]
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "manual",
+      "manualReason": "Кампус SAE в США, см. выше.",
+      "triedCandidates": []
     },
     {
       "college": "SAE Institute of Technology Nashville",
       "collegeUrl": "https://usa.sae.edu",
       "collegeCountry": null,
-      "derivedUniversityName": "SAE Institute of Technology Nashville",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:SAE Institute of Technology Nashville=no-match",
-        "as-is+strip-campus:SAE Institute of Technology=no-match"
-      ]
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "manual",
+      "manualReason": "Кампус SAE в США, см. выше.",
+      "triedCandidates": []
     },
     {
       "college": "SAE Institute of Technology NYC",
       "collegeUrl": "https://usa.sae.edu",
       "collegeCountry": null,
-      "derivedUniversityName": "SAE Institute of Technology NYC",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:SAE Institute of Technology NYC=no-match",
-        "as-is+strip-campus:SAE Institute of Technology=no-match"
-      ]
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "manual",
+      "manualReason": "Кампус SAE в США, см. выше.",
+      "triedCandidates": []
     },
     {
       "college": "SAE University College - Adelaide",
@@ -744,14 +720,12 @@
       "college": "Taylors College Sydney",
       "collegeUrl": "https://www.taylorssydney.edu.au",
       "collegeCountry": "Australia",
-      "derivedUniversityName": "Taylors College Sydney",
+      "derivedUniversityName": null,
       "catalogSlug": null,
       "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:Taylors College Sydney=no-match",
-        "as-is+strip-campus:Taylors College=no-match"
-      ]
+      "matchMethod": "manual/no-card",
+      "manualReason": "Подготовительный колледж Taylors — карточки в каталоге нет.",
+      "triedCandidates": []
     },
     {
       "college": "The College, Swansea University",
@@ -808,28 +782,23 @@
       "college": "UC International College",
       "collegeUrl": "https://www.ucic.ac.nz",
       "collegeCountry": "New Zealand",
-      "derivedUniversityName": "UC International College",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:UC International College=no-match"
-      ]
+      "derivedUniversityName": "University of Canterbury",
+      "catalogSlug": "canterbury-nz",
+      "catalogName": "University of Canterbury",
+      "matchMethod": "manual",
+      "manualReason": "ucic.ac.nz — колледж при University of Canterbury (Новая Зеландия). НЕ путать с University of Canberra.",
+      "triedCandidates": []
     },
     {
       "college": "ULethbridge International College Calgary",
       "collegeUrl": "https://www.uicc.ca/",
       "collegeCountry": "Canada",
-      "derivedUniversityName": "ULethbridge International College Calgary",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:ULethbridge International College Calgary=no-match",
-        "as-is+strip-campus:ULethbridge International College=no-match",
-        "as-is+expand-U-prefix:Lethbridge International College Calgary=no-match",
-        "as-is+strip-campus+expand-U-prefix:Lethbridge International College=no-match"
-      ]
+      "derivedUniversityName": "University of Lethbridge",
+      "catalogSlug": "lethbridge",
+      "catalogName": "University of Lethbridge",
+      "matchMethod": "manual",
+      "manualReason": "uicc.ca — колледж при University of Lethbridge (Канада).",
+      "triedCandidates": []
     },
     {
       "college": "University of Canberra College",
@@ -898,14 +867,12 @@
       "college": "Western Sydney University Sydney City Campus",
       "collegeUrl": "https://city.westernsydney.edu.au/",
       "collegeCountry": "Australia",
-      "derivedUniversityName": "Western Sydney University Sydney City Campus",
-      "catalogSlug": null,
-      "catalogName": null,
-      "matchMethod": "no-match",
-      "triedCandidates": [
-        "as-is:Western Sydney University Sydney City Campus=no-match",
-        "as-is+strip-campus:Western Sydney University Sydney=no-match"
-      ]
+      "derivedUniversityName": "Western Sydney University",
+      "catalogSlug": "western-sydney",
+      "catalogName": "Western Sydney University",
+      "matchMethod": "manual",
+      "manualReason": "Городской кампус того же вуза.",
+      "triedCandidates": []
     },
     {
       "college": "Wilfrid Laurier International College",
@@ -924,7 +891,9 @@
     "acap",
     "anglia-ruskin",
     "birmingham-city",
+    "brunel",
     "canberra",
+    "canterbury-nz",
     "charles-sturt",
     "curtin-college",
     "curtin-singapore",
@@ -940,11 +909,14 @@
     "keele",
     "la-trobe",
     "lancaster-leipzig",
+    "lethbridge",
     "manitoba",
     "mmu-international-college",
     "murdoch-dubai",
+    "navitas",
     "plymouth",
     "portsmouth",
+    "queens-college-cuny",
     "robert-gordon",
     "sae",
     "srh-international-college",
@@ -957,108 +929,22 @@
     "western-sydney",
     "wilfrid-laurier-international-college"
   ],
-  "unmatched": [
-    {
-      "college": "Brunel University London Pathway College",
-      "derived": "Brunel University London Pathway College",
-      "method": "no-match",
-      "url": "https://pathway.brunel.ac.uk"
-    },
+  "noCardInCatalog": [
     {
       "college": "Christchurch College of English",
-      "derived": "Christchurch College of English",
-      "method": "no-match",
-      "url": "https://www.ccel.co.nz"
+      "url": "https://www.ccel.co.nz",
+      "why": "Языковая школа в Новой Зеландии, самостоятельного вуза за ней нет — карточки в каталоге нет."
     },
     {
       "college": "Hawthorn-Melbourne",
-      "derived": "Hawthorn-Melbourne",
-      "method": "no-match",
-      "url": "https://www.hawthornenglish.edu.au"
-    },
-    {
-      "college": "La Trobe College Australia English Centre",
-      "derived": "La Trobe College Australia English Centre",
-      "method": "no-match",
-      "url": "https://www.latrobecollegeaustralia.edu.au/study-options/english"
-    },
-    {
-      "college": "La Trobe University Sydney Campus",
-      "derived": "La Trobe University Sydney Campus",
-      "method": "no-match",
-      "url": "https://www.latrobe.edu.au/sydney"
-    },
-    {
-      "college": "Navitas English Perth Campus",
-      "derived": "Navitas English Perth Campus",
-      "method": "no-match",
-      "url": "https://www.navitasenglish.edu.au/school/perth"
-    },
-    {
-      "college": "Navitas English Sydney Campus",
-      "derived": "Navitas English Sydney Campus",
-      "method": "no-match",
-      "url": "https://www.navitasenglish.edu.au/school/sydney"
-    },
-    {
-      "college": "Queens College Global Student Success Program",
-      "derived": "Queens College Global Student Success Program",
-      "method": "no-match",
-      "url": "https://www.queensgssp.com"
-    },
-    {
-      "college": "SAE Institute Atlanta",
-      "derived": "SAE Institute Atlanta",
-      "method": "no-match",
-      "url": "https://usa.sae.edu"
-    },
-    {
-      "college": "SAE Institute Chicago",
-      "derived": "SAE Institute Chicago",
-      "method": "no-match",
-      "url": "https://usa.sae.edu"
-    },
-    {
-      "college": "SAE Institute of Technology Miami",
-      "derived": "SAE Institute of Technology Miami",
-      "method": "no-match",
-      "url": "https://usa.sae.edu"
-    },
-    {
-      "college": "SAE Institute of Technology Nashville",
-      "derived": "SAE Institute of Technology Nashville",
-      "method": "no-match",
-      "url": "https://usa.sae.edu"
-    },
-    {
-      "college": "SAE Institute of Technology NYC",
-      "derived": "SAE Institute of Technology NYC",
-      "method": "no-match",
-      "url": "https://usa.sae.edu"
+      "url": "https://www.hawthornenglish.edu.au",
+      "why": "Языковой центр в Мельбурне — карточки в каталоге нет."
     },
     {
       "college": "Taylors College Sydney",
-      "derived": "Taylors College Sydney",
-      "method": "no-match",
-      "url": "https://www.taylorssydney.edu.au"
-    },
-    {
-      "college": "UC International College",
-      "derived": "UC International College",
-      "method": "no-match",
-      "url": "https://www.ucic.ac.nz"
-    },
-    {
-      "college": "ULethbridge International College Calgary",
-      "derived": "ULethbridge International College Calgary",
-      "method": "no-match",
-      "url": "https://www.uicc.ca/"
-    },
-    {
-      "college": "Western Sydney University Sydney City Campus",
-      "derived": "Western Sydney University Sydney City Campus",
-      "method": "no-match",
-      "url": "https://city.westernsydney.edu.au/"
+      "url": "https://www.taylorssydney.edu.au",
+      "why": "Подготовительный колледж Taylors — карточки в каталоге нет."
     }
-  ]
+  ],
+  "unresolved": []
 }

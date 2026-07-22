@@ -36,12 +36,16 @@ const INDEX = `${BASE}/courses/`;
 const DRY = args.has('dry-run');
 const LIMIT = args.num('limit', Infinity);
 
-// Партнёры из документа владельца (сессия 1) + слаг каталога.
+// Партнёры QA. Документ владельца называл четверых; РЕШЕНИЕМ ВЛАДЕЛЬЦА от 2026-07-22
+// список расширен до шести — London Metropolitan и Swansea включены, Oxford Brookes
+// оставлен партнёром, хотя курсов у него на живом сайте QA нет.
 const OWNER_LIST = [
-  { key: 'northumbria', name: 'Northumbria University', catalogSlug: 'northumbria-university' },
-  { key: 'ulster', name: 'Ulster University', catalogSlug: 'ulster-university' },
-  { key: 'oxford-brookes', name: 'Oxford Brookes University', catalogSlug: 'oxford-brookes-university' },
+  { key: 'northumbria', name: 'Northumbria University', catalogSlug: 'northumbria' },
+  { key: 'ulster', name: 'Ulster University', catalogSlug: 'ulster' },
+  { key: 'oxford-brookes', name: 'Oxford Brookes University', catalogSlug: 'oxford-brookes', note: 'Курсов на живом сайте QA нет; карточка сохраняется решением владельца.' },
   { key: 'solent', name: 'Solent University', catalogSlug: 'solent' },
+  { key: 'london-met', name: 'London Metropolitan University', catalogSlug: 'london-met', addedBy: 'owner-2026-07-22' },
+  { key: 'swansea', name: 'Swansea University', catalogSlug: 'swansea', addedBy: 'owner-2026-07-22' },
 ];
 
 // Домен курса -> вуз. Единственный надёжный признак принадлежности.
@@ -58,12 +62,12 @@ const HOST_TO_PARTNER = {
 };
 
 const PARTNER_META = {
-  northumbria: { name: 'Northumbria University', catalogSlug: 'northumbria-university' },
-  ulster: { name: 'Ulster University', catalogSlug: 'ulster-university' },
+  northumbria: { name: 'Northumbria University', catalogSlug: 'northumbria' },
+  ulster: { name: 'Ulster University', catalogSlug: 'ulster' },
   solent: { name: 'Solent University', catalogSlug: 'solent' },
-  'oxford-brookes': { name: 'Oxford Brookes University', catalogSlug: 'oxford-brookes-university' },
-  'london-met': { name: 'London Metropolitan University', catalogSlug: 'london-metropolitan-university' },
-  swansea: { name: 'Swansea University', catalogSlug: 'swansea-university' },
+  'oxford-brookes': { name: 'Oxford Brookes University', catalogSlug: 'oxford-brookes' },
+  'london-met': { name: 'London Metropolitan University', catalogSlug: 'london-met' },
+  swansea: { name: 'Swansea University', catalogSlug: 'swansea' },
   'qa-own': { name: 'QA Higher Education (собственные программы)', catalogSlug: null },
 };
 

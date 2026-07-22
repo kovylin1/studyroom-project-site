@@ -3,9 +3,9 @@
     "aggregator": "qahe",
     "label": "QA Higher Education",
     "source": "https://qahighereducation.com/courses/",
-    "collectedAt": "2026-07-22T10:08:31.504Z",
+    "collectedAt": "2026-07-22T11:18:06.550Z",
     "rule": "list",
-    "ownerListCount": 4,
+    "ownerListCount": 6,
     "livePartnerPages": 6,
     "notes": [
       "Курсы QA физически лежат на поддоменах партнёров; привязка сделана по домену, не по тексту.",
@@ -17,22 +17,35 @@
     {
       "key": "northumbria",
       "name": "Northumbria University",
-      "catalogSlug": "northumbria-university"
+      "catalogSlug": "northumbria"
     },
     {
       "key": "ulster",
       "name": "Ulster University",
-      "catalogSlug": "ulster-university"
+      "catalogSlug": "ulster"
     },
     {
       "key": "oxford-brookes",
       "name": "Oxford Brookes University",
-      "catalogSlug": "oxford-brookes-university"
+      "catalogSlug": "oxford-brookes",
+      "note": "Курсов на живом сайте QA нет; карточка сохраняется решением владельца."
     },
     {
       "key": "solent",
       "name": "Solent University",
       "catalogSlug": "solent"
+    },
+    {
+      "key": "london-met",
+      "name": "London Metropolitan University",
+      "catalogSlug": "london-met",
+      "addedBy": "owner-2026-07-22"
+    },
+    {
+      "key": "swansea",
+      "name": "Swansea University",
+      "catalogSlug": "swansea",
+      "addedBy": "owner-2026-07-22"
     }
   ],
   "livePartnerPages": [
@@ -87,13 +100,12 @@
       "parsed": 5,
       "withFee": 5,
       "intl": 4,
-      "inOwnerList": false
+      "inOwnerList": true
     }
   ],
   "ownerPartnersWithoutCourses": [
-    "Oxford Brookes University"
+    "Oxford Brookes University",
+    "Swansea University"
   ],
-  "extraOnSite": [
-    "London Metropolitan University"
-  ]
+  "extraOnSite": []
 }

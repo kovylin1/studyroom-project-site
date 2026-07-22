@@ -105,6 +105,49 @@ function universityNameCandidates(collegeName) {
   return out;
 }
 
+// -------------------------------------------------- ручные сопоставления ----
+// Решением владельца 2026-07-22 партнёрами Navitas считаются ВСЕ колледжи сети,
+// поэтому каждому нужен ответ: карточка каталога или явное «карточки нет».
+// Автоматика этих 17 не взяла; разобрано глазами 2026-07-22, у каждой строки причина.
+// Ключ — имя колледжа на сайте Navitas, как есть.
+const MANUAL = {
+  'Brunel University London Pathway College':
+    { slug: 'brunel', why: 'Источник пишет «Brunel University London», каталог — «Brunel University of London»: расходится предлог.' },
+  'La Trobe College Australia English Centre':
+    { slug: 'la-trobe', why: 'Языковой центр при La Trobe College — тот же вуз.' },
+  'La Trobe University Sydney Campus':
+    { slug: 'la-trobe', why: 'Сиднейский кампус того же вуза.' },
+  'Western Sydney University Sydney City Campus':
+    { slug: 'western-sydney', why: 'Городской кампус того же вуза.' },
+  'Queens College Global Student Success Program':
+    { slug: 'queens-college-cuny', why: 'queensgssp.com — это программа при Queens College, CUNY (Нью-Йорк). НЕ путать с Queen’s University Belfast.' },
+  'UC International College':
+    { slug: 'canterbury-nz', why: 'ucic.ac.nz — колледж при University of Canterbury (Новая Зеландия). НЕ путать с University of Canberra.' },
+  'ULethbridge International College Calgary':
+    { slug: 'lethbridge', why: 'uicc.ca — колледж при University of Lethbridge (Канада).' },
+  'Navitas English Perth Campus':
+    { slug: 'navitas', why: 'Языковая школа самой сети; в каталоге есть карточка «Navitas».' },
+  'Navitas English Sydney Campus':
+    { slug: 'navitas', why: 'Языковая школа самой сети; в каталоге есть карточка «Navitas».' },
+  'SAE Institute Atlanta':
+    { slug: 'sae', why: 'Кампус SAE в США. В каталоге одна карточка бренда «SAE University College» (Австралия) — вопрос владельцу: одна карточка на бренд или отдельные по странам.' },
+  'SAE Institute Chicago':
+    { slug: 'sae', why: 'Кампус SAE в США, см. выше.' },
+  'SAE Institute of Technology Miami':
+    { slug: 'sae', why: 'Кампус SAE в США, см. выше.' },
+  'SAE Institute of Technology Nashville':
+    { slug: 'sae', why: 'Кампус SAE в США, см. выше.' },
+  'SAE Institute of Technology NYC':
+    { slug: 'sae', why: 'Кампус SAE в США, см. выше.' },
+  // Карточки в каталоге НЕТ — это языковые школы и подготовительные колледжи без вуза.
+  'Christchurch College of English':
+    { slug: null, why: 'Языковая школа в Новой Зеландии, самостоятельного вуза за ней нет — карточки в каталоге нет.' },
+  'Hawthorn-Melbourne':
+    { slug: null, why: 'Языковой центр в Мельбурне — карточки в каталоге нет.' },
+  'Taylors College Sydney':
+    { slug: null, why: 'Подготовительный колледж Taylors — карточки в каталоге нет.' },
+};
+
 // ------------------------------------------------------- индекс каталога ----
 const norm = (s) => (s || '').toLowerCase()
   .normalize('NFKD').replace(/[̀-ͯ]/g, '')
@@ -214,8 +257,27 @@ const catalog = await buildCatalogIndex();
 log(`каталог: ${catalog.length} вузов`);
 
 const rows = colleges.map((c) => {
-  const cands = universityNameCandidates(c.college);
   const country = countryFromUrl(c.url);
+
+  // Ручное решение сильнее автоматики: эти 17 разобраны глазами, причина у каждого.
+  const manual = MANUAL[c.college];
+  if (manual) {
+    const row = catalog.find((x) => x.slug === manual.slug);
+    if (manual.slug && !row) throw new Error(`MANUAL указывает на несуществующий слаг «${manual.slug}» для «${c.college}»`);
+    return {
+      college: c.college,
+      collegeUrl: c.url,
+      collegeCountry: country,
+      derivedUniversityName: row?.name || null,
+      catalogSlug: manual.slug,
+      catalogName: row?.name || null,
+      matchMethod: manual.slug ? 'manual' : 'manual/no-card',
+      manualReason: manual.why,
+      triedCandidates: [],
+    };
+  }
+
+  const cands = universityNameCandidates(c.college);
   let hit = null;
   const tried = [];
   for (const cand of cands) {
@@ -236,7 +298,8 @@ const rows = colleges.map((c) => {
 });
 
 const matched = rows.filter((r) => r.catalogSlug);
-const unmatched = rows.filter((r) => !r.catalogSlug);
+const noCard = rows.filter((r) => !r.catalogSlug && r.matchMethod === 'manual/no-card');
+const unmatched = rows.filter((r) => !r.catalogSlug && r.matchMethod !== 'manual/no-card');
 const uniqueUnis = [...new Set(matched.map((r) => r.catalogSlug))];
 
 await writeMembership(AGG, {
@@ -252,15 +315,16 @@ await writeMembership(AGG, {
       'Программы Navitas в этой выгрузке отсутствуют: у сайтов колледжей нет типа записи «курс» в WP REST, курсы лежат обычными страницами со своей разметкой на каждом из ~40 доменов. Нужен отдельный коллектор на домен.',
       'Имя вуза выведено из имени колледжа снятием сетевых суффиксов — каждую строку видно вместе с methodом, проверять глазами.',
     ],
-    counts: { colleges: rows.length, matchedToCatalog: matched.length, uniqueUniversities: uniqueUnis.length, unmatched: unmatched.length },
+    counts: { colleges: rows.length, matchedToCatalog: matched.length, uniqueUniversities: uniqueUnis.length, noCardByReview: noCard.length, unresolved: unmatched.length },
   },
   colleges: rows,
   matchedSlugs: uniqueUnis.sort(),
-  unmatched: unmatched.map((r) => ({ college: r.college, derived: r.derivedUniversityName, method: r.matchMethod, url: r.collegeUrl })),
+  noCardInCatalog: noCard.map((r) => ({ college: r.college, url: r.collegeUrl, why: r.manualReason })),
+  unresolved: unmatched.map((r) => ({ college: r.college, derived: r.derivedUniversityName, method: r.matchMethod, url: r.collegeUrl })),
 }, { dryRun: DRY });
 
 log('--- итог ---');
-log(`колледжей ${rows.length}; сопоставлено с каталогом ${matched.length} записей -> ${uniqueUnis.length} вузов; не сопоставлено ${unmatched.length}`);
+log(`колледжей ${rows.length}; сопоставлено ${matched.length} -> ${uniqueUnis.length} вузов; карточки нет по разбору ${noCard.length}; НЕ РАЗОБРАНО ${unmatched.length}`);
 const byMethod = rows.reduce((a, r) => (a[r.matchMethod] = (a[r.matchMethod] || 0) + 1, a), {});
 log(`методы: ${JSON.stringify(byMethod)}`);
 log(`запросов ${stats.requests}, неудач ${stats.failed}`);
