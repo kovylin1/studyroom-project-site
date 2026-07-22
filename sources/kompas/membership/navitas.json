@@ -1,0 +1,1064 @@
+{
+  "_meta": {
+    "aggregator": "navitas",
+    "label": "Navitas",
+    "source": "https://www.navitas.com/study/colleges-campuses/",
+    "collectedAt": "2026-07-22T10:19:37.129Z",
+    "rule": "all",
+    "notes": [
+      "Живой состав сети на 2026-07-22. До этой сессии локально было известно только 10 британских вузов из seed-navitas-uk.mjs.",
+      "Цены в seed-navitas-uk.mjs заданы литеральной таблицей UK_FEE_BAND_BASE — это не данные источника. Подтверждения им здесь НЕТ.",
+      "Программы Navitas в этой выгрузке отсутствуют: у сайтов колледжей нет типа записи «курс» в WP REST, курсы лежат обычными страницами со своей разметкой на каждом из ~40 доменов. Нужен отдельный коллектор на домен.",
+      "Имя вуза выведено из имени колледжа снятием сетевых суффиксов — каждую строку видно вместе с methodом, проверять глазами."
+    ],
+    "counts": {
+      "colleges": 72,
+      "matchedToCatalog": 55,
+      "uniqueUniversities": 35,
+      "unmatched": 17
+    }
+  },
+  "colleges": [
+    {
+      "college": "ACAP University College - Adelaide",
+      "collegeUrl": "https://www.acap.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "ACAP University College",
+      "catalogSlug": "acap",
+      "catalogName": "ACAP University College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:ACAP University College=exact-name"
+      ]
+    },
+    {
+      "college": "ACAP University College - Melbourne",
+      "collegeUrl": "https://www.acap.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "ACAP University College",
+      "catalogSlug": "acap",
+      "catalogName": "ACAP University College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:ACAP University College=exact-name"
+      ]
+    },
+    {
+      "college": "ACAP University College - Perth",
+      "collegeUrl": "https://www.acap.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "ACAP University College",
+      "catalogSlug": "acap",
+      "catalogName": "ACAP University College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:ACAP University College=exact-name"
+      ]
+    },
+    {
+      "college": "ACAP University College - Sydney",
+      "collegeUrl": "https://www.acap.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "ACAP University College",
+      "catalogSlug": "acap",
+      "catalogName": "ACAP University College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:ACAP University College=exact-name"
+      ]
+    },
+    {
+      "college": "Anglia Ruskin University College",
+      "collegeUrl": "http://www.arucollege.com",
+      "collegeCountry": null,
+      "derivedUniversityName": "Anglia Ruskin University College",
+      "catalogSlug": "anglia-ruskin",
+      "catalogName": "Anglia Ruskin University",
+      "matchMethod": "as-is/core-name",
+      "triedCandidates": [
+        "as-is:Anglia Ruskin University College=core-name"
+      ]
+    },
+    {
+      "college": "Birmingham City University International College",
+      "collegeUrl": "https://www.bcuic.navitas.com",
+      "collegeCountry": null,
+      "derivedUniversityName": "Birmingham City University",
+      "catalogSlug": "birmingham-city",
+      "catalogName": "Birmingham City University",
+      "matchMethod": "strip-suffix/exact-name",
+      "triedCandidates": [
+        "as-is:Birmingham City University International College=no-match",
+        "strip-suffix:Birmingham City University=exact-name"
+      ]
+    },
+    {
+      "college": "Brunel University London Pathway College",
+      "collegeUrl": "https://pathway.brunel.ac.uk",
+      "collegeCountry": "United Kingdom",
+      "derivedUniversityName": "Brunel University London Pathway College",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:Brunel University London Pathway College=no-match",
+        "strip-suffix:Brunel University London=no-match",
+        "strip-suffix+strip-campus:Brunel University=no-match"
+      ]
+    },
+    {
+      "college": "Charles Sturt University Melbourne",
+      "collegeUrl": "https://sydneymelbourne.csu.edu.au/",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Charles Sturt University",
+      "catalogSlug": "charles-sturt",
+      "catalogName": "Charles Sturt University",
+      "matchMethod": "as-is+strip-campus/exact-name",
+      "triedCandidates": [
+        "as-is:Charles Sturt University Melbourne=no-match",
+        "as-is+strip-campus:Charles Sturt University=exact-name"
+      ]
+    },
+    {
+      "college": "Charles Sturt University Sydney",
+      "collegeUrl": "https://sydneymelbourne.csu.edu.au/",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Charles Sturt University",
+      "catalogSlug": "charles-sturt",
+      "catalogName": "Charles Sturt University",
+      "matchMethod": "as-is+strip-campus/exact-name",
+      "triedCandidates": [
+        "as-is:Charles Sturt University Sydney=no-match",
+        "as-is+strip-campus:Charles Sturt University=exact-name"
+      ]
+    },
+    {
+      "college": "Christchurch College of English",
+      "collegeUrl": "https://www.ccel.co.nz",
+      "collegeCountry": "New Zealand",
+      "derivedUniversityName": "Christchurch College of English",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:Christchurch College of English=no-match"
+      ]
+    },
+    {
+      "college": "Curtin College",
+      "collegeUrl": "https://www.curtincollege.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Curtin College",
+      "catalogSlug": "curtin-college",
+      "catalogName": "Curtin College",
+      "matchMethod": "as-is/exact-slug",
+      "triedCandidates": [
+        "as-is:Curtin College=exact-slug"
+      ]
+    },
+    {
+      "college": "Curtin Singapore",
+      "collegeUrl": "http://curtin.edu.sg",
+      "collegeCountry": "Singapore",
+      "derivedUniversityName": "Curtin Singapore",
+      "catalogSlug": "curtin-singapore",
+      "catalogName": "Curtin Singapore",
+      "matchMethod": "as-is/exact-slug",
+      "triedCandidates": [
+        "as-is:Curtin Singapore=exact-slug"
+      ]
+    },
+    {
+      "college": "Deakin College",
+      "collegeUrl": "https://www.deakincollege.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Deakin College",
+      "catalogSlug": "deakin",
+      "catalogName": "Deakin University",
+      "matchMethod": "as-is/core-name",
+      "triedCandidates": [
+        "as-is:Deakin College=core-name"
+      ]
+    },
+    {
+      "college": "Deakin College - Geelong Waterfront",
+      "collegeUrl": "https://www.deakincollege.edu.au/",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Deakin College",
+      "catalogSlug": "deakin",
+      "catalogName": "Deakin University",
+      "matchMethod": "as-is/core-name",
+      "triedCandidates": [
+        "as-is:Deakin College=core-name"
+      ]
+    },
+    {
+      "college": "Deakin College - Geelong Waurn Ponds",
+      "collegeUrl": "https://www.deakincollege.edu.au/",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Deakin College",
+      "catalogSlug": "deakin",
+      "catalogName": "Deakin University",
+      "matchMethod": "as-is/core-name",
+      "triedCandidates": [
+        "as-is:Deakin College=core-name"
+      ]
+    },
+    {
+      "college": "Deakin University Lancaster University Indonesia",
+      "collegeUrl": "https://www.dli.ac.id/",
+      "collegeCountry": "Indonesia",
+      "derivedUniversityName": "Deakin University Lancaster University Indonesia",
+      "catalogSlug": "dli-bandung",
+      "catalogName": "Deakin Lancaster Indonesia",
+      "matchMethod": "as-is/core-name",
+      "triedCandidates": [
+        "as-is:Deakin University Lancaster University Indonesia=core-name"
+      ]
+    },
+    {
+      "college": "Edith Cowan College",
+      "collegeUrl": "https://www.edithcowancollege.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Edith Cowan College",
+      "catalogSlug": "edith-cowan",
+      "catalogName": "Edith Cowan University",
+      "matchMethod": "as-is/core-name",
+      "triedCandidates": [
+        "as-is:Edith Cowan College=core-name"
+      ]
+    },
+    {
+      "college": "Edith Cowan University English Centre",
+      "collegeUrl": "https://www.edithcowancollege.edu.au/courses/english",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Edith Cowan University",
+      "catalogSlug": "edith-cowan",
+      "catalogName": "Edith Cowan University",
+      "matchMethod": "strip-suffix/exact-name",
+      "triedCandidates": [
+        "as-is:Edith Cowan University English Centre=no-match",
+        "strip-suffix:Edith Cowan University=exact-name"
+      ]
+    },
+    {
+      "college": "Edith Cowan University Sri Lanka",
+      "collegeUrl": "https://www.ecu.edu.lk",
+      "collegeCountry": "Sri Lanka",
+      "derivedUniversityName": "Edith Cowan University Sri Lanka",
+      "catalogSlug": "edith-cowan-sl",
+      "catalogName": "Edith Cowan University Sri Lanka",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:Edith Cowan University Sri Lanka=exact-name"
+      ]
+    },
+    {
+      "college": "Eynesbury College",
+      "collegeUrl": "https://www.eynesbury.edu.au/",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Eynesbury College",
+      "catalogSlug": "eynesbury",
+      "catalogName": "Eynesbury College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:Eynesbury College=exact-name"
+      ]
+    },
+    {
+      "college": "Eynesbury College | Adelaide University",
+      "collegeUrl": "https://www.eynesbury.edu.au/adelaide-university/",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Eynesbury College",
+      "catalogSlug": "eynesbury",
+      "catalogName": "Eynesbury College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:Eynesbury College=exact-name"
+      ]
+    },
+    {
+      "college": "Fraser International College",
+      "collegeUrl": "https://www.fraseric.ca",
+      "collegeCountry": "Canada",
+      "derivedUniversityName": "Fraser International College",
+      "catalogSlug": "fraser-international-college",
+      "catalogName": "Fraser International College",
+      "matchMethod": "as-is/exact-slug",
+      "triedCandidates": [
+        "as-is:Fraser International College=exact-slug"
+      ]
+    },
+    {
+      "college": "Griffith College - Brisbane",
+      "collegeUrl": "https://www.griffithcollege.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Griffith College",
+      "catalogSlug": "griffith",
+      "catalogName": "Griffith University",
+      "matchMethod": "as-is/core-name",
+      "triedCandidates": [
+        "as-is:Griffith College=core-name"
+      ]
+    },
+    {
+      "college": "Griffith College - Gold Coast",
+      "collegeUrl": "https://www.griffithcollege.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Griffith College",
+      "catalogSlug": "griffith",
+      "catalogName": "Griffith University",
+      "matchMethod": "as-is/core-name",
+      "triedCandidates": [
+        "as-is:Griffith College=core-name"
+      ]
+    },
+    {
+      "college": "Hawthorn-Melbourne",
+      "collegeUrl": "https://www.hawthornenglish.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Hawthorn-Melbourne",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:Hawthorn-Melbourne=no-match"
+      ]
+    },
+    {
+      "college": "Hertfordshire International College",
+      "collegeUrl": "https://www.hic.navitas.com",
+      "collegeCountry": null,
+      "derivedUniversityName": "Hertfordshire",
+      "catalogSlug": "hertfordshire",
+      "catalogName": "University of Hertfordshire",
+      "matchMethod": "strip-suffix/exact-slug",
+      "triedCandidates": [
+        "as-is:Hertfordshire International College=no-match",
+        "strip-suffix:Hertfordshire=exact-slug"
+      ]
+    },
+    {
+      "college": "International College of Manitoba",
+      "collegeUrl": "https://www.icmanitoba.ca",
+      "collegeCountry": "Canada",
+      "derivedUniversityName": "Manitoba",
+      "catalogSlug": "manitoba",
+      "catalogName": "University of Manitoba",
+      "matchMethod": "strip-prefix-international-college/exact-slug",
+      "triedCandidates": [
+        "as-is:International College of Manitoba=no-match",
+        "strip-prefix-international-college:Manitoba=exact-slug"
+      ]
+    },
+    {
+      "college": "International College Portsmouth",
+      "collegeUrl": "https://icp.navitas.com",
+      "collegeCountry": null,
+      "derivedUniversityName": "Portsmouth",
+      "catalogSlug": "portsmouth",
+      "catalogName": "University of Portsmouth",
+      "matchMethod": "strip-prefix-international-college/exact-slug",
+      "triedCandidates": [
+        "as-is:International College Portsmouth=no-match",
+        "strip-prefix-international-college:Portsmouth=exact-slug"
+      ]
+    },
+    {
+      "college": "International College Robert Gordon University",
+      "collegeUrl": "https://icrgu.navitas.com",
+      "collegeCountry": null,
+      "derivedUniversityName": "Robert Gordon University",
+      "catalogSlug": "robert-gordon",
+      "catalogName": "Robert Gordon University",
+      "matchMethod": "strip-prefix-international-college/exact-name",
+      "triedCandidates": [
+        "as-is:International College Robert Gordon University=no-match",
+        "strip-prefix-international-college:Robert Gordon University=exact-name"
+      ]
+    },
+    {
+      "college": "Keele University International College",
+      "collegeUrl": "https://kuic.keele.ac.uk",
+      "collegeCountry": "United Kingdom",
+      "derivedUniversityName": "Keele University",
+      "catalogSlug": "keele",
+      "catalogName": "Keele University",
+      "matchMethod": "strip-suffix/exact-name",
+      "triedCandidates": [
+        "as-is:Keele University International College=no-match",
+        "strip-suffix:Keele University=exact-name"
+      ]
+    },
+    {
+      "college": "La Trobe College Australia (Melbourne)",
+      "collegeUrl": "https://www.latrobecollegeaustralia.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "La Trobe",
+      "catalogSlug": "la-trobe",
+      "catalogName": "La Trobe University",
+      "matchMethod": "strip-suffix/exact-slug",
+      "triedCandidates": [
+        "as-is:La Trobe College Australia=no-match",
+        "strip-suffix:La Trobe=exact-slug"
+      ]
+    },
+    {
+      "college": "La Trobe College Australia (Sydney)",
+      "collegeUrl": "https://www.latrobecollegeaustralia.edu.au/",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "La Trobe",
+      "catalogSlug": "la-trobe",
+      "catalogName": "La Trobe University",
+      "matchMethod": "strip-suffix/exact-slug",
+      "triedCandidates": [
+        "as-is:La Trobe College Australia=no-match",
+        "strip-suffix:La Trobe=exact-slug"
+      ]
+    },
+    {
+      "college": "La Trobe College Australia English Centre",
+      "collegeUrl": "https://www.latrobecollegeaustralia.edu.au/study-options/english",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "La Trobe College Australia English Centre",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:La Trobe College Australia English Centre=no-match",
+        "strip-suffix:La Trobe College Australia=no-match"
+      ]
+    },
+    {
+      "college": "La Trobe University Sydney Campus",
+      "collegeUrl": "https://www.latrobe.edu.au/sydney",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "La Trobe University Sydney Campus",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:La Trobe University Sydney Campus=no-match",
+        "as-is+strip-campus:La Trobe University Sydney=no-match"
+      ]
+    },
+    {
+      "college": "Lancaster University Leipzig",
+      "collegeUrl": "https://www.lancasterleipzig.de",
+      "collegeCountry": "Germany",
+      "derivedUniversityName": "Lancaster University Leipzig",
+      "catalogSlug": "lancaster-leipzig",
+      "catalogName": "Lancaster University Leipzig",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:Lancaster University Leipzig=exact-name"
+      ]
+    },
+    {
+      "college": "Manchester Metropolitan University International College",
+      "collegeUrl": "https://www.mmu.ac.uk/international/college",
+      "collegeCountry": "United Kingdom",
+      "derivedUniversityName": "Manchester Metropolitan University International College",
+      "catalogSlug": "mmu-international-college",
+      "catalogName": "Manchester Metropolitan University International College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:Manchester Metropolitan University International College=exact-name"
+      ]
+    },
+    {
+      "college": "Murdoch University Dubai",
+      "collegeUrl": "https://www.murdochuniversitydubai.com",
+      "collegeCountry": null,
+      "derivedUniversityName": "Murdoch University Dubai",
+      "catalogSlug": "murdoch-dubai",
+      "catalogName": "Murdoch University Dubai",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:Murdoch University Dubai=exact-name"
+      ]
+    },
+    {
+      "college": "Navitas English Perth Campus",
+      "collegeUrl": "https://www.navitasenglish.edu.au/school/perth",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Navitas English Perth Campus",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:Navitas English Perth Campus=no-match",
+        "as-is+strip-campus:Navitas English Perth=no-match"
+      ]
+    },
+    {
+      "college": "Navitas English Sydney Campus",
+      "collegeUrl": "https://www.navitasenglish.edu.au/school/sydney",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Navitas English Sydney Campus",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:Navitas English Sydney Campus=no-match",
+        "as-is+strip-campus:Navitas English Sydney=no-match"
+      ]
+    },
+    {
+      "college": "Queens College Global Student Success Program",
+      "collegeUrl": "https://www.queensgssp.com",
+      "collegeCountry": null,
+      "derivedUniversityName": "Queens College Global Student Success Program",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:Queens College Global Student Success Program=no-match",
+        "strip-suffix:Queens College=no-match"
+      ]
+    },
+    {
+      "college": "SAE Auckland",
+      "collegeUrl": "https://auckland.sae.edu/",
+      "collegeCountry": null,
+      "derivedUniversityName": "SAE",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "as-is+strip-campus/exact-slug",
+      "triedCandidates": [
+        "as-is:SAE Auckland=no-match",
+        "as-is+strip-campus:SAE=exact-slug"
+      ]
+    },
+    {
+      "college": "SAE Institute Atlanta",
+      "collegeUrl": "https://usa.sae.edu",
+      "collegeCountry": null,
+      "derivedUniversityName": "SAE Institute Atlanta",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:SAE Institute Atlanta=no-match",
+        "as-is+strip-campus:SAE Institute=no-match"
+      ]
+    },
+    {
+      "college": "SAE Institute Chicago",
+      "collegeUrl": "https://usa.sae.edu",
+      "collegeCountry": null,
+      "derivedUniversityName": "SAE Institute Chicago",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:SAE Institute Chicago=no-match",
+        "as-is+strip-campus:SAE Institute=no-match"
+      ]
+    },
+    {
+      "college": "SAE Institute of Technology Miami",
+      "collegeUrl": "https://usa.sae.edu",
+      "collegeCountry": null,
+      "derivedUniversityName": "SAE Institute of Technology Miami",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:SAE Institute of Technology Miami=no-match",
+        "as-is+strip-campus:SAE Institute of Technology=no-match"
+      ]
+    },
+    {
+      "college": "SAE Institute of Technology Nashville",
+      "collegeUrl": "https://usa.sae.edu",
+      "collegeCountry": null,
+      "derivedUniversityName": "SAE Institute of Technology Nashville",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:SAE Institute of Technology Nashville=no-match",
+        "as-is+strip-campus:SAE Institute of Technology=no-match"
+      ]
+    },
+    {
+      "college": "SAE Institute of Technology NYC",
+      "collegeUrl": "https://usa.sae.edu",
+      "collegeCountry": null,
+      "derivedUniversityName": "SAE Institute of Technology NYC",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:SAE Institute of Technology NYC=no-match",
+        "as-is+strip-campus:SAE Institute of Technology=no-match"
+      ]
+    },
+    {
+      "college": "SAE University College - Adelaide",
+      "collegeUrl": "https://sae.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:SAE University College=exact-name"
+      ]
+    },
+    {
+      "college": "SAE University College - Brisbane",
+      "collegeUrl": "https://sae.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:SAE University College=exact-name"
+      ]
+    },
+    {
+      "college": "SAE University College - Byron Bay",
+      "collegeUrl": "https://sae.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:SAE University College=exact-name"
+      ]
+    },
+    {
+      "college": "SAE University College - Melbourne",
+      "collegeUrl": "https://sae.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:SAE University College=exact-name"
+      ]
+    },
+    {
+      "college": "SAE University College - Online (AUS)",
+      "collegeUrl": "https://sae.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:SAE University College=exact-name"
+      ]
+    },
+    {
+      "college": "SAE University College - Perth",
+      "collegeUrl": "https://sae.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:SAE University College=exact-name"
+      ]
+    },
+    {
+      "college": "SAE University College - Sydney",
+      "collegeUrl": "https://sae.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "SAE University College",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "as-is/exact-name",
+      "triedCandidates": [
+        "as-is:SAE University College=exact-name"
+      ]
+    },
+    {
+      "college": "SAE Vancouver",
+      "collegeUrl": "https://canada.sae.edu",
+      "collegeCountry": null,
+      "derivedUniversityName": "SAE",
+      "catalogSlug": "sae",
+      "catalogName": "SAE University College",
+      "matchMethod": "as-is+strip-campus/exact-slug",
+      "triedCandidates": [
+        "as-is:SAE Vancouver=no-match",
+        "as-is+strip-campus:SAE=exact-slug"
+      ]
+    },
+    {
+      "college": "SRH International College - Berlin",
+      "collegeUrl": "https://www.srh-international-college.de/",
+      "collegeCountry": "Germany",
+      "derivedUniversityName": "SRH International College",
+      "catalogSlug": "srh-international-college",
+      "catalogName": "SRH International College",
+      "matchMethod": "as-is/exact-slug",
+      "triedCandidates": [
+        "as-is:SRH International College=exact-slug"
+      ]
+    },
+    {
+      "college": "SRH International College - Heidelberg",
+      "collegeUrl": "https://www.srh-international-college.de/",
+      "collegeCountry": "Germany",
+      "derivedUniversityName": "SRH International College",
+      "catalogSlug": "srh-international-college",
+      "catalogName": "SRH International College",
+      "matchMethod": "as-is/exact-slug",
+      "triedCandidates": [
+        "as-is:SRH International College=exact-slug"
+      ]
+    },
+    {
+      "college": "SRH International College - Munich",
+      "collegeUrl": "https://www.srh-international-college.de/",
+      "collegeCountry": "Germany",
+      "derivedUniversityName": "SRH International College",
+      "catalogSlug": "srh-international-college",
+      "catalogName": "SRH International College",
+      "matchMethod": "as-is/exact-slug",
+      "triedCandidates": [
+        "as-is:SRH International College=exact-slug"
+      ]
+    },
+    {
+      "college": "Sydney Institute of Business and Technology",
+      "collegeUrl": "https://www.sibt.nsw.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Sydney Institute of Business and Technology",
+      "catalogSlug": "sydney-institute-of-business-and-technology",
+      "catalogName": "Sydney Institute of Business and Technology",
+      "matchMethod": "as-is/exact-slug",
+      "triedCandidates": [
+        "as-is:Sydney Institute of Business and Technology=exact-slug"
+      ]
+    },
+    {
+      "college": "Taylors College Sydney",
+      "collegeUrl": "https://www.taylorssydney.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Taylors College Sydney",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:Taylors College Sydney=no-match",
+        "as-is+strip-campus:Taylors College=no-match"
+      ]
+    },
+    {
+      "college": "The College, Swansea University",
+      "collegeUrl": "https://www.swansea.ac.uk/the-college",
+      "collegeCountry": "United Kingdom",
+      "derivedUniversityName": "Swansea University",
+      "catalogSlug": "swansea",
+      "catalogName": "Swansea University",
+      "matchMethod": "after-comma/exact-name",
+      "triedCandidates": [
+        "after-comma:Swansea University=exact-name"
+      ]
+    },
+    {
+      "college": "The Hague Pathway College",
+      "collegeUrl": "https://www.thehaguepathway.nl",
+      "collegeCountry": "Netherlands",
+      "derivedUniversityName": "The Hague",
+      "catalogSlug": "hague",
+      "catalogName": "The Hague University of Applied Sciences",
+      "matchMethod": "strip-suffix/exact-slug",
+      "triedCandidates": [
+        "as-is:The Hague Pathway College=no-match",
+        "strip-suffix:The Hague=exact-slug"
+      ]
+    },
+    {
+      "college": "Toronto Metropolitan University International College",
+      "collegeUrl": "https://www.torontomuic.ca",
+      "collegeCountry": "Canada",
+      "derivedUniversityName": "Toronto Metropolitan University",
+      "catalogSlug": "toronto-met",
+      "catalogName": "Toronto Metropolitan University",
+      "matchMethod": "strip-suffix/exact-name",
+      "triedCandidates": [
+        "as-is:Toronto Metropolitan University International College=no-match",
+        "strip-suffix:Toronto Metropolitan University=exact-name"
+      ]
+    },
+    {
+      "college": "Twente Pathway College",
+      "collegeUrl": "https://www.twentepathway.nl",
+      "collegeCountry": "Netherlands",
+      "derivedUniversityName": "Twente",
+      "catalogSlug": "twente",
+      "catalogName": "University of Twente",
+      "matchMethod": "strip-suffix/exact-slug",
+      "triedCandidates": [
+        "as-is:Twente Pathway College=no-match",
+        "strip-suffix:Twente=exact-slug"
+      ]
+    },
+    {
+      "college": "UC International College",
+      "collegeUrl": "https://www.ucic.ac.nz",
+      "collegeCountry": "New Zealand",
+      "derivedUniversityName": "UC International College",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:UC International College=no-match"
+      ]
+    },
+    {
+      "college": "ULethbridge International College Calgary",
+      "collegeUrl": "https://www.uicc.ca/",
+      "collegeCountry": "Canada",
+      "derivedUniversityName": "ULethbridge International College Calgary",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:ULethbridge International College Calgary=no-match",
+        "as-is+strip-campus:ULethbridge International College=no-match",
+        "as-is+expand-U-prefix:Lethbridge International College Calgary=no-match",
+        "as-is+strip-campus+expand-U-prefix:Lethbridge International College=no-match"
+      ]
+    },
+    {
+      "college": "University of Canberra College",
+      "collegeUrl": "https://www.canberra.edu.au/uc-college",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "University of Canberra College",
+      "catalogSlug": "canberra",
+      "catalogName": "University of Canberra",
+      "matchMethod": "as-is/core-name",
+      "triedCandidates": [
+        "as-is:University of Canberra College=core-name"
+      ]
+    },
+    {
+      "college": "University of Plymouth International College",
+      "collegeUrl": "https://www.upic.navitas.com",
+      "collegeCountry": null,
+      "derivedUniversityName": "University of Plymouth",
+      "catalogSlug": "plymouth",
+      "catalogName": "University of Plymouth",
+      "matchMethod": "strip-suffix/exact-name",
+      "triedCandidates": [
+        "as-is:University of Plymouth International College=no-match",
+        "strip-suffix:University of Plymouth=exact-name"
+      ]
+    },
+    {
+      "college": "University of Waikato College",
+      "collegeUrl": "https://pathways.waikato.ac.nz",
+      "collegeCountry": "New Zealand",
+      "derivedUniversityName": "University of Waikato College",
+      "catalogSlug": "waikato",
+      "catalogName": "University of Waikato",
+      "matchMethod": "as-is/core-name",
+      "triedCandidates": [
+        "as-is:University of Waikato College=core-name"
+      ]
+    },
+    {
+      "college": "Western International College",
+      "collegeUrl": "https://www.westernic.ca/",
+      "collegeCountry": "Canada",
+      "derivedUniversityName": "Western",
+      "catalogSlug": "western-ontario",
+      "catalogName": "Western University",
+      "matchMethod": "strip-suffix/core-name",
+      "triedCandidates": [
+        "as-is:Western International College=no-match",
+        "strip-suffix:Western=core-name"
+      ]
+    },
+    {
+      "college": "Western Sydney University International College",
+      "collegeUrl": "https://internationalcollege.westernsydney.edu.au",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Western Sydney University",
+      "catalogSlug": "western-sydney",
+      "catalogName": "Western Sydney University",
+      "matchMethod": "strip-suffix/exact-name",
+      "triedCandidates": [
+        "as-is:Western Sydney University International College=no-match",
+        "strip-suffix:Western Sydney University=exact-name"
+      ]
+    },
+    {
+      "college": "Western Sydney University Sydney City Campus",
+      "collegeUrl": "https://city.westernsydney.edu.au/",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Western Sydney University Sydney City Campus",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:Western Sydney University Sydney City Campus=no-match",
+        "as-is+strip-campus:Western Sydney University Sydney=no-match"
+      ]
+    },
+    {
+      "college": "Wilfrid Laurier International College",
+      "collegeUrl": "https://www.laurieric.ca",
+      "collegeCountry": "Canada",
+      "derivedUniversityName": "Wilfrid Laurier International College",
+      "catalogSlug": "wilfrid-laurier-international-college",
+      "catalogName": "Wilfrid Laurier International College",
+      "matchMethod": "as-is/exact-slug",
+      "triedCandidates": [
+        "as-is:Wilfrid Laurier International College=exact-slug"
+      ]
+    }
+  ],
+  "matchedSlugs": [
+    "acap",
+    "anglia-ruskin",
+    "birmingham-city",
+    "canberra",
+    "charles-sturt",
+    "curtin-college",
+    "curtin-singapore",
+    "deakin",
+    "dli-bandung",
+    "edith-cowan",
+    "edith-cowan-sl",
+    "eynesbury",
+    "fraser-international-college",
+    "griffith",
+    "hague",
+    "hertfordshire",
+    "keele",
+    "la-trobe",
+    "lancaster-leipzig",
+    "manitoba",
+    "mmu-international-college",
+    "murdoch-dubai",
+    "plymouth",
+    "portsmouth",
+    "robert-gordon",
+    "sae",
+    "srh-international-college",
+    "swansea",
+    "sydney-institute-of-business-and-technology",
+    "toronto-met",
+    "twente",
+    "waikato",
+    "western-ontario",
+    "western-sydney",
+    "wilfrid-laurier-international-college"
+  ],
+  "unmatched": [
+    {
+      "college": "Brunel University London Pathway College",
+      "derived": "Brunel University London Pathway College",
+      "method": "no-match",
+      "url": "https://pathway.brunel.ac.uk"
+    },
+    {
+      "college": "Christchurch College of English",
+      "derived": "Christchurch College of English",
+      "method": "no-match",
+      "url": "https://www.ccel.co.nz"
+    },
+    {
+      "college": "Hawthorn-Melbourne",
+      "derived": "Hawthorn-Melbourne",
+      "method": "no-match",
+      "url": "https://www.hawthornenglish.edu.au"
+    },
+    {
+      "college": "La Trobe College Australia English Centre",
+      "derived": "La Trobe College Australia English Centre",
+      "method": "no-match",
+      "url": "https://www.latrobecollegeaustralia.edu.au/study-options/english"
+    },
+    {
+      "college": "La Trobe University Sydney Campus",
+      "derived": "La Trobe University Sydney Campus",
+      "method": "no-match",
+      "url": "https://www.latrobe.edu.au/sydney"
+    },
+    {
+      "college": "Navitas English Perth Campus",
+      "derived": "Navitas English Perth Campus",
+      "method": "no-match",
+      "url": "https://www.navitasenglish.edu.au/school/perth"
+    },
+    {
+      "college": "Navitas English Sydney Campus",
+      "derived": "Navitas English Sydney Campus",
+      "method": "no-match",
+      "url": "https://www.navitasenglish.edu.au/school/sydney"
+    },
+    {
+      "college": "Queens College Global Student Success Program",
+      "derived": "Queens College Global Student Success Program",
+      "method": "no-match",
+      "url": "https://www.queensgssp.com"
+    },
+    {
+      "college": "SAE Institute Atlanta",
+      "derived": "SAE Institute Atlanta",
+      "method": "no-match",
+      "url": "https://usa.sae.edu"
+    },
+    {
+      "college": "SAE Institute Chicago",
+      "derived": "SAE Institute Chicago",
+      "method": "no-match",
+      "url": "https://usa.sae.edu"
+    },
+    {
+      "college": "SAE Institute of Technology Miami",
+      "derived": "SAE Institute of Technology Miami",
+      "method": "no-match",
+      "url": "https://usa.sae.edu"
+    },
+    {
+      "college": "SAE Institute of Technology Nashville",
+      "derived": "SAE Institute of Technology Nashville",
+      "method": "no-match",
+      "url": "https://usa.sae.edu"
+    },
+    {
+      "college": "SAE Institute of Technology NYC",
+      "derived": "SAE Institute of Technology NYC",
+      "method": "no-match",
+      "url": "https://usa.sae.edu"
+    },
+    {
+      "college": "Taylors College Sydney",
+      "derived": "Taylors College Sydney",
+      "method": "no-match",
+      "url": "https://www.taylorssydney.edu.au"
+    },
+    {
+      "college": "UC International College",
+      "derived": "UC International College",
+      "method": "no-match",
+      "url": "https://www.ucic.ac.nz"
+    },
+    {
+      "college": "ULethbridge International College Calgary",
+      "derived": "ULethbridge International College Calgary",
+      "method": "no-match",
+      "url": "https://www.uicc.ca/"
+    },
+    {
+      "college": "Western Sydney University Sydney City Campus",
+      "derived": "Western Sydney University Sydney City Campus",
+      "method": "no-match",
+      "url": "https://city.westernsydney.edu.au/"
+    }
+  ]
+}

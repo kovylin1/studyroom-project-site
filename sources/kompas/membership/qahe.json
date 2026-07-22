@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "aggregator": "qahe",
+    "label": "QA Higher Education",
+    "source": "https://qahighereducation.com/courses/",
+    "collectedAt": "2026-07-22T10:08:31.504Z",
+    "rule": "list",
+    "ownerListCount": 4,
+    "livePartnerPages": 6,
+    "notes": [
+      "Курсы QA физически лежат на поддоменах партнёров; привязка сделана по домену, не по тексту.",
+      "Страницы /partner-institutions/ программ больше не содержат — прежний коллектор скрёб именно их и добирал fallbackPrograms().",
+      "Страницы International Foundation Programme на qahighereducation.com редиректят на southwales.ac.uk."
+    ]
+  },
+  "ownerList": [
+    {
+      "key": "northumbria",
+      "name": "Northumbria University",
+      "catalogSlug": "northumbria-university"
+    },
+    {
+      "key": "ulster",
+      "name": "Ulster University",
+      "catalogSlug": "ulster-university"
+    },
+    {
+      "key": "oxford-brookes",
+      "name": "Oxford Brookes University",
+      "catalogSlug": "oxford-brookes-university"
+    },
+    {
+      "key": "solent",
+      "name": "Solent University",
+      "catalogSlug": "solent"
+    }
+  ],
+  "livePartnerPages": [
+    "london-metropolitan-university",
+    "northumbria-university",
+    "oxford-brookes-university",
+    "solent-university",
+    "swansea-university",
+    "ulster-university"
+  ],
+  "perPartner": [
+    {
+      "key": "qa-own",
+      "name": "QA Higher Education (собственные программы)",
+      "courses": 6,
+      "parsed": 6,
+      "withFee": 5,
+      "intl": 3,
+      "inOwnerList": false
+    },
+    {
+      "key": "ulster",
+      "name": "Ulster University",
+      "courses": 28,
+      "parsed": 28,
+      "withFee": 28,
+      "intl": 28,
+      "inOwnerList": true
+    },
+    {
+      "key": "northumbria",
+      "name": "Northumbria University",
+      "courses": 60,
+      "parsed": 56,
+      "withFee": 56,
+      "intl": 53,
+      "inOwnerList": true
+    },
+    {
+      "key": "solent",
+      "name": "Solent University",
+      "courses": 13,
+      "parsed": 13,
+      "withFee": 13,
+      "intl": 2,
+      "inOwnerList": true
+    },
+    {
+      "key": "london-met",
+      "name": "London Metropolitan University",
+      "courses": 5,
+      "parsed": 5,
+      "withFee": 5,
+      "intl": 4,
+      "inOwnerList": false
+    }
+  ],
+  "ownerPartnersWithoutCourses": [
+    "Oxford Brookes University"
+  ],
+  "extraOnSite": [
+    "London Metropolitan University"
+  ]
+}

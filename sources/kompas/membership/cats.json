@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "aggregator": "cats",
+    "label": "CATS Global Schools",
+    "source": "https://catsglobalschools.com/our-schools/",
+    "collectedAt": "2026-07-22T10:31:42.941Z",
+    "rule": "all",
+    "counts": {
+      "live": 12,
+      "coveredByCollector": 9
+    },
+    "notes": [
+      "CATS — сеть школ (GCSE / A-level / sixth form / языковые), а не вузов; уровни не покрываются схемой вузовского каталога.",
+      "В cats-collected.json поле subjects у GCSE и A-Level содержит таблицу ПОСТУПЛЕНИЙ выпускников (вузы и специальности), а не предметы школы.",
+      "В живой каталог эта грязь НЕ протекла: expand-cats-programs.mjs разворачивает предметы по собственному шаблону — проверено на cats-cambridge, bosworth, guildhouse.",
+      "Программы CATS в единой форме здесь не собираются — сперва нужно решение владельца, нужны ли школы в каталоге вообще."
+    ]
+  },
+  "schools": [
+    {
+      "slug": "bournemouth-collegiate-school",
+      "name": "Bournemouth Collegiate School",
+      "url": "https://catsglobalschools.com/our-schools/bournemouth-collegiate-school/",
+      "coveredByCollector": true,
+      "collectorSlug": "bournemouth-collegiate-school"
+    },
+    {
+      "slug": "bosworth-independent-school",
+      "name": "Bosworth Independent School",
+      "url": "https://catsglobalschools.com/our-schools/bosworth-independent-school/",
+      "coveredByCollector": true,
+      "collectorSlug": "bosworth-independent-school"
+    },
+    {
+      "slug": "cambridge-school-of-visual-performing-arts",
+      "name": "Cambridge School of Visual & Performing Arts",
+      "url": "https://catsglobalschools.com/our-schools/cambridge-school-of-visual-performing-arts/",
+      "coveredByCollector": false,
+      "collectorSlug": null
+    },
+    {
+      "slug": "cambridge-school-of-visual-performing-arts-csvpa-china",
+      "name": "Cambridge School of Visual & Performing Arts, China",
+      "url": "https://catsglobalschools.com/our-schools/cambridge-school-of-visual-performing-arts-csvpa-china/",
+      "coveredByCollector": false,
+      "collectorSlug": null
+    },
+    {
+      "slug": "cats-academy-boston",
+      "name": "CATS Academy Boston",
+      "url": "https://catsglobalschools.com/our-schools/cats-academy-boston/",
+      "coveredByCollector": true,
+      "collectorSlug": "cats-academy-boston"
+    },
+    {
+      "slug": "cats-cambridge",
+      "name": "CATS Cambridge",
+      "url": "https://catsglobalschools.com/our-schools/cats-cambridge/",
+      "coveredByCollector": true,
+      "collectorSlug": "cats-cambridge"
+    },
+    {
+      "slug": "cats-college-china",
+      "name": "CATS College China",
+      "url": "https://catsglobalschools.com/our-schools/cats-college-china/",
+      "coveredByCollector": true,
+      "collectorSlug": "cats-college-china"
+    },
+    {
+      "slug": "forest-city-international-school",
+      "name": "Forest City International School",
+      "url": "https://catsglobalschools.com/our-schools/forest-city-international-school/",
+      "coveredByCollector": true,
+      "collectorSlug": "forest-city-international-school"
+    },
+    {
+      "slug": "guildhouse-school-london",
+      "name": "Guildhouse School, London",
+      "url": "https://catsglobalschools.com/our-schools/guildhouse-school-london/",
+      "coveredByCollector": true,
+      "collectorSlug": "guildhouse-school-london"
+    },
+    {
+      "slug": "st-michaels-school",
+      "name": "St Michael’s School",
+      "url": "https://catsglobalschools.com/our-schools/st-michaels-school/",
+      "coveredByCollector": true,
+      "collectorSlug": "st-michaels-school"
+    },
+    {
+      "slug": "stafford-house",
+      "name": "Stafford House",
+      "url": "https://catsglobalschools.com/our-schools/stafford-house/",
+      "coveredByCollector": false,
+      "collectorSlug": null
+    },
+    {
+      "slug": "the-worthgate-school-canterbury",
+      "name": "The Worthgate School, Canterbury",
+      "url": "https://catsglobalschools.com/our-schools/the-worthgate-school-canterbury/",
+      "coveredByCollector": true,
+      "collectorSlug": "worthgate-school"
+    }
+  ],
+  "notCoveredByCollector": [
+    "Cambridge School of Visual & Performing Arts",
+    "Cambridge School of Visual & Performing Arts, China",
+    "Stafford House"
+  ]
+}
