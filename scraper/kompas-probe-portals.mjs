@@ -109,22 +109,32 @@ async function main() {
   await loadEnv();
   await fs.mkdir(OUT, { recursive: true });
 
-  const targets = [
-    { name: 'iapro', url: 'https://iapro.my.site.com/agentportals/login', login: process.env.IAPRO_LOGIN, pass: process.env.IAPRO_PASS },
-    { name: 'qs', url: 'https://admissions.qs.com/suite/sites/qs-apply', login: process.env.QS_LOGIN, pass: process.env.QS_PASS },
-  ].filter((t) => {
-    if (!t.login || !t.pass) { log(`${t.name}: нет учётных данных в .env — пропускаем`); return false; }
-    return true;
-  });
+  // Адрес IAPro уточнён владельцем 2026-07-23: вход живёт на Experience Cloud
+  // (/s/login/), а не на /login — прежняя разведка стучалась не туда.
+  // Паролей владелец дал по два на портал, поэтому пробуем оба: «отклонил» с
+  // первого раза ещё не значит «пароль не тот».
+  const targets = [];
+  const add = (name, url, login, passes) => {
+    const list = passes.filter(Boolean);
+    if (!login || !list.length) { log(`${name}: нет учётных данных в .env — пропускаем`); return; }
+    list.forEach((pass, i) => targets.push({ name: list.length > 1 ? `${name}-p${i + 1}` : name, portal: name, url, login, pass }));
+  };
+  add('iapro', 'https://iapro.my.site.com/agentportals/s/login/?language=en_US',
+    process.env.IAPRO_LOGIN, [process.env.IAPRO_PASS, process.env.IAPRO_PASS_ALT]);
+  add('qs', 'https://admissions.qs.com/suite/sites/qs-apply',
+    process.env.QS_LOGIN, [process.env.QS_PASS, process.env.QS_PASS_ALT]);
 
   const { chromium } = await import('playwright');
   const browser = await chromium.launch({ headless: !process.argv.includes('--headed') });
   const out = [];
   try {
+    const done = new Set();
     for (const t of targets) {
+      if (done.has(t.portal)) { log(`${t.name}: пропускаю, на этот портал уже вошли`); continue; }
       log(`${t.name}: захожу`);
       const r = await probeOne(browser, t.name, t);
       log(`${t.name}: ${r.error ? 'ПРОБЛЕМА — ' + r.error : 'вход прошёл'}`);
+      if (!r.error) done.add(t.portal);
       out.push(r);
     }
   } finally { await browser.close(); }
