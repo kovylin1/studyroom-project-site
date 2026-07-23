@@ -1,0 +1,98 @@
+#!/usr/bin/env node
+// kompas-gaps.mjs — КОМПАС: разбор 45 вузов, у которых источник собран, а выгрузки нет.
+//
+// Замер сессии 4 показал 45 таких вузов и назвал это «нашим пробелом сбора».
+// Проверка показала, что это НЕ одна причина, а четыре, и три из них
+// перезапуском коллектора не чинятся:
+//
+//  1. collectable — вуз есть в списке агрегатора, выгрузки просто нет → добрать;
+//  2. merged      — StudyGroup слил карточку «… Direct Entry» в основную;
+//                   отдельного файла и не должно быть, это дубль каталога;
+//  3. stale-mark  — вуза нет в ЖИВОМ списке агрегатора: метка partnerSource
+//                   поставлена по устаревшим заметкам;
+//  4. not-a-uni   — у StudyGroup это учебный центр, а не вуз-партнёр.
+//
+// Сети нет, каталог не трогается.
+// Выход: sources/kompas/gap-report.json + gap-review.json (кейсы в панель)
+
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { KOMPAS_DIR, logger } from './lib/kompas-collect.mjs';
+
+const log = logger('gaps');
+const readJson = async (f) => JSON.parse(await fs.readFile(f, 'utf8'));
+
+async function main() {
+  const diff = await readJson(path.join(KOMPAS_DIR, 'diff-report.json'));
+  const gaps = diff.universities.filter((u) => u.status === 'no-extract');
+  const now = new Date().toISOString();
+
+  const mem = {};
+  for (const s of ['edvoy', 'studygroup', 'oxford-international', 'kaplan', 'qahe']) {
+    try { mem[s] = await readJson(path.join(KOMPAS_DIR, 'membership', `${s}.json`)); } catch { mem[s] = null; }
+  }
+
+  const sg = mem.studygroup ?? {};
+  const mergedInto = new Map();     // слаг-дубль → слаг, в который слили
+  for (const m of sg.mergedSlugs ?? []) {
+    for (const from of m.from ?? []) {
+      const guess = from.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      mergedInto.set(guess, m.slug);
+    }
+  }
+  const sgCentres = new Set((sg.skippedNotUniversity ?? []).map((x) => (typeof x === 'string' ? x : x.name ?? x.from ?? '')));
+
+  const inList = (src, slug) => {
+    const m = mem[src];
+    if (!m) return false;
+    return JSON.stringify(m).includes(`"${slug}"`);
+  };
+
+  const rows = []; const cases = [];
+  for (const g of gaps) {
+    const hit = g.ready.filter((s) => inList(s, g.slug));
+    let kind; let detail; let via = g.ready.join(', ');
+
+    if (hit.length) {
+      kind = 'collectable';
+      detail = `Вуз есть в списке источника (${hit.join(', ')}), а выгрузки нет — недобор коллектора. Чинится прогоном, решение владельца не нужно.`;
+    } else if (/-direct-entry$/.test(g.slug) || mergedInto.has(g.slug)) {
+      kind = 'merged';
+      const into = mergedInto.get(g.slug) ?? g.slug.replace(/-direct-entry$/, '');
+      detail = `StudyGroup слил эту запись в карточку «${into}»: у источника это не отдельный вуз, а вариант поступления. Отдельной выгрузки быть и не должно — зато в каталоге две карточки на один вуз.`;
+    } else if (g.ready.includes('studygroup') && sgCentres.size) {
+      kind = 'not-a-uni';
+      detail = `У StudyGroup это учебный центр, а не вуз-партнёр: в списке вузов его нет. Метка «партнёр через studygroup» на карточке вуза выглядит ошибкой.`;
+    } else {
+      kind = 'stale-mark';
+      detail = `В ЖИВОМ списке источника (${via}) этого вуза нет. Метка partnerSource поставлена по заметкам, а не по сегодняшнему составу партнёров. Нужно решение: снять метку или назначить другой источник.`;
+    }
+
+    rows.push({ slug: g.slug, name: g.name, kind, ready: g.ready, catalogPrograms: g.catalogPrograms });
+    cases.push({
+      id: `${g.slug}||kompas_gap_${kind.replace(/-/g, '_')}||${via}`,
+      slug: g.slug, name: g.name,
+      issue: `kompas_gap_${kind.replace(/-/g, '_')}`,
+      severity: kind === 'collectable' ? 'info' : 'warning',
+      detail: `${detail} В карточке ${g.catalogPrograms} программ.`,
+      catalog: g.catalogPrograms, official: null, program: null, sourceUrl: null,
+      checkedAt: now, decision: null, decidedAt: null, applied: false,
+    });
+  }
+
+  const byKind = {};
+  for (const r of rows) byKind[r.kind] = (byKind[r.kind] ?? 0) + 1;
+
+  await fs.writeFile(path.join(KOMPAS_DIR, 'gap-report.json'),
+    JSON.stringify({ generatedAt: now, summary: { total: rows.length, byKind }, universities: rows }, null, 2) + '\n', 'utf8');
+  await fs.writeFile(path.join(KOMPAS_DIR, 'gap-review.json'),
+    JSON.stringify({ generatedAt: now, scope: 'kompas-gaps', summary: { total: cases.length, byIssue: byKind }, items: cases }, null, 2) + '\n', 'utf8');
+
+  log(`разобрано ${rows.length}: ${Object.entries(byKind).map(([k, v]) => `${k} ${v}`).join(', ')}`);
+  for (const k of Object.keys(byKind)) {
+    log(`  ${k}: ${rows.filter((r) => r.kind === k).map((r) => r.slug).join(', ')}`);
+  }
+  console.log('GAPS DONE');
+}
+
+main().catch((e) => { console.error(e); process.exit(1); });

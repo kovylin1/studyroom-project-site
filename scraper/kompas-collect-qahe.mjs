@@ -113,6 +113,44 @@ function classifyAudience(s) {
   return /^(international|overseas|non)/i.test(m[1]) ? 'international' : 'UK';
 }
 
+// Сумма без валюты и «сумма», которая на самом деле год, — это не цена.
+// Замер сессии 4: из 102 цен QAHE 20 попадали в 1990–2035, а 28 шли вовсе без
+// валюты. Источник виноват не был: подпись «Tuition fees for 2026/27» отдаёт
+// число 2026, и порог «больше 1000» его пропускал. У Ulster так родилась
+// «цена 2023 USD».
+const YEAR_MIN = 1990;
+const YEAR_MAX = 2035;
+
+function isPlausibleFee(money, cell) {
+  if (!money || typeof money.amount !== 'number') return false;
+  if (!money.currency) return false;               // цена без валюты недостоверна
+  if (money.amount < 1000) return false;
+  // Год отбрасываем, если рядом с числом не стоял знак валюты: «£2,026» теоретически
+  // возможен как цена, «Tuition fees for 2026/27» — нет.
+  // Ячейка-простыня — это текст страницы, а не строка прайса. Настоящая подпись
+  // цены короткая: «£16,200», «International Fee: £17,250 (26/27)».
+  if ((cell || '').length > 200) return false;
+
+  if (money.amount >= YEAR_MIN && money.amount <= YEAR_MAX) {
+    // Мало того, что знак валюты есть в ячейке, — он должен стоять вплотную
+    // к ЭТОМУ числу. У Ulster «global trade projected to reach US$86.6 trillion
+    // by 2023» знак валюты относится к 86.6, а ценой уезжал 2023.
+    if (!currencyAdjacent(cell || '', money.amount)) return false;
+  }
+  return true;
+}
+
+/** Стоит ли знак валюты вплотную перед самим числом (а не где-то в той же ячейке). */
+function currencyAdjacent(cell, amount) {
+  const digits = String(amount);
+  const withCommas = digits.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  for (const form of new Set([digits, withCommas])) {
+    const re = new RegExp(`(?:[£$€]|\\b(?:GBP|USD|EUR)\\b)\\s*${form.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+    if (re.test(cell)) return true;
+  }
+  return false;
+}
+
 function findFee(cells) {
   const found = [];
   for (let i = 0; i < cells.length; i++) {
@@ -123,14 +161,14 @@ function findFee(cells) {
 
     // число в этой же ячейке
     const inline = parseMoney(c);
-    if (inline?.amount >= 1000 && (hasHint || aud)) {
+    if (isPlausibleFee(inline, c) && (hasHint || aud)) {
       found.push({ ...inline, feeAudience: aud || 'unknown', feeLabel: c.slice(0, 90) });
       continue;
     }
     // число в ближайших ячейках; подпись аудитории могла быть отдельной ячейкой
     for (let j = i + 1; j <= i + 2 && j < cells.length; j++) {
       const money = parseMoney(cells[j]);
-      if (!money?.amount || money.amount < 1000) continue;
+      if (!isPlausibleFee(money, cells[j])) continue;
       found.push({ ...money, feeAudience: aud || 'unknown', feeLabel: `${c} ${cells[j]}`.slice(0, 90) });
       break;
     }

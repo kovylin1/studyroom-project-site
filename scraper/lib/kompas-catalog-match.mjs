@@ -152,9 +152,23 @@ export function universityNameCandidates(rawName) {
 }
 
 /** Полный разбор: перебор кандидатов имени + сверка страны. Возвращает hit и след попыток. */
-export function matchToCatalog(rawName, catalog, { url = null, country = null } = {}) {
+export function matchToCatalog(rawName, catalog, { url = null, country = null, refId = null } = {}) {
   const expected = country || (url ? countryFromUrl(url) : null);
   const tried = [];
+
+  // Собственный идентификатор агрегатора пробуем ПЕРВЫМ и как есть.
+  // Замер сессии 4: у семи вузов Edvoy его edpRefId совпадал со слагом каталога
+  // буква в букву («esce-international-business-school»), а разбор имени рубил
+  // «ESCE - International Business School» до «ESCE» — и 191 собранный курс
+  // уходил в «не привязано». Равенство слагов — самое строгое совпадение,
+  // какое вообще возможно, и оно должно проверяться раньше разбора имени.
+  if (refId) {
+    const hit = catalog.filter((c) => c.slug === refId);
+    const r0 = pick(hit, expected, 'ref-id');
+    tried.push(`ref-id:${refId}=${r0?.method ?? 'no-match'}`);
+    if (r0?.slug) return { catalogSlug: r0.slug, catalogName: r0.catalogName, matchMethod: `ref-id/${r0.method}`, tried, expectedCountry: expected };
+  }
+
   for (const cand of universityNameCandidates(rawName)) {
     const res = resolveCatalogSlug(cand.name, catalog, expected);
     tried.push(`${cand.how}:${cand.name}=${res.method}`);

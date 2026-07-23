@@ -337,7 +337,20 @@ async function main() {
   log(`источник заявляет: курсов ${total}, вузов ${declaredUnis}`);
   if (!total) throw new Error('источник вернул 0 курсов — ничего не пишем');
 
-  const { found, cappedPrefixes, discoveryQueries } = await discoverInstitutions(declaredUnis, args.num('discover-budget', 300));
+  // --only=<edpRefId,...> — точечный добор без перечисления всех вузов.
+  // Нужен, когда чинится привязка у нескольких штук: гнать 48 тысяч курсов
+  // ради двух сотен глупо, а перечисление стоит сотни запросов.
+  // ВАЖНО: точечный прогон НЕ переписывает membership-файл — иначе список
+  // партнёров схлопнулся бы до этих нескольких (болезнь «частичный прогон
+  // затирает общий файл», уже ловленная в ОРЛЕ).
+  const only = (args.get('only') || '').split(',').map((s) => s.trim()).filter(Boolean);
+  let found; let cappedPrefixes = []; let discoveryQueries = 0;
+  if (only.length) {
+    found = new Map(only.map((ref) => [ref, { edpRefId: ref, name: ref, country: null, origin: '--only' }]));
+    log(`точечный прогон: ${only.length} вузов, перечисление пропущено`);
+  } else {
+    ({ found, cappedPrefixes, discoveryQueries } = await discoverInstitutions(declaredUnis, args.num('discover-budget', 300)));
+  }
   if (discoverOnly) {
     log('только перечисление — выходим');
     return;
@@ -379,7 +392,11 @@ async function main() {
     // для отчёта, а не повод молча записать что вышло.
     if (courses.length < n) shortfall.push({ edpRefId: inst.edpRefId, declared: n, fetched: courses.length });
     fetched += courses.length;
-    byEdp.set(inst.edpRefId, { ...inst, courses });
+    // При --only настоящее имя вуза берём из первого курса: в точечном прогоне
+    // имени неоткуда взяться, а писать слаг вместо названия — врать в выгрузке.
+    const realName = courses[0]?.institution?.name || inst.name;
+    const realCountry = inst.country || courses[0]?.institution?.address?.country || null;
+    byEdp.set(inst.edpRefId, { ...inst, name: realName, country: realCountry, courses });
     if (++done % 50 === 0) log(`… вузов обработано ${done}/${list.length}, курсов ${fetched}`);
   }
 
@@ -395,7 +412,7 @@ async function main() {
 
   for (const g of byEdp.values()) {
     if (!g.courses.length) { emptyUnis.push({ from: g.name, edpRefId: g.edpRefId }); continue; }
-    const res = matchToCatalog(g.name, catalog, { country: g.country });
+    const res = matchToCatalog(g.name, catalog, { country: g.country, refId: g.edpRefId });
     const programs = g.courses.map(toProgram);
     programsTotal += programs.length;
     withPrice += programs.filter((p) => p.tuition != null).length;
@@ -458,7 +475,8 @@ async function main() {
     unmatched,
     emptyUnis,
   };
-  await writeMembership(AGG, membership, { dryRun });
+  if (only.length) log('точечный прогон: membership не переписываю, чтобы не потерять остальных');
+  else await writeMembership(AGG, membership, { dryRun });
 
   log(`привязано ${matched.length}, не привязано ${unmatched.length}, без курсов ${emptyUnis.length}`);
   log(`программ ${programsTotal}, с ценой ${withPrice}`);

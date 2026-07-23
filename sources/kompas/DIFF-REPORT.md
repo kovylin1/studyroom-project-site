@@ -7,22 +7,22 @@
 | Показатель | Значение |
 |---|---|
 | Карточек в рабочей копии | 807 |
-| Из них партнёрских | 714 (не партнёры: 93) |
-| **Сверено с источником** | **433** |
-| Сверить не с чем: источник за логином | 225 (QS, IAPro) |
+| Из них партнёрских | 716 (не партнёры: 91) |
+| **Сверено с источником** | **444** |
+| Сверить не с чем: источник за логином | 223 (QS, IAPro) |
 | Сверить не с чем: источник без программ | 11 (Navitas, CATS) |
-| Сверить не с чем: источник готов, выгрузки по вузу нет | 45 |
-| Программ в каталоге (сверенные вузы) | 56181 |
-| Программ у источников (объединение) | 50307 |
-| Совпало названий | 35097 (из них по написанию: 310) |
-| Есть в каталоге, нет у источника | 21084 |
-| Есть у источника, нет в каталоге | 15210 |
-| Цена расходится | 2215 |
-| **Валюта расходится** | **79** |
-| У источника цена есть, в каталоге нет | 25371 |
+| Сверить не с чем: источник готов, выгрузки по вузу нет | 38 |
+| Программ в каталоге (сверенные вузы) | 56629 |
+| Программ у источников (объединение) | 50773 |
+| Совпало названий | 35352 (из них по написанию: 353) |
+| Есть в каталоге, нет у источника | 21277 |
+| Есть у источника, нет в каталоге | 15421 |
+| Цена расходится | 2222 |
+| **Валюта расходится** | **78** |
+| У источника цена есть, в каталоге нет | 25557 |
 | Кампусы источника, которых нет в карточке | 96 |
 
-Кейсов в панель: **2103** — kompas_programs_missing 242, kompas_programs_extra 324, kompas_fee_mismatch 1059, kompas_campus_missing 56, kompas_fee_absent 332, kompas_no_extract 45, kompas_fee_currency 11, kompas_fee_mismatch_rest 32, kompas_source_blocked 1, kompas_source_empty 1.
+Кейсов в панель: **2119** — kompas_programs_missing 248, kompas_programs_extra 330, kompas_fee_mismatch 1065, kompas_campus_missing 56, kompas_fee_absent 338, kompas_no_extract 38, kompas_fee_currency 10, kompas_fee_mismatch_rest 32, kompas_source_blocked 1, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -62,9 +62,9 @@
 | SP Jain School of Global Management Dubai (`sp-jain-school-of-global-management-dubai`) | direct | 109 | 317 | 12 | 97 | 305 | 0 | 0 |
 | Manchester Metropolitan University (`manchester-met`) | edvoy | 66 | 288 | 31 | 35 | 257 | 31 | 0 |
 | University of Nottingham (`nottingham`) | kaplan+edvoy | 574 | 399 | 300 | 274 | 99 | 4 | 0 |
-| Ulster University (`ulster`) | qahe+oxford-international+edvoy | 88 | 260 | 37 | 51 | 223 | 32 | 1 |
 | Birmingham City University (`birmingham-city`) | edvoy | 72 | 273 | 32 | 40 | 241 | 32 | 0 |
 | University of Reading (`reading`) | edvoy | 21 | 356 | 3 | 18 | 353 | 2 | 0 |
+| Ulster University (`ulster`) | qahe+oxford-international+edvoy | 88 | 260 | 37 | 51 | 223 | 33 | 0 |
 | INTO Partnerships (`into-partnerships`) | edvoy | 598 | 940 | 592 | 6 | 348 | 0 | 0 |
 | University of South Wales (`south-wales`) | edvoy | 576 | 237 | 236 | 340 | 1 | 0 | 0 |
 | University of Bradford (`bradford`) | oxford-international+edvoy | 73 | 248 | 27 | 46 | 221 | 24 | 0 |
@@ -76,7 +76,7 @@
 | Вуз | Программ | Источники |
 |---|---:|---|
 | University of Chester (`chester`) | 23 | kaplan+edvoy |
-| Arden University (`arden`) | 19 | edvoy |
+| Arden University (`arden`) | 19 | edvoy+iapro |
 | Schiller International University (`schiller-international-university`) | 10 | edvoy+gedu |
 | De Montfort University Dubai (`de-montfort-dubai`) | 7 | edvoy |
 | Middlesex University Dubai (`middlesex-dubai`) | 6 | direct+edvoy |
@@ -85,5 +85,4 @@
 | Asia Pacific University of Technology and Innovation (`apu-malaysia`) | 2 | direct+edvoy |
 | BHMS — Business and Hotel Management School (`bhms`) | 2 | edvoy |
 | Hult International Business School (`hult`) | 2 | edvoy |
-| Ulster University (`ulster`) | 1 | qahe+oxford-international+edvoy |
 

@@ -1,34 +1,34 @@
 {
-  "generatedAt": "2026-07-23T12:12:20.643Z",
+  "generatedAt": "2026-07-23T15:25:39.676Z",
   "scope": "kompas-session4",
   "summary": {
     "catalogFiles": 807,
-    "notPartner": 93,
-    "partners": 714,
-    "compared": 433,
-    "sourceBlocked": 225,
+    "notPartner": 91,
+    "partners": 716,
+    "compared": 444,
+    "sourceBlocked": 223,
     "sourceEmpty": 11,
-    "noExtract": 45,
-    "programsCatalog": 56181,
-    "programsSource": 50307,
-    "matched": 35097,
-    "matchedFuzzy": 310,
-    "catalogOnly": 21084,
-    "sourceOnly": 15210,
-    "feeMismatch": 2215,
-    "feeMissingInCatalog": 25371,
-    "feeCurrency": 79,
+    "noExtract": 38,
+    "programsCatalog": 56629,
+    "programsSource": 50773,
+    "matched": 35352,
+    "matchedFuzzy": 353,
+    "catalogOnly": 21277,
+    "sourceOnly": 15421,
+    "feeMismatch": 2222,
+    "feeMissingInCatalog": 25557,
+    "feeCurrency": 78,
     "campusMissing": 96,
     "extractsLoaded": {
       "kaplan": 24,
       "oxford-international": 26,
       "qahe": 4,
       "studygroup": 31,
-      "edvoy": 430,
+      "edvoy": 437,
       "gedu": 8,
       "direct": 31,
+      "iapro": 21,
       "qs": 0,
-      "iapro": 0,
       "navitas": 0,
       "cats": 0
     },
@@ -54,7 +54,6 @@
     "atilim",
     "aud",
     "aut",
-    "avila",
     "basis-mclean",
     "bcit",
     "birkbeck",
@@ -155,7 +154,6 @@
     "les-roches-crans-montana",
     "les-roches-marbella",
     "lethbridge",
-    "lim-college",
     "lincoln-uk",
     "lipscomb",
     "liu",
@@ -280,18 +278,16 @@
     "australian-vocational-training-academy",
     "beijing-novo",
     "bow-valley",
+    "cctb",
     "dalhousie",
     "eastbourne-twin",
     "ecole-management-appliquee",
     "edith-cowan",
-    "esce-international-business-school",
-    "fachhochschule-des-mittelstands-fhm-university",
     "fisher-college-boston",
     "harbin-novo",
     "hefei-hfut",
     "htmi-international-hotel-and-tourism-institute-switzerland",
     "international-school-of-management-ism",
-    "iqs-institut-quimic-de-sarria",
     "kansas",
     "lincoln-nz",
     "liu-brooklyn",
@@ -301,9 +297,7 @@
     "memorial-nl",
     "mount-allison",
     "nanjing-novo",
-    "new-zealand-management-academies-nzma",
     "nscad",
-    "nuova-accademia-di-belle-arti-naba",
     "royal-holloway-direct-entry",
     "saint-marys",
     "seoul-gec",
@@ -311,12 +305,9 @@
     "st-francis-xavier",
     "tamucc",
     "texas-aandm-corpus-christi-university-direct-entry",
-    "the-university-of-arizona",
     "the-university-of-law",
     "trine-university",
-    "ue-amsterdam",
     "ue-university-of-europe-for-applied-sciences",
-    "university-of-michigan-flint",
     "university-of-north-carolina-at-wilmington",
     "uwe-bristol",
     "xian-eurasia",
@@ -1439,10 +1430,12 @@
       "type": "aggregator",
       "assigned": [
         "qs",
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "ready": [
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "blocked": [
         "qs"
@@ -1450,10 +1443,10 @@
       "empty": [],
       "status": "compared",
       "catalogPrograms": 126,
-      "sourcePrograms": 27,
-      "matched": 27,
+      "sourcePrograms": 28,
+      "matched": 28,
       "matchedFuzzy": 0,
-      "catalogOnly": 99,
+      "catalogOnly": 98,
       "sourceOnly": 0,
       "catalogWithFee": 56,
       "sourceWithFee": 27,
@@ -2382,16 +2375,67 @@
       "name": "Avila University",
       "type": "aggregator",
       "assigned": [
-        "qs"
+        "qs",
+        "iapro"
       ],
-      "ready": [],
+      "ready": [
+        "iapro"
+      ],
       "blocked": [
         "qs"
       ],
       "empty": [],
-      "status": "source-blocked",
+      "status": "compared",
       "catalogPrograms": 89,
-      "sourcePrograms": 0
+      "sourcePrograms": 46,
+      "matched": 4,
+      "matchedFuzzy": 3,
+      "catalogOnly": 85,
+      "sourceOnly": 42,
+      "catalogWithFee": 37,
+      "sourceWithFee": 0,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 0,
+      "feeCurrency": 0,
+      "catalogCampuses": 4,
+      "sourceCampuses": 0,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 5,
+      "samples": {
+        "sourceOnly": [
+          "Accounting, B.S.B.A.",
+          "Artificial Intelligence (STEM), M.S.",
+          "B.A. Psychology Mental Health",
+          "B.A. Psychology Research",
+          "B.S. Applied Science"
+        ],
+        "catalogOnly": [
+          "BA in Accounting",
+          "BA in Business Administration",
+          "BA in Marketing",
+          "BA in Management",
+          "BA in Finance"
+        ],
+        "feeMismatch": [],
+        "fuzzyPairs": [
+          {
+            "catalog": "MBA in Strategic Human Resources",
+            "source": "Strategic Human Resources, MBA",
+            "score": 1
+          },
+          {
+            "catalog": "MBA in Accounting",
+            "source": "Accounting, MBA",
+            "score": 1
+          },
+          {
+            "catalog": "MBA in Finance",
+            "source": "Finance, MBA",
+            "score": 1
+          }
+        ]
+      }
     },
     {
       "slug": "bangor",
@@ -3732,11 +3776,13 @@
       "assigned": [
         "direct",
         "qs",
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "ready": [
         "direct",
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "blocked": [
         "qs"
@@ -3744,11 +3790,11 @@
       "empty": [],
       "status": "compared",
       "catalogPrograms": 163,
-      "sourcePrograms": 153,
-      "matched": 71,
+      "sourcePrograms": 178,
+      "matched": 72,
       "matchedFuzzy": 6,
-      "catalogOnly": 92,
-      "sourceOnly": 82,
+      "catalogOnly": 91,
+      "sourceOnly": 106,
       "catalogWithFee": 29,
       "sourceWithFee": 114,
       "feeMismatch": 7,
@@ -3783,7 +3829,7 @@
             "currency": "EUR",
             "basis": "level",
             "audience": "international",
-            "via": "direct",
+            "via": "direct+iapro",
             "rel": 3.3
           },
           {
@@ -3794,7 +3840,7 @@
             "currency": "EUR",
             "basis": "approxAnnual",
             "audience": null,
-            "via": "edvoy+direct",
+            "via": "edvoy+direct+iapro",
             "rel": 6.6
           },
           {
@@ -3805,7 +3851,7 @@
             "currency": "EUR",
             "basis": "approxAnnual",
             "audience": null,
-            "via": "edvoy+direct",
+            "via": "edvoy+direct+iapro+iapro",
             "rel": 3
           },
           {
@@ -3816,7 +3862,7 @@
             "currency": "EUR",
             "basis": "approxAnnual",
             "audience": null,
-            "via": "edvoy+direct",
+            "via": "edvoy+direct+iapro",
             "rel": 3
           },
           {
@@ -3827,7 +3873,7 @@
             "currency": "EUR",
             "basis": "level",
             "audience": "international",
-            "via": "direct",
+            "via": "direct+iapro",
             "rel": 10
           }
         ],
@@ -4432,10 +4478,12 @@
       "type": "aggregator",
       "assigned": [
         "qs",
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "ready": [
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "blocked": [
         "qs"
@@ -4443,11 +4491,11 @@
       "empty": [],
       "status": "compared",
       "catalogPrograms": 323,
-      "sourcePrograms": 100,
-      "matched": 99,
-      "matchedFuzzy": 0,
-      "catalogOnly": 224,
-      "sourceOnly": 1,
+      "sourcePrograms": 186,
+      "matched": 127,
+      "matchedFuzzy": 14,
+      "catalogOnly": 196,
+      "sourceOnly": 59,
       "catalogWithFee": 56,
       "sourceWithFee": 100,
       "feeMismatch": 3,
@@ -4460,14 +4508,18 @@
       "scholarships": 5,
       "samples": {
         "sourceOnly": [
-          "MSc International Business Management"
+          "MSc International Business Management",
+          "BA (Hons) Creative Writing",
+          "BA (Hons) Creative Writing with Foundation Year",
+          "BA (Hons) Events Management",
+          "BA (Hons) Events Management with Foundation Year"
         ],
         "catalogOnly": [
           "BA (Hons) Primary Education with QTS",
-          "BA (Hons) Education Studies",
           "BA (Hons) Secondary Education with QTS",
           "BSc (Hons) Nursing (Adult)",
-          "BSc (Hons) Nursing (Mental Health)"
+          "BSc (Hons) Nursing (Mental Health)",
+          "BSc (Hons) Nursing — Child"
         ],
         "feeMismatch": [
           {
@@ -4478,7 +4530,7 @@
             "currency": "GBP",
             "basis": "approxAnnual",
             "audience": null,
-            "via": "edvoy",
+            "via": "edvoy+iapro",
             "rel": 11.4
           },
           {
@@ -4489,7 +4541,7 @@
             "currency": "GBP",
             "basis": "approxAnnual",
             "audience": null,
-            "via": "edvoy",
+            "via": "edvoy+iapro",
             "rel": 3.1
           },
           {
@@ -4504,7 +4556,33 @@
             "rel": 6.1
           }
         ],
-        "fuzzyPairs": []
+        "fuzzyPairs": [
+          {
+            "catalog": "BA (Hons) Theology, Religion and Philosophy",
+            "source": "BA (Hons) Theology, Philosophy & Religion",
+            "score": 1
+          },
+          {
+            "catalog": "Countering Terrorism & Extremism, BSc",
+            "source": "BSc (Hons) Countering Terrorism and Extremism",
+            "score": 1
+          },
+          {
+            "catalog": "General Engineering, BEng",
+            "source": "BEng (Hons) General Engineering",
+            "score": 1
+          },
+          {
+            "catalog": "Law with Foundation Year, LL.B.",
+            "source": "LL.B. Law (Hons)  with Foundation Year",
+            "score": 1
+          },
+          {
+            "catalog": "TESOL (Teaching English to Speakers of Other Languages), MA",
+            "source": "MA Teaching English to Speakers of Other Languages (TESOL)",
+            "score": 1
+          }
+        ]
       }
     },
     {
@@ -4938,6 +5016,22 @@
         "feeMismatch": [],
         "fuzzyPairs": []
       }
+    },
+    {
+      "slug": "cctb",
+      "name": "Canadian College of Technology and Business",
+      "type": "aggregator",
+      "assigned": [
+        "iapro"
+      ],
+      "ready": [
+        "iapro"
+      ],
+      "blocked": [],
+      "empty": [],
+      "status": "no-extract",
+      "catalogPrograms": 19,
+      "sourcePrograms": 0
     },
     {
       "slug": "ceg-digital",
@@ -5576,20 +5670,22 @@
       "name": "Concordia University Chicago",
       "type": "aggregator",
       "assigned": [
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "ready": [
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "blocked": [],
       "empty": [],
       "status": "compared",
       "catalogPrograms": 168,
-      "sourcePrograms": 57,
-      "matched": 57,
-      "matchedFuzzy": 0,
-      "catalogOnly": 111,
-      "sourceOnly": 0,
+      "sourcePrograms": 121,
+      "matched": 81,
+      "matchedFuzzy": 23,
+      "catalogOnly": 87,
+      "sourceOnly": 40,
       "catalogWithFee": 75,
       "sourceWithFee": 57,
       "feeMismatch": 25,
@@ -5601,7 +5697,13 @@
       "hasDescription": true,
       "scholarships": 8,
       "samples": {
-        "sourceOnly": [],
+        "sourceOnly": [
+          "BA Christian Ministry",
+          "BA Deaconess",
+          "BA Director of Christian Education (DCE)",
+          "BA Director of Christian Education (DCED) Certification with EEL",
+          "BA in Accounting"
+        ],
         "catalogOnly": [
           "BBA Accounting",
           "BBA Business Intelligence and Analytics",
@@ -5629,7 +5731,7 @@
             "currency": "USD",
             "basis": "approxAnnual",
             "audience": null,
-            "via": "edvoy",
+            "via": "edvoy+iapro",
             "rel": 6.7
           },
           {
@@ -5666,7 +5768,33 @@
             "rel": 6.7
           }
         ],
-        "fuzzyPairs": []
+        "fuzzyPairs": [
+          {
+            "catalog": "BA Biology",
+            "source": "BA in Biology",
+            "score": 1
+          },
+          {
+            "catalog": "BS Biology",
+            "source": "BS in Biology",
+            "score": 1
+          },
+          {
+            "catalog": "BA Computer Science",
+            "source": "BA in Computer Science",
+            "score": 1
+          },
+          {
+            "catalog": "BS Computer Science",
+            "source": "BS in Computer Science",
+            "score": 1
+          },
+          {
+            "catalog": "BA Mathematics",
+            "source": "BA in Mathematics",
+            "score": 1
+          }
+        ]
       }
     },
     {
@@ -8200,9 +8328,39 @@
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
+      "status": "compared",
       "catalogPrograms": 65,
-      "sourcePrograms": 0
+      "sourcePrograms": 12,
+      "matched": 9,
+      "matchedFuzzy": 0,
+      "catalogOnly": 56,
+      "sourceOnly": 3,
+      "catalogWithFee": 0,
+      "sourceWithFee": 12,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 9,
+      "feeCurrency": 0,
+      "catalogCampuses": 1,
+      "sourceCampuses": 1,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [
+          "MSc in Technology Management & International Entrepreneurship - 2nd Year Entry",
+          "Master of Science in International Management and Business Intelligence",
+          "Master in Communication, Luxury and Prestige Marketing"
+        ],
+        "catalogOnly": [
+          "Master (10) PG(10)",
+          "Spécialisation Marketing Digital International Bachelor - ESCE",
+          "Master Cycle - Management & Consulting - ESCE",
+          "bachelor Internation Sport Business - ESCE",
+          "MSc In Business Transformation & Consulting - ESCE"
+        ],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "esic",
@@ -8589,9 +8747,29 @@
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
+      "status": "compared",
       "catalogPrograms": 18,
-      "sourcePrograms": 0
+      "sourcePrograms": 18,
+      "matched": 18,
+      "matchedFuzzy": 0,
+      "catalogOnly": 0,
+      "sourceOnly": 0,
+      "catalogWithFee": 0,
+      "sourceWithFee": 18,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 18,
+      "feeCurrency": 0,
+      "catalogCampuses": 6,
+      "sourceCampuses": 4,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [],
+        "catalogOnly": [],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "fad-institute-dubai",
@@ -9567,21 +9745,23 @@
       "type": "direct",
       "assigned": [
         "direct",
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "ready": [
         "direct",
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "blocked": [],
       "empty": [],
       "status": "compared",
       "catalogPrograms": 106,
-      "sourcePrograms": 99,
-      "matched": 39,
-      "matchedFuzzy": 1,
-      "catalogOnly": 67,
-      "sourceOnly": 60,
+      "sourcePrograms": 128,
+      "matched": 41,
+      "matchedFuzzy": 2,
+      "catalogOnly": 65,
+      "sourceOnly": 87,
       "catalogWithFee": 29,
       "sourceWithFee": 41,
       "feeMismatch": 3,
@@ -9616,7 +9796,7 @@
             "currency": "EUR",
             "basis": "approxAnnual",
             "audience": null,
-            "via": "edvoy+direct",
+            "via": "edvoy+direct+iapro",
             "rel": 12.4
           },
           {
@@ -9627,7 +9807,7 @@
             "currency": "EUR",
             "basis": "approxAnnual",
             "audience": null,
-            "via": "edvoy+direct",
+            "via": "edvoy+direct+iapro",
             "rel": 12.9
           },
           {
@@ -9638,7 +9818,7 @@
             "currency": "EUR",
             "basis": "approxAnnual",
             "audience": null,
-            "via": "edvoy+direct",
+            "via": "edvoy+direct+iapro",
             "rel": 12.9
           }
         ],
@@ -9646,6 +9826,11 @@
           {
             "catalog": "BSc Business Management Human Resource",
             "source": "BSc Business Management & Human Resource",
+            "score": 1
+          },
+          {
+            "catalog": "MSc Business Management & Marketing",
+            "source": "Msc Business Management Marketing",
             "score": 1
           }
         ]
@@ -12429,9 +12614,29 @@
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
+      "status": "compared",
       "catalogPrograms": 11,
-      "sourcePrograms": 0
+      "sourcePrograms": 11,
+      "matched": 11,
+      "matchedFuzzy": 0,
+      "catalogOnly": 0,
+      "sourceOnly": 0,
+      "catalogWithFee": 0,
+      "sourceWithFee": 11,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 11,
+      "feeCurrency": 0,
+      "catalogCampuses": 1,
+      "sourceCampuses": 1,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [],
+        "catalogOnly": [],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "irvine-valley-college",
@@ -14640,16 +14845,62 @@
       "name": "LIM College",
       "type": "aggregator",
       "assigned": [
-        "qs"
+        "qs",
+        "iapro"
       ],
-      "ready": [],
+      "ready": [
+        "iapro"
+      ],
       "blocked": [
         "qs"
       ],
       "empty": [],
-      "status": "source-blocked",
+      "status": "compared",
       "catalogPrograms": 38,
-      "sourcePrograms": 0
+      "sourcePrograms": 12,
+      "matched": 7,
+      "matchedFuzzy": 2,
+      "catalogOnly": 31,
+      "sourceOnly": 5,
+      "catalogWithFee": 22,
+      "sourceWithFee": 0,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 0,
+      "feeCurrency": 0,
+      "catalogCampuses": 5,
+      "sourceCampuses": 0,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 4,
+      "samples": {
+        "sourceOnly": [
+          "Business of Fashion, MPS",
+          "Fashion Marketing, MPS",
+          "Fashion Merchandising & Retail Management, MPS",
+          "Fashion Merchandising, BPS",
+          "Hyflex - Fashion Marketing, MPS"
+        ],
+        "catalogOnly": [
+          "Associate in Applied Science — Fashion Merchandising & Management (AAS)",
+          "Associate in Occupational Studies — Fashion Merchandising (AOS)",
+          "Bachelor of Professional Studies — Fashion Merchandising (BPS)",
+          "Bachelor of Business Administration — Fashion Merchandising (BBA)",
+          "Bachelor of Business Administration — Fashion Marketing (BBA)"
+        ],
+        "feeMismatch": [],
+        "fuzzyPairs": [
+          {
+            "catalog": "The Business of Fashion, BBA",
+            "source": "Business of Fashion, BBA",
+            "score": 1
+          },
+          {
+            "catalog": "Luxury Brand Management, MBA",
+            "source": "MBA Luxury Brand Management",
+            "score": 1
+          }
+        ]
+      }
     },
     {
       "slug": "limerick",
@@ -17430,9 +17681,38 @@
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
+      "status": "compared",
       "catalogPrograms": 39,
-      "sourcePrograms": 0
+      "sourcePrograms": 13,
+      "matched": 11,
+      "matchedFuzzy": 0,
+      "catalogOnly": 28,
+      "sourceOnly": 2,
+      "catalogWithFee": 0,
+      "sourceWithFee": 13,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 11,
+      "feeCurrency": 0,
+      "catalogCampuses": 8,
+      "sourceCampuses": 7,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [
+          "New Zealand Diploma in Construction (Level 6) with a strand in Quantity Surveying",
+          "NZ Certificate in Health and Wellbeing (Social and Community Services) (Level 4) - Mental Health and Addiction Support Strand"
+        ],
+        "catalogOnly": [
+          "Certificate in Beekeeping",
+          "Horticulture Certificate",
+          "Certificate in Horticulture (Landscape Design & Build) (Level 3)",
+          "Certificate in Animal Care (Level 3)",
+          "Certificate in Baking (Generalist) (Level 4)"
+        ],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "newcastle-au",
@@ -18000,8 +18280,8 @@
       "catalogOnly": 71,
       "sourceOnly": 39,
       "catalogWithFee": 68,
-      "sourceWithFee": 349,
-      "feeMismatch": 8,
+      "sourceWithFee": 356,
+      "feeMismatch": 14,
       "feeMissingInCatalog": 302,
       "feeCurrency": 0,
       "catalogCampuses": 6,
@@ -18026,59 +18306,59 @@
         ],
         "feeMismatch": [
           {
-            "program": "Computer Science (Extended Degree) BSc (Hons)",
-            "slug": "northumbria-bsc-computer-science-extended",
-            "catalog": 21500,
-            "source": 19850,
+            "program": "International Foundation Programme — Business and Law",
+            "slug": "northumbria-ifp-business-law",
+            "catalog": 17250,
+            "source": 21250,
             "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 7.7
+            "basis": null,
+            "audience": "international",
+            "via": "qahe",
+            "rel": 18.8
           },
           {
-            "program": "Business Analytics MSc",
-            "slug": "northumbria-msc-business-analytics",
-            "catalog": 21500,
-            "source": 24500,
+            "program": "International Foundation Programme — Computing",
+            "slug": "northumbria-ifp-computing",
+            "catalog": 17250,
+            "source": 21250,
             "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 12.2
+            "basis": null,
+            "audience": "international",
+            "via": "qahe",
+            "rel": 18.8
           },
           {
-            "program": "Advanced Computer Science MSc",
-            "slug": "northumbria-msc-advanced-computer-science",
-            "catalog": 21500,
-            "source": 20950,
+            "program": "International Foundation Programme — Engineering",
+            "slug": "northumbria-ifp-engineering",
+            "catalog": 17250,
+            "source": 21250,
             "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 2.6
+            "basis": null,
+            "audience": "international",
+            "via": "qahe",
+            "rel": 18.8
           },
           {
-            "program": "Data Science MSc",
-            "slug": "northumbria-msc-data-science",
-            "catalog": 21500,
-            "source": 20950,
+            "program": "International Foundation Programme — Applied Science",
+            "slug": "northumbria-ifp-applied-science",
+            "catalog": 17250,
+            "source": 21250,
             "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 2.6
+            "basis": null,
+            "audience": "international",
+            "via": "qahe",
+            "rel": 18.8
           },
           {
-            "program": "Artificial Intelligence MSc",
-            "slug": "northumbria-msc-artificial-intelligence",
-            "catalog": 21500,
-            "source": 20950,
+            "program": "International Foundation Programme — Art, Design and Media",
+            "slug": "northumbria-ifp-art-design",
+            "catalog": 17250,
+            "source": 21250,
             "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 2.6
+            "basis": null,
+            "audience": "international",
+            "via": "qahe",
+            "rel": 18.8
           }
         ],
         "fuzzyPairs": [
@@ -18362,9 +18642,29 @@
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
+      "status": "compared",
       "catalogPrograms": 13,
-      "sourcePrograms": 0
+      "sourcePrograms": 13,
+      "matched": 13,
+      "matchedFuzzy": 0,
+      "catalogOnly": 0,
+      "sourceOnly": 0,
+      "catalogWithFee": 0,
+      "sourceWithFee": 13,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 13,
+      "feeCurrency": 0,
+      "catalogCampuses": 2,
+      "sourceCampuses": 2,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [],
+        "catalogOnly": [],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "nyit",
@@ -21604,9 +21904,9 @@
       "catalogOnly": 157,
       "sourceOnly": 7,
       "catalogWithFee": 18,
-      "sourceWithFee": 9,
+      "sourceWithFee": 13,
       "feeMismatch": 0,
-      "feeMissingInCatalog": 5,
+      "feeMissingInCatalog": 6,
       "feeCurrency": 0,
       "catalogCampuses": 3,
       "sourceCampuses": 0,
@@ -24030,9 +24330,29 @@
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
+      "status": "compared",
       "catalogPrograms": 1,
-      "sourcePrograms": 0
+      "sourcePrograms": 1,
+      "matched": 1,
+      "matchedFuzzy": 0,
+      "catalogOnly": 0,
+      "sourceOnly": 0,
+      "catalogWithFee": 1,
+      "sourceWithFee": 1,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 0,
+      "feeCurrency": 0,
+      "catalogCampuses": 1,
+      "sourceCampuses": 1,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [],
+        "catalogOnly": [],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "the-university-of-law",
@@ -24558,6 +24878,54 @@
           "Bachelor in Computer Engineering and Electronics",
           "Bachelor in Robotics",
           "Bachelor in Computer Science"
+        ],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
+    },
+    {
+      "slug": "trebas",
+      "name": "Trebas Institute",
+      "type": "aggregator",
+      "assigned": [
+        "iapro"
+      ],
+      "ready": [
+        "iapro"
+      ],
+      "blocked": [],
+      "empty": [],
+      "status": "compared",
+      "catalogPrograms": 14,
+      "sourcePrograms": 10,
+      "matched": 0,
+      "matchedFuzzy": 0,
+      "catalogOnly": 14,
+      "sourceOnly": 10,
+      "catalogWithFee": 14,
+      "sourceWithFee": 0,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 0,
+      "feeCurrency": 0,
+      "catalogCampuses": 3,
+      "sourceCampuses": 0,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 3,
+      "samples": {
+        "sourceOnly": [
+          "16 Months Business Administration",
+          "16 Months E-commerce and Online Business Management",
+          "17 Months Computer security analyst",
+          "24 Months Business Administration",
+          "24 Months E-Commerce and Online Business Management"
+        ],
+        "catalogOnly": [
+          "Diploma in Audio Engineering and Production",
+          "Diploma in Music Business Administration",
+          "Diploma in Film and Television Production",
+          "Diploma in Digital Marketing Management",
+          "Diploma in Data Analytics for Business"
         ],
         "feeMismatch": [],
         "fuzzyPairs": []
@@ -25444,16 +25812,44 @@
       "name": "University of Applied Sciences Europe — Amsterdam",
       "type": "aggregator",
       "assigned": [
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "ready": [
-        "edvoy"
+        "edvoy",
+        "iapro"
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
+      "status": "compared",
       "catalogPrograms": 37,
-      "sourcePrograms": 0
+      "sourcePrograms": 2,
+      "matched": 2,
+      "matchedFuzzy": 0,
+      "catalogOnly": 35,
+      "sourceOnly": 0,
+      "catalogWithFee": 9,
+      "sourceWithFee": 0,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 0,
+      "feeCurrency": 0,
+      "catalogCampuses": 2,
+      "sourceCampuses": 0,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 5,
+      "samples": {
+        "sourceOnly": [],
+        "catalogOnly": [
+          "Bachelor of Business Administration (BBA)",
+          "BBA — Marketing & Brand Management (specialisation)",
+          "BBA — Entrepreneurship & Innovation (specialisation)",
+          "BBA — Finance & Investment (specialisation)",
+          "BBA — International Business (specialisation)"
+        ],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "ue-germany",
@@ -25685,10 +26081,10 @@
       "catalogOnly": 51,
       "sourceOnly": 223,
       "catalogWithFee": 88,
-      "sourceWithFee": 249,
-      "feeMismatch": 32,
+      "sourceWithFee": 260,
+      "feeMismatch": 33,
       "feeMissingInCatalog": 0,
-      "feeCurrency": 1,
+      "feeCurrency": 0,
       "catalogCampuses": 4,
       "sourceCampuses": 4,
       "campusMissing": 0,
@@ -26999,9 +27395,29 @@
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
+      "status": "compared",
       "catalogPrograms": 123,
-      "sourcePrograms": 0
+      "sourcePrograms": 123,
+      "matched": 123,
+      "matchedFuzzy": 0,
+      "catalogOnly": 0,
+      "sourceOnly": 0,
+      "catalogWithFee": 0,
+      "sourceWithFee": 123,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 123,
+      "feeCurrency": 0,
+      "catalogCampuses": 1,
+      "sourceCampuses": 1,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [],
+        "catalogOnly": [],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "university-of-nebraska-omaha",

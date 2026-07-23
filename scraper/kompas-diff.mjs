@@ -35,8 +35,10 @@ const SOURCES = {
   edvoy: { dir: path.join(EXTRACTS, 'edvoy'), state: 'ready' },
   gedu: { dir: GEDU_DIR, state: 'ready' },
   direct: { dir: path.join(EXTRACTS, 'direct'), state: 'ready' },
+  // IAPro открылся 2026-07-23: ProgrammeFinder отдаёт названия, уровни и города.
+  // Цен там нет — по стоимости эти вузы сверяются другими источниками.
+  iapro: { dir: path.join(EXTRACTS, 'iapro'), state: 'ready' },
   qs: { dir: null, state: 'blocked', why: 'портал QS Apply отклонил учётные данные, программ нет' },
-  iapro: { dir: null, state: 'blocked', why: 'портал GUS Gateway отклонил учётные данные, партнёры не выписаны' },
   navitas: { dir: null, state: 'empty', why: 'у сайтов колледжей нет типа записи «курс», сбор не дал программ' },
   cats: { dir: null, state: 'empty', why: 'у CATS школы, а не программы в единой форме' },
 };
