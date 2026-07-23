@@ -413,9 +413,17 @@ async function collectUni({ slug, name, official }) {
 
 // ------------------------------------------------------------------ main ----
 
+const MANUAL_SITES = JSON.parse(await fs.readFile(path.join(path.dirname(fileURLToPath(import.meta.url)), 'sources', 'official-sites-manual.json'), 'utf8'));
+
 async function main() {
   const map = JSON.parse(await fs.readFile(path.join(KOMPAS_DIR, 'partner-source-map.json'), 'utf8'));
   const targets = Object.entries(map).filter(([, v]) => v?.type === 'direct');
+  // прямые партнёры без карточки в каталоге: в карте сессии 1 их нет, потому что
+  // карта строилась по каталогу. Адрес задан владельцем — собираем под новую карточку.
+  for (const slug of Object.keys(MANUAL_SITES)) {
+    if (slug.startsWith('_') || map[slug]) continue;
+    targets.push([slug, { type: 'direct', via: [], directRaw: slug, newCard: true }]);
+  }
 
   const report = [];
   let done = 0;
@@ -440,9 +448,17 @@ async function main() {
 
     let uni;
     try { uni = JSON.parse(await fs.readFile(path.join(CATALOG_DIR, `${slug}.json`), 'utf8')); }
-    catch { log(`${slug}: карточки нет — пропуск`); report.push({ slug, status: 'no-card' }); continue; }
+    catch {
+      // карточки может не быть намеренно: два прямых партнёра из «списка Б» сессии 1
+      // заводятся с нуля, и данные для карточки берутся как раз этим сбором
+      if (!MANUAL_SITES[slug]) { log(`${slug}: карточки нет — пропуск`); report.push({ slug, status: 'no-card' }); continue; }
+      uni = { name: meta?.directRaw ?? slug, slug };
+      log(`${slug}: карточки нет, но адрес задан владельцем — собираю под новую карточку`);
+    }
 
-    let official = resolveOfficialSite(uni, []);
+    // Адрес, данный владельцем, сильнее любой автоматики: у amity и webster в карточке
+    // стоит агрегатор, у adu/woosong/final прежний адрес не отвечал или отбивался.
+    let official = MANUAL_SITES[slug] ?? resolveOfficialSite(uni, []);
     // запасной путь: адрес из старой выгрузки, если он не агрегаторский
     if (!official) {
       try {
