@@ -1708,6 +1708,16 @@ const CONTROL_DEFAULT_URL = '';
       workflow: OREL_APPLY_WORKFLOW,
       lsKey: 'studyroom.orel.decisions',
     },
+    {
+      // КОМПАС: кейсы сессий 3.5 и 4. Это ЗАМЕР, а не правка — apply-workflow
+      // сознательно нет: по правилу 5 плана каталог меняется только в сессии 5,
+      // на копии и целиком. Решения оператора здесь копятся до этого момента.
+      key: 'kompas', title: 'КОМПАС',
+      api: '/api/kompas-review.json',
+      contentPath: 'site/public/api/kompas-review.json',
+      workflow: null,
+      lsKey: 'studyroom.kompas.decisions',
+    },
   ];
   const srcState = {};   // key → { cfg, data }  (data = полный JSON источника)
   let reviewData = null; // объединённый вид { items: [...] } для рендера
@@ -1756,6 +1766,23 @@ const CONTROL_DEFAULT_URL = '';
       tuition_outlier: 'цена обучения вне диапазона',
       ielts_implausible: 'неправдоподобный балл IELTS',
       orel_needs_eyes: 'фото найдено — нужен просмотр глазами',
+      // КОМПАС, сессия 3.5 — прямые партнёры
+      direct_fee_unlinked: 'цена офсайта не привязана к программе',
+      direct_zero_programs: 'офсайт не отдал ни одной программы',
+      direct_capped: 'обход упёрся в потолок, часть программ не собрана',
+      direct_no_official_site: 'офсайт неизвестен — в карточке адрес агрегатора',
+      direct_site_unreachable: 'сайт вуза не ответил',
+      // КОМПАС, сессия 4 — замер расхождений
+      kompas_programs_missing: 'у источника есть программы, которых нет в карточке',
+      kompas_programs_extra: 'в карточке есть программы, которых нет у источника',
+      kompas_fee_mismatch: 'цена расходится с источником',
+      kompas_fee_mismatch_rest: 'остальные расхождения цены (свод)',
+      kompas_fee_absent: 'у источника цена есть, в карточке нет',
+      kompas_fee_currency: 'валюта не совпадает с источником',
+      kompas_campus_missing: 'кампусы источника отсутствуют в карточке',
+      kompas_no_extract: 'источник собран, но выгрузки по вузу нет',
+      kompas_source_blocked: 'источник за логином — сверить не с чем',
+      kompas_source_empty: 'источник не отдаёт программы',
     };
     return map[issue] || issue;
   }
@@ -1786,6 +1813,14 @@ const CONTROL_DEFAULT_URL = '';
       `<button class="review-btn${a.danger ? ' review-btn--danger' : ''}${decided === a.value ? ' review-btn--active' : ''}" data-id="${item.id}" data-decision="${a.value}">${a.label}</button>`;
     // Кейсы без авто-фикса значения (СОРОКА: неправдоподобный IELTS) — только
     // «Игнорировать»; реальное значение правится руками (пункт B).
+    // КОМПАС меряет, а не правит: «Удалить» здесь было бы кнопкой, за которой
+    // ничего не стоит (apply-workflow нет, правки идут в сессии 5 целиком).
+    if (String(item.issue || '').startsWith('kompas_') || String(item.issue || '').startsWith('direct_')) {
+      return [
+        { value: 'accept', label: 'В работу', danger: false },
+        { value: 'ignore', label: 'Игнорировать', danger: false },
+      ].map(btn).join('');
+    }
     if (item.issue === 'ielts_implausible') {
       return [{ value: 'ignore', label: 'Игнорировать', danger: false }].map(btn).join('');
     }
@@ -1997,13 +2032,24 @@ const CONTROL_DEFAULT_URL = '';
     try {
       // Запускаем apply-workflow каждого источника, у которого есть принятые,
       // но ещё не применённые решения (РЕВИЗОР и/или СОРОКА).
-      const toRun = REVIEW_SRCS.filter(cfg => {
+      const ready = REVIEW_SRCS.filter(cfg => {
         const st = srcState[cfg.key];
         return st && (st.data.items || []).some(i => i.decision !== null && !i.applied);
       });
-      if (!toRun.length) {
+      // Источник без apply-workflow (КОМПАС) применять нечем: решения копятся
+      // до сессии 5. Молча пропустить нельзя — оператор решит, что применилось.
+      const toRun = ready.filter(cfg => cfg.workflow);
+      const held = ready.filter(cfg => !cfg.workflow).map(cfg => cfg.title);
+      if (!ready.length) {
         showReviewFeedback('Нет решений для применения', 'warn');
         return;
+      }
+      if (!toRun.length) {
+        showReviewFeedback('Решения сохранены (' + held.join(', ') + '), но применять их нечем: авто-применение у этого источника не заведено.', 'warn');
+        return;
+      }
+      if (held.length) {
+        showReviewFeedback('Решения ' + held.join(', ') + ' сохранены, но не применяются автоматически.', 'warn');
       }
       for (const cfg of toRun) {
         await runRemoteWorkflow({ workflowFile: cfg.workflow, label: cfg.title + ' Apply', expectedMin: 5 });
