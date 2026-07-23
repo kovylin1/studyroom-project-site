@@ -22,7 +22,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   fetchHtml, htmlToCells, decodeEntities, parseMoney, mapLevel,
-  writeExtract, extract, args, logger, stats, CATALOG_DIR, KOMPAS_DIR,
+  writeExtract, extract, args, logger, stats, CATALOG_DIR, KOMPAS_DIR, UA,
 } from './lib/kompas-collect.mjs';
 import { resolveOfficialSite, AGG_DOMAINS } from './lib/official-site.mjs';
 
@@ -31,6 +31,17 @@ const DRY = args.has('dry-run');
 const ONLY = args.get('slug');
 const LIMIT = args.num('limit', Infinity);
 const MAX_PAGES = args.num('max-pages', 160);
+const SKIP_FRESH = args.has('skip-fresh');
+const FRESH_HOURS = args.num('fresh-hours', 6);
+
+/** Выгрузка, снятая недавно: прогон продолжается пачками и не переснимает то же самое. */
+async function readIfFresh(file) {
+  try {
+    const j = JSON.parse(await fs.readFile(file, 'utf8'));
+    const age = (Date.now() - new Date(j.scrapedAt).getTime()) / 36e5;
+    return age <= FRESH_HOURS ? j : null;
+  } catch { return null; }
+}
 const OFFICIAL_EXTRACTS = path.join(path.dirname(fileURLToPath(import.meta.url)), 'sources', 'official-extracts');
 
 // ---------------------------------------------------------------- эвристики ----
@@ -38,7 +49,63 @@ const OFFICIAL_EXTRACTS = path.join(path.dirname(fileURLToPath(import.meta.url))
 // Ссылка похожа на страницу программы. Национальные пути добавлены после первого
 // прогона: турецкие и арабские сайты (beykent, ciu, final, adu) дали 0 страниц,
 // потому что курсы у них лежат под /bolum, /lisans, /akademik, /majors.
-const COURSE_PATH = /\/(course|courses|programme|programmes|program|programs|study|studies|degree|degrees|bachelor|bachelors|master|masters|undergraduate|postgraduate|graduate|academics|academic-programs|majors|faculties|faculty|school-of|akademik|bolum|bolumler|program-?lar|lisans|yuksek-lisans|onlisans|ders)\b/i;
+const COURSE_PATH = /\/(course|courses|programme|programmes|program|programs|study|studies|degree|degrees|bachelor|bachelors|master|masters|undergraduate|postgraduate|graduate|academics|academic-programs|majors|faculties|faculty|school-of|akademik|bolum|bolumler|program-?lar|lisans|yuksek-lisans|onlisans|ders|kepzes|kepzesek|szak|szakok|hakgwa|jeongong|corsi|cursos)\b/i;
+
+// Заголовки настоящего браузера. Без них final.edu.tr и uowdubai.ac.ae отвечали
+// HTTP 403 — и это выглядело как «сайт не отдаёт курсы», хотя дело было в запросе.
+const BROWSER_HEADERS = {
+  'Accept-Language': 'en-US,en;q=0.9,ar;q=0.8,tr;q=0.7',
+  'Accept-Encoding': 'gzip, deflate, br',
+  'Sec-Fetch-Dest': 'document',
+  'Sec-Fetch-Mode': 'navigate',
+  'Sec-Fetch-Site': 'none',
+  'Upgrade-Insecure-Requests': '1',
+};
+// Часть сайтов (final.edu.tr, uowdubai.ac.ae) отбивает любой прямой запрос HTTP 403 —
+// это защита WAF, заголовками не лечится. Для них поднимается настоящий браузер.
+// Включается флагом --browser, потому что он на порядок медленнее обычного запроса.
+const USE_BROWSER = args.has('browser');
+let browserPage = null;
+
+async function browserGet(url) {
+  if (!browserPage) {
+    const { chromium } = await import('playwright');
+    const b = await chromium.launch({ headless: true });
+    const ctx = await b.newContext({ userAgent: UA, locale: 'en-US' });
+    browserPage = await ctx.newPage();
+  }
+  const r = await browserPage.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+  if (!r || !r.ok()) throw new Error(`browser HTTP ${r ? r.status() : '?'} :: ${url}`);
+  return await browserPage.content();
+}
+
+const get = async (url) => {
+  try { return await fetchHtml(url, { headers: BROWSER_HEADERS }); }
+  catch (e) {
+    if (!USE_BROWSER || !/HTTP 40[3169]|network/.test(String(e.message))) throw e;
+    return browserGet(url);
+  }
+};
+
+/** Запасные написания адреса: без www, с www, http. Домен не выдумываем — только формы данного. */
+function originCandidates(origin) {
+  const u = new URL(origin);
+  const bare = u.hostname.replace(/^www\./, '');
+  return [...new Set([
+    `${u.protocol}//${u.hostname}`,
+    `https://${bare}`,
+    `https://www.${bare}`,
+    `http://${bare}`,
+  ])];
+}
+
+/** Первый адрес, который вообще отвечает. null — сайт недоступен, это факт для отчёта. */
+async function reachableOrigin(origin) {
+  for (const cand of originCandidates(origin)) {
+    try { await get(cand); return cand; } catch { /* пробуем следующее написание */ }
+  }
+  return null;
+}
 
 // Страница со сводной таблицей стоимости — цены у большинства вузов лежат НЕ на
 // странице программы, а отдельно. Поймано первым прогоном: у anglo-american 151
@@ -150,19 +217,27 @@ function absolute(href, base) {
 
 // ------------------------------------------------------------------ обход ----
 
+// Вложенные карты, которые почти наверняка блог, а не курсы. Поймано на
+// uni-milton.hu: индекс из 176 карт, первые 12 — помесячные архивы постов,
+// обходчик упирался в лимит и уходил с нулём.
+const BLOG_SITEMAP = /(post|news|blog|event|author|tag|category)/i;
+const MAX_SITEMAPS = 40;
+
 async function fromSitemap(origin) {
   const urls = new Set();
-  const queue = [`${origin}/sitemap.xml`, `${origin}/sitemap_index.xml`];
+  let queue = [`${origin}/sitemap.xml`, `${origin}/sitemap_index.xml`, `${origin}/sitemap-index.xml`];
   const seen = new Set();
-  while (queue.length && urls.size < 4000) {
+  while (queue.length && urls.size < 8000 && seen.size < MAX_SITEMAPS) {
+    // карты страниц разбираем раньше архивов блога
+    queue.sort((a, b) => Number(BLOG_SITEMAP.test(a)) - Number(BLOG_SITEMAP.test(b)));
     const sm = queue.shift();
-    if (seen.has(sm) || seen.size > 12) continue;
+    if (seen.has(sm)) continue;
     seen.add(sm);
     let xml;
-    try { xml = await fetchHtml(sm); } catch { continue; }
+    try { xml = await get(sm); } catch { continue; }
     for (const m of xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/gi)) {
       const u = m[1];
-      if (/\.xml(\.gz)?$/i.test(u)) { if (seen.size <= 12) queue.push(u); continue; }
+      if (/\.xml(\.gz)?$/i.test(u)) { queue.push(u); continue; }
       urls.add(u);
     }
   }
@@ -174,7 +249,7 @@ async function fromCrawl(origin) {
   const indexPages = ['', '/courses', '/programmes', '/programs', '/study', '/academics', '/study-with-us'];
   for (const p of indexPages) {
     let html;
-    try { html = await fetchHtml(origin + p); } catch { continue; }
+    try { html = await get(origin + p); } catch { continue; }
     for (const m of html.matchAll(/href\s*=\s*["']([^"']+)["']/gi)) {
       const u = absolute(m[1], origin + p);
       if (u && u.startsWith(origin)) found.add(u);
@@ -225,7 +300,8 @@ const normTitle = (s) => (s || '').toLowerCase()
 // ------------------------------------------------------------------ вуз ----
 
 async function collectUni({ slug, name, official }) {
-  const origin = new URL(official).origin;
+  const origin = await reachableOrigin(new URL(official).origin);
+  if (!origin) return { unreachable: true };
   let all = await fromSitemap(origin);
   let viaSitemap = all.length > 0;
   // Sitemap может существовать и при этом не содержать курсов (так было у ciu и gedu) —
@@ -245,7 +321,7 @@ async function collectUni({ slug, name, official }) {
 
   for (const url of pages) {
     let html;
-    try { html = await fetchHtml(url); } catch { continue; }
+    try { html = await get(url); } catch { continue; }
     parsed++;
     const title = pageTitle(html);
     if (!looksLikeProgram(title)) { rejected++; continue; }
@@ -288,7 +364,7 @@ async function collectUni({ slug, name, official }) {
   const feeTable = [];
   for (const url of feePages) {
     let html;
-    try { html = await fetchHtml(url); } catch { continue; }
+    try { html = await get(url); } catch { continue; }
     feeTable.push(...parseFeeTable(htmlToCells(html), url));
   }
   const feeByTitle = new Map();
@@ -348,6 +424,20 @@ async function main() {
     if (ONLY && slug !== ONLY) continue;
     if (done >= LIMIT) break;
 
+    // Среда убивает долгий фоновый процесс примерно через 45 минут, поэтому прогон
+    // должен продолжаться пачками: уже собранное сегодня пропускаем.
+    if (SKIP_FRESH) {
+      const prev = await readIfFresh(path.join(KOMPAS_DIR, 'extracts', 'direct', `${slug}.json`));
+      if (prev) {
+        // в сводку кладём цифры прежней пачки, иначе отчёт покажет только добранное
+        const { programs: _p, feeTable: _f, ...e } = prev;
+        log(`${slug}: свежая выгрузка есть — пропуск`);
+        report.push({ slug, name: prev.name, status: 'ok', official: prev.sourceUrl, ...e,
+          programs: prev.programs?.length ?? 0, fromPreviousBatch: true });
+        continue;
+      }
+    }
+
     let uni;
     try { uni = JSON.parse(await fs.readFile(path.join(CATALOG_DIR, `${slug}.json`), 'utf8')); }
     catch { log(`${slug}: карточки нет — пропуск`); report.push({ slug, status: 'no-card' }); continue; }
@@ -369,7 +459,14 @@ async function main() {
 
     done++;
     try {
-      const { payload, noPrice } = await collectUni({ slug, name: uni.name, official });
+      const res = await collectUni({ slug, name: uni.name, official });
+      if (res.unreachable) {
+        // сайт не ответил ни на одном написании адреса — это факт про сайт, а не про сбор
+        log(`${slug}: сайт не отвечает (${official})`);
+        report.push({ slug, name: uni.name, status: 'unreachable', official });
+        continue;
+      }
+      const { payload, noPrice } = res;
       const w = await writeExtract('direct', slug, payload, { dryRun: DRY });
       // extract() спредит extra в КОРЕНЬ payload, отдельного поля .extra нет —
       // поэтому счётчики берём из корня, а массив programs из отчёта исключаем.
