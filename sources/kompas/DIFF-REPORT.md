@@ -7,22 +7,22 @@
 | Показатель | Значение |
 |---|---|
 | Карточек в рабочей копии | 823 |
-| Из них партнёрских | 710 (не партнёры: 113) |
-| **Сверено с источником** | **455** |
-| Сверить не с чем: источник за логином | 229 (QS, IAPro) |
+| Из них партнёрских | 708 (не партнёры: 115) |
+| **Сверено с источником** | **456** |
+| Сверить не с чем: источник за логином | 227 (QS, IAPro) |
 | Сверить не с чем: источник без программ | 11 (Navitas, CATS) |
-| Сверить не с чем: источник готов, выгрузки по вузу нет | 15 |
-| Программ в каталоге (сверенные вузы) | 57219 |
-| Программ у источников (объединение) | 51273 |
-| Совпало названий | 35787 (из них по написанию: 356) |
-| Есть в каталоге, нет у источника | 21432 |
-| Есть у источника, нет в каталоге | 15486 |
-| Цена расходится | 2222 |
-| **Валюта расходится** | **78** |
-| У источника цена есть, в каталоге нет | 25557 |
+| Сверить не с чем: источник готов, выгрузки по вузу нет | 14 |
+| Программ в каталоге (сверенные вузы) | 57490 |
+| Программ у источников (объединение) | 51362 |
+| Совпало названий | 35869 (из них по написанию: 356) |
+| Есть в каталоге, нет у источника | 21621 |
+| Есть у источника, нет в каталоге | 15493 |
+| Цена расходится | 2232 |
+| **Валюта расходится** | **79** |
+| У источника цена есть, в каталоге нет | 25560 |
 | Кампусы источника, которых нет в карточке | 96 |
 
-Кейсов в панель: **2099** — kompas_programs_missing 250, kompas_programs_extra 331, kompas_fee_mismatch 1065, kompas_campus_missing 56, kompas_fee_absent 338, kompas_fee_currency 10, kompas_fee_mismatch_rest 32, kompas_no_extract 15, kompas_source_blocked 1, kompas_source_empty 1.
+Кейсов в панель: **2113** — kompas_programs_missing 250, kompas_programs_extra 333, kompas_fee_mismatch 1075, kompas_campus_missing 56, kompas_fee_absent 340, kompas_fee_currency 11, kompas_fee_mismatch_rest 32, kompas_no_extract 14, kompas_source_blocked 1, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -85,4 +85,5 @@
 | Asia Pacific University of Technology and Innovation (`apu-malaysia`) | 2 | direct+edvoy |
 | BHMS — Business and Hotel Management School (`bhms`) | 2 | edvoy |
 | Hult International Business School (`hult`) | 2 | edvoy |
+| University of Niagara Falls Canada (`niagara-falls`) | 1 | edvoy |
 

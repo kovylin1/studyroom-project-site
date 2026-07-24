@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-07-24T03:47:44.927Z",
+  "generatedAt": "2026-07-24T07:22:46.881Z",
   "scope": "kompas-session4",
   "summary": {
     "catalogFiles": 823,
-    "notPartner": 113,
-    "partners": 710,
-    "compared": 455,
-    "sourceBlocked": 229,
+    "notPartner": 115,
+    "partners": 708,
+    "compared": 456,
+    "sourceBlocked": 227,
     "sourceEmpty": 11,
-    "noExtract": 15,
-    "programsCatalog": 57219,
-    "programsSource": 51273,
-    "matched": 35787,
+    "noExtract": 14,
+    "programsCatalog": 57490,
+    "programsSource": 51362,
+    "matched": 35869,
     "matchedFuzzy": 356,
-    "catalogOnly": 21432,
-    "sourceOnly": 15486,
-    "feeMismatch": 2222,
-    "feeMissingInCatalog": 25557,
-    "feeCurrency": 78,
+    "catalogOnly": 21621,
+    "sourceOnly": 15493,
+    "feeMismatch": 2232,
+    "feeMissingInCatalog": 25560,
+    "feeCurrency": 79,
     "campusMissing": 96,
     "extractsLoaded": {
       "kaplan": 24,
@@ -185,7 +185,6 @@
     "new-haven",
     "newcastle-au",
     "newcastle-college-au",
-    "niagara-falls",
     "nicosia-medical",
     "nmit-nz",
     "north-broward-prep",
@@ -246,7 +245,6 @@
     "uclan-cyprus",
     "uic",
     "unbc",
-    "university-of-law",
     "utah",
     "utsa",
     "uwe-bristol",
@@ -291,7 +289,6 @@
     "niagara-college-toronto",
     "royal-holloway-direct-entry",
     "texas-aandm-corpus-christi-university-direct-entry",
-    "the-university-of-law",
     "toronto-school-of-management",
     "trine-university",
     "university-of-gloucestershire"
@@ -11704,7 +11701,7 @@
       }
     },
     {
-      "slug": "humber-polytechnic",
+      "slug": "humber-college",
       "name": "Humber Polytechnic",
       "type": "aggregator",
       "assigned": [
@@ -11716,13 +11713,13 @@
       "blocked": [],
       "empty": [],
       "status": "compared",
-      "catalogPrograms": 6,
+      "catalogPrograms": 29,
       "sourcePrograms": 3,
       "matched": 2,
       "matchedFuzzy": 0,
-      "catalogOnly": 4,
+      "catalogOnly": 27,
       "sourceOnly": 1,
-      "catalogWithFee": 0,
+      "catalogWithFee": 16,
       "sourceWithFee": 3,
       "feeMismatch": 0,
       "feeMissingInCatalog": 2,
@@ -11730,17 +11727,18 @@
       "catalogCampuses": 1,
       "sourceCampuses": 2,
       "campusMissing": 1,
-      "hasDescription": true,
-      "scholarships": 0,
+      "hasDescription": false,
+      "scholarships": 4,
       "samples": {
         "sourceOnly": [
           "Ontario Graduate Certificate Health Informatics"
         ],
         "catalogOnly": [
-          "Bachelor of Commerce Marketing Students Develop Strategic Capstone Campaigns for Real-World Clients",
-          "Bachelor of Commerce Marketing Students Drive Promotion for Annual Golf Pop-Up Event",
-          "Bachelor of Community Development",
-          "Master’s Degrees in Engineering and Cybersecurity"
+          "Bachelor of Commerce – Accounting",
+          "Bachelor of Commerce – International Business",
+          "Bachelor of Commerce – Human Resources Management",
+          "Bachelor of Commerce – Marketing",
+          "Bachelor of Commerce – Finance"
         ],
         "feeMismatch": [],
         "fuzzyPairs": []
@@ -17967,16 +17965,45 @@
       "name": "University of Niagara Falls Canada",
       "type": "aggregator",
       "assigned": [
-        "qs"
+        "qs",
+        "edvoy"
       ],
-      "ready": [],
+      "ready": [
+        "edvoy"
+      ],
       "blocked": [
         "qs"
       ],
       "empty": [],
-      "status": "source-blocked",
-      "catalogPrograms": 53,
-      "sourcePrograms": 0
+      "status": "compared",
+      "catalogPrograms": 54,
+      "sourcePrograms": 9,
+      "matched": 9,
+      "matchedFuzzy": 0,
+      "catalogOnly": 45,
+      "sourceOnly": 0,
+      "catalogWithFee": 14,
+      "sourceWithFee": 9,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 1,
+      "feeCurrency": 1,
+      "catalogCampuses": 2,
+      "sourceCampuses": 1,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 1,
+      "samples": {
+        "sourceOnly": [],
+        "catalogOnly": [
+          "Bachelor of Commerce — Business Administration",
+          "Bachelor of Science — Information Technology",
+          "Bachelor of Hospitality Management",
+          "Bachelor of Health Sciences",
+          "Master of Business Administration"
+        ],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "nicosia-medical",
@@ -24462,22 +24489,6 @@
       }
     },
     {
-      "slug": "the-university-of-law",
-      "name": "The University of Law",
-      "type": "aggregator",
-      "assigned": [
-        "edvoy"
-      ],
-      "ready": [
-        "edvoy"
-      ],
-      "blocked": [],
-      "empty": [],
-      "status": "no-extract",
-      "catalogPrograms": 90,
-      "sourcePrograms": 0
-    },
-    {
       "slug": "the-university-of-melbourne",
       "name": "The University of Melbourne",
       "type": "aggregator",
@@ -27380,16 +27391,107 @@
       "name": "University of Law",
       "type": "aggregator",
       "assigned": [
-        "qs"
+        "qs",
+        "edvoy"
       ],
-      "ready": [],
+      "ready": [
+        "edvoy"
+      ],
       "blocked": [
         "qs"
       ],
       "empty": [],
-      "status": "source-blocked",
-      "catalogPrograms": 199,
-      "sourcePrograms": 0
+      "status": "compared",
+      "catalogPrograms": 202,
+      "sourcePrograms": 89,
+      "matched": 81,
+      "matchedFuzzy": 0,
+      "catalogOnly": 121,
+      "sourceOnly": 8,
+      "catalogWithFee": 96,
+      "sourceWithFee": 89,
+      "feeMismatch": 10,
+      "feeMissingInCatalog": 2,
+      "feeCurrency": 0,
+      "catalogCampuses": 20,
+      "sourceCampuses": 24,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 3,
+      "samples": {
+        "sourceOnly": [
+          "MBA with Fintech and Digital Finance",
+          "MSc Computing",
+          "MSc Data Science and Artificial Intelligence",
+          "MSc Computing and Artificial Intelligence",
+          "MSc Computing and Cybersecurity"
+        ],
+        "catalogOnly": [
+          "LLB (Hons) Law – Accelerated 2-Year",
+          "LLB (Hons) Business Law",
+          "Solicitors Qualifying Examination (SQE) Preparation",
+          "LLM Corporate and Commercial Law",
+          "LLM International Law"
+        ],
+        "feeMismatch": [
+          {
+            "program": "MSc Artificial Intelligence for Business",
+            "slug": "university-of-law-msc-artificial-intelligence-for-business",
+            "catalog": 17000,
+            "source": 18500,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 8.1
+          },
+          {
+            "program": "MSc Computer Science (Conversion)",
+            "slug": "university-of-law-msc-computer-science-conversion",
+            "catalog": 16000,
+            "source": 17000,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 5.9
+          },
+          {
+            "program": "MSc Business Analytics",
+            "slug": "university-of-law-msc-business-analytics",
+            "catalog": 17000,
+            "source": 12000,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 29.4
+          },
+          {
+            "program": "MSc Cyber Security Management",
+            "slug": "university-of-law-msc-cyber-security-management",
+            "catalog": 17000,
+            "source": 15850,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 6.8
+          },
+          {
+            "program": "MSc Marketing",
+            "slug": "university-of-law-msc-marketing",
+            "catalog": 17000,
+            "source": 15850,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 6.8
+          }
+        ],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "university-of-leeds",
@@ -27721,44 +27823,6 @@
           "Bachelor of Science in Information Technology",
           "Bachelor of Science in International Relations"
         ],
-        "feeMismatch": [],
-        "fuzzyPairs": []
-      }
-    },
-    {
-      "slug": "university-of-niagara-falls",
-      "name": "University of Niagara Falls",
-      "type": "aggregator",
-      "assigned": [
-        "edvoy"
-      ],
-      "ready": [
-        "edvoy"
-      ],
-      "blocked": [],
-      "empty": [],
-      "status": "compared",
-      "catalogPrograms": 8,
-      "sourcePrograms": 9,
-      "matched": 8,
-      "matchedFuzzy": 0,
-      "catalogOnly": 0,
-      "sourceOnly": 1,
-      "catalogWithFee": 8,
-      "sourceWithFee": 9,
-      "feeMismatch": 0,
-      "feeMissingInCatalog": 0,
-      "feeCurrency": 0,
-      "catalogCampuses": 1,
-      "sourceCampuses": 1,
-      "campusMissing": 0,
-      "hasDescription": true,
-      "scholarships": 0,
-      "samples": {
-        "sourceOnly": [
-          "English for Academic Purposes"
-        ],
-        "catalogOnly": [],
         "feeMismatch": [],
         "fuzzyPairs": []
       }

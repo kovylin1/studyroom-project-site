@@ -1709,14 +1709,14 @@
     ]
   },
   "humber-college": {
-    "type": "none",
-    "via": []
-  },
-  "humber-polytechnic": {
     "type": "aggregator",
     "via": [
       "edvoy"
     ]
+  },
+  "humber-polytechnic": {
+    "type": "none",
+    "via": []
   },
   "ibs-budapest": {
     "type": "direct",
@@ -2839,7 +2839,8 @@
   "niagara-falls": {
     "type": "aggregator",
     "via": [
-      "qs"
+      "qs",
+      "edvoy"
     ]
   },
   "nicosia-medical": {
@@ -3907,10 +3908,8 @@
     ]
   },
   "the-university-of-law": {
-    "type": "aggregator",
-    "via": [
-      "edvoy"
-    ]
+    "type": "none",
+    "via": []
   },
   "the-university-of-melbourne": {
     "type": "aggregator",
@@ -4344,7 +4343,8 @@
   "university-of-law": {
     "type": "aggregator",
     "via": [
-      "qs"
+      "qs",
+      "edvoy"
     ]
   },
   "university-of-leeds": {
@@ -4397,10 +4397,8 @@
     "note": "Дубль строки «NY, Prague» — тот же вуз, в документе записан дважды."
   },
   "university-of-niagara-falls": {
-    "type": "aggregator",
-    "via": [
-      "edvoy"
-    ]
+    "type": "none",
+    "via": []
   },
   "university-of-north-carolina-at-greensboro": {
     "type": "aggregator",
