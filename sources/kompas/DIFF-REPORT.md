@@ -17,12 +17,12 @@
 | Совпало названий | 49937 (из них по написанию: 356) |
 | Есть в каталоге, нет у источника | 21621 |
 | Есть у источника, нет в каталоге | 1794 |
-| Цена расходится | 1833 |
-| **Валюта расходится** | **77** |
+| Цена расходится | 1831 |
+| **Валюта расходится** | **92** |
 | У источника цена есть, в каталоге нет | 1720 |
 | Кампусы источника, которых нет в карточке | 96 |
 
-Кейсов в панель: **1322** — kompas_programs_extra 333, kompas_campus_missing 56, kompas_fee_mismatch 787, kompas_fee_absent 48, kompas_programs_missing 57, kompas_fee_currency 10, kompas_fee_mismatch_rest 21, kompas_no_extract 8, kompas_source_blocked 1, kompas_source_empty 1.
+Кейсов в панель: **1321** — kompas_programs_extra 333, kompas_campus_missing 56, kompas_fee_mismatch 785, kompas_fee_absent 48, kompas_programs_missing 57, kompas_fee_currency 11, kompas_fee_mismatch_rest 21, kompas_no_extract 8, kompas_source_blocked 1, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -65,11 +65,11 @@
 | Southern Cross University (`southern-cross-university`) | edvoy | 271 | 56 | 56 | 215 | 0 | 0 | 0 |
 | Fairleigh Dickinson University, Vancouver (`fairleigh-dickinson-university-vancouver`) | edvoy | 231 | 19 | 19 | 212 | 0 | 0 | 0 |
 | Canterbury Christ Church University (`canterbury-christ-church`) | edvoy+iapro | 382 | 186 | 186 | 196 | 0 | 3 | 0 |
+| BHMS — Business and Hotel Management School (`bhms`) | edvoy | 66 | 15 | 15 | 51 | 0 | 0 | 15 |
 | KAPLAN (`kaplan`) | edvoy | 681 | 496 | 496 | 185 | 0 | 5 | 0 |
 | Griffith College (`griffith-ireland`) | edvoy | 195 | 9 | 9 | 186 | 0 | 4 | 0 |
 | University of Galway (`galway`) | edvoy | 382 | 186 | 186 | 196 | 0 | 0 | 0 |
 | Griffith University (`griffith`) | edvoy | 963 | 915 | 913 | 50 | 2 | 46 | 0 |
-| Ravensbourne University London (`ravensbourne`) | edvoy | 105 | 50 | 50 | 55 | 0 | 42 | 0 |
 
 ## Расхождение валюты (недостоверность на сайте)
 
@@ -77,6 +77,7 @@
 |---|---:|---|
 | University of Chester (`chester`) | 23 | kaplan+edvoy |
 | Arden University (`arden`) | 19 | edvoy+iapro |
+| BHMS — Business and Hotel Management School (`bhms`) | 15 | edvoy |
 | Schiller International University (`schiller-international-university`) | 10 | edvoy+gedu |
 | De Montfort University Dubai (`de-montfort-dubai`) | 7 | edvoy |
 | Middlesex University Dubai (`middlesex-dubai`) | 6 | direct+edvoy |
