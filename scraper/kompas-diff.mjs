@@ -1,10 +1,12 @@
-// kompas-diff.mjs — КОМПАС, сессия 4: замер расхождений «карточка каталога vs её источник».
+// kompas-diff.mjs — КОМПАС, сессия 4: замер расхождений «карточка каталога vs источник».
 //
 // Что делает: по каждому партнёрскому вузу берёт карточку рабочей копии
 // (sources/kompas/catalog-work) и сравнивает с ОБЪЕДИНЕНИЕМ выгрузок его источников
 // (правило 3 плана: агрегаторы дополняют друг друга, не режут).
 //
-// Сети нет. Каталог не трогается вообще — только чтение (правило 5).
+// Ядро сравнения вынесено в lib/kompas-diff-core.mjs (сессия 5) — этот файл только
+// раскладывает результат diffUniversity в отчёт и кейсы панели. Сети нет, каталог
+// не трогается (правило 5).
 //
 // Выход:
 //   sources/kompas/diff-report.json   — полный замер по вузам и полям
@@ -16,134 +18,14 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { KOMPAS_DIR, logger } from './lib/kompas-collect.mjs';
-import { normProgram, normCatalogProgram, similarity, isSubsetPair, SIM_THRESHOLD } from './lib/kompas-normalize.mjs';
+import {
+  WORK_DIR, SOURCES, FEE_TOLERANCE, readJson,
+  loadSourceIndex, resolveAssignment, diffUniversity,
+} from './lib/kompas-diff-core.mjs';
 
 const log = logger('diff');
 
-const WORK_DIR = path.join(KOMPAS_DIR, 'catalog-work');
-const EXTRACTS = path.join(KOMPAS_DIR, 'extracts');
-const GEDU_DIR = path.join(KOMPAS_DIR, '..', '..', 'scraper', 'sources', 'gedu-extracts');
-
-// Состояние источников на 2026-07-23. «blocked» и «empty» — не наш промах разметки,
-// а отсутствие данных; такие вузы в кейсы поштучно НЕ идут, иначе панель забьётся
-// четырьмя сотнями одинаковых карточек. Они сведены в отчёт и в один сводный кейс.
-const SOURCES = {
-  kaplan: { dir: path.join(EXTRACTS, 'kaplan'), state: 'ready' },
-  'oxford-international': { dir: path.join(EXTRACTS, 'oxford-international'), state: 'ready' },
-  qahe: { dir: path.join(EXTRACTS, 'qahe'), state: 'ready' },
-  studygroup: { dir: path.join(EXTRACTS, 'studygroup'), state: 'ready' },
-  edvoy: { dir: path.join(EXTRACTS, 'edvoy'), state: 'ready' },
-  gedu: { dir: GEDU_DIR, state: 'ready' },
-  direct: { dir: path.join(EXTRACTS, 'direct'), state: 'ready' },
-  // IAPro открылся 2026-07-23: ProgrammeFinder отдаёт названия, уровни и города.
-  // Цен там нет — по стоимости эти вузы сверяются другими источниками.
-  iapro: { dir: path.join(EXTRACTS, 'iapro'), state: 'ready' },
-  qs: { dir: null, state: 'blocked', why: 'портал QS Apply отклонил учётные данные, программ нет' },
-  navitas: { dir: null, state: 'empty', why: 'у сайтов колледжей нет типа записи «курс», сбор не дал программ' },
-  cats: { dir: null, state: 'empty', why: 'у CATS школы, а не программы в единой форме' },
-};
-
-const FEE_TOLERANCE = 0.02;   // ниже — округление источника, не расхождение
 const CASE_CAP_PER_UNI = 20;  // потолок поштучных кейсов на вуз; остаток уходит в сводный
-
-const readJson = async (f) => { try { return JSON.parse(await fs.readFile(f, 'utf8')); } catch { return null; } };
-
-// ------------------------------------------------------------------ загрузка --
-
-async function loadSourceIndex() {
-  const index = new Map();   // slug → [{ src, data }]
-  const loaded = {};
-  for (const [src, cfg] of Object.entries(SOURCES)) {
-    if (cfg.state !== 'ready') { loaded[src] = 0; continue; }
-    let files = [];
-    try { files = (await fs.readdir(cfg.dir)).filter((f) => f.endsWith('.json')); } catch { files = []; }
-    let n = 0;
-    for (const f of files) {
-      const data = await readJson(path.join(cfg.dir, f));
-      if (!data) continue;
-      const slug = data.catalogSlug ?? data.slug ?? f.replace(/\.json$/, '');
-      if (!index.has(slug)) index.set(slug, []);
-      index.get(slug).push({ src, data });
-      n++;
-    }
-    loaded[src] = n;
-  }
-  return { index, loaded };
-}
-
-// Объединение программ источников. Дубли внутри объединения схлопываем по
-// нормализованному названию, но цену подтягиваем из того источника, где она есть:
-// у одного вуза Edvoy даёт название, а Kaplan — сумму.
-function unionPrograms(entries) {
-  const out = [];
-  const byNorm = new Map();
-  for (const { src, data } of entries) {
-    for (const raw of data.programs ?? []) {
-      const p = normProgram(raw, src, data.currency);
-      if (!p.norm) continue;
-      const seen = byNorm.get(p.norm);
-      if (!seen) { byNorm.set(p.norm, p); out.push(p); continue; }
-      if (!seen.fee && p.fee) seen.fee = p.fee;
-      if (!seen.level && p.level) seen.level = p.level;
-      if (!seen.duration && p.duration) seen.duration = p.duration;
-      seen.via = seen.via === p.via ? seen.via : `${seen.via}+${p.via}`;
-    }
-  }
-  return out;
-}
-
-function unionCampuses(entries) {
-  const set = new Set();
-  for (const { data } of entries) {
-    for (const c of data.campuses ?? []) set.add(typeof c === 'string' ? c : (c.title ?? c.name ?? ''));
-    for (const p of data.programs ?? []) for (const c of p.campuses ?? []) set.add(String(c));
-    if (data.campus) set.add(String(data.campus));
-  }
-  set.delete('');
-  return [...set];
-}
-
-// --------------------------------------------------------------- сопоставление --
-
-// Сначала точные совпадения нормализованных названий, потом жадное сближение
-// по Жаккару. Порядок важен: без точного прохода «BA Business» может увести
-// к «BA Business Management» и обе программы отчитаются как расхождение.
-function pairPrograms(catalog, source) {
-  const pairs = [];
-  const srcByNorm = new Map();
-  for (const p of source) if (!srcByNorm.has(p.norm)) srcByNorm.set(p.norm, p);
-
-  const usedSrc = new Set();
-  const restCat = [];
-
-  for (const c of catalog) {
-    const hit = srcByNorm.get(c.norm);
-    if (hit && !usedSrc.has(hit)) { pairs.push({ cat: c, src: hit, how: 'exact' }); usedSrc.add(hit); }
-    else restCat.push(c);
-  }
-
-  const restSrc = source.filter((p) => !usedSrc.has(p));
-  for (const c of restCat.slice()) {
-    let best = null; let bestScore = 0;
-    for (const s of restSrc) {
-      if (usedSrc.has(s)) continue;
-      if (isSubsetPair(c.title, s.title)) continue;   // специализация, а не другое написание
-      const score = similarity(c.title, s.title);
-      if (score > bestScore) { bestScore = score; best = s; }
-    }
-    if (best && bestScore >= SIM_THRESHOLD) {
-      pairs.push({ cat: c, src: best, how: 'fuzzy', score: Number(bestScore.toFixed(2)) });
-      usedSrc.add(best);
-      restCat.splice(restCat.indexOf(c), 1);
-    }
-  }
-
-  return {
-    pairs,
-    catalogOnly: restCat,
-    sourceOnly: source.filter((p) => !usedSrc.has(p)),
-  };
-}
 
 // ---------------------------------------------------------------------- замер --
 
@@ -162,17 +44,11 @@ async function main() {
     const card = await readJson(path.join(WORK_DIR, f));
     if (!card) continue;
 
-    const ps = card.partnerSource ?? map[slug] ?? { type: 'none', via: [] };
+    const { ps, assigned, ready, blocked, empty } = resolveAssignment(card, slug, map);
     if (ps.type === 'none') { skipped.notPartner++; continue; }
 
-    const assigned = ps.type === 'direct' ? ['direct', ...(ps.via ?? [])] : (ps.via ?? []);
-    const ready = assigned.filter((s) => SOURCES[s]?.state === 'ready');
-    const blocked = assigned.filter((s) => SOURCES[s]?.state === 'blocked');
-    const empty = assigned.filter((s) => SOURCES[s]?.state === 'empty');
-
     const entries = (index.get(slug) ?? []).filter((e) => ready.includes(e.src));
-
-    const catPrograms = (card.programs ?? []).map((p) => normCatalogProgram(p, card));
+    const catProgramsLen = (card.programs ?? []).length;
 
     if (!entries.length) {
       // Нет данных. Разделяем ЧЕСТНО: закрытый портал — это блокер и не наш пробел;
@@ -180,7 +56,7 @@ async function main() {
       const row = {
         slug, name: card.name ?? slug, type: ps.type, assigned, ready, blocked, empty,
         status: ready.length ? 'no-extract' : (blocked.length ? 'source-blocked' : 'source-empty'),
-        catalogPrograms: catPrograms.length, sourcePrograms: 0,
+        catalogPrograms: catProgramsLen, sourcePrograms: 0,
       };
       report.push(row);
       if (ready.length) {
@@ -190,8 +66,8 @@ async function main() {
           slug, name: row.name,
           issue: 'kompas_no_extract',
           severity: 'warning',
-          detail: `Вуз размечен партнёром через ${ready.join(', ')}, источник собран, но выгрузки по этому вузу нет. В карточке ${catPrograms.length} программ — сверить не с чем.`,
-          catalog: catPrograms.length, official: null, program: null, sourceUrl: card.sourceUrl ?? null,
+          detail: `Вуз размечен партнёром через ${ready.join(', ')}, источник собран, но выгрузки по этому вузу нет. В карточке ${catProgramsLen} программ — сверить не с чем.`,
+          catalog: catProgramsLen, official: null, program: null, sourceUrl: card.sourceUrl ?? null,
           checkedAt: now, decision: null, decidedAt: null, applied: false,
         });
       } else if (blocked.length) skipped.blockedOnly.push(slug);
@@ -199,35 +75,9 @@ async function main() {
       continue;
     }
 
-    const srcPrograms = unionPrograms(entries);
-    const { pairs, catalogOnly, sourceOnly } = pairPrograms(catPrograms, srcPrograms);
-
-    // ---- цены
-    const feeMismatch = []; const feeMissingInCatalog = []; const feeCurrency = [];
-    for (const { cat, src } of pairs) {
-      if (!src.fee) continue;
-      if (!cat.fee) { feeMissingInCatalog.push({ program: cat.title, slug: cat.slug, source: src.fee, via: src.via }); continue; }
-      if (cat.fee.currency !== src.fee.currency) {
-        feeCurrency.push({ program: cat.title, slug: cat.slug, catalog: cat.fee, source: src.fee, via: src.via });
-        continue;
-      }
-      const rel = Math.abs(cat.fee.amount - src.fee.amount) / Math.max(cat.fee.amount, src.fee.amount);
-      if (rel > FEE_TOLERANCE) {
-        feeMismatch.push({
-          program: cat.title, slug: cat.slug,
-          catalog: cat.fee.amount, source: src.fee.amount, currency: src.fee.currency,
-          basis: src.fee.basis, audience: src.fee.audience, via: src.via,
-          rel: Number((rel * 100).toFixed(1)),
-        });
-      }
-    }
-
-    // ---- кампусы (описания и стипендии источники не отдают — см. отчёт)
-    const srcCampuses = unionCampuses(entries);
-    const catCampuses = (card.campuses ?? []).map((c) => String(c.title ?? c.sub ?? ''));
-    const campusMissing = srcCampuses.filter(
-      (s) => !catCampuses.some((c) => similarity(c, s) >= 0.6),
-    );
+    const d = diffUniversity(card, entries);
+    const { catPrograms, srcPrograms, pairs, catalogOnly, sourceOnly,
+      feeMismatch, feeMissingInCatalog, feeCurrency, catCampuses, srcCampuses, campusMissing } = d;
 
     const row = {
       slug, name: card.name ?? slug, type: ps.type, assigned, ready, blocked, empty,
