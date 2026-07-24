@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-07-24T15:46:35.894Z",
+  "scope": "kompas-fix-currency",
+  "summary": {
+    "relabeled": 1,
+    "reviewedKept": 12
+  },
+  "items": [
+    {
+      "id": "bhms||kompas_fee_currency_fixed||EUR-CHF",
+      "slug": "bhms",
+      "name": "bhms",
+      "issue": "kompas_fee_currency_fixed",
+      "severity": "info",
+      "detail": "Валюта карточки исправлена EUR → CHF. BHMS — швейцарская школа гостеприимства (Люцерн), прайсит в CHF. Суммы карточки (27–38k) — франки; метка EUR ошибочна, источник даёт CHF. EUR/CHF ≈ паритет, поэтому сумма как число остаётся верной под новой валютой. Суммы не пересчитывались (относка метки). Откат — sources/kompas/currency-fix-backup.json.",
+      "catalog": null,
+      "official": null,
+      "program": null,
+      "sourceUrl": null,
+      "checkedAt": "2026-07-24T15:46:35.894Z",
+      "decision": "applied",
+      "decidedAt": "2026-07-24T15:46:35.894Z",
+      "applied": true
+    },
+    {
+      "id": "__kompas__||kompas_fee_currency_reviewed||12",
+      "slug": "__kompas__",
+      "name": "КОМПАС — валютный обзор P0.4",
+      "issue": "kompas_fee_currency_reviewed",
+      "severity": "info",
+      "detail": "79 расхождений валюты сверены со страной вуза. Настоящий баг один — bhms EUR→CHF (исправлен). Остальные 12 проверенных вузов оставлены как есть: arden (UK, каталог GBP = нац. валюта; источник EUR — пересчёт); chester (UK, каталог GBP = нац. валюта; источник USD — пересчёт); global-banking-school (UK, каталог GBP = нац. валюта; источник EUR — пересчёт); niagara-falls (Canada, каталог CAD = нац. валюта; источник GBP — пересчёт); hult (US HQ, каталог USD = нац. валюта; источник AED/GBP — другие кампусы); schiller-international-university (US HQ, каталог USD = нац. валюта; источник EUR/GBP — кампусы ЕС); apu-malaysia (Malaysia, каталог USD — настоящий международный прайс (4.5–7.8k USD), не MYR под меткой USD); heriot-watt-malaysia (Malaysia, каталог USD — настоящий международный прайс (3.5–11.5k USD)); de-montfort-dubai (UAE, каталог USD — настоящий международный прайс (11.5–19.5k USD), не AED под меткой USD); middlesex-dubai (UAE, каталог USD — настоящий международный прайс (12.5–27.5k USD)); curtin-singapore (Singapore, AUD — офшорный кампус австралийского Curtin, прайс родителя); murdoch-dubai (UAE, AUD — офшорный кампус австралийского Murdoch, прайс родителя).",
+      "catalog": null,
+      "official": null,
+      "program": null,
+      "sourceUrl": null,
+      "checkedAt": "2026-07-24T15:46:35.894Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    }
+  ]
+}

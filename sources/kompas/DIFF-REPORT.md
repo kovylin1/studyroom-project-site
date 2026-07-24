@@ -17,12 +17,12 @@
 | Совпало названий | 36052 (из них по написанию: 356) |
 | Есть в каталоге, нет у источника | 21621 |
 | Есть у источника, нет в каталоге | 15679 |
-| Цена расходится | 1831 |
-| **Валюта расходится** | **79** |
+| Цена расходится | 1833 |
+| **Валюта расходится** | **77** |
 | У источника цена есть, в каталоге нет | 26026 |
 | Кампусы источника, которых нет в карточке | 96 |
 
-Кейсов в панель: **1822** — kompas_programs_missing 255, kompas_programs_extra 333, kompas_fee_absent 351, kompas_campus_missing 56, kompas_fee_mismatch 785, kompas_fee_currency 11, kompas_fee_mismatch_rest 21, kompas_no_extract 8, kompas_source_blocked 1, kompas_source_empty 1.
+Кейсов в панель: **1823** — kompas_programs_missing 255, kompas_programs_extra 333, kompas_fee_absent 351, kompas_campus_missing 56, kompas_fee_mismatch 787, kompas_fee_currency 10, kompas_fee_mismatch_rest 21, kompas_no_extract 8, kompas_source_blocked 1, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -83,7 +83,6 @@
 | Heriot-Watt University Malaysia (`heriot-watt-malaysia`) | 4 | edvoy |
 | Global Banking School (`global-banking-school`) | 3 | edvoy+gedu |
 | Asia Pacific University of Technology and Innovation (`apu-malaysia`) | 2 | direct+edvoy |
-| BHMS — Business and Hotel Management School (`bhms`) | 2 | edvoy |
 | Hult International Business School (`hult`) | 2 | edvoy |
 | University of Niagara Falls Canada (`niagara-falls`) | 1 | edvoy |
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T15:42:34.314Z",
+  "generatedAt": "2026-07-24T15:46:47.018Z",
   "scope": "kompas-session4",
   "summary": {
     "catalogFiles": 823,
@@ -15,9 +15,9 @@
     "matchedFuzzy": 356,
     "catalogOnly": 21621,
     "sourceOnly": 15679,
-    "feeMismatch": 1831,
+    "feeMismatch": 1833,
     "feeMissingInCatalog": 26026,
-    "feeCurrency": 79,
+    "feeCurrency": 77,
     "campusMissing": 96,
     "extractsLoaded": {
       "kaplan": 24,
@@ -2780,9 +2780,9 @@
       "sourceOnly": 0,
       "catalogWithFee": 22,
       "sourceWithFee": 15,
-      "feeMismatch": 0,
+      "feeMismatch": 2,
       "feeMissingInCatalog": 13,
-      "feeCurrency": 2,
+      "feeCurrency": 0,
       "catalogCampuses": 3,
       "sourceCampuses": 2,
       "campusMissing": 0,
@@ -2797,7 +2797,30 @@
           "Summer Programme",
           "BA in Hotel & Hospitality Management"
         ],
-        "feeMismatch": [],
+        "feeMismatch": [
+          {
+            "program": "Diploma in Pastry, Chocolate & Bakery",
+            "slug": "bhms-diploma-pastry-chocolate-bakery",
+            "catalog": 18000,
+            "source": 28100,
+            "currency": "CHF",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 35.9
+          },
+          {
+            "program": "Postgraduate Diploma in Culinary Arts",
+            "slug": "bhms-pgd-culinary-arts",
+            "catalog": 22000,
+            "source": 29100,
+            "currency": "CHF",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 24.4
+          }
+        ],
         "fuzzyPairs": []
       }
     },
