@@ -48,7 +48,8 @@ function inferLevel(title, url) {
   // english-language — ТОЛЬКО настоящие языковые курсы. «English Literature» и
   // «Speech & Language Disabilities» — это бакалаврские программы, а не ESL.
   if (/\b(esl|pre-?sessional|elicos|english language|language course)\b/.test(t)) return 'english-language';
-  return 'bachelor';
+  if (/\b(bachelor|b\.?sc|b\.?a\b|beng|llb|bba|honours|hons)\b/.test(t)) return 'bachelor';
+  return null; // явного сигнала нет — уровень возьмётся из defaultLevel карточки
 }
 
 // keepUrl: предикат «это настоящая программа», выведен глазами по каждой выгрузке.
@@ -68,6 +69,15 @@ const CARDS = {
   'elmira-college': {
     // мажоры — /academics/programs/<одно-слово>; концентрации (глубже) и служебные страницы отсекаем.
     keepUrl: (p) => /^\/academics\/programs\/[^/]+$/.test(p) && !/\/(overview|programs|undeclared)$/.test(p),
+  },
+  'fleming-college-toronto': {
+    // выгрузка уже выверена (kompas-collect-fleming.mjs), берём все её страницы под /programs/.
+    keepUrl: (p) => /^\/programs\//.test(p),
+    // Fleming — канадский колледж: программы это дипломы/сертификаты, а не бакалавриат,
+    // и тип в названии не указан. Без явного сигнала кладём short-course с длительностью
+    // 2 года (типичный онтарийский диплом), а не дефолтные 0.5.
+    defaultLevel: 'short-course',
+    defaultDuration: 2,
   },
   'london-school-of-business-and-finance': {
     // держим листовые страницы степеней/квалификаций; биографии /faculty, справку ACCA
@@ -96,6 +106,7 @@ const COUNTRY = {
   'university-of-gloucestershire': ['United Kingdom', 'GBP', 'Cheltenham'],
   'elmira-college': ['United States', 'USD', 'Elmira, NY'],
   'london-school-of-business-and-finance': ['United Kingdom', 'GBP', 'London'],
+  'fleming-college-toronto': ['Canada', 'CAD', 'Toronto'],
 };
 
 const cases = [];
@@ -115,13 +126,18 @@ async function foldCard(slug, MAP) {
   const programs = [];
   let priced = 0;
   for (const p of kept) {
-    const level = inferLevel(p.title, p.programUrl || '');
+    const inferred = inferLevel(p.title, p.programUrl || '');
+    const level = inferred ?? CARDS[slug].defaultLevel ?? 'bachelor';
+    // Длительность: у канадских колледж-дипломов short-course по умолчанию 0.5 года
+    // вводит в заблуждение (дипломы 1–3 года). Если уровень взят из defaultLevel карточки,
+    // разрешаем карточке задать свою длительность.
+    const durationYears = (!inferred && CARDS[slug].defaultDuration) ? CARDS[slug].defaultDuration : (DURATION[level] ?? 1);
     let s = slugify(`${slug}-${p.title}`) || `${slug}-p${programs.length}`;
     let n = 1; let fin = s; while (seen.has(fin)) fin = `${s}-${++n}`; seen.add(fin);
     programs.push({
       slug: fin,
       title: p.title,
-      durationYears: DURATION[level] ?? 1,
+      durationYears,
       level,
       language: 'en',
       programType: level === 'foundation' ? 'pathway' : 'degree',
