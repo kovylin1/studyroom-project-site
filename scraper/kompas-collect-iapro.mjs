@@ -113,6 +113,32 @@ async function main() {
     const best = Math.max(0, ...[...declared.values()]);
     if (best > programmes.size) log(`НЕДОБОР: получено ${programmes.size} из объявленных ${best}`);
 
+    // Сырая выгрузка ВСЕХ программ, как их отдал портал. Заведена в сессии 4.5.
+    // Причина: прошлый прогон записывал только те бренды, у которых уже была карточка
+    // каталога, — программы остальных 12 брендов не сохранились нигде, и ради них
+    // пришлось идти в портал второй раз. Дамп снимает эту зависимость навсегда:
+    // любой пересчёт делается с диска, без сети и без логина.
+    if (!DRY) {
+      await fs.mkdir(path.join(KOMPAS_DIR, 'extracts', 'iapro'), { recursive: true });
+      await fs.writeFile(path.join(KOMPAS_DIR, 'extracts', 'iapro', '_all-programmes.json'), JSON.stringify({
+        generatedAt: new Date().toISOString(),
+        source: 'ProgrammeFinder (aura.ApexAction.execute)',
+        sourceUrl: FINDER_URL,
+        declared: Object.fromEntries(declared),
+        collected: programmes.size,
+        brands: [...brands].map(([value, label]) => ({ value, label })),
+        programmes: [...programmes.values()].map((p) => ({
+          id: p.id ?? null,
+          brand: p.brand,
+          brandLabel: brands.get(p.brand) ?? null,
+          name: p.name,
+          levelName: p.levelName ?? null,
+          location: p.location ?? null,
+        })),
+      }, null, 2) + '\n', 'utf8');
+      log(`сырой дамп записан: extracts/iapro/_all-programmes.json (${programmes.size} программ)`);
+    }
+
     await fs.mkdir(path.join(KOMPAS_DIR, 'membership'), { recursive: true });
     if (!DRY) {
       await fs.writeFile(path.join(KOMPAS_DIR, 'membership', 'iapro-courses.json'), JSON.stringify({

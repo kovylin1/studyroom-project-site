@@ -28,9 +28,22 @@ async function main() {
   const now = new Date().toISOString();
 
   const mem = {};
-  for (const s of ['edvoy', 'studygroup', 'oxford-international', 'kaplan', 'qahe']) {
+  // iapro добавлен в сессии 4.5: без него любой вуз, размеченный только через IAPro,
+  // автоматически считался «меткой по устаревшим заметкам», хотя партнёрство как раз
+  // подтверждено — портал просто не отдаёт по нему программ.
+  for (const s of ['edvoy', 'studygroup', 'oxford-international', 'kaplan', 'qahe', 'iapro']) {
     try { mem[s] = await readJson(path.join(KOMPAS_DIR, 'membership', `${s}.json`)); } catch { mem[s] = null; }
   }
+  // Бренды, которые ProgrammeFinder вообще знает. Партнёр, которого в этом списке нет,
+  // — это «источник программ не отдаёт», а не «метка устарела».
+  let iaproBrands = new Set();
+  try {
+    const c = await readJson(path.join(KOMPAS_DIR, 'membership', 'iapro-courses.json'));
+    iaproBrands = new Set((c.brands ?? []).map((b) => b.label));
+  } catch { /* дампа нет — тогда просто не уточняем */ }
+  const readCard = async (slug) => {
+    try { return await readJson(path.join(KOMPAS_DIR, 'catalog-work', `${slug}.json`)); } catch { return null; }
+  };
 
   const sg = mem.studygroup ?? {};
   const mergedInto = new Map();     // слаг-дубль → слаг, в который слили
@@ -53,9 +66,16 @@ async function main() {
     const hit = g.ready.filter((s) => inList(s, g.slug));
     let kind; let detail; let via = g.ready.join(', ');
 
-    if (hit.length) {
+    const card = await readCard(g.slug);
+    if (card?.kompasStatus === 'programs-not-collected') {
+      kind = 'awaiting-collection';
+      detail = `Карточка заведена в сессии 4.5 по решению владельца: договор с учреждением есть, а программ у источника НЕТ ВОВСЕ. Это не пробел разметки и не недобор коллектора — нужен сбор с офсайта вуза. До него карточка не проходит схему (programs.min(1)) и в живой каталог не поедет.`;
+    } else if (hit.length && !(g.ready.length === 1 && g.ready[0] === 'iapro' && !iaproBrands.has(g.name))) {
       kind = 'collectable';
       detail = `Вуз есть в списке источника (${hit.join(', ')}), а выгрузки нет — недобор коллектора. Чинится прогоном, решение владельца не нужно.`;
+    } else if (g.ready.length === 1 && g.ready[0] === 'iapro') {
+      kind = 'source-no-programs';
+      detail = `Партнёрство IAPro подтверждено (вуз в реестре), но в ProgrammeFinder такого бренда нет — источник по нему программ не отдаёт. Метка верна, сверять нечем; нужен второй источник или сбор с офсайта.`;
     } else if (/-direct-entry$/.test(g.slug) || mergedInto.has(g.slug)) {
       kind = 'merged';
       const into = mergedInto.get(g.slug) ?? g.slug.replace(/-direct-entry$/, '');
