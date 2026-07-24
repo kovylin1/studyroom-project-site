@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-07-24T07:22:46.881Z",
+  "generatedAt": "2026-07-24T08:08:01.972Z",
   "scope": "kompas-session4",
   "summary": {
     "catalogFiles": 823,
     "notPartner": 115,
     "partners": 708,
-    "compared": 456,
+    "compared": 461,
     "sourceBlocked": 227,
     "sourceEmpty": 11,
-    "noExtract": 14,
-    "programsCatalog": 57490,
-    "programsSource": 51362,
-    "matched": 35869,
+    "noExtract": 9,
+    "programsCatalog": 57600,
+    "programsSource": 51658,
+    "matched": 35979,
     "matchedFuzzy": 356,
     "catalogOnly": 21621,
-    "sourceOnly": 15493,
+    "sourceOnly": 15679,
     "feeMismatch": 2232,
     "feeMissingInCatalog": 25560,
     "feeCurrency": 79,
@@ -26,7 +26,7 @@
       "studygroup": 31,
       "edvoy": 437,
       "gedu": 8,
-      "direct": 31,
+      "direct": 37,
       "iapro": 34,
       "qs": 0,
       "navitas": 0,
@@ -280,18 +280,13 @@
   "noExtractSlugs": [
     "australian-vocational-training-academy",
     "cctb",
-    "elmira-college",
     "fleming-college-toronto",
     "international-school-of-management-ism",
-    "london-school-of-business-and-finance",
     "long-island-university-brooklyn-direct-entry",
     "long-island-university-post-direct-entry",
-    "niagara-college-toronto",
     "royal-holloway-direct-entry",
     "texas-aandm-corpus-christi-university-direct-entry",
-    "toronto-school-of-management",
-    "trine-university",
-    "university-of-gloucestershire"
+    "trine-university"
   ],
   "universities": [
     {
@@ -8098,16 +8093,44 @@
       "name": "Elmira College",
       "type": "aggregator",
       "assigned": [
-        "iapro"
+        "iapro",
+        "direct"
       ],
       "ready": [
-        "iapro"
+        "iapro",
+        "direct"
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
-      "catalogPrograms": 0,
-      "sourcePrograms": 0
+      "status": "compared",
+      "catalogPrograms": 43,
+      "sourcePrograms": 105,
+      "matched": 43,
+      "matchedFuzzy": 0,
+      "catalogOnly": 0,
+      "sourceOnly": 62,
+      "catalogWithFee": 0,
+      "sourceWithFee": 0,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 0,
+      "feeCurrency": 0,
+      "catalogCampuses": 0,
+      "sourceCampuses": 0,
+      "campusMissing": 0,
+      "hasDescription": false,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [
+          "Academics",
+          "Continuing Education",
+          "Meet Our Faculty",
+          "Specialized Academic Programs",
+          "Graduate Programs"
+        ],
+        "catalogOnly": [],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "em-normandie-dubai",
@@ -15582,16 +15605,44 @@
       "name": "London School of Business and Finance",
       "type": "aggregator",
       "assigned": [
-        "iapro"
+        "iapro",
+        "direct"
       ],
       "ready": [
-        "iapro"
+        "iapro",
+        "direct"
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
-      "catalogPrograms": 0,
-      "sourcePrograms": 0
+      "status": "compared",
+      "catalogPrograms": 32,
+      "sourcePrograms": 105,
+      "matched": 32,
+      "matchedFuzzy": 0,
+      "catalogOnly": 0,
+      "sourceOnly": 73,
+      "catalogWithFee": 6,
+      "sourceWithFee": 6,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 0,
+      "feeCurrency": 0,
+      "catalogCampuses": 0,
+      "sourceCampuses": 0,
+      "campusMissing": 0,
+      "hasDescription": false,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [
+          "Faculty",
+          "LSBF Academic Management Faculty",
+          "Professor Maurits Van Rooijen",
+          "Karina Kizhner",
+          "Rathakrishnan Govind"
+        ],
+        "catalogOnly": [],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "london-south-bank",
@@ -17949,16 +18000,40 @@
       "name": "Niagara College - Toronto",
       "type": "aggregator",
       "assigned": [
-        "iapro"
+        "iapro",
+        "direct"
       ],
       "ready": [
-        "iapro"
+        "iapro",
+        "direct"
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
-      "catalogPrograms": 0,
-      "sourcePrograms": 0
+      "status": "compared",
+      "catalogPrograms": 8,
+      "sourcePrograms": 9,
+      "matched": 8,
+      "matchedFuzzy": 0,
+      "catalogOnly": 0,
+      "sourceOnly": 1,
+      "catalogWithFee": 0,
+      "sourceWithFee": 0,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 0,
+      "feeCurrency": 0,
+      "catalogCampuses": 0,
+      "sourceCampuses": 0,
+      "campusMissing": 0,
+      "hasDescription": false,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [
+          "Explore our programs"
+        ],
+        "catalogOnly": [],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "niagara-falls",
@@ -24868,16 +24943,44 @@
       "name": "Toronto School of Management",
       "type": "aggregator",
       "assigned": [
-        "iapro"
+        "iapro",
+        "direct"
       ],
       "ready": [
-        "iapro"
+        "iapro",
+        "direct"
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
-      "catalogPrograms": 0,
-      "sourcePrograms": 0
+      "status": "compared",
+      "catalogPrograms": 13,
+      "sourcePrograms": 29,
+      "matched": 13,
+      "matchedFuzzy": 0,
+      "catalogOnly": 0,
+      "sourceOnly": 16,
+      "catalogWithFee": 0,
+      "sourceWithFee": 0,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 0,
+      "feeCurrency": 0,
+      "catalogCampuses": 0,
+      "sourceCampuses": 0,
+      "campusMissing": 0,
+      "hasDescription": false,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [
+          "Faculty",
+          "Information Technology",
+          "Microcredentials",
+          "Business",
+          "Hospitality and Tourism"
+        ],
+        "catalogOnly": [],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "toulouse-business-school",
@@ -26974,16 +27077,44 @@
       "name": "University of Gloucestershire",
       "type": "aggregator",
       "assigned": [
-        "iapro"
+        "iapro",
+        "direct"
       ],
       "ready": [
-        "iapro"
+        "iapro",
+        "direct"
       ],
       "blocked": [],
       "empty": [],
-      "status": "no-extract",
-      "catalogPrograms": 0,
-      "sourcePrograms": 0
+      "status": "compared",
+      "catalogPrograms": 14,
+      "sourcePrograms": 48,
+      "matched": 14,
+      "matchedFuzzy": 0,
+      "catalogOnly": 0,
+      "sourceOnly": 34,
+      "catalogWithFee": 1,
+      "sourceWithFee": 1,
+      "feeMismatch": 0,
+      "feeMissingInCatalog": 0,
+      "feeCurrency": 0,
+      "catalogCampuses": 0,
+      "sourceCampuses": 0,
+      "campusMissing": 0,
+      "hasDescription": false,
+      "scholarships": 0,
+      "samples": {
+        "sourceOnly": [
+          "Architecture, construction & environment",
+          "Biosciences",
+          "Business",
+          "Criminology & forensics",
+          "Computing & cyber security"
+        ],
+        "catalogOnly": [],
+        "feeMismatch": [],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "university-of-greater-manchester",

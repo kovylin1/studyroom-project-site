@@ -413,15 +413,24 @@ async function collectUni({ slug, name, official }) {
 
 // ------------------------------------------------------------------ main ----
 
-const MANUAL_SITES = JSON.parse(await fs.readFile(path.join(path.dirname(fileURLToPath(import.meta.url)), 'sources', 'official-sites-manual.json'), 'utf8'));
+// Файл адресов можно переопределить: сессия 4.5 собирает 6 карточек Contract Hub
+// из отдельного списка, чтобы не пересобирать всех прямых партнёров 3.5.
+const MANUAL_FILE = args.get('manual') || path.join('sources', 'official-sites-manual.json');
+const MANUAL_SITES = JSON.parse(await fs.readFile(path.join(path.dirname(fileURLToPath(import.meta.url)), MANUAL_FILE), 'utf8'));
+// --only-manual: цели — РОВНО слаги из файла адресов, без прямых партнёров карты.
+// Нужно для сессии 4.5: её карточки помечены aggregator (via iapro), под фильтр
+// type==='direct' не попадают, а собрать их надо.
+const ONLY_MANUAL = args.has('only-manual');
 
 async function main() {
   const map = JSON.parse(await fs.readFile(path.join(KOMPAS_DIR, 'partner-source-map.json'), 'utf8'));
-  const targets = Object.entries(map).filter(([, v]) => v?.type === 'direct');
+  const targets = ONLY_MANUAL ? [] : Object.entries(map).filter(([, v]) => v?.type === 'direct');
   // прямые партнёры без карточки в каталоге: в карте сессии 1 их нет, потому что
   // карта строилась по каталогу. Адрес задан владельцем — собираем под новую карточку.
+  // В режиме --only-manual берём ВСЕ слаги файла (в т.ч. те, что уже есть в карте).
   for (const slug of Object.keys(MANUAL_SITES)) {
-    if (slug.startsWith('_') || map[slug]) continue;
+    if (slug.startsWith('_')) continue;
+    if (!ONLY_MANUAL && map[slug]) continue;
     targets.push([slug, { type: 'direct', via: [], directRaw: slug, newCard: true }]);
   }
 
