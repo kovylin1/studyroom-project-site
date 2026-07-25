@@ -192,7 +192,9 @@ async function main() {
       slug: '__kompas__', name: 'КОМПАС — блокеры источников',
       issue: 'kompas_source_blocked',
       severity: 'warning',
-      detail: `${skipped.blockedOnly.length} вузов сверить не с чем: их единственный источник за логином и данные не получены (QS Apply, GUS Gateway). Нужен рабочий доступ от владельца. Полный список — в sources/kompas/diff-report.json.`,
+      // Именно QS, а не «порталы за логином» вообще: в IAPro (GUS Gateway) вход рабочий
+      // (проверено 2026-07-25), и все 227 заблокированных завязаны на QS Apply.
+      detail: `${skipped.blockedOnly.length} вузов сверить не с чем: их единственный источник — QS Apply, а портал отклоняет оба выданных пароля (проверено 2026-07-25: «The username/password entered is invalid»). Нужен рабочий доступ от владельца. Полный список — в sources/kompas/diff-report.json.`,
       catalog: skipped.blockedOnly.length, official: null, program: null, sourceUrl: null,
       checkedAt: now, decision: null, decidedAt: null, applied: false,
     });

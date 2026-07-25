@@ -72,7 +72,17 @@ async function probeOne(browser, name, cfg) {
     });
     await page.waitForTimeout(1000);
 
-    const findSel = (list) => page.evaluate((a) => { for (const s of a) if (document.querySelector(s)) return s; return null; }, list);
+    // Ищем ЛОКАТОРОМ, а не document.querySelector. IAPro переехал на Salesforce LWC:
+    // 2026-07-25 форма входа живёт в shadow DOM (3 теневых корня), и querySelector из
+    // page.evaluate её не видит — проба отчиталась «форма не опознана», хотя портал
+    // отдаёт обычный логин. CSS-движок Playwright открытые теневые корни пробивает.
+    const findSel = async (list) => {
+      for (const s of list) {
+        const n = await page.locator(s).count().catch(() => 0);
+        if (n) return s;
+      }
+      return null;
+    };
     const userSel = await findSel(['input[type=email]', 'input[name*=user i]', 'input[id*=user i]', 'input[placeholder*="email" i]', 'input[placeholder*="user" i]', 'input[type=text]']);
     const passSel = await findSel(['input[type=password]', 'input[name*=pass i]', 'input[id*=pass i]']);
     result.steps.push({ step: 'селекторы', userSel, passSel });
@@ -82,11 +92,13 @@ async function probeOne(browser, name, cfg) {
       return result;
     }
 
-    await page.fill(userSel, cfg.login);
-    await page.fill(passSel, cfg.pass);
+    // .first(): у порталов на компонентных фреймворках один и тот же селектор нередко
+    // ловит несколько узлов, а строгий режим Playwright на этом падает.
+    await page.locator(userSel).first().fill(cfg.login);
+    await page.locator(passSel).first().fill(cfg.pass);
     await page.waitForTimeout(300);
-    try { await page.click('button[type=submit], input[type=submit], button:has-text("Log In"), button:has-text("Login"), button:has-text("Sign In")', { timeout: 6000 }); }
-    catch { await page.press(passSel, 'Enter'); }
+    try { await page.locator('button[type=submit], input[type=submit], button:has-text("Log In"), button:has-text("Login"), button:has-text("Sign In")').first().click({ timeout: 6000 }); }
+    catch { await page.locator(passSel).first().press('Enter'); }
 
     await page.waitForLoadState('networkidle', { timeout: 60000 }).catch(() => {});
     await page.waitForTimeout(8000);

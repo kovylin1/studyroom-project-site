@@ -21,7 +21,7 @@ const PARTS = [
   'dupmerge-review.json', 'offsite-review.json',
   // сессия 5 (P0–P2): правки цен, валюты, добор программ
   'navitas-fix-review.json', 'oxfordintl-fix-review.json', 'currency-fix-review.json',
-  'program-backfill-review.json', 'fee-mismatch-review.json',
+  'program-backfill-review.json', 'fee-mismatch-review.json', 'dupe-scan-review.json',
 ];
 
 const readJson = async (f) => { try { return JSON.parse(await fs.readFile(f, 'utf8')); } catch { return null; } };
