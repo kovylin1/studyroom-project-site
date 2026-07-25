@@ -22,6 +22,8 @@ const PARTS = [
   // сессия 5 (P0–P2): правки цен, валюты, добор программ
   'navitas-fix-review.json', 'oxfordintl-fix-review.json', 'currency-fix-review.json',
   'program-backfill-review.json', 'fee-mismatch-review.json', 'dupe-scan-review.json',
+  // P4: стипендии
+  'scholarship-review.json',
 ];
 
 const readJson = async (f) => { try { return JSON.parse(await fs.readFile(f, 'utf8')); } catch { return null; } };

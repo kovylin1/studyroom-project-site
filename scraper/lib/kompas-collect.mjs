@@ -100,7 +100,10 @@ export function decodeEntities(s) {
   if (!s) return '';
   return String(s)
     .replace(/&[a-z]+;|&#\d+;/gi, (m) => ENTITIES[m.toLowerCase()] ?? ENTITIES[m] ?? m)
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+    // Шестнадцатеричная форма: без неё названия со страниц вузов выходили с мусором —
+    // «Abertay IB30&#x2B; Scholarship», «T&#xFC;rkiye Scholarship» (сбор стипендий, сессия 5).
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)));
 }
 
 /** HTML -> плоский текст с разделителем '|' между узлами (удобно для таблиц «поле | значение»). */
