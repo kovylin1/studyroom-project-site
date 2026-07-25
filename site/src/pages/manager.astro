@@ -1783,6 +1783,26 @@ const CONTROL_DEFAULT_URL = '';
       kompas_no_extract: 'источник собран, но выгрузки по вузу нет',
       kompas_source_blocked: 'источник за логином — сверить не с чем',
       kompas_source_empty: 'источник не отдаёт программы',
+      // КОМПАС, сессия 4.5 — карточки, дубли, дыры сбора
+      kompas_gap_collectable: 'вуз есть в источнике, выгрузки нет — чинится прогоном',
+      kompas_gap_source_no_programs: 'партнёрство есть, программ источник не отдаёт',
+      kompas_gap_dupe_card: 'бренд источника привязан к другой карточке — дубль в каталоге',
+      kompas_gap_merged: 'источник слил запись в другую карточку',
+      kompas_card_merged: 'карточка слита в другую (решение владельца)',
+      kompas_card_new_iapro: 'карточка заведена из IAPro — цен у источника нет',
+      kompas_card_city_not_from_source: 'город/страна проставлены не источником',
+      kompas_card_empty_contract_hub: 'договор есть, программ у источника нет вовсе',
+      kompas_card_filled_offsite: 'карточка заполнена с офсайта — проверить состав',
+      kompas_dupe_merged: 'дубль слит в эту карточку',
+      kompas_dupe_dropped: 'карточка-дубль, слита в другую — удаление в сессии 5',
+      kompas_mark_removed_stale_mark: 'метка партнёрства снята (решение владельца)',
+      kompas_mark_removed_not_a_uni: 'не вуз — метка партнёрства снята',
+      // КОМПАС, сессия 5 — P0–P2
+      kompas_navitas_price_fabricated: 'сняты фабрикованные цены Navitas',
+      kompas_oxfordintl_price_fabricated: 'сняты сид-цены Oxford International',
+      kompas_fee_currency_fixed: 'валюта карточки исправлена',
+      kompas_fee_currency_reviewed: 'валюта сверена со страной — относок нет',
+      kompas_program_foreign_currency: 'программы не заведены: чужая валюта, подозрение на чужой кампус',
     };
     return map[issue] || issue;
   }

@@ -15,7 +15,14 @@ import { KOMPAS_DIR, ROOT, logger } from './lib/kompas-collect.mjs';
 
 const log = logger('panel');
 const OUT = path.join(ROOT, 'site', 'public', 'api', 'kompas-review.json');
-const PARTS = ['direct-review.json', 'diff-review.json', 'gap-review.json', 'cards-review.json', 'dupmerge-review.json', 'offsite-review.json'];
+const PARTS = [
+  // сессии 3.5–4.5
+  'direct-review.json', 'diff-review.json', 'gap-review.json', 'cards-review.json',
+  'dupmerge-review.json', 'offsite-review.json',
+  // сессия 5 (P0–P2): правки цен, валюты, добор программ
+  'navitas-fix-review.json', 'oxfordintl-fix-review.json', 'currency-fix-review.json',
+  'program-backfill-review.json', 'fee-mismatch-review.json',
+];
 
 const readJson = async (f) => { try { return JSON.parse(await fs.readFile(f, 'utf8')); } catch { return null; } };
 

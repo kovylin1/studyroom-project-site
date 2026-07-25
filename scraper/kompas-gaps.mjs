@@ -46,12 +46,19 @@ async function main() {
   };
 
   const sg = mem.studygroup ?? {};
+  // «&» → «and» до срезки символов: слаги каталога пишут «texas-aandm-…», а наивная
+  // срезка давала «texas-a-m-…» и имя источника переставало совпадать со слагом дыры.
+  const slugify = (s) => String(s).toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const mergedInto = new Map();     // слаг-дубль → слаг, в который слили
   for (const m of sg.mergedSlugs ?? []) {
-    for (const from of m.from ?? []) {
-      const guess = from.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      mergedInto.set(guess, m.slug);
-    }
+    for (const from of m.from ?? []) mergedInto.set(slugify(from), m.slug);
+  }
+  // Целевой слаг берём У ИСТОЧНИКА, а не отрезанием «-direct-entry» от слага дубля.
+  // Догадка врала: у «long-island-university-brooklyn-direct-entry» она давала
+  // «long-island-university-brooklyn», карточки с таким слагом в каталоге нет вовсе,
+  // а настоящая — «liu-brooklyn» (89 программ). Оператор шёл сливать в пустоту.
+  for (const m of sg.matched ?? []) {
+    if (m.from && m.to) mergedInto.set(slugify(m.from), m.to);
   }
   const sgCentres = new Set((sg.skippedNotUniversity ?? []).map((x) => (typeof x === 'string' ? x : x.name ?? x.from ?? '')));
 
@@ -60,6 +67,20 @@ async function main() {
     if (!m) return false;
     return JSON.stringify(m).includes(`"${slug}"`);
   };
+
+  // Присутствие в списке источника ещё не значит «есть что собрать»: Edvoy держит
+  // бренд в реестре и отдаёт по нему НОЛЬ курсов. Сессия 5, точечный прогон
+  // `--only=australian-vocational-training-academy,trine-university` — 0 курсов у обоих.
+  // Без этой проверки такой вуз годами числился «недобором коллектора», и прогон за
+  // прогоном ничего не менял.
+  const edvoyEmpty = new Set((mem.edvoy?.emptyUnis ?? []).map((x) => x.edpRefId ?? x.from));
+  // Тот же список знает и вторую вещь: бренд источника может быть привязан к ДРУГОЙ
+  // карточке каталога. Тогда выгрузки под этим слагом не будет никогда — не потому что
+  // сбор не дошёл, а потому что в каталоге на один вуз две карточки.
+  const edvoyBoundElsewhere = new Map();
+  for (const m of mem.edvoy?.matched ?? []) {
+    if (m.edpRefId && m.to && m.edpRefId !== m.to) edvoyBoundElsewhere.set(m.edpRefId, { to: m.to, courses: m.courses ?? 0 });
+  }
 
   const rows = []; const cases = [];
   for (const g of gaps) {
@@ -70,6 +91,13 @@ async function main() {
     if (card?.kompasStatus === 'programs-not-collected') {
       kind = 'awaiting-collection';
       detail = `Карточка заведена в сессии 4.5 по решению владельца: договор с учреждением есть, а программ у источника НЕТ ВОВСЕ. Это не пробел разметки и не недобор коллектора — нужен сбор с офсайта вуза. До него карточка не проходит схему (programs.min(1)) и в живой каталог не поедет.`;
+    } else if (edvoyBoundElsewhere.has(g.slug)) {
+      const b = edvoyBoundElsewhere.get(g.slug);
+      kind = 'dupe-card';
+      detail = `Бренд источника (edvoy, ${b.courses} курсов) привязан к другой карточке каталога — «${b.to}». Выгрузки под этим слагом не будет: это не недобор, а две карточки на один вуз. Нужно решение: слить или развести.`;
+    } else if (edvoyEmpty.has(g.slug)) {
+      kind = 'source-no-programs';
+      detail = `Вуз есть в реестре Edvoy, но курсов источник по нему НЕ отдаёт вовсе (проверено точечным прогоном сессии 5: 0 курсов). Прогон коллектора это не чинит — нужен второй источник или сбор с офсайта.`;
     } else if (hit.length && !(g.ready.length === 1 && g.ready[0] === 'iapro' && !iaproBrands.has(g.name))) {
       kind = 'collectable';
       detail = `Вуз есть в списке источника (${hit.join(', ')}), а выгрузки нет — недобор коллектора. Чинится прогоном, решение владельца не нужно.`;
@@ -79,7 +107,11 @@ async function main() {
     } else if (/-direct-entry$/.test(g.slug) || mergedInto.has(g.slug)) {
       kind = 'merged';
       const into = mergedInto.get(g.slug) ?? g.slug.replace(/-direct-entry$/, '');
-      detail = `StudyGroup слил эту запись в карточку «${into}»: у источника это не отдельный вуз, а вариант поступления. Отдельной выгрузки быть и не должно — зато в каталоге две карточки на один вуз.`;
+      const target = await readCard(into);
+      const where = target
+        ? `карточка «${into}» в каталоге есть, программ в ней ${(target.programs ?? []).length}`
+        : `карточки «${into}» в каталоге НЕТ — цель слияния надо назначить руками`;
+      detail = `StudyGroup слил эту запись в карточку «${into}»: у источника это не отдельный вуз, а вариант поступления. Отдельной выгрузки быть и не должно — зато в каталоге две карточки на один вуз (${where}).`;
     } else if (g.ready.includes('studygroup') && sgCentres.size) {
       kind = 'not-a-uni';
       detail = `У StudyGroup это учебный центр, а не вуз-партнёр: в списке вузов его нет. Метка «партнёр через studygroup» на карточке вуза выглядит ошибкой.`;
