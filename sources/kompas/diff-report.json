@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T16:08:22.901Z",
+  "generatedAt": "2026-07-25T16:36:13.423Z",
   "scope": "kompas-session4",
   "summary": {
     "catalogFiles": 823,
@@ -15,9 +15,9 @@
     "matchedFuzzy": 356,
     "catalogOnly": 21621,
     "sourceOnly": 1794,
-    "feeMismatch": 1831,
+    "feeMismatch": 1723,
     "feeMissingInCatalog": 1720,
-    "feeCurrency": 92,
+    "feeCurrency": 77,
     "campusMissing": 96,
     "extractsLoaded": {
       "kaplan": 24,
@@ -1407,7 +1407,7 @@
       "sourceOnly": 7,
       "catalogWithFee": 863,
       "sourceWithFee": 639,
-      "feeMismatch": 91,
+      "feeMismatch": 88,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 6,
@@ -1731,7 +1731,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 243,
       "sourceWithFee": 194,
-      "feeMismatch": 61,
+      "feeMismatch": 60,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 3,
@@ -2712,9 +2712,9 @@
       "sourceOnly": 0,
       "catalogWithFee": 35,
       "sourceWithFee": 15,
-      "feeMismatch": 0,
+      "feeMismatch": 1,
       "feeMissingInCatalog": 0,
-      "feeCurrency": 15,
+      "feeCurrency": 0,
       "catalogCampuses": 3,
       "sourceCampuses": 2,
       "campusMissing": 0,
@@ -2729,7 +2729,19 @@
           "Summer Programme",
           "BA in Hotel & Hospitality Management"
         ],
-        "feeMismatch": [],
+        "feeMismatch": [
+          {
+            "program": "Postgraduate Diploma in Culinary Arts",
+            "slug": "bhms-pgd-culinary-arts",
+            "catalog": 22000,
+            "source": 29100,
+            "currency": "CHF",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 24.4
+          }
+        ],
         "fuzzyPairs": []
       }
     },
@@ -3128,7 +3140,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 42,
       "sourceWithFee": 34,
-      "feeMismatch": 9,
+      "feeMismatch": 6,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -3158,28 +3170,6 @@
             "rel": 17.1
           },
           {
-            "program": "Law Conversion Course (Masters)",
-            "slug": "bpp-university-law-conversion-course-masters",
-            "catalog": 12600,
-            "source": 17900,
-            "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 29.6
-          },
-          {
-            "program": "BSc (Hons) Nursing (Adult) [Pre-registration Nursing]",
-            "slug": "bpp-university-bsc-hons-nursing-adult-pre-registration-nursing",
-            "catalog": 11000,
-            "source": 33000,
-            "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 66.7
-          },
-          {
             "program": "BTC Barrister Training Course (London)",
             "slug": "bpp-university-btc-barrister-training-course-london",
             "catalog": 20150,
@@ -3200,6 +3190,28 @@
             "audience": null,
             "via": "edvoy",
             "rel": 7.2
+          },
+          {
+            "program": "LLM Law Conversion with SQE1",
+            "slug": "bpp-university-llm-law-conversion-with-sqe1",
+            "catalog": 18100,
+            "source": 19600,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 7.7
+          },
+          {
+            "program": "MSc Management with Data Analytics",
+            "slug": "bpp-university-msc-management-with-data-analytics",
+            "catalog": 18100,
+            "source": 19000,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 4.7
           }
         ],
         "fuzzyPairs": []
@@ -3350,7 +3362,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 363,
       "sourceWithFee": 360,
-      "feeMismatch": 1,
+      "feeMismatch": 0,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 3,
@@ -3367,19 +3379,7 @@
           "University of Bristol International Foundation Programme&nbsp;",
           "Bachelor&#8217;s admission"
         ],
-        "feeMismatch": [
-          {
-            "program": "BEng (Hons) Mechanical Engineering",
-            "slug": "bristol-beng-hons-mechanical-engineering-bachelor",
-            "catalog": 31300,
-            "source": 17000,
-            "currency": "GBP",
-            "basis": null,
-            "audience": null,
-            "via": "kaplan",
-            "rel": 45.7
-          }
-        ],
+        "feeMismatch": [],
         "fuzzyPairs": []
       }
     },
@@ -5795,7 +5795,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 112,
       "sourceWithFee": 90,
-      "feeMismatch": 17,
+      "feeMismatch": 13,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -5813,28 +5813,6 @@
           "Pre-Master's — Business, Economics and Finance"
         ],
         "feeMismatch": [
-          {
-            "program": "MSc Environmental Engineering",
-            "slug": "master-1584",
-            "catalog": 25955,
-            "source": 18720,
-            "currency": "GBP",
-            "basis": null,
-            "audience": null,
-            "via": "kaplan+edvoy",
-            "rel": 27.9
-          },
-          {
-            "program": "MSc Environmental Management for Business",
-            "slug": "master-1585",
-            "catalog": 26580,
-            "source": 18720,
-            "currency": "GBP",
-            "basis": null,
-            "audience": null,
-            "via": "kaplan+edvoy",
-            "rel": 29.6
-          },
           {
             "program": "MSc Applied Artificial Intelligence",
             "slug": "cranfield-msc-applied-artificial-intelligence",
@@ -5858,15 +5836,37 @@
             "rel": 22.1
           },
           {
-            "program": "PGCert Advanced Mechanical Engineering",
-            "slug": "cranfield-pgcert-advanced-mechanical-engineering",
-            "catalog": 29025,
-            "source": 11275,
+            "program": "MSc Aerospace Vehicle Design",
+            "slug": "cranfield-msc-aerospace-vehicle-design",
+            "catalog": 33045,
+            "source": 31775,
             "currency": "GBP",
             "basis": "approxAnnual",
             "audience": null,
             "via": "edvoy",
-            "rel": 61.2
+            "rel": 3.8
+          },
+          {
+            "program": "MSc Avionic Systems Design option in Aerospace Vehicle Design",
+            "slug": "cranfield-msc-avionic-systems-design-option-in-aerospace-vehicle-desig",
+            "catalog": 33045,
+            "source": 31775,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 3.8
+          },
+          {
+            "program": "MSc Structural Design option in Aerospace Vehicle Design",
+            "slug": "cranfield-msc-structural-design-option-in-aerospace-vehicle-design",
+            "catalog": 33045,
+            "source": 31775,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 3.8
           }
         ],
         "fuzzyPairs": []
@@ -6308,7 +6308,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 110,
       "sourceWithFee": 86,
-      "feeMismatch": 4,
+      "feeMismatch": 3,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -6358,17 +6358,6 @@
             "audience": null,
             "via": "edvoy",
             "rel": 14.9
-          },
-          {
-            "program": "JD Juris Doctor",
-            "slug": "dayton-jd-juris-doctor",
-            "catalog": 36000,
-            "source": 25516,
-            "currency": "USD",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 29.1
           }
         ],
         "fuzzyPairs": []
@@ -6692,7 +6681,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 295,
       "sourceWithFee": 266,
-      "feeMismatch": 3,
+      "feeMismatch": 1,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 2,
@@ -6720,28 +6709,6 @@
             "audience": null,
             "via": "edvoy",
             "rel": 5.9
-          },
-          {
-            "program": "MS Computer Science",
-            "slug": "depaul-ms-computer-science",
-            "catalog": 44000,
-            "source": 29700,
-            "currency": "USD",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 32.5
-          },
-          {
-            "program": "MS Human-Computer Interaction",
-            "slug": "depaul-ms-human-computer-interaction",
-            "catalog": 44000,
-            "source": 29700,
-            "currency": "USD",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 32.5
           }
         ],
         "fuzzyPairs": []
@@ -6893,7 +6860,7 @@
       "sourceOnly": 79,
       "catalogWithFee": 44,
       "sourceWithFee": 33,
-      "feeMismatch": 9,
+      "feeMismatch": 8,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 2,
@@ -7388,7 +7355,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 221,
       "sourceWithFee": 148,
-      "feeMismatch": 125,
+      "feeMismatch": 119,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 4,
@@ -7429,17 +7396,6 @@
             "rel": 4.2
           },
           {
-            "program": "MSc Computing with Professional Placement",
-            "slug": "edinburgh-napier-msc-computing-with-professional-placement",
-            "catalog": 20540,
-            "source": 12685,
-            "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 38.2
-          },
-          {
             "program": "MSc Business Management",
             "slug": "edinburgh-napier-msc-business-management",
             "catalog": 20540,
@@ -7453,6 +7409,17 @@
           {
             "program": "MSc Intercultural Business Communication",
             "slug": "edinburgh-napier-msc-intercultural-business-communication",
+            "catalog": 20540,
+            "source": 19750,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 3.8
+          },
+          {
+            "program": "MSc International Business Management",
+            "slug": "edinburgh-napier-msc-international-business-management",
             "catalog": 20540,
             "source": 19750,
             "currency": "GBP",
@@ -8486,7 +8453,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 2,
       "sourceWithFee": 2,
-      "feeMismatch": 2,
+      "feeMismatch": 0,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 0,
@@ -8497,30 +8464,7 @@
       "samples": {
         "sourceOnly": [],
         "catalogOnly": [],
-        "feeMismatch": [
-          {
-            "program": "Direct Admit Undergraduate",
-            "slug": "florida-atlantic-university-direct-entry-direct-admit-undergraduate",
-            "catalog": 23991,
-            "source": 17324,
-            "currency": "USD",
-            "basis": "from",
-            "audience": null,
-            "via": "studygroup",
-            "rel": 27.8
-          },
-          {
-            "program": "Direct Admit Graduate",
-            "slug": "florida-atlantic-university-direct-entry-direct-admit-graduate",
-            "catalog": 33751,
-            "source": 18483,
-            "currency": "USD",
-            "basis": "from",
-            "audience": null,
-            "via": "studygroup",
-            "rel": 45.2
-          }
-        ],
+        "feeMismatch": [],
         "fuzzyPairs": []
       }
     },
@@ -8800,7 +8744,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 127,
       "sourceWithFee": 92,
-      "feeMismatch": 6,
+      "feeMismatch": 5,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 4,
@@ -9363,7 +9307,7 @@
       "sourceOnly": 3,
       "catalogWithFee": 129,
       "sourceWithFee": 132,
-      "feeMismatch": 21,
+      "feeMismatch": 20,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 2,
@@ -9413,17 +9357,6 @@
             "rel": 3.1
           },
           {
-            "program": "MSc Investigative Ophthalmology and Vision Research",
-            "slug": "glasgow-caledonian-university-msc-investigative-ophthalmology-and-vision-research",
-            "catalog": 116200,
-            "source": 16700,
-            "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 85.6
-          },
-          {
             "program": "MSc International Banking and Finance",
             "slug": "glasgow-caledonian-university-msc-international-banking-and-finance",
             "catalog": 18800,
@@ -9433,6 +9366,17 @@
             "audience": null,
             "via": "edvoy",
             "rel": 3.1
+          },
+          {
+            "program": "BSc (Hons) Software Development",
+            "slug": "glasgow-caledonian-university-bsc-hons-software-development",
+            "catalog": 15200,
+            "source": 15700,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 3.2
           }
         ],
         "fuzzyPairs": [
@@ -9472,7 +9416,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 639,
       "sourceWithFee": 530,
-      "feeMismatch": 242,
+      "feeMismatch": 215,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 6,
@@ -9535,15 +9479,15 @@
             "rel": 17.1
           },
           {
-            "program": "MBA Business Administration",
-            "slug": "glasgow-mba-business-administration",
+            "program": "MSc/PGDip/PGCert Immunology and Inflammatory Disease",
+            "slug": "glasgow-msc-pgdip-pgcert-immunology-and-inflammatory-disease",
             "catalog": 27720,
-            "source": 39000,
+            "source": 29700,
             "currency": "GBP",
             "basis": "approxAnnual",
             "audience": null,
             "via": "edvoy",
-            "rel": 28.9
+            "rel": 6.7
           }
         ],
         "fuzzyPairs": []
@@ -9588,7 +9532,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 21,
       "sourceWithFee": 30,
-      "feeMismatch": 9,
+      "feeMismatch": 5,
       "feeMissingInCatalog": 9,
       "feeCurrency": 3,
       "catalogCampuses": 2,
@@ -9601,39 +9545,6 @@
         "catalogOnly": [],
         "feeMismatch": [
           {
-            "program": "BA (Hons) Global Business and Entrepreneurship with Foundation Year",
-            "slug": "global-banking-school-ba-hons-global-business-and-entrepreneurship-with-foundation-year-bachelor",
-            "catalog": 9250,
-            "source": 5760,
-            "currency": "GBP",
-            "basis": null,
-            "audience": null,
-            "via": "gedu",
-            "rel": 37.7
-          },
-          {
-            "program": "BSc (Hons) Business & Tourism Management",
-            "slug": "global-banking-school-bsc-hons-business-tourism-management-bachelor",
-            "catalog": 9250,
-            "source": 5760,
-            "currency": "GBP",
-            "basis": null,
-            "audience": null,
-            "via": "gedu",
-            "rel": 37.7
-          },
-          {
-            "program": "BA (Hons) Global Business (Business Management) with Foundation Year",
-            "slug": "global-banking-school-ba-hons-global-business-business-management-with-foundation-year-bachelor",
-            "catalog": 9250,
-            "source": 5760,
-            "currency": "GBP",
-            "basis": null,
-            "audience": null,
-            "via": "gedu",
-            "rel": 37.7
-          },
-          {
             "program": "BSc (Hons) Construction Management with Foundation Year",
             "slug": "global-banking-school-bsc-hons-construction-management-with-foundation-year-bachelor",
             "catalog": 9250,
@@ -9645,15 +9556,48 @@
             "rel": 3
           },
           {
-            "program": "BSc (Hons) Accounting & Financial Management",
-            "slug": "global-banking-school-bsc-hons-accounting-financial-management-bachelor",
+            "program": "BA (Hons) Business and Management (Level 6 Top",
+            "slug": "global-banking-school-ba-hons-business-and-management-level-6-top-bachelor",
             "catalog": 9250,
-            "source": 5760,
+            "source": 9535,
             "currency": "GBP",
             "basis": null,
             "audience": null,
             "via": "gedu",
-            "rel": 37.7
+            "rel": 3
+          },
+          {
+            "program": "BSc (Hons) Health, Wellbeing and Social Care (Level 6 Direct Entry)",
+            "slug": "global-banking-school-bsc-hons-health-wellbeing-and-social-care-level-6-direct-entry-bachelor",
+            "catalog": 9250,
+            "source": 9535,
+            "currency": "GBP",
+            "basis": null,
+            "audience": null,
+            "via": "gedu",
+            "rel": 3
+          },
+          {
+            "program": "BSc (Hons) Construction Management (Level 6 Top",
+            "slug": "global-banking-school-bsc-hons-construction-management-level-6-top-bachelor",
+            "catalog": 9250,
+            "source": 9535,
+            "currency": "GBP",
+            "basis": null,
+            "audience": null,
+            "via": "gedu",
+            "rel": 3
+          },
+          {
+            "program": "MSc Project Management",
+            "slug": "global-banking-school-msc-project-management-master",
+            "catalog": 8595,
+            "source": 9535,
+            "currency": "GBP",
+            "basis": null,
+            "audience": null,
+            "via": "gedu",
+            "rel": 9.9
           }
         ],
         "fuzzyPairs": []
@@ -9945,7 +9889,7 @@
       "sourceOnly": 2,
       "catalogWithFee": 953,
       "sourceWithFee": 915,
-      "feeMismatch": 46,
+      "feeMismatch": 44,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -10538,7 +10482,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 241,
       "sourceWithFee": 234,
-      "feeMismatch": 5,
+      "feeMismatch": 3,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 3,
@@ -10579,17 +10523,6 @@
             "rel": 17.3
           },
           {
-            "program": "BSc Actuarial Science",
-            "slug": "bsc-actuarial-science",
-            "catalog": 18000,
-            "source": 24048,
-            "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 25.1
-          },
-          {
             "program": "BSc Mathematics",
             "slug": "bsc-mathematics",
             "catalog": 17000,
@@ -10599,17 +10532,6 @@
             "audience": null,
             "via": "edvoy",
             "rel": 9.1
-          },
-          {
-            "program": "BSc Chemistry",
-            "slug": "bsc-chemistry",
-            "catalog": 18000,
-            "source": 24048,
-            "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 25.1
           }
         ],
         "fuzzyPairs": [
@@ -10780,7 +10702,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 232,
       "sourceWithFee": 214,
-      "feeMismatch": 21,
+      "feeMismatch": 18,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 3,
@@ -12090,7 +12012,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 34,
       "sourceWithFee": 18,
-      "feeMismatch": 9,
+      "feeMismatch": 0,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -12107,63 +12029,7 @@
           "BA Business Administration",
           "BA Business Administration — International Management"
         ],
-        "feeMismatch": [
-          {
-            "program": "MBA — Engineering Management",
-            "slug": "iu-germany-mba-engineering-management",
-            "catalog": 15051,
-            "source": 10034,
-            "currency": "EUR",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 33.3
-          },
-          {
-            "program": "MBA — Healthcare Management",
-            "slug": "iu-germany-mba-healthcare-management",
-            "catalog": 15051,
-            "source": 10034,
-            "currency": "EUR",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 33.3
-          },
-          {
-            "program": "BA Business Administration — Artificial Intelligence",
-            "slug": "iu-germany-ba-business-administration-ai",
-            "catalog": 13432,
-            "source": 6381,
-            "currency": "EUR",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 52.5
-          },
-          {
-            "program": "BA Business Administration — Business Analytics",
-            "slug": "iu-germany-ba-business-administration-business-analytics",
-            "catalog": 13432,
-            "source": 6381,
-            "currency": "EUR",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 52.5
-          },
-          {
-            "program": "BA Business Administration — Entrepreneurship",
-            "slug": "iu-germany-ba-business-administration-entrepreneurship",
-            "catalog": 13432,
-            "source": 6831,
-            "currency": "EUR",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 49.1
-          }
-        ],
+        "feeMismatch": [],
         "fuzzyPairs": [
           {
             "catalog": "BA Business Administration — Artificial Intelligence",
@@ -14582,7 +14448,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 298,
       "sourceWithFee": 287,
-      "feeMismatch": 2,
+      "feeMismatch": 1,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 4,
@@ -14610,17 +14476,6 @@
             "audience": null,
             "via": "edvoy",
             "rel": 15
-          },
-          {
-            "program": "LLB Law",
-            "slug": "llb-law",
-            "catalog": 14250,
-            "source": 19500,
-            "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 26.9
           }
         ],
         "fuzzyPairs": [
@@ -15220,7 +15075,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 322,
       "sourceWithFee": 284,
-      "feeMismatch": 1,
+      "feeMismatch": 0,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -15237,19 +15092,7 @@
           "Diploma in Facilities Management",
           "Bachelor of Fine Arts with Honours – BFA(Hons)"
         ],
-        "feeMismatch": [
-          {
-            "program": "Executive Master of Business Administration",
-            "slug": "ma-pmbsa",
-            "catalog": 41400,
-            "source": 65150,
-            "currency": "NZD",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 36.5
-          }
-        ],
+        "feeMismatch": [],
         "fuzzyPairs": [
           {
             "catalog": "Bachelor of Horticultural and Plant Systems – BHort&PlantSys",
@@ -17042,7 +16885,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 84,
       "sourceWithFee": 66,
-      "feeMismatch": 13,
+      "feeMismatch": 8,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 3,
@@ -17060,17 +16903,6 @@
           "BSc Interior Design"
         ],
         "feeMismatch": [
-          {
-            "program": "BBA Business Administration",
-            "slug": "nicosia-bba-business-administration",
-            "catalog": 9120,
-            "source": 6780,
-            "currency": "EUR",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 25.7
-          },
           {
             "program": "BSc Accounting",
             "slug": "nicosia-bsc-accounting",
@@ -17107,6 +16939,17 @@
           {
             "program": "BSc Computer Engineering",
             "slug": "nicosia-bsc-computer-engineering",
+            "catalog": 9120,
+            "source": 9540,
+            "currency": "EUR",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 4.4
+          },
+          {
+            "program": "BSc Electrical Engineering",
+            "slug": "nicosia-bsc-electrical-engineering",
             "catalog": 9120,
             "source": 9540,
             "currency": "EUR",
@@ -17611,7 +17454,7 @@
       "sourceOnly": 2,
       "catalogWithFee": 593,
       "sourceWithFee": 398,
-      "feeMismatch": 4,
+      "feeMismatch": 3,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -17664,17 +17507,6 @@
             "audience": null,
             "via": "edvoy",
             "rel": 6.8
-          },
-          {
-            "program": "MSc Finance and Accounting",
-            "slug": "master-2350",
-            "catalog": 21150,
-            "source": 37500,
-            "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 43.6
           }
         ],
         "fuzzyPairs": [
@@ -17784,7 +17616,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 61,
       "sourceWithFee": 39,
-      "feeMismatch": 8,
+      "feeMismatch": 5,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 4,
@@ -17802,39 +17634,6 @@
           "BS Computer Engineering"
         ],
         "feeMismatch": [
-          {
-            "program": "BS Computer Science",
-            "slug": "nyit-bs-computer-science",
-            "catalog": 44680,
-            "source": 20980,
-            "currency": "USD",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 53
-          },
-          {
-            "program": "BS Mechanical Engineering",
-            "slug": "nyit-bs-mechanical-engineering",
-            "catalog": 44680,
-            "source": 20980,
-            "currency": "USD",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 53
-          },
-          {
-            "program": "BS Biology",
-            "slug": "nyit-bs-biology",
-            "catalog": 44680,
-            "source": 20980,
-            "currency": "USD",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 53
-          },
           {
             "program": "MS Computer Science",
             "slug": "nyit-ms-computer-science",
@@ -17856,6 +17655,39 @@
             "audience": null,
             "via": "edvoy",
             "rel": 12.3
+          },
+          {
+            "program": "MS Data Science",
+            "slug": "nyit-ms-data-science",
+            "catalog": 24300,
+            "source": 27720,
+            "currency": "USD",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 12.3
+          },
+          {
+            "program": "MBA Master of Business Administration",
+            "slug": "nyit-mba",
+            "catalog": 26500,
+            "source": 27720,
+            "currency": "USD",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 4.4
+          },
+          {
+            "program": "MS Occupational Therapy",
+            "slug": "nyit-ms-occupational-therapy",
+            "catalog": 26000,
+            "source": 27720,
+            "currency": "USD",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 6.2
           }
         ],
         "fuzzyPairs": []
@@ -18213,7 +18045,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 87,
       "sourceWithFee": 92,
-      "feeMismatch": 3,
+      "feeMismatch": 2,
       "feeMissingInCatalog": 10,
       "feeCurrency": 0,
       "catalogCampuses": 15,
@@ -18241,17 +18073,6 @@
             "audience": null,
             "via": "edvoy",
             "rel": 3.1
-          },
-          {
-            "program": "Pre-Master's - Business - 2 Term - University of Dundee",
-            "slug": "oxford-international-pre-master-s-business-2-term-university-of-dundee",
-            "catalog": 5000,
-            "source": 14995,
-            "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 66.7
           },
           {
             "program": "Pre-Master's - Business - 1 Term - University of Dundee",
@@ -18310,7 +18131,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 160,
       "sourceWithFee": 102,
-      "feeMismatch": 17,
+      "feeMismatch": 15,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 3,
@@ -18976,7 +18797,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 382,
       "sourceWithFee": 369,
-      "feeMismatch": 27,
+      "feeMismatch": 23,
       "feeMissingInCatalog": 1,
       "feeCurrency": 0,
       "catalogCampuses": 8,
@@ -18994,39 +18815,6 @@
           "Pre-Master's — Business, Economics and Finance"
         ],
         "feeMismatch": [
-          {
-            "program": "BEng (Hons) Aerospace Engineering",
-            "slug": "bachelor-13490",
-            "catalog": 49950,
-            "source": 32950,
-            "currency": "GBP",
-            "basis": null,
-            "audience": null,
-            "via": "kaplan+edvoy",
-            "rel": 34
-          },
-          {
-            "program": "LLB (Hons) English and European Law",
-            "slug": "bachelor-13534",
-            "catalog": 63250,
-            "source": 29450,
-            "currency": "GBP",
-            "basis": null,
-            "audience": null,
-            "via": "kaplan+edvoy",
-            "rel": 53.4
-          },
-          {
-            "program": "MA Creative Industries and Arts Organisation",
-            "slug": "master-16994",
-            "catalog": 37800,
-            "source": 27250,
-            "currency": "GBP",
-            "basis": null,
-            "audience": null,
-            "via": "kaplan+edvoy",
-            "rel": 27.9
-          },
           {
             "program": "MSc Finance",
             "slug": "queen-mary-london-msc-finance",
@@ -19048,6 +18836,39 @@
             "audience": null,
             "via": "edvoy",
             "rel": 17.9
+          },
+          {
+            "program": "MSc Law and Finance",
+            "slug": "queen-mary-london-msc-law-and-finance",
+            "catalog": 35250,
+            "source": 36250,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 2.8
+          },
+          {
+            "program": "BA (Hons) Film Studies",
+            "slug": "queen-mary-london-ba-hons-film-studies",
+            "catalog": 26950,
+            "source": 23350,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 13.4
+          },
+          {
+            "program": "LLB (Hons) Law Senior Status",
+            "slug": "queen-mary-london-llb-hons-law-senior-status",
+            "catalog": 29450,
+            "source": 27950,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 5.1
           }
         ],
         "fuzzyPairs": []
@@ -22655,7 +22476,7 @@
       "sourceOnly": 14,
       "catalogWithFee": 457,
       "sourceWithFee": 435,
-      "feeMismatch": 58,
+      "feeMismatch": 57,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -23945,7 +23766,7 @@
       "sourceOnly": 1,
       "catalogWithFee": 79,
       "sourceWithFee": 13,
-      "feeMismatch": 3,
+      "feeMismatch": 2,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 1,
@@ -23986,17 +23807,6 @@
             "audience": null,
             "via": "edvoy",
             "rel": 13
-          },
-          {
-            "program": "MSc Environmental and Energy Management",
-            "slug": "twente-msc-environmental-and-energy-management",
-            "catalog": 19000,
-            "source": 10616,
-            "currency": "EUR",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 44.1
           }
         ],
         "fuzzyPairs": [
@@ -25531,7 +25341,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 222,
       "sourceWithFee": 190,
-      "feeMismatch": 1,
+      "feeMismatch": 0,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 1,
@@ -25548,19 +25358,7 @@
           "MSc Social Neuroscience",
           "BSc (Hons) Computing with industrial placement"
         ],
-        "feeMismatch": [
-          {
-            "program": "BSc (Hons) Nursing (Adult)",
-            "slug": "university-of-greater-manchester-bsc-hons-nursing-adult",
-            "catalog": 9535,
-            "source": 17500,
-            "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 45.5
-          }
-        ],
+        "feeMismatch": [],
         "fuzzyPairs": [
           {
             "catalog": "LLB (Hons) LLB Law",
@@ -25794,7 +25592,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 451,
       "sourceWithFee": 329,
-      "feeMismatch": 251,
+      "feeMismatch": 250,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 4,
@@ -25911,7 +25709,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 106,
       "sourceWithFee": 89,
-      "feeMismatch": 10,
+      "feeMismatch": 9,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 20,
@@ -25952,17 +25750,6 @@
             "rel": 5.9
           },
           {
-            "program": "MSc Business Analytics",
-            "slug": "university-of-law-msc-business-analytics",
-            "catalog": 17000,
-            "source": 12000,
-            "currency": "GBP",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 29.4
-          },
-          {
             "program": "MSc Cyber Security Management",
             "slug": "university-of-law-msc-cyber-security-management",
             "catalog": 17000,
@@ -25976,6 +25763,17 @@
           {
             "program": "MSc Marketing",
             "slug": "university-of-law-msc-marketing",
+            "catalog": 17000,
+            "source": 15850,
+            "currency": "GBP",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 6.8
+          },
+          {
+            "program": "MSc Corporate Financial Management",
+            "slug": "university-of-law-msc-corporate-financial-management",
             "catalog": 17000,
             "source": 15850,
             "currency": "GBP",
@@ -27281,7 +27079,7 @@
       "sourceOnly": 1,
       "catalogWithFee": 454,
       "sourceWithFee": 445,
-      "feeMismatch": 25,
+      "feeMismatch": 15,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -27436,7 +27234,7 @@
       "sourceOnly": 3,
       "catalogWithFee": 487,
       "sourceWithFee": 411,
-      "feeMismatch": 2,
+      "feeMismatch": 1,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 2,
@@ -27458,17 +27256,6 @@
           "Diploma in Data Analytics"
         ],
         "feeMismatch": [
-          {
-            "program": "Master of Applied Finance",
-            "slug": "waikato-master-of-applied-finance",
-            "catalog": 36500,
-            "source": 59760,
-            "currency": "NZD",
-            "basis": "approxAnnual",
-            "audience": null,
-            "via": "edvoy",
-            "rel": 38.9
-          },
           {
             "program": "Master of Cyber Security",
             "slug": "waikato-master-of-cyber-security",
@@ -28030,7 +27817,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 321,
       "sourceWithFee": 311,
-      "feeMismatch": 93,
+      "feeMismatch": 91,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
