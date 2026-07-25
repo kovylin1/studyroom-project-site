@@ -41,7 +41,7 @@ export const programSchema = z.object({
 export type Program = z.infer<typeof programSchema>;
 
 export const tuitionSchema = z.object({
-  currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD']),
+  currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF']),
   byProgram: z.record(slug, z.number().nonnegative()),
 });
 export type Tuition = z.infer<typeof tuitionSchema>;
