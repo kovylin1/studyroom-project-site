@@ -96,6 +96,77 @@ test('настоящее название проходит и чистится �
   assert.equal(acceptName('Bangor Bursary for Care Leavers'), 'Bangor Bursary for Care Leavers');
 });
 
+// --- разряды брака, найденные просмотром выборки origin:'hub-headings' 2026-07-26 ---
+
+test('«maximum award is $1,000» — это «до», а не ровно столько (Herzing)', () => {
+  assert.equal(amountFrom('The maximum award is $1,000 for courses nine months or longer.'), 'до USD 1,000');
+  assert.equal(amountFrom('Scholarships to a maximum value of £5,000 are available.'), 'до GBP 5,000');
+});
+
+test('помесячная выплата помечается «/мес» (Herzing: $60 в месяц, а не $60 всего)', () => {
+  assert.equal(
+    amountFrom('Students are eligible for a scholarship of $60 per month for the duration of the program.'),
+    'USD 60/мес');
+});
+
+test('предложение вместо названия отсекается (ashland, david-game)', () => {
+  assert.equal(acceptName('We offer scholarships'), null);
+  assert.equal(acceptName('If you have questions about the scholarship program, contact the office'), null);
+  assert.equal(acceptName('Apply for a scholarship. The deadline is in March'), null);
+});
+
+test('обрывок абзаца со строчной буквы — не название (carmel-catholic, ac-badem)', () => {
+  assert.equal(acceptName('average financial assistance award of $8,092'), null);
+  assert.equal(acceptName('not included in the tuition discount'), null);
+  assert.equal(acceptName('to access the Scholarship Directive.'), null);
+});
+
+test('обобщённый раздел — не стипендия (apu-malaysia, aud, herzing)', () => {
+  assert.equal(acceptName('External Scholarships'), null);
+  assert.equal(acceptName('UNDERGRADUATE SCHOLARSHIPS'), null);
+  assert.equal(acceptName('HIGH SCHOOL SCHOLARSHIPS'), null);
+  assert.equal(acceptName('Student Loans and Grants'), null);
+  assert.equal(acceptName('Progression Scholarships'), null);
+});
+
+test('раздел перечислением через запятую (bpp, concordia, curtin-dubai)', () => {
+  assert.equal(acceptName('University scholarships, bursaries and discounts'), null);
+  assert.equal(acceptName('Scholarships, Grants, & Loans'), null);
+  assert.equal(acceptName('Managing your scholarship, bursary or tuition grant.'), null);
+});
+
+test('заголовок страницы «Scholarships <предлог>…» (brunel, stover, UQ)', () => {
+  assert.equal(acceptName('Scholarships available'), null);
+  assert.equal(acceptName('Scholarships at Stover'), null);
+  assert.equal(acceptName('Scholarships explained'), null);
+  assert.equal(acceptName('Scholarships that support your journey'), null);
+  assert.equal(acceptName('Maintaining Your Scholarship'), null);
+  assert.equal(acceptName('Financing and Scholarships'), null);
+});
+
+test('название чистится от склейки с описанием через «|» (gbsb-global)', () => {
+  assert.equal(acceptName('Merit-Based International Scholarship | Up to 30% tuition reduction'),
+    'Merit-Based International Scholarship');
+  assert.equal(acceptName('Early Bird Discount.'), 'Early Bird Discount');
+});
+
+test('ужесточение не задело настоящие названия', () => {
+  for (const ok of [
+    'Steve Madrid \'89 Memorial Scholarship',
+    '100% ÖSYS Scholarship',
+    'West Virginia Promise Scholarship',
+    'WILLIAM R. ROOTHAM SCHOLARSHIPS',
+    'Erasmus+ scholarship',
+    'Paris School of Business merit-based scholarship',
+    'Kerem Aydınlar Foundation Support Scholarship (KAVDEB)',
+    'Vice-Chancellor’s Excellence Scholarship',
+    // Именные стипендии с сокращениями: грубое правило «точка посреди строки»
+    // выбрасывало их как предложения (fanshawe-college, mater-dei).
+    'Dr. Leonard Reeves Entrance Award for Women in Skilled Trades',
+    'Mr. and Mrs. Richard G. Balelo Sr. Memorial Scholarship',
+  ]) assert.equal(acceptName(ok), ok.replace(/\.$/, ''), ok);
+});
+
 // ------------------------------------------------------------ страницы --
 
 test('разбор раздела: заголовок берётся, сумма — из текста до следующего заголовка', () => {

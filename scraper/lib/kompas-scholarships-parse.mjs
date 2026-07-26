@@ -19,11 +19,44 @@ export const FULL_HINT = /\bfull[- ](tuition|fee|funding|scholarship)\b|\b100%\s
 // Заголовки РАЗДЕЛА, а не стипендии: «Scholarships and Bursaries» — это название страницы
 // Abertay, под которым лежат 39 настоящих стипендий. Записать его самой стипендией значит
 // завести в каталоге пустышку — ровно то, чем сейчас забиты 1234 записи.
-export const SECTION_TITLE = /^(our |available |international |student |uk |eu )?(scholarships?|bursaries|bursary|awards?|grants?|funding|financial aid)( (and|&) (scholarships?|bursaries|awards?|grants?|funding|discounts))?( for .*)?$/i;
+export const SECTION_TITLE = /^(our |available |international |student |uk |eu )?(scholarships?|bursaries|bursary|awards?|grants?|funding|financing|financial aid)( (and|&) (scholarships?|bursaries|awards?|grants?|funding|financing|discounts))?( for .*)?$/i;
 // Заголовки-инструкции: «How do I apply for the scholarship?», «Advice on Applying for
 // Scholarships» — это разделы справки, а не стипендии. Поймано на Bangor: из 19 записей
 // пилота четыре были такими.
-export const NOT_A_NAME = /^(how|what|when|where|who|why|do i|can i|advice|guidance|information|help|faqs?|applying|apply|eligibility|terms|contact|this|these|other|more|all)\b|\?$|\bnot available\b/i;
+export const NOT_A_NAME = /^(how|what|when|where|who|why|do i|can i|advice|guidance|information|help|faqs?|applying|apply|eligibility|terms|contact|this|these|other|more|all|maintaining|managing|understanding|about)\b|\?$|\bnot available\b/i;
+
+// --- правила, добавленные после просмотра выборки origin:'hub-headings' 2026-07-26 ---
+// Заголовки страницы-раздела грязнее отдельных страниц: из 1223 записей 163 вузов
+// 97 (8%) оказались не стипендиями. Каждое правило ниже закрывает свой разряд брака,
+// найденный глазами.
+
+// Предложение вместо названия: «We offer scholarships», «If you have questions about the
+// … program, contact» (ashland). Точка посреди строки — тоже признак текста, а не имени.
+export const SENTENCE_LIKE = /\b(if you|please|contact us|we offer|we provide|you can|you will|you may|is given|makes a|are eligible|to access|click here|find out|learn more)\b/i;
+// Обрывок абзаца: настоящее название стипендии со строчной буквы не начинается.
+// «average financial assistance award of $8,092» (carmel-catholic), «not included in the
+// tuition discount» (california-miramar), «to access the Scholarship Directive.» (ac-badem).
+export const LOWERCASE_START = /^[a-zа-яё]/;
+// Точка посреди строки — признак предложения, но НЕ в сокращениях: «Dr. Leonard Reeves
+// Entrance Award», «Mr. and Mrs. Richard G. Balelo Sr. Memorial Scholarship» — настоящие
+// именные стипендии, и грубое правило «[a-z]. [A-Z]» их выбрасывало (поймано проверкой
+// ужесточения на всём собранном корпусе, до применения).
+const ABBREV = /^(dr|mr|mrs|ms|miss|prof|st|jr|sr|rev|hon|inc|ltd|co|no|vs|etc|[a-z])$/i;
+export function looksLikeSentence(name) {
+  for (const m of String(name).matchAll(/([A-Za-z]+)\.\s+[A-Z]/g)) {
+    if (!ABBREV.test(m[1])) return true;
+  }
+  return false;
+}
+// Обобщённый раздел: «External Scholarships», «UNDERGRADUATE SCHOLARSHIPS»,
+// «HIGH SCHOOL SCHOLARSHIPS», «Student Loans and Grants», «Progression Scholarships».
+export const GENERIC_SECTION = /^(internal|external|undergraduate|postgraduate|graduate|progression|high school|student|other|further|more)\s+(scholarships?|bursaries|grants?|awards?|loans?)( (and|&) (scholarships?|bursaries|grants?|awards?|loans?))?$/i;
+// Раздел перечислением через запятую — SECTION_TITLE ловит только «X and Y»:
+// «Scholarships, Grants, & Loans», «University scholarships, bursaries and discounts».
+export const LISTED_SECTION = /^[\w\s'’-]*scholarships?,\s.*\b(bursar|grant|award|loan|discount)/i;
+// Заголовок страницы: «Scholarships available», «Scholarships explained»,
+// «Scholarships at Stover», «Scholarships that support your journey».
+export const SCHOLARSHIPS_PAGE = /^scholarships?\s+(at|for|in|on|explained|that|awarded|available|overview)\b/i;
 // Подписи полей на странице раздела: «Scope of scholarship», «Duration of scholarship»,
 // «Scholarship decisions», «Statement of Scholarship». Слово «scholarship» в них есть,
 // стипендии за ними — нет. Поймано на Aalto и Adelphi в пилоте 25 вузов.
@@ -57,9 +90,16 @@ export function amountFrom(text) {
     const after = text.slice(m.index + m[0].length, m.index + m[0].length + 70);
     if (MONEY_TRAP.test(before) || MONEY_TRAP.test(after)) continue;
     if (!MONEY_LABEL.test(before) && !MONEY_LABEL.test(after)) continue;
-    const upTo = /\b(up to|maximum of|as much as)\b[^.]*$/i.test(before);
+    // «maximum award is $1,000» и «maximum value of £5,000» — та же оговорка «до», что
+    // и «up to», но прежняя формулировка правила её не видела: у Herzing выплата
+    // «до $1,000» уезжала в карточку как ровно $1,000 (найдено просмотром hub-headings).
+    const upTo = /\b(up to|as much as|maximum(\s+\w+){0,2}\s+(of|is|:)?)\b[^.]*$/i.test(before);
     const perYear = /^\s*(per|a|each|\/)\s*(year|annum|session)|^\s*(annually|per annum)/i.test(after);
-    return `${upTo ? 'до ' : ''}${p.currency} ${p.amount.toLocaleString('en-US')}${perYear ? '/год' : ''}`;
+    // Помесячная выплата без пометки читается как весь размер стипендии: у Herzing
+    // «$60 per month за программу» стояло в выгрузке просто «USD 60».
+    const perMonth = /^\s*(per|a|each|\/)\s*month|^\s*monthly/i.test(after);
+    const period = perYear ? '/год' : (perMonth ? '/мес' : '');
+    return `${upTo ? 'до ' : ''}${p.currency} ${p.amount.toLocaleString('en-US')}${period}`;
   }
   return fallback();
 }
@@ -71,10 +111,17 @@ export function amountFrom(text) {
  * разъехались бы, а мусор попадает в оба.
  */
 export function acceptName(raw) {
-  const name = String(raw ?? '').replace(/[:\s]+$/, '').trim();
+  // Вертикальная черта склеивает имя с описанием: «Merit-Based International Scholarship
+  // | Up to 30% tuition reduction» (gbsb-global). Берём часть до неё — сумма и так
+  // разбирается отдельно, а в названии она превращает одну стипендию в две разных.
+  let name = String(raw ?? '').split('|')[0];
+  // Хвостовая точка и двоеточие — от вёрстки, не от названия: «Early Bird Discount.»
+  name = name.replace(/[:.\s]+$/, '').trim();
   if (!name) return null;
   if (name.length > 100) return null;          // заголовок новости, а не название стипендии
   if (SECTION_TITLE.test(name) || NOT_A_NAME.test(name) || FIELD_LABEL.test(name)) return null;
+  if (LOWERCASE_START.test(name) || SENTENCE_LIKE.test(name) || looksLikeSentence(name)) return null;
+  if (GENERIC_SECTION.test(name) || LISTED_SECTION.test(name) || SCHOLARSHIPS_PAGE.test(name)) return null;
   return name;
 }
 
