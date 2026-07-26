@@ -59,6 +59,20 @@ export const requirementsSchema = z.object({
 });
 export type Requirements = z.infer<typeof requirementsSchema>;
 
+/**
+ * Разряд происхождения стипендии (КОМПАС P4.9, kompas-mark-scholarships.mjs).
+ *
+ *   linked           — есть ссылка, запись можно открыть и проверить;
+ *   generic-external — внешняя программа (Fulbright, Chevening, Erasmus+), не стипендия вуза;
+ *   cloned           — одно название и сумма у трёх и более карточек без ссылки: сид-таблица;
+ *   untraceable      — ни ссылки, ни источника, повторов нет: происхождение неизвестно.
+ *
+ * Поле обязано быть в схеме: zod по умолчанию СРЕЗАЕТ лишние ключи, и без объявления
+ * метка осталась бы в catalog-work, но до страницы вуза не доехала.
+ */
+export const scholarshipOrigin = z.enum(['linked', 'generic-external', 'cloned', 'untraceable']);
+export type ScholarshipOrigin = z.infer<typeof scholarshipOrigin>;
+
 export const scholarshipSchema = z.object({
   name: z.string().min(1),
   nameRu: z.string().min(1).optional(),
@@ -71,6 +85,8 @@ export const scholarshipSchema = z.object({
   verifiedBySite: z.boolean().optional(),
   confidence: z.number().min(0).max(1).optional(),
   checkedAt: isoDate.optional(),
+  kompasStatus: scholarshipOrigin.optional(),
+  kompasCheckedAt: isoDate.optional(),
 });
 export type Scholarship = z.infer<typeof scholarshipSchema>;
 

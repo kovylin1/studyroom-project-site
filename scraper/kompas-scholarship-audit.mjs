@@ -23,26 +23,17 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { KOMPAS_DIR, logger } from './lib/kompas-collect.mjs';
+import { CLONE_MIN, buildCloneCounts, classifyScholarship, cloneKey } from './lib/kompas-scholarship-kind.mjs';
 
 const log = logger('sch-audit');
 const WORK = path.join(KOMPAS_DIR, 'catalog-work');
 const OUT_REPORT = path.join(KOMPAS_DIR, 'scholarship-report.json');
 const OUT_REVIEW = path.join(KOMPAS_DIR, 'scholarship-review.json');
 
-// Порог «клона»: одно и то же название с одной и той же суммой у стольких карточек.
-// 3 выбрано так, чтобы не ловить случайные совпадения вроде двух кампусов одного вуза.
-const CLONE_MIN = 3;
-
-// Внешние программы, которые вуз не назначает: их сумма и правила общие для страны.
-// Список закрытый и проверяемый — угадывать «похоже на внешнюю» по эвристике нельзя.
-const EXTERNAL = [
-  /fulbright/i, /chevening/i, /erasmus\+/i, /commonwealth (shared )?scholarship/i,
-  /daad/i, /gates cambridge/i, /rhodes scholarship/i, /marshall scholarship/i,
-  /^stipendium hungaricum/i, /vanier/i, /^mext/i, /^bolashak/i,
-];
+// Разряды, пороги и список внешних программ — в lib/kompas-scholarship-kind.mjs:
+// тем же классификатором помечает записи kompas-mark-scholarships.mjs.
 
 const readJson = async (f) => JSON.parse(await fs.readFile(f, 'utf8'));
-const norm = (s) => String(s ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
 
 async function main() {
   const now = new Date().toISOString();
@@ -58,16 +49,8 @@ async function main() {
     for (const s of d.scholarships ?? []) all.push({ slug, name: d.name, s });
   }
 
-  const cloneKey = (s) => `${norm(s.name)}|${norm(s.amount)}`;
-  const cloneCount = new Map();
-  for (const r of all) cloneCount.set(cloneKey(r.s), (cloneCount.get(cloneKey(r.s)) ?? 0) + 1);
-
-  const classify = (s) => {
-    if (EXTERNAL.some((re) => re.test(s.name ?? ''))) return 'generic-external';
-    if (s.url) return 'linked';
-    if ((cloneCount.get(cloneKey(s)) ?? 0) >= CLONE_MIN) return 'cloned';
-    return 'untraceable';
-  };
+  const cloneCount = buildCloneCounts(all.map((r) => r.s));
+  const classify = (s) => classifyScholarship(s, cloneCount);
 
   const byKind = { linked: 0, 'generic-external': 0, cloned: 0, untraceable: 0 };
   const perCard = new Map();
