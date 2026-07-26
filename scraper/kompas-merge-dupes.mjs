@@ -98,16 +98,16 @@ const addCase = (slug, name, issue, severity, detail, tag) => cases.push({
 // что merge идемпотентен: на втором прогоне programs дедуплицируются и «добавлено»
 // станет 0. Чтобы отчёт не врал при повторе, дельты берём отсюда, а не пересчётом.
 const KNOWN = {
-  'university-of-niagara-falls': { added: 1, feesMoved: 1, feesEnriched: 7, dlMoved: 8, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 54 },
-  'humber-polytechnic': { added: 6, feesMoved: 0, feesEnriched: 0, dlMoved: 0, campusesAdded: 1, feesSkippedCurrency: 0, totalPrograms: 29 },
-  'the-university-of-law': { added: 3, feesMoved: 3, feesEnriched: 86, dlMoved: 90, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 202 },
+  'university-of-niagara-falls': { added: 1, feesMoved: 1, feesEnriched: 7, dlMoved: 8, campusesAdded: 0, feesSkippedCurrency: 0, scholarshipsAdded: 0, accommodationAdded: 0, photoSetsTaken: 0, totalPrograms: 54 },
+  'humber-polytechnic': { added: 6, feesMoved: 0, feesEnriched: 0, dlMoved: 0, campusesAdded: 1, feesSkippedCurrency: 0, scholarshipsAdded: 0, accommodationAdded: 0, photoSetsTaken: 0, totalPrograms: 29 },
+  'the-university-of-law': { added: 3, feesMoved: 3, feesEnriched: 86, dlMoved: 90, campusesAdded: 0, feesSkippedCurrency: 0, scholarshipsAdded: 0, accommodationAdded: 0, photoSetsTaken: 0, totalPrograms: 202 },
   // Сессия 6, замерено первым прогоном 2026-07-26 против каталога до слияния.
-  'fisher-college-boston': { added: 19, feesMoved: 9, feesEnriched: 17, dlMoved: 26, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 97 },
-  'international-school-of-management-ism': { added: 1, feesMoved: 1, feesEnriched: 0, dlMoved: 1, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 44 },
-  'long-island-university-brooklyn-direct-entry': { added: 2, feesMoved: 2, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 91 },
-  'long-island-university-post-direct-entry': { added: 2, feesMoved: 2, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 146 },
-  'texas-aandm-corpus-christi-university-direct-entry': { added: 2, feesMoved: 0, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 123 },
-  'royal-holloway-direct-entry': { added: 3, feesMoved: 0, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 499 },
+  'fisher-college-boston': { added: 19, feesMoved: 9, feesEnriched: 17, dlMoved: 26, campusesAdded: 0, feesSkippedCurrency: 0, scholarshipsAdded: 0, accommodationAdded: 0, photoSetsTaken: 0, totalPrograms: 97 },
+  'international-school-of-management-ism': { added: 1, feesMoved: 1, feesEnriched: 0, dlMoved: 1, campusesAdded: 0, feesSkippedCurrency: 0, scholarshipsAdded: 0, accommodationAdded: 0, photoSetsTaken: 0, totalPrograms: 44 },
+  'long-island-university-brooklyn-direct-entry': { added: 2, feesMoved: 2, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, scholarshipsAdded: 0, accommodationAdded: 0, photoSetsTaken: 1, totalPrograms: 91 },
+  'long-island-university-post-direct-entry': { added: 2, feesMoved: 2, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, scholarshipsAdded: 0, accommodationAdded: 0, photoSetsTaken: 1, totalPrograms: 146 },
+  'texas-aandm-corpus-christi-university-direct-entry': { added: 2, feesMoved: 0, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, scholarshipsAdded: 2, accommodationAdded: 0, photoSetsTaken: 1, totalPrograms: 123 },
+  'royal-holloway-direct-entry': { added: 3, feesMoved: 0, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, scholarshipsAdded: 2, accommodationAdded: 0, photoSetsTaken: 1, totalPrograms: 499 },
 };
 
 async function mergePair(keepSlug, dropSlug, tag, MAP, backup) {
@@ -181,6 +181,39 @@ async function mergePair(keepSlug, dropSlug, tag, MAP, backup) {
     }
   }
 
+  // Стипендии — объединением по названию. У texas-aandm-…-direct-entry и
+  // royal-holloway-direct-entry они есть, а у оставляемых карточек этих записей нет:
+  // без переноса слияние молча выбросило бы данные, которых больше взять негде.
+  let scholarshipsAdded = 0;
+  if (Array.isArray(drop.scholarships) && drop.scholarships.length) {
+    keep.scholarships ??= [];
+    const have = new Set(keep.scholarships.map((s) => normTitle(s.name)));
+    for (const s of drop.scholarships) {
+      const t = normTitle(s.name);
+      if (!t || have.has(t)) continue;
+      have.add(t); keep.scholarships.push(s); scholarshipsAdded++;
+    }
+  }
+
+  // Жильё — тем же правилом объединения по названию.
+  let accommodationAdded = 0;
+  if (Array.isArray(drop.accommodation) && drop.accommodation.length) {
+    keep.accommodation ??= [];
+    const have = new Set(keep.accommodation.map((a) => normTitle(a.name)));
+    for (const a of drop.accommodation) {
+      const t = normTitle(a.name);
+      if (!t || have.has(t)) continue;
+      have.add(t); keep.accommodation.push(a); accommodationAdded++;
+    }
+  }
+
+  // Фотонаборы — только если у оставляемой их нет вовсе (правило описания и логотипа:
+  // дыру заполняем, поверх непустого не кладём). Галерею НЕ сливаем сознательно: у
+  // оставляемых карточек она уже полная, а второй комплект снимков того же кампуса —
+  // это не дополнение, а удвоение с риском чужого фото.
+  let photoSetsTaken = 0;
+  if (!keep.photoSets && drop.photoSets) { keep.photoSets = drop.photoSets; photoSetsTaken = 1; }
+
   // Метки источника — объединением. Обе карточки — один вуз, партнёрство через
   // РАЗНЫЕ агрегаторы (qs у одной, edvoy у другой) должно сложиться, а не потеряться.
   const via = new Set([...(keep.partnerSource?.via ?? []), ...(drop.partnerSource?.via ?? [])]);
@@ -215,20 +248,28 @@ async function mergePair(keepSlug, dropSlug, tag, MAP, backup) {
   // (программы уже слиты), поэтому берём зафиксированные числа первого слияния.
   const m = alreadyMerged && KNOWN[dropSlug]
     ? { ...KNOWN[dropSlug] }
-    : { added, feesMoved, feesEnriched, dlMoved, campusesAdded, feesSkippedCurrency, totalPrograms: keep.programs.length };
+    : { added, feesMoved, feesEnriched, dlMoved, campusesAdded, feesSkippedCurrency, scholarshipsAdded, accommodationAdded, photoSetsTaken, totalPrograms: keep.programs.length };
   ({ added, feesMoved, feesEnriched, dlMoved, campusesAdded, feesSkippedCurrency } = m);
+  scholarshipsAdded = m.scholarshipsAdded ?? scholarshipsAdded;
+  accommodationAdded = m.accommodationAdded ?? accommodationAdded;
+  photoSetsTaken = m.photoSetsTaken ?? photoSetsTaken;
 
   const feeNote = feesSkippedCurrency
     ? ` ${feesSkippedCurrency} цен НЕ перенесено — валюта карточек разная (${keep.tuition.currency} vs ${drop.tuition?.currency}).`
     : '';
   const decidedOn = tag === 'session4.5-merge' ? '2026-07-24' : '2026-07-26';
+  const extraNote = [
+    scholarshipsAdded ? `стипендий перенесено ${scholarshipsAdded}` : '',
+    accommodationAdded ? `вариантов жилья ${accommodationAdded}` : '',
+    photoSetsTaken ? 'взяты фотонаборы дубля (у оставленной их не было)' : '',
+  ].filter(Boolean).join(', ');
   addCase(keepSlug, keep.name, 'kompas_dupe_merged', 'warning',
-    `Дубль «${dropSlug}» слит сюда (решение владельца ${decidedOn}). Программ добавлено ${added} (стало ${keep.programs.length}), цен перенесено ${feesMoved}, цен добавлено на совпавшие программы ${feesEnriched}, дедлайнов ${dlMoved}, кампусов ${campusesAdded}.${feeNote} Метки источников объединены: ${[...via].join(', ') || '—'}. Файл дубля оставлен с пометкой mergedInto — снять при подмене живого каталога. Откат: dupmerge-backup.json.`, tag);
+    `Дубль «${dropSlug}» слит сюда (решение владельца ${decidedOn}). Программ добавлено ${added} (стало ${keep.programs.length}), цен перенесено ${feesMoved}, цен добавлено на совпавшие программы ${feesEnriched}, дедлайнов ${dlMoved}, кампусов ${campusesAdded}.${extraNote ? ` Кроме программ: ${extraNote}.` : ''}${feeNote} Метки источников объединены: ${[...via].join(', ') || '—'}. Файл дубля оставлен с пометкой mergedInto — снять при подмене живого каталога. Откат: dupmerge-backup.json.`, tag);
   addCase(dropSlug, drop.name, 'kompas_dupe_dropped', 'info',
     `Эта карточка — дубль «${keepSlug}», слита туда ${decidedOn}. Содержимое оставлено на месте, метка источника снята. Удаление — при подмене живого каталога.`, tag);
 
-  log(`${dropSlug} → ${keepSlug}: программ +${added} (стало ${keep.programs.length}), цен перенесено ${feesMoved}, обогащено ${feesEnriched}, дедлайнов +${dlMoved}, кампусов +${campusesAdded}${feesSkippedCurrency ? `, цен пропущено по валюте ${feesSkippedCurrency}` : ''}`);
-  return { keep: keepSlug, drop: dropSlug, added, feesMoved, feesEnriched, dlMoved, campusesAdded, feesSkippedCurrency, totalPrograms: keep.programs.length };
+  log(`${dropSlug} → ${keepSlug}: программ +${added} (стало ${keep.programs.length}), цен перенесено ${feesMoved}, обогащено ${feesEnriched}, дедлайнов +${dlMoved}, кампусов +${campusesAdded}${scholarshipsAdded ? `, стипендий +${scholarshipsAdded}` : ''}${accommodationAdded ? `, жилья +${accommodationAdded}` : ''}${photoSetsTaken ? ', +фотонаборы' : ''}${feesSkippedCurrency ? `, цен пропущено по валюте ${feesSkippedCurrency}` : ''}`);
+  return { keep: keepSlug, drop: dropSlug, added, feesMoved, feesEnriched, dlMoved, campusesAdded, feesSkippedCurrency, scholarshipsAdded, accommodationAdded, photoSetsTaken, totalPrograms: keep.programs.length };
 }
 
 async function main() {
