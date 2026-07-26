@@ -7,6 +7,16 @@
 //   humber-college       ← humber-polytechnic
 //   university-of-law    ← the-university-of-law
 //
+// Решение владельца 2026-07-26 (сессия 6): «объединением, дополнять карточки друг
+// другом, без повторов; оставлять более полную». Ещё шесть пар — четыре «… Direct Entry»
+// и два разночтения имени, найденные kompas-dupe-scan.mjs и разбором дыр P3.8:
+//   fisher-college (78)  ← fisher-college-boston (42)
+//   ism-germany (43)     ← international-school-of-management-ism (1)
+//   liu-brooklyn (89)    ← long-island-university-brooklyn-direct-entry (2)
+//   liu-post (144)       ← long-island-university-post-direct-entry (2)
+//   tamucc (121)         ← texas-aandm-corpus-christi-university-direct-entry (2)
+//   royal-holloway (496) ← royal-holloway-direct-entry (3)
+//
 // В каждой паре оставляем БОЛЕЕ ПОЛНУЮ карточку (офсайт как источник, больше
 // программ, логотип, описания) и вливаем вторую ОБЪЕДИНЕНИЕМ. Ключевая тонкость,
 // оплаченная парой University of Law: у сливаемой карточки бывают цены на программы,
@@ -38,10 +48,18 @@ const dedupKey = (title, level) => `${normTitle(title)}|${level || ''}`;
 const normCampus = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 
 // Пары: [оставляем, сливаем]. Порядок выбран по полноте карточки, не по алфавиту.
+// tag — в какой сессии пара решена: он уходит в id кейса, чтобы решение оператора по
+// старым парам не перезаписалось новым прогоном.
 const PAIRS = [
-  { keep: 'niagara-falls', drop: 'university-of-niagara-falls' },
-  { keep: 'humber-college', drop: 'humber-polytechnic' },
-  { keep: 'university-of-law', drop: 'the-university-of-law' },
+  { keep: 'niagara-falls', drop: 'university-of-niagara-falls', tag: 'session4.5-merge' },
+  { keep: 'humber-college', drop: 'humber-polytechnic', tag: 'session4.5-merge' },
+  { keep: 'university-of-law', drop: 'the-university-of-law', tag: 'session4.5-merge' },
+  { keep: 'fisher-college', drop: 'fisher-college-boston', tag: 'session6-merge' },
+  { keep: 'ism-germany', drop: 'international-school-of-management-ism', tag: 'session6-merge' },
+  { keep: 'liu-brooklyn', drop: 'long-island-university-brooklyn-direct-entry', tag: 'session6-merge' },
+  { keep: 'liu-post', drop: 'long-island-university-post-direct-entry', tag: 'session6-merge' },
+  { keep: 'tamucc', drop: 'texas-aandm-corpus-christi-university-direct-entry', tag: 'session6-merge' },
+  { keep: 'royal-holloway', drop: 'royal-holloway-direct-entry', tag: 'session6-merge' },
 ];
 
 // Агрегаторы, чьи выгрузки лежат по слагу. При слиянии выгрузку сливаемой карточки
@@ -69,8 +87,8 @@ async function relocateExtracts(dropSlug, keepSlug) {
 }
 
 const cases = [];
-const addCase = (slug, name, issue, severity, detail) => cases.push({
-  id: `${slug}||${issue}||session4.5-merge`,
+const addCase = (slug, name, issue, severity, detail, tag) => cases.push({
+  id: `${slug}||${issue}||${tag}`,
   slug, name, issue, severity, detail,
   catalog: null, official: null, program: null, sourceUrl: null,
   checkedAt: new Date().toISOString(), decision: null, decidedAt: null, applied: false,
@@ -83,12 +101,30 @@ const KNOWN = {
   'university-of-niagara-falls': { added: 1, feesMoved: 1, feesEnriched: 7, dlMoved: 8, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 54 },
   'humber-polytechnic': { added: 6, feesMoved: 0, feesEnriched: 0, dlMoved: 0, campusesAdded: 1, feesSkippedCurrency: 0, totalPrograms: 29 },
   'the-university-of-law': { added: 3, feesMoved: 3, feesEnriched: 86, dlMoved: 90, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 202 },
+  // Сессия 6, замерено первым прогоном 2026-07-26 против каталога до слияния.
+  'fisher-college-boston': { added: 19, feesMoved: 9, feesEnriched: 17, dlMoved: 26, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 97 },
+  'international-school-of-management-ism': { added: 1, feesMoved: 1, feesEnriched: 0, dlMoved: 1, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 44 },
+  'long-island-university-brooklyn-direct-entry': { added: 2, feesMoved: 2, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 91 },
+  'long-island-university-post-direct-entry': { added: 2, feesMoved: 2, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 146 },
+  'texas-aandm-corpus-christi-university-direct-entry': { added: 2, feesMoved: 0, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 123 },
+  'royal-holloway-direct-entry': { added: 3, feesMoved: 0, feesEnriched: 0, dlMoved: 0, campusesAdded: 0, feesSkippedCurrency: 0, totalPrograms: 499 },
 };
 
-async function mergePair(keepSlug, dropSlug, MAP) {
+async function mergePair(keepSlug, dropSlug, tag, MAP, backup) {
   const keep = await readJson(path.join(WORK, `${keepSlug}.json`));
   const drop = await readJson(path.join(WORK, `${dropSlug}.json`));
   const alreadyMerged = (keep.mergedFrom ?? []).includes(dropSlug);
+
+  // Бэкап на откат — ДО первой правки и только один раз за пару. Если карточка уже
+  // слита, а бэкапа нет (пары сессии 4.5 слиты до того, как бэкап появился), снимок
+  // сделать нечем: писать текущее состояние в «оригинал» значит соврать про откат.
+  if (!backup[dropSlug]) {
+    backup[dropSlug] = alreadyMerged
+      ? { keep: keepSlug, note: 'слито до появления бэкапа — откат только через git' }
+      // structuredClone обязателен: keep/drop правятся ниже по месту, и ссылка
+      // в бэкапе показала бы уже слитое состояние вместо исходного.
+      : { keep: keepSlug, mergedAt: TODAY, cards: { [keepSlug]: structuredClone(keep), [dropSlug]: structuredClone(drop) } };
+  }
 
   keep.tuition ??= { byProgram: {} };
   keep.tuition.byProgram ??= {};
@@ -185,10 +221,11 @@ async function mergePair(keepSlug, dropSlug, MAP) {
   const feeNote = feesSkippedCurrency
     ? ` ${feesSkippedCurrency} цен НЕ перенесено — валюта карточек разная (${keep.tuition.currency} vs ${drop.tuition?.currency}).`
     : '';
+  const decidedOn = tag === 'session4.5-merge' ? '2026-07-24' : '2026-07-26';
   addCase(keepSlug, keep.name, 'kompas_dupe_merged', 'warning',
-    `Дубль «${dropSlug}» слит сюда (решение владельца 2026-07-24). Программ добавлено ${added} (стало ${keep.programs.length}), цен перенесено ${feesMoved}, цен добавлено на совпавшие программы ${feesEnriched}, дедлайнов ${dlMoved}, кампусов ${campusesAdded}.${feeNote} Метки источников объединены: ${[...via].join(', ') || '—'}. Файл дубля оставлен с пометкой mergedInto — снять при подмене живого каталога в сессии 5.`);
+    `Дубль «${dropSlug}» слит сюда (решение владельца ${decidedOn}). Программ добавлено ${added} (стало ${keep.programs.length}), цен перенесено ${feesMoved}, цен добавлено на совпавшие программы ${feesEnriched}, дедлайнов ${dlMoved}, кампусов ${campusesAdded}.${feeNote} Метки источников объединены: ${[...via].join(', ') || '—'}. Файл дубля оставлен с пометкой mergedInto — снять при подмене живого каталога. Откат: dupmerge-backup.json.`, tag);
   addCase(dropSlug, drop.name, 'kompas_dupe_dropped', 'info',
-    `Эта карточка — дубль «${keepSlug}», слита туда 2026-07-24. Содержимое оставлено на месте, метка источника снята. Удаление — сессия 5.`);
+    `Эта карточка — дубль «${keepSlug}», слита туда ${decidedOn}. Содержимое оставлено на месте, метка источника снята. Удаление — при подмене живого каталога.`, tag);
 
   log(`${dropSlug} → ${keepSlug}: программ +${added} (стало ${keep.programs.length}), цен перенесено ${feesMoved}, обогащено ${feesEnriched}, дедлайнов +${dlMoved}, кампусов +${campusesAdded}${feesSkippedCurrency ? `, цен пропущено по валюте ${feesSkippedCurrency}` : ''}`);
   return { keep: keepSlug, drop: dropSlug, added, feesMoved, feesEnriched, dlMoved, campusesAdded, feesSkippedCurrency, totalPrograms: keep.programs.length };
@@ -197,13 +234,18 @@ async function mergePair(keepSlug, dropSlug, MAP) {
 async function main() {
   if (!APPLY) log('СУХОЙ ПРОГОН: ничего не пишу. Для записи добавь --apply');
   const MAP = await readJson(MAP_FILE);
+  // Бэкап накопительный: снимки прошлых пар не перезаписываем, иначе повторный
+  // прогон подменит «оригинал» уже слитым состоянием и откат станет пустышкой.
+  const BACKUP_FILE = path.join(KOMPAS_DIR, 'dupmerge-backup.json');
+  const backup = await readJson(BACKUP_FILE).catch(() => ({}));
   const merges = [];
-  for (const { keep, drop } of PAIRS) merges.push(await mergePair(keep, drop, MAP));
+  for (const { keep, drop, tag } of PAIRS) merges.push(await mergePair(keep, drop, tag, MAP, backup));
   await writeJson(MAP_FILE, MAP);
+  await writeJson(BACKUP_FILE, backup);
 
-  await writeJson(path.join(KOMPAS_DIR, 'dupmerge-session4.5.json'), {
+  await writeJson(path.join(KOMPAS_DIR, 'dupmerge-log.json'), {
     generatedAt: new Date().toISOString(),
-    note: 'Слияния дублей каталога, сессия 4.5, решение владельца 2026-07-24. Файлы сливаемых карточек оставлены на месте с mergedInto — удаление в сессии 5.',
+    note: 'Слияния дублей каталога: 3 пары решением владельца 2026-07-24, 6 пар — 2026-07-26. Файлы сливаемых карточек оставлены на месте с mergedInto — удаление при подмене живого каталога. Откат: dupmerge-backup.json.',
     merges,
   });
   await writeJson(path.join(KOMPAS_DIR, 'dupmerge-review.json'), {

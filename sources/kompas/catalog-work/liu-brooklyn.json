@@ -1273,6 +1273,20 @@
       "verified": true,
       "source": "edvoy",
       "faculty": "Здоровье и медицина"
+    },
+    {
+      "slug": "long-island-university-brooklyn-direct-entry-undergraduate",
+      "title": "Undergraduate Degree Programs",
+      "durationYears": 4,
+      "level": "bachelor",
+      "programType": "degree"
+    },
+    {
+      "slug": "long-island-university-brooklyn-direct-entry-graduate",
+      "title": "Graduate Degree Programs",
+      "durationYears": 2,
+      "level": "master",
+      "programType": "degree"
     }
   ],
   "tuition": {
@@ -1318,7 +1332,9 @@
       "liu-brooklyn-dsw-social-work": 38000,
       "liu-brooklyn-phd-clinical-psychology": 32000,
       "liu-brooklyn-phd-computational-science-ai": 32000,
-      "liu-brooklyn-phd-pharmaceutics": 32000
+      "liu-brooklyn-phd-pharmaceutics": 32000,
+      "long-island-university-brooklyn-direct-entry-undergraduate": 41052,
+      "long-island-university-brooklyn-direct-entry-graduate": 25326
     }
   },
   "deadlines": {
@@ -1508,7 +1524,7 @@
       "11 акрлық қалалық кампус — NYC-тегі ең қауіпсіз оқу орындарының бірі деп танылған"
     ]
   },
-  "lastChecked": "2026-05-18T00:00:00.000Z",
+  "lastChecked": "2026-07-26",
   "sourceUrl": "https://www.liu.edu/brooklyn",
   "sourceHash": "sha256:a3f9c12d7e841b05",
   "confidence": "aggregator",
@@ -1546,7 +1562,11 @@
   "partnerSource": {
     "type": "aggregator",
     "via": [
-      "qs"
+      "qs",
+      "studygroup"
     ]
-  }
+  },
+  "mergedFrom": [
+    "long-island-university-brooklyn-direct-entry"
+  ]
 }
