@@ -24,6 +24,7 @@ const PARTS = [
   'program-backfill-review.json', 'fee-mismatch-review.json', 'dupe-scan-review.json',
   // P4: стипендии — замер достоверности и сверка каталога с собранными офсайтами
   'scholarship-review.json', 'scholarship-diff-review.json', 'scholarship-clean-review.json',
+  'sito-review.json',
 ];
 
 const readJson = async (f) => { try { return JSON.parse(await fs.readFile(f, 'utf8')); } catch { return null; } };
