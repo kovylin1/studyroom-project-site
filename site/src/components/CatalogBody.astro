@@ -19,9 +19,27 @@ const WHATSAPP_NUMBER = CONTACTS.whatsappNumber;
 const BUILD_DATE = new Date();
 
 const entries = await getCollection('universities');
+
+// Порядок каталога (решение владельца 2026-07-29): сначала известные ТОП-вузы,
+// потом остальные по размеру (числу программ), алфавит — только как разрешение
+// ничьей. Слаг вне каталога в списке безвреден — просто не даёт буста.
+const TOP_SLUGS = [
+  'oxford', 'ucl', 'exeter', 'glasgow', 'birmingham', 'nottingham', 'bristol',
+  'york', 'bath', 'durham', 'lancaster', 'queen-mary-london', 'royal-holloway',
+  'cranfield', 'sydney', 'melbourne', 'adelaide', 'massey', 'auckland',
+  'amsterdam', 'arizona-state',
+];
+const topRank = new Map(TOP_SLUGS.map((s, i) => [s, i]));
 const universities = entries
   .map((entry) => entry.data)
-  .sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+  .sort((a, b) => {
+    const ta = topRank.get(a.slug) ?? Infinity;
+    const tb = topRank.get(b.slug) ?? Infinity;
+    if (ta !== tb) return ta - tb;
+    const size = b.programs.length - a.programs.length;
+    if (size !== 0) return size;
+    return a.name.localeCompare(b.name, 'ru');
+  });
 
 const countries = Array.from(new Set(universities.map((u) => u.country))).sort((a, b) =>
   a.localeCompare(b, 'ru'),
