@@ -47,6 +47,15 @@ jobs:
         # «Commit + push» ниже подхватывает его через `git add site/public/api/`.
         run: node scraper/soroka.mjs --skip-live  || true
 
+      - name: КОМПАС — замер дрейфа каталог vs партнёрские источники
+        # Сверка ЖИВОГО каталога с назначенными источниками (partner-source-map):
+        # сколько программ подтверждено, расхождения цен, недобор. Детерминированно,
+        # $0, без сети — сравнивает с уже собранными выгрузками. Кейсы уходят в
+        # sources/kompas/diff-review.json, панель пересводится kompas-panel.
+        run: |
+          KOMPAS_WORK_DIR=site/src/content/universities node scraper/kompas-diff.mjs  || true
+          node scraper/kompas-panel.mjs  || true
+
       - name: Generate status + verify snapshots
         run: |
           node site/scripts/generate-status.mjs  || true
@@ -59,7 +68,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scraper/sources/ site/public/api/
+          git add scraper/sources/ site/public/api/ sources/kompas/diff-review.json sources/kompas/diff-report.json
           git diff --staged --quiet || git commit -m "chore: monthly consolidation $(date -u +%Y-%m-%d)"
           attempt=0
           until git push; do

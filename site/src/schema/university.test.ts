@@ -24,7 +24,7 @@ const validSample: University = {
     exams: ['MAT'],
   },
   scholarships: [
-    { name: 'Reach Oxford', amountUSD: 35000, deadline: '2026-03-01' },
+    { name: 'Reach Oxford', amount: 'до $35,000', deadline: '2026-03-01' },
   ],
   lastChecked: '2026-05-01T08:00:00Z',
   sourceUrl: 'https://www.ox.ac.uk/admissions',

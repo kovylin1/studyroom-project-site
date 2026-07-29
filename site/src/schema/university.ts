@@ -35,6 +35,12 @@ export const programSchema = z.object({
   source: z.string().optional(),
   verifiedBySite: z.boolean().optional(),
   confidence: z.number().min(0).max(1).optional(),
+  // КОМПАС: catalog-only — программа есть только в каталоге, источник её не
+  // подтверждает (P1); source-added — программа добрана с источника (P2).
+  // Без объявления в схеме zod срезал бы метку и до страницы вуза она не
+  // доезжала (та же история, что у стипендий, см. scholarshipOrigin).
+  kompasStatus: z.enum(['catalog-only', 'source-added']).optional(),
+  kompasCheckedAt: isoDate.optional(),
   checkedAt: isoDate.optional(),
   brokenLink: z.boolean().optional(),
 });
