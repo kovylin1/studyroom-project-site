@@ -13,10 +13,10 @@ import { CONTACTS, waLink, tgLink } from './contacts';
 // landing ([slug].astro) and the catalog card (UniversityCardV2.astro).
 // Approximate rates; update here once to keep both views in sync.
 export const CURRENCY_TO_KZT: Record<string, number> = {
-  GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290,
+  GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290, CHF: 545,
 };
 export const CURRENCY_SYMBOL: Record<string, string> = {
-  GBP: '£', USD: '$', EUR: '€', CAD: 'CA$', AUD: 'A$', NZD: 'NZ$',
+  GBP: '£', USD: '$', EUR: '€', CAD: 'CA$', AUD: 'A$', NZD: 'NZ$', CHF: 'CHF',
 };
 export const DEFAULT_KZT_RATE = 500;
 

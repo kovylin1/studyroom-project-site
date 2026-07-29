@@ -1,0 +1,323 @@
+{
+  "_meta": {
+    "aggregator": "studygroup",
+    "label": "Study Group",
+    "source": "https://kentico-content-services.studygroup.com/course-search/search/?language=en",
+    "collectedAt": "2026-07-22T13:33:21.239Z",
+    "rule": "all",
+    "access": "public",
+    "notes": [
+      "План числил Study Group закрытым (логин). Замер сессии 3: поиск курсов открыт без авторизации.",
+      "Эндпоинт взят из записи сети прошлой сессии (_v5-network.json), а не подобран.",
+      "Цены — «от» (tuitionFeeFrom). Аудитория цены источником не указана, feeAudience не выдумываем.",
+      "Центры сети Bellerbys названы «Город - Партнёр» — это подготовительные центры, не вузы; в MANUAL с причиной."
+    ],
+    "counts": {
+      "groups": 46,
+      "matched": 34,
+      "unmatched": 0,
+      "skipped": 12,
+      "catalogCards": 31,
+      "programs": 192,
+      "withPrice": 161
+    }
+  },
+  "mergedSlugs": [
+    {
+      "slug": "hartford",
+      "from": [
+        "University of Hartford Direct Entry",
+        "University of Hartford"
+      ],
+      "programs": 4,
+      "duplicatesDropped": 0
+    },
+    {
+      "slug": "james-madison",
+      "from": [
+        "James Madison University Direct Entry",
+        "James Madison University"
+      ],
+      "programs": 2,
+      "duplicatesDropped": 0
+    },
+    {
+      "slug": "royal-holloway",
+      "from": [
+        "Royal Holloway Direct Entry",
+        "Royal Holloway"
+      ],
+      "programs": 12,
+      "duplicatesDropped": 0
+    }
+  ],
+  "matched": [
+    {
+      "from": "New Jersey Institute of Technology",
+      "to": "new-jersey-institute-of-technology",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "Cardiff University",
+      "to": "cardiff",
+      "method": "as-is/exact-name",
+      "courses": 16
+    },
+    {
+      "from": "Durham University",
+      "to": "durham",
+      "method": "as-is/exact-name",
+      "courses": 10
+    },
+    {
+      "from": "University of Bath",
+      "to": "bath",
+      "method": "as-is/exact-name",
+      "courses": 6
+    },
+    {
+      "from": "University of Huddersfield - London",
+      "to": "university-of-huddersfield-london",
+      "method": "as-is/exact-slug",
+      "courses": 14
+    },
+    {
+      "from": "University of Hartford Direct Entry",
+      "to": "hartford",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "Texas A&M Corpus Christi University Direct Entry",
+      "to": "tamucc",
+      "method": "manual",
+      "courses": 2
+    },
+    {
+      "from": "Long Island University Brooklyn Direct Entry",
+      "to": "liu-brooklyn",
+      "method": "manual",
+      "courses": 2
+    },
+    {
+      "from": "Western Washington University Direct Entry",
+      "to": "western-washington",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "Long Island University Post Direct Entry",
+      "to": "liu-post",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "DePaul University Direct Entry",
+      "to": "depaul",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "James Madison University Direct Entry",
+      "to": "james-madison",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "Towson University",
+      "to": "towson",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "Royal Holloway Direct Entry",
+      "to": "royal-holloway",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "California State University San Marcos",
+      "to": "california-state-university-san-marcos",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "University of Nebraska Omaha",
+      "to": "university-of-nebraska-omaha",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "ERC Institute Direct Entry",
+      "to": "erc-institute-direct-entry",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "Florida Atlantic University Direct Entry",
+      "to": "florida-atlantic-university-direct-entry",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "University of Huddersfield",
+      "to": "university-of-huddersfield",
+      "method": "as-is/exact-slug",
+      "courses": 9
+    },
+    {
+      "from": "University of Aberdeen",
+      "to": "aberdeen",
+      "method": "as-is/exact-name",
+      "courses": 9
+    },
+    {
+      "from": "University of Surrey",
+      "to": "surrey",
+      "method": "as-is/exact-name",
+      "courses": 6
+    },
+    {
+      "from": "Dublin",
+      "to": "university-college-dublin",
+      "method": "manual",
+      "courses": 2
+    },
+    {
+      "from": "University of Leeds",
+      "to": "university-of-leeds",
+      "method": "as-is/exact-slug",
+      "courses": 7
+    },
+    {
+      "from": "University of Sheffield International College",
+      "to": "university-of-sheffield",
+      "method": "as-is/exact-slug",
+      "courses": 7
+    },
+    {
+      "from": "University of Strathclyde",
+      "to": "strathclyde",
+      "method": "as-is/exact-name",
+      "courses": 6
+    },
+    {
+      "from": "Liverpool John Moores University",
+      "to": "liverpool-john-moores-university",
+      "method": "as-is/exact-slug",
+      "courses": 6
+    },
+    {
+      "from": "Leeds Beckett University",
+      "to": "leeds-beckett",
+      "method": "as-is/exact-name",
+      "courses": 7
+    },
+    {
+      "from": "Kingston University London",
+      "to": "kingston-university",
+      "method": "as-is+strip-campus/exact-slug",
+      "courses": 8
+    },
+    {
+      "from": "James Madison University",
+      "to": "james-madison",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "Royal Holloway",
+      "to": "royal-holloway",
+      "method": "as-is/exact-slug",
+      "courses": 9
+    },
+    {
+      "from": "University of Sussex",
+      "to": "sussex",
+      "method": "as-is/exact-name",
+      "courses": 9
+    },
+    {
+      "from": "University of Hartford",
+      "to": "hartford",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "Mercer University",
+      "to": "mercer",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "University of Wisconsin - Stout",
+      "to": "university-of-wisconsin-stout",
+      "method": "manual",
+      "courses": 2
+    }
+  ],
+  "unmatched": [],
+  "skippedNotUniversity": [
+    {
+      "from": "Eastbourne - TWIN",
+      "reason": "центр Bellerbys в Истборне, не вуз",
+      "courses": 3
+    },
+    {
+      "from": "London - TWIN",
+      "reason": "центр Bellerbys в Лондоне, не вуз",
+      "courses": 3
+    },
+    {
+      "from": "Harbin - NOVO",
+      "reason": "центр Bellerbys в Харбине, не вуз",
+      "courses": 2
+    },
+    {
+      "from": "Zhuhai - BNBU",
+      "reason": "центр Bellerbys в Чжухае при BNBU, не вуз",
+      "courses": 3
+    },
+    {
+      "from": "Changsha - TSH",
+      "reason": "центр Bellerbys в Чанша, не вуз",
+      "courses": 2
+    },
+    {
+      "from": "Singapore - VWA",
+      "reason": "центр Bellerbys в Сингапуре, не вуз",
+      "courses": 4
+    },
+    {
+      "from": "Shanghai - ECUST",
+      "reason": "центр Bellerbys в Шанхае при ECUST, не вуз",
+      "courses": 4
+    },
+    {
+      "from": "Wuhan - NOVO",
+      "reason": "центр Bellerbys в Ухане, не вуз",
+      "courses": 1
+    },
+    {
+      "from": "Beijing - NOVO",
+      "reason": "центр Bellerbys в Пекине (партнёр NOVO), не вуз",
+      "courses": 1
+    },
+    {
+      "from": "Seoul - GEC",
+      "reason": "центр Bellerbys в Сеуле, не вуз",
+      "courses": 2
+    },
+    {
+      "from": "Xian - Eurasia",
+      "reason": "центр Bellerbys в Сиане при Xian Eurasia, не вуз",
+      "courses": 1
+    },
+    {
+      "from": "Nanjing - NOVO",
+      "reason": "центр Bellerbys в Нанкине, не вуз",
+      "courses": 1
+    }
+  ]
+}

@@ -1260,6 +1260,7 @@ const CONTROL_DEFAULT_URL = '';
   const REVIZOR_APPLY_WORKFLOW = 'revizor-apply.yml';
   const SOROKA_APPLY_WORKFLOW  = 'soroka-apply.yml';
   const BOBR_APPLY_WORKFLOW    = 'bobr-apply.yml';
+  const OREL_APPLY_WORKFLOW    = 'orel-apply.yml';
   const SOROKA_RUN_WORKFLOW    = 'soroka-on-demand.yml';
   const OREL_WORKFLOW          = 'orel-on-demand.yml';
   const PAUK_WORKFLOW          = 'pauk-on-demand.yml';
@@ -1700,6 +1701,23 @@ const CONTROL_DEFAULT_URL = '';
       workflow: BOBR_APPLY_WORKFLOW,
       lsKey: 'studyroom.bobr.decisions',
     },
+    {
+      key: 'orel', title: 'ОРЁЛ',
+      api: '/api/orel-review.json',
+      contentPath: 'site/public/api/orel-review.json',
+      workflow: OREL_APPLY_WORKFLOW,
+      lsKey: 'studyroom.orel.decisions',
+    },
+    {
+      // КОМПАС: кейсы сессий 3.5 и 4. Это ЗАМЕР, а не правка — apply-workflow
+      // сознательно нет: по правилу 5 плана каталог меняется только в сессии 5,
+      // на копии и целиком. Решения оператора здесь копятся до этого момента.
+      key: 'kompas', title: 'КОМПАС',
+      api: '/api/kompas-review.json',
+      contentPath: 'site/public/api/kompas-review.json',
+      workflow: null,
+      lsKey: 'studyroom.kompas.decisions',
+    },
   ];
   const srcState = {};   // key → { cfg, data }  (data = полный JSON источника)
   let reviewData = null; // объединённый вид { items: [...] } для рендера
@@ -1747,8 +1765,77 @@ const CONTROL_DEFAULT_URL = '';
       tuition_zero: 'цена обучения не заполнена (0)',
       tuition_outlier: 'цена обучения вне диапазона',
       ielts_implausible: 'неправдоподобный балл IELTS',
+      orel_needs_eyes: 'фото найдено — нужен просмотр глазами',
+      // КОМПАС, сессия 3.5 — прямые партнёры
+      direct_fee_unlinked: 'цена офсайта не привязана к программе',
+      direct_zero_programs: 'офсайт не отдал ни одной программы',
+      direct_capped: 'обход упёрся в потолок, часть программ не собрана',
+      direct_no_official_site: 'офсайт неизвестен — в карточке адрес агрегатора',
+      direct_site_unreachable: 'сайт вуза не ответил',
+      // КОМПАС, сессия 4 — замер расхождений
+      kompas_programs_missing: 'у источника есть программы, которых нет в карточке',
+      kompas_programs_extra: 'в карточке есть программы, которых нет у источника',
+      kompas_fee_mismatch: 'цена расходится с источником',
+      kompas_fee_mismatch_rest: 'остальные расхождения цены (свод)',
+      kompas_fee_absent: 'у источника цена есть, в карточке нет',
+      kompas_fee_currency: 'валюта не совпадает с источником',
+      kompas_campus_missing: 'кампусы источника отсутствуют в карточке',
+      kompas_no_extract: 'источник собран, но выгрузки по вузу нет',
+      kompas_source_blocked: 'источник за логином — сверить не с чем',
+      kompas_source_empty: 'источник не отдаёт программы',
+      // КОМПАС, сессия 4.5 — карточки, дубли, дыры сбора
+      kompas_gap_collectable: 'вуз есть в источнике, выгрузки нет — чинится прогоном',
+      kompas_gap_source_no_programs: 'партнёрство есть, программ источник не отдаёт',
+      kompas_gap_dupe_card: 'бренд источника привязан к другой карточке — дубль в каталоге',
+      kompas_dupe_candidate: 'похоже на один вуз под двумя карточками',
+      // КОМПАС P4 — стипендии
+      kompas_scholarship_untraceable: 'стипендии в карточке нечем проверить',
+      kompas_scholarship_absent: 'стипендий нет ни одной — нужен сбор с офсайтов',
+      // КОМПАС, сессия 6 — сверка стипендий каталога с офсайтами
+      kompas_scholarship_offsite_new: 'на сайте вуза есть стипендии, которых нет в карточке',
+      kompas_scholarship_not_on_site: 'стипендии карточки не подтвердились сайтом вуза',
+      kompas_scholarship_amount_diff: 'сумма стипендии расходится с сайтом вуза',
+      kompas_scholarship_diff_summary: 'свод сверки стипендий с офсайтами',
+      kompas_scholarship_parse_junk: 'брак разбора стипендий отброшен (свод)',
+      kompas_scholarship_parse_junk_uni: 'разбор страницы стипендий давал не стипендии',
+      kompas_gap_merged: 'источник слил запись в другую карточку',
+      kompas_card_merged: 'карточка слита в другую (решение владельца)',
+      kompas_card_new_iapro: 'карточка заведена из IAPro — цен у источника нет',
+      kompas_card_city_not_from_source: 'город/страна проставлены не источником',
+      kompas_card_empty_contract_hub: 'договор есть, программ у источника нет вовсе',
+      kompas_card_filled_offsite: 'карточка заполнена с офсайта — проверить состав',
+      kompas_dupe_merged: 'дубль слит в эту карточку',
+      kompas_dupe_dropped: 'карточка-дубль, слита в другую — удаление в сессии 5',
+      kompas_mark_removed_stale_mark: 'метка партнёрства снята (решение владельца)',
+      kompas_mark_removed_not_a_uni: 'не вуз — метка партнёрства снята',
+      // КОМПАС, сессия 5 — P0–P2
+      kompas_navitas_price_fabricated: 'сняты фабрикованные цены Navitas',
+      kompas_oxfordintl_price_fabricated: 'сняты сид-цены Oxford International',
+      kompas_fee_currency_fixed: 'валюта карточки исправлена',
+      kompas_fee_currency_reviewed: 'валюта сверена со страной — относок нет',
+      kompas_program_foreign_currency: 'программы не заведены: чужая валюта, подозрение на чужой кампус',
     };
     return map[issue] || issue;
+  }
+
+  // Кейс ОРЛА показывает САМО ФОТО: решить «здание это или реклама» по тексту
+  // нельзя. В пилоте мимо всех фильтров прошли рекламная плашка, ИИ-портрет
+  // и SVG-логотип — каждый раз это было видно только глазами.
+  function candidateHtml(item) {
+    const c = item.candidate;
+    if (!c || !c.img) return '';
+    const esc = (s) => String(s == null ? '' : s)
+      .replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+    const lic = c.imgLicense === 'official-site' ? 'офсайт вуза' : esc(c.imgLicense || 'лицензия неизвестна');
+    const author = c.imgAuthor ? esc(c.imgAuthor) : 'автор неизвестен';
+    const src = c.imgSource
+      ? `<a href="${esc(c.imgSource)}" target="_blank" rel="noopener">источник</a>`
+      : 'источник не указан';
+    return `<div class="review-item__detail" style="display:flex;gap:12px;align-items:flex-start;margin-top:6px">
+      <img src="${esc(c.img)}" alt="" loading="lazy"
+           style="width:200px;height:134px;object-fit:cover;border-radius:6px;background:#eee;flex:none">
+      <span class="muted">${lic} · ${author} · ${src}<br>${c.width || '?'}×${c.height || '?'}</span>
+    </div>`;
   }
 
   function decisionActions(item) {
@@ -1757,6 +1844,14 @@ const CONTROL_DEFAULT_URL = '';
       `<button class="review-btn${a.danger ? ' review-btn--danger' : ''}${decided === a.value ? ' review-btn--active' : ''}" data-id="${item.id}" data-decision="${a.value}">${a.label}</button>`;
     // Кейсы без авто-фикса значения (СОРОКА: неправдоподобный IELTS) — только
     // «Игнорировать»; реальное значение правится руками (пункт B).
+    // КОМПАС меряет, а не правит: «Удалить» здесь было бы кнопкой, за которой
+    // ничего не стоит (apply-workflow нет, правки идут в сессии 5 целиком).
+    if (String(item.issue || '').startsWith('kompas_') || String(item.issue || '').startsWith('direct_')) {
+      return [
+        { value: 'accept', label: 'В работу', danger: false },
+        { value: 'ignore', label: 'Игнорировать', danger: false },
+      ].map(btn).join('');
+    }
     if (item.issue === 'ielts_implausible') {
       return [{ value: 'ignore', label: 'Игнорировать', danger: false }].map(btn).join('');
     }
@@ -1804,6 +1899,7 @@ const CONTROL_DEFAULT_URL = '';
           </div>
           ${programsHtml ? `<div class="review-item__detail">${programsHtml}</div>` : ''}
           ${item.detail ? `<div class="review-item__detail">${item.detail}</div>` : ''}
+          ${candidateHtml(item)}
           <div class="review-item__actions">${decisionActions(item)}</div>
         </li>`;
       }).join('');
@@ -1967,13 +2063,24 @@ const CONTROL_DEFAULT_URL = '';
     try {
       // Запускаем apply-workflow каждого источника, у которого есть принятые,
       // но ещё не применённые решения (РЕВИЗОР и/или СОРОКА).
-      const toRun = REVIEW_SRCS.filter(cfg => {
+      const ready = REVIEW_SRCS.filter(cfg => {
         const st = srcState[cfg.key];
         return st && (st.data.items || []).some(i => i.decision !== null && !i.applied);
       });
-      if (!toRun.length) {
+      // Источник без apply-workflow (КОМПАС) применять нечем: решения копятся
+      // до сессии 5. Молча пропустить нельзя — оператор решит, что применилось.
+      const toRun = ready.filter(cfg => cfg.workflow);
+      const held = ready.filter(cfg => !cfg.workflow).map(cfg => cfg.title);
+      if (!ready.length) {
         showReviewFeedback('Нет решений для применения', 'warn');
         return;
+      }
+      if (!toRun.length) {
+        showReviewFeedback('Решения сохранены (' + held.join(', ') + '), но применять их нечем: авто-применение у этого источника не заведено.', 'warn');
+        return;
+      }
+      if (held.length) {
+        showReviewFeedback('Решения ' + held.join(', ') + ' сохранены, но не применяются автоматически.', 'warn');
       }
       for (const cfg of toRun) {
         await runRemoteWorkflow({ workflowFile: cfg.workflow, label: cfg.title + ' Apply', expectedMin: 5 });

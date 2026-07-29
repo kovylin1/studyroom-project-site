@@ -1,0 +1,4491 @@
+{
+  "_meta": {
+    "aggregator": "edvoy",
+    "label": "Edvoy",
+    "source": "https://api-prod.edvoy.com/edp/graphql",
+    "collectedAt": "2026-07-22T15:42:52.646Z",
+    "rule": "all",
+    "access": "public",
+    "notes": [
+      "План числил Edvoy закрытым (логин). Замер сессии 3: GraphQL отвечает без токена.",
+      "Выдача обрезана: курсы 500 на запрос, список вузов 100. Пустая страница неотличима от «данные кончились».",
+      "Поэтому вузы перечислены перебором префиксов строки поиска, а курсы взяты отдельно по каждому вузу.",
+      "findOneEdp в схеме больше нет (Edvoy переименовал EDP в Hta): галерея, рейтинги и keyFacts этим путём недоступны.",
+      "scholarshipTag — UI-бейдж портала, не стипендия (урок PR #29)."
+    ],
+    "counts": {
+      "sourceCourses": 48833,
+      "declaredUniversities": 666,
+      "discoveredUniversities": 672,
+      "fetchedCourses": 48833,
+      "matched": 432,
+      "unmatched": 234,
+      "emptyUniversities": 6,
+      "programs": 48833,
+      "withPrice": 46903,
+      "discoveryComplete": true,
+      "discoveryQueries": 7,
+      "universitiesWithShortfall": 0
+    }
+  },
+  "cappedPrefixes": [],
+  "shortfall": [],
+  "matched": [
+    {
+      "from": "Abertay University",
+      "edpRefId": "abertay-university",
+      "to": "abertay",
+      "method": "as-is/exact-name",
+      "courses": 24
+    },
+    {
+      "from": "Academy of Learning Career College, Scarborough",
+      "edpRefId": "academy-of-learning-career-college-scarborough",
+      "to": "academy-of-learning-career-college-scarborough",
+      "method": "as-is/exact-slug",
+      "courses": 24
+    },
+    {
+      "from": "Adelphi University",
+      "edpRefId": "adelphi-university",
+      "to": "adelphi",
+      "method": "as-is/exact-name",
+      "courses": 62
+    },
+    {
+      "from": "Aivancity School for Technology, Business & Society",
+      "edpRefId": "aivancity-school-for-technology-business-society",
+      "to": "aivancity",
+      "method": "as-is/exact-name",
+      "courses": 6
+    },
+    {
+      "from": "Alexander College",
+      "edpRefId": "alexander-college",
+      "to": "alexander-college",
+      "method": "as-is/exact-slug",
+      "courses": 14
+    },
+    {
+      "from": "Algoma University",
+      "edpRefId": "algoma-university",
+      "to": "algoma-university",
+      "method": "as-is/exact-slug",
+      "courses": 49
+    },
+    {
+      "from": "American Institute of Applied Sciences in Switzerland",
+      "edpRefId": "american-institute-of-applied-sciences-in-switzerland",
+      "to": "american-institute-of-applied-sciences-in-switzerland",
+      "method": "as-is/exact-slug",
+      "courses": 15
+    },
+    {
+      "from": "American University of Greece",
+      "edpRefId": "american-university-of-greece",
+      "to": "american-university-of-greece",
+      "method": "as-is/exact-slug",
+      "courses": 17
+    },
+    {
+      "from": "American University",
+      "edpRefId": "american-university",
+      "to": "american-university",
+      "method": "as-is/exact-slug",
+      "courses": 93
+    },
+    {
+      "from": "Arden University",
+      "edpRefId": "arden-university-berlin-study-center",
+      "to": "arden",
+      "method": "as-is/exact-name",
+      "courses": 27
+    },
+    {
+      "from": "Arizona State University",
+      "edpRefId": "arizona-state-university",
+      "to": "arizona-state",
+      "method": "as-is/exact-name",
+      "courses": 42
+    },
+    {
+      "from": "Arts University Bournemouth",
+      "edpRefId": "arts-university-bournemouth",
+      "to": "arts-university-bournemouth",
+      "method": "as-is/exact-slug",
+      "courses": 30
+    },
+    {
+      "from": "Ashland University",
+      "edpRefId": "ashland-university",
+      "to": "ashland",
+      "method": "as-is/exact-name",
+      "courses": 82
+    },
+    {
+      "from": "Asia Pacific University of Technology & Innovation",
+      "edpRefId": "asia-pacific-university-of-technology-innovation",
+      "to": "apu-malaysia",
+      "method": "as-is/exact-name",
+      "courses": 128
+    },
+    {
+      "from": "Aston University London",
+      "edpRefId": "aston-university-london",
+      "to": "aston-university-london",
+      "method": "as-is/exact-slug",
+      "courses": 7
+    },
+    {
+      "from": "Aston University",
+      "edpRefId": "aston-university",
+      "to": "aston",
+      "method": "as-is/exact-name",
+      "courses": 194
+    },
+    {
+      "from": "Atelier Chardon Savard",
+      "edpRefId": "atelier-chardon-savard",
+      "to": "atelier-chardon-savard",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "Atelier de Sevres",
+      "edpRefId": "atelier-de-sevres",
+      "to": "atelier-de-sevres",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "Auburn University at Montgomery",
+      "edpRefId": "auburn-university-at-montgomery",
+      "to": "auburn-university-at-montgomery",
+      "method": "as-is/exact-slug",
+      "courses": 74
+    },
+    {
+      "from": "Auburn University",
+      "edpRefId": "auburn-university",
+      "to": "auburn",
+      "method": "as-is/exact-name",
+      "courses": 337
+    },
+    {
+      "from": "Auckland Institute Of Studies",
+      "edpRefId": "auckland-institute-of-studies",
+      "to": "auckland-institute-of-studies",
+      "method": "as-is/exact-slug",
+      "courses": 29
+    },
+    {
+      "from": "Australia Institute of Business and Technology",
+      "edpRefId": "australia-institute-of-business-and-technology",
+      "to": "australia-institute-of-business-and-technology",
+      "method": "as-is/exact-slug",
+      "courses": 37
+    },
+    {
+      "from": "Australian Institute of Technical Training",
+      "edpRefId": "australian-institute-of-technical-training",
+      "to": "australian-institute-of-technical-training",
+      "method": "as-is/exact-slug",
+      "courses": 8
+    },
+    {
+      "from": "Australian Performing Arts Conservatory",
+      "edpRefId": "australian-performing-arts-conservatory",
+      "to": "australian-performing-arts-conservatory",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "Bangor University",
+      "edpRefId": "bangor-university",
+      "to": "bangor",
+      "method": "as-is/exact-name",
+      "courses": 262
+    },
+    {
+      "from": "Bath Academy",
+      "edpRefId": "bath-academy",
+      "to": "bath-academy",
+      "method": "as-is/exact-slug",
+      "courses": 12
+    },
+    {
+      "from": "Baylor University",
+      "edpRefId": "baylor-university",
+      "to": "baylor-university",
+      "method": "as-is/exact-slug",
+      "courses": 118
+    },
+    {
+      "from": "Berlin School of Business and Innovation",
+      "edpRefId": "berlin-school-of-business-and-innovation",
+      "to": "bsbi",
+      "method": "as-is/exact-name",
+      "courses": 47
+    },
+    {
+      "from": "BHMS Business and Hotel Management School",
+      "edpRefId": "bhms-business-and-hotel-management-school",
+      "to": "bhms",
+      "method": "as-is/exact-name",
+      "courses": 15
+    },
+    {
+      "from": "Birmingham City University",
+      "edpRefId": "birmingham-city-university",
+      "to": "birmingham-city",
+      "method": "as-is/exact-name",
+      "courses": 274
+    },
+    {
+      "from": "Bournemouth University",
+      "edpRefId": "bournemouth-university",
+      "to": "bournemouth",
+      "method": "as-is/exact-name",
+      "courses": 95
+    },
+    {
+      "from": "BPP University",
+      "edpRefId": "bpp-university",
+      "to": "bpp-university",
+      "method": "as-is/exact-slug",
+      "courses": 34
+    },
+    {
+      "from": "Brunel University of London",
+      "edpRefId": "brunel-university-london",
+      "to": "brunel",
+      "method": "as-is/exact-name",
+      "courses": 176
+    },
+    {
+      "from": "Buckinghamshire New University",
+      "edpRefId": "buckinghamshire-new-university",
+      "to": "buckinghamshire-new-university",
+      "method": "as-is/exact-slug",
+      "courses": 171
+    },
+    {
+      "from": "Budapest Metropolitan University",
+      "edpRefId": "budapest-metropolitan-university",
+      "to": "metropolitan-budapest",
+      "method": "as-is/exact-name",
+      "courses": 34
+    },
+    {
+      "from": "Budapest University of Economics and Business",
+      "edpRefId": "budapest-university-of-economics-and-business",
+      "to": "budapest-university-of-economics-and-business",
+      "method": "as-is/exact-slug",
+      "courses": 10
+    },
+    {
+      "from": "C3S Business School",
+      "edpRefId": "c-3-s-business-school",
+      "to": "c3s-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 19
+    },
+    {
+      "from": "California Baptist University",
+      "edpRefId": "california-baptist-university",
+      "to": "california-baptist-university",
+      "method": "as-is/exact-slug",
+      "courses": 355
+    },
+    {
+      "from": "California Institute of Advanced Management",
+      "edpRefId": "california-institute-of-advanced-management",
+      "to": "california-institute-of-advanced-management",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "California Miramar University",
+      "edpRefId": "california-miramar-university",
+      "to": "california-miramar-university",
+      "method": "as-is/exact-slug",
+      "courses": 14
+    },
+    {
+      "from": "California State University East Bay",
+      "edpRefId": "california-state-university-east-bay",
+      "to": "california-state-university-east-bay",
+      "method": "as-is/exact-slug",
+      "courses": 155
+    },
+    {
+      "from": "Cambridge Education Group",
+      "edpRefId": "oncampus",
+      "to": "cambridge-education-group",
+      "method": "as-is/exact-slug",
+      "courses": 199
+    },
+    {
+      "from": "Canterbury Christ Church University",
+      "edpRefId": "canterbury-christ-church-university-college-old",
+      "to": "canterbury-christ-church",
+      "method": "as-is/exact-name",
+      "courses": 100
+    },
+    {
+      "from": "Cape Breton University",
+      "edpRefId": "cape-breton-university",
+      "to": "cape-breton-university",
+      "method": "as-is/exact-slug",
+      "courses": 12
+    },
+    {
+      "from": "Cardiff Metropolitan University",
+      "edpRefId": "cardiff-metropolitan-university",
+      "to": "cardiff-met",
+      "method": "as-is/exact-name",
+      "courses": 97
+    },
+    {
+      "from": "Cardiff University",
+      "edpRefId": "cardiff-university",
+      "to": "cardiff",
+      "method": "as-is/exact-name",
+      "courses": 354
+    },
+    {
+      "from": "Carolina University",
+      "edpRefId": "carolina-university",
+      "to": "carolina-university",
+      "method": "as-is/exact-slug",
+      "courses": 34
+    },
+    {
+      "from": "CCT College Dublin",
+      "edpRefId": "cct-college-dublin",
+      "to": "cct-college-dublin",
+      "method": "as-is/exact-slug",
+      "courses": 13
+    },
+    {
+      "from": "CEG Digital",
+      "edpRefId": "ceg-digital",
+      "to": "ceg-digital",
+      "method": "as-is/exact-slug",
+      "courses": 12
+    },
+    {
+      "from": "Cesar Ritz Colleges",
+      "edpRefId": "cesar-ritz-colleges",
+      "to": "cesar-ritz-colleges",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "Charles Sturt University",
+      "edpRefId": "charles-sturt-university",
+      "to": "charles-sturt",
+      "method": "as-is/exact-name",
+      "courses": 45
+    },
+    {
+      "from": "City St George's, University of London",
+      "edpRefId": "city-university-of-london",
+      "to": "city-london",
+      "method": "as-is/exact-name",
+      "courses": 203
+    },
+    {
+      "from": "Clark University",
+      "edpRefId": "clark-university",
+      "to": "clark",
+      "method": "as-is/exact-name",
+      "courses": 22
+    },
+    {
+      "from": "Cleveland State University",
+      "edpRefId": "cleveland-state-university",
+      "to": "cleveland-state",
+      "method": "as-is/exact-name",
+      "courses": 117
+    },
+    {
+      "from": "College de Paris",
+      "edpRefId": "college-de-paris",
+      "to": "college-de-paris",
+      "method": "as-is/exact-slug",
+      "courses": 39
+    },
+    {
+      "from": "College of Marin",
+      "edpRefId": "college-of-marin",
+      "to": "college-of-marin",
+      "method": "as-is/exact-slug",
+      "courses": 67
+    },
+    {
+      "from": "College of San Mateo",
+      "edpRefId": "college-of-san-mateo",
+      "to": "san-mateo",
+      "method": "as-is/exact-name",
+      "courses": 69
+    },
+    {
+      "from": "Colorado State University",
+      "edpRefId": "colorado-state-university",
+      "to": "colorado-state-university",
+      "method": "as-is/exact-slug",
+      "courses": 126
+    },
+    {
+      "from": "Columbia College",
+      "edpRefId": "columbia-college",
+      "to": "columbia-college",
+      "method": "as-is/exact-slug",
+      "courses": 16
+    },
+    {
+      "from": "Concordia University Chicago",
+      "edpRefId": "concordia-university-chicago",
+      "to": "concordia-chicago",
+      "method": "as-is/exact-name",
+      "courses": 57
+    },
+    {
+      "from": "Concordia University, St. Paul",
+      "edpRefId": "concordia-university-st-paul",
+      "to": "concordia-university-st-paul",
+      "method": "as-is/exact-slug",
+      "courses": 102
+    },
+    {
+      "from": "Conestoga College",
+      "edpRefId": "conestoga-college",
+      "to": "conestoga-college",
+      "method": "as-is/exact-slug",
+      "courses": 16
+    },
+    {
+      "from": "Contra Costa College",
+      "edpRefId": "contra-costa-college",
+      "to": "contra-costa-college",
+      "method": "as-is/exact-slug",
+      "courses": 43
+    },
+    {
+      "from": "Cours Florent",
+      "edpRefId": "cours-florent",
+      "to": "cours-florent",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "Coventry University",
+      "edpRefId": "coventry-university",
+      "to": "coventry",
+      "method": "as-is/exact-name",
+      "courses": 161
+    },
+    {
+      "from": "Crandall University",
+      "edpRefId": "crandall-university",
+      "to": "crandall-university",
+      "method": "as-is/exact-slug",
+      "courses": 36
+    },
+    {
+      "from": "Cranfield University",
+      "edpRefId": "cranfield-university",
+      "to": "cranfield",
+      "method": "as-is/exact-name",
+      "courses": 74
+    },
+    {
+      "from": "Culinary Arts Academy Switzerland",
+      "edpRefId": "culinary-arts-academy-switzerland",
+      "to": "culinary-arts-academy-switzerland",
+      "method": "as-is/exact-slug",
+      "courses": 6
+    },
+    {
+      "from": "Curtin University",
+      "edpRefId": "curtin-university",
+      "to": "curtin",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "CY TECH CERGY PARIS UNIVERSITY",
+      "edpRefId": "cy-tech-cergy-paris-university",
+      "to": "cy-tech-cergy-paris-university",
+      "method": "as-is/exact-slug",
+      "courses": 4
+    },
+    {
+      "from": "Dallas Baptist University",
+      "edpRefId": "dallas-baptist-university-via-outbound-kc",
+      "to": "dallas-baptist-university",
+      "method": "as-is/exact-slug",
+      "courses": 204
+    },
+    {
+      "from": "De Montfort University Dubai",
+      "edpRefId": "de-montfort-university-dubai",
+      "to": "de-montfort-dubai",
+      "method": "as-is/exact-name",
+      "courses": 24
+    },
+    {
+      "from": "De Montfort University",
+      "edpRefId": "de-montfort-university",
+      "to": "de-montfort",
+      "method": "as-is/exact-name",
+      "courses": 198
+    },
+    {
+      "from": "DEA Canadian College",
+      "edpRefId": "dea-canadian-college",
+      "to": "dea-canadian-college",
+      "method": "as-is/exact-slug",
+      "courses": 8
+    },
+    {
+      "from": "Deakin University",
+      "edpRefId": "deakin-university",
+      "to": "deakin",
+      "method": "as-is/exact-name",
+      "courses": 145
+    },
+    {
+      "from": "DeMont Institute of Management & Technology",
+      "edpRefId": "de-mont-institute-of-management-technology",
+      "to": "demont-institute-of-management-and-technology",
+      "method": "as-is/exact-slug",
+      "courses": 16
+    },
+    {
+      "from": "DePaul University",
+      "edpRefId": "depaul-university",
+      "to": "depaul",
+      "method": "as-is/exact-name",
+      "courses": 264
+    },
+    {
+      "from": "Diablo Valley College",
+      "edpRefId": "diablo-valley-college",
+      "to": "diablo-valley-college",
+      "method": "as-is/exact-slug",
+      "courses": 89
+    },
+    {
+      "from": "Domus Academy",
+      "edpRefId": "domus-academy",
+      "to": "domus-academy",
+      "method": "as-is/exact-slug",
+      "courses": 33
+    },
+    {
+      "from": "Drew University",
+      "edpRefId": "drew-university",
+      "to": "drew",
+      "method": "as-is/exact-name",
+      "courses": 59
+    },
+    {
+      "from": "Drexel University",
+      "edpRefId": "drexel-university",
+      "to": "drexel",
+      "method": "as-is/exact-name",
+      "courses": 14
+    },
+    {
+      "from": "Dublin City University",
+      "edpRefId": "dublin-city-university",
+      "to": "dublin-city-university",
+      "method": "as-is/exact-slug",
+      "courses": 118
+    },
+    {
+      "from": "Durham University",
+      "edpRefId": "durham-university",
+      "to": "durham",
+      "method": "as-is/exact-name",
+      "courses": 17
+    },
+    {
+      "from": "East Tennessee State University",
+      "edpRefId": "east-tennessee-state-university",
+      "to": "east-tennessee-state-university",
+      "method": "as-is/exact-slug",
+      "courses": 298
+    },
+    {
+      "from": "ECE Engineering School",
+      "edpRefId": "ece-engineering-school",
+      "to": "ece-engineering-school",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "Edinburgh Napier University",
+      "edpRefId": "edinburgh-napier-university",
+      "to": "edinburgh-napier",
+      "method": "as-is/exact-name",
+      "courses": 150
+    },
+    {
+      "from": "Elmhurst University",
+      "edpRefId": "elmhurst-university",
+      "to": "elmhurst-university",
+      "method": "as-is/exact-slug",
+      "courses": 92
+    },
+    {
+      "from": "ESC Clermont",
+      "edpRefId": "esc-clermont-business-school",
+      "to": "esc-clermont",
+      "method": "as-is/exact-slug",
+      "courses": 10
+    },
+    {
+      "from": "ESSCA School of Management",
+      "edpRefId": "essca-school-of-management",
+      "to": "essca-school-of-management",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "EU Business School",
+      "edpRefId": "eu-business-school",
+      "to": "eu-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 61
+    },
+    {
+      "from": "EURASIA Institute",
+      "edpRefId": "eurasia-institute",
+      "to": "eurasia-institute",
+      "method": "as-is/exact-slug",
+      "courses": 13
+    },
+    {
+      "from": "Fairleigh Dickinson University, Vancouver",
+      "edpRefId": "fairleigh-dickinson-university",
+      "to": "fairleigh-dickinson-university-vancouver",
+      "method": "as-is/exact-slug",
+      "courses": 19
+    },
+    {
+      "from": "Fanshawe College",
+      "edpRefId": "fanshawe-college",
+      "to": "fanshawe-college",
+      "method": "as-is/exact-slug",
+      "courses": 135
+    },
+    {
+      "from": "Federation University",
+      "edpRefId": "federation-university",
+      "to": "federation-university",
+      "method": "as-is/exact-slug",
+      "courses": 42
+    },
+    {
+      "from": "Fisher College - Boston",
+      "edpRefId": "fisher-college",
+      "to": "fisher-college",
+      "method": "as-is/exact-slug",
+      "courses": 26
+    },
+    {
+      "from": "Florida International University",
+      "edpRefId": "florida-international-university",
+      "to": "florida-international",
+      "method": "as-is/exact-name",
+      "courses": 61
+    },
+    {
+      "from": "Franklin College",
+      "edpRefId": "franklin-college",
+      "to": "franklin-college",
+      "method": "as-is/exact-slug",
+      "courses": 54
+    },
+    {
+      "from": "Fresenius University of Applied Sciences",
+      "edpRefId": "fresenius-university-of-applied-sciences",
+      "to": "fresenius-university-of-applied-sciences",
+      "method": "as-is/exact-slug",
+      "courses": 27
+    },
+    {
+      "from": "Gannon University",
+      "edpRefId": "gannon-university",
+      "to": "gannon",
+      "method": "as-is/exact-name",
+      "courses": 92
+    },
+    {
+      "from": "GBSB Global Business School",
+      "edpRefId": "gbsb-global-business-school",
+      "to": "gbsb-global",
+      "method": "as-is/exact-name",
+      "courses": 31
+    },
+    {
+      "from": "George Mason University",
+      "edpRefId": "george-mason-university",
+      "to": "george-mason",
+      "method": "as-is/exact-name",
+      "courses": 98
+    },
+    {
+      "from": "Georgian College of Applied Arts and Technology",
+      "edpRefId": "georgian-college-of-applied-arts-and-technology",
+      "to": "georgian-college-of-applied-arts-and-technology",
+      "method": "as-is/exact-slug",
+      "courses": 70
+    },
+    {
+      "from": "GISMA University of Applied Sciences",
+      "edpRefId": "gisma-business-school",
+      "to": "gisma",
+      "method": "as-is/exact-name",
+      "courses": 33
+    },
+    {
+      "from": "Glasgow Caledonian University",
+      "edpRefId": "glasgow-caledonian-university",
+      "to": "glasgow-caledonian-university",
+      "method": "as-is/exact-slug",
+      "courses": 132
+    },
+    {
+      "from": "Global Banking School",
+      "edpRefId": "global-banking-school",
+      "to": "global-banking-school",
+      "method": "as-is/exact-slug",
+      "courses": 16
+    },
+    {
+      "from": "GlobalU",
+      "edpRefId": "global-u",
+      "to": "globalu",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "Goldey Beacom College",
+      "edpRefId": "goldey-beacom-college",
+      "to": "goldey-beacom-college",
+      "method": "as-is/exact-slug",
+      "courses": 14
+    },
+    {
+      "from": "Griffith College",
+      "edpRefId": "griffith-college",
+      "to": "griffith-ireland",
+      "method": "as-is/exact-name",
+      "courses": 9
+    },
+    {
+      "from": "Griffith University",
+      "edpRefId": "griffith-university",
+      "to": "griffith",
+      "method": "as-is/exact-name",
+      "courses": 915
+    },
+    {
+      "from": "Harrisburg University of Science and Technology",
+      "edpRefId": "harrisburg-university-of-science-and-technology",
+      "to": "harrisburg-university-of-science-and-technology",
+      "method": "as-is/exact-slug",
+      "courses": 36
+    },
+    {
+      "from": "Hartwick College",
+      "edpRefId": "hartwick-college",
+      "to": "hartwick-college",
+      "method": "as-is/exact-slug",
+      "courses": 41
+    },
+    {
+      "from": "Health Sciences University",
+      "edpRefId": "health-sciences-university",
+      "to": "health-sciences-university",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "HEIP - Hautes Etudes Internationales & Politiques",
+      "edpRefId": "heip-hautes-etudes-internationales-politiques",
+      "to": "heip-hautes-etudes-internationales-and-politiques",
+      "method": "as-is/exact-slug",
+      "courses": 9
+    },
+    {
+      "from": "Helvetic Business School",
+      "edpRefId": "helvetic-business-school",
+      "to": "helvetic-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 14
+    },
+    {
+      "from": "Heriot-Watt University Dubai",
+      "edpRefId": "heriot-watt-university-dubai",
+      "to": "heriot-watt-dubai",
+      "method": "as-is/exact-name",
+      "courses": 62
+    },
+    {
+      "from": "Heriot-Watt University Malaysia",
+      "edpRefId": "heriot-watt-university-malaysia",
+      "to": "heriot-watt-malaysia",
+      "method": "as-is/exact-name",
+      "courses": 24
+    },
+    {
+      "from": "Heriot-Watt University",
+      "edpRefId": "heriot-watt-university",
+      "to": "heriot-watt",
+      "method": "as-is/exact-name",
+      "courses": 234
+    },
+    {
+      "from": "HIM Business School",
+      "edpRefId": "him-business-school",
+      "to": "him-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "Hofstra University",
+      "edpRefId": "hofstra-university",
+      "to": "hofstra",
+      "method": "as-is/exact-name",
+      "courses": 214
+    },
+    {
+      "from": "Hult International Business School",
+      "edpRefId": "hult-international-business-school",
+      "to": "hult",
+      "method": "as-is/exact-name",
+      "courses": 9
+    },
+    {
+      "from": "Humber Polytechnic",
+      "edpRefId": "humber-polytechnic",
+      "to": "humber-polytechnic",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "IBS International Business School",
+      "edpRefId": "ibs-international-business-school",
+      "to": "ibs-international-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 24
+    },
+    {
+      "from": "ICN Creactive Business School",
+      "edpRefId": "icn-creactive-business-school",
+      "to": "icn-creactive-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 4
+    },
+    {
+      "from": "IDEA College",
+      "edpRefId": "idea-college",
+      "to": "idea-college",
+      "method": "as-is/exact-slug",
+      "courses": 77
+    },
+    {
+      "from": "IESA Arts and Culture",
+      "edpRefId": "iesa-arts-and-culture",
+      "to": "iesa-arts-and-culture",
+      "method": "as-is/exact-slug",
+      "courses": 5
+    },
+    {
+      "from": "Illinois State University",
+      "edpRefId": "illinois-state-university",
+      "to": "illinois-state",
+      "method": "as-is/exact-name",
+      "courses": 219
+    },
+    {
+      "from": "INSEEC Business School",
+      "edpRefId": "inseec",
+      "to": "inseec-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 7
+    },
+    {
+      "from": "Institut Francais de l'Hotellerie",
+      "edpRefId": "institut-francais-de-l-hotellerie",
+      "to": "institut-francais-de-lhotellerie",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "International College of Hotel Management",
+      "edpRefId": "international-college-of-hotel-management",
+      "to": "international-college-of-hotel-management",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "International School of Management (ISM)",
+      "edpRefId": "international-school-of-management-ism",
+      "to": "ism-germany",
+      "method": "as-is/exact-name",
+      "courses": 14
+    },
+    {
+      "from": "International University of Monaco",
+      "edpRefId": "international-university-of-monaco",
+      "to": "international-university-of-monaco",
+      "method": "as-is/exact-slug",
+      "courses": 13
+    },
+    {
+      "from": "INTO Partnerships",
+      "edpRefId": "into",
+      "to": "into-partnerships",
+      "method": "as-is/exact-slug",
+      "courses": 940
+    },
+    {
+      "from": "Irvine Valley College",
+      "edpRefId": "irvine-valley-college",
+      "to": "irvine-valley-college",
+      "method": "as-is/exact-slug",
+      "courses": 116
+    },
+    {
+      "from": "ISTEC Business School",
+      "edpRefId": "istec-business-school",
+      "to": "istec-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 8
+    },
+    {
+      "from": "IU International University of Applied Sciences",
+      "edpRefId": "international-university-of-applied-sciences",
+      "to": "iu-germany",
+      "method": "as-is/exact-name",
+      "courses": 18
+    },
+    {
+      "from": "Johns Hopkins University",
+      "edpRefId": "johns-hopkins-university",
+      "to": "johns-hopkins",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "JUNIA",
+      "edpRefId": "junia",
+      "to": "junia",
+      "method": "as-is/exact-slug",
+      "courses": 9
+    },
+    {
+      "from": "Justice Institute of British Columbia",
+      "edpRefId": "justice-institute-of-british-columbia",
+      "to": "jibc",
+      "method": "as-is/exact-name",
+      "courses": 3
+    },
+    {
+      "from": "Kaplan ANZ",
+      "edpRefId": "kaplan-anz",
+      "to": "kaplan-anz",
+      "method": "as-is/exact-slug",
+      "courses": 28
+    },
+    {
+      "from": "KAPLAN",
+      "edpRefId": "kaplan",
+      "to": "kaplan",
+      "method": "as-is/exact-slug",
+      "courses": 496
+    },
+    {
+      "from": "Keck Graduate Institute",
+      "edpRefId": "keck-graduate-institute",
+      "to": "keck-grad",
+      "method": "as-is/exact-name",
+      "courses": 27
+    },
+    {
+      "from": "KEDGE Business School",
+      "edpRefId": "kedge-business-school",
+      "to": "kedge-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 18
+    },
+    {
+      "from": "Keele University",
+      "edpRefId": "keele-university",
+      "to": "keele",
+      "method": "as-is/exact-name",
+      "courses": 323
+    },
+    {
+      "from": "Kennesaw State University",
+      "edpRefId": "kennesaw-state-university",
+      "to": "kennesaw-state-university",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "Kent State University",
+      "edpRefId": "kent-state-university",
+      "to": "kent-state-university",
+      "method": "as-is/exact-slug",
+      "courses": 401
+    },
+    {
+      "from": "King's College London",
+      "edpRefId": "kings-college-london",
+      "to": "kcl-online",
+      "method": "as-is/exact-name",
+      "courses": 33
+    },
+    {
+      "from": "Kings Hall College",
+      "edpRefId": "kings-hall-college",
+      "to": "kings-hall-college",
+      "method": "as-is/exact-slug",
+      "courses": 16
+    },
+    {
+      "from": "Kingston University",
+      "edpRefId": "kingston-university",
+      "to": "kingston-university",
+      "method": "as-is/exact-slug",
+      "courses": 158
+    },
+    {
+      "from": "La Trobe University",
+      "edpRefId": "la-trobe-university",
+      "to": "la-trobe",
+      "method": "as-is/exact-name",
+      "courses": 564
+    },
+    {
+      "from": "Lancaster University",
+      "edpRefId": "lancaster-university",
+      "to": "lancaster",
+      "method": "as-is/exact-name",
+      "courses": 38
+    },
+    {
+      "from": "Language Studies International",
+      "edpRefId": "language-studies-international",
+      "to": "language-studies-international",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "LaSalle College",
+      "edpRefId": "la-salle-college-vancouver",
+      "to": "lasalle-college",
+      "method": "as-is/exact-slug",
+      "courses": 52
+    },
+    {
+      "from": "Learn Key Institute",
+      "edpRefId": "learn-key-institute",
+      "to": "learn-key-institute",
+      "method": "as-is/exact-slug",
+      "courses": 15
+    },
+    {
+      "from": "Leeds Beckett University",
+      "edpRefId": "leeds-beckett-university",
+      "to": "leeds-beckett",
+      "method": "as-is/exact-name",
+      "courses": 207
+    },
+    {
+      "from": "Leeds Trinity University",
+      "edpRefId": "leeds-trinity-university",
+      "to": "leeds-trinity-university",
+      "method": "as-is/exact-slug",
+      "courses": 21
+    },
+    {
+      "from": "Lehigh University",
+      "edpRefId": "lehigh-university",
+      "to": "lehigh-university",
+      "method": "as-is/exact-slug",
+      "courses": 4
+    },
+    {
+      "from": "Lincoln Bishop University",
+      "edpRefId": "lincoln-bishop-university",
+      "to": "lincoln-bishop-university",
+      "method": "as-is/exact-slug",
+      "courses": 7
+    },
+    {
+      "from": "LISAA",
+      "edpRefId": "lisaa",
+      "to": "lisaa",
+      "method": "as-is/exact-slug",
+      "courses": 6
+    },
+    {
+      "from": "Liverpool John Moores University",
+      "edpRefId": "liverpool-john-moores-university",
+      "to": "liverpool-john-moores-university",
+      "method": "as-is/exact-slug",
+      "courses": 115
+    },
+    {
+      "from": "London Metropolitan University",
+      "edpRefId": "london-metropolitan-university",
+      "to": "london-met",
+      "method": "as-is/exact-name",
+      "courses": 287
+    },
+    {
+      "from": "London South Bank University",
+      "edpRefId": "london-south-bank-university",
+      "to": "london-south-bank",
+      "method": "as-is/exact-name",
+      "courses": 186
+    },
+    {
+      "from": "Long Island University Post",
+      "edpRefId": "long-island-university-post",
+      "to": "liu-post",
+      "method": "as-is/exact-name",
+      "courses": 115
+    },
+    {
+      "from": "Los Medanos College",
+      "edpRefId": "los-medanos-college",
+      "to": "los-medanos-college",
+      "method": "as-is/exact-slug",
+      "courses": 65
+    },
+    {
+      "from": "Loughborough University",
+      "edpRefId": "loughborough-university",
+      "to": "loughborough-university",
+      "method": "as-is/exact-slug",
+      "courses": 330
+    },
+    {
+      "from": "Louisiana State University",
+      "edpRefId": "louisiana-state-university",
+      "to": "lsu",
+      "method": "as-is/exact-name",
+      "courses": 194
+    },
+    {
+      "from": "Malvern International",
+      "edpRefId": "malvern-house",
+      "to": "malvern-international",
+      "method": "as-is/exact-slug",
+      "courses": 61
+    },
+    {
+      "from": "Manchester Metropolitan University",
+      "edpRefId": "manchester-metropolitan-university",
+      "to": "manchester-met",
+      "method": "as-is/exact-name",
+      "courses": 288
+    },
+    {
+      "from": "Massey University",
+      "edpRefId": "massey-university",
+      "to": "massey",
+      "method": "as-is/exact-name",
+      "courses": 284
+    },
+    {
+      "from": "Melbourne City Institute of Education",
+      "edpRefId": "melbourne-city-institute-of-education",
+      "to": "melbourne-city-institute-of-education",
+      "method": "as-is/exact-slug",
+      "courses": 5
+    },
+    {
+      "from": "Miami University",
+      "edpRefId": "miami-university-ohio",
+      "to": "miami-oh",
+      "method": "as-is/exact-name",
+      "courses": 172
+    },
+    {
+      "from": "Middlesex University Dubai",
+      "edpRefId": "middlesex-university-dubai",
+      "to": "middlesex-dubai",
+      "method": "as-is/exact-name",
+      "courses": 74
+    },
+    {
+      "from": "Middlesex University Mauritius",
+      "edpRefId": "middlesex-university-mauritius",
+      "to": "middlesex-university-mauritius",
+      "method": "as-is/exact-slug",
+      "courses": 22
+    },
+    {
+      "from": "Middlesex University",
+      "edpRefId": "middlesex-university",
+      "to": "middlesex-university",
+      "method": "as-is/exact-slug",
+      "courses": 207
+    },
+    {
+      "from": "Missouri State University",
+      "edpRefId": "missouri-state-university-via-outbound-kc",
+      "to": "missouri-state-university",
+      "method": "as-is/exact-slug",
+      "courses": 121
+    },
+    {
+      "from": "Monash University",
+      "edpRefId": "monash-university",
+      "to": "monash-university",
+      "method": "as-is/exact-slug",
+      "courses": 18
+    },
+    {
+      "from": "Montclair State University",
+      "edpRefId": "montclair-state-university",
+      "to": "montclair-state",
+      "method": "as-is/exact-name",
+      "courses": 115
+    },
+    {
+      "from": "Mount Saint Vincent University",
+      "edpRefId": "mount-st-vincent-university",
+      "to": "mount-saint-vincent",
+      "method": "as-is/exact-name",
+      "courses": 43
+    },
+    {
+      "from": "Mt. San Antonio College",
+      "edpRefId": "mt-san-antonio-college",
+      "to": "mt-san-antonio-college",
+      "method": "as-is/exact-slug",
+      "courses": 34
+    },
+    {
+      "from": "Munich Business School",
+      "edpRefId": "munich-business-school",
+      "to": "munich-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 21
+    },
+    {
+      "from": "Munich University of Digital Technologies & Applied Sciences",
+      "edpRefId": "munich-university-of-digital-technologies-applied-sciences",
+      "to": "munich-university-of-digital-technologies-and-applied-scienc",
+      "method": "as-is/exact-name",
+      "courses": 27
+    },
+    {
+      "from": "Murray State University",
+      "edpRefId": "murray-state-university",
+      "to": "murray-state-university",
+      "method": "as-is/exact-slug",
+      "courses": 195
+    },
+    {
+      "from": "Navitas",
+      "edpRefId": "navitas",
+      "to": "navitas",
+      "method": "as-is/exact-slug",
+      "courses": 472
+    },
+    {
+      "from": "New England College",
+      "edpRefId": "new-england-college-henniker",
+      "to": "new-england-college",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "New European College",
+      "edpRefId": "new-european-college",
+      "to": "new-european-college",
+      "method": "as-is/exact-slug",
+      "courses": 11
+    },
+    {
+      "from": "New York Film Academy",
+      "edpRefId": "new-york-film-academy",
+      "to": "new-york-film-academy",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "New York Institute of Technology",
+      "edpRefId": "new-york-institute-of-technology",
+      "to": "nyit",
+      "method": "as-is/exact-name",
+      "courses": 39
+    },
+    {
+      "from": "Newcastle University",
+      "edpRefId": "newcastle-university",
+      "to": "newcastle-uk",
+      "method": "as-is/exact-name",
+      "courses": 152
+    },
+    {
+      "from": "Nipissing University",
+      "edpRefId": "nipissing-university",
+      "to": "nipissing-university",
+      "method": "as-is/exact-slug",
+      "courses": 61
+    },
+    {
+      "from": "North Seattle College",
+      "edpRefId": "north-seattle-college",
+      "to": "north-seattle-college",
+      "method": "as-is/exact-slug",
+      "courses": 21
+    },
+    {
+      "from": "Northeastern University",
+      "edpRefId": "northeastern-university",
+      "to": "northeastern-university",
+      "method": "as-is/exact-slug",
+      "courses": 166
+    },
+    {
+      "from": "NorthTec Tai Tokerau Wananga",
+      "edpRefId": "north-tec",
+      "to": "northtec-tai-tokerau-wananga",
+      "method": "as-is/exact-slug",
+      "courses": 15
+    },
+    {
+      "from": "Northumbria University",
+      "edpRefId": "northumbria-university",
+      "to": "northumbria",
+      "method": "as-is/exact-name",
+      "courses": 321
+    },
+    {
+      "from": "Nottingham Trent University",
+      "edpRefId": "nottingham-trent-university",
+      "to": "nottingham-trent",
+      "method": "as-is/exact-name",
+      "courses": 16
+    },
+    {
+      "from": "Nova Southeastern University",
+      "edpRefId": "nova-southeastern-university",
+      "to": "nova-southeastern-university",
+      "method": "as-is/exact-slug",
+      "courses": 31
+    },
+    {
+      "from": "Ohio University",
+      "edpRefId": "ohio-university",
+      "to": "ohio-university",
+      "method": "as-is/exact-slug",
+      "courses": 199
+    },
+    {
+      "from": "Oregon State University",
+      "edpRefId": "oregon-state-university-via-into",
+      "to": "oregon-state",
+      "method": "as-is/exact-name",
+      "courses": 330
+    },
+    {
+      "from": "Oxford Brookes University",
+      "edpRefId": "oxford-brookes-university",
+      "to": "oxford-brookes",
+      "method": "as-is/exact-name",
+      "courses": 225
+    },
+    {
+      "from": "Oxford International",
+      "edpRefId": "oxford-international-education-group",
+      "to": "oxford-international",
+      "method": "as-is/exact-slug",
+      "courses": 95
+    },
+    {
+      "from": "Pace University",
+      "edpRefId": "pace-university",
+      "to": "pace",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "Paris School of Business",
+      "edpRefId": "paris-school-of-business",
+      "to": "psb-paris",
+      "method": "as-is/exact-name",
+      "courses": 28
+    },
+    {
+      "from": "Piedmont Virginia Community College",
+      "edpRefId": "piedmont-virginia-community-college",
+      "to": "piedmont-virginia-community-college",
+      "method": "as-is/exact-slug",
+      "courses": 37
+    },
+    {
+      "from": "QA Higher Education",
+      "edpRefId": "qa-higher-education",
+      "to": "qa-higher-education",
+      "method": "as-is/exact-slug",
+      "courses": 65
+    },
+    {
+      "from": "Queen Mary University of London",
+      "edpRefId": "queen-mary-university-of-london",
+      "to": "queen-mary-london",
+      "method": "as-is/exact-name",
+      "courses": 286
+    },
+    {
+      "from": "Queen's University Belfast",
+      "edpRefId": "queens-university-belfast",
+      "to": "queens-university-belfast",
+      "method": "as-is/exact-slug",
+      "courses": 239
+    },
+    {
+      "from": "Rajiv Gandhi University School of Science and Technology",
+      "edpRefId": "rajiv-gandhi-university-school-of-science-and-technology",
+      "to": "rajiv-gandhi-university-school-of-science-and-technology",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "Ravensbourne University London",
+      "edpRefId": "ravensbourne-university-london",
+      "to": "ravensbourne",
+      "method": "as-is/exact-name",
+      "courses": 50
+    },
+    {
+      "from": "Reach Community College",
+      "edpRefId": "reach-community-college",
+      "to": "reach-community-college",
+      "method": "as-is/exact-slug",
+      "courses": 28
+    },
+    {
+      "from": "Regent College London",
+      "edpRefId": "regent-college-london",
+      "to": "regent-college-london",
+      "method": "as-is/exact-slug",
+      "courses": 11
+    },
+    {
+      "from": "Regent's University London",
+      "edpRefId": "regents-university-london",
+      "to": "regents-university-london",
+      "method": "as-is/exact-slug",
+      "courses": 68
+    },
+    {
+      "from": "Rensselaer Polytechnic Institute",
+      "edpRefId": "rensselaer-polytechnic-institute",
+      "to": "rensselaer-polytechnic-institute",
+      "method": "as-is/exact-slug",
+      "courses": 47
+    },
+    {
+      "from": "RMIT University",
+      "edpRefId": "rmit-university",
+      "to": "rmit-university",
+      "method": "as-is/exact-slug",
+      "courses": 239
+    },
+    {
+      "from": "Rochester Institute of Technology",
+      "edpRefId": "rochester-institute-of-technology-new-york-no-contract",
+      "to": "rochester-institute-of-technology",
+      "method": "as-is/exact-slug",
+      "courses": 164
+    },
+    {
+      "from": "Saba University School of Medicine",
+      "edpRefId": "saba-university-school-of-medicine",
+      "to": "saba-university-school-of-medicine",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "Sacred Heart University",
+      "edpRefId": "sacred-heart-university",
+      "to": "sacred-heart-university",
+      "method": "as-is/exact-slug",
+      "courses": 58
+    },
+    {
+      "from": "Saint Louis University Madrid",
+      "edpRefId": "saint-louis-university-madrid",
+      "to": "saint-louis-university-madrid",
+      "method": "as-is/exact-slug",
+      "courses": 72
+    },
+    {
+      "from": "Saint Louis University",
+      "edpRefId": "saint-louis-university",
+      "to": "saint-louis-university",
+      "method": "as-is/exact-slug",
+      "courses": 9
+    },
+    {
+      "from": "Salem University",
+      "edpRefId": "salem-university",
+      "to": "salem-university",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "Santa Monica College",
+      "edpRefId": "santa-monica-college",
+      "to": "santa-monica-college",
+      "method": "as-is/exact-slug",
+      "courses": 94
+    },
+    {
+      "from": "Saskatchewan Polytechnic",
+      "edpRefId": "saskatchewan-polytechnic",
+      "to": "sask-polytechnic",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "Schiller International University",
+      "edpRefId": "schiller-international-university",
+      "to": "schiller-international-university",
+      "method": "as-is/exact-slug",
+      "courses": 14
+    },
+    {
+      "from": "Selkirk College",
+      "edpRefId": "selkirk-college",
+      "to": "selkirk-college",
+      "method": "as-is/exact-slug",
+      "courses": 10
+    },
+    {
+      "from": "Seneca Polytechnic",
+      "edpRefId": "seneca-polytechnic",
+      "to": "seneca",
+      "method": "as-is/exact-name",
+      "courses": 169
+    },
+    {
+      "from": "Sheffield Hallam University",
+      "edpRefId": "sheffield-hallam-university",
+      "to": "sheffield-hallam",
+      "method": "as-is/exact-name",
+      "courses": 325
+    },
+    {
+      "from": "Sheridan College Institute of Technology and Advanced Learning",
+      "edpRefId": "sheridan-college",
+      "to": "sheridan-college-institute-of-technology-and-advanced-learning",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "SOAS University of London",
+      "edpRefId": "soas-university-of-london",
+      "to": "soas",
+      "method": "as-is/exact-name",
+      "courses": 494
+    },
+    {
+      "from": "Sofia University",
+      "edpRefId": "sofia-university",
+      "to": "sofia-university",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "South East Technological University",
+      "edpRefId": "waterford-institute-of-technology",
+      "to": "south-east-technological-university",
+      "method": "as-is/exact-slug",
+      "courses": 178
+    },
+    {
+      "from": "South Seattle College",
+      "edpRefId": "south-seattle-college",
+      "to": "south-seattle-college",
+      "method": "as-is/exact-slug",
+      "courses": 49
+    },
+    {
+      "from": "Southeast Missouri State University",
+      "edpRefId": "southeast-missouri-state-university",
+      "to": "southeast-missouri-state-university",
+      "method": "as-is/exact-slug",
+      "courses": 157
+    },
+    {
+      "from": "Southern Alberta Institute of Technology",
+      "edpRefId": "southern-alberta-institute-of-technology",
+      "to": "southern-alberta-institute-of-technology",
+      "method": "as-is/exact-slug",
+      "courses": 62
+    },
+    {
+      "from": "Southern Cross University",
+      "edpRefId": "southern-cross-university",
+      "to": "southern-cross-university",
+      "method": "as-is/exact-slug",
+      "courses": 56
+    },
+    {
+      "from": "Southern Illinois University Edwardsville",
+      "edpRefId": "southern-illinois-university-edwardsville",
+      "to": "southern-illinois-university-edwardsville",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "Southern Utah University",
+      "edpRefId": "southern-utah-university",
+      "to": "southern-utah-university",
+      "method": "as-is/exact-slug",
+      "courses": 118
+    },
+    {
+      "from": "Southwest Minnesota State University",
+      "edpRefId": "southwest-minnesota-state-university",
+      "to": "southwest-minnesota-state-university",
+      "method": "as-is/exact-slug",
+      "courses": 97
+    },
+    {
+      "from": "SRH Haarlem University of Applied Sciences",
+      "edpRefId": "srh-haarlem-university-of-applied-sciences",
+      "to": "srh-haarlem-university-of-applied-sciences",
+      "method": "as-is/exact-slug",
+      "courses": 4
+    },
+    {
+      "from": "SRH Hochschule Berlin",
+      "edpRefId": "srh-berlin-university-of-applied-sciences",
+      "to": "srh-hochschule-berlin",
+      "method": "as-is/exact-slug",
+      "courses": 80
+    },
+    {
+      "from": "St. George's University",
+      "edpRefId": "st-georges-university",
+      "to": "st-georges-university",
+      "method": "as-is/exact-slug",
+      "courses": 49
+    },
+    {
+      "from": "St. Joseph’s University",
+      "edpRefId": "st-josephs-university",
+      "to": "st-josephs-university",
+      "method": "as-is/exact-slug",
+      "courses": 45
+    },
+    {
+      "from": "St Lawrence College",
+      "edpRefId": "st-lawrence-college",
+      "to": "st-lawrence-college",
+      "method": "as-is/exact-slug",
+      "courses": 55
+    },
+    {
+      "from": "St. Matthew’s University School of Medicine",
+      "edpRefId": "st-matthews-university-school-of-medicine",
+      "to": "st-matthews-university-school-of-medicine",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "St. Thomas University",
+      "edpRefId": "st-thomas-university",
+      "to": "st-thomas-university",
+      "method": "as-is/exact-slug",
+      "courses": 31
+    },
+    {
+      "from": "State university of new york at geneseo",
+      "edpRefId": "state-university-of-new-york-at-geneseo",
+      "to": "suny-geneseo",
+      "method": "as-is/exact-name",
+      "courses": 72
+    },
+    {
+      "from": "State University of New York at Oswego",
+      "edpRefId": "state-university-of-new-york-at-oswego",
+      "to": "state-university-of-new-york-at-oswego",
+      "method": "as-is/exact-slug",
+      "courses": 109
+    },
+    {
+      "from": "Strate School of Design",
+      "edpRefId": "strate-school-of-design",
+      "to": "strate-design",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "Study Group",
+      "edpRefId": "studygroup",
+      "to": "study-group",
+      "method": "as-is/exact-slug",
+      "courses": 102
+    },
+    {
+      "from": "Suffolk University",
+      "edpRefId": "suffolk-university",
+      "to": "suffolk-university",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "Sup de Pub",
+      "edpRefId": "sup-de-pub",
+      "to": "sup-de-pub",
+      "method": "as-is/exact-slug",
+      "courses": 5
+    },
+    {
+      "from": "Swansea University",
+      "edpRefId": "swansea-university",
+      "to": "swansea",
+      "method": "as-is/exact-name",
+      "courses": 507
+    },
+    {
+      "from": "Swinburne University of Technology",
+      "edpRefId": "swinburne-university-of-technology",
+      "to": "swinburne-university-of-technology",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "Swiss Hotel Management School",
+      "edpRefId": "swiss-hotel-management-school",
+      "to": "swiss-hotel-management-school",
+      "method": "as-is/exact-slug",
+      "courses": 7
+    },
+    {
+      "from": "Sydney Institute of Business and Technology",
+      "edpRefId": "sydney-institute-of-business-and-technology",
+      "to": "sydney-institute-of-business-and-technology",
+      "method": "as-is/exact-slug",
+      "courses": 7
+    },
+    {
+      "from": "Syracuse University",
+      "edpRefId": "syracuse-university",
+      "to": "syracuse-university",
+      "method": "as-is/exact-slug",
+      "courses": 55
+    },
+    {
+      "from": "Teesside University",
+      "edpRefId": "teesside-university",
+      "to": "teesside",
+      "method": "as-is/exact-name",
+      "courses": 485
+    },
+    {
+      "from": "Temple University",
+      "edpRefId": "temple-university",
+      "to": "temple",
+      "method": "as-is/exact-name",
+      "courses": 24
+    },
+    {
+      "from": "Texas State University",
+      "edpRefId": "texas-state-university",
+      "to": "texas-state-university",
+      "method": "as-is/exact-slug",
+      "courses": 475
+    },
+    {
+      "from": "The University College of Enterprise and Administration",
+      "edpRefId": "the-university-college-of-enterprise-and-administration",
+      "to": "the-university-college-of-enterprise-and-administration",
+      "method": "as-is/exact-name",
+      "courses": 4
+    },
+    {
+      "from": "The University of Akron",
+      "edpRefId": "the-university-of-akron",
+      "to": "the-university-of-akron",
+      "method": "as-is/exact-name",
+      "courses": 168
+    },
+    {
+      "from": "The University of Law",
+      "edpRefId": "the-university-of-law",
+      "to": "university-of-law",
+      "method": "as-is/exact-slug",
+      "courses": 89
+    },
+    {
+      "from": "The University of Melbourne",
+      "edpRefId": "the-university-of-melbourne",
+      "to": "the-university-of-melbourne",
+      "method": "as-is/exact-name",
+      "courses": 286
+    },
+    {
+      "from": "The University of New South Wales",
+      "edpRefId": "the-university-of-new-south-wales",
+      "to": "the-university-of-new-south-wales",
+      "method": "as-is/exact-name",
+      "courses": 339
+    },
+    {
+      "from": "The University of Queensland",
+      "edpRefId": "the-university-of-queensland",
+      "to": "the-university-of-queensland",
+      "method": "as-is/exact-name",
+      "courses": 7
+    },
+    {
+      "from": "The University of Scranton",
+      "edpRefId": "the-university-of-scranton",
+      "to": "the-university-of-scranton",
+      "method": "as-is/exact-name",
+      "courses": 60
+    },
+    {
+      "from": "The University of Sydney",
+      "edpRefId": "the-university-of-sydney",
+      "to": "sydney",
+      "method": "as-is/exact-name",
+      "courses": 435
+    },
+    {
+      "from": "The University of Western Australia",
+      "edpRefId": "the-university-of-western-australia",
+      "to": "the-university-of-western-australia",
+      "method": "as-is/exact-name",
+      "courses": 316
+    },
+    {
+      "from": "Thomas Jefferson University",
+      "edpRefId": "jefferson-university-philadelphia",
+      "to": "thomas-jefferson-university",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "Thompson Rivers University",
+      "edpRefId": "thompson-rivers-university",
+      "to": "thompson-rivers",
+      "method": "as-is/exact-name",
+      "courses": 87
+    },
+    {
+      "from": "Toi Ohomai Institute of Technology",
+      "edpRefId": "toi-ohomai-institute-of-technology",
+      "to": "toi-ohomai-institute-of-technology",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "Toulouse Business School",
+      "edpRefId": "toulouse-business-school",
+      "to": "toulouse-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 18
+    },
+    {
+      "from": "Trent University",
+      "edpRefId": "trent-university",
+      "to": "trent",
+      "method": "as-is/exact-name",
+      "courses": 11
+    },
+    {
+      "from": "Trinity College Dublin",
+      "edpRefId": "trinity-college-dublin",
+      "to": "trinity-dublin",
+      "method": "as-is/exact-name",
+      "courses": 229
+    },
+    {
+      "from": "Troy University",
+      "edpRefId": "troy-university",
+      "to": "troy-university",
+      "method": "as-is/exact-slug",
+      "courses": 102
+    },
+    {
+      "from": "Tulane University",
+      "edpRefId": "tulane-university",
+      "to": "tulane",
+      "method": "as-is/exact-name",
+      "courses": 15
+    },
+    {
+      "from": "UCAM Catholic University of Murcia",
+      "edpRefId": "ucam-catholic-university-of-murcia",
+      "to": "ucam-catholic-university-of-murcia",
+      "method": "as-is/exact-slug",
+      "courses": 23
+    },
+    {
+      "from": "Ulster University",
+      "edpRefId": "ulster-university",
+      "to": "ulster",
+      "method": "as-is/exact-name",
+      "courses": 238
+    },
+    {
+      "from": "Universidad Nebrija",
+      "edpRefId": "universidad-nebrija",
+      "to": "nebrija",
+      "method": "as-is/exact-name",
+      "courses": 14
+    },
+    {
+      "from": "Universidade Europeia",
+      "edpRefId": "universidade-europeia",
+      "to": "universidade-europeia",
+      "method": "as-is/exact-slug",
+      "courses": 5
+    },
+    {
+      "from": "University at Albany",
+      "edpRefId": "university-of-albany",
+      "to": "university-at-albany",
+      "method": "as-is/exact-slug",
+      "courses": 106
+    },
+    {
+      "from": "University Canada West",
+      "edpRefId": "university-canada-west",
+      "to": "university-canada-west",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "University College Birmingham",
+      "edpRefId": "university-college-birmingham",
+      "to": "ucb",
+      "method": "as-is/exact-name",
+      "courses": 72
+    },
+    {
+      "from": "University College Cork",
+      "edpRefId": "university-college-cork",
+      "to": "ucc",
+      "method": "as-is/exact-name",
+      "courses": 196
+    },
+    {
+      "from": "University College Dublin",
+      "edpRefId": "university-college-dublin",
+      "to": "university-college-dublin",
+      "method": "as-is/exact-slug",
+      "courses": 342
+    },
+    {
+      "from": "University for the Creative Arts",
+      "edpRefId": "university-for-the-creative-arts",
+      "to": "uca",
+      "method": "as-is/exact-name",
+      "courses": 154
+    },
+    {
+      "from": "University of Alabama at Birmingham",
+      "edpRefId": "university-of-alabama-at-birmingham",
+      "to": "uab",
+      "method": "as-is/exact-name",
+      "courses": 54
+    },
+    {
+      "from": "University of Applied Sciences Europe, Amsterdam",
+      "edpRefId": "university-of-applied-sciences-europe-amsterdam",
+      "to": "amsterdam",
+      "method": "after-comma/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "University of Bath",
+      "edpRefId": "university-of-bath",
+      "to": "bath",
+      "method": "as-is/exact-name",
+      "courses": 294
+    },
+    {
+      "from": "University of Bedfordshire",
+      "edpRefId": "university-of-bedfordshire",
+      "to": "university-of-bedfordshire",
+      "method": "as-is/exact-slug",
+      "courses": 277
+    },
+    {
+      "from": "University of Birmingham",
+      "edpRefId": "university-of-birmingham",
+      "to": "birmingham",
+      "method": "as-is/exact-name",
+      "courses": 123
+    },
+    {
+      "from": "University of Bradford",
+      "edpRefId": "university-of-bradford",
+      "to": "bradford",
+      "method": "as-is/exact-name",
+      "courses": 133
+    },
+    {
+      "from": "University of Bridgeport",
+      "edpRefId": "university-of-bridgeport-connecticut",
+      "to": "university-of-bridgeport",
+      "method": "as-is/exact-slug",
+      "courses": 43
+    },
+    {
+      "from": "University of Brighton",
+      "edpRefId": "university-of-brighton",
+      "to": "brighton",
+      "method": "as-is/exact-name",
+      "courses": 316
+    },
+    {
+      "from": "University of Bristol",
+      "edpRefId": "university-of-bristol",
+      "to": "bristol",
+      "method": "as-is/exact-name",
+      "courses": 45
+    },
+    {
+      "from": "University of California Irvine Division of Continuing Education",
+      "edpRefId": "university-of-california-irvine-dce",
+      "to": "university-of-california-irvine-division-of-continuing-educa",
+      "method": "as-is/exact-name",
+      "courses": 27
+    },
+    {
+      "from": "University of Canterbury",
+      "edpRefId": "university-of-canterbury",
+      "to": "canterbury-nz",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "University of Central Florida",
+      "edpRefId": "university-of-central-florida",
+      "to": "ucf",
+      "method": "as-is/exact-name",
+      "courses": 81
+    },
+    {
+      "from": "University of Central Lancashire, Cyprus",
+      "edpRefId": "university-of-central-lancashire-cyprus",
+      "to": "university-of-central-lancashire-cyprus",
+      "method": "as-is/exact-slug",
+      "courses": 27
+    },
+    {
+      "from": "University of Chester",
+      "edpRefId": "university-of-chester",
+      "to": "chester",
+      "method": "as-is/exact-name",
+      "courses": 357
+    },
+    {
+      "from": "University of Cincinnati",
+      "edpRefId": "university-of-cincinnati-via-outbound-kc",
+      "to": "university-of-cincinnati",
+      "method": "as-is/exact-slug",
+      "courses": 265
+    },
+    {
+      "from": "University of Colorado Denver",
+      "edpRefId": "university-of-colorado-denver",
+      "to": "university-of-colorado-denver",
+      "method": "as-is/exact-slug",
+      "courses": 182
+    },
+    {
+      "from": "University of Connecticut",
+      "edpRefId": "university-of-connecticut",
+      "to": "uconn",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "University of Cumbria",
+      "edpRefId": "university-of-cumbria",
+      "to": "cumbria",
+      "method": "as-is/exact-name",
+      "courses": 53
+    },
+    {
+      "from": "University of Dayton",
+      "edpRefId": "university-of-dayton",
+      "to": "dayton",
+      "method": "as-is/exact-name",
+      "courses": 86
+    },
+    {
+      "from": "University of Derby",
+      "edpRefId": "university-of-derby",
+      "to": "derby",
+      "method": "as-is/exact-name",
+      "courses": 80
+    },
+    {
+      "from": "University of Dundee",
+      "edpRefId": "university-of-dundee",
+      "to": "dundee",
+      "method": "as-is/exact-name",
+      "courses": 287
+    },
+    {
+      "from": "University of East Anglia",
+      "edpRefId": "university-of-east-anglia",
+      "to": "uea",
+      "method": "as-is/exact-name",
+      "courses": 179
+    },
+    {
+      "from": "University of East London",
+      "edpRefId": "university-of-east-london",
+      "to": "university-of-east-london",
+      "method": "as-is/exact-slug",
+      "courses": 312
+    },
+    {
+      "from": "University of Edinburgh",
+      "edpRefId": "university-of-edinburgh",
+      "to": "university-of-edinburgh",
+      "method": "as-is/exact-slug",
+      "courses": 15
+    },
+    {
+      "from": "University of Essex",
+      "edpRefId": "university-of-essex",
+      "to": "essex",
+      "method": "as-is/exact-name",
+      "courses": 349
+    },
+    {
+      "from": "University of Exeter",
+      "edpRefId": "university-of-exeter",
+      "to": "exeter",
+      "method": "as-is/exact-name",
+      "courses": 880
+    },
+    {
+      "from": "University of Galway",
+      "edpRefId": "national-university-of-ireland-maynooth",
+      "to": "galway",
+      "method": "as-is/exact-name",
+      "courses": 186
+    },
+    {
+      "from": "University of Glasgow",
+      "edpRefId": "university-of-glasgow",
+      "to": "glasgow",
+      "method": "as-is/exact-name",
+      "courses": 420
+    },
+    {
+      "from": "University of Greater Manchester",
+      "edpRefId": "university-of-bolton",
+      "to": "university-of-greater-manchester",
+      "method": "as-is/exact-slug",
+      "courses": 190
+    },
+    {
+      "from": "University of Greenwich",
+      "edpRefId": "university-of-greenwich",
+      "to": "greenwich",
+      "method": "as-is/exact-name",
+      "courses": 342
+    },
+    {
+      "from": "University of Hartford",
+      "edpRefId": "university-of-hartford",
+      "to": "hartford",
+      "method": "as-is/exact-name",
+      "courses": 83
+    },
+    {
+      "from": "University of Hertfordshire",
+      "edpRefId": "university-of-hertfordshire",
+      "to": "hertfordshire",
+      "method": "as-is/exact-name",
+      "courses": 391
+    },
+    {
+      "from": "University of Huddersfield London",
+      "edpRefId": "university-of-huddersfield-london",
+      "to": "university-of-huddersfield-london",
+      "method": "as-is/exact-slug",
+      "courses": 14
+    },
+    {
+      "from": "University of Huddersfield",
+      "edpRefId": "university-of-huddersfield",
+      "to": "university-of-huddersfield",
+      "method": "as-is/exact-slug",
+      "courses": 355
+    },
+    {
+      "from": "University of Hull London",
+      "edpRefId": "university-of-hull-london",
+      "to": "university-of-hull-london",
+      "method": "as-is/exact-slug",
+      "courses": 4
+    },
+    {
+      "from": "University of Hull",
+      "edpRefId": "university-of-hull",
+      "to": "hull",
+      "method": "as-is/exact-name",
+      "courses": 51
+    },
+    {
+      "from": "University of Illinois Springfield",
+      "edpRefId": "university-of-illinois-springfield",
+      "to": "uis",
+      "method": "as-is/exact-name",
+      "courses": 6
+    },
+    {
+      "from": "University of Kent",
+      "edpRefId": "university-of-kent",
+      "to": "kent",
+      "method": "as-is/exact-name",
+      "courses": 150
+    },
+    {
+      "from": "University of La Verne",
+      "edpRefId": "university-of-la-verne",
+      "to": "university-of-la-verne",
+      "method": "as-is/exact-slug",
+      "courses": 98
+    },
+    {
+      "from": "University of Lancashire",
+      "edpRefId": "university-of-central-lancashire",
+      "to": "university-of-lancashire",
+      "method": "as-is/exact-slug",
+      "courses": 331
+    },
+    {
+      "from": "University of Leeds",
+      "edpRefId": "university-of-leeds",
+      "to": "university-of-leeds",
+      "method": "as-is/exact-slug",
+      "courses": 35
+    },
+    {
+      "from": "University of Leicester",
+      "edpRefId": "university-of-leicester",
+      "to": "leicester",
+      "method": "as-is/exact-name",
+      "courses": 488
+    },
+    {
+      "from": "University of Limerick",
+      "edpRefId": "university-of-limerick",
+      "to": "limerick",
+      "method": "as-is/exact-name",
+      "courses": 99
+    },
+    {
+      "from": "University of Lincoln",
+      "edpRefId": "university-of-lincoln",
+      "to": "lincoln-uk",
+      "method": "as-is/exact-name",
+      "courses": 166
+    },
+    {
+      "from": "University of Liverpool",
+      "edpRefId": "university-of-liverpool",
+      "to": "liverpool",
+      "method": "as-is/exact-name",
+      "courses": 484
+    },
+    {
+      "from": "University of Louisville",
+      "edpRefId": "university-of-louisville",
+      "to": "university-of-louisville",
+      "method": "as-is/exact-slug",
+      "courses": 58
+    },
+    {
+      "from": "University of Massachusetts Amherst",
+      "edpRefId": "university-of-massachusetts-amherst",
+      "to": "university-of-massachusetts-amherst",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "University of Massachusetts Boston",
+      "edpRefId": "umass-boston",
+      "to": "umass-boston",
+      "method": "as-is/exact-name",
+      "courses": 73
+    },
+    {
+      "from": "University of Massachusetts Lowell",
+      "edpRefId": "university-of-massachusetts-lowell",
+      "to": "university-of-massachusetts-lowell",
+      "method": "as-is/exact-slug",
+      "courses": 155
+    },
+    {
+      "from": "University of Nevada, Las Vegas",
+      "edpRefId": "university-of-nevada-las-vegas",
+      "to": "university-of-nevada-las-vegas",
+      "method": "as-is/exact-slug",
+      "courses": 55
+    },
+    {
+      "from": "University of Niagara Falls",
+      "edpRefId": "university-of-niagara-falls",
+      "to": "university-of-niagara-falls",
+      "method": "as-is/exact-slug",
+      "courses": 9
+    },
+    {
+      "from": "University of Nicosia",
+      "edpRefId": "university-of-nicosia",
+      "to": "nicosia",
+      "method": "as-is/exact-name",
+      "courses": 66
+    },
+    {
+      "from": "University of North Carolina at Greensboro",
+      "edpRefId": "university-of-north-carolina-greensboro",
+      "to": "university-of-north-carolina-at-greensboro",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "University of North Florida",
+      "edpRefId": "university-of-north-florida",
+      "to": "university-of-north-florida",
+      "method": "as-is/exact-slug",
+      "courses": 156
+    },
+    {
+      "from": "University of Northampton",
+      "edpRefId": "university-of-northampton",
+      "to": "university-of-northampton",
+      "method": "as-is/exact-slug",
+      "courses": 184
+    },
+    {
+      "from": "University of Notre Dame",
+      "edpRefId": "university-of-notre-dame",
+      "to": "university-of-notre-dame",
+      "method": "as-is/exact-slug",
+      "courses": 52
+    },
+    {
+      "from": "University of Nottingham Malaysia",
+      "edpRefId": "university-of-nottingham-malaysia",
+      "to": "university-of-nottingham-malaysia",
+      "method": "as-is/exact-slug",
+      "courses": 78
+    },
+    {
+      "from": "University of Nottingham",
+      "edpRefId": "university-of-nottingham",
+      "to": "nottingham",
+      "method": "as-is/exact-name",
+      "courses": 113
+    },
+    {
+      "from": "University of Otago",
+      "edpRefId": "university-of-otago",
+      "to": "otago",
+      "method": "as-is/exact-name",
+      "courses": 515
+    },
+    {
+      "from": "University of Plymouth",
+      "edpRefId": "university-of-plymouth",
+      "to": "plymouth",
+      "method": "as-is/exact-name",
+      "courses": 397
+    },
+    {
+      "from": "University of Portsmouth",
+      "edpRefId": "university-of-portsmouth",
+      "to": "portsmouth",
+      "method": "as-is/exact-name",
+      "courses": 430
+    },
+    {
+      "from": "University of Prince Edward Island",
+      "edpRefId": "university-of-prince-edward-island",
+      "to": "upei",
+      "method": "as-is/exact-name",
+      "courses": 114
+    },
+    {
+      "from": "University of Reading",
+      "edpRefId": "university-of-reading",
+      "to": "reading",
+      "method": "as-is/exact-name",
+      "courses": 356
+    },
+    {
+      "from": "University Of Redlands",
+      "edpRefId": "university-of-redlands",
+      "to": "university-of-redlands",
+      "method": "as-is/exact-slug",
+      "courses": 64
+    },
+    {
+      "from": "University of Regina",
+      "edpRefId": "university-of-regina",
+      "to": "university-of-regina",
+      "method": "as-is/exact-slug",
+      "courses": 270
+    },
+    {
+      "from": "University of Roehampton",
+      "edpRefId": "university-of-roehampton",
+      "to": "roehampton",
+      "method": "as-is/exact-name",
+      "courses": 296
+    },
+    {
+      "from": "University of Salford",
+      "edpRefId": "university-of-salford",
+      "to": "university-of-salford",
+      "method": "as-is/exact-slug",
+      "courses": 53
+    },
+    {
+      "from": "University of Sheffield",
+      "edpRefId": "university-of-sheffield",
+      "to": "university-of-sheffield",
+      "method": "as-is/exact-slug",
+      "courses": 24
+    },
+    {
+      "from": "University of South Carolina",
+      "edpRefId": "university-of-south-carolina",
+      "to": "south-carolina",
+      "method": "as-is/exact-name",
+      "courses": 9
+    },
+    {
+      "from": "University of South Wales",
+      "edpRefId": "university-of-south-wales",
+      "to": "south-wales",
+      "method": "as-is/exact-name",
+      "courses": 237
+    },
+    {
+      "from": "University of Southampton",
+      "edpRefId": "university-of-southampton",
+      "to": "university-of-southampton",
+      "method": "as-is/exact-slug",
+      "courses": 401
+    },
+    {
+      "from": "University of Southern Queensland",
+      "edpRefId": "university-of-southern-queensland",
+      "to": "university-of-southern-queensland",
+      "method": "as-is/exact-slug",
+      "courses": 99
+    },
+    {
+      "from": "University of Stirling Ras Al Khaimah",
+      "edpRefId": "university-of-stirling-ras-al-khaimah",
+      "to": "university-of-stirling-ras-al-khaimah",
+      "method": "as-is/exact-slug",
+      "courses": 8
+    },
+    {
+      "from": "University of Stirling",
+      "edpRefId": "university-of-stirling",
+      "to": "stirling",
+      "method": "as-is/exact-name",
+      "courses": 214
+    },
+    {
+      "from": "University of Strathclyde",
+      "edpRefId": "university-of-strathclyde",
+      "to": "strathclyde",
+      "method": "as-is/exact-name",
+      "courses": 405
+    },
+    {
+      "from": "University of Sunderland",
+      "edpRefId": "university-of-sunderland",
+      "to": "sunderland",
+      "method": "as-is/exact-name",
+      "courses": 295
+    },
+    {
+      "from": "University of Surrey",
+      "edpRefId": "university-of-surrey",
+      "to": "surrey",
+      "method": "as-is/exact-name",
+      "courses": 12
+    },
+    {
+      "from": "University of Sussex",
+      "edpRefId": "university-of-sussex",
+      "to": "sussex",
+      "method": "as-is/exact-name",
+      "courses": 302
+    },
+    {
+      "from": "University of the Pacific",
+      "edpRefId": "university-of-the-pacific",
+      "to": "pacific",
+      "method": "as-is/exact-name",
+      "courses": 68
+    },
+    {
+      "from": "University of the West of Scotland",
+      "edpRefId": "university-of-the-west-of-scotland",
+      "to": "university-of-the-west-of-scotland",
+      "method": "as-is/exact-name",
+      "courses": 126
+    },
+    {
+      "from": "University of Tulsa",
+      "edpRefId": "the-university-of-tulsa",
+      "to": "university-of-tulsa",
+      "method": "as-is/exact-slug",
+      "courses": 116
+    },
+    {
+      "from": "University of Twente",
+      "edpRefId": "university-of-twente",
+      "to": "twente",
+      "method": "as-is/exact-name",
+      "courses": 13
+    },
+    {
+      "from": "University of Waikato",
+      "edpRefId": "the-university-of-waikato",
+      "to": "waikato",
+      "method": "as-is/exact-name",
+      "courses": 411
+    },
+    {
+      "from": "University of West Alabama",
+      "edpRefId": "university-of-west-alabama",
+      "to": "university-of-west-alabama",
+      "method": "as-is/exact-slug",
+      "courses": 65
+    },
+    {
+      "from": "University of Westminster",
+      "edpRefId": "university-of-westminster",
+      "to": "westminster",
+      "method": "as-is/exact-name",
+      "courses": 270
+    },
+    {
+      "from": "University of Winchester",
+      "edpRefId": "university-of-winchester",
+      "to": "university-of-winchester",
+      "method": "as-is/exact-slug",
+      "courses": 86
+    },
+    {
+      "from": "University of Wolverhampton",
+      "edpRefId": "university-of-wolverhampton",
+      "to": "university-of-wolverhampton",
+      "method": "as-is/exact-slug",
+      "courses": 67
+    },
+    {
+      "from": "University of York",
+      "edpRefId": "university-of-york",
+      "to": "york",
+      "method": "as-is/exact-name",
+      "courses": 102
+    },
+    {
+      "from": "Utah Tech University",
+      "edpRefId": "utah-tech-university",
+      "to": "utah-tech-university",
+      "method": "as-is/exact-slug",
+      "courses": 81
+    },
+    {
+      "from": "Vibe Education",
+      "edpRefId": "vibe-education",
+      "to": "vibe-education",
+      "method": "as-is/exact-slug",
+      "courses": 7
+    },
+    {
+      "from": "Victoria University of Wellington",
+      "edpRefId": "victoria-university-of-wellington",
+      "to": "victoria-wellington",
+      "method": "as-is/exact-name",
+      "courses": 445
+    },
+    {
+      "from": "VIZJA University",
+      "edpRefId": "vizja-university",
+      "to": "vizja-university",
+      "method": "as-is/exact-slug",
+      "courses": 93
+    },
+    {
+      "from": "Warsaw University of Business",
+      "edpRefId": "warsaw-university-of-business",
+      "to": "warsaw-business",
+      "method": "as-is/exact-name",
+      "courses": 6
+    },
+    {
+      "from": "Washington State University",
+      "edpRefId": "washington-state-university",
+      "to": "washington-state",
+      "method": "as-is/exact-name",
+      "courses": 48
+    },
+    {
+      "from": "Washington University School of Law",
+      "edpRefId": "washington-university-school-of-law",
+      "to": "washington-university-school-of-law",
+      "method": "as-is/exact-slug",
+      "courses": 6
+    },
+    {
+      "from": "Weber State University",
+      "edpRefId": "weber-state-university",
+      "to": "weber-state-university",
+      "method": "as-is/exact-slug",
+      "courses": 139
+    },
+    {
+      "from": "Webster University",
+      "edpRefId": "webster-university-st-louis",
+      "to": "webster-university",
+      "method": "as-is/exact-slug",
+      "courses": 113
+    },
+    {
+      "from": "Westcliff University",
+      "edpRefId": "westcliff-university",
+      "to": "westcliff-university",
+      "method": "as-is/exact-slug",
+      "courses": 101
+    },
+    {
+      "from": "Western Atlantic University School of Medicine",
+      "edpRefId": "western-atlantic-university-school-of-medicine",
+      "to": "western-atlantic-university-school-of-medicine",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "Western New England University",
+      "edpRefId": "western-new-england-university",
+      "to": "western-new-england",
+      "method": "as-is/exact-name",
+      "courses": 77
+    },
+    {
+      "from": "Western Sydney University",
+      "edpRefId": "western-sydney-university",
+      "to": "western-sydney",
+      "method": "as-is/exact-name",
+      "courses": 62
+    },
+    {
+      "from": "Western Washington University",
+      "edpRefId": "western-washington-university",
+      "to": "western-washington",
+      "method": "as-is/exact-name",
+      "courses": 137
+    },
+    {
+      "from": "William Paterson University",
+      "edpRefId": "william-paterson-university",
+      "to": "william-paterson-university",
+      "method": "as-is/exact-slug",
+      "courses": 153
+    },
+    {
+      "from": "Wittenborg - University of Applied Sciences",
+      "edpRefId": "wittenborg-university-of-applied-sciences",
+      "to": "wittenborg",
+      "method": "as-is/exact-slug",
+      "courses": 40
+    },
+    {
+      "from": "Wrexham University",
+      "edpRefId": "glyndwr-university",
+      "to": "wrexham-university",
+      "method": "as-is/exact-slug",
+      "courses": 75
+    },
+    {
+      "from": "Xavier University",
+      "edpRefId": "xavier-university",
+      "to": "xavier-university",
+      "method": "as-is/exact-slug",
+      "courses": 134
+    },
+    {
+      "from": "Yoobee College of Creative Innovation",
+      "edpRefId": "yoobee-college-of-creative-innovation",
+      "to": "yoobee-college-of-creative-innovation",
+      "method": "as-is/exact-slug",
+      "courses": 17
+    },
+    {
+      "from": "University of Northern British Columbia",
+      "edpRefId": "university-of-northern-british-columbia",
+      "to": "unbc",
+      "method": "as-is/exact-name",
+      "courses": 70
+    },
+    {
+      "from": "University of Aberdeen",
+      "edpRefId": "university-of-aberdeen",
+      "to": "aberdeen",
+      "method": "as-is/exact-name",
+      "courses": 14
+    },
+    {
+      "from": "Technological University Dublin",
+      "edpRefId": "technological-university-dublin",
+      "to": "technological-university-of-dublin-tu-dublin",
+      "method": "as-is/exact-name",
+      "courses": 11
+    },
+    {
+      "from": "Anglia Ruskin University",
+      "edpRefId": "anglia-ruskin-university",
+      "to": "anglia-ruskin",
+      "method": "as-is/exact-name",
+      "courses": 7
+    },
+    {
+      "from": "Arizona State University London",
+      "edpRefId": "arizona-state-university-london",
+      "to": "arizona-state",
+      "method": "as-is+strip-campus/exact-name",
+      "courses": 7
+    },
+    {
+      "from": "Technological University of the Shannon - Midlands Midwest",
+      "edpRefId": "technological-university-of-the-shannon-midlands-midwest",
+      "to": "tus-shannon",
+      "method": "as-is/exact-name",
+      "courses": 6
+    },
+    {
+      "from": "University of New Haven",
+      "edpRefId": "university-of-new-haven-via-outbound-kc",
+      "to": "new-haven",
+      "method": "as-is/exact-name",
+      "courses": 6
+    },
+    {
+      "from": "Goldsmiths University of London",
+      "edpRefId": "goldsmiths-university-of-london",
+      "to": "goldsmiths",
+      "method": "as-is/exact-name",
+      "courses": 5
+    },
+    {
+      "from": "University of Debrecen",
+      "edpRefId": "university-of-debrecen",
+      "to": "debrecen",
+      "method": "as-is/exact-name",
+      "courses": 5
+    },
+    {
+      "from": "Aalto University",
+      "edpRefId": "aalto-university",
+      "to": "aalto-university",
+      "method": "as-is/exact-slug",
+      "courses": 3
+    },
+    {
+      "from": "Abu Dhabi University",
+      "edpRefId": "abu-dhabi-university",
+      "to": "abu-dhabi-university",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "James Cook University",
+      "edpRefId": "james-cook-university-brisbane-campus",
+      "to": "james-cook",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "London School of Commerce Malta (LSC)",
+      "edpRefId": "london-school-of-commerce-malta-lsc",
+      "to": "lsc-malta",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "Montpellier Business School",
+      "edpRefId": "montpellier-business-school",
+      "to": "montpellier-business-school",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "University of Canberra",
+      "edpRefId": "university-of-canberra",
+      "to": "canberra",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "Wilfrid Laurier University",
+      "edpRefId": "wilfrid-laurier-university",
+      "to": "wilfrid-laurier",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "Aberystwyth University",
+      "edpRefId": "aberystwyth-university",
+      "to": "aberystwyth",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "Auckland University of Technology",
+      "edpRefId": "auckland-university-of-technology",
+      "to": "aut",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "ENAE International Business School",
+      "edpRefId": "enae-international-business-school",
+      "to": "enae",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "Florida Atlantic University",
+      "edpRefId": "florida-atlantic-university",
+      "to": "florida-atlantic-university-direct-entry",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "James Madison University",
+      "edpRefId": "james-madison-university",
+      "to": "james-madison",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "Karelia University of Applied Sciences",
+      "edpRefId": "karelia-university-of-applied-sciences",
+      "to": "karelia-university-of-applied-sciences",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "New Jersey Institute of Technology",
+      "edpRefId": "new-jersey-institute-of-technology",
+      "to": "new-jersey-institute-of-technology",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "SAE University College",
+      "edpRefId": "sae-university-college",
+      "to": "sae",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "University of Wollongong Malaysia",
+      "edpRefId": "university-of-wollongong-malaysia",
+      "to": "wollongong-malaysia",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "University of Wyoming",
+      "edpRefId": "university-of-wyoming",
+      "to": "wyoming",
+      "method": "as-is/exact-name",
+      "courses": 138
+    },
+    {
+      "from": "Trinity Western University",
+      "edpRefId": "trinity-western-university",
+      "to": "trinity-western",
+      "method": "as-is/exact-name",
+      "courses": 51
+    },
+    {
+      "from": "David Game College",
+      "edpRefId": "david-game-college",
+      "to": "david-game",
+      "method": "strip-suffix/exact-slug",
+      "courses": 17
+    },
+    {
+      "from": "Bosworth Independent College",
+      "edpRefId": "bosworth-independent-college",
+      "to": "bosworth-independent-school",
+      "method": "as-is/core-name",
+      "courses": 11
+    },
+    {
+      "from": "Brighton College",
+      "edpRefId": "brighton-college",
+      "to": "brighton",
+      "method": "strip-suffix/exact-slug",
+      "courses": 11
+    },
+    {
+      "from": "Cardiff Sixth Form College",
+      "edpRefId": "cardiff-sixth-form-college",
+      "to": "cardiff-sixth-form",
+      "method": "as-is/exact-name",
+      "courses": 11
+    },
+    {
+      "from": "National College of Ireland",
+      "edpRefId": "national-college-of-ireland",
+      "to": "nci-ireland",
+      "method": "as-is/exact-name",
+      "courses": 8
+    },
+    {
+      "from": "Murdoch University",
+      "edpRefId": "murdoch-university",
+      "to": "murdoch",
+      "method": "as-is/exact-name",
+      "courses": 3
+    },
+    {
+      "from": "University of Vaasa",
+      "edpRefId": "university-of-vaasa",
+      "to": "vaasa",
+      "method": "as-is/exact-name",
+      "courses": 3
+    },
+    {
+      "from": "Robert Gordon University",
+      "edpRefId": "robert-gordon-university",
+      "to": "robert-gordon",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "University of Pecs",
+      "edpRefId": "university-of-pecs",
+      "to": "university-of-pecs",
+      "method": "as-is/exact-slug",
+      "courses": 2
+    },
+    {
+      "from": "University of Windsor",
+      "edpRefId": "university-of-windsor",
+      "to": "windsor",
+      "method": "as-is/exact-name",
+      "courses": 2
+    },
+    {
+      "from": "Aarhus University",
+      "edpRefId": "aarhus-university",
+      "to": "aarhus-university",
+      "method": "as-is/exact-slug",
+      "courses": 1
+    },
+    {
+      "from": "Adelaide University",
+      "edpRefId": "adelaide-university",
+      "to": "adelaide",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "British Columbia Institute of Technology",
+      "edpRefId": "british-columbia-institute-of-technology",
+      "to": "bcit",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "Ontario Tech University",
+      "edpRefId": "ontario-tech-university",
+      "to": "ontario-tech",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "Toronto Metropolitan University",
+      "edpRefId": "toronto-metropolitan-university",
+      "to": "toronto-met",
+      "method": "as-is/exact-name",
+      "courses": 1
+    },
+    {
+      "from": "University of Lethbridge",
+      "edpRefId": "university-of-lethbridge",
+      "to": "lethbridge",
+      "method": "as-is/exact-name",
+      "courses": 1
+    }
+  ],
+  "unmatched": [
+    {
+      "from": "AMITY University (Dubai)",
+      "edpRefId": "amity-university-dubai",
+      "country": "United Arab Emirates",
+      "courses": 28
+    },
+    {
+      "from": "Ecole de Management Applique",
+      "edpRefId": "ecole-de-management-applique",
+      "country": "France",
+      "courses": 9
+    },
+    {
+      "from": "ESCE - International Business School",
+      "edpRefId": "esce-international-business-school",
+      "country": "France",
+      "courses": 12
+    },
+    {
+      "from": "Fachhochschule des Mittelstands (FHM University)",
+      "edpRefId": "fachhochschule-des-mittelstands-fhm-university",
+      "country": "Germany",
+      "courses": 18
+    },
+    {
+      "from": "HTMi - International Hotel and Tourism Institute (Switzerland)",
+      "edpRefId": "hotel-and-tourism-management-institute",
+      "country": "Switzerland",
+      "courses": 14
+    },
+    {
+      "from": "IQS - Institut Quimic de Sarria",
+      "edpRefId": "iqs-institut-quimic-de-sarria",
+      "country": "Spain",
+      "courses": 11
+    },
+    {
+      "from": "Long Island University Brooklyn",
+      "edpRefId": "long-island-university-brooklyn",
+      "country": "United States",
+      "courses": 67
+    },
+    {
+      "from": "New Zealand Management Academies (NZMA)",
+      "edpRefId": "new-zealand-management-academies-nzma",
+      "country": "New Zealand",
+      "courses": 13
+    },
+    {
+      "from": "NUOVA ACCADEMIA DI BELLE ARTI (NABA)",
+      "edpRefId": "nuova-accademia-di-belle-arti-naba",
+      "country": "Italy",
+      "courses": 13
+    },
+    {
+      "from": "Royal Holloway University of London",
+      "edpRefId": "royal-holloway-university-of-london",
+      "country": "United Kingdom",
+      "courses": 321
+    },
+    {
+      "from": "Texas A and M University Corpus Christi",
+      "edpRefId": "texas-a-m-university-corpus-christi",
+      "country": "United States",
+      "courses": 75
+    },
+    {
+      "from": "The University of Arizona",
+      "edpRefId": "the-university-of-arizona",
+      "country": "United States",
+      "courses": 1
+    },
+    {
+      "from": "UE - University of Europe for Applied Sciences",
+      "edpRefId": "university-of-europe-for-applied-sciences",
+      "country": "Germany",
+      "courses": 38
+    },
+    {
+      "from": "University of Michigan - Flint",
+      "edpRefId": "university-of-michigan-flint",
+      "country": "United States",
+      "courses": 123
+    },
+    {
+      "from": "University of the West of England",
+      "edpRefId": "university-of-the-west-of-england-bristol",
+      "country": "United Kingdom",
+      "courses": 252
+    },
+    {
+      "from": "University of Victoria",
+      "edpRefId": "university-of-victoria",
+      "country": "Canada",
+      "courses": 88
+    },
+    {
+      "from": "University of Manchester",
+      "edpRefId": "university-of-manchester",
+      "country": "United Kingdom",
+      "courses": 31
+    },
+    {
+      "from": "University of New Mexico",
+      "edpRefId": "university-of-new-mexico",
+      "country": "United States",
+      "courses": 461
+    },
+    {
+      "from": "Illinois Institute of Technology",
+      "edpRefId": "illinois-institute-of-technology",
+      "country": "United States",
+      "courses": 165
+    },
+    {
+      "from": "The University of Texas at Arlington",
+      "edpRefId": "the-university-of-texas-at-arlington",
+      "country": "United States",
+      "courses": 133
+    },
+    {
+      "from": "IOWA State University",
+      "edpRefId": "iowa-state-university",
+      "country": "United States",
+      "courses": 101
+    },
+    {
+      "from": "Manipal Academy of Higher Education Dubai",
+      "edpRefId": "manipal-academy-of-higher-education",
+      "country": "United Arab Emirates",
+      "courses": 72
+    },
+    {
+      "from": "Johnson & Wales University",
+      "edpRefId": "johnson-wales-university-rhode-island",
+      "country": "United States",
+      "courses": 70
+    },
+    {
+      "from": "Rutgers University Camden",
+      "edpRefId": "rutgers-university-camden",
+      "country": "United States",
+      "courses": 61
+    },
+    {
+      "from": "ILSC",
+      "edpRefId": "ilsc",
+      "country": "United Kingdom",
+      "courses": 45
+    },
+    {
+      "from": "Trinity Laban Conservatoire of Music and Dance",
+      "edpRefId": "trinity-laban-conservatoire-of-music-and-dance",
+      "country": "United Kingdom",
+      "courses": 43
+    },
+    {
+      "from": "University of Warwick",
+      "edpRefId": "university-of-warwick",
+      "country": "United Kingdom",
+      "courses": 24
+    },
+    {
+      "from": "UP Education",
+      "edpRefId": "up-education",
+      "country": "New Zealand",
+      "courses": 23
+    },
+    {
+      "from": "NEOMA Business School",
+      "edpRefId": "neoma-business-school",
+      "country": "France",
+      "courses": 12
+    },
+    {
+      "from": "Box Hill School",
+      "edpRefId": "box-hill-school",
+      "country": "United Kingdom",
+      "courses": 11
+    },
+    {
+      "from": "Dublin Business School",
+      "edpRefId": "dublin-business-school",
+      "country": "Ireland",
+      "courses": 11
+    },
+    {
+      "from": "Hanson College",
+      "edpRefId": "hanson-college",
+      "country": "Canada",
+      "courses": 10
+    },
+    {
+      "from": "Maynooth University",
+      "edpRefId": "maynooth-university",
+      "country": "Ireland",
+      "courses": 9
+    },
+    {
+      "from": "English Path",
+      "edpRefId": "english-path",
+      "country": "United Kingdom",
+      "courses": 8
+    },
+    {
+      "from": "Skema Business School",
+      "edpRefId": "skema-business-school",
+      "country": "France",
+      "courses": 8
+    },
+    {
+      "from": "University of Padua",
+      "edpRefId": "university-of-padua",
+      "country": "Italy",
+      "courses": 8
+    },
+    {
+      "from": "De Vinci Higher Education",
+      "edpRefId": "de-vinci-higher-education",
+      "country": "France",
+      "courses": 7
+    },
+    {
+      "from": "Lincoln University College",
+      "edpRefId": "lincoln-university-college",
+      "country": "Malaysia",
+      "courses": 7
+    },
+    {
+      "from": "Southern Ontario Collegiate",
+      "edpRefId": "southern-ontario-collegiate",
+      "country": "Canada",
+      "courses": 6
+    },
+    {
+      "from": "Concordia University Texas",
+      "edpRefId": "concordia-university-texas",
+      "country": "United States",
+      "courses": 5
+    },
+    {
+      "from": "University of Technology Sydney",
+      "edpRefId": "university-of-technology-sydney",
+      "country": "Australia",
+      "courses": 5
+    },
+    {
+      "from": "York St John University",
+      "edpRefId": "york-st-john-university",
+      "country": "United Kingdom",
+      "courses": 5
+    },
+    {
+      "from": "Atlantic Technological University",
+      "edpRefId": "atlantic-technological-university",
+      "country": "Ireland",
+      "courses": 4
+    },
+    {
+      "from": "Australian National University",
+      "edpRefId": "australian-national-university",
+      "country": "Australia",
+      "courses": 4
+    },
+    {
+      "from": "Bay Atlantic University",
+      "edpRefId": "bay-atlantic-university",
+      "country": "United States",
+      "courses": 4
+    },
+    {
+      "from": "Rennes School of Business",
+      "edpRefId": "esc-rennes-school-of-business",
+      "country": "France",
+      "courses": 4
+    },
+    {
+      "from": "University of Wollongong",
+      "edpRefId": "university-of-wollongong",
+      "country": "Australia",
+      "courses": 4
+    },
+    {
+      "from": "Eurospeak",
+      "edpRefId": "eurospeak-reading",
+      "country": "United Kingdom",
+      "courses": 3
+    },
+    {
+      "from": "Missouri University of Science and Technology",
+      "edpRefId": "missouri-university-of-science-and-technology",
+      "country": "United States",
+      "courses": 3
+    },
+    {
+      "from": "Taylor's University",
+      "edpRefId": "taylors-university",
+      "country": "Malaysia",
+      "courses": 3
+    },
+    {
+      "from": "University of Eastern Finland",
+      "edpRefId": "university-of-eastern-finland",
+      "country": "Finland",
+      "courses": 3
+    },
+    {
+      "from": "Britts Imperial University College",
+      "edpRefId": "britts-imperial-university-college",
+      "country": "United Arab Emirates",
+      "courses": 2
+    },
+    {
+      "from": "California State University Dominguez Hills",
+      "edpRefId": "california-state-university-dominguez-hills",
+      "country": "United States",
+      "courses": 2
+    },
+    {
+      "from": "California State University Long Beach",
+      "edpRefId": "california-state-university-long-beach",
+      "country": "United States",
+      "courses": 2
+    },
+    {
+      "from": "California State University Los Angeles",
+      "edpRefId": "california-state-university-los-angeles",
+      "country": "United States",
+      "courses": 2
+    },
+    {
+      "from": "CBS University of Applied Sciences",
+      "edpRefId": "cbs-university-of-applied-sciences",
+      "country": "Germany",
+      "courses": 2
+    },
+    {
+      "from": "Charles Darwin University",
+      "edpRefId": "charles-darwin-university",
+      "country": "Australia",
+      "courses": 2
+    },
+    {
+      "from": "Global College Malta",
+      "edpRefId": "global-college-malta",
+      "country": "Malta",
+      "courses": 2
+    },
+    {
+      "from": "University of Maryland Baltimore County",
+      "edpRefId": "graduate-school-at-umbc-university-of-maryland-baltimore-county",
+      "country": "United States",
+      "courses": 2
+    },
+    {
+      "from": "Jonkoping University",
+      "edpRefId": "jonkoping-university",
+      "country": "Sweden",
+      "courses": 2
+    },
+    {
+      "from": "Munster Technological University",
+      "edpRefId": "munster-technological-university",
+      "country": "Ireland",
+      "courses": 2
+    },
+    {
+      "from": "Robert Morris University",
+      "edpRefId": "robert-morris-university",
+      "country": "United States",
+      "courses": 2
+    },
+    {
+      "from": "SIM Global Education",
+      "edpRefId": "sim-global-education",
+      "country": "Singapore",
+      "courses": 2
+    },
+    {
+      "from": "University of Antwerp",
+      "edpRefId": "university-of-antwerp",
+      "country": "Belgium",
+      "courses": 2
+    },
+    {
+      "from": "ALFA University College (AUC)",
+      "edpRefId": "alfa-university-college-auc",
+      "country": "Malaysia",
+      "courses": 1
+    },
+    {
+      "from": "Amber International Aviation Academy",
+      "edpRefId": "amber-international-aviation-academy",
+      "country": "Australia",
+      "courses": 1
+    },
+    {
+      "from": "Barcelona Technology School",
+      "edpRefId": "barcelona-technology-school",
+      "country": "Spain",
+      "courses": 1
+    },
+    {
+      "from": "Bath Spa University",
+      "edpRefId": "bath-spa-university",
+      "country": "United Kingdom",
+      "courses": 1
+    },
+    {
+      "from": "California State University - Northridge",
+      "edpRefId": "california-state-university-northridge",
+      "country": "United States",
+      "courses": 1
+    },
+    {
+      "from": "CBS International Business School",
+      "edpRefId": "cbs-international-business-school",
+      "country": "Germany",
+      "courses": 1
+    },
+    {
+      "from": "EDC Paris Business School",
+      "edpRefId": "edc-paris-business-school",
+      "country": "France",
+      "courses": 1
+    },
+    {
+      "from": "FOM University of Applied Sciences for Economics and Management",
+      "edpRefId": "fom-university-of-applied-sciences-for-economics-and-management",
+      "country": "Germany",
+      "courses": 1
+    },
+    {
+      "from": "Governors State University",
+      "edpRefId": "governors-state-university",
+      "country": "United States",
+      "courses": 1
+    },
+    {
+      "from": "ISEP - Paris Institute of Digital Technology",
+      "edpRefId": "isep-school-of-digital-engineers",
+      "country": "France",
+      "courses": 1
+    },
+    {
+      "from": "Linnaeus University",
+      "edpRefId": "linnaeus-university",
+      "country": "Sweden",
+      "courses": 1
+    },
+    {
+      "from": "Medical University of the Americas",
+      "edpRefId": "medical-university-of-the-americas",
+      "country": "Saint Kitts And Nevis",
+      "courses": 1
+    },
+    {
+      "from": "MJM Graphic Design",
+      "edpRefId": "mjm-graphic-design",
+      "country": "France",
+      "courses": 1
+    },
+    {
+      "from": "National Louis University",
+      "edpRefId": "national-louis-university",
+      "country": "United States",
+      "courses": 1
+    },
+    {
+      "from": "National Research Nuclear University(MEPhI)",
+      "edpRefId": "national-research-nuclear-university-mephi",
+      "country": "Russia",
+      "courses": 1
+    },
+    {
+      "from": "National University of Singapore",
+      "edpRefId": "national-university-of-singapore",
+      "country": "Singapore",
+      "courses": 1
+    },
+    {
+      "from": "New Zealand Airline Academy",
+      "edpRefId": "new-zealand-airline-academy",
+      "country": "New Zealand",
+      "courses": 1
+    },
+    {
+      "from": "New Zealand Skills and Education",
+      "edpRefId": "new-zealand-skills-and-education",
+      "country": "New Zealand",
+      "courses": 1
+    },
+    {
+      "from": "Pepperdine University",
+      "edpRefId": "pepperdine-university",
+      "country": "United States",
+      "courses": 1
+    },
+    {
+      "from": "Queensland University of Technology",
+      "edpRefId": "queensland-university-of-technology",
+      "country": "Australia",
+      "courses": 1
+    },
+    {
+      "from": "Rome Business School",
+      "edpRefId": "rome-business-school",
+      "country": "Italy",
+      "courses": 1
+    },
+    {
+      "from": "San Jose State University",
+      "edpRefId": "san-jose-state-university",
+      "country": "United States",
+      "courses": 1
+    },
+    {
+      "from": "Stevens Institute of Technology",
+      "edpRefId": "stevens-institute-of-technology",
+      "country": "United States",
+      "courses": 1
+    },
+    {
+      "from": "swinburne university of technology Malaysia",
+      "edpRefId": "swinburne-university-of-technology-malaysia",
+      "country": "Malaysia",
+      "courses": 1
+    },
+    {
+      "from": "Technical University of Munich",
+      "edpRefId": "technical-university-of-munich",
+      "country": "Germany",
+      "courses": 1
+    },
+    {
+      "from": "The International University of Logistics and Transport",
+      "edpRefId": "the-international-university-of-logistics-and-transport",
+      "country": "Poland",
+      "courses": 1
+    },
+    {
+      "from": "The University of waterloo",
+      "edpRefId": "the-university-of-waterloo",
+      "country": "Canada",
+      "courses": 1
+    },
+    {
+      "from": "Turku University of Applied Sciences",
+      "edpRefId": "turku-university-of-applied-sciences",
+      "country": "Poland",
+      "courses": 1
+    },
+    {
+      "from": "Unitec Institute of Technology",
+      "edpRefId": "unitec-institute-of-technology",
+      "country": "New Zealand",
+      "courses": 1
+    },
+    {
+      "from": "University at Buffalo",
+      "edpRefId": "university-at-buffalo",
+      "country": "United States",
+      "courses": 1
+    },
+    {
+      "from": "University College London",
+      "edpRefId": "university-college-london",
+      "country": "United Kingdom",
+      "courses": 1
+    },
+    {
+      "from": "University of Jyväskylä",
+      "edpRefId": "university-of-jyvaskyla",
+      "country": "Finland",
+      "courses": 1
+    },
+    {
+      "from": "University of Turku",
+      "edpRefId": "university-of-turku",
+      "country": "Finland",
+      "courses": 1
+    },
+    {
+      "from": "Villanova University",
+      "edpRefId": "villanova-university",
+      "country": "United States",
+      "courses": 1
+    },
+    {
+      "from": "Widener University",
+      "edpRefId": "widener-university",
+      "country": "United States",
+      "courses": 1
+    },
+    {
+      "from": "Istituto Europeo di Design (IED)",
+      "edpRefId": "istituto-europeo-di-design-ied",
+      "country": "Italy",
+      "courses": 2
+    },
+    {
+      "from": "KAPLAN English",
+      "edpRefId": "kaplan-english",
+      "country": "United Kingdom",
+      "courses": 317
+    },
+    {
+      "from": "International House",
+      "edpRefId": "international-house",
+      "country": "United Kingdom",
+      "courses": 142
+    },
+    {
+      "from": "EC English",
+      "edpRefId": "ec-english",
+      "country": "United Kingdom",
+      "courses": 139
+    },
+    {
+      "from": "Anglo-Continental",
+      "edpRefId": "anglo-continental",
+      "country": "United Kingdom",
+      "courses": 86
+    },
+    {
+      "from": "Centre of English Studies",
+      "edpRefId": "centre-of-english-studies",
+      "country": "United Kingdom",
+      "courses": 78
+    },
+    {
+      "from": "Kings Education",
+      "edpRefId": "kings-education",
+      "country": "United Kingdom",
+      "courses": 72
+    },
+    {
+      "from": "British School of Marketing International",
+      "edpRefId": "british-school-of-marketing-international",
+      "country": "United Kingdom",
+      "courses": 65
+    },
+    {
+      "from": "Oxford International Language School",
+      "edpRefId": "oxford-international-language-school",
+      "country": "United Kingdom",
+      "courses": 62
+    },
+    {
+      "from": "Stafford House",
+      "edpRefId": "stafford-house",
+      "country": "Germany",
+      "courses": 62
+    },
+    {
+      "from": "New College Group",
+      "edpRefId": "new-college-group",
+      "country": "United Kingdom",
+      "courses": 44
+    },
+    {
+      "from": "Oxford School of English",
+      "edpRefId": "oxford-school-of-english",
+      "country": "United Kingdom",
+      "courses": 40
+    },
+    {
+      "from": "English in York",
+      "edpRefId": "english-in-york",
+      "country": "United Kingdom",
+      "courses": 35
+    },
+    {
+      "from": "The Language Gallery",
+      "edpRefId": "the-language-gallery",
+      "country": "United Kingdom",
+      "courses": 35
+    },
+    {
+      "from": "Bayswater College",
+      "edpRefId": "bayswater-college",
+      "country": "United Kingdom",
+      "courses": 34
+    },
+    {
+      "from": "LSI/IH Portsmouth (Language Specialists International)",
+      "edpRefId": "lsi-portsmouth",
+      "country": "United Kingdom",
+      "courses": 31
+    },
+    {
+      "from": "Beet English Language Centre",
+      "edpRefId": "beet-language-school-bournemouth",
+      "country": "United Kingdom",
+      "courses": 30
+    },
+    {
+      "from": "Eurocentres",
+      "edpRefId": "eurocentres",
+      "country": "United Kingdom",
+      "courses": 28
+    },
+    {
+      "from": "TopUp Learning London",
+      "edpRefId": "top-up-learning-london",
+      "country": "United Kingdom",
+      "courses": 28
+    },
+    {
+      "from": "London School of English",
+      "edpRefId": "london-school-of-english",
+      "country": "United Kingdom",
+      "courses": 27
+    },
+    {
+      "from": "University of Wisconsin-Milwaukee",
+      "edpRefId": "university-of-wisconsin-milwaukee",
+      "country": "United States",
+      "courses": 26
+    },
+    {
+      "from": "Anglolang Academy of English",
+      "edpRefId": "anglolang-academy-of-english",
+      "country": "United Kingdom",
+      "courses": 25
+    },
+    {
+      "from": "North Island College",
+      "edpRefId": "north-island-college",
+      "country": "Canada",
+      "courses": 25
+    },
+    {
+      "from": "College of English Language",
+      "edpRefId": "college-of-english-language",
+      "country": "United States",
+      "courses": 24
+    },
+    {
+      "from": "WE Bridge Academy",
+      "edpRefId": "we-bridge-academy",
+      "country": "United Kingdom",
+      "courses": 16
+    },
+    {
+      "from": "Abbey DLD Colleges",
+      "edpRefId": "abbey-dld-group-of-colleges",
+      "country": "United Kingdom",
+      "courses": 12
+    },
+    {
+      "from": "Stay Campus London",
+      "edpRefId": "stay-campus-london",
+      "country": "United Kingdom",
+      "courses": 12
+    },
+    {
+      "from": "Academic Summer",
+      "edpRefId": "academic-summer",
+      "country": "United Kingdom",
+      "courses": 11
+    },
+    {
+      "from": "Adcote School for Girls",
+      "edpRefId": "adcote-school-for-girls",
+      "country": "United Kingdom",
+      "courses": 11
+    },
+    {
+      "from": "Bede's Summer School",
+      "edpRefId": "bedes-summer-school",
+      "country": "United Kingdom",
+      "courses": 11
+    },
+    {
+      "from": "Bishop's Stortford College",
+      "edpRefId": "bishops-stortford-college",
+      "country": "United Kingdom",
+      "courses": 11
+    },
+    {
+      "from": "Bromsgrove School",
+      "edpRefId": "bromsgrove-school",
+      "country": "United Kingdom",
+      "courses": 11
+    },
+    {
+      "from": "Brooke House College",
+      "edpRefId": "brooke-house-college",
+      "country": "United Kingdom",
+      "courses": 11
+    },
+    {
+      "from": "Colchester English Study Centre",
+      "edpRefId": "colchester-english-study-centre",
+      "country": "United Kingdom",
+      "courses": 11
+    },
+    {
+      "from": "International School of Creative Arts",
+      "edpRefId": "international-school-of-creative-arts",
+      "country": "United Kingdom",
+      "courses": 11
+    },
+    {
+      "from": "Mander Portman Woodward",
+      "edpRefId": "mander-portman-woodward",
+      "country": "United Kingdom",
+      "courses": 11
+    },
+    {
+      "from": "Myddelton College",
+      "edpRefId": "myddelton-college",
+      "country": "United Kingdom",
+      "courses": 11
+    },
+    {
+      "from": "ATC",
+      "edpRefId": "atc",
+      "country": "United Kingdom",
+      "courses": 10
+    },
+    {
+      "from": "Atlantic Language",
+      "edpRefId": "atlantic-language",
+      "country": "United Kingdom",
+      "courses": 10
+    },
+    {
+      "from": "Concord College",
+      "edpRefId": "concord-college",
+      "country": "United Kingdom",
+      "courses": 10
+    },
+    {
+      "from": "International House - Sydney",
+      "edpRefId": "international-house-sydeny",
+      "country": "Australia",
+      "courses": 9
+    },
+    {
+      "from": "Langports Australia",
+      "edpRefId": "langports-brisbane",
+      "country": "Australia",
+      "courses": 9
+    },
+    {
+      "from": "Languages International",
+      "edpRefId": "languages-international",
+      "country": "New Zealand",
+      "courses": 9
+    },
+    {
+      "from": "Matrix College of Management, Technology and Healthcare",
+      "edpRefId": "matrix-college-of-management-technology-and-healthcare",
+      "country": "Canada",
+      "courses": 9
+    },
+    {
+      "from": "Mentor Language Institute",
+      "edpRefId": "mentor-language-institute",
+      "country": "United States",
+      "courses": 9
+    },
+    {
+      "from": "International House Belfast",
+      "edpRefId": "international-house-belfast",
+      "country": "United Kingdom",
+      "courses": 8
+    },
+    {
+      "from": "Academia International",
+      "edpRefId": "academia-international",
+      "country": "Australia",
+      "courses": 7
+    },
+    {
+      "from": "Leeds Language College",
+      "edpRefId": "leeds-language-college",
+      "country": "United Kingdom",
+      "courses": 7
+    },
+    {
+      "from": "LUT University",
+      "edpRefId": "lut-university",
+      "country": "Finland",
+      "courses": 7
+    },
+    {
+      "from": "Queen's University - School of English",
+      "edpRefId": "queens-university",
+      "country": "Canada",
+      "courses": 7
+    },
+    {
+      "from": "Vancouver Island University",
+      "edpRefId": "vancouver-island-university",
+      "country": "Canada",
+      "courses": 7
+    },
+    {
+      "from": "CCEL - Christchurch College of English",
+      "edpRefId": "ccel-christchurch-college-of-english",
+      "country": "New Zealand",
+      "courses": 6
+    },
+    {
+      "from": "English Language Centre - Bristol",
+      "edpRefId": "english-language-centre-bristol",
+      "country": "United Kingdom",
+      "courses": 6
+    },
+    {
+      "from": "ILAC",
+      "edpRefId": "ilac",
+      "country": "Canada",
+      "courses": 6
+    },
+    {
+      "from": "Impact English",
+      "edpRefId": "impact-brisbane",
+      "country": "Australia",
+      "courses": 6
+    },
+    {
+      "from": "Radboud University",
+      "edpRefId": "radboud-university",
+      "country": "Netherlands",
+      "courses": 6
+    },
+    {
+      "from": "Flinders University",
+      "edpRefId": "flinders-university",
+      "country": "Australia",
+      "courses": 5
+    },
+    {
+      "from": "Limerick Language Centre",
+      "edpRefId": "limerick-language-centre",
+      "country": "Ireland",
+      "courses": 5
+    },
+    {
+      "from": "MDA College",
+      "edpRefId": "mda-college",
+      "country": "United Kingdom",
+      "courses": 5
+    },
+    {
+      "from": "ECA - Elsis English",
+      "edpRefId": "eca-elsis-english",
+      "country": "Australia",
+      "courses": 4
+    },
+    {
+      "from": "International Language Institute",
+      "edpRefId": "international-language-institute",
+      "country": "United States",
+      "courses": 4
+    },
+    {
+      "from": "Lambton College Canada",
+      "edpRefId": "lambton-college-canada",
+      "country": "Canada",
+      "courses": 4
+    },
+    {
+      "from": "Lexis Education",
+      "edpRefId": "lexis-education",
+      "country": "Australia",
+      "courses": 4
+    },
+    {
+      "from": "Skola English in London",
+      "edpRefId": "skola-english-in-london",
+      "country": "United Kingdom",
+      "courses": 4
+    },
+    {
+      "from": "Vilnius University",
+      "edpRefId": "vilnius-university",
+      "country": "Lithuania",
+      "courses": 4
+    },
+    {
+      "from": "American English College",
+      "edpRefId": "american-english-college",
+      "country": "United States",
+      "courses": 3
+    },
+    {
+      "from": "ELS Language Centers",
+      "edpRefId": "els-language-centers",
+      "country": "United Kingdom",
+      "courses": 3
+    },
+    {
+      "from": "Emlyon Business School",
+      "edpRefId": "emlyon-business-school",
+      "country": "France",
+      "courses": 3
+    },
+    {
+      "from": "Istituto Marangoni",
+      "edpRefId": "istituto-marangoni",
+      "country": "Italy",
+      "courses": 3
+    },
+    {
+      "from": "Lakehead University",
+      "edpRefId": "lakehead-university",
+      "country": "Canada",
+      "courses": 3
+    },
+    {
+      "from": "Language Schools New Zealand",
+      "edpRefId": "language-schools-new-zealand",
+      "country": "New Zealand",
+      "courses": 3
+    },
+    {
+      "from": "Macquarie University",
+      "edpRefId": "macquarie-university",
+      "country": "Australia",
+      "courses": 3
+    },
+    {
+      "from": "Metropolia University of Applied Sciences",
+      "edpRefId": "metropolia-university-of-applied-sciences",
+      "country": "Finland",
+      "courses": 3
+    },
+    {
+      "from": "Northern Lights College",
+      "edpRefId": "northern-lights-college",
+      "country": "Canada",
+      "courses": 3
+    },
+    {
+      "from": "Sheffield College",
+      "edpRefId": "sheffield-college",
+      "country": "United Kingdom",
+      "courses": 3
+    },
+    {
+      "from": "Sunway University",
+      "edpRefId": "sunway-university",
+      "country": "Malaysia",
+      "courses": 3
+    },
+    {
+      "from": "Universiti Kuala Lumpur",
+      "edpRefId": "universiti-kuala-lumpur",
+      "country": "Malaysia",
+      "courses": 3
+    },
+    {
+      "from": "University of Newcastle",
+      "edpRefId": "university-of-newcastle",
+      "country": "Australia",
+      "courses": 3
+    },
+    {
+      "from": "California State University - Channel Islands",
+      "edpRefId": "california-state-university-channel-islands",
+      "country": "United States",
+      "courses": 2
+    },
+    {
+      "from": "Chichester College",
+      "edpRefId": "chichester-college",
+      "country": "United Kingdom",
+      "courses": 2
+    },
+    {
+      "from": "Duquesne University",
+      "edpRefId": "duquesne-university",
+      "country": "United States",
+      "courses": 2
+    },
+    {
+      "from": "EBS University",
+      "edpRefId": "ebs-university",
+      "country": "Germany",
+      "courses": 2
+    },
+    {
+      "from": "EM Normandie Business School",
+      "edpRefId": "em-normandie-business-school",
+      "country": "France",
+      "courses": 2
+    },
+    {
+      "from": "Fleming College",
+      "edpRefId": "fleming-college",
+      "country": "Canada",
+      "courses": 2
+    },
+    {
+      "from": "George Brown College",
+      "edpRefId": "george-brown-college-via-outbound-kc",
+      "country": "Canada",
+      "courses": 2
+    },
+    {
+      "from": "Steinbeis University",
+      "edpRefId": "steinbeis-university",
+      "country": "Germany",
+      "courses": 2
+    },
+    {
+      "from": "University of Information Technology and Management in Rzeszow",
+      "edpRefId": "university-of-information-technology-and-management-in-rzeszow",
+      "country": "Poland",
+      "courses": 2
+    },
+    {
+      "from": "University of New Brunswick",
+      "edpRefId": "university-of-new-brunswick",
+      "country": "Canada",
+      "courses": 2
+    },
+    {
+      "from": "University of Southampton Malaysia",
+      "edpRefId": "university-of-southampton-malaysia",
+      "country": "Malaysia",
+      "courses": 2
+    },
+    {
+      "from": "University of Wollongong  Dubai",
+      "edpRefId": "university-of-wollongong-dubai",
+      "country": "United Arab Emirates",
+      "courses": 2
+    },
+    {
+      "from": "Adema University School",
+      "edpRefId": "adema-university-school",
+      "country": "Spain",
+      "courses": 1
+    },
+    {
+      "from": "Alte University",
+      "edpRefId": "alte-university",
+      "country": "Georgia",
+      "courses": 1
+    },
+    {
+      "from": "American Business College",
+      "edpRefId": "american-business-college",
+      "country": "France",
+      "courses": 1
+    },
+    {
+      "from": "Baltic International Academy",
+      "edpRefId": "baltic-international-academy",
+      "country": "Latvia",
+      "courses": 1
+    },
+    {
+      "from": "Bath Spa University Academic Centre, RAK",
+      "edpRefId": "bath-spa-university-academic-centre-rak",
+      "country": "United Arab Emirates",
+      "courses": 1
+    },
+    {
+      "from": "Birla Institute of Technology and Science, Pilani- Dubai",
+      "edpRefId": "birla-institute-of-technology-and-science-pilani-dubai",
+      "country": "United Arab Emirates",
+      "courses": 1
+    },
+    {
+      "from": "Bright School of English",
+      "edpRefId": "bright-school-of-english",
+      "country": "United Kingdom",
+      "courses": 1
+    },
+    {
+      "from": "Cambrian College",
+      "edpRefId": "cambrian-college",
+      "country": "Canada",
+      "courses": 1
+    },
+    {
+      "from": "Canadore College",
+      "edpRefId": "canadore-college",
+      "country": "Canada",
+      "courses": 1
+    },
+    {
+      "from": "Curtin University Dubai",
+      "edpRefId": "curtin-university-dubai",
+      "country": "United Arab Emirates",
+      "courses": 1
+    },
+    {
+      "from": "DSTI School of Engineering",
+      "edpRefId": "dsti-school-of-engineering",
+      "country": "France",
+      "courses": 1
+    },
+    {
+      "from": "Eastern Institute Of Technology",
+      "edpRefId": "eastern-institute-of-technology",
+      "country": "New Zealand",
+      "courses": 1
+    },
+    {
+      "from": "Emirates Aviation University",
+      "edpRefId": "emirates-aviation-university",
+      "country": "United Arab Emirates",
+      "courses": 1
+    },
+    {
+      "from": "EPITECH",
+      "edpRefId": "epitech",
+      "country": "France",
+      "courses": 1
+    },
+    {
+      "from": "Erasmus University Rotterdam",
+      "edpRefId": "erasmus-university-rotterdam",
+      "country": "Netherlands",
+      "courses": 1
+    },
+    {
+      "from": "European Global Institute of Innovation and Technology",
+      "edpRefId": "european-global-institute-of-innovation-and-technology",
+      "country": "Malta",
+      "courses": 1
+    },
+    {
+      "from": "Halmstad University",
+      "edpRefId": "halmstad-university",
+      "country": "Sweden",
+      "courses": 1
+    },
+    {
+      "from": "Hotel and Tourism Management Institute Dubai",
+      "edpRefId": "international-hotel-and-tourism-institute-dubai",
+      "country": "United Arab Emirates",
+      "courses": 1
+    },
+    {
+      "from": "ISC Paris - Business School",
+      "edpRefId": "isc-paris-business-school",
+      "country": "France",
+      "courses": 1
+    },
+    {
+      "from": "Kazimiero Simonaviciaus Universitetas",
+      "edpRefId": "kazimiero-simonaviciaus-universitetas",
+      "country": "Lithuania",
+      "courses": 1
+    },
+    {
+      "from": "Kwantlen Polytechnic University",
+      "edpRefId": "kwantlen-polytechnic-university",
+      "country": "Canada",
+      "courses": 1
+    },
+    {
+      "from": "LAB University of Applied Sciences",
+      "edpRefId": "lab-university-of-applied-sciences",
+      "country": "Finland",
+      "courses": 1
+    },
+    {
+      "from": "Maastricht University",
+      "edpRefId": "maastricht-university",
+      "country": "Netherlands",
+      "courses": 1
+    },
+    {
+      "from": "Monash University Malaysia",
+      "edpRefId": "monash-university-malaysia",
+      "country": "Malaysia",
+      "courses": 1
+    },
+    {
+      "from": "Niagara University",
+      "edpRefId": "niagara-university",
+      "country": "Canada",
+      "courses": 1
+    },
+    {
+      "from": "Northern Arizona University",
+      "edpRefId": "northern-arizona-university",
+      "country": "United States",
+      "courses": 1
+    },
+    {
+      "from": "Northern College",
+      "edpRefId": "northern-college",
+      "country": "Canada",
+      "courses": 1
+    },
+    {
+      "from": "Royal Roads University",
+      "edpRefId": "royal-roads-university",
+      "country": "Canada",
+      "courses": 1
+    },
+    {
+      "from": "SEU Georgian National University",
+      "edpRefId": "seu-georgian-national-university",
+      "country": "Georgia",
+      "courses": 1
+    },
+    {
+      "from": "Southern Institute of Technology",
+      "edpRefId": "southern-institute-of-technology",
+      "country": "New Zealand",
+      "courses": 1
+    },
+    {
+      "from": "St Giles International",
+      "edpRefId": "st-giles-international",
+      "country": "United Kingdom",
+      "courses": 1
+    },
+    {
+      "from": "Success Point College",
+      "edpRefId": "success-point-college",
+      "country": "United Arab Emirates",
+      "courses": 1
+    },
+    {
+      "from": "The University of Adelaide",
+      "edpRefId": "the-university-of-adelaide",
+      "country": "Australia",
+      "courses": 1
+    },
+    {
+      "from": "The University of Auckland",
+      "edpRefId": "the-university-of-auckland",
+      "country": "New Zealand",
+      "courses": 1
+    },
+    {
+      "from": "UCSI University",
+      "edpRefId": "ucsi-university",
+      "country": "Malaysia",
+      "courses": 1
+    },
+    {
+      "from": "University of Chichester",
+      "edpRefId": "university-of-chichester",
+      "country": "United Kingdom",
+      "courses": 1
+    },
+    {
+      "from": "University of Limassol",
+      "edpRefId": "university-of-limassol",
+      "country": "Cyprus",
+      "courses": 1
+    },
+    {
+      "from": "University of Miskolc",
+      "edpRefId": "university-of-miskolc",
+      "country": "Hungary",
+      "courses": 1
+    },
+    {
+      "from": "University of Otago Pathway and Language Centre",
+      "edpRefId": "university-of-otago-pathway-and-language-centre",
+      "country": "New Zealand",
+      "courses": 1
+    },
+    {
+      "from": "University of St Andrews",
+      "edpRefId": "university-of-st-andrews",
+      "country": "United Kingdom",
+      "courses": 1
+    },
+    {
+      "from": "University of the Arts London",
+      "edpRefId": "university-of-the-arts-london",
+      "country": "United Kingdom",
+      "courses": 1
+    },
+    {
+      "from": "University of Wales Trinity Saint David",
+      "edpRefId": "university-of-wales-trinity-saint-david",
+      "country": "United Kingdom",
+      "courses": 1
+    },
+    {
+      "from": "University of West London",
+      "edpRefId": "university-of-west-london",
+      "country": "United Kingdom",
+      "courses": 1
+    },
+    {
+      "from": "Uppsala University",
+      "edpRefId": "uppsala-university",
+      "country": "Sweden",
+      "courses": 1
+    },
+    {
+      "from": "Wentworth Institute of Technology",
+      "edpRefId": "wentworth-institute-of-technology",
+      "country": "United States",
+      "courses": 1
+    }
+  ],
+  "emptyUnis": [
+    {
+      "from": "Australian Vocational Training Academy",
+      "edpRefId": "australian-vocational-training-academy"
+    },
+    {
+      "from": "Bow Valley College",
+      "edpRefId": "bow-valley-college"
+    },
+    {
+      "from": "Edith Cowan University",
+      "edpRefId": "edith-cowan-university"
+    },
+    {
+      "from": "Trine University",
+      "edpRefId": "trine-university"
+    },
+    {
+      "from": "University of Kansas",
+      "edpRefId": "university-of-kansas"
+    },
+    {
+      "from": "University of North Carolina at Wilmington",
+      "edpRefId": "university-of-north-carolina-wilmington"
+    }
+  ]
+}

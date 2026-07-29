@@ -41,7 +41,7 @@ export const programSchema = z.object({
 export type Program = z.infer<typeof programSchema>;
 
 export const tuitionSchema = z.object({
-  currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD']),
+  currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF']),
   byProgram: z.record(slug, z.number().nonnegative()),
 });
 export type Tuition = z.infer<typeof tuitionSchema>;
@@ -59,6 +59,20 @@ export const requirementsSchema = z.object({
 });
 export type Requirements = z.infer<typeof requirementsSchema>;
 
+/**
+ * Разряд происхождения стипендии (КОМПАС P4.9, kompas-mark-scholarships.mjs).
+ *
+ *   linked           — есть ссылка, запись можно открыть и проверить;
+ *   generic-external — внешняя программа (Fulbright, Chevening, Erasmus+), не стипендия вуза;
+ *   cloned           — одно название и сумма у трёх и более карточек без ссылки: сид-таблица;
+ *   untraceable      — ни ссылки, ни источника, повторов нет: происхождение неизвестно.
+ *
+ * Поле обязано быть в схеме: zod по умолчанию СРЕЗАЕТ лишние ключи, и без объявления
+ * метка осталась бы в catalog-work, но до страницы вуза не доехала.
+ */
+export const scholarshipOrigin = z.enum(['linked', 'generic-external', 'cloned', 'untraceable']);
+export type ScholarshipOrigin = z.infer<typeof scholarshipOrigin>;
+
 export const scholarshipSchema = z.object({
   name: z.string().min(1),
   nameRu: z.string().min(1).optional(),
@@ -71,12 +85,34 @@ export const scholarshipSchema = z.object({
   verifiedBySite: z.boolean().optional(),
   confidence: z.number().min(0).max(1).optional(),
   checkedAt: isoDate.optional(),
+  kompasStatus: scholarshipOrigin.optional(),
+  kompasCheckedAt: isoDate.optional(),
 });
 export type Scholarship = z.infer<typeof scholarshipSchema>;
+
+/**
+ * Происхождение фото (ОРЁЛ, срез 3). Общий фрагмент для галереи, кампусов и жилья.
+ *
+ * imgKind: verified — подтверждено офсайтом или Wikimedia (заполнены imgSource+imgLicense);
+ *          shared   — та же картинка есть у других вузов;
+ *          stock    — общая стоковая библиотека или картинка у пяти и более вузов;
+ *          unknown  — своё по отпечатку, но происхождение неизвестно;
+ *          real     — легаси-значение до среза 3, оставлено ради совместимости.
+ *
+ * Все поля опциональные: непроверенные карточки не должны ронять build.
+ */
+export const photoProvenanceFields = {
+  imgKind: z.enum(['verified', 'stock', 'shared', 'unknown', 'real']).optional(),
+  imgSource: z.string().url().optional(),
+  imgLicense: z.string().optional(),
+  imgAuthor: z.string().optional(),
+  imgCheckedAt: isoDate.optional(),
+};
 
 export const galleryItemSchema = z.object({
   img: z.string().min(1),
   caption: z.string().optional(),
+  ...photoProvenanceFields,
 });
 export type GalleryItem = z.infer<typeof galleryItemSchema>;
 
@@ -99,11 +135,11 @@ export const accommodationItemSchema = z.object({
   oldPrice: z.string().optional(),
   text: z.string().optional(),
   img: z.string().optional(),
-  imgKind: z.enum(['stock', 'real']).optional(),
   source: z.string().optional(),
   verifiedBySite: z.boolean().optional(),
   confidence: z.number().min(0).max(1).optional(),
   checkedAt: isoDate.optional(),
+  ...photoProvenanceFields,
 });
 export type AccommodationItem = z.infer<typeof accommodationItemSchema>;
 
@@ -112,11 +148,11 @@ export const campusItemSchema = z.object({
   sub: z.string().optional(),
   text: z.string().optional(),
   img: z.string().optional(),
-  imgKind: z.enum(['stock', 'real']).optional(),
   source: z.string().optional(),
   verifiedBySite: z.boolean().optional(),
   confidence: z.number().min(0).max(1).optional(),
   checkedAt: isoDate.optional(),
+  ...photoProvenanceFields,
 });
 export type CampusItem = z.infer<typeof campusItemSchema>;
 

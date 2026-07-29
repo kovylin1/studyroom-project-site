@@ -22,7 +22,7 @@ const CCY = {
 const JUNK_TITLE = /\b(admission|preparation|pathway entry|pre-?sessional|foundation entry)\b/i;
 // ВНИМАНИЕ: держать в синхроне с LEVEL_HINT в fix-catalog.mjs (общий источник правил).
 const LEVEL_HINT = [
-  [/\b(master'?s?|msc|m\.?a\b|mba|llm|postgraduate|pg)\b/i, 'master'],
+  [/\b(master'?s?|msc|m\.?a\b|m\.?b\.?a\b|llm|postgraduate|pg)\b/i, 'master'],
   [/\b(bachelor'?s?|bsc|b\.?a\b|beng|llb|undergraduate|ug)\b/i, 'bachelor'],
   [/\b(phd|doctoral|doctorate)\b/i, 'phd'],
 ];

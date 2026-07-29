@@ -1,0 +1,370 @@
+{
+  "_meta": {
+    "plan": "КОМПАС — docs/superpowers/plans/2026-07-22-kompas-partner-source-catalog.md",
+    "session": 2,
+    "builtAt": "2026-07-22",
+    "note": "Структурированная версия партнёрского документа владельца. Паролей и логинов здесь НЕТ и быть не должно.",
+    "rules": {
+      "direct": "Прямой партнёр → источник данных = офсайт вуза.",
+      "aggregator": "Партнёр через агрегатор → источник = сайт агрегатора.",
+      "listVsAll": "Если в документе дан явный список — партнёры только они; если просто ссылка — все вузы агрегатора.",
+      "union": "Вуз на нескольких агрегаторах = ОДНА карточка, программы объединяются.",
+      "noDelete": "Из каталога ничего не удаляем и не фабрикуем."
+    },
+    "ownerDecisions2026_07_22": [
+      "QA: включить London Metropolitan University и Swansea University — список расширен с 4 до 6.",
+      "QA: Oxford Brookes оставить партнёром, несмотря на отсутствие курсов на живом сайте.",
+      "Navitas: партнёрами считаются ВСЕ 72 колледжа сети (правило «все» подтверждено владельцем)."
+    ]
+  },
+  "aggregators": [
+    {
+      "key": "iapro",
+      "label": "IAPro",
+      "url": "https://iapro.my.salesforce-sites.com/",
+      "access": "login-owner",
+      "rule": "list",
+      "expectedCount": 11,
+      "list": [],
+      "listStatus": "MISSING",
+      "listNote": "Документ говорит «11 партнёров, вкладка Marketing Hub», но сами названия нигде локально не записаны. Нужен владелец (логин ранее падал по таймауту) либо выгрузка. Блокирует разметку этих 11 вузов.",
+      "coverageSource": null
+    },
+    {
+      "key": "kaplan",
+      "label": "Kaplan Pathways",
+      "url": "https://www.kaplanpathways.com/degree-finder/",
+      "access": "open",
+      "rule": "all",
+      "coverageSource": "scraper/sources/kaplan-extracts",
+      "coverageNote": "25 вузов в выгрузке от 2026-07-01. В сессии 2 берём свежий фид degree_finder_object (один fetch = вся база)."
+    },
+    {
+      "key": "cats",
+      "label": "CATS Global Schools",
+      "url": "https://catsglobalschools.com/our-schools/",
+      "access": "open",
+      "rule": "all",
+      "coverageSource": "sources/cats-collected.json",
+      "coverageNote": "12 школ, снимок 2026-05-16. Преимущественно K-12 / Sixth Form / языковые — уровни программ не покрываются текущим enum схемы."
+    },
+    {
+      "key": "qahe",
+      "label": "QA Higher Education",
+      "url": "https://qahighereducation.com/",
+      "access": "open",
+      "rule": "list",
+      "expectedCount": 6,
+      "list": [
+        {
+          "name": "Northumbria University",
+          "catalogSlug": "northumbria"
+        },
+        {
+          "name": "Ulster University",
+          "catalogSlug": "ulster"
+        },
+        {
+          "name": "Oxford Brookes University",
+          "catalogSlug": "oxford-brookes",
+          "note": "Решение владельца 2026-07-22: оставить партнёром, хотя на живом сайте QA курсов у него нет."
+        },
+        {
+          "name": "Solent University",
+          "catalogSlug": "solent",
+          "note": "В каталоге карточка «Southampton Solent University» — слаг проставлен вручную."
+        },
+        {
+          "name": "London Metropolitan University",
+          "addedBy": "owner-2026-07-22",
+          "note": "Есть на живом сайте QA, в исходном документе не значился. Включён решением владельца."
+        },
+        {
+          "name": "Swansea University",
+          "addedBy": "owner-2026-07-22",
+          "note": "Есть на живом сайте QA, в исходном документе не значился. Включён решением владельца."
+        }
+      ],
+      "listStatus": "OK (расширен владельцем 2026-07-22 с 4 до 6)",
+      "coverageSource": "sources/kompas/extracts/qahe"
+    },
+    {
+      "key": "oxford-international",
+      "label": "Oxford International Education Group",
+      "url": "https://www.oxfordinternationaleducationgroup.com/services/academic-partnerships/",
+      "access": "open",
+      "rule": "all",
+      "coverageSource": "sources/aggregators.md",
+      "knownPartners": [
+        "University of Kent",
+        "University of Dundee",
+        "Ulster University",
+        "University of Bradford",
+        "Abertay University",
+        "Bangor University",
+        "De Montfort University",
+        "University of Greenwich",
+        "University of Birmingham",
+        "University of Glasgow",
+        "Saint Mary's University",
+        "Dalhousie University",
+        "NSCAD University",
+        "Mount Saint Vincent University",
+        "St. Francis Xavier University",
+        "Acadia University",
+        "Mount Allison University",
+        "University of Prince Edward Island",
+        "Memorial University of Newfoundland",
+        "San Francisco State University",
+        "Edith Cowan University"
+      ],
+      "coverageNote": "Правило «все», но живого списка с сайта нет — локально только наши заметки от 2026-05-15 (21 партнёр). Полное покрытие берём в сессии 2. НЕ путать с University of Oxford (отдельный вуз, слаг oxford)."
+    },
+    {
+      "key": "studygroup",
+      "label": "Study Group",
+      "url": "https://agent.studygroup.com/",
+      "access": "login",
+      "rule": "all",
+      "coverageSource": "sources/studygroup-extracts",
+      "coverageNote": "51 файл выгрузки. Качество снимка под вопросом: часть записей содержит заголовки интерфейса (uniName «University», title «Agent Portal») вместо данных — перепроверить в сессии 3."
+    },
+    {
+      "key": "navitas",
+      "label": "Navitas",
+      "url": "https://www.navitas.com/study/colleges-campuses/",
+      "access": "open",
+      "rule": "all",
+      "coverageSource": "sources/kompas/membership/navitas.json",
+      "coverageNote": "Живой состав сети на 2026-07-22: 72 колледжа и кампуса по AU/CA/DE/ID/LK/NL/NZ/SG/AE/UK/USA. Решением владельца партнёрами считаются ВСЕ. Программ с ценами пока нет: у сайтов колледжей нет общего API курсов, нужен коллектор на домен.",
+      "ownerConfirmedAllMembers": "2026-07-22"
+    },
+    {
+      "key": "qs",
+      "label": "QS (admissions.qs.com)",
+      "url": "https://admissions.qs.com/suite/sites/qs-apply",
+      "access": "login-owner",
+      "rule": "list",
+      "list": [],
+      "listStatus": "FOUND_LOCALLY_NEEDS_CONFIRM",
+      "listNote": "Владелец списка не присылал, НО он уже лежит в репозитории: партнёрский PDF QS от 25.12.2025 (sources/qs-list.pdf), распознанный текст (sources/qs-list-raw.txt) и разобранная версия sources/qs-targets.json — 393 партнёра со слагами. Использую его как список QS, владельцу нужно подтвердить, что версия от декабря актуальна.",
+      "coverageSource": "sources/qs-targets.json"
+    },
+    {
+      "key": "edvoy",
+      "label": "Edvoy (Genie)",
+      "url": "https://edvoy.com/",
+      "access": "login",
+      "rule": "all",
+      "coverageSource": "sources/edvoy-extracts",
+      "coverageNote": "411 вузов в выгрузке."
+    },
+    {
+      "key": "gedu",
+      "label": "GEDU Global Education",
+      "url": "https://gedu.global/",
+      "access": "login",
+      "rule": "all",
+      "coverageSource": "scraper/sources/gedu-extracts",
+      "coverageNote": "8 вузов в выгрузке."
+    }
+  ],
+  "unlistedAggregators": [
+    {
+      "key": "collab",
+      "label": "Collab International",
+      "url": "https://www.collabinternational.com/",
+      "coverageSource": "sources/collab-extracts",
+      "count": 120,
+      "note": "НЕ входит в список 10 агрегаторов КОМПАСа, но выгрузка на 120 вузов лежит в репозитории и 27 карточек каталога прямо ссылаются на collabinternational.com в поле sourceUrl. Нужно решение владельца: партнёр это или нет."
+    }
+  ],
+  "manualOverrides": {
+    "_note": "Пары, которые автосопоставление ставит неверно. Ключ — «<агрегатор>:<слаг или имя в источнике>», значение — слаг каталога либо null, если сопоставлять нечем. Ловятся только просмотром глазами.",
+    "kaplan:university-of-the-west-of-england": {
+      "catalogSlug": "uwe-bristol",
+      "reason": "В каталоге карточка называется «UWE Bristol» — аббревиатура, по названию с «University of the West of England» не сходится."
+    },
+    "edvoy:university-of-the-west-of-england": {
+      "catalogSlug": "uwe-bristol",
+      "reason": "То же, что и у Kaplan: каталожное имя — аббревиатура «UWE Bristol»."
+    },
+    "studygroup:kingston-university-london": {
+      "catalogSlug": "kingston-university",
+      "reason": "Источник добавляет город: «Kingston University London» против «Kingston University» в каталоге."
+    },
+    "edvoy:ecole-de-management-applique": {
+      "catalogSlug": "ecole-management-appliquee",
+      "reason": "Расхождение написания: у Edvoy «Applique», в каталоге «Appliquée» (с конечным e). Вуз тот же."
+    },
+    "edvoy:texas-a-and-m-university-corpus-christi": {
+      "catalogSlug": "tamucc",
+      "reason": "В каталоге ДВЕ карточки с одинаковым названием «Texas A&M University-Corpus Christi»: tamucc и texas-aandm-corpus-christi-university-direct-entry. Вторая заведена из маршрутной записи Study Group «Direct Entry» — это дубль, на решение владельца. Разметка привязана к tamucc."
+    },
+    "studygroup:university": {
+      "catalogSlug": null,
+      "reason": "Мусор снимка: в выгрузке Study Group записан заголовок интерфейса «University», а не вуз."
+    },
+    "studygroup:exciting-new-opportunity-study-group-partners-with-the-university-of-b": {
+      "catalogSlug": null,
+      "reason": "Мусор снимка: это заголовок новости с сайта, а не вуз."
+    },
+    "studygroup:study-group-partners-with-the-university-of-bath": {
+      "catalogSlug": null,
+      "reason": "Мусор снимка: заголовок новости. Сам Bath уже размечен отдельной записью выгрузки."
+    },
+    "studygroup:dublin": {
+      "catalogSlug": null,
+      "reason": "Источник — Dublin International Study Centre (dublinisc.com), в выгрузке записан просто как «Dublin». Нормализатор срезает слова university/college, поэтому «Dublin» ошибочно схлопывался с карточкой «University College Dublin». Какой ирландский вуз стоит за этим центром — по локальным данным не определить, нужен заход на сайт в сессии 2."
+    }
+  },
+  "directPartners": [
+    {
+      "raw": "SRH, Germany",
+      "extract": "srh-university-heidelberg",
+      "catalogSlug": "srh-university",
+      "note": "НЕОДНОЗНАЧНО: в каталоге пять карточек SRH (srh-university = Heidelberg, srh-hochschule-berlin, srh-international-college, srh-germany, srh-haarlem в Нидерландах). Документ говорит просто «SRH, Germany». Поставлен Heidelberg — по названию выгрузки прошлой сессии. Нужно решение владельца: один это партнёр или вся группа SRH."
+    },
+    {
+      "raw": "Gisma Univ, Germany",
+      "extract": "gisma-university-of-applied-sciences"
+    },
+    {
+      "raw": "BSBI, Germany",
+      "extract": "berlin-school-of-business-and-innovation"
+    },
+    {
+      "raw": "CIU Cyprus",
+      "extract": "cyprus-international-university"
+    },
+    {
+      "raw": "Final Univ, Cyprus",
+      "extract": "final-international-university"
+    },
+    {
+      "raw": "TSI, Latvia",
+      "extract": "transport-and-telecommunication-institute"
+    },
+    {
+      "raw": "UEM, Poland",
+      "extract": "university-of-european-management"
+    },
+    {
+      "raw": "NY, Prague",
+      "extract": "university-of-new-york-in-prague"
+    },
+    {
+      "raw": "Wollongong Uni, Dubai",
+      "extract": "university-of-wollongong-in-dubai"
+    },
+    {
+      "raw": "Abu Dhabi Uni, Abu Dhabi",
+      "extract": "abu-dhabi-university"
+    },
+    {
+      "raw": "Heriot Watt, Dubai",
+      "extract": "heriot-watt-university-dubai"
+    },
+    {
+      "raw": "GEDU, Dubai (HND)",
+      "extract": "gedu-global-education"
+    },
+    {
+      "raw": "Northland Institute, Dubai",
+      "extract": "northland-institute"
+    },
+    {
+      "raw": "Middlesex Uni, Dubai",
+      "extract": "middlesex-university-dubai"
+    },
+    {
+      "raw": "California State Uni of Dominguez Hills, Usa",
+      "extract": "california-state-university-dominguez-hills"
+    },
+    {
+      "raw": "Curtis Uni, Dubai",
+      "extract": "curtin-university-dubai",
+      "note": "В документе опечатка «Curtis» — это Curtin University Dubai."
+    },
+    {
+      "raw": "SP Jain unit, Dubai",
+      "extract": "sp-jain-school-of-global-management-dubai"
+    },
+    {
+      "raw": "LAne college, Usa",
+      "extract": "lane-college"
+    },
+    {
+      "raw": "Webster University, USA",
+      "extract": "webster-university"
+    },
+    {
+      "raw": "Woosong Univ, South Korea",
+      "extract": "woosong-university"
+    },
+    {
+      "raw": "Xi'an Jiaotong-Liverpool University (XJTLU)",
+      "extract": "xi-an-jiaotong-liverpool-university"
+    },
+    {
+      "raw": "APU, Malaysia",
+      "extract": "asia-pacific-university-of-technology-and-innovation"
+    },
+    {
+      "raw": "INTI, MAlaysia",
+      "extract": "inti-international-university"
+    },
+    {
+      "raw": "Aurak unit, Cyprus",
+      "extract": "american-university-of-ras-al-khaimah",
+      "note": "В документе страна указана как Кипр, но AURAK — American University of Ras Al Khaimah, это ОАЭ. Расхождение документа, на подтверждение владельцу."
+    },
+    {
+      "raw": "Bilim Univ, Turkey",
+      "extract": "istanbul-bilim-university"
+    },
+    {
+      "raw": "Beykent unit, Turkey",
+      "extract": "beykent-university"
+    },
+    {
+      "raw": "BSB Univ, France",
+      "extract": "burgundy-school-of-business"
+    },
+    {
+      "raw": "KArelia University, Finland",
+      "extract": "karelia-university-of-applied-sciences"
+    },
+    {
+      "raw": "METU, Hungary",
+      "extract": "milton-friedman-university",
+      "note": "НЕОДНОЗНАЧНО: METU в Будапеште обычно означает Budapest Metropolitan University, а не Milton Friedman University. Сопоставление сделано прошлой сессией, требует подтверждения владельца."
+    },
+    {
+      "raw": "Amity University, Dubai",
+      "extract": "amity-university-dubai"
+    },
+    {
+      "raw": "Domes Academy Italy",
+      "extract": "domus-academy",
+      "note": "В документе «Domes» — это Domus Academy, Милан."
+    },
+    {
+      "raw": "IBS, Hungary",
+      "extract": "international-business-school-budapest"
+    },
+    {
+      "raw": "Modul University,Vienna",
+      "extract": "modul-university-vienna"
+    },
+    {
+      "raw": "NY University Czeck Republic",
+      "extract": "university-of-new-york-in-prague",
+      "note": "Дубль строки «NY, Prague» — тот же вуз, в документе записан дважды."
+    },
+    {
+      "raw": "Anglo-American university, Czeck Republic",
+      "extract": "anglo-american-university"
+    }
+  ]
+}

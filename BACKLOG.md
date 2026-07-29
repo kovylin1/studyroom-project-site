@@ -7,6 +7,8 @@
 
 ## IN PROGRESS
 
+- **КОМПАС — приведение каталога к партнёрским источникам.** Сессии 1–3 сделаны (ветка `feat/kompas`, коммиты `66bbdb80`, `e7713fdd`, `8a17ce0e`, `21f08863`, `c5e77823`). Собраны Kaplan, QA, Oxford International, Study Group, Edvoy (48 833 программы). Живой каталог не тронут ни разу. **Полный список незакрытого — `docs/superpowers/plans/2026-07-22-kompas-open-tasks.md`** (8 задач). Ближайшие по важности: (1) Navitas — в живом каталоге стоят фабрикованные сид-цены у 10 британских вузов; (2) IAPro и QS — пароли в `scraper/.env` устарели, порталы их отклонили, нужен владелец; (3) сессия 3.5 — прямые партнёры, начинать с замера 757 файлов `official-extracts` глазами. **2026-07-25: P0–P4 плана `sources/kompas/FIX-PLAN.md` пройдены, отчёты `OWNER-REPORT-session5.md` и `OWNER-REPORT-session5-p3p4.md`.** Уточнение по (2): IAPro на самом деле пускает — пароли рабочие, ломалась проба (портал переехал в shadow DOM), починено; отклоняет только QS Apply, и это блокирует 227 вузов / 21% каталога. Открыто и ждёт владельца: доступ QS, слияние 6 пар карточек-дублей, судьба 1234 непроверяемых стипендий, полный прогон сбора стипендий с офсайтов. **2026-07-26 (сессия 6): хвост P3/P4 закрыт, отчёт `OWNER-REPORT-session6.md`.** 6 пар дублей слиты (объединением, с переносом стипендий и фотонаборов, откат — `dupmerge-backup.json`); всем 1769 стипендиям проставлен разряд происхождения (`untraceable` 1234), поле объявлено в схеме сайта; собранные с офсайтов записи сведены с каталогом — 553 кейса решений в панели; разборщики сбора вынесены в `lib` и покрыты 26 тестами; просмотр выборки `hub-headings` отбросил 131 запись брака разбора. Панель: 1894 → 2469 кейсов. Единственное, что по-прежнему упирается в владельца, — **доступ QS Apply** (227 вузов, 21% каталога).
+
 - **Stage 13 — Program-catalog expansion to 30+ per uni (resume after 20:00 Almaty 2026-05-22 — Sonnet budget reset).** Started 2026-05-22 at 17:00 Almaty. 7 parallel Sonnet agents launched on `sources/expand-batch-{J,K,L,M,N,O,P}.json` (249 thin universities total, ~36 each). All 7 hit Sonnet session limit ~10 min in. Net result: 55/249 touched, 33 reached the 30+ target, 194 still queued. **K-12 (12 unis), language schools (8), pathway-only centres (41) — 61 unis total — DELIBERATELY EXCLUDED** because <15 programs is realistic for their type. **Resume protocol** after 20:00 Almaty Sonnet reset: re-launch the same 7 parallel Sonnet agents on the same 7 batch JSONs — each agent has "skip if file exists with current >= target" gate, so the 33 already-expanded unis auto-skip; agents only re-process the 194 untouched. Promote J/K/L/M/N/O/P to a 5-agent batch (35-50 unis each) if budget allows.
 
 - **Maintenance gap (after Stage 13):** 1 uni with 0 photos (`basis-mclean` — no Wikimedia, no Wikipedia, no working officialUrl), 6 unis with empty `scholarships` (agents marked as "no public int'l scholarships found"), 110 unis without `logoUrl` (sites blocked scraper / no `apple-touch-icon` / 403). Photo gap is hardest — would need Exa/manual hunt. Logo gap can re-run `scraper/discover-logos.mjs` after some sites recover.
@@ -32,6 +34,25 @@
 
 ## TODO
 
+### КОМПАС — хвост после сессии 6 (2026-07-26)
+
+- [ ] **Добор `officialUrl` у 204 карточек.** Заведено отдельно по решению владельца: задача крупнее
+  хвоста P3/P4 и в `FIX-PLAN.md` её нет. Без офсайта карточка не участвует ни в сборе стипендий, ни
+  в сверке с сайтом вуза — то есть тянет за собой всю P4.
+- [ ] **Суммы стипендий в собранных выгрузках чинятся только повторным обходом.** Просмотр выборки
+  нашёл два разряда брака, которые правятся лишь по полному тексту страницы (в выгрузке лежит
+  обрезанное описание): «maximum award is $1,000» писалось ровно `$1,000` вместо `до $1,000`,
+  «$60 per month» — как `USD 60`. Правила уже исправлены и покрыты тестами, но применятся при
+  следующем прогоне `kompas-collect-scholarships.mjs --refetch`. Затронуто ~9 записей из 1823.
+- [ ] **Голый `$` в сумме всегда читается как USD.** У канадских сайтов (herzing.ca) это скорее CAD.
+  Валюту надо брать от страны вуза, как в правиле P0.4 «страна ≠ валюта».
+- [ ] **Метка `kompasStatus` на программах срезается схемой сайта.** У стипендий поле объявлено
+  (сессия 6), у `programSchema` — нет, поэтому 21 621 метка P1 «catalog-only» живёт только в
+  `catalog-work` и до страницы вуза не доезжает. Одна строка в `site/src/schema/university.ts`.
+- [ ] **46 кейсов с одинаковым id внутри `direct-review.json`** (например
+  `amity-university-dubai||direct_fee_unlinked||2200-AED-4 Years`). Панель их отбрасывает при сборке,
+  то есть решение оператора по одному применится к другому. Предсуществующее, не от сессии 6.
+
 ### «Безопасные» режимы пишут в данные — починить флаги dry-run (найдено 2026-07-20)
 
 Обнаружено при реализации среза 2 (БОБР-аудит). Оба бага откачены вручную, в коммиты не попали,
@@ -49,8 +70,11 @@
   Единственное, что действительно перезаписывается, — диагностический дамп
   `sources/audit/soroka-report.json` (в нём всегда только кейсы текущего прогона: 1 → 0).
   Это его назначение, не потеря данных: панель оператора читает review.json, а не его.
-- [ ] Общее: добавить сквозной тест «после любого `--dry-run` рабочее дерево чистое»
-  (`git status --porcelain site/` пусто), чтобы регресс не повторялся.
+- [x] ~~Общее: сквозной тест «после любого `--dry-run` рабочее дерево чистое».~~ **СДЕЛАНО 2026-07-21** —
+  `scraper/dry-run-clean.test.mjs` сравнивает `git status --porcelain` до и после сухого прогона
+  (по содержимому, а не по mtime: скрипт может переписать файл тем же текстом). Покрыты
+  `orel-apply.mjs` и `orel-hunt.mjs`, оба зелёные. `bobr.mjs` в список ещё НЕ добавлен —
+  его баг не починен, тест бы падал; добавить вместе с починкой.
 
 ### Launch-readiness audit (2026-06-03) — чеклист по итогам полного аудита сайта+скрейпера
 
@@ -106,6 +130,69 @@
 - **Stage 10 — Fill TBD content.** `site/src/content/studyroom/static.ts` has `[TBD: ...]` markers in reviews, about, and CTA contact info. Replace before launch.
 
 ## DONE
+
+- 2026-07-21 — **СРЕЗ 3, массовый прогон МОТЫЛЬКА: 289 вузов из 807 получили кандидатов
+  (36%), 1242 фото.** 5745 запросов к Wikimedia, **торможений 429 — ноль**, неудачных ответов
+  ноль: починка лимитов подтверждена на объёме, а не на пилоте. Провенанс полный (лицензия +
+  автор) у 1230 из 1242 — **лицензионный долг CC BY-SA закрыт**, кроме 12 снимков.
+  **Каталог не изменён**: все 1242 ушли кейсами оператору, автозамен ноль (режим `--no-auto`).
+  Три бага, найденных замером по ходу прогона: (1) 429 при СКАЧИВАНИИ картинок — первая
+  починка охватила только api.php, а `upload.wikimedia.org` остался без очереди, из-за чего
+  выпадали хорошие кадры; (2) ведущий артикль «The» ломал сверку с Wikidata у 18 вузов
+  (вернуло Melbourne, Sydney, Oxford); (3) `orel-hunt --worklist` стирал общий файл кандидатов —
+  догон по 16 вузам снёс 1225 результатов, спасла ручная копия. Все три починены,
+  третий проверен: 1242 до точечного прогона → 1242 после. Пороги качества MIN_SIDE 900,
+  MIN_BPP 0.10, MIN_SAT 0.03 — каждый взят по замеру выборки, не на глаз.
+  Тесты 58/58, validate 807/0, build 2428 стр. exit 0.
+  Открытый вопрос вкуса: слабые кадры (парковка, дождь) числовыми признаками не ловятся —
+  отбор за оператором в панели. Evidence: `sources/audit/orel-pilot-eyeball.md`.
+
+- 2026-07-21 — **СРЕЗ 3 (фото/галерея, ОРЁЛ) — половина: пометка сделана, регрессия поиска закрыта.**
+  Ветка `feat/orel-photo-fidelity` (в main НЕ влита, финальный merge за владельцем).
+  Замер опроверг отчёт среза 2: «2309 карточек помечены stock» покрывало лишь 54% объёма —
+  `mark-stock-photos.mjs` знал один признак (путь `/photos/_lib/`) и не обходил галерею.
+  Факты по 807 файлам: 7074 ссылки на фото, уникальных по содержимому (sha1) — 2854, т.е.
+  **4287 ссылок (61%) ведут на картинку другого вуза**; у 235 вузов ВСЯ галерея чужая;
+  одна картинка стоит в галерее у 64 вузов. Провенанса не было ни у одного из 2854 изображений.
+  Сделано: `lib/photo-fingerprint.mjs` (sha1 + перцептивный dHash), `lib/photo-classify.mjs`
+  (verified/stock/shared/unknown), `orel-audit.mjs` (реестр `sources/photo-registry.json` + пометка,
+  НИЧЕГО не удаляет), поля `img*` в Zod-схеме, подписи «Иллюстративное фото» в `LandingBody.astro`
+  (728 страниц), `prune-orphan-photos.mjs` (диск 1.5→1.1 ГБ, 1152 осиротевших файла).
+  **Все 7074 фото классифицированы** (stock 3647, unknown 2787, shared 640, verified 0 — провенанса
+  взять было неоткуда). Тесты 50/50, validate 807/0, build 2428 стр. exit 0, идемпотентно.
+  **Регрессия МОТЫЛЬКА закрыта замером:** три прогона подряд отчитывались «Wikimedia-кандидатов 0»,
+  и откат кода результат не возвращал. Причина — **HTTP 429**: 40 запросов к Commons пачкой дают
+  32 отказа с `Retry-After: 19`, а общий `catch { return null }` делал лимит неотличимым от
+  «файла нет». Штраф накопительный, поэтому чинили код, а тормозил счётчик на стороне Wikimedia;
+  прежняя проверка «Wikidata отвечает штатно» проходила ровно потому, что это был ОДИН запрос.
+  Лечение — `lib/wikimedia.mjs`: общая очередь (~1 запрос/с), уважение `Retry-After` с повтором,
+  `ThrottledError` вместо молчаливой пустоты, пакетные запросы (2 запроса на вуз вместо 41),
+  счётчики торможений в отчёте прогона. Замер после: acadia 0→41 кандидат, cranfield 0→40,
+  bristol 41, торможений 0, автор известен у 41 из 41. Коммит `5da07082`.
+  **НЕ СДЕЛАНО (переходит дальше):** сама замена фото, `orel-preview.mjs`, `orel-apply.mjs`,
+  вкладка ОРЁЛ в `manager.astro`. Спека: `docs/superpowers/specs/2026-07-21-photo-gallery-fidelity-design.md`,
+  план: `docs/superpowers/plans/2026-07-21-orel-photo-fidelity.md`,
+  визуальные проверки: `sources/audit/orel-pilot-eyeball.md`.
+
+- 2026-07-21 — **СРЕЗ 2 (достоверность жилья и кампусов, БОБР) — PR #51 смёрджен в main** (merge
+  `354deda7`, автодеплой Cloudflare success). Замер опроверг посылки спеки среза 1: жильё есть
+  у 430 вузов (не ~29), кампусы у 668, а в extract-источниках домена почти нет — «merge несёт
+  accommodation/campuses» переносить нечего. Настоящая проблема оказалась в недостоверности:
+  `source` у 2 карточек из 1401, `verifiedBySite` у 0, 974 карточки (70%) — русский текст,
+  написанный вручную, **102 цены у 18 вузов захардкожены литералами** повторяющейся «лесенкой»
+  £140–195/нед (нарушение правила «не фабриковать»). `bobr-verifier.mjs` существовал, но был
+  выключен флагом `--skip-verifier` и всё равно сверял бы с агрегатором. Сделано:
+  `lib/official-site.mjs` (SSOT резолва офсайта), `lib/accommodation-match.mjs`, `bobr-audit.mjs`,
+  `bobr-apply.mjs` + workflow, `mark-stock-photos.mjs`, вкладка БОБР в manager; `bobr-verifier.mjs`
+  удалён. Прогон 807 вузов, 0 ошибок: **404 карточки подтверждены офсайтом, 1529 кейсов ждут
+  владельца в /manager** (not_found 879, no_page 415, no_official_site 235). Из каталога ничего
+  не удалено — решение владельца. Тесты 27/27, build 2428 стр. exit 0, validate 807/0.
+  Спека: `docs/superpowers/specs/2026-07-20-accommodation-campuses-fidelity-audit-design.md`.
+
+- 2026-07-20 — **СРЕЗ 1 (канонические факультеты) — PR #50 смёрджен в main.**
+  `lib/canonicalize-faculty.mjs` (чистая функция raw+title→канон|null, идемпотентна) +
+  `backfill-faculties.mjs`. Прогон: **1677→12 значений, 74018 программ, 807 файлов**. Встроено
+  в `merge-programs.mjs`, поэтому будущие скрейпы сразу дают канон. Build 2428 страниц, exit 0.
 
 - 2026-05-15 — `/v2` promoted to the main `/` route. User decision: "Это будет основной сайт". (1) `site/src/pages/index.astro` overwritten with the v2 layout (HeroV2 + KPI bar + trust-strip + UniversityCardV2 grid + compare bar + final-cta + `<Filters />` panel) — net `+170 / -334` lines vs the old hero+`UniversityCard` shell. Title cleaned from "(v2 preview)" to plain "StudyRoom — каталог зарубежных университетов". Form id stays `catalog-filters` so the `<Filters />` component (the "old filter" — chip toggle, country select, GBP-tuition range, IELTS cap, scholarship toggle) drops in untouched and `catalog-v2.ts` script binds to the same canonical ids. (2) `site/src/pages/v2.astro` removed via `git rm` since its content now lives at `/`. (3) `site/astro.config.mjs` gained `redirects: { '/v2': '/' }` so the previous-session URL pattern (`/v2/?maxTuition=124000`) keeps resolving — Astro emits `dist/v2/index.html` with `<meta http-equiv="refresh" content="0;url=/">` + `<link rel="canonical" href="https://studyroom.kz/">` + `robots=noindex`. Query strings are NOT preserved through the meta-refresh, but the URL doesn't 404. Old `UniversityCard.astro` + `catalog-filters.ts` are now dead code (only `/` used them) but left in-tree as a small cleanup follow-up. Built locally (41 pages, 73s) and deployed via `npx wrangler pages deploy dist --project-name=studyroom-project-site --branch=main --commit-dirty=true` — preview at https://f3e54677.studyroom-project-site.pages.dev, alias `studyroom-project-site.pages.dev/` smoke-tested 200 (new layout), `/v2` smoke-tested 200 with the expected meta-refresh redirect to `/`. — evidence: `site/src/pages/index.astro` (rewrite), `site/astro.config.mjs` (`redirects` key), `git rm site/src/pages/v2.astro`. Commit `0a3abdd` on `main`.
 

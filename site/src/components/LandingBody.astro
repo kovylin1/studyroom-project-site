@@ -122,6 +122,30 @@ const usedImgs = new Set([heroPhoto, ...galleryItems.slice(1, 5).map((g: any) =>
 const aboutPhoto = [...galleryItems.map((g: any) => g.img), ...campuses.map((c: any) => c.img)]
   .find((img) => img && !usedImgs.has(img)) ?? null;
 
+// Происхождение фото (ОРЁЛ, срез 3). Два независимых повода для подписи:
+//   1) фото не подтверждено как снимок этого вуза → честно говорим «иллюстративное»;
+//   2) лицензия не «фото с офсайта» → указываем автора и лицензию, чего требует CC BY-SA.
+// Словарь держим здесь же: ключей на три языка ради двух строк заводить незачем.
+const PHOTO_L10N: Record<string, { illustrative: string }> = {
+  ru: { illustrative: 'Иллюстративное фото' },
+  en: { illustrative: 'Illustrative photo' },
+  kk: { illustrative: 'Иллюстрациялық сурет' },
+};
+const photoWords = PHOTO_L10N[locale] ?? PHOTO_L10N.ru;
+
+const photoNote = (p: any) => {
+  if (!p) return null;
+  const illustrative = Boolean(p.imgKind) && p.imgKind !== 'verified';
+  const credit = p.imgLicense && p.imgLicense !== 'official-site'
+    ? [p.imgAuthor, p.imgLicense].filter(Boolean).join(', ')
+    : null;
+  return illustrative || credit ? { illustrative, credit, source: p.imgSource ?? null } : null;
+};
+
+const galleryNotes = galleryItems.map(photoNote);
+const accomNotes = accom.map(photoNote);
+const campNotes = campuses.map(photoNote);
+
 // Real application deadlines (schema field u.deadlines: programSlug → ISO date), parsed from
 // official sources / aggregators. Group upcoming ones by date, drive the countdown from the nearest.
 const nowMs = Date.now();
@@ -219,6 +243,20 @@ const SCRIPT_STR = {
     --shadow-lg: 0 24px 64px rgba(0,0,0,.18);
   }
   body { font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+  /* Происхождение фото (ОРЁЛ, срез 3): честная пометка непроверенных снимков
+     и указание автора/лицензии там, где этого требует CC BY-SA. Подпись должна
+     читаться, но не спорить с фотографией. */
+  .photo-note { margin: 6px 0 0; font-size: 11px; line-height: 1.35; color: var(--ink-3); }
+  .photo-note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  .photo-note--overlay {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 1;
+    padding: 4px 8px; margin: 0; color: #fff; font-size: 10px;
+    background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+    pointer-events: none;
+  }
+  /* Оверлей позиционируется от плитки — без этого он уедет к краю страницы. */
+  .hero__strip-tile, .photo-tile { position: relative; }
   body.no-scroll { overflow: hidden; }
   .lp, .lp * { min-width: 0; }
   .lp h1, .lp h2, .lp h3, .lp h4 { font-weight: 900; line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; overflow-wrap: break-word; word-wrap: break-word; }
@@ -658,8 +696,14 @@ const SCRIPT_STR = {
       </div>
       {galleryItems.length >= 4 && (
         <div class="hero__strip">
-          {galleryItems.slice(1, 5).map((p: any) => (
-            <div class="hero__strip-tile" data-lightbox={p.img} style={`background-image: url('${p.img}')`}></div>
+          {galleryItems.slice(1, 5).map((p: any, i: number) => (
+            <div class="hero__strip-tile" data-lightbox={p.img} style={`background-image: url('${p.img}')`}>
+              {galleryNotes[i + 1] && (
+                <span class="photo-note photo-note--overlay">
+                  {galleryNotes[i + 1]!.illustrative ? photoWords.illustrative : galleryNotes[i + 1]!.credit}
+                </span>
+              )}
+            </div>
           ))}
         </div>
       )}
@@ -887,6 +931,17 @@ const SCRIPT_STR = {
                     {a.price && <span class="accom__price">{a.price}</span>}
                     <div class="accom__name">{a.name}</div>
                     {a.text && <p class="accom__text">{a.text.slice(0, 160)}{a.text.length > 160 ? '…' : ''}</p>}
+                    {accomNotes[i] && (
+                      <p class="photo-note">
+                        {accomNotes[i]!.illustrative && <span>{photoWords.illustrative}</span>}
+                        {accomNotes[i]!.illustrative && accomNotes[i]!.credit && <span> · </span>}
+                        {accomNotes[i]!.credit && (
+                          accomNotes[i]!.source
+                            ? <a href={accomNotes[i]!.source!} rel="nofollow noopener" target="_blank">{accomNotes[i]!.credit}</a>
+                            : <span>{accomNotes[i]!.credit}</span>
+                        )}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -909,6 +964,17 @@ const SCRIPT_STR = {
                     {c.sub && <div class="camp__sub">{c.sub}</div>}
                     <div class="camp__title">{c.title}</div>
                     {c.text && <p class="camp__text">{c.text.slice(0, 160)}{c.text.length > 160 ? '…' : ''}</p>}
+                    {campNotes[i] && (
+                      <p class="photo-note">
+                        {campNotes[i]!.illustrative && <span>{photoWords.illustrative}</span>}
+                        {campNotes[i]!.illustrative && campNotes[i]!.credit && <span> · </span>}
+                        {campNotes[i]!.credit && (
+                          campNotes[i]!.source
+                            ? <a href={campNotes[i]!.source!} rel="nofollow noopener" target="_blank">{campNotes[i]!.credit}</a>
+                            : <span>{campNotes[i]!.credit}</span>
+                        )}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -925,9 +991,18 @@ const SCRIPT_STR = {
         <span class="eyebrow">{t('lp.living.galleryEyebrow')}</span>
         <h2>{fill('lp.living.galleryTitle', { uni: u.name })}</h2>
         <div class="photo-grid">
-          {photoSets.general.map((p: any) => (
-            <div class="photo-tile" data-lightbox={p.img} style={`background-image: url('${p.img}')`}></div>
-          ))}
+          {photoSets.general.map((p: any) => {
+            const note = photoNote(p);
+            return (
+              <div class="photo-tile" data-lightbox={p.img} style={`background-image: url('${p.img}')`}>
+                {note && (
+                  <span class="photo-note photo-note--overlay">
+                    {note.illustrative ? photoWords.illustrative : note.credit}
+                  </span>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

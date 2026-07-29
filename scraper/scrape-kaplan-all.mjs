@@ -14,7 +14,13 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUT_DIR = path.join(__dirname, 'sources', 'kaplan-extracts');
+// --out=<путь> — куда писать выгрузку. По умолчанию прежнее место (его использует CI).
+// КОМПАС (сессия 2) гоняет тот же коллектор в свою песочницу, чтобы не трогать
+// committed-выгрузки: --out=../sources/kompas/extracts/kaplan
+const outArg = process.argv.find(a => a.startsWith('--out='));
+const OUT_DIR = outArg
+  ? path.resolve(__dirname, outArg.slice('--out='.length))
+  : path.join(__dirname, 'sources', 'kaplan-extracts');
 const CATALOG_DIR = path.join(__dirname, '..', 'site', 'src', 'content', 'universities');
 const FEED_PAGE = 'https://www.kaplanpathways.com/degree-finder/';
 const UA = 'StudyRoom-Scraper/0.3 (+https://studyroom.kz)';
