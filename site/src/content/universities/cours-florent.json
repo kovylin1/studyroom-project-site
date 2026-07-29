@@ -10,7 +10,9 @@
       "durationYears": 3,
       "level": "bachelor",
       "programType": "degree",
-      "faculty": "Гуманитарные и языки"
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "cours-florent-ba-hons-acting-and-performance",
@@ -18,7 +20,9 @@
       "durationYears": 3,
       "level": "bachelor",
       "programType": "degree",
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "cours-florent-classe-libre",
@@ -26,14 +30,29 @@
       "durationYears": 1,
       "level": "short-course",
       "programType": "degree",
-      "faculty": "Short Courses"
+      "faculty": "Short Courses",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "cours-florent-first-year-acting-in-english",
+      "title": "First Year Acting in English",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
     }
   ],
   "tuition": {
     "currency": "EUR",
     "byProgram": {
       "cours-florent-acting-in-english": 8875,
-      "cours-florent-ba-hons-acting-and-performance": 8875
+      "cours-florent-ba-hons-acting-and-performance": 8875,
+      "cours-florent-first-year-acting-in-english": 5800
     }
   },
   "deadlines": {},
@@ -47,7 +66,9 @@
     {
       "name": "Free English Scholarship",
       "amount": "Full tuition for one academic year",
-      "url": "https://www.coursflorent.fr/en/programs/acting-in-english"
+      "url": "https://www.coursflorent.fr/en/programs/acting-in-english",
+      "kompasStatus": "linked",
+      "kompasCheckedAt": "2026-07-26"
     }
   ],
   "gallery": {
@@ -83,5 +104,12 @@
   "sourceUrl": "https://www.coursflorent.fr/en/programs",
   "sourceHash": "sha256:official-cours-florent",
   "confidence": "official",
-  "language": "en"
+  "language": "en",
+  "partnerSource": {
+    "type": "aggregator",
+    "via": [
+      "qs",
+      "edvoy"
+    ]
+  }
 }

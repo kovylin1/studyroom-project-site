@@ -9,19 +9,50 @@
       "title": "Bachelor's Degree",
       "durationYears": 4,
       "level": "bachelor",
-      "programType": "degree"
+      "programType": "degree",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "new-jersey-institute-of-technology-master",
       "title": "Master's Degree",
       "durationYears": 2,
       "level": "master",
-      "programType": "degree"
+      "programType": "degree",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "new-jersey-institute-of-technology-direct-admit-graduate",
+      "title": "Direct Admit Graduate",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "studygroup",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "new-jersey-institute-of-technology-direct-admit-undergraduate",
+      "title": "Direct Admit Undergraduate",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "studygroup",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
     }
   ],
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "new-jersey-institute-of-technology-direct-admit-graduate": 40734,
+      "new-jersey-institute-of-technology-direct-admit-undergraduate": 39912
+    }
   },
   "deadlines": {
     "new-jersey-institute-of-technology-bachelor": "2026-03-01",
@@ -59,6 +90,12 @@
         "caption": "New Jersey Institute of Technology",
         "imgKind": "stock"
       }
+    ]
+  },
+  "partnerSource": {
+    "type": "aggregator",
+    "via": [
+      "studygroup"
     ]
   }
 }

@@ -9,21 +9,51 @@
       "title": "Bachelor's Degree",
       "durationYears": 4,
       "level": "bachelor",
-      "programType": "degree"
+      "programType": "degree",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "university-of-nebraska-omaha-master",
       "title": "Master's Degree",
       "durationYears": 2,
       "level": "master",
-      "programType": "degree"
+      "programType": "degree",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "university-of-nebraska-omaha-direct-entry-graduate",
+      "title": "Direct Entry Graduate",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "studygroup",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "university-of-nebraska-omaha-direct-entry-undergraduate",
+      "title": "Direct Entry Undergraduate",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "studygroup",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
     }
   ],
   "tuition": {
     "currency": "USD",
     "byProgram": {
       "university-of-nebraska-omaha-bachelor": 24900,
-      "university-of-nebraska-omaha-master": 27660
+      "university-of-nebraska-omaha-master": 27660,
+      "university-of-nebraska-omaha-direct-entry-graduate": 18648,
+      "university-of-nebraska-omaha-direct-entry-undergraduate": 21624
     }
   },
   "deadlines": {},
@@ -34,12 +64,16 @@
     {
       "name": "International Academic Excellence Scholarship for Undergraduates",
       "amount": "approximately $3,000 per year (renewable up to 5 years)",
-      "url": "https://www.unomaha.edu/international-at-uno/student-support/scholarships-and-funding.php"
+      "url": "https://www.unomaha.edu/international-at-uno/student-support/scholarships-and-funding.php",
+      "kompasStatus": "linked",
+      "kompasCheckedAt": "2026-07-26"
     },
     {
       "name": "Tom and Janet Miller Scholarship",
       "amount": "$1,000",
-      "url": "https://www.unomaha.edu/international-at-uno/student-support/scholarships-and-funding.php"
+      "url": "https://www.unomaha.edu/international-at-uno/student-support/scholarships-and-funding.php",
+      "kompasStatus": "linked",
+      "kompasCheckedAt": "2026-07-26"
     }
   ],
   "lastChecked": "2026-06-09",
@@ -83,6 +117,12 @@
         "img": "/photos/university-of-nebraska-omaha/bobr-6.jpg",
         "caption": "University of Nebraska Omaha"
       }
+    ]
+  },
+  "partnerSource": {
+    "type": "aggregator",
+    "via": [
+      "studygroup"
     ]
   }
 }

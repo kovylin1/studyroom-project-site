@@ -32,7 +32,9 @@
       "language": "en",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Инженерия и IT"
+      "faculty": "Инженерия и IT",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "the-university-of-queensland-beng-hons-biomedical-engineering",
@@ -47,7 +49,9 @@
       "language": "en",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Инженерия и IT"
+      "faculty": "Инженерия и IT",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "the-university-of-queensland-bachelor-of-science-earth-science",
@@ -62,7 +66,81 @@
       "language": "en",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Наука"
+      "faculty": "Наука",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "the-university-of-queensland-foundation-program-accelerated",
+      "title": "Foundation Program Accelerated",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "the-university-of-queensland-foundation-program-standard",
+      "title": "Foundation Program Standard",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "the-university-of-queensland-foundation-program-extended",
+      "title": "Foundation Program Extended",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "the-university-of-queensland-master-of-speech-pathology-studies",
+      "title": "Master of Speech Pathology Studies",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "the-university-of-queensland-master-of-physiotherapy-studies",
+      "title": "Master of Physiotherapy Studies",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "the-university-of-queensland-bridging-english-uq-college",
+      "title": "Bridging English (UQ College)",
+      "durationYears": 1,
+      "level": "english-language",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
     }
   ],
   "sourceUrl": "https://edge.edvoy.com/institutions/the-university-of-queensland",
@@ -84,7 +162,14 @@
   ],
   "tuition": {
     "currency": "AUD",
-    "byProgram": {}
+    "byProgram": {
+      "the-university-of-queensland-master-of-civil-engineering-professional": 58056,
+      "the-university-of-queensland-foundation-program-accelerated": 22600,
+      "the-university-of-queensland-foundation-program-standard": 36280,
+      "the-university-of-queensland-foundation-program-extended": 41080,
+      "the-university-of-queensland-master-of-speech-pathology-studies": 44300,
+      "the-university-of-queensland-master-of-physiotherapy-studies": 66664
+    }
   },
   "deadlines": {},
   "requirements": {
@@ -121,5 +206,11 @@
   "logoUrl": "https://static.uq.net.au/v10/logos/corporate/uq-apple-touch-icon.png",
   "officialUrl": "https://www.uq.edu.au",
   "officialUrlSource": "wikidata:Q866012",
-  "officialUrlCheckedAt": "2026-07-21"
+  "officialUrlCheckedAt": "2026-07-21",
+  "partnerSource": {
+    "type": "aggregator",
+    "via": [
+      "edvoy"
+    ]
+  }
 }

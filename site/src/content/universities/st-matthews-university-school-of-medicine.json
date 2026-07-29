@@ -61,7 +61,9 @@
       "programUrl": "https://medicine.stmatthews.edu/academics/programs/pre-med-masters-program/curriculum-overview",
       "language": "en",
       "verified": true,
-      "faculty": "Образование"
+      "faculty": "Образование",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "st-matthews-university-school-of-medicine-pre-medical-master-s-program",
@@ -75,7 +77,9 @@
       "programUrl": "https://medicine.stmatthews.edu/academics/programs/pre-med-masters-program",
       "language": "en",
       "verified": true,
-      "faculty": "Образование"
+      "faculty": "Образование",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "st-matthews-university-school-of-medicine-mbbs-to-md-pathway",
@@ -89,7 +93,9 @@
       "programUrl": "https://medicine.stmatthews.edu/academics/programs/st-matthews-mbbs-md-pathway",
       "language": "en",
       "verified": true,
-      "faculty": "Подготовка (Foundation)"
+      "faculty": "Подготовка (Foundation)",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "st-matthews-university-school-of-medicine-md-program",
@@ -102,7 +108,9 @@
       ],
       "programUrl": "https://medicine.stmatthews.edu/academics/programs/md-program",
       "language": "en",
-      "verified": true
+      "verified": true,
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "st-matthews-university-school-of-medicine-clinical-medicine-md-program",
@@ -116,7 +124,69 @@
       "programUrl": "https://medicine.stmatthews.edu/academics/programs/md-program/clinical-medicine",
       "language": "en",
       "verified": true,
-      "faculty": "Здоровье и медицина"
+      "faculty": "Здоровье и медицина",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "st-matthews-university-school-of-medicine-gateway-medical-program",
+      "title": "Gateway Medical Program",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "iapro",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "st-matthews-university-school-of-medicine-gateway-veterinary-program",
+      "title": "Gateway Veterinary Program",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "iapro",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "st-matthews-university-school-of-medicine-pre-med-5-year",
+      "title": "Pre-Med 5-Year",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "iapro",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "st-matthews-university-school-of-medicine-pre-vet-5-year",
+      "title": "Pre-Vet 5-Year",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "iapro",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "st-matthews-university-school-of-medicine-pre-veterinary-masters",
+      "title": "Pre-Veterinary Masters",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "iapro",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
     }
   ],
   "sourceUrl": "https://edge.edvoy.com/institutions/st-matthews-university-school-of-medicine",
@@ -141,7 +211,11 @@
   ],
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "st-matthews-university-school-of-medicine-pre-medical-masters": 19000,
+      "st-matthews-university-school-of-medicine-doctor-of-medicine": 60630,
+      "st-matthews-university-school-of-medicine-doctor-of-veterinary-medicine": 58255
+    }
   },
   "deadlines": {},
   "requirements": {
@@ -176,5 +250,12 @@
     ]
   },
   "officialUrl": "https://medicine.stmatthews.edu",
-  "logoUrl": "https://medicine.stmatthews.edu/favicon-512x512.png"
+  "logoUrl": "https://medicine.stmatthews.edu/favicon-512x512.png",
+  "partnerSource": {
+    "type": "aggregator",
+    "via": [
+      "edvoy",
+      "iapro"
+    ]
+  }
 }

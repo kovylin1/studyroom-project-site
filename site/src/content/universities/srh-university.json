@@ -10,7 +10,9 @@
       "durationYears": 3.5,
       "level": "bachelor",
       "programType": "degree",
-      "faculty": "Инженерия и IT"
+      "faculty": "Инженерия и IT",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "srh-university-information-technology-master",
@@ -18,7 +20,9 @@
       "durationYears": 2,
       "level": "master",
       "programType": "degree",
-      "faculty": "Инженерия и IT"
+      "faculty": "Инженерия и IT",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "srh-university-master-s-education-in-china-master",
@@ -28,7 +32,9 @@
       "source": "official",
       "verifiedBySite": true,
       "checkedAt": "2026-05-31",
-      "faculty": "Образование"
+      "faculty": "Образование",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "srh-university-high-school-diploma-high-school",
@@ -37,7 +43,9 @@
       "level": "high-school",
       "source": "official",
       "verifiedBySite": true,
-      "checkedAt": "2026-05-31"
+      "checkedAt": "2026-05-31",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "srh-university-top-universities-for-master-s-studies-in-china-master",
@@ -46,7 +54,9 @@
       "level": "master",
       "source": "official",
       "verifiedBySite": true,
-      "checkedAt": "2026-05-31"
+      "checkedAt": "2026-05-31",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "srh-university-popular-master-s-programs-in-china-master",
@@ -55,7 +65,9 @@
       "level": "master",
       "source": "official",
       "verifiedBySite": true,
-      "checkedAt": "2026-05-31"
+      "checkedAt": "2026-05-31",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "srh-university-application-periods-and-deadlines-for-master-programs-in-china-master",
@@ -64,7 +76,9 @@
       "level": "master",
       "source": "official",
       "verifiedBySite": true,
-      "checkedAt": "2026-05-31"
+      "checkedAt": "2026-05-31",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "srh-university-scholarship-opportunities-for-master-s-students-in-china-master",
@@ -73,7 +87,9 @@
       "level": "master",
       "source": "official",
       "verifiedBySite": true,
-      "checkedAt": "2026-05-31"
+      "checkedAt": "2026-05-31",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "srh-university-bachelor-s-degree-4-years-bachelor",
@@ -82,7 +98,33 @@
       "level": "bachelor",
       "source": "official",
       "verifiedBySite": true,
-      "checkedAt": "2026-05-31"
+      "checkedAt": "2026-05-31",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "srh-university-dein-bachelorstudium-an-der-srh-university",
+      "title": "Dein Bachelorstudium an der SRH University",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "direct",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "srh-university-dein-masterstudium-an-der-srh-university",
+      "title": "Dein Masterstudium an der SRH University",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "direct",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24"
     }
   ],
   "tuition": {
@@ -100,7 +142,9 @@
     {
       "name": "SRH Scholarship for Talented Pupils or Students",
       "amount": "Full tuition coverage for remaining standard period of study",
-      "url": "https://www.srh-university.de/en/study-at-srh/financing-your-studies/scholarships/srh-scholarships/scholarship-for-talented-pupils-or-students/"
+      "url": "https://www.srh-university.de/en/study-at-srh/financing-your-studies/scholarships/srh-scholarships/scholarship-for-talented-pupils-or-students/",
+      "kompasStatus": "linked",
+      "kompasCheckedAt": "2026-07-26"
     }
   ],
   "logoUrl": "https://cdn.collabinternational.com/yuklemeler/imaj/collab_abroad_1.png",
@@ -122,5 +166,11 @@
   "sourceUrl": "https://www.srh-university.de/en/",
   "sourceHash": "sha256:official-srh-university",
   "confidence": "official",
-  "language": "en"
+  "language": "en",
+  "partnerSource": {
+    "type": "direct",
+    "via": [],
+    "directRaw": "SRH, Germany",
+    "note": "НЕОДНОЗНАЧНО: в каталоге пять карточек SRH (srh-university = Heidelberg, srh-hochschule-berlin, srh-international-college, srh-germany, srh-haarlem в Нидерландах). Документ говорит просто «SRH, Germany». Поставлен Heidelberg — по названию выгрузки прошлой сессии. Нужно решение владельца: один это партнёр или вся группа SRH."
+  }
 }
