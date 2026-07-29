@@ -1,4 +1,6 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import type { University } from '~/schema/university';
 import { CURRENCY_TO_KZT, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
 import { ruSynonymsFor } from '~/scripts/search-synonyms';
@@ -38,6 +40,12 @@ const ielts = data.requirements.language?.ielts;
 const hasScholarship = data.scholarships.length > 0;
 
 const cardLevels = levels.join(',');
+
+// Логотип есть не у всех (~170 вузов): без файла не рисуем <img> с заведомым
+// 404, а сразу ставим иконку-инициалы. onerror на <img> остаётся страховкой
+// для битых внешних ссылок. Проверка по диску идёт на сборке ($0 в рантайме).
+const hasLogo = Boolean(data.logoUrl)
+  || fs.existsSync(path.join(process.cwd(), 'public', 'logos', `${data.slug}.png`));
 const facultyKeywords = faculties
   .map((f) => f.toLowerCase().replace(/[‘’']/g, '').replace(/[^a-zа-яё0-9]+/g, '-'))
   .join(',');
@@ -121,15 +129,19 @@ const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
   <a class="uni-card-v2__main" href={localizeUrl(`/${data.slug}`, locale)}>
     <div class="uni-card-v2__top">
       <div class="uni-card-v2__logo" aria-hidden="true">
-        <img
-          src={data.logoUrl ?? `/logos/${data.slug}.png`}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          data-initials={initials}
-          referrerpolicy="no-referrer"
-          onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.dataset.initials,className:'uni-card-v2__logo-initials'}))"
-        />
+        {hasLogo ? (
+          <img
+            src={data.logoUrl ?? `/logos/${data.slug}.png`}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            data-initials={initials}
+            referrerpolicy="no-referrer"
+            onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.dataset.initials,className:'uni-card-v2__logo-initials'}))"
+          />
+        ) : (
+          <span class="uni-card-v2__logo-initials">{initials}</span>
+        )}
       </div>
       <div class="uni-card-v2__head">
         <h3 class="uni-card-v2__name">{data.name}</h3>
