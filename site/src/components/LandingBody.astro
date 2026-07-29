@@ -32,6 +32,7 @@ interface ProgramRow {
   faculty: string;
   tuition: number | undefined;
   programType: string | undefined;
+  unverified: boolean | undefined;
   durationYears: number | undefined;
   language: string | undefined;
   intakes: string[] | undefined;
@@ -47,6 +48,7 @@ const programRows: ProgramRow[] = u.programs.map((p) => ({
   faculty: p.faculty ?? t('lp.misc.otherFaculty'),
   tuition: u.tuition.byProgram[p.slug],
   programType: p.programType,
+  unverified: p.kompasStatus === 'catalog-only' || undefined,
   durationYears: p.durationYears,
   language: p.language,
   intakes: p.intakes,
@@ -201,6 +203,7 @@ const SCRIPT_STR = {
   lvlShort: t('lp.programs.lvlShort'),
   lvlAll: t('lp.programs.lvlAll'),
   tbd: t('lp.programs.tbd'),
+  unverifiedWord: t('lp.programs.unverified'),
   perYear: t('lp.programs.perYear'),
   yearsWord: t('lp.programs.yearsWord'),
   intakesWord: t('lp.programs.intakesWord'),
@@ -393,6 +396,7 @@ const SCRIPT_STR = {
   .lp .program-row__level--sixth-form { background: #ffe8d6; color: #8a3a00; }
   .lp .program-row__level--foundation { background: #e6f0ff; color: #004ac2; }
   .lp .program-row__level--pathway { background: #fff4e0; color: #b86b00; }
+  .lp .program-row__chip--unverified { background: #fdeeee; color: #b03a3a; }
   .lp .program-row__level--master { background: #fff0e0; color: #a85400; }
   .lp .program-row__level--bachelor { background: var(--green-soft); color: var(--green-dark); }
   .lp .program-row__level--phd { background: #f3e0ff; color: #5a1080; }
@@ -1342,6 +1346,7 @@ const SCRIPT_STR = {
     if (p.durationYears) bits.push('<span class="program-row__chip">' + p.durationYears + ' ' + STR.yearsWord + '</span>');
     if (p.language) bits.push('<span class="program-row__chip">' + esc(p.language) + '</span>');
     if (p.intakes && p.intakes.length) bits.push('<span class="program-row__chip program-row__chip--intake">' + STR.intakesWord + ' ' + esc(p.intakes.slice(0, 3).join(', ')) + '</span>');
+    if (p.unverified) bits.push('<span class="program-row__chip program-row__chip--unverified">' + STR.unverifiedWord + '</span>');
     return bits.length ? '<div class="program-row__meta">' + bits.join('') + '</div>' : '';
   }
   function progTitle(p) {

@@ -433,6 +433,12 @@ async function main() {
     if (!ONLY_MANUAL && map[slug]) continue;
     targets.push([slug, { type: 'direct', via: [], directRaw: slug, newCard: true }]);
   }
+  // СИТО (2026-07-29): просев catalog-only программ зовёт сбор для ЛЮБОГО слага
+  // каталога, не только прямых партнёров. Явно названный --slug — цель всегда,
+  // иначе вуз агрегаторного типа молча пропускался и выгрузки не появлялось.
+  if (ONLY && !targets.some(([s]) => s === ONLY)) {
+    targets.push([ONLY, { type: 'direct', via: [], directRaw: ONLY }]);
+  }
 
   const report = [];
   let done = 0;

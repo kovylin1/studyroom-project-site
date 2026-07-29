@@ -15,7 +15,11 @@ import { normProgram, normCatalogProgram, similarity, isSubsetPair, SIM_THRESHOL
 const EXTRACTS = path.join(KOMPAS_DIR, 'extracts');
 const GEDU_DIR = path.join(KOMPAS_DIR, '..', '..', 'scraper', 'sources', 'gedu-extracts');
 
-export const WORK_DIR = path.join(KOMPAS_DIR, 'catalog-work');
+// KOMPAS_WORK_DIR: месячный CI меряет дрейф ЖИВОГО каталога (site/src/content/
+// universities), локальные сессии — рабочую копию catalog-work (по умолчанию).
+export const WORK_DIR = process.env.KOMPAS_WORK_DIR
+  ? path.resolve(process.env.KOMPAS_WORK_DIR)
+  : path.join(KOMPAS_DIR, 'catalog-work');
 
 // Состояние источников на 2026-07-23. «blocked» и «empty» — не наш промах разметки,
 // а отсутствие данных.
