@@ -93,21 +93,20 @@ async function main() {
     const body = (await page.evaluate(() => document.body.innerText)).toLowerCase();
     if (/invalid|incorrect/.test(body)) throw new Error('портал отклонил учётные данные');
 
-    // Смотрим, что внутри выпадашки APPLICATIONS.
-    await page.locator('button:has-text("APPLICATIONS")').first().click().catch(() => {});
-    await page.waitForTimeout(2000);
-    await snap('03-menu-open');
-
-    // Деп-линк в новом формате Appian: /page/g.<group>.p.<page>
-    for (const [i, stub] of [['04', 'g.students-and-applications.p.institutions'], ['05', 'g.students-and-applications.p.dashboard-B2B-partners']]) {
-      await page.goto('https://admissions.qs.com/suite/sites/qs-apply/page/' + stub, { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
-      await snap(i + '-' + stub);
-      const search = page.locator('input[type=text]:visible, input[type=search]:visible').first();
-      if (await search.count()) {
-        await search.fill('University').catch(() => {});
-        await page.waitForTimeout(4000);
-        await snap(i + '-search');
-      }
+    // Верный формат деп-линка подсказал владелец: /group/<group>/page/<page>
+    await page.goto('https://admissions.qs.com/suite/sites/qs-apply/group/students-and-applications/page/institutions', { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
+    await snap('03-institutions');
+    const search = page.locator('input[type=text]:visible, input[type=search]:visible').first();
+    if (await search.count()) {
+      await search.fill('University').catch(() => {});
+      await page.waitForTimeout(5000);
+      await snap('04-institutions-search');
+    }
+    // Клик по первому вузу в списке — снять разметку карточки вуза (программы).
+    const firstRow = page.locator('table tbody tr a, [role=grid] a, a[href*="record"]').first();
+    if (await firstRow.count()) {
+      await firstRow.click().catch(() => {});
+      await snap('05-first-institution');
     }
   } catch (e) {
     log('ОШИБКА: ' + e.message);

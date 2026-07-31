@@ -8,13 +8,16 @@
 ## IN PROGRESS
 
 - **КОМПАС — приведение каталога к партнёрским источникам.** Сессии 1–3 сделаны (ветка `feat/kompas`, коммиты `66bbdb80`, `e7713fdd`, `8a17ce0e`, `21f08863`, `c5e77823`). Собраны Kaplan, QA, Oxford International, Study Group, Edvoy (48 833 программы). Живой каталог не тронут ни разу. **Полный список незакрытого — `docs/superpowers/plans/2026-07-22-kompas-open-tasks.md`** (8 задач). Ближайшие по важности: (1) Navitas — в живом каталоге стоят фабрикованные сид-цены у 10 британских вузов; (2) IAPro и QS — пароли в `scraper/.env` устарели, порталы их отклонили, нужен владелец; (3) сессия 3.5 — прямые партнёры, начинать с замера 757 файлов `official-extracts` глазами. **2026-07-25: P0–P4 плана `sources/kompas/FIX-PLAN.md` пройдены, отчёты `OWNER-REPORT-session5.md` и `OWNER-REPORT-session5-p3p4.md`.** Уточнение по (2): IAPro на самом деле пускает — пароли рабочие, ломалась проба (портал переехал в shadow DOM), починено; отклоняет только QS Apply, и это блокирует 227 вузов / 21% каталога. Открыто и ждёт владельца: доступ QS, слияние 6 пар карточек-дублей, судьба 1234 непроверяемых стипендий, полный прогон сбора стипендий с офсайтов. **2026-07-26 (сессия 6): хвост P3/P4 закрыт, отчёт `OWNER-REPORT-session6.md`.** 6 пар дублей слиты (объединением, с переносом стипендий и фотонаборов, откат — `dupmerge-backup.json`); всем 1769 стипендиям проставлен разряд происхождения (`untraceable` 1234), поле объявлено в схеме сайта; собранные с офсайтов записи сведены с каталогом — 553 кейса решений в панели; разборщики сбора вынесены в `lib` и покрыты 26 тестами; просмотр выборки `hub-headings` отбросил 131 запись брака разбора. Панель: 1894 → 2469 кейсов. Единственное, что по-прежнему упирается в владельца, — **доступ QS Apply** (227 вузов, 21% каталога).
-  **2026-07-31: пароль подобран, вход РАБОТАЕТ** (elmira.k@, кред в `scraper/.env`), но роль аккаунта
-  урезана: видны только Homepage (туториал) и Notifications; Institutions / Applicants Dashboard
-  в меню не отрисовываются, деп-линки (`/page/students-and-applications/institutions` и
-  `g..p.-формат`) отвечают «не существует или нет прав». Похоже, онбординг не завершён.
-  Нужно от владельца: пройти туториал/активацию в аккаунте ИЛИ запросить у менеджера QS
-  включение раздела Institutions. Разведчик готов: `scraper/kompas-qs-recon.mjs`
-  (дампы — `sources/kompas/qs-recon/`).
+  **2026-07-31: ДОСТУП ПОЛУЧЕН ПОЛНОСТЬЮ.** Пароль рабочий (elmira.k@, кред в `scraper/.env`),
+  раздел Institutions открывается — верный деп-линк подсказал владелец:
+  `/suite/sites/qs-apply/group/students-and-applications/page/institutions`
+  (мои ранние «403» были ошибкой формата ссылки, не прав). Разведчик `scraper/kompas-qs-recon.mjs`
+  снял разметку: страница — Appian SAIL, список вузов с фильтрами (education level / destination /
+  study level / intake), интерфейс-JSON 450 КБ — `sources/kompas/qs-recon/net/007.json` (GET
+  `…/page/g.students-and-applications.p.institutions`), обновления списка — POST туда же (008.json).
+  **Следующий шаг: написать `kompas-collect-qs.mjs`** — разобрать SAIL-JSON 007/008 (структура
+  списка, пагинация через POST c updates), выкачать вузы+программы, ночной прогон. Уроки:
+  сверять собранное с числом, объявленным порталом; сохранять сырой дамп целиком.
 
 - **Stage 13 — Program-catalog expansion to 30+ per uni (resume after 20:00 Almaty 2026-05-22 — Sonnet budget reset).** Started 2026-05-22 at 17:00 Almaty. 7 parallel Sonnet agents launched on `sources/expand-batch-{J,K,L,M,N,O,P}.json` (249 thin universities total, ~36 each). All 7 hit Sonnet session limit ~10 min in. Net result: 55/249 touched, 33 reached the 30+ target, 194 still queued. **K-12 (12 unis), language schools (8), pathway-only centres (41) — 61 unis total — DELIBERATELY EXCLUDED** because <15 programs is realistic for their type. **Resume protocol** after 20:00 Almaty Sonnet reset: re-launch the same 7 parallel Sonnet agents on the same 7 batch JSONs — each agent has "skip if file exists with current >= target" gate, so the 33 already-expanded unis auto-skip; agents only re-process the 194 untouched. Promote J/K/L/M/N/O/P to a 5-agent batch (35-50 unis each) if budget allows.
 
