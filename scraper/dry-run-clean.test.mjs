@@ -23,10 +23,13 @@ const gitState = () =>
 const DRY_SCRIPTS = [
   ['orel-apply.mjs', ['--dry-run']],
   ['orel-hunt.mjs', ['--dry-run', '--slug=acadia']],
+  // Аргументы повторяют прогон, который в 2026-07-20 изменил 99 вузов.
+  // --skip-audit: фаза аудита сама чтит --dry-run, а баг был в коллекторах фазы 1.
+  ['bobr.mjs', ['--dry-run', '--limit=3', '--skip-photos', '--skip-audit']],
 ];
 
 for (const [script, args] of DRY_SCRIPTS) {
-  test(`${script} ${args.join(' ')} не трогает рабочее дерево`, { timeout: 180000 }, () => {
+  test(`${script} ${args.join(' ')} не трогает рабочее дерево`, { timeout: 600000 }, () => {
     const before = gitState();
     try {
       execFileSync('node', [path.join(SCRAPER, script), ...args], { cwd: ROOT, stdio: 'pipe' });
