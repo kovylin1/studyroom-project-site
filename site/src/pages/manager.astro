@@ -654,6 +654,7 @@ const CONTROL_DEFAULT_URL = '';
   .tier--partner { background: var(--color-primary-soft); color: var(--color-primary-dark); }
   .tier--official { background: #fff4cc; color: #6b4d00; }
   .tier--aggregator { background: var(--color-bg-soft); color: var(--color-text-muted); }
+  .agg-chips { display: inline-flex; flex-wrap: wrap; gap: 4px; }
   .checked-fresh { color: var(--color-primary-dark); font-weight: 600; }
   .checked-stale { color: #c47a30; font-weight: 600; }
   .checked-never { color: var(--color-text-faint); font-style: italic; }
@@ -921,7 +922,7 @@ const CONTROL_DEFAULT_URL = '';
       const q = filters.search.toLowerCase();
       if (!row.slug.toLowerCase().includes(q) && !row.name.toLowerCase().includes(q)) return false;
     }
-    if (filters.aggregator && row.aggregatorSlug !== filters.aggregator) return false;
+    if (filters.aggregator && !rowAggregatorSlugs(row).includes(filters.aggregator)) return false;
     if (filters.tiers.size > 0 && !filters.tiers.has(row.tier)) return false;
     if (filters.country && row.country !== filters.country) return false;
     if (filters.status === 'in' && !row.catalog) return false;
@@ -934,6 +935,26 @@ const CONTROL_DEFAULT_URL = '';
     if (!slug) return '—';
     const found = lastAggregators.find((a) => a.slug === slug);
     return found ? found.name : slug;
+  }
+
+  // Все агрегаторы вуза: новый снимок кладёт массив aggregatorSlugs (КОМПАС-карта),
+  // старый — одиночный aggregatorSlug; поддерживаем оба.
+  function rowAggregatorSlugs(row) {
+    if (Array.isArray(row.aggregatorSlugs)) return row.aggregatorSlugs;
+    return row.aggregatorSlug ? [row.aggregatorSlug] : [];
+  }
+
+  function aggregatorCell(row) {
+    const chips = [];
+    if (row.partnerType === 'direct') {
+      chips.push('<span class="tier tier--partner">прямой</span>');
+    }
+    for (const slug of rowAggregatorSlugs(row)) {
+      const agg = lastAggregators.find((a) => a.slug === slug);
+      const tier = agg?.tier || 'aggregator';
+      chips.push('<span class="tier tier--' + escapeHtml(tier) + '">' + escapeHtml(agg ? agg.name : slug) + '</span>');
+    }
+    return chips.length ? '<span class="agg-chips">' + chips.join('') + '</span>' : '<span class="muted">—</span>';
   }
 
   function renderRegistry(registry) {
@@ -956,10 +977,7 @@ const CONTROL_DEFAULT_URL = '';
       const checkedLabel = checked ? fmt.ago(checked) : 'никогда';
       const checkedCls = fmt.stalenessClass(checked);
       const disabledAttr = isOnline ? '' : ' disabled';
-      const aggLabel = aggregatorLabel(row.aggregatorSlug);
-      const aggCell = row.aggregatorSlug
-        ? '<span class="tier tier--' + escapeHtml(lastAggregators.find((a) => a.slug === row.aggregatorSlug)?.tier || 'aggregator') + '">' + escapeHtml(aggLabel) + '</span>'
-        : '<span class="muted">—</span>';
+      const aggCell = aggregatorCell(row);
       const slugLink = '<a href="/' + escapeHtml(row.slug) + '" target="_blank" rel="noopener" class="table-link"><code>' + escapeHtml(row.slug) + '</code></a>';
       const nameLink = '<a href="/' + escapeHtml(row.slug) + '" target="_blank" rel="noopener" class="table-link">' + escapeHtml(row.name || '—') + '</a>';
       return '<tr>' +
@@ -1028,17 +1046,19 @@ const CONTROL_DEFAULT_URL = '';
       container.appendChild(btn);
       existing.add(agg.slug);
     }
-    // Add chips for any aggregatorSlug found in registry but not yet listed
+    // Add chips for any aggregator slug found in registry but not yet listed
     for (const row of (registry || [])) {
-      if (!row.aggregatorSlug || existing.has(row.aggregatorSlug)) continue;
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'chip';
-      btn.dataset.filter = 'aggregator';
-      btn.dataset.value = row.aggregatorSlug;
-      btn.textContent = row.aggregatorSlug;
-      container.appendChild(btn);
-      existing.add(row.aggregatorSlug);
+      for (const slug of rowAggregatorSlugs(row)) {
+        if (existing.has(slug)) continue;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'chip';
+        btn.dataset.filter = 'aggregator';
+        btn.dataset.value = slug;
+        btn.textContent = slug;
+        container.appendChild(btn);
+        existing.add(slug);
+      }
     }
   }
 

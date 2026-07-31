@@ -3,6 +3,8 @@
 // Receives the university data `u` and a `locale`; renders the whole landing.
 // All static UI strings go through t('lp.*'); dynamic values stay in markup.
 import type { CollectionEntry } from 'astro:content';
+import fs from 'node:fs';
+import path from 'node:path';
 import { STUDYROOM_FAQ, CURRENCY_TO_KZT, CURRENCY_SYMBOL, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
 import { CONTACTS, waLink, telLink, AGENCY, yearsOnMarket } from '~/content/studyroom/contacts';
 import { useTranslations, localizeUrl, type Locale } from '~/i18n/utils';
@@ -15,6 +17,12 @@ const REVIEW_VIDEOS = [
   '1_r4tL9tczalbVBafNq_tanPjqa5j9n9F',
   '17Zcih4JYZpQZZ6qIYGjfycapM4ltk3TY',
 ];
+
+// Фон секции «О StudyRoom» — заблюренное фото команды. Включается сам, как
+// только владелец положит файл public/photos/studyroom-team.jpg (проверка на
+// сборке); пока файла нет, секция выглядит как раньше.
+const TEAM_PHOTO = '/photos/studyroom-team.jpg';
+const hasTeamPhoto = fs.existsSync(path.join(process.cwd(), 'public', 'photos', 'studyroom-team.jpg'));
 import { pickTimeline } from '~/i18n/timelines';
 import LangSwitcher from '~/components/LangSwitcher.astro';
 
@@ -913,7 +921,8 @@ const SCRIPT_STR = {
     </div>
   </section>
 
-  <section class="section section--alt reveal" id="about">
+  <section class:list={['section', 'section--alt', 'reveal', hasTeamPhoto && 'about--photo']} id="about">
+    {hasTeamPhoto && <div class="about-bg" aria-hidden="true"></div>}
     <div class="wrap">
       <span class="eyebrow">{t('lp.about.eyebrow')}</span>
       <div class="about-grid">

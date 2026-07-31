@@ -36,6 +36,14 @@ const KNOWN_AGGREGATORS = [
 ];
 const REGISTRY_FILE = resolve(PROJECT_ROOT, 'sources/universities.list.md');
 const AGGREGATORS_FILE = resolve(PROJECT_ROOT, 'sources/aggregators.md');
+const PARTNER_MAP_FILE = resolve(PROJECT_ROOT, 'sources/kompas/partner-source-map.json');
+
+// КОМПАС-карта пишет короткие via-слаги; канонические слаги — из KNOWN_AGGREGATORS.
+const VIA_TO_AGGREGATOR = {
+  qs: 'qs-topuniversities',
+  kaplan: 'kaplan-pathways',
+  navitas: 'navitas-pathways',
+};
 const CATALOG_DIR = resolve(SITE_ROOT, 'src/content/universities');
 const CRON_FILE = resolve(PROJECT_ROOT, '.github/workflows/scrape-monthly.yml');
 const OUTPUT_FILE = resolve(SITE_ROOT, 'public/api/status.json');
@@ -128,6 +136,14 @@ async function readRegistry(aggregators) {
   }
 }
 
+async function readPartnerMap() {
+  try {
+    return JSON.parse(await readFile(PARTNER_MAP_FILE, 'utf8'));
+  } catch {
+    return {};
+  }
+}
+
 async function readCatalog() {
   try {
     const files = await readdir(CATALOG_DIR);
@@ -216,13 +232,14 @@ async function readGaps() {
 }
 
 async function main() {
-  const [catalog, cron, aggregators, directors, gaps, schedules] = await Promise.all([
+  const [catalog, cron, aggregators, directors, gaps, schedules, partnerMap] = await Promise.all([
     readCatalog(),
     readCronExpression(),
     readAggregators(),
     readDirectors(),
     readGaps(),
     readSchedules(),
+    readPartnerMap(),
   ]);
   for (const agg of aggregators) {
     const s = schedules[agg.slug];
@@ -240,14 +257,24 @@ async function main() {
   }
 
   // Build registry from catalog (all 804 JSON files) instead of universities.list.md (437 rows)
-  const merged = Object.entries(catalog).map(([slug, cat]) => ({
+  const merged = Object.entries(catalog).map(([slug, cat]) => {
+    // Агрегаторы вуза: КОМПАС-карта (curated) + host-match по sourceUrl (фактический источник карточки).
+    const pm = partnerMap[slug];
+    const viaSlugs = (pm?.via || [])
+      .filter((v) => v !== 'direct')
+      .map((v) => VIA_TO_AGGREGATOR[v] || v);
+    const hostSlug = resolveAggregatorSlug(cat.sourceUrl, aggregators);
+    const aggregatorSlugs = [...new Set(hostSlug ? [...viaSlugs, hostSlug] : viaSlugs)];
+    return {
     slug,
     name: cat.name,
     country: cat.country,
     city: cat.city,
     tier: cat.confidence || 'aggregator',
     officialUrl: cat.sourceUrl || null,
-    aggregatorSlug: resolveAggregatorSlug(cat.sourceUrl, aggregators),
+    aggregatorSlug: aggregatorSlugs[0] || null,
+    aggregatorSlugs,
+    partnerType: pm?.type || null,
     catalog: {
       lastChecked: cat.lastChecked,
       sourceUrl: cat.sourceUrl,
@@ -256,7 +283,8 @@ async function main() {
       programsCount: cat.programsCount,
     },
     gapPriority: gapBySlug[slug] || null,
-  }));
+    };
+  });
   const defaultProfile = aggregators[0] ?? {
     slug: 'kaplan-pathways',
     name: 'Kaplan Pathways',
