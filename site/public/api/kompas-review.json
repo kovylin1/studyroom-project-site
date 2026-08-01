@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T07:50:25.077Z",
+  "generatedAt": "2026-08-01T03:14:07.478Z",
   "scope": "kompas",
   "summary": {
     "total": 2791,
@@ -17,9 +17,9 @@
       "kompas_scholarship_parse_junk": 1,
       "kompas_scholarship_offsite_new": 316,
       "kompas_programs_extra": 333,
-      "sito_programs_removed": 108,
       "direct_zero_programs": 5,
       "kompas_fee_mismatch": 731,
+      "sito_programs_removed": 67,
       "kompas_programs_missing": 58,
       "kompas_program_foreign_currency": 9,
       "direct_site_unreachable": 1,
@@ -36,6 +36,7 @@
       "kompas_fee_currency_reviewed": 1,
       "sito_offsite_unverified": 214,
       "kompas_campus_missing": 57,
+      "sito_rollback_undercrawl": 41,
       "kompas_mark_removed_stale_mark": 19,
       "kompas_fee_absent": 48,
       "direct_fee_unlinked": 111,
@@ -10420,15 +10421,6 @@
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
     },
     {
-      "id": "sito_removed_abertay",
-      "slug": "abertay",
-      "name": "Abertay University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (12 программ снято с сайта вуза). Убрано 49 catalog-only программ, которых там нет: International Foundation Year — Business and Management · International Foundation Year — Engineering, Computing and Science · International Foundation Year — Art, Design and Media · International Foundation Year — Humanities, Law and Social Sciences · Pre-Master Programme — Business … и ещё 44. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "id": "aberystwyth||kompas_scholarship_offsite_new||session6-scholardiff",
       "slug": "aberystwyth",
       "name": "Aberystwyth University",
@@ -11557,15 +11549,6 @@
       "applied": false
     },
     {
-      "id": "sito_removed_arizona-state",
-      "slug": "arizona-state",
-      "name": "Arizona State University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (18 программ снято с сайта вуза). Убрано 243 catalog-only программ, которых там нет: BFA Art (Textiles) · BA Media Arts and Sciences (Interdisciplinary Arts and Performance) · MM Music Composition ·  Business Exploratory · MNS Natural Science (Physics) … и ещё 238. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "arts-university-bournemouth",
       "name": "Arts University Bournemouth",
       "catalog": 21,
@@ -12249,15 +12232,6 @@
       "decisionNote": "Решение 2026-07-29: в каталог записана цена источника (kompas-adopt-fees --threshold=2, 1720 цен у 98 вузов)."
     },
     {
-      "id": "sito_removed_auburn",
-      "slug": "auburn",
-      "name": "Auburn University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (41 программ снято с сайта вуза). Убрано 105 catalog-only программ, которых там нет: BS Agriculture · BS Animal Sciences · BS Agronomy and Soils · BS Food Science · B.Arch Architecture … и ещё 100. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "id": "aurak||direct_unreachable||site",
       "slug": "aurak",
       "name": "aurak",
@@ -12635,15 +12609,6 @@
       "detail": "«Postgraduate Diploma in Culinary Arts»: в каталоге 22000 CHF, у источника 29100 CHF (edvoy), расхождение 24.4%, основа цены источника: approxAnnual.",
       "currency": "CHF",
       "decisionNote": "Решение 2026-07-29: в каталог записана цена источника (kompas-adopt-fees --threshold=2, 1720 цен у 98 вузов)."
-    },
-    {
-      "id": "sito_removed_bhms",
-      "slug": "bhms",
-      "name": "BHMS — Business and Hotel Management School",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (12 программ снято с сайта вуза). Убрано 34 catalog-only программ, которых там нет: Foundation in Hospitality and Business · Pre-University Programme · Preparatory English Programme · Summer Programme · BA in Hotel & Hospitality Management … и ещё 29. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "id": "bilgi-university||kompas_scholarship_offsite_new||session6-scholardiff",
@@ -13338,15 +13303,6 @@
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
     },
     {
-      "id": "sito_removed_bradford",
-      "slug": "bradford",
-      "name": "University of Bradford",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (36 программ снято с сайта вуза). Убрано 46 catalog-only программ, которых там нет: International Foundation Year — Engineering, Computing and Science · International Foundation Year — Art, Design and Media · International Foundation Year — Humanities, Law and Social Sciences · Pre-Master Programme — Business · Pre-Master Programme — Engineering and Computing … и ещё 41. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "brighton",
       "name": "University of Brighton",
       "catalog": 403,
@@ -13378,15 +13334,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
-    },
-    {
-      "id": "sito_removed_brighton",
-      "slug": "brighton",
-      "name": "University of Brighton",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (14 программ снято с сайта вуза). Убрано 403 catalog-only программ, которых там нет: Foundation Certificate — Arts and Humanities · Foundation Certificate — Law and Social Sciences · Foundation Certificate — Science and Engineering · Foundation Certificate — Business, Economics and Finance · Pre-Master's — Arts and Humanities … и ещё 398. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "bristol",
@@ -13470,15 +13417,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
-    },
-    {
-      "id": "sito_removed_brunel",
-      "slug": "brunel",
-      "name": "Brunel University of London",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (14 программ снято с сайта вуза). Убрано 34 catalog-only программ, которых там нет: International Foundation Year — Business · International Foundation Year — Art & Design · International Foundation Year — Health & Life Sciences · Pre-Master Programme — Business · BSc (Hons) International Business … и ещё 29. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "bsbi",
@@ -13928,15 +13866,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
-    },
-    {
-      "id": "sito_removed_canterbury-nz",
-      "slug": "canterbury-nz",
-      "name": "University of Canterbury",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (12 программ снято с сайта вуза). Убрано 96 catalog-only программ, которых там нет: UTP Stage 1 — pathway to UC Year 2 · UTP Stage 2 — Commerce · UTP Stage 2 — Engineering · UTP Stage 2 — Product Design · UTP Stage 2 — Science … и ещё 91. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "cape-breton-university",
@@ -14469,15 +14398,6 @@
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
     },
     {
-      "id": "sito_removed_charles-sturt",
-      "slug": "charles-sturt",
-      "name": "Charles Sturt University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (14 программ снято с сайта вуза). Убрано 41 catalog-only программ, которых там нет: CSU Study Centres Foundation Studies · CSU Foundation Studies — Extended · Diploma of Business · Diploma of Commerce · Diploma of Accounting … и ещё 36. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "chester",
       "name": "University of Chester",
       "catalog": 724,
@@ -14492,15 +14412,6 @@
       "issue": "kompas_programs_extra",
       "severity": "warning",
       "detail": "В карточке 724 программ, которых нет ни в одном назначенном источнике (kaplan, edvoy). Либо источник их не показывает, либо запись устарела/выдумана — удалять нельзя (правило 4), нужно решение. Примеры: «BSc Computer Science», «BA Business Management», «BSc Nursing (Adult)», «BA Education Studies», «LLB Law», «BSc Psychology»"
-    },
-    {
-      "id": "sito_removed_chester",
-      "slug": "chester",
-      "name": "University of Chester",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (28 программ снято с сайта вуза). Убрано 701 catalog-only программ, которых там нет: BSc Computer Science · BA Business Management · BSc Nursing (Adult) · BA Education Studies · BSc Psychology … и ещё 696. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "city-london",
@@ -15483,15 +15394,6 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
-      "id": "sito_removed_cranfield",
-      "slug": "cranfield",
-      "name": "Cranfield University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (10 программ снято с сайта вуза). Убрано 86 catalog-only программ, которых там нет: Foundation Certificate — Arts and Humanities · Foundation Certificate — Law and Social Sciences · Foundation Certificate — Science and Engineering · Foundation Certificate — Business, Economics and Finance · Pre-Master's — Business, Economics and Finance … и ещё 81. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "id": "cretin-derham-hall||kompas_scholarship_not_on_site||session6-scholardiff",
       "slug": "cretin-derham-hall",
       "name": "Cretin-Derham Hall",
@@ -15845,15 +15747,6 @@
       "decisionNote": "Решение 2026-07-29: непроверяемые сняты (kompas-scholarships-apply, откат scholarship-apply-backup.json)."
     },
     {
-      "id": "sito_removed_de-montfort",
-      "slug": "de-montfort",
-      "name": "De Montfort University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (17 программ снято с сайта вуза). Убрано 51 catalog-only программ, которых там нет: International Foundation Year — Business and Management · International Foundation Year — Engineering, Computing and Science · International Foundation Year — Art, Design and Media · International Foundation Year — Humanities, Law and Social Sciences · Pre-Master Programme — Business … и ещё 46. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "de-montfort-dubai",
       "name": "De Montfort University Dubai",
       "catalog": 266,
@@ -15885,15 +15778,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
-    },
-    {
-      "id": "sito_removed_de-montfort-dubai",
-      "slug": "de-montfort-dubai",
-      "name": "De Montfort University Dubai",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (24 программ снято с сайта вуза). Убрано 265 catalog-only программ, которых там нет: International Foundation — Business and Law · International Foundation — Computing and Engineering · International Foundation — Art and Design · Pre-Master — Business · BA (Hons) Accounting and Finance … и ещё 260. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "deakin",
@@ -16287,15 +16171,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
-    },
-    {
-      "id": "sito_removed_deakin",
-      "slug": "deakin",
-      "name": "Deakin University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (14 программ снято с сайта вуза). Убрано 41 catalog-only программ, которых там нет: Diploma of Management · Diploma of Architecture · Bachelor of Marketing · Bachelor of International Business · Bachelor of Business (Event Management) … и ещё 36. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "depaul",
@@ -17136,15 +17011,6 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
-      "id": "sito_removed_edinburgh-napier",
-      "slug": "edinburgh-napier",
-      "name": "Edinburgh Napier University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (33 программ снято с сайта вуза). Убрано 51 catalog-only программ, которых там нет: BSc Computer Science · BN Nursing · BA Tourism Management · BA Journalism · BSc Cybersecurity and Forensics … и ещё 46. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "id": "edith-cowan||kompas_scholarship_not_on_site||session6-scholardiff",
       "slug": "edith-cowan",
       "name": "Edith Cowan University",
@@ -17747,15 +17613,6 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
-      "id": "sito_removed_exeter",
-      "slug": "exeter",
-      "name": "University of Exeter",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (21 программ снято с сайта вуза). Убрано 121 catalog-only программ, которых там нет: BEng / MEng Engineering · MB ChB Medicine · BSc Climate Science · Executive MBA · MSc Finance … и ещё 116. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "fairleigh-dickinson-university-vancouver",
       "name": "Fairleigh Dickinson University, Vancouver",
       "catalog": 212,
@@ -18044,15 +17901,6 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
-      "id": "sito_removed_galway",
-      "slug": "galway",
-      "name": "University of Galway",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (9 программ снято с сайта вуза). Убрано 196 catalog-only программ, которых там нет: Commerce BCom · Law BCL · Medicine MB BCh BAO · Computer Science BSc · Engineering BE … и ещё 191. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "gannon",
       "name": "Gannon University",
       "catalog": 44,
@@ -18174,15 +18022,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
-    },
-    {
-      "id": "sito_removed_gannon",
-      "slug": "gannon",
-      "name": "Gannon University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (10 программ снято с сайта вуза). Убрано 40 catalog-only программ, которых там нет: BS Accounting · BS Business Administration · BS Marketing · BS Management · BS Computer Science … и ещё 35. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "gbs-dubai",
@@ -18660,15 +18499,6 @@
       "decisionNote": "Решение 2026-07-29: в каталог записана цена источника (kompas-adopt-fees --threshold=2, 1720 цен у 98 вузов)."
     },
     {
-      "id": "sito_removed_george-mason",
-      "slug": "george-mason",
-      "name": "George Mason University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (14 программ снято с сайта вуза). Убрано 50 catalog-only программ, которых там нет: BS Civil and Infrastructure Engineering · BS Statistics · BS Systems and Industrial Engineering · BS Business · BS Public Health … и ещё 45. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "gisma",
       "name": "GISMA University of Applied Sciences",
       "catalog": 65,
@@ -19122,15 +18952,6 @@
       "detail": "«MSci Software Engineering Faster Route»: в каталоге 33210 GBP, у источника 31800 GBP (edvoy), расхождение 4.2%, основа цены источника: approxAnnual.",
       "currency": "GBP",
       "decisionNote": "Решение 2026-07-29: в каталог записана цена источника (kompas-adopt-fees --threshold=2, 1720 цен у 98 вузов)."
-    },
-    {
-      "id": "sito_removed_glasgow",
-      "slug": "glasgow",
-      "name": "University of Glasgow",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (20 программ снято с сайта вуза). Убрано 69 catalog-only программ, которых там нет: Foundation Certificate — Arts and Humanities · Foundation Certificate — Business, Economics and Finance · Foundation Certificate — Science and Engineering · Pre-Master's — Arts and Humanities · Pre-Master's — Business, Economics and Finance … и ещё 64. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "glasgow-caledonian-university",
@@ -20049,15 +19870,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
-    },
-    {
-      "id": "sito_removed_griffith",
-      "slug": "griffith",
-      "name": "Griffith University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (16 программ снято с сайта вуза). Убрано 27 catalog-only программ, которых там нет: Diploma of Arts and Communication · Bachelor of Marketing · Bachelor of Government and International Relations · Bachelor of Asian Studies · Bachelor of Business / Bachelor of Laws (double) … и ещё 22. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "griffith-ireland",
@@ -21016,15 +20828,6 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
-      "id": "sito_removed_hofstra",
-      "slug": "hofstra",
-      "name": "Hofstra University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (21 программ снято с сайта вуза). Убрано 20 catalog-only программ, которых там нет: BA English · BA International Studies · BA Public Policy · BA Fine Arts · BA Theatre Arts … и ещё 15. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "hull",
       "name": "University of Hull",
       "catalog": 24,
@@ -21323,15 +21126,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
-    },
-    {
-      "id": "sito_removed_illinois-state",
-      "slug": "illinois-state",
-      "name": "Illinois State University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (21 программ снято с сайта вуза). Убрано 94 catalog-only программ, которых там нет: BS Accountancy · BS Management · BS Marketing · BS Information Systems · BS Computer Science … и ещё 89. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "inseec-business-school",
@@ -21939,15 +21733,6 @@
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
     },
     {
-      "id": "sito_removed_keele",
-      "slug": "keele",
-      "name": "Keele University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (16 программ снято с сайта вуза). Убрано 27 catalog-only программ, которых там нет: International Foundation Year — Business · International Foundation Year — Art & Design · Pre-Master Programme — Business · BA (Hons) International Business · BA (Hons) Accounting and Finance … и ещё 22. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "kennesaw-state-university",
       "name": "Kennesaw State University",
       "catalog": 338,
@@ -22475,15 +22260,6 @@
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
     },
     {
-      "id": "sito_removed_la-trobe",
-      "slug": "la-trobe",
-      "name": "La Trobe University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (26 программ снято с сайта вуза). Убрано 43 catalog-only программ, которых там нет: Diploma of Commerce · Diploma of Accounting and Finance · Diploma of Biomedical Science · Bachelor of Commerce · Bachelor of International Business … и ещё 38. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "id": "lancashire||kompas_scholarship_offsite_new||session6-scholardiff",
       "slug": "lancashire",
       "name": "University of Central Lancashire",
@@ -22780,15 +22556,6 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
-      "id": "sito_removed_leeds-beckett",
-      "slug": "leeds-beckett",
-      "name": "Leeds Beckett University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (21 программ снято с сайта вуза). Убрано 13 catalog-only программ, которых там нет: BSc Computer Science · BA Business Management · BSc Sport Science · LLB Law · BSc Nursing (Adult) … и ещё 8. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "id": "leeds-isc||kompas_scholarship_offsite_new||session6-scholardiff",
       "slug": "leeds-isc",
       "name": "University of Leeds International Study Centre",
@@ -23044,15 +22811,6 @@
       "issue": "kompas_programs_extra",
       "severity": "warning",
       "detail": "В карточке 34 программ, которых нет ни в одном назначенном источнике (edvoy). Либо источник их не показывает, либо запись устарела/выдумана — удалять нельзя (правило 4), нужно решение. Примеры: «Business Studies BBS», «Computer Science BSc», «Electronic and Computer Engineering BE», «Law LLB», «Sport and Exercise Sciences BSc», «Marketing MSc»"
-    },
-    {
-      "id": "sito_removed_limerick",
-      "slug": "limerick",
-      "name": "University of Limerick",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (16 программ снято с сайта вуза). Убрано 34 catalog-only программ, которых там нет: Business Studies BBS · Computer Science BSc · Electronic and Computer Engineering BE · Law LLB · Sport and Exercise Sciences BSc … и ещё 29. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "id": "lincoln-uk||kompas_scholarship_offsite_new||session6-scholardiff",
@@ -23696,15 +23454,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
-    },
-    {
-      "id": "sito_removed_london-met",
-      "slug": "london-met",
-      "name": "London Metropolitan University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (18 программ снято с сайта вуза). Убрано 18 catalog-only программ, которых там нет: BSc Computer Science · BSc Cyber Security · BA Business Administration · BSc Nutrition and Food Science · BA Fashion Design … и ещё 13. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "london-school-of-business-and-finance",
@@ -27053,15 +26802,6 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
-      "id": "sito_removed_pace",
-      "slug": "pace",
-      "name": "Pace University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (21 программ снято с сайта вуза). Убрано 183 catalog-only программ, которых там нет: BA Biological Psychology · BA Digital Journalism · BA Communications · BA English · BA Personality and Social Psychology … и ещё 178. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "pacific",
       "name": "University of the Pacific",
       "catalog": 89,
@@ -27312,15 +27052,6 @@
       "decisionNote": "Решение 2026-07-29: в каталог записана цена источника (kompas-adopt-fees --threshold=2, 1720 цен у 98 вузов)."
     },
     {
-      "id": "sito_removed_pacific",
-      "slug": "pacific",
-      "name": "University of the Pacific",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (18 программ снято с сайта вуза). Убрано 89 catalog-only программ, которых там нет: BA Psychology · BA Studio Art · BS Biological Sciences · BS Chemistry · BS Physics … и ещё 84. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "id": "penn-state-dickinson-law||kompas_card_new_iapro||session4.5",
       "slug": "penn-state-dickinson-law",
       "name": "Penn State Dickinson Law",
@@ -27452,15 +27183,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
-    },
-    {
-      "id": "sito_removed_plymouth",
-      "slug": "plymouth",
-      "name": "University of Plymouth",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (14 программ снято с сайта вуза). Убрано 35 catalog-only программ, которых там нет: International Foundation Year — Business · International Foundation Year — Engineering & Computing · International Foundation Year — Art & Design · International Foundation Year — Health & Life Sciences · Pre-Master Programme — Business … и ещё 30. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "id": "porto-business-school||kompas_scholarship_offsite_new||session6-scholardiff",
@@ -28420,15 +28142,6 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
-      "id": "sito_removed_ravensbourne",
-      "slug": "ravensbourne",
-      "name": "Ravensbourne University London",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (8 программ снято с сайта вуза). Убрано 35 catalog-only программ, которых там нет: BA (Hons) Broadcasting · BA (Hons) Film Production · MA Digital Media · BA (Hons) 3D Animation · BA (Hons) Games Art … и ещё 30. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "reach-community-college",
       "name": "Reach Community College",
       "catalog": 4,
@@ -29287,15 +29000,6 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
-      "id": "sito_removed_simmons",
-      "slug": "simmons",
-      "name": "Simmons University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (18 программ снято с сайта вуза). Убрано 87 catalog-only программ, которых там нет: Master of Library and Information Science · Master of Social Work · Master of Public Health · Bachelor of Social Work (BSW): Online · PhD in Behavior Analysis: Meet the Students and Faculty Panel Webinar … и ещё 82. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "id": "simon-fraser||kompas_scholarship_not_on_site||session6-scholardiff",
       "slug": "simon-fraser",
       "name": "Simon Fraser University",
@@ -29469,15 +29173,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
-    },
-    {
-      "id": "sito_removed_soas",
-      "slug": "soas",
-      "name": "SOAS University of London",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (37 программ снято с сайта вуза). Убрано 71 catalog-only программ, которых там нет: LLB Law · BA Arabic and Middle Eastern Studies · BMus Music · MA Global Political Economy · PhD Research Programmes … и ещё 66. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "sofia-university",
@@ -29675,15 +29370,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
-    },
-    {
-      "id": "sito_removed_southern-cross-university",
-      "slug": "southern-cross-university",
-      "name": "Southern Cross University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (47 программ снято с сайта вуза). Убрано 99 catalog-only программ, которых там нет: Graduate Certificate in Project Management - 2026 - SCU · Graduate Certificate in Project Management - 2027 - SCU · Graduate Certificate in Advanced Naturopathic Medicine - 2026 - SCU · Graduate Diploma of Project Management - 2026 - SCU · Graduate Diploma of Project Management - 2027 - SCU … и ещё 94. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "id": "southwest-minnesota-state-university||kompas_scholarship_offsite_new||session6-scholardiff",
@@ -29984,15 +29670,6 @@
       "detail": "«BSc Psychology»: в каталоге 15500 GBP, у источника 19500 GBP (edvoy), расхождение 20.5%, основа цены источника: approxAnnual.",
       "currency": "GBP",
       "decisionNote": "Решение 2026-07-29: в каталог записана цена источника (kompas-adopt-fees --threshold=2, 1720 цен у 98 вузов)."
-    },
-    {
-      "id": "sito_removed_stirling",
-      "slug": "stirling",
-      "name": "University of Stirling",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (15 программ снято с сайта вуза). Убрано 97 catalog-only программ, которых там нет: BSc Computing Science · BA Business Studies · BSc Nursing · BSc Sport and Exercise Science · BA Film and Media … и ещё 92. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "strate-design",
@@ -30340,15 +30017,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
-    },
-    {
-      "id": "sito_removed_sussex",
-      "slug": "sussex",
-      "name": "University of Sussex",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (33 программ снято с сайта вуза). Убрано 243 catalog-only программ, которых там нет: BSc Computer Science · BSc Economics · BSc Psychology · BA International Relations · BSc Neuroscience … и ещё 238. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "swansea",
@@ -30858,15 +30526,6 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: не подтверждённое источником снято; matched/nearMiss/linked оставлены."
-    },
-    {
-      "id": "sito_removed_sydney",
-      "slug": "sydney",
-      "name": "The University of Sydney",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (10 программ снято с сайта вуза). Убрано 36 catalog-only программ, которых там нет: Taylors Foundation — Standard (40 weeks) · Taylors Foundation — Extended (60 weeks) · Taylors Foundation — Intensive (30 weeks) · Taylors Foundation — Health Sciences stream · Bachelor of Commerce (Liberal Studies) … и ещё 31. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "sydney-institute-of-business-and-technology",
@@ -34101,15 +33760,6 @@
       "detail": "В карточке 70 программ, которых нет ни в одном назначенном источнике (edvoy). Либо источник их не показывает, либо запись устарела/выдумана — удалять нельзя (правило 4), нужно решение. Примеры: «BA American Studies», «BS Biology», «BS Chemistry», «BA Communication», «BS Computer Science», «BS Criminal Justice»"
     },
     {
-      "id": "sito_removed_western-new-england",
-      "slug": "western-new-england",
-      "name": "Western New England University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (8 программ снято с сайта вуза). Убрано 70 catalog-only программ, которых там нет: BA American Studies · BS Biology · BS Chemistry · BA Communication · BS Computer Science … и ещё 65. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "slug": "western-sydney",
       "name": "Western Sydney University",
       "catalog": 90,
@@ -34358,15 +34008,6 @@
       "detail": "«Bachelor of International Business»: в каталоге 32500 AUD, у источника 35868 AUD (edvoy), расхождение 9.4%, основа цены источника: approxAnnual.",
       "currency": "AUD",
       "decisionNote": "Решение 2026-07-29: в каталог записана цена источника (kompas-adopt-fees --threshold=2, 1720 цен у 98 вузов)."
-    },
-    {
-      "id": "sito_removed_western-sydney",
-      "slug": "western-sydney",
-      "name": "Western Sydney University",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (9 программ снято с сайта вуза). Убрано 78 catalog-only программ, которых там нет: Foundation Studies (Standard / Extended) · Foundation Studies — Intensive · Diploma of Commerce · Diploma of Accounting · Diploma of Construction Management … и ещё 73. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
     },
     {
       "slug": "western-washington",
@@ -34891,15 +34532,6 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
-      "id": "sito_removed_wittenborg",
-      "slug": "wittenborg",
-      "name": "Wittenborg University of Applied Sciences",
-      "issue": "sito_programs_removed",
-      "severity": "warning",
-      "detail": "Офсайт обойдён полностью (11 программ снято с сайта вуза). Убрано 107 catalog-only программ, которых там нет: BBA International Business Administration · MSc International Event, Music and Festival Management · Foundation Year in Business · MBA with specialisation in Clean Technology · structure - MSc International Event Management … и ещё 102. Откат: sito-backup.json.",
-      "checkedAt": "2026-07-31"
-    },
-    {
       "id": "wollongong-dubai||direct_zero_programs||site",
       "slug": "wollongong-dubai",
       "name": "University of Wollongong in Dubai",
@@ -35076,6 +34708,15 @@
       "issue": "kompas_campus_missing",
       "severity": "info",
       "detail": "Источник называет кампусы, которых нет в карточке (1): Abertay Campus."
+    },
+    {
+      "id": "sito_removed_abertay",
+      "slug": "abertay",
+      "name": "Abertay University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "sito_unverified_abu-dhabi-university",
@@ -35689,6 +35330,15 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
+      "id": "sito_removed_arizona-state",
+      "slug": "arizona-state",
+      "name": "Arizona State University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "id": "sito_unverified_arts-university-bournemouth",
       "slug": "arts-university-bournemouth",
       "name": "Arts University Bournemouth",
@@ -35836,6 +35486,15 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
+      "id": "sito_removed_auburn",
+      "slug": "auburn",
+      "name": "Auburn University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "id": "sito_unverified_australian-institute-of-technical-training",
       "slug": "australian-institute-of-technical-training",
       "name": "Australian Institute of Technical Training",
@@ -35960,6 +35619,15 @@
       "decision": "applied",
       "decidedAt": "2026-07-25T16:35:05.553Z",
       "applied": true
+    },
+    {
+      "id": "sito_removed_bhms",
+      "slug": "bhms",
+      "name": "BHMS — Business and Hotel Management School",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "slug": "birmingham",
@@ -36170,6 +35838,15 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
+      "id": "sito_removed_bradford",
+      "slug": "bradford",
+      "name": "University of Bradford",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "slug": "brighton",
       "name": "University of Brighton",
       "catalog": 565,
@@ -36184,6 +35861,15 @@
       "issue": "kompas_programs_missing",
       "severity": "info",
       "detail": "Источник (kaplan, edvoy) даёт 173 программ, в карточке 565. Нет в карточке: 11. Примеры: «GCSE Grade 6», «GCSE Grade 7», «GCSE Grade 8», «GCSE Grade 9», «GCSE Grade 4», «GCSE Grade 5»"
+    },
+    {
+      "id": "sito_removed_brighton",
+      "slug": "brighton",
+      "name": "University of Brighton",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "slug": "bristol",
@@ -36226,6 +35912,15 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
+    },
+    {
+      "id": "sito_removed_brunel",
+      "slug": "brunel",
+      "name": "Brunel University of London",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "bsbi||direct_fee_unlinked||18000-EUR-Master in Global MBA",
@@ -36882,6 +36577,15 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
+      "id": "sito_removed_canterbury-nz",
+      "slug": "canterbury-nz",
+      "name": "University of Canterbury",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "id": "sito_unverified_cape-breton-university",
       "slug": "cape-breton-university",
       "name": "Cape Breton University",
@@ -37019,6 +36723,15 @@
       "detail": "Источник называет кампусы, которых нет в карточке (7): CSU Sydney Campus, CSU Port Macquarie Campus, CSU Waaga Waaga Campus, CSU Orange Campus, CSU Albury Wodonga Campus, CSU Dubbo Campus."
     },
     {
+      "id": "sito_removed_charles-sturt",
+      "slug": "charles-sturt",
+      "name": "Charles Sturt University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "slug": "chester",
       "name": "University of Chester",
       "catalog": 0,
@@ -37051,6 +36764,15 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
+    },
+    {
+      "id": "sito_removed_chester",
+      "slug": "chester",
+      "name": "University of Chester",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "sito_unverified_city-london",
@@ -37223,6 +36945,15 @@
       "severity": "info",
       "detail": "Офсайт не дал полной выгрузки (выгрузки нет — сайт не отдался). 2 catalog-only программ ОСТАВЛЕНЫ с меткой (решение владельца: без проверки не убирать).",
       "checkedAt": "2026-07-31"
+    },
+    {
+      "id": "sito_removed_cranfield",
+      "slug": "cranfield",
+      "name": "Cranfield University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "cretin-derham-hall||kompas_scholarship_offsite_new||session6-scholardiff",
@@ -37574,6 +37305,15 @@
       "detail": "Источник называет кампусы, которых нет в карточке (1): DMU Leicester Campus."
     },
     {
+      "id": "sito_removed_de-montfort",
+      "slug": "de-montfort",
+      "name": "De Montfort University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "slug": "de-montfort-dubai",
       "name": "De Montfort University Dubai",
       "catalog": 0,
@@ -37589,6 +37329,15 @@
       "severity": "info",
       "detail": "У источника есть цена по 17 программам, в карточке цены нет. Примеры: «MSc Artificial Intelligence» 93713 AED; «MBA Master of Business Administration (Global)» 104186 AED; «MA/MSc Design Innovation and Management» 93713 AED; «MA Fashion Management with Marketing» 93713 AED; «BSc (Hons) Accounting and Finance» 63614 AED",
       "decisionNote": "Решение 2026-07-29: у источника цены нет — на сайте честное «Уточняется»."
+    },
+    {
+      "id": "sito_removed_de-montfort-dubai",
+      "slug": "de-montfort-dubai",
+      "name": "De Montfort University Dubai",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "slug": "deakin",
@@ -37623,6 +37372,15 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
+    },
+    {
+      "id": "sito_removed_deakin",
+      "slug": "deakin",
+      "name": "Deakin University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "debrecen||kompas_scholarship_offsite_new||session6-scholardiff",
@@ -37913,6 +37671,15 @@
       "decisionNote": "Решение 2026-07-29: цена источника (adopt-fees >2%)."
     },
     {
+      "id": "sito_removed_edinburgh-napier",
+      "slug": "edinburgh-napier",
+      "name": "Edinburgh Napier University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "id": "edith-cowan||kompas_mark_removed_stale_mark||session4.5",
       "slug": "edith-cowan",
       "name": "Edith Cowan University",
@@ -38061,6 +37828,15 @@
       "severity": "info",
       "detail": "У источника есть цена по 17 программам, в карточке цены нет. Примеры: «Master in Artificial Intelligence for Business - Geneva» 21920 CHF; «Master of Business Administration (MBA) - Geneva» 39750 CHF; «Master in Innovation & Entrepreneurship - Geneva» 21920 CHF; «Master in Management - Geneva» 21920 CHF; «Master in Business Analytics & Data Science - Geneva» 21920 CHF",
       "decisionNote": "Решение 2026-07-29: у источника цены нет — на сайте честное «Уточняется»."
+    },
+    {
+      "id": "sito_removed_exeter",
+      "slug": "exeter",
+      "name": "University of Exeter",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "eynesbury||kompas_scholarship_offsite_new||session6-scholardiff",
@@ -38277,6 +38053,24 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
+      "id": "sito_removed_galway",
+      "slug": "galway",
+      "name": "University of Galway",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
+      "id": "sito_removed_gannon",
+      "slug": "gannon",
+      "name": "Gannon University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "slug": "gbs-dubai",
       "name": "Global Banking School Dubai",
       "catalog": 3,
@@ -38409,6 +38203,15 @@
       "severity": "info",
       "detail": "Ещё 1 расхождений цены сверх показанных 20 — полный список в sources/kompas/diff-report.json.",
       "decisionNote": "Решение 2026-07-29: цена источника (adopt-fees >2%)."
+    },
+    {
+      "id": "sito_removed_george-mason",
+      "slug": "george-mason",
+      "name": "George Mason University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "gilbert-school||kompas_scholarship_offsite_new||session6-scholardiff",
@@ -38645,6 +38448,15 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
+      "id": "sito_removed_glasgow",
+      "slug": "glasgow",
+      "name": "University of Glasgow",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "slug": "glasgow-caledonian-university",
       "name": "Glasgow Caledonian University",
       "catalog": 129,
@@ -38851,6 +38663,15 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
+    },
+    {
+      "id": "sito_removed_griffith",
+      "slug": "griffith",
+      "name": "Griffith University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "slug": "griffith-ireland",
@@ -39213,6 +39034,15 @@
       "checkedAt": "2026-07-31"
     },
     {
+      "id": "sito_removed_hofstra",
+      "slug": "hofstra",
+      "name": "Hofstra University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "id": "htmi-international-hotel-and-tourism-institute-switzerland||kompas_mark_removed_stale_mark||session4.5",
       "slug": "htmi-international-hotel-and-tourism-institute-switzerland",
       "name": "HTMi - International Hotel and Tourism Institute (Switzerland)",
@@ -39431,6 +39261,15 @@
       "severity": "info",
       "detail": "Офсайт не дал полной выгрузки (программ снято 3 < 8). 1 catalog-only программ ОСТАВЛЕНЫ с меткой (решение владельца: без проверки не убирать).",
       "checkedAt": "2026-07-31"
+    },
+    {
+      "id": "sito_removed_illinois-state",
+      "slug": "illinois-state",
+      "name": "Illinois State University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "sito_unverified_inseec-business-school",
@@ -39938,6 +39777,15 @@
       "detail": "Источник называет кампусы, которых нет в карточке (2): Keele Hospital Campus, Keele Guy Hilton Research Centre."
     },
     {
+      "id": "sito_removed_keele",
+      "slug": "keele",
+      "name": "Keele University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "id": "sito_unverified_kennesaw-state-university",
       "slug": "kennesaw-state-university",
       "name": "Kennesaw State University",
@@ -40037,6 +39885,15 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
+    },
+    {
+      "id": "sito_removed_la-trobe",
+      "slug": "la-trobe",
+      "name": "La Trobe University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "slug": "lancaster",
@@ -40191,6 +40048,15 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
+      "id": "sito_removed_leeds-beckett",
+      "slug": "leeds-beckett",
+      "name": "Leeds Beckett University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "id": "sito_unverified_leeds-trinity-university",
       "slug": "leeds-trinity-university",
       "name": "Leeds Trinity University",
@@ -40293,6 +40159,15 @@
       "severity": "info",
       "detail": "Офсайт не дал полной выгрузки (обход обрезан потолком страниц). 31 catalog-only программ ОСТАВЛЕНЫ с меткой (решение владельца: без проверки не убирать).",
       "checkedAt": "2026-07-31"
+    },
+    {
+      "id": "sito_removed_limerick",
+      "slug": "limerick",
+      "name": "University of Limerick",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "lincoln-nz||kompas_mark_removed_stale_mark||session4.5",
@@ -40403,6 +40278,15 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
+    },
+    {
+      "id": "sito_removed_london-met",
+      "slug": "london-met",
+      "name": "London Metropolitan University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "sito_unverified_london-south-bank",
@@ -42087,6 +41971,24 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
+      "id": "sito_removed_pace",
+      "slug": "pace",
+      "name": "Pace University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
+      "id": "sito_removed_pacific",
+      "slug": "pacific",
+      "name": "University of the Pacific",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "id": "pihms||kompas_scholarship_offsite_new||session6-scholardiff",
       "slug": "pihms",
       "name": "Pacific International Hotel Management School (PIHMS)",
@@ -42118,6 +42020,15 @@
       "issue": "kompas_campus_missing",
       "severity": "info",
       "detail": "Источник называет кампусы, которых нет в карточке (1): Online Campus."
+    },
+    {
+      "id": "sito_removed_plymouth",
+      "slug": "plymouth",
+      "name": "University of Plymouth",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "slug": "portsmouth",
@@ -42322,6 +42233,15 @@
       "severity": "info",
       "detail": "Ещё 22 расхождений цены сверх показанных 20 — полный список в sources/kompas/diff-report.json.",
       "decisionNote": "Решение 2026-07-29: цена источника (adopt-fees >2%)."
+    },
+    {
+      "id": "sito_removed_ravensbourne",
+      "slug": "ravensbourne",
+      "name": "Ravensbourne University London",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "sito_unverified_reach-community-college",
@@ -42767,6 +42687,15 @@
       "checkedAt": "2026-07-31"
     },
     {
+      "id": "sito_removed_simmons",
+      "slug": "simmons",
+      "name": "Simmons University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "id": "simon-fraser||kompas_scholarship_offsite_new||session6-scholardiff",
       "slug": "simon-fraser",
       "name": "Simon Fraser University",
@@ -42815,6 +42744,15 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Брак разбора снят clean-скриптом (сессия 6)."
+    },
+    {
+      "id": "sito_removed_soas",
+      "slug": "soas",
+      "name": "SOAS University of London",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "sofia-university||kompas_scholarship_offsite_new||session6-scholardiff",
@@ -42919,6 +42857,15 @@
       "issue": "kompas_campus_missing",
       "severity": "info",
       "detail": "Источник называет кампусы, которых нет в карточке (1): SCU Lismore Campus."
+    },
+    {
+      "id": "sito_removed_southern-cross-university",
+      "slug": "southern-cross-university",
+      "name": "Southern Cross University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "southern-denmark-university||kompas_scholarship_offsite_new||session6-scholardiff",
@@ -43426,6 +43373,15 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
+      "id": "sito_removed_stirling",
+      "slug": "stirling",
+      "name": "University of Stirling",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "id": "sito_unverified_strate-design",
       "slug": "strate-design",
       "name": "Strate School of Design",
@@ -43536,6 +43492,15 @@
       "severity": "info",
       "detail": "Офсайт не дал полной выгрузки (программ снято 7 < 8). 173 catalog-only программ ОСТАВЛЕНЫ с меткой (решение владельца: без проверки не убирать).",
       "checkedAt": "2026-07-31"
+    },
+    {
+      "id": "sito_removed_sussex",
+      "slug": "sussex",
+      "name": "University of Sussex",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "slug": "swansea",
@@ -43678,6 +43643,15 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
+    },
+    {
+      "id": "sito_removed_sydney",
+      "slug": "sydney",
+      "name": "The University of Sydney",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "sydney-institute-of-business-and-technology||kompas_scholarship_offsite_new||session6-scholardiff",
@@ -45031,6 +45005,24 @@
       "checkedAt": "2026-07-31"
     },
     {
+      "id": "sito_removed_western-new-england",
+      "slug": "western-new-england",
+      "name": "Western New England University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
+      "id": "sito_removed_western-sydney",
+      "slug": "western-sydney",
+      "name": "Western Sydney University",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
+    },
+    {
       "id": "western-washington||kompas_scholarship_offsite_new||session6-scholardiff",
       "slug": "western-washington",
       "name": "Western Washington University",
@@ -45105,6 +45097,15 @@
       "decidedAt": "2026-07-29T07:18:52.790Z",
       "applied": false,
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
+    },
+    {
+      "id": "sito_removed_wittenborg",
+      "slug": "wittenborg",
+      "name": "Wittenborg University of Applied Sciences",
+      "issue": "sito_rollback_undercrawl",
+      "severity": "info",
+      "detail": "ОТКАЧЕНО 2026-08-01: обход офсайта признан неполным (нашёл меньше четверти программ карточки), снятые программы возвращены с меткой catalog-only. Решение владельца 2026-08-01.",
+      "checkedAt": "2026-08-01"
     },
     {
       "id": "sito_unverified_wollongong-dubai",
