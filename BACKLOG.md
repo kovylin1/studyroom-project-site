@@ -39,6 +39,16 @@
   **Важно про цену:** портал НЕ показывает цену программы — только стоимость обучения кампуса
   для уровня (Campus Costs). У программ стоит `feeBasis: "campusLevelStated"`, программных цен
   не выдумано. Живой каталог не тронут.
+  **2026-08-02: сбор закоммичен и запушен** — `8af05278` (коллектор + 512 сырых дампов +
+  512 выгрузок + `membership/qs.json` + пересчитанная сверка, 1036 файлов). До этого вся
+  работа жила в одном экземпляре на диске владельца. Разведочные дампы `sources/kompas/qs-recon/`
+  в git НЕ поехали: в 7 файлах лежит логин владельца открытым текстом, а репозиторий публичный —
+  папка добавлена в `.gitignore` рядом с `portal-probe/` по тому же основанию. Ссылки на
+  `qs-recon/net/007.json` выше — на локальный файл. В самих данных (`extracts/qs`, `qs/records`)
+  ни логина, ни пароля, ни чужих email нет — проверено перед индексированием.
+  `feat/kompas` запушена; в `main` ветка НЕ влита (11 коммитов), решение владельца — мерж позже,
+  потому что мерж = деплой, а 1361 кейс сверки ещё не разобран.
+
   **Осталось по QS:** разобрать 1361 кейс сверки в панели; решить судьбу 133 карточек без
   привязки к каталогу (часть — не вузы, а центры/школы); 4 вуза без программ у самого портала
   (American Collegiate Washington DC, Centennial College, Durham College, Heriot-Watt Malaysia
@@ -157,9 +167,10 @@
 **🟢 Техдолг:**
 - [x] **Мёртвый код сайта (7 файлов, удалены 2026-06-04)** — `UniversityCard.astro` (v1, index использует V2), `catalog-filters.ts` (index грузит `catalog-v2`; DOM-id `catalog-filters` — живая форма, не скрипт), 5× `oxford-*.ts` (старый шаблон `[slug].astro` переписан в v2). Каждый проверен: импортеров 0. Build после удаления: 807 стр., exit 0.
 - [x] **Мёртвые скрейпер-скрипты (10 файлов, удалены 2026-06-04, коммит `cc4d157`)** — граф проверен по всему репо: живые = `scrape-direct-partners-v2`, `scrape-volk-collab-v3`, `scrape-studygroup-all`; `overnight-volk-mukha.mjs` никем не зовётся → `scrape-volk-collab.mjs` (v1) и `scrape-mukha-api.mjs` транзитивно мертвы. ПАУК/БОБР-цепочки не затронуты (проверено: pauk зовёт qahe/gedu/edvoy/iapro/detect-gaps/shmel/merge-programs, bobr — только `bobr-*`). Удалены: overnight-orchestrator, overnight-v2-orchestrator, overnight-volk-mukha, mukha-v3/v4/v5-apex, mukha-api, volk-collab v1+v2, direct-partners v1. Фото-зоопарк не проверялся — отдельный заход.
-- [ ] Стейл-мусор: `edvoy-scrape.log`, корневой `sources/revizor-flags.json` (дубль), `scraper-*.log` в корне.
-- [ ] `site/public/api/status.json` коммитится и грязнит дерево → в `.gitignore`.
-- [ ] i18n `/en` не начат; `deploy.yml` на `wrangler@latest` (незакреплённая версия).
+- [x] ~~Стейл-мусор: `edvoy-scrape.log`, корневой `sources/revizor-flags.json` (дубль), `scraper-*.log` в корне.~~ **ЗАКРЫТО 2026-08-02.** Дерева не пачкает: корневого дубля `sources/revizor-flags.json` больше нет (остался один настоящий `scraper/sources/revizor-flags.json`), `*.log` покрыт `.gitignore`, `git ls-files "*revizor-flags.json"` пуст. Локально лежит только `scraper/edvoy-scrape.log` от 23.05 — вне git, удалить можно в любой момент.
+- [x] ~~`site/public/api/status.json` коммитится и грязнит дерево → в `.gitignore`.~~ **ЗАКРЫТО** (дата не отмечена, обнаружено 2026-08-02): строка в `.gitignore` есть, `git ls-files site/public/api/status.json` → «did not match any file(s) known to git», то есть файл не отслеживается.
+- [x] ~~i18n `/en` не начат; `deploy.yml` на `wrangler@latest` (незакреплённая версия).~~ **ЗАКРЫТО** (обнаружено 2026-08-02): `astro.config` → `locales: ['ru','en','kk']`, `defaultLocale: 'ru'`, маршрут `site/src/pages/[lang]/` на месте, словарь `site/src/i18n/ui.ts`. Версия закреплена: `deploy.yml:45` зовёт `npx --yes wrangler@4`, не `@latest`.
+- [x] ~~Рабочее дерево захламлено 1159 неотслеживаемыми файлами~~ **ЗАКРЫТО 2026-08-02**, коммит `6de42623`. В `.gitignore` уехали кандидаты ОРЛА `site/public/photos/*/hunt-*.jpg` (1125 файлов, 2.1 ГБ — промежуточный результат, в git едут только применённые фото), их страница просмотра `site/public/orel-preview.html` (пересобирается скриптом, ссылается на локальные картинки) и снимок `sources/_faculty_backup_2026-06-19/`. `git status` пуст.
 
 ---
 
