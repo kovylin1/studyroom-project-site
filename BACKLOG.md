@@ -15,9 +15,34 @@
   снял разметку: страница — Appian SAIL, список вузов с фильтрами (education level / destination /
   study level / intake), интерфейс-JSON 450 КБ — `sources/kompas/qs-recon/net/007.json` (GET
   `…/page/g.students-and-applications.p.institutions`), обновления списка — POST туда же (008.json).
-  **Следующий шаг: написать `kompas-collect-qs.mjs`** — разобрать SAIL-JSON 007/008 (структура
-  списка, пагинация через POST c updates), выкачать вузы+программы, ночной прогон. Уроки:
-  сверять собранное с числом, объявленным порталом; сохранять сырой дамп целиком.
+  **2026-08-01: QS СОБРАН ЦЕЛИКОМ — блокер снят.** Коллектор `scraper/kompas-collect-qs.mjs`
+  (3 стадии, resume, `--extract-only` для повторного разбора без сети, `--workers=N`).
+  Итог: **512 / 512 карточек** (портал объявлял 512 — сошлось), 508 с программами,
+  **35 303 программы**, из них 34 864 с ценой, 379 привязано к каталогу, 133 без привязки,
+  33 страны (UK 197, US 104, CA 47, AU 33), ошибок сбора 0.
+  Выход: `sources/kompas/qs/records/*.json` (сырые дампы), `sources/kompas/extracts/qs/*.json`,
+  `sources/kompas/membership/qs.json`, `sources/kompas/qs/grid-shapes.json`.
+  Источник `qs` переведён из `blocked` в `ready` в `lib/kompas-diff-core.mjs`; сверка прогнана:
+  сверено 569 вузов, 1361 кейс (`sources/kompas/DIFF-REPORT.md`, `diff-review.json`).
+  **Как устроен портал (Appian/SAIL):** POST-ответы — дельты интерфейса, грида в них нет,
+  поэтому строки снимаются с DOM. Программы лежат за каскадом
+  `List of Degrees -> List of Study Levels -> <кампус> Campus Costs + Programs`,
+  грид Programs со своей пагинацией по 10 строк.
+  **Уроки прогонов:** (1) сверять собранное с числом, объявленным порталом — сошлось 512/512;
+  (2) несколько вкладок роняли друг другу переход («interrupted by another navigation»,
+  339 карточек из 508) — переходы поставлены в общую очередь `gotoSafe`, после этого 0 ошибок;
+  (3) первая степень каскада терялась: `settle()` успокаивался раньше, чем приезжала таблица
+  уровней — добавлено ожидание `waitCascadeAdvance`; (4) имя вуза берётся из текста record-ссылки,
+  а не из ячейки: в ячейке к имени приклеен бейдж типа партнёрства («… (Postgraduate) University»),
+  из-за него не сходился каталог; (5) имя файла выгрузки — слаг стороны QS, не каталога:
+  «UEL (Postgraduate)» и «UEL (Undergraduate)» сходятся в один слаг каталога и затирали друг друга.
+  **Важно про цену:** портал НЕ показывает цену программы — только стоимость обучения кампуса
+  для уровня (Campus Costs). У программ стоит `feeBasis: "campusLevelStated"`, программных цен
+  не выдумано. Живой каталог не тронут.
+  **Осталось по QS:** разобрать 1361 кейс сверки в панели; решить судьбу 133 карточек без
+  привязки к каталогу (часть — не вузы, а центры/школы); 4 вуза без программ у самого портала
+  (American Collegiate Washington DC, Centennial College, Durham College, Heriot-Watt Malaysia
+  Foundation); даты приёма лежат за ссылкой «View Intakes» — отдельным проходом, если понадобятся.
 
 - **Stage 13 — Program-catalog expansion to 30+ per uni (resume after 20:00 Almaty 2026-05-22 — Sonnet budget reset).** Started 2026-05-22 at 17:00 Almaty. 7 parallel Sonnet agents launched on `sources/expand-batch-{J,K,L,M,N,O,P}.json` (249 thin universities total, ~36 each). All 7 hit Sonnet session limit ~10 min in. Net result: 55/249 touched, 33 reached the 30+ target, 194 still queued. **K-12 (12 unis), language schools (8), pathway-only centres (41) — 61 unis total — DELIBERATELY EXCLUDED** because <15 programs is realistic for their type. **Resume protocol** after 20:00 Almaty Sonnet reset: re-launch the same 7 parallel Sonnet agents on the same 7 batch JSONs — each agent has "skip if file exists with current >= target" gate, so the 33 already-expanded unis auto-skip; agents only re-process the 194 untouched. Promote J/K/L/M/N/O/P to a 5-agent batch (35-50 unis each) if budget allows.
 
