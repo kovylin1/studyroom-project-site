@@ -32,7 +32,8 @@ export const SOURCES = {
   gedu: { dir: GEDU_DIR, state: 'ready' },
   direct: { dir: path.join(EXTRACTS, 'direct'), state: 'ready' },
   iapro: { dir: path.join(EXTRACTS, 'iapro'), state: 'ready' },
-  qs: { dir: null, state: 'blocked', why: 'портал QS Apply отклонил учётные данные, программ нет' },
+  // 2026-08-01: доступ получен, портал обойдён целиком (512 вузов / 35 303 программы).
+  qs: { dir: path.join(EXTRACTS, 'qs'), state: 'ready' },
   navitas: { dir: null, state: 'empty', why: 'у сайтов колледжей нет типа записи «курс», сбор не дал программ' },
   cats: { dir: null, state: 'empty', why: 'у CATS школы, а не программы в единой форме' },
 };

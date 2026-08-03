@@ -231,6 +231,10 @@ const noScrape = process.argv.includes('--no-scrape');
 // --no-scrape отключает только сетевой сбор, но НЕ запись — раньше bobr.mjs слал
 // его вместо --dry-run, и «сухой» прогон создавал файлы вузов в каталоге.
 const DRY_RUN = process.argv.includes('--dry-run');
+// Автосоздание карточек вузов ЗАПРЕЩЕНО решением владельца (2026-07-31): в прошлые
+// прогоны STAGE 1.5 тихо заводил новые вузы из непривязанных edvoy-выгрузок.
+// Новые вузы заводит только человек; для осознанного разового прогона — --allow-new-cards.
+const ALLOW_NEW_CARDS = process.argv.includes('--allow-new-cards');
 
 log('loading unis + edvoy extracts');
 const unis = await loadAllUnis();
@@ -253,6 +257,10 @@ for (const ev of edvoy) {
 log(`STAGE 1 merge: matched=${mergeMatched}, no-match=${mergeNoMatch}, field-changes=${mergeFieldChanges}`);
 
 // STAGE 1.5: create new uni JSONs for unmatched Edvoy partners
+if (!ALLOW_NEW_CARDS && unmatched.length) {
+  log(`STAGE 1.5 SKIPPED (нет --allow-new-cards): ${unmatched.length} непривязанных edvoy-партнёров НЕ заведены: ${unmatched.slice(0, 10).map(e => e.name).join(' · ')}${unmatched.length > 10 ? ' …' : ''}`);
+  unmatched.length = 0;
+}
 log(`STAGE 1.5: creating new uni files from ${unmatched.length} unmatched Edvoy partners`);
 const existingSlugs = new Set(unis.map(u => u.slug));
 for (const ev of unmatched) {

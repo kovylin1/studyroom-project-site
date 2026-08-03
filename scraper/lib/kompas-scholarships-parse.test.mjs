@@ -10,6 +10,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   amountFrom, acceptName, parseScholarships, parseDetail, detailUrls, sameSite,
+  resolveCurrency, dollarCurrency,
 } from './kompas-scholarships-parse.mjs';
 
 // ------------------------------------------------------------------ сумма --
@@ -210,4 +211,60 @@ test('свой домен узнаётся с www и без, чужой — не
   assert.ok(sameSite('https://abertay.ac.uk/x', 'https://www.abertay.ac.uk'));
   assert.ok(sameSite('https://search.abertay.ac.uk/x', 'https://www.abertay.ac.uk'));
   assert.ok(!sameSite('https://www.chevening.org/x', 'https://www.abertay.ac.uk'));
+});
+
+// ── голый «$» читается по стране вуза (правило P0.4 «страна ≠ валюта») ──
+// `SYMBOL_TO_CODE` в lib/numbers.mjs переводит «$» в USD. У канадского herzing.ca
+// «$1,000» — это CAD, и запись «USD 1 000» завышает выплату примерно в полтора раза.
+
+test('голый $ у канадского вуза читается как CAD', () => {
+  assert.equal(amountFrom('award of $1,000', { country: 'Canada' }), 'CAD 1,000');
+});
+
+test('без страны поведение прежнее — USD', () => {
+  assert.equal(amountFrom('award of $1,000'), 'USD 1,000');
+  assert.equal(amountFrom('award of $1,000', {}), 'USD 1,000');
+});
+
+test('страна без долларовой валюты знак не подменяет', () => {
+  assert.equal(amountFrom('award of $1,000', { country: 'United Kingdom' }), 'USD 1,000');
+  assert.equal(amountFrom('award of $1,000', { country: 'United States' }), 'USD 1,000');
+});
+
+test('AU, NZ, SG и HK получают свои коды', () => {
+  assert.equal(dollarCurrency('Australia'), 'AUD');
+  assert.equal(dollarCurrency('New Zealand'), 'NZD');
+  assert.equal(dollarCurrency('Singapore'), 'SGD');
+  assert.equal(dollarCurrency('Hong Kong'), 'HKD');
+  assert.equal(dollarCurrency('France'), null);
+  assert.equal(dollarCurrency(undefined), null);
+  assert.equal(dollarCurrency(' canada '), 'CAD', 'регистр и пробелы не мешают');
+});
+
+test('C$, A$, NZ$, US$ автор написал сам — не трогаем', () => {
+  assert.equal(resolveCurrency('C$1,000', 'USD', 'Canada'), 'USD',
+    'C$ разбирается numbers.mjs отдельно; подменять знак с буквой слева нельзя');
+  assert.equal(resolveCurrency('US$1,000', 'USD', 'Canada'), 'USD');
+  assert.equal(resolveCurrency('A$1,000', 'USD', 'Australia'), 'USD');
+  assert.equal(resolveCurrency('NZ$1,000', 'USD', 'New Zealand'), 'USD');
+});
+
+test('явный код валюты рядом со знаком сильнее страны', () => {
+  assert.equal(resolveCurrency('$1,000 USD', 'USD', 'Canada'), 'USD');
+});
+
+test('не-долларовую валюту страна не переписывает', () => {
+  assert.equal(resolveCurrency('£1,000', 'GBP', 'Canada'), 'GBP');
+  assert.equal(resolveCurrency('€1,000', 'EUR', 'Canada'), 'EUR');
+});
+
+test('оговорки «до» и «/год» переживают подмену валюты', () => {
+  assert.equal(amountFrom('maximum award is $1,000 per year', { country: 'Canada' }), 'до CAD 1,000/год');
+});
+
+test('страна доезжает до parseScholarships и parseDetail', () => {
+  const hub = '<h2>Entrance Scholarship</h2><p>award of $2,500 per year</p><h2>x</h2>';
+  assert.equal(parseScholarships(hub, 'https://herzing.ca/f', { country: 'Canada' })[0].amount, 'CAD 2,500/год');
+  const detail = '<h1>Entrance Scholarship</h1><p>award of $2,500</p>';
+  assert.equal(parseDetail(detail, 'https://herzing.ca/s', { country: 'Canada' }).amount, 'CAD 2,500');
 });

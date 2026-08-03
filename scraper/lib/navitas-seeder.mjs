@@ -104,14 +104,32 @@ function buildPrograms(uni, defaultIntakes) {
   });
 }
 
+/**
+ * Откуда у сидера цены. По умолчанию — из литеральной таблицы `feeBand` в самом
+ * скрипте: это НЕ данные источника, а придуманные полосы, одинаковые всем вузам.
+ * Такие цены в каталог не попадают (правило «не выдумывать»): программа пишется
+ * без цены и страница вуза честно показывает «уточняется».
+ *
+ * Значение 'source-confirmed' ставит тот, кто сверил полосы с прайсом источника, —
+ * только тогда сидер раздаёт цены. Разбор 2026-08-03: Navitas реальных цен не отдаёт
+ * (замер `kompas-navitas-fees-diag.mjs`), поэтому у него остаётся 'seed-literal'.
+ */
+export const FEE_PROVENANCE = ['seed-literal', 'source-confirmed'];
+
 export function buildUniversity(uni, opts) {
   const { country, currency, primaryIntake, secondaryIntake, defaultIntakes, scholarship } = opts;
+  const feeProvenance = opts.feeProvenance ?? 'seed-literal';
+  if (!FEE_PROVENANCE.includes(feeProvenance)) {
+    throw new Error(`buildUniversity: неизвестный feeProvenance «${feeProvenance}»`);
+  }
   const programs = buildPrograms(uni, defaultIntakes);
   const tuitionByProgram = {};
   const deadlines = {};
   for (const p of programs) {
-    const fee = uni.feeBand[p.feeBandKey] ?? uni.feeBand[p.level] ?? 0;
-    tuitionByProgram[p.slug] = fee;
+    if (feeProvenance === 'source-confirmed') {
+      const fee = uni.feeBand[p.feeBandKey] ?? uni.feeBand[p.level] ?? 0;
+      tuitionByProgram[p.slug] = fee;
+    }
     deadlines[p.slug] = p.level === 'master' ? secondaryIntake : primaryIntake;
   }
   const scholarships = [scholarship, ...(uni.extraScholarships ?? [])];
@@ -161,30 +179,75 @@ export function buildUniversity(uni, opts) {
 // university object before writing.
 const PRESERVE_FIELDS = ['gallery', 'photoSets'];
 
+/**
+ * Решение по одной карточке: писать её или отойти в сторону.
+ *
+ * Сидер собирает карточку с нуля и затирает `programs` и `tuition` целиком, а поверх
+ * его сида давно легли выгрузки партнёров. У 10 британских Navitas-вузов это 3208
+ * программ и 2774 цены Edvoy против ~60 программ сида — повторный прогон стёр бы их
+ * подчистую. Поэтому: карточка, где программ больше, чем у сида, не перезаписывается,
+ * пока не позовут явно (`force`). Цены существующих программ переносятся в любом случае.
+ *
+ * Отдельная функция, а не ветка внутри цикла, чтобы решение можно было проверить тестом
+ * без записи на диск.
+ */
+export function planWrite(built, existing, { force = false } = {}) {
+  if (!existing) return { action: 'write', reason: 'новая карточка', university: built };
+
+  const university = { ...built };
+  for (const key of PRESERVE_FIELDS) {
+    if (existing[key] != null && university[key] == null) university[key] = existing[key];
+  }
+
+  // Настоящие цены (выгрузки партнёров, решения оператора) переносим на те программы,
+  // которые в сборке остались. Сид своих цен не даёт — затирать нечем и незачем.
+  const existingFees = existing.tuition?.byProgram;
+  if (existingFees && typeof existingFees === 'object' && !Array.isArray(existingFees)) {
+    const carried = {};
+    for (const p of university.programs) {
+      const fee = existingFees[p.slug];
+      if (Number(fee) > 0) carried[p.slug] = fee;
+    }
+    university.tuition = { ...university.tuition, byProgram: { ...carried, ...university.tuition.byProgram } };
+  }
+
+  const existingCount = (existing.programs || []).length;
+  const builtCount = university.programs.length;
+  if (existingCount > builtCount && !force) {
+    return {
+      action: 'skip',
+      reason: `в каталоге ${existingCount} программ, у сида ${builtCount} — перезапись потеряла бы ${existingCount - builtCount}. Нужен --force`,
+      university,
+    };
+  }
+  return { action: 'write', reason: force ? 'force' : 'сид не беднее каталога', university };
+}
+
 export async function writeAll(unis, opts) {
+  const force = opts.force ?? process.argv.includes('--force');
+  const dryRun = opts.dryRun ?? process.argv.includes('--dry-run');
   await mkdir(CONTENT_DIR, { recursive: true });
-  let totalPrograms = 0;
+  let totalPrograms = 0, written = 0, skipped = 0;
   for (const uni of unis) {
-    const university = buildUniversity(uni, opts);
+    const built = buildUniversity(uni, opts);
     const filePath = resolve(CONTENT_DIR, `${uni.slug}.json`);
 
-    // Read existing JSON (if any) and copy over preserved fields so other
-    // pipelines (photo discovery, manual edits) don't get clobbered.
-    try {
-      const existingRaw = await readFile(filePath, 'utf8');
-      const existing = JSON.parse(existingRaw);
-      for (const key of PRESERVE_FIELDS) {
-        if (existing[key] != null && university[key] == null) {
-          university[key] = existing[key];
-        }
-      }
-    } catch {
-      // file didn't exist or couldn't parse — skip merge, write fresh
-    }
+    let existing = null;
+    try { existing = JSON.parse(await readFile(filePath, 'utf8')); } catch { /* нет файла или битый — пишем свежий */ }
 
-    await writeFile(filePath, JSON.stringify(university, null, 2) + '\n', 'utf8');
-    totalPrograms += university.programs.length;
-    console.log(`[seed] wrote ${uni.slug}.json (${university.programs.length} programs)`);
+    const plan = planWrite(built, existing, { force });
+    if (plan.action === 'skip') {
+      skipped++;
+      console.log(`[seed] SKIP ${uni.slug}.json — ${plan.reason}`);
+      continue;
+    }
+    if (!dryRun) await writeFile(filePath, JSON.stringify(plan.university, null, 2) + '\n', 'utf8');
+    written++;
+    totalPrograms += plan.university.programs.length;
+    console.log(`[seed] ${dryRun ? 'DRY ' : ''}wrote ${uni.slug}.json (${plan.university.programs.length} programs)`);
   }
-  console.log(`[seed] done · ${unis.length} universities · ${totalPrograms} programs total`);
+  console.log(
+    `[seed] done · записано ${written} · пропущено ${skipped} · программ ${totalPrograms}` +
+    `${dryRun ? ' · СУХОЙ ПРОГОН, на диск не писал' : ''}`,
+  );
 }

@@ -75,17 +75,55 @@ export const MONEY_TRAP = /household income|taxable|income of|earnings|salary|th
 export const MONEY_LABEL = /award|worth|value|bursary of|scholarship of|receive|discount|reduction|up to|covers?|payment|towards|per year|per annum|a year/i;
 
 /**
+ * Голый знак «$» читается по стране вуза, а не как доллар США.
+ *
+ * `SYMBOL_TO_CODE` в `lib/numbers.mjs` жёстко переводит «$» в USD. На канадском
+ * herzing.ca «$1,000» — это почти наверняка CAD, и запись «USD 1 000» в карточке
+ * завышает выплату примерно в полтора раза. Правило P0.4 «страна ≠ валюта».
+ *
+ * Подменяем ТОЛЬКО голый знак. `C$`, `A$`, `NZ$`, `US$`, `S$`, `HK$` и явный код
+ * валюты автор страницы написал сам — их трогать нельзя. Страны, где доллар не
+ * местная валюта (UK, Франция, ОАЭ), остаются на USD: там «$» и правда доллар США.
+ */
+export const DOLLAR_BY_COUNTRY = {
+  canada: 'CAD',
+  australia: 'AUD',
+  'new zealand': 'NZD',
+  singapore: 'SGD',
+  'hong kong': 'HKD',
+};
+
+export function dollarCurrency(country) {
+  return DOLLAR_BY_COUNTRY[String(country ?? '').trim().toLowerCase()] ?? null;
+}
+
+// «$1,000» — голый; «C$1,000», «US$1,000» — нет. Знак с буквой слева не наш случай.
+const BARE_DOLLAR_RE = /(?:^|[^A-Za-z])\$/;
+
+/** Валюта денежного токена с поправкой на страну. Отдельная функция — ради теста. */
+export function resolveCurrency(matchText, currency, country) {
+  if (currency !== 'USD') return currency;
+  const s = String(matchText ?? '');
+  if (!BARE_DOLLAR_RE.test(s)) return currency;   // «C$» / «US$» — автор написал сам
+  if (/\bUSD\b/i.test(s)) return currency;        // явный код рядом — верим ему
+  return dollarCurrency(country) ?? currency;
+}
+
+/**
  * Сумма стипендии вместе с оговорками, а не голое число.
  *
  * На странице Abertay IB30+ стоят и «up to £28,000» (за четыре года), и «£7,000 per year».
  * Обе цифры верные, но «GBP 28,000» без «до» и без срока читается как годовая выплата —
  * это враньё на карточке. Поэтому «up to» слева и «per year» справа переносим в строку.
+ *
+ * `opts.country` — страна вуза, по ней читается голый «$» (см. resolveCurrency).
  */
-export function amountFrom(text) {
+export function amountFrom(text, opts = {}) {
   const fallback = () => (FULL_HINT.test(text.slice(0, 2000)) ? 'full tuition' : null);
   for (const m of text.matchAll(MONEY_RE)) {
     const p = parseMoney(m[0]);
     if (!p || !p.currency) continue;
+    const currency = resolveCurrency(m[0], p.currency, opts.country);
     const before = text.slice(Math.max(0, m.index - 70), m.index);
     const after = text.slice(m.index + m[0].length, m.index + m[0].length + 70);
     if (MONEY_TRAP.test(before) || MONEY_TRAP.test(after)) continue;
@@ -99,7 +137,7 @@ export function amountFrom(text) {
     // «$60 per month за программу» стояло в выгрузке просто «USD 60».
     const perMonth = /^\s*(per|a|each|\/)\s*month|^\s*monthly/i.test(after);
     const period = perYear ? '/год' : (perMonth ? '/мес' : '');
-    return `${upTo ? 'до ' : ''}${p.currency} ${p.amount.toLocaleString('en-US')}${period}`;
+    return `${upTo ? 'до ' : ''}${currency} ${p.amount.toLocaleString('en-US')}${period}`;
   }
   return fallback();
 }
@@ -161,7 +199,7 @@ export function links(html, baseUrl) {
  * финансировании это единственная общая структура. Сумму ищем в тексте ДО следующего
  * заголовка — так «£4,000» из соседней стипендии не приклеится к предыдущей.
  */
-export function parseScholarships(html, pageUrl) {
+export function parseScholarships(html, pageUrl, opts = {}) {
   const blocks = [];
   const re = /<(h2|h3|h4|dt|strong)\b[^>]*>([\s\S]{0,300}?)<\/\1>/gi;
   let prev = null;
@@ -186,7 +224,7 @@ export function parseScholarships(html, pageUrl) {
     const text = clean(b.body).slice(0, 600);
     // Сумма — только явная. parseMoney без валюты вернёт {currency:null}: такое не
     // берём, «5,000» без знака валюты может быть числом студентов.
-    const amount = amountFrom(text);
+    const amount = amountFrom(text, opts);
     out.push({
       name: b.title,
       ...(amount ? { amount } : {}),
@@ -230,13 +268,13 @@ export function detailUrls(html, base, hubUrl) {
 }
 
 /** Название и сумма с ОТДЕЛЬНОЙ страницы стипендии: имя — из h1, сумма — из текста. */
-export function parseDetail(html, url) {
+export function parseDetail(html, url, opts = {}) {
   const h1 = html.match(/<h1\b[^>]*>([\s\S]{0,300}?)<\/h1>/i);
   const name = clean(h1?.[1] ?? '');
   if (!name || name.length < 6 || name.length > 140) return null;
   if (!NAME_HINT.test(name)) return null;
   const body = clean(html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' '));
-  const amount = amountFrom(body);
+  const amount = amountFrom(body, opts);
   return {
     name,
     ...(amount ? { amount } : {}),

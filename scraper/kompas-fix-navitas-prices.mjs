@@ -3,10 +3,19 @@
 //
 // Диагноз (замер 2026-07-24): у 10 британских Navitas-вузов цены в tuition.byProgram
 // раздавались литеральной таблицей UK_FEE_BAND_BASE/feeBand из seed-navitas-uk.mjs,
-// одинаково всем. Признак фабрикации: у программы нет поля source (сид его не писал),
-// а Navitas настоящих цен не отдаёт (сессии 2-3). По правилу «не выдумывать» такие
-// цены зануляются в честную пустоту; программы НЕ удаляем (правило 4). Цены на
-// программах с реальным source (edvoy/official/kaplan) НЕ трогаем.
+// одинаково всем. По правилу «не выдумывать» такие цены зануляются в честную пустоту;
+// программы НЕ удаляем (правило 4).
+//
+// ПРАВКА КРИТЕРИЯ 2026-08-03. Раньше уликой фабрикации считалось отсутствие поля
+// `source` у программы: сид его не писал. Критерий протух — добор цен из выгрузок
+// (kompas-backfill-fees) проставил настоящие цены Edvoy, а `source` не проставил.
+// На живом каталоге старый критерий снял бы 232 цены, из которых 218 сходятся с
+// выгрузкой Edvoy по названию и сумме, то есть настоящие. Улика теперь одна:
+// программу НЕ знает ни одна выгрузка `sources/kompas/extracts/*` (сверка по
+// нормализованному названию) — тогда цене неоткуда взяться, кроме сида.
+// Замер 2026-08-03 (`kompas-navitas-fees-diag.mjs`): подтверждённых цен 2760,
+// расхождений 0, без цены 434, неподтверждённых 14 — и те оказались вариантами
+// написания реальных записей Edvoy с той же суммой. Фабрикаций в живом каталоге нет.
 //
 // Работает на КОПИИ sources/kompas/catalog-work — живой каталог не тронут (правило 5).
 // Снятое кладётся в бэкап, чтобы откат был одной командой. Кейсы — в панель /manager.
@@ -16,6 +25,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { KOMPAS_DIR, args, logger } from './lib/kompas-collect.mjs';
+import { extractIndex, normTitle } from './kompas-navitas-fees-diag.mjs';
 
 const log = logger('fix-navitas');
 const APPLY = args.has('apply');
@@ -41,13 +51,16 @@ async function main() {
 
     const bp = (u.tuition && u.tuition.byProgram) || {};
     const bySlug = new Map((u.programs || []).map((p) => [p.slug, p]));
+    const idx = await extractIndex(slug);   // название программы → цена выгрузки
     const removed = {};
     let kept = 0;
 
     for (const [pslug, price] of Object.entries(bp)) {
       const prog = bySlug.get(pslug);
-      const hasSource = prog && prog.source;   // сид source не писал → фабрикация
-      if (!hasSource) { removed[pslug] = price; delete bp[pslug]; }
+      // Цена настоящая, если у программы есть source ИЛИ её знает выгрузка партнёра.
+      const hit = prog ? idx.get(normTitle(prog.title)) : null;
+      const backed = (prog && prog.source) || (hit && hit.fee > 0);
+      if (!backed) { removed[pslug] = price; delete bp[pslug]; }
       else kept++;
     }
 
