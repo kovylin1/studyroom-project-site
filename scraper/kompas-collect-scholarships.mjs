@@ -52,6 +52,10 @@ async function collectOne(uni, slug) {
   const base = resolveOfficialSite(uni, []);
   if (!base) return { slug, status: 'no-site', found: 0 };
 
+  // Страна нужна разбору, чтобы прочитать голый «$»: на herzing.ca это CAD, а не USD
+  // (правило P0.4 «страна ≠ валюта»). Явные C$/A$/US$ и коды валют не трогаются.
+  const parseOpts = { country: uni.country };
+
   let homeHtml;
   try { homeHtml = await fetchHtml(base); }
   catch (e) { return { slug, status: 'unreachable', reason: e.message, found: 0 }; }
@@ -98,7 +102,7 @@ async function collectOne(uni, slug) {
     let html;
     try { html = await fetchHtml(url); } catch { continue; }
     pagesRead.push(url);
-    for (const s of parseScholarships(html, url)) addHub(s);
+    for (const s of parseScholarships(html, url, parseOpts)) addHub(s);
     for (const d of detailUrls(html, base, url)) details.add(d);
   }
 
@@ -111,7 +115,7 @@ async function collectOne(uni, slug) {
     let html;
     try { html = await fetchHtml(url); } catch { continue; }
     pagesRead.push(url);
-    addDetail(parseDetail(html, url));
+    addDetail(parseDetail(html, url, parseOpts));
   }
   const detailsSkipped = Math.max(0, details.size - MAX_DETAILS);
 
