@@ -28,10 +28,6 @@ const arg = (p) => (process.argv.find((a) => a.startsWith(p)) || '').slice(p.len
 const ONLY = arg('--slug=') || null;
 const LIMIT = parseInt(arg('--limit=') || '400', 10);
 
-// Степень в тексте ссылки — тоже признак курса: у Falmouth адреса вида /courses/<слаг>
-// покрывают не весь список.
-const DEGREE_LINK = /\b(BA|BSc|BEng|BBA|LLB|MA|MSc|MEng|MBA|LLM|MRes|MFA|PhD|MPhil|DipHE|FdA|FdSc|Bachelor|Master|Foundation|Diploma|Certificate)\b/i;
-
 const WORD_NUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7 };
 
 const log = (m) => {
@@ -52,11 +48,14 @@ export function yearsFrom(text) {
 // «3 years / 4 years» у Falmouth — это курс без года практики и с ним.
 // В карточку идёт базовый срок; второй остаётся в сыром виде для оператора.
 export function baseYears(raw) {
-  const all = [...String(raw || '').matchAll(/\b(\d(?:\.\d)?|one|two|three|four|five|six|seven)[\s-]?(year|yr|month)s?\b/gi)]
+  // Месяцев бывает больше двенадцати («around 13 months» у Worcester), поэтому
+  // предел у месяцев свой: до 72 (шесть лет). У лет предел прежний.
+  const all = [...String(raw || '').matchAll(/\b(\d{1,2}(?:\.\d)?|one|two|three|four|five|six|seven)[\s-]?(year|yr|month)s?\b/gi)]
     .map((m) => {
       const n = WORD_NUM[m[1].toLowerCase()] ?? Number(m[1]);
-      if (!Number.isFinite(n) || n <= 0 || n > 12) return null;
-      return /month/i.test(m[2]) ? Number((n / 12).toFixed(2)) : n;
+      if (!Number.isFinite(n) || n <= 0) return null;
+      if (/month/i.test(m[2])) return n > 72 ? null : Number((n / 12).toFixed(2));
+      return n > 12 ? null : n;
     })
     .filter((x) => x !== null);
   return all.length ? Math.min(...all) : null;
@@ -109,10 +108,19 @@ const SITES = {
     // Списки курсов: бакалавриат и магистратура отдельными страницами.
     lists: ['https://www.falmouth.ac.uk/courses/undergraduate', 'https://www.falmouth.ac.uk/courses/postgraduate'],
     host: 'falmouth.ac.uk',
-    courseLink: /^\/courses\/[a-z0-9-]{4,}/i,
-    // Разделы списка живут по тем же адресам, что и курсы, но на них стоит
-    // фильтр «Course duration» с вариантами — он читается как длительность курса.
-    skipLink: /^\/courses\/(undergraduate|postgraduate|online|short-courses|degree-apprenticeships|foundation-year)\/?$/i,
+    // Список лежит по /courses/…, а САМИ курсы — по /study/<уровень>/<слаг>.
+    // Правило `^/courses/<слаг>` (первый заход) не ловило ни одного курса:
+    // 43 записи первого прогона взялись по степени в тексте ссылки и притащили
+    // мастер-классы из /events/ и раздел коротких курсов.
+    courseLink: /^\/study\/(undergraduate|postgraduate|online)\/[a-z0-9-]/i,
+    skipLink: /^\/study\/(undergraduate|postgraduate|online)\/?$/i,
+    // Страницы-разделы («Games Courses», «Art and Design Master's Degrees») лежат
+    // среди курсов и срока не несут — иначе они уедут в сведение как программы.
+    hubTitle: /\b(courses|master'?s degrees|online study)$/i,
+    // Drupal-пейджер «Load More» скрыт (`visually-hidden`, infinite scroll),
+    // но его же адрес работает напрямую: ?page=,N по 20 карточек.
+    pageUrl: (base, i) => (i === 0 ? base : `${base}?page=,${i}`),
+    settleMs: 3500,
     contact: 'https://www.falmouth.ac.uk/contact',
     // «Course duration 3 years / 4 years» лежит парой в блоке ключевых фактов.
     parse: async (page) => page.evaluate(() => {
@@ -146,63 +154,159 @@ const SITES = {
     host: 'worc.ac.uk',
     hostAlso: ['worcester.ac.uk'],
     courseLink: /^\/courses\/[a-z0-9-]{4,}/i,
+    // Листалка поиска — ссылки «1 2 3 …» с адресом &index=N, по 20 на страницу.
+    pageUrl: (base, i) => `${base}&index=${i}`,
+    settleMs: 1500,
     contact: 'https://www.worc.ac.uk/contact/',
-    // Подписи «Duration» нет: срок стоит строкой «3 years full-time (part-time …)».
+    // Подписи «Duration» нет на страницах бакалавриата: срок стоит строкой
+    // «3 years full-time (part-time …)». А на страницах магистратуры и MPhil/PhD
+    // подпись как раз есть, но лежит ВНЕ `main` — из-за этого первый прогон
+    // не взял срок у 75 страниц, хотя он там написан.
+    hubUrl: /-home\/?$/i,
     parse: async (page) => page.evaluate(() => {
       const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
       const banner = document.querySelector('#ccc');
       const outside = (el) => el && !(banner && banner.contains(el));
       const title = clean([...document.querySelectorAll('h1')].find(outside)?.innerText);
-      const body = clean((document.querySelector('main') || document.body)?.innerText);
-      const m = body.match(/\b\d(?:\.\d)?\s*years?\s*full[- ]?time[^.]{0,60}/i)
-        || body.match(/\b(one|two|three|four|five|six)\s*years?\s*full[- ]?time[^.]{0,60}/i);
-      return { title, raw: m ? m[0] : null, campus: null };
+      // 1) Подпись «Duration» где угодно в документе. Значение обязано содержать
+      // год или месяц: рядом с подписью попадается и «Duration → Timetables».
+      let raw = null;
+      for (const el of document.querySelectorAll('dt, th, strong, b, h3, h4, span, div, li, p')) {
+        if (el.children.length > 2 || !outside(el)) continue;
+        const t = clean(el.innerText);
+        if (!/^duration\b/i.test(t)) continue;
+        const val = t.replace(/^duration\s*:?\s*/i, '') || clean(el.nextElementSibling?.innerText);
+        if (val && /\b(year|month)s?\b/i.test(val)) { raw = val.slice(0, 160); break; }
+      }
+      // 2) Иначе — строка «3 years full-time» в тексте страницы.
+      if (!raw) {
+        const body = clean((document.querySelector('main') || document.body)?.innerText);
+        const m = body.match(/\b\d(?:\.\d)?\s*years?\s*full[- ]?time[^.]{0,60}/i)
+          || body.match(/\b(one|two|three|four|five|six)\s*years?\s*full[- ]?time[^.]{0,60}/i);
+        raw = m ? m[0] : null;
+      }
+      return { title, raw, campus: null };
+    }),
+  },
+  // --- Дальше три записи, у которых программ у QS единицы (PHBS 2, MPW 4, ILAC 1).
+  // Обходить сайт целиком незачем и нельзя: программы и цены берутся у агрегатора,
+  // офсайт нужен только под длительность и город. Поэтому вместо списка курсов —
+  // `pages`: адреса ровно тех страниц, что отвечают строкам QS.
+  phbs: {
+    name: 'Peking University HSBC Business School',
+    // Обе программы QS («Cross-Border MA in Finance», «Cross-Border MA Management») —
+    // это Cross-Border MiF/MiM, их страницы живут на сайте британского кампуса ПУ.
+    pages: [
+      'http://www.pku.org.uk/Study/Cross_Border_Master_s_i_Finance.htm',
+      'http://www.pku.org.uk/Study/Cross_Border_Master_s_in_Management.htm',
+    ],
+    host: 'pku.org.uk',
+    hostAlso: ['phbs.pku.edu.cn'],
+    contact: 'https://english.phbs.pku.edu.cn/About/Visit___Contact.htm',
+    // Пара «Duration → Two years» в шапке программы; в тексте дублируется «two-year».
+    parse: async (page) => page.evaluate(() => {
+      const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
+      const body = clean(document.body.innerText);
+      const title = clean(document.title).replace(/-Peking University.*$/i, '').trim()
+        || clean(document.querySelector('h1')?.innerText);
+      const raw = (body.match(/\bDuration\s+((?:one|two|three|four|\d)[\s-]?years?)\b/i) || [])[1]
+        || (body.match(/\b(?:is|as)\s+an?\s+((?:one|two|three|four|\d)[\s-]?year)\s+(?:full[- ]time\s+)?(?:post)?graduate\s+(?:degree|program)/i) || [])[1]
+        || null;
+      // Кампус у кросс-бордера двойной: год в Оксфордшире, год в Шэньчжэне.
+      const campus = (body.match(/Year 1 in [^;.]{0,40}[;,] ?Year 2 in [A-Za-z, ]{0,40}/i) || [])[0]
+        ?.replace(/\s+(Application|Start|Study)\b.*$/i, '').trim() || null;
+      return { title, raw, campus };
+    }),
+  },
+  mpw: {
+    name: 'MPW',
+    // Три колледжа в трёх городах; у QS одна запись на все три, город карточки выбирает
+    // владелец. Страницы уровня курса (A Level / GCSE), а не отдельных предметов:
+    // у QS строки тоже предметные не по одному («1 year A Level», «GCSE Subjects»).
+    pages: [
+      'https://www.mpw.ac.uk/locations/london/courses/a-level/',
+      'https://www.mpw.ac.uk/locations/london/courses/gcse/',
+      'https://www.mpw.ac.uk/locations/birmingham/courses/a-level/',
+      'https://www.mpw.ac.uk/locations/birmingham/courses/gcse/',
+      'https://www.mpw.ac.uk/locations/cambridge/courses/a-level/',
+      'https://www.mpw.ac.uk/locations/cambridge/courses/gcse/',
+    ],
+    host: 'mpw.ac.uk',
+    contact: 'https://www.mpw.ac.uk/contact/',
+    // На странице СРАЗУ ДВА срока («one year courses and two year courses»), поэтому
+    // одного значения тут нет и выдумывать его нельзя: отдаём улику, решает оператор.
+    parse: async (page) => page.evaluate(() => {
+      const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
+      const body = clean((document.querySelector('main') || document.body).innerText);
+      const h1 = clean(document.querySelector('h1')?.innerText);
+      const city = (location.pathname.match(/\/locations\/([a-z-]+)\//i) || [])[1] || null;
+      const sentence = (body.match(/[^.!?]{0,80}\b(?:one|two|1|2)[\s-]?years?\b[^.!?]{0,120}(?:courses?|programmes?|A level|GCSE)[^.!?]{0,60}/i) || [])[0] || null;
+      const both = /\b(one|1)[\s-]?year\b/i.test(body) && /\b(two|2)[\s-]?year\b/i.test(body);
+      return { title: city ? `${h1} — MPW ${city[0].toUpperCase()}${city.slice(1)}` : h1, raw: both ? null : sentence, evidence: sentence, campus: city, both };
+    }),
+  },
+  ilac: {
+    name: 'ILAC International Language Academy of Canada',
+    // Единственная запись QS — «Young Adults 15 - 18 University Pathway Program».
+    pages: [
+      'https://ilac.com/university-pathway/university-pathway-program-young-adults/',
+      'https://ilac.com/university-pathway-program-adults/',
+    ],
+    host: 'ilac.com',
+    contact: 'https://ilac.com/contact/',
+    // Сайт прямо пишет, что срока у программы нет: он зависит от входного уровня
+    // английского (8–56 недель). Значит durationYears тут не берётся ниоткуда.
+    parse: async (page) => page.evaluate(() => {
+      const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
+      const body = clean((document.querySelector('main') || document.body).innerText);
+      const title = clean(document.querySelector('h1')?.innerText);
+      const varies = /duration varies|varies based on your starting|estimated length of your program/i.test(body);
+      const table = (body.match(/The estimated length of your program will be:[^]{0,320}/i) || [])[0] || null;
+      const campus = /Vancouver/i.test(body) && /Toronto/i.test(body) ? 'Toronto + Vancouver' : null;
+      return { title, raw: null, evidence: table, campus, varies };
     }),
   },
 };
 
-// Дожимает список до конца: жмёт «Load More» / «Next», пока ссылок прибавляется.
-// Считаем прямо по числу подходящих ссылок на странице, а не по виду кнопки:
-// у Falmouth это ссылка «Load More», у других — кнопка пагинации.
-const MORE_BUTTONS = [
-  'a:has-text("Load More")', 'button:has-text("Load more")', 'button:has-text("Show more")',
-  'a:has-text("Show more")', 'button:has-text("Next")', 'a[rel="next"]',
-];
-
-async function countCourseLinks(page, site, hosts) {
-  const anchors = await page.$$eval('a[href]', (as) => as.map((a) => ({ href: a.href, text: (a.innerText || '').trim().slice(0, 120) })));
-  let n = 0;
+// Снимает адреса курсов с ОТКРЫТОЙ страницы списка в общую копилку.
+// Возвращает, сколько адресов прибавилось, — по этому и решаем, листать ли дальше.
+function harvest(anchors, site, hosts, urls) {
+  let added = 0;
   for (const a of anchors) {
     let u;
     try { u = new URL(a.href); } catch { continue; }
     if (!hosts.some((h) => u.hostname.endsWith(h))) continue;
     if (!site.courseLink.test(u.pathname)) continue;
     if (site.skipLink && site.skipLink.test(u.pathname)) continue;
-    n += 1;
+    if (u.pathname.split('/').filter(Boolean).length < 2) continue;
+    const clean = u.origin + u.pathname;
+    if (urls.has(clean)) continue;
+    urls.set(clean, a.text);
+    added += 1;
   }
-  return n;
+  return added;
 }
 
-async function loadWholeList(page, slug, site, hosts, urls) {
-  let before = await countCourseLinks(page, site, hosts);
-  for (let i = 0; i < 40; i += 1) {
-    let clicked = false;
-    for (const sel of MORE_BUTTONS) {
-      try {
-        const el = page.locator(sel).first();
-        if (!(await el.isVisible({ timeout: 600 }))) continue;
-        await el.scrollIntoViewIfNeeded({ timeout: 2000 });
-        await el.click({ timeout: 4000 });
-        clicked = true;
-        break;
-      } catch { /* кнопки нет либо перекрыта — пробуем следующую */ }
+// Листает список адресом (у обоих сайтов кнопка «дальше» — обычная ссылка) и
+// снимает адреса С КАЖДОЙ страницы: у Falmouth переход на ?page=,N ЗАМЕНЯЕТ
+// карточки, а не дописывает их, поэтому собирать только после листания нельзя.
+const MAX_PAGES = 30;
+
+async function crawlList(page, slug, site, hosts, urls, base) {
+  for (let i = 0; i < MAX_PAGES; i += 1) {
+    const url = site.pageUrl ? site.pageUrl(base, i) : base;
+    try {
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      if (i === 0) await dismissCookies(page);
+      await page.waitForTimeout(site.settleMs || 2500);
+    } catch (e) {
+      log(`${slug}: страница списка ${url} не открылась — ${e.message.slice(0, 60)}`);
+      break;
     }
-    if (!clicked) break;
-    await page.waitForTimeout(1600);
-    const after = await countCourseLinks(page, site, hosts);
-    if (after <= before) break; // кнопка есть, а список не растёт — конец
-    before = after;
-    if (i % 5 === 4) log(`${slug}: дожимаю список, ссылок ${after}`);
+    const anchors = await page.$$eval('a[href]', (as) => as.map((a) => ({ href: a.href, text: (a.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 120) })));
+    const added = harvest(anchors, site, hosts, urls);
+    if (added === 0) break; // страница не дала ничего нового — список кончился
+    if (!site.pageUrl) break;
   }
 }
 
@@ -231,27 +335,15 @@ for (const [slug, site] of Object.entries(SITES)) {
   const hosts = [site.host, ...(site.hostAlso || [])];
   const urls = new Map();
 
-  for (const list of site.lists) {
-    try {
-      await page.goto(list, { waitUntil: 'domcontentloaded', timeout: 60000 });
-      await dismissCookies(page);
-      await page.waitForTimeout(2500);
-    } catch (e) { log(`${slug}: список ${list} не открылся — ${e.message.slice(0, 60)}`); continue; }
-    // Список отдаёт первую порцию, остальное — по кнопке. Дожимаем её, пока
-    // адреса прибавляются: без этого у Falmouth собиралось 43 курса из 124.
-    await loadWholeList(page, slug, site, hosts, urls);
-    const anchors = await page.$$eval('a[href]', (as) => as.map((a) => ({ href: a.href, text: (a.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 120) })));
-    for (const a of anchors) {
-      let u;
-      try { u = new URL(a.href); } catch { continue; }
-      if (!hosts.some((h) => u.hostname.endsWith(h))) continue;
-      // Ссылка на курс — либо по виду адреса, либо по степени в тексте ссылки.
-      if (!site.courseLink.test(u.pathname) && !DEGREE_LINK.test(a.text)) continue;
-      if (u.pathname.split('/').filter(Boolean).length < 2) continue;
-      if (site.skipLink && site.skipLink.test(u.pathname)) continue;
-      const clean = u.origin + u.pathname;
-      if (!urls.has(clean)) urls.set(clean, a.text);
-    }
+  if (site.pages) {
+    // Список не обходим: страницы заданы поимённо под строки QS.
+    for (const u of site.pages) urls.set(u, null);
+    log(`${slug}: страниц задано поимённо — ${urls.size}`);
+  }
+  for (const list of site.lists || []) {
+    // Список отдаёт по 20 карточек, остальное — следующими страницами.
+    // Без листания у Falmouth бралось 43 адреса вместо 121, у Worcester 52 вместо 266.
+    await crawlList(page, slug, site, hosts, urls, list);
     log(`${slug}: ${list} → всего адресов курсов ${urls.size}`);
   }
 
@@ -266,28 +358,40 @@ for (const [slug, site] of Object.entries(SITES)) {
     } catch { courses.push({ url, title: linkText || null, durationYears: null, durationRaw: null, durationSource: null, note: 'страница не открылась' }); continue; }
     const got = await site.parse(page);
     const years = got.raw ? baseYears(got.raw) : null;
+    const title = got.title || linkText || null;
+    // Раздел списка, а не программа: в сведение с QS такие не идут.
+    const isHub = Boolean((site.hubTitle && site.hubTitle.test(title || ''))
+      || (site.hubUrl && site.hubUrl.test(new URL(url).pathname)));
     courses.push({
       url,
-      title: got.title || linkText || null,
+      title,
+      ...(isHub ? { kind: 'hub' } : {}),
       level: levelFromTitle(got.title || linkText),
       durationYears: years,
       durationRaw: got.raw,
       durationSource: years ? 'страница курса' : null,
       campus: got.campus,
+      // Улика — то, что на странице сказано про срок, когда одного значения нет
+      // (у MPW сразу два варианта, у ILAC срок зависит от входного уровня).
+      ...(got.evidence ? { durationEvidence: got.evidence.slice(0, 400) } : {}),
+      ...(got.both ? { note: 'на странице два срока сразу — один год и два; выбор оператору' } : {}),
+      ...(got.varies ? { note: 'срок программы не фиксирован: зависит от входного уровня английского' } : {}),
     });
     if (n % 25 === 0) log(`${slug}: ${n} / ${Math.min(urls.size, LIMIT)}`);
   }
 
   const city = await collectCity(page, site);
-  const withYears = courses.filter((c) => c.durationYears).length;
+  const real = courses.filter((c) => c.kind !== 'hub');
+  const withYears = real.filter((c) => c.durationYears).length;
   const out = {
     slug, name: site.name, collectedAt: new Date().toISOString().slice(0, 10),
     coursesFound: urls.size, coursesParsed: courses.length,
-    withDuration: withYears, withoutDuration: courses.length - withYears,
+    hubPages: courses.length - real.length,
+    withDuration: withYears, withoutDuration: real.length - withYears,
     cityEvidence: city.evidence, courses,
   };
   fs.writeFileSync(path.join(OUTDIR, `${slug}.json`), JSON.stringify(out, null, 2));
-  log(`${slug}: готово — курсов ${courses.length}, длительность взялась у ${withYears}, без неё ${courses.length - withYears}`);
+  log(`${slug}: готово — программ ${real.length} (+${courses.length - real.length} разделов), длительность взялась у ${withYears}, без неё ${real.length - withYears}`);
   await ctx.close();
 }
 
