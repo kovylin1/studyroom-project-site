@@ -21,8 +21,10 @@ if (existsSync(envFile)) {
 const log = (...a) => process.stderr.write(`[smoke] ${a.join(' ')}\n`);
 
 const COLLECTORS = [
-  { name: 'navitas-uk',      script: 'seed-navitas-uk.mjs',           args: [],             needsEnv: [] },
-  { name: 'oxford-intl',     script: 'seed-oxfordintl-uk.mjs',        args: [],             needsEnv: [] },
+  // Сидеры пишут прямо в живой каталог и собирают карточку с нуля — без --dry-run
+  // проверка «а запускается ли» переписала бы 10 вузов сидом поверх выгрузок партнёров.
+  { name: 'navitas-uk',      script: 'seed-navitas-uk.mjs',           args: ['--dry-run'],  needsEnv: [] },
+  { name: 'oxford-intl',     script: 'seed-oxfordintl-uk.mjs',        args: ['--dry-run'],  needsEnv: [] },
   { name: 'qahe',            script: 'scrape-qahe-all.mjs',           args: ['--limit=1'],  needsEnv: [] },
   { name: 'cats',            script: 'scrape-cats-all.mjs',           args: ['--dry-run'],  needsEnv: [] },
   { name: 'volk',            script: 'scrape-volk-collab-v3.mjs',     args: ['--limit=1'],  needsEnv: [] },
