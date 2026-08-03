@@ -161,6 +161,51 @@ const SITES = {
   },
 };
 
+// Дожимает список до конца: жмёт «Load More» / «Next», пока ссылок прибавляется.
+// Считаем прямо по числу подходящих ссылок на странице, а не по виду кнопки:
+// у Falmouth это ссылка «Load More», у других — кнопка пагинации.
+const MORE_BUTTONS = [
+  'a:has-text("Load More")', 'button:has-text("Load more")', 'button:has-text("Show more")',
+  'a:has-text("Show more")', 'button:has-text("Next")', 'a[rel="next"]',
+];
+
+async function countCourseLinks(page, site, hosts) {
+  const anchors = await page.$$eval('a[href]', (as) => as.map((a) => ({ href: a.href, text: (a.innerText || '').trim().slice(0, 120) })));
+  let n = 0;
+  for (const a of anchors) {
+    let u;
+    try { u = new URL(a.href); } catch { continue; }
+    if (!hosts.some((h) => u.hostname.endsWith(h))) continue;
+    if (!site.courseLink.test(u.pathname)) continue;
+    if (site.skipLink && site.skipLink.test(u.pathname)) continue;
+    n += 1;
+  }
+  return n;
+}
+
+async function loadWholeList(page, slug, site, hosts, urls) {
+  let before = await countCourseLinks(page, site, hosts);
+  for (let i = 0; i < 40; i += 1) {
+    let clicked = false;
+    for (const sel of MORE_BUTTONS) {
+      try {
+        const el = page.locator(sel).first();
+        if (!(await el.isVisible({ timeout: 600 }))) continue;
+        await el.scrollIntoViewIfNeeded({ timeout: 2000 });
+        await el.click({ timeout: 4000 });
+        clicked = true;
+        break;
+      } catch { /* кнопки нет либо перекрыта — пробуем следующую */ }
+    }
+    if (!clicked) break;
+    await page.waitForTimeout(1600);
+    const after = await countCourseLinks(page, site, hosts);
+    if (after <= before) break; // кнопка есть, а список не растёт — конец
+    before = after;
+    if (i % 5 === 4) log(`${slug}: дожимаю список, ссылок ${after}`);
+  }
+}
+
 async function collectCity(page, site) {
   if (!site.contact) return { city: null, evidence: null };
   try {
@@ -192,6 +237,9 @@ for (const [slug, site] of Object.entries(SITES)) {
       await dismissCookies(page);
       await page.waitForTimeout(2500);
     } catch (e) { log(`${slug}: список ${list} не открылся — ${e.message.slice(0, 60)}`); continue; }
+    // Список отдаёт первую порцию, остальное — по кнопке. Дожимаем её, пока
+    // адреса прибавляются: без этого у Falmouth собиралось 43 курса из 124.
+    await loadWholeList(page, slug, site, hosts, urls);
     const anchors = await page.$$eval('a[href]', (as) => as.map((a) => ({ href: a.href, text: (a.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 120) })));
     for (const a of anchors) {
       let u;
