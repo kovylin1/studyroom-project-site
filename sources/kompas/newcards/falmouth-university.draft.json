@@ -2,7 +2,7 @@
   "slug": "falmouth-university",
   "name": "Falmouth University",
   "country": "United Kingdom",
-  "city": null,
+  "city": "Falmouth, Penryn",
   "programs": [
     {
       "slug": "animation-ba-hons-three-year-degree",
@@ -1235,7 +1235,9 @@
     "builtAt": "2026-08-03",
     "priceFrom": "qs-apply / campusLevelStated (цена уровня кампуса, не курса)",
     "durationFrom": "офсайт (страница курса) либо название строки QS",
-    "cityProposal": {
+    "city": {
+      "value": "Falmouth, Penryn",
+      "source": "QS, описание вуза: «across two campuses (Falmouth and Penryn)»",
       "evidenceUrl": "https://www.falmouth.ac.uk/contact-us",
       "campusValues": [
         "Penryn Campus",
@@ -1243,8 +1245,7 @@
       ],
       "note": "значение города ставит человек; у Worcester json-ld отдаёт графство «Worcestershire», а не город"
     },
-    "missing": [
-      "city — значение ставит человек по улике"
-    ]
+    "feeNote": null,
+    "missing": []
   }
 }

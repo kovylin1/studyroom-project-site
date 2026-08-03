@@ -50,6 +50,9 @@ const slugify = (s) => (s || '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ
 
 // --------------------------------------------------------------------- вузы --
 
+// Город берётся из описания вуза у QS (решение владельца 2026-08-03); где кампусов
+// несколько — перечисляются все, потому что учатся и там, и там. Значение и точная
+// цитата-источник лежат рядом, чтобы человек мог проверить не выходя из файла.
 const UNIS = [
   {
     slug: 'falmouth-university',
@@ -58,6 +61,8 @@ const UNIS = [
     offsite: 'falmouth',
     qs: ['falmouth-university'],
     mode: 'fuzzy',
+    city: 'Falmouth, Penryn',
+    citySource: 'QS, описание вуза: «across two campuses (Falmouth and Penryn)»',
   },
   {
     // У QS вуз приходит ДВУМЯ выгрузками (бейдж-дубль портала, урок QS-5):
@@ -69,6 +74,10 @@ const UNIS = [
     offsite: 'worcester',
     qs: ['university-of-worcester-undergraduate', 'university-of-worcester-postgraduate'],
     mode: 'fuzzy',
+    // Единственный из пяти, у кого города нет в описании QS. Берётся с офсайта;
+    // json-ld того же сайта отдаёт «Worcestershire» — это графство, не город.
+    city: 'Worcester',
+    citySource: 'офсайт (у QS в описании города нет); json-ld отдаёт графство «Worcestershire» — не брать',
   },
   {
     slug: 'peking-university-hsbc-business-school',
@@ -85,6 +94,18 @@ const UNIS = [
       ['Cross-Border MA in Finance', 'Cross_Border_Master_s_i_Finance'],
       ['Cross-Border MA Management', 'Cross_Border_Master_s_in_Management'],
     ],
+    city: 'Shenzhen, Oxfordshire',
+    citySource: 'офсайт: «Year 1 in Oxfordshire, UK; Year 2 in Shenzhen, China» — учатся в обоих',
+    // У QS цена пришла без валюты (272 895), поэтому берётся с офсайта, где она
+    // расписана прямо. Сумма сходится с шапкой QS «£29,500», а 272 895 — та же
+    // сумма в юанях по курсу ~9.25. ВНИМАНИЕ: это цена за ВСЮ программу (два года),
+    // а не за год, — см. кейс.
+    feeOverride: {
+      amount: 29500,
+      currency: 'GBP',
+      note: 'за всю программу (2 года): год 1 Оксфордшир £23 000 + год 2 Шэньчжэнь £6 500',
+      source: 'https://www.pku.org.uk/Study/Cross_Border_Master_s_i_Finance.htm — «Tuition fee (2026/27) Year 1 Oxfordshire, UK £23,000; Year 2 Shenzhen, China £6,500»',
+    },
   },
   {
     slug: 'mpw',
@@ -101,6 +122,8 @@ const UNIS = [
       ['2 year A Level', '/locations/london/courses/a-level/'],
       ['GCSE Subjects', '/locations/london/courses/gcse/'],
     ],
+    city: 'London, Birmingham, Cambridge',
+    citySource: 'QS, описание вуза: «three fifth- and sixth-form colleges in London, Birmingham and Cambridge»',
   },
   {
     slug: 'ilac-international-language-academy-of-canada',
@@ -114,6 +137,8 @@ const UNIS = [
     pairs: [
       ['Young Adults 15 - 18 University Pathway Program', 'university-pathway-program-young-adults'],
     ],
+    city: 'Toronto, Vancouver',
+    citySource: 'QS, описание вуза: «with campuses in Toronto and Vancouver»',
   },
 ];
 
@@ -244,6 +269,28 @@ const LEVEL_ALIAS = {
 };
 const lvl = (v) => (v ? (LEVEL_ALIAS[v] ?? v) : null);
 
+/**
+ * Уровень, когда его не дали ни QS, ни страница курса (решение владельца 2026-08-03).
+ *
+ * Читается ТОЛЬКО однозначная разметка — код степени в адресе страницы или название
+ * квалификации. Ни кредиты, ни срок в уровень не пересчитываются: это был бы вывод.
+ * Что осталось без ответа — уходит кейсом, а не догадкой.
+ */
+const LEVEL_BY_MARK = [
+  [/\bpgce\b/i, 'master'],          // postgraduate certificate in education
+  [/\ba[ -]level\b/i, 'sixth-form'],
+  [/\bgcse\b/i, 'high-school'],
+  [/\b(ba|bsc|beng|llb|bmus|joint[ -]honours|hons)\b/i, 'bachelor'],
+  [/\b(ma|msc|meng|mba|mres|mphil)\b/i, 'master'],
+  [/\bphd\b/i, 'phd'],
+];
+
+export function levelFromMarks(title, url) {
+  const hay = `${title || ''} ${urlSlugText(url || '')}`;
+  for (const [re, level] of LEVEL_BY_MARK) if (re.test(hay)) return level;
+  return null;
+}
+
 // Уровни сходятся, если хоть один неизвестен или они равны. Отдельно разрешена
 // пара foundation↔bachelor: строка QS «… with Integrated Foundation» — это тот же
 // бакалавриат с добавленным нулевым годом, и ведёт она на ту же страницу офсайта.
@@ -367,11 +414,12 @@ function buildCard(uni, qsHead, rows, cityProposal) {
     if (!r.duration.years) continue; // без срока схема карточку не соберёт
     if (r.duplicateOf) continue; // тот же курс другой строкой QS, см. кейс
     const slug = programSlug(r.qs.title, used);
+    const marked = levelFromMarks(r.qs.title, r.hit?.course?.url);
     const p = {
       slug,
       title: r.qs.title,
       durationYears: r.duration.years,
-      level: lvl(r.qs.level) ?? lvl(r.hit?.course?.level) ?? null,
+      level: lvl(r.qs.level) ?? lvl(r.hit?.course?.level) ?? marked,
       source: 'qs-apply+offsite',
       verifiedBySite: r.duration.basis === 'offsite-page',
       confidence: r.confidence,
@@ -382,11 +430,15 @@ function buildCard(uni, qsHead, rows, cityProposal) {
     if (!p.level) delete p.level;
     programs.push(p);
     // Сумма без валюты — не цена (правило «не фабриковать», урок сессии 3.5).
-    // У PHBS QS отдаёт 272 895 без валюты, и в карточку это уйти не должно:
-    // в шапке того же вуза стоит «£29,500», то есть разряд величины другой.
-    if (typeof r.qs.tuition === 'number' && r.qs.tuition > 0 && r.qs.currency) {
-      byProgram[slug] = r.qs.tuition;
-      currencies.add(r.qs.currency);
+    // У PHBS QS отдаёт 272 895 без валюты; цена для него взята с офсайта (feeOverride),
+    // где она расписана по годам и сходится с шапкой QS «£29,500».
+    const fee = uni.feeOverride
+      ?? (typeof r.qs.tuition === 'number' && r.qs.tuition > 0 && r.qs.currency
+        ? { amount: r.qs.tuition, currency: r.qs.currency }
+        : null);
+    if (fee) {
+      byProgram[slug] = fee.amount;
+      currencies.add(fee.currency);
     }
   }
 
@@ -397,7 +449,7 @@ function buildCard(uni, qsHead, rows, cityProposal) {
     slug: uni.slug,
     name: uni.name,
     country: uni.country,
-    city: null, // ставит человек по улике, см. _kompas.cityProposal
+    city: uni.city ?? null,
     programs,
     tuition: { currency, byProgram },
     deadlines: {},
@@ -414,11 +466,12 @@ function buildCard(uni, qsHead, rows, cityProposal) {
       builtAt: TODAY,
       priceFrom: 'qs-apply / campusLevelStated (цена уровня кампуса, не курса)',
       durationFrom: 'офсайт (страница курса) либо название строки QS',
-      cityProposal,
+      city: { value: uni.city ?? null, source: uni.citySource ?? null, ...cityProposal },
+      feeNote: uni.feeOverride ? `${uni.feeOverride.note} — ${uni.feeOverride.source}` : null,
       // Чего карточке не хватает до схемы. Список не «на всякий случай»: каждый
       // пункт — поле, без которого zod карточку не пропустит.
       missing: [
-        'city — значение ставит человек по улике',
+        ...(uni.city ? [] : ['city — значение ставит человек по улике']),
         ...(currency ? [] : ['tuition.currency — цена у QS без валюты либо валюты разные']),
         ...(noLevel.length ? [`level у ${noLevel.length} программ: ${noLevel.slice(0, 5).join(', ')}${noLevel.length > 5 ? ' …' : ''}`] : []),
         ...(programs.length ? [] : ['programs — ни одной программы со сроком']),
@@ -533,10 +586,14 @@ async function run() {
     for (const r of rows) {
       if (typeof r.qs.tuition === 'number' && r.qs.tuition > 0 && !r.qs.currency) {
         cases.push({
-          kind: 'цена без валюты',
+          kind: uni.feeOverride ? 'цена взята с офсайта, проверить единицу' : 'цена без валюты',
           program: r.qs.title,
           value: r.qs.tuition,
-          hint: heads[0].yearlyFeesStated ? `у QS в шапке вуза: ${heads[0].yearlyFeesStated}` : null,
+          hint: uni.feeOverride
+            ? `${uni.feeOverride.amount} ${uni.feeOverride.currency} — ${uni.feeOverride.note}. `
+              + `У QS в шапке: ${heads[0].yearlyFeesStated}. Число 272 895 — та же сумма в юанях (курс ~9.25). `
+              + 'Если поле хранит цену ЗА ГОД, ставить 14 750.'
+            : (heads[0].yearlyFeesStated ? `у QS в шапке вуза: ${heads[0].yearlyFeesStated}` : null),
         });
       }
     }

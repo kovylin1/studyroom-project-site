@@ -9,9 +9,9 @@
 | Вуз | QS строк (после отсева дублей) | Страниц офсайта | Пар | Со сроком | В черновике | Кейсов | Страниц офсайта без пары |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Falmouth University | 124 → 98 | 102 | 97 | 96 | 93 | 48 | 47 |
-| University of Worcester | 212 → 201 | 245 | 106 | 94 | 94 | 127 | 141 |
+| University of Worcester | 212 → 201 | 245 | 106 | 94 | 94 | 110 | 141 |
 | Peking University HSBC Business School | 2 → 2 | 2 | 2 | 2 | 2 | 2 | 0 |
-| MPW | 4 → 4 | 6 | 4 | 2 | 2 | 4 | 4 |
+| MPW | 4 → 4 | 6 | 4 | 2 | 2 | 2 | 4 |
 | ILAC — International Language Academy of Canada | 1 → 1 | 2 | 1 | 0 | 0 | 1 | 1 |
 
 Разделы (`kind: "hub"`) в сведение не брались: falmouth-university 18, university-of-worcester 1, peking-university-hsbc-business-school 0, mpw 0, ilac-international-language-academy-of-canada 0.
@@ -22,11 +22,10 @@
 |---|---:|
 | нет пары на офсайте | 96 |
 | срок под вопросом (вариант курса) | 43 |
-| нет уровня | 19 |
 | нет срока | 16 |
 | одна страница у нескольких строк QS | 4 |
 | две страницы с одинаковым счётом | 2 |
-| цена без валюты | 2 |
+| цена взята с офсайта, проверить единицу | 2 |
 
 Полный список — `sources/kompas/newcards/cases.json`.
 
@@ -106,30 +105,14 @@
 
 - MPHIL/PHD ENGLISH LITERATURE AND LANGUAGE / MPhil/Phd ENGLISH LITERATURE and LANGUAGE — у строк РАЗНАЯ цена — какая верна, решает человек — цены: 14700 GBP / 17400 GBP
 
-**нет уровня — 17**
-
-- GRAPHIC DESIGN — уровень не отдали ни QS, ни страница курса; схема его требует
-- SCREENWRITING (JOINT HONOURS) — уровень не отдали ни QS, ни страница курса; схема его требует
-- PGCE - PRIMARY EDUCATION with SENDI (QTS) — уровень не отдали ни QS, ни страница курса; схема его требует
-- PGCE - PRIMARY with PE — уровень не отдали ни QS, ни страница курса; схема его требует
-- PGCE - SECONDARY — уровень не отдали ни QS, ни страница курса; схема его требует
-- PGCE - SECONDARY - GEOGRAPHY — уровень не отдали ни QS, ни страница курса; схема его требует
-- PGCE - SECONDARY - HISTORY — уровень не отдали ни QS, ни страница курса; схема его требует
-- PGCE - SECONDARY - MODERN LANGUAGES — уровень не отдали ни QS, ни страница курса; схема его требует
-- PGCE - SECONDARY - PSYCHOLOGY — уровень не отдали ни QS, ни страница курса; схема его требует
-- PGCE - SECONDARY - RELIGIOUS EDUCATION — уровень не отдали ни QS, ни страница курса; схема его требует
-- PGCE - SECONDARY - MATHEMATICS — уровень не отдали ни QS, ни страница курса; схема его требует
-- PGCE - SECONDARY - SCIENCE: BIOLOGY — уровень не отдали ни QS, ни страница курса; схема его требует
-- …ещё 5, см. cases.json
-
 **Страницы офсайта без пары — 141** (примеры): Professional Development, Medicine (Graduate Entry), Circus Arts and Physical Theatre, Computer Science, Cricket Coaching and Management, Criminology and Psychology, Criminology, Criminology with Forensic Psychology, Degree in Professional Policing, Dental Technology, Diagnostic Radiography, Diagnostic Radiography
 
 ## Peking University HSBC Business School
 
-**цена без валюты — 2**
+**цена взята с офсайта, проверить единицу — 2**
 
-- Cross-Border MA in Finance — у QS в шапке вуза: Max: £29,500.00 Min: £29,500.00
-- Cross-Border MA Management — у QS в шапке вуза: Max: £29,500.00 Min: £29,500.00
+- Cross-Border MA in Finance — 29500 GBP — за всю программу (2 года): год 1 Оксфордшир £23 000 + год 2 Шэньчжэнь £6 500. У QS в шапке: Max: £29,500.00 Min: £29,500.00. Число 272 895 — та же сумма в юанях (курс ~9.25). Если поле хранит цену ЗА ГОД, ставить 14 750.
+- Cross-Border MA Management — 29500 GBP — за всю программу (2 года): год 1 Оксфордшир £23 000 + год 2 Шэньчжэнь £6 500. У QS в шапке: Max: £29,500.00 Min: £29,500.00. Число 272 895 — та же сумма в юанях (курс ~9.25). Если поле хранит цену ЗА ГОД, ставить 14 750.
 
 ## MPW
 
@@ -137,11 +120,6 @@
 
 - GCSE Subjects — срока нет ни на странице, ни в названии строки QS — улика: «TIONS » MPW LONDON » COURSES » GCSE MPW London – GCSE & IGCSE MPW London offers one year GCSE courses and two year GCSE »
 - GCSE Subjects — срока нет ни на странице, ни в названии строки QS — улика: «TIONS » MPW LONDON » COURSES » GCSE MPW London – GCSE & IGCSE MPW London offers one year GCSE courses and two year GCSE »
-
-**нет уровня — 2**
-
-- 1 year A Level — уровень не отдали ни QS, ни страница курса; схема его требует
-- 2 year A Level — уровень не отдали ни QS, ни страница курса; схема его требует
 
 **Страницы офсайта без пары — 4** (примеры): A Level — MPW Birmingham, GCSE — MPW Birmingham, A Level — MPW Cambridge, GCSE — MPW Cambridge
 

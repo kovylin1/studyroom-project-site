@@ -2,7 +2,7 @@
   "slug": "ilac-international-language-academy-of-canada",
   "name": "ILAC — International Language Academy of Canada",
   "country": "Canada",
-  "city": null,
+  "city": "Toronto, Vancouver",
   "programs": [],
   "tuition": {
     "currency": null,
@@ -24,15 +24,17 @@
     "builtAt": "2026-08-03",
     "priceFrom": "qs-apply / campusLevelStated (цена уровня кампуса, не курса)",
     "durationFrom": "офсайт (страница курса) либо название строки QS",
-    "cityProposal": {
+    "city": {
+      "value": "Toronto, Vancouver",
+      "source": "QS, описание вуза: «with campuses in Toronto and Vancouver»",
       "evidenceUrl": "https://ilac.com/contact/",
       "campusValues": [
         "Toronto + Vancouver"
       ],
       "note": "значение города ставит человек; у Worcester json-ld отдаёт графство «Worcestershire», а не город"
     },
+    "feeNote": null,
     "missing": [
-      "city — значение ставит человек по улике",
       "tuition.currency — цена у QS без валюты либо валюты разные",
       "programs — ни одной программы со сроком"
     ]

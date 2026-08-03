@@ -2,7 +2,7 @@
   "slug": "peking-university-hsbc-business-school",
   "name": "Peking University HSBC Business School",
   "country": "China",
-  "city": null,
+  "city": "Shenzhen, Oxfordshire",
   "programs": [
     {
       "slug": "cross-border-ma-in-finance",
@@ -30,8 +30,11 @@
     }
   ],
   "tuition": {
-    "currency": null,
-    "byProgram": {}
+    "currency": "GBP",
+    "byProgram": {
+      "cross-border-ma-in-finance": 29500,
+      "cross-border-ma-management": 29500
+    }
   },
   "deadlines": {},
   "requirements": {
@@ -49,7 +52,9 @@
     "builtAt": "2026-08-03",
     "priceFrom": "qs-apply / campusLevelStated (цена уровня кампуса, не курса)",
     "durationFrom": "офсайт (страница курса) либо название строки QS",
-    "cityProposal": {
+    "city": {
+      "value": "Shenzhen, Oxfordshire",
+      "source": "офсайт: «Year 1 in Oxfordshire, UK; Year 2 in Shenzhen, China» — учатся в обоих",
       "evidenceUrl": "https://english.phbs.pku.edu.cn/About/Visit___Contact.htm",
       "campusValues": [
         "Year 1 in Oxfordshire, UK; Year 2 in Shenzhen, China",
@@ -57,9 +62,7 @@
       ],
       "note": "значение города ставит человек; у Worcester json-ld отдаёт графство «Worcestershire», а не город"
     },
-    "missing": [
-      "city — значение ставит человек по улике",
-      "tuition.currency — цена у QS без валюты либо валюты разные"
-    ]
+    "feeNote": "за всю программу (2 года): год 1 Оксфордшир £23 000 + год 2 Шэньчжэнь £6 500 — https://www.pku.org.uk/Study/Cross_Border_Master_s_i_Finance.htm — «Tuition fee (2026/27) Year 1 Oxfordshire, UK £23,000; Year 2 Shenzhen, China £6,500»",
+    "missing": []
   }
 }

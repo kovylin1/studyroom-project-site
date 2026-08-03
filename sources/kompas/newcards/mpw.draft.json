@@ -2,12 +2,13 @@
   "slug": "mpw",
   "name": "MPW",
   "country": "United Kingdom",
-  "city": null,
+  "city": "London, Birmingham, Cambridge",
   "programs": [
     {
       "slug": "1-year-a-level",
       "title": "1 year A Level",
       "durationYears": 1,
+      "level": "sixth-form",
       "source": "qs-apply+offsite",
       "verifiedBySite": false,
       "confidence": 0.8,
@@ -19,6 +20,7 @@
       "slug": "2-year-a-level",
       "title": "2 year A Level",
       "durationYears": 2,
+      "level": "sixth-form",
       "source": "qs-apply+offsite",
       "verifiedBySite": false,
       "confidence": 0.8,
@@ -50,7 +52,9 @@
     "builtAt": "2026-08-03",
     "priceFrom": "qs-apply / campusLevelStated (цена уровня кампуса, не курса)",
     "durationFrom": "офсайт (страница курса) либо название строки QS",
-    "cityProposal": {
+    "city": {
+      "value": "London, Birmingham, Cambridge",
+      "source": "QS, описание вуза: «three fifth- and sixth-form colleges in London, Birmingham and Cambridge»",
       "evidenceUrl": "https://www.mpw.ac.uk/contact/",
       "campusValues": [
         "london",
@@ -59,9 +63,7 @@
       ],
       "note": "значение города ставит человек; у Worcester json-ld отдаёт графство «Worcestershire», а не город"
     },
-    "missing": [
-      "city — значение ставит человек по улике",
-      "level у 2 программ: 1 year A Level, 2 year A Level"
-    ]
+    "feeNote": null,
+    "missing": []
   }
 }
