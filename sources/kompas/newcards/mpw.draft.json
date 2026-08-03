@@ -1,0 +1,67 @@
+{
+  "slug": "mpw",
+  "name": "MPW",
+  "country": "United Kingdom",
+  "city": null,
+  "programs": [
+    {
+      "slug": "1-year-a-level",
+      "title": "1 year A Level",
+      "durationYears": 1,
+      "source": "qs-apply+offsite",
+      "verifiedBySite": false,
+      "confidence": 0.8,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-03",
+      "programUrl": "https://www.mpw.ac.uk/locations/london/courses/a-level/"
+    },
+    {
+      "slug": "2-year-a-level",
+      "title": "2 year A Level",
+      "durationYears": 2,
+      "source": "qs-apply+offsite",
+      "verifiedBySite": false,
+      "confidence": 0.8,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-03",
+      "programUrl": "https://www.mpw.ac.uk/locations/london/courses/a-level/"
+    }
+  ],
+  "tuition": {
+    "currency": "GBP",
+    "byProgram": {
+      "1-year-a-level": 28518,
+      "2-year-a-level": 28518
+    }
+  },
+  "deadlines": {},
+  "requirements": {
+    "exams": []
+  },
+  "scholarships": [],
+  "lastChecked": "2026-08-03",
+  "sourceUrl": "https://admissions.qs.com/suite/sites/qs-apply/group/students-and-applications/page/institutions/record/L1ijtFAwne7VnNX8_tC-LjSVQFhiLZUkyWApLUgOR3b9hNs6MlF004acLxf5TwOcuWWPBQ-qoQCY8ofTk_csJpRhK5WkpEbYl9mONgdiKsrajzsKVsyTWiICEs48RDCYI42TBPs9gk/view/summary",
+  "sourceHash": "56cc7699ce8ff537",
+  "confidence": "aggregator",
+  "language": "en",
+  "_kompas": {
+    "draft": true,
+    "note": "ЧЕРНОВИК. В живой каталог не класть: карточки заводит человек (правило 31.07).",
+    "builtAt": "2026-08-03",
+    "priceFrom": "qs-apply / campusLevelStated (цена уровня кампуса, не курса)",
+    "durationFrom": "офсайт (страница курса) либо название строки QS",
+    "cityProposal": {
+      "evidenceUrl": "https://www.mpw.ac.uk/contact/",
+      "campusValues": [
+        "london",
+        "birmingham",
+        "cambridge"
+      ],
+      "note": "значение города ставит человек; у Worcester json-ld отдаёт графство «Worcestershire», а не город"
+    },
+    "missing": [
+      "city — значение ставит человек по улике",
+      "level у 2 программ: 1 year A Level, 2 year A Level"
+    ]
+  }
+}
