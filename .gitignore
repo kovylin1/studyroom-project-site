@@ -12,6 +12,10 @@
 *.log
 **/logs/
 scraper/run-*.json
+*.out
+# Сырьё замера разметки офсайтов: 3.5 МБ чужого HTML, нужен только глазами
+# в момент замера. Сводка замера (report.json / *.json) в git едет.
+sources/kompas/qs-newcards-markup/*.html
 
 # IDE / OS junk
 .DS_Store
