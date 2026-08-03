@@ -38,8 +38,12 @@ const MAX_LISTS = parseInt(arg('--lists=') || '6', 10);
 const SITES = [
   { slug: 'falmouth', name: 'Falmouth University', hosts: ['falmouth.ac.uk'],
     seeds: ['https://www.falmouth.ac.uk/courses/undergraduate', 'https://www.falmouth.ac.uk/study/postgraduate'] },
+  // Списка курсов у Worcester нет ни в sitemap, ни на странице A-Z: их отдаёт
+  // поиск home.aspx по уровню (52 — бакалавриат, 53 — магистратура).
+  // Сами страницы курсов живут на /courses/<слаг>.
   { slug: 'worcester', name: 'University of Worcester', hosts: ['worcester.ac.uk', 'worc.ac.uk'],
-    seeds: ['https://www.worcester.ac.uk/study/find-a-course/home.aspx?level=52&term=', 'https://www.worcester.ac.uk/study/find-a-course/a-z-of-courses.aspx'] },
+    seeds: ['https://www.worc.ac.uk/study/find-a-course/home.aspx?level=52&term=', 'https://www.worc.ac.uk/study/find-a-course/home.aspx?level=53&term='],
+    courseLink: /^\/courses\/[a-z0-9-]{4,}/i },
   { slug: 'kpu', name: 'Kwantlen Polytechnic University', hosts: ['kpu.ca'],
     seeds: ['https://calendar.kpu.ca/programs-az/', 'https://www.kpu.ca/programs'] },
   { slug: 'marshall', name: 'Marshall University', hosts: ['marshall.edu'],
@@ -88,7 +92,10 @@ function parseIso(v) {
 async function scrapeSignals(page) {
   return page.evaluate(() => {
     const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
-    const out = { h1: clean(document.querySelector('h1')?.innerText), jsonLd: [], pairs: [], address: null, ldLocality: null, text: '' };
+    // У Courseleaf (KPU, Marshall) первый h1 — шапка сайта, название программы
+    // лежит в блоке содержимого. Берём его, если он есть.
+    const titleEl = document.querySelector('#content h1, .page-title, main h1, article h1') || document.querySelector('h1');
+    const out = { h1: clean(titleEl?.innerText), jsonLd: [], pairs: [], address: null, ldLocality: null, text: '' };
 
     for (const el of document.querySelectorAll('script[type="application/ld+json"]')) {
       out.jsonLd.push(el.textContent.slice(0, 20000));
@@ -193,7 +200,8 @@ for (const site of SITES) {
       if (!site.hosts.some((h) => u.hostname.endsWith(h))) continue;
       if (/\.(pdf|jpe?g|png|docx?|xlsx?|zip)$/i.test(u.pathname)) continue;
       const clean = u.origin + u.pathname + (u.search && /level|term|id/i.test(u.search) ? u.search : '');
-      if (DEGREE.test(a.text) && u.pathname.split('/').filter(Boolean).length >= 1) {
+      const looksLikeCourse = site.courseLink ? site.courseLink.test(u.pathname) : DEGREE.test(a.text);
+      if (looksLikeCourse && u.pathname.split('/').filter(Boolean).length >= 1) {
         if (!courseLinks.has(clean)) courseLinks.set(clean, a.text);
       } else if (LIST_HINT.test(u.pathname) && !seenUrl.has(clean) && listQueue.length < 40) {
         listQueue.push(clean);
