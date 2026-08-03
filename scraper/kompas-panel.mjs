@@ -11,6 +11,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { KOMPAS_DIR, ROOT, logger } from './lib/kompas-collect.mjs';
 
 const log = logger('panel');
@@ -27,7 +28,50 @@ const PARTS = [
   'sito-review.json',
 ];
 
+const ORPHANS = path.join(KOMPAS_DIR, 'panel-orphan-decisions.json');
+
 const readJson = async (f) => { try { return JSON.parse(await fs.readFile(f, 'utf8')); } catch { return null; } };
+
+/**
+ * Перенести решения оператора из уже собранной панели в свежую сборку.
+ *
+ * Панель — не производный файл: `/manager` коммитит решение прямо в
+ * `site/public/api/kompas-review.json` через GitHub API, и другого их хранилища нет.
+ * А сборщик до 2026-08-03 складывал панель заново из частей и ничего оттуда не читал,
+ * то есть каждый пересчёт стирал всё, что оператор нащёлкал с прошлого раза
+ * (замер: 1929 решений в панели против 1100 в частях — 829 под нож). Ровно та же дыра,
+ * что чинили у `kompas-direct-cases.mjs` в `0492de90`.
+ *
+ * Решение из панели старше решения из части: часть пересобирается скриптом, а в панель
+ * нажимает человек. Решения, которым в новой сборке не нашлось кейса, не выбрасываются
+ * молча — они возвращаются отдельным списком и уезжают в файл.
+ */
+export function carryDecisions(built, prevItems) {
+  const prev = new Map((prevItems ?? []).map((p) => [p.id, p]));
+  const claimed = new Set();   // id прошлой панели, чьё решение нашло себе кейс
+  let carried = 0, conflicts = 0;
+
+  for (const it of built) {
+    // Кейс мог сменить id: свёртка прайса 2026-08-03 заменила построчные кейсы
+    // групповыми, и решение оператора лежит на id одной из свёрнутых строк.
+    // Порядок проб: собственный id, потом id членов группы, потом их legacy-форма.
+    const probes = [it.id, ...(it.members ?? []).flatMap((m) => [m.id, m.legacyId])].filter(Boolean);
+    let hit = null;
+    for (const key of probes) {
+      const p = prev.get(key);
+      if (p?.decision) { claimed.add(key); if (!hit) hit = p; }
+    }
+    if (!hit) continue;
+    if (it.decision && it.decision !== hit.decision) conflicts += 1;
+    if (!it.decision) carried += 1;
+    it.decision = hit.decision;
+    it.decidedAt = hit.decidedAt ?? it.decidedAt ?? null;
+    it.applied = hit.applied ?? it.applied ?? false;
+  }
+
+  const orphans = (prevItems ?? []).filter((p) => p.decision && !claimed.has(p.id));
+  return { carried, conflicts, orphans };
+}
 
 async function main() {
   const items = [];
@@ -48,6 +92,9 @@ async function main() {
     seen.add(it.id); unique.push(it);
   }
 
+  const prevPanel = await readJson(OUT);
+  const { carried, conflicts, orphans } = carryDecisions(unique, prevPanel?.items);
+
   const order = { critical: 0, warning: 1, info: 2 };
   unique.sort((a, b) => (order[a.severity] ?? 3) - (order[b.severity] ?? 3) || String(a.slug).localeCompare(String(b.slug)));
 
@@ -58,12 +105,31 @@ async function main() {
   await fs.writeFile(OUT, JSON.stringify({
     generatedAt: new Date().toISOString(),
     scope: 'kompas',
-    summary: { total: unique.length, byIssue, sources, duplicatesDropped: dupes.length },
+    summary: {
+      total: unique.length, byIssue, sources, duplicatesDropped: dupes.length,
+      decided: unique.filter((i) => i.decision).length,
+      decisionsCarriedFromPanel: carried, decisionConflicts: conflicts, orphanDecisions: orphans.length,
+    },
     items: unique,
   }, null, 2) + '\n', 'utf8');
 
+  // Решение, которому не нашлось кейса, не должно исчезнуть без следа: кейс мог
+  // сменить id (свёртка прайса 2026-08-03) или уйти из выборки. Складываем рядом.
+  if (orphans.length) {
+    await fs.writeFile(ORPHANS, JSON.stringify({
+      generatedAt: new Date().toISOString(),
+      note: 'Решения оператора, которым в свежей сборке панели не нашлось кейса с тем же id. Не потеряны — разобрать вручную.',
+      items: orphans,
+    }, null, 2) + '\n', 'utf8');
+  }
+
   log(`в панель ${unique.length} кейсов${dupes.length ? `, отброшено дублей ${dupes.length}` : ''}`);
+  log(`решений: в частях ${unique.filter((i) => i.decision).length - carried}, перенесено из панели ${carried}` +
+    `${conflicts ? `, расхождений ${conflicts} (взято из панели)` : ''}` +
+    `${orphans.length ? `, осиротело ${orphans.length} → ${path.relative(ROOT, ORPHANS)}` : ''}`);
   console.log('PANEL DONE', JSON.stringify({ total: unique.length, sources }));
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+// Сборка запускается только при прямом вызове: файл импортируют тесты.
+const invokedDirectly = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (invokedDirectly) main().catch((e) => { console.error(e); process.exit(1); });
