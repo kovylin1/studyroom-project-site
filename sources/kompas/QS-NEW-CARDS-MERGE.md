@@ -1,4 +1,4 @@
-# Сведение офсайта с QS — 2026-08-03
+# Сведение офсайта с QS — 2026-08-04
 
 Собрано `scraper/kompas-merge-offsite.mjs`. Цена — от QS (`campusLevelStated`),
 срок — со страницы курса офсайта либо из названия строки QS, город — за человеком.
@@ -9,7 +9,7 @@
 | Вуз | QS строк (после отсева дублей) | Страниц офсайта | Пар | Со сроком | В черновике | Кейсов | Страниц офсайта без пары |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Falmouth University | 124 → 98 | 102 | 97 | 96 | 93 | 48 | 47 |
-| University of Worcester | 212 → 201 | 245 | 106 | 94 | 94 | 110 | 141 |
+| University of Worcester | 212 → 201 | 262 | 135 | 108 | 108 | 102 | 135 |
 | Peking University HSBC Business School | 2 → 2 | 2 | 2 | 2 | 2 | 2 | 0 |
 | MPW | 4 → 4 | 6 | 4 | 2 | 2 | 2 | 4 |
 | ILAC — International Language Academy of Canada | 1 → 1 | 2 | 1 | 0 | 0 | 1 | 1 |
@@ -20,10 +20,10 @@
 
 | Вид | Сколько |
 |---|---:|
-| нет пары на офсайте | 96 |
+| нет пары на офсайте | 67 |
 | срок под вопросом (вариант курса) | 43 |
-| нет срока | 16 |
-| одна страница у нескольких строк QS | 4 |
+| нет срока | 31 |
+| одна страница у нескольких строк QS | 10 |
 | две страницы с одинаковым счётом | 2 |
 | цена взята с офсайта, проверить единицу | 2 |
 
@@ -65,47 +65,54 @@
 
 ## University of Worcester
 
-**нет пары на офсайте — 95**
+**нет пары на офсайте — 66**
 
-- ACCOUNTING and FINANCE DIPHE — лучший счёт 0.00 < 0.8 — ближайшая страница: Professional Development (0.00) https://www.worcester.ac.uk/courses/postgraduate-professional-development
-- BA ACCOUNTING and FINANCE (HONS) — лучший счёт 0.25 < 0.8 — ближайшая страница: Filmmaking (0.25) https://www.worc.ac.uk/courses/filmmaking-ba-hons
-- BA BUSINESS and FINANCE (HONS) — лучший счёт 0.50 < 0.8 — ближайшая страница: Business and Marketing (0.50) https://www.worc.ac.uk/courses/business-marketing-ba-hons
-- BA BUSINESS and HUMAN RESOURCE MANAGEMENT (HONS) — лучший счёт 0.60 < 0.8 — ближайшая страница: Business Management (0.60) https://www.worc.ac.uk/courses/business-management-ba-hons
+- ACCOUNTING and FINANCE DIPHE — лучший счёт 0.67 < 0.8 — ближайшая страница: Accounting and Finance (0.67) https://www.worc.ac.uk/courses/accounting-and-finance-ba-hons
 - BA DIGITAL BUSINESS (HONS) — лучший счёт 0.50 < 0.8 — ближайшая страница: Business and Marketing (0.50) https://www.worc.ac.uk/courses/business-marketing-ba-hons
 - BSc BUSINESS PSYCHOLOGY (HONS) — лучший счёт 0.67 < 0.8 — ближайшая страница: Psychology (0.67) https://www.worc.ac.uk/courses/psychology-bsc-hons
 - MARKETING — лучший счёт 0.50 < 0.8 — ближайшая страница: Business and Marketing (0.50) https://www.worc.ac.uk/courses/business-marketing-ba-hons
-- ANIMATION (JOINT HONOURS) — лучший счёт 0.33 < 0.8 — ближайшая страница: Screenwriting (0.33) https://www.worc.ac.uk/courses/screenwriting-joint-honours
-- BA ANIMATION and FILMMAKING (HONS) — лучший счёт 0.67 < 0.8 — ближайшая страница: Filmmaking (0.67) https://www.worc.ac.uk/courses/filmmaking-ba-hons
-- BA ANIMATION and GAME ART (HONS) — лучший счёт 0.75 < 0.8 — ближайшая страница: Game Art (0.75) https://www.worc.ac.uk/courses/game-art-ba-hons
-- BA ANIMATION and GRAPHIC DESIGN (HONS) — лучший счёт 0.75 < 0.8 — ближайшая страница: Graphic Design (0.75) https://www.worc.ac.uk/courses/graphic-design-ba-hons
-- BA ANIMATION and ILLUSTRATION (HONS) — лучший счёт 0.67 < 0.8 — ближайшая страница: Illustration (0.67) https://www.worc.ac.uk/courses/illustration-ba-hons
-- …ещё 83, см. cases.json
+- ENGLISH LITERATURE AND THEATRE — лучший счёт 0.67 < 0.8 — ближайшая страница: English Literature (0.67) https://www.worc.ac.uk/courses/english-literature-ba-hons
+- THEATRE — лучший счёт 0.50 < 0.8 — ближайшая страница: Musical Theatre (0.50) https://www.worc.ac.uk/courses/musical-theatre-ba-with-millennium-performing-arts-hons
+- BSc DATA SCIENCE (HONS) — лучший счёт 0.50 < 0.8 — ближайшая страница: Computer Science (0.50) https://www.worc.ac.uk/courses/computer-science-bsc-hons
+- COMPUTING FOUNDATION YEAR — лучший счёт 0.20 < 0.8 — ближайшая страница: Geography with International Year Abroad (0.20) https://www.worc.ac.uk/courses/geography-with-international-year-abroad-bsc-hons
+- BA CRIMINOLOGY with FORENSIC PSYCHOLOGY (HONS) — лучший счёт 0.75 < 0.8 — ближайшая страница: Criminology with Forensic Psychology (0.75) https://www.worc.ac.uk/courses/criminology-with-forensic-psychology
+- BA EARLY CHILDHOOD in SOCIETY (HONS) — лучший счёт 0.67 < 0.8 — ближайшая страница: Early Childhood (0.67) https://www.worc.ac.uk/courses/early-childhood-in-society-graduate-practitioner-ba-hons
+- BA INTEGRATIVE COUNSELLING (HONS) TOP-UP DEGREE — лучший счёт 0.28 < 0.8 — ближайшая страница: Counselling (0.28) https://www.worc.ac.uk/courses/counselling-msc
+- BA PRIMARY INITIAL TEACHER EDUCATION (with QTS) (HONS) — лучший счёт 0.67 < 0.8 — ближайшая страница: Primary Education (0.67) https://www.worc.ac.uk/courses/primary-education-with-qts-ba-hons
+- …ещё 54, см. cases.json
 
-**две страницы с одинаковым счётом — 2**
+**нет срока — 27**
 
-- BA MEDIA & FILM STUDIES and SCREENWRITING (HONS)
-- BA MEDIA & FILM STUDIES and SOCIOLOGY (HONS)
-
-**нет срока — 12**
-
+- BA ANIMATION and GAME ART (HONS) — срока нет ни на странице, ни в названии строки QS
 - MTHEATRE TOURING THEATRE — срока нет ни на странице, ни в названии строки QS
 - BA/BSc EDUCATION STUDIES and PSYCHOLOGY (HONS) — срока нет ни на странице, ни в названии строки QS
 - CELTA — срока нет ни на странице, ни в названии строки QS
 - HISTORY MRES — срока нет ни на странице, ни в названии строки QS
 - LEADING CULTURE CHANGE in SAFEGUARDING PGCERT — срока нет ни на странице, ни в названии строки QS
 - LEARNING AND TEACHING in HIGHER EDUCATION (PGCLTHE) — срока нет ни на странице, ни в названии строки QS
+- MPHIL/PHD HISTORY — срока нет ни на странице, ни в названии строки QS
+- MPHIL/PHD LAW — срока нет ни на странице, ни в названии строки QS
+- MPHIL/PHD PSYCHOLOGY — срока нет ни на странице, ни в названии строки QS
+- MPHIL/PHD SOCIOLOGY — срока нет ни на странице, ни в названии строки QS
 - SOCIOLOGY MRES — срока нет ни на странице, ни в названии строки QS
-- FILM MRES — срока нет ни на странице, ни в названии строки QS
-- MA CREATIVE MEDIA — срока нет ни на странице, ни в названии строки QS
-- MEDIA and CULTURE MRES — срока нет ни на странице, ни в названии строки QS
-- MPHIL/PHD ENGLISH LITERATURE AND LANGUAGE — срока нет ни на странице, ни в названии строки QS
-- MPhil/Phd ENGLISH LITERATURE and LANGUAGE — срока нет ни на странице, ни в названии строки QS
+- …ещё 15, см. cases.json
 
-**одна страница у нескольких строк QS — 1**
+**две страницы с одинаковым счётом — 2**
 
+- BA MEDIA & FILM STUDIES and SCREENWRITING (HONS)
+- BA MEDIA & FILM STUDIES and SOCIOLOGY (HONS)
+
+**одна страница у нескольких строк QS — 7**
+
+- MPHIL/PHD LAW / MPhil/Phd LAW — у строк РАЗНАЯ цена — какая верна, решает человек — цены: 14700 GBP / 17400 GBP
+- MPHIL/PHD PSYCHOLOGY / MPhil/Phd PSYCHOLOGY — у строк РАЗНАЯ цена — какая верна, решает человек — цены: 14700 GBP / 17400 GBP
+- MPHIL/PHD SOCIOLOGY / MPhil/Phd SOCIOLOGY — у строк РАЗНАЯ цена — какая верна, решает человек — цены: 14700 GBP / 17400 GBP
+- MPHIL/PHD ART AND DESIGN / MPhil/Phd ART and DESIGN — у строк РАЗНАЯ цена — какая верна, решает человек — цены: 14700 GBP / 17400 GBP
+- MPHIL/PHD DRAMA AND PERFORMANCE / MPhil/Phd DRAMA and PERFORMANCE — у строк РАЗНАЯ цена — какая верна, решает человек — цены: 14700 GBP / 17400 GBP
 - MPHIL/PHD ENGLISH LITERATURE AND LANGUAGE / MPhil/Phd ENGLISH LITERATURE and LANGUAGE — у строк РАЗНАЯ цена — какая верна, решает человек — цены: 14700 GBP / 17400 GBP
+- MPHIL/PHD COMPUTING / Mphil/Phd COMPUTING — у строк РАЗНАЯ цена — какая верна, решает человек — цены: 14700 GBP / 17400 GBP
 
-**Страницы офсайта без пары — 141** (примеры): Professional Development, Medicine (Graduate Entry), Circus Arts and Physical Theatre, Computer Science, Cricket Coaching and Management, Criminology and Psychology, Criminology, Criminology with Forensic Psychology, Degree in Professional Policing, Dental Technology, Diagnostic Radiography, Diagnostic Radiography
+**Страницы офсайта без пары — 135** (примеры): Professional Development, Medicine (Graduate Entry), Circus Arts and Physical Theatre, Computer Science, Cricket Coaching and Management, Criminology and Psychology, Criminology with Forensic Psychology, Degree in Professional Policing, Dental Technology, Diagnostic Radiography, Diagnostic Radiography, Diploma in Teaching (Further Education & Skills) (DiT) UNDERGRADUATE Explore our Further Education & Skills Teaching Dip
 
 ## Peking University HSBC Business School
 

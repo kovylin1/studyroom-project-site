@@ -37,7 +37,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { KOMPAS_DIR, args, logger } from './lib/kompas-collect.mjs';
-import { normTitle, titleTokens, SIM_THRESHOLD } from './lib/kompas-normalize.mjs';
+import { normTitle, titleTokens, tokensOfNorm, SIM_THRESHOLD } from './lib/kompas-normalize.mjs';
 
 const log = logger('merge');
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -201,10 +201,16 @@ function readTitle(raw) {
 // Путь целиком тянет за собой служебные слова («courses», «study», «undergraduate»),
 // они разбавляют пересечение и сбивают счёт: «BA BUSINESS MANAGEMENT (HONS)» против
 // /courses/business-management-ba-hons давало 0.75 вместо 1.0 из-за одного «courses».
+// Год приёма в адресе — не часть названия курса. У Worcester он стоит у части
+// страниц («law-llb-hons-2024», «law-with-politics-llb-hons-2022-entry») и ровно
+// на один лишний токен разводил строку QS с её же страницей: 0.67 вместо 1.0.
 const urlSlugText = (u) => {
   try {
     const seg = new URL(u).pathname.replace(/\/+$/, '').split('/').filter(Boolean).pop() ?? '';
-    return seg.replace(/\.(html?|htm|php|aspx)$/i, '').replace(/[_-]+/g, ' ').trim();
+    return seg.replace(/\.(html?|htm|php|aspx)$/i, '')
+      .replace(/-(?:19|20)\d{2}(?:-entry)?$/i, '')
+      .replace(/-entry$/i, '')
+      .replace(/[_-]+/g, ' ').trim();
   } catch { return ''; }
 };
 
@@ -312,11 +318,13 @@ function levelsFit(qsLevel, offLevel, hasFoundationVariant) {
  * в токенах адреса, и прибавка 0.15 до порога не дотягивала.
  */
 function scorePair(read, course) {
-  const coreTokens = titleTokens(read.core);
+  // `read.core` и `titleCut.base` УЖЕ нормализованы — второй прогон normTitle
+  // по ним терял токены (см. tokensOfNorm). Слаг адреса нормализуется впервые.
+  const coreTokens = tokensOfNorm(read.core);
   const urlCut = stripVariants(urlSlugText(course.url));
   const titleCut = stripVariants(normTitle(course.title));
 
-  const byTitle = jaccard(coreTokens, titleTokens(titleCut.base));
+  const byTitle = jaccard(coreTokens, tokensOfNorm(titleCut.base));
   const byUrl = jaccard(coreTokens, titleTokens(urlCut.base));
   const base = Math.max(byTitle, byUrl);
 

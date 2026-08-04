@@ -14,6 +14,7 @@
 // Usage:
 //   node scraper/kompas-collect-offsite.mjs --slug=falmouth
 //   node scraper/kompas-collect-offsite.mjs --slug=worcester --limit=20
+//   node scraper/kompas-collect-offsite.mjs --slug=worcester --merge  # дополнить прошлую выгрузку
 //   node scraper/kompas-collect-offsite.mjs                     # все настроенные
 
 import fs from 'node:fs';
@@ -27,6 +28,10 @@ const LOG = path.join(ROOT, 'sources/kompas/offsite-collect.log');
 const arg = (p) => (process.argv.find((a) => a.startsWith(p)) || '').slice(p.length);
 const ONLY = arg('--slug=') || null;
 const LIMIT = parseInt(arg('--limit=') || '400', 10);
+// Поиск курсов у Worcester отдаёт от прогона к прогону РАЗНОЕ подмножество
+// (264 адреса в одном заходе, 246 в другом), поэтому перезапись выгрузки теряет
+// найденное прошлым разом. С --merge выгрузка не заменяется, а дополняется.
+const MERGE = process.argv.includes('--merge');
 
 const WORD_NUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7 };
 
@@ -268,6 +273,17 @@ const SITES = {
   },
 };
 
+// Опознаватель курса. У Worcester один и тот же курс лежит и на worc.ac.uk,
+// и на worcester.ac.uk — второй домен просто зеркало, поэтому в ключ идёт
+// основной домен вуза, а не тот, что попался в ссылке. Иначе такая страница
+// задваивается и внутри прогона, и при объединении с прошлой выгрузкой.
+export function courseKey(url, site) {
+  let u;
+  try { u = new URL(url); } catch { return String(url); }
+  const p = u.pathname.replace(/\/+$/, '').toLowerCase() || '/';
+  return `${site.host}${p}`;
+}
+
 // Снимает адреса курсов с ОТКРЫТОЙ страницы списка в общую копилку.
 // Возвращает, сколько адресов прибавилось, — по этому и решаем, листать ли дальше.
 function harvest(anchors, site, hosts, urls) {
@@ -280,11 +296,34 @@ function harvest(anchors, site, hosts, urls) {
     if (site.skipLink && site.skipLink.test(u.pathname)) continue;
     if (u.pathname.split('/').filter(Boolean).length < 2) continue;
     const clean = u.origin + u.pathname;
-    if (urls.has(clean)) continue;
-    urls.set(clean, a.text);
+    const key = courseKey(clean, site);
+    if (urls.has(key)) continue;
+    urls.set(key, { url: clean, text: a.text });
     added += 1;
   }
   return added;
+}
+
+// Из двух записей одного курса оставляем ту, что полнее: сначала со сроком,
+// потом с названием. При равенстве берём свежую — это `b`, запись этого прогона.
+const fullness = (c) => (c && c.durationYears ? 2 : 0) + (c && c.title ? 1 : 0);
+
+/**
+ * Слить курсы прошлой выгрузки с курсами этого прогона по опознавателю.
+ *
+ * Прогон бесплатный, но неполный: сайт отдаёт подмножество. Объединение копит
+ * найденное, а не заменяет его. Ничего не выдумывает — только выбирает из двух
+ * записей ту, где поле заполнено.
+ */
+export function mergeCourses(prev, next, keyOf) {
+  const by = new Map();
+  for (const c of [...(prev || []), ...(next || [])]) {
+    if (!c || !c.url) continue;
+    const k = keyOf(c.url);
+    const old = by.get(k);
+    by.set(k, !old || fullness(c) >= fullness(old) ? c : old);
+  }
+  return [...by.values()];
 }
 
 // Листает список адресом (у обоих сайтов кнопка «дальше» — обычная ссылка) и
@@ -292,20 +331,39 @@ function harvest(anchors, site, hosts, urls) {
 // карточки, а не дописывает их, поэтому собирать только после листания нельзя.
 const MAX_PAGES = 30;
 
+// Поиск курсов у Worcester ложится на отдельных заходах: три прогона подряд
+// упёрлись в таймаут на первой же странице списка постдипломных курсов, и прогон
+// принёс ноль адресов. Один повтор снимает почти все такие отказы.
+async function gotoRetry(page, url, opts, tries, onFail) {
+  for (let t = 1; t <= tries; t += 1) {
+    try { await page.goto(url, opts); return true; } catch (e) {
+      if (onFail) onFail(`попытка ${t}/${tries} — ${e.message.slice(0, 60)}`);
+      if (t < tries) await page.waitForTimeout(5000 * t);
+    }
+  }
+  return false;
+}
+
 async function crawlList(page, slug, site, hosts, urls, base) {
+  let misses = 0; // подряд идущие страницы, не давшие ничего нового
+  let cookiesDone = false;
   for (let i = 0; i < MAX_PAGES; i += 1) {
     const url = site.pageUrl ? site.pageUrl(base, i) : base;
-    try {
-      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
-      if (i === 0) await dismissCookies(page);
-      await page.waitForTimeout(site.settleMs || 2500);
-    } catch (e) {
-      log(`${slug}: страница списка ${url} не открылась — ${e.message.slice(0, 60)}`);
-      break;
+    const ok = await gotoRetry(page, url, { waitUntil: 'domcontentloaded', timeout: 60000 }, 3,
+      (m) => log(`${slug}: страница списка ${url} не открылась, ${m}`));
+    if (!ok) {
+      // Список из-за одного отказа не бросаем: дальше по листалке страницы живые.
+      misses += 1;
+      if (misses >= 3 || !site.pageUrl) break;
+      continue;
     }
+    if (!cookiesDone) { await dismissCookies(page); cookiesDone = true; }
+    await page.waitForTimeout(site.settleMs || 2500);
     const anchors = await page.$$eval('a[href]', (as) => as.map((a) => ({ href: a.href, text: (a.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 120) })));
     const added = harvest(anchors, site, hosts, urls);
-    if (added === 0) break; // страница не дала ничего нового — список кончился
+    // Пустая страница больше не значит «список кончился»: у флаки-поиска она
+    // попадается и в середине. Кончился — когда пусто три раза подряд.
+    if (added === 0) { misses += 1; if (misses >= 3) break; } else misses = 0;
     if (!site.pageUrl) break;
   }
 }
@@ -337,7 +395,7 @@ for (const [slug, site] of Object.entries(SITES)) {
 
   if (site.pages) {
     // Список не обходим: страницы заданы поимённо под строки QS.
-    for (const u of site.pages) urls.set(u, null);
+    for (const u of site.pages) urls.set(courseKey(u, site), { url: u, text: null });
     log(`${slug}: страниц задано поимённо — ${urls.size}`);
   }
   for (const list of site.lists || []) {
@@ -349,13 +407,12 @@ for (const [slug, site] of Object.entries(SITES)) {
 
   const courses = [];
   let n = 0;
-  for (const [url, linkText] of [...urls].slice(0, LIMIT)) {
+  for (const { url, text: linkText } of [...urls.values()].slice(0, LIMIT)) {
     n += 1;
-    try {
-      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
-      await dismissCookies(page);
-      await page.waitForTimeout(1200);
-    } catch { courses.push({ url, title: linkText || null, durationYears: null, durationRaw: null, durationSource: null, note: 'страница не открылась' }); continue; }
+    const opened = await gotoRetry(page, url, { waitUntil: 'domcontentloaded', timeout: 45000 }, 2);
+    if (!opened) { courses.push({ url, title: linkText || null, durationYears: null, durationRaw: null, durationSource: null, note: 'страница не открылась' }); continue; }
+    await dismissCookies(page);
+    await page.waitForTimeout(1200);
     const got = await site.parse(page);
     const years = got.raw ? baseYears(got.raw) : null;
     const title = got.title || linkText || null;
@@ -381,17 +438,31 @@ for (const [slug, site] of Object.entries(SITES)) {
   }
 
   const city = await collectCity(page, site);
-  const real = courses.filter((c) => c.kind !== 'hub');
+  const outFile = path.join(OUTDIR, `${slug}.json`);
+
+  // Прошлая выгрузка читается только под --merge; без флага поведение прежнее — перезапись.
+  let prev = null;
+  if (MERGE) {
+    try { prev = JSON.parse(fs.readFileSync(outFile, 'utf8')); }
+    catch { log(`${slug}: прошлой выгрузки нет — пишу как первый прогон`); }
+  }
+  const all = prev ? mergeCourses(prev.courses, courses, (u) => courseKey(u, site)) : courses;
+  if (prev) log(`${slug}: было ${prev.courses?.length ?? 0}, этим прогоном ${courses.length}, после объединения ${all.length}`);
+
+  const real = all.filter((c) => c.kind !== 'hub');
   const withYears = real.filter((c) => c.durationYears).length;
   const out = {
     slug, name: site.name, collectedAt: new Date().toISOString().slice(0, 10),
-    coursesFound: urls.size, coursesParsed: courses.length,
-    hubPages: courses.length - real.length,
+    coursesFound: all.length, coursesParsed: all.length,
+    hubPages: all.length - real.length,
     withDuration: withYears, withoutDuration: real.length - withYears,
-    cityEvidence: city.evidence, courses,
+    ...(prev ? { mergedRuns: (prev.mergedRuns ?? 1) + 1, foundThisRun: urls.size } : {}),
+    // Улику города страница контактов отдаёт не всегда; прошлую в этом случае не теряем.
+    cityEvidence: city.evidence ?? prev?.cityEvidence ?? null,
+    courses: all,
   };
-  fs.writeFileSync(path.join(OUTDIR, `${slug}.json`), JSON.stringify(out, null, 2));
-  log(`${slug}: готово — программ ${real.length} (+${courses.length - real.length} разделов), длительность взялась у ${withYears}, без неё ${real.length - withYears}`);
+  fs.writeFileSync(outFile, JSON.stringify(out, null, 2));
+  log(`${slug}: готово — программ ${real.length} (+${all.length - real.length} разделов), длительность взялась у ${withYears}, без неё ${real.length - withYears}`);
   await ctx.close();
 }
 

@@ -45,6 +45,30 @@ test('из адреса берётся только последний сегм�
   assert.equal(urlSlugText('http://www.pku.org.uk/Study/Cross_Border_Master_s_i_Finance.htm'), 'Cross Border Master s i Finance');
 });
 
+test('год приёма в адресе не считается словом названия', () => {
+  // Worcester держит год у части страниц; из-за одного лишнего токена
+  // «LAW LLB (HONS)» расходилась со своей же страницей.
+  assert.equal(urlSlugText('https://www.worc.ac.uk/courses/law-llb-hons-2024'), 'law llb hons');
+  assert.equal(urlSlugText('https://www.worc.ac.uk/courses/law-with-politics-llb-hons-2022-entry'), 'law with politics llb hons');
+  // Число, которое не год приёма, остаётся: это часть названия.
+  assert.equal(urlSlugText('https://www.worc.ac.uk/courses/level-3-diploma'), 'level 3 diploma');
+
+  const m = matchFuzzy(
+    { title: 'LAW LLB (HONS)', level: null },
+    [course('Law', 'https://www.worc.ac.uk/courses/law-llb-hons-2024', { durationYears: 3 })],
+  );
+  assert.ok(m.hit, 'пара не найдена');
+  assert.equal(m.hit.score, 1);
+});
+
+test('MPhil перед PhD не съедается как код степени', () => {
+  // normTitle не идемпотентна: на втором прогоне «mphil phd law» превращалось
+  // в «phd law». Слэш в «MPHIL/PHD LAW» закрывал разбор только на первом.
+  const read = readTitle('MPHIL/PHD LAW');
+  const s = scorePair(read, course('LAW MPHIL AND PHD', 'https://www.worc.ac.uk/courses/law-mphilphd'));
+  assert.equal(s.score, 1);
+});
+
 test('одна правка Дамерау: вставка, замена и перестановка соседей', () => {
   assert.ok(within1('arts', 'art'));
   assert.ok(within1('flim', 'film'));   // опечатка QS в «Television & Flim Production»
