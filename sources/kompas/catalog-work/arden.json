@@ -803,7 +803,9 @@
       "programType": "degree",
       "verifiedBySite": true,
       "source": "official",
-      "checkedAt": "2026-05-31"
+      "checkedAt": "2026-05-31",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-08-15"
     },
     {
       "slug": "msc-strategic-hrm",
@@ -2325,6 +2327,18 @@
       "sub": "Манчестер",
       "img": "/photos/arden/bobr-11.jpg",
       "imgKind": "unknown"
+    },
+    {
+      "title": "Berlin Campus",
+      "source": "kompas:edvoy",
+      "confidence": 0.4,
+      "checkedAt": "2026-08-15"
+    },
+    {
+      "title": "AU Leeds Campus",
+      "source": "kompas:edvoy",
+      "confidence": 0.4,
+      "checkedAt": "2026-08-15"
     }
   ],
   "description": {
@@ -2468,8 +2482,7 @@
     "type": "aggregator",
     "via": [
       "qs",
-      "edvoy",
-      "iapro"
+      "edvoy"
     ]
   }
 }

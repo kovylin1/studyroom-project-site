@@ -1,14 +1,14 @@
 {
   "_meta": {
     "plan": "КОМПАС сессия 1",
-    "generatedAt": "2026-07-22",
-    "catalogSize": 807,
+    "generatedAt": "2026-08-15",
+    "catalogSize": 823,
     "network": "не использовалась"
   },
   "counts": {
     "direct": 32,
     "aggregator": 682,
-    "none": 93
+    "none": 109
   },
   "perAggregator": [
     {
@@ -279,28 +279,28 @@
       "label": "QA Higher Education",
       "rule": "list",
       "access": "open",
-      "members": 4,
-      "matched": 4,
+      "members": 6,
+      "matched": 6,
       "byMethod": {
-        "exact-name": 3,
-        "manual": 1
+        "manual": 4,
+        "exact-name": 2
       },
       "matches": [
         {
           "from": "Northumbria University",
-          "method": "exact-name",
+          "method": "manual",
           "to": "northumbria",
           "catalogName": "Northumbria University"
         },
         {
           "from": "Ulster University",
-          "method": "exact-name",
+          "method": "manual",
           "to": "ulster",
           "catalogName": "Ulster University"
         },
         {
           "from": "Oxford Brookes University",
-          "method": "exact-name",
+          "method": "manual",
           "to": "oxford-brookes",
           "catalogName": "Oxford Brookes University"
         },
@@ -309,6 +309,18 @@
           "method": "manual",
           "to": "solent",
           "catalogName": "Southampton Solent University"
+        },
+        {
+          "from": "London Metropolitan University",
+          "method": "exact-name",
+          "to": "london-met",
+          "catalogName": "London Metropolitan University"
+        },
+        {
+          "from": "Swansea University",
+          "method": "exact-name",
+          "to": "swansea",
+          "catalogName": "Swansea University"
         }
       ],
       "unmatched": []
@@ -5815,6 +5827,16 @@
       ]
     },
     {
+      "slug": "swansea",
+      "name": "Swansea University",
+      "via": [
+        "qahe",
+        "navitas",
+        "qs",
+        "edvoy"
+      ]
+    },
+    {
       "slug": "ulster",
       "name": "Ulster University",
       "via": [
@@ -5996,6 +6018,15 @@
       ]
     },
     {
+      "slug": "london-met",
+      "name": "London Metropolitan University",
+      "via": [
+        "qahe",
+        "qs",
+        "edvoy"
+      ]
+    },
+    {
       "slug": "manchester-met",
       "name": "Manchester Metropolitan University",
       "via": [
@@ -6108,15 +6139,6 @@
       "name": "University of Sussex",
       "via": [
         "studygroup",
-        "qs",
-        "edvoy"
-      ]
-    },
-    {
-      "slug": "swansea",
-      "name": "Swansea University",
-      "via": [
-        "navitas",
         "qs",
         "edvoy"
       ]
@@ -6735,14 +6757,6 @@
       ]
     },
     {
-      "slug": "london-met",
-      "name": "London Metropolitan University",
-      "via": [
-        "qs",
-        "edvoy"
-      ]
-    },
-    {
       "slug": "london-south-bank",
       "name": "London South Bank University",
       "via": [
@@ -7301,8 +7315,16 @@
       "name": "Advanced Placement (AP) Exams"
     },
     {
+      "slug": "avila-arizona",
+      "name": "Avila University Arizona"
+    },
+    {
       "slug": "bau-global",
       "name": "Bahçeşehir University (BAU)"
+    },
+    {
+      "slug": "bentley-university",
+      "name": "Bentley University"
     },
     {
       "slug": "berk-alyeni",
@@ -7319,6 +7341,10 @@
     {
       "slug": "canberra",
       "name": "University of Canberra"
+    },
+    {
+      "slug": "catholic-university-of-america",
+      "name": "The Catholic University of America"
     },
     {
       "slug": "cctb",
@@ -7365,6 +7391,10 @@
       "name": "Edith Cowan University Sri Lanka"
     },
     {
+      "slug": "elmira-college",
+      "name": "Elmira College"
+    },
+    {
       "slug": "epita-school-of-engineering-and-computer-science",
       "name": "EPITA - School of Engineering and Computer Science"
     },
@@ -7373,12 +7403,28 @@
       "name": "Exam Prep"
     },
     {
+      "slug": "fleming-college-toronto",
+      "name": "Fleming College Toronto"
+    },
+    {
+      "slug": "florida-memorial-university",
+      "name": "Florida Memorial University"
+    },
+    {
       "slug": "fontys-university",
       "name": "Fontys University of Applied Sciences"
     },
     {
+      "slug": "george-brown",
+      "name": "George Brown Polytechnic"
+    },
+    {
       "slug": "gre-gmat-exams",
       "name": "GRE - GMAT Exams"
+    },
+    {
+      "slug": "hartpury",
+      "name": "Hartpury University"
     },
     {
       "slug": "humber-college",
@@ -7441,6 +7487,10 @@
       "name": "Lazarski University"
     },
     {
+      "slug": "london-school-of-business-and-finance",
+      "name": "London School of Business and Finance"
+    },
+    {
       "slug": "make-a-comment",
       "name": "Make a comment"
     },
@@ -7469,8 +7519,16 @@
       "name": "Medical Degrees in Europe"
     },
     {
+      "slug": "medical-university-of-the-americas",
+      "name": "Medical University of the Americas"
+    },
+    {
       "slug": "medipol-university",
       "name": "Istanbul Medipol University"
+    },
+    {
+      "slug": "metropolitan-college-of-new-york",
+      "name": "Metropolitan College of New York"
     },
     {
       "slug": "montpellier-business-school",
@@ -7487,6 +7545,10 @@
     {
       "slug": "naba-milano",
       "name": "NABA — Nuova Accademia di Belle Arti"
+    },
+    {
+      "slug": "niagara-college-toronto",
+      "name": "Niagara College - Toronto"
     },
     {
       "slug": "open-consent-form",
@@ -7507,6 +7569,14 @@
     {
       "slug": "partner-with-us",
       "name": "Partner With Us"
+    },
+    {
+      "slug": "penn-state-dickinson-law",
+      "name": "Penn State Dickinson Law"
+    },
+    {
+      "slug": "pepperdine-university",
+      "name": "Pepperdine University"
     },
     {
       "slug": "prague-university-of-economics",
@@ -7581,6 +7651,10 @@
       "name": "Toronto Metropolitan University"
     },
     {
+      "slug": "toronto-school-of-management",
+      "name": "Toronto School of Management"
+    },
+    {
       "slug": "trebas",
       "name": "Trebas Institute"
     },
@@ -7611,6 +7685,10 @@
     {
       "slug": "university-of-ghent",
       "name": "Ghent University"
+    },
+    {
+      "slug": "university-of-gloucestershire",
+      "name": "University of Gloucestershire"
     },
     {
       "slug": "university-of-helsinki",

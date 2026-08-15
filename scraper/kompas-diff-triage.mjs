@@ -56,7 +56,7 @@ export function countFromDetail(detail, re) {
  * прецедентом, а проверкой, что метка `catalog-only` на программах карточки реально
  * стоит. Без проверки это было бы обещание, а не решение.
  */
-export function decide(item, card) {
+export function decide(item, card, ctx = {}) {
   switch (item.issue) {
     case 'kompas_fee_absent':
       return { decision: 'ignore', note: 'Прецедент владельца 2026-07-29: у источника цены нет — на сайте честное «Уточняется».' };
@@ -99,11 +99,42 @@ export function decide(item, card) {
     case 'kompas_programs_missing':
       return { decision: null, why: 'добор программ с агрегатора (P2) — механический шаг, но он меняет живой каталог' };
 
-    case 'kompas_campus_missing':
-      return { decision: null, why: 'добор кампусов с источника — механический шаг, меняет живой каталог' };
+    // Что осталось «недостающим» после добора кампусов — это не пропуски, а
+    // разобранные случаи: то же место под именем агрегатора, дубль уже стоящего
+    // кампуса, «Online Campus» и абзацы описания, заехавшие в поле кампусов.
+    // Разбор лежит в campus-backfill-review.json; оставлять кейс открытым после
+    // него значит показывать оператору вопрос, ответ на который уже есть.
+    case 'kompas_campus_missing': {
+      const v = ctx.campusVerdicts?.[item.slug];
+      if (!v) return { decision: null, why: 'добор кампусов по этому вузу не прогонялся' };
+      const kinds = Object.entries(v.skipped ?? {}).map(([k, n]) => `${k} ${n}`).join(', ');
+      return {
+        decision: 'ignore',
+        note: `Разобрано добором кампусов: настоящих пропусков нет, дописано ${v.added}. Остальные названия — ${kinds || 'ничего'}. Примеры: ${(v.examples ?? []).join('; ') || '—'}.`,
+      };
+    }
 
-    case 'kompas_no_extract':
-      return { decision: null, why: 'выгрузка источника не села на карточку — баг привязки, диагноз в QS-UNLINKED-REPORT.md' };
+    // «Источник собран, а выгрузки по вузу нет» значит разное в зависимости от
+    // источника. У QS сбор доказано полный: портал сам объявил 512 вузов, снято
+    // 512 (2026-08-01). Значит вариантов ровно два: либо выгрузка есть, но не
+    // привязалась (тогда карточка стоит в подсказках непривязанных записей —
+    // `pendingTargets` из kompas-qs-relink), либо вуза в списке QS попросту нет,
+    // и тогда пробел не в сборе, а в разметке партнёрства. Второе — не вопрос
+    // к владельцу, а факт: сверять не с чем и не будет с чем.
+    case 'kompas_no_extract': {
+      const via = String(item.id ?? '').split('||')[2] ?? '';
+      const sources = via.split('+').filter(Boolean);
+      if (sources.length !== 1 || sources[0] !== 'qs') {
+        return { decision: null, why: 'выгрузка источника не села на карточку — баг привязки, диагноз в QS-UNLINKED-REPORT.md' };
+      }
+      if (ctx.qsPending?.has(item.slug)) {
+        return { decision: null, why: 'выгрузка QS на эту карточку похожа, но привязка не подтверждена — кейс kompas_qs_link' };
+      }
+      return {
+        decision: 'ignore',
+        note: 'QS собран целиком: портал объявил 512 вузов, снято 512 (2026-08-01). Ни одна непривязанная выгрузка QS на эту карточку не указывает — значит вуза в списке QS нет. Пробел не в сборе, а в разметке партнёрства; сверять не с чем.',
+      };
+    }
 
     default:
       return { decision: null, why: 'нужен исполнитель или решение владельца' };
@@ -112,6 +143,18 @@ export function decide(item, card) {
 
 async function main() {
   const review = JSON.parse(await fs.readFile(REVIEW, 'utf8'));
+  // Карточки, на которые указывают ещё не подтверждённые привязки QS.
+  let qsPending = new Set();
+  try {
+    const rl = JSON.parse(await fs.readFile(path.join(KOMPAS_DIR, 'qs-relink-review.json'), 'utf8'));
+    qsPending = new Set(rl.pendingTargets ?? []);
+  } catch { log('qs-relink-review.json не найден — кейсы kompas_no_extract остаются открытыми'); }
+  let campusVerdicts = {};
+  try {
+    const cb = JSON.parse(await fs.readFile(path.join(KOMPAS_DIR, 'campus-backfill-review.json'), 'utf8'));
+    campusVerdicts = cb.verdicts ?? {};
+  } catch { log('campus-backfill-review.json не найден — кейсы kompas_campus_missing остаются открытыми'); }
+  const ctx = { qsPending, campusVerdicts };
   const cards = new Map();
   for (const f of await fs.readdir(UNI_DIR)) {
     if (!f.endsWith('.json')) continue;
@@ -124,7 +167,7 @@ async function main() {
 
   for (const it of review.items) {
     if (it.decision) { already++; continue; }
-    const r = decide(it, cards.get(it.slug) ?? null);
+    const r = decide(it, cards.get(it.slug) ?? null, ctx);
     if (!r.decision) {
       (left[it.issue] ??= {});
       left[it.issue][r.why] = (left[it.issue][r.why] ?? 0) + 1;

@@ -1,0 +1,110 @@
+{
+  "ok": true,
+  "dry": false,
+  "finishedAt": "2026-08-15T02:29:37.509Z",
+  "cases": {
+    "total": 1485,
+    "closed": {
+      "kompas_no_extract": 91,
+      "kompas_fee_absent": 271,
+      "kompas_programs_extra": 310,
+      "kompas_campus_missing": 42,
+      "kompas_fee_currency": 18,
+      "kompas_fee_mismatch": 10,
+      "kompas_source_empty": 1
+    },
+    "open": {
+      "kompas_no_extract": 59,
+      "kompas_programs_missing": 207,
+      "kompas_programs_extra": 129,
+      "kompas_fee_mismatch": 342,
+      "kompas_campus_missing": 4,
+      "kompas_fee_mismatch_rest": 1
+    }
+  },
+  "schema": {
+    "before": 0,
+    "after": 0,
+    "новых": 0
+  },
+  "results": [
+    {
+      "name": "тесты",
+      "code": 0,
+      "secs": 0,
+      "tail": "ℹ pass 21\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 159.3334"
+    },
+    {
+      "name": "1. рабочая копия с живого каталога",
+      "code": 0,
+      "secs": 2,
+      "tail": "[kompas] рабочая копия: 823 файлов → sources/kompas/catalog-work/\n[kompas] каталог 823: direct 32, aggregator 682, none 109\n[kompas] у нескольких агрегаторов: 180; партнёров без карточки: 5\n[kompas] отчёты → sources/kompas/{partner-source-map,coverage-report}.json"
+    },
+    {
+      "name": "2. проверка копии до правок",
+      "code": 0,
+      "secs": 2,
+      "tail": "ПРОВЕРКА ОК: 823 карточек, нарушений нет"
+    },
+    {
+      "name": "3. привязка выгрузок QS",
+      "code": 0,
+      "secs": 0,
+      "tail": "│ 14      │ 'university-of-victoria'                                │ 'University of Victoria'                                │ 'uvic'                                         │ 73       │ 1     │\n│ 15      │ 'university-of-victoria-wvunarhk'                       │ 'University of Victoria'                                │ 'uvic'                                         │ 6        │ 1     │\n└─────────┴─────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────┴────────────────────────────────────────────────┴──────────┴───────┘\nПРИВЯЗАНО 16 выгрузок (558 программ) к 14 карточкам\nКЕЙСОВ владельцу 53; без кандидата 64\nПРИМЕНЕНО + qs-relink-review.json / qs-relink-backup.json"
+    },
+    {
+      "name": "4. P1: метка catalog-only",
+      "code": 0,
+      "secs": 10,
+      "tail": "│ 17      │ 'heriot-watt-dubai'       │ 'Heriot-Watt University Dubai'                                │ 149         │ 134    │\n│ 18      │ 'tamucc'                  │ 'Texas A&M University-Corpus Christi'                         │ 121         │ 121    │\n│ 19      │ 'into-exeter'             │ 'INTO University of Exeter'                                   │ 117         │ 117    │\n└─────────┴───────────────────────────┴───────────────────────────────────────────────────────────────┴─────────────┴────────┘\nСВЕРЕНО вузов 553; помечено 8350 программ у 129 вузов; уже было помечено 20521\nПРИМЕНЕНО к catalog-work + бэкап catalog-only-marks.json"
+    },
+    {
+      "name": "5. P2: добор программ",
+      "code": 0,
+      "secs": 10,
+      "tail": "│ 13      │ 'newcastle-uk'      │ 'Newcastle University'            │ 232   │\n│ 14      │ 'cardiff'           │ 'Cardiff University'              │ 227   │\n└─────────┴─────────────────────┴───────────────────────────────────┴───────┘\nЗАВЕДЕНО программ 14820 у 237 вузов, из них с ценой 34\nПРОПУЩЕНО: без уровня 6087, дубль по названию+уровню 0, чуждая валюта (риск мислейбла) 44\nПРИМЕНЕНО к catalog-work + бэкап program-backfill-backup.json"
+    },
+    {
+      "name": "6. добор кампусов",
+      "code": 0,
+      "secs": 1,
+      "tail": "│ 18      │ 'nottingham'                             │ 'University of Nottingham'                 │ 1     │ \"Queen's Medical Centre\"                                                                │\n│ 19      │ 'study-group'                            │ 'Study Group'                              │ 1     │ 'Headingley Campus'                                                                     │\n└─────────┴──────────────────────────────────────────┴────────────────────────────────────────────┴───────┴─────────────────────────────────────────────────────────────────────────────────────────┘\nДОПИСАНО кампусов 37 у 22 вузов\nПРОПУЩЕНО: alias 275, duplicate 551, not-place 20, prose 1\nПРИМЕНЕНО к catalog-work + campus-backfill-backup.json"
+    },
+    {
+      "name": "7. проверка копии после правок",
+      "code": 0,
+      "secs": 1,
+      "tail": "ПРОВЕРКА ОК: 823 карточек, нарушений нет"
+    },
+    {
+      "name": "8. замер сверки",
+      "code": 0,
+      "secs": 4,
+      "tail": "DIFF DONE {\"catalogFiles\":823,\"notPartner\":109,\"partners\":714,\"compared\":553,\"sourceBlocked\":0,\"sourceEmpty\":11,\"noExtract\":150,\"programsCatalog\":93494,\"programsSource\":70754,\"matched\":64623,\"matchedFuzzy\":605,\"catalogOnly\":28871,\"sourceOnly\":6131,\"feeMismatch\":358,\"feeMissingInCatalog\":16933,\"feeCurrency\":132,\"campusMissing\":61,\"extractsLoaded\":{\"kaplan\":24,\"oxford-international\":26,\"qahe\":4,\"studygroup\":31,\"edvoy\":438,\"gedu\":8,\"direct\":273,\"iapro\":34,\"qs\":512,\"navitas\":0,\"cats\":0},\"caseCapPerUni\":20,\"feeTolerance\":0.02}"
+    },
+    {
+      "name": "9. перенос решений",
+      "code": 0,
+      "secs": 0,
+      "tail": "ПЕРЕНЕСЕНО решений: по id 694, по паре «вуз+разряд» 7; сирот 0 {}\nЗАПИСАНО в diff-review.json"
+    },
+    {
+      "name": "10. разбор кейсов",
+      "code": 0,
+      "secs": 1,
+      "tail": "| kompas_no_extract | выгрузка QS на эту карточку похожа, но привязка не подтверждена — кейс kompas_qs_link | 23 |\n| kompas_programs_missing | добор программ с агрегатора (P2) — механический шаг, но он меняет живой каталог | 207 |\n| kompas_programs_extra | метка catalog-only на карточке не проставлена — нужен повторный прогон P1 (при нём QS был заблокирован) | 129 |\n| kompas_fee_mismatch | цена источника кампусная (campusLevelStated), прецедент 29.07 её не покрывает | 342 |\n| kompas_campus_missing | добор кампусов по этому вузу не прогонялся | 4 |\n| kompas_fee_mismatch_rest | цена источника кампусная (campusLevelStated), прецедент 29.07 её не покрывает | 1 |"
+    },
+    {
+      "name": "11. валюта: 6 вузов вне P0.4",
+      "code": 0,
+      "secs": 1,
+      "tail": "┌─────────┐\n│ (index) │\n├─────────┤\n└─────────┘\nЗАКРЫТО по валюте 0 из 0; новых кейсов на сумму 0\nЗАПИСАНО в diff-review.json + CURRENCY-REVIEW.md"
+    },
+    {
+      "name": "12. сборка панели",
+      "code": 0,
+      "secs": 0,
+      "tail": "PANEL DONE {\"total\":5119,\"sources\":{\"direct-review.json\":2170,\"diff-review.json\":1485,\"gap-review.json\":7,\"cards-review.json\":52,\"dupmerge-review.json\":18,\"offsite-review.json\":6,\"navitas-fix-review.json\":10,\"oxfordintl-fix-review.json\":13,\"currency-fix-review.json\":2,\"program-backfill-review.json\":10,\"fee-mismatch-review.json\":0,\"dupe-scan-review.json\":0,\"scholarship-review.json\":405,\"scholarship-diff-review.json\":553,\"scholarship-clean-review.json\":12,\"sito-review.json\":322,\"qs-relink-review.json\":53,\"campus-backfill-review.json\":1}}"
+    }
+  ]
+}

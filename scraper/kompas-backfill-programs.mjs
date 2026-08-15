@@ -10,8 +10,13 @@
 //     не опознан (null и пр.) — программу НЕ заводим (выдумывать уровень нельзя).
 //   • длительность источник не даёт — выводим по уровню (таблица репозитория),
 //     помечаем confidence 0.4 (соглашение, а не факт с сайта).
-//   • цену добавляем только если валюта источника == валюте карточки, основа не
-//     'level', аудитория не 'home' (те же правила, что в P2a).
+//   • цену добавляем только если валюта источника == валюте карточки, основа
+//     ПРОГРАММНАЯ, аудитория не 'home' (те же правила, что в P2a). Кампусная
+//     основа ('level', 'campusLevelStated') ценой программы не является: QS
+//     показывает стоимость обучения кампуса для уровня, одну на все программы.
+//     Записать её в цену программы — подмена смысла, и ровно этот вопрос сейчас
+//     стоит перед владельцем по 323 кейсам расхождения цены. Программа заводится,
+//     цена — нет.
 //   • слаг уникален в пределах карточки; дубли по (нормназвание|уровень) не заводим.
 //   • добавленное помечено kompasStatus='source-added' + source=<via> — для отката
 //     и чтобы на сайте было видно происхождение.
@@ -68,6 +73,12 @@ const NAT = {
 };
 // Международные валюты ценообразования, допустимые для любой страны.
 const INTL = new Set(['USD', 'EUR']);
+
+// Основы цены, которые ценой ПРОГРАММЫ не являются: стоимость обучения кампуса
+// для уровня. У QS такая основа стоит у всех 35 303 программ — портал программной
+// цены не показывает вовсе.
+const NON_PROGRAM_BASIS = new Set(['level', 'campusLevelStated']);
+export const feeIsProgramPriced = (fee) => Boolean(fee) && !NON_PROGRAM_BASIS.has(String(fee.basis ?? ''));
 function countryForeign(fee, card) {
   if (!fee) return false;
   const cc = card.tuition?.currency ?? null;
@@ -144,12 +155,12 @@ async function main() {
         (card.programs ??= []).push(prog);
         // цена — по тем же правилам, что P2a
         const fee = sp.fee;
-        if (fee && cardCur && fee.currency === cardCur && fee.basis !== 'level' && fee.audience !== 'home') {
+        if (feeIsProgramPriced(fee) && cardCur && fee.currency === cardCur && fee.audience !== 'home') {
           bp[s] = fee.amount; addedFees++;
         } else if (fee && !(cardCur && fee.currency === cardCur)) {
           // цена есть, но в другой валюте — не кладём (учтётся замером как feeMissing/diffCur)
         }
-      } else if (sp.fee && cardCur && sp.fee.currency === cardCur && sp.fee.basis !== 'level' && sp.fee.audience !== 'home') {
+      } else if (feeIsProgramPriced(sp.fee) && cardCur && sp.fee.currency === cardCur && sp.fee.audience !== 'home') {
         addedFees++;
       }
       nowAdded.push(s);
@@ -167,8 +178,15 @@ async function main() {
   top.sort((a, b) => b.added - a.added);
 
   if (APPLY) {
-    const prev = (await readJson(BACKUP_FILE))?.added ?? {};
-    for (const [s, arr] of Object.entries(addedLog)) prev[s] = [...new Set([...(prev[s] ?? []), ...arr])];
+    // Накопительный бэкап читается из JSON, то есть у объекта живой прототип:
+    // слаг вуза вроде `constructor`/`toString` вернул бы не массив, а метод
+    // прототипа, и слияние падало с «is not iterable». Берём только собственные
+    // ключи и только массивы.
+    const prev = Object.assign(Object.create(null), (await readJson(BACKUP_FILE))?.added ?? {});
+    for (const [s, arr] of Object.entries(addedLog)) {
+      const было = Array.isArray(prev[s]) ? prev[s] : [];
+      prev[s] = [...new Set([...было, ...arr])];
+    }
     const total = Object.values(prev).reduce((a, arr) => a + arr.length, 0);
     await fs.writeFile(BACKUP_FILE, JSON.stringify({
       generatedAt: new Date().toISOString(),

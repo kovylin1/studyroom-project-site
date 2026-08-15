@@ -47,6 +47,22 @@ test('число программ берётся из текста кейса', 
   assert.equal(countFromDetail('нет числа', /В карточке (\d+) программ/), null);
 });
 
+test('«выгрузки нет» у QS закрывается только там, где вуза в списке портала нет', () => {
+  const item = { id: 'adelaide||kompas_no_extract||qs', slug: 'adelaide', issue: 'kompas_no_extract', detail: '' };
+  const closed = decide(item, null, { qsPending: new Set() });
+  assert.equal(closed.decision, 'ignore');
+  assert.match(closed.note, /512/);
+
+  const pending = decide(item, null, { qsPending: new Set(['adelaide']) });
+  assert.equal(pending.decision, null, 'выгрузка похожа на эту карточку — сперва привязка');
+
+  const edvoy = { id: 'x||kompas_no_extract||edvoy', slug: 'x', issue: 'kompas_no_extract', detail: '' };
+  assert.equal(decide(edvoy, null, { qsPending: new Set() }).decision, null, 'полнота сбора доказана только у QS');
+
+  const both = { id: 'y||kompas_no_extract||qs+edvoy', slug: 'y', issue: 'kompas_no_extract', detail: '' };
+  assert.equal(decide(both, null, { qsPending: new Set() }).decision, null, 'второй источник молчит по своей причине');
+});
+
 test('разряды, которые скрипт решать не вправе', () => {
   for (const issue of ['kompas_programs_missing', 'kompas_campus_missing', 'kompas_no_extract']) {
     const r = decide({ issue, detail: '' }, null);

@@ -26,6 +26,8 @@ const PARTS = [
   // P4: стипендии — замер достоверности и сверка каталога с собранными офсайтами
   'scholarship-review.json', 'scholarship-diff-review.json', 'scholarship-clean-review.json',
   'sito-review.json',
+  // хвост после сбора QS: привязка выгрузок, брак кампусов у коллекторов
+  'qs-relink-review.json', 'campus-backfill-review.json',
 ];
 
 const ORPHANS = path.join(KOMPAS_DIR, 'panel-orphan-decisions.json');
