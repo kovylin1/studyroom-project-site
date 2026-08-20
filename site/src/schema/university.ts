@@ -25,7 +25,11 @@ export type ProgramLevel = z.infer<typeof programLevel>;
 export const programSchema = z.object({
   slug,
   title: z.string().min(1),
-  durationYears: z.number().positive(),
+  // 2026-08-20: срок стал необязательным. Агрегаторы (QS) его не отдают вовсе,
+  // а у части программ его нет в природе: у языковых курсов он зависит от входного
+  // уровня, у MPhil/PhD не фиксирован. Без этого 797 программ 38 новых партнёров
+  // не проходили zod и карточку нельзя было завести.
+  durationYears: z.number().positive().optional(),
   level: programLevel,
   language: z.string().min(2).optional(),
   faculty: z.string().min(1).optional(),
@@ -47,7 +51,9 @@ export const programSchema = z.object({
 export type Program = z.infer<typeof programSchema>;
 
 export const tuitionSchema = z.object({
-  currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF']),
+  // 2026-08-20: добавлены AED, HKD, THB, CNY — валюты новых партнёров QS
+  // (AURAK в дирхамах, три школы Wycombe Abbey в бат/юань/гонконгский доллар).
+  currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF', 'AED', 'HKD', 'THB', 'CNY']),
   byProgram: z.record(slug, z.number().nonnegative()),
 });
 export type Tuition = z.infer<typeof tuitionSchema>;

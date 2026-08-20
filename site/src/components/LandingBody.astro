@@ -224,6 +224,7 @@ const SCRIPT_STR = {
   unverifiedWord: t('lp.programs.unverified'),
   perYear: t('lp.programs.perYear'),
   yearsWord: t('lp.programs.yearsWord'),
+  durationTbd: t('lp.programs.durationTbd'),
   intakesWord: t('lp.programs.intakesWord'),
   programsEmpty: t('lp.programs.empty'),
   showAllCount: t('lp.programs.showAllCount'),
@@ -426,6 +427,7 @@ const SCRIPT_STR = {
   .lp .program-row__meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
   .lp .program-row__chip { font-size: 11.5px; line-height: 1; color: var(--ink-3); background: var(--surface-2, #f4f5f4); border: 1px solid var(--line); border-radius: 999px; padding: 4px 8px; white-space: nowrap; }
   .lp .program-row__chip--intake { color: #7a4500; background: #fff4e0; border-color: #ffd591; }
+  .lp .program-row__chip--tbd { color: var(--ink-3); background: transparent; border-style: dashed; }
   .lp .program-row__price { font-weight: 700; color: var(--green); white-space: nowrap; }
   .lp .program-row__price-link { font-weight: 600; font-size: 0.85em; color: var(--green); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
   .lp .program-row__price-link:hover { opacity: 0.75; }
@@ -1375,6 +1377,7 @@ const SCRIPT_STR = {
   function progMeta(p) {
     const bits = [];
     if (p.durationYears) bits.push('<span class="program-row__chip">' + p.durationYears + ' ' + STR.yearsWord + '</span>');
+    else bits.push('<span class="program-row__chip program-row__chip--tbd">' + STR.durationTbd + '</span>');
     if (p.language) bits.push('<span class="program-row__chip">' + esc(p.language) + '</span>');
     if (p.intakes && p.intakes.length) bits.push('<span class="program-row__chip program-row__chip--intake">' + STR.intakesWord + ' ' + esc(p.intakes.slice(0, 3).join(', ')) + '</span>');
     if (p.unverified) bits.push('<span class="program-row__chip program-row__chip--unverified">' + STR.unverifiedWord + '</span>');

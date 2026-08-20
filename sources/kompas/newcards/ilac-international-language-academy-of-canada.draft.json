@@ -1,42 +1,50 @@
 {
-  "slug": "ilac-international-language-academy-of-canada",
-  "name": "ILAC — International Language Academy of Canada",
-  "country": "Canada",
-  "city": "Toronto, Vancouver",
-  "programs": [],
-  "tuition": {
-    "currency": null,
-    "byProgram": {}
-  },
-  "deadlines": {},
-  "requirements": {
-    "exams": []
-  },
-  "scholarships": [],
-  "lastChecked": "2026-08-04",
-  "sourceUrl": "https://admissions.qs.com/suite/sites/qs-apply/group/students-and-applications/page/institutions/record/L1ijtFAwne7VnNX8_tC-LjSVQFhiLZUkyWApLUgOR3b9hNs6MlF004acLxf5TwOcuWWPBQ-qoQCY8ofTk_csJpRhK5WkpEbYl9mONgdj60ubDzsdWaEbtx6bt4H0zTFNOusnPNuzcQ/view/summary",
-  "sourceHash": "b8f22be987f0d122",
-  "confidence": "aggregator",
-  "language": "en",
-  "_kompas": {
-    "draft": true,
-    "note": "ЧЕРНОВИК. В живой каталог не класть: карточки заводит человек (правило 31.07).",
-    "builtAt": "2026-08-04",
-    "priceFrom": "qs-apply / campusLevelStated (цена уровня кампуса, не курса)",
-    "durationFrom": "офсайт (страница курса) либо название строки QS",
-    "city": {
-      "value": "Toronto, Vancouver",
-      "source": "QS, описание вуза: «with campuses in Toronto and Vancouver»",
-      "evidenceUrl": "https://ilac.com/contact/",
-      "campusValues": [
-        "Toronto + Vancouver"
-      ],
-      "note": "значение города ставит человек; у Worcester json-ld отдаёт графство «Worcestershire», а не город"
-    },
-    "feeNote": null,
-    "missing": [
-      "tuition.currency — цена у QS без валюты либо валюты разные",
-      "programs — ни одной программы со сроком"
-    ]
+ "slug": "ilac-international-language-academy-of-canada",
+ "name": "ILAC International Language Academy of Canada",
+ "country": "Canada",
+ "city": "Toronto, Vancouver",
+ "programs": [
+  {
+   "slug": "young-adults-15-18-university-pathway-program",
+   "title": "Young Adults 15 - 18 University Pathway Program",
+   "level": "high-school",
+   "source": "qs-apply",
+   "verifiedBySite": false,
+   "confidence": 0.6,
+   "kompasStatus": "source-added",
+   "kompasCheckedAt": "2026-08-20",
+   "programUrl": "https://admissions.qs.com/suite/sites/qs-apply/group/students-and-applications/page/institutions/record/L1ijtFAwne7VnNX8_tC-LjSVQFhiLZUkyWApLUgOR3b9hNs6MlF004acLxf5TwOcuWWPBQ-qoQCY8ofTk_csJpRhK5WkpEbYl9mONgdj60ubDzsdWaEbtx6bt4H0zTFNOusnPNuzcQ/view/_yNBtlg#"
   }
+ ],
+ "tuition": {
+  "currency": "CAD",
+  "byProgram": {
+   "young-adults-15-18-university-pathway-program": 15303
+  }
+ },
+ "deadlines": {},
+ "requirements": {
+  "exams": []
+ },
+ "scholarships": [],
+ "lastChecked": "2026-08-20",
+ "sourceUrl": "https://admissions.qs.com/suite/sites/qs-apply/group/students-and-applications/page/institutions/record/L1ijtFAwne7VnNX8_tC-LjSVQFhiLZUkyWApLUgOR3b9hNs6MlF004acLxf5TwOcuWWPBQ-qoQCY8ofTk_csJpRhK5WkpEbYl9mONgdj60ubDzsdWaEbtx6bt4H0zTFNOusnPNuzcQ/view/summary",
+ "sourceHash": "ca99af609f934a77",
+ "confidence": "aggregator",
+ "language": "en",
+ "_kompas": {
+  "draft": false,
+  "builtAt": "2026-08-20",
+  "qsRecords": [
+   "ilac-international-language-academy-of-canada"
+  ],
+  "city": {
+   "value": "Toronto, Vancouver",
+   "source": "черновик 04.08: описание QS «campuses in Toronto and Vancouver»"
+  },
+  "priceFrom": "qs-apply, сверено с годовым диапазоном записи (Max: CA$15,935.00 Min: CA$11,686.00)",
+  "durationFrom": "нет: QS срок не отдаёт",
+  "priceKept": 1,
+  "missing": []
+ }
 }

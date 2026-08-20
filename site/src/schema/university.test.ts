@@ -109,3 +109,25 @@ describe('universitySchema', () => {
     expect(result.success).toBe(false);
   });
 });
+
+describe('durationYears — необязателен с 2026-08-20', () => {
+  it('пропускает программу без срока: QS его не отдаёт, а у языковых курсов его нет в природе', () => {
+    const noDuration = {
+      ...validSample,
+      programs: [{ slug: 'foundation', title: 'International Foundation', level: 'foundation' as const }],
+      tuition: { currency: 'GBP' as const, byProgram: { foundation: 18738 } },
+      deadlines: { foundation: '2026-09-01' },
+    };
+    expect(universitySchema.safeParse(noDuration).success).toBe(true);
+  });
+
+  it('но отвергает срок нулём или отрицательным — это не «неизвестно», а брак разбора', () => {
+    const zero = {
+      ...validSample,
+      programs: [{ slug: 'foundation', title: 'International Foundation', level: 'foundation' as const, durationYears: 0 }],
+      tuition: { currency: 'GBP' as const, byProgram: { foundation: 18738 } },
+      deadlines: { foundation: '2026-09-01' },
+    };
+    expect(universitySchema.safeParse(zero).success).toBe(false);
+  });
+});
