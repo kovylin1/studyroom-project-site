@@ -6,23 +6,23 @@
 
 | Показатель | Значение |
 |---|---|
-| Карточек в рабочей копии | 853 |
-| Из них партнёрских | 744 (не партнёры: 109) |
-| **Сверено с источником** | **607** |
+| Карточек в рабочей копии | 852 |
+| Из них партнёрских | 743 (не партнёры: 109) |
+| **Сверено с источником** | **606** |
 | Сверить не с чем: источник за логином | 0 (QS, IAPro) |
 | Сверить не с чем: источник без программ | 11 (Navitas, CATS) |
 | Сверить не с чем: источник готов, выгрузки по вузу нет | 126 |
-| Программ в каталоге (сверенные вузы) | 96439 |
-| Программ у источников (объединение) | 72374 |
-| Совпало названий | 65376 (из них по написанию: 706) |
-| Есть в каталоге, нет у источника | 31063 |
-| Есть у источника, нет в каталоге | 6998 |
-| Цена расходится | 459 |
+| Программ в каталоге (сверенные вузы) | 96832 |
+| Программ у источников (объединение) | 72368 |
+| Совпало названий | 65784 (из них по написанию: 706) |
+| Есть в каталоге, нет у источника | 31048 |
+| Есть у источника, нет в каталоге | 6584 |
+| Цена расходится | 456 |
 | **Валюта расходится** | **146** |
-| У источника цена есть, в каталоге нет | 17108 |
+| У источника цена есть, в каталоге нет | 17518 |
 | Кампусы источника, которых нет в карточке | 61 |
 
-Кейсов в панель: **1573** — kompas_no_extract 126, kompas_programs_missing 239, kompas_programs_extra 470, kompas_fee_absent 288, kompas_fee_mismatch 382, kompas_campus_missing 46, kompas_fee_currency 19, kompas_fee_mismatch_rest 2, kompas_source_empty 1.
+Кейсов в панель: **1576** — kompas_no_extract 126, kompas_programs_missing 226, kompas_programs_extra 469, kompas_fee_absent 308, kompas_fee_mismatch 379, kompas_campus_missing 46, kompas_fee_currency 19, kompas_fee_mismatch_rest 2, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -30,10 +30,9 @@
 
 | Вуз | Источник | Каталог | Источник, программ | Совпало | Только каталог | Только источник | Цена ≠ | Валюта ≠ |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| University College London (UCL) (`ucl`) | qs | 965 | 11 | 0 | 965 | 11 | 0 | 0 |
+| University College London (UCL) (`ucl`) | qs | 976 | 11 | 11 | 965 | 0 | 0 | 0 |
 | University of Chester (`chester`) | kaplan+qs+edvoy | 1257 | 590 | 589 | 668 | 1 | 3 | 23 |
 | Swinburne University of Technology (`swinburne-university-of-technology`) | edvoy | 542 | 1 | 1 | 541 | 0 | 0 | 0 |
-| UWE Bristol (`uwe-bristol`) | kaplan+qs+edvoy | 130 | 311 | 92 | 38 | 219 | 91 | 0 |
 | Royal Holloway, University of London (`royal-holloway`) | studygroup+qs+edvoy | 499 | 11 | 11 | 488 | 0 | 0 | 0 |
 | INTO University of East Anglia (`into-uea`) | qs | 493 | 8 | 8 | 485 | 0 | 0 | 0 |
 | INSEEC Business School (`inseec-business-school`) | edvoy | 476 | 7 | 7 | 469 | 0 | 0 | 0 |
@@ -44,6 +43,7 @@
 | University of Liverpool (`liverpool`) | kaplan+qs+edvoy | 1061 | 773 | 709 | 352 | 64 | 1 | 0 |
 | Massey University (`massey`) | qs+edvoy | 765 | 396 | 394 | 371 | 2 | 13 | 0 |
 | University of Texas at San Antonio (`utsa`) | qs | 384 | 106 | 50 | 334 | 56 | 6 | 0 |
+| UWE Bristol (`uwe-bristol`) | kaplan+qs+edvoy | 261 | 311 | 223 | 38 | 88 | 91 | 0 |
 | University of Sussex (`sussex`) | studygroup+qs+edvoy | 703 | 597 | 458 | 245 | 139 | 0 | 0 |
 | University of Nottingham (`nottingham`) | kaplan+qs+edvoy | 964 | 791 | 698 | 266 | 93 | 5 | 0 |
 | INTO Queen's University Belfast (`into-queens-belfast`) | qs | 361 | 12 | 12 | 349 | 0 | 1 | 0 |
