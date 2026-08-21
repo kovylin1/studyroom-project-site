@@ -1,28 +1,28 @@
 # КОМПАС — сессия 4: расхождения «каталог vs источник»
 
-**Дата:** 2026-08-15 · сети нет, каталог не тронут (только чтение).
+**Дата:** 2026-08-21 · сети нет, каталог не тронут (только чтение).
 
 ## Сводка
 
 | Показатель | Значение |
 |---|---|
-| Карточек в рабочей копии | 823 |
-| Из них партнёрских | 714 (не партнёры: 109) |
-| **Сверено с источником** | **553** |
+| Карточек в рабочей копии | 853 |
+| Из них партнёрских | 744 (не партнёры: 109) |
+| **Сверено с источником** | **607** |
 | Сверить не с чем: источник за логином | 0 (QS, IAPro) |
 | Сверить не с чем: источник без программ | 11 (Navitas, CATS) |
-| Сверить не с чем: источник готов, выгрузки по вузу нет | 150 |
-| Программ в каталоге (сверенные вузы) | 93494 |
-| Программ у источников (объединение) | 70754 |
-| Совпало названий | 64623 (из них по написанию: 605) |
-| Есть в каталоге, нет у источника | 28871 |
-| Есть у источника, нет в каталоге | 6131 |
-| Цена расходится | 358 |
-| **Валюта расходится** | **132** |
-| У источника цена есть, в каталоге нет | 16933 |
+| Сверить не с чем: источник готов, выгрузки по вузу нет | 126 |
+| Программ в каталоге (сверенные вузы) | 96439 |
+| Программ у источников (объединение) | 72374 |
+| Совпало названий | 65376 (из них по написанию: 706) |
+| Есть в каталоге, нет у источника | 31063 |
+| Есть у источника, нет в каталоге | 6998 |
+| Цена расходится | 459 |
+| **Валюта расходится** | **146** |
+| У источника цена есть, в каталоге нет | 17108 |
 | Кампусы источника, которых нет в карточке | 61 |
 
-Кейсов в панель: **1485** — kompas_no_extract 150, kompas_programs_missing 207, kompas_programs_extra 439, kompas_fee_absent 271, kompas_fee_mismatch 352, kompas_campus_missing 46, kompas_fee_currency 18, kompas_fee_mismatch_rest 1, kompas_source_empty 1.
+Кейсов в панель: **1573** — kompas_no_extract 126, kompas_programs_missing 239, kompas_programs_extra 470, kompas_fee_absent 288, kompas_fee_mismatch 382, kompas_campus_missing 46, kompas_fee_currency 19, kompas_fee_mismatch_rest 2, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -30,8 +30,10 @@
 
 | Вуз | Источник | Каталог | Источник, программ | Совпало | Только каталог | Только источник | Цена ≠ | Валюта ≠ |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
+| University College London (UCL) (`ucl`) | qs | 965 | 11 | 0 | 965 | 11 | 0 | 0 |
 | University of Chester (`chester`) | kaplan+qs+edvoy | 1257 | 590 | 589 | 668 | 1 | 3 | 23 |
 | Swinburne University of Technology (`swinburne-university-of-technology`) | edvoy | 542 | 1 | 1 | 541 | 0 | 0 | 0 |
+| UWE Bristol (`uwe-bristol`) | kaplan+qs+edvoy | 130 | 311 | 92 | 38 | 219 | 91 | 0 |
 | Royal Holloway, University of London (`royal-holloway`) | studygroup+qs+edvoy | 499 | 11 | 11 | 488 | 0 | 0 | 0 |
 | INTO University of East Anglia (`into-uea`) | qs | 493 | 8 | 8 | 485 | 0 | 0 | 0 |
 | INSEEC Business School (`inseec-business-school`) | edvoy | 476 | 7 | 7 | 469 | 0 | 0 | 0 |
@@ -68,8 +70,6 @@
 | University of Bath (`bath`) | studygroup+qs+edvoy | 733 | 538 | 520 | 213 | 18 | 2 | 0 |
 | Technological University of the Shannon (`tus-shannon`) | qs | 361 | 137 | 133 | 228 | 4 | 1 | 0 |
 | University of Wollongong in Dubai (`wollongong-dubai`) | direct+qs | 75 | 52 | 52 | 23 | 0 | 0 | 20 |
-| University of Galway (`galway`) | qs+edvoy | 506 | 342 | 316 | 190 | 26 | 1 | 0 |
-| University of Birmingham (`birmingham`) | kaplan+oxford-international+qs+edvoy | 946 | 933 | 834 | 112 | 99 | 2 | 0 |
 
 ## Расхождение валюты (недостоверность на сайте)
 
@@ -78,6 +78,7 @@
 | University of Chester (`chester`) | 23 | kaplan+qs+edvoy |
 | University of Wollongong in Dubai (`wollongong-dubai`) | 20 | direct+qs |
 | Arden University (`arden`) | 19 | qs+edvoy |
+| University of Wollongong Malaysia (`wollongong-malaysia`) | 14 | qs |
 | Schiller International University (`schiller-international-university`) | 10 | edvoy+gedu |
 | Middlesex University Dubai (`middlesex-dubai`) | 8 | direct+qs+edvoy |
 | University of Reading Malaysia (`reading-malaysia`) | 8 | qs |
