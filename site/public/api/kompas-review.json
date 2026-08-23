@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-23T10:51:46.626Z",
+  "generatedAt": "2026-08-23T13:50:45.191Z",
   "scope": "kompas",
   "summary": {
-    "total": 5269,
+    "total": 5288,
     "byIssue": {
       "kompas_scholarship_untraceable": 404,
       "kompas_scholarship_not_on_site": 232,
@@ -23,6 +23,7 @@
       "kompas_programs_missing": 226,
       "direct_zero_programs": 9,
       "sito_programs_removed": 67,
+      "kompas_card_edvoy_no_city": 19,
       "kompas_program_ambiguous_twins": 32,
       "kompas_program_level_unsupported": 13,
       "kompas_program_foreign_currency": 11,
@@ -69,13 +70,14 @@
       "sito-review.json": 322,
       "qs-relink-review.json": 53,
       "campus-backfill-review.json": 1,
-      "unmatched-review.json": 58
+      "unmatched-review.json": 58,
+      "edvoy-newcards-review.json": 19
     },
     "duplicatesDropped": 0,
     "decided": 1838,
     "decisionsCarriedFromPanel": 0,
     "decisionConflicts": 0,
-    "orphanDecisions": 10
+    "orphanDecisions": 0
   },
   "items": [
     {
@@ -11079,6 +11081,22 @@
       "checkedAt": "2026-07-31"
     },
     {
+      "id": "alfa-university-college-auc||kompas_card_edvoy_no_city||1",
+      "slug": "alfa-university-college-auc",
+      "name": "ALFA University College (AUC)",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Malaysia, программ у источника: 1.",
+      "catalog": null,
+      "official": 1,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/alfa-university-college-auc",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
       "slug": "algoma-university",
       "name": "Algoma University",
       "catalog": 1,
@@ -14566,6 +14584,22 @@
       "applied": false
     },
     {
+      "id": "cbs-university-of-applied-sciences||kompas_card_edvoy_no_city||2",
+      "slug": "cbs-university-of-applied-sciences",
+      "name": "CBS University of Applied Sciences",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Germany, программ у источника: 2.",
+      "catalog": null,
+      "official": 2,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/cbs-university-of-applied-sciences",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
       "slug": "cct-college-dublin",
       "name": "CCT College Dublin",
       "catalog": 30,
@@ -16554,6 +16588,22 @@
       "decisionNote": "Метка «catalog-only» стоит на 20 программах карточки (P1, механизм сессии 5) — расхождение размечено, удалять программы правило 4 запрещает."
     },
     {
+      "id": "ecole-de-management-applique||kompas_card_edvoy_no_city||9",
+      "slug": "ecole-de-management-applique",
+      "name": "Ecole de Management Applique",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: France, программ у источника: 9.",
+      "catalog": null,
+      "official": 9,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/ecole-de-management-applique",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
       "id": "ecole-management-appliquee||kompas_no_extract||qs+edvoy",
       "slug": "ecole-management-appliquee",
       "name": "Ecole de Management Appliquée",
@@ -17112,6 +17162,22 @@
       "decidedAt": "2026-08-15T02:27:19.835Z",
       "applied": false,
       "decisionNote": "QS собран целиком: портал объявил 512 вузов, снято 512 (2026-08-01). Ни одна непривязанная выгрузка QS на эту карточку не указывает — значит вуза в списке QS нет. Пробел не в сборе, а в разметке партнёрства; сверять не с чем."
+    },
+    {
+      "id": "european-global-institute-of-innovation-and-technology||kompas_card_edvoy_no_city||1",
+      "slug": "european-global-institute-of-innovation-and-technology",
+      "name": "European Global Institute of Innovation and Technology",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Malta, программ у источника: 1.",
+      "catalog": null,
+      "official": 1,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/european-global-institute-of-innovation-and-technology",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
     },
     {
       "slug": "exeter",
@@ -19096,6 +19162,22 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
+      "id": "hotel-and-tourism-management-institute||kompas_card_edvoy_no_city||14",
+      "slug": "hotel-and-tourism-management-institute",
+      "name": "HTMi - International Hotel and Tourism Institute (Switzerland)",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Switzerland, программ у источника: 14.",
+      "catalog": null,
+      "official": 14,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/hotel-and-tourism-management-institute",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
       "id": "htmi-international-hotel-and-tourism-institute-switzerland||kompas_no_extract||edvoy",
       "slug": "htmi-international-hotel-and-tourism-institute-switzerland",
       "name": "HTMi - International Hotel and Tourism Institute (Switzerland)",
@@ -19991,6 +20073,22 @@
       "issue": "kompas_programs_extra",
       "severity": "warning",
       "detail": "В карточке 485 программ, которых нет ни в одном назначенном источнике (qs). Либо источник их не показывает, либо запись устарела/выдумана — удалять нельзя (правило 4), нужно решение. Примеры: «Foundation in Business and Social Sciences», «Foundation in Science and Engineering», «Foundation in Health Sciences», «International Year One — Business», «Pre-Masters Programme», «Academic English Language»"
+    },
+    {
+      "id": "iowa-state-university||kompas_card_edvoy_no_city||101",
+      "slug": "iowa-state-university",
+      "name": "IOWA State University",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: United States, программ у источника: 101.",
+      "catalog": null,
+      "official": 101,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/iowa-state-university",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
     },
     {
       "id": "ipag||kompas_no_extract||qs",
@@ -22971,6 +23069,22 @@
       "decisionNote": "Решение 2026-07-29: стипендии с офсайтов добавлены (1807 записей, source=official-site)."
     },
     {
+      "id": "lincoln-university-college||kompas_card_edvoy_no_city||7",
+      "slug": "lincoln-university-college",
+      "name": "Lincoln University College",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Malaysia, программ у источника: 7.",
+      "catalog": null,
+      "official": 7,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/lincoln-university-college",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
       "id": "lipscomb||kompas_no_extract||qs",
       "slug": "lipscomb",
       "name": "Lipscomb University",
@@ -23354,6 +23468,22 @@
       "program": null,
       "sourceUrl": "https://www.twinenglishcentres.com/destinations/london-centre",
       "checkedAt": "2026-08-21T08:10:25.137Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "long-island-university-brooklyn||kompas_card_edvoy_no_city||66",
+      "slug": "long-island-university-brooklyn",
+      "name": "Long Island University Brooklyn",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: United States, программ у источника: 66.",
+      "catalog": null,
+      "official": 66,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/long-island-university-brooklyn",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
@@ -24749,6 +24879,22 @@
       "decisionNote": "Метка «catalog-only» стоит на 157 программах карточки (P1, механизм сессии 5) — расхождение размечено, удалять программы правило 4 запрещает."
     },
     {
+      "id": "mjm-graphic-design||kompas_card_edvoy_no_city||1",
+      "slug": "mjm-graphic-design",
+      "name": "MJM Graphic Design",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: France, программ у источника: 1.",
+      "catalog": null,
+      "official": 1,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/mjm-graphic-design",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
       "slug": "mla-college",
       "name": "MLA College",
       "catalog": 1,
@@ -25102,6 +25248,22 @@
       "program": null,
       "sourceUrl": "https://www.bellerbysglobal.com/study-with-us/bellerbys-study-centres",
       "checkedAt": "2026-08-21T08:10:25.137Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "national-research-nuclear-university-mephi||kompas_card_edvoy_no_city||1",
+      "slug": "national-research-nuclear-university-mephi",
+      "name": "National Research Nuclear University(MEPhI)",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Russia, программ у источника: 1.",
+      "catalog": null,
+      "official": 1,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/national-research-nuclear-university-mephi",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
@@ -28269,6 +28431,22 @@
       "applied": false
     },
     {
+      "id": "rome-business-school||kompas_card_edvoy_no_city||1",
+      "slug": "rome-business-school",
+      "name": "Rome Business School",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Italy, программ у источника: 1.",
+      "catalog": null,
+      "official": 1,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/rome-business-school",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
       "id": "rome-university-of-fine-arts||kompas_scholarship_offsite_new||session6-scholardiff",
       "slug": "rome-university-of-fine-arts",
       "name": "Rome University of Fine Arts (RUFA)",
@@ -28430,6 +28608,22 @@
       "program": null,
       "sourceUrl": null,
       "checkedAt": "2026-07-25T17:01:15.028Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "royal-holloway-university-of-london||kompas_card_edvoy_no_city||321",
+      "slug": "royal-holloway-university-of-london",
+      "name": "Royal Holloway University of London",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: United Kingdom, программ у источника: 321.",
+      "catalog": null,
+      "official": 321,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/royal-holloway-university-of-london",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
       "decision": null,
       "decidedAt": null,
       "applied": false
@@ -31059,6 +31253,22 @@
       "applied": false
     },
     {
+      "id": "the-international-university-of-logistics-and-transport||kompas_card_edvoy_no_city||1",
+      "slug": "the-international-university-of-logistics-and-transport",
+      "name": "The International University of Logistics and Transport",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Poland, программ у источника: 1.",
+      "catalog": null,
+      "official": 1,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/the-international-university-of-logistics-and-transport",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
       "id": "the-university-of-arizona||kompas_scholarship_offsite_new||session6-scholardiff",
       "slug": "the-university-of-arizona",
       "name": "The University of Arizona",
@@ -31107,6 +31317,22 @@
       "severity": "warning",
       "detail": "В карточке 3 программ, которых нет ни в одном назначенном источнике (edvoy). Либо источник их не показывает, либо запись устарела/выдумана — удалять нельзя (правило 4), нужно решение. Примеры: «BEng (Hons) Electrical Engineering», «BEng (Hons) Biomedical Engineering», «Bachelor of Science Earth Science»",
       "decisionNote": "Метка «catalog-only» стоит на 3 программах карточки (P1, механизм сессии 5) — расхождение размечено, удалять программы правило 4 запрещает."
+    },
+    {
+      "id": "the-university-of-waterloo||kompas_card_edvoy_no_city||1",
+      "slug": "the-university-of-waterloo",
+      "name": "The University of waterloo",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Canada, программ у источника: 1.",
+      "catalog": null,
+      "official": 1,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/the-university-of-waterloo",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
     },
     {
       "slug": "the-university-of-western-australia",
@@ -33034,6 +33260,38 @@
       "decisionNote": "Метка «catalog-only» стоит на 17 программах карточки (P1, механизм сессии 5) — расхождение размечено, удалять программы правило 4 запрещает."
     },
     {
+      "id": "university-of-eastern-finland||kompas_card_edvoy_no_city||4",
+      "slug": "university-of-eastern-finland",
+      "name": "University of Eastern Finland",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Finland, программ у источника: 4.",
+      "catalog": null,
+      "official": 4,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/university-of-eastern-finland",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "university-of-europe-for-applied-sciences||kompas_card_edvoy_no_city||38",
+      "slug": "university-of-europe-for-applied-sciences",
+      "name": "UE - University of Europe for Applied Sciences",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Germany, программ у источника: 38.",
+      "catalog": null,
+      "official": 38,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/university-of-europe-for-applied-sciences",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
       "id": "university-of-european-management||direct_zero_programs||site",
       "slug": "university-of-european-management",
       "name": "University of European Management",
@@ -33625,6 +33883,38 @@
       "issue": "kompas_programs_extra",
       "severity": "warning",
       "detail": "В карточке 1 программ, которых нет ни в одном назначенном источнике (qs). Либо источник их не показывает, либо запись устарела/выдумана — удалять нельзя (правило 4), нужно решение. Примеры: «Master of Information Technology and Systems»"
+    },
+    {
+      "id": "university-of-the-west-of-england-bristol||kompas_card_edvoy_no_city||301",
+      "slug": "university-of-the-west-of-england-bristol",
+      "name": "University of the West of England",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: United Kingdom, программ у источника: 301.",
+      "catalog": null,
+      "official": 301,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/university-of-the-west-of-england-bristol",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
+    },
+    {
+      "id": "university-of-victoria||kompas_card_edvoy_no_city||88",
+      "slug": "university-of-victoria",
+      "name": "University of Victoria",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: Canada, программ у источника: 88.",
+      "catalog": null,
+      "official": 88,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/university-of-victoria",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
     },
     {
       "id": "university-of-winchester||kompas_program_ambiguous_twins||2",
@@ -35029,6 +35319,22 @@
       "severity": "warning",
       "detail": "В карточке 19 программ, которых нет ни в одном назначенном источнике (kaplan, edvoy). Либо источник их не показывает, либо запись устарела/выдумана — удалять нельзя (правило 4), нужно решение. Примеры: «Foundation Certificate — Arts and Humanities», «Foundation Certificate — Law and Social Sciences», «Foundation Certificate — Science and Engineering», «Foundation Certificate — Business, Economics and Finance», «Pre-Master's — Business, Economics and Finance», «Pre-Master's — Law and Social Sciences»",
       "decisionNote": "Метка «catalog-only» стоит на 19 программах карточки (P1, механизм сессии 5) — расхождение размечено, удалять программы правило 4 запрещает."
+    },
+    {
+      "id": "widener-university||kompas_card_edvoy_no_city||1",
+      "slug": "widener-university",
+      "name": "Widener University",
+      "issue": "kompas_card_edvoy_no_city",
+      "severity": "warning",
+      "detail": "источник города не назвал — карточка не заводится, город не выдумываем. Страна: United States, программ у источника: 1.",
+      "catalog": null,
+      "official": 1,
+      "program": null,
+      "sourceUrl": "https://edge.edvoy.com/institutions/widener-university",
+      "checkedAt": "2026-08-23T13:49:27.943Z",
+      "decision": null,
+      "decidedAt": null,
+      "applied": false
     },
     {
       "id": "wilfrid-laurier||kompas_scholarship_not_on_site||session6-scholardiff",

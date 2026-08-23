@@ -30,6 +30,8 @@ const PARTS = [
   'qs-relink-review.json', 'campus-backfill-review.json',
   // 3.5-g: остаток непривязанного после перепривязки по уровню
   'unmatched-review.json',
+  // заведение карточек edvoy: кого завести не вышло
+  'edvoy-newcards-review.json',
 ];
 
 const ORPHANS = path.join(KOMPAS_DIR, 'panel-orphan-decisions.json');
