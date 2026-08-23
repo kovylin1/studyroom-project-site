@@ -13,7 +13,10 @@
 // на «BSc Business and Management», а это разные программы. Поэтому:
 //   * приставка отрезается только известная (список ниже), а не «первое слово»;
 //   * остаток должен совпасть ТОЧНО, никакой похожести;
-//   * уровень программы обязан совпасть, если он известен с обеих сторон;
+//   * уровень программы обязан совпасть, если он известен с обеих сторон
+//     (уровень строки — через rowLevel: у QS он в поле `sourceLevel`);
+//   * строке, чья приставка называет квалификацию вне схемы каталога
+//     («Graduate Certificate in ...»), третья ступень не положена вовсе;
 //   * если после отрезания подходит больше одной программы карточки — не привязываем,
 //     это кейс оператору.
 
@@ -77,6 +80,91 @@ export function levelFromTitle(title) {
   return null;
 }
 
+// Уровни источников → уровни схемы каталога (site/src/schema/university.ts).
+// Карта жила в kompas-programs-backfill.mjs; вынесена сюда, чтобы добор и
+// сопоставление читали уровень строки ОДИНАКОВО. Пока карта была только в доборе,
+// матчер уровень строки QS вовсе не видел: он читает `level`, а QS кладёт уровень
+// в `sourceLevel` — из-за этого 187 строк уходили в «спорные» на ровном месте
+// («History» при кандидатах «BA History» и «MA History»), а 123 садились на
+// программу чужого уровня (строка магистратуры на бакалаврскую программу).
+export const LEVEL_MAP = {
+  bachelor: 'bachelor', master: 'master', phd: 'phd', foundation: 'foundation',
+  pathway: 'foundation', language: 'english-language', 'english-language': 'english-language',
+  'high-school': 'high-school', 'sixth-form': 'sixth-form', 'short-course': 'short-course',
+};
+
+// Разметка уровня самого источника (поле sourceLevel у QS).
+// null — уровень назван, но схема каталога его не принимает: такую строку нельзя
+// ни привязать по уровню, ни подогнать под соседний, она уходит кейсом.
+export const SOURCE_LEVEL_MAP = {
+  // QS
+  Bachelors: 'bachelor', Masters: 'master', PhD: 'phd',
+  'High School': 'high-school', Pathway: 'foundation', 'English Course': 'english-language',
+  Undergraduate: 'bachelor', Postgraduate: 'master', Foundation: 'foundation',
+  // edvoy: своя разметка. Добавлена 23.08 (3.5-g) — без неё 390 строк с пустым
+  // `level` считались безуровневыми, хотя источник уровень называет.
+  Doctorate: 'phd', PreMasters: 'foundation',
+  Language: 'english-language', PresessionalEnglish: 'english-language',
+  ALevel: 'sixth-form', ASLevel: 'sixth-form',
+  GCSEgradesAC: 'high-school', GCSEgradesDG: 'high-school',
+  ProfessionalShortCourse: 'short-course',
+  // studygroup, iapro
+  'Undergraduate Degree': 'bachelor', 'Postgraduate Degree': 'master',
+  'Graduate Degree': 'master', 'Preparatory Programme': 'foundation',
+  // квалификации вне схемы каталога (8 уровней): под чужой уровень не подгоняем
+  Diploma: null, 'Graduate Diploma': null, 'Advanced Diploma': null,
+  Certificate: null, 'Graduate Certificate': null, 'Certificate of Higher Education': null,
+  // намеренно не размечены: 'Undergraduate + Foundation' (два уровня разом, у строки
+  // и так заполнен level), 'Continuing Education', 'Apprenticeships' — улик нет.
+};
+
+// Приставки, которые называют квалификацию, которой в схеме каталога нет
+// (8 уровней, `certificate` и `diploma` среди них отсутствуют). Такую строку
+// нельзя привязывать по названию без приставки: «Graduate Certificate in Commerce»
+// и «Master of Commerce» после снятия приставки оба дают «commerce», а это
+// разные квалификации. Замер 23.08: так склеилось 10 строк.
+const UNSUPPORTED_AWARDS = [
+  'graduate diploma in', 'postgraduate diploma in', 'advanced diploma in',
+  'graduate diploma', 'postgraduate diploma', 'advanced diploma',
+  'graduate certificate in', 'postgraduate certificate in',
+  'graduate certificate', 'postgraduate certificate',
+  'diploma in', 'certificate in', 'diploma of', 'certificate of',
+  'pgdip', 'pgcert', 'pgce', 'hnd', 'hnc', 'foundation diploma in',
+];
+
+/** Называет ли само название квалификацию, которой нет в схеме каталога. */
+export function unsupportedAwardInTitle(title) {
+  const t = norm(title);
+  return UNSUPPORTED_AWARDS.some((a) => t === a || t.startsWith(a + ' '));
+}
+
+/**
+ * Уровень строки выгрузки: { level, from }.
+ * `from`: 'source' — поле level источника, 'sourceLevel' — его собственная разметка,
+ * 'title' — явная приставка степени в названии, 'unsupported' — уровень назван,
+ * но схема каталога его не принимает, null — уровня нет нигде.
+ * Порядок тот же, что был в доборе: поле источника важнее его разметки, название — последнее.
+ */
+export function rowLevel(row) {
+  const raw = row.level ? String(row.level).toLowerCase() : null;
+  const key = row.sourceLevel ? String(row.sourceLevel).trim() : null;
+  const mapped = key ? SOURCE_LEVEL_MAP[key] : undefined;
+  if (raw && LEVEL_MAP[raw]) return { level: LEVEL_MAP[raw], from: 'source' };
+  if (mapped) return { level: mapped, from: 'sourceLevel' };
+  // Порядок важен: годная разметка источника проверяется РАНЬШЕ непринимаемого
+  // поля level. Строка с level: 'diploma' и sourceLevel: 'Masters' — магистратура,
+  // а не кейс. Так считал добор до выноса карты сюда, поведение сохранено.
+  if (raw && !LEVEL_MAP[raw]) return { level: null, from: 'unsupported', raw };
+  if (mapped === null) return { level: null, from: 'unsupported', raw: key };
+  const guess = levelFromTitle(row.title);
+  if (guess) return { level: guess, from: 'title' };
+  // Явная приставка степени важнее: «Master of ...» выше уже вернулось.
+  if (unsupportedAwardInTitle(row.title)) {
+    return { level: null, from: 'unsupported', raw: norm(row.title).split(' ').slice(0, 2).join(' ') };
+  }
+  return { level: null, from: null };
+}
+
 /** Индексы по программам карточки. Строится один раз на карточку. */
 export function buildIndex(programs) {
   const list = programs || [];
@@ -114,13 +202,21 @@ export function matchProgram(idx, row) {
   const exact = idx.byTitle.get(norm(row.title));
   if (exact) return { program: exact, how: 'title' };
 
+  // Уровень строки берём через rowLevel: у QS он лежит в `sourceLevel`, а не в `level`,
+  // и без этого «History» при кандидатах «BA History» и «MA History» считалось спорным.
+  const lv = rowLevel(row);
+  // Квалификации, которой нет в схеме каталога, третья ступень не положена:
+  // без приставки «Graduate Certificate in Commerce» неотличим от «Master of Commerce».
+  // Точное совпадение названия (вторая ступень) для таких строк работает как прежде.
+  if (lv.from === 'unsupported') return { program: null, how: 'none' };
+
   const st = stripAward(row.title);
   if (!st) return { program: null, how: 'none' };
   const pool = idx.byStripped.get(st);
   if (!pool || !pool.length) return { program: null, how: 'none' };
 
   // уровень должен совпасть, если он известен с обеих сторон
-  const lvl = row.level || null;
+  const lvl = lv.level;
   const fit = lvl ? pool.filter((p) => !p.level || p.level === lvl) : pool;
   if (fit.length === 1) return { program: fit[0], how: 'award-stripped' };
   if (fit.length > 1) return { program: null, how: 'ambiguous' };

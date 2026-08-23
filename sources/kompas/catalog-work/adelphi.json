@@ -238,26 +238,7 @@
         "January"
       ],
       "programUrl": "https://www.adelphi.edu/academics/",
-      "programType": "degree",
-      "tuitionVariants": [
-        {
-          "tuition": 40500,
-          "currency": "USD",
-          "source": "qs",
-          "level": "Bachelors",
-          "degreeGroup": "Business & Management",
-          "accommodation": 13000,
-          "other": 2000,
-          "total": 55500
-        },
-        {
-          "tuition": 44686,
-          "currency": "USD",
-          "source": "edvoy",
-          "campus": "Garden City Campus",
-          "level": "Undergraduate"
-        }
-      ]
+      "programType": "degree"
     },
     {
       "slug": "adelphi-bba-finance",
@@ -303,26 +284,7 @@
         "January"
       ],
       "programUrl": "https://www.adelphi.edu/academics/",
-      "programType": "degree",
-      "tuitionVariants": [
-        {
-          "tuition": 40500,
-          "currency": "USD",
-          "source": "qs",
-          "level": "Bachelors",
-          "degreeGroup": "Business & Management",
-          "accommodation": 13000,
-          "other": 2000,
-          "total": 55500
-        },
-        {
-          "tuition": 44686,
-          "currency": "USD",
-          "source": "edvoy",
-          "campus": "Garden City Campus",
-          "level": "Undergraduate"
-        }
-      ]
+      "programType": "degree"
     },
     {
       "slug": "adelphi-bs-education",
@@ -1009,26 +971,7 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Социальные науки",
-      "tuitionVariants": [
-        {
-          "tuition": 40500,
-          "currency": "USD",
-          "source": "qs",
-          "level": "Bachelors",
-          "degreeGroup": "Business & Management",
-          "accommodation": 13000,
-          "other": 2000,
-          "total": 55500
-        },
-        {
-          "tuition": 44686,
-          "currency": "USD",
-          "source": "edvoy",
-          "campus": "Garden City Campus",
-          "level": "Undergraduate"
-        }
-      ]
+      "faculty": "Социальные науки"
     },
     {
       "slug": "adelphi-bfa-art-and-design-education",
@@ -2057,6 +2000,66 @@
       "confidence": 0.6,
       "kompasStatus": "source-added",
       "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "accounting",
+      "title": "Accounting",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "economics",
+      "title": "Economics",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "finance",
+      "title": "Finance",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "management",
+      "title": "Management",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "marketing",
+      "title": "Marketing",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "social-work",
+      "title": "Social Work",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
     }
   ],
   "tuition": {
@@ -2073,10 +2076,8 @@
       "adelphi-bs-computer-science": 52110,
       "adelphi-ba-communications": 44686,
       "adelphi-bba-business-administration": 52110,
-      "adelphi-bba-accounting": 40500,
-      "adelphi-bba-finance": 40500,
-      "adelphi-bba-marketing": 40500,
-      "adelphi-bba-management": 40500,
+      "adelphi-bba-accounting": 44686,
+      "adelphi-bba-management": 44686,
       "adelphi-bs-education": 52110,
       "adelphi-bs-physical-education": 52110,
       "adelphi-bs-nursing": 52110,
@@ -2096,7 +2097,6 @@
       "adelphi-ms-public-health": 22000,
       "adelphi-ms-communication-sciences": 24000,
       "adelphi-phd-psychology": 26000,
-      "adelphi-phd-social-work": 32500,
       "adelphi-phd-nursing": 26000,
       "adelphi-ms-stem-designated-computer-science": 35000,
       "adelphi-ms-in-business-analytics-stem-designated": 35000,
@@ -2107,7 +2107,7 @@
       "adelphi-bs-information-systems-stem-designated": 44686,
       "adelphi-bs-marketing": 44686,
       "adelphi-bs-neuroscience": 44686,
-      "adelphi-ba-economics": 40500,
+      "adelphi-ba-economics": 44686,
       "adelphi-bfa-art-and-design-education": 44686,
       "adelphi-bfa-graphic-design": 44686,
       "adelphi-ms-supply-chain-management": 35000,
@@ -2180,7 +2180,13 @@
       "computer-science-stem-designated": 40500,
       "information-systems-stem-designated": 40500,
       "artificial-intelligence-and-machine-learning-ms": 32500,
-      "computer-science-ms-stem-designated": 32500
+      "computer-science-ms-stem-designated": 32500,
+      "accounting": 40500,
+      "economics": 40500,
+      "finance": 40500,
+      "management": 40500,
+      "marketing": 40500,
+      "social-work": 32500
     }
   },
   "deadlines": {

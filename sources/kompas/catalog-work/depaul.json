@@ -224,7 +224,26 @@
       "programUrl": "https://www.depaul.edu/academics/",
       "programType": "degree",
       "confidence": 0.8,
-      "checkedAt": "2026-06-08T05:50:39.962Z"
+      "checkedAt": "2026-06-08T05:50:39.962Z",
+      "tuitionVariants": [
+        {
+          "tuition": 42411,
+          "currency": "USD",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Art, Design & Media",
+          "accommodation": 10326,
+          "other": 6000,
+          "total": 58737
+        },
+        {
+          "tuition": 43506,
+          "currency": "USD",
+          "source": "edvoy",
+          "campus": "Loop Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "depaul-ba-public-relations-and-advertising",
@@ -3045,26 +3064,7 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Искусство и дизайн",
-      "tuitionVariants": [
-        {
-          "tuition": 40464,
-          "currency": "USD",
-          "source": "edvoy",
-          "campus": "Loop Campus",
-          "level": "Postgraduate"
-        },
-        {
-          "tuition": 42411,
-          "currency": "USD",
-          "source": "qs",
-          "level": "Bachelors",
-          "degreeGroup": "Art, Design & Media",
-          "accommodation": 10326,
-          "other": 6000,
-          "total": 58737
-        }
-      ]
+      "faculty": "Искусство и дизайн"
     },
     {
       "slug": "depaul-mph-public-health-social-epidemiology",
@@ -5996,6 +5996,16 @@
       "confidence": 0.6,
       "kompasStatus": "source-added",
       "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "acting",
+      "title": "Acting",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
     }
   ],
   "tuition": {
@@ -6012,10 +6022,10 @@
       "depaul-bs-data-science": 42696,
       "depaul-bs-information-technology": 43506,
       "depaul-bfa-game-design": 42696,
-      "depaul-bfa-animation": 42696,
+      "depaul-bfa-animation": 42411,
       "depaul-ba-communication": 42696,
-      "depaul-ba-journalism": 43506,
-      "depaul-ba-public-relations-and-advertising": 42696,
+      "depaul-ba-journalism": 42411,
+      "depaul-ba-public-relations-and-advertising": 42411,
       "depaul-ba-media-and-cinema-studies": 42411,
       "depaul-ba-liberal-studies": 42696,
       "depaul-ba-psychology": 43506,
@@ -6383,7 +6393,8 @@
       "user-experience-design": 42411,
       "wig-and-makeup-design-technology": 42411,
       "depaul-bs-mathematics-computer-science": 43506,
-      "depaul-bfa-film-and-television": 43506
+      "depaul-bfa-film-and-television": 43506,
+      "acting": 42411
     }
   },
   "deadlines": {

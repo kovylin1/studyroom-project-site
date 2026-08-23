@@ -20,7 +20,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { buildIndex, matchProgram, norm, levelFromTitle } from './lib/program-match.mjs';
+import { buildIndex, matchProgram, norm, rowLevel } from './lib/program-match.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EX = path.join(ROOT, 'sources/kompas/extracts');
@@ -35,23 +35,9 @@ const DRY = process.argv.includes('--dry');
 const SOURCES = (process.argv.find((a) => a.startsWith('--sources=')) || '--sources=qs,edvoy,kaplan,studygroup,oxford-international,qahe,iapro')
   .slice(10).split(',').map((x) => x.trim()).filter(Boolean);
 
-// уровни источников → уровни схемы каталога (site/src/schema/university.ts)
-const LEVEL_MAP = {
-  bachelor: 'bachelor', master: 'master', phd: 'phd', foundation: 'foundation',
-  pathway: 'foundation', language: 'english-language', 'english-language': 'english-language',
-  'high-school': 'high-school', 'sixth-form': 'sixth-form', 'short-course': 'short-course',
-};
-
-// Как источник называет уровень своей разметкой (поле sourceLevel у QS).
-// null — уровень есть, но схема каталога его не принимает; такие уходят кейсами,
-// а не подгоняются под соседний.
-const SOURCE_LEVEL_MAP = {
-  Bachelors: 'bachelor', Masters: 'master', PhD: 'phd',
-  'High School': 'high-school', Pathway: 'foundation', 'English Course': 'english-language',
-  Undergraduate: 'bachelor', Postgraduate: 'master', Foundation: 'foundation',
-  Diploma: null, 'Graduate Diploma': null, 'Advanced Diploma': null,
-  Certificate: null, 'Graduate Certificate': null,
-};
+// Карты уровней переехали в lib/program-match.mjs (задача 3.5-g): уровень строки
+// нужен не только здесь, но и матчеру — иначе он не видит уровень строки QS,
+// который лежит в `sourceLevel`. Читаем через общий rowLevel.
 
 const slugify = (s) => norm(s).replace(/ /g, '-').slice(0, 90).replace(/^-+|-+$/g, '');
 
@@ -115,29 +101,15 @@ for (const src of SOURCES) {
       if (!key) continue;
       if (seen.has(key)) { stats.duplicatesInSource++; continue; }
 
-      let level = null, from = null;
-      const raw = ep.level ? String(ep.level).toLowerCase() : null;
       // У QS 8 551 строка идёт с пустым level, но с заполненным sourceLevel
-      // («Bachelors», «Masters», «High School»). Это поле источника, а не догадка —
-      // читаем его вторым после level.
-      const rawSrc = ep.sourceLevel ? SOURCE_LEVEL_MAP[String(ep.sourceLevel).trim()] : undefined;
-      if (raw && LEVEL_MAP[raw]) { level = LEVEL_MAP[raw]; from = 'source'; stats.levelFromSource++; }
-      else if (rawSrc) { level = rawSrc; from = 'sourceLevel'; stats.levelFromSourceLevel++; }
-      else if (raw && !LEVEL_MAP[raw]) {
+      // («Bachelors», «Masters», «High School»). Это поле источника, а не догадка.
+      const { level, from } = rowLevel(ep);
+      if (from === 'unsupported') {
         stats.levelUnsupported++;
-        cases.push({ source: src, catalogSlug: slug, title: ep.title, sourceLevel: raw,
+        cases.push({ source: src, catalogSlug: slug, title: ep.title, sourceLevel: ep.sourceLevel || ep.level,
           reason: 'level-unsupported',
           note: 'уровень источника не принимает схема каталога — под чужой не подгоняем' });
         continue;
-      } else if (ep.sourceLevel && rawSrc === null) {
-        stats.levelUnsupported++;
-        cases.push({ source: src, catalogSlug: slug, title: ep.title, sourceLevel: ep.sourceLevel,
-          reason: 'level-unsupported',
-          note: 'уровень источника не принимает схема каталога — под чужой не подгоняем' });
-        continue;
-      } else {
-        const guess = levelFromTitle(ep.title);
-        if (guess) { level = guess; from = 'title'; stats.levelFromTitle++; }
       }
       if (!level) {
         stats.noLevel++;
@@ -145,6 +117,9 @@ for (const src of SOURCES) {
           note: 'уровня нет ни у источника, ни в названии — программа не создаётся' });
         continue;
       }
+      if (from === 'source') stats.levelFromSource++;
+      else if (from === 'sourceLevel') stats.levelFromSourceLevel++;
+      else if (from === 'title') stats.levelFromTitle++;
 
       // слаг уникальный внутри карточки
       let ps = slugify(ep.title) || ('program-' + (card.programs.length + 1));
