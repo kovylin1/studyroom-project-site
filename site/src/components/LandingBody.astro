@@ -25,6 +25,7 @@ const TEAM_PHOTO = '/photos/studyroom-team.jpg';
 const hasTeamPhoto = fs.existsSync(path.join(process.cwd(), 'public', 'photos', 'studyroom-team.jpg'));
 import { pickTimeline } from '~/i18n/timelines';
 import LangSwitcher from '~/components/LangSwitcher.astro';
+import { annualTuitionValues } from '../lib/tuition';
 
 interface Props {
   u: CollectionEntry<'universities'>['data'];
@@ -48,6 +49,8 @@ interface ProgramRow {
   level: string;
   faculty: string;
   tuition: number | undefined;
+  // 'program' — сумма за весь срок, а не за год (КОМПАС 3.3-a); подпись в progPrice
+  tuitionBasis: 'year' | 'program' | undefined;
   programType: string | undefined;
   unverified: boolean | undefined;
   durationYears: number | undefined;
@@ -64,6 +67,7 @@ const programRows: ProgramRow[] = u.programs.map((p) => ({
   level: p.level,
   faculty: p.faculty ?? t('lp.misc.otherFaculty'),
   tuition: u.tuition.byProgram[p.slug],
+  tuitionBasis: p.tuitionBasis,
   programType: p.programType,
   unverified: p.kompasStatus === 'catalog-only' || undefined,
   durationYears: p.durationYears,
@@ -101,7 +105,7 @@ const faculties = Array.from(facultyMap.entries())
   })
   .slice(0, 48);
 
-const tuitionValues = Object.values(u.tuition.byProgram).filter((v) => v > 0);
+const tuitionValues = annualTuitionValues(u.tuition, u.programs);
 const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
 
 function stripKaplan<T extends string | undefined | null>(s: T): T {
@@ -223,6 +227,7 @@ const SCRIPT_STR = {
   tbdLink: t('lp.programs.tbdLink'),
   unverifiedWord: t('lp.programs.unverified'),
   perYear: t('lp.programs.perYear'),
+  perProgram: t('lp.programs.perProgram'),
   yearsWord: t('lp.programs.yearsWord'),
   durationTbd: t('lp.programs.durationTbd'),
   intakesWord: t('lp.programs.intakesWord'),
@@ -1392,7 +1397,8 @@ const SCRIPT_STR = {
   // Цена программы; когда цены нет, но есть страница программы у вуза/агрегатора —
   // даём ссылку туда вместо голого «уточняется» (данные не выдумываем, ведём к источнику).
   function progPrice(p) {
-    if (p.tuition) return CURRENCY_SYM + p.tuition.toLocaleString('en') + STR.perYear;
+    if (p.tuition) return CURRENCY_SYM + p.tuition.toLocaleString('en') +
+      (p.tuitionBasis === 'program' ? STR.perProgram : STR.perYear);
     return p.programUrl
       ? '<a class="program-row__price-link" href="' + esc(p.programUrl) + '" target="_blank" rel="noopener">' + STR.tbdLink + '</a>'
       : STR.tbd;

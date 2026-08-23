@@ -2,10 +2,11 @@
 // Применение кампусных цен QS в рабочую копию каталога по результату замера
 // (scraper/kompas-qs-fee-basis.mjs → sources/kompas/qs-fee-basis-map.json).
 //
-// Пишутся ТОЛЬКО суммы разряда `annual`: сайт подписывает любое число из
-// tuition.byProgram как цену «в год» (ключ card.perYear), поэтому whole-term
-// туда класть нельзя — получится завышение в 2-4 раза. whole-term,
-// annual-loose и currency-mismatch выгружаются отдельным списком оператору.
+// Пишутся суммы разрядов `annual` и `whole-term`. Разница в подписи: у
+// whole-term проставляется program.tuitionBasis = 'program', и вёрстка пишет
+// «за всю программу» вместо «/год», а сама сумма исключается из «от … в год»
+// (site/src/lib/tuition.ts). Без этого признака whole-term завысил бы ценник
+// вуза в 2-4 раза. annual-loose и currency-mismatch — отдельным списком оператору.
 //
 // По умолчанию цены НЕ перезаписываются: заполняются только пустые места.
 // --overwrite — писать поверх существующих (не делать без решения по 3.3).
@@ -45,7 +46,7 @@ for (const m of mapRows) basisOf.set(m.slug + '|' + (m.currency || '?') + '|' + 
 
 const files = (await fs.readdir(QS_DIR)).filter(f => f.endsWith('.json')).sort();
 
-const backup = {};        // catalogSlug → прежний tuition (для отката)
+const backup = {};        // catalogSlug → прежние tuition и метки основы (для отката)
 const changes = [];       // что записали
 const cases = [];         // что не записали и почему
 const stats = {
@@ -53,6 +54,7 @@ const stats = {
   extractsLinked: 0,
   cardsTouched: 0,
   written: 0,
+  wholeTerm: 0,
   keptExisting: 0,
   overwritten: 0,
   skippedBucket: 0,
@@ -100,7 +102,10 @@ for (const f of files) {
   if (!card.tuition.byProgram) card.tuition.byProgram = {};
 
   let touched = false;
-  const before = JSON.stringify(card.tuition);
+  const before = JSON.stringify({
+    tuition: card.tuition,
+    tuitionBasis: Object.fromEntries(progs.filter(p => p.tuitionBasis).map(p => [p.slug, p.tuitionBasis])),
+  });
 
   for (const ep of (data.programs || [])) {
     const t = (typeof ep.tuition === 'number') ? ep.tuition : null;
@@ -109,7 +114,19 @@ for (const f of files) {
     const m = basisOf.get((data.slug || f.replace(/\.json$/, '')) + '|' + (cur || '?') + '|' + t);
     const bucket = m ? m.bucket : 'unknown';
 
-    if (bucket !== 'annual') {
+    // невозможный срок: у Oxford Int. NA Pathway годовой диапазон 250-250 (это
+    // сбор, а не цена), отношение 196 — такое писать нельзя ни с какой подписью
+    if (bucket === 'whole-term' && m && m.ratio > 12) {
+      stats.skippedBucket++;
+      cases.push({
+        extract: f, catalogSlug, program: ep.title, tuition: t, currency: cur,
+        bucket, ratio: m.ratio, reason: 'whole-term-implausible',
+        note: 'отношение к годовому диапазону ' + m.ratio + ' — диапазон источника мусорный',
+      });
+      continue;
+    }
+
+    if (bucket !== 'annual' && bucket !== 'whole-term') {
       stats.skippedBucket++;
       cases.push({
         extract: f, catalogSlug, program: ep.title, tuition: t, currency: cur,
@@ -155,8 +172,12 @@ for (const f of files) {
     if (!touched) { backup[catalogSlug] = JSON.parse(before); touched = true; stats.cardsTouched++; }
     if (prev != null && prev > 0) stats.overwritten++;
     card.tuition.byProgram[target.slug] = t;
+    if (bucket === 'whole-term') {
+      target.tuitionBasis = 'program';
+      stats.wholeTerm++;
+    }
     stats.written++;
-    changes.push({ catalogSlug, program: target.slug, fee: t, currency: cur, prev: prev != null ? prev : null });
+    changes.push({ catalogSlug, program: target.slug, fee: t, currency: cur, basis: bucket === 'whole-term' ? 'program' : 'year', prev: prev != null ? prev : null });
   }
 
   if (touched && !DRY) {

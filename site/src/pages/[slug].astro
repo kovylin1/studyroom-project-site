@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import Base from '~/layouts/Base.astro';
 import LandingBody from '~/components/LandingBody.astro';
 import { CURRENCY_SYMBOL } from '~/content/studyroom/static';
+import { annualTuitionValues } from '../lib/tuition';
 
 export async function getStaticPaths() {
   const entries = await getCollection('universities');
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
 
 const { u, uniCount } = Astro.props;
 const sym = CURRENCY_SYMBOL[u.tuition.currency] ?? u.tuition.currency;
-const tuitionValues = Object.values(u.tuition.byProgram).filter((v) => v > 0);
+const tuitionValues = annualTuitionValues(u.tuition, u.programs);
 const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
 
 const pageTitle = `${u.name} — поступление из Казахстана | StudyRoom`;

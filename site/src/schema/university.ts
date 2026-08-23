@@ -44,6 +44,15 @@ export const programSchema = z.object({
   // Без объявления в схеме zod срезал бы метку и до страницы вуза она не
   // доезжала (та же история, что у стипендий, см. scholarshipOrigin).
   kompasStatus: z.enum(['catalog-only', 'source-added']).optional(),
+  // Основа цены из tuition.byProgram для ЭТОЙ программы (КОМПАС 3.3-a).
+  // year (по умолчанию, когда поля нет) — сумма за год, так подписана вся вёрстка.
+  // program — сумма за весь срок обучения: частные колледжи (SRH, EU Business
+  // School, LCI, LaSalle, Kwantlen) продают программу пакетом, и годовой цены у
+  // них в источнике нет. Замер основы: scraper/kompas-qs-fee-basis.mjs.
+  // Признак попрограммный, а не на карточку: у 54 вузов QS основа внутри одной
+  // карточки разная. Такие суммы обязаны быть исключены из «от … в год»
+  // (см. site/src/lib/tuition.ts), иначе завышают ценник вуза в 2-4 раза.
+  tuitionBasis: z.enum(['year', 'program']).optional(),
   kompasCheckedAt: isoDate.optional(),
   checkedAt: isoDate.optional(),
   brokenLink: z.boolean().optional(),
