@@ -6,7 +6,7 @@
 | Агрегатор | Снимок описи | Перечислено | Карточка есть | Карточек несколько | Нет карточки | Не вуз (решено) |
 |---|---|---:|---:|---:|---:|---:|
 | qs | 2026-08-01 | 512 | 508 (99.2 %) | 1 | 3 | 0 |
-| edvoy | 2026-08-23 | 591 | 574 (97.1 %) | 4 | 13 | 0 |
+| edvoy | 2026-08-23 | 591 | 578 (97.8 %) | 4 | 9 | 0 |
 | kaplan | — | опись не снималась | | | | |
 | studygroup | 2026-07-22 | 46 | 34 (100.0 %) | 0 | 0 | 12 |
 | oxford-international | 2026-07-22 | 26 | 19 (73.1 %) | 0 | 7 | 0 |
@@ -26,18 +26,14 @@
 | Testing December - Testing purpose | Ukraine | 2 |
 | American Collegiate, Washington DC | United States | 0 |
 
-### edvoy — 13
+### edvoy — 9
 
 | Вуз | Страна | Программ у источника |
 |---|---|---:|
-| University of the West of England | United Kingdom | 301 |
-| IOWA State University | United States | 101 |
 | Ecole de Management Applique | France | 9 |
-| University of Eastern Finland | Finland | 4 |
 | CBS University of Applied Sciences | Germany | 2 |
 | ALFA University College (AUC) | Malaysia | 1 |
 | MJM Graphic Design | France | 1 |
-| National Research Nuclear University(MEPhI) | Russia | 1 |
 | Rome Business School | Italy | 1 |
 | The International University of Logistics and Transport | Poland | 1 |
 | The University of waterloo | Canada | 1 |

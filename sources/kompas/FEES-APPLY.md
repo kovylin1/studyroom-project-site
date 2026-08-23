@@ -5,23 +5,23 @@
 | Показатель | Значение |
 |---|---:|
 | sources | qs,edvoy,kaplan,studygroup,oxford-international,qahe |
-| extracts | 1229 |
-| linked | 1217 |
-| candidates | 86401 |
+| extracts | 1233 |
+| linked | 1221 |
+| candidates | 86808 |
 | skippedCurrency | 21 |
 | skippedBucket | 1433 |
 | skippedNoMatch | 251 |
 | skippedNoCard | 7 |
 | skippedAudience | 20 |
 | skippedPartTime | 4 |
-| matchedByAward | 1516 |
+| matchedByAward | 1520 |
 | ambiguousMatch | 83 |
-| programsWritten | 76540 |
-| cardsTouched | 753 |
-| overwritten | 76494 |
+| programsWritten | 76937 |
+| cardsTouched | 756 |
+| overwritten | 76637 |
 | ownCurrency | 2323 |
-| variantPrograms | 4440 |
-| variantSums | 9214 |
+| variantPrograms | 4449 |
+| variantSums | 9232 |
 | foreignQuoteDemoted | 251 |
 
 ## Не записано
