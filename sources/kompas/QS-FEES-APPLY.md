@@ -2,17 +2,17 @@
 
 Источник: `sources/kompas/qs-fee-basis-map.json`. Пишется только разряд `annual` —
 сайт подписывает любое число из `tuition.byProgram` как цену за год (`card.perYear`).
-Режим: заполняются только пустые места, существующие цены не трогаются.
+Режим: **перезапись существующих цен**.
 
 | Показатель | Значение |
 |---|---:|
 | extracts | 512 |
 | extractsLinked | 505 |
-| cardsTouched | 15 |
-| written | 56 |
-| wholeTerm | 56 |
-| keptExisting | 21816 |
-| overwritten | 0 |
+| cardsTouched | 407 |
+| written | 21872 |
+| wholeTerm | 340 |
+| keptExisting | 0 |
+| overwritten | 21872 |
 | skippedBucket | 1433 |
 | skippedCurrency | 1202 |
 | skippedNoMatch | 10340 |
@@ -23,7 +23,6 @@
 | Причина | Штук |
 |---|---:|
 | `no-match` | 10340 |
-| `fee-mismatch` | 3530 |
 | `bucket` | 1433 |
 | `currency-conflict` | 928 |
 | `currency-unsupported` | 274 |
