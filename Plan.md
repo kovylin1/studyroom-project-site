@@ -526,7 +526,7 @@
 8. **2.1** — 109 карточек без источника. Крупное решение, но не срочное.
 9. **3.16** — мерж и деплой, когда предыдущее устоялось.
 
-- [ ] **3.20 Хвост edvoy — разобрать отдельно.** Полный список и цифры —
+- [ ] **3.27 Хвост edvoy — разобрать отдельно.** Полный список и цифры —
       `sources/kompas/EDVOY-OPEN.md`, кейсы во вкладке КОМПАС в `/manager`,
       черновики выгрузок в `sources/kompas/extracts/edvoy-newcards/`.
       Шесть разрядов, все ждут человека, скриптом не закрываются:
@@ -556,7 +556,7 @@
 | Сверка «каталог против источника» | `sources/kompas/DIFF-REPORT.md` |
 | Покрытие источниками | `sources/kompas/coverage-report.json` |
 | Непривязанные записи QS | `sources/kompas/qs-unlinked.json` |
-| Хвост edvoy (задача 3.20) | `sources/kompas/EDVOY-OPEN.md` |
+| Хвост edvoy (задача 3.27) | `sources/kompas/EDVOY-OPEN.md` |
 | Вузы с усохшей выдачей edvoy | `sources/kompas/EDVOY-SHRUNK.md` |
 | Состав вузов против агрегаторов | `sources/kompas/UNI-COVERAGE.md` |
 | История задач | `BACKLOG.md` |
