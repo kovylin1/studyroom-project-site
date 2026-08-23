@@ -9,6 +9,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { inferLevel as inferProgramLevel } from './lib/program-level.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EX = path.join(ROOT, 'sources/kompas/extracts/qs');
@@ -106,17 +107,10 @@ function yearlyRange(s) {
   return { currency, max: num(m[2]), min: num(n[2]) };
 }
 
-// Те же правила, что у ворот каталога (scraper/audit-catalog.mjs, LEVEL_HINT).
-// Держать в синхроне: расхождение уронит сборку на GARBAGE:level-mismatch.
-const LEVEL_HINT = [
-  [/\b(master'?s?|msc|m\.?a\b|m\.?b\.?a\b|llm|postgraduate|pg)\b/i, 'master'],
-  [/\b(bachelor'?s?|bsc|b\.?a\b|beng|llb|undergraduate|ug)\b/i, 'bachelor'],
-  [/\b(phd|doctoral|doctorate)\b/i, 'phd'],
-];
-const inferLevel = (t) => {
-  for (const [re, exp] of LEVEL_HINT) if (re.test(t || '')) return exp;
-  return null;
-};
+// Те же правила, что у ворот каталога: карта одна на всех — lib/program-level.mjs.
+// Своя копия здесь и была той причиной, по которой заведение карточек ставило
+// «M.B.A.Business Administration» бакалавриатом, а гейт потом это ловил.
+const inferLevel = (t) => inferProgramLevel(t);
 
 function slugify(s) {
   return String(s)

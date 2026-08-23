@@ -6,27 +6,31 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { inferLevel as inferProgramLevel } from './lib/program-level.mjs';
+import { COUNTRY_CURRENCY } from './lib/country-currency.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CAT = path.join(__dirname, '..', 'site', 'src', 'content', 'universities');
 const PUBLIC = path.join(__dirname, '..', 'site', 'public');
 
-// страна → ожидаемая валюта (для детекта несоответствий вроде chester=USD)
-const CCY = {
-  'United Kingdom': 'GBP', 'UK': 'GBP', 'England': 'GBP', 'Scotland': 'GBP', 'Wales': 'GBP',
-  'United States': 'USD', 'USA': 'USD',
-  'Canada': 'CAD', 'Australia': 'AUD', 'New Zealand': 'NZD', 'Kazakhstan': 'KZT',
-  'Germany': 'EUR', 'France': 'EUR', 'Netherlands': 'EUR', 'Spain': 'EUR', 'Italy': 'EUR',
-  'Ireland': 'EUR', 'Austria': 'EUR', 'Belgium': 'EUR', 'Finland': 'EUR', 'Malta': 'EUR',
-};
-const JUNK_TITLE = /\b(admission|preparation|pathway entry|pre-?sessional|foundation entry)\b/i;
-// ВНИМАНИЕ: держать в синхроне с LEVEL_HINT в fix-catalog.mjs (общий источник правил).
-const LEVEL_HINT = [
-  [/\b(master'?s?|msc|m\.?a\b|m\.?b\.?a\b|llm|postgraduate|pg)\b/i, 'master'],
-  [/\b(bachelor'?s?|bsc|b\.?a\b|beng|llb|undergraduate|ug)\b/i, 'bachelor'],
-  [/\b(phd|doctoral|doctorate)\b/i, 'phd'],
-];
-const inferLevel = t => { for (const [re, exp] of LEVEL_HINT) if (re.test(t || '')) return exp; return null; };
+// страна → ожидаемая валюта (для детекта несоответствий вроде chester=USD).
+// Одна карта на проверку и на починку — см. lib/country-currency.mjs.
+const CCY = COUNTRY_CURRENCY;
+// Название, которое ЦЕЛИКОМ состоит из приёмной лексики, — это не программа, а
+// служебная страница, затянутая обходом. Такое блокирует деплой.
+const JUNK_TITLE = /^\s*(admissions?|entry\s+requirements?|requirements|how\s+to\s+apply|apply\s+(now|online)|pathway\s+entry|foundation\s+entry)\s*$/i;
+// 2026-08-23: правило сужено с «название СОДЕРЖИТ admission/preparation/pre-sessional»
+// до «название ИЗ НИХ СОСТОИТ». Прежнее давало 357 срабатываний на рабочей копии, и
+// все до одного — настоящие курсы: «Pre-sessional English 10 weeks» у Anglia Ruskin,
+// «English for IELTS Preparation» у языковых школ, «M.Sc. Professional Accounting
+// (with Professional Study Preparation)». Каталог перестал быть только дипломным,
+// и слово «preparation» в нём давно означает курс, а не мусор. Широкая проверка
+// осталась мягкой (SUSPECT:junk-title-wide): видно в отчёте, деплой не держит.
+const JUNK_TITLE_WIDE = /\b(admission|preparation|pathway entry|pre-?sessional|foundation entry)\b/i;
+// Уровень по названию — общая карта на все скрипты (см. lib/program-level.mjs).
+// Модуль молчит, когда название называет две квалификации («PhD/MA by Research»)
+// или ни одной: без улик уровень не выдумываем.
+const inferLevel = t => inferProgramLevel(t);
 
 const files = fs.readdirSync(CAT).filter(f => f.endsWith('.json'));
 const report = [];                       // per-uni issues
@@ -80,7 +84,9 @@ for (const f of files) {
     bump('GARBAGE:currency', slug); issues.push(`валюта ${o.tuition.currency}, ожидалась ${expCcy} (${o.country})`);
   }
   const junk = programs.filter(p => JUNK_TITLE.test(p.title || '') && p.programType !== 'pathway').length;
-  if (junk) { bump('GARBAGE:junk-title', slug, junk); issues.push(`${junk} мусорных тайтлов (admission/preparation)`); }
+  if (junk) { bump('GARBAGE:junk-title', slug, junk); issues.push(`${junk} мусорных тайтлов (название целиком из приёмной лексики)`); }
+  const junkWide = programs.filter(p => JUNK_TITLE_WIDE.test(p.title || '') && p.programType !== 'pathway').length;
+  if (junkWide) bump('SUSPECT:junk-title-wide', slug, junkWide);
   const dupSlugs = programs.length - progSlugs.size;
   if (dupSlugs > 0) { bump('GARBAGE:dup-program-slug', slug, dupSlugs); issues.push(`${dupSlugs} дублей program.slug`); }
   let lvlBad = 0;

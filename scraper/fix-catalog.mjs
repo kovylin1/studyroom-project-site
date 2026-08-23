@@ -6,6 +6,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { inferLevel as inferProgramLevel } from './lib/program-level.mjs';
+import { COUNTRY_CURRENCY } from './lib/country-currency.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CAT = path.join(__dirname, '..', 'site', 'src', 'content', 'universities');
@@ -15,20 +17,11 @@ const onlyArg = process.argv.find(a => a.startsWith('--only='));
 const ONLY = onlyArg ? new Set(onlyArg.split('=')[1].split(',')) : null;
 const on = name => !ONLY || ONLY.has(name);
 
-const CCY = {
-  'United Kingdom': 'GBP', 'UK': 'GBP', 'England': 'GBP', 'Scotland': 'GBP', 'Wales': 'GBP',
-  'United States': 'USD', 'USA': 'USD', 'Canada': 'CAD', 'Australia': 'AUD', 'New Zealand': 'NZD',
-  'Kazakhstan': 'KZT', 'Germany': 'EUR', 'France': 'EUR', 'Netherlands': 'EUR', 'Spain': 'EUR',
-  'Italy': 'EUR', 'Ireland': 'EUR', 'Austria': 'EUR', 'Belgium': 'EUR', 'Finland': 'EUR', 'Malta': 'EUR',
-};
-const JUNK_TITLE = /\b(admission|preparation|pathway entry|pre-?sessional|foundation entry)\b/i;
-// ВНИМАНИЕ: держать в синхроне с LEVEL_HINT в audit-catalog.mjs (общий источник правил).
-const LEVEL_HINT = [
-  [/\b(master'?s?|msc|m\.?a\b|m\.?b\.?a\b|llm|postgraduate|pg)\b/i, 'master'],
-  [/\b(bachelor'?s?|bsc|b\.?a\b|beng|llb|undergraduate|ug)\b/i, 'bachelor'],
-  [/\b(phd|doctoral|doctorate)\b/i, 'phd'],
-];
-const inferLevel = t => { for (const [re, exp] of LEVEL_HINT) if (re.test(t || '')) return exp; return null; };
+// Карты — общие с гейтом (lib/country-currency.mjs, lib/program-level.mjs): одна
+// проверяет, второй чинит, разъедутся — фиксер начнёт писать то, что гейт запретит.
+const CCY = COUNTRY_CURRENCY;
+const JUNK_TITLE = /^\s*(admissions?|entry\s+requirements?|requirements|how\s+to\s+apply|apply\s+(now|online)|pathway\s+entry|foundation\s+entry)\s*$/i;
+const inferLevel = t => inferProgramLevel(t);
 const imgExists = rel => !rel || /^https?:\/\//.test(rel) || fs.existsSync(path.join(PUBLIC, rel.replace(/^\//, '')));
 
 const stat = {}; // fixer → changes
@@ -42,6 +35,10 @@ for (const f of fs.readdirSync(CAT).filter(f => f.endsWith('.json'))) {
   let changed = false;
 
   // 1. currency: валюта вуза = валюта страны (страна — авторитетный сигнал; чинит USD-leak и пр.)
+  // ОСТОРОЖНО: смена ярлыка НЕ пересчитывает суммы — те же числа начинают значить другие
+  // деньги. Пока в карточке есть цены, правильный путь — kompas-fix-card-currency.mjs:
+  // он сперва проставляет каждой цене её собственную валюту (program.tuitionCurrency),
+  // и только потом меняет валюту карточки. Здесь фиксер оставлен для пустых карточек.
   if (on('currency') && o.tuition && o.tuition.currency) {
     const exp = CCY[o.country];
     if (exp && o.tuition.currency !== exp) { o.tuition.currency = exp; add('currency'); changed = true; }

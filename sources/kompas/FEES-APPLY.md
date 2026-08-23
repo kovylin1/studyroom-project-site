@@ -7,22 +7,23 @@
 | sources | qs,edvoy,kaplan,studygroup,oxford-international,qahe |
 | extracts | 1233 |
 | linked | 1221 |
-| candidates | 86808 |
+| candidates | 86699 |
 | skippedCurrency | 21 |
 | skippedBucket | 1433 |
-| skippedNoMatch | 251 |
+| skippedNoMatch | 250 |
 | skippedNoCard | 7 |
 | skippedAudience | 20 |
 | skippedPartTime | 4 |
-| matchedByAward | 1520 |
-| ambiguousMatch | 83 |
-| programsWritten | 76937 |
+| matchedByAward | 1492 |
+| ambiguousMatch | 82 |
+| programsWritten | 76869 |
 | cardsTouched | 756 |
-| overwritten | 76637 |
-| ownCurrency | 2323 |
-| variantPrograms | 4449 |
-| variantSums | 9232 |
+| overwritten | 76869 |
+| ownCurrency | 2392 |
+| variantPrograms | 4427 |
+| variantSums | 9169 |
 | foreignQuoteDemoted | 251 |
+| skippedPathwayFee | 110 |
 
 ## Не записано
 
@@ -30,7 +31,8 @@
 |---|---:|
 | `bucket` | 1433 |
 | `no-match` | 168 |
-| `match-ambiguous` | 83 |
+| `pathway-stage-fee` | 110 |
+| `match-ambiguous` | 82 |
 | `currency-unsupported` | 21 |
 | `fee-audience` | 20 |
 | `part-time` | 4 |

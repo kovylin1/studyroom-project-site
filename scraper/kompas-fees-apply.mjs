@@ -74,7 +74,25 @@ const stats = { sources: SOURCES.join(','), extracts: 0, linked: 0,
   candidates: 0, skippedCurrency: 0, skippedBucket: 0, skippedNoMatch: 0, skippedNoCard: 0,
   skippedAudience: 0, skippedPartTime: 0, matchedByAward: 0, ambiguousMatch: 0,
   programsWritten: 0, cardsTouched: 0, overwritten: 0, ownCurrency: 0,
-  variantPrograms: 0, variantSums: 0, foreignQuoteDemoted: 0 };
+  variantPrograms: 0, variantSums: 0, foreignQuoteDemoted: 0,
+  // 3.28: цена подготовительной ступени, выданная за цену степени
+  skippedPathwayFee: 0 };
+
+// Строка подготовительной ступени ПЕРЕД магистратурой. Намеренно узко: обычные
+// foundation-программы сюда не входят — у них своя законная цена, и по ней в каталоге
+// стоят собственные программы. Ловим только приставку к степени.
+const PRE_MASTER_TITLE = /pre[-\s'’]*master|extended\s+master/i;
+const isPreMasterRow = (ep) => PRE_MASTER_TITLE.test(ep.title || '');
+// Строка, которая сама называет подготовительный маршрут: «BEng … with International
+// Year One», «Undergraduate Foundation Programme», курсы центров INTO и CEG. У таких
+// цена подготовительного года — своя законная цена товара, снимать её нельзя.
+const ROUTE_TITLE = /international\s+year\s+one|\biy1\b|foundation|pathway|pre[-\s'’]*sessional/i;
+const isRouteRow = (ep) => ep.level === 'foundation' || ROUTE_TITLE.test(ep.title || '');
+const median = (xs) => {
+  if (!xs.length) return null;
+  const s = [...xs].sort((a, b) => a - b);
+  return s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2;
+};
 
 // slug карточки -> slug программы -> список кандидатов
 const pool = new Map();
@@ -93,9 +111,37 @@ for (const src of SOURCES) {
     if (!card) { stats.skippedNoCard++; continue; }
     stats.linked++;
 
+    // Цена подготовительной ступени, выданная за цену степени (КОМПАС 3.28).
+    // Улика лежит в самой выгрузке: у «расширенных» маршрутов на 15 месяцев
+    // (Pre-Master's + степень) источник ставит степенной строке цену ПОДГОТОВКИ,
+    // и ровно то же число стоит у соседней строки Pre-Master's. Примеры 23.08:
+    // Roehampton 4 000 при обычных 16 950–18 250, Sheffield Hallam 4 500 при 17 000,
+    // Edinburgh Napier 9 445 при 15 325. По правилу минимума такая сумма выигрывала
+    // у настоящей цены и занижала ценник вчетверо.
+    // Улик нужно две сразу, одной мало: совпадение суммы бывает и случайным.
+    //   1. ровно эта сумма стоит у строки Pre-Master's / Extended Masters того же вуза;
+    //   2. она заметно ниже медианы того же источника по этому же вузу.
+    const preMasterFees = new Set();
+    const ordinaryFees = [];
     for (const ep of (d.programs || [])) {
       const t = feeOf(ep);
       if (t == null) continue;
+      if (isPreMasterRow(ep)) preMasterFees.add(t + '|' + (ep.currency || ''));
+      else ordinaryFees.push(inKzt(t, ep.currency || ''));
+    }
+    const medianFee = median(ordinaryFees);
+
+    for (const ep of (d.programs || [])) {
+      const t = feeOf(ep);
+      if (t == null) continue;
+      if (!isPreMasterRow(ep) && !isRouteRow(ep) && preMasterFees.has(t + '|' + (ep.currency || ''))
+          && medianFee && inKzt(t, ep.currency || '') < medianFee * 0.75) {
+        stats.skippedPathwayFee++;
+        cases.push({ source: src, catalogSlug: slug, program: ep.title, tuition: t, currency: ep.currency,
+          level: ep.level, duration: ep.duration, medianFee: Math.round(medianFee), reason: 'pathway-stage-fee',
+          note: 'та же сумма стоит у строки Pre-Master’s этого вуза и заметно ниже медианы источника — это цена ступени, а не степени' });
+        continue;
+      }
       // Цена не для международного студента в выбор не идёт: у qahe 20 строк из 102
       // помечены feeAudience: unknown, и там британский внутренний тариф 9 790 GBP —
       // он выиграл бы минимум и занизил ценник вдвое.
@@ -242,7 +288,11 @@ const byReason = {};
 for (const c of cases) byReason[c.reason] = (byReason[c.reason] || 0) + 1;
 let md = '# Применение цен агрегаторов\n\n' + (DRY ? '**Прогон вхолостую (--dry).**\n\n' : '');
 md += 'Источники: `' + SOURCES.join('`, `') + '`.\n\n| Показатель | Значение |\n|---|---:|\n';
-for (const k of Object.keys(stats)) md += '| ' + k + ' | ' + stats[k] + ' |\n';
+for (const k of Object.keys(stats)) {
+  const v = stats[k];
+  md += '| ' + k + ' | ' + (v && typeof v === 'object'
+    ? Object.entries(v).map(([s, c]) => s + ': ' + c).join(', ') : v) + ' |\n';
+}
 md += '\n## Не записано\n\n| Причина | Штук |\n|---|---:|\n';
 for (const k of Object.keys(byReason).sort((a, b) => byReason[b] - byReason[a])) md += '| `' + k + '` | ' + byReason[k] + ' |\n';
 md += '\nПодробности: `fees-apply-cases.json`, откат: `fees-apply-backup.json`.\n';
