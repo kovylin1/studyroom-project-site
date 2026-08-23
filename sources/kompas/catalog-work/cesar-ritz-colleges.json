@@ -17,7 +17,31 @@
       "language": "en",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionCurrency": "CHF",
+      "tuitionVariants": [
+        {
+          "tuition": 14530,
+          "currency": "CHF",
+          "source": "edvoy",
+          "campus": "Cesar Ritz Le Bouveret Campus",
+          "level": "Undergraduate"
+        },
+        {
+          "tuition": 22000,
+          "currency": "CHF",
+          "source": "edvoy",
+          "campus": "Cesar Ritz Le Bouveret Campus, Cesar Ritz Brig Campus",
+          "level": "Undergraduate"
+        },
+        {
+          "tuition": 33000,
+          "currency": "CHF",
+          "source": "edvoy",
+          "campus": "Cesar Ritz Brig Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "cesar-ritz-colleges-industry-immersion-year",
@@ -117,7 +141,9 @@
   ],
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "cesar-ritz-colleges-bachelor-of-science-in-hospitality-business-management": 14530
+    }
   },
   "deadlines": {},
   "requirements": {

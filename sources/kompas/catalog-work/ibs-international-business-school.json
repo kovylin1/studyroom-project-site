@@ -17,7 +17,31 @@
       "language": "en",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionCurrency": "EUR",
+      "tuitionVariants": [
+        {
+          "tuition": 6000,
+          "currency": "EUR",
+          "source": "edvoy",
+          "campus": "IBS Budapest Campus",
+          "level": "Foundation"
+        },
+        {
+          "tuition": 8000,
+          "currency": "EUR",
+          "source": "edvoy",
+          "campus": "IBS Budapest Campus",
+          "level": "Undergraduate"
+        },
+        {
+          "tuition": 12800,
+          "currency": "EUR",
+          "source": "edvoy",
+          "campus": "IBS Budapest Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "ibs-international-business-school-msc-in-strategic-international-management",
@@ -460,7 +484,9 @@
   ],
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "ibs-international-business-school-mba-in-strategic-data-driven-management": 6000
+    }
   },
   "deadlines": {},
   "requirements": {

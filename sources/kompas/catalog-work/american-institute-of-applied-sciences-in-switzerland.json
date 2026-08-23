@@ -17,7 +17,24 @@
       "language": "en",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionCurrency": "CHF",
+      "tuitionVariants": [
+        {
+          "tuition": 25000,
+          "currency": "CHF",
+          "source": "edvoy",
+          "campus": "AUS Main Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 28000,
+          "currency": "CHF",
+          "source": "edvoy",
+          "campus": "AUS Main Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "american-institute-of-applied-sciences-in-switzerland-bsba-bachelor-of-science-in-business-administration-business",
@@ -220,7 +237,9 @@
   ],
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "american-institute-of-applied-sciences-in-switzerland-miba-master-of-science-in-international-business-administrat": 25000
+    }
   },
   "deadlines": {},
   "requirements": {

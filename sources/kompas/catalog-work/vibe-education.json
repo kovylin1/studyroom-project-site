@@ -17,7 +17,24 @@
       "language": "en",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionCurrency": "AED",
+      "tuitionVariants": [
+        {
+          "tuition": 4350,
+          "currency": "AED",
+          "source": "edvoy",
+          "campus": "Online Campus",
+          "level": "Undergraduate"
+        },
+        {
+          "tuition": 5850,
+          "currency": "AED",
+          "source": "edvoy",
+          "campus": "Online Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "vibe-education-higher-diploma-level-4-and-5-business-management-l5-extended",
@@ -124,7 +141,9 @@
   ],
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "vibe-education-higher-diploma-level-4-and-5-business-management": 4350
+    }
   },
   "deadlines": {},
   "requirements": {

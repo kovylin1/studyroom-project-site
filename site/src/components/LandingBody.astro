@@ -1424,8 +1424,10 @@ const SCRIPT_STR = {
     var items = vs.map(function (v) {
       var vsym = v.currency ? (CURRENCY_SYM_BY_CODE[v.currency] || v.currency) : sym;
       var marks = [];
+      if (v.campus) marks.push(esc(v.campus));
       if (v.degreeGroup) marks.push(esc(v.degreeGroup));
       if (v.level) marks.push(esc(v.level));
+      if (v.source) marks.push(esc(v.source));
       var costs = [];
       if (v.accommodation) costs.push(STR.varAccommodation + ' ' + vsym + v.accommodation.toLocaleString('en'));
       if (v.other) costs.push(STR.varOther + ' ' + vsym + v.other.toLocaleString('en'));

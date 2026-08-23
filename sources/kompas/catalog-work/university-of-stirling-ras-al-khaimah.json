@@ -16,7 +16,24 @@
         "September 2026"
       ],
       "language": "en",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-stirling-ras-al-khaimah"
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-stirling-ras-al-khaimah",
+      "tuitionCurrency": "AED",
+      "tuitionVariants": [
+        {
+          "tuition": 40000,
+          "currency": "AED",
+          "source": "edvoy",
+          "campus": "Ras Al Khaimah Campus",
+          "level": "Undergraduate"
+        },
+        {
+          "tuition": 50000,
+          "currency": "AED",
+          "source": "edvoy",
+          "campus": "Ras Al Khaimah Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "university-of-stirling-ras-al-khaimah-msc-finance",
@@ -126,7 +143,9 @@
   ],
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "university-of-stirling-ras-al-khaimah-msc-big-data": 40000
+    }
   },
   "deadlines": {
     "university-of-stirling-ras-al-khaimah-msc-big-data": "2024-07-01T00:00:00.000Z",

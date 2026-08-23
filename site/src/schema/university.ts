@@ -76,6 +76,10 @@ export const programSchema = z.object({
   tuitionVariants: z.array(z.object({
     tuition: z.number().nonnegative(),
     currency: CURRENCY_CODES_SCHEMA.optional(),
+    // какой агрегатор дал эту сумму: у одной программы их бывает несколько
+    source: z.string().optional(),
+    // площадку называет edvoy; QS её не отдаёт ни в одной группе
+    campus: z.string().optional(),
     level: z.string().optional(),
     degreeGroup: z.string().optional(),
     accommodation: z.number().nonnegative().optional(),

@@ -17,7 +17,24 @@
       "language": "en",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionCurrency": "AED",
+      "tuitionVariants": [
+        {
+          "tuition": 10000,
+          "currency": "AED",
+          "source": "edvoy",
+          "campus": "GUC Ajman Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 10000,
+          "currency": "EUR",
+          "source": "edvoy",
+          "campus": "GUC Ajman Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "globalu-mba-master-of-business-administration-in-project-management",
@@ -64,7 +81,9 @@
   ],
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "globalu-mba-master-of-business-administration-in-marketing-managemen": 10000
+    }
   },
   "deadlines": {},
   "requirements": {

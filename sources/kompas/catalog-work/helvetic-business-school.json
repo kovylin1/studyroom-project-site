@@ -17,7 +17,38 @@
       "language": "en",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionCurrency": "CHF",
+      "tuitionVariants": [
+        {
+          "tuition": 9000,
+          "currency": "CHF",
+          "source": "edvoy",
+          "campus": "HBS Vevey  Campus",
+          "level": "Undergraduate"
+        },
+        {
+          "tuition": 11000,
+          "currency": "CHF",
+          "source": "edvoy",
+          "campus": "HBS Vevey  Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 13500,
+          "currency": "CHF",
+          "source": "edvoy",
+          "campus": "HBS Vevey  Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 20000,
+          "currency": "CHF",
+          "source": "edvoy",
+          "campus": "HBS Vevey  Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "helvetic-business-school-mba-msc-international-management",
@@ -389,7 +420,9 @@
   ],
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "helvetic-business-school-mba-in-business-administration": 9000
+    }
   },
   "deadlines": {},
   "requirements": {

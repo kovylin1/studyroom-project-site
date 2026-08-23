@@ -17,7 +17,31 @@
       "language": "en",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionCurrency": "EUR",
+      "tuitionVariants": [
+        {
+          "tuition": 5500,
+          "currency": "EUR",
+          "source": "edvoy",
+          "campus": "BUEB Budapest Campus",
+          "level": "Undergraduate"
+        },
+        {
+          "tuition": 6000,
+          "currency": "EUR",
+          "source": "edvoy",
+          "campus": "BUEB Budapest Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 6200,
+          "currency": "EUR",
+          "source": "edvoy",
+          "campus": "BUEB Budapest Campus",
+          "level": "Doctorate"
+        }
+      ]
     },
     {
       "slug": "budapest-university-of-economics-and-business-msc-international-economy-and-business",
@@ -169,7 +193,9 @@
   ],
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "budapest-university-of-economics-and-business-bsc-business-administration-and-management": 5500
+    }
   },
   "deadlines": {},
   "requirements": {
