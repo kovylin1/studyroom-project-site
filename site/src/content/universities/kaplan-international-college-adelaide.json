@@ -50,7 +50,29 @@
       "kompasStatus": "source-added",
       "kompasCheckedAt": "2026-08-20",
       "programUrl": "https://admissions.qs.com/suite/sites/qs-apply/group/students-and-applications/page/institutions/record/L1ijtFAwne7VnNX8_tC-LjSVQFhiLZUkyWApLUgOR3b9hNs6MlF004acLxf5TwOcuWWPBQ-qoQCY8ofTk_csJpRhK5WkpEbYl9mONgdiKQtajzsNvMFbhWmAWEgjd8nVcTLobH5e84/view/_yNBtlg#",
-      "programType": "pathway"
+      "programType": "pathway",
+      "tuitionVariants": [
+        {
+          "tuition": 51000,
+          "currency": "AUD",
+          "source": "qs",
+          "level": "Pathway",
+          "degreeGroup": "Pre-Masters",
+          "accommodation": 8000,
+          "other": 4000,
+          "total": 63000
+        },
+        {
+          "tuition": 53000,
+          "currency": "AUD",
+          "source": "qs",
+          "level": "Pathway",
+          "degreeGroup": "Foundation Year",
+          "accommodation": 8000,
+          "other": 4000,
+          "total": 65000
+        }
+      ]
     },
     {
       "slug": "communications-and-media",
@@ -110,7 +132,29 @@
       "kompasStatus": "source-added",
       "kompasCheckedAt": "2026-08-20",
       "programUrl": "https://admissions.qs.com/suite/sites/qs-apply/group/students-and-applications/page/institutions/record/L1ijtFAwne7VnNX8_tC-LjSVQFhiLZUkyWApLUgOR3b9hNs6MlF004acLxf5TwOcuWWPBQ-qoQCY8ofTk_csJpRhK5WkpEbYl9mONgdiKQtajzsNvMFbhWmAWEgjd8nVcTLobH5e84/view/_yNBtlg#",
-      "programType": "pathway"
+      "programType": "pathway",
+      "tuitionVariants": [
+        {
+          "tuition": 51000,
+          "currency": "AUD",
+          "source": "qs",
+          "level": "Pathway",
+          "degreeGroup": "Pre-Masters",
+          "accommodation": 8000,
+          "other": 4000,
+          "total": 63000
+        },
+        {
+          "tuition": 53000,
+          "currency": "AUD",
+          "source": "qs",
+          "level": "Pathway",
+          "degreeGroup": "Foundation Year",
+          "accommodation": 8000,
+          "other": 4000,
+          "total": 65000
+        }
+      ]
     },
     {
       "slug": "information-technology",
@@ -223,7 +267,24 @@
   ],
   "tuition": {
     "currency": "AUD",
-    "byProgram": {}
+    "byProgram": {
+      "architecture-and-design": 53000,
+      "arts": 53000,
+      "aviation": 53000,
+      "business-and-economics": 51000,
+      "communications-and-media": 53000,
+      "computer-science": 53000,
+      "engineering": 53000,
+      "foundation-studies-programs": 53000,
+      "health-and-biomedical-sciences": 51000,
+      "information-technology": 53000,
+      "mathematics-and-data-science": 53000,
+      "psychology-and-social-work": 53000,
+      "teaching-and-education": 53000,
+      "computer-science-and-information-technology": 51000,
+      "english-for-academic-purposes-10-weeks": 5000,
+      "general-academic-english-5-weeks": 5000
+    }
   },
   "deadlines": {},
   "requirements": {
@@ -234,5 +295,11 @@
   "sourceUrl": "https://admissions.qs.com/suite/sites/qs-apply/group/students-and-applications/page/institutions/record/L1ijtFAwne7VnNX8_tC-LjSVQFhiLZUkyWApLUgOR3b9hNs6MlF004acLxf5TwOcuWWPBQ-qoQCY8ofTk_csJpRhK5WkpEbYl9mONgdiKQtajzsNvMFbhWmAWEgjd8nVcTLobH5e84/view/summary",
   "sourceHash": "4a8b7e1c10a14e2e",
   "confidence": "aggregator",
-  "language": "en"
+  "language": "en",
+  "partnerSource": {
+    "type": "aggregator",
+    "via": [
+      "qs"
+    ]
+  }
 }

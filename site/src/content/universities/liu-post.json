@@ -2144,14 +2144,40 @@
       "title": "Undergraduate Degree Programs",
       "durationYears": 4,
       "level": "bachelor",
-      "programType": "degree"
+      "programType": "degree",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-08-15"
     },
     {
       "slug": "long-island-university-post-direct-entry-graduate-master",
       "title": "Graduate Master's Degree Programs",
       "durationYears": 2,
       "level": "master",
-      "programType": "degree"
+      "programType": "degree",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "direct-admit-graduate-post",
+      "title": "Direct Admit Graduate (Post)",
+      "level": "master",
+      "source": "studygroup",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 2
+    },
+    {
+      "slug": "direct-admit-undergraduate-post",
+      "title": "Direct Admit Undergraduate (Post)",
+      "level": "bachelor",
+      "source": "studygroup",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 4
     }
   ],
   "tuition": {
@@ -2300,7 +2326,9 @@
       "liu-post-ms-registered-dietitian-nutritionist-professional-program": 25860,
       "liu-post-msed-students-with-disabilities-7-12": 25860,
       "long-island-university-post-direct-entry-undergraduate": 41874,
-      "long-island-university-post-direct-entry-graduate-master": 43050
+      "long-island-university-post-direct-entry-graduate-master": 43050,
+      "direct-admit-graduate-post": 26514,
+      "direct-admit-undergraduate-post": 43276
     }
   },
   "deadlines": {
@@ -2535,8 +2563,7 @@
     "type": "aggregator",
     "via": [
       "qs",
-      "edvoy",
-      "studygroup"
+      "edvoy"
     ]
   },
   "mergedFrom": [

@@ -230,7 +230,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 2900,
+          "currency": "EUR",
+          "source": "edvoy",
+          "campus": "WWSB Warsaw Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 3800,
+          "currency": "EUR",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Business & Management",
+          "accommodation": 3600,
+          "other": 6000,
+          "total": 13400
+        }
+      ]
     },
     {
       "slug": "warsaw-business-mba-management",
@@ -457,6 +476,36 @@
       "faculty": "Бизнес",
       "kompasStatus": "catalog-only",
       "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "hotel-and-tourism-management",
+      "title": "Hotel and Tourism Management",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "economics",
+      "title": "Economics",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "journalism",
+      "title": "Journalism",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
     }
   ],
   "tuition": {
@@ -471,7 +520,10 @@
       "warsaw-business-bachelor-of-business-management": 2900,
       "warsaw-business-bachelor-of-it-management": 2900,
       "warsaw-business-bachelor-of-hotel-tourism-management": 2900,
-      "warsaw-business-bachelor-of-logistics-management": 2900
+      "warsaw-business-bachelor-of-logistics-management": 2900,
+      "hotel-and-tourism-management": 2900,
+      "economics": 2900,
+      "journalism": 2900
     }
   },
   "deadlines": {},

@@ -534,7 +534,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Инженерия и IT"
+      "faculty": "Инженерия и IT",
+      "tuitionVariants": [
+        {
+          "tuition": 28000,
+          "currency": "USD",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Computer Science & IT",
+          "accommodation": 9600,
+          "other": 9000,
+          "total": 46600
+        },
+        {
+          "tuition": 55000,
+          "currency": "USD",
+          "source": "edvoy",
+          "campus": "Tulane Elmwood Campus, Tulane Uptown Campus, Tulane Downtown Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "tulane-master-of-science-in-biostatistics",
@@ -564,7 +583,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Образование"
+      "faculty": "Образование",
+      "tuitionVariants": [
+        {
+          "tuition": 28000,
+          "currency": "USD",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Natural Science & Mathematics",
+          "accommodation": 9600,
+          "other": 9000,
+          "total": 46600
+        },
+        {
+          "tuition": 55000,
+          "currency": "USD",
+          "source": "edvoy",
+          "campus": "Tulane Elmwood Campus, Tulane Uptown Campus, Tulane Downtown Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "tulane-master-of-architecture",
@@ -1849,6 +1887,116 @@
       "faculty": "Искусство и дизайн",
       "kompasStatus": "catalog-only",
       "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "tulane-m-b-a-business-administration",
+      "title": "M.B.A.Business Administration",
+      "durationYears": 3,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "tulane-master-of-science-in-data-science",
+      "title": "Master of Science in Data Science",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "tulane-m-sc-applied-mathematics",
+      "title": "M.Sc.Applied Mathematics",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "tulane-m-sc-biostatistics",
+      "title": "M.Sc.Biostatistics",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "tulane-m-sc-cell-and-molecular-biology",
+      "title": "M.Sc.Cell and Molecular Biology",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "m-ac-accounting",
+      "title": "M.Ac.Accounting",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "m-fin-finance",
+      "title": "M.Fin.Finance",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "m-mg-management",
+      "title": "M.Mg.Management",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "manbusiness-analytics",
+      "title": "MANBusiness Analytics",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "mpapublic-administration",
+      "title": "MPAPublic Administration",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
     }
   ],
   "tuition": {
@@ -1887,9 +2035,9 @@
       "tulane-phd-biomedical-sciences": 55000,
       "tulane-phd-public-health": 55000,
       "tulane-english-language-program": 8500,
-      "tulane-master-of-science-in-computer-science": 55000,
+      "tulane-master-of-science-in-computer-science": 28000,
       "tulane-master-of-science-in-biostatistics": 55000,
-      "tulane-master-of-science-in-tropical-medicine": 55000,
+      "tulane-master-of-science-in-tropical-medicine": 28000,
       "tulane-master-of-architecture": 55000,
       "tulane-master-of-science-in-biomedical-engineering": 55000,
       "tulane-master-of-science-in-applied-mathematics": 55000,
@@ -1901,7 +2049,17 @@
       "tulane-master-of-science-in-cell-and-molecular-biology": 55000,
       "tulane-master-of-public-health-international-health-and-sustainable": 55000,
       "tulane-master-of-public-health-social-behavioral-and-population-sci": 55000,
-      "tulane-master-of-science-in-materials-science-and-engineering": 55000
+      "tulane-master-of-science-in-materials-science-and-engineering": 55000,
+      "tulane-m-b-a-business-administration": 28000,
+      "tulane-master-of-science-in-data-science": 28000,
+      "tulane-m-sc-applied-mathematics": 28000,
+      "tulane-m-sc-biostatistics": 28000,
+      "tulane-m-sc-cell-and-molecular-biology": 28000,
+      "m-ac-accounting": 28000,
+      "m-fin-finance": 28000,
+      "m-mg-management": 28000,
+      "manbusiness-analytics": 28000,
+      "mpapublic-administration": 28000
     }
   },
   "deadlines": {

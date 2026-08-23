@@ -88,6 +88,17 @@
       "language": "en",
       "verified": true,
       "faculty": "Инженерия и IT"
+    },
+    {
+      "slug": "ontario-graduate-certificate-health-informatics",
+      "title": "Ontario Graduate Certificate Health Informatics",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
     }
   ],
   "sourceUrl": "https://edge.edvoy.com/institutions/humber-polytechnic",
@@ -104,7 +115,11 @@
   ],
   "tuition": {
     "currency": "CAD",
-    "byProgram": {}
+    "byProgram": {
+      "humber-polytechnic-master-of-computer-science-cybersecurity-operations-and-mana": 24179,
+      "humber-polytechnic-master-of-engineering-in-advanced-manufacturing-engineering": 24024,
+      "ontario-graduate-certificate-health-informatics": 21720
+    }
   },
   "deadlines": {},
   "requirements": {
@@ -146,8 +161,10 @@
   "officialUrl": "http://humber.ca",
   "logoUrl": "http://humber.ca/themes/custom/humber_sitestudio_theme/favicon.ico",
   "partnerSource": {
-    "type": "none",
-    "via": []
+    "type": "aggregator",
+    "via": [
+      "edvoy"
+    ]
   },
   "mergedInto": "humber-college",
   "mergedAt": "2026-07-26",
