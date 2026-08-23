@@ -287,11 +287,21 @@
       Не разобрано: 11 310 `no-match` (программы источника нет в карточке — хвост 1.9),
       1 433 `bucket` у QS, 20 `currency-unsupported`.
 
-- [ ] **3.5-d Остальные агрегаторы через тот же движок.** kaplan 488 расхождений
-      из 4 725, oxford-international 72 из 678, qahe 28 из 100, studygroup 15 из 153.
-      Прогоняется тем же скриптом: `--sources=qs,edvoy,kaplan,studygroup,oxford-international,qahe`.
-      Перед прогоном проверить основу цены у каждого: у kaplan, oxford-international
-      и qahe поле называется `feePerYear`, то есть годовая по определению источника.
+- [x] **3.5-d СДЕЛАНО 23.08. Все агрегаторы прогнаны одним движком.**
+      `--sources=qs,edvoy,kaplan,studygroup,oxford-international,qahe`.
+      **31 853 программы с ценой, 1 838 с вариантами, 6 773 суммы в вариантах.**
+      Сходимость: edvoy, kaplan, studygroup, oxford-international, qahe — **100 %**;
+      QS 22 675 из 23 602 (остаток — разряд `bucket`, основа цены не определилась).
+      Две мины, найденные перед прогоном и отсечённые:
+      - **qahe отдаёт внутренние британские тарифы.** 20 строк из 102 помечены
+        `feeAudience: unknown`, там 9 790 GBP — это home fee, а не международная цена.
+        Она выиграла бы минимум и занизила ценник вдвое. Правило: строка с
+        `feeAudience` не `international` в выбор не идёт (кейс `fee-audience`).
+      - **oxford-international отдаёт заочные тарифы.** 4 строки `studyMode: Part Time`
+        с ценой; заочка дешевле очной и с ней несравнима (кейс `part-time`).
+      `studygroup` помечает все цены `feeBasis: from` — это и есть «от», ложится
+      в наше правило минимума без оговорок.
+      `iapro` цен не отдаёт вовсе, `direct` (обходы офсайтов) агрегатором не считается.
 
 - [ ] **3.5 132 расхождения валюты у 18 вузов.** Chester 23, Wollongong Dubai 20,
       Arden 19, Schiller 10, Middlesex Dubai 8, Reading Malaysia 8.

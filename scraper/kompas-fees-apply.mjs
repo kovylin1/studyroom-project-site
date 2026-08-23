@@ -79,6 +79,7 @@ for (const f of fs.readdirSync(WORK)) {
 const cases = [];
 const stats = { sources: SOURCES.join(','), extracts: 0, linked: 0,
   candidates: 0, skippedCurrency: 0, skippedBucket: 0, skippedNoMatch: 0, skippedNoCard: 0,
+  skippedAudience: 0, skippedPartTime: 0,
   programsWritten: 0, cardsTouched: 0, overwritten: 0, ownCurrency: 0,
   variantPrograms: 0, variantSums: 0, foreignQuoteDemoted: 0 };
 
@@ -103,6 +104,23 @@ for (const src of SOURCES) {
     for (const ep of (d.programs || [])) {
       const t = feeOf(ep);
       if (t == null) continue;
+      // Цена не для международного студента в выбор не идёт: у qahe 20 строк из 102
+      // помечены feeAudience: unknown, и там британский внутренний тариф 9 790 GBP —
+      // он выиграл бы минимум и занизил ценник вдвое.
+      if (ep.feeAudience && ep.feeAudience !== 'international') {
+        stats.skippedAudience++;
+        cases.push({ source: src, catalogSlug: slug, program: ep.title, tuition: t, currency: ep.currency,
+          feeAudience: ep.feeAudience, feeLabel: ep.feeLabel, reason: 'fee-audience',
+          note: 'цена не помечена как международная — оператору' });
+        continue;
+      }
+      // Заочная форма дешевле очной и с ней несравнима.
+      if (ep.studyMode && /part[\s-]*time/i.test(ep.studyMode)) {
+        stats.skippedPartTime++;
+        cases.push({ source: src, catalogSlug: slug, program: ep.title, tuition: t, currency: ep.currency,
+          studyMode: ep.studyMode, reason: 'part-time', note: 'заочная форма — с очной не сравнивается' });
+        continue;
+      }
       const cur = ep.currency || null;
       if (!CURRENCIES.includes(cur)) {
         stats.skippedCurrency++;
@@ -141,10 +159,12 @@ for (const src of SOURCES) {
       const m2 = pool.get(slug);
       if (!m2.has(target.slug)) m2.set(target.slug, []);
       const cc = ep.campusCosts || {};
-      const campus = Array.isArray(ep.campuses) && ep.campuses.length
+      // площадку называют по-разному: edvoy массивом campuses, oxford-international
+      // строкой campus; QS не даёт ни того ни другого
+      const campus = (Array.isArray(ep.campuses) && ep.campuses.length
         ? ep.campuses.map((c) => (typeof c === 'string' ? c : (c && (c.name || c.city))))
-          .filter(Boolean).join(', ') || undefined
-        : undefined;
+          .filter(Boolean).join(', ')
+        : (typeof ep.campus === 'string' ? ep.campus : '')) || undefined;
       m2.get(target.slug).push({ target, t, cur, basis, source: src,
         level: ep.sourceLevel || undefined,
         degreeGroup: ep.degreeGroup || undefined,
