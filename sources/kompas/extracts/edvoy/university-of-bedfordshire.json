@@ -3,16 +3,67 @@
   "name": "University of Bedfordshire",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-  "scrapedAt": "2026-07-22T15:42:52.450Z",
+  "scrapedAt": "2026-08-23T13:11:40.032Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-bedfordshire",
   "country": "United Kingdom",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
+    {
+      "title": "MSc Computer Science with placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "21 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "June 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-computer-science-with-placement"
+    },
+    {
+      "title": "MSc Computer Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "15 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "November 2024",
+        "October 2024",
+        "May 2024",
+        "November 2025",
+        "November 2026",
+        "October 2025",
+        "October 2026",
+        "January 2026",
+        "July 2026",
+        "January 2027",
+        "March 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-computer-science"
+    },
     {
       "title": "MSc Computer Science (with Placement)",
       "level": "master",
@@ -43,34 +94,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|msc-computer-science-with-placement-22-months"
-    },
-    {
-      "title": "MSc Computer Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "15 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "November 2024",
-        "October 2024",
-        "May 2024",
-        "November 2025",
-        "November 2026",
-        "October 2025",
-        "October 2026",
-        "January 2026",
-        "July 2026",
-        "January 2027",
-        "March 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-computer-science"
     },
     {
       "title": "MSc Software Engineering and Applications",
@@ -107,27 +130,6 @@
       "courseRefId": "university-of-bedfordshire|msc-software-engineering-and-applications"
     },
     {
-      "title": "MSc Computer Science with placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "21 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "June 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-computer-science-with-placement"
-    },
-    {
       "title": "MSc Computer Networking (Masters)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -144,7 +146,8 @@
         "October 2025",
         "October 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -152,74 +155,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|msc-computer-networking"
-    },
-    {
-      "title": "MSc Cyber Security",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2024",
-        "July 2025",
-        "March 2025",
-        "May 2025",
-        "July 2026",
-        "May 2026",
-        "March 2026",
-        "May 2024",
-        "July 2024",
-        "March 2024",
-        "October 2026",
-        "January 2027",
-        "March 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-cyber-security"
-    },
-    {
-      "title": "MSc International Business",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "November 2024",
-        "October 2024",
-        "July 2025",
-        "March 2025",
-        "May 2025",
-        "March 2026",
-        "July 2026",
-        "May 2026",
-        "July 2024",
-        "May 2024",
-        "February 2024",
-        "March 2024",
-        "November 2025",
-        "November 2026",
-        "October 2025",
-        "October 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027",
-        "March 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-international-business"
     },
     {
       "title": "MBA Master of Business Administration (Placement)",
@@ -234,11 +169,11 @@
         "July 2025",
         "March 2025",
         "May 2025",
-        "July 2026",
         "March 2026",
         "May 2026",
-        "July 2024",
+        "July 2026",
         "May 2024",
+        "July 2024",
         "March 2024",
         "October 2025",
         "October 2026"
@@ -277,7 +212,8 @@
         "January 2025",
         "January 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -285,6 +221,76 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|mba-business-administration"
+    },
+    {
+      "title": "MSc Cyber Security",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2024",
+        "July 2025",
+        "March 2025",
+        "May 2025",
+        "July 2026",
+        "May 2026",
+        "March 2026",
+        "May 2024",
+        "July 2024",
+        "March 2024",
+        "October 2026",
+        "January 2027",
+        "March 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-cyber-security"
+    },
+    {
+      "title": "MSc International Business",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "November 2024",
+        "October 2024",
+        "July 2025",
+        "March 2025",
+        "May 2025",
+        "March 2026",
+        "July 2026",
+        "May 2026",
+        "July 2024",
+        "May 2024",
+        "February 2024",
+        "March 2024",
+        "November 2025",
+        "November 2026",
+        "October 2025",
+        "October 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027",
+        "March 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-international-business"
     },
     {
       "title": "MSc Management",
@@ -352,7 +358,7 @@
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 18000,
+      "tuition": 18900,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -367,7 +373,8 @@
         "March 2024",
         "November 2024",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -400,7 +407,8 @@
         "October 2026",
         "July 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -418,13 +426,13 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "November 2024",
         "October 2024",
-        "July 2025",
-        "June 2025",
-        "March 2025",
+        "November 2024",
         "November 2025",
+        "June 2025",
         "September 2025",
+        "March 2025",
+        "July 2025",
         "June 2024",
         "September 2024",
         "May 2025",
@@ -509,8 +517,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "November 2024",
         "October 2024",
+        "November 2024",
         "November 2025",
         "November 2026",
         "October 2025",
@@ -582,8 +590,8 @@
         "March 2025",
         "May 2025",
         "July 2026",
-        "March 2026",
         "May 2026",
+        "March 2026",
         "July 2024",
         "May 2024",
         "March 2024",
@@ -594,7 +602,8 @@
         "October 2025",
         "October 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -614,14 +623,14 @@
       "intake": [
         "November 2024",
         "October 2024",
-        "July 2025",
-        "March 2025",
         "May 2025",
+        "March 2025",
+        "July 2025",
         "July 2026",
-        "March 2026",
         "May 2026",
-        "July 2024",
+        "March 2026",
         "May 2024",
+        "July 2024",
         "March 2024",
         "January 2025",
         "September 2024",
@@ -631,7 +640,8 @@
         "October 2026",
         "September 2025",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -639,6 +649,42 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|msc-accounting-and-business-finance"
+    },
+    {
+      "title": "MBA Business Administration - Marketing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "November 2024",
+        "March 2025",
+        "November 2025",
+        "September 2025",
+        "July 2025",
+        "June 2025",
+        "September 2024",
+        "June 2024",
+        "May 2025",
+        "March 2026",
+        "May 2026",
+        "May 2024",
+        "March 2024",
+        "January 2025",
+        "November 2026",
+        "October 2025",
+        "October 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|mba-business-administration-marketing"
     },
     {
       "title": "LLM International Business Law",
@@ -651,9 +697,9 @@
       "intake": [
         "November 2024",
         "October 2024",
-        "July 2025",
         "March 2025",
         "May 2025",
+        "July 2025",
         "July 2026",
         "March 2026",
         "May 2026",
@@ -674,40 +720,53 @@
       "courseRefId": "university-of-bedfordshire|llm-international-business-law"
     },
     {
-      "title": "MBA Business Administration - Marketing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18000,
+      "title": "BSc (Hons) Business Management with International Business with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "November 2024",
-        "October 2024",
-        "July 2025",
-        "June 2025",
-        "March 2025",
-        "November 2025",
         "September 2025",
-        "June 2024",
+        "September 2026",
         "September 2024",
-        "May 2025",
-        "March 2026",
-        "May 2026",
-        "May 2024",
-        "March 2024",
-        "January 2025",
-        "November 2026",
-        "October 2025",
-        "October 2026",
-        "September 2026"
+        "June 2024",
+        "January 2024"
       ],
       "campuses": [
-        "Luton Campus"
+        "Milton Keynes Campus",
+        "Luton Campus",
+        "Bedford Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|mba-business-administration-marketing"
+      "courseRefId": "university-of-bedfordshire|bsc-hons-business-management-with-international-business-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Business Management with International Business",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2025",
+        "September 2024",
+        "June 2024",
+        "January 2024",
+        "January 2027"
+      ],
+      "campuses": [
+        "Luton Campus",
+        "Milton Keynes Campus",
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-business-management-with-international-business"
     },
     {
       "title": "BSc (Hons) International Business",
@@ -722,7 +781,8 @@
         "October 2024",
         "October 2026",
         "January 2025",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -740,9 +800,9 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2025",
         "February 2026",
         "October 2025",
+        "February 2025",
         "October 2024",
         "February 2024",
         "October 2026",
@@ -754,30 +814,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|ba-hons-business-administration-international-business"
-    },
-    {
-      "title": "BSc (Hons) Business Management with International Business with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "June 2024",
-        "September 2024",
-        "January 2024"
-      ],
-      "campuses": [
-        "Bedford Campus",
-        "Luton Campus",
-        "Milton Keynes Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-business-management-with-international-business-with-foundation-year"
     },
     {
       "title": "BSc (Hons) Business Management",
@@ -808,31 +844,6 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-business-management"
     },
     {
-      "title": "BSc (Hons) Business Management with International Business",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2025",
-        "September 2024",
-        "June 2024",
-        "January 2024",
-        "January 2027"
-      ],
-      "campuses": [
-        "Luton Campus",
-        "Milton Keynes Campus",
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-business-management-with-international-business"
-    },
-    {
       "title": "MSc Biotechnology",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -853,128 +864,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|msc-biotechnology"
-    },
-    {
-      "title": "BSc (Hons) Computer Networking with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-computer-networking-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Computer Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2025",
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-computer-science"
-    },
-    {
-      "title": "BSc (Hons) Computer Science with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-computer-science-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Computer Science with Professional Practice Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-computer-science-with-professional-practice-year"
-    },
-    {
-      "title": "BSc (Hons) Software Engineering with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-software-engineering-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Software Engineering with Professional Practice Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-software-engineering-with-professional-practice-year"
     },
     {
       "title": "BSc (Hons) Computer Networking",
@@ -1000,6 +889,108 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-computer-networking"
     },
     {
+      "title": "BSc (Hons) Computer Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2025",
+        "September 2025",
+        "September 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-computer-science"
+    },
+    {
+      "title": "BSc (Hons) Computer Science with Professional Practice Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-computer-science-with-professional-practice-year"
+    },
+    {
+      "title": "BSc (Hons) Computer Networking with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-computer-networking-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Computer Science with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-computer-science-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Software Engineering with Professional Practice Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-software-engineering-with-professional-practice-year"
+    },
+    {
       "title": "BSc (Hons) Software Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1021,6 +1012,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|bsc-hons-software-engineering"
+    },
+    {
+      "title": "BSc (Hons) Software Engineering with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-software-engineering-with-foundation-year"
     },
     {
       "title": "BA (Hons) Business Management (with placement)",
@@ -1085,7 +1096,7 @@
       "courseRefId": "university-of-bedfordshire|pgce-secondary-design-and-technology"
     },
     {
-      "title": "MSc Software Engineering and Applications with Project Management",
+      "title": "MSc Computer Networking with Project Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -1095,28 +1106,29 @@
       "intake": [
         "November 2024",
         "October 2024",
-        "May 2025",
         "March 2025",
         "July 2025",
-        "May 2026",
+        "May 2025",
         "July 2026",
+        "May 2026",
         "March 2026",
-        "May 2024",
         "July 2024",
+        "May 2024",
         "March 2024",
         "November 2025",
         "November 2026",
         "October 2025",
         "October 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-software-engineering-and-applications-with-project-management"
+      "courseRefId": "university-of-bedfordshire|msc-computer-networking-with-project-management"
     },
     {
       "title": "MSc Computer Science with Project Management",
@@ -1141,7 +1153,8 @@
         "October 2025",
         "October 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -1151,7 +1164,7 @@
       "courseRefId": "university-of-bedfordshire|msc-computer-science-with-project-management"
     },
     {
-      "title": "MSc Computer Networking with Project Management",
+      "title": "MSc Software Engineering and Applications with Project Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -1161,26 +1174,29 @@
       "intake": [
         "November 2024",
         "October 2024",
-        "July 2025",
-        "March 2025",
         "May 2025",
+        "March 2025",
+        "July 2025",
+        "May 2026",
         "July 2026",
         "March 2026",
-        "May 2026",
-        "July 2024",
         "May 2024",
+        "July 2024",
         "March 2024",
         "November 2025",
         "November 2026",
         "October 2025",
-        "October 2026"
+        "October 2026",
+        "January 2027",
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-computer-networking-with-project-management"
+      "courseRefId": "university-of-bedfordshire|msc-software-engineering-and-applications-with-project-management"
     },
     {
       "title": "MSc Project Management with Data Analytics",
@@ -1242,7 +1258,8 @@
         "October 2025",
         "October 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -1250,6 +1267,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|msc-cyber-security-with-project-management"
+    },
+    {
+      "title": "MSc Midwifery",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2024",
+        "October 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-midwifery"
     },
     {
       "title": "MSc Adult Nursing",
@@ -1272,26 +1309,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|msc-adult-nursing"
-    },
-    {
-      "title": "MSc Midwifery",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2024",
-        "October 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-midwifery"
     },
     {
       "title": "BSc (Hons) Paramedic Science",
@@ -1338,136 +1355,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|bsc-hons-sports-therapy-and-rehabilitation"
-    },
-    {
-      "title": "MSc Applied Computing and Information Technology with Project Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "November 2024",
-        "July 2025",
-        "May 2025",
-        "March 2025",
-        "July 2026",
-        "March 2026",
-        "May 2026",
-        "July 2024",
-        "May 2024",
-        "March 2024",
-        "November 2025",
-        "November 2026",
-        "October 2025",
-        "October 2026",
-        "January 2027",
-        "March 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-applied-computing-and-information-technology-with-project-management"
-    },
-    {
-      "title": "MSc Information Systems Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "November 2024",
-        "July 2025",
-        "March 2025",
-        "May 2025",
-        "May 2026",
-        "July 2026",
-        "March 2026",
-        "July 2024",
-        "May 2024",
-        "March 2024",
-        "January 2025",
-        "November 2025",
-        "November 2026",
-        "October 2025",
-        "October 2026",
-        "January 2027",
-        "March 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-information-systems-management"
-    },
-    {
-      "title": "PGCE Secondary Art and Design",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 12900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|pgce-secondary-art-and-design"
-    },
-    {
-      "title": "MA Art and Design",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "January 2025",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ma-art-and-design"
-    },
-    {
-      "title": "MA Creative Digital Film Production",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "15 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ma-creative-digital-film-production"
     },
     {
       "title": "MSc Digital Marketing",
@@ -1527,7 +1414,8 @@
         "October 2025",
         "October 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -1537,7 +1425,7 @@
       "courseRefId": "university-of-bedfordshire|msc-electronic-engineering"
     },
     {
-      "title": "MSc Mechanical Engineering",
+      "title": "MSc Information Systems Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -1547,20 +1435,20 @@
       "intake": [
         "October 2024",
         "November 2024",
-        "May 2025",
-        "March 2025",
         "July 2025",
+        "March 2025",
+        "May 2025",
+        "May 2026",
         "July 2026",
         "March 2026",
-        "May 2026",
-        "May 2024",
         "July 2024",
+        "May 2024",
         "March 2024",
+        "January 2025",
         "November 2025",
         "November 2026",
         "October 2025",
         "October 2026",
-        "January 2026",
         "January 2027",
         "March 2027"
       ],
@@ -1569,7 +1457,27 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-mechanical-engineering"
+      "courseRefId": "university-of-bedfordshire|msc-information-systems-management"
+    },
+    {
+      "title": "PGCE Secondary Art and Design",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 12900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|pgce-secondary-art-and-design"
     },
     {
       "title": "MSc Marketing",
@@ -1597,7 +1505,8 @@
         "October 2025",
         "October 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -1607,24 +1516,116 @@
       "courseRefId": "university-of-bedfordshire|msc-marketing"
     },
     {
-      "title": "BSc (Hons) Business Management with Law",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
+      "title": "MSc Mechanical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16900,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
+        "October 2024",
+        "November 2024",
+        "May 2025",
+        "March 2025",
+        "July 2025",
+        "July 2026",
+        "March 2026",
+        "May 2026",
+        "May 2024",
+        "July 2024",
+        "March 2024",
+        "November 2025",
+        "November 2026",
+        "October 2025",
+        "October 2026",
+        "January 2026",
+        "January 2027",
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
-        "Bedford Campus"
+        "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-business-management-with-law"
+      "courseRefId": "university-of-bedfordshire|msc-mechanical-engineering"
+    },
+    {
+      "title": "MA Art and Design",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "January 2025",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ma-art-and-design"
+    },
+    {
+      "title": "MSc Applied Computing and Information Technology with Project Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "November 2024",
+        "July 2025",
+        "May 2025",
+        "March 2025",
+        "July 2026",
+        "March 2026",
+        "May 2026",
+        "July 2024",
+        "May 2024",
+        "March 2024",
+        "November 2025",
+        "November 2026",
+        "October 2025",
+        "October 2026",
+        "January 2027",
+        "March 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-applied-computing-and-information-technology-with-project-management"
+    },
+    {
+      "title": "MA Creative Digital Film Production",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "15 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ma-creative-digital-film-production"
     },
     {
       "title": "BSc (Hons) Business Management with Law with Foundation Year",
@@ -1645,6 +1646,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|bsc-hons-business-management-with-law-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Business Management with Law",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-business-management-with-law"
     },
     {
       "title": "BSc (Hons) Business Management with Law (with Professional Practice Year)",
@@ -1737,7 +1758,8 @@
         "September 2026",
         "July 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -1833,26 +1855,6 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-artificial-intelligence-and-robotics-with-foundation-year"
     },
     {
-      "title": "BSc (Hons) Artificial Intelligence and Robotics with Professional Practice Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-artificial-intelligence-and-robotics-with-professional-practice-year"
-    },
-    {
       "title": "BSc (Hons) Artificial Intelligence and Robotics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1874,6 +1876,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|bsc-hons-artificial-intelligence-and-robotics"
+    },
+    {
+      "title": "BSc (Hons) Artificial Intelligence and Robotics with Professional Practice Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-artificial-intelligence-and-robotics-with-professional-practice-year"
     },
     {
       "title": "BSc (Hons) Accounting and Finance",
@@ -1923,26 +1945,6 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-midwifery"
     },
     {
-      "title": "BSc (Hons) Adult Nursing (Aylesbury)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2024",
-        "October 2026"
-      ],
-      "campuses": [
-        "Aylesbury Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-adult-nursing-aylesbury"
-    },
-    {
       "title": "FdSc Nursing Associate Practitioner",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1988,6 +1990,26 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-adult-nursing"
     },
     {
+      "title": "BSc (Hons) Adult Nursing (Aylesbury)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2024",
+        "October 2026"
+      ],
+      "campuses": [
+        "Aylesbury Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-adult-nursing-aylesbury"
+    },
+    {
       "title": "MSc Electronic Engineering with Project Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2013,7 +2035,8 @@
         "October 2026",
         "January 2025",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -2021,6 +2044,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|msc-electronic-engineering-with-project-management"
+    },
+    {
+      "title": "LLB (Hons) Law with Financial Management (with Foundation Year)",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|llb-hons-law-with-financial-management-with-foundation-year"
     },
     {
       "title": "BSc (Hons) Accounting and Finance with Foundation Year",
@@ -2063,26 +2106,6 @@
       "courseRefId": "university-of-bedfordshire|llb-hons-law-with-financial-management"
     },
     {
-      "title": "LLB (Hons) Law with Financial Management (with Foundation Year)",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|llb-hons-law-with-financial-management-with-foundation-year"
-    },
-    {
       "title": "BSc (Hons) Children and Young People's Nursing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2102,6 +2125,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|bsc-hons-children-and-young-peoples-nursing"
+    },
+    {
+      "title": "LLB (Hons) Law (Bedford)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2024",
+        "October 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|llb-hons-law-bedford"
     },
     {
       "title": "BSc (Hons) Economics and Finance",
@@ -2150,26 +2193,6 @@
       "courseRefId": "university-of-bedfordshire|ba-hons-media-production"
     },
     {
-      "title": "LLB (Hons) Law (Bedford)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2024",
-        "October 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|llb-hons-law-bedford"
-    },
-    {
       "title": "MSc Project Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2178,14 +2201,14 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "November 2024",
         "October 2024",
-        "July 2025",
-        "March 2025",
+        "November 2024",
         "May 2025",
-        "July 2026",
-        "March 2026",
+        "March 2025",
+        "July 2025",
         "May 2026",
+        "March 2026",
+        "July 2026",
         "July 2024",
         "May 2024",
         "March 2024",
@@ -2196,7 +2219,8 @@
         "October 2026",
         "January 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -2247,6 +2271,30 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-marketing"
     },
     {
+      "title": "Law LLB (Hons)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Bedford Campus",
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|llb-hons-law"
+    },
+    {
       "title": "BA (Hons) Art and Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2267,8 +2315,8 @@
       "courseRefId": "university-of-bedfordshire|ba-hons-art-and-design"
     },
     {
-      "title": "BA (Hons) Film and Television Production (with Foundation Year)",
-      "level": "foundation",
+      "title": "BEng (Hons) Electronic Engineering (BE)",
+      "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
       "tuition": 16800,
@@ -2276,97 +2324,16 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-film-and-television-production-with-foundation-year"
-    },
-    {
-      "title": "BEng (Hons) Electronic Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2025",
         "September 2025",
         "September 2026",
-        "January 2026"
+        "January 2027"
       ],
       "campuses": [
         "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|beng-hons-electronic-engineering"
-    },
-    {
-      "title": "BEng (Hons) Mechanical Engineering (with Foundation Year)",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|beng-hons-mechanical-engineering-with-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Media, Marketing and Public Relations with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-media-marketing-and-public-relations-with-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Media, Marketing and Public Relations with Professional Practice Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-media-marketing-and-public-relations-with-professional-practice-year"
+      "courseRefId": "university-of-bedfordshire|beng-hons-electronic-engineering-with-foundation-year"
     },
     {
       "title": "BA (Hons) Accounting",
@@ -2392,7 +2359,7 @@
       "courseRefId": "university-of-bedfordshire|ba-hons-accounting"
     },
     {
-      "title": "BA (Hons) Media, Marketing and Public Relations",
+      "title": "BEng (Hons) Electronic Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -2412,11 +2379,11 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-media-marketing-and-public-relations"
+      "courseRefId": "university-of-bedfordshire|beng-hons-electronic-engineering"
     },
     {
-      "title": "BEng (Hons) Electronic Engineering (BE)",
-      "level": "bachelor",
+      "title": "BA (Hons) Film and Television Production (with Foundation Year)",
+      "level": "foundation",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
       "tuition": 16800,
@@ -2425,15 +2392,14 @@
       "intake": [
         "September 2024",
         "September 2025",
-        "September 2026",
-        "January 2027"
+        "September 2026"
       ],
       "campuses": [
         "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|beng-hons-electronic-engineering-with-foundation-year"
+      "courseRefId": "university-of-bedfordshire|ba-hons-film-and-television-production-with-foundation-year"
     },
     {
       "title": "BEng (Hons) Mechanical Engineering",
@@ -2460,7 +2426,27 @@
       "courseRefId": "university-of-bedfordshire|beng-hons-mechanical-engineering"
     },
     {
-      "title": "Law LLB (Hons)",
+      "title": "BEng (Hons) Mechanical Engineering (with Foundation Year)",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|beng-hons-mechanical-engineering-with-foundation-year"
+    },
+    {
+      "title": "BA (Hons) Media, Marketing and Public Relations",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -2469,19 +2455,58 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
+        "January 2025",
         "September 2025",
         "September 2026",
-        "January 2025",
         "January 2026",
         "January 2027"
       ],
       "campuses": [
-        "Bedford Campus",
         "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|llb-hons-law"
+      "courseRefId": "university-of-bedfordshire|ba-hons-media-marketing-and-public-relations"
+    },
+    {
+      "title": "BA (Hons) Media, Marketing and Public Relations with Professional Practice Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-media-marketing-and-public-relations-with-professional-practice-year"
+    },
+    {
+      "title": "BA (Hons) Media, Marketing and Public Relations with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-media-marketing-and-public-relations-with-foundation-year"
     },
     {
       "title": "BA (Hons) Health and Social Care",
@@ -2530,6 +2555,29 @@
       "courseRefId": "university-of-bedfordshire|ba-hons-football-business"
     },
     {
+      "title": "BSc (Hons) Events Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "October 2025",
+        "October 2024",
+        "October 2026",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-events-management"
+    },
+    {
       "title": "BSc (Hons) Biomedical Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2556,52 +2604,6 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-biomedical-science"
     },
     {
-      "title": "BSc (Hons) Events Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-events-management"
-    },
-    {
-      "title": "BSc (Hons) Human Resources Management with Law",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-human-resources-management-with-law"
-    },
-    {
       "title": "LLB (Hons) Law with Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2625,39 +2627,27 @@
       "courseRefId": "university-of-bedfordshire|llb-hons-law-with-psychology"
     },
     {
-      "title": "MSc International Human Resource Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16900,
+      "title": "BSc (Hons) Human Resources Management with Law",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2024",
-        "November 2024",
-        "July 2025",
-        "March 2025",
-        "May 2025",
-        "July 2026",
-        "March 2026",
-        "May 2026",
-        "July 2024",
-        "May 2024",
-        "March 2024",
-        "January 2025",
-        "November 2025",
-        "November 2026",
+        "September 2024",
         "October 2025",
+        "October 2024",
         "October 2026",
-        "January 2027",
-        "March 2027"
+        "September 2025",
+        "September 2026"
       ],
       "campuses": [
         "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-international-human-resource-management"
+      "courseRefId": "university-of-bedfordshire|bsc-hons-human-resources-management-with-law"
     },
     {
       "title": "MSc Applied Psychology (Conversion)",
@@ -2744,24 +2734,40 @@
       "courseRefId": "university-of-bedfordshire|pgce-primary-education"
     },
     {
-      "title": "PGCE Secondary Geography",
+      "title": "MSc International Human Resource Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 12900,
+      "tuition": 16900,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
+        "October 2024",
+        "November 2024",
+        "July 2025",
+        "March 2025",
+        "May 2025",
+        "July 2026",
+        "March 2026",
+        "May 2026",
+        "July 2024",
+        "May 2024",
+        "March 2024",
+        "January 2025",
+        "November 2025",
+        "November 2026",
+        "October 2025",
+        "October 2026",
+        "January 2027",
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
-        "Bedford Campus"
+        "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|pgce-secondary-geography"
+      "courseRefId": "university-of-bedfordshire|msc-international-human-resource-management"
     },
     {
       "title": "PGCE Secondary Science with Physics",
@@ -2784,7 +2790,7 @@
       "courseRefId": "university-of-bedfordshire|pgce-secondary-science-with-physics"
     },
     {
-      "title": "PGCE Primary Education (3-7)",
+      "title": "PGCE Secondary Geography",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -2792,8 +2798,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
+        "September 2025",
         "September 2026"
       ],
       "campuses": [
@@ -2801,7 +2807,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|pgce-primary-education-3-7"
+      "courseRefId": "university-of-bedfordshire|pgce-secondary-geography"
     },
     {
       "title": "PGCE Primary Education (5-11)",
@@ -2824,6 +2830,26 @@
       "courseRefId": "university-of-bedfordshire|pgce-primary-education-5-11"
     },
     {
+      "title": "PGCE Primary Education (3-7)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 12900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|pgce-primary-education-3-7"
+    },
+    {
       "title": "MA Education",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2841,7 +2867,8 @@
         "January 2027"
       ],
       "campuses": [
-        "Bedford Campus"
+        "Bedford Campus",
+        "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
@@ -2868,6 +2895,41 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|msc-pharmacology-with-data-analytics"
+    },
+    {
+      "title": "MBA Business Administration Hospital and Health Services Management with Data Analytics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2025",
+        "March 2025",
+        "May 2025",
+        "July 2026",
+        "May 2026",
+        "March 2026",
+        "September 2025",
+        "November 2025",
+        "September 2026",
+        "November 2026",
+        "May 2024",
+        "July 2024",
+        "September 2024",
+        "November 2024",
+        "March 2024",
+        "January 2025",
+        "January 2027",
+        "March 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|mba-business-administration-hospital-and-health-services-management-with-data-analytics"
     },
     {
       "title": "BA (Hons) Graphic Design",
@@ -2930,41 +2992,6 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-human-resource-management-with-law-with-foundation-year"
     },
     {
-      "title": "MBA Business Administration Hospital and Health Services Management with Data Analytics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2025",
-        "March 2025",
-        "May 2025",
-        "July 2026",
-        "May 2026",
-        "March 2026",
-        "September 2025",
-        "November 2025",
-        "September 2026",
-        "November 2026",
-        "May 2024",
-        "July 2024",
-        "September 2024",
-        "November 2024",
-        "March 2024",
-        "January 2025",
-        "January 2027",
-        "March 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|mba-business-administration-hospital-and-health-services-management-with-data-analytics"
-    },
-    {
       "title": "BSc (Hons) Computer Games Development with Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
@@ -3008,26 +3035,6 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-computer-games-development"
     },
     {
-      "title": "BSc (Hons) Computer Animation and Visual Effects (with Foundation Year)",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-computer-animation-and-visual-effects-with-foundation-year"
-    },
-    {
       "title": "BSc (Hons) Computer Animation and Visual Effects",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3051,7 +3058,27 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-computer-animation-and-visual-effects"
     },
     {
-      "title": "BSc (Hons) Psychology",
+      "title": "BSc (Hons) Computer Animation and Visual Effects (with Foundation Year)",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-computer-animation-and-visual-effects-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Quantity Surveying and Value Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3071,45 +3098,19 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-psychology"
+      "courseRefId": "university-of-bedfordshire|bsc-hons-quantity-surveying-and-value-engineering"
     },
     {
-      "title": "BSc (Hons) Psychology, Counselling and Therapies",
+      "title": "BA (Hons) Applied Education Studies (Daytime Delivery)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "48 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
         "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-psychology-counselling-and-therapies"
-    },
-    {
-      "title": "BA (Hons) Education with Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
         "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
-        "September 2025",
         "September 2026"
       ],
       "campuses": [
@@ -3117,30 +3118,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-education-with-psychology"
-    },
-    {
-      "title": "BA (Hons) Primary Education (with QTS)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-primary-education-with-qts"
+      "courseRefId": "university-of-bedfordshire|ba-hons-applied-education-studies-daytime-delivery"
     },
     {
       "title": "BA (Hons) Early Years Education",
@@ -3189,7 +3167,53 @@
       "courseRefId": "university-of-bedfordshire|ba-hons-education"
     },
     {
-      "title": "BSc (Hons) Quantity Surveying and Value Engineering",
+      "title": "BA (Hons) Education with Psychology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "October 2025",
+        "October 2024",
+        "October 2026",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-education-with-psychology"
+    },
+    {
+      "title": "BA (Hons) Primary Education (with QTS)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "October 2025",
+        "October 2024",
+        "October 2026",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-primary-education-with-qts"
+    },
+    {
+      "title": "BSc (Hons) Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3209,7 +3233,30 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-quantity-surveying-and-value-engineering"
+      "courseRefId": "university-of-bedfordshire|bsc-hons-psychology"
+    },
+    {
+      "title": "BSc (Hons) Psychology, Counselling and Therapies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "October 2025",
+        "October 2024",
+        "October 2026",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-psychology-counselling-and-therapies"
     },
     {
       "title": "BA (Hons) Primary Education (3-7) (with QTS)",
@@ -3252,26 +3299,6 @@
       "courseRefId": "university-of-bedfordshire|ba-hons-applied-education-practice"
     },
     {
-      "title": "BA (Hons) Applied Education Studies (Daytime Delivery)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-applied-education-studies-daytime-delivery"
-    },
-    {
       "title": "MSc Mental Health Nursing",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3289,6 +3316,66 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|msc-mental-health-nursing"
+    },
+    {
+      "title": "BA (Hons) Early Childhood Education Graduate Practitioner (With Professional Practice Year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-early-childhood-education-graduate-practitioner-with-professional-practice-year"
+    },
+    {
+      "title": "BA (Hons) Education with Psychology (with Foundation Year)",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-education-with-psychology-with-foundation-year"
+    },
+    {
+      "title": "BA (Hons) Early Childhood Education Graduate Practitioner (with Foundation Year)",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-early-childhood-education-graduate-practitioner-with-foundation-year"
     },
     {
       "title": "BSc (Hons) Human Resource Management (with placement) with Foundation Year (Accredited)",
@@ -3331,10 +3418,32 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-human-resource-management-with-professional-practice-year-accredited"
     },
     {
-      "title": "BA (Hons) Education with Psychology (with Foundation Year)",
-      "level": "foundation",
+      "title": "BA (Hons) Sport Journalism",
+      "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-sport-journalism"
+    },
+    {
+      "title": "BA (Hons) Applied Early Years Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -3348,7 +3457,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-education-with-psychology-with-foundation-year"
+      "courseRefId": "university-of-bedfordshire|ba-hons-applied-early-years-studies"
     },
     {
       "title": "BSc (Hons) Construction Management (Top-up)",
@@ -3389,88 +3498,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|ba-hons-early-childhood-education-graduate-practitioner"
-    },
-    {
-      "title": "BA (Hons) Early Childhood Education Graduate Practitioner (with Foundation Year)",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-early-childhood-education-graduate-practitioner-with-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Early Childhood Education Graduate Practitioner (With Professional Practice Year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-early-childhood-education-graduate-practitioner-with-professional-practice-year"
-    },
-    {
-      "title": "BA (Hons) Applied Early Years Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-applied-early-years-studies"
-    },
-    {
-      "title": "BA (Hons) Sport Journalism",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-sport-journalism"
     },
     {
       "title": "BSc (Hons) Construction Management",
@@ -3579,26 +3606,6 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-pharmacology-and-health-science"
     },
     {
-      "title": "BA (Hons) Music Technology with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-music-technology-with-foundation-year"
-    },
-    {
       "title": "BSc (Hons) Pharmacology and Health Science with Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
@@ -3639,6 +3646,26 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-pharmacology-and-health-science-with-professional-practice-year"
     },
     {
+      "title": "BA (Hons) Music Technology with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-music-technology-with-foundation-year"
+    },
+    {
       "title": "BSc (Hons) Children and Young People's Nursing (Bedford)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3657,6 +3684,28 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|bsc-hons-children-and-young-peoples-nursing-bedford"
+    },
+    {
+      "title": "MSc Pharmacology with Project Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-pharmacology-with-project-management"
     },
     {
       "title": "MSc Financial Economics",
@@ -3686,7 +3735,8 @@
         "October 2026",
         "January 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -3696,26 +3746,27 @@
       "courseRefId": "university-of-bedfordshire|msc-financial-economics"
     },
     {
-      "title": "MSc Pharmacology with Project Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 16900,
+      "title": "LLB (Hons) Law with Criminology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
-        "September 2025",
         "September 2024",
-        "September 2026",
-        "January 2027"
+        "October 2025",
+        "October 2024",
+        "October 2026",
+        "September 2025",
+        "September 2026"
       ],
       "campuses": [
         "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-pharmacology-with-project-management"
+      "courseRefId": "university-of-bedfordshire|llb-hons-law-with-criminology"
     },
     {
       "title": "BA (Hons) Football Coaching",
@@ -3762,29 +3813,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|ba-hons-football-studies"
-    },
-    {
-      "title": "LLB (Hons) Law with Criminology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|llb-hons-law-with-criminology"
     },
     {
       "title": "BA (Hons) Interior Design",
@@ -3871,10 +3899,10 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-mental-health-nursing"
     },
     {
-      "title": "BA (Hons) Fashion Design",
-      "level": "bachelor",
+      "title": "LLB (Hons) Law with Criminology with Foundation Year",
+      "level": "foundation",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "48 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -3888,7 +3916,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-fashion-design"
+      "courseRefId": "university-of-bedfordshire|llb-hons-law-with-criminology-with-foundation-year"
     },
     {
       "title": "BA (Hons) Football Coaching (with Foundation Year)",
@@ -3911,10 +3939,10 @@
       "courseRefId": "university-of-bedfordshire|ba-hons-football-coaching-with-foundation-year"
     },
     {
-      "title": "LLB (Hons) Law with Criminology with Foundation Year",
-      "level": "foundation",
+      "title": "BA (Hons) Fashion Design",
+      "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "36 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -3928,7 +3956,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|llb-hons-law-with-criminology-with-foundation-year"
+      "courseRefId": "university-of-bedfordshire|ba-hons-fashion-design"
     },
     {
       "title": "PGCE Secondary Physical Education",
@@ -3999,16 +4027,15 @@
       "courseRefId": "university-of-bedfordshire|ba-hons-sport-and-physical-education"
     },
     {
-      "title": "BSc (Hons) International Tourism with Hospitality Management",
+      "title": "BSc (Hons) International Tourism with Hospitality Management with Professional Practice Year",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "48 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
-        "January 2025",
         "September 2025",
         "September 2026"
       ],
@@ -4017,7 +4044,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-international-tourism-with-hospitality-management"
+      "courseRefId": "university-of-bedfordshire|bsc-hons-international-tourism-with-hospitality-management-with-professional-practice-year"
     },
     {
       "title": "BSc (Hons) International Tourism with Hospitality Management with Foundation Year",
@@ -4040,8 +4067,29 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-international-tourism-with-hospitality-management-with-foundation-year"
     },
     {
-      "title": "BSc (Hons) International Tourism with Hospitality Management with Professional Practice Year",
+      "title": "BSc (Hons) International Tourism with Hospitality Management",
       "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2025",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-international-tourism-with-hospitality-management"
+    },
+    {
+      "title": "BA (Hons) Sport and Physical Education with Foundation Year",
+      "level": "foundation",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
       "tuition": 16800,
@@ -4053,11 +4101,11 @@
         "September 2026"
       ],
       "campuses": [
-        "Luton Campus"
+        "Bedford Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-international-tourism-with-hospitality-management-with-professional-practice-year"
+      "courseRefId": "university-of-bedfordshire|ba-hons-sport-and-physical-education-with-foundation-year"
     },
     {
       "title": "BSc (Hons) Sport and Physical Education with Foundation Year",
@@ -4080,24 +4128,24 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-sport-and-physical-education-with-foundation-year"
     },
     {
-      "title": "BA (Hons) Sport and Physical Education with Foundation Year",
-      "level": "foundation",
+      "title": "BA (Hons) Psychology and Criminal Behaviour (Top up)",
+      "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "12 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
+        "October 2025",
+        "October 2024",
+        "October 2026"
       ],
       "campuses": [
-        "Bedford Campus"
+        "Milton Keynes Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-sport-and-physical-education-with-foundation-year"
+      "courseRefId": "university-of-bedfordshire|ba-hons-psychology-and-criminal-behaviour-top-up"
     },
     {
       "title": "BA (Hons) Animation",
@@ -4121,6 +4169,29 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|ba-hons-animation"
+    },
+    {
+      "title": "MPhysEd Master of Physical Education (Secondary) (with QTS)",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "October 2025",
+        "October 2024",
+        "October 2026",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|mphysed-master-of-physical-education-secondary-with-qts"
     },
     {
       "title": "BA (Hons) Education and Sociology",
@@ -4171,29 +4242,6 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-pharmaceutical-and-chemical-sciences"
     },
     {
-      "title": "MPhysEd Master of Physical Education (Secondary) (with QTS)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|mphysed-master-of-physical-education-secondary-with-qts"
-    },
-    {
       "title": "BSc (Hons) Forensic Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4215,6 +4263,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|bsc-hons-forensic-psychology"
+    },
+    {
+      "title": "BSc (Hons) Biology with Psychology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2024",
+        "October 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-biology-with-psychology"
     },
     {
       "title": "BSc (Hons) Clinical Exercise Therapy",
@@ -4241,51 +4309,11 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-clinical-exercise-therapy"
     },
     {
-      "title": "BSc (Hons) Biology with Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2024",
-        "October 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-biology-with-psychology"
-    },
-    {
-      "title": "BA (Hons) Psychology and Criminal Behaviour (Top up)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2024",
-        "October 2026"
-      ],
-      "campuses": [
-        "Milton Keynes Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-psychology-and-criminal-behaviour-top-up"
-    },
-    {
       "title": "MSc Supply Chain Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 16900,
+      "tuition": 17900,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -4387,7 +4415,7 @@
       "courseRefId": "university-of-bedfordshire|msc-clinical-exercise-physiology"
     },
     {
-      "title": "MSc Environmental Management",
+      "title": "MSc Automotive Engineering for Electric Vehicles",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -4396,62 +4424,22 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "October 2024",
-        "January 2025",
-        "October 2025",
-        "October 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-environmental-management"
-    },
-    {
-      "title": "MSc Food Security in Public Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "January 2025",
-        "October 2025",
-        "October 2026",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-food-security-in-public-health"
-    },
-    {
-      "title": "MSc Sustainable Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "June 2024",
         "August 2024",
+        "November 2024",
+        "June 2024",
         "March 2025",
         "May 2025",
         "March 2026",
         "May 2026",
         "May 2024",
         "March 2024",
-        "January 2025",
         "August 2025",
         "August 2026",
-        "July 2026",
+        "November 2025",
+        "November 2026",
+        "October 2025",
+        "October 2026",
+        "January 2025",
         "January 2027",
         "March 2027"
       ],
@@ -4460,60 +4448,19 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-sustainable-management"
+      "courseRefId": "university-of-bedfordshire|msc-automotive-engineering-for-electric-vehicles"
     },
     {
-      "title": "PGDip Professional Social Work Practice",
+      "title": "MA Childhood, Youth and Family Studies: Youth Work Pathway",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "14 Months",
-      "tuition": 17900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2024",
-        "January 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|pgdip-professional-social-work-practice"
-    },
-    {
-      "title": "PGDip Social Work",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
+      "duration": "15 Months",
       "tuition": 16900,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2024",
         "October 2025",
-        "October 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-social-work"
-    },
-    {
-      "title": "MSc Microbiology in Public Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
         "October 2024",
-        "January 2025",
-        "October 2025",
         "October 2026"
       ],
       "campuses": [
@@ -4521,7 +4468,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-microbiology-in-public-health"
+      "courseRefId": "university-of-bedfordshire|ma-childhood-youth-and-family-studies-youth-work-pathway"
     },
     {
       "title": "MA Applied Linguistics (TEFL)",
@@ -4565,6 +4512,27 @@
       "courseRefId": "university-of-bedfordshire|ma-international-social-welfare-and-social-development"
     },
     {
+      "title": "PGDip Social Work",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-social-work"
+    },
+    {
       "title": "PGCE Secondary English",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4583,6 +4551,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|pgce-secondary-english"
+    },
+    {
+      "title": "PGCE Secondary Drama",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 12900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|pgce-secondary-drama"
     },
     {
       "title": "PGCE Secondary History",
@@ -4645,6 +4633,70 @@
       "courseRefId": "university-of-bedfordshire|pgce-secondary-science-with-chemistry"
     },
     {
+      "title": "PGDip Professional Social Work Practice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "14 Months",
+      "tuition": 17900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2024",
+        "January 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|pgdip-professional-social-work-practice"
+    },
+    {
+      "title": "MSc Environmental Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "January 2025",
+        "October 2025",
+        "October 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-environmental-management"
+    },
+    {
+      "title": "MSc Food Security in Public Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "January 2025",
+        "October 2025",
+        "October 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-food-security-in-public-health"
+    },
+    {
       "title": "MSc International Relations Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4653,14 +4705,14 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "November 2024",
         "October 2024",
+        "November 2024",
+        "May 2025",
         "July 2025",
         "March 2025",
-        "May 2025",
+        "May 2026",
         "July 2026",
         "March 2026",
-        "May 2026",
         "July 2024",
         "May 2024",
         "March 2024",
@@ -4721,7 +4773,7 @@
       "courseRefId": "university-of-bedfordshire|msc-public-health"
     },
     {
-      "title": "PGCE Secondary Drama",
+      "title": "PGCE Secondary Maths",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -4729,8 +4781,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
+        "September 2024",
         "September 2026"
       ],
       "campuses": [
@@ -4738,27 +4790,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|pgce-secondary-drama"
-    },
-    {
-      "title": "MA Childhood, Youth and Family Studies: Youth Work Pathway",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "15 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2024",
-        "October 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ma-childhood-youth-and-family-studies-youth-work-pathway"
+      "courseRefId": "university-of-bedfordshire|pgce-secondary-maths"
     },
     {
       "title": "MSc Childhood Youth and Family Studies",
@@ -4782,27 +4814,28 @@
       "courseRefId": "university-of-bedfordshire|msc-childhood-youth-and-family-studies"
     },
     {
-      "title": "PGCE Secondary Maths",
+      "title": "MSc Microbiology in Public Health",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 12900,
+      "duration": "15 Months",
+      "tuition": 16900,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
+        "October 2024",
+        "January 2025",
+        "October 2025",
+        "October 2026"
       ],
       "campuses": [
-        "Bedford Campus"
+        "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|pgce-secondary-maths"
+      "courseRefId": "university-of-bedfordshire|msc-microbiology-in-public-health"
     },
     {
-      "title": "MSc Automotive Engineering for Electric Vehicles",
+      "title": "MSc Sustainable Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -4810,35 +4843,31 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2024",
-        "August 2024",
-        "November 2024",
         "June 2024",
+        "August 2024",
         "March 2025",
         "May 2025",
         "March 2026",
         "May 2026",
         "May 2024",
         "March 2024",
+        "January 2025",
         "August 2025",
         "August 2026",
-        "November 2025",
-        "November 2026",
-        "October 2025",
-        "October 2026",
-        "January 2025",
+        "July 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-automotive-engineering-for-electric-vehicles"
+      "courseRefId": "university-of-bedfordshire|msc-sustainable-management"
     },
     {
-      "title": "BA (Hons) Film and Television Production",
+      "title": "BSc (Hons) Social Work",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -4858,122 +4887,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-film-and-television-production"
-    },
-    {
-      "title": "BA (Hons) Film Production",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-film-production"
-    },
-    {
-      "title": "BA (Hons) Creative Writing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-creative-writing"
-    },
-    {
-      "title": "BA (Hons) Acting",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-acting"
-    },
-    {
-      "title": "BA (Hons) Childhood and Youth Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-childhood-and-youth-studies"
-    },
-    {
-      "title": "BSc (Hons) Criminology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "October 2025",
-        "October 2024",
-        "October 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-criminology"
+      "courseRefId": "university-of-bedfordshire|bsc-hons-social-work"
     },
     {
       "title": "BSc (Hons) Criminology and Sociology",
@@ -4997,6 +4911,92 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|bsc-hons-criminology-and-sociology"
+    },
+    {
+      "title": "BSc (Hons) Occupational Therapy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "October 2025",
+        "October 2024",
+        "October 2026",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-occupational-therapy"
+    },
+    {
+      "title": "BA (Hons) English",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2024",
+        "October 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-english"
+    },
+    {
+      "title": "BA (Hons) Applied Special Educational Needs and Disability (Top up)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2024",
+        "October 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-applied-special-educational-needs-and-disability-top-up"
+    },
+    {
+      "title": "BA (Hons) Creative Writing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "October 2025",
+        "October 2024",
+        "October 2026",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-creative-writing"
     },
     {
       "title": "BA (Hons) Performing Arts",
@@ -5069,7 +5069,7 @@
       "courseRefId": "university-of-bedfordshire|ba-hons-professional-policing"
     },
     {
-      "title": "BSc (Hons) Occupational Therapy",
+      "title": "BA (Hons) Film Production",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -5089,10 +5089,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-occupational-therapy"
+      "courseRefId": "university-of-bedfordshire|ba-hons-film-production"
     },
     {
-      "title": "BSc (Hons) Social Work",
+      "title": "BA (Hons) Film and Television Production",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -5112,7 +5112,78 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-social-work"
+      "courseRefId": "university-of-bedfordshire|ba-hons-film-and-television-production"
+    },
+    {
+      "title": "BSc (Hons) Criminology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "October 2025",
+        "October 2024",
+        "October 2026",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-criminology"
+    },
+    {
+      "title": "BSc (Hons) Biological Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "October 2025",
+        "October 2024",
+        "January 2025",
+        "October 2026",
+        "September 2025",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-biological-science"
+    },
+    {
+      "title": "BA (Hons) Childhood and Youth Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "October 2025",
+        "October 2024",
+        "October 2026",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-childhood-and-youth-studies"
     },
     {
       "title": "BSc (Hons) Strength and Conditioning",
@@ -5158,26 +5229,6 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-travel-aviation-and-tourism-management"
     },
     {
-      "title": "BA (Hons) English",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2024",
-        "October 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-english"
-    },
-    {
       "title": "BA (Hons) Special Educational Needs and Disability",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -5198,27 +5249,7 @@
       "courseRefId": "university-of-bedfordshire|ba-hons-special-educational-needs-and-disability"
     },
     {
-      "title": "BA (Hons) Applied Special Educational Needs and Disability (Top up)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2024",
-        "October 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-applied-special-educational-needs-and-disability-top-up"
-    },
-    {
-      "title": "BSc (Hons) Biological Science",
+      "title": "BA (Hons) Acting",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -5229,50 +5260,8 @@
         "September 2024",
         "October 2025",
         "October 2024",
-        "January 2025",
         "October 2026",
         "September 2025",
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-biological-science"
-    },
-    {
-      "title": "BA (Hons) Childhood and Youth Studies with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-childhood-and-youth-studies-with-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Applied Special Educational Needs and Disability Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
         "September 2026"
       ],
       "campuses": [
@@ -5280,269 +5269,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|ba-hons-applied-special-educational-needs-and-disability-studies"
-    },
-    {
-      "title": "BSc (Hons) Forensic Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-forensic-science"
-    },
-    {
-      "title": "BSc (Hons) Forensic Science and Criminology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-forensic-science-and-criminology"
-    },
-    {
-      "title": "BSc (Hons) Forensic Science and Criminology with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-forensic-science-and-criminology-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Forensic Science and Criminology with Professional Practice Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-forensic-science-and-criminology-with-professional-practice-year"
-    },
-    {
-      "title": "BSc (Hons) Forensic Science with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-forensic-science-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) International Tourism Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2025",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-international-tourism-management"
-    },
-    {
-      "title": "BSc (Hons) Aviation and Airport Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2025",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-aviation-and-airport-management"
-    },
-    {
-      "title": "BSc (Hons) Aviation and Airport Management with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-aviation-and-airport-management-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Aviation and Airport Management with Professional Practice Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-aviation-and-airport-management-with-professional-practice-year"
-    },
-    {
-      "title": "BSc (Hons) Biological Science with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-biological-science-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Clinical Exercise Therapy (with Foundation Year)",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-clinical-exercise-therapy-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) International Tourism Management with Professional Practice Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-international-tourism-management-with-professional-practice-year"
-    },
-    {
-      "title": "BSc (Hons) Physiotherapy",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-physiotherapy"
+      "courseRefId": "university-of-bedfordshire|ba-hons-acting"
     },
     {
       "title": "BSc (Hons) Sport and Exercise Science",
@@ -5586,27 +5313,7 @@
       "courseRefId": "university-of-bedfordshire|bsc-hons-sport-and-exercise-science-with-foundation-year"
     },
     {
-      "title": "BSc (Hons) Strength and Conditioning with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bedford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|bsc-hons-strength-and-conditioning-with-foundation-year"
-    },
-    {
-      "title": "BEng (Hons) Automotive Engineering (with Foundation Year)",
+      "title": "BSc (Hons) Biological Science with Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -5623,7 +5330,128 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|beng-hons-automotive-engineering-with-foundation-year"
+      "courseRefId": "university-of-bedfordshire|bsc-hons-biological-science-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) International Tourism Management with Professional Practice Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-international-tourism-management-with-professional-practice-year"
+    },
+    {
+      "title": "BSc (Hons) Forensic Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-forensic-science"
+    },
+    {
+      "title": "BSc (Hons) Aviation and Airport Management with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-aviation-and-airport-management-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Clinical Exercise Therapy (with Foundation Year)",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-clinical-exercise-therapy-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Forensic Science with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-forensic-science-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) International Tourism Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2025",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-international-tourism-management"
     },
     {
       "title": "BEng (Hons) Automotive Engineering",
@@ -5649,28 +5477,205 @@
       "courseRefId": "university-of-bedfordshire|beng-hons-automotive-engineering"
     },
     {
-      "title": "MSc Cyber Crime, Terrorism and Security",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16900,
+      "title": "BEng (Hons) Automotive Engineering (with Foundation Year)",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2024",
         "September 2025",
-        "September 2026",
-        "March 2026",
-        "May 2026",
-        "July 2026",
-        "January 2027",
-        "March 2027"
+        "September 2026"
       ],
       "campuses": [
         "Luton Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-cyber-crime-terrorism-and-security"
+      "courseRefId": "university-of-bedfordshire|beng-hons-automotive-engineering-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Aviation and Airport Management with Professional Practice Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-aviation-and-airport-management-with-professional-practice-year"
+    },
+    {
+      "title": "BSc (Hons) Forensic Science and Criminology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-forensic-science-and-criminology"
+    },
+    {
+      "title": "BSc (Hons) Forensic Science and Criminology with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-forensic-science-and-criminology-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Physiotherapy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-physiotherapy"
+    },
+    {
+      "title": "BSc (Hons) Aviation and Airport Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2025",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-aviation-and-airport-management"
+    },
+    {
+      "title": "BA (Hons) Applied Special Educational Needs and Disability Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-applied-special-educational-needs-and-disability-studies"
+    },
+    {
+      "title": "BA (Hons) Childhood and Youth Studies with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|ba-hons-childhood-and-youth-studies-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Forensic Science and Criminology with Professional Practice Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-forensic-science-and-criminology-with-professional-practice-year"
+    },
+    {
+      "title": "BSc (Hons) Strength and Conditioning with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bedford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|bsc-hons-strength-and-conditioning-with-foundation-year"
     },
     {
       "title": "MBA Business Administration (Entrepreneurship)",
@@ -5686,7 +5691,8 @@
         "July 2026",
         "September 2026",
         "November 2026",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -5694,6 +5700,31 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|mba-business-administration-entrepreneurship"
+    },
+    {
+      "title": "MSc Cyber Crime, Terrorism and Security",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "March 2026",
+        "May 2026",
+        "July 2026",
+        "January 2027",
+        "March 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-cyber-crime-terrorism-and-security"
     },
     {
       "title": "MSc Renewable and Sustainable Energy Engineering",
@@ -5710,7 +5741,8 @@
         "September 2026",
         "November 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -5724,7 +5756,7 @@
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "15 Months",
-      "tuition": 18000,
+      "tuition": 18900,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -5738,7 +5770,8 @@
         "May 2026",
         "July 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -5746,26 +5779,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|mba-business-administration-business-analytics"
-    },
-    {
-      "title": "MSc Integrated Healthcare Practice and Strategy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "15 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Luton Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
-      "courseRefId": "university-of-bedfordshire|msc-integrated-healthcare-practice-and-strategy"
     },
     {
       "title": "MSc Sports Therapy and Rehabilitation",
@@ -5786,6 +5799,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
       "courseRefId": "university-of-bedfordshire|msc-sports-therapy-and-rehabilitation"
+    },
+    {
+      "title": "MSc Integrated Healthcare Practice and Strategy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "15 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|msc-integrated-healthcare-practice-and-strategy"
     },
     {
       "title": "BA(Hons) Business Administration (Entrepreneurship ) (Top-up)",
@@ -6153,6 +6186,26 @@
       "courseRefId": "university-of-bedfordshire|msc-artificial-intelligence-in-marketing"
     },
     {
+      "title": "MBA Educational Leadership and Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027",
+        "October 2027",
+        "February 2027"
+      ],
+      "campuses": [
+        "Luton Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bedfordshire",
+      "courseRefId": "university-of-bedfordshire|mba-educational-leadership-and-management"
+    },
+    {
       "title": "BSc (Hons) Human Resource Management with Law",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -6177,7 +6230,7 @@
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 16900,
+      "tuition": 17900,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -6188,7 +6241,8 @@
         "March 2026",
         "July 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -6212,7 +6266,8 @@
         "May 2026",
         "July 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -6354,7 +6409,8 @@
       "intake": [
         "May 2026",
         "January 2027",
-        "March 2027"
+        "March 2027",
+        "May 2027"
       ],
       "campuses": [
         "Luton Campus"
@@ -6431,7 +6487,6 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",

@@ -3,13 +3,14 @@
   "name": "University of Notre Dame",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
-  "scrapedAt": "2026-07-22T15:42:52.522Z",
+  "scrapedAt": "2026-08-23T13:11:40.102Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-notre-dame",
   "country": "Australia",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -107,29 +108,6 @@
       "courseRefId": "university-of-notre-dame|bachelor-of-computer-science"
     },
     {
-      "title": "Bachelor of Commerce/Bachelor of Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 40256,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027",
-        "February 2028",
-        "July 2028"
-      ],
-      "campuses": [
-        "UND Fremantle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
-      "courseRefId": "university-of-notre-dame|bachelor-of-commerce-bachelor-of-science"
-    },
-    {
       "title": "Bachelor of Commerce",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -176,11 +154,11 @@
       "courseRefId": "university-of-notre-dame|bachelor-of-commerce-bachelor-of-arts"
     },
     {
-      "title": "Bachelor of Nursing",
+      "title": "Bachelor of Commerce/Bachelor of Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 38818,
+      "duration": "48 Months",
+      "tuition": 40256,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -196,7 +174,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
-      "courseRefId": "university-of-notre-dame|bachelor-of-nursing"
+      "courseRefId": "university-of-notre-dame|bachelor-of-commerce-bachelor-of-science"
     },
     {
       "title": "Bachelor of Nursing (Enrolled Nurse Articulation Pathway)",
@@ -220,6 +198,29 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
       "courseRefId": "university-of-notre-dame|bachelor-of-nursing-enrolled-nurse-articulation-pathway"
+    },
+    {
+      "title": "Bachelor of Nursing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 38818,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027",
+        "February 2028",
+        "July 2028"
+      ],
+      "campuses": [
+        "UND Fremantle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
+      "courseRefId": "university-of-notre-dame|bachelor-of-nursing"
     },
     {
       "title": "Bachelor of Commerce/Bachelor of Communications and Media",
@@ -313,52 +314,6 @@
       "courseRefId": "university-of-notre-dame|bachelor-of-business-administration"
     },
     {
-      "title": "Bachelor of Arts (Architecture)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 34371,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027",
-        "February 2028",
-        "July 2028"
-      ],
-      "campuses": [
-        "UND Fremantle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
-      "courseRefId": "university-of-notre-dame|bachelor-of-arts-architecture"
-    },
-    {
-      "title": "Bachelor of Biomedical Science (Assured Pathway) into Doctor of Medicine",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 41421,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027",
-        "February 2028",
-        "July 2028"
-      ],
-      "campuses": [
-        "UND Sydney Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
-      "courseRefId": "university-of-notre-dame|bachelor-of-biomedical-science-assured-pathway-into-doctor-of-medicine"
-    },
-    {
       "title": "Bachelor of Communications and Media",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -428,6 +383,29 @@
       "courseRefId": "university-of-notre-dame|bachelor-of-laws"
     },
     {
+      "title": "Bachelor of Laws (Graduate Entry)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "42 Months",
+      "tuition": 40785,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027",
+        "February 2028",
+        "July 2028"
+      ],
+      "campuses": [
+        "UND Fremantle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
+      "courseRefId": "university-of-notre-dame|bachelor-of-laws-graduate-entry"
+    },
+    {
       "title": "Bachelor of Accounting",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -451,11 +429,11 @@
       "courseRefId": "university-of-notre-dame|bachelor-of-accounting"
     },
     {
-      "title": "Bachelor of Laws (Graduate Entry)",
+      "title": "Bachelor of Arts (Architecture)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "42 Months",
-      "tuition": 40785,
+      "duration": "36 Months",
+      "tuition": 34371,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -471,7 +449,30 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
-      "courseRefId": "university-of-notre-dame|bachelor-of-laws-graduate-entry"
+      "courseRefId": "university-of-notre-dame|bachelor-of-arts-architecture"
+    },
+    {
+      "title": "Bachelor of Biomedical Science (Assured Pathway) into Doctor of Medicine",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 41421,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027",
+        "February 2028",
+        "July 2028"
+      ],
+      "campuses": [
+        "UND Sydney Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
+      "courseRefId": "university-of-notre-dame|bachelor-of-biomedical-science-assured-pathway-into-doctor-of-medicine"
     },
     {
       "title": "Bachelor of Health Physical Education (Primary)",
@@ -658,75 +659,6 @@
       "courseRefId": "university-of-notre-dame|master-of-teaching-secondary-education"
     },
     {
-      "title": "Bachelor of Arts in Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 34371,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027",
-        "February 2028",
-        "July 2028"
-      ],
-      "campuses": [
-        "UND Sydney Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
-      "courseRefId": "university-of-notre-dame|bachelor-of-arts-in-psychology"
-    },
-    {
-      "title": "Bachelor of Primary Education",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 37490,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027",
-        "February 2028",
-        "July 2028"
-      ],
-      "campuses": [
-        "UND Fremantle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
-      "courseRefId": "university-of-notre-dame|bachelor-of-primary-education"
-    },
-    {
-      "title": "Bachelor of Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 41421,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027",
-        "February 2028",
-        "July 2028"
-      ],
-      "campuses": [
-        "UND Fremantle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
-      "courseRefId": "university-of-notre-dame|bachelor-of-science"
-    },
-    {
       "title": "Bachelor of Science/Bachelor of Arts",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -865,6 +797,95 @@
       "courseRefId": "university-of-notre-dame|bachelor-of-arts"
     },
     {
+      "title": "Bachelor of Arts in Psychology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 34371,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027",
+        "February 2028",
+        "July 2028"
+      ],
+      "campuses": [
+        "UND Sydney Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
+      "courseRefId": "university-of-notre-dame|bachelor-of-arts-in-psychology"
+    },
+    {
+      "title": "Bachelor of Primary Education",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 37490,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027",
+        "February 2028",
+        "July 2028"
+      ],
+      "campuses": [
+        "UND Fremantle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
+      "courseRefId": "university-of-notre-dame|bachelor-of-primary-education"
+    },
+    {
+      "title": "Bachelor of Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 41421,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027",
+        "February 2028",
+        "July 2028"
+      ],
+      "campuses": [
+        "UND Fremantle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
+      "courseRefId": "university-of-notre-dame|bachelor-of-science"
+    },
+    {
+      "title": "Bachelor of Exercise and Sport Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 38222,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "UND Fremantle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
+      "courseRefId": "university-of-notre-dame|bachelor-of-exercise-and-sport-science"
+    },
+    {
       "title": "Bachelor of Arts (Politics and Journalism)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -886,26 +907,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
       "courseRefId": "university-of-notre-dame|bachelor-of-arts-politics-and-journalism"
-    },
-    {
-      "title": "Bachelor of Exercise and Sport Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 38222,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "UND Fremantle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-notre-dame",
-      "courseRefId": "university-of-notre-dame|bachelor-of-exercise-and-sport-science"
     },
     {
       "title": "Bachelor of Philosophy, Politics and Economics",

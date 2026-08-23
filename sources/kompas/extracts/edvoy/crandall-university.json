@@ -3,13 +3,14 @@
   "name": "Crandall University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/crandall-university",
-  "scrapedAt": "2026-07-22T15:42:52.177Z",
+  "scrapedAt": "2026-08-23T13:11:39.816Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "crandall-university",
   "country": "Canada",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -22,8 +23,8 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
         "September 2025",
+        "January 2025",
         "September 2024",
         "May 2024",
         "May 2025",
@@ -74,6 +75,30 @@
       "courseRefId": "crandall-university|master-of-organizational-management"
     },
     {
+      "title": "BBA General Business Administration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17900,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027",
+        "September 2028",
+        "January 2027",
+        "January 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|bba-general-business-administration"
+    },
+    {
       "title": "BBA Concentration in Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -98,7 +123,7 @@
       "courseRefId": "crandall-university|bba-concentration-in-management"
     },
     {
-      "title": "BBA General Business Administration",
+      "title": "BBA Concentration in Marketing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -119,7 +144,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|bba-general-business-administration"
+      "courseRefId": "crandall-university|bba-concentration-in-marketing"
     },
     {
       "title": "BBA Concentration in Accounting",
@@ -170,59 +195,6 @@
       "courseRefId": "crandall-university|bba-concentration-in-economics-finance"
     },
     {
-      "title": "BBA Concentration in Marketing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17900,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027",
-        "September 2028",
-        "January 2027",
-        "January 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|bba-concentration-in-marketing"
-    },
-    {
-      "title": "BA Honours in Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17900,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "May 2026",
-        "September 2026",
-        "January 2026",
-        "January 2027",
-        "January 2028",
-        "September 2027",
-        "September 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|ba-honours-in-psychology"
-    },
-    {
       "title": "BA Honours in Religious Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -250,6 +222,64 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
       "courseRefId": "crandall-university|ba-honours-in-religious-studies"
+    },
+    {
+      "title": "Bachelor of Arts & Science Concentration in Psychology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17900,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2025",
+        "September 2025",
+        "January 2025",
+        "September 2024",
+        "May 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "January 2027",
+        "January 2028",
+        "September 2027",
+        "September 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-psychology"
+    },
+    {
+      "title": "BA Major in Religious Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17900,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "May 2025",
+        "January 2025",
+        "September 2024",
+        "May 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "January 2027",
+        "January 2028",
+        "September 2027",
+        "September 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|ba-major-in-religious-studies"
     },
     {
       "title": "BA Major in Psychology",
@@ -281,7 +311,7 @@
       "courseRefId": "crandall-university|ba-major-in-psychology"
     },
     {
-      "title": "BA Major in Religious Studies",
+      "title": "BA Honours in Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -307,60 +337,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|ba-major-in-religious-studies"
-    },
-    {
-      "title": "BBA Co-operative Education",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 19920,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027",
-        "September 2028",
-        "January 2027",
-        "January 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|bba-co-operative-education"
-    },
-    {
-      "title": "Bachelor of Arts & Science Concentration in Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17900,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "May 2026",
-        "September 2026",
-        "January 2026",
-        "January 2027",
-        "January 2028",
-        "September 2027",
-        "September 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-psychology"
+      "courseRefId": "crandall-university|ba-honours-in-psychology"
     },
     {
       "title": "BEd Bachelor of Education - Elementary",
@@ -385,6 +362,30 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
       "courseRefId": "crandall-university|bed-bachelor-of-education-elementary"
+    },
+    {
+      "title": "BBA Co-operative Education",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 19920,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027",
+        "September 2028",
+        "January 2027",
+        "January 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|bba-co-operative-education"
     },
     {
       "title": "BEd Bachelor of Education - Secondary",
@@ -435,35 +436,6 @@
       "courseRefId": "crandall-university|ba-major-in-communication-arts-theatre"
     },
     {
-      "title": "BA Honours in Sociology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17900,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "May 2026",
-        "September 2026",
-        "January 2026",
-        "January 2027",
-        "January 2028",
-        "September 2027",
-        "September 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|ba-honours-in-sociology"
-    },
-    {
       "title": "BA Major in Biblical Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -473,8 +445,8 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2025",
-        "May 2025",
         "September 2025",
+        "May 2025",
         "May 2024",
         "September 2024",
         "May 2026",
@@ -493,93 +465,6 @@
       "courseRefId": "crandall-university|ba-major-in-biblical-studies"
     },
     {
-      "title": "BA Major in English",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17900,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "May 2026",
-        "September 2026",
-        "January 2026",
-        "January 2027",
-        "January 2028",
-        "September 2027",
-        "September 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|ba-major-in-english"
-    },
-    {
-      "title": "BA Major in English with a Concentration in Creative Writing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17900,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "May 2026",
-        "September 2026",
-        "January 2026",
-        "January 2027",
-        "January 2028",
-        "September 2027",
-        "September 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|ba-major-in-english-with-a-concentration-in-creative-writing"
-    },
-    {
-      "title": "BA Major in History",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17900,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "May 2026",
-        "September 2026",
-        "January 2026",
-        "January 2027",
-        "January 2028",
-        "September 2027",
-        "September 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|ba-major-in-history"
-    },
-    {
       "title": "BA Major in Kinesiology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -588,8 +473,8 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
         "May 2025",
+        "January 2025",
         "September 2025",
         "May 2024",
         "September 2024",
@@ -609,83 +494,6 @@
       "courseRefId": "crandall-university|ba-major-in-kinesiology"
     },
     {
-      "title": "BSc Major in Biology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17900,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "May 2026",
-        "September 2026",
-        "January 2026",
-        "January 2027",
-        "January 2028",
-        "September 2027",
-        "September 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|bsc-major-in-biology"
-    },
-    {
-      "title": "Bachelor of Arts & Science Concentration in Christian Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17900,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027",
-        "September 2028",
-        "January 2027",
-        "January 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-christian-studies"
-    },
-    {
-      "title": "Bachelor of Arts & Science Concentration in Religious Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17900,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027",
-        "September 2028",
-        "January 2027",
-        "January 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-religious-studies"
-    },
-    {
       "title": "BA Major in Sociology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -694,11 +502,11 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
         "May 2025",
         "September 2025",
-        "May 2024",
+        "January 2025",
         "September 2024",
+        "May 2024",
         "May 2026",
         "September 2026",
         "January 2026",
@@ -713,6 +521,151 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
       "courseRefId": "crandall-university|ba-major-in-sociology"
+    },
+    {
+      "title": "BA Honours in Biblical Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17900,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "May 2025",
+        "September 2024",
+        "May 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "January 2027",
+        "January 2028",
+        "September 2027",
+        "September 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|ba-honours-in-biblical-studies"
+    },
+    {
+      "title": "Bachelor of Arts & Science Concentration in Biology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17900,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2025",
+        "January 2025",
+        "September 2025",
+        "May 2024",
+        "September 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "January 2027",
+        "January 2028",
+        "September 2027",
+        "September 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-biology"
+    },
+    {
+      "title": "Bachelor of Arts & Science Concentration in English",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17900,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2025",
+        "September 2025",
+        "January 2025",
+        "May 2024",
+        "September 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "January 2027",
+        "January 2028",
+        "September 2027",
+        "September 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-english"
+    },
+    {
+      "title": "BA Honours in Sociology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17900,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2025",
+        "May 2025",
+        "September 2024",
+        "May 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "January 2027",
+        "January 2028",
+        "September 2027",
+        "September 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|ba-honours-in-sociology"
+    },
+    {
+      "title": "BA Major in English with a Concentration in Creative Writing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17900,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2025",
+        "September 2025",
+        "January 2025",
+        "May 2024",
+        "September 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "January 2027",
+        "January 2028",
+        "September 2027",
+        "September 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|ba-major-in-english-with-a-concentration-in-creative-writing"
     },
     {
       "title": "BA Major in Sociology with Concentration in Social Justice",
@@ -744,7 +697,7 @@
       "courseRefId": "crandall-university|ba-major-in-sociology-with-concentration-in-social-justice"
     },
     {
-      "title": "Bachelor of Arts & Science Concentration in Biology",
+      "title": "BA Honours in English",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -752,9 +705,9 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
         "May 2025",
         "September 2025",
+        "January 2025",
         "May 2024",
         "September 2024",
         "May 2026",
@@ -770,10 +723,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-biology"
+      "courseRefId": "crandall-university|ba-honours-in-english"
     },
     {
-      "title": "Bachelor of Arts & Science Concentration in English",
+      "title": "BA Honours in History",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -782,8 +735,37 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2025",
+        "September 2025",
+        "May 2025",
+        "September 2024",
+        "May 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "January 2027",
+        "January 2028",
+        "September 2027",
+        "September 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|ba-honours-in-history"
+    },
+    {
+      "title": "BA Major in English",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17900,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
         "May 2025",
         "September 2025",
+        "January 2025",
         "May 2024",
         "September 2024",
         "May 2026",
@@ -799,7 +781,36 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-english"
+      "courseRefId": "crandall-university|ba-major-in-english"
+    },
+    {
+      "title": "BA Major in History",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17900,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2025",
+        "May 2025",
+        "September 2024",
+        "May 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "January 2027",
+        "January 2028",
+        "September 2027",
+        "September 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|ba-major-in-history"
     },
     {
       "title": "Bachelor of Arts & Science Concentration in History",
@@ -810,11 +821,11 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
         "May 2025",
+        "January 2025",
         "September 2025",
-        "May 2024",
         "September 2024",
+        "May 2024",
         "May 2026",
         "September 2026",
         "January 2026",
@@ -829,6 +840,35 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
       "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-history"
+    },
+    {
+      "title": "BSc Honours in Biology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17900,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2025",
+        "May 2025",
+        "September 2024",
+        "May 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "January 2027",
+        "January 2028",
+        "September 2027",
+        "September 2028"
+      ],
+      "campuses": [
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
+      "courseRefId": "crandall-university|bsc-honours-in-biology"
     },
     {
       "title": "Bachelor of Arts & Science Concentration in Sociology",
@@ -860,7 +900,7 @@
       "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-sociology"
     },
     {
-      "title": "BSc Honours in Biology",
+      "title": "BSc Major in Biology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -871,8 +911,8 @@
         "January 2025",
         "May 2025",
         "September 2025",
-        "May 2024",
         "September 2024",
+        "May 2024",
         "May 2026",
         "September 2026",
         "January 2026",
@@ -886,10 +926,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|bsc-honours-in-biology"
+      "courseRefId": "crandall-university|bsc-major-in-biology"
     },
     {
-      "title": "BA Honours in Biblical Studies",
+      "title": "Bachelor of Arts & Science Concentration in Religious Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -897,28 +937,23 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
-        "May 2025",
         "September 2025",
-        "May 2024",
         "September 2024",
-        "May 2026",
         "September 2026",
-        "January 2026",
-        "January 2027",
-        "January 2028",
         "September 2027",
-        "September 2028"
+        "September 2028",
+        "January 2027",
+        "January 2028"
       ],
       "campuses": [
         "Main Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|ba-honours-in-biblical-studies"
+      "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-religious-studies"
     },
     {
-      "title": "BA Honours in English",
+      "title": "Bachelor of Arts & Science Concentration in Christian Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -926,54 +961,20 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
-        "May 2025",
         "September 2025",
-        "May 2024",
         "September 2024",
-        "May 2026",
         "September 2026",
-        "January 2026",
-        "January 2027",
-        "January 2028",
         "September 2027",
-        "September 2028"
+        "September 2028",
+        "January 2027",
+        "January 2028"
       ],
       "campuses": [
         "Main Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|ba-honours-in-english"
-    },
-    {
-      "title": "BA Honours in History",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17900,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "May 2026",
-        "September 2026",
-        "January 2026",
-        "January 2027",
-        "January 2028",
-        "September 2027",
-        "September 2028"
-      ],
-      "campuses": [
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/crandall-university",
-      "courseRefId": "crandall-university|ba-honours-in-history"
+      "courseRefId": "crandall-university|bachelor-of-arts-science-concentration-in-christian-studies"
     },
     {
       "title": "Foundations Certificate Christian",
@@ -985,10 +986,10 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2025",
-        "May 2025",
         "September 2025",
-        "May 2024",
+        "May 2025",
         "September 2024",
+        "May 2024",
         "May 2026",
         "September 2026",
         "January 2026",

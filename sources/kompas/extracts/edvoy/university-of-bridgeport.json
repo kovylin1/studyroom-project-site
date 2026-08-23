@@ -3,16 +3,40 @@
   "name": "University of Bridgeport",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-  "scrapedAt": "2026-07-22T15:42:52.454Z",
+  "scrapedAt": "2026-08-23T13:11:40.036Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-bridgeport-connecticut",
   "country": "United States",
+  "city": null,
   "matchMethod": "as-is/exact-slug",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
+    {
+      "title": "MS Computer Science (STEM)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18810,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "May 2026",
+        "January 2027",
+        "September 2027",
+        "May 2027",
+        "January 2028"
+      ],
+      "campuses": [
+        "Bridgeport Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
+      "courseRefId": "university-of-bridgeport-connecticut|ms-computer-science-stem"
+    },
     {
       "title": "MS Computer Engineering (STEM)",
       "level": "master",
@@ -38,7 +62,7 @@
       "courseRefId": "university-of-bridgeport-connecticut|ms-computer-engineering-stem"
     },
     {
-      "title": "MS Computer Science (STEM)",
+      "title": "MS Technology Management (STEM)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -46,6 +70,7 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
         "September 2026",
         "May 2026",
         "January 2027",
@@ -58,7 +83,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|ms-computer-science-stem"
+      "courseRefId": "university-of-bridgeport-connecticut|ms-technology-management-stem"
     },
     {
       "title": "MBA Business Administration",
@@ -85,7 +110,7 @@
       "courseRefId": "university-of-bridgeport-connecticut|mba-business-administration"
     },
     {
-      "title": "MS Technology Management (STEM)",
+      "title": "MS Finance (STEM)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -106,7 +131,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|ms-technology-management-stem"
+      "courseRefId": "university-of-bridgeport-connecticut|ms-finance-stem"
     },
     {
       "title": "MS Acupuncture",
@@ -157,54 +182,6 @@
       "courseRefId": "university-of-bridgeport-connecticut|ms-analytics-and-systems-stem"
     },
     {
-      "title": "MS Finance (STEM)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18810,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "May 2026",
-        "January 2027",
-        "September 2027",
-        "May 2027",
-        "January 2028"
-      ],
-      "campuses": [
-        "Bridgeport Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|ms-finance-stem"
-    },
-    {
-      "title": "BS Computer Engineering Technology (STEM)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 32860,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "May 2026",
-        "January 2027",
-        "September 2027",
-        "May 2027",
-        "January 2028"
-      ],
-      "campuses": [
-        "Bridgeport Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|bs-computer-engineering-technology-stem"
-    },
-    {
       "title": "BS Computer Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -249,6 +226,30 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
       "courseRefId": "university-of-bridgeport-connecticut|bs-computer-engineering-stem"
+    },
+    {
+      "title": "BS Computer Engineering Technology (STEM)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 32860,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "May 2026",
+        "January 2027",
+        "September 2027",
+        "May 2027",
+        "January 2028"
+      ],
+      "campuses": [
+        "Bridgeport Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
+      "courseRefId": "university-of-bridgeport-connecticut|bs-computer-engineering-technology-stem"
     },
     {
       "title": "BS Data Analytics (STEM)",
@@ -394,7 +395,7 @@
       "courseRefId": "university-of-bridgeport-connecticut|phd-computer-science-engineering-stem"
     },
     {
-      "title": "BS Marketing",
+      "title": "BS Mechanical Engineering (STEM)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -402,7 +403,6 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2026",
         "May 2026",
         "January 2027",
@@ -415,7 +415,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|bs-marketing"
+      "courseRefId": "university-of-bridgeport-connecticut|bs-mechanical-engineering-stem"
     },
     {
       "title": "BS Accounting",
@@ -442,34 +442,11 @@
       "courseRefId": "university-of-bridgeport-connecticut|bs-accounting"
     },
     {
-      "title": "BS Mechanical Engineering (STEM)",
+      "title": "BS Marketing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
       "tuition": 32860,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "May 2026",
-        "January 2027",
-        "September 2027",
-        "May 2027",
-        "January 2028"
-      ],
-      "campuses": [
-        "Bridgeport Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|bs-mechanical-engineering-stem"
-    },
-    {
-      "title": "MS Biomedical Engineering (STEM)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18810,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -486,7 +463,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|ms-biomedical-engineering-stem"
+      "courseRefId": "university-of-bridgeport-connecticut|bs-marketing"
     },
     {
       "title": "MS Electrical Engineering (STEM)",
@@ -511,6 +488,30 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
       "courseRefId": "university-of-bridgeport-connecticut|ms-electrical-engineering-stem"
+    },
+    {
+      "title": "MS Biomedical Engineering (STEM)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18810,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "May 2026",
+        "January 2027",
+        "September 2027",
+        "May 2027",
+        "January 2028"
+      ],
+      "campuses": [
+        "Bridgeport Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
+      "courseRefId": "university-of-bridgeport-connecticut|ms-biomedical-engineering-stem"
     },
     {
       "title": "BS Electrical Engineering (STEM)",
@@ -606,6 +607,30 @@
       "courseRefId": "university-of-bridgeport-connecticut|ms-acupuncture-with-chinese-herbology"
     },
     {
+      "title": "BS Mathematics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 32860,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "May 2026",
+        "January 2027",
+        "September 2027",
+        "May 2027",
+        "January 2028"
+      ],
+      "campuses": [
+        "Bridgeport Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
+      "courseRefId": "university-of-bridgeport-connecticut|bs-mathematics"
+    },
+    {
       "title": "BS General Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -678,30 +703,6 @@
       "courseRefId": "university-of-bridgeport-connecticut|bs-psychology"
     },
     {
-      "title": "BS Mathematics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 32860,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "May 2026",
-        "January 2027",
-        "September 2027",
-        "May 2027",
-        "January 2028"
-      ],
-      "campuses": [
-        "Bridgeport Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|bs-mathematics"
-    },
-    {
       "title": "BM Music - Music Business track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -749,30 +750,6 @@
       "courseRefId": "university-of-bridgeport-connecticut|bs-health-science-exercise-fitness"
     },
     {
-      "title": "BS Sport Management - eSports",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 32860,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "May 2026",
-        "January 2027",
-        "September 2027",
-        "May 2027",
-        "January 2028"
-      ],
-      "campuses": [
-        "Bridgeport Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|bs-sport-management-esports"
-    },
-    {
       "title": "BS Sport Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -797,6 +774,30 @@
       "courseRefId": "university-of-bridgeport-connecticut|bs-sport-management"
     },
     {
+      "title": "BS Sport Management - eSports",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 32860,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "May 2026",
+        "January 2027",
+        "September 2027",
+        "May 2027",
+        "January 2028"
+      ],
+      "campuses": [
+        "Bridgeport Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
+      "courseRefId": "university-of-bridgeport-connecticut|bs-sport-management-esports"
+    },
+    {
       "title": "BM Music - Music Education track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -818,6 +819,52 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
       "courseRefId": "university-of-bridgeport-connecticut|bm-music-music-education-track"
+    },
+    {
+      "title": "MA Biology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18810,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "May 2026",
+        "January 2027",
+        "September 2027",
+        "May 2027",
+        "January 2028"
+      ],
+      "campuses": [
+        "Bridgeport Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
+      "courseRefId": "university-of-bridgeport-connecticut|ma-biology"
+    },
+    {
+      "title": "MS Biology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18810,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "May 2026",
+        "January 2027",
+        "September 2027",
+        "May 2027",
+        "January 2028"
+      ],
+      "campuses": [
+        "Bridgeport Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
+      "courseRefId": "university-of-bridgeport-connecticut|ms-biology"
     },
     {
       "title": "MA Criminal Justice and Human Security",
@@ -844,11 +891,11 @@
       "courseRefId": "university-of-bridgeport-connecticut|ma-criminal-justice-and-human-security"
     },
     {
-      "title": "MS Biology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18810,
+      "title": "BM Music",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 32860,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -864,14 +911,14 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|ms-biology"
+      "courseRefId": "university-of-bridgeport-connecticut|bm-music"
     },
     {
-      "title": "MA Biology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18810,
+      "title": "BM Music - Music Performance track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 32860,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -887,7 +934,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|ma-biology"
+      "courseRefId": "university-of-bridgeport-connecticut|bm-music-music-performance-track"
     },
     {
       "title": "BA Criminal Justice and Human Security",
@@ -938,30 +985,6 @@
       "courseRefId": "university-of-bridgeport-connecticut|ba-biology"
     },
     {
-      "title": "BS Human Services",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 32860,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "May 2026",
-        "January 2027",
-        "September 2027",
-        "May 2027",
-        "January 2028"
-      ],
-      "campuses": [
-        "Bridgeport Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|bs-human-services"
-    },
-    {
       "title": "BS Biology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -986,7 +1009,7 @@
       "courseRefId": "university-of-bridgeport-connecticut|bs-biology"
     },
     {
-      "title": "BM Music",
+      "title": "BS Human Services",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -994,6 +1017,7 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
         "September 2026",
         "May 2026",
         "January 2027",
@@ -1006,30 +1030,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|bm-music"
-    },
-    {
-      "title": "BM Music - Music Performance track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 32860,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "May 2026",
-        "January 2027",
-        "September 2027",
-        "May 2027",
-        "January 2028"
-      ],
-      "campuses": [
-        "Bridgeport Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bridgeport-connecticut",
-      "courseRefId": "university-of-bridgeport-connecticut|bm-music-music-performance-track"
+      "courseRefId": "university-of-bridgeport-connecticut|bs-human-services"
     }
   ]
 }

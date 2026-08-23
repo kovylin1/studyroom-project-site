@@ -3,13 +3,14 @@
   "name": "Concordia University, St. Paul",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-  "scrapedAt": "2026-07-22T15:42:52.171Z",
+  "scrapedAt": "2026-08-23T13:11:39.807Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "concordia-university-st-paul",
   "country": "United States",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -45,9 +46,9 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
         "January 2025",
         "January 2026",
-        "September 2025",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -161,8 +162,8 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
         "January 2026",
+        "January 2025",
         "September 2025",
         "September 2024",
         "January 2024",
@@ -176,17 +177,17 @@
       "courseRefId": "concordia-university-st-paul|ba-business-management"
     },
     {
-      "title": "BS Pre-Medicine",
+      "title": "BA in Health Care Administration - Online",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "24 Months",
       "tuition": 25000,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "January 2025",
         "January 2026",
+        "September 2025",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -196,30 +197,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-pre-medicine"
-    },
-    {
-      "title": "BS Finance",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-finance"
+      "courseRefId": "concordia-university-st-paul|ba-in-health-care-administration-online"
     },
     {
       "title": "BS Pre-Physician Assistant (PA)",
@@ -245,6 +223,52 @@
       "courseRefId": "concordia-university-st-paul|bs-pre-physician-assistant-pa"
     },
     {
+      "title": "BS Finance",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|bs-finance"
+    },
+    {
+      "title": "BS Pre-Medicine",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2025",
+        "January 2026",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|bs-pre-medicine"
+    },
+    {
       "title": "BS Pre-Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -266,29 +290,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
       "courseRefId": "concordia-university-st-paul|bs-pre-engineering"
-    },
-    {
-      "title": "BA in Health Care Administration - Online",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-in-health-care-administration-online"
     },
     {
       "title": "MA in Strategic Communication Management - Online",
@@ -360,17 +361,17 @@
       "courseRefId": "concordia-university-st-paul|bs-in-nursing-pre-licensure"
     },
     {
-      "title": "BA in Digital Marketing - Online",
+      "title": "BS in Accounting - Online",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
+      "duration": "30 Months",
       "tuition": 25000,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "January 2025",
         "January 2026",
+        "September 2025",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -380,7 +381,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-in-digital-marketing-online"
+      "courseRefId": "concordia-university-st-paul|bs-in-accounting-online"
     },
     {
       "title": "BA Public Relations",
@@ -429,17 +430,17 @@
       "courseRefId": "concordia-university-st-paul|bs-accounting"
     },
     {
-      "title": "BS in Accounting - Online",
+      "title": "BA in Digital Marketing - Online",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "30 Months",
+      "duration": "24 Months",
       "tuition": 25000,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
         "January 2025",
         "January 2026",
-        "September 2025",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -449,7 +450,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-in-accounting-online"
+      "courseRefId": "concordia-university-st-paul|ba-in-digital-marketing-online"
     },
     {
       "title": "BS in Information Systems",
@@ -521,6 +522,29 @@
       "courseRefId": "concordia-university-st-paul|bfa-graphic-design"
     },
     {
+      "title": "MAEd Literacy (Including K-12 Reading Endorsement) - Online",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 11850,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|maed-literacy-including-k-12-reading-endorsement-online"
+    },
+    {
       "title": "MAEd Differentiated Instruction - Online",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -544,17 +568,17 @@
       "courseRefId": "concordia-university-st-paul|maed-differentiated-instruction-online"
     },
     {
-      "title": "MAEd Literacy (Including K-12 Reading Endorsement) - Online",
+      "title": "MAEd Educational Leadership",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
+      "duration": "12 Months",
       "tuition": 11850,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "January 2026",
         "January 2025",
         "September 2025",
-        "January 2026",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -564,7 +588,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|maed-literacy-including-k-12-reading-endorsement-online"
+      "courseRefId": "concordia-university-st-paul|maed-educational-leadership"
     },
     {
       "title": "MA in Human Resource Management - Online",
@@ -613,29 +637,6 @@
       "courseRefId": "concordia-university-st-paul|ma-in-early-childhood-education-online"
     },
     {
-      "title": "MAEd Educational Leadership",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 11850,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2025",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|maed-educational-leadership"
-    },
-    {
       "title": "BS Pre-Veterinary Medicine",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -659,30 +660,7 @@
       "courseRefId": "concordia-university-st-paul|bs-pre-veterinary-medicine"
     },
     {
-      "title": "BA Art Education/Teaching (K-12)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-art-education-teaching-k-12"
-    },
-    {
-      "title": "AA in Early Childhood Education",
+      "title": "AA in General Studies - Online",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
@@ -690,77 +668,8 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
-        "January 2026",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|aa-in-early-childhood-education"
-    },
-    {
-      "title": "BA in Psychology - Online",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
         "September 2025",
         "January 2026",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-in-psychology-online"
-    },
-    {
-      "title": "BA Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2025",
-        "January 2026",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-psychology"
-    },
-    {
-      "title": "BS Actuarial Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
         "January 2025",
         "September 2024",
         "January 2024",
@@ -771,30 +680,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-actuarial-science"
-    },
-    {
-      "title": "Certification Lutheran Classroom Teacher (LCT)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|certification-lutheran-classroom-teacher-lct"
+      "courseRefId": "concordia-university-st-paul|aa-in-general-studies-online"
     },
     {
       "title": "Certification Early Childhood Education - Online",
@@ -818,6 +704,29 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
       "courseRefId": "concordia-university-st-paul|certification-early-childhood-education-online"
+    },
+    {
+      "title": "AA in Early Childhood Education",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|aa-in-early-childhood-education"
     },
     {
       "title": "BA Early Childhood Education",
@@ -866,6 +775,29 @@
       "courseRefId": "concordia-university-st-paul|ba-elementary-education"
     },
     {
+      "title": "BS Pre-Genetic Counseling",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2026",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|bs-pre-genetic-counseling"
+    },
+    {
       "title": "BS Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -912,7 +844,53 @@
       "courseRefId": "concordia-university-st-paul|certification-director-of-christian-education-dce"
     },
     {
-      "title": "BS Pre-Genetic Counseling",
+      "title": "Certification Lutheran Classroom Teacher (LCT)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|certification-lutheran-classroom-teacher-lct"
+    },
+    {
+      "title": "BS Actuarial Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|bs-actuarial-science"
+    },
+    {
+      "title": "BA Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -921,8 +899,8 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
-        "January 2026",
         "January 2025",
+        "January 2026",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -932,10 +910,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-pre-genetic-counseling"
+      "courseRefId": "concordia-university-st-paul|ba-psychology"
     },
     {
-      "title": "AA in General Studies - Online",
+      "title": "BA in Psychology - Online",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
@@ -943,9 +921,9 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "January 2025",
         "September 2025",
         "January 2026",
-        "January 2025",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -955,7 +933,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|aa-in-general-studies-online"
+      "courseRefId": "concordia-university-st-paul|ba-in-psychology-online"
     },
     {
       "title": "BA in Human Resource Management - Online",
@@ -981,6 +959,29 @@
       "courseRefId": "concordia-university-st-paul|ba-in-human-resource-management-online"
     },
     {
+      "title": "BA Art Education/Teaching (K-12)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-art-education-teaching-k-12"
+    },
+    {
       "title": "BA Music Business",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1002,52 +1003,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
       "courseRefId": "concordia-university-st-paul|ba-music-business"
-    },
-    {
-      "title": "MA in Sport Management - Online",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 15675,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ma-in-sport-management-online"
-    },
-    {
-      "title": "MS in Coaching and Athletic Administration - Online",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 15675,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ms-in-coaching-and-athletic-administration-online"
     },
     {
       "title": "MS Orthotics and Prosthetics",
@@ -1073,17 +1028,17 @@
       "courseRefId": "concordia-university-st-paul|ms-orthotics-and-prosthetics"
     },
     {
-      "title": "BA Physical Education (K-12) and Health Education (5-12)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
+      "title": "MS in Coaching and Athletic Administration - Online",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 15675,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "January 2026",
         "January 2025",
+        "January 2026",
+        "September 2025",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -1093,7 +1048,30 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-physical-education-k-12-and-health-education-5-12"
+      "courseRefId": "concordia-university-st-paul|ms-in-coaching-and-athletic-administration-online"
+    },
+    {
+      "title": "MA in Sport Management - Online",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 15675,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ma-in-sport-management-online"
     },
     {
       "title": "Certificate in Forensic Behavioral Health - Online",
@@ -1119,7 +1097,7 @@
       "courseRefId": "concordia-university-st-paul|certificate-in-forensic-behavioral-health-online"
     },
     {
-      "title": "BA Education - Communication Arts and Literature (grades 5-12)",
+      "title": "BA Physical Education (K-12) and Health Education (5-12)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1127,9 +1105,9 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
-        "January 2026",
         "September 2025",
+        "January 2026",
+        "January 2025",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -1139,7 +1117,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-education-communication-arts-and-literature-grades-5-12"
+      "courseRefId": "concordia-university-st-paul|ba-physical-education-k-12-and-health-education-5-12"
     },
     {
       "title": "BA Coaching and Sport Psychology",
@@ -1165,6 +1143,29 @@
       "courseRefId": "concordia-university-st-paul|ba-coaching-and-sport-psychology"
     },
     {
+      "title": "BA Education - Communication Arts and Literature (grades 5-12)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-education-communication-arts-and-literature-grades-5-12"
+    },
+    {
       "title": "EDd Doctorate in Education - Online",
       "level": null,
       "sourceLevel": "Doctorate",
@@ -1186,52 +1187,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
       "courseRefId": "concordia-university-st-paul|edd-doctorate-in-education-online"
-    },
-    {
-      "title": "BS Orthotics and Prosthetics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "September 2025",
-        "January 2026",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-orthotics-and-prosthetics"
-    },
-    {
-      "title": "BA Sport Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-sport-management"
     },
     {
       "title": "BA in Sport Management - Online",
@@ -1278,6 +1233,52 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
       "courseRefId": "concordia-university-st-paul|ba-communication-studies"
+    },
+    {
+      "title": "BA Sport Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-sport-management"
+    },
+    {
+      "title": "BS Orthotics and Prosthetics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|bs-orthotics-and-prosthetics"
     },
     {
       "title": "MA in Human Services-Forensic Behavioral Health - Online",
@@ -1349,29 +1350,6 @@
       "courseRefId": "concordia-university-st-paul|maed-special-education-specific-learning-disabilities-sld-endorsement-online"
     },
     {
-      "title": "BA Child Learning and Development",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2025",
-        "January 2026",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-child-learning-and-development"
-    },
-    {
       "title": "BS Pre-Dental",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1393,6 +1371,29 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
       "courseRefId": "concordia-university-st-paul|bs-pre-dental"
+    },
+    {
+      "title": "BA Child Learning and Development",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2025",
+        "January 2026",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-child-learning-and-development"
     },
     {
       "title": "MAEd Special Education (Autism Spectrum Disorder (ASD) Endorsement) - Online",
@@ -1441,6 +1442,29 @@
       "courseRefId": "concordia-university-st-paul|master-of-fine-arts-creative-writing-online"
     },
     {
+      "title": "Master of Public Health - Online",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18150,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|master-of-public-health-online"
+    },
+    {
       "title": "MAEd with emphasis in English as a Second Language - Online",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1485,29 +1509,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
       "courseRefId": "concordia-university-st-paul|maed-trauma-and-resilience-in-educational-settings-online"
-    },
-    {
-      "title": "MA in Criminal Justice Leadership - Online",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 15675,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ma-in-criminal-justice-leadership-online"
     },
     {
       "title": "Graduate Certificate in Trauma, Resilience, and Self-Care Strategies - Online",
@@ -1556,29 +1557,6 @@
       "courseRefId": "concordia-university-st-paul|ma-in-human-services-trauma-resilience-and-self-care-strategies-online"
     },
     {
-      "title": "Master of Public Health - Online",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18150,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|master-of-public-health-online"
-    },
-    {
       "title": "MS in Exercise Science",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1602,108 +1580,16 @@
       "courseRefId": "concordia-university-st-paul|ms-in-exercise-science"
     },
     {
-      "title": "BA Biology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2025",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-biology"
-    },
-    {
-      "title": "BA Chemistry",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "September 2025",
-        "January 2026",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-chemistry"
-    },
-    {
-      "title": "BA History",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2025",
-        "January 2026",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-history"
-    },
-    {
-      "title": "BA in Child Development",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "30 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "September 2025",
-        "January 2026",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-in-child-development"
-    },
-    {
-      "title": "BA in Criminal Justice",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
+      "title": "MA in Criminal Justice Leadership - Online",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 25000,
+      "tuition": 15675,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2026",
         "January 2025",
+        "January 2026",
         "September 2025",
         "September 2024",
         "January 2024",
@@ -1714,10 +1600,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-in-criminal-justice"
+      "courseRefId": "concordia-university-st-paul|ma-in-criminal-justice-leadership-online"
     },
     {
-      "title": "BA Mathematics",
+      "title": "BA Art Studio",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1737,79 +1623,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-mathematics"
+      "courseRefId": "concordia-university-st-paul|ba-art-studio"
     },
     {
-      "title": "BA Music",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-music"
-    },
-    {
-      "title": "BA Music Education (Instrumental or Vocal)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2025",
-        "January 2026",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-music-education-instrumental-or-vocal"
-    },
-    {
-      "title": "BS Mathematics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2025",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-mathematics"
-    },
-    {
-      "title": "BS Pre-Chiropractic",
+      "title": "BA Christian Ministry",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1829,7 +1646,214 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-pre-chiropractic"
+      "courseRefId": "concordia-university-st-paul|ba-christian-ministry"
+    },
+    {
+      "title": "BA Church Music",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2025",
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-church-music"
+    },
+    {
+      "title": "BA Criminal Justice",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2025",
+        "January 2026",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-criminal-justice"
+    },
+    {
+      "title": "BA English",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2026",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-english"
+    },
+    {
+      "title": "BS Pre-Optometry",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2026",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|bs-pre-optometry"
+    },
+    {
+      "title": "BS Pre-Pharmacy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2025",
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|bs-pre-pharmacy"
+    },
+    {
+      "title": "Certification Director of Christian Outreach (DCO)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2026",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|certification-director-of-christian-outreach-dco"
+    },
+    {
+      "title": "BS Pre-Physical Therapy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|bs-pre-physical-therapy"
+    },
+    {
+      "title": "Certification Pre-Seminary",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|certification-pre-seminary"
+    },
+    {
+      "title": "Certification Director of Parish Music (DPM)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|certification-director-of-parish-music-dpm"
     },
     {
       "title": "BA Public Health",
@@ -1947,145 +1971,7 @@
       "courseRefId": "concordia-university-st-paul|ba-theology"
     },
     {
-      "title": "Certification Leadership - Online",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|certification-leadership-online"
-    },
-    {
-      "title": "Certification Pre-Seminary",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|certification-pre-seminary"
-    },
-    {
-      "title": "Certification Director of Parish Music (DPM)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|certification-director-of-parish-music-dpm"
-    },
-    {
-      "title": "Certification Pre-Deaconess",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|certification-pre-deaconess"
-    },
-    {
-      "title": "BA Criminal Justice",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2025",
-        "January 2026",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-criminal-justice"
-    },
-    {
-      "title": "BA English",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2026",
-        "January 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-english"
-    },
-    {
-      "title": "BS Pre-Pharmacy",
+      "title": "BS Biology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2105,20 +1991,20 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-pre-pharmacy"
+      "courseRefId": "concordia-university-st-paul|bs-biology"
     },
     {
-      "title": "Certification Director of Christian Outreach (DCO)",
+      "title": "BS Mathematics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
+      "duration": "48 Months",
       "tuition": 25000,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "January 2026",
         "January 2025",
+        "September 2025",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -2128,10 +2014,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|certification-director-of-christian-outreach-dco"
+      "courseRefId": "concordia-university-st-paul|bs-mathematics"
     },
     {
-      "title": "BS Pre-Physical Therapy",
+      "title": "BS Pre-Chiropractic",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2140,8 +2026,8 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2025",
-        "September 2025",
         "January 2026",
+        "September 2025",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -2151,7 +2037,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-pre-physical-therapy"
+      "courseRefId": "concordia-university-st-paul|bs-pre-chiropractic"
     },
     {
       "title": "BS Pre-Occupational Therapy",
@@ -2177,7 +2063,7 @@
       "courseRefId": "concordia-university-st-paul|bs-pre-occupational-therapy"
     },
     {
-      "title": "BS Pre-Optometry",
+      "title": "BA Biology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2185,9 +2071,9 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "January 2026",
         "January 2025",
+        "September 2025",
         "September 2024",
         "January 2024",
         "September 2026"
@@ -2197,10 +2083,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-pre-optometry"
+      "courseRefId": "concordia-university-st-paul|ba-biology"
     },
     {
-      "title": "BS Biology",
+      "title": "BA Mathematics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2220,7 +2106,191 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|bs-biology"
+      "courseRefId": "concordia-university-st-paul|ba-mathematics"
+    },
+    {
+      "title": "BA Music",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-music"
+    },
+    {
+      "title": "BA Music Education (Instrumental or Vocal)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2025",
+        "January 2026",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-music-education-instrumental-or-vocal"
+    },
+    {
+      "title": "BA History",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2025",
+        "January 2026",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-history"
+    },
+    {
+      "title": "BA in Child Development",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "30 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-in-child-development"
+    },
+    {
+      "title": "BA in Criminal Justice",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2025",
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-in-criminal-justice"
+    },
+    {
+      "title": "Certification Pre-Deaconess",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|certification-pre-deaconess"
+    },
+    {
+      "title": "BA in Exercise Science - Online",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-in-exercise-science-online"
+    },
+    {
+      "title": "BA Chemistry",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25000,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "CSP Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
+      "courseRefId": "concordia-university-st-paul|ba-chemistry"
     },
     {
       "title": "BS Pre-Audiology",
@@ -2246,33 +2316,10 @@
       "courseRefId": "concordia-university-st-paul|bs-pre-audiology"
     },
     {
-      "title": "BA Art Studio",
+      "title": "Certification Leadership - Online",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2025",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-art-studio"
-    },
-    {
-      "title": "BA Christian Ministry",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "12 Months",
       "tuition": 25000,
       "currency": "USD",
       "feeBasis": "approxAnnual",
@@ -2289,53 +2336,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-christian-ministry"
-    },
-    {
-      "title": "BA Church Music",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2025",
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-church-music"
-    },
-    {
-      "title": "BA in Exercise Science - Online",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 25000,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "September 2025",
-        "January 2026",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "CSP Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/concordia-university-st-paul",
-      "courseRefId": "concordia-university-st-paul|ba-in-exercise-science-online"
+      "courseRefId": "concordia-university-st-paul|certification-leadership-online"
     },
     {
       "title": "Doctorate in Physical Therapy (DPT)",

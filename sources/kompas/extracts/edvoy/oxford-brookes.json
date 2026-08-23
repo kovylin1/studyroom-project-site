@@ -3,16 +3,36 @@
   "name": "Oxford Brookes University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-  "scrapedAt": "2026-07-22T15:42:52.346Z",
+  "scrapedAt": "2026-08-23T13:11:39.939Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "oxford-brookes-university",
   "country": "United Kingdom",
+  "city": null,
   "matchMethod": "as-is/exact-name",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
+    {
+      "title": "MSc Computing Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 19600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-computing-science"
+    },
     {
       "title": "PGDip Advanced Computer Science",
       "level": "master",
@@ -51,25 +71,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|msc-advanced-computer-science"
-    },
-    {
-      "title": "MSc Computing Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-computing-science"
     },
     {
       "title": "MSc Computer Science for Cyber Security",
@@ -129,6 +130,28 @@
       "courseRefId": "oxford-brookes-university|msc-artificial-intelligence"
     },
     {
+      "title": "MSc International Business Management with Work Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 19600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "May 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-international-business-management-with-work-placement"
+    },
+    {
       "title": "MSc International Business Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -151,6 +174,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|msc-international-business-management"
+    },
+    {
+      "title": "MSc Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 19600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-management"
     },
     {
       "title": "MSc International Business Management with Placement Year",
@@ -176,47 +218,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|msc-international-business-management-with-placement-year"
-    },
-    {
-      "title": "MSc Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-management"
-    },
-    {
-      "title": "MSc International Business Management with Work Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 19600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026",
-        "May 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-international-business-management-with-work-placement"
     },
     {
       "title": "MSc Management and Business Analytics",
@@ -283,27 +284,6 @@
       "courseRefId": "oxford-brookes-university|msc-finance-and-analytics"
     },
     {
-      "title": "MSc Finance",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-finance"
-    },
-    {
       "title": "MPH Global Public Health Leadership",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -334,7 +314,9 @@
       "intake": [
         "September 2025",
         "January 2026",
-        "September 2026"
+        "September 2026",
+        "January 2027",
+        "September 2027"
       ],
       "campuses": [
         "Headington Campus"
@@ -342,6 +324,45 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|mph-public-health"
+    },
+    {
+      "title": "MSc Finance",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 19600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-finance"
+    },
+    {
+      "title": "BSc (Hons) Computing (Final Year Entry)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|bsc-hons-computing-final-year-entry"
     },
     {
       "title": "MSc Building Information Modelling and Management",
@@ -428,6 +449,162 @@
       "courseRefId": "oxford-brookes-university|msci-artificial-intelligence"
     },
     {
+      "title": "BA (Hons) International Business (Final Year Entry)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 16300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-international-business-final-year-entry"
+    },
+    {
+      "title": "BA (Hons) Business and Management with Placement Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 19700,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-business-and-management-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) International Business Management with Placement Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 19700,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-international-business-management-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) Business Management (Final Year Entry)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 16300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-business-management-final-year-entry"
+    },
+    {
+      "title": "BA (Hons) International Business Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-international-business-management"
+    },
+    {
+      "title": "BA (Hons) Business Enterprise and Entrepreneurship",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-business-enterprise-and-entrepreneurship"
+    },
+    {
+      "title": "BA (Hons) Business and Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "January 2024",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-business-and-management"
+    },
+    {
       "title": "BA (Hons) Business and Enterprise (Final Year Entry)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -462,162 +639,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|ba-hons-business-enterprise-and-entrepreneurship-with-placement-year"
-    },
-    {
-      "title": "BA (Hons) International Business Management with Placement Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 19700,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-international-business-management-with-placement-year"
-    },
-    {
-      "title": "BA (Hons) Business and Management with Placement Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 19700,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-business-and-management-with-placement-year"
-    },
-    {
-      "title": "BA (Hons) Business and Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "January 2024",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-business-and-management"
-    },
-    {
-      "title": "BA (Hons) Business Enterprise and Entrepreneurship",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-business-enterprise-and-entrepreneurship"
-    },
-    {
-      "title": "BA (Hons) International Business Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-international-business-management"
-    },
-    {
-      "title": "BA (Hons) International Business (Final Year Entry)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 16300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-international-business-final-year-entry"
-    },
-    {
-      "title": "BA (Hons) Business Management (Final Year Entry)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 16300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-business-management-final-year-entry"
     },
     {
       "title": "BA (Hons) Business Management and Analytics (Final Year Entry)",
@@ -740,26 +761,6 @@
       "courseRefId": "oxford-brookes-university|international-foundation-diploma"
     },
     {
-      "title": "Foundation in Business",
-      "level": "foundation",
-      "sourceLevel": "Foundation",
-      "duration": "12 Months",
-      "tuition": 17100,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|foundation-in-business"
-    },
-    {
       "title": "BA (Hons) Business and Management Practice (Top-Up)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -778,6 +779,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|ba-hons-business-and-management-practice-top-up"
+    },
+    {
+      "title": "Foundation in Business",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 17100,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|foundation-in-business"
     },
     {
       "title": "MSc Strategic Professional Accounting and Finance",
@@ -844,16 +865,16 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-business-finance-final-year-entry"
     },
     {
-      "title": "MSc Project Management in the Built Environment",
+      "title": "MSc Project Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 18500,
+      "tuition": 19600,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2026",
-        "September 2025",
+        "September 2027",
         "January 2026",
         "January 2027"
       ],
@@ -862,7 +883,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-project-management-in-the-built-environment"
+      "courseRefId": "oxford-brookes-university|msc-project-management"
     },
     {
       "title": "MSc Global Events Management with Placement Year",
@@ -885,27 +906,6 @@
       "courseRefId": "oxford-brookes-university|msc-global-events-management-with-placement-year"
     },
     {
-      "title": "MSc Project Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-project-management"
-    },
-    {
       "title": "MSc Global Events Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -925,6 +925,27 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|msc-global-events-management"
+    },
+    {
+      "title": "MSc Project Management in the Built Environment",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-project-management-in-the-built-environment"
     },
     {
       "title": "MSc Midwifery - Pre-Registration",
@@ -969,30 +990,6 @@
       "courseRefId": "oxford-brookes-university|ba-hons-business-and-marketing-management-with-placement-year"
     },
     {
-      "title": "BA (Hons) Business and Marketing Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "January 2024",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-business-and-marketing-management"
-    },
-    {
       "title": "BA (Hons) Business and Marketing Management (Final Year Entry)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1017,24 +1014,28 @@
       "courseRefId": "oxford-brookes-university|ba-hons-business-and-marketing-management-final-year-entry"
     },
     {
-      "title": "BSc (Hons) Business and Finance",
+      "title": "BA (Hons) Business and Marketing Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "36 Months",
       "tuition": 16300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
         "September 2025",
-        "September 2026"
+        "January 2024",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Headington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|bsc-hons-business-and-finance"
+      "courseRefId": "oxford-brookes-university|ba-hons-business-and-marketing-management"
     },
     {
       "title": "BSc (Hons) Information Technology for Business",
@@ -1057,24 +1058,24 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-information-technology-for-business"
     },
     {
-      "title": "Fd(Sc) Nursing Associate",
+      "title": "BSc (Hons) Business and Finance",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 16900,
+      "duration": "48 Months",
+      "tuition": 16300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2024",
         "September 2025",
         "September 2026"
       ],
       "campuses": [
-        "Headington Campus",
-        "Swindon Campus"
+        "Headington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|fd-sc-nursing-associate"
+      "courseRefId": "oxford-brookes-university|bsc-hons-business-and-finance"
     },
     {
       "title": "BSc (Hons) Medical Sciences (Final Year Entry)",
@@ -1094,6 +1095,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|bsc-hons-medical-sciences-final-year-entry"
+    },
+    {
+      "title": "Fd(Sc) Nursing Associate",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus",
+        "Swindon Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|fd-sc-nursing-associate"
     },
     {
       "title": "BSc (Hons) Business Finance with Accounting (Final Year Entry)",
@@ -1135,60 +1156,6 @@
       "courseRefId": "oxford-brookes-university|ba-hons-marketing-and-events-management-with-foundation-year"
     },
     {
-      "title": "PGCert Building Information Modelling and Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "17 Months",
-      "tuition": 18500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|pgcert-building-information-modelling-and-management"
-    },
-    {
-      "title": "PGDip Building Information Modelling and Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "17 Months",
-      "tuition": 18500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|pgdip-building-information-modelling-and-management"
-    },
-    {
-      "title": "PGCert LLM Master of Laws",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "9 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|pgcert-llm-master-of-laws"
-    },
-    {
       "title": "MSc Digital Marketing with Placement Year",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1209,25 +1176,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|msc-digital-marketing-with-placement-year"
-    },
-    {
-      "title": "MSc Global Marketing with Placement Year",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-global-marketing-with-placement-year"
     },
     {
       "title": "MSc International Luxury Marketing with Placement Year",
@@ -1252,6 +1200,79 @@
       "courseRefId": "oxford-brookes-university|msc-international-luxury-marketing-with-placement-year"
     },
     {
+      "title": "MArch Advanced Architectural Design",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|march-advanced-architectural-design"
+    },
+    {
+      "title": "PGCert Building Information Modelling and Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "17 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|pgcert-building-information-modelling-and-management"
+    },
+    {
+      "title": "PGCert LLM Master of Laws",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "9 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|pgcert-llm-master-of-laws"
+    },
+    {
+      "title": "PGDip Building Information Modelling and Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "17 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|pgdip-building-information-modelling-and-management"
+    },
+    {
       "title": "PGDip LLM Master of Laws",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1270,25 +1291,23 @@
       "courseRefId": "oxford-brookes-university|pgdip-llm-master-of-laws"
     },
     {
-      "title": "MSc Global Marketing",
+      "title": "MArchD Applied Design in Architecture (ARB and RIBA part 2)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "24 Months",
       "tuition": 18900,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
-        "January 2026",
-        "September 2026",
-        "January 2027"
+        "September 2026"
       ],
       "campuses": [
         "Headington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-global-marketing"
+      "courseRefId": "oxford-brookes-university|marchd-applied-design-in-architecture-arb-and-riba-part-2"
     },
     {
       "title": "LLM Master of Laws",
@@ -1314,6 +1333,46 @@
       "courseRefId": "oxford-brookes-university|llm-master-of-laws"
     },
     {
+      "title": "MSc Global Marketing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2026",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-global-marketing"
+    },
+    {
+      "title": "MSc Global Marketing with Placement Year",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-global-marketing-with-placement-year"
+    },
+    {
       "title": "MSc Digital Marketing",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1333,6 +1392,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|msc-digital-marketing"
+    },
+    {
+      "title": "MSc Digital Media Production",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-digital-media-production"
     },
     {
       "title": "MSc International Luxury Marketing",
@@ -1356,44 +1434,6 @@
       "courseRefId": "oxford-brookes-university|msc-international-luxury-marketing"
     },
     {
-      "title": "MArch Advanced Architectural Design",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|march-advanced-architectural-design"
-    },
-    {
-      "title": "MSc Digital Media Production",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-digital-media-production"
-    },
-    {
       "title": "MSc Mechanical Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1411,25 +1451,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|msc-mechanical-engineering"
-    },
-    {
-      "title": "MArchD Applied Design in Architecture (ARB and RIBA part 2)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|marchd-applied-design-in-architecture-arb-and-riba-part-2"
     },
     {
       "title": "MSc Quantity Surveying and Commercial Management",
@@ -1453,26 +1474,6 @@
       "courseRefId": "oxford-brookes-university|msc-quantity-surveying-and-commercial-management"
     },
     {
-      "title": "BSc (Hons) Medical Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|bsc-hons-medical-science"
-    },
-    {
       "title": "BSc (Hons) Paramedic Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1491,6 +1492,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|bsc-hons-paramedic-science"
+    },
+    {
+      "title": "BSc (Hons) Medical Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|bsc-hons-medical-science"
     },
     {
       "title": "BA (Hons) Business and Law",
@@ -1673,11 +1694,11 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-accounting-and-finance"
     },
     {
-      "title": "BSc (Hons) Midwifery",
+      "title": "BSc (Hons) Nursing (Children's)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 18250,
+      "tuition": 17250,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1691,7 +1712,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|bsc-hons-midwifery"
+      "courseRefId": "oxford-brookes-university|bsc-hons-nursing-childrens"
     },
     {
       "title": "BSc (Hons) Nursing (Adult)",
@@ -1714,11 +1735,11 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-nursing-adult"
     },
     {
-      "title": "BSc (Hons) Nursing (Children's)",
+      "title": "BSc (Hons) Midwifery",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 17250,
+      "tuition": 18250,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1732,66 +1753,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|bsc-hons-nursing-childrens"
-    },
-    {
-      "title": "BA (Hons) Digital Marketing (Final Year Entry)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 19700,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-digital-marketing-final-year-entry"
-    },
-    {
-      "title": "BA (Hons) Digital Marketing with Placement Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 19700,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-digital-marketing-with-placement-year"
-    },
-    {
-      "title": "BA (Hons) Marketing Management with Placement Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 19700,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2024",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-marketing-management-with-placement-year"
+      "courseRefId": "oxford-brookes-university|bsc-hons-midwifery"
     },
     {
       "title": "BA (Hons) Digital Marketing",
@@ -1816,6 +1778,48 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|ba-hons-digital-marketing"
+    },
+    {
+      "title": "BA (Hons) Digital Marketing with Placement Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 19700,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-digital-marketing-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) Communication, Media and Culture",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-communication-media-and-culture"
     },
     {
       "title": "BA (Hons) Marketing Management",
@@ -1862,23 +1866,23 @@
       "courseRefId": "oxford-brookes-university|llb-hons-law-final-year-entry"
     },
     {
-      "title": "BA (Hons) Marketing Management (with Foundation Year)",
-      "level": "foundation",
+      "title": "BA (Hons) Marketing Management with Placement Year",
+      "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
       "tuition": 19700,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2026"
+        "January 2024",
+        "January 2027"
       ],
       "campuses": [
         "Headington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-marketing-management-with-foundation-year"
+      "courseRefId": "oxford-brookes-university|ba-hons-marketing-management-with-placement-year"
     },
     {
       "title": "BSc (Hons) Digital Media Production",
@@ -1900,6 +1904,43 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-digital-media-production"
     },
     {
+      "title": "BA (Hons) Marketing Management (with Foundation Year)",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 19700,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-marketing-management-with-foundation-year"
+    },
+    {
+      "title": "BA (Hons) Digital Marketing (Final Year Entry)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 19700,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-digital-marketing-final-year-entry"
+    },
+    {
       "title": "BEng (Hons) Electronic Engineering BEng (Final Year Direct Entry)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1917,26 +1958,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|beng-hons-electronic-engineering-beng-final-year-direct-entry"
-    },
-    {
-      "title": "BA (Hons) Communication, Media and Culture",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-communication-media-and-culture"
     },
     {
       "title": "MA Journalism",
@@ -1976,67 +1997,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|foundation-diploma-foundation-in-law"
-    },
-    {
-      "title": "BA (Hons) Architecture",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-architecture"
-    },
-    {
-      "title": "BA (Hons) Film",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-film"
-    },
-    {
-      "title": "BEng (Hons) Electro-Mechanical Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|beng-hons-electro-mechanical-engineering"
     },
     {
       "title": "BEng (Hons) Mechanical Engineering",
@@ -2081,15 +2041,16 @@
       "courseRefId": "oxford-brookes-university|beng-hons-mechanical-engineering-design"
     },
     {
-      "title": "Foundation Diploma in Art and Design",
-      "level": "foundation",
-      "sourceLevel": "Foundation",
-      "duration": "12 Months",
-      "tuition": 16750,
+      "title": "BA (Hons) Film",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15950,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2026",
+        "September 2024",
+        "September 2025",
         "September 2026"
       ],
       "campuses": [
@@ -2097,7 +2058,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|foundation-diploma-in-art-and-design"
+      "courseRefId": "oxford-brookes-university|ba-hons-film"
     },
     {
       "title": "LLB (Hons) Law",
@@ -2118,6 +2079,66 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|llb-hons-law"
+    },
+    {
+      "title": "Foundation Diploma in Art and Design",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 16750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|foundation-diploma-in-art-and-design"
+    },
+    {
+      "title": "BA (Hons) Architecture",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-architecture"
+    },
+    {
+      "title": "BEng (Hons) Electro-Mechanical Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|beng-hons-electro-mechanical-engineering"
     },
     {
       "title": "MSc Professional Development in Health and Social Care",
@@ -2197,6 +2218,27 @@
       "courseRefId": "oxford-brookes-university|msc-international-hospitality-events-and-tourism-management-with-placement-year"
     },
     {
+      "title": "MSc International Hospitality, Events and Tourism Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-international-hospitality-events-and-tourism-management"
+    },
+    {
       "title": "MSc International Hospitality, Event and Tourism Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2219,25 +2261,44 @@
       "courseRefId": "oxford-brookes-university|msc-international-hospitality-event-and-tourism-management"
     },
     {
-      "title": "MSc International Hospitality, Events and Tourism Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
+      "title": "BSc (Hons) Accounting and Economics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2024",
         "September 2025",
-        "September 2026",
-        "January 2026",
-        "January 2027"
+        "September 2026"
       ],
       "campuses": [
         "Headington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-international-hospitality-events-and-tourism-management"
+      "courseRefId": "oxford-brookes-university|bsc-hons-accounting-and-economics"
+    },
+    {
+      "title": "BA (Hons) Marketing and Events Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 14900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-marketing-and-events-management"
     },
     {
       "title": "International Foundation Arts, Humanities and Law",
@@ -2261,46 +2322,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|international-foundation-arts-humanities-and-law"
-    },
-    {
-      "title": "BA (Hons) Marketing and Events Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 14900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-marketing-and-events-management"
-    },
-    {
-      "title": "BSc (Hons) Accounting and Economics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|bsc-hons-accounting-and-economics"
     },
     {
       "title": "MSc International Hotel and Tourism Management with Placement Year",
@@ -2477,22 +2498,42 @@
       "courseRefId": "oxford-brookes-university|ba-hons-business-management-and-international-relations"
     },
     {
-      "title": "PGDip Sustainable Architecture: Evaluation and Design",
+      "title": "MA Education",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "9 Months",
-      "tuition": 18500,
+      "duration": "12 Months",
+      "tuition": 17250,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2027"
+        "September 2026",
+        "September 2025"
       ],
       "campuses": [
         "Headington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|pgdip-sustainable-architecture-evaluation-and-design"
+      "courseRefId": "oxford-brookes-university|ma-education"
+    },
+    {
+      "title": "MSc Human Resource Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-human-resource-management"
     },
     {
       "title": "MSc Sustainable Architecture: Evaluation and Design",
@@ -2516,6 +2557,24 @@
       "courseRefId": "oxford-brookes-university|msc-sustainable-architecture-evaluation-and-design"
     },
     {
+      "title": "PGDip Sustainable Architecture: Evaluation and Design",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "9 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|pgdip-sustainable-architecture-evaluation-and-design"
+    },
+    {
       "title": "MSc Psychology",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2533,44 +2592,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|msc-psychology"
-    },
-    {
-      "title": "MSc Human Resource Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-human-resource-management"
-    },
-    {
-      "title": "MA Education",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2025"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ma-education"
     },
     {
       "title": "MPhil Business and Management",
@@ -2693,25 +2714,6 @@
       "courseRefId": "oxford-brookes-university|ba-hons-media-journalism-and-publishing"
     },
     {
-      "title": "BA (Hons) Primary Teacher Education with QTS (Campus-Based)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-primary-teacher-education-with-qts-campus-based"
-    },
-    {
       "title": "BSc (Hons) Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2770,6 +2772,25 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-sport-physical-activity-and-health-promotion"
     },
     {
+      "title": "BA (Hons) Primary Teacher Education with QTS (Campus-Based)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-primary-teacher-education-with-qts-campus-based"
+    },
+    {
       "title": "MSc Nursing (Mental Health)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2787,6 +2808,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|msc-nursing-mental-health"
+    },
+    {
+      "title": "BA (Hons) Education Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-education-studies"
     },
     {
       "title": "BSc (Hons) Building Surveying",
@@ -2809,26 +2850,6 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-building-surveying"
     },
     {
-      "title": "BSc (Hons) Construction Project Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|bsc-hons-construction-project-management"
-    },
-    {
       "title": "BSc (Hons) Geography",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2849,10 +2870,10 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-geography"
     },
     {
-      "title": "BA (Hons) Education Studies",
+      "title": "BSc (Hons) Construction Project Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "48 Months",
       "tuition": 15950,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -2866,7 +2887,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-education-studies"
+      "courseRefId": "oxford-brookes-university|bsc-hons-construction-project-management"
     },
     {
       "title": "BSc (Hons) Artificial Intelligence",
@@ -2987,26 +3008,6 @@
       "courseRefId": "oxford-brookes-university|ba-hons-communication-media-and-culture-and-english-literature-joint-honours"
     },
     {
-      "title": "BSc (Hons) Criminology and Law",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|bsc-hons-criminology-and-law"
-    },
-    {
       "title": "LLB (Hons) Law with Criminology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3025,6 +3026,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|llb-hons-law-with-criminology"
+    },
+    {
+      "title": "BSc (Hons) Criminology and Law",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|bsc-hons-criminology-and-law"
     },
     {
       "title": "MSc Infrastructure Planning and Sustainable Development",
@@ -3164,28 +3185,6 @@
       "courseRefId": "oxford-brookes-university|ba-hons-fine-art"
     },
     {
-      "title": "BA (Hons) Economics, Politics and International Relations with Placement Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 19700,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-economics-politics-and-international-relations-with-placement-year"
-    },
-    {
       "title": "BA (Hons) Economics, Politics and International Relations",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3211,23 +3210,26 @@
       "courseRefId": "oxford-brookes-university|ba-hons-economics-politics-and-international-relations"
     },
     {
-      "title": "BA (Hons) Education Studies and English Literature (Joint Honours)",
+      "title": "BA (Hons) Economics, Politics and International Relations with Placement Year",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17250,
+      "duration": "48 Months",
+      "tuition": 19700,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
-        "September 2026"
+        "September 2024",
+        "January 2024",
+        "September 2026",
+        "January 2027"
       ],
       "campuses": [
         "Headington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-education-studies-and-english-literature-joint-honours"
+      "courseRefId": "oxford-brookes-university|ba-hons-economics-politics-and-international-relations-with-placement-year"
     },
     {
       "title": "MBiol Biological Sciences (Genetics and Genomics)",
@@ -3247,6 +3249,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|mbiol-biological-sciences-genetics-and-genomics"
+    },
+    {
+      "title": "BA (Hons) Education Studies and English Literature (Joint Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-education-studies-and-english-literature-joint-honours"
     },
     {
       "title": "BSc (Hons) Biological Sciences (Genetics and Genomics)",
@@ -3308,6 +3329,122 @@
       "courseRefId": "oxford-brookes-university|ba-hons-fine-art-and-history-of-art"
     },
     {
+      "title": "MSc Applied Sport and Exercise Nutrition",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2025"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-applied-sport-and-exercise-nutrition"
+    },
+    {
+      "title": "MA Interior Architecture",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ma-interior-architecture"
+    },
+    {
+      "title": "MSc Primate Conservation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-primate-conservation"
+    },
+    {
+      "title": "MSc Conservation Ecology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2025"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-conservation-ecology"
+    },
+    {
+      "title": "LLM International Law",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|llm-international-law"
+    },
+    {
+      "title": "MSc Electric Motorsport",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 19200,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-electric-motorsport"
+    },
+    {
       "title": "MA Advanced Practice",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3362,94 +3499,11 @@
       "courseRefId": "oxford-brookes-university|pgdip-real-estate"
     },
     {
-      "title": "MSc Real Estate",
+      "title": "MSc Applied Human Nutrition",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 19600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2026",
-        "September 2025",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-real-estate"
-    },
-    {
-      "title": "MSc Electric Motorsport",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19200,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-electric-motorsport"
-    },
-    {
-      "title": "MSc Racing Engine Systems",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2026",
-        "September 2025",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-racing-engine-systems"
-    },
-    {
-      "title": "MSc Spatial Planning",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-spatial-planning"
-    },
-    {
-      "title": "MA Interior Architecture",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18500,
+      "tuition": 18900,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3461,46 +3515,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ma-interior-architecture"
-    },
-    {
-      "title": "MSc Applied Sport and Exercise Nutrition",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2025"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-applied-sport-and-exercise-nutrition"
-    },
-    {
-      "title": "LLM International Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|llm-international-law"
+      "courseRefId": "oxford-brookes-university|msc-applied-human-nutrition"
     },
     {
       "title": "MSc Dietetics (Pre-Registration)",
@@ -3540,80 +3555,62 @@
       "courseRefId": "oxford-brookes-university|pgdip-social-work"
     },
     {
-      "title": "MA International Relations",
+      "title": "MSc Physiotherapy (pre-registration)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ma-international-relations"
-    },
-    {
-      "title": "MA International Security",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ma-international-security"
-    },
-    {
-      "title": "MSc Applied Human Nutrition",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-applied-human-nutrition"
-    },
-    {
-      "title": "MSc Conservation Ecology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
+      "duration": "24 Months",
+      "tuition": 19600,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2026",
-        "September 2025"
+        "September 2027"
       ],
       "campuses": [
         "Headington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-conservation-ecology"
+      "courseRefId": "oxford-brookes-university|msc-physiotherapy-pre-registration"
+    },
+    {
+      "title": "PGCert Shelter after Disaster",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "4 Months",
+      "tuition": 6150,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|pgcert-shelter-after-disaster"
+    },
+    {
+      "title": "MA Social work",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ma-social-work"
     },
     {
       "title": "MSc Historic Conservation",
@@ -3673,26 +3670,7 @@
       "courseRefId": "oxford-brookes-university|ma-urban-design"
     },
     {
-      "title": "MA Global Development and Humanitarian Practice",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ma-global-development-and-humanitarian-practice"
-    },
-    {
-      "title": "MSc Primate Conservation",
+      "title": "MA International Relations",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -3708,13 +3686,13 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-primate-conservation"
+      "courseRefId": "oxford-brookes-university|ma-international-relations"
     },
     {
-      "title": "MA Social work",
+      "title": "MA International Security",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
+      "duration": "12 Months",
       "tuition": 18250,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -3727,7 +3705,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ma-social-work"
+      "courseRefId": "oxford-brookes-university|ma-international-security"
     },
     {
       "title": "MSc Automotive Engineering with Electric Vehicles",
@@ -3747,6 +3725,46 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|msc-automotive-engineering-with-electric-vehicles"
+    },
+    {
+      "title": "MSc Spatial Planning",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|msc-spatial-planning"
+    },
+    {
+      "title": "MA Global Development and Humanitarian Practice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ma-global-development-and-humanitarian-practice"
     },
     {
       "title": "MSc Motorsport Engineering",
@@ -3788,82 +3806,46 @@
       "courseRefId": "oxford-brookes-university|msc-occupational-therapy-pre-registration"
     },
     {
-      "title": "MSc Physiotherapy (pre-registration)",
+      "title": "MSc Real Estate",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
+      "duration": "12 Months",
       "tuition": 19600,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2026",
-        "September 2027"
+        "January 2026",
+        "September 2025",
+        "January 2027"
       ],
       "campuses": [
         "Headington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|msc-physiotherapy-pre-registration"
+      "courseRefId": "oxford-brookes-university|msc-real-estate"
     },
     {
-      "title": "PGCert Shelter after Disaster",
+      "title": "MSc Racing Engine Systems",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "4 Months",
-      "tuition": 6150,
+      "duration": "12 Months",
+      "tuition": 19600,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2026",
+        "January 2026",
         "September 2025",
-        "September 2026"
+        "January 2027"
       ],
       "campuses": [
         "Headington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|pgcert-shelter-after-disaster"
-    },
-    {
-      "title": "BA (Hons) Japanese Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-japanese-studies"
-    },
-    {
-      "title": "BA (Hons) Modern Languages with Translation",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-modern-languages-with-translation"
+      "courseRefId": "oxford-brookes-university|msc-racing-engine-systems"
     },
     {
       "title": "BA (Hons) Social Work",
@@ -3925,6 +3907,45 @@
       "courseRefId": "oxford-brookes-university|mbiol-biological-sciences"
     },
     {
+      "title": "BA (Hons) Japanese Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-japanese-studies"
+    },
+    {
+      "title": "BSc (Hons) Nutrition Science (Final Year Entry)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|bsc-hons-nutrition-science-final-year-entry"
+    },
+    {
       "title": "BA (Hons) Anthropology and English Literature (Joint Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3963,34 +3984,16 @@
       "courseRefId": "oxford-brookes-university|ba-hons-anthropology-and-history-joint-honours"
     },
     {
-      "title": "BA (Hons) Anthropology and History of Art (Joint Honours)",
+      "title": "BSc (Hons) Sport and Exercise Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 17250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-anthropology-and-history-of-art-joint-honours"
-    },
-    {
-      "title": "BSc (Hons) Nutrition Science (Final Year Entry)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
       "tuition": 18250,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
+        "September 2024",
         "September 2026"
       ],
       "campuses": [
@@ -3998,25 +4001,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|bsc-hons-nutrition-science-final-year-entry"
-    },
-    {
-      "title": "BA (Hons) Film Production",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-film-production"
+      "courseRefId": "oxford-brookes-university|bsc-hons-sport-and-exercise-science"
     },
     {
       "title": "MBiol Biological Sciences (Human Biosciences)",
@@ -4057,6 +4042,24 @@
       "courseRefId": "oxford-brookes-university|mbiol-biological-sciences-zoology"
     },
     {
+      "title": "BA (Hons) Film Production",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-film-production"
+    },
+    {
       "title": "BSc (Hons) Physiotherapy",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4078,16 +4081,15 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-physiotherapy"
     },
     {
-      "title": "BSc (Hons) Sport and Exercise Science",
+      "title": "BA (Hons) Anthropology and History of Art (Joint Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 18250,
+      "tuition": 17250,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
-        "September 2024",
         "September 2026"
       ],
       "campuses": [
@@ -4095,10 +4097,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|bsc-hons-sport-and-exercise-science"
+      "courseRefId": "oxford-brookes-university|ba-hons-anthropology-and-history-of-art-joint-honours"
     },
     {
-      "title": "BA (Hons) English Literature with Creative Writing",
+      "title": "BA (Hons) Modern Languages with Translation",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -4106,8 +4108,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
+        "September 2024",
         "September 2026"
       ],
       "campuses": [
@@ -4115,67 +4117,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-english-literature-with-creative-writing"
-    },
-    {
-      "title": "BA (Hons) History",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-history"
-    },
-    {
-      "title": "BA (Hons) History of Art",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-history-of-art"
-    },
-    {
-      "title": "BA (Hons) Interior Architecture",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-interior-architecture"
+      "courseRefId": "oxford-brookes-university|ba-hons-modern-languages-with-translation"
     },
     {
       "title": "BA (Hons) Philosophy",
@@ -4281,66 +4223,6 @@
       "courseRefId": "oxford-brookes-university|beng-hons-motorsport-technology"
     },
     {
-      "title": "BA (Hons) Early Childhood Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 15950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-early-childhood-studies"
-    },
-    {
-      "title": "BA (Hons) Early Childhood Studies (Top-Up)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 9900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-early-childhood-studies-top-up"
-    },
-    {
-      "title": "BA (Hons) English Literature",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|ba-hons-english-literature"
-    },
-    {
       "title": "BSc (Hons) Anthropology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4359,6 +4241,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
       "courseRefId": "oxford-brookes-university|bsc-hons-anthropology"
+    },
+    {
+      "title": "BSc (Hons) Biological Sciences (Zoology)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|bsc-hons-biological-sciences-zoology"
     },
     {
       "title": "BSc (Hons) Biological Sciences",
@@ -4401,26 +4303,6 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-biological-sciences-human-biosciences"
     },
     {
-      "title": "BSc (Hons) Biological Sciences (Zoology)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Headington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|bsc-hons-biological-sciences-zoology"
-    },
-    {
       "title": "BSc (Hons) Criminology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4441,7 +4323,67 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-criminology"
     },
     {
-      "title": "BSc (Hons) Nutrition",
+      "title": "BA (Hons) English Literature with Creative Writing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-english-literature-with-creative-writing"
+    },
+    {
+      "title": "BA (Hons) History",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-history"
+    },
+    {
+      "title": "BA (Hons) History of Art",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-history-of-art"
+    },
+    {
+      "title": "BA (Hons) Interior Architecture",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -4458,7 +4400,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
-      "courseRefId": "oxford-brookes-university|bsc-hons-nutrition"
+      "courseRefId": "oxford-brookes-university|ba-hons-interior-architecture"
     },
     {
       "title": "BSc (Hons) Occupational Therapy",
@@ -4501,6 +4443,86 @@
       "courseRefId": "oxford-brookes-university|bsc-hons-real-estate"
     },
     {
+      "title": "BA (Hons) Early Childhood Studies (Top-Up)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 9900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-early-childhood-studies-top-up"
+    },
+    {
+      "title": "BA (Hons) English Literature",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-english-literature"
+    },
+    {
+      "title": "BA (Hons) Early Childhood Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 15950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|ba-hons-early-childhood-studies"
+    },
+    {
+      "title": "BSc (Hons) Nutrition",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Headington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/oxford-brookes-university",
+      "courseRefId": "oxford-brookes-university|bsc-hons-nutrition"
+    },
+    {
       "title": "Pre-Master's Diploma - English Language and Study Skills",
       "level": "foundation",
       "sourceLevel": "PreMasters",
@@ -4533,7 +4555,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",

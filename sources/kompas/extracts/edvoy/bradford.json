@@ -3,12 +3,13 @@
   "name": "University of Bradford",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-  "scrapedAt": "2026-07-22T15:42:52.453Z",
+  "scrapedAt": "2026-08-23T13:11:40.035Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-bradford",
   "country": "United Kingdom",
+  "city": null,
   "matchMethod": "as-is/exact-name",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
@@ -124,6 +125,28 @@
       "courseRefId": "university-of-bradford|msc-cyber-security"
     },
     {
+      "title": "MSc Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21490,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|msc-management"
+    },
+    {
       "title": "MSc International Business and Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -145,28 +168,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|msc-international-business-and-management"
-    },
-    {
-      "title": "MSc Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21490,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|msc-management"
     },
     {
       "title": "MSc Engineering Management",
@@ -213,26 +214,6 @@
       "courseRefId": "university-of-bradford|msc-financial-technology-fintech"
     },
     {
-      "title": "LLM Technology and Artificial Intelligence Law LLM",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 15700,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|llm-technology-and-artificial-intelligence-law-llm"
-    },
-    {
       "title": "LLM Technology and Artificial Intelligence Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -245,7 +226,8 @@
         "September 2025",
         "September 2026",
         "January 2025",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Bradford Campus"
@@ -267,7 +249,8 @@
         "September 2025",
         "September 2026",
         "January 2025",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Bradford Campus"
@@ -363,26 +346,6 @@
       "courseRefId": "university-of-bradford|llm-international-banking-and-financial-technology-law"
     },
     {
-      "title": "BEng (Hons) Software Engineering (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16890,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|beng-hons-software-engineering-with-placement-year"
-    },
-    {
       "title": "BSc (Hons) Computer Science (with a placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -401,6 +364,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|bsc-hons-computer-science-with-a-placement-year"
+    },
+    {
+      "title": "BEng (Hons) Software Engineering (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16890,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|beng-hons-software-engineering-with-placement-year"
     },
     {
       "title": "BSc (Hons) Computer Science",
@@ -423,26 +406,6 @@
       "courseRefId": "university-of-bradford|bsc-hons-computer-science"
     },
     {
-      "title": "BSc (Hons) Computer Science for Cyber Security (with a placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16890,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-computer-science-for-cyber-security-with-a-placement-year"
-    },
-    {
       "title": "BSc (Hons) Computer Science for Cyber Security",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -461,6 +424,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|bsc-hons-computer-science-for-cyber-security"
+    },
+    {
+      "title": "BSc (Hons) Computer Science for Cyber Security (with a placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16890,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|bsc-hons-computer-science-for-cyber-security-with-a-placement-year"
     },
     {
       "title": "BSc (Hons) International Business and Management",
@@ -483,26 +466,6 @@
       "courseRefId": "university-of-bradford|bsc-hons-international-business-and-management"
     },
     {
-      "title": "BSc (Hons) Business and Management (with a placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16100,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-business-and-management-with-a-placement-year"
-    },
-    {
       "title": "BSc (Hons) Business and Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -521,6 +484,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|bsc-hons-business-and-management"
+    },
+    {
+      "title": "BSc (Hons) Business and Management (with a placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16100,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|bsc-hons-business-and-management-with-a-placement-year"
     },
     {
       "title": "MSc Marketing",
@@ -564,6 +547,50 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|mlaw-hons-legal-theory-and-solicitors-practice"
+    },
+    {
+      "title": "MSc Advanced Mechanical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25389,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|msc-advanced-mechanical-engineering"
+    },
+    {
+      "title": "LLM International Commercial Law",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21490,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|llm-international-commercial-law"
     },
     {
       "title": "LLM International Legal Studies",
@@ -630,50 +657,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|msc-digital-and-strategic-marketing"
-    },
-    {
-      "title": "MSc Advanced Mechanical Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25389,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|msc-advanced-mechanical-engineering"
-    },
-    {
-      "title": "LLM International Commercial Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21490,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|llm-international-commercial-law"
     },
     {
       "title": "BSc (Hons) Clinical Sciences with Placement Year",
@@ -830,7 +813,8 @@
         "September 2024",
         "September 2026",
         "January 2025",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Bradford Campus"
@@ -1064,26 +1048,6 @@
       "courseRefId": "university-of-bradford|bsc-hons-international-business-and-management-with-a-placement-year"
     },
     {
-      "title": "BSc (Hons) Nursing (Adult)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16890,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-nursing-adult"
-    },
-    {
       "title": "BSc (Hons) Nursing (Adult) (Harrogate and District NHS Trust)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1102,6 +1066,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|bsc-hons-nursing-adult-harrogate-and-district-nhs-trust"
+    },
+    {
+      "title": "BSc (Hons) Nursing (Adult)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16890,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|bsc-hons-nursing-adult"
     },
     {
       "title": "MSc / PGDip / PGCert Construction and Project Management",
@@ -1147,6 +1131,46 @@
       "courseRefId": "university-of-bradford|md-doctorate-in-medicine"
     },
     {
+      "title": "MEng Mechanical Engineering (with Placement Year)",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 16890,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|meng-mechanical-engineering-with-placement-year"
+    },
+    {
+      "title": "LLB (Hons) Law (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16100,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|llb-hons-law-with-placement-year"
+    },
+    {
       "title": "BSc (Hons) Marketing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1165,26 +1189,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|bsc-hons-marketing"
-    },
-    {
-      "title": "BSc (Hons) Marketing (with Placement Year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16100,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-marketing-with-placement-year"
     },
     {
       "title": "MEng Mechanical Engineering",
@@ -1227,7 +1231,7 @@
       "courseRefId": "university-of-bradford|llb-hons-law"
     },
     {
-      "title": "LLB (Hons) Law (with placement year)",
+      "title": "BSc (Hons) Marketing (with Placement Year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1244,27 +1248,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|llb-hons-law-with-placement-year"
-    },
-    {
-      "title": "MEng Mechanical Engineering (with Placement Year)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 16890,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|meng-mechanical-engineering-with-placement-year"
+      "courseRefId": "university-of-bradford|bsc-hons-marketing-with-placement-year"
     },
     {
       "title": "BEng (Hons) Mechanical Engineering (with Placement Year)",
@@ -1319,7 +1303,8 @@
         "September 2025",
         "September 2026",
         "January 2025",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Bradford Campus"
@@ -1327,28 +1312,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|msc-advanced-civil-and-structural-engineering"
-    },
-    {
-      "title": "MSc Economics and Finance for Development",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21490,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "January 2025",
-        "January 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|msc-economics-and-finance-for-development"
     },
     {
       "title": "MSc Human Resource Management (CIPD Accreditation)",
@@ -1371,6 +1334,28 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|msc-human-resource-management-cipd-accreditation"
+    },
+    {
+      "title": "MSc Economics and Finance for Development",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21490,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2025",
+        "January 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|msc-economics-and-finance-for-development"
     },
     {
       "title": "MSc Psychology",
@@ -1406,7 +1391,8 @@
         "September 2025",
         "September 2026",
         "January 2025",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Bradford Campus"
@@ -1436,26 +1422,6 @@
       "courseRefId": "university-of-bradford|bsc-hons-clinical-sciences"
     },
     {
-      "title": "MEng (Hons) Biomedical Engineering",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16890,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|meng-hons-biomedical-engineering"
-    },
-    {
       "title": "MEng (Hons) Biomedical Engineering with Placement Year",
       "level": "master",
       "sourceLevel": "Undergraduate",
@@ -1474,6 +1440,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|meng-hons-biomedical-engineering-with-placement-year"
+    },
+    {
+      "title": "MEng (Hons) Biomedical Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16890,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|meng-hons-biomedical-engineering"
     },
     {
       "title": "MSc Psychology of Health and Wellbeing",
@@ -1601,6 +1587,26 @@
       "courseRefId": "university-of-bradford|bsc-hons-economics-with-a-placement-year"
     },
     {
+      "title": "MEng (Hons) Civil and Structural Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16890,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|meng-hons-civil-and-structural-engineering"
+    },
+    {
       "title": "MEng (Hons) Civil and Structural Engineering with Placement Year",
       "level": "master",
       "sourceLevel": "Undergraduate",
@@ -1619,6 +1625,86 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|meng-hons-civil-and-structural-engineering-with-placement-year"
+    },
+    {
+      "title": "BSc (Hons) Psychology with Placement Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16100,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|bsc-hons-psychology-with-placement-year"
+    },
+    {
+      "title": "BSc (Hons) Psychology with Counselling with Placement Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16100,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|bsc-hons-psychology-with-counselling-with-placement-year"
+    },
+    {
+      "title": "MEng (Hons) Chemical Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16890,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|meng-hons-chemical-engineering"
+    },
+    {
+      "title": "LLM International Corporate Law and Governance LLM",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21490,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|llm-international-corporate-law-and-governance-llm"
     },
     {
       "title": "MEng (Hons) Chemical Engineering with Placement Year",
@@ -1663,50 +1749,10 @@
       "courseRefId": "university-of-bradford|llm-international-corporate-law-and-governance"
     },
     {
-      "title": "MEng (Hons) Chemical Engineering",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16890,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|meng-hons-chemical-engineering"
-    },
-    {
-      "title": "MEng (Hons) Civil and Structural Engineering",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16890,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|meng-hons-civil-and-structural-engineering"
-    },
-    {
-      "title": "BSc (Hons) Psychology with Placement Year",
+      "title": "BSc (Hons) Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "36 Months",
       "tuition": 16100,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -1720,27 +1766,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-psychology-with-placement-year"
-    },
-    {
-      "title": "BSc (Hons) Psychology with Counselling with Placement Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16100,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-psychology-with-counselling-with-placement-year"
+      "courseRefId": "university-of-bradford|bsc-hons-psychology"
     },
     {
       "title": "BSc (Hons) Psychology with Counselling",
@@ -1761,26 +1787,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|bsc-hons-psychology-with-counselling"
-    },
-    {
-      "title": "LLM International Corporate Law and Governance LLM",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21490,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|llm-international-corporate-law-and-governance-llm"
     },
     {
       "title": "LLM International Human Rights Law and Development",
@@ -1805,24 +1811,26 @@
       "courseRefId": "university-of-bradford|llm-international-human-rights-law-and-development"
     },
     {
-      "title": "BSc (Hons) Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16100,
+      "title": "MSc Drug Toxicology and Safety Pharmacology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25389,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
-        "September 2026"
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026"
       ],
       "campuses": [
         "Bradford Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-psychology"
+      "courseRefId": "university-of-bradford|msc-drug-toxicology-and-safety-pharmacology"
     },
     {
       "title": "MSc Social Sciences Research for Healthcare",
@@ -1846,7 +1854,7 @@
       "courseRefId": "university-of-bradford|msc-social-sciences-research-for-healthcare"
     },
     {
-      "title": "MSc Drug Toxicology and Safety Pharmacology",
+      "title": "MSc Advanced Chemical and Petroleum Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -1865,7 +1873,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|msc-drug-toxicology-and-safety-pharmacology"
+      "courseRefId": "university-of-bradford|msc-advanced-chemical-and-petroleum-engineering"
     },
     {
       "title": "LLM Natural Resources and Environmental Law and Policy",
@@ -1888,28 +1896,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|llm-natural-resources-and-environmental-law-and-policy"
-    },
-    {
-      "title": "MSc Advanced Chemical and Petroleum Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25389,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|msc-advanced-chemical-and-petroleum-engineering"
     },
     {
       "title": "BSc (Hons) Nursing (Mental Health)",
@@ -1952,7 +1938,7 @@
       "courseRefId": "university-of-bradford|bsc-hons-psychology-and-criminology"
     },
     {
-      "title": "MA International Development Management with 3-month Placement",
+      "title": "MA Peace, Conflict and Development With Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "15 Months",
@@ -1961,15 +1947,15 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
-        "September 2024",
-        "September 2026"
+        "September 2026",
+        "January 2026"
       ],
       "campuses": [
         "Bradford Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|ma-international-development-management-with-3-month-placement"
+      "courseRefId": "university-of-bradford|ma-peace-conflict-and-development-with-placement"
     },
     {
       "title": "MSc Forensic Archaeology and Crime Scene Investigation",
@@ -1991,6 +1977,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|msc-forensic-archaeology-and-crime-scene-investigation"
+    },
+    {
+      "title": "MA International Development Management with 3-month Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "15 Months",
+      "tuition": 21490,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|ma-international-development-management-with-3-month-placement"
     },
     {
       "title": "MSc Renewable and Sustainable Energy",
@@ -2015,6 +2021,28 @@
       "courseRefId": "university-of-bradford|msc-renewable-and-sustainable-energy"
     },
     {
+      "title": "MSc Pharmaceutical Technology and Medicines Control",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25389,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2025",
+        "January 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|msc-pharmaceutical-technology-and-medicines-control"
+    },
+    {
       "title": "MSc Sustainable Development",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2035,68 +2063,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|msc-sustainable-development"
-    },
-    {
-      "title": "MA Peace, Conflict and Development With Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "15 Months",
-      "tuition": 21490,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|ma-peace-conflict-and-development-with-placement"
-    },
-    {
-      "title": "MA Social Work",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 21490,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|ma-social-work"
-    },
-    {
-      "title": "MSc Archaeological Sciences",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "January 2025"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|msc-archaeological-sciences"
     },
     {
       "title": "MA Peace, Resilience and Social Justice",
@@ -2121,6 +2087,28 @@
       "courseRefId": "university-of-bradford|ma-peace-resilience-and-social-justice"
     },
     {
+      "title": "MA International Development Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21490,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2025",
+        "January 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|ma-international-development-management"
+    },
+    {
       "title": "MPH Public Health",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2140,28 +2128,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|mph-public-health"
-    },
-    {
-      "title": "MSc Pharmaceutical Technology and Medicines Control",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25389,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "January 2025",
-        "January 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|msc-pharmaceutical-technology-and-medicines-control"
     },
     {
       "title": "MA International Relations and Security Studies",
@@ -2186,26 +2152,46 @@
       "courseRefId": "university-of-bradford|ma-international-relations-and-security-studies"
     },
     {
-      "title": "MA International Development Management",
+      "title": "MSc Archaeological Sciences",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 21490,
+      "tuition": 19500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
         "September 2024",
         "September 2026",
-        "January 2025",
-        "January 2026"
+        "January 2025"
       ],
       "campuses": [
         "Bradford Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|ma-international-development-management"
+      "courseRefId": "university-of-bradford|msc-archaeological-sciences"
+    },
+    {
+      "title": "MA Social Work",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 21490,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|ma-social-work"
     },
     {
       "title": "MA Peace, Conflict and Development",
@@ -2228,6 +2214,88 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|ma-peace-conflict-and-development"
+    },
+    {
+      "title": "BSc (Hons) Pharmaceutical and Cosmetic Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16890,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|bsc-hons-pharmaceutical-and-cosmetic-science"
+    },
+    {
+      "title": "BSc (Hons) Physiotherapy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17312,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|bsc-hons-physiotherapy"
+    },
+    {
+      "title": "MPharm (Hons) Pharmacy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17312,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|mpharm-hons-pharmacy"
+    },
+    {
+      "title": "BA (Hons) Working with Children, Young People and Families with Placement Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 20538,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|ba-hons-working-with-children-young-people-and-families-with-placement-year"
     },
     {
       "title": "BSc (Hons) Forensic Science",
@@ -2270,69 +2338,7 @@
       "courseRefId": "university-of-bradford|ba-hons-social-work"
     },
     {
-      "title": "BA (Hons) Working with Children, Young People and Families with Placement Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 20538,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|ba-hons-working-with-children-young-people-and-families-with-placement-year"
-    },
-    {
-      "title": "MPharm (Hons) Pharmacy",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17312,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|mpharm-hons-pharmacy"
-    },
-    {
-      "title": "BSc (Hons) Physiotherapy",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17312,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-physiotherapy"
-    },
-    {
-      "title": "BSc (Hons) Pharmaceutical and Cosmetic Science",
+      "title": "BSc (Hons) Occupational Therapy",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -2340,8 +2346,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
+        "September 2025",
         "September 2026"
       ],
       "campuses": [
@@ -2349,7 +2355,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-pharmaceutical-and-cosmetic-science"
+      "courseRefId": "university-of-bradford|bsc-hons-occupational-therapy"
     },
     {
       "title": "BSc (Hons) Archaeology",
@@ -2372,46 +2378,6 @@
       "courseRefId": "university-of-bradford|bsc-hons-archaeology"
     },
     {
-      "title": "BSc (Hons) Archaeology (with a placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16890,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-archaeology-with-a-placement-year"
-    },
-    {
-      "title": "BSc (Hons) Occupational Therapy",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16890,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-occupational-therapy"
-    },
-    {
       "title": "BSc (Hons) Forensic Science (with a placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2430,6 +2396,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|bsc-hons-forensic-science-with-a-placement-year"
+    },
+    {
+      "title": "BSc (Hons) Archaeology (with a placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16890,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|bsc-hons-archaeology-with-a-placement-year"
     },
     {
       "title": "MSc Artificial Intelligence and Space Technology",
@@ -2494,6 +2480,48 @@
       "courseRefId": "university-of-bradford|msc-economics-and-finance-for-development-with-placement"
     },
     {
+      "title": "MA International Development Management With Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "17 Months",
+      "tuition": 21490,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|ma-international-development-management-with-placement"
+    },
+    {
+      "title": "MA International Relations and Security Studies with Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "17 Months",
+      "tuition": 21490,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|ma-international-relations-and-security-studies-with-placement"
+    },
+    {
       "title": "MA Peacebuilding and Conflict Resolution",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2536,7 +2564,7 @@
       "courseRefId": "university-of-bradford|ma-peacebuilding-and-conflict-resolution-with-placement"
     },
     {
-      "title": "MA International Development Management With Placement",
+      "title": "MSc Sustainable Development with Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "17 Months",
@@ -2554,7 +2582,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|ma-international-development-management-with-placement"
+      "courseRefId": "university-of-bradford|msc-sustainable-development-with-placement"
     },
     {
       "title": "MA Peace, Resilience and Social Justice with Placement",
@@ -2576,48 +2604,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
       "courseRefId": "university-of-bradford|ma-peace-resilience-and-social-justice-with-placement"
-    },
-    {
-      "title": "MA International Relations and Security Studies with Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "17 Months",
-      "tuition": 21490,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|ma-international-relations-and-security-studies-with-placement"
-    },
-    {
-      "title": "MSc Sustainable Development with Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "17 Months",
-      "tuition": 21490,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|msc-sustainable-development-with-placement"
     },
     {
       "title": "MSc Clinical Pharmacy and Healthcare Leadership (International)",
@@ -2721,6 +2707,25 @@
       "courseRefId": "university-of-bradford|beng-hons-software-and-artificial-intelligence-engineering"
     },
     {
+      "title": "BSc (Hons) Public Health and Population Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16100,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Bradford Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
+      "courseRefId": "university-of-bradford|bsc-hons-public-health-and-population-studies"
+    },
+    {
       "title": "MSc Artificial Intelligence Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2741,25 +2746,6 @@
       "courseRefId": "university-of-bradford|msc-artificial-intelligence-engineering"
     },
     {
-      "title": "BSc (Hons) Public Health and Population Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16100,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "Bradford Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-bradford",
-      "courseRefId": "university-of-bradford|bsc-hons-public-health-and-population-studies"
-    },
-    {
       "title": "Pre-sessional English Language Programme (PREP)",
       "level": "language",
       "sourceLevel": "PresessionalEnglish",
@@ -2768,7 +2754,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",

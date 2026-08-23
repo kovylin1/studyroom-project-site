@@ -3,13 +3,14 @@
   "name": "Dublin City University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-  "scrapedAt": "2026-07-22T15:42:52.196Z",
+  "scrapedAt": "2026-08-23T13:11:39.827Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "dublin-city-university",
   "country": "Ireland",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -34,7 +35,7 @@
       "courseRefId": "dublin-city-university|computer-science"
     },
     {
-      "title": "MSc in Computing (with Major Options)",
+      "title": "MSc in Computing-Data Analytics",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -42,9 +43,6 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
         "January 2027"
       ],
       "campuses": [
@@ -52,7 +50,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-computing-with-major-options"
+      "courseRefId": "dublin-city-university|msc-in-computing-data-analytics"
     },
     {
       "title": "Multimedia",
@@ -73,6 +71,27 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
       "courseRefId": "dublin-city-university|multimedia"
+    },
+    {
+      "title": "MSc in Computing (with Major Options)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|msc-in-computing-with-major-options"
     },
     {
       "title": "Data Science",
@@ -115,66 +134,6 @@
       "courseRefId": "dublin-city-university|computing-for-business"
     },
     {
-      "title": "Global Business (Canada)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|global-business-canada"
-    },
-    {
-      "title": "Global Business (Spain)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|global-business-spain"
-    },
-    {
-      "title": "Digital Business and Innovation",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|digital-business-and-innovation"
-    },
-    {
       "title": "Business Studies International",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -193,6 +152,51 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
       "courseRefId": "dublin-city-university|business-studies-international"
+    },
+    {
+      "title": "MSc in Management (Business)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 23000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|msc-in-management-business"
+    },
+    {
+      "title": "MSc in Management (Strategy)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 23000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|msc-in-management-strategy"
     },
     {
       "title": "Global Business (France)",
@@ -275,55 +279,11 @@
       "courseRefId": "dublin-city-university|global-business-germany"
     },
     {
-      "title": "MSc in Management (Business)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 23000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-management-business"
-    },
-    {
-      "title": "MSc in Management (Strategy)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 23000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-management-strategy"
-    },
-    {
-      "title": "Health and Society",
+      "title": "Global Business (Spain)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16900,
+      "duration": "48 Months",
+      "tuition": 17000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -336,14 +296,14 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|health-and-society"
+      "courseRefId": "dublin-city-university|global-business-spain"
     },
     {
-      "title": "Common Entry into Engineering",
+      "title": "Digital Business and Innovation",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 17900,
+      "duration": "48 Months",
+      "tuition": 17000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -356,14 +316,14 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|common-entry-into-engineering"
+      "courseRefId": "dublin-city-university|digital-business-and-innovation"
     },
     {
-      "title": "MSc in Diagnostics and Precision Medicine",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 23000,
+      "title": "Global Business (Canada)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -376,7 +336,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-diagnostics-and-precision-medicine"
+      "courseRefId": "dublin-city-university|global-business-canada"
     },
     {
       "title": "MSc in Finance",
@@ -422,6 +382,46 @@
       "courseRefId": "dublin-city-university|msc-in-science-and-health-communication"
     },
     {
+      "title": "Health and Society",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16900,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|health-and-society"
+    },
+    {
+      "title": "Common Entry into Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 17900,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|common-entry-into-engineering"
+    },
+    {
       "title": "Sport Science and Health",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -440,6 +440,49 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
       "courseRefId": "dublin-city-university|sport-science-and-health"
+    },
+    {
+      "title": "MSc in Diagnostics and Precision Medicine",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 23000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|msc-in-diagnostics-and-precision-medicine"
+    },
+    {
+      "title": "MSc in Electronic & Computer Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2024",
+        "September 2025",
+        "January 2025",
+        "September 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|msc-in-electronic-computer-technology"
     },
     {
       "title": "Electronic and Computer Engineering",
@@ -483,29 +526,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
       "courseRefId": "dublin-city-university|meng-in-electronic-and-computer-engineering"
-    },
-    {
-      "title": "MSc in Electronic & Computer Technology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2024",
-        "September 2025",
-        "January 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-electronic-computer-technology"
     },
     {
       "title": "MSc in Electronic Commerce (Business)",
@@ -628,6 +648,25 @@
       "courseRefId": "dublin-city-university|accounting-and-finance"
     },
     {
+      "title": "International Foundation Year Engineering Stream",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 14100,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|international-foundation-year-engineering-stream"
+    },
+    {
       "title": "International Foundation Year Business Stream",
       "level": "foundation",
       "sourceLevel": "Foundation",
@@ -648,23 +687,24 @@
       "courseRefId": "dublin-city-university|international-foundation-year-business-stream"
     },
     {
-      "title": "International Foundation Year Engineering Stream",
-      "level": "foundation",
-      "sourceLevel": "Foundation",
-      "duration": "12 Months",
-      "tuition": 14100,
+      "title": "Nursing (Children's and General integrated)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "54 Months",
+      "tuition": 23000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026",
-        "September 2027"
+        "September 2024",
+        "September 2025",
+        "September 2026"
       ],
       "campuses": [
         "DCU Glasnevin Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|international-foundation-year-engineering-stream"
+      "courseRefId": "dublin-city-university|nursing-childrens-and-general-integrated"
     },
     {
       "title": "Nursing (General)",
@@ -687,11 +727,11 @@
       "courseRefId": "dublin-city-university|nursing-general"
     },
     {
-      "title": "Nursing (Children's and General integrated)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "54 Months",
-      "tuition": 23000,
+      "title": "LLM",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 15000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -704,7 +744,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|nursing-childrens-and-general-integrated"
+      "courseRefId": "dublin-city-university|llm"
     },
     {
       "title": "Arts: Joint Honours (Law)",
@@ -767,11 +807,11 @@
       "courseRefId": "dublin-city-university|bcl-law-and-society"
     },
     {
-      "title": "LLM",
+      "title": "MSc in Public Relations and Strategic Communications",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 15000,
+      "tuition": 17200,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -784,67 +824,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|llm"
-    },
-    {
-      "title": "Communication Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|communication-studies"
-    },
-    {
-      "title": "Marketing, Innovation and Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|marketing-innovation-and-technology"
-    },
-    {
-      "title": "MSc in Digital Marketing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 23000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-digital-marketing"
+      "courseRefId": "dublin-city-university|msc-in-public-relations-and-strategic-communications"
     },
     {
       "title": "MSc in Emerging Media",
@@ -867,11 +847,11 @@
       "courseRefId": "dublin-city-university|msc-in-emerging-media"
     },
     {
-      "title": "MSc in Public Relations and Strategic Communications",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17200,
+      "title": "Communication Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17300,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -884,7 +864,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-public-relations-and-strategic-communications"
+      "courseRefId": "dublin-city-university|communication-studies"
     },
     {
       "title": "MA in Data Protection and Privacy Law",
@@ -947,6 +927,46 @@
       "courseRefId": "dublin-city-university|ma-in-social-media-communications"
     },
     {
+      "title": "Marketing, Innovation and Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|marketing-innovation-and-technology"
+    },
+    {
+      "title": "MSc in Digital Marketing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 23000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|msc-in-digital-marketing"
+    },
+    {
       "title": "Physics with Data Analytics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -987,6 +1007,26 @@
       "courseRefId": "dublin-city-university|msc-in-astrophysics-relativity"
     },
     {
+      "title": "International Foundation Year Programme Humanities Stream",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "30 Weeks",
+      "tuition": 14100,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2025",
+        "September 2024"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|international-foundation-year-programme-humanities-stream"
+    },
+    {
       "title": "International Foundation Year Programme Science Stream",
       "level": "foundation",
       "sourceLevel": "Foundation",
@@ -1003,6 +1043,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
       "courseRefId": "dublin-city-university|international-foundation-year-programme-science-stream"
+    },
+    {
+      "title": "Arts: Joint Honours (Humanities)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17300,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|arts-joint-honours-humanities"
     },
     {
       "title": "MA in Journalism",
@@ -1105,26 +1165,6 @@
       "courseRefId": "dublin-city-university|meng-mechatronic-engineering"
     },
     {
-      "title": "Arts: Joint Honours (Humanities)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|arts-joint-honours-humanities"
-    },
-    {
       "title": "Environmental Science and Technology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1185,46 +1225,6 @@
       "courseRefId": "dublin-city-university|bed-church-of-ireland-pathway-restricted-entry"
     },
     {
-      "title": "Early Childhood Education",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 12600,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|early-childhood-education"
-    },
-    {
-      "title": "Education and Training",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 12600,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|education-and-training"
-    },
-    {
       "title": "BEd (Primary Teaching)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1245,11 +1245,11 @@
       "courseRefId": "dublin-city-university|bed-primary-teaching"
     },
     {
-      "title": "BSc Psychology and Disruptive Technologies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16900,
+      "title": "MSc in Human Resource Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 23000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1262,7 +1262,27 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|bsc-psychology-and-disruptive-technologies"
+      "courseRefId": "dublin-city-university|msc-in-human-resource-management"
+    },
+    {
+      "title": "MSc in Psychology and Wellbeing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 15300,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|msc-in-psychology-and-wellbeing"
     },
     {
       "title": "Mechanical and Manufacturing Engineering",
@@ -1285,11 +1305,34 @@
       "courseRefId": "dublin-city-university|mechanical-and-manufacturing-engineering"
     },
     {
-      "title": "MSc in Psychology and Wellbeing",
+      "title": "MEng in Mechanical and Manufacturing Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 15300,
+      "tuition": 17000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|meng-in-mechanical-and-manufacturing-engineering"
+    },
+    {
+      "title": "BSc Psychology and Disruptive Technologies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16900,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1302,7 +1345,47 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-psychology-and-wellbeing"
+      "courseRefId": "dublin-city-university|bsc-psychology-and-disruptive-technologies"
+    },
+    {
+      "title": "Education and Training",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 12600,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|education-and-training"
+    },
+    {
+      "title": "Early Childhood Education",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 12600,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|early-childhood-education"
     },
     {
       "title": "Professional Master of Education (Post Primary Education)",
@@ -1365,46 +1448,22 @@
       "courseRefId": "dublin-city-university|psychology"
     },
     {
-      "title": "MEng in Mechanical and Manufacturing Engineering",
+      "title": "MSc in Computing-Artificial Intelligence",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 17000,
-      "currency": "EUR",
+      "tuition": 25000,
+      "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026"
+        "January 2027"
       ],
       "campuses": [
         "DCU Glasnevin Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|meng-in-mechanical-and-manufacturing-engineering"
-    },
-    {
-      "title": "MSc in Human Resource Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 23000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-human-resource-management"
+      "courseRefId": "dublin-city-university|msc-in-computing-artificial-intelligence"
     },
     {
       "title": "Chemistry with Artificial Intelligence",
@@ -1427,10 +1486,10 @@
       "courseRefId": "dublin-city-university|chemistry-with-artificial-intelligence"
     },
     {
-      "title": "Financial Mathematics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
+      "title": "MSc in Financial Mathematics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
       "tuition": 15000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
@@ -1444,7 +1503,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|financial-mathematics"
+      "courseRefId": "dublin-city-university|msc-in-financial-mathematics"
     },
     {
       "title": "Common Entry into Actuarial and Financial Mathematics",
@@ -1467,10 +1526,10 @@
       "courseRefId": "dublin-city-university|common-entry-into-actuarial-and-financial-mathematics"
     },
     {
-      "title": "MSc in Financial Mathematics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "title": "Financial Mathematics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
       "tuition": 15000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
@@ -1484,27 +1543,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-financial-mathematics"
-    },
-    {
-      "title": "Nursing (Mental Health)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 13200,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|nursing-mental-health"
+      "courseRefId": "dublin-city-university|financial-mathematics"
     },
     {
       "title": "Nursing (Intellectual Disability)",
@@ -1525,6 +1564,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
       "courseRefId": "dublin-city-university|nursing-intellectual-disability"
+    },
+    {
+      "title": "Nursing (Mental Health)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 13200,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|nursing-mental-health"
     },
     {
       "title": "MSc in Quantitative Economics for Business and Management (QuEB)",
@@ -1585,6 +1644,26 @@
       "courseRefId": "dublin-city-university|actuarial-mathematics"
     },
     {
+      "title": "MA in Political Communication",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16800,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|ma-in-political-communication"
+    },
+    {
       "title": "Arts: Joint Honours (Politics)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1623,46 +1702,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
       "courseRefId": "dublin-city-university|bed-irish-sign-language-pathway-restricted-entry"
-    },
-    {
-      "title": "MA in Political Communication",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|ma-in-political-communication"
-    },
-    {
-      "title": "Chemical and Pharmaceutical Sciences",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|chemical-and-pharmaceutical-sciences"
     },
     {
       "title": "Genetics and Cell Biology",
@@ -1743,6 +1782,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
       "courseRefId": "dublin-city-university|science-education"
+    },
+    {
+      "title": "Chemical and Pharmaceutical Sciences",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|chemical-and-pharmaceutical-sciences"
     },
     {
       "title": "MSc in Business Analytics",
@@ -1861,27 +1920,7 @@
       "courseRefId": "dublin-city-university|climate-and-environmental-sustainability"
     },
     {
-      "title": "Athletic Therapy and Training",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|athletic-therapy-and-training"
-    },
-    {
-      "title": "Analytical Science",
+      "title": "Applied Language and Translation Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1898,33 +1937,13 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|analytical-science"
+      "courseRefId": "dublin-city-university|applied-language-and-translation-studies"
     },
     {
-      "title": "Aviation Management/Aviation Management with Pilot Studies/Aviation Management with Air Traffic Controller Studies",
+      "title": "Arts: Joint Honours (International Languages)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 14000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|aviation-management-aviation-management-with-pilot-studies-aviation-management-with-air-traffic-controller-studies"
-    },
-    {
-      "title": "International Relations",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "36 Months",
       "tuition": 15000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
@@ -1938,7 +1957,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|international-relations"
+      "courseRefId": "dublin-city-university|arts-joint-honours-international-languages"
     },
     {
       "title": "MA in Creative Writing",
@@ -2001,11 +2020,11 @@
       "courseRefId": "dublin-city-university|ma-in-chaplaincy-studies-and-pastoral-work"
     },
     {
-      "title": "MA in International Relations",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 15000,
+      "title": "Athletic Therapy and Training",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -2018,10 +2037,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|ma-in-international-relations"
+      "courseRefId": "dublin-city-university|athletic-therapy-and-training"
     },
     {
-      "title": "Jazz and Contemporary Music Performance",
+      "title": "Analytical Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2038,7 +2057,27 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|jazz-and-contemporary-music-performance"
+      "courseRefId": "dublin-city-university|analytical-science"
+    },
+    {
+      "title": "Aviation Management/Aviation Management with Pilot Studies/Aviation Management with Air Traffic Controller Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 14000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|aviation-management-aviation-management-with-pilot-studies-aviation-management-with-air-traffic-controller-studies"
     },
     {
       "title": "Bioprocessing",
@@ -2059,66 +2098,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
       "courseRefId": "dublin-city-university|bioprocessing"
-    },
-    {
-      "title": "Physical Education with Biology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|physical-education-with-biology"
-    },
-    {
-      "title": "Religious Education and English",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 14900,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|religious-education-and-english"
-    },
-    {
-      "title": "MSc in Climate Change: Policy, Media and Society",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 15000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-climate-change-policy-media-and-society"
     },
     {
       "title": "Physical Education with Mathematics",
@@ -2181,6 +2160,66 @@
       "courseRefId": "dublin-city-university|religious-education-and-music"
     },
     {
+      "title": "MSc in Bioprocess Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 23000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|msc-in-bioprocess-engineering"
+    },
+    {
+      "title": "Jazz and Contemporary Music Performance",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|jazz-and-contemporary-music-performance"
+    },
+    {
+      "title": "International Relations",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|international-relations"
+    },
+    {
       "title": "Religious Education and History",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2241,11 +2280,11 @@
       "courseRefId": "dublin-city-university|msc-in-public-policy"
     },
     {
-      "title": "MSc in Bioprocess Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 23000,
+      "title": "Physical Education with Biology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -2258,7 +2297,47 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|msc-in-bioprocess-engineering"
+      "courseRefId": "dublin-city-university|physical-education-with-biology"
+    },
+    {
+      "title": "Religious Education and English",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 14900,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|religious-education-and-english"
+    },
+    {
+      "title": "MA in International Relations",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 15000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DCU Glasnevin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
+      "courseRefId": "dublin-city-university|ma-in-international-relations"
     },
     {
       "title": "MA in Refugee Integration",
@@ -2341,10 +2420,10 @@
       "courseRefId": "dublin-city-university|ma-in-translation-studies"
     },
     {
-      "title": "Applied Language and Translation Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "title": "MSc in Climate Change: Policy, Media and Society",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
       "tuition": 15000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
@@ -2358,27 +2437,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|applied-language-and-translation-studies"
-    },
-    {
-      "title": "Arts: Joint Honours (International Languages)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DCU Glasnevin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/dublin-city-university",
-      "courseRefId": "dublin-city-university|arts-joint-honours-international-languages"
+      "courseRefId": "dublin-city-university|msc-in-climate-change-policy-media-and-society"
     }
   ]
 }

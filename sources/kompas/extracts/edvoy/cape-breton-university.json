@@ -3,13 +3,14 @@
   "name": "Cape Breton University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/cape-breton-university",
-  "scrapedAt": "2026-07-22T15:42:52.151Z",
+  "scrapedAt": "2026-08-23T13:11:39.797Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "cape-breton-university",
   "country": "Canada",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -39,6 +40,31 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/cape-breton-university",
       "courseRefId": "cape-breton-university|bachelor-of-business-administration"
+    },
+    {
+      "title": "Bachelor of Engineering (Transfer)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 22708.1,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2024",
+        "September 2024",
+        "January 2024",
+        "September 2025",
+        "September 2026",
+        "May 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "Main Campus",
+        "CBU Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/cape-breton-university",
+      "courseRefId": "cape-breton-university|bachelor-of-engineering-transfer"
     },
     {
       "title": "Bachelor of Engineering Technology",
@@ -90,31 +116,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/cape-breton-university",
       "courseRefId": "cape-breton-university|bachelor-of-health-sciences-public-health"
-    },
-    {
-      "title": "Bachelor of Engineering (Transfer)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 22708.1,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "May 2024",
-        "September 2024",
-        "January 2024",
-        "September 2025",
-        "September 2026",
-        "May 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Main Campus",
-        "CBU Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/cape-breton-university",
-      "courseRefId": "cape-breton-university|bachelor-of-engineering-transfer"
     },
     {
       "title": "Master of Artificial Intelligence and Business Analytics",

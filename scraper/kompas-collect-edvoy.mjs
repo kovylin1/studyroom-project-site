@@ -219,6 +219,36 @@ function toProgram(c) {
 }
 
 /**
+ * Сколько курсов у вуза было в прошлом сборе: edpRefId -> число программ.
+ *
+ * Берём из уже лежащих выгрузок (они и есть прошлый результат) и добираем описью
+ * членства — там счёт есть даже у тех вузов, которым выгрузку раньше не писали.
+ * Пусто на первом в жизни прогоне — тогда защита от обвала просто молчит.
+ */
+async function loadPrevCounts() {
+  const out = new Map();
+  for (const sub of ['edvoy', 'edvoy-newcards']) {
+    const dir = path.join(ROOT, 'sources', 'kompas', 'extracts', sub);
+    let files = [];
+    try { files = await fs.readdir(dir); } catch { continue; }
+    for (const f of files) {
+      if (!f.endsWith('.json')) continue;
+      try {
+        const j = JSON.parse(await fs.readFile(path.join(dir, f), 'utf8'));
+        if (j.edpRefId) out.set(j.edpRefId, (j.programs || []).length);
+      } catch { /* битый файл — не улика */ }
+    }
+  }
+  try {
+    const m = JSON.parse(await fs.readFile(path.join(ROOT, 'sources', 'kompas', 'membership', 'edvoy.json'), 'utf8'));
+    for (const r of [...(m.matched || []), ...(m.unmatched || [])]) {
+      if (r.edpRefId && r.courses != null && !out.has(r.edpRefId)) out.set(r.edpRefId, r.courses);
+    }
+  } catch { /* описи нет — работаем на выгрузках */ }
+  return out;
+}
+
+/**
  * Фаза 1: перечисление вузов.
  *
  * Слепой перебор префиксов не годится: ветвление растёт как 36^N, за 25 минут он не сошёлся
@@ -356,16 +386,56 @@ async function main() {
     return;
   }
 
+  // Сколько курсов было у вуза в прошлом сборе. Это единственная опора против
+  // ТИХОГО обвала выдачи: счётчик недобора ниже сравнивает полученное с тем,
+  // что источник обещал В ЭТОМ ЖЕ запросе, а когда сессия портится, портится и
+  // обещание — портал отвечает «count: 1» с кодом 200, и недобора не возникает.
+  // Прогон 23.08: Kent State 401 курс → 1, Auburn 337 → 3, Oregon State 330 → 2,
+  // 48 вузов отдали ноль. Всё это записалось бы поверх хороших выгрузок как «свежее».
+  const prevCounts = await loadPrevCounts();
+  // Токен берётся один раз и к четырёхсотому вузу выдыхается: обвал начался ровно
+  // там (за сотню вузов прибавилось 76 курсов против восьми тысяч сотней раньше).
+  // Обновляем его по расписанию, не дожидаясь 401 — портал его и не отдаёт.
+  const REFRESH_EVERY = args.num('refresh-every', 150);
+
   // Фаза 2: курсы по каждому вузу отдельно.
   const byEdp = new Map();
   let fetched = 0;
   const shortfall = [];
+  const degraded = [];
   const list = [...found.values()].slice(0, limitUnis || undefined);
 
   let done = 0;
   for (const inst of list) {
-    const h = await gql(Q_COURSES, { filter: { edpRefIds: [inst.edpRefId] }, paging: { limit: 1, offset: 0, skip: -1 } }, 'fetchOnlyCourseList');
-    const n = h.searchCourse?.count ?? 0;
+    if (AUTH && done && done % REFRESH_EVERY === 0) {
+      log(`профилактика: ${done} вузов пройдено, обновляю токен`);
+      await acquireToken();
+    }
+    const countOf = async () => {
+      const h = await gql(Q_COURSES, { filter: { edpRefIds: [inst.edpRefId] }, paging: { limit: 1, offset: 0, skip: -1 } }, 'fetchOnlyCourseList');
+      return h.searchCourse?.count ?? 0;
+    };
+    let n = await countOf();
+    const prev = prevCounts.get(inst.edpRefId) ?? null;
+    // Обвал: у вуза было заметное число курсов, а сейчас ноль или меньше половины.
+    // Так вузы не пустеют — так отваливается сессия. Пробуем ещё раз со свежим токеном.
+    const collapsed = (p, got) => p != null && p >= 20 && got < p * 0.5;
+    if (collapsed(prev, n)) {
+      log(`обвал у ${inst.edpRefId}: было ${prev}, отдано ${n} — вхожу заново и повторяю`);
+      // Перевход может не выйти (анонимный прогон, нет паролей, 2FA). Это не повод
+      // ронять весь сбор: без свежего токена вуз просто уедет в degraded и сохранит
+      // старую выгрузку. Молча ронять полчаса работы было бы хуже.
+      try { await acquireToken(); } catch (e) { log(`перевход не удался: ${e.message}`); }
+      n = await countOf();
+    }
+    if (collapsed(prev, n)) {
+      // Второй раз то же самое — либо вуз правда усох, либо портал не в себе.
+      // В обоих случаях затирать хорошую выгрузку худшей нельзя: помечаем и не пишем.
+      degraded.push({ edpRefId: inst.edpRefId, name: inst.name, was: prev, now: n });
+      byEdp.set(inst.edpRefId, { ...inst, courses: [], degradedPrev: prev, degradedNow: n });
+      if (++done % 50 === 0) log(`… вузов обработано ${done}/${list.length}, курсов ${fetched}`);
+      continue;
+    }
 
     // ВНИМАНИЕ: `offset` здесь — НОМЕР СТРАНИЦЫ, а не смещение в записях.
     // Замер: offset=1 отдаёт 100 НОВЫХ записей, offset=100 — пустоту (сотой страницы нет).
@@ -400,17 +470,20 @@ async function main() {
     if (++done % 50 === 0) log(`… вузов обработано ${done}/${list.length}, курсов ${fetched}`);
   }
 
-  log(`фаза 2: получено курсов ${fetched}, вузов ${byEdp.size}, вузов с недобором ${shortfall.length}`);
+  log(`фаза 2: получено курсов ${fetched}, вузов ${byEdp.size}, вузов с недобором ${shortfall.length}, с обвалом выдачи ${degraded.length}`);
 
   const catalog = await buildCatalogIndex();
   const matched = [];
   const unmatched = [];
   const emptyUnis = [];
   let written = 0;
+  let writtenNew = 0;
   let programsTotal = 0;
   let withPrice = 0;
 
   for (const g of byEdp.values()) {
+    // Вуз с испорченной выдачей: старую выгрузку не трогаем, она лучше свежей пустоты.
+    if (g.degradedPrev != null) { continue; }
     if (!g.courses.length) { emptyUnis.push({ from: g.name, edpRefId: g.edpRefId }); continue; }
     const res = matchToCatalog(g.name, catalog, { country: g.country, refId: g.edpRefId });
     const programs = g.courses.map(toProgram);
@@ -418,7 +491,36 @@ async function main() {
     withPrice += programs.filter((p) => p.tuition != null).length;
 
     if (!res.catalogSlug) {
-      unmatched.push({ from: g.name, edpRefId: g.edpRefId, country: g.country, courses: programs.length });
+      unmatched.push({ from: g.name, edpRefId: g.edpRefId, country: g.country, city: g.city || null, courses: programs.length });
+      // Раньше здесь стоял голый `continue`: собранные курсы непривязанного вуза
+      // выбрасывались, в описи оставалось только имя и число. Из-за этого добор
+      // карточек по edvoy был невозможен в принципе — строить не из чего, тогда как
+      // у QS выгрузка пишется каждому вузу портала и добор прошёл спокойно.
+      // Решение владельца 2026-08-23: правило «если есть у агрегатора, должно быть
+      // и у нас» распространено с очереди QS на edvoy, языковые школы тоже заводим.
+      // Пишем в отдельную папку, чтобы не путать с привязанными выгрузками.
+      const draft = extract({
+        slug: g.edpRefId,
+        name: g.name,
+        source: 'edvoy',
+        sourceUrl: `https://edge.edvoy.com/institutions/${g.edpRefId}`,
+        programs,
+        extra: {
+          aggregator: 'Edvoy',
+          aggregatorEndpoint: EDP,
+          access: 'public',
+          edpRefId: g.edpRefId,
+          country: g.country,
+          city: g.city || null,
+          catalogSlug: null,
+          newCard: true,
+          matchMethod: 'no-match',
+          feeNote: 'approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана',
+          schemaNote: 'карточки в каталоге нет: выгрузка отложена под заведение карточки',
+        },
+      });
+      const wd = await writeExtract(AGG + '-newcards', g.edpRefId, draft, { dryRun });
+      if (wd.written) writtenNew++;
       continue;
     }
     matched.push({ from: g.name, edpRefId: g.edpRefId, to: res.catalogSlug, method: res.matchMethod, courses: programs.length });
@@ -435,6 +537,8 @@ async function main() {
         access: 'public',
         edpRefId: g.edpRefId,
         country: g.country,
+        // город источник отдаёт полем address.city — раньше он до выгрузки не доезжал
+        city: g.city || null,
         matchMethod: res.matchMethod,
         feeNote: 'approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана',
         schemaNote: 'findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен',
@@ -463,7 +567,8 @@ async function main() {
         sourceCourses: total, declaredUniversities: declaredUnis,
         discoveredUniversities: found.size, fetchedCourses: fetched,
         matched: matched.length, unmatched: unmatched.length, emptyUniversities: emptyUnis.length,
-        programs: programsTotal, withPrice,
+        programs: programsTotal, withPrice, newCardDrafts: writtenNew,
+        degradedKeptOld: degraded.length,
         discoveryComplete: found.size >= declaredUnis,
         discoveryQueries,
         universitiesWithShortfall: shortfall.length,
@@ -471,6 +576,9 @@ async function main() {
     },
     cappedPrefixes,
     shortfall,
+    // Вузы, у которых выдача обвалилась даже после перевхода: старая выгрузка сохранена,
+    // свежая не писалась. Разобрать глазами — усох вуз или портал капризничал.
+    degraded,
     matched,
     unmatched,
     emptyUnis,
@@ -478,9 +586,9 @@ async function main() {
   if (only.length) log('точечный прогон: membership не переписываю, чтобы не потерять остальных');
   else await writeMembership(AGG, membership, { dryRun });
 
-  log(`привязано ${matched.length}, не привязано ${unmatched.length}, без курсов ${emptyUnis.length}`);
+  log(`привязано ${matched.length}, не привязано ${unmatched.length}, без курсов ${emptyUnis.length}, старая выгрузка сохранена у ${degraded.length}`);
   log(`программ ${programsTotal}, с ценой ${withPrice}`);
-  log(`файлов записано ${written}${dryRun ? ' (сухой прогон)' : ''}`);
+  log(`файлов записано ${written}, черновиков под новые карточки ${writtenNew}${dryRun ? ' (сухой прогон)' : ''}`);
   log(`запросов ${stats.requests}, торможений ${stats.throttled}, неудач ${stats.failed}`);
   log(found.size >= declaredUnis
     ? `перечисление полное: ${found.size} из ${declaredUnis}`

@@ -3,13 +3,14 @@
   "name": "California State University East Bay",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-  "scrapedAt": "2026-07-22T15:42:52.145Z",
+  "scrapedAt": "2026-08-23T13:11:39.795Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "california-state-university-east-bay",
   "country": "United States",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -106,25 +107,6 @@
       "courseRefId": "california-state-university-east-bay|ms-computer-science-artificial-intelligence-and-machine-learning-concentration"
     },
     {
-      "title": "MS in Computer Science: Computer Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 17555,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ms-in-computer-science-computer-science"
-    },
-    {
       "title": "MBA Business Administration-General Business Concentration",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -218,6 +200,29 @@
       "courseRefId": "california-state-university-east-bay|mba-business-administration-finance-concentration"
     },
     {
+      "title": "MS Statistics-Mathematical Statistics Concentration",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 17555,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ms-statistics-mathematical-statistics-concentration"
+    },
+    {
       "title": "MS Biostatistics",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -264,6 +269,27 @@
       "courseRefId": "california-state-university-east-bay|ms-business-analytics"
     },
     {
+      "title": "MS Health Care Administration",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 17555,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "CSUEB online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ms-health-care-administration"
+    },
+    {
       "title": "MS Statistics",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -308,50 +334,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
       "courseRefId": "california-state-university-east-bay|ms-statistics-applied-statistics-concentration"
-    },
-    {
-      "title": "MS Statistics-Mathematical Statistics Concentration",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 17555,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ms-statistics-mathematical-statistics-concentration"
-    },
-    {
-      "title": "MS Health Care Administration",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 17555,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "CSUEB online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ms-health-care-administration"
     },
     {
       "title": "BS Computer Engineering",
@@ -565,6 +547,29 @@
       "courseRefId": "california-state-university-east-bay|bs-business-administration-information-technology-management-concentration"
     },
     {
+      "title": "BS Statistics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-statistics"
+    },
+    {
       "title": "BS Health Sciences",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -655,29 +660,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
       "courseRefId": "california-state-university-east-bay|bs-public-health"
-    },
-    {
-      "title": "BS Statistics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-statistics"
     },
     {
       "title": "BS Business Administration-Marketing Management Concentration",
@@ -862,53 +844,6 @@
       "courseRefId": "california-state-university-east-bay|ms-statistics-actuarial-science-concentration"
     },
     {
-      "title": "BS Accounting and Analytics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center",
-        "CSUEB online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-accounting-and-analytics"
-    },
-    {
-      "title": "BFA Art-3D Art & Design Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bfa-art-3-d-art-design-concentration"
-    },
-    {
       "title": "BA Art-Art & Design Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -953,6 +888,53 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
       "courseRefId": "california-state-university-east-bay|ba-communication"
+    },
+    {
+      "title": "BFA Art-3D Art & Design Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bfa-art-3-d-art-design-concentration"
+    },
+    {
+      "title": "BS Accounting and Analytics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center",
+        "CSUEB online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-accounting-and-analytics"
     },
     {
       "title": "BS Business Administration-Human Resources Management & Organizational Behavior Concentration",
@@ -1047,29 +1029,6 @@
       "courseRefId": "california-state-university-east-bay|bfa-art-transdisciplinary-arts-concentration"
     },
     {
-      "title": "BS Economics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-economics"
-    },
-    {
       "title": "BA Global Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1091,6 +1050,29 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
       "courseRefId": "california-state-university-east-bay|ba-global-studies"
+    },
+    {
+      "title": "BS Economics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-economics"
     },
     {
       "title": "MS Construction Management",
@@ -1181,27 +1163,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
       "courseRefId": "california-state-university-east-bay|ms-curriculum-and-instruction"
-    },
-    {
-      "title": "MS Special Education-Mild/Moderate Support Needs Concentration",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 17555,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "CSUEB online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ms-special-education-mild-moderate-support-needs-concentration"
     },
     {
       "title": "MS Early Childhood Education",
@@ -1311,6 +1272,27 @@
       "courseRefId": "california-state-university-east-bay|ms-special-education-extensive-support-needs-concentration"
     },
     {
+      "title": "MS Special Education-Mild/Moderate Support Needs Concentration",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 17555,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "CSUEB online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ms-special-education-mild-moderate-support-needs-concentration"
+    },
+    {
       "title": "BS Environmental Science-Environmental Health Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1403,6 +1385,52 @@
       "courseRefId": "california-state-university-east-bay|ms-kinesiology-physical-activity-and-exercise-an-international-perspective-on-programming-for-health-and-wellness-concentration"
     },
     {
+      "title": "BFA Art-Graphic Design Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bfa-art-graphic-design-concentration"
+    },
+    {
+      "title": "BFA Art-Interaction & Game Design Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bfa-art-interaction-game-design-concentration"
+    },
+    {
       "title": "BA Physics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1470,121 +1498,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
       "courseRefId": "california-state-university-east-bay|ba-psychology"
-    },
-    {
-      "title": "BS Mathematics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-mathematics"
-    },
-    {
-      "title": "BS Physics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-physics"
-    },
-    {
-      "title": "BS Psychology-Industrial/Organizational Psychology Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-psychology-industrial-organizational-psychology-concentration"
-    },
-    {
-      "title": "BFA Art-Graphic Design Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bfa-art-graphic-design-concentration"
-    },
-    {
-      "title": "BFA Art-Interaction & Game Design Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bfa-art-interaction-game-design-concentration"
     },
     {
       "title": "BS Civil Engineering",
@@ -1677,6 +1590,75 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
       "courseRefId": "california-state-university-east-bay|bs-geography-spatial-techniques-concentration"
+    },
+    {
+      "title": "BS Mathematics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-mathematics"
+    },
+    {
+      "title": "BS Physics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-physics"
+    },
+    {
+      "title": "BS Psychology-Industrial/Organizational Psychology Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-psychology-industrial-organizational-psychology-concentration"
     },
     {
       "title": "BA Political Science-Public Affairs and Administration Concentration",
@@ -1922,144 +1904,6 @@
       "courseRefId": "california-state-university-east-bay|bs-hospitality-and-tourism-event-planning-and-management-concentration"
     },
     {
-      "title": "BA Liberal Studies-Early Childhood Education Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-liberal-studies-early-childhood-education-concentration"
-    },
-    {
-      "title": "BA Political Science-Traditional Political Science Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-political-science-traditional-political-science-concentration"
-    },
-    {
-      "title": "BS Industrial Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-industrial-engineering"
-    },
-    {
-      "title": "BFA Art-Fine Arts Practice Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bfa-art-fine-arts-practice-concentration"
-    },
-    {
-      "title": "BS Environmental Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-environmental-science"
-    },
-    {
-      "title": "BS Geography-Resources and Sustainability Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-geography-resources-and-sustainability-concentration"
-    },
-    {
       "title": "BA Art-Art History and Visual Studies Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2129,6 +1973,29 @@
       "courseRefId": "california-state-university-east-bay|ba-chemistry-chemistry-education-concentration"
     },
     {
+      "title": "BFA Art-Fine Arts Practice Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bfa-art-fine-arts-practice-concentration"
+    },
+    {
       "title": "BA Geology-Geoscience Education Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2150,6 +2017,121 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
       "courseRefId": "california-state-university-east-bay|ba-geology-geoscience-education-concentration"
+    },
+    {
+      "title": "BA Liberal Studies-Early Childhood Education Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-liberal-studies-early-childhood-education-concentration"
+    },
+    {
+      "title": "BA Political Science-Traditional Political Science Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-political-science-traditional-political-science-concentration"
+    },
+    {
+      "title": "BS Environmental Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-environmental-science"
+    },
+    {
+      "title": "BS Geography-Resources and Sustainability Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-geography-resources-and-sustainability-concentration"
+    },
+    {
+      "title": "BS Industrial Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-industrial-engineering"
     },
     {
       "title": "BS Hospitality and Tourism-Food and Beverage Concentration",
@@ -2196,6 +2178,29 @@
       "courseRefId": "california-state-university-east-bay|ba-biochemistry-chemistry-education-concentration"
     },
     {
+      "title": "BA English-English Language and Literacies Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-english-english-language-and-literacies-concentration"
+    },
+    {
       "title": "BFA Art-Video & Animation Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2240,29 +2245,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
       "courseRefId": "california-state-university-east-bay|bs-biological-sciences-physiology-concentration"
-    },
-    {
-      "title": "BA English-English Language and Literacies Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-english-english-language-and-literacies-concentration"
     },
     {
       "title": "MA History-Public History Concentration",
@@ -2472,76 +2454,7 @@
       "courseRefId": "california-state-university-east-bay|ms-marine-science"
     },
     {
-      "title": "BA Liberal Studies-Liberal Arts Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-liberal-studies-liberal-arts-concentration"
-    },
-    {
-      "title": "BA Liberal Studies-Teacher Preparation Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-liberal-studies-teacher-preparation-concentration"
-    },
-    {
-      "title": "BA Music",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-music"
-    },
-    {
-      "title": "BA Spanish",
+      "title": "BA Ethnic Studies-American Indian Studies Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2562,10 +2475,58 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-spanish"
+      "courseRefId": "california-state-university-east-bay|ba-ethnic-studies-american-indian-studies-concentration"
     },
     {
-      "title": "BA Theatre Arts-Cross-disciplinary Performance Concentration",
+      "title": "BA Ethnic Studies-Asian American Studies Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center",
+        "CSUEB online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-ethnic-studies-asian-american-studies-concentration"
+    },
+    {
+      "title": "BA Ethnic Studies-Black Studies Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center",
+        "CSUEB online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-ethnic-studies-black-studies-concentration"
+    },
+    {
+      "title": "BA Biochemistry",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2585,10 +2546,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-theatre-arts-cross-disciplinary-performance-concentration"
+      "courseRefId": "california-state-university-east-bay|ba-biochemistry"
     },
     {
-      "title": "BA Theatre Arts-Dance and Inclusive Performance Concentration",
+      "title": "BA Chemistry",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2608,7 +2569,77 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-theatre-arts-dance-and-inclusive-performance-concentration"
+      "courseRefId": "california-state-university-east-bay|ba-chemistry"
+    },
+    {
+      "title": "BA English-British and American Literature Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center",
+        "CSUEB online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-english-british-and-american-literature-concentration"
+    },
+    {
+      "title": "BA English-Creative Writing Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-english-creative-writing-concentration"
+    },
+    {
+      "title": "BA Environmental Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-environmental-studies"
     },
     {
       "title": "BA Theatre Arts-Stage Technology and Design Concentration",
@@ -2634,7 +2665,7 @@
       "courseRefId": "california-state-university-east-bay|ba-theatre-arts-stage-technology-and-design-concentration"
     },
     {
-      "title": "BS Kinesiology",
+      "title": "BA Theatre Arts-Theatre Performance-Emphases in Acting and Musical Theatre",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2654,49 +2685,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-kinesiology"
-    },
-    {
-      "title": "BA Anthropology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "CSUEB online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-anthropology"
-    },
-    {
-      "title": "BA Human Development-Adolescent Development Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "CSUEB online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-human-development-adolescent-development-concentration"
+      "courseRefId": "california-state-university-east-bay|ba-theatre-arts-theatre-performance-emphases-in-acting-and-musical-theatre"
     },
     {
       "title": "BFA Art-Illustration Concentration",
@@ -2837,117 +2826,6 @@
       "courseRefId": "california-state-university-east-bay|bs-biological-sciences-ecology-and-evolutionary-biology-concentration"
     },
     {
-      "title": "BS Chemistry-Bioanalytical and Forensics Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-chemistry-bioanalytical-and-forensics-concentration"
-    },
-    {
-      "title": "BS Criminal Justice",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-criminal-justice"
-    },
-    {
-      "title": "BS Geology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-geology"
-    },
-    {
-      "title": "BS Recreation-Recreation Therapy Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "CSUEB online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-recreation-recreation-therapy-concentration"
-    },
-    {
-      "title": "BS Recreation",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "CSUEB online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-recreation"
-    },
-    {
       "title": "BS Biological Sciences-Microbiology and Biomedical Lab Sciences Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2969,240 +2847,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
       "courseRefId": "california-state-university-east-bay|bs-biological-sciences-microbiology-and-biomedical-lab-sciences-concentration"
-    },
-    {
-      "title": "BA Theatre Arts-Theatre Performance-Emphases in Acting and Musical Theatre",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-theatre-arts-theatre-performance-emphases-in-acting-and-musical-theatre"
-    },
-    {
-      "title": "BA Biochemistry",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-biochemistry"
-    },
-    {
-      "title": "BA Chemistry",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-chemistry"
-    },
-    {
-      "title": "BA English-British and American Literature Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center",
-        "CSUEB online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-english-british-and-american-literature-concentration"
-    },
-    {
-      "title": "BA English-Creative Writing Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-english-creative-writing-concentration"
-    },
-    {
-      "title": "BA Environmental Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-environmental-studies"
-    },
-    {
-      "title": "BS Chemistry",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|bs-chemistry"
-    },
-    {
-      "title": "BA Ethnic Studies-American Indian Studies Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center",
-        "CSUEB online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-ethnic-studies-american-indian-studies-concentration"
-    },
-    {
-      "title": "BA Ethnic Studies-Asian American Studies Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center",
-        "CSUEB online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-ethnic-studies-asian-american-studies-concentration"
-    },
-    {
-      "title": "BA Ethnic Studies-Black Studies Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18605,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2027",
-        "August 2026"
-      ],
-      "campuses": [
-        "Hayward Campus",
-        "CSUEB Concord Center",
-        "CSUEB Oakland Center",
-        "CSUEB online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
-      "courseRefId": "california-state-university-east-bay|ba-ethnic-studies-black-studies-concentration"
     },
     {
       "title": "BA Ethnic Studies-Chicanx and Latinx Studies Concentration",
@@ -3396,6 +3040,187 @@
       "courseRefId": "california-state-university-east-bay|ba-history-social-science-concentration-in-teacher-preparation-for-middle-and-high-schools"
     },
     {
+      "title": "BA Liberal Studies-Liberal Arts Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-liberal-studies-liberal-arts-concentration"
+    },
+    {
+      "title": "BA Liberal Studies-Teacher Preparation Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-liberal-studies-teacher-preparation-concentration"
+    },
+    {
+      "title": "BA Music",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-music"
+    },
+    {
+      "title": "BA Spanish",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center",
+        "CSUEB online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-spanish"
+    },
+    {
+      "title": "BA Theatre Arts-Cross-disciplinary Performance Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-theatre-arts-cross-disciplinary-performance-concentration"
+    },
+    {
+      "title": "BA Theatre Arts-Dance and Inclusive Performance Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-theatre-arts-dance-and-inclusive-performance-concentration"
+    },
+    {
+      "title": "BA Anthropology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "CSUEB online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-anthropology"
+    },
+    {
+      "title": "BA Human Development-Adolescent Development Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "CSUEB online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|ba-human-development-adolescent-development-concentration"
+    },
+    {
       "title": "BA Human Development-Adult Development and Gerontology Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3541,6 +3366,163 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
       "courseRefId": "california-state-university-east-bay|ba-sociology"
+    },
+    {
+      "title": "BS Recreation-Recreation Therapy Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "CSUEB online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-recreation-recreation-therapy-concentration"
+    },
+    {
+      "title": "BS Recreation",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "CSUEB online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-recreation"
+    },
+    {
+      "title": "BS Chemistry",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-chemistry"
+    },
+    {
+      "title": "BS Chemistry-Bioanalytical and Forensics Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-chemistry-bioanalytical-and-forensics-concentration"
+    },
+    {
+      "title": "BS Criminal Justice",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-criminal-justice"
+    },
+    {
+      "title": "BS Geology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-geology"
+    },
+    {
+      "title": "BS Kinesiology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18605,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "January 2027",
+        "August 2026"
+      ],
+      "campuses": [
+        "Hayward Campus",
+        "CSUEB Concord Center",
+        "CSUEB Oakland Center"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/california-state-university-east-bay",
+      "courseRefId": "california-state-university-east-bay|bs-kinesiology"
     }
   ]
 }

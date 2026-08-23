@@ -3,13 +3,14 @@
   "name": "Columbia College",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/columbia-college",
-  "scrapedAt": "2026-07-22T15:42:52.169Z",
+  "scrapedAt": "2026-08-23T13:11:39.806Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "columbia-college",
   "country": "Canada",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -134,36 +135,6 @@
       "courseRefId": "columbia-college|university-transfer-engineering"
     },
     {
-      "title": "University Transfer Communication",
-      "level": "foundation",
-      "sourceLevel": "Foundation",
-      "duration": "12 Months",
-      "tuition": 17100,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "September 2025",
-        "May 2025",
-        "May 2024",
-        "September 2024",
-        "January 2024",
-        "May 2026",
-        "September 2026",
-        "January 2026",
-        "May 2027",
-        "September 2027",
-        "January 2027"
-      ],
-      "campuses": [
-        "Columbia College Main Campus",
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/columbia-college",
-      "courseRefId": "columbia-college|university-transfer-communication"
-    },
-    {
       "title": "Associate of Arts Communication",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -194,19 +165,19 @@
       "courseRefId": "columbia-college|associate-of-arts-communication"
     },
     {
-      "title": "University Transfer Arts",
+      "title": "University Transfer Communication",
       "level": "foundation",
       "sourceLevel": "Foundation",
-      "duration": "24 Months",
+      "duration": "12 Months",
       "tuition": 17100,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2025",
-        "May 2025",
         "September 2025",
-        "September 2024",
+        "May 2025",
         "May 2024",
+        "September 2024",
         "January 2024",
         "May 2026",
         "September 2026",
@@ -221,7 +192,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/columbia-college",
-      "courseRefId": "columbia-college|university-transfer-arts"
+      "courseRefId": "columbia-college|university-transfer-communication"
     },
     {
       "title": "General Associate of Arts Degree",
@@ -252,6 +223,36 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/columbia-college",
       "courseRefId": "columbia-college|general-associate-of-arts-degree"
+    },
+    {
+      "title": "University Transfer Arts",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "24 Months",
+      "tuition": 17100,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "May 2025",
+        "September 2025",
+        "September 2024",
+        "May 2024",
+        "January 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "May 2027",
+        "September 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "Columbia College Main Campus",
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/columbia-college",
+      "courseRefId": "columbia-college|university-transfer-arts"
     },
     {
       "title": "Associate of Arts Economics",
@@ -374,6 +375,36 @@
       "courseRefId": "columbia-college|associate-of-arts-political-science"
     },
     {
+      "title": "Associate of Arts International Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "16 Months",
+      "tuition": 17100,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2025",
+        "September 2025",
+        "January 2025",
+        "September 2024",
+        "May 2024",
+        "January 2024",
+        "May 2026",
+        "September 2026",
+        "January 2026",
+        "May 2027",
+        "September 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "Columbia College Main Campus",
+        "Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/columbia-college",
+      "courseRefId": "columbia-college|associate-of-arts-international-studies"
+    },
+    {
       "title": "Associate of Science Mathematics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -432,36 +463,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/columbia-college",
       "courseRefId": "columbia-college|general-associate-of-science"
-    },
-    {
-      "title": "Associate of Arts International Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "16 Months",
-      "tuition": 17100,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "May 2025",
-        "September 2025",
-        "January 2025",
-        "September 2024",
-        "May 2024",
-        "January 2024",
-        "May 2026",
-        "September 2026",
-        "January 2026",
-        "May 2027",
-        "September 2027",
-        "January 2027"
-      ],
-      "campuses": [
-        "Columbia College Main Campus",
-        "Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/columbia-college",
-      "courseRefId": "columbia-college|associate-of-arts-international-studies"
     },
     {
       "title": "University Transfer Science",

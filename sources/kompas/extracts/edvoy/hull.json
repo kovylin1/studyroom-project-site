@@ -3,12 +3,13 @@
   "name": "University of Hull",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-hull",
-  "scrapedAt": "2026-07-22T15:42:52.497Z",
+  "scrapedAt": "2026-08-23T13:11:40.078Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-hull",
   "country": "United Kingdom",
+  "city": null,
   "matchMethod": "as-is/exact-name",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
@@ -71,7 +72,8 @@
         "May 2025",
         "January 2026",
         "May 2026",
-        "January 2027"
+        "January 2027",
+        "May 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -96,7 +98,8 @@
         "September 2026",
         "May 2025",
         "January 2026",
-        "May 2026"
+        "May 2026",
+        "January 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -164,27 +167,6 @@
       "courseRefId": "university-of-hull|ba-hons-business-management"
     },
     {
-      "title": "MSc in Mechanical Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 14000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Hull Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
-      "courseRefId": "university-of-hull|msc-in-mechanical-engineering"
-    },
-    {
       "title": "MSc in Digital Marketing and Advertising",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -207,9 +189,37 @@
       "courseRefId": "university-of-hull|msc-in-digital-marketing-and-advertising"
     },
     {
+      "title": "PhD Computer Science",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "May 2026",
+        "September 2025",
+        "January 2025",
+        "January 2026",
+        "May 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-computer-science"
+    },
+    {
       "title": "MSc by Thesis Data Science",
       "level": "master",
-      "sourceLevel": "Doctorate",
+      "sourceLevel": "Postgraduate",
       "duration": "12 Months",
       "tuition": 20000,
       "currency": "GBP",
@@ -218,7 +228,9 @@
         "January 2025",
         "January 2026",
         "May 2026",
-        "September 2026"
+        "September 2026",
+        "February 2027",
+        "May 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -246,6 +258,25 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
       "courseRefId": "university-of-hull|ma-leadership-and-management-in-education"
+    },
+    {
+      "title": "PhD Data Science",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-data-science"
     },
     {
       "title": "BSc (Hons) Nursing (Adult)",
@@ -278,7 +309,8 @@
         "January 2025",
         "September 2025",
         "January 2026",
-        "September 2026"
+        "September 2026",
+        "January 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -298,7 +330,8 @@
       "intake": [
         "January 2025",
         "January 2026",
-        "September 2026"
+        "September 2026",
+        "January 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -306,6 +339,54 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
       "courseRefId": "university-of-hull|msc-artificial-intelligence-for-engineering"
+    },
+    {
+      "title": "PHD Accounting",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-accounting"
+    },
+    {
+      "title": "PhD Engineering",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2026",
+        "September 2025",
+        "May 2025",
+        "May 2026",
+        "January 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-engineering"
     },
     {
       "title": "LLB (Hons) Law",
@@ -329,7 +410,7 @@
     {
       "title": "MSc by Thesis Engineering",
       "level": "master",
-      "sourceLevel": "Doctorate",
+      "sourceLevel": "Postgraduate",
       "duration": "12 Months",
       "tuition": 20000,
       "currency": "GBP",
@@ -343,7 +424,9 @@
         "September 2024",
         "May 2024",
         "January 2024",
-        "September 2026"
+        "September 2026",
+        "February 2027",
+        "May 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -351,6 +434,44 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
       "courseRefId": "university-of-hull|msc-by-thesis-engineering"
+    },
+    {
+      "title": "PhD Medical Engineering",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-medical-engineering"
+    },
+    {
+      "title": "PhD Medical or Human Sciences",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-medical-or-human-sciences"
     },
     {
       "title": "MSc in Biomedical Engineering",
@@ -364,7 +485,8 @@
         "September 2025",
         "September 2024",
         "September 2026",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -413,6 +535,27 @@
       "courseRefId": "university-of-hull|ma-international-politics"
     },
     {
+      "title": "PhD Management",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2026",
+        "January 2027",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-management"
+    },
+    {
       "title": "BEng (Hons) Mechanical Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -432,6 +575,187 @@
       "courseRefId": "university-of-hull|beng-hons-mechanical-engineering"
     },
     {
+      "title": "PhD Politics",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-politics"
+    },
+    {
+      "title": "PhD Nursing Studies",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-nursing-studies"
+    },
+    {
+      "title": "PhD Digital Media",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2025",
+        "January 2026",
+        "May 2025",
+        "September 2025",
+        "May 2026",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-digital-media"
+    },
+    {
+      "title": "PhD Law",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "May 2025",
+        "September 2025",
+        "January 2025",
+        "January 2026",
+        "May 2026",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "January 2027",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-law"
+    },
+    {
+      "title": "PhD Marketing",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2026",
+        "January 2025",
+        "September 2025",
+        "May 2025",
+        "May 2026",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-marketing"
+    },
+    {
+      "title": "PhD Electronic Engineering",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-electronic-engineering"
+    },
+    {
+      "title": "PhD Mechanical Engineering",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-mechanical-engineering"
+    },
+    {
+      "title": "PhD Media Studies",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-media-studies"
+    },
+    {
       "title": "MSc in Advanced Chemical Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -443,7 +767,8 @@
         "September 2024",
         "September 2025",
         "September 2026",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -451,28 +776,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
       "courseRefId": "university-of-hull|msc-in-advanced-chemical-engineering"
-    },
-    {
-      "title": "MA in Education",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 14000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "January 2025",
-        "January 2026"
-      ],
-      "campuses": [
-        "Hull Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
-      "courseRefId": "university-of-hull|ma-in-education"
     },
     {
       "title": "MSc Human Resource Management",
@@ -515,6 +818,29 @@
       "courseRefId": "university-of-hull|bsc-hons-computer-science-and-cyber-security"
     },
     {
+      "title": "MA in Education",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 14000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|ma-in-education"
+    },
+    {
       "title": "MSc Clinical Applications of Psychology",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -554,6 +880,35 @@
       "courseRefId": "university-of-hull|msc-computer-science-and-cyber-security"
     },
     {
+      "title": "PhD Economics",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "May 2026",
+        "September 2025",
+        "January 2025",
+        "January 2026",
+        "May 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "January 2027",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-economics"
+    },
+    {
       "title": "MSc Health and Climate Change",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -574,6 +929,25 @@
       "courseRefId": "university-of-hull|msc-health-and-climate-change"
     },
     {
+      "title": "PhD Project Management",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-project-management"
+    },
+    {
       "title": "MSc Civil Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -583,7 +957,8 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2026",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -610,6 +985,25 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
       "courseRefId": "university-of-hull|ba-hons-primary-teaching"
+    },
+    {
+      "title": "MSc Mechanical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|msc-mechanical-engineering"
     },
     {
       "title": "MSc Business Analytics and Artificial Intelligence",
@@ -640,7 +1034,8 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2026",
-        "September 2027"
+        "September 2027",
+        "January 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -669,6 +1064,159 @@
       "courseRefId": "university-of-hull|llm-international-law"
     },
     {
+      "title": "MSc (by Thesis) Mechanical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|msc-by-thesis-mechanical-engineering"
+    },
+    {
+      "title": "MSc (by Thesis) Medical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|msc-by-thesis-medical-engineering"
+    },
+    {
+      "title": "PhD Psychology",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "May 2025",
+        "January 2025",
+        "May 2026",
+        "January 2026",
+        "September 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-psychology"
+    },
+    {
+      "title": "PhD Education",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2025",
+        "January 2026",
+        "May 2025",
+        "September 2025",
+        "May 2026",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-education"
+    },
+    {
+      "title": "PhD Chemical Engineering",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-chemical-engineering"
+    },
+    {
+      "title": "PhD Human Resource Management",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-human-resource-management"
+    },
+    {
+      "title": "PhD Physics",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-physics"
+    },
+    {
       "title": "MSc AI, Philosophy and Ethics",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -687,6 +1235,25 @@
       "courseRefId": "university-of-hull|msc-ai-philosophy-and-ethics"
     },
     {
+      "title": "PhD Health Studies",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-health-studies"
+    },
+    {
       "title": "PhD Finance",
       "level": "phd",
       "sourceLevel": "Doctorate",
@@ -697,7 +1264,10 @@
       "intake": [
         "January 2026",
         "May 2026",
-        "September 2026"
+        "September 2026",
+        "January 2027",
+        "February 2027",
+        "May 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -705,6 +1275,34 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
       "courseRefId": "university-of-hull|phd-finance"
+    },
+    {
+      "title": "PhD Sport, Health and Exercise Science",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "May 2025",
+        "January 2026",
+        "May 2026",
+        "January 2025",
+        "September 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-sport-health-and-exercise-science"
     },
     {
       "title": "MSc Logistics and Supply Chain Management",
@@ -728,6 +1326,62 @@
       "courseRefId": "university-of-hull|msc-logistics-and-supply-chain-management"
     },
     {
+      "title": "PhD Film Studies",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2026",
+        "January 2025",
+        "September 2025",
+        "May 2025",
+        "May 2026",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-film-studies"
+    },
+    {
+      "title": "MA by Thesis Film Studies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2025",
+        "September 2025",
+        "January 2025",
+        "January 2026",
+        "May 2026",
+        "May 2024",
+        "September 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|ma-by-thesis-film-studies"
+    },
+    {
       "title": "MA Early Childhood and Education",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -747,6 +1401,86 @@
       "courseRefId": "university-of-hull|ma-early-childhood-and-education"
     },
     {
+      "title": "MSc Artificial Intelligence for Business",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|msc-artificial-intelligence-for-business"
+    },
+    {
+      "title": "MSc (by Thesis) Electronic Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "May 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|msc-by-thesis-electronic-engineering"
+    },
+    {
+      "title": "PhD Human Geography",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-human-geography"
+    },
+    {
+      "title": "MSc ( by Thesis) Chemical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|msc-by-thesis-chemical-engineering"
+    },
+    {
       "title": "MA by Thesis History",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -756,7 +1490,9 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2026",
-        "May 2026"
+        "May 2026",
+        "February 2027",
+        "May 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -764,6 +1500,200 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
       "courseRefId": "university-of-hull|ma-by-thesis-history"
+    },
+    {
+      "title": "MSc Nutrition and Dietetics (pre-registration)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|msc-nutrition-and-dietetics-pre-registration"
+    },
+    {
+      "title": "MA Teaching English to Speakers of Other Languages",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 14000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|ma-teaching-english-to-speakers-of-other-languages"
+    },
+    {
+      "title": "MSc Renewable Energy and Low Carbon Solutions",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|msc-renewable-energy-and-low-carbon-solutions"
+    },
+    {
+      "title": "MA Special Educational Needs Disabilities and Inclusion",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|ma-special-educational-needs-disabilities-and-inclusion"
+    },
+    {
+      "title": "MA Social Justice and Community Engagement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|ma-social-justice-and-community-engagement"
+    },
+    {
+      "title": "MA Social Work",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 12400,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|ma-social-work"
+    },
+    {
+      "title": "MSc Marine Conservation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|msc-marine-conservation"
+    },
+    {
+      "title": "Pre-Sessional English (10 - week Course)",
+      "level": "language",
+      "sourceLevel": "PresessionalEnglish",
+      "duration": "10 Weeks",
+      "tuition": null,
+      "currency": null,
+      "feeBasis": null,
+      "intake": [
+        "June 2024",
+        "June 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Hull Campus",
+        "Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|pre-sessional-english-10-week-course"
+    },
+    {
+      "title": "MA by Thesis Creative Writing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|ma-by-thesis-creative-writing"
+    },
+    {
+      "title": "MA by Thesis English",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|ma-by-thesis-english"
     },
     {
       "title": "MSc in Environmental Change, Management and Monitoring",
@@ -806,64 +1736,6 @@
       "courseRefId": "university-of-hull|ma-in-criminal-justice-and-crime-control"
     },
     {
-      "title": "MSc Nutrition and Dietetics (pre-registration)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Hull Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
-      "courseRefId": "university-of-hull|msc-nutrition-and-dietetics-pre-registration"
-    },
-    {
-      "title": "MA Teaching English to Speakers of Other Languages",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 14000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Hull Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
-      "courseRefId": "university-of-hull|ma-teaching-english-to-speakers-of-other-languages"
-    },
-    {
-      "title": "MA Special Educational Needs Disabilities and Inclusion",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Hull Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
-      "courseRefId": "university-of-hull|ma-special-educational-needs-disabilities-and-inclusion"
-    },
-    {
       "title": "MA in History",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -884,42 +1756,23 @@
       "courseRefId": "university-of-hull|ma-in-history"
     },
     {
-      "title": "MA Social Justice and Community Engagement",
+      "title": "MA by Thesis Archaeology",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 17000,
+      "tuition": 18000,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2026"
+        "February 2027",
+        "May 2027"
       ],
       "campuses": [
         "Hull Campus"
       ],
-      "scholarshipTag": "Scholarship applied!",
+      "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
-      "courseRefId": "university-of-hull|ma-social-justice-and-community-engagement"
-    },
-    {
-      "title": "MA Social Work",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 12400,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Hull Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
-      "courseRefId": "university-of-hull|ma-social-work"
+      "courseRefId": "university-of-hull|ma-by-thesis-archaeology"
     },
     {
       "title": "MSc Wildlife Conservation",
@@ -939,45 +1792,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
       "courseRefId": "university-of-hull|msc-wildlife-conservation"
-    },
-    {
-      "title": "MSc Marine Conservation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Hull Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
-      "courseRefId": "university-of-hull|msc-marine-conservation"
-    },
-    {
-      "title": "MSc Renewable Energy and Low Carbon Solutions",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Hull Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
-      "courseRefId": "university-of-hull|msc-renewable-energy-and-low-carbon-solutions"
     },
     {
       "title": "BA (Hons) Drama",
@@ -1001,7 +1815,7 @@
     {
       "title": "MA by Thesis Music",
       "level": "master",
-      "sourceLevel": "Doctorate",
+      "sourceLevel": "Postgraduate",
       "duration": "12 Months",
       "tuition": 17500,
       "currency": "GBP",
@@ -1015,7 +1829,9 @@
         "May 2024",
         "September 2024",
         "January 2024",
-        "September 2026"
+        "September 2026",
+        "February 2027",
+        "May 2027"
       ],
       "campuses": [
         "Hull Campus"
@@ -1023,6 +1839,554 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
       "courseRefId": "university-of-hull|ma-by-thesis-music"
+    },
+    {
+      "title": "PhD Archaeology",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-archaeology"
+    },
+    {
+      "title": "PhD Biochemistry",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-biochemistry"
+    },
+    {
+      "title": "PhD Biological Sciences",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-biological-sciences"
+    },
+    {
+      "title": "PhD Creative Writing",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-creative-writing"
+    },
+    {
+      "title": "PhD Criminology",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2026",
+        "May 2025",
+        "May 2026",
+        "September 2025",
+        "January 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-criminology"
+    },
+    {
+      "title": "PhD Drama",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "May 2025",
+        "May 2026",
+        "January 2025",
+        "January 2026",
+        "September 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-drama"
+    },
+    {
+      "title": "PhD English",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2025",
+        "May 2026",
+        "May 2025",
+        "January 2026",
+        "September 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-english"
+    },
+    {
+      "title": "PhD Philosophy",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2025",
+        "May 2026",
+        "May 2025",
+        "January 2026",
+        "September 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "January 2027",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-philosophy"
+    },
+    {
+      "title": "PhD Music",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "May 2026",
+        "September 2025",
+        "January 2026",
+        "January 2025",
+        "May 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-music"
+    },
+    {
+      "title": "PhD Social Work",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "May 2026",
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "May 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-social-work"
+    },
+    {
+      "title": "PhD Mathematics",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2026",
+        "January 2025",
+        "May 2025",
+        "May 2026",
+        "September 2025",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-mathematics"
+    },
+    {
+      "title": "PhD Drama (Theory and Practice)",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-drama-theory-and-practice"
+    },
+    {
+      "title": "PhD Earth Science",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-earth-science"
+    },
+    {
+      "title": "PhD Fisheries",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-fisheries"
+    },
+    {
+      "title": "PhD Gender Studies",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-gender-studies"
+    },
+    {
+      "title": "PhD Geology",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-geology"
+    },
+    {
+      "title": "PhD History",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-history"
+    },
+    {
+      "title": "PhD Marine Sciences",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-marine-sciences"
+    },
+    {
+      "title": "PhD Social Justice",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-social-justice"
+    },
+    {
+      "title": "PhD Sociology",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-sociology"
+    },
+    {
+      "title": "PhD Systems Science",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-systems-science"
+    },
+    {
+      "title": "PhD Theatre and Performance",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-theatre-and-performance"
+    },
+    {
+      "title": "PhD in Music Performance",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-in-music-performance"
+    },
+    {
+      "title": "PhD in Music by Composition",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-in-music-by-composition"
+    },
+    {
+      "title": "PhD American Studies",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2025",
+        "May 2025",
+        "May 2026",
+        "September 2025",
+        "January 2026",
+        "May 2024",
+        "January 2024",
+        "September 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "Hull Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-hull",
+      "courseRefId": "university-of-hull|phd-american-studies"
     },
     {
       "title": "Pre-Sessional English (6 - week Course)",
@@ -1034,7 +2398,6 @@
       "feeBasis": null,
       "intake": [
         "July 2024",
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",

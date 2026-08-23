@@ -3,13 +3,14 @@
   "name": "RMIT University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/rmit-university",
-  "scrapedAt": "2026-07-22T15:42:52.361Z",
+  "scrapedAt": "2026-08-23T13:11:39.951Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "rmit-university",
   "country": "Australia",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -66,6 +67,28 @@
       "courseRefId": "rmit-university|master-of-analytics"
     },
     {
+      "title": "Master of Fashion (Entrepreneurship)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 44160,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Brunswick campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-fashion-entrepreneurship"
+    },
+    {
       "title": "Master of International Business",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -112,17 +135,15 @@
       "courseRefId": "rmit-university|master-of-cyber-security"
     },
     {
-      "title": "Master of Commerce",
+      "title": "Executive Master of Business Administration",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48960,
+      "duration": "18 Months",
+      "tuition": 53760,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
-        "July 2026",
-        "July 2027",
         "February 2027",
         "February 2028"
       ],
@@ -131,29 +152,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-commerce"
-    },
-    {
-      "title": "Master of Fashion (Entrepreneurship)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 44160,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Brunswick campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-fashion-entrepreneurship"
+      "courseRefId": "rmit-university|executive-master-of-business-administration"
     },
     {
       "title": "Master of Business Administration",
@@ -176,6 +175,28 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|master-of-business-administration"
+    },
+    {
+      "title": "Master of Commerce",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48960,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-commerce"
     },
     {
       "title": "Master of Business Administration (Accelerated)",
@@ -236,26 +257,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|master-of-international-business-accelerated"
-    },
-    {
-      "title": "Executive Master of Business Administration",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 53760,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|executive-master-of-business-administration"
     },
     {
       "title": "Master of Business Information Technology",
@@ -347,6 +348,50 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|master-of-finance"
+    },
+    {
+      "title": "Master of Information Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 44160,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-information-technology"
+    },
+    {
+      "title": "Master of Occupational Health and Safety",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 45120,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-occupational-health-and-safety"
     },
     {
       "title": "Master of Engineering (Telecommunication and Network Engineering)",
@@ -441,50 +486,6 @@
       "courseRefId": "rmit-university|juris-doctor"
     },
     {
-      "title": "Master of Information Technology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 44160,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-information-technology"
-    },
-    {
-      "title": "Master of Occupational Health and Safety",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 45120,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-occupational-health-and-safety"
-    },
-    {
       "title": "Master of Finance (Accelerated)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -503,6 +504,29 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|master-of-finance-accelerated"
+    },
+    {
+      "title": "Bachelor of Computer Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 43200,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-computer-science"
     },
     {
       "title": "Bachelor of Computer Science (Honours)",
@@ -549,29 +573,6 @@
       "courseRefId": "rmit-university|bachelor-of-computer-science-professional"
     },
     {
-      "title": "Bachelor of Computer Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 43200,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-computer-science"
-    },
-    {
       "title": "Bachelor of Data Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -616,11 +617,11 @@
       "courseRefId": "rmit-university|bachelor-of-data-science-professional"
     },
     {
-      "title": "Bachelor of Commerce – International Business major",
+      "title": "Associate Degree in Business",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 45120,
+      "duration": "24 Months",
+      "tuition": 35520,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -635,183 +636,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-commerce-international-business-major"
-    },
-    {
-      "title": "Bachelor of Commerce – Leadership and Strategy major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 45120,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-commerce-leadership-and-strategy-major"
-    },
-    {
-      "title": "Bachelor of Fashion (Enterprise)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 47040,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Brunswick campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-fashion-enterprise"
-    },
-    {
-      "title": "Bachelor of Cyber Security",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 43200,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-cyber-security"
-    },
-    {
-      "title": "Bachelor of Cyber Security (Professional)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 43200,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-cyber-security-professional"
-    },
-    {
-      "title": "Bachelor of Business",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 45120,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-business"
-    },
-    {
-      "title": "Bachelor of Business - Business and Technology major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 45120,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-business-business-and-technology-major"
-    },
-    {
-      "title": "Bachelor of Business - Entrepreneurship major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 45120,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-business-entrepreneurship-major"
-    },
-    {
-      "title": "Bachelor of Business - Global Business major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 45120,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-business-global-business-major"
+      "courseRefId": "rmit-university|associate-degree-in-business"
     },
     {
       "title": "Bachelor of Business - Management and Change major",
@@ -902,11 +727,11 @@
       "courseRefId": "rmit-university|bachelor-of-commerce"
     },
     {
-      "title": "Associate Degree in Business",
+      "title": "Bachelor of Commerce – International Business major",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 35520,
+      "duration": "36 Months",
+      "tuition": 45120,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -921,7 +746,95 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|associate-degree-in-business"
+      "courseRefId": "rmit-university|bachelor-of-commerce-international-business-major"
+    },
+    {
+      "title": "Bachelor of Commerce – Leadership and Strategy major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 45120,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-commerce-leadership-and-strategy-major"
+    },
+    {
+      "title": "Bachelor of Cyber Security",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 43200,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-cyber-security"
+    },
+    {
+      "title": "Bachelor of Cyber Security (Professional)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 43200,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-cyber-security-professional"
+    },
+    {
+      "title": "Bachelor of Fashion (Enterprise)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 47040,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Brunswick campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-fashion-enterprise"
     },
     {
       "title": "Diploma of Business",
@@ -968,6 +881,94 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|diploma-of-commerce"
+    },
+    {
+      "title": "Bachelor of Business",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 45120,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-business"
+    },
+    {
+      "title": "Bachelor of Business - Business and Technology major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 45120,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-business-business-and-technology-major"
+    },
+    {
+      "title": "Bachelor of Business - Entrepreneurship major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 45120,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-business-entrepreneurship-major"
+    },
+    {
+      "title": "Bachelor of Business - Global Business major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 45120,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-business-global-business-major"
     },
     {
       "title": "Bachelor of Engineering (Software Engineering) (Honours)",
@@ -1123,14 +1124,18 @@
       "courseRefId": "rmit-university|bachelor-of-engineering-electronic-and-computer-systems-engineering-honours-bachelor-of-business"
     },
     {
-      "title": "Bachelor of Engineering (Honours)",
+      "title": "Bachelor of Nursing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 47040,
+      "duration": "36 Months",
+      "tuition": 43200,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "July 2025",
+        "February 2025",
+        "July 2024",
+        "February 2024",
         "February 2026",
         "July 2026",
         "July 2027",
@@ -1138,11 +1143,11 @@
         "February 2028"
       ],
       "campuses": [
-        "RMIT Melbourne City Campus"
+        "RMIT Bundoora Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-engineering-honours"
+      "courseRefId": "rmit-university|bachelor-of-nursing"
     },
     {
       "title": "Bachelor of Information Technology",
@@ -1211,18 +1216,14 @@
       "courseRefId": "rmit-university|bachelor-of-laboratory-medicine-honours"
     },
     {
-      "title": "Bachelor of Nursing",
+      "title": "Diploma of Nursing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 43200,
+      "duration": "24 Months",
+      "tuition": 20250,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2025",
-        "July 2025",
-        "July 2024",
-        "February 2024",
         "February 2026",
         "July 2026",
         "July 2027",
@@ -1230,11 +1231,12 @@
         "February 2028"
       ],
       "campuses": [
+        "RMIT Melbourne City Campus",
         "RMIT Bundoora Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-nursing"
+      "courseRefId": "rmit-university|diploma-of-nursing"
     },
     {
       "title": "Associate Degree in Engineering Technology",
@@ -1301,6 +1303,28 @@
       "courseRefId": "rmit-university|associate-degree-in-information-technology"
     },
     {
+      "title": "Bachelor of Engineering (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 47040,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-engineering-honours"
+    },
+    {
       "title": "Bachelor of Science - Statistics major",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1347,29 +1371,6 @@
       "courseRefId": "rmit-university|diploma-of-information-technology"
     },
     {
-      "title": "Diploma of Nursing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 20250,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus",
-        "RMIT Bundoora Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|diploma-of-nursing"
-    },
-    {
       "title": "Bachelor of Engineering (Electronic and Computer Systems Engineering) (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1390,50 +1391,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|bachelor-of-engineering-electronic-and-computer-systems-engineering-honours"
-    },
-    {
-      "title": "Bachelor of Commerce – Marketing Technology major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 45120,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-commerce-marketing-technology-major"
-    },
-    {
-      "title": "Bachelor of Engineering (Mechanical Engineering) (Honours)/Bachelor of Business",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 51744,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-engineering-mechanical-engineering-honours-bachelor-of-business"
     },
     {
       "title": "Bachelor of Laws/Bachelor of Business",
@@ -1480,28 +1437,6 @@
       "courseRefId": "rmit-university|bachelor-of-laws-bachelor-of-commerce"
     },
     {
-      "title": "Bachelor of Business - Business Information Systems major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 45120,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-business-business-information-systems-major"
-    },
-    {
       "title": "Bachelor of Business - Marketing major",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1522,6 +1457,50 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|bachelor-of-business-marketing-major"
+    },
+    {
+      "title": "Bachelor of Commerce – Marketing Technology major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 45120,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-commerce-marketing-technology-major"
+    },
+    {
+      "title": "Bachelor of Engineering (Mechanical Engineering) (Honours)/Bachelor of Business",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 51744,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-engineering-mechanical-engineering-honours-bachelor-of-business"
     },
     {
       "title": "Bachelor of Accounting/Bachelor of Business",
@@ -1566,6 +1545,28 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|bachelor-of-accounting-bachelor-of-commerce"
+    },
+    {
+      "title": "Bachelor of Business - Business Information Systems major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 45120,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-business-business-information-systems-major"
     },
     {
       "title": "Master of Communication Design",
@@ -1616,71 +1617,44 @@
       "courseRefId": "rmit-university|master-of-architecture"
     },
     {
-      "title": "Master of Marketing",
+      "title": "Master of Marketing (Accelerated)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
+      "duration": "18 Months",
       "tuition": 48960,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "July 2024",
-        "February 2026",
         "July 2026",
-        "July 2027",
         "February 2027",
-        "February 2028"
+        "July 2027"
       ],
       "campuses": [
         "RMIT Melbourne City Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-marketing"
+      "courseRefId": "rmit-university|master-of-marketing-accelerated"
     },
     {
-      "title": "Master of Design Innovation and Technology",
+      "title": "Master of Professional Accounting (Accelerated)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 47040,
+      "duration": "18 Months",
+      "tuition": 48960,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2026",
         "July 2026",
-        "July 2027",
         "February 2027",
-        "February 2028"
+        "July 2027"
       ],
       "campuses": [
         "RMIT Melbourne City Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-design-innovation-and-technology"
-    },
-    {
-      "title": "Master of Communication",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 43200,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-communication"
+      "courseRefId": "rmit-university|master-of-professional-accounting-accelerated"
     },
     {
       "title": "Master of Engineering (Mechanical Engineering)",
@@ -1703,28 +1677,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|master-of-engineering-mechanical-engineering"
-    },
-    {
-      "title": "Master of Advertising",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 43200,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-advertising"
     },
     {
       "title": "Master of Geospatial Science",
@@ -1837,44 +1789,93 @@
       "courseRefId": "rmit-university|master-of-professional-accounting"
     },
     {
-      "title": "Master of Marketing (Accelerated)",
+      "title": "Master of Marketing",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
+      "duration": "24 Months",
       "tuition": 48960,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "July 2024",
+        "February 2026",
         "July 2026",
+        "July 2027",
         "February 2027",
-        "July 2027"
+        "February 2028"
       ],
       "campuses": [
         "RMIT Melbourne City Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-marketing-accelerated"
+      "courseRefId": "rmit-university|master-of-marketing"
     },
     {
-      "title": "Master of Professional Accounting (Accelerated)",
+      "title": "Master of Advertising",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 48960,
+      "duration": "24 Months",
+      "tuition": 43200,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "February 2026",
         "July 2026",
+        "July 2027",
         "February 2027",
-        "July 2027"
+        "February 2028"
       ],
       "campuses": [
         "RMIT Melbourne City Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-professional-accounting-accelerated"
+      "courseRefId": "rmit-university|master-of-advertising"
+    },
+    {
+      "title": "Master of Communication",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 43200,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-communication"
+    },
+    {
+      "title": "Master of Design Innovation and Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 47040,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-design-innovation-and-technology"
     },
     {
       "title": "Bachelor of Commerce – Quantitative Economics and Finance major",
@@ -1899,6 +1900,26 @@
       "courseRefId": "rmit-university|bachelor-of-commerce-quantitative-economics-and-finance-major"
     },
     {
+      "title": "Associate Degree in Applied Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 36480,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|associate-degree-in-applied-science"
+    },
+    {
       "title": "Bachelor of Science - Biotechnology major",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1919,26 +1940,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|bachelor-of-science-biotechnology-major"
-    },
-    {
-      "title": "Associate Degree in Applied Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 36480,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|associate-degree-in-applied-science"
     },
     {
       "title": "Bachelor of Business - Digital Economy major",
@@ -2029,6 +2030,105 @@
       "courseRefId": "rmit-university|master-of-engineering-robotics-and-mechatronics-engineering"
     },
     {
+      "title": "Bachelor of Engineering (Mechanical Engineering) (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 47040,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2025",
+        "October 2025",
+        "February 2025",
+        "October 2024",
+        "July 2024",
+        "February 2024",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus",
+        "RMIT Bundoora Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-engineering-mechanical-engineering-honours"
+    },
+    {
+      "title": "Bachelor of Interior Design (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 48000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "July 2025",
+        "July 2024",
+        "February 2024",
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-interior-design-honours"
+    },
+    {
+      "title": "Bachelor of Laws",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 45120,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-laws"
+    },
+    {
+      "title": "Bachelor of Laws/Bachelor of Professional Communication",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 45120,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-laws-bachelor-of-professional-communication"
+    },
+    {
       "title": "Bachelor of Professional Communication",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2117,17 +2217,15 @@
       "courseRefId": "rmit-university|bachelor-of-professional-communication-public-relations-major"
     },
     {
-      "title": "Bachelor of Communication (Media)",
+      "title": "Diploma of Screen and Media",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 41280,
+      "duration": "12 Months",
+      "tuition": 26500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
-        "July 2026",
-        "July 2027",
         "February 2027",
         "February 2028"
       ],
@@ -2136,20 +2234,18 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-communication-media"
+      "courseRefId": "rmit-university|diploma-of-screen-and-media"
     },
     {
-      "title": "Bachelor of Design (Digital Media)",
+      "title": "Diploma of Screen and Media (Content Creation)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 46080,
+      "duration": "12 Months",
+      "tuition": 26750,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
-        "July 2026",
-        "July 2027",
         "February 2027",
         "February 2028"
       ],
@@ -2158,128 +2254,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-design-digital-media"
-    },
-    {
-      "title": "Bachelor of Laws",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 45120,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-laws"
-    },
-    {
-      "title": "Bachelor of Laws/Bachelor of Professional Communication",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 45120,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-laws-bachelor-of-professional-communication"
-    },
-    {
-      "title": "Bachelor of Biomedical Science (Osteopathy)/Master of Clinical Osteopathy (3+2 package)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 46080,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Bundoora Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-biomedical-science-osteopathy-master-of-clinical-osteopathy-3-2-package"
-    },
-    {
-      "title": "Bachelor of Interior Design (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 48000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2025",
-        "February 2025",
-        "July 2024",
-        "February 2024",
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-interior-design-honours"
-    },
-    {
-      "title": "Bachelor of Engineering (Mechanical Engineering) (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 47040,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "October 2025",
-        "July 2024",
-        "October 2024",
-        "February 2024",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus",
-        "RMIT Bundoora Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-engineering-mechanical-engineering-honours"
+      "courseRefId": "rmit-university|diploma-of-screen-and-media-content-creation"
     },
     {
       "title": "Advanced Diploma of Accounting",
@@ -2390,6 +2365,72 @@
       "courseRefId": "rmit-university|associate-degree-in-interior-decoration-and-design"
     },
     {
+      "title": "Bachelor of Communication (Media)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 41280,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-communication-media"
+    },
+    {
+      "title": "Bachelor of Design (Digital Media)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 46080,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-design-digital-media"
+    },
+    {
+      "title": "Diploma of Interior Design",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 26750,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|diploma-of-interior-design"
+    },
+    {
       "title": "Associate Degree in Screen and Media Production",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2476,11 +2517,11 @@
       "courseRefId": "rmit-university|bachelor-of-architectural-design"
     },
     {
-      "title": "Diploma of Interior Design",
-      "level": "bachelor",
+      "title": "Bachelor of Biomedical Science (Osteopathy)/Master of Clinical Osteopathy (3+2 package)",
+      "level": "master",
       "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 26750,
+      "duration": "36 Months",
+      "tuition": 46080,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -2491,51 +2532,11 @@
         "February 2028"
       ],
       "campuses": [
-        "RMIT Melbourne City Campus"
+        "RMIT Bundoora Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|diploma-of-interior-design"
-    },
-    {
-      "title": "Diploma of Screen and Media",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 26500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|diploma-of-screen-and-media"
-    },
-    {
-      "title": "Diploma of Screen and Media (Content Creation)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 26750,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|diploma-of-screen-and-media-content-creation"
+      "courseRefId": "rmit-university|bachelor-of-biomedical-science-osteopathy-master-of-clinical-osteopathy-3-2-package"
     },
     {
       "title": "Bachelor of Engineering (Civil and Infrastructure) (Honours)/Bachelor of Business",
@@ -2582,32 +2583,6 @@
       "courseRefId": "rmit-university|bachelor-of-business-human-resource-management-major"
     },
     {
-      "title": "Master of Project Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 49920,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "July 2025",
-        "July 2024",
-        "February 2024",
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-project-management"
-    },
-    {
       "title": "Master of Engineering (Electrical Engineering)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2628,6 +2603,54 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|master-of-engineering-electrical-engineering"
+    },
+    {
+      "title": "Master of Global Studies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 39360,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-global-studies"
+    },
+    {
+      "title": "Master of Project Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 49920,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2025",
+        "February 2025",
+        "July 2024",
+        "February 2024",
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-project-management"
     },
     {
       "title": "Graduate Diploma in Journalism",
@@ -2670,28 +2693,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|graduate-diploma-in-project-management"
-    },
-    {
-      "title": "Master of Global Studies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 39360,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-global-studies"
     },
     {
       "title": "Bachelor of Science (Biotechnology)/Bachelor of Biomedical Science",
@@ -2739,94 +2740,6 @@
       "courseRefId": "rmit-university|bachelor-of-commerce-cyber-security-law-and-governance-major"
     },
     {
-      "title": "Bachelor of Engineering (Biomedical Engineering) (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 47040,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-engineering-biomedical-engineering-honours"
-    },
-    {
-      "title": "Bachelor of Engineering (Electrical Engineering) (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 47040,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-engineering-electrical-engineering-honours"
-    },
-    {
-      "title": "Bachelor of Communication (Journalism)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 41280,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-communication-journalism"
-    },
-    {
-      "title": "Bachelor of Project Management (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 43200,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-project-management-honours"
-    },
-    {
       "title": "Bachelor of Graphic Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2849,11 +2762,11 @@
       "courseRefId": "rmit-university|bachelor-of-graphic-design"
     },
     {
-      "title": "Bachelor of Biomedical Science",
+      "title": "Bachelor of Project Management (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 46080,
+      "duration": "48 Months",
+      "tuition": 43200,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -2864,31 +2777,11 @@
         "February 2028"
       ],
       "campuses": [
-        "RMIT Bundoora Campus"
+        "RMIT Melbourne City Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-biomedical-science"
-    },
-    {
-      "title": "Bachelor of Biomedical Science (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 46080,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Bundoora Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-biomedical-science-honours"
+      "courseRefId": "rmit-university|bachelor-of-project-management-honours"
     },
     {
       "title": "Advanced Diploma of Engineering Technology - Electrical",
@@ -2957,6 +2850,50 @@
       "courseRefId": "rmit-university|associate-degree-in-graphic-design"
     },
     {
+      "title": "Bachelor of Communication (Journalism)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 41280,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-communication-journalism"
+    },
+    {
+      "title": "Bachelor of Engineering (Electrical Engineering) (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 47040,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-engineering-electrical-engineering-honours"
+    },
+    {
       "title": "Diploma of Graphic Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2979,6 +2916,70 @@
       "courseRefId": "rmit-university|diploma-of-graphic-design"
     },
     {
+      "title": "Bachelor of Biomedical Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 46080,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Bundoora Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-biomedical-science"
+    },
+    {
+      "title": "Bachelor of Biomedical Science (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 46080,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Bundoora Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-biomedical-science-honours"
+    },
+    {
+      "title": "Bachelor of Engineering (Biomedical Engineering) (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 47040,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-engineering-biomedical-engineering-honours"
+    },
+    {
       "title": "Bachelor of Engineering (Adv Manufacturing & Mechatronics)(Hons)/Bachelor of Business",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2999,6 +3000,30 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|bachelor-of-engineering-adv-manufacturing-mechatronics-hons-bachelor-of-business"
+    },
+    {
+      "title": "Master of Human Resource Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48960,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2024",
+        "February 2024",
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-human-resource-management"
     },
     {
       "title": "Master of Teaching Practice (Primary Education) (Accelerated)",
@@ -3041,98 +3066,6 @@
       "courseRefId": "rmit-university|master-of-teaching-practice-secondary-education-accelerated"
     },
     {
-      "title": "Master of Human Resource Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48960,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2024",
-        "February 2024",
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-human-resource-management"
-    },
-    {
-      "title": "Foundation Studies: Art, Design and Architecture",
-      "level": "foundation",
-      "sourceLevel": "Foundation",
-      "duration": "12 Months",
-      "tuition": 31750,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "July 2024",
-        "February 2024",
-        "February 2027",
-        "January 2027"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|foundation-studies-art-design-and-architecture"
-    },
-    {
-      "title": "Master of Engineering (Civil Engineering)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2025",
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-engineering-civil-engineering"
-    },
-    {
-      "title": "Master of Clinical Psychology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 44160,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Bundoora Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-clinical-psychology"
-    },
-    {
       "title": "Master of Teaching Practice (Primary Education)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3173,6 +3106,31 @@
       "courseRefId": "rmit-university|master-of-teaching-practice-secondary-education"
     },
     {
+      "title": "Foundation Studies: Art, Design and Architecture",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 31750,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2025",
+        "February 2025",
+        "July 2026",
+        "July 2024",
+        "February 2024",
+        "February 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|foundation-studies-art-design-and-architecture"
+    },
+    {
       "title": "Graduate Diploma in Early Childhood Education",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3193,6 +3151,49 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|graduate-diploma-in-early-childhood-education"
+    },
+    {
+      "title": "Master of Clinical Psychology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 44160,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Bundoora Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-clinical-psychology"
+    },
+    {
+      "title": "Master of Engineering (Civil Engineering)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2025",
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-engineering-civil-engineering"
     },
     {
       "title": "Master of Artificial Intelligence",
@@ -3262,122 +3263,15 @@
       "courseRefId": "rmit-university|graduate-diploma-in-mental-health-nursing"
     },
     {
-      "title": "Bachelor of Engineering (Chemical Engineering) (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 47040,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-engineering-chemical-engineering-honours"
-    },
-    {
-      "title": "Bachelor of Engineering (Civil and Infrastructure) (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 47040,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-engineering-civil-and-infrastructure-honours"
-    },
-    {
-      "title": "Bachelor of Psychology (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 43200,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-psychology-honours"
-    },
-    {
-      "title": "Bachelor of Engineering (Environmental Engineering) (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 47040,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-engineering-environmental-engineering-honours"
-    },
-    {
-      "title": "Bachelor of Construction Management (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 43200,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-construction-management-honours"
-    },
-    {
-      "title": "Bachelor of Design (Games)",
+      "title": "Bachelor of Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 46080,
+      "tuition": 43200,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "July 2024",
         "February 2026",
         "July 2026",
         "July 2027",
@@ -3385,33 +3279,12 @@
         "February 2028"
       ],
       "campuses": [
+        "RMIT Bundoora Campus",
         "RMIT Melbourne City Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-design-games"
-    },
-    {
-      "title": "Bachelor of Education",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 36480,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Bundoora Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-education"
+      "courseRefId": "rmit-university|bachelor-of-psychology"
     },
     {
       "title": "Bachelor of Industrial Design (Honours)",
@@ -3459,15 +3332,34 @@
       "courseRefId": "rmit-university|bachelor-of-landscape-architectural-design"
     },
     {
-      "title": "Bachelor of Psychology",
+      "title": "Bachelor of Psychology (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "12 Months",
       "tuition": 43200,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "July 2024",
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-psychology-honours"
+    },
+    {
+      "title": "Diploma of Screen and Media (Animation, Gaming and Visual Effects)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 25750,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
         "February 2026",
         "July 2026",
         "July 2027",
@@ -3475,12 +3367,31 @@
         "February 2028"
       ],
       "campuses": [
-        "RMIT Bundoora Campus",
         "RMIT Melbourne City Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-psychology"
+      "courseRefId": "rmit-university|diploma-of-screen-and-media-animation-gaming-and-visual-effects"
+    },
+    {
+      "title": "Diploma of Visual Arts",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 25000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|diploma-of-visual-arts"
     },
     {
       "title": "Advanced Diploma of Visual Arts",
@@ -3503,6 +3414,94 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|advanced-diploma-of-visual-arts"
+    },
+    {
+      "title": "Bachelor of Construction Management (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 43200,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-construction-management-honours"
+    },
+    {
+      "title": "Bachelor of Design (Games)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 46080,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-design-games"
+    },
+    {
+      "title": "Bachelor of Engineering (Civil and Infrastructure) (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 47040,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-engineering-civil-and-infrastructure-honours"
+    },
+    {
+      "title": "Bachelor of Engineering (Environmental Engineering) (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 47040,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-engineering-environmental-engineering-honours"
     },
     {
       "title": "Bachelor of Science - Mathematics major",
@@ -3593,6 +3592,29 @@
       "courseRefId": "rmit-university|bachelor-of-surveying-honours"
     },
     {
+      "title": "Diploma of Building and Construction (Building)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 21750,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus",
+        "RMIT Bundoora Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|diploma-of-building-and-construction-building"
+    },
+    {
       "title": "Diploma of Laboratory Technology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3615,11 +3637,11 @@
       "courseRefId": "rmit-university|diploma-of-laboratory-technology"
     },
     {
-      "title": "Diploma of Screen and Media (Animation, Gaming and Visual Effects)",
+      "title": "Bachelor of Education",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 25750,
+      "duration": "48 Months",
+      "tuition": 36480,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3630,54 +3652,33 @@
         "February 2028"
       ],
       "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|diploma-of-screen-and-media-animation-gaming-and-visual-effects"
-    },
-    {
-      "title": "Diploma of Visual Arts",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 25000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|diploma-of-visual-arts"
-    },
-    {
-      "title": "Diploma of Building and Construction (Building)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 21750,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus",
         "RMIT Bundoora Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|diploma-of-building-and-construction-building"
+      "courseRefId": "rmit-university|bachelor-of-education"
+    },
+    {
+      "title": "Bachelor of Engineering (Chemical Engineering) (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 47040,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-engineering-chemical-engineering-honours"
     },
     {
       "title": "Bachelor of Business - Logistics and Supply Chain major",
@@ -3732,10 +3733,10 @@
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2025",
         "February 2026",
-        "July 2025",
         "July 2026",
+        "February 2025",
+        "July 2025",
         "July 2024",
         "February 2024",
         "January 2027"
@@ -3756,10 +3757,10 @@
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2025",
         "February 2026",
         "July 2025",
         "July 2026",
+        "February 2025",
         "July 2024",
         "February 2024",
         "January 2027"
@@ -3770,31 +3771,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|foundation-studies-communication-and-social-context"
-    },
-    {
-      "title": "Foundation Studies: Engineering and Science",
-      "level": "foundation",
-      "sourceLevel": "Foundation",
-      "duration": "12 Months",
-      "tuition": 31750,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "July 2024",
-        "February 2024",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|foundation-studies-engineering-and-science"
     },
     {
       "title": "Foundation Studies: Health",
@@ -3821,6 +3797,31 @@
       "courseRefId": "rmit-university|foundation-studies-health"
     },
     {
+      "title": "Foundation Studies: Engineering and Science",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 31750,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2025",
+        "July 2025",
+        "July 2026",
+        "July 2024",
+        "February 2024",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|foundation-studies-engineering-and-science"
+    },
+    {
       "title": "Foundation Studies: Information Technology",
       "level": "foundation",
       "sourceLevel": "Foundation",
@@ -3829,10 +3830,10 @@
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "July 2026",
+        "July 2025",
         "February 2025",
         "February 2026",
-        "July 2025",
-        "July 2026",
         "July 2024",
         "February 2024",
         "January 2027"
@@ -3888,28 +3889,6 @@
       "courseRefId": "rmit-university|master-of-fashion-design"
     },
     {
-      "title": "Graduate Diploma in Translating and Interpreting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 39360,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|graduate-diploma-in-translating-and-interpreting"
-    },
-    {
       "title": "Master of Translating and Interpreting",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3930,6 +3909,28 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|master-of-translating-and-interpreting"
+    },
+    {
+      "title": "Graduate Diploma in Translating and Interpreting",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 39360,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|graduate-diploma-in-translating-and-interpreting"
     },
     {
       "title": "Bachelor of Engineering (Adv Manufacturing and Mechatronics) (Honours)",
@@ -3998,6 +3999,50 @@
       "courseRefId": "rmit-university|master-of-writing-and-publishing"
     },
     {
+      "title": "Associate Degree in Design (Furniture)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 36480,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|associate-degree-in-design-furniture"
+    },
+    {
+      "title": "Associate Degree in Professional Writing and Editing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 36480,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|associate-degree-in-professional-writing-and-editing"
+    },
+    {
       "title": "Bachelor of Environmental Science/Bachelor of Engineering (Environmental Engineering) (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4062,50 +4107,6 @@
       "courseRefId": "rmit-university|bachelor-of-fashion-design-honours"
     },
     {
-      "title": "Associate Degree in Design (Furniture)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 36480,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|associate-degree-in-design-furniture"
-    },
-    {
-      "title": "Associate Degree in Professional Writing and Editing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 36480,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|associate-degree-in-professional-writing-and-editing"
-    },
-    {
       "title": "Bachelor of Accounting Professional Practice",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4149,6 +4150,32 @@
       "courseRefId": "rmit-university|bachelor-of-food-technology-and-nutrition-bachelor-of-business"
     },
     {
+      "title": "Master of Supply Chain and Logistics Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "17 Months",
+      "tuition": 48960,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "July 2026",
+        "February 2026",
+        "July 2025",
+        "July 2024",
+        "February 2024",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-supply-chain-and-logistics-management"
+    },
+    {
       "title": "Master of Supply Chain and Logistics Management (Accelerated)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4167,32 +4194,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|master-of-supply-chain-and-logistics-management-accelerated"
-    },
-    {
-      "title": "Master of Supply Chain and Logistics Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "17 Months",
-      "tuition": 48960,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "July 2024",
-        "February 2024",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-supply-chain-and-logistics-management"
     },
     {
       "title": "Master of Engineering (Management)",
@@ -4262,6 +4263,28 @@
       "courseRefId": "rmit-university|master-of-animation-games-and-interactivity"
     },
     {
+      "title": "Bachelor of Criminology and Psychology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 38400,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-criminology-and-psychology"
+    },
+    {
       "title": "Bachelor of Engineering (Chemical Engineering)(Honours)/Bachelor of Pharmaceutical Sciences",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4325,28 +4348,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|bachelor-of-fine-arts"
-    },
-    {
-      "title": "Bachelor of Criminology and Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 38400,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-criminology-and-psychology"
     },
     {
       "title": "Bachelor of Social Science (Psychology)",
@@ -4457,101 +4458,6 @@
       "courseRefId": "rmit-university|master-of-photography"
     },
     {
-      "title": "Master of Food Science and Technology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 44160,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "July 2025",
-        "July 2024",
-        "February 2024",
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus",
-        "RMIT Bundoora Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-food-science-and-technology"
-    },
-    {
-      "title": "Master of Engineering (Aerospace)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "July 2024",
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Bundoora Campus",
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-engineering-aerospace"
-    },
-    {
-      "title": "Master of Social Work",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 39360,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-social-work"
-    },
-    {
-      "title": "Master of Energy Efficient and Sustainable Building",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 46080,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|master-of-energy-efficient-and-sustainable-building"
-    },
-    {
       "title": "Master of Engineering (Sustainable Energy)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4573,50 +4479,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|master-of-engineering-sustainable-energy"
-    },
-    {
-      "title": "Graduate Diploma in Energy Efficient and Sustainable Building",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 46080,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|graduate-diploma-in-energy-efficient-and-sustainable-building"
-    },
-    {
-      "title": "Graduate Diploma in Property",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 46080,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|graduate-diploma-in-property"
     },
     {
       "title": "Master of Justice and Criminology",
@@ -4726,11 +4588,84 @@
       "courseRefId": "rmit-university|master-of-urban-planning-and-environment"
     },
     {
-      "title": "Bachelor of Engineering (Aerospace Engineering) (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 47040,
+      "title": "Master of Food Science and Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 44160,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "July 2025",
+        "July 2024",
+        "February 2024",
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus",
+        "RMIT Bundoora Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-food-science-and-technology"
+    },
+    {
+      "title": "Master of Engineering (Aerospace)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "July 2024",
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Bundoora Campus",
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-engineering-aerospace"
+    },
+    {
+      "title": "Master of Social Work",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 39360,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-social-work"
+    },
+    {
+      "title": "Graduate Diploma in Energy Efficient and Sustainable Building",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 46080,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -4745,7 +4680,162 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-engineering-aerospace-engineering-honours"
+      "courseRefId": "rmit-university|graduate-diploma-in-energy-efficient-and-sustainable-building"
+    },
+    {
+      "title": "Graduate Diploma in Property",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 46080,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|graduate-diploma-in-property"
+    },
+    {
+      "title": "Master of Energy Efficient and Sustainable Building",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 46080,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|master-of-energy-efficient-and-sustainable-building"
+    },
+    {
+      "title": "Bachelor of Aviation (Pilot Training)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 69120,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2025",
+        "February 2025",
+        "July 2024",
+        "February 2024",
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-aviation-pilot-training"
+    },
+    {
+      "title": "Bachelor of Food Technology and Nutrition",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 43200,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus",
+        "RMIT Bundoora Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-food-technology-and-nutrition"
+    },
+    {
+      "title": "Bachelor of International Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 38400,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-international-studies"
+    },
+    {
+      "title": "Bachelor of Pharmaceutical Sciences (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 46080,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Bundoora Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-pharmaceutical-sciences-honours"
+    },
+    {
+      "title": "Bachelor of Pharmacy (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 48000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Bundoora Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-pharmacy-honours"
     },
     {
       "title": "Bachelor of Photography",
@@ -4836,190 +4926,15 @@
       "courseRefId": "rmit-university|bachelor-of-science-biological-sciences-major"
     },
     {
-      "title": "Bachelor of Science - Chemistry major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 43200,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-science-chemistry-major"
-    },
-    {
-      "title": "Bachelor of Science - Food Science and Technology major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 43200,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-science-food-science-and-technology-major"
-    },
-    {
-      "title": "Bachelor of Fashion Sustainability",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 47040,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Brunswick campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-fashion-sustainability"
-    },
-    {
-      "title": "Bachelor of Food Technology and Nutrition",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 43200,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus",
-        "RMIT Bundoora Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-food-technology-and-nutrition"
-    },
-    {
-      "title": "Bachelor of Criminology and Criminal Justice",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 38400,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-criminology-and-criminal-justice"
-    },
-    {
-      "title": "Bachelor of International Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 38400,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-international-studies"
-    },
-    {
-      "title": "Bachelor of Pharmaceutical Sciences (Honours)",
+      "title": "Diploma of Photography and Digital Imaging",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "12 Months",
-      "tuition": 46080,
+      "tuition": 25250,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Bundoora Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-pharmaceutical-sciences-honours"
-    },
-    {
-      "title": "Bachelor of Pharmacy (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 48000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Bundoora Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-pharmacy-honours"
-    },
-    {
-      "title": "Bachelor of Arts (Music Industry)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 40320,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "July 2027",
         "February 2027",
         "February 2028"
       ],
@@ -5028,33 +4943,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-arts-music-industry"
-    },
-    {
-      "title": "Bachelor of Aviation (Pilot Training)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 69120,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "July 2025",
-        "July 2024",
-        "February 2024",
-        "February 2026",
-        "July 2026",
-        "July 2027",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "RMIT Melbourne City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|bachelor-of-aviation-pilot-training"
+      "courseRefId": "rmit-university|diploma-of-photography-and-digital-imaging"
     },
     {
       "title": "Bachelor of Pharmaceutical Sciences",
@@ -5121,6 +5010,94 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
       "courseRefId": "rmit-university|associate-degree-in-fashion"
+    },
+    {
+      "title": "Bachelor of Criminology and Criminal Justice",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 38400,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-criminology-and-criminal-justice"
+    },
+    {
+      "title": "Bachelor of Fashion Sustainability",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 47040,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Brunswick campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-fashion-sustainability"
+    },
+    {
+      "title": "Bachelor of Science - Chemistry major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 43200,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-science-chemistry-major"
+    },
+    {
+      "title": "Bachelor of Science - Food Science and Technology major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 43200,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "July 2027",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|bachelor-of-science-food-science-and-technology-major"
     },
     {
       "title": "Bachelor of Science - Nutrition Science major",
@@ -5233,6 +5210,26 @@
       "courseRefId": "rmit-university|bachelor-of-youth-work-and-youth-studies"
     },
     {
+      "title": "Diploma of Conservation and Ecosystem Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 22000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "RMIT Melbourne City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
+      "courseRefId": "rmit-university|diploma-of-conservation-and-ecosystem-management"
+    },
+    {
       "title": "Diploma of Fashion Styling",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -5255,15 +5252,17 @@
       "courseRefId": "rmit-university|diploma-of-fashion-styling"
     },
     {
-      "title": "Diploma of Photography and Digital Imaging",
+      "title": "Bachelor of Arts (Music Industry)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 25250,
+      "duration": "36 Months",
+      "tuition": 40320,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
+        "July 2026",
+        "July 2027",
         "February 2027",
         "February 2028"
       ],
@@ -5272,18 +5271,20 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|diploma-of-photography-and-digital-imaging"
+      "courseRefId": "rmit-university|bachelor-of-arts-music-industry"
     },
     {
-      "title": "Diploma of Conservation and Ecosystem Management",
+      "title": "Bachelor of Engineering (Aerospace Engineering) (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 22000,
+      "duration": "48 Months",
+      "tuition": 47040,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
+        "July 2026",
+        "July 2027",
         "February 2027",
         "February 2028"
       ],
@@ -5292,7 +5293,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/rmit-university",
-      "courseRefId": "rmit-university|diploma-of-conservation-and-ecosystem-management"
+      "courseRefId": "rmit-university|bachelor-of-engineering-aerospace-engineering-honours"
     }
   ]
 }

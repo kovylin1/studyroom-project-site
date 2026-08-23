@@ -3,12 +3,13 @@
   "name": "SRH Hochschule Berlin",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-  "scrapedAt": "2026-07-22T15:42:52.386Z",
+  "scrapedAt": "2026-08-23T13:11:39.978Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "srh-berlin-university-of-applied-sciences",
   "country": "Germany",
+  "city": null,
   "matchMethod": "as-is/exact-slug",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
@@ -67,8 +68,8 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2023",
         "April 2023",
+        "October 2023",
         "April 2026",
         "October 2026",
         "October 2025",
@@ -84,25 +85,27 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|msc-computer-science-cyber-security"
     },
     {
-      "title": "MA Global Business and Leadership",
+      "title": "MBA General Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 11500,
+      "duration": "18 Months",
+      "tuition": 15800,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
+        "April 2023",
+        "October 2023",
         "April 2026",
         "October 2026",
         "April 2027",
         "October 2027"
       ],
       "campuses": [
-        "SRH Heidelberg Campus"
+        "SRH Berlin Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-global-business-and-leadership"
+      "courseRefId": "srh-berlin-university-of-applied-sciences|mba-general-management"
     },
     {
       "title": "MA International Management - Creative Leadership",
@@ -151,30 +154,6 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|ma-international-management"
     },
     {
-      "title": "MA International Business & Leadership (90 ECTS)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 11500,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2023",
-        "April 2026",
-        "October 2026",
-        "April 2027",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Dresden Campus",
-        "SRH Hamburg Campus",
-        "SRH Heidelberg Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-international-business-leadership-90-ects"
-    },
-    {
       "title": "MA International Business & Leadership (120 ECTS)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -208,8 +187,8 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2023",
         "April 2023",
+        "October 2023",
         "April 2026",
         "October 2026",
         "April 2027",
@@ -223,15 +202,14 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|mba-executive-general-management"
     },
     {
-      "title": "MBA General Management",
+      "title": "MA International Business & Leadership (90 ECTS)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "18 Months",
-      "tuition": 15800,
+      "tuition": 11500,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2023",
         "April 2023",
         "April 2026",
         "October 2026",
@@ -239,11 +217,13 @@
         "October 2027"
       ],
       "campuses": [
-        "SRH Berlin Campus"
+        "SRH Dresden Campus",
+        "SRH Hamburg Campus",
+        "SRH Heidelberg Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|mba-general-management"
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-international-business-leadership-90-ects"
     },
     {
       "title": "MA International Management - Entrepreneurship and Intrapreneurship",
@@ -294,6 +274,51 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|meng-international-business-and-engineering"
     },
     {
+      "title": "MA Global Business and Leadership",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 11500,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "April 2026",
+        "October 2026",
+        "April 2027",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Heidelberg Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-global-business-and-leadership"
+    },
+    {
+      "title": "MBA Healthcare Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 15800,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "April 2023",
+        "October 2023",
+        "April 2026",
+        "October 2026",
+        "April 2025",
+        "April 2027",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Berlin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|mba-healthcare-management"
+    },
+    {
       "title": "MA International Business and Leadership - Healthcare Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -313,30 +338,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
       "courseRefId": "srh-berlin-university-of-applied-sciences|ma-international-business-and-leadership-healthcare-management"
-    },
-    {
-      "title": "MBA Healthcare Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 15800,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2023",
-        "April 2023",
-        "April 2026",
-        "October 2026",
-        "April 2025",
-        "April 2027",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Berlin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|mba-healthcare-management"
     },
     {
       "title": "MEng Information Technology",
@@ -451,6 +452,31 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|bsc-computer-science-fast-track"
     },
     {
+      "title": "BA International Business Administration (Fast Track)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 10200,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2023",
+        "April 2023",
+        "April 2026",
+        "October 2026",
+        "April 2027",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Berlin Campus",
+        "SRH Hamburg Campus",
+        "SRH Heidelberg Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-international-business-administration-fast-track"
+    },
+    {
       "title": "BEng Business Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -478,8 +504,8 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2023",
         "April 2023",
+        "October 2023",
         "April 2026",
         "October 2026",
         "April 2027",
@@ -493,31 +519,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
       "courseRefId": "srh-berlin-university-of-applied-sciences|ba-international-business-administration-international-experience-track"
-    },
-    {
-      "title": "BA International Business Administration (Fast Track)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 10200,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2023",
-        "April 2023",
-        "April 2026",
-        "October 2026",
-        "April 2027",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Berlin Campus",
-        "SRH Hamburg Campus",
-        "SRH Heidelberg Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-international-business-administration-fast-track"
     },
     {
       "title": "PerMasters in Computing",
@@ -572,8 +573,8 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2023",
         "April 2023",
+        "October 2023",
         "April 2026",
         "October 2026",
         "April 2027",
@@ -681,8 +682,8 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2023",
         "April 2023",
+        "October 2023",
         "April 2026",
         "October 2026",
         "April 2027",
@@ -720,6 +721,27 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|ba-international-business-administration-digital-marketing-fast-track"
     },
     {
+      "title": "MA Law & Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 13900,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "April 2026",
+        "October 2026",
+        "April 2027",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Berlin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-law-technology"
+    },
+    {
       "title": "MA Architecture - Design for the Built Environment",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -740,27 +762,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
       "courseRefId": "srh-berlin-university-of-applied-sciences|ma-architecture-design-for-the-built-environment"
-    },
-    {
-      "title": "MA Law & Technology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 13900,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2026",
-        "October 2026",
-        "April 2027",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Berlin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-law-technology"
     },
     {
       "title": "BA User Experience Design and Content Creation",
@@ -803,6 +804,26 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|msc-artificial-intelligence-ai-in-business"
     },
     {
+      "title": "BA Communication Design",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "42 Months",
+      "tuition": 9900,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Heidelberg Campus",
+        "SRH Berlin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-communication-design"
+    },
+    {
       "title": "BA Interior Design & Scenography",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -822,26 +843,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
       "courseRefId": "srh-berlin-university-of-applied-sciences|ba-interior-design-scenography"
-    },
-    {
-      "title": "BA Communication Design",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "42 Months",
-      "tuition": 9900,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Heidelberg Campus",
-        "SRH Berlin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-communication-design"
     },
     {
       "title": "BA Advertising and Brand Design",
@@ -914,28 +915,6 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|ba-international-business-administration-business-psychology-international-experience-track"
     },
     {
-      "title": "MA Hospitality Management & Leadership (90 ECTS)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 11500,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2023",
-        "April 2026",
-        "October 2026",
-        "April 2027",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Dresden Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-hospitality-management-leadership-90-ects"
-    },
-    {
       "title": "MA Hospitality Management & Leadership (120 ECTS)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -944,8 +923,8 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2023",
         "April 2023",
+        "October 2023",
         "April 2026",
         "October 2026",
         "April 2027",
@@ -982,6 +961,28 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
       "courseRefId": "srh-berlin-university-of-applied-sciences|meng-engineering-and-sustainable-technology-management-industry-4-0-automation-robotics-3-d-manufacturing"
+    },
+    {
+      "title": "MA Hospitality Management & Leadership (90 ECTS)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 11500,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "April 2023",
+        "April 2026",
+        "October 2026",
+        "April 2027",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Dresden Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-hospitality-management-leadership-90-ects"
     },
     {
       "title": "MEng Information Technology - Artificial Intelligence",
@@ -1051,25 +1052,6 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|beng-applied-mechatronic-systems"
     },
     {
-      "title": "BEng Electrical Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "42 Months",
-      "tuition": 10200,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Heidelberg Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|beng-electrical-engineering"
-    },
-    {
       "title": "BA Global Hospitality Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1093,6 +1075,25 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|ba-global-hospitality-management"
     },
     {
+      "title": "BEng Electrical Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "42 Months",
+      "tuition": 10200,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Heidelberg Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|beng-electrical-engineering"
+    },
+    {
       "title": "MSc Supply Chain Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1109,8 +1110,8 @@
         "October 2027"
       ],
       "campuses": [
-        "SRH Berlin Campus",
-        "SRH Hamburg Campus"
+        "SRH Hamburg Campus",
+        "SRH Berlin Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
@@ -1134,6 +1135,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
       "courseRefId": "srh-berlin-university-of-applied-sciences|msc-supply-chain-management-digital-supply-chain-management"
+    },
+    {
+      "title": "BEng Electrical and Electronics Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "42 Months",
+      "tuition": 10200,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Heidelberg Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|beng-electrical-and-electronics-engineering"
     },
     {
       "title": "MA International Business and Leadership - Sustainability Management",
@@ -1182,25 +1202,6 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|meng-engineering-and-sustainable-technology-management-mobility-and-automotive-industry"
     },
     {
-      "title": "BSc Web Development (dual)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "42 Months",
-      "tuition": 9450,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Berlin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|bsc-web-development-dual"
-    },
-    {
       "title": "BSc Web Development (English)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1219,6 +1220,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
       "courseRefId": "srh-berlin-university-of-applied-sciences|bsc-web-development-english"
+    },
+    {
+      "title": "BSc Web Development (dual)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "42 Months",
+      "tuition": 9450,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Berlin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|bsc-web-development-dual"
     },
     {
       "title": "BSc Applied Artificial Intelligence",
@@ -1409,48 +1429,6 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|foundation-in-creative-studies"
     },
     {
-      "title": "MA Film, Television and Digital Narratives",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 11900,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2023",
-        "April 2023",
-        "April 2026",
-        "October 2026",
-        "April 2027",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Berlin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-film-television-and-digital-narratives"
-    },
-    {
-      "title": "MA Dance Movement Therapy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 10900,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Heidelberg Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-dance-movement-therapy"
-    },
-    {
       "title": "MA Strategic Design",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1459,8 +1437,8 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2023",
         "April 2023",
+        "October 2023",
         "April 2026",
         "October 2026",
         "October 2027"
@@ -1473,29 +1451,6 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|ma-strategic-design"
     },
     {
-      "title": "MA Social Design & Sustainable Innovation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 11900,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2023",
-        "April 2023",
-        "April 2026",
-        "October 2026",
-        "April 2027",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Berlin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-social-design-sustainable-innovation"
-    },
-    {
       "title": "MA Photography",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1504,8 +1459,8 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2023",
         "April 2023",
+        "October 2023",
         "April 2026",
         "October 2026",
         "April 2027",
@@ -1601,11 +1556,11 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|mm-classical-music"
     },
     {
-      "title": "BA Music Production",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "42 Months",
-      "tuition": 9000,
+      "title": "MA Social Design & Sustainable Innovation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 11900,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1621,7 +1576,49 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-music-production"
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-social-design-sustainable-innovation"
+    },
+    {
+      "title": "MA Film, Television and Digital Narratives",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 11900,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2023",
+        "April 2023",
+        "April 2026",
+        "October 2026",
+        "April 2027",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Berlin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-film-television-and-digital-narratives"
+    },
+    {
+      "title": "MA Dance Movement Therapy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 10900,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Heidelberg Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ma-dance-movement-therapy"
     },
     {
       "title": "BMus Popular Music",
@@ -1646,7 +1643,7 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|bmus-popular-music"
     },
     {
-      "title": "BA Photography (English)",
+      "title": "BA Illustration (English)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "42 Months",
@@ -1654,7 +1651,9 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
+        "April 2023",
         "October 2023",
+        "April 2026",
         "October 2026",
         "October 2027"
       ],
@@ -1663,10 +1662,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-photography-english"
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-illustration-english"
     },
     {
-      "title": "BA Film and Motion Design (English)",
+      "title": "BA Audio Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "42 Months",
@@ -1686,7 +1685,50 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-film-and-motion-design-english"
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-audio-design"
+    },
+    {
+      "title": "BA Music Production",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "42 Months",
+      "tuition": 9000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2023",
+        "April 2023",
+        "April 2026",
+        "October 2026",
+        "April 2027",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Berlin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-music-production"
+    },
+    {
+      "title": "BA Photography (English)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "42 Months",
+      "tuition": 9900,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2023",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "SRH Berlin Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-photography-english"
     },
     {
       "title": "BA World Music",
@@ -1731,7 +1773,7 @@
       "courseRefId": "srh-berlin-university-of-applied-sciences|bm-classical-music"
     },
     {
-      "title": "BA Illustration (English)",
+      "title": "BA Film and Motion Design (English)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "42 Months",
@@ -1739,30 +1781,8 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2023",
         "April 2023",
-        "April 2026",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "SRH Berlin Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-illustration-english"
-    },
-    {
-      "title": "BA Audio Design",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "42 Months",
-      "tuition": 9900,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
         "October 2023",
-        "April 2023",
         "April 2026",
         "October 2026",
         "April 2027",
@@ -1773,7 +1793,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/srh-berlin-university-of-applied-sciences",
-      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-audio-design"
+      "courseRefId": "srh-berlin-university-of-applied-sciences|ba-film-and-motion-design-english"
     }
   ]
 }

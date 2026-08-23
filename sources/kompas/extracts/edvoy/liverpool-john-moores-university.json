@@ -3,13 +3,14 @@
   "name": "Liverpool John Moores University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-  "scrapedAt": "2026-07-22T15:42:52.294Z",
+  "scrapedAt": "2026-08-23T13:11:39.896Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "liverpool-john-moores-university",
   "country": "United Kingdom",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -86,6 +87,28 @@
       "courseRefId": "liverpool-john-moores-university|msc-cyber-security"
     },
     {
+      "title": "MSc Management and Digital Business",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-management-and-digital-business"
+    },
+    {
       "title": "MSc International Business and Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -128,28 +151,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|msc-management"
-    },
-    {
-      "title": "MSc Management and Digital Business",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-management-and-digital-business"
     },
     {
       "title": "MSc Management (with Advanced Practice)",
@@ -214,85 +215,6 @@
       "courseRefId": "liverpool-john-moores-university|msc-drug-discovery-development-and-delivery"
     },
     {
-      "title": "MSc International Public Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-international-public-health"
-    },
-    {
-      "title": "MSc Nursing (Adult)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2027",
-        "September 2026"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-nursing-adult"
-    },
-    {
-      "title": "MSc Nursing (Child)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 19000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-nursing-child"
-    },
-    {
-      "title": "PGDip Specialist Practitioner: District Nursing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|pgdip-specialist-practitioner-district-nursing"
-    },
-    {
       "title": "PGDip Specialist Practitioner: Community Children's Nursing",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -311,27 +233,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|pgdip-specialist-practitioner-community-childrens-nursing"
-    },
-    {
-      "title": "MSc Public Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-public-health"
     },
     {
       "title": "MSc Public Health (Addictions)",
@@ -353,6 +254,27 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|msc-public-health-addictions"
+    },
+    {
+      "title": "MSc Public Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-public-health"
     },
     {
       "title": "MSc Investment and Finance",
@@ -377,6 +299,65 @@
       "courseRefId": "liverpool-john-moores-university|msc-investment-and-finance"
     },
     {
+      "title": "MSc Nursing (Child)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 19000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-nursing-child"
+    },
+    {
+      "title": "MSc International Public Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-international-public-health"
+    },
+    {
+      "title": "PGDip Specialist Practitioner: District Nursing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|pgdip-specialist-practitioner-district-nursing"
+    },
+    {
       "title": "PGDip Specialist Practitioner: District Nursing Degree Apprenticeship",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -396,7 +377,7 @@
       "courseRefId": "liverpool-john-moores-university|pgdip-specialist-practitioner-district-nursing-degree-apprenticeship"
     },
     {
-      "title": "MSc Sensors, Data and Management with Placement Year",
+      "title": "MSc Nursing (Adult)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -404,16 +385,46 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2026",
         "September 2025",
-        "September 2027"
+        "September 2027",
+        "September 2026"
       ],
       "campuses": [
         "LJMU City Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-sensors-data-and-management-with-placement-year"
+      "courseRefId": "liverpool-john-moores-university|msc-nursing-adult"
+    },
+    {
+      "title": "MSc Computing and Information Systems",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "February 2025",
+        "February 2026",
+        "January 2025",
+        "January 2026",
+        "June 2025",
+        "June 2026",
+        "October 2025",
+        "October 2024",
+        "September 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-computing-and-information-systems"
     },
     {
       "title": "MSc Sensors, Data and Management",
@@ -445,34 +456,24 @@
       "courseRefId": "liverpool-john-moores-university|msc-sensors-data-and-management"
     },
     {
-      "title": "MSc Computing and Information Systems",
+      "title": "MSc Sensors, Data and Management with Placement Year",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "24 Months",
       "tuition": 18250,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "February 2025",
-        "February 2026",
-        "January 2025",
         "January 2026",
-        "June 2025",
-        "June 2026",
-        "October 2025",
-        "October 2024",
-        "September 2027",
-        "January 2027"
+        "September 2025",
+        "September 2027"
       ],
       "campuses": [
         "LJMU City Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-computing-and-information-systems"
+      "courseRefId": "liverpool-john-moores-university|msc-sensors-data-and-management-with-placement-year"
     },
     {
       "title": "LLM International Business, Corporate and Finance Law",
@@ -544,6 +545,73 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|bsc-hons-business-management"
+    },
+    {
+      "title": "LLM Artificial Intelligence and Law",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|llm-artificial-intelligence-and-law"
+    },
+    {
+      "title": "MA Mass Communications",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-mass-communications"
+    },
+    {
+      "title": "LLM Master of Laws",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "September 2027",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|llm-master-of-laws"
     },
     {
       "title": "MA Immersive Media",
@@ -641,8 +709,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2027",
+        "September 2025",
         "February 2026"
       ],
       "campuses": [
@@ -651,47 +719,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|llm-legal-practice-sqe-1-and-2"
-    },
-    {
-      "title": "PGCert Foundations in Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 7300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|pgcert-foundations-in-law"
-    },
-    {
-      "title": "MA Mass Communications",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-mass-communications"
     },
     {
       "title": "MSc Embedded Systems and IC Design",
@@ -724,29 +751,23 @@
       "courseRefId": "liverpool-john-moores-university|msc-embedded-systems-and-ic-design"
     },
     {
-      "title": "LLM Master of Laws",
+      "title": "PGCert Foundations in Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17250,
+      "duration": "6 Months",
+      "tuition": 7300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
-        "September 2026",
-        "January 2025",
-        "September 2027",
-        "January 2026",
-        "January 2027"
+        "September 2027"
       ],
       "campuses": [
-        "LJMU City Campus",
         "LJMU Mount Pleasant Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|llm-master-of-laws"
+      "courseRefId": "liverpool-john-moores-university|pgcert-foundations-in-law"
     },
     {
       "title": "MSc Health Psychology",
@@ -819,10 +840,10 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "October 2025",
+        "April 2026",
         "July 2026",
         "October 2027",
-        "January 2026",
-        "April 2026"
+        "January 2026"
       ],
       "campuses": [
         "LJMU Mount Pleasant Campus"
@@ -830,93 +851,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|bsc-hons-professional-policing-practice-degree-apprenticeship"
-    },
-    {
-      "title": "MA Journalism",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-journalism"
-    },
-    {
-      "title": "MSc Biomedical Sciences",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-biomedical-sciences"
-    },
-    {
-      "title": "MA Art in Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-art-in-science"
-    },
-    {
-      "title": "MA Exhibition Studies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-exhibition-studies"
     },
     {
       "title": "MA Sports Journalism",
@@ -939,6 +873,28 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|ma-sports-journalism"
+    },
+    {
+      "title": "MA Journalism",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-journalism"
     },
     {
       "title": "MSc Project Management",
@@ -971,24 +927,69 @@
       "courseRefId": "liverpool-john-moores-university|msc-project-management"
     },
     {
-      "title": "BEng (Hons) Mechanical Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "title": "MSc Biomedical Sciences",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
       "tuition": 18250,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
         "September 2025",
-        "September 2026"
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "LJMU City Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|beng-hons-mechanical-engineering"
+      "courseRefId": "liverpool-john-moores-university|msc-biomedical-sciences"
+    },
+    {
+      "title": "MA Exhibition Studies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-exhibition-studies"
+    },
+    {
+      "title": "MA Art in Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-art-in-science"
     },
     {
       "title": "BA (Hons) Architecture",
@@ -1010,6 +1011,27 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|ba-hons-architecture"
+    },
+    {
+      "title": "BEng (Hons) Mechanical Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|beng-hons-mechanical-engineering"
     },
     {
       "title": "MSc Sport and Clinical Biomechanics",
@@ -1053,29 +1075,7 @@
       "courseRefId": "liverpool-john-moores-university|ba-hons-health-and-social-care"
     },
     {
-      "title": "MSc Psychology in Education",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027",
-        "January 2026"
-      ],
-      "campuses": [
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-psychology-in-education"
-    },
-    {
-      "title": "MA Strategic People Management and Practice",
+      "title": "MA Human Resource Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -1083,97 +1083,16 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-strategic-people-management-and-practice"
-    },
-    {
-      "title": "MSc Commercial Building Surveying",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
         "September 2024",
         "September 2025",
-        "September 2026",
-        "September 2027"
+        "September 2026"
       ],
       "campuses": [
         "LJMU City Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-commercial-building-surveying"
-    },
-    {
-      "title": "MSc Construction Project Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "February 2025",
-        "February 2026",
-        "January 2025",
-        "January 2026",
-        "June 2025",
-        "June 2026",
-        "October 2025",
-        "October 2024",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-construction-project-management"
-    },
-    {
-      "title": "MSc Quantity Surveying and Commercial Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "February 2025",
-        "February 2026",
-        "January 2025",
-        "January 2026",
-        "June 2025",
-        "June 2026",
-        "October 2025",
-        "October 2024",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-quantity-surveying-and-commercial-management"
+      "courseRefId": "liverpool-john-moores-university|ma-human-resource-management"
     },
     {
       "title": "MSc Civil Engineering",
@@ -1206,11 +1125,83 @@
       "courseRefId": "liverpool-john-moores-university|msc-civil-engineering"
     },
     {
-      "title": "PGCE Primary Teaching with QTS",
+      "title": "MSc Commercial Building Surveying",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
       "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-commercial-building-surveying"
+    },
+    {
+      "title": "MSc Quantity Surveying and Commercial Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "February 2025",
+        "February 2026",
+        "January 2025",
+        "January 2026",
+        "June 2025",
+        "June 2026",
+        "October 2025",
+        "October 2024",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-quantity-surveying-and-commercial-management"
+    },
+    {
+      "title": "MA Strategic People Management and Practice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-strategic-people-management-and-practice"
+    },
+    {
+      "title": "PGCE Secondary Teaching with QTS (salaried)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1222,7 +1213,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|pgce-primary-teaching-with-qts"
+      "courseRefId": "liverpool-john-moores-university|pgce-secondary-teaching-with-qts-salaried"
     },
     {
       "title": "PGCE Primary Teaching with QTS (salaried)",
@@ -1263,7 +1254,36 @@
       "courseRefId": "liverpool-john-moores-university|pgce-primary-teaching-with-qts-school-led"
     },
     {
-      "title": "PGCE Secondary Teaching with QTS",
+      "title": "MSc Construction Project Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "February 2025",
+        "February 2026",
+        "January 2025",
+        "January 2026",
+        "June 2025",
+        "June 2026",
+        "October 2025",
+        "October 2024",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-construction-project-management"
+    },
+    {
+      "title": "PGCE Primary Teaching with QTS",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -1279,26 +1299,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|pgce-secondary-teaching-with-qts"
-    },
-    {
-      "title": "PGCE Secondary Teaching with QTS (salaried)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|pgce-secondary-teaching-with-qts-salaried"
+      "courseRefId": "liverpool-john-moores-university|pgce-primary-teaching-with-qts"
     },
     {
       "title": "PGCE Secondary Teaching with QTS (school-led)",
@@ -1320,24 +1321,45 @@
       "courseRefId": "liverpool-john-moores-university|pgce-secondary-teaching-with-qts-school-led"
     },
     {
-      "title": "BSc (Hons) Biomedical Science with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "title": "PGCE Secondary Teaching with QTS",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
       "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|pgce-secondary-teaching-with-qts"
+    },
+    {
+      "title": "MSc Psychology in Education",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
         "September 2025",
-        "September 2026"
+        "September 2026",
+        "September 2027",
+        "January 2026"
       ],
       "campuses": [
-        "LJMU City Campus"
+        "LJMU Mount Pleasant Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|bsc-hons-biomedical-science-with-foundation-year"
+      "courseRefId": "liverpool-john-moores-university|msc-psychology-in-education"
     },
     {
       "title": "MSc Management and Digital Business (with Advanced Practice)",
@@ -1360,6 +1382,47 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|msc-management-and-digital-business-with-advanced-practice"
+    },
+    {
+      "title": "BSc (Hons) Biomedical Science with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|bsc-hons-biomedical-science-with-foundation-year"
+    },
+    {
+      "title": "MSc Sport Psychology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 22000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-sport-psychology"
     },
     {
       "title": "MSc Investment and Finance (with Advanced Practice)",
@@ -1401,27 +1464,6 @@
       "courseRefId": "liverpool-john-moores-university|msc-nursing-mental-health"
     },
     {
-      "title": "MSc Sport Psychology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 22000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-sport-psychology"
-    },
-    {
       "title": "MSc Business Analytics and Artificial Intelligence",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1439,26 +1481,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|msc-business-analytics-and-artificial-intelligence"
-    },
-    {
-      "title": "BEng (Hons) Architectural Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|beng-hons-architectural-engineering"
     },
     {
       "title": "BEng (Hons) Civil Engineering",
@@ -1479,6 +1501,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|beng-hons-civil-engineering"
+    },
+    {
+      "title": "BEng (Hons) Architectural Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|beng-hons-architectural-engineering"
     },
     {
       "title": "MA Urban Design",
@@ -1525,25 +1567,6 @@
       "courseRefId": "liverpool-john-moores-university|msc-policing-and-criminal-investigation"
     },
     {
-      "title": "DOC DSportExPsy Professional Doctorate in Sport and Exercise Psychology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "27 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|doc-dsportexpsy-professional-doctorate-in-sport-and-exercise-psychology"
-    },
-    {
       "title": "MSc Electrical Power and Control Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1572,6 +1595,47 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|msc-electrical-power-and-control-engineering"
+    },
+    {
+      "title": "DOC DSportExPsy Professional Doctorate in Sport and Exercise Psychology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "27 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|doc-dsportexpsy-professional-doctorate-in-sport-and-exercise-psychology"
+    },
+    {
+      "title": "MA Fine Art",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-fine-art"
     },
     {
       "title": "MSc Criminal Psychology and Criminal Justice",
@@ -1615,6 +1679,27 @@
       "courseRefId": "liverpool-john-moores-university|msc-supply-chain-logistics-and-management"
     },
     {
+      "title": "MSc Positive Psychology and Wellbeing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-positive-psychology-and-wellbeing"
+    },
+    {
       "title": "MA Education and Social Justice",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1636,28 +1721,6 @@
       "courseRefId": "liverpool-john-moores-university|ma-education-and-social-justice"
     },
     {
-      "title": "MA Fine Art",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-fine-art"
-    },
-    {
       "title": "MSc Forensic and Investigative Psychology",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1677,27 +1740,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|msc-forensic-and-investigative-psychology"
-    },
-    {
-      "title": "MSc Positive Psychology and Wellbeing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-positive-psychology-and-wellbeing"
     },
     {
       "title": "MSc Sport Physiology and Performance",
@@ -1751,8 +1793,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2027"
+        "September 2027",
+        "September 2025"
       ],
       "campuses": [
         "LJMU Mount Pleasant Campus"
@@ -1803,6 +1845,374 @@
       "courseRefId": "liverpool-john-moores-university|msc-clinical-exercise-physiology"
     },
     {
+      "title": "MA Documentary",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-documentary"
+    },
+    {
+      "title": "MA English Literature",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-english-literature"
+    },
+    {
+      "title": "MA Criminal Justice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-criminal-justice"
+    },
+    {
+      "title": "MSc Forensic Anthropology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-forensic-anthropology"
+    },
+    {
+      "title": "MSc Marine and Offshore Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "February 2025",
+        "February 2026",
+        "January 2026",
+        "June 2025",
+        "June 2026",
+        "October 2025",
+        "October 2024",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-marine-and-offshore-engineering"
+    },
+    {
+      "title": "MA International Relations",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-international-relations"
+    },
+    {
+      "title": "MA Social Work",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-social-work"
+    },
+    {
+      "title": "MA Film",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-film"
+    },
+    {
+      "title": "MSc Maritime Operations Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "February 2025",
+        "February 2026",
+        "January 2025",
+        "January 2026",
+        "June 2025",
+        "June 2026",
+        "October 2025",
+        "October 2024",
+        "September 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-maritime-operations-management"
+    },
+    {
+      "title": "MA Modern History",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus",
+        "LJMU Mount Pleasant Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|ma-modern-history"
+    },
+    {
+      "title": "MSc Forensic Bioscience",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-forensic-bioscience"
+    },
+    {
+      "title": "MSc Port Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "February 2026",
+        "February 2025",
+        "January 2026",
+        "June 2025",
+        "June 2026",
+        "October 2025",
+        "October 2024",
+        "September 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-port-management"
+    },
+    {
+      "title": "MSc Real Estate",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-real-estate"
+    },
+    {
+      "title": "MSc Strength and Conditioning",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-strength-and-conditioning"
+    },
+    {
+      "title": "MSc Climate Change and Sustainability",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-climate-change-and-sustainability"
+    },
+    {
+      "title": "MSc Cosmetic Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 20000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-cosmetic-science"
+    },
+    {
       "title": "MPharm Pharmacy",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1824,6 +2234,37 @@
       "courseRefId": "liverpool-john-moores-university|mpharm-pharmacy"
     },
     {
+      "title": "MSc Renewable Energy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2024",
+        "January 2024",
+        "January 2025",
+        "February 2025",
+        "February 2026",
+        "January 2026",
+        "June 2025",
+        "June 2026",
+        "October 2025",
+        "October 2024",
+        "September 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-renewable-energy"
+    },
+    {
       "title": "MA Cities",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1843,6 +2284,180 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|ma-cities"
+    },
+    {
+      "title": "MSc International Transport, Trade and Logistics with Placement Year",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-international-transport-trade-and-logistics-with-placement-year"
+    },
+    {
+      "title": "MSc Maritime Operations Management with Placement Year",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-maritime-operations-management-with-placement-year"
+    },
+    {
+      "title": "MSc Port Management with Placement Year",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-port-management-with-placement-year"
+    },
+    {
+      "title": "MSc Human Evolution",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-human-evolution"
+    },
+    {
+      "title": "MSc International Transport, Trade and Logistics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "February 2025",
+        "February 2026",
+        "January 2025",
+        "January 2026",
+        "June 2025",
+        "June 2026",
+        "October 2025",
+        "October 2024",
+        "September 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-international-transport-trade-and-logistics"
+    },
+    {
+      "title": "MSc Audio Forensics and Restoration",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "February 2025",
+        "February 2026",
+        "January 2025",
+        "January 2026",
+        "June 2025",
+        "June 2026",
+        "October 2025",
+        "October 2024",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-audio-forensics-and-restoration"
+    },
+    {
+      "title": "MSc Clinical Embryology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 30000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-clinical-embryology"
+    },
+    {
+      "title": "MSc Natural Products Discovery",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LJMU City Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
+      "courseRefId": "liverpool-john-moores-university|msc-natural-products-discovery"
     },
     {
       "title": "MSc Water, Energy and the Environment",
@@ -1929,452 +2544,6 @@
       "courseRefId": "liverpool-john-moores-university|msc-wildlife-conservation"
     },
     {
-      "title": "MA English Literature",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-english-literature"
-    },
-    {
-      "title": "MA Film",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-film"
-    },
-    {
-      "title": "MA International Relations",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-international-relations"
-    },
-    {
-      "title": "MSc Audio Forensics and Restoration",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "February 2025",
-        "February 2026",
-        "January 2025",
-        "January 2026",
-        "June 2025",
-        "June 2026",
-        "October 2025",
-        "October 2024",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-audio-forensics-and-restoration"
-    },
-    {
-      "title": "MSc Climate Change and Sustainability",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-climate-change-and-sustainability"
-    },
-    {
-      "title": "MSc Clinical Embryology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 30000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-clinical-embryology"
-    },
-    {
-      "title": "MSc Natural Products Discovery",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-natural-products-discovery"
-    },
-    {
-      "title": "MSc Human Evolution",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-human-evolution"
-    },
-    {
-      "title": "MSc Cosmetic Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-cosmetic-science"
-    },
-    {
-      "title": "MA Social Work",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-social-work"
-    },
-    {
-      "title": "MA Criminal Justice",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-criminal-justice"
-    },
-    {
-      "title": "MA Documentary",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-documentary"
-    },
-    {
-      "title": "MSc Real Estate",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-real-estate"
-    },
-    {
-      "title": "MSc Strength and Conditioning",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-strength-and-conditioning"
-    },
-    {
-      "title": "MA Modern History",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus",
-        "LJMU Mount Pleasant Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|ma-modern-history"
-    },
-    {
-      "title": "MSc Forensic Anthropology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-forensic-anthropology"
-    },
-    {
-      "title": "MSc Forensic Bioscience",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-forensic-bioscience"
-    },
-    {
-      "title": "MSc Marine and Offshore Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "February 2025",
-        "February 2026",
-        "January 2026",
-        "June 2025",
-        "June 2026",
-        "October 2025",
-        "October 2024",
-        "September 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-marine-and-offshore-engineering"
-    },
-    {
-      "title": "MSc International Transport, Trade and Logistics with Placement Year",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-international-transport-trade-and-logistics-with-placement-year"
-    },
-    {
-      "title": "MSc International Transport, Trade and Logistics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "February 2025",
-        "February 2026",
-        "January 2025",
-        "January 2026",
-        "June 2025",
-        "June 2026",
-        "October 2025",
-        "October 2024",
-        "September 2027",
-        "January 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-international-transport-trade-and-logistics"
-    },
-    {
       "title": "MSc Maritime Energy Efficiency",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2397,133 +2566,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
       "courseRefId": "liverpool-john-moores-university|msc-maritime-energy-efficiency"
-    },
-    {
-      "title": "MSc Maritime Operations Management with Placement Year",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-maritime-operations-management-with-placement-year"
-    },
-    {
-      "title": "MSc Maritime Operations Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "February 2025",
-        "February 2026",
-        "January 2025",
-        "January 2026",
-        "June 2025",
-        "June 2026",
-        "October 2025",
-        "October 2024",
-        "September 2027",
-        "January 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-maritime-operations-management"
-    },
-    {
-      "title": "MSc Port Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "February 2026",
-        "February 2025",
-        "January 2026",
-        "June 2025",
-        "June 2026",
-        "October 2025",
-        "October 2024",
-        "September 2027",
-        "January 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-port-management"
-    },
-    {
-      "title": "MSc Port Management with Placement Year",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-port-management-with-placement-year"
-    },
-    {
-      "title": "MSc Renewable Energy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2024",
-        "January 2024",
-        "January 2025",
-        "February 2025",
-        "February 2026",
-        "January 2026",
-        "June 2025",
-        "June 2026",
-        "October 2025",
-        "October 2024",
-        "September 2027",
-        "January 2027"
-      ],
-      "campuses": [
-        "LJMU City Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/liverpool-john-moores-university",
-      "courseRefId": "liverpool-john-moores-university|msc-renewable-energy"
     },
     {
       "title": "BSc (Hons) Sport and Exercise Science",

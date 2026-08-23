@@ -3,12 +3,13 @@
   "name": "Bournemouth University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-  "scrapedAt": "2026-07-22T15:42:52.133Z",
+  "scrapedAt": "2026-08-23T13:11:39.783Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "bournemouth-university",
   "country": "United Kingdom",
+  "city": null,
   "matchMethod": "as-is/exact-name",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
@@ -35,29 +36,6 @@
       "courseRefId": "bournemouth-university|msc-data-science-and-artificial-intelligence-with-placement-year"
     },
     {
-      "title": "MSc International Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026"
-      ],
-      "campuses": [
-        "Lansdowne Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-international-management"
-    },
-    {
       "title": "MSc International Management (with Placement Year)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -80,26 +58,27 @@
       "courseRefId": "bournemouth-university|msc-international-management-with-placement-year"
     },
     {
-      "title": "MSc Management with Business Analytics with Placement",
+      "title": "MSc International Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
+      "duration": "12 Months",
       "tuition": 19000,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
         "January 2024",
-        "September 2026"
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026"
       ],
       "campuses": [
-        "Lansdowne Campus",
-        "Talbot Campus"
+        "Lansdowne Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-management-with-business-analytics-with-placement"
+      "courseRefId": "bournemouth-university|msc-international-management"
     },
     {
       "title": "MSc Management with Business Analytics",
@@ -124,10 +103,32 @@
       "courseRefId": "bournemouth-university|msc-management-with-business-analytics"
     },
     {
+      "title": "MSc Management with Business Analytics with Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 19000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Lansdowne Campus",
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|msc-management-with-business-analytics-with-placement"
+    },
+    {
       "title": "MSc Information Technology",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "24 Months",
       "tuition": 18750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -168,28 +169,6 @@
       "courseRefId": "bournemouth-university|msc-digital-health"
     },
     {
-      "title": "MSc Finance",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Lansdowne Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-finance"
-    },
-    {
       "title": "MSc Digital Health (with Placement Year)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -209,6 +188,27 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|msc-digital-health-with-placement-year"
+    },
+    {
+      "title": "MSc Information Technology (with Placement Year)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|msc-information-technology-with-placement-year"
     },
     {
       "title": "MSc Finance (with Placement Year)",
@@ -233,25 +233,26 @@
       "courseRefId": "bournemouth-university|msc-finance-with-placement-year"
     },
     {
-      "title": "MSc Information Technology (with Placement Year)",
+      "title": "MSc Finance",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18750,
+      "duration": "12 Months",
+      "tuition": 19000,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
         "January 2024",
-        "September 2026"
+        "September 2025",
+        "September 2026",
+        "January 2026"
       ],
       "campuses": [
-        "Talbot Campus"
+        "Lansdowne Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-information-technology-with-placement-year"
+      "courseRefId": "bournemouth-university|msc-finance"
     },
     {
       "title": "MSc Artificial Intelligence for Media",
@@ -294,6 +295,29 @@
       "courseRefId": "bournemouth-university|bsc-hons-cyber-security-management"
     },
     {
+      "title": "BA (Hons) Business and Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 19700,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "September 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|ba-hons-business-and-management"
+    },
+    {
       "title": "BA (Hons) Business and Management (Top-up)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -326,7 +350,8 @@
         "January 2024",
         "September 2025",
         "September 2026",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Lansdowne Campus"
@@ -399,47 +424,24 @@
       "courseRefId": "bournemouth-university|bsc-hons-sports-therapy-with-placement-year"
     },
     {
-      "title": "MA International Political Communication",
+      "title": "LLM in Legal Practice",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 18000,
+      "tuition": 17000,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
         "September 2025",
-        "September 2026",
-        "January 2026"
+        "September 2026"
       ],
       "campuses": [
         "Talbot Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ma-international-political-communication"
-    },
-    {
-      "title": "MA Media & Communication",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ma-media-communication"
+      "courseRefId": "bournemouth-university|llm-in-legal-practice"
     },
     {
       "title": "MA Sound Design for Screen",
@@ -462,26 +464,6 @@
       "courseRefId": "bournemouth-university|ma-sound-design-for-screen"
     },
     {
-      "title": "LLM in Legal Practice",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|llm-in-legal-practice"
-    },
-    {
       "title": "LLM Intellectual Property",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -502,6 +484,28 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|llm-intellectual-property"
+    },
+    {
+      "title": "MA Media & Communication",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|ma-media-communication"
     },
     {
       "title": "LLM International Commercial Law",
@@ -527,6 +531,49 @@
       "courseRefId": "bournemouth-university|llm-international-commercial-law"
     },
     {
+      "title": "MA International Political Communication",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|ma-international-political-communication"
+    },
+    {
+      "title": "MSc Marketing Management (Digital)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 19000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "Lansdowne Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|msc-marketing-management-digital"
+    },
+    {
       "title": "LLM International Tax Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -550,26 +597,69 @@
       "courseRefId": "bournemouth-university|llm-international-tax-law"
     },
     {
-      "title": "MSc Marketing Management (Digital)",
+      "title": "MSc Marketing & User Experience (with Placement Year)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "24 Months",
       "tuition": 19000,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
         "September 2024",
         "January 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026"
+        "September 2026"
       ],
       "campuses": [
+        "Lansdowne Campus",
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|msc-marketing-user-experience-with-placement-year"
+    },
+    {
+      "title": "MSc Marketing Management (Digital) (with Placement Year)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 19000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Talbot Campus",
         "Lansdowne Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-marketing-management-digital"
+      "courseRefId": "bournemouth-university|msc-marketing-management-digital-with-placement-year"
+    },
+    {
+      "title": "MA Media & Communication (with Placement Year)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|ma-media-communication-with-placement-year"
     },
     {
       "title": "MSc Marketing & User Experience",
@@ -595,49 +685,6 @@
       "courseRefId": "bournemouth-university|msc-marketing-user-experience"
     },
     {
-      "title": "MA Media & Communication (with Placement Year)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ma-media-communication-with-placement-year"
-    },
-    {
-      "title": "MSc Marketing Management (Digital) (with Placement Year)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 19000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Lansdowne Campus",
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-marketing-management-digital-with-placement-year"
-    },
-    {
       "title": "MSc Marketing Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -658,28 +705,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|msc-marketing-management"
-    },
-    {
-      "title": "MSc Marketing & User Experience (with Placement Year)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 19000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Lansdowne Campus",
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-marketing-user-experience-with-placement-year"
     },
     {
       "title": "MA Digital Effects",
@@ -763,6 +788,26 @@
       "courseRefId": "bournemouth-university|msc-business-analytics"
     },
     {
+      "title": "BA (Hons) Communication and Media (with Placement Year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18700,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|ba-hons-communication-and-media-with-placement-year"
+    },
+    {
       "title": "BA (Hons) Communication and Media with Foundation and Placement Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
@@ -783,11 +828,11 @@
       "courseRefId": "bournemouth-university|ba-hons-communication-and-media-with-foundation-and-placement-year"
     },
     {
-      "title": "BA (Hons) Communication and Media (with Placement Year)",
+      "title": "BA (Hons) Media Production (with Placement Year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 18700,
+      "tuition": 19700,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -800,7 +845,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ba-hons-communication-and-media-with-placement-year"
+      "courseRefId": "bournemouth-university|ba-hons-media-production-with-placement-year"
     },
     {
       "title": "LLB (Hons) Law",
@@ -841,26 +886,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|ba-hons-media-production-with-foundation-and-placement-year"
-    },
-    {
-      "title": "BA (Hons) Media Production (with Placement Year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 19700,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ba-hons-media-production-with-placement-year"
     },
     {
       "title": "MSc Engineering Project Management",
@@ -1019,7 +1044,8 @@
         "September 2025",
         "January 2024",
         "September 2026",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Talbot Campus"
@@ -1027,27 +1053,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|msc-foundations-of-clinical-psychology"
-    },
-    {
-      "title": "MSc Investigative Forensic Psychology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-investigative-forensic-psychology"
     },
     {
       "title": "MSc Management with Human Resources",
@@ -1072,28 +1077,6 @@
       "courseRefId": "bournemouth-university|msc-management-with-human-resources"
     },
     {
-      "title": "MSc Psychology (Conversion)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-psychology-conversion"
-    },
-    {
       "title": "MSc International Finance & Economics (with Placement Year)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1108,34 +1091,12 @@
         "September 2026"
       ],
       "campuses": [
-        "Lansdowne Campus",
-        "Talbot Campus"
+        "Talbot Campus",
+        "Lansdowne Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|msc-international-finance-economics-with-placement-year"
-    },
-    {
-      "title": "MSc Management with Human Resources (with Placement Year)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 19000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Lansdowne Campus",
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-management-with-human-resources-with-placement-year"
     },
     {
       "title": "BEng (Hons) Mechatronics and Robotics",
@@ -1155,6 +1116,49 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|beng-hons-mechatronics-and-robotics"
+    },
+    {
+      "title": "MSc Management with Human Resources (with Placement Year)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 19000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Talbot Campus",
+        "Lansdowne Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|msc-management-with-human-resources-with-placement-year"
+    },
+    {
+      "title": "MSc Investigative Forensic Psychology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|msc-investigative-forensic-psychology"
     },
     {
       "title": "MSc International Finance & Economics",
@@ -1178,6 +1182,28 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|msc-international-finance-economics"
+    },
+    {
+      "title": "MSc Psychology (Conversion)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|msc-psychology-conversion"
     },
     {
       "title": "LLB (Hons) Law, Media & Creative Industries",
@@ -1260,26 +1286,6 @@
       "courseRefId": "bournemouth-university|msc-mental-health-nursing"
     },
     {
-      "title": "MA Producing Film & Television",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ma-producing-film-television"
-    },
-    {
       "title": "MA Cinematography for Film and Television",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1321,6 +1327,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|msc-sport-management"
+    },
+    {
+      "title": "MA Producing Film & Television",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|ma-producing-film-television"
     },
     {
       "title": "MSc Sport Management (with Placement Year)",
@@ -1377,7 +1403,8 @@
         "September 2025",
         "September 2026",
         "January 2025",
-        "January 2026"
+        "January 2026",
+        "September 2027"
       ],
       "campuses": [
         "Talbot Campus"
@@ -1485,46 +1512,6 @@
       "courseRefId": "bournemouth-university|msc-human-centred-artificial-intelligence"
     },
     {
-      "title": "MA Post Production Editing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ma-post-production-editing"
-    },
-    {
-      "title": "MA Scriptwriting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ma-scriptwriting"
-    },
-    {
       "title": "MA Social Work",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1543,127 +1530,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|ma-social-work"
-    },
-    {
-      "title": "MSc Disaster Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17350,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-disaster-management"
-    },
-    {
-      "title": "MSc Public Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Lansdowne Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-public-health"
-    },
-    {
-      "title": "MSc Medical Imaging with Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Lansdowne Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-medical-imaging-with-management"
-    },
-    {
-      "title": "MSc Nutrition & Behaviour",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Lansdowne Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-nutrition-behaviour"
-    },
-    {
-      "title": "MSc Bioarchaeology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-bioarchaeology"
-    },
-    {
-      "title": "MSc Biodiversity Conservation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|msc-biodiversity-conservation"
     },
     {
       "title": "MSc Clinical & Developmental Neuropsychology",
@@ -1688,36 +1554,56 @@
       "courseRefId": "bournemouth-university|msc-clinical-developmental-neuropsychology"
     },
     {
-      "title": "BSc (Hons) Anthropology (with Placement Year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18700,
+      "title": "MSc Medical Imaging with Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 19000,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
+        "September 2025",
         "September 2026"
       ],
       "campuses": [
-        "Talbot Campus"
+        "Lansdowne Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|bsc-hons-anthropology-with-placement-year"
+      "courseRefId": "bournemouth-university|msc-medical-imaging-with-management"
     },
     {
-      "title": "BSc (Hons) Archaeological, Anthropological and Forensic Sciences (with Placement Year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18700,
+      "title": "MSc Public Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18000,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Lansdowne Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|msc-public-health"
+    },
+    {
+      "title": "MSc Bioarchaeology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
         "September 2026"
       ],
       "campuses": [
@@ -1725,7 +1611,109 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|bsc-hons-archaeological-anthropological-and-forensic-sciences-with-placement-year"
+      "courseRefId": "bournemouth-university|msc-bioarchaeology"
+    },
+    {
+      "title": "MA Scriptwriting",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|ma-scriptwriting"
+    },
+    {
+      "title": "MSc Disaster Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17350,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|msc-disaster-management"
+    },
+    {
+      "title": "MSc Nutrition & Behaviour",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Lansdowne Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|msc-nutrition-behaviour"
+    },
+    {
+      "title": "MSc Biodiversity Conservation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|msc-biodiversity-conservation"
+    },
+    {
+      "title": "MA Post Production Editing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|ma-post-production-editing"
     },
     {
       "title": "BSc (Hons) Archaeology (with Placement Year)",
@@ -1768,11 +1756,11 @@
       "courseRefId": "bournemouth-university|ba-hons-archaeology-and-anthropology-with-placement-year"
     },
     {
-      "title": "BA (Hons) Sociology and Criminology (with Placement Year)",
+      "title": "BA (Hons) Music and Sound Production (with Placement Year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 18700,
+      "tuition": 19700,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1781,14 +1769,14 @@
         "September 2026"
       ],
       "campuses": [
-        "Lansdowne Campus"
+        "Talbot Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ba-hons-sociology-and-criminology-with-placement-year"
+      "courseRefId": "bournemouth-university|ba-hons-music-and-sound-production-with-placement-year"
     },
     {
-      "title": "BA (Hons) Sociology (with Placement Year)",
+      "title": "BSc (Hons) Archaeological, Anthropological and Forensic Sciences (with Placement Year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1801,11 +1789,11 @@
         "September 2026"
       ],
       "campuses": [
-        "Lansdowne Campus"
+        "Talbot Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ba-hons-sociology-with-placement-year"
+      "courseRefId": "bournemouth-university|bsc-hons-archaeological-anthropological-and-forensic-sciences-with-placement-year"
     },
     {
       "title": "BA (Hons) History with Foundation and Placement Year",
@@ -1828,7 +1816,7 @@
       "courseRefId": "bournemouth-university|ba-hons-history-with-foundation-and-placement-year"
     },
     {
-      "title": "BA (Hons) History (with Placement Year)",
+      "title": "BA (Hons) Tourism Management (with Placement Year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1845,7 +1833,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ba-hons-history-with-placement-year"
+      "courseRefId": "bournemouth-university|ba-hons-tourism-management-with-placement-year"
     },
     {
       "title": "BSc (Hons) Physiotherapy",
@@ -1868,27 +1856,7 @@
       "courseRefId": "bournemouth-university|bsc-hons-physiotherapy"
     },
     {
-      "title": "BA (Hons) Music and Sound Production (with Placement Year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 19700,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Talbot Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ba-hons-music-and-sound-production-with-placement-year"
-    },
-    {
-      "title": "BA (Hons) Tourism Management (with Placement Year)",
+      "title": "BA (Hons) Sociology and Criminology (with Placement Year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1901,11 +1869,11 @@
         "September 2026"
       ],
       "campuses": [
-        "Talbot Campus"
+        "Lansdowne Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|ba-hons-tourism-management-with-placement-year"
+      "courseRefId": "bournemouth-university|ba-hons-sociology-and-criminology-with-placement-year"
     },
     {
       "title": "BA (Hons) Criminology (with Placement Year)",
@@ -1926,6 +1894,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|ba-hons-criminology-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) Sociology (with Placement Year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18700,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Lansdowne Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|ba-hons-sociology-with-placement-year"
     },
     {
       "title": "BSc (Hons) Nutrition",
@@ -1949,24 +1937,44 @@
       "courseRefId": "bournemouth-university|bsc-hons-nutrition"
     },
     {
-      "title": "MPhil Faculty of Science & Technology",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "18 Months",
-      "tuition": 19000,
+      "title": "BSc (Hons) Anthropology (with Placement Year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18700,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
+        "September 2024",
         "September 2026"
       ],
       "campuses": [
-        "Lansdowne Campus"
+        "Talbot Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
-      "courseRefId": "bournemouth-university|mphil-faculty-of-science-technology"
+      "courseRefId": "bournemouth-university|bsc-hons-anthropology-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) History (with Placement Year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18700,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Talbot Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|ba-hons-history-with-placement-year"
     },
     {
       "title": "PhD Faculty of Science & Technology",
@@ -1987,6 +1995,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
       "courseRefId": "bournemouth-university|phd-faculty-of-science-technology"
+    },
+    {
+      "title": "MPhil Faculty of Science & Technology",
+      "level": "master",
+      "sourceLevel": "Doctorate",
+      "duration": "18 Months",
+      "tuition": 19000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Lansdowne Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/bournemouth-university",
+      "courseRefId": "bournemouth-university|mphil-faculty-of-science-technology"
     }
   ]
 }

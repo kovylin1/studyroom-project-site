@@ -3,12 +3,13 @@
   "name": "University of Derby",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-  "scrapedAt": "2026-07-22T15:42:52.469Z",
+  "scrapedAt": "2026-08-23T13:11:40.048Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-derby",
   "country": "United Kingdom",
+  "city": null,
   "matchMethod": "as-is/exact-name",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
@@ -38,10 +39,100 @@
       "courseRefId": "university-of-derby|bsc-hons-psychology"
     },
     {
-      "title": "MRes Molecular Medicine",
+      "title": "MSc Nursing (Adult) with NMC registration",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|msc-nursing-adult-with-nmc-registration"
+    },
+    {
+      "title": "MSc Leadership in Health and Social Care",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|msc-leadership-in-health-and-social-care"
+    },
+    {
+      "title": "MA Creative Writing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|ma-creative-writing"
+    },
+    {
+      "title": "MA Applied Theatre and Education",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|ma-applied-theatre-and-education"
+    },
+    {
+      "title": "MSc Occupational Therapy (Pre-Registration)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -55,78 +146,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|mres-molecular-medicine"
-    },
-    {
-      "title": "MSc Human Resource Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2024",
-        "January 2025",
-        "September 2025",
-        "September 2026",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Derby Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|msc-human-resource-management"
-    },
-    {
-      "title": "MRes Leadership and Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "June 2025",
-        "September 2026",
-        "April 2026",
-        "June 2026"
-      ],
-      "campuses": [
-        "Derby Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|mres-leadership-and-management"
-    },
-    {
-      "title": "Master of Business Administration - MBA Global",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "September 2025",
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Derby Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|master-of-business-administration-mba-global"
+      "courseRefId": "university-of-derby|msc-occupational-therapy-pre-registration"
     },
     {
       "title": "MBA Master of Business Administration - MBA Global with Placement Year",
@@ -171,50 +191,34 @@
       "courseRefId": "university-of-derby|msc-control-and-instrumentation"
     },
     {
-      "title": "MSc Diagnostic Radiography (Pre-Registration)",
+      "title": "MSc Human Resource Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
+      "duration": "12 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
-        "September 2026"
+        "January 2024",
+        "January 2025",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Derby Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|msc-diagnostic-radiography-pre-registration"
+      "courseRefId": "university-of-derby|msc-human-resource-management"
     },
     {
-      "title": "MSc Occupational Therapy (Pre-Registration)",
+      "title": "MA Journalism",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Derby Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|msc-occupational-therapy-pre-registration"
-    },
-    {
-      "title": "MSc Nursing (Adult) with NMC registration",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
+      "duration": "12 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -222,14 +226,36 @@
         "September 2024",
         "September 2025",
         "September 2026",
-        "January 2026"
+        "January 2027"
       ],
       "campuses": [
         "Derby Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|msc-nursing-adult-with-nmc-registration"
+      "courseRefId": "university-of-derby|ma-journalism"
+    },
+    {
+      "title": "Master of Business Administration - MBA Global",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "September 2025",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|master-of-business-administration-mba-global"
     },
     {
       "title": "BA (Hons) English",
@@ -299,6 +325,30 @@
       "courseRefId": "university-of-derby|msc-audio-engineering"
     },
     {
+      "title": "MSc Cyber Security",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2024",
+        "January 2025",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|msc-cyber-security"
+    },
+    {
       "title": "MSc Advanced Cyber Security",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -342,15 +392,14 @@
       "courseRefId": "university-of-derby|msc-midwifery-pre-registration"
     },
     {
-      "title": "LLB (Hons) Law",
+      "title": "BSc (Hons) Accounting and Finance",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 16900,
+      "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
         "September 2026"
       ],
@@ -359,10 +408,10 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|llb-hons-law"
+      "courseRefId": "university-of-derby|bsc-hons-accounting-and-finance"
     },
     {
-      "title": "MRes Psychology",
+      "title": "MA Publishing",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -373,14 +422,35 @@
         "September 2024",
         "September 2025",
         "September 2026",
-        "January 2025"
+        "January 2027"
       ],
       "campuses": [
         "Derby Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|mres-psychology"
+      "courseRefId": "university-of-derby|ma-publishing"
+    },
+    {
+      "title": "LLB (Hons) Law",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|llb-hons-law"
     },
     {
       "title": "MSc Advanced Data Science",
@@ -422,7 +492,7 @@
       "title": "MSc International Business",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "18 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -464,7 +534,7 @@
       "title": "MSc International Business and Finance",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "18 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -509,22 +579,28 @@
       "courseRefId": "university-of-derby|msc-international-business-and-marketing"
     },
     {
-      "title": "MSc Economics and Finance",
+      "title": "MSc International Hospitality and Tourism Management with Placement Year",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "24 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026",
         "January 2027"
       ],
       "campuses": [
-        "Derby Campus"
+        "Derby Campus",
+        "Chesterfield Campus"
       ],
-      "scholarshipTag": null,
+      "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|msc-economics-and-finance"
+      "courseRefId": "university-of-derby|msc-international-hospitality-and-tourism-management-with-placement-year"
     },
     {
       "title": "MSc International Hospitality and Tourism Management",
@@ -551,34 +627,10 @@
       "courseRefId": "university-of-derby|msc-international-hospitality-and-tourism-management"
     },
     {
-      "title": "MSc International Hospitality and Tourism Management with Placement Year",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Derby Campus",
-        "Chesterfield Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|msc-international-hospitality-and-tourism-management-with-placement-year"
-    },
-    {
       "title": "MSc Accounting and Finance",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "18 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -597,6 +649,47 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
       "courseRefId": "university-of-derby|msc-accounting-and-finance"
+    },
+    {
+      "title": "MSc Economics and Finance",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|msc-economics-and-finance"
+    },
+    {
+      "title": "MSc Building Information Modelling (BIM) and Project Collaboration",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|msc-building-information-modelling-bim-and-project-collaboration"
     },
     {
       "title": "MSc Marketing Management",
@@ -621,29 +714,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
       "courseRefId": "university-of-derby|msc-marketing-management"
-    },
-    {
-      "title": "MSc Building Information Modelling (BIM) and Project Collaboration",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Derby Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|msc-building-information-modelling-bim-and-project-collaboration"
     },
     {
       "title": "MSc International Business and HRM",
@@ -693,6 +763,27 @@
       "courseRefId": "university-of-derby|msc-biomedical-science"
     },
     {
+      "title": "MA Global Affairs and Politics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|ma-global-affairs-and-politics"
+    },
+    {
       "title": "MSc Civil Engineering and Construction Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -720,7 +811,7 @@
       "title": "MSc Global Operations and Supply Chain Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "18 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -925,6 +1016,29 @@
       "courseRefId": "university-of-derby|msc-sustainable-and-ethical-business-management"
     },
     {
+      "title": "MSc Police Leadership, Strategy and Organisation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|msc-police-leadership-strategy-and-organisation"
+    },
+    {
       "title": "MPH Master of Public Health",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -949,27 +1063,42 @@
       "courseRefId": "university-of-derby|mph-master-of-public-health"
     },
     {
-      "title": "MSc Police Leadership, Strategy and Organisation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
+      "title": "Foundation Pathways Programme in Computing",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
       "duration": "12 Months",
-      "tuition": 17500,
+      "tuition": 14900,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
         "September 2026",
-        "January 2025",
-        "January 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|foundation-pathways-programme-in-computing"
+    },
+    {
+      "title": "Foundation Pathways Programme in Business",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 14900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
         "January 2027"
       ],
       "campuses": [
         "Derby Campus"
       ],
-      "scholarshipTag": "Scholarship applied!",
+      "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|msc-police-leadership-strategy-and-organisation"
+      "courseRefId": "university-of-derby|foundation-pathways-programme-in-business"
     },
     {
       "title": "BA (Hons) International Marketing (Top-up)",
@@ -981,7 +1110,8 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
-        "September 2026"
+        "September 2026",
+        "January 2027"
       ],
       "campuses": [
         "Derby Campus"
@@ -989,6 +1119,25 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
       "courseRefId": "university-of-derby|ba-hons-international-marketing-top-up"
+    },
+    {
+      "title": "Foundation Pathways Programme in Engineering Pathway",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 14900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|foundation-pathways-programme-in-engineering-pathway"
     },
     {
       "title": "PGDip Forensic Psychology Practice",
@@ -1012,6 +1161,186 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
       "courseRefId": "university-of-derby|pgdip-forensic-psychology-practice"
+    },
+    {
+      "title": "MPhil by Published Works - Business",
+      "level": "master",
+      "sourceLevel": "Doctorate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027",
+        "March 2027",
+        "June 2027",
+        "September 2027",
+        "January 2028",
+        "March 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|mphil-by-published-works-business"
+    },
+    {
+      "title": "PhD by Published Works - Business",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027",
+        "March 2027",
+        "June 2027",
+        "September 2027",
+        "January 2028",
+        "March 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|phd-by-published-works-business"
+    },
+    {
+      "title": "Foundation Pathways Programme in Humanities and Education",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 14900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|foundation-pathways-programme-in-humanities-and-education"
+    },
+    {
+      "title": "Foundation Pathways Programme in Psychology",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 14900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|foundation-pathways-programme-in-psychology"
+    },
+    {
+      "title": "MPhil by Published Works - Health and Humanities",
+      "level": "master",
+      "sourceLevel": "Doctorate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027",
+        "March 2027",
+        "June 2027",
+        "September 2027",
+        "January 2028",
+        "March 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|mphil-by-published-works-health-and-humanities"
+    },
+    {
+      "title": "PhD by Published Works - Health and Humanities",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027",
+        "March 2027",
+        "June 2027",
+        "September 2027",
+        "January 2028",
+        "March 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|phd-by-published-works-health-and-humanities"
+    },
+    {
+      "title": "Foundation Pathways Programme in Health and Wellbeing",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 14900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|foundation-pathways-programme-in-health-and-wellbeing"
+    },
+    {
+      "title": "Foundation Pathways Programme in Criminology and Law",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 14900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|foundation-pathways-programme-in-criminology-and-law"
     },
     {
       "title": "BSc (Hons) Computer Science",
@@ -1119,6 +1448,110 @@
       "courseRefId": "university-of-derby|bsc-hons-cyber-security-with-foundation-year"
     },
     {
+      "title": "MPhil by Published Works - Education and Skills",
+      "level": "master",
+      "sourceLevel": "Doctorate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027",
+        "March 2027",
+        "June 2027",
+        "September 2027",
+        "January 2028",
+        "March 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|mphil-by-published-works-education-and-skills"
+    },
+    {
+      "title": "PhD by Published Works - Education and Skills",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027",
+        "March 2027",
+        "June 2027",
+        "September 2027",
+        "January 2028",
+        "March 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|phd-by-published-works-education-and-skills"
+    },
+    {
+      "title": "MPhil by Published Works - Science and Engineering",
+      "level": "master",
+      "sourceLevel": "Doctorate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027",
+        "March 2027",
+        "June 2027",
+        "September 2027",
+        "January 2028",
+        "March 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|mphil-by-published-works-science-and-engineering"
+    },
+    {
+      "title": "PhD by Published Works - Science and Engineering",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027",
+        "March 2027",
+        "June 2027",
+        "September 2027",
+        "January 2028",
+        "March 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|phd-by-published-works-science-and-engineering"
+    },
+    {
       "title": "BSc (Hons) Economics and Finance",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1158,6 +1591,25 @@
       "courseRefId": "university-of-derby|ba-hons-media-and-communication"
     },
     {
+      "title": "Foundation Pathways Programme in Science",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 14900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|foundation-pathways-programme-in-science"
+    },
+    {
       "title": "BEng (Hons) Electrical and Electronic Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1176,6 +1628,28 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
       "courseRefId": "university-of-derby|beng-hons-electrical-and-electronic-engineering"
+    },
+    {
+      "title": "MA Education (with Optional Pathways)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2024",
+        "September 2025",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|ma-education-with-optional-pathways"
     },
     {
       "title": "MSc Integrative Counselling and Psychotherapy (Incorporating PGCert/PGDip)",
@@ -1199,16 +1673,15 @@
       "courseRefId": "university-of-derby|msc-integrative-counselling-and-psychotherapy-incorporating-pgcert-pgdip"
     },
     {
-      "title": "MA Education (with Optional Pathways)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "title": "BSc (Hons) Biomedical Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
-        "January 2024",
         "September 2025",
         "September 2026",
         "January 2027"
@@ -1218,7 +1691,27 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|ma-education-with-optional-pathways"
+      "courseRefId": "university-of-derby|bsc-hons-biomedical-science"
+    },
+    {
+      "title": "BA (Hons) Graphic Design",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|ba-hons-graphic-design"
     },
     {
       "title": "BA (Hons) Event Management",
@@ -1326,6 +1819,27 @@
       "courseRefId": "university-of-derby|bsc-hons-occupational-therapy"
     },
     {
+      "title": "International Foundation Programme",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "12 Months",
+      "tuition": 15500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|international-foundation-programme"
+    },
+    {
       "title": "BA (Hons) International Tourism Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1407,6 +1921,27 @@
       "courseRefId": "university-of-derby|bsc-hons-artificial-intelligence-and-data-science-with-foundation-year"
     },
     {
+      "title": "BA (Hons) Event Management with Placement Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Derby Campus",
+        "Chesterfield Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|ba-hons-event-management-with-placement-year"
+    },
+    {
       "title": "BA (Hons) Business Management with Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
@@ -1470,45 +2005,28 @@
       "courseRefId": "university-of-derby|ba-hons-business-management-and-entrepreneurship"
     },
     {
-      "title": "BA (Hons) Event Management with Placement Year",
+      "title": "BSc (Hons) Nursing (Children's)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "36 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2025",
         "January 2026",
         "January 2027"
       ],
       "campuses": [
-        "Derby Campus",
-        "Chesterfield Campus"
+        "Chesterfield Campus",
+        "Derby Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|ba-hons-event-management-with-placement-year"
-    },
-    {
-      "title": "BSc (Hons) Nursing (Adult) with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Derby Campus",
-        "Chesterfield Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|bsc-hons-nursing-adult-with-foundation-year"
+      "courseRefId": "university-of-derby|bsc-hons-nursing-childrens"
     },
     {
       "title": "BSc (Hons) Nursing (Adult)",
@@ -1535,6 +2053,26 @@
       "courseRefId": "university-of-derby|bsc-hons-nursing-adult"
     },
     {
+      "title": "BSc (Hons) Nursing (Adult) with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Derby Campus",
+        "Chesterfield Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
+      "courseRefId": "university-of-derby|bsc-hons-nursing-adult-with-foundation-year"
+    },
+    {
       "title": "MSc Nursing (Mental Health)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1544,7 +2082,8 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2026",
-        "September 2027"
+        "September 2027",
+        "January 2027"
       ],
       "campuses": [
         "Derby Campus"
@@ -1614,67 +2153,50 @@
       "courseRefId": "university-of-derby|beng-hons-mechanical-and-manufacturing-engineering-top-up"
     },
     {
-      "title": "MRes Health and Care (Nursing and Midwifery)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
+      "title": "BSc (Hons) Nursing (Mental Health)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2026",
+        "September 2025",
+        "September 2024",
+        "January 2024",
         "September 2026",
-        "May 2026",
-        "April 2026"
+        "January 2025",
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
+        "Chesterfield Campus",
         "Derby Campus"
       ],
-      "scholarshipTag": null,
+      "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|mres-health-and-care-nursing-and-midwifery"
+      "courseRefId": "university-of-derby|bsc-hons-nursing-mental-health"
     },
     {
-      "title": "MRes Health and Care (Allied Health Professions)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "title": "BA (Hons) International Tourism Management with Placement Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026",
+        "September 2025",
         "January 2026",
-        "April 2026",
-        "May 2026"
+        "January 2027"
       ],
       "campuses": [
-        "Derby Campus"
+        "Derby Campus",
+        "Chesterfield Campus"
       ],
-      "scholarshipTag": null,
+      "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|mres-health-and-care-allied-health-professions"
-    },
-    {
-      "title": "MRes Health and Care (Public Health)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2026",
-        "April 2026",
-        "May 2026"
-      ],
-      "campuses": [
-        "Derby Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|mres-health-and-care-public-health"
+      "courseRefId": "university-of-derby|ba-hons-international-tourism-management-with-placement-year"
     },
     {
       "title": "BA (Hons) Special Educational Needs and Disability",
@@ -1699,27 +2221,6 @@
       "courseRefId": "university-of-derby|ba-hons-special-educational-needs-and-disability"
     },
     {
-      "title": "BA (Hons) International Tourism Management with Placement Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Derby Campus",
-        "Chesterfield Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-derby",
-      "courseRefId": "university-of-derby|ba-hons-international-tourism-management-with-placement-year"
-    },
-    {
       "title": "Pre-Sessional English For Academic Purposes",
       "level": "language",
       "sourceLevel": "PresessionalEnglish",
@@ -1728,7 +2229,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",

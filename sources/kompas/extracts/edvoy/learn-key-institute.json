@@ -3,16 +3,43 @@
   "name": "Learn Key Institute",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/learn-key-institute",
-  "scrapedAt": "2026-07-22T15:42:52.289Z",
+  "scrapedAt": "2026-08-23T13:11:39.892Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "learn-key-institute",
   "country": "Malta",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
+    {
+      "title": "MBA Master in Business Administration MQF Level 7 (Hybrid) (Malta)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 9000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2026",
+        "April 2026",
+        "January 2026",
+        "January 2027",
+        "April 2027",
+        "October 2027",
+        "January 2028",
+        "April 2028",
+        "October 2028"
+      ],
+      "campuses": [
+        "Malta Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/learn-key-institute",
+      "courseRefId": "learn-key-institute|mba-master-in-business-administration-mqf-level-7-hybrid-malta"
+    },
     {
       "title": "MBA Master of Business Administration (Hybrid) (Barcelona)",
       "level": "master",
@@ -38,32 +65,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/learn-key-institute",
       "courseRefId": "learn-key-institute|mba-master-of-business-administration-hybrid-barcelona"
-    },
-    {
-      "title": "MBA Master in Business Administration MQF Level 7 (Hybrid) (Malta)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 9000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "April 2026",
-        "October 2026",
-        "January 2027",
-        "April 2027",
-        "October 2027",
-        "January 2028",
-        "April 2028",
-        "October 2028"
-      ],
-      "campuses": [
-        "Malta Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/learn-key-institute",
-      "courseRefId": "learn-key-institute|mba-master-in-business-administration-mqf-level-7-hybrid-malta"
     },
     {
       "title": "Undergraduate Diploma in Strategic Business Management MQF Level 5 (Hybrid) (Malta)",
@@ -175,11 +176,11 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2026",
         "April 2026",
-        "June 2026",
         "September 2026",
+        "February 2026",
         "November 2026",
+        "June 2026",
         "February 2027",
         "April 2027",
         "June 2027",

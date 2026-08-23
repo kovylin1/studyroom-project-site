@@ -3,13 +3,14 @@
   "name": "Alexander College",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/alexander-college",
-  "scrapedAt": "2026-07-22T15:42:52.101Z",
+  "scrapedAt": "2026-08-23T13:11:39.760Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "alexander-college",
   "country": "Canada",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -23,14 +24,15 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2024",
-        "January 2025",
-        "May 2024",
-        "May 2025",
         "September 2024",
         "September 2025",
+        "January 2025",
+        "May 2025",
+        "May 2024",
         "January 2026",
         "May 2026",
-        "September 2026"
+        "September 2026",
+        "April 2027"
       ],
       "campuses": [
         "Burnaby Campus",
@@ -49,15 +51,16 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2024",
-        "January 2025",
         "May 2024",
+        "January 2024",
         "May 2025",
-        "September 2024",
         "September 2025",
+        "January 2025",
+        "September 2024",
         "January 2026",
         "May 2026",
-        "September 2026"
+        "September 2026",
+        "April 2027"
       ],
       "campuses": [
         "Burnaby Campus",
@@ -68,31 +71,22 @@
       "courseRefId": "alexander-college|associate-of-arts-business"
     },
     {
-      "title": "Associate of Arts (International Business)",
+      "title": "BBA in e-Business Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 18300,
+      "duration": "48 Months",
+      "tuition": 23250,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2024",
-        "January 2025",
-        "May 2024",
-        "May 2025",
-        "September 2024",
-        "September 2025",
-        "January 2026",
-        "May 2026",
-        "September 2026"
+        "January 2027"
       ],
       "campuses": [
-        "Burnaby Campus",
         "Vancouver Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/alexander-college",
-      "courseRefId": "alexander-college|associate-of-arts-international-business"
+      "courseRefId": "alexander-college|bba-in-e-business-management"
     },
     {
       "title": "Associate of Arts (Business and Psychology)",
@@ -103,19 +97,20 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2024",
         "January 2025",
         "May 2024",
+        "January 2024",
         "May 2025",
-        "September 2024",
         "September 2025",
+        "September 2024",
         "January 2026",
         "May 2026",
-        "September 2026"
+        "September 2026",
+        "April 2027"
       ],
       "campuses": [
-        "Burnaby Campus",
-        "Vancouver Campus"
+        "Vancouver Campus",
+        "Burnaby Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/alexander-college",
@@ -125,7 +120,7 @@
       "title": "Associate of Arts (Economics)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
+      "duration": "24 Months",
       "tuition": 18300,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
@@ -138,42 +133,16 @@
         "September 2025",
         "January 2026",
         "May 2026",
-        "September 2026"
+        "September 2026",
+        "April 2027"
       ],
       "campuses": [
-        "Burnaby Campus",
-        "Vancouver Campus"
+        "Vancouver Campus",
+        "Burnaby Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/alexander-college",
       "courseRefId": "alexander-college|associate-of-arts-economics"
-    },
-    {
-      "title": "Associate of Arts (Psychology)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 18300,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2024",
-        "January 2025",
-        "May 2024",
-        "May 2025",
-        "September 2024",
-        "September 2025",
-        "January 2026",
-        "May 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "Burnaby Campus",
-        "Vancouver Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/alexander-college",
-      "courseRefId": "alexander-college|associate-of-arts-psychology"
     },
     {
       "title": "University Transfer Program",
@@ -184,12 +153,12 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2024",
-        "January 2025",
+        "September 2025",
         "May 2024",
+        "January 2025",
         "May 2025",
         "September 2024",
-        "September 2025",
+        "January 2024",
         "September 2026",
         "January 2026"
       ],
@@ -202,7 +171,7 @@
       "courseRefId": "alexander-college|university-transfer-program"
     },
     {
-      "title": "Associate of Arts",
+      "title": "Associate of Arts (Psychology)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "12 Months",
@@ -212,24 +181,25 @@
       "intake": [
         "January 2024",
         "January 2025",
-        "May 2024",
         "May 2025",
         "September 2024",
+        "May 2024",
         "September 2025",
         "January 2026",
         "May 2026",
-        "September 2026"
+        "September 2026",
+        "April 2027"
       ],
       "campuses": [
-        "Burnaby Campus",
-        "Vancouver Campus"
+        "Vancouver Campus",
+        "Burnaby Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/alexander-college",
-      "courseRefId": "alexander-college|associate-of-arts"
+      "courseRefId": "alexander-college|associate-of-arts-psychology"
     },
     {
-      "title": "Associate of Arts (International Relations)",
+      "title": "Associate of Arts (International Business)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "12 Months",
@@ -237,15 +207,16 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2024",
-        "January 2025",
         "May 2024",
         "May 2025",
         "September 2024",
         "September 2025",
+        "January 2024",
+        "January 2025",
         "January 2026",
         "May 2026",
-        "September 2026"
+        "September 2026",
+        "April 2027"
       ],
       "campuses": [
         "Burnaby Campus",
@@ -253,34 +224,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/alexander-college",
-      "courseRefId": "alexander-college|associate-of-arts-international-relations"
-    },
-    {
-      "title": "Associate of Arts (Mathematics)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 18300,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2024",
-        "January 2025",
-        "May 2024",
-        "May 2025",
-        "September 2024",
-        "September 2025",
-        "January 2026",
-        "May 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "Burnaby Campus",
-        "Vancouver Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/alexander-college",
-      "courseRefId": "alexander-college|associate-of-arts-mathematics"
+      "courseRefId": "alexander-college|associate-of-arts-international-business"
     },
     {
       "title": "Associate of Arts (Sociology)",
@@ -292,14 +236,15 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2024",
-        "January 2025",
-        "May 2024",
         "May 2025",
-        "September 2024",
         "September 2025",
+        "May 2024",
+        "September 2024",
+        "January 2025",
         "January 2026",
         "May 2026",
-        "September 2026"
+        "September 2026",
+        "April 2027"
       ],
       "campuses": [
         "Burnaby Campus",
@@ -318,15 +263,16 @@
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2024",
         "January 2025",
         "May 2024",
-        "May 2025",
-        "September 2024",
         "September 2025",
+        "January 2024",
+        "September 2024",
+        "May 2025",
         "January 2026",
         "May 2026",
-        "September 2026"
+        "September 2026",
+        "April 2027"
       ],
       "campuses": [
         "Burnaby Campus",
@@ -340,20 +286,21 @@
       "title": "Associate of Science (Mathematics)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
+      "duration": "24 Months",
       "tuition": 18300,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2024",
         "January 2025",
-        "May 2024",
         "May 2025",
+        "May 2024",
         "September 2024",
         "September 2025",
         "January 2026",
         "May 2026",
-        "September 2026"
+        "September 2026",
+        "April 2027"
       ],
       "campuses": [
         "Burnaby Campus",
@@ -362,6 +309,90 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/alexander-college",
       "courseRefId": "alexander-college|associate-of-science-mathematics"
+    },
+    {
+      "title": "Associate of Arts",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 18300,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2024",
+        "January 2025",
+        "September 2024",
+        "September 2025",
+        "May 2024",
+        "May 2025",
+        "January 2026",
+        "May 2026",
+        "September 2026",
+        "April 2027"
+      ],
+      "campuses": [
+        "Burnaby Campus",
+        "Vancouver Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/alexander-college",
+      "courseRefId": "alexander-college|associate-of-arts"
+    },
+    {
+      "title": "Associate of Arts (International Relations)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 18300,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2024",
+        "September 2024",
+        "January 2024",
+        "May 2025",
+        "September 2025",
+        "January 2025",
+        "January 2026",
+        "May 2026",
+        "September 2026",
+        "April 2027"
+      ],
+      "campuses": [
+        "Burnaby Campus",
+        "Vancouver Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/alexander-college",
+      "courseRefId": "alexander-college|associate-of-arts-international-relations"
+    },
+    {
+      "title": "Associate of Arts (Mathematics)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 18300,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2024",
+        "September 2024",
+        "September 2025",
+        "January 2024",
+        "January 2025",
+        "May 2025",
+        "January 2026",
+        "May 2026",
+        "September 2026",
+        "April 2027"
+      ],
+      "campuses": [
+        "Burnaby Campus",
+        "Vancouver Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/alexander-college",
+      "courseRefId": "alexander-college|associate-of-arts-mathematics"
     },
     {
       "title": "Associate of Arts (Pre-Social Work)",
@@ -374,7 +405,8 @@
       "intake": [
         "September 2025",
         "January 2026",
-        "September 2026"
+        "September 2026",
+        "April 2027"
       ],
       "campuses": [
         "Vancouver Campus",

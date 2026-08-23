@@ -3,45 +3,17 @@
   "name": "Regent College London",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/regent-college-london",
-  "scrapedAt": "2026-07-22T15:42:52.357Z",
+  "scrapedAt": "2026-08-23T13:11:39.949Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "regent-college-london",
   "country": "United Kingdom",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
-    {
-      "title": "MSc International Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "September 2025",
-        "January 2026",
-        "April 2026",
-        "November 2025",
-        "September 2026",
-        "January 2027",
-        "April 2027"
-      ],
-      "campuses": [
-        "RCL Fitzrovia Campus",
-        "RCL Holborn Central London Campus",
-        "RCL Kingsbury Campus",
-        "RCL Southall Campus",
-        "RCL Wembley Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/regent-college-london",
-      "courseRefId": "regent-college-london|msc-international-management"
-    },
     {
       "title": "MBA Master of Business Administration",
       "level": "master",
@@ -60,7 +32,8 @@
         "September 2026",
         "September 2027",
         "January 2027",
-        "April 2027"
+        "April 2027",
+        "May 2027"
       ],
       "campuses": [
         "RCL Fitzrovia Campus",
@@ -72,6 +45,36 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/regent-college-london",
       "courseRefId": "regent-college-london|mba-master-of-business-administration"
+    },
+    {
+      "title": "MSc International Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "April 2025",
+        "September 2025",
+        "January 2026",
+        "April 2026",
+        "November 2025",
+        "September 2026",
+        "January 2027",
+        "April 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "RCL Fitzrovia Campus",
+        "RCL Holborn Central London Campus",
+        "RCL Kingsbury Campus",
+        "RCL Southall Campus",
+        "RCL Wembley Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/regent-college-london",
+      "courseRefId": "regent-college-london|msc-international-management"
     },
     {
       "title": "MSc Software Engineering",
@@ -88,7 +91,8 @@
         "April 2026",
         "April 2027",
         "January 2027",
-        "September 2026"
+        "September 2026",
+        "May 2027"
       ],
       "campuses": [
         "RCL Fitzrovia Campus",
@@ -117,7 +121,8 @@
         "November 2025",
         "January 2027",
         "April 2027",
-        "September 2026"
+        "September 2026",
+        "May 2027"
       ],
       "campuses": [
         "RCL Fitzrovia Campus",
@@ -145,7 +150,8 @@
         "April 2026",
         "September 2026",
         "January 2027",
-        "April 2027"
+        "April 2027",
+        "May 2027"
       ],
       "campuses": [
         "RCL Fitzrovia Campus",
@@ -171,7 +177,9 @@
         "September 2025",
         "January 2026",
         "April 2026",
-        "September 2026"
+        "September 2026",
+        "May 2027",
+        "January 2027"
       ],
       "campuses": [
         "RCL Fitzrovia Campus",
@@ -195,7 +203,8 @@
       "intake": [
         "September 2026",
         "January 2027",
-        "April 2027"
+        "April 2027",
+        "May 2027"
       ],
       "campuses": [
         "RCL Fitzrovia Campus",
@@ -242,7 +251,8 @@
         "September 2025",
         "April 2026",
         "September 2026",
-        "January 2027"
+        "January 2027",
+        "May 2027"
       ],
       "campuses": [
         "RCL Holborn Central London Campus",
@@ -283,6 +293,32 @@
       "courseRefId": "regent-college-london|msc-psychology"
     },
     {
+      "title": "BSc (Hons) Health and Social care",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "April 2025",
+        "September 2025",
+        "April 2026",
+        "January 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "RCL Fitzrovia Campus",
+        "RCL Holborn Central London Campus",
+        "RCL Kingsbury Campus",
+        "RCL Southall Campus",
+        "RCL Wembley Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/regent-college-london",
+      "courseRefId": "regent-college-london|bsc-hons-health-and-social-care"
+    },
+    {
       "title": "MSc Social Care, Health and Wellbeing",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -297,7 +333,8 @@
         "April 2026",
         "September 2026",
         "January 2027",
-        "April 2027"
+        "April 2027",
+        "May 2027"
       ],
       "campuses": [
         "RCL Fitzrovia Campus",
