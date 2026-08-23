@@ -53,6 +53,8 @@ interface ProgramRow {
   tuitionBasis: 'year' | 'program' | undefined;
   // своя валюта программы (КОМПАС 3.5-a); когда её нет — валюта карточки
   tuitionCurrency: string | undefined;
+  // несколько сумм у источника (КОМПАС 3.5-b); в tuition лежит минимальная
+  tuitionVariants: unknown[] | undefined;
   programType: string | undefined;
   unverified: boolean | undefined;
   durationYears: number | undefined;
@@ -71,6 +73,7 @@ const programRows: ProgramRow[] = u.programs.map((p) => ({
   tuition: u.tuition.byProgram[p.slug],
   tuitionBasis: p.tuitionBasis,
   tuitionCurrency: p.tuitionCurrency,
+  tuitionVariants: p.tuitionVariants,
   programType: p.programType,
   unverified: p.kompasStatus === 'catalog-only' || undefined,
   durationYears: p.durationYears,
@@ -231,6 +234,11 @@ const SCRIPT_STR = {
   unverifiedWord: t('lp.programs.unverified'),
   perYear: t('lp.programs.perYear'),
   perProgram: t('lp.programs.perProgram'),
+  priceFrom: t('lp.programs.priceFrom'),
+  variantsTitle: t('lp.programs.variantsTitle'),
+  varAccommodation: t('lp.programs.variantAccommodation'),
+  varOther: t('lp.programs.variantOther'),
+  varTotal: t('lp.programs.variantTotal'),
   yearsWord: t('lp.programs.yearsWord'),
   durationTbd: t('lp.programs.durationTbd'),
   intakesWord: t('lp.programs.intakesWord'),
@@ -1401,12 +1409,38 @@ const SCRIPT_STR = {
   // Цена программы; когда цены нет, но есть страница программы у вуза/агрегатора —
   // даём ссылку туда вместо голого «уточняется» (данные не выдумываем, ведём к источнику).
   function progPrice(p) {
-    if (p.tuition) return (p.tuitionCurrency ? (CURRENCY_SYM_BY_CODE[p.tuitionCurrency] || p.tuitionCurrency) : CURRENCY_SYM) +
-      p.tuition.toLocaleString('en') +
-      (p.tuitionBasis === 'program' ? STR.perProgram : STR.perYear);
-    return p.programUrl
-      ? '<a class="program-row__price-link" href="' + esc(p.programUrl) + '" target="_blank" rel="noopener">' + STR.tbdLink + '</a>'
-      : STR.tbd;
+    if (!p.tuition) {
+      return p.programUrl
+        ? '<a class="program-row__price-link" href="' + esc(p.programUrl) + '" target="_blank" rel="noopener">' + STR.tbdLink + '</a>'
+        : STR.tbd;
+    }
+    var sym = p.tuitionCurrency ? (CURRENCY_SYM_BY_CODE[p.tuitionCurrency] || p.tuitionCurrency) : CURRENCY_SYM;
+    var suffix = (p.tuitionBasis === 'program' ? STR.perProgram : STR.perYear);
+    var main = sym + p.tuition.toLocaleString('en') + suffix;
+    var vs = p.tuitionVariants;
+    if (!vs || vs.length < 2) return main;
+    // У источника для этой программы несколько сумм: в строке показываем минимальную
+    // как «от …», раскрытие перечисляет все с тем, чем они отличаются.
+    var items = vs.map(function (v) {
+      var vsym = v.currency ? (CURRENCY_SYM_BY_CODE[v.currency] || v.currency) : sym;
+      var marks = [];
+      if (v.degreeGroup) marks.push(esc(v.degreeGroup));
+      if (v.level) marks.push(esc(v.level));
+      var costs = [];
+      if (v.accommodation) costs.push(STR.varAccommodation + ' ' + vsym + v.accommodation.toLocaleString('en'));
+      if (v.other) costs.push(STR.varOther + ' ' + vsym + v.other.toLocaleString('en'));
+      if (v.total) costs.push(STR.varTotal + ' ' + vsym + v.total.toLocaleString('en'));
+      return '<li style="margin:0 0 6px">' +
+        '<b>' + vsym + v.tuition.toLocaleString('en') + '</b>' +
+        (marks.length ? '<span style="opacity:.7"> · ' + marks.join(' · ') + '</span>' : '') +
+        (costs.length ? '<div style="opacity:.7;font-size:.9em">' + costs.join(' · ') + '</div>' : '') +
+        '</li>';
+    }).join('');
+    return '<details class="program-row__variants">' +
+      '<summary style="cursor:pointer">' + STR.priceFrom + main + '</summary>' +
+      '<div style="margin-top:6px;font-weight:400;text-align:left">' +
+      '<div style="opacity:.7;font-size:.9em;margin-bottom:4px">' + STR.variantsTitle.replace('{count}', String(vs.length)) + '</div>' +
+      '<ul style="list-style:none;padding:0;margin:0">' + items + '</ul></div></details>';
   }
 
   function renderProgramsCards(facultyKey, lvl) {

@@ -72,6 +72,8 @@ const stats = {
   keptExisting: 0,
   overwritten: 0,
   programCurrency: 0,
+  variantPrograms: 0,
+  variantSums: 0,
   skippedBucket: 0,
   skippedCurrency: 0,
   skippedNoMatch: 0,
@@ -117,10 +119,15 @@ for (const f of files) {
   if (!card.tuition.byProgram) card.tuition.byProgram = {};
 
   let touched = false;
+  // Строки выгрузки, прошедшие все проверки. Пишем не сразу: одна программа карточки
+  // может собрать несколько строк с РАЗНЫМИ суммами (у QS цена привязана к кампусу
+  // и уровню), и выбирать надо по правилу, а не по порядку обхода файла.
+  const candidates = [];
   const before = JSON.stringify({
     tuition: card.tuition,
     tuitionBasis: Object.fromEntries(progs.filter(p => p.tuitionBasis).map(p => [p.slug, p.tuitionBasis])),
     tuitionCurrency: Object.fromEntries(progs.filter(p => p.tuitionCurrency).map(p => [p.slug, p.tuitionCurrency])),
+    tuitionVariants: Object.fromEntries(progs.filter(p => p.tuitionVariants).map(p => [p.slug, p.tuitionVariants])),
   });
 
   for (const ep of (data.programs || [])) {
@@ -201,17 +208,56 @@ for (const f of files) {
       continue;
     }
 
+    candidates.push({ target, t, cur, bucket, curConflict, prev, ep });
+  }
+
+  // Разбор нескольких сумм на одну программу. В tuition.byProgram идёт МИНИМАЛЬНАЯ:
+  // витрина везде говорит «от …», и минимум — это реальная цена источника, а не
+  // среднее, которого никто не берёт. Все суммы ложатся в program.tuitionVariants
+  // и раскрываются в строке программы. Названий кампусов источник не даёт
+  // (campuses пустой, campusCosts.campus === null), поэтому вариант подписывается
+  // уровнем, направлением и раскладкой стоимости — тем, что в данных есть.
+  const byProgram = new Map();
+  for (const c of candidates) {
+    if (!byProgram.has(c.target.slug)) byProgram.set(c.target.slug, []);
+    byProgram.get(c.target.slug).push(c);
+  }
+  for (const list of byProgram.values()) {
+    const sums = [...new Set(list.map((c) => c.t))].sort((a, b) => a - b);
+    const chosen = list.find((c) => c.t === sums[0]);
+    const { target, t, cur, bucket, curConflict, prev } = chosen;
+
     if (!card.tuition.currency) card.tuition.currency = cur;
     if (!touched) { backup[catalogSlug] = JSON.parse(before); touched = true; stats.cardsTouched++; }
     if (prev != null && prev > 0) stats.overwritten++;
     card.tuition.byProgram[target.slug] = t;
     if (curConflict) { target.tuitionCurrency = cur; stats.programCurrency++; }
-    if (bucket === 'whole-term') {
-      target.tuitionBasis = 'program';
-      stats.wholeTerm++;
+    if (bucket === 'whole-term') { target.tuitionBasis = 'program'; stats.wholeTerm++; }
+
+    if (sums.length > 1) {
+      const seenSum = new Set();
+      target.tuitionVariants = list
+        .filter((c) => !seenSum.has(c.t) && seenSum.add(c.t))
+        .sort((a, b) => a.t - b.t)
+        .map((c) => {
+          const cc = c.ep.campusCosts || {};
+          const v = { tuition: c.t };
+          if (c.cur) v.currency = c.cur;
+          if (c.ep.sourceLevel) v.level = c.ep.sourceLevel;
+          if (c.ep.degreeGroup) v.degreeGroup = c.ep.degreeGroup;
+          if (typeof cc.accommodation === 'number' && cc.accommodation > 0) v.accommodation = cc.accommodation;
+          if (typeof cc.other === 'number' && cc.other > 0) v.other = cc.other;
+          if (typeof cc.total === 'number' && cc.total > 0) v.total = cc.total;
+          return v;
+        });
+      stats.variantPrograms++;
+      stats.variantSums += sums.length;
+    } else if (target.tuitionVariants) {
+      delete target.tuitionVariants;
     }
+
     stats.written++;
-    changes.push({ catalogSlug, program: target.slug, fee: t, currency: cur, ownCurrency: curConflict || undefined, basis: bucket === 'whole-term' ? 'program' : 'year', prev: prev != null ? prev : null });
+    changes.push({ catalogSlug, program: target.slug, fee: t, currency: cur, ownCurrency: curConflict || undefined, basis: bucket === 'whole-term' ? 'program' : 'year', prev: prev != null ? prev : null, variants: sums.length > 1 ? sums.length : undefined });
   }
 
   if (touched && !DRY) {

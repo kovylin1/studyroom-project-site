@@ -7,11 +7,12 @@
 |---|---:|
 | extractsLinked | 507 |
 | qsPricesTotal | 34858 |
-| matchExact | 21222 |
-| matchOwnCurrency | 655 |
-| priceDiffers | 848 |
+| matchExact | 17863 |
+| matchOwnCurrency | 553 |
+| matchVariants | 210 |
+| priceDiffers | 68 |
 | currencyDiffers | 69 |
-| basisDiffers | 0 |
+| basisDiffers | 1 |
 | qsProgramMissingInCard | 11256 |
 | qsPriceNotWritten | 808 |
 | catalogPriceNotInQs | 65731 |
@@ -22,7 +23,9 @@
 
 | Вид | Штук |
 |---|---:|
-| `price-differs` | 848 |
 | `currency-differs` | 69 |
+| `price-differs` | 68 |
+| `variants-missing` | 23 |
+| `basis-differs` | 1 |
 
 Подробности: `workcopy-vs-qs.json`.

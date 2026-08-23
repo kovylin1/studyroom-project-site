@@ -29,7 +29,7 @@ for (const m of JSON.parse(await fs.readFile(MAP_FILE, 'utf8'))) {
 
 const stats = {
   extractsLinked: 0, qsPricesTotal: 0,
-  matchExact: 0, matchOwnCurrency: 0,
+  matchExact: 0, matchOwnCurrency: 0, matchVariants: 0,
   priceDiffers: 0, currencyDiffers: 0, basisDiffers: 0,
   qsProgramMissingInCard: 0, qsPriceNotWritten: 0,
   catalogPriceNotInQs: 0, orphanCurrencyMark: 0, priceForUnknownProgram: 0,
@@ -56,17 +56,45 @@ for (const f of files) {
   const cardCur = card.tuition && card.tuition.currency;
   const seen = new Set();
 
+  // Группируем строки выгрузки по программе карточки: у QS цена привязана к кампусу
+  // и уровню, поэтому на одну программу их приходит несколько. Сверяем не строку,
+  // а группу — записана должна быть минимальная сумма, остальные лежать в вариантах.
+  const groups = new Map();
   for (const ep of (data.programs || [])) {
     const t = typeof ep.tuition === 'number' ? ep.tuition : null;
     if (t == null || t <= 0) continue;
     stats.qsPricesTotal++;
     const target = (ep.programUrl && byUrl.get(ep.programUrl)) || byTitle.get(norm(ep.title));
     if (!target || !target.slug) { stats.qsProgramMissingInCard++; continue; }
+    if (!groups.has(target.slug)) groups.set(target.slug, { target, rows: [] });
+    groups.get(target.slug).rows.push(ep);
+  }
+
+  for (const { target, rows } of groups.values()) {
     seen.add(target.slug);
     const written = bp[target.slug];
-    if (written == null || written <= 0) { stats.qsPriceNotWritten++; continue; }
+    if (written == null || written <= 0) { stats.qsPriceNotWritten += rows.length; continue; }
 
+    const sums = [...new Set(rows.map((r) => r.tuition))].sort((a, b) => a - b);
+    const ep = rows.find((r) => r.tuition === sums[0]) || rows[0];
+    const t = sums[0];
     const effCur = target.tuitionCurrency || cardCur;
+
+    // несколько сумм у источника: записана должна быть минимальная, а все — в вариантах
+    if (sums.length > 1) {
+      const vs = target.tuitionVariants;
+      if (!vs || vs.length !== sums.length) {
+        findings.push({ kind: 'variants-missing', catalogSlug: data.catalogSlug, program: target.slug,
+          qsSums: sums, recorded: vs ? vs.length : 0 });
+        continue;
+      }
+      const rec = [...new Set(vs.map((v) => v.tuition))].sort((a, b) => a - b);
+      if (JSON.stringify(rec) !== JSON.stringify(sums)) {
+        findings.push({ kind: 'variants-differ', catalogSlug: data.catalogSlug, program: target.slug,
+          qsSums: sums, recorded: rec });
+        continue;
+      }
+    }
     const m = basisOf.get((data.slug || f.replace(/\.json$/, '')) + '|' + (ep.currency || '?') + '|' + t);
     const wantBasis = m && m.bucket === 'whole-term' && !(m.ratio > 12) ? 'program' : 'year';
     const gotBasis = target.tuitionBasis || 'year';
@@ -83,7 +111,8 @@ for (const f of files) {
       stats.basisDiffers++;
       findings.push({ kind: 'basis-differs', catalogSlug: data.catalogSlug, program: target.slug,
         written, want: wantBasis, got: gotBasis, ratio: m.ratio });
-    } else if (target.tuitionCurrency) stats.matchOwnCurrency++;
+    } else if (sums.length > 1) stats.matchVariants++;
+    else if (target.tuitionCurrency) stats.matchOwnCurrency++;
     else stats.matchExact++;
   }
 

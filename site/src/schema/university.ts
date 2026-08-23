@@ -64,6 +64,24 @@ export const programSchema = z.object({
   // в USD. Без этого поля такие цены просто отбрасывались — 1 081 сумма у 25 вузов.
   // Пересчёт для min/max делает annualTuitionValues (site/src/lib/tuition.ts).
   tuitionCurrency: CURRENCY_CODES_SCHEMA.optional(),
+  // Варианты стоимости у источника (КОМПАС 3.5-b). У QS цена привязана к кампусу и
+  // уровню, а не к программе, поэтому одна программа приходит несколькими строками
+  // с разными суммами — 255 программ у 66 вузов. Раньше в карточку попадала та,
+  // что при обходе шла последней, то есть выбор зависел от порядка чтения файлов.
+  // Теперь в tuition.byProgram пишется МИНИМАЛЬНАЯ (витрина везде говорит «от …»),
+  // а все суммы источника лежат здесь и раскрываются в строке программы.
+  // Названий кампусов источник не даёт ни в одной из 255 групп (campuses пустой,
+  // campusCosts.campus === null), поэтому вариант подписывается тем, что есть:
+  // уровнем, направлением и раскладкой стоимости.
+  tuitionVariants: z.array(z.object({
+    tuition: z.number().nonnegative(),
+    currency: CURRENCY_CODES_SCHEMA.optional(),
+    level: z.string().optional(),
+    degreeGroup: z.string().optional(),
+    accommodation: z.number().nonnegative().optional(),
+    other: z.number().nonnegative().optional(),
+    total: z.number().nonnegative().optional(),
+  })).min(2).optional(),
   kompasCheckedAt: isoDate.optional(),
   checkedAt: isoDate.optional(),
   brokenLink: z.boolean().optional(),
