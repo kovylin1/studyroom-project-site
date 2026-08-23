@@ -268,7 +268,26 @@
       "programUrl": "https://www.iu.org/mba/",
       "programType": "degree",
       "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-07-24"
+      "kompasCheckedAt": "2026-07-24",
+      "tuitionVariants": [
+        {
+          "tuition": 10034,
+          "currency": "EUR",
+          "source": "edvoy",
+          "campus": "Berlin Campus, IU Cologne Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 15770,
+          "currency": "EUR",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Business & Management",
+          "accommodation": 11904,
+          "other": 6000,
+          "total": 33674
+        }
+      ]
     },
     {
       "slug": "iu-germany-mba-one-year",
@@ -792,58 +811,7 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Инженерия и IT",
-      "tuitionVariants": [
-        {
-          "tuition": 6381,
-          "currency": "EUR",
-          "source": "edvoy",
-          "campus": "IU Cologne Campus",
-          "level": "Undergraduate"
-        },
-        {
-          "tuition": 6831,
-          "currency": "EUR",
-          "source": "edvoy",
-          "campus": "IU Cologne Campus",
-          "level": "Undergraduate"
-        },
-        {
-          "tuition": 6890,
-          "currency": "EUR",
-          "source": "edvoy",
-          "campus": "Berlin Campus, IU Cologne Campus",
-          "level": "Undergraduate"
-        },
-        {
-          "tuition": 6900,
-          "currency": "EUR",
-          "source": "edvoy",
-          "campus": "Berlin Campus, IU Cologne Campus",
-          "level": "Foundation"
-        },
-        {
-          "tuition": 6970,
-          "currency": "EUR",
-          "source": "edvoy",
-          "campus": "Berlin Campus, IU Cologne Campus",
-          "level": "Undergraduate"
-        },
-        {
-          "tuition": 8300,
-          "currency": "EUR",
-          "source": "edvoy",
-          "campus": "Berlin Campus, IU Cologne Campus",
-          "level": "Postgraduate"
-        },
-        {
-          "tuition": 10034,
-          "currency": "EUR",
-          "source": "edvoy",
-          "campus": "Berlin Campus, IU Cologne Campus",
-          "level": "Postgraduate"
-        }
-      ]
+      "faculty": "Инженерия и IT"
     },
     {
       "slug": "iu-germany-bachelor-bsc-computer-science",
@@ -1320,6 +1288,28 @@
       "confidence": 0.4,
       "kompasStatus": "source-added",
       "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "mba-one-year",
+      "title": "MBA One-year",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "ba-business-administration-with-artificial-intelligence",
+      "title": "BA Business Administration with Artificial Intelligence",
+      "level": "bachelor",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 3
     }
   ],
   "tuition": {
@@ -1341,7 +1331,7 @@
       "iu-germany-msc-computer-science-data-science": 12000,
       "iu-germany-msc-cyber-security": 12000,
       "iu-germany-ma-international-management": 12000,
-      "iu-germany-mba": 15770,
+      "iu-germany-mba": 10034,
       "iu-germany-mba-one-year": 10034,
       "iu-germany-mba-artificial-intelligence": 10034,
       "iu-germany-mba-business-analytics": 15051,
@@ -1353,7 +1343,7 @@
       "iu-germany-mba-supply-chain-management": 10034,
       "iu-germany-master-of-business-administration": 10034,
       "iu-germany-master-ma-international-management": 8300,
-      "iu-germany-master-msc-computer-science": 6381,
+      "iu-germany-master-msc-computer-science": 8300,
       "iu-germany-bachelor-bsc-computer-science": 6970,
       "iu-germany-master-msc-cyber-security": 8300,
       "iu-germany-bachelor-ba-of-business-administration": 6890,
@@ -1375,7 +1365,11 @@
       "iu-germany-m-sc-computer-science-with-ai": 15770,
       "iu-germany-m-sc-computer-science-with-business-analytics": 15770,
       "iu-germany-m-sc-computer-science-with-data-science": 15770,
-      "iu-germany-m-sc-cyber-security": 15770
+      "iu-germany-m-sc-cyber-security": 15770,
+      "mba-one-year": 10034,
+      "ba-business-administration-with-artificial-intelligence": 6381,
+      "iu-germany-bachelor-ba-business-administration-with-entrepreneurship": 6831,
+      "iu-germany-bachelor-ba-business-administration-with-business-analytics": 6381
     }
   },
   "deadlines": {

@@ -1323,7 +1323,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Наука"
+      "faculty": "Наука",
+      "tuitionVariants": [
+        {
+          "tuition": 15500,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Chester Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 18000,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Natural Science & Mathematics",
+          "accommodation": 8000,
+          "other": 4000,
+          "total": 30000
+        }
+      ]
     },
     {
       "slug": "chester-msc-engineering-project-management-with-placement-year",
@@ -7475,65 +7494,7 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Здоровье и медицина",
-      "tuitionVariants": [
-        {
-          "tuition": 12950,
-          "currency": "GBP",
-          "source": "edvoy",
-          "campus": "Chester Campus",
-          "level": "Undergraduate"
-        },
-        {
-          "tuition": 13450,
-          "currency": "GBP",
-          "source": "edvoy",
-          "campus": "Chester Campus",
-          "level": "Undergraduate"
-        },
-        {
-          "tuition": 14950,
-          "currency": "GBP",
-          "source": "edvoy",
-          "campus": "Chester Campus",
-          "level": "Undergraduate"
-        },
-        {
-          "tuition": 15000,
-          "currency": "GBP",
-          "source": "edvoy",
-          "campus": "Chester Campus",
-          "level": "Postgraduate"
-        },
-        {
-          "tuition": 15500,
-          "currency": "GBP",
-          "source": "edvoy",
-          "campus": "Chester Campus",
-          "level": "Postgraduate"
-        },
-        {
-          "tuition": 15700,
-          "currency": "GBP",
-          "source": "edvoy",
-          "campus": "Chester Campus",
-          "level": "Postgraduate"
-        },
-        {
-          "tuition": 19000,
-          "currency": "GBP",
-          "source": "edvoy",
-          "campus": "Chester Campus",
-          "level": "Postgraduate"
-        },
-        {
-          "tuition": 46000,
-          "currency": "GBP",
-          "source": "edvoy",
-          "campus": "Chester Campus",
-          "level": "Undergraduate"
-        }
-      ]
+      "faculty": "Здоровье и медицина"
     },
     {
       "slug": "chester-msc-computer-science-conversion",
@@ -8403,7 +8364,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 15500,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Chester Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 18000,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Pharmacy, Health & Life Sciences",
+          "accommodation": 8000,
+          "other": 4000,
+          "total": 30000
+        }
+      ]
     },
     {
       "slug": "chester-llm-international-business-and-commercial-law",
@@ -10431,7 +10411,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Здоровье и медицина"
+      "faculty": "Здоровье и медицина",
+      "tuitionVariants": [
+        {
+          "tuition": 14450,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Pharmacy, Health & Life Sciences",
+          "accommodation": 8000,
+          "other": 4000,
+          "total": 26450
+        },
+        {
+          "tuition": 14950,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "University Centre Birkenhead",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "chester-ma-public-archaeology",
@@ -14756,7 +14755,8 @@
       "intakes": [
         "September",
         "January"
-      ]
+      ],
+      "tuitionCurrency": "USD"
     },
     {
       "slug": "chester-bba-management-business-management-master",
@@ -19167,6 +19167,869 @@
       "confidence": 0.4,
       "kompasStatus": "source-added",
       "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "business-management-and-marketing-including-foundation-year-ba-hons",
+      "title": "Business Management and Marketing (including Foundation Year) BA (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "business-management-ba-hons",
+      "title": "Business Management BA (Hons)",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "accounting-msc",
+      "title": "Accounting MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "banking-and-finance-msc",
+      "title": "Banking and Finance MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "digital-marketing-msc",
+      "title": "Digital Marketing MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "financial-technology-fintech-and-business-analytics-msc",
+      "title": "Financial Technology (FinTech) and Business Analytics MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "international-finance-msc",
+      "title": "International Finance MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "marketing-management-msc",
+      "title": "Marketing Management MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "international-tourism-management-including-a-foundation-year-ba-hons",
+      "title": "International Tourism Management (including a Foundation Year) BA (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "international-tourism-and-hospitality-management-msc",
+      "title": "International Tourism and Hospitality Management MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "archaeology-including-a-foundation-year-ba-hons",
+      "title": "Archaeology (Including a Foundation Year) BA (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "archaeology-and-history-ba-hons",
+      "title": "Archaeology and History BA (Hons)",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "english-ba-hons",
+      "title": "English BA Hons",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "english-language-including-a-foundation-year-ba-hons",
+      "title": "English Language (Including a Foundation Year) BA (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "english-literature-including-a-foundation-year-ba-hons",
+      "title": "English Literature (Including a Foundation Year) BA (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "history-including-foundation-year-ba-hons",
+      "title": "History (including Foundation Year) BA (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "law-including-a-foundation-year-llb-hons",
+      "title": "Law (including a Foundation Year) LLB (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "law-llb-hons",
+      "title": "Law LLB (Hons)",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "educational-leadership-ma",
+      "title": "Educational Leadership MA",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "adult-nursing-including-foundation-year-bn-hons",
+      "title": "Adult Nursing (including Foundation Year) BN (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "biomedical-science-including-foundation-year-bsc-hons",
+      "title": "Biomedical Science (including Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "childrens-nursing-including-foundation-year-bn-hons",
+      "title": "Children's Nursing (including Foundation Year) BN (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "childrens-nursing-bn-hons",
+      "title": "Children's Nursing BN (Hons)",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "graduate-entry-medicine-mbchb-mb-chb",
+      "title": "Graduate Entry Medicine (MBChB) MB ChB",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "health-services-management-msc",
+      "title": "Health Services Management MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "medical-science-mres",
+      "title": "Medical Science MRes",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "sport-and-exercise-sciences-mres",
+      "title": "Sport and Exercise Sciences MRes",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "stem-cells-and-regenerative-medicine-msc",
+      "title": "Stem Cells and Regenerative Medicine MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "animal-behaviour-including-foundation-year-bsc-hons",
+      "title": "Animal Behaviour (including Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "biology-including-foundation-year-bsc-hons",
+      "title": "Biology (including Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "bioveterinary-science-including-foundation-year-bsc-hons",
+      "title": "Bioveterinary Science (including Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "chemistry-including-foundation-year-bsc-hons",
+      "title": "Chemistry (including Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "forensic-biology-including-foundation-year-bsc-hons",
+      "title": "Forensic Biology (including Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "marine-biology-including-a-foundation-year-bsc-hons",
+      "title": "Marine Biology (including a Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "zoology-including-foundation-year-bsc-hons",
+      "title": "Zoology (including Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "animal-behaviour-msc",
+      "title": "Animal Behaviour MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "biotechnology-msc",
+      "title": "Biotechnology MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "mathematics-msc",
+      "title": "Mathematics MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "advanced-computer-science-msc",
+      "title": "Advanced Computer Science MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "advanced-cybersecurity-msc",
+      "title": "Advanced Cybersecurity MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "applied-artificial-intelligence-msc",
+      "title": "Applied Artificial Intelligence MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "computer-science-conversion-msc",
+      "title": "Computer Science (Conversion) MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "cybersecurity-conversion-msc",
+      "title": "Cybersecurity (Conversion) MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "data-science-conversion-msc",
+      "title": "Data Science (Conversion) MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "management-of-information-systems-and-digital-innovation-msc",
+      "title": "Management of Information Systems and Digital Innovation MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "programme-and-project-management-msc",
+      "title": "Programme and Project Management MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "programme-and-project-management-msc-with-project-placement-year",
+      "title": "Programme and Project Management MSc (with Project/Placement Year)",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "computer-science-including-foundation-year-bsc-hons",
+      "title": "Computer Science (including Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "computer-science-bsc-hons",
+      "title": "Computer Science BSc (Hons)",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "cybersecurity-including-foundation-year-bsc-hons",
+      "title": "Cybersecurity (including Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "games-development-including-foundation-year-bsc-hons",
+      "title": "Games Development (including Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "electronic-and-electrical-engineering-msc",
+      "title": "Electronic and Electrical Engineering MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "mechanical-engineering-and-mechatronics-msc",
+      "title": "Mechanical Engineering and Mechatronics MSc",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "software-engineering-including-foundation-year-bsc-hons",
+      "title": "Software Engineering (including Foundation Year) BSc (Hons)",
+      "level": "foundation",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "programType": "pathway"
+    },
+    {
+      "slug": "bsc-hons-finance-with-banking",
+      "title": "BSc (Hons) Finance with Banking",
+      "level": "bachelor",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 3
+    },
+    {
+      "slug": "bsc-hons-finance-with-banking-with-foundation-year",
+      "title": "BSc (Hons) Finance with Banking with Foundation Year",
+      "level": "foundation",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 4,
+      "programType": "pathway"
+    },
+    {
+      "slug": "bsc-hons-finance-with-banking-with-placement-year",
+      "title": "BSc (Hons) Finance with Banking with Placement Year",
+      "level": "bachelor",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 4
+    },
+    {
+      "slug": "msc-accounting-with-optional-placement-project-year-with-project-placement-year",
+      "title": "MSc Accounting (with optional Placement/Project year) with Project/Placement Year",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 2
+    },
+    {
+      "slug": "bsc-hons-accounting-and-finance-with-foundation-year",
+      "title": "BSc (Hons) Accounting and Finance with Foundation Year",
+      "level": "foundation",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 4,
+      "programType": "pathway"
+    },
+    {
+      "slug": "pgce-secondary-art-and-design-with-qts",
+      "title": "PGCE Secondary Art and Design with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "pgce-secondary-design-technology-with-qts",
+      "title": "PGCE Secondary Design Technology with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "ba-hons-business-and-international-tourism-management",
+      "title": "BA (Hons) Business and International Tourism Management",
+      "level": "bachelor",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 3
+    },
+    {
+      "slug": "msc-pre-registration-mental-health-nursing",
+      "title": "MSc Pre-registration Mental Health Nursing",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 2
+    },
+    {
+      "slug": "pgce-primary-early-years-3-7-with-qts",
+      "title": "PGCE Primary/Early Years (3-7) with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "pgce-secondary-geography-with-qts",
+      "title": "PGCE Secondary Geography with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "pgce-secondary-physics-with-qts",
+      "title": "PGCE Secondary Physics with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "bn-hons-mental-health-nursing",
+      "title": "BN (Hons) Mental Health Nursing",
+      "level": "bachelor",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 3
+    },
+    {
+      "slug": "bsc-hons-geography-with-natural-hazard-management",
+      "title": "BSc (Hons) Geography with Natural Hazard Management",
+      "level": "bachelor",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 3
+    },
+    {
+      "slug": "ba-hons-international-tourism-management-with-foundation-year",
+      "title": "BA (Hons) International Tourism Management with Foundation Year",
+      "level": "foundation",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 4,
+      "programType": "pathway"
+    },
+    {
+      "slug": "msc-logistics-and-supply-chain-management-with-optional-placement-project-year-with-placem",
+      "title": "MSc Logistics and Supply Chain Management (with optional Placement/Project year) with Placement Year",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 2
+    },
+    {
+      "slug": "ba-hons-film-and-media-studies-with-foundation-year",
+      "title": "BA (Hons) Film and Media Studies with Foundation Year",
+      "level": "foundation",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 4,
+      "programType": "pathway"
+    },
+    {
+      "slug": "bsc-hons-sport-and-exercise-sciences",
+      "title": "BSc (Hons) Sport and Exercise Sciences",
+      "level": "bachelor",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 3
+    },
+    {
+      "slug": "pgce-secondary-history-with-qts",
+      "title": "PGCE Secondary History with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "pgce-secondary-physical-education-with-qts",
+      "title": "PGCE Secondary Physical Education with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "pgce-secondary-biology-with-qts",
+      "title": "PGCE Secondary Biology with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "pgce-secondary-chemistry-with-qts",
+      "title": "PGCE Secondary Chemistry with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "pgce-secondary-drama-with-qts",
+      "title": "PGCE Secondary Drama with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "pgce-secondary-english-with-qts",
+      "title": "PGCE Secondary English with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "pgce-secondary-mathematics-with-qts",
+      "title": "PGCE Secondary Mathematics with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "pgce-secondary-modern-languages-with-qts",
+      "title": "PGCE Secondary Modern Languages with QTS",
+      "level": "master",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 1
+    },
+    {
+      "slug": "ba-hons-philosophy-ethics-and-religion-with-foundation-year",
+      "title": "BA (Hons) Philosophy, Ethics and Religion with Foundation Year",
+      "level": "foundation",
+      "source": "edvoy",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "durationYears": 4,
+      "programType": "pathway"
     }
   ],
   "tuition": {
@@ -19239,7 +20102,7 @@
       "chester-bsc-hons-accounting-and-finance-with-placement-year": 14950,
       "chester-bsc-hons-accounting-and-finance": 14950,
       "chester-ba-hons-marketing-with-placement-year": 14950,
-      "chester-msc-biomedical-science": 18000,
+      "chester-msc-biomedical-science": 15500,
       "chester-ba-hons-film-and-media-studies": 14950,
       "chester-ba-hons-marketing": 14950,
       "chester-llb-hons-law": 14950,
@@ -19264,7 +20127,7 @@
       "chester-bsc-hons-mathematics": 14950,
       "chester-bsc-hons-biomedical-science-with-foundation-year": 14950,
       "chester-ba-hons-photography-with-foundation-year": 14950,
-      "chester-mph-master-of-public-health": 12950,
+      "chester-mph-master-of-public-health": 15500,
       "chester-msc-international-business": 15500,
       "chester-msc-oncology": 15500,
       "chester-msc-diabetes": 15500,
@@ -19275,7 +20138,7 @@
       "chester-msc-respiratory-medicine": 15500,
       "chester-llm-law": 15000,
       "chester-msc-cardiovascular-health-and-rehabilitation": 15500,
-      "chester-msc-food-science-and-innovation": 18000,
+      "chester-msc-food-science-and-innovation": 15500,
       "chester-llm-international-business-and-commercial-law": 15000,
       "chester-ba-hons-digital-marketing": 14950,
       "chester-ba-hons-product-design": 14950,
@@ -19744,7 +20607,89 @@
       "chester-bs-chemical-biology-master-2-2-2-2-2-2-2-2-2-2-2-2": 52924,
       "chester-bs-health-science-master-2-2-2-2-2-2-2-2-2-2-2-2": 55040,
       "chester-bs-computer-engineering-master-2-2-2-2-2-2-2-2-2-2-2-2": 55040,
-      "chester-bs-pharmaceutical-sciences-master-2-2-2-2-2-2-2-2-2-2-2-2": 55040
+      "chester-bs-pharmaceutical-sciences-master-2-2-2-2-2-2-2-2-2-2-2-2": 55040,
+      "business-management-and-marketing-including-foundation-year-ba-hons": 14450,
+      "business-management-ba-hons": 14450,
+      "accounting-msc": 17750,
+      "banking-and-finance-msc": 17750,
+      "digital-marketing-msc": 17750,
+      "financial-technology-fintech-and-business-analytics-msc": 17750,
+      "international-finance-msc": 17750,
+      "marketing-management-msc": 17750,
+      "international-tourism-management-including-a-foundation-year-ba-hons": 14450,
+      "international-tourism-and-hospitality-management-msc": 18000,
+      "archaeology-including-a-foundation-year-ba-hons": 14450,
+      "archaeology-and-history-ba-hons": 14450,
+      "english-ba-hons": 14450,
+      "english-language-including-a-foundation-year-ba-hons": 14450,
+      "english-literature-including-a-foundation-year-ba-hons": 14450,
+      "history-including-foundation-year-ba-hons": 14450,
+      "law-including-a-foundation-year-llb-hons": 14450,
+      "law-llb-hons": 14450,
+      "educational-leadership-ma": 18000,
+      "adult-nursing-including-foundation-year-bn-hons": 14450,
+      "biomedical-science-including-foundation-year-bsc-hons": 14450,
+      "childrens-nursing-including-foundation-year-bn-hons": 14450,
+      "childrens-nursing-bn-hons": 14450,
+      "graduate-entry-medicine-mbchb-mb-chb": 14450,
+      "health-services-management-msc": 18000,
+      "medical-science-mres": 18000,
+      "sport-and-exercise-sciences-mres": 18000,
+      "stem-cells-and-regenerative-medicine-msc": 18000,
+      "animal-behaviour-including-foundation-year-bsc-hons": 14450,
+      "biology-including-foundation-year-bsc-hons": 14450,
+      "bioveterinary-science-including-foundation-year-bsc-hons": 14450,
+      "chemistry-including-foundation-year-bsc-hons": 14450,
+      "forensic-biology-including-foundation-year-bsc-hons": 14450,
+      "marine-biology-including-a-foundation-year-bsc-hons": 14450,
+      "zoology-including-foundation-year-bsc-hons": 14450,
+      "animal-behaviour-msc": 18000,
+      "biotechnology-msc": 18000,
+      "mathematics-msc": 18000,
+      "advanced-computer-science-msc": 18000,
+      "advanced-cybersecurity-msc": 18000,
+      "applied-artificial-intelligence-msc": 18000,
+      "computer-science-conversion-msc": 18000,
+      "cybersecurity-conversion-msc": 18000,
+      "data-science-conversion-msc": 18000,
+      "management-of-information-systems-and-digital-innovation-msc": 18000,
+      "programme-and-project-management-msc": 18000,
+      "programme-and-project-management-msc-with-project-placement-year": 18000,
+      "computer-science-including-foundation-year-bsc-hons": 14450,
+      "computer-science-bsc-hons": 14450,
+      "cybersecurity-including-foundation-year-bsc-hons": 14450,
+      "games-development-including-foundation-year-bsc-hons": 14450,
+      "electronic-and-electrical-engineering-msc": 18000,
+      "mechanical-engineering-and-mechatronics-msc": 18000,
+      "software-engineering-including-foundation-year-bsc-hons": 14900,
+      "chester-bsc-hons-business-management-with-foundation-year": 14950,
+      "bsc-hons-finance-with-banking": 14950,
+      "bsc-hons-finance-with-banking-with-foundation-year": 14950,
+      "bsc-hons-finance-with-banking-with-placement-year": 14950,
+      "msc-accounting-with-optional-placement-project-year-with-project-placement-year": 15500,
+      "bsc-hons-accounting-and-finance-with-foundation-year": 14950,
+      "pgce-secondary-art-and-design-with-qts": 14950,
+      "pgce-secondary-design-technology-with-qts": 14950,
+      "ba-hons-business-and-international-tourism-management": 14950,
+      "msc-pre-registration-mental-health-nursing": 15500,
+      "pgce-primary-early-years-3-7-with-qts": 14950,
+      "pgce-secondary-geography-with-qts": 14950,
+      "pgce-secondary-physics-with-qts": 14950,
+      "bn-hons-mental-health-nursing": 14950,
+      "bsc-hons-geography-with-natural-hazard-management": 14950,
+      "ba-hons-international-tourism-management-with-foundation-year": 14950,
+      "msc-logistics-and-supply-chain-management-with-optional-placement-project-year-with-placem": 15500,
+      "ba-hons-film-and-media-studies-with-foundation-year": 14950,
+      "bsc-hons-sport-and-exercise-sciences": 14950,
+      "pgce-secondary-history-with-qts": 14950,
+      "pgce-secondary-physical-education-with-qts": 14950,
+      "pgce-secondary-biology-with-qts": 14950,
+      "pgce-secondary-chemistry-with-qts": 14950,
+      "pgce-secondary-drama-with-qts": 14950,
+      "pgce-secondary-english-with-qts": 14950,
+      "pgce-secondary-mathematics-with-qts": 14950,
+      "pgce-secondary-modern-languages-with-qts": 14950,
+      "ba-hons-philosophy-ethics-and-religion-with-foundation-year": 14950
     }
   },
   "deadlines": {},

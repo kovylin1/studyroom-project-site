@@ -419,20 +419,6 @@
           "total": 30963
         },
         {
-          "tuition": 15000,
-          "currency": "CAD",
-          "source": "edvoy",
-          "campus": "MSVU Halifax Campus",
-          "level": "Postgraduate"
-        },
-        {
-          "tuition": 20000,
-          "currency": "CAD",
-          "source": "edvoy",
-          "campus": "MSVU Halifax Campus",
-          "level": "Undergraduate"
-        },
-        {
           "tuition": 21537,
           "currency": "CAD",
           "source": "edvoy",
@@ -829,7 +815,26 @@
       "language": "en",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 14343,
+          "currency": "CAD",
+          "source": "qs",
+          "level": "Diploma",
+          "degreeGroup": "Hospitality & Tourism",
+          "accommodation": 11620,
+          "other": 5000,
+          "total": 30963
+        },
+        {
+          "tuition": 21537,
+          "currency": "CAD",
+          "source": "edvoy",
+          "campus": "MSVU Halifax Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "mount-saint-vincent-bachelor-of-science-general-studies",
@@ -1610,6 +1615,16 @@
       "confidence": 0.4,
       "kompasStatus": "source-added",
       "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "master-of-arts-in-child-youth-study",
+      "title": "Master of Arts in Child & Youth Study",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
     }
   ],
   "tuition": {
@@ -1705,7 +1720,8 @@
       "mount-saint-vincent-master-of-applied-human-nutrition": 14343,
       "mount-saint-vincent-master-of-applied-human-nutrition-mahn-thesis-based": 14343,
       "mount-saint-vincent-master-of-applied-human-nutrition-mahn-with-internship": 14343,
-      "bachelor-arts-child-youth-study": 21085
+      "bachelor-arts-child-youth-study": 21085,
+      "master-of-arts-in-child-youth-study": 14343
     }
   },
   "deadlines": {},

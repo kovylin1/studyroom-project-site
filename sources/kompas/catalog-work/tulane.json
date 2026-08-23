@@ -583,7 +583,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Образование"
+      "faculty": "Образование",
+      "tuitionVariants": [
+        {
+          "tuition": 28000,
+          "currency": "USD",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Natural Science & Mathematics",
+          "accommodation": 9600,
+          "other": 9000,
+          "total": 46600
+        },
+        {
+          "tuition": 55000,
+          "currency": "USD",
+          "source": "edvoy",
+          "campus": "Tulane Elmwood Campus, Tulane Uptown Campus, Tulane Downtown Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "tulane-master-of-architecture",
@@ -1928,6 +1947,56 @@
       "confidence": 0.4,
       "kompasStatus": "source-added",
       "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "m-ac-accounting",
+      "title": "M.Ac.Accounting",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "m-fin-finance",
+      "title": "M.Fin.Finance",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "m-mg-management",
+      "title": "M.Mg.Management",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "manbusiness-analytics",
+      "title": "MANBusiness Analytics",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "mpapublic-administration",
+      "title": "MPAPublic Administration",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
     }
   ],
   "tuition": {
@@ -1985,7 +2054,12 @@
       "tulane-master-of-science-in-data-science": 28000,
       "tulane-m-sc-applied-mathematics": 28000,
       "tulane-m-sc-biostatistics": 28000,
-      "tulane-m-sc-cell-and-molecular-biology": 28000
+      "tulane-m-sc-cell-and-molecular-biology": 28000,
+      "m-ac-accounting": 28000,
+      "m-fin-finance": 28000,
+      "m-mg-management": 28000,
+      "manbusiness-analytics": 28000,
+      "mpapublic-administration": 28000
     }
   },
   "deadlines": {

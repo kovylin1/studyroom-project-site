@@ -582,30 +582,7 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Инженерия и IT",
-      "tuitionVariants": [
-        {
-          "tuition": 20230,
-          "currency": "USD",
-          "source": "edvoy",
-          "campus": "Main Campus",
-          "level": "Undergraduate"
-        },
-        {
-          "tuition": 31150,
-          "currency": "USD",
-          "source": "edvoy",
-          "campus": "Main Campus",
-          "level": "Postgraduate"
-        },
-        {
-          "tuition": 43980,
-          "currency": "USD",
-          "source": "edvoy",
-          "campus": "Main Campus",
-          "level": "Undergraduate"
-        }
-      ]
+      "faculty": "Инженерия и IT"
     },
     {
       "slug": "drew-ms-finance",
@@ -980,7 +957,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 25318,
+          "currency": "USD",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Art, Design & Media",
+          "accommodation": 16000,
+          "other": 14000,
+          "total": 55318
+        },
+        {
+          "tuition": 31150,
+          "currency": "USD",
+          "source": "edvoy",
+          "campus": "Main Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "drew-matm-theology-and-ministry",
@@ -1504,7 +1500,26 @@
       "source": "edvoy",
       "confidence": 0.4,
       "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
+      "kompasCheckedAt": "2026-07-24",
+      "tuitionVariants": [
+        {
+          "tuition": 20230,
+          "currency": "USD",
+          "source": "edvoy",
+          "campus": "Main Campus",
+          "level": "Undergraduate"
+        },
+        {
+          "tuition": 25318,
+          "currency": "USD",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 16000,
+          "other": 14000,
+          "total": 55318
+        }
+      ]
     },
     {
       "slug": "drew-bachelor-accounting",
@@ -1709,6 +1724,26 @@
       "confidence": 0.4,
       "kompasStatus": "source-added",
       "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "integrated-masters-program-in-finance-with-non-business-economics-undergrad",
+      "title": "Integrated Masters Program in Finance (with Non-Business/Economics Undergrad)",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "bachelorbiochemistry-and-molecular-biology",
+      "title": "BachelorBiochemistry and Molecular Biology",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
     }
   ],
   "tuition": {
@@ -1750,7 +1785,7 @@
       "drew-ma-theology": 26000,
       "drew-dmin-doctor-of-ministry": 26000,
       "drew-phd-theology-and-religion": 25000,
-      "drew-ms-data-science": 20230,
+      "drew-ms-data-science": 31150,
       "drew-ms-finance": 31150,
       "drew-ms-financial-engineering-finance": 31150,
       "drew-bs-liberal-arts-computer-science-intended": 43980,
@@ -1807,7 +1842,7 @@
       "drew-ba-liberal-arts-sociology-intended": 43980,
       "drew-ba-liberal-arts-italian-intended": 43980,
       "drew-ba-liberal-arts-german-studies-intended": 43980,
-      "drew-integrated-masters-program-in-finance-with-business-economics-undergrad": 25318,
+      "drew-integrated-masters-program-in-finance-with-business-economics-undergrad": 20230,
       "drew-bachelor-accounting": 43000,
       "drew-bachelor-business": 43000,
       "drew-bachelor-finance": 43000,
@@ -1824,7 +1859,9 @@
       "drew-bsc-engineering-combined-degree": 43000,
       "drew-graduate-pathway-in-data-science": 49450,
       "drew-graduate-pathway-in-education": 49450,
-      "drew-graduate-pathway-in-finance": 49450
+      "drew-graduate-pathway-in-finance": 49450,
+      "integrated-masters-program-in-finance-with-non-business-economics-undergrad": 25318,
+      "bachelorbiochemistry-and-molecular-biology": 43000
     }
   },
   "deadlines": {

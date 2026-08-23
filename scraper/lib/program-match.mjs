@@ -53,11 +53,44 @@ export function stripAward(title) {
   return s.trim();
 }
 
+// Уровень по явной приставке степени в названии. Решение владельца 23.08:
+// когда источник уровень не проставил, но в названии он написан прямо
+// («MSc Data Science», «Bachelor of Arts»), это улика источника, а не догадка.
+// Прецедент от 20.08: при противоречии уровень берётся из названия — оно конкретнее.
+const LEVEL_BY_AWARD = [
+  [['bachelor', 'bachelors', 'bsc', 'ba', 'bba', 'beng', 'bcom', 'bed', 'bfa', 'barch', 'llb'], 'bachelor'],
+  [['master', 'masters', 'msc', 'ma', 'mba', 'meng', 'mres', 'mphil', 'llm', 'med', 'mfa', 'march'], 'master'],
+  [['phd', 'doctor'], 'phd'],
+  [['foundation'], 'foundation'],
+];
+
+/** Уровень из названия либо null. Смотрит только на первое слово. */
+export function levelFromTitle(title) {
+  const words = norm(title).split(' ');
+  const first = words[0];
+  if (!first) return null;
+  // «Doctor of Philosophy» — только в этом сочетании, иначе это медицина
+  if (first === 'doctor') return words[1] === 'of' && words[2] === 'philosophy' ? 'phd' : null;
+  for (const [list, level] of LEVEL_BY_AWARD) {
+    if (list.includes(first)) return level;
+  }
+  return null;
+}
+
 /** Индексы по программам карточки. Строится один раз на карточку. */
 export function buildIndex(programs) {
+  const list = programs || [];
+  // Ссылка годится для сопоставления, только если внутри карточки она ведёт ровно
+  // к одной программе. У QS programUrl — общая ссылка на портал: её делят 35 238
+  // строк из 35 259. Если такая ссылка окажется у программы карточки, по первому
+  // правилу на неё сядет вся выгрузка вуза разом.
+  const urlCount = new Map();
+  for (const p of list) {
+    if (p.programUrl) urlCount.set(p.programUrl, (urlCount.get(p.programUrl) || 0) + 1);
+  }
   const byUrl = new Map(), byTitle = new Map(), byStripped = new Map();
-  for (const p of (programs || [])) {
-    if (p.programUrl && !byUrl.has(p.programUrl)) byUrl.set(p.programUrl, p);
+  for (const p of list) {
+    if (p.programUrl && urlCount.get(p.programUrl) === 1 && !byUrl.has(p.programUrl)) byUrl.set(p.programUrl, p);
     const k = norm(p.title);
     if (k && !byTitle.has(k)) byTitle.set(k, p);
     const st = stripAward(p.title);
