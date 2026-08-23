@@ -32,6 +32,19 @@ const DRY = process.argv.includes('--dry');
 const OVERWRITE = process.argv.includes('--overwrite');
 
 // валюты, которые принимает site/src/schema/university.ts
+// Местная валюта страны кампуса. Нужна, чтобы отличить два разных конфликта валют:
+// у кампуса в Дубае QS даёт AED при карточке в USD — это карточка держит чужую валюту;
+// у Roehampton (Британия) QS даёт USD при карточке в GBP — это QS пересчитал для витрины.
+const LOCAL_CURRENCY = {
+  'United Arab Emirates': 'AED', Malaysia: 'MYR', Singapore: 'SGD', Switzerland: 'CHF',
+  'United Kingdom': 'GBP', Ireland: 'EUR', 'New Zealand': 'NZD', Australia: 'AUD',
+  Canada: 'CAD', 'United States': 'USD', Bahrain: 'BHD', China: 'CNY', 'Hong Kong': 'HKD',
+  Thailand: 'THB', Kazakhstan: 'KZT', Germany: 'EUR', Spain: 'EUR', France: 'EUR',
+  Italy: 'EUR', Netherlands: 'EUR', Austria: 'EUR', Portugal: 'EUR', Greece: 'EUR',
+  Finland: 'EUR', Malta: 'EUR', Cyprus: 'EUR', Latvia: 'EUR', Lithuania: 'EUR',
+  Estonia: 'EUR', Slovakia: 'EUR', Slovenia: 'EUR', Croatia: 'EUR', Belgium: 'EUR',
+};
+
 const CURRENCIES = ['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF', 'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD'];
 
 const norm = (s) => String(s || '')
@@ -58,6 +71,7 @@ const stats = {
   wholeTerm: 0,
   keptExisting: 0,
   overwritten: 0,
+  programCurrency: 0,
   skippedBucket: 0,
   skippedCurrency: 0,
   skippedNoMatch: 0,
@@ -106,6 +120,7 @@ for (const f of files) {
   const before = JSON.stringify({
     tuition: card.tuition,
     tuitionBasis: Object.fromEntries(progs.filter(p => p.tuitionBasis).map(p => [p.slug, p.tuitionBasis])),
+    tuitionCurrency: Object.fromEntries(progs.filter(p => p.tuitionCurrency).map(p => [p.slug, p.tuitionCurrency])),
   });
 
   for (const ep of (data.programs || [])) {
@@ -143,11 +158,9 @@ for (const f of files) {
       cases.push({ extract: f, catalogSlug, program: ep.title, tuition: t, currency: cur, reason: 'currency-unsupported', note: 'валюты нет в схеме' });
       continue;
     }
-    if (cardCur && cardCur !== cur) {
-      stats.skippedCurrency++;
-      cases.push({ extract: f, catalogSlug, program: ep.title, tuition: t, currency: cur, reason: 'currency-conflict', note: 'валюта карточки ' + cardCur });
-      continue;
-    }
+    // Решение владельца 23.08 (3.5-a): валюта стала попрограммной. Цена в чужой для
+    // карточки валюте больше не отбрасывается — она пишется вместе с program.tuitionCurrency.
+    const curConflict = Boolean(cardCur && cardCur !== cur);
 
     const target = (ep.programUrl && byUrl.get(ep.programUrl)) || byTitle.get(norm(ep.title)) || null;
     if (!target || !target.slug) {
@@ -157,6 +170,25 @@ for (const f of files) {
     }
 
     const prev = card.tuition.byProgram[target.slug];
+
+    // Единственный случай, когда чужая валюта всё же не пишется: у программы уже есть
+    // цена каталога, а валюта QS не местная для страны кампуса. Тогда это пересчёт
+    // источника для витрины (USD у британского вуза), и родная цена каталога точнее.
+    if (curConflict) {
+      const local = LOCAL_CURRENCY[card.country];
+      const qsIsLocal = Boolean(local) && cur === local && cardCur !== local;
+      if (prev != null && prev > 0 && !qsIsLocal) {
+        stats.skippedCurrency++;
+        cases.push({
+          extract: f, catalogSlug, program: target.slug, title: target.title,
+          catalogFee: prev, catalogCurrency: cardCur, qsFee: t, currency: cur,
+          reason: 'currency-foreign-quote',
+          note: 'у программы есть цена каталога в ' + cardCur + ', а ' + cur +
+            ' не местная валюта страны кампуса (' + card.country + ') — похоже на пересчёт источника',
+        });
+        continue;
+      }
+    }
     if (prev != null && prev > 0 && !OVERWRITE) {
       stats.keptExisting++;
       if (Math.abs(prev - t) / Math.max(prev, t) > 0.02) {
@@ -173,12 +205,13 @@ for (const f of files) {
     if (!touched) { backup[catalogSlug] = JSON.parse(before); touched = true; stats.cardsTouched++; }
     if (prev != null && prev > 0) stats.overwritten++;
     card.tuition.byProgram[target.slug] = t;
+    if (curConflict) { target.tuitionCurrency = cur; stats.programCurrency++; }
     if (bucket === 'whole-term') {
       target.tuitionBasis = 'program';
       stats.wholeTerm++;
     }
     stats.written++;
-    changes.push({ catalogSlug, program: target.slug, fee: t, currency: cur, basis: bucket === 'whole-term' ? 'program' : 'year', prev: prev != null ? prev : null });
+    changes.push({ catalogSlug, program: target.slug, fee: t, currency: cur, ownCurrency: curConflict || undefined, basis: bucket === 'whole-term' ? 'program' : 'year', prev: prev != null ? prev : null });
   }
 
   if (touched && !DRY) {

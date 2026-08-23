@@ -22,6 +22,11 @@ export const programLevel = z.enum([
 ]);
 export type ProgramLevel = z.infer<typeof programLevel>;
 
+// Валюты, которые принимает каталог. Один список на цену карточки и цену программы.
+export const CURRENCY_CODES = ['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF',
+  'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD'] as const;
+const CURRENCY_CODES_SCHEMA = z.enum(CURRENCY_CODES);
+
 export const programSchema = z.object({
   slug,
   title: z.string().min(1),
@@ -53,6 +58,12 @@ export const programSchema = z.object({
   // карточки разная. Такие суммы обязаны быть исключены из «от … в год»
   // (см. site/src/lib/tuition.ts), иначе завышают ценник вуза в 2-4 раза.
   tuitionBasis: z.enum(['year', 'program']).optional(),
+  // Валюта цены ЭТОЙ программы (КОМПАС 3.5-a). Когда поля нет — валюта карточки.
+  // Карточка держит одну валюту на все программы, а у кампусов в Дубае, Малайзии,
+  // Сингапуре и Швейцарии агрегатор даёт местную (AED, MYR, SGD, CHF) при карточке
+  // в USD. Без этого поля такие цены просто отбрасывались — 1 081 сумма у 25 вузов.
+  // Пересчёт для min/max делает annualTuitionValues (site/src/lib/tuition.ts).
+  tuitionCurrency: CURRENCY_CODES_SCHEMA.optional(),
   kompasCheckedAt: isoDate.optional(),
   checkedAt: isoDate.optional(),
   brokenLink: z.boolean().optional(),
@@ -64,7 +75,7 @@ export const tuitionSchema = z.object({
   // 274 цены QS (MYR 175, SGD 111) и не заводился Strathclyde Bahrain.
   // 2026-08-20: добавлены AED, HKD, THB, CNY — валюты новых партнёров QS
   // (AURAK в дирхамах, три школы Wycombe Abbey в бат/юань/гонконгский доллар).
-  currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF', 'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD']),
+  currency: CURRENCY_CODES_SCHEMA,
   byProgram: z.record(slug, z.number().nonnegative()),
 });
 export type Tuition = z.infer<typeof tuitionSchema>;

@@ -8,23 +8,24 @@
 |---|---:|
 | extracts | 512 |
 | extractsLinked | 507 |
-| cardsTouched | 411 |
-| written | 21923 |
-| wholeTerm | 340 |
+| cardsTouched | 438 |
+| written | 22573 |
+| wholeTerm | 380 |
 | keptExisting | 0 |
-| overwritten | 21880 |
+| overwritten | 22066 |
+| programCurrency | 650 |
 | skippedBucket | 1433 |
-| skippedCurrency | 1100 |
-| skippedNoMatch | 10402 |
+| skippedCurrency | 102 |
+| skippedNoMatch | 10750 |
 | skippedNoCard | 0 |
 
 ## Не записано
 
 | Причина | Штук |
 |---|---:|
-| `no-match` | 10402 |
+| `no-match` | 10750 |
 | `bucket` | 1433 |
-| `currency-conflict` | 1081 |
+| `currency-foreign-quote` | 83 |
 | `currency-unsupported` | 19 |
 
 Подробности: `qs-fees-apply-cases.json`, откат: `qs-fees-apply-backup.json`.
