@@ -19,6 +19,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { buildIndex, matchProgram } from './lib/program-match.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EX = path.join(ROOT, 'sources/kompas/extracts');
@@ -47,8 +48,6 @@ const LOCAL_CURRENCY = {
   Finland: 'EUR', Malta: 'EUR', Cyprus: 'EUR', Latvia: 'EUR', Lithuania: 'EUR',
   Estonia: 'EUR', Slovakia: 'EUR', Slovenia: 'EUR', Croatia: 'EUR', Belgium: 'EUR',
 };
-const norm = (s) => String(s || '').toLowerCase().replace(/[’'`]/g, '')
-  .replace(/[^a-z0-9]+/g, ' ').trim();
 const inKzt = (v, cur) => v * (KZT[cur] || 500);
 const feeOf = (p) => {
   const v = typeof p.tuition === 'number' ? p.tuition
@@ -67,19 +66,13 @@ for (const f of fs.readdirSync(WORK)) {
   const slug = f.replace(/\.json$/, '');
   const card = JSON.parse(fs.readFileSync(path.join(WORK, f), 'utf8'));
   cards.set(slug, card);
-  const byUrl = new Map(), byTitle = new Map();
-  for (const p of (card.programs || [])) {
-    if (p.programUrl && !byUrl.has(p.programUrl)) byUrl.set(p.programUrl, p);
-    const k = norm(p.title);
-    if (k && !byTitle.has(k)) byTitle.set(k, p);
-  }
-  idx.set(slug, { byUrl, byTitle });
+  idx.set(slug, buildIndex(card.programs));
 }
 
 const cases = [];
 const stats = { sources: SOURCES.join(','), extracts: 0, linked: 0,
   candidates: 0, skippedCurrency: 0, skippedBucket: 0, skippedNoMatch: 0, skippedNoCard: 0,
-  skippedAudience: 0, skippedPartTime: 0,
+  skippedAudience: 0, skippedPartTime: 0, matchedByAward: 0, ambiguousMatch: 0,
   programsWritten: 0, cardsTouched: 0, overwritten: 0, ownCurrency: 0,
   variantPrograms: 0, variantSums: 0, foreignQuoteDemoted: 0 };
 
@@ -99,7 +92,6 @@ for (const src of SOURCES) {
     const card = cards.get(slug);
     if (!card) { stats.skippedNoCard++; continue; }
     stats.linked++;
-    const { byUrl, byTitle } = idx.get(slug);
 
     for (const ep of (d.programs || [])) {
       const t = feeOf(ep);
@@ -147,13 +139,19 @@ for (const src of SOURCES) {
         }
         if (bucket === 'whole-term') basis = 'program';
       }
-      const target = (ep.programUrl && byUrl.get(ep.programUrl)) || byTitle.get(norm(ep.title));
+      const hit = matchProgram(idx.get(slug), ep);
+      const target = hit.program;
       if (!target || !target.slug) {
         stats.skippedNoMatch++;
+        if (hit.how === 'ambiguous') stats.ambiguousMatch++;
         cases.push({ source: src, catalogSlug: slug, program: ep.title, tuition: t, currency: cur,
-          reason: 'no-match', note: 'программа выгрузки не нашлась в карточке' });
+          reason: hit.how === 'ambiguous' ? 'match-ambiguous' : 'no-match',
+          note: hit.how === 'ambiguous'
+            ? 'после снятия приставки степени подходит больше одной программы карточки — привязывать нельзя'
+            : 'программа выгрузки не нашлась в карточке' });
         continue;
       }
+      if (hit.how === 'award-stripped') stats.matchedByAward++;
       stats.candidates++;
       if (!pool.has(slug)) pool.set(slug, new Map());
       const m2 = pool.get(slug);

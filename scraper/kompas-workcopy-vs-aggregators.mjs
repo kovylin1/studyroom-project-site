@@ -13,6 +13,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { buildIndex, matchProgram } from './lib/program-match.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EX = path.join(ROOT, 'sources/kompas/extracts');
@@ -21,8 +22,6 @@ const OUT_MD = path.join(ROOT, 'sources/kompas/WORKCOPY-VS-AGGREGATORS.md');
 const OUT_JSON = path.join(ROOT, 'sources/kompas/workcopy-vs-aggregators.json');
 
 const AGGREGATORS = ['qs', 'edvoy', 'kaplan', 'studygroup', 'oxford-international', 'iapro', 'qahe'];
-const norm = (s) => String(s || '').toLowerCase().replace(/[’'`]/g, '')
-  .replace(/[^a-z0-9]+/g, ' ').trim();
 const feeOf = (p) => {
   const v = typeof p.tuition === 'number' ? p.tuition
     : typeof p.feePerYear === 'number' ? p.feePerYear : null;
@@ -37,13 +36,7 @@ for (const f of fs.readdirSync(WORK)) {
 // индексы программ карточки — строим один раз
 const idx = new Map();
 for (const [slug, card] of cards) {
-  const byUrl = new Map(), byTitle = new Map();
-  for (const p of (card.programs || [])) {
-    if (p.programUrl && !byUrl.has(p.programUrl)) byUrl.set(p.programUrl, p);
-    const k = norm(p.title);
-    if (k && !byTitle.has(k)) byTitle.set(k, p);
-  }
-  idx.set(slug, { byUrl, byTitle });
+  idx.set(slug, buildIndex(card.programs));
 }
 
 const confirmed = new Map();   // slug карточки -> Set слагов программ, подтверждённых агрегатором
@@ -70,12 +63,11 @@ for (const src of [...AGGREGATORS, 'direct']) {
     if (!card) { st.cardMissing++; continue; }
     st.linked++;
     if (src !== 'direct') cardsWithSource.add(slug);
-    const { byUrl, byTitle } = idx.get(slug);
     const bp = (card.tuition && card.tuition.byProgram) || {};
     if (!confirmed.has(slug)) { confirmed.set(slug, new Set()); priceConfirmed.set(slug, new Set()); }
     for (const ep of (d.programs || [])) {
       st.programs++;
-      const target = (ep.programUrl && byUrl.get(ep.programUrl)) || byTitle.get(norm(ep.title));
+      const target = matchProgram(idx.get(slug), ep).program;
       if (!target || !target.slug) { st.notInCard++; continue; }
       st.matched++;
       if (src !== 'direct') confirmed.get(slug).add(target.slug);
