@@ -5,9 +5,9 @@
 | Показатель | Значение |
 |---|---:|
 | sources | qs,edvoy,kaplan,studygroup,oxford-international,qahe |
-| extracts | 1227 |
-| linked | 1215 |
-| candidates | 86349 |
+| extracts | 1229 |
+| linked | 1217 |
+| candidates | 86401 |
 | skippedCurrency | 21 |
 | skippedBucket | 1433 |
 | skippedNoMatch | 251 |
@@ -16,12 +16,12 @@
 | skippedPartTime | 4 |
 | matchedByAward | 1516 |
 | ambiguousMatch | 83 |
-| programsWritten | 76494 |
-| cardsTouched | 752 |
-| overwritten | 72094 |
-| ownCurrency | 2304 |
-| variantPrograms | 4434 |
-| variantSums | 9202 |
+| programsWritten | 76540 |
+| cardsTouched | 753 |
+| overwritten | 76494 |
+| ownCurrency | 2323 |
+| variantPrograms | 4440 |
+| variantSums | 9214 |
 | foreignQuoteDemoted | 251 |
 
 ## Не записано

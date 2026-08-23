@@ -46,8 +46,10 @@ for (const f of fs.readdirSync(WORK)) {
   if (!f.endsWith('.json')) continue;
   const slug = f.replace(/\.json$/, '');
   taken.add(slug);
-  try { cards.push({ slug, name: JSON.parse(fs.readFileSync(path.join(WORK, f), 'utf8')).name || '' }); }
-  catch { /* битый файл — не улика */ }
+  try {
+    const c = JSON.parse(fs.readFileSync(path.join(WORK, f), 'utf8'));
+    cards.push({ slug, name: c.name || '', country: c.country || null });
+  } catch { /* битый файл — не улика */ }
 }
 
 // Не всякий непривязанный вуз — новый. Матчер отказывается выбирать, когда под имя
@@ -75,6 +77,20 @@ const cardsByName = (name) => {
   return [...out];
 };
 
+// Однофамильцы — главный источник тихого брака: «Lincoln University College» (Малайзия)
+// по имени без родовых слов сходится с «Lincoln University» (Новая Зеландия), и выгрузка
+// малайзийского вуза села бы на новозеландскую карточку. Поймано на прогоне 23.08.
+// Страна должна совпасть; написания у источников разные, поэтому приводим к одному виду.
+const COUNTRY_ALIAS = {
+  uae: 'united arab emirates', usa: 'united states', us: 'united states',
+  uk: 'united kingdom', 'great britain': 'united kingdom',
+};
+const normCountry = (c) => {
+  const k = String(c || '').toLowerCase().replace(/[^a-z ]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return COUNTRY_ALIAS[k] || k;
+};
+const cardCountry = new Map(cards.map((c) => [c.slug, c.country]));
+
 const drafts = [];
 for (const f of fs.readdirSync(DRAFTS)) {
   if (!f.endsWith('.json')) continue;
@@ -93,13 +109,6 @@ for (const d of drafts) {
   const name = String(d.name || '').trim();
   const programs = d.programs || [];
   if (!name) continue;
-  if (!d.city) {
-    stats.noCity++;
-    cases.push({ edpRefId: d.edpRefId, name, country: d.country || null,
-      programs: programs.length, reason: 'no-city',
-      note: 'источник города не назвал — карточка не заводится, город не выдумываем' });
-    continue;
-  }
   if (!programs.length) {
     stats.noPrograms++;
     cases.push({ edpRefId: d.edpRefId, name, country: d.country || null, programs: 0,
@@ -109,7 +118,17 @@ for (const d of drafts) {
   // Карточка уже есть, просто матчер её не выбрал. Новую не заводим: вместо дубля
   // привязываем выгрузку к существующей — но только если своей выгрузки edvoy у неё
   // ещё нет, чтобы не затереть чужую работу.
-  const already = cardsByName(name);
+  const already = cardsByName(name).filter((slug) => {
+    const a = normCountry(cardCountry.get(slug));
+    const b = normCountry(d.country);
+    return !a || !b || a === b;   // страну знаем с обеих сторон — она обязана совпасть
+  });
+  const rejectedByCountry = cardsByName(name).length - already.length;
+  if (rejectedByCountry) {
+    cases.push({ edpRefId: d.edpRefId, name, country: d.country || null, programs: programs.length,
+      reason: 'country-mismatch', cards: cardsByName(name),
+      note: 'карточка с тем же именем есть, но в другой стране — однофамилец, привязывать нельзя' });
+  }
   if (already.length) {
     stats.cardExists++;
     const free = already.length === 1 && !fs.existsSync(path.join(EXTRACTS, already[0] + '.json'));
@@ -128,6 +147,17 @@ for (const d of drafts) {
         reason: 'card-exists', cards: already,
         note: 'карточка в каталоге есть (' + already.join(', ') + '), но привязка не сложилась — привязать вручную' });
     }
+    continue;
+  }
+
+  // Город нужен только НОВОЙ карточке. У существующей он уже есть, поэтому проверка
+  // города стоит после поиска карточки: иначе вуз с готовой карточкой уходил в кейсы
+  // «нет города» и выгрузка к нему не привязывалась (так было с Royal Holloway и ещё тремя).
+  if (!d.city) {
+    stats.noCity++;
+    cases.push({ edpRefId: d.edpRefId, name, country: d.country || null,
+      programs: programs.length, reason: 'no-city',
+      note: 'источник города не назвал — карточка не заводится, город не выдумываем' });
     continue;
   }
 

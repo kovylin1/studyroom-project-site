@@ -5,20 +5,20 @@
 | Показатель | Значение |
 |---|---:|
 | sources | qs,edvoy,kaplan,studygroup,oxford-international,qahe,iapro |
-| rows | 91841 |
-| unmatched | 6132 |
+| rows | 91893 |
+| unmatched | 196 |
 | ambiguous | 84 |
-| levelFromSource | 5739 |
-| levelFromSourceLevel | 205 |
+| levelFromSource | 8 |
+| levelFromSourceLevel | 0 |
 | levelFromTitle | 0 |
 | noLevel | 96 |
 | levelUnsupported | 92 |
 | duplicatesInSource | 0 |
-| created | 5944 |
-| cardsTouched | 275 |
-| withDuration | 4129 |
-| withUrl | 57 |
-| urlShared | 5887 |
+| created | 8 |
+| cardsTouched | 1 |
+| withDuration | 8 |
+| withUrl | 0 |
+| urlShared | 8 |
 
 ## Не заведено
 
