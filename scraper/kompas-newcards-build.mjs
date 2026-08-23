@@ -15,6 +15,11 @@ const EX = path.join(ROOT, 'sources/kompas/extracts/qs');
 const CATALOG = path.join(ROOT, 'site/src/content/universities');
 const OUT = path.join(ROOT, 'sources/kompas/newcards');
 const APPLY = process.argv.includes('--apply');
+// --only=slug1,slug2 — завести только перечисленные карточки. Без фильтра --apply
+// проходит по всей очереди, а очередь с 20.08 уже заведена: строка 207 вешает
+// на занятый слаг суффикс -qs, и повторный прогон наплодил бы дубли.
+const ONLY = (process.argv.find((a) => a.startsWith('--only=')) || '').slice(7)
+  .split(',').map((x) => x.trim()).filter(Boolean);
 const TODAY = '2026-08-20';
 
 const log = (...a) => console.log(...a);
@@ -54,6 +59,14 @@ const CITY = {
   'mercy-university': ['Dobbs Ferry', 'Wikidata Q16951582 (Mercy University), P159 штаб-квартира'],
   'charles-darwin-university-international-college': ['Darwin', 'Wikidata Q1064071 (Charles Darwin University), P159 штаб-квартира'],
   'anglican-schools-commission-asc-western-australia-victoria-and-new-south-wales': ['Perth', 'Wikidata Q4763547 (Anglican Schools Commission), P159 штаб-квартира'],
+  // Названы владельцем 23.08 — источник города не даёт, Wikidata не помогла.
+  'university-of-tasmania-international-pathway-college': ['Hobart', 'решение владельца 23.08'],
+  'university-bridge': ['Saskatoon', 'решение владельца 23.08'],
+  'on-campus-ireland': ['Dublin', 'решение владельца 23.08'],
+  'oxford-international-education-group-english-schools': ['Oxford', 'решение владельца 23.08'],
+  'oxford-international-education-group-ielts-and-tesol': ['Oxford', 'решение владельца 23.08'],
+  'oxford-international-education-group-junior': ['Oxford', 'решение владельца 23.08'],
+
   // Не взято намеренно: University of Tasmania → Wikidata отдаёт «Tasmania», это штат,
   // а не город; OnCampus Ireland, University Bridge и три записи Oxford International
   // — сущности нет либо она про другой объект (University Bridge оказался мостом
@@ -75,7 +88,7 @@ const LEVEL = {
   'Advanced Diploma': null,
 };
 
-const CURRENCIES = ['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF', 'AED', 'HKD', 'THB', 'CNY'];
+const CURRENCIES = ['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF', 'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD'];
 const SYM2CUR = {
   '£': 'GBP', '€': 'EUR', 'CA$': 'CAD', 'A$': 'AUD', 'NZ$': 'NZD', 'US$': 'USD',
   AED: 'AED', 'HK$': 'HKD', THB: 'THB', 'CN¥': 'CNY', CHF: 'CHF', SGD: 'SGD', MYR: 'MYR',
@@ -317,6 +330,7 @@ function main() {
     const written = [];
     for (const c of [...ready, ...fromDrafts]) {
       const { _kompas, ...clean } = c;
+      if (ONLY.length && !ONLY.includes(clean.slug)) continue;
       const dest = path.join(CATALOG, `${clean.slug}.json`);
       if (fs.existsSync(dest)) { log(`ПРОПУСК ${clean.slug}: карточка уже есть, не перезаписываю`); continue; }
       fs.writeFileSync(dest, `${JSON.stringify(clean, null, 2)}\n`);

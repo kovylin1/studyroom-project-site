@@ -32,7 +32,7 @@ const DRY = process.argv.includes('--dry');
 const OVERWRITE = process.argv.includes('--overwrite');
 
 // валюты, которые принимает site/src/schema/university.ts
-const CURRENCIES = ['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF', 'AED', 'HKD', 'THB', 'CNY'];
+const CURRENCIES = ['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF', 'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD'];
 
 const norm = (s) => String(s || '')
   .toLowerCase()

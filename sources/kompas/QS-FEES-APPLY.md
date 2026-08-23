@@ -7,24 +7,24 @@
 | Показатель | Значение |
 |---|---:|
 | extracts | 512 |
-| extractsLinked | 505 |
-| cardsTouched | 407 |
-| written | 21872 |
+| extractsLinked | 507 |
+| cardsTouched | 411 |
+| written | 21923 |
 | wholeTerm | 340 |
 | keptExisting | 0 |
-| overwritten | 21872 |
+| overwritten | 21880 |
 | skippedBucket | 1433 |
-| skippedCurrency | 1202 |
-| skippedNoMatch | 10340 |
+| skippedCurrency | 1100 |
+| skippedNoMatch | 10402 |
 | skippedNoCard | 0 |
 
 ## Не записано
 
 | Причина | Штук |
 |---|---:|
-| `no-match` | 10340 |
+| `no-match` | 10402 |
 | `bucket` | 1433 |
-| `currency-conflict` | 928 |
-| `currency-unsupported` | 274 |
+| `currency-conflict` | 1081 |
+| `currency-unsupported` | 19 |
 
 Подробности: `qs-fees-apply-cases.json`, откат: `qs-fees-apply-backup.json`.

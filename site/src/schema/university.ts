@@ -60,9 +60,11 @@ export const programSchema = z.object({
 export type Program = z.infer<typeof programSchema>;
 
 export const tuitionSchema = z.object({
+  // 2026-08-23: добавлены BHD, MYR, SGD по решению владельца — без них отбрасывались
+  // 274 цены QS (MYR 175, SGD 111) и не заводился Strathclyde Bahrain.
   // 2026-08-20: добавлены AED, HKD, THB, CNY — валюты новых партнёров QS
   // (AURAK в дирхамах, три школы Wycombe Abbey в бат/юань/гонконгский доллар).
-  currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF', 'AED', 'HKD', 'THB', 'CNY']),
+  currency: z.enum(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF', 'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD']),
   byProgram: z.record(slug, z.number().nonnegative()),
 });
 export type Tuition = z.infer<typeof tuitionSchema>;
