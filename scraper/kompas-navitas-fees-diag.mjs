@@ -54,34 +54,75 @@ export async function readSeedBands(slugs = NAVITAS_UK_SLUGS) {
   return bands;
 }
 
-// Все выгрузки по вузу: Map<нормализованное название, {fee, src}>
-export async function extractIndex(slug) {
-  const idx = new Map();
-  if (!existsSync(EXTRACT_DIR)) return idx;
-  for (const srcName of await fs.readdir(EXTRACT_DIR)) {
-    const f = path.join(EXTRACT_DIR, srcName, `${slug}.json`);
-    if (!existsSync(f)) continue;
-    let j;
-    try { j = JSON.parse(await fs.readFile(f, 'utf8')); } catch { continue; }
-    for (const p of j.programs || j.items || []) {
-      const key = normTitle(p.title || p.name);
-      if (!key) continue;
-      const fee = Number(p.tuition ?? p.fee ?? p.amount ?? 0);
-      const prev = idx.get(key);
-      // предпочитаем запись с ценой
-      if (!prev || (!(prev.fee > 0) && fee > 0)) idx.set(key, { fee, src: srcName });
+// Выгрузки, разобранные по КАРТОЧКЕ, а не по имени файла.
+//
+// ПОЧЕМУ ТАК. Прежняя версия искала файл `<extracts>/<источник>/<slug карточки>.json`
+// и этим была слепа к QS: у edvoy имя файла совпадает со слагом карточки, а QS зовёт
+// файлы своим слагом портала — `robert-gordon-university-foundation.json` при карточке
+// `robert-gordon`. Привязка лежит ВНУТРИ файла, в поле `catalogSlug` (так её и читает
+// `kompas-fees-apply.mjs`). Из-за этого 24.08 замер объявил 1 113 цен «ничем не
+// подтверждёнными», хотя все они пришли от QS и записаны в `fees-apply-report.json`
+// с явным `source: 'qs'`. Одному вузу может отвечать НЕСКОЛЬКО файлов QS, поэтому
+// строки накапливаются, а не перезаписываются.
+//
+// ДВА ВИДА ПОДТВЕРЖДЕНИЯ. QS даёт вузу одну цену на уровень, и она ложится на все
+// программы этого уровня — по названию такая цена не сойдётся никогда, названий у неё
+// нет. Поэтому кроме совпадения по названию считаем совпадение по уровню: цена
+// подтверждена уровнем, если ровно эта сумма стоит у строки того же уровня того же
+// вуза. Это слабее названия, но это улика источника, а не выдумка сида.
+
+const feeOfRow = (p) => Number(p.tuition ?? p.fee ?? p.amount ?? 0);
+
+// Map<slug карточки, { titles: Map<название, {fee, src}>, levels: Map<уровень, Map<сумма, src>> }>
+export async function buildExtractIndex(dir = EXTRACT_DIR) {
+  const byCard = new Map();
+  if (!existsSync(dir)) return byCard;
+  for (const srcName of await fs.readdir(dir)) {
+    const srcDir = path.join(dir, srcName);
+    let files;
+    try { files = await fs.readdir(srcDir); } catch { continue; }
+    for (const fname of files) {
+      if (!fname.endsWith('.json')) continue;
+      let j;
+      try { j = JSON.parse(await fs.readFile(path.join(srcDir, fname), 'utf8')); } catch { continue; }
+      if (j.notAnInstitution || j.noPrograms || j.excludedFromDiff) continue;
+      const card = j.catalogSlug || j.slug || fname.replace(/\.json$/, '');
+      if (!card) continue;
+      let bucket = byCard.get(card);
+      if (!bucket) { bucket = { titles: new Map(), levels: new Map() }; byCard.set(card, bucket); }
+      for (const p of j.programs || j.items || []) {
+        const fee = feeOfRow(p);
+        const key = normTitle(p.title || p.name);
+        if (key) {
+          const prev = bucket.titles.get(key);
+          // предпочитаем запись с ценой
+          if (!prev || (!(prev.fee > 0) && fee > 0)) bucket.titles.set(key, { fee, src: srcName });
+        }
+        const lvl = p.level || p.sourceLevel;
+        if (lvl && fee > 0) {
+          let m = bucket.levels.get(lvl);
+          if (!m) { m = new Map(); bucket.levels.set(lvl, m); }
+          if (!m.has(fee)) m.set(fee, srcName);
+        }
+      }
     }
   }
-  return idx;
+  return byCard;
+}
+
+let _cache = null;
+export async function extractIndex(slug) {
+  if (!_cache) _cache = await buildExtractIndex();
+  return (_cache.get(slug) || { titles: new Map(), levels: new Map() });
 }
 
 // Запуск напрямую (на Windows pathToFileURL даёт file:///D:/…, «file://»+путь не сходится).
 if (process.argv[1] && import.meta.url === (await import('url')).pathToFileURL(process.argv[1]).href) {
   const bands = await readSeedBands();
-  const totals = { programs: 0, backedSame: 0, backedDiff: 0, unbacked: 0, noPrice: 0 };
+  const totals = { programs: 0, backedSame: 0, backedDiff: 0, backedLevel: 0, unbacked: 0, noPrice: 0 };
   const unbackedAll = [];
 
-  console.log('slug                 прогр  подтв  расх  БЕЗ-ПОДТВ  без-цены  из-сид-полосы');
+  console.log('slug                 прогр  назв=  назв≠  уровень  БЕЗ-ПОДТВ  без-цены  из-сид-полосы');
   for (const slug of NAVITAS_UK_SLUGS) {
     const f = path.join(UNI_DIR, `${slug}.json`);
     if (!existsSync(f)) { console.log(`${slug.padEnd(20)} нет карточки`); continue; }
@@ -90,32 +131,36 @@ if (process.argv[1] && import.meta.url === (await import('url')).pathToFileURL(p
     const idx = await extractIndex(slug);
     const bandValues = new Set(Object.values(bands[slug] || {}));
 
-    let same = 0, diff = 0, unbacked = 0, none = 0, inBand = 0;
+    let same = 0, diff = 0, byLevel = 0, unbacked = 0, none = 0, inBand = 0;
     for (const p of u.programs || []) {
       const price = Number(byProgram[p.slug] ?? 0);
       if (!(price > 0)) { none++; continue; }
-      const hit = idx.get(normTitle(p.title));
+      const hit = idx.titles.get(normTitle(p.title));
       if (hit && hit.fee > 0) { if (hit.fee === price) same++; else diff++; continue; }
+      // цена уровня: QS даёт вузу одну сумму на уровень, названия у неё нет
+      if (idx.levels.get(p.level)?.has(price)) { byLevel++; continue; }
       unbacked++;
       if (bandValues.has(price)) inBand++;
       unbackedAll.push({ slug, program: p.slug, title: p.title, price, inBand: bandValues.has(price) });
     }
     totals.programs += (u.programs || []).length;
-    totals.backedSame += same; totals.backedDiff += diff;
+    totals.backedSame += same; totals.backedDiff += diff; totals.backedLevel += byLevel;
     totals.unbacked += unbacked; totals.noPrice += none;
 
     console.log(
       `${slug.padEnd(20)} ${String((u.programs || []).length).padStart(5)} ${String(same).padStart(6)} ` +
-      `${String(diff).padStart(5)} ${String(unbacked).padStart(10)} ${String(none).padStart(9)} ${String(inBand).padStart(14)}`,
+      `${String(diff).padStart(6)} ${String(byLevel).padStart(8)} ${String(unbacked).padStart(10)} ` +
+      `${String(none).padStart(9)} ${String(inBand).padStart(14)}`,
     );
   }
 
   console.log(
-    `\nИТОГО: программ ${totals.programs}; цена подтверждена выгрузкой ${totals.backedSame}; ` +
+    `\nИТОГО: программ ${totals.programs}; цена сошлась с выгрузкой по названию ${totals.backedSame}; ` +
     `выгрузка знает программу, но цена другая ${totals.backedDiff}; ` +
+    `подтверждена уровнем источника ${totals.backedLevel}; ` +
     `НИЧЕМ НЕ ПОДТВЕРЖДЕНА ${totals.unbacked}; без цены (уже «уточняется») ${totals.noPrice}`,
   );
-  console.log(`из неподтверждённых совпадает со значением сид-полосы: ${unbackedAll.filter(x => x.inBand).length}`);
+  console.log(`из неподтверждённых совпадает со значением сид-полосы: ${unbackedAll.filter((x) => x.inBand).length}`);
 
   if (LIST) {
     console.log('\n— неподтверждённые —');
