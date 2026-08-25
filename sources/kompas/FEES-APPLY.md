@@ -19,11 +19,12 @@
 | programsWritten | 76869 |
 | cardsTouched | 756 |
 | overwritten | 76869 |
-| ownCurrency | 2392 |
+| ownCurrency | 2393 |
 | variantPrograms | 4427 |
 | variantSums | 9169 |
-| foreignQuoteDemoted | 251 |
+| foreignQuoteDemoted | 122 |
 | skippedPathwayFee | 110 |
+| campusDemoted | 4368 |
 
 ## Не записано
 

@@ -20,6 +20,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { buildIndex, matchProgram } from './lib/program-match.mjs';
+import { feeScope, preferProgramScope } from './lib/fee-scope.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EX = path.join(ROOT, 'sources/kompas/extracts');
@@ -76,7 +77,9 @@ const stats = { sources: SOURCES.join(','), extracts: 0, linked: 0,
   programsWritten: 0, cardsTouched: 0, overwritten: 0, ownCurrency: 0,
   variantPrograms: 0, variantSums: 0, foreignQuoteDemoted: 0,
   // 3.28: цена подготовительной ступени, выданная за цену степени
-  skippedPathwayFee: 0 };
+  skippedPathwayFee: 0,
+  // 3.29: кампусная сумма уступила цене программы
+  campusDemoted: 0 };
 
 // Строка подготовительной ступени ПЕРЕД магистратурой. Намеренно узко: обычные
 // foundation-программы сюда не входят — у них своя законная цена, и по ней в каталоге
@@ -210,6 +213,7 @@ for (const src of SOURCES) {
           .filter(Boolean).join(', ')
         : (typeof ep.campus === 'string' ? ep.campus : '')) || undefined;
       m2.get(target.slug).push({ target, t, cur, basis, source: src,
+        scope: feeScope(ep),
         level: ep.sourceLevel || undefined,
         degreeGroup: ep.degreeGroup || undefined,
         campus,
@@ -240,9 +244,14 @@ for (const [slug, byProgram] of pool) {
     const target = list[0].target;
     // Родная валюта важнее пересчитанной: сперва ищем суммы в валюте карточки или
     // в местной валюте страны кампуса, и только если таких нет — берём что есть.
-    const native = list.filter((c) => c.cur === cardCur || (local && c.cur === local));
-    const usable = native.length ? native : list;
-    if (native.length && native.length < list.length) stats.foreignQuoteDemoted += list.length - native.length;
+    // Цена программы важнее цены кампуса (3.29). QS даёт одно число на весь уровень
+    // и по минимуму оно било настоящую программную цену — сравнивать их нельзя.
+    // Кампусная сумма остаётся в tuitionVariants, из выдачи она не пропадает.
+    const scoped = preferProgramScope(list);
+    if (scoped.length < list.length) stats.campusDemoted += list.length - scoped.length;
+    const native = scoped.filter((c) => c.cur === cardCur || (local && c.cur === local));
+    const usable = native.length ? native : scoped;
+    if (native.length && native.length < scoped.length) stats.foreignQuoteDemoted += scoped.length - native.length;
     const chosen = usable.reduce((a, b) => (inKzt(b.t, b.cur) < inKzt(a.t, a.cur) ? b : a));
 
     const prev = card.tuition.byProgram[progSlug];
