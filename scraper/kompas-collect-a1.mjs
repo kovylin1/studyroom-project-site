@@ -41,6 +41,7 @@ const DIRS = [
 const EXTRACT_DIR = path.join(ROOT, 'sources/kompas/extracts/direct');
 const BACKUP = path.join(ROOT, 'sources/kompas/a1-programs-backup.json');
 const APPLY = process.argv.includes('--apply');
+const DROP_ORPHANS = process.argv.includes('--drop-orphan-fees');
 const ONLY = (process.argv.find((a) => a.startsWith('--slug=')) || '').slice(7);
 const TODAY = new Date().toISOString().slice(0, 10);
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36';
@@ -78,6 +79,10 @@ const SECTION_SLUGS = new Set([
   'ders-plani', 'yonetim', 'bolum-mesaji', 'egitim-amaclari', 'kariyer',
 ]);
 const isSection = (url) => SECTION_SLUGS.has(url.split('?')[0].replace(/\/$/, '').split('/').pop());
+
+// Схема сайта требует абсолютный адрес программы. Относительные ссылки
+// приводим к абсолютным здесь, а не в каждом разборе по отдельности.
+const abs = (href, base) => { try { return new URL(href, base).href; } catch { return null; } };
 
 const anchors = (html) => [...html.matchAll(/<a[^>]+href="([^"#]+)"[^>]*>([\s\S]*?)<\/a>/gi)]
   .map((m) => ({ href: m[1], text: dec(m[2].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim() }))
@@ -148,6 +153,61 @@ const SITES = {
       return out;
     },
   },
+  'sp-jain-school-of-global-management-dubai': {
+    site: 'https://www.spjain.org/',
+    collect() {
+      // У вуза всего шестнадцать программ, а в карточке лежало 203 строки —
+      // страницы сайта: «Student life in the MFWM program», «Admissions for
+      // online Executive MBA», «Bachelor of Data Science Program Fees».
+      // Настоящий состав — на страницах ступеней.
+      const out = [];
+      const steps = [
+        ['https://www.spjain.org/programs/undergraduate', /\/programs\/undergraduate\/[a-z0-9-]+$/, 'bachelor'],
+        ['https://www.spjain.org/programs/postgraduate', /\/programs\/postgraduate\/[a-z0-9-]+$/, 'master'],
+      ];
+      for (const [url, re, level] of steps) {
+        for (const a of anchors(get(url))) {
+          if (!re.test(a.href)) continue;
+          const href = abs(a.href, 'https://www.spjain.org/');
+          if (!href) continue;
+          out.push({ title: a.text, level, unit: level, url: href });
+        }
+      }
+      // Докторантура лежит отдельной веткой, ступень названа в самом адресе.
+      out.push({
+        title: 'Doctorate of Business Administration', level: 'phd', unit: 'doctorate',
+        url: 'https://www.spjain.org/programs/doctorate-business-administration',
+      });
+      return out;
+    },
+  },
+  'burgundy-school-of-business': {
+    site: 'https://www.bsb-education.com/',
+    collect() {
+      // Сводная страница «Toutes nos formations». Настоящие программы отличаются
+      // от разделов тем, что в карточке подписана ступень французским «Bac +N»:
+      // «Bachelor Wine Tourism Bac +3 Dijon». Разделы («Nos formations Vins &
+      // Spiritueux», «Alumni») такой подписи не имеют и не берутся.
+      const page = get('https://www.bsb-education.com/fr/formation/trouver-ma-formation');
+      const out = [];
+      for (const a of anchors(page)) {
+        if (!/\/formation\/[a-z0-9-]+$/.test(a.href)) continue;
+        const m = a.text.match(/^(Bachelor|Mast[eè]re|Master|MSc|MBA|DBA|Doctorate)\s+(.*?)\s+Bac\s*\+\s*(\d)/i);
+        if (!m) continue;
+        const degree = m[1];
+        // Название иногда повторяет степень дважды: «Bachelor Bachelor Wine Tourism».
+        // Степень в шаблонной строке не экранируется без сюрпризов, поэтому
+        // повтор снимаем по словам: «Bachelor Bachelor Wine Tourism» → «Bachelor Wine Tourism».
+        const words = `${degree} ${m[2]}`.replace(/\s+/g, ' ').trim().split(' ');
+        const title = (words[1] && words[0].toLowerCase() === words[1].toLowerCase()
+          ? words.slice(1) : words).join(' ');
+        const level = /^(dba|doctorate)$/i.test(degree) ? 'phd'
+          : /^(mast|msc|mba)/i.test(degree) ? 'master' : 'bachelor';
+        out.push({ title, level, unit: `bac+${m[3]}`, url: a.href.startsWith('http') ? a.href : `https://www.bsb-education.com${a.href}` });
+      }
+      return out;
+    },
+  },
 };
 
 const UNREACHABLE = {
@@ -202,9 +262,19 @@ for (const [slug, cfg] of Object.entries(SITES)) {
     const newSlugs = new Set(finalPrograms.map((p) => p.slug));
     const orphanFees = Object.keys(card.tuition?.byProgram || {}).filter((s) => !newSlugs.has(s));
     const orphanDates = Object.keys(card.deadlines || {}).filter((s) => !newSlugs.has(s));
-    if (orphanFees.length || orphanDates.length) {
-      blocked = `осиротели бы ${orphanFees.length} цен и ${orphanDates.length} сроков — состав не заменён`;
+    if ((orphanFees.length || orphanDates.length) && !DROP_ORPHANS) {
+      blocked = `осиротели бы ${orphanFees.length} цен и ${orphanDates.length} сроков — состав не заменён (снять: --drop-orphan-fees)`;
       continue;
+    }
+    // Цена, висевшая на строке, которая программой не была, уезжает вместе с ней.
+    // Не потеря данных: сумма относилась к странице сайта, а не к программе.
+    for (const s2 of orphanFees) {
+      backup.push({ dir: path.basename(dir), slug, droppedFee: s2, amount: card.tuition.byProgram[s2], currency: card.tuition.currency });
+      delete card.tuition.byProgram[s2];
+    }
+    for (const s2 of orphanDates) {
+      backup.push({ dir: path.basename(dir), slug, droppedDeadline: s2, value: card.deadlines[s2] });
+      delete card.deadlines[s2];
     }
     backup.push({ dir: path.basename(dir), slug, programs: card.programs });
     card.programs = finalPrograms;
