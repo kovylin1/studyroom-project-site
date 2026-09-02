@@ -34,6 +34,8 @@ const RULES = [
     'пункт меню или служебная страница'],
   ['studyroom-stub', /contact\s+studyroom|уточня|— contact/i,
     'заглушка «спросите менеджера», а не программа'],
+  ['marketing', /^(why|how|what|meet|discover|download|join|welcome|introducing|explore|a message|our |your )|(message from the|all about|meet the (faculty|team|dean)|alumni network|brochures?|open day|virtual tour|curriculum & academics|student art of living)/i,
+    'рекламная или навигационная страница сайта, а не программа'],
   ['sentence', /^.{95,}$/,
     'длиннее 95 знаков — обычно заголовок новости, а не название программы'],
 ];
