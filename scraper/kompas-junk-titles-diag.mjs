@@ -17,6 +17,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { RULES, classifyTitle } from './lib/junk-title.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (p, d) => (process.argv.find((a) => a.startsWith(p)) || `${p}${d}`).slice(p.length);
@@ -24,23 +25,8 @@ const DIR = path.resolve(arg('--dir=', path.join(ROOT, 'site/src/content/univers
 const LIST = arg('--list=', '');
 const REPORT = path.join(ROOT, 'sources/kompas/junk-titles.json');
 
-// Разряды. Порядок важен: строка попадает в первый подошедший.
-const RULES = [
-  ['html-entity', /&#\d+;|&#x[0-9a-f]+;|&(amp|nbsp|quot|lt|gt);/i,
-    'в названии остались HTML-сущности — брак разбора, а не название'],
-  ['person-name', /\b(prof|doç|doc|dr|öğr|ogr|assoc|asst|assist)\b\.?\s*(dr|öğr|ogr|üyesi|uyesi)?\b\.?\s*[A-ZÇĞİÖŞÜ]/,
-    'звание и фамилия — это карточка преподавателя'],
-  ['navigation', /^\s*(mainpage|main page|home ?page|homepage|anasayfa|thank you|te[sş]ekk[uü]rler|contact( us)?|about( us)?|news|haberler|login|sitemap|search|read more|devam[ıi]|duyurular)\s*$/i,
-    'пункт меню или служебная страница'],
-  ['studyroom-stub', /contact\s+studyroom|уточня|— contact/i,
-    'заглушка «спросите менеджера», а не программа'],
-  ['marketing', /^(why|how|what|meet|discover|download|join|welcome|introducing|explore|a message|our |your )|(message from the|all about|meet the (faculty|team|dean)|alumni network|brochures?|open day|virtual tour|curriculum & academics|student art of living)/i,
-    'рекламная или навигационная страница сайта, а не программа'],
-  ['sentence', /^.{95,}$/,
-    'длиннее 95 знаков — обычно заголовок новости, а не название программы'],
-];
-
-const DEGREE = /\b(bsc|ba|bs|beng|bba|bcom|llb|llm|msc|ma|ms|meng|mba|mphil|phd|doctor|bachelor|master|diploma|certificate|foundation|lisans|tıp|hem[sş]irelik)\b/i;
+// Правило живёт в lib/junk-title.mjs — замер и чистилка обязаны отвечать
+// на вопрос «это программа?» одинаково.
 
 const files = fs.readdirSync(DIR).filter((f) => f.endsWith('.json'));
 const byKind = {};
@@ -55,14 +41,10 @@ for (const f of files) {
   const hits = [];
   for (const p of programs) {
     const title = String(p.title || '');
-    for (const [kind, re, why] of RULES) {
-      if (!re.test(title)) continue;
-      // Длинное название с настоящей степенью — не новость, а длинное название.
-      if (kind === 'sentence' && DEGREE.test(title)) break;
-      hits.push({ kind, title, level: p.level, source: p.source, why });
-      byKind[kind] = (byKind[kind] || 0) + 1;
-      break;
-    }
+    const rule = classifyTitle(title);
+    if (!rule) continue;
+    hits.push({ kind: rule.kind, title, level: p.level, source: p.source, why: rule.why });
+    byKind[rule.kind] = (byKind[rule.kind] || 0) + 1;
   }
   if (hits.length) {
     cards.push({
@@ -85,7 +67,7 @@ console.log(`каталог: ${files.length} карточек, ${programsTotal} 
 console.log(`подозрительных названий: ${junkTotal} у ${cards.length} карточек\n`);
 console.log('по разрядам:');
 for (const [k, v] of Object.entries(byKind).sort((a, b) => b[1] - a[1])) {
-  console.log(`  ${String(v).padStart(5)}  ${k} — ${RULES.find((r) => r[0] === k)[2]}`);
+  console.log(`  ${String(v).padStart(5)}  ${k} — ${RULES.find((r) => r.kind === k).why}`);
 }
 console.log('\nхудшие карточки (доля мусора):');
 for (const c of cards.slice(0, 20)) {
