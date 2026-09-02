@@ -46,7 +46,20 @@ const PLAN = {
   'srh-haarlem-university-of-applied-sciences': { type: 'direct', directRaw: 'SRH, Germany', note: SRH_NOTE },
   'metropolitan-budapest': { type: 'direct', directRaw: 'METU, Hungary', note: METU_NOTE_NEW },
   'milton-friedman-university': { type: 'none', directRaw: null, note: METU_NOTE_OFF },
+  'american-university-of-ras-al-khaimah-aurak': {
+    type: 'direct',
+    directRaw: 'Aurak unit, Cyprus',
+    note: `Решение владельца ${DECIDED}: строка документа «Aurak unit, Cyprus» — это AURAK, American University of Ras Al Khaimah. Страна в документе указана неверно: вуз в ОАЭ, Рас-эль-Хайма, никакого AURAK на Кипре нет. Карточка была заведена 23.08 из выгрузки QS и стояла как aggregator; план от 30.08 числил её отсутствующей по устаревшим данным.`,
+  },
+  'demiroglu-bilim-university': {
+    type: 'direct',
+    directRaw: 'Bilim Univ, Turkey',
+    note: `Заведён ${DECIDED} с офсайта demiroglu.bilim.edu.tr — см. kompas-collect-bilim.mjs.`,
+  },
 };
+
+// Карта документа: обе записи висели неразобранными («unresolved» в OWNER-REPORT).
+const MAP_FILE = path.join(ROOT, 'sources/kompas/partner-source-map.json');
 
 let touched = 0, missing = 0;
 for (const dir of DIRS) {
@@ -69,6 +82,20 @@ for (const dir of DIRS) {
     console.log(`  ${path.basename(dir)}/${slug}: ${was.type || '—'} → ${want.type}`);
     touched++;
   }
+}
+
+if (fs.existsSync(MAP_FILE)) {
+  const map = JSON.parse(fs.readFileSync(MAP_FILE, 'utf8'));
+  let added = 0;
+  for (const [slug, want] of Object.entries(PLAN)) {
+    if (want.type !== 'direct' || !want.directRaw) continue;
+    const was = map[slug];
+    if (was && was.directRaw === want.directRaw) continue;
+    map[slug] = { type: 'direct', via: (was && was.via) || [], directRaw: want.directRaw };
+    added++;
+    console.log(`  карта документа: ${slug} ← «${want.directRaw}»`);
+  }
+  if (APPLY && added) fs.writeFileSync(MAP_FILE, JSON.stringify(map, null, 2) + '\n');
 }
 
 console.log(`${APPLY ? 'ЗАПИСАНО' : 'СУХОЙ ПРОГОН'}: карточек ${touched}, пропущено ${missing}`);

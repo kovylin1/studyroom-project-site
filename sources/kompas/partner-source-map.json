@@ -166,8 +166,9 @@
     ]
   },
   "american-university-of-ras-al-khaimah-aurak": {
-    "type": "none",
-    "via": []
+    "type": "direct",
+    "via": [],
+    "directRaw": "Aurak unit, Cyprus"
   },
   "american-university": {
     "type": "aggregator",
@@ -2701,11 +2702,12 @@
     ]
   },
   "metropolitan-budapest": {
-    "type": "aggregator",
+    "type": "direct",
     "via": [
       "qs",
       "edvoy"
-    ]
+    ],
+    "directRaw": "METU, Hungary"
   },
   "metropolitan-college-of-new-york": {
     "type": "none",
@@ -3742,20 +3744,23 @@
     ]
   },
   "srh-germany": {
-    "type": "none",
-    "via": []
+    "type": "direct",
+    "via": [],
+    "directRaw": "SRH, Germany"
   },
   "srh-haarlem-university-of-applied-sciences": {
-    "type": "aggregator",
+    "type": "direct",
     "via": [
       "edvoy"
-    ]
+    ],
+    "directRaw": "SRH, Germany"
   },
   "srh-hochschule-berlin": {
-    "type": "aggregator",
+    "type": "direct",
     "via": [
       "edvoy"
-    ]
+    ],
+    "directRaw": "SRH, Germany"
   },
   "srh-international-college": {
     "type": "aggregator",
@@ -5066,5 +5071,10 @@
     "via": [
       "studygroup"
     ]
+  },
+  "demiroglu-bilim-university": {
+    "type": "direct",
+    "via": [],
+    "directRaw": "Bilim Univ, Turkey"
   }
 }
