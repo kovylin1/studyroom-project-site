@@ -43,6 +43,18 @@ const TIMELINE = pickTimeline(locale, u.country);
 
 const officialSite = officialSiteOf(u);
 
+// Задача 3.21: обещание подготовки показывалось всем подряд — и вузам, у которых
+// ни Foundation, ни Pre-Master's нет вовсе. Смотрим на программы самой карточки.
+const hasFoundation = u.programs.some((p) => p.level === 'foundation');
+const hasPathway = u.programs.some((p) => p.programType === 'pathway');
+const ieltsHelpKey = hasFoundation && hasPathway
+  ? 'lp.req.ieltsHelpText'
+  : hasFoundation
+    ? 'lp.req.ieltsHelpTextFoundation'
+    : hasPathway
+      ? 'lp.req.ieltsHelpTextPathway'
+      : 'lp.req.ieltsHelpTextNone';
+
 const baseRate = CURRENCY_TO_KZT[u.tuition.currency] ?? DEFAULT_KZT_RATE;
 const sym = CURRENCY_SYMBOL[u.tuition.currency] ?? u.tuition.currency;
 
@@ -918,7 +930,7 @@ const SCRIPT_STR = {
         </div>
         <div class="ielts-help">
           <h4>{fill('lp.req.ieltsHelpTitle', { ielts: u.requirements?.language?.ielts != null ? u.requirements.language.ielts : '6.0' })}</h4>
-          <p style="font-size: 14px; color: var(--ink-2);" set:html={fill('lp.req.ieltsHelpText', { ielts: u.requirements?.language?.ielts ?? 5.5 })} />
+          <p style="font-size: 14px; color: var(--ink-2);" set:html={fill(ieltsHelpKey, { ielts: u.requirements?.language?.ielts ?? 5.5 })} />
           {u.requirements?.gpa == null && (
             <p style="font-size: 13px; color: var(--ink-3); margin-top: 8px;">{t('lp.req.gpaNote')}</p>
           )}
