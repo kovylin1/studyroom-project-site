@@ -225,6 +225,7 @@ const SCRIPT_STR = {
   lvlFoundation: t('lp.programs.lvlFoundation'),
   lvlPreMaster: t('lp.programs.lvlPreMaster'),
   lvlMaster: t('lp.programs.lvlMaster'),
+  lvlPhd: t('lp.programs.lvlPhd'),
   lvlBachelor: t('lp.programs.lvlBachelor'),
   lvlEnglish: t('lp.programs.lvlEnglish'),
   lvlShort: t('lp.programs.lvlShort'),
@@ -842,6 +843,7 @@ const SCRIPT_STR = {
         <button class="lvl" type="button" data-level="bachelor">{t('lp.programs.lvlBachelor')}</button>
         <button class="lvl" type="button" data-level="pathway">{t('lp.programs.lvlPreMaster')}</button>
         <button class="lvl" type="button" data-level="master">{t('lp.programs.lvlMaster')}</button>
+        <button class="lvl" type="button" data-level="phd">{t('lp.programs.lvlPhd')}</button>
         <button class="lvl" type="button" data-level="english-language">{t('lp.programs.lvlEnglish')}</button>
         <button class="lvl" type="button" data-level="short-course">{t('lp.programs.lvlShort')}</button>
       </div>
@@ -1235,6 +1237,7 @@ const SCRIPT_STR = {
         <button class="lvl" type="button" data-level="bachelor">{t('lp.programs.lvlBachelor')}</button>
         <button class="lvl" type="button" data-level="pathway">{t('lp.programs.lvlPreMaster')}</button>
         <button class="lvl" type="button" data-level="master">{t('lp.programs.lvlMaster')}</button>
+        <button class="lvl" type="button" data-level="phd">{t('lp.programs.lvlPhd')}</button>
         <button class="lvl" type="button" data-level="english-language">{t('lp.programs.lvlEnglish')}</button>
         <button class="lvl" type="button" data-level="short-course">{t('lp.programs.lvlShort')}</button>
       </div>
@@ -1300,7 +1303,7 @@ const SCRIPT_STR = {
   const $$ = (s, root) => Array.from((root || document).querySelectorAll(s));
   document.body.classList.add('lp-mobile');
 
-  const LEVEL_LABELS = { 'high-school': STR.lvlSchool, 'sixth-form': STR.lvlSixthForm, foundation: STR.lvlFoundation, pathway: STR.lvlPreMaster, master: STR.lvlMaster, bachelor: STR.lvlBachelor, phd: 'PhD', 'english-language': STR.lvlEnglish, 'short-course': STR.lvlShort };
+  const LEVEL_LABELS = { 'high-school': STR.lvlSchool, 'sixth-form': STR.lvlSixthForm, foundation: STR.lvlFoundation, pathway: STR.lvlPreMaster, master: STR.lvlMaster, bachelor: STR.lvlBachelor, phd: STR.lvlPhd, 'english-language': STR.lvlEnglish, 'short-course': STR.lvlShort };
   function levelLabel(level, programType) {
     if (level === 'master' && programType === 'pathway') return STR.lvlPreMaster;
     return LEVEL_LABELS[level] || level;
@@ -1486,7 +1489,7 @@ const SCRIPT_STR = {
     const filtered = q ? list.filter(p => p.title.toLowerCase().includes(q.toLowerCase())) : list;
     const facHead = $('#lpProgramsModalFaculty');
     if (facHead) {
-      const lvlLabels = { all: '', foundation: STR.lvlFoundation, bachelor: STR.lvlBachelor, pathway: STR.lvlPreMaster, master: STR.lvlMaster };
+      const lvlLabels = { all: '', foundation: STR.lvlFoundation, bachelor: STR.lvlBachelor, pathway: STR.lvlPreMaster, master: STR.lvlMaster, phd: STR.lvlPhd };
       facHead.textContent = facultyKey + (lvl !== 'all' ? ' · ' + (lvlLabels[lvl] || '') : '');
     }
     $$('#lpModalLevelFilter .lvl').forEach(b => b.classList.toggle('is-active', b.dataset.level === lvl));
