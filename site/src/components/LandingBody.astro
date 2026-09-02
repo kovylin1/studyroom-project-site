@@ -8,6 +8,7 @@ import path from 'node:path';
 import { STUDYROOM_FAQ, CURRENCY_TO_KZT, CURRENCY_SYMBOL, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
 import { CONTACTS, waLink, telLink, AGENCY, yearsOnMarket } from '~/content/studyroom/contacts';
 import { useTranslations, localizeUrl, type Locale } from '~/i18n/utils';
+import { officialSiteOf, programLink } from '~/scripts/program-link';
 
 // Видео-отзывы студентов (ссылки владельца 2026-07-29, Google Drive «anyone with
 // link»). Встраиваются через drive.google.com/file/d/<id>/preview — файлы не
@@ -39,6 +40,8 @@ const fill = (key: string, vars: Record<string, string | number>) =>
   Object.entries(vars).reduce((s, [k, v]) => s.replaceAll(`{${k}}`, String(v)), t(key));
 
 const TIMELINE = pickTimeline(locale, u.country);
+
+const officialSite = officialSiteOf(u);
 
 const baseRate = CURRENCY_TO_KZT[u.tuition.currency] ?? DEFAULT_KZT_RATE;
 const sym = CURRENCY_SYMBOL[u.tuition.currency] ?? u.tuition.currency;
@@ -79,7 +82,8 @@ const programRows: ProgramRow[] = u.programs.map((p) => ({
   durationYears: p.durationYears,
   language: p.language,
   intakes: p.intakes,
-  programUrl: p.programUrl,
+  // ссылка на агрегатор подменяется офсайтом вуза, а если офсайта нет — ссылки нет
+  programUrl: programLink(p.programUrl, officialSite),
 }));
 
 const facultyMap = new Map<string, ProgramRow[]>();

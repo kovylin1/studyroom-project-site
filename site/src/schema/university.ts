@@ -245,6 +245,12 @@ export const universitySchema = z
     description: descriptionSchema.optional(),
     photoSets: photoSetsSchema.optional(),
     logoUrl: z.string().min(1).optional(),
+    // Офсайт вуза и его происхождение (задача 3.12/F). Поля лежали в карточках
+    // с 29.07, но в схеме их не было — zod вырезал их при чтении, и до страниц
+    // адрес не доезжал. Тот же класс, что был у kompasStatus.
+    officialUrl: z.string().url().optional(),
+    officialUrlSource: z.string().min(1).optional(),
+    officialUrlCheckedAt: isoDate.optional(),
     lastChecked: isoDate,
     sourceUrl: z.string().url(),
     sourceHash: z.string().min(1),
