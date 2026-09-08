@@ -8,7 +8,12 @@
 //
 // Проверяются ровно те инварианты, которые может нарушить добор:
 //   • program.slug — только [a-z0-9-], уникален внутри карточки;
-//   • program.durationYears > 0; level — из перечисления схемы;
+//   • program.durationYears, если он есть, — число > 0 (схема сделала поле
+//     необязательным 2026-08-20; до 2026-09-08 проверка требовала его всегда
+//     и выдавала тысячи ложных нарушений, за которыми не было видно настоящих);
+//   • level — из перечисления схемы;
+//   • tuition.currency — код из перечисления схемы (на этом 2026-08-23 упал build:
+//     у 61 карточки без цен стояло currency: null);
 //   • tuition.byProgram ссылается только на существующие слаги программ;
 //   • deadlines — то же самое;
 //   • campus.title непустой.
@@ -18,12 +23,22 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { logger } from './lib/kompas-collect.mjs';
 import { WORK_DIR } from './lib/kompas-diff-core.mjs';
 
 const log = logger('workcopy-check');
 const dirArg = process.argv.find((a) => a.startsWith('--dir='));
 const DIR = dirArg ? path.resolve(dirArg.slice('--dir='.length)) : WORK_DIR;
+
+// Перечисление валют читаем из самой схемы, чтобы список не разъехался с ней.
+const SCHEMA_PATH = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../site/src/schema/university.ts');
+const schemaText = await fs.readFile(SCHEMA_PATH, 'utf8');
+const CURRENCIES = new Set(
+  (schemaText.match(/CURRENCY_CODES\s*=\s*\[([\s\S]*?)\]/)?.[1] ?? '')
+    .split(',').map((x) => x.trim().replace(/^['"]|['"]$/g, '')).filter(Boolean),
+);
+if (!CURRENCIES.size) throw new Error('не удалось прочитать CURRENCY_CODES из схемы сайта');
 
 const LEVELS = new Set(['high-school', 'sixth-form', 'foundation', 'bachelor', 'master', 'phd', 'english-language', 'short-course']);
 const SLUG = /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
@@ -35,10 +50,12 @@ export function checkCard(card) {
     if (!SLUG.test(String(p.slug ?? ''))) bad.push(`слаг программы «${p.slug}» не по схеме`);
     if (slugs.has(p.slug)) bad.push(`слаг программы «${p.slug}» повторяется`);
     slugs.add(p.slug);
-    if (!(typeof p.durationYears === 'number' && p.durationYears > 0)) bad.push(`«${p.title}»: durationYears ${p.durationYears}`);
+    if (p.durationYears !== undefined && !(typeof p.durationYears === 'number' && p.durationYears > 0)) bad.push(`«${p.title}»: durationYears ${p.durationYears}`);
     if (!LEVELS.has(p.level)) bad.push(`«${p.title}»: level «${p.level}» вне схемы`);
     if (!String(p.title ?? '').trim()) bad.push(`программа ${p.slug} без названия`);
   }
+  const cur = card.tuition?.currency;
+  if (!CURRENCIES.has(cur)) bad.push(`tuition.currency «${cur}» вне перечисления схемы`);
   for (const k of Object.keys(card.tuition?.byProgram ?? {})) {
     if (!slugs.has(k)) bad.push(`tuition.byProgram ссылается на несуществующую программу «${k}»`);
   }

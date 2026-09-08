@@ -43,6 +43,10 @@ export const programSchema = z.object({
   programType: z.enum(['pathway', 'degree']).optional(),
   source: z.string().optional(),
   verifiedBySite: z.boolean().optional(),
+  // Название программы подтверждено обходом офсайта (scrape-direct-partners-v2.mjs).
+  // Поле лежит у 52 847 программ в 558 карточках с давних пор, но объявлено не было —
+  // zod срезал его при чтении. Тот же класс, что kompasStatus и officialUrl.
+  verified: z.boolean().optional(),
   confidence: z.number().min(0).max(1).optional(),
   // КОМПАС: catalog-only — программа есть только в каталоге, источник её не
   // подтверждает (P1); source-added — программа добрана с источника (P2).
@@ -108,9 +112,19 @@ export const requirementsSchema = z.object({
       ielts: z.number().min(0).max(9).optional(),
       toefl: z.number().min(0).max(120).optional(),
       duolingo: z.number().min(0).max(160).optional(),
+      // Объявлены 2026-09-08: лежали в карточках, но zod их срезал.
+      // pte — PTE Academic (10–90); *Diploma — порог для дипломных программ,
+      // он ниже основного (Kaplan Business School: IELTS 6.0 / диплом 5.5).
+      pte: z.number().min(0).max(90).optional(),
+      ieltsDiploma: z.number().min(0).max(9).optional(),
+      pteDiploma: z.number().min(0).max(90).optional(),
+      ieltsNotes: z.string().min(1).optional(),
     })
     .optional(),
   gpa: z.number().min(0).max(4).optional(),
+  // Требования по уровням словами — то, чего не выразить числами
+  // («Foundation: IELTS 5.5, no band below 5.0; Diploma of Health Science: 6.0»).
+  notes: z.string().min(1).optional(),
   exams: z.array(z.string()).default([]),
 });
 export type Requirements = z.infer<typeof requirementsSchema>;
@@ -178,6 +192,8 @@ export const gallerySchema = z.object({
 export type Gallery = z.infer<typeof gallerySchema>;
 
 export const photoSetsSchema = z.object({
+  // hero — главный кадр карточки; лежит у 11 вузов и до 2026-09-08 срезался схемой.
+  hero: z.array(galleryItemSchema).optional(),
   general: z.array(galleryItemSchema).optional(),
   studentsFaculty: z.array(galleryItemSchema).optional(),
   campuses: z.array(galleryItemSchema).optional(),
@@ -228,6 +244,33 @@ export type ConfidenceLevel = z.infer<typeof confidenceLevel>;
 export const landingLanguage = z.enum(['en', 'ru', 'kz', 'mixed']);
 export type LandingLanguage = z.infer<typeof landingLanguage>;
 
+// Откуда взялось партнёрство вуза (КОМПАС). Стоит у всех 1071 карточки:
+// aggregator — вуз пришёл из выгрузки агрегатора (via — их коды),
+// direct — прямой партнёр (directRaw — исходная строка списка),
+// none — источник не назван, карточка заведена руками.
+// Объявлено 2026-09-08: поле писалось скриптами и читалось отчётами, но в схеме
+// его не было, и до страниц оно не доезжало (как kompasStatus и officialUrl).
+export const partnerSourceSchema = z.object({
+  type: z.enum(['aggregator', 'direct', 'none']),
+  via: z.array(z.string().min(1)).default([]),
+  directRaw: z.string().optional(),
+  note: z.string().optional(),
+  decidedAt: isoDate.optional(),
+});
+export type PartnerSource = z.infer<typeof partnerSourceSchema>;
+
+// След сборщика карточки (kompas-newcards-build): когда заведена, из какой выгрузки,
+// откуда взят город и по какому решению владельца. Не показывается на страницах —
+// это провенанс для аудита. Новый сборщик (kompas-cat1-newcards) его уже не пишет.
+export const kompasBuildTraceSchema = z.object({
+  builtAt: z.string().min(1).optional(),
+  source: z.string().min(1).optional(),
+  edpRefId: z.string().min(1).optional(),
+  city: z.object({ value: z.string().min(1), source: z.string().min(1) }).optional(),
+  rule: z.string().optional(),
+  programsExpected: z.number().nonnegative().optional(),
+});
+
 export const universitySchema = z
   .object({
     slug,
@@ -245,6 +288,19 @@ export const universitySchema = z
     description: descriptionSchema.optional(),
     photoSets: photoSetsSchema.optional(),
     logoUrl: z.string().min(1).optional(),
+    partnerSource: partnerSourceSchema.optional(),
+    // След слияния карточек-дублей (сессия 6, 26.07): у выжившей — mergedFrom,
+    // у поглощённой — mergedInto + mergedAt. Откат — dupmerge-backup.json.
+    mergedFrom: z.array(slug).optional(),
+    mergedInto: slug.optional(),
+    mergedAt: isoDate.optional(),
+    // Разметка со стороны QS: уровень партнёрства, регион портала и признак
+    // подготовительного центра с указанием головного вуза (сейчас — Eynesbury/Adelaide).
+    qsLevel: z.string().min(1).optional(),
+    region: z.string().min(1).optional(),
+    isPathwayCentre: z.boolean().optional(),
+    pathwayParentSlug: slug.optional(),
+    _kompas: kompasBuildTraceSchema.optional(),
     // Офсайт вуза и его происхождение (задача 3.12/F). Поля лежали в карточках
     // с 29.07, но в схеме их не было — zod вырезал их при чтении, и до страниц
     // адрес не доезжал. Тот же класс, что был у kompasStatus.
