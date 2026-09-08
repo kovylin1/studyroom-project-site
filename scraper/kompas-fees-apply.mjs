@@ -79,7 +79,9 @@ const stats = { sources: SOURCES.join(','), extracts: 0, linked: 0,
   // 3.28: цена подготовительной ступени, выданная за цену степени
   skippedPathwayFee: 0,
   // 3.29: кампусная сумма уступила цене программы
-  campusDemoted: 0 };
+  campusDemoted: 0,
+  // 08.09.2026: разряд annual-loose записан как годовая цена
+  annualLooseWritten: 0 };
 
 // Строка подготовительной ступени ПЕРЕД магистратурой. Намеренно узко: обычные
 // foundation-программы сюда не входят — у них своя законная цена, и по ней в каталоге
@@ -180,12 +182,18 @@ for (const src of SOURCES) {
             note: 'отношение к годовому диапазону ' + m.ratio + ' — диапазон источника мусорный' });
           continue;
         }
-        if (bucket !== 'annual' && bucket !== 'whole-term') {
+        // Решение владельца 08.09.2026: разряд annual-loose (сумма в 1.15–1.8 раза
+        // выше годового ПОТОЛКА самого же QS) пишется как ГОДОВАЯ. До порога цены
+        // за весь срок (1.8) он не дотягивает, значит завышен диапазон портала,
+        // а не основа суммы. Раньше разряд молча откладывался «оператору» и
+        // 1417 цен не доезжали до каталога.
+        if (bucket !== 'annual' && bucket !== 'annual-loose' && bucket !== 'whole-term') {
           stats.skippedBucket++;
           cases.push({ source: src, catalogSlug: slug, program: ep.title, tuition: t, currency: cur,
             bucket, reason: 'bucket', note: 'разряд основы цены не определился — оператору' });
           continue;
         }
+        if (bucket === 'annual-loose') stats.annualLooseWritten++;
         if (bucket === 'whole-term') basis = 'program';
       }
       const hit = matchProgram(idx.get(slug), ep);

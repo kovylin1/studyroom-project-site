@@ -1,45 +1,45 @@
 {
-  "generatedAt": "2026-08-23T16:07:21.363Z",
+  "generatedAt": "2026-09-08T03:42:26.663Z",
   "direction": "catalog-work → site/src/content/universities",
   "totals": {
     "cards": {
-      "live": 1070,
-      "work": 1070,
-      "new": 0,
+      "live": 1071,
+      "work": 1076,
+      "new": 5,
       "gone": 0,
-      "changed": 0
+      "changed": 1
     },
     "programs": {
-      "live": 124592,
-      "work": 124592,
-      "addedInCommon": 0,
-      "addedWithNewCards": 0,
+      "live": 124252,
+      "work": 124265,
+      "addedInCommon": 1,
+      "addedWithNewCards": 12,
       "removedInCommon": 0,
       "removedWithGoneCards": 0,
       "changed": 0
     },
     "fees": {
-      "live": 90150,
-      "work": 90150,
+      "live": 91230,
+      "work": 91242,
       "addedInCommon": 0,
-      "addedWithNewCards": 0,
+      "addedWithNewCards": 12,
       "changed": 0,
       "removedInCommon": 0,
       "currencyChanges": 0
     },
     "marks": {
-      "catalogOnlyLive": 29971,
-      "catalogOnlyWork": 29971,
-      "sourceAddedLive": 46885,
-      "sourceAddedWork": 46885
+      "catalogOnlyLive": 29579,
+      "catalogOnlyWork": 29579,
+      "sourceAddedLive": 47018,
+      "sourceAddedWork": 47031
     },
     "newFields": {
-      "tuitionBasis": 408,
-      "tuitionCurrency": 2898,
-      "tuitionVariants": 4438,
-      "tuitionBasisLive": 408,
-      "tuitionCurrencyLive": 2898,
-      "tuitionVariantsLive": 4438
+      "tuitionBasis": 352,
+      "tuitionCurrency": 2917,
+      "tuitionVariants": 4516,
+      "tuitionBasisLive": 352,
+      "tuitionCurrencyLive": 2917,
+      "tuitionVariantsLive": 4516
     },
     "campuses": {
       "live": 2145,
@@ -54,7 +54,13 @@
   },
   "keyTally": {},
   "fieldTally": {},
-  "newCards": [],
+  "newCards": [
+    "coquitlam-college",
+    "oxford-international-london-centre",
+    "oxford-international-oxford-centre",
+    "universal-higher-education-australia",
+    "universal-higher-education-uk"
+  ],
   "goneCards": [],
   "riskySummary": {
     "cardsLosingPrograms": 0,
@@ -78,5 +84,37 @@
     "titleChanges": [],
     "levelChanges": []
   },
-  "cards": []
+  "cards": [
+    {
+      "slug": "kings-education",
+      "name": "Kings Education",
+      "country": "United Kingdom",
+      "programsAdded": [
+        {
+          "slug": "discover-london-london-campus",
+          "title": "Discover London - London Campus",
+          "level": "english-language",
+          "kompasStatus": "source-added"
+        }
+      ],
+      "programsRemoved": [],
+      "programsChanged": [],
+      "feesAdded": [],
+      "feesChanged": [],
+      "feesRemoved": [],
+      "currencyChange": null,
+      "fieldChanges": [],
+      "collectionChanges": [],
+      "marks": {
+        "catalog-only": 0,
+        "source-added": 72
+      },
+      "newFields": {
+        "tuitionBasis": 0,
+        "tuitionCurrency": 0,
+        "tuitionVariants": 0
+      },
+      "weight": 1
+    }
+  ]
 }

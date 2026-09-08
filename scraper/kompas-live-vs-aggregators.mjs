@@ -16,6 +16,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { buildIndex, matchProgram } from './lib/program-match.mjs';
+import { expectedCurrency } from './lib/country-currency.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EX = path.join(ROOT, 'sources/kompas/extracts');
@@ -140,7 +141,15 @@ for (const src of [...AGGREGATORS, 'direct']) {
       const sc = ep.currency || null;
       const cc = target.tuitionCurrency || cardCur;
       if (src !== 'direct' && sc && cc && sc !== cc) {
-        currencyDiffs.push({ src, slug, program: target.slug, catalogCurrency: cc, sourceCurrency: sc });
+        // Не всякое расхождение валют — брак каталога. Портал часто пересчитывает
+        // ценник в свою витринную валюту: QS показывает британский Roehampton
+        // в USD, и таких строк 249 из 254. Каталог при этом держит валюту страны
+        // кампуса — то есть прав. Разряд `foreign-quote` отделяет этот случай от
+        // настоящего расхождения, где каталожная валюта тоже не местная.
+        const local = expectedCurrency(card.country);
+        const kind = (local && cc === local && sc !== local) ? 'foreign-quote' : 'real';
+        currencyDiffs.push({ src, slug, program: target.slug,
+          catalogCurrency: cc, sourceCurrency: sc, country: card.country || null, kind });
       }
     }
   }

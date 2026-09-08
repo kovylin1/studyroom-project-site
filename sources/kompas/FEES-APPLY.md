@@ -6,36 +6,37 @@
 |---|---:|
 | sources | qs,edvoy,kaplan,studygroup,oxford-international,qahe |
 | extracts | 1233 |
-| linked | 1221 |
-| candidates | 86699 |
+| linked | 1226 |
+| candidates | 88118 |
 | skippedCurrency | 21 |
-| skippedBucket | 1433 |
-| skippedNoMatch | 250 |
-| skippedNoCard | 7 |
+| skippedBucket | 16 |
+| skippedNoMatch | 261 |
+| skippedNoCard | 2 |
 | skippedAudience | 20 |
 | skippedPartTime | 4 |
-| matchedByAward | 1492 |
+| matchedByAward | 1501 |
 | ambiguousMatch | 82 |
-| programsWritten | 76869 |
-| cardsTouched | 756 |
-| overwritten | 76869 |
-| ownCurrency | 2393 |
-| variantPrograms | 4427 |
-| variantSums | 9169 |
-| foreignQuoteDemoted | 122 |
+| programsWritten | 77976 |
+| cardsTouched | 767 |
+| overwritten | 77964 |
+| ownCurrency | 2410 |
+| variantPrograms | 4505 |
+| variantSums | 9328 |
+| foreignQuoteDemoted | 123 |
 | skippedPathwayFee | 110 |
-| campusDemoted | 4368 |
+| campusDemoted | 4439 |
+| annualLooseWritten | 1417 |
 
 ## Не записано
 
 | Причина | Штук |
 |---|---:|
-| `bucket` | 1433 |
-| `no-match` | 168 |
+| `no-match` | 179 |
 | `pathway-stage-fee` | 110 |
 | `match-ambiguous` | 82 |
 | `currency-unsupported` | 21 |
 | `fee-audience` | 20 |
+| `bucket` | 16 |
 | `part-time` | 4 |
 
 Подробности: `fees-apply-cases.json`, откат: `fees-apply-backup.json`.
