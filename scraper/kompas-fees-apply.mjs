@@ -21,6 +21,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { buildIndex, matchProgram } from './lib/program-match.mjs';
 import { feeScope, preferProgramScope } from './lib/fee-scope.mjs';
+import { inKzt } from './lib/country-currency.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EX = path.join(ROOT, 'sources/kompas/extracts');
@@ -37,9 +38,7 @@ const SOURCES = (process.argv.find((a) => a.startsWith('--sources=')) || '--sour
 
 const CURRENCIES = ['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF',
   'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD'];
-// те же приблизительные курсы, что у витрины (site/src/content/studyroom/static.ts)
-const KZT = { GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290, CHF: 545,
-  AED: 131, HKD: 62, THB: 14, CNY: 66, BHD: 1276, MYR: 108, SGD: 369, KZT: 1, RUB: 6 };
+
 const LOCAL_CURRENCY = {
   'United Arab Emirates': 'AED', Malaysia: 'MYR', Singapore: 'SGD', Switzerland: 'CHF',
   'United Kingdom': 'GBP', Ireland: 'EUR', 'New Zealand': 'NZD', Australia: 'AUD',
@@ -49,7 +48,7 @@ const LOCAL_CURRENCY = {
   Finland: 'EUR', Malta: 'EUR', Cyprus: 'EUR', Latvia: 'EUR', Lithuania: 'EUR',
   Estonia: 'EUR', Slovakia: 'EUR', Slovenia: 'EUR', Croatia: 'EUR', Belgium: 'EUR',
 };
-const inKzt = (v, cur) => v * (KZT[cur] || 500);
+
 const feeOf = (p) => {
   const v = typeof p.tuition === 'number' ? p.tuition
     : typeof p.feePerYear === 'number' ? p.feePerYear : null;
