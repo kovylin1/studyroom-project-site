@@ -3,39 +3,17 @@
   "name": "The University of Melbourne",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-  "scrapedAt": "2026-07-22T15:42:52.415Z",
+  "scrapedAt": "2026-08-23T13:11:40.002Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "the-university-of-melbourne",
   "country": "Australia",
-  "matchMethod": "as-is/exact-name",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
-    {
-      "title": "Master of Computer Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2025",
-        "July 2026",
-        "July 2024",
-        "February 2025",
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-computer-science"
-    },
     {
       "title": "Graduate Diploma in Computer Science",
       "level": "master",
@@ -56,15 +34,18 @@
       "courseRefId": "the-university-of-melbourne|graduate-diploma-in-computer-science"
     },
     {
-      "title": "Master of Data Science",
+      "title": "Master of Computer Science",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 57984,
+      "tuition": 62976,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "March 2025",
+        "July 2026",
+        "July 2025",
+        "July 2024",
+        "February 2025",
         "March 2026",
         "March 2027"
       ],
@@ -73,7 +54,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-data-science"
+      "courseRefId": "the-university-of-melbourne|master-of-computer-science"
     },
     {
       "title": "Graduate Diploma in Foundational Data Science",
@@ -93,6 +74,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
       "courseRefId": "the-university-of-melbourne|graduate-diploma-in-foundational-data-science"
+    },
+    {
+      "title": "Master of Data Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 57984,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2025",
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-data-science"
     },
     {
       "title": "Master of International Business",
@@ -121,11 +122,11 @@
       "courseRefId": "the-university-of-melbourne|master-of-international-business"
     },
     {
-      "title": "Graduate Certificate in Business",
+      "title": "Master of Business",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 16000,
+      "duration": "18 Months",
+      "tuition": 32000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -137,7 +138,28 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-business"
+      "courseRefId": "the-university-of-melbourne|master-of-business"
+    },
+    {
+      "title": "Master of Management (Entrepreneurship and Innovation)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-management-entrepreneurship-and-innovation"
     },
     {
       "title": "Master of Cyber Security (Online)",
@@ -169,11 +191,30 @@
       "courseRefId": "the-university-of-melbourne|master-of-cyber-security-online"
     },
     {
-      "title": "Master of Business",
+      "title": "Master of Entrepreneurship",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 32000,
+      "duration": "12 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-entrepreneurship"
+    },
+    {
+      "title": "Graduate Certificate in Business",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 16000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -185,7 +226,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-business"
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-business"
     },
     {
       "title": "Graduate Certificate in Entrepreneurship",
@@ -207,46 +248,6 @@
       "courseRefId": "the-university-of-melbourne|graduate-certificate-in-entrepreneurship"
     },
     {
-      "title": "Master of Management (Entrepreneurship and Innovation)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-management-entrepreneurship-and-innovation"
-    },
-    {
-      "title": "Master of Entrepreneurship",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-entrepreneurship"
-    },
-    {
       "title": "Master of Software Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -255,10 +256,10 @@
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2025",
-        "February 2026",
         "July 2025",
+        "February 2025",
         "July 2026",
+        "February 2026",
         "July 2024",
         "February 2024",
         "March 2026",
@@ -271,31 +272,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
       "courseRefId": "the-university-of-melbourne|master-of-software-engineering"
-    },
-    {
-      "title": "Graduate Certificate in Cancer Sciences",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 17488,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "April 2026",
-        "July 2026",
-        "October 2026",
-        "January 2027",
-        "April 2027",
-        "July 2027",
-        "October 2027"
-      ],
-      "campuses": [
-        "TUM Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-cancer-sciences"
     },
     {
       "title": "Master of Cancer Sciences",
@@ -323,341 +299,29 @@
       "courseRefId": "the-university-of-melbourne|master-of-cancer-sciences"
     },
     {
-      "title": "Master of Biostatistics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-biostatistics"
-    },
-    {
-      "title": "Master of Management (Finance)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "July 2025",
-        "July 2024",
-        "February 2024",
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-management-finance"
-    },
-    {
-      "title": "Master of Nursing Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 44000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2024",
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-nursing-science"
-    },
-    {
-      "title": "Master of Information Technology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 64000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "July 2024",
-        "February 2024",
-        "March 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-information-technology"
-    },
-    {
-      "title": "Master of Finance",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 65984,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "July 2025",
-        "July 2024",
-        "February 2024",
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-finance"
-    },
-    {
-      "title": "Graduate Diploma in Clinical Research",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 44000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-clinical-research"
-    },
-    {
-      "title": "Graduate Diploma in Perioperative Medicine",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 24992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "TUM Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-perioperative-medicine"
-    },
-    {
-      "title": "Graduate Diploma in Biostatistics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-biostatistics"
-    },
-    {
-      "title": "Graduate Certificate in Sports Medicine",
+      "title": "Graduate Certificate in Cancer Sciences",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "6 Months",
-      "tuition": 18000,
+      "tuition": 17488,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2026",
+        "April 2026",
         "July 2026",
+        "October 2026",
         "January 2027",
-        "July 2027"
+        "April 2027",
+        "July 2027",
+        "October 2027"
       ],
       "campuses": [
         "TUM Online Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-sports-medicine"
-    },
-    {
-      "title": "Master of Finance (Enhanced)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 65984,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-finance-enhanced"
-    },
-    {
-      "title": "Master of Biostatistics (Enhanced)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-biostatistics-enhanced"
-    },
-    {
-      "title": "Master of Clinical Audiology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 68992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-clinical-audiology"
-    },
-    {
-      "title": "Master of Clinical Research",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 44000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-clinical-research"
-    },
-    {
-      "title": "Graduate Diploma in Sports Medicine",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 36000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "July 2026",
-        "January 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "TUM Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-sports-medicine"
-    },
-    {
-      "title": "Master of Environmental Systems Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-environmental-systems-engineering"
-    },
-    {
-      "title": "Master of Medicine",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-medicine"
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-cancer-sciences"
     },
     {
       "title": "Master of Public Health",
@@ -719,6 +383,343 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
       "courseRefId": "the-university-of-melbourne|master-of-sports-medicine"
+    },
+    {
+      "title": "Graduate Diploma in Perioperative Medicine",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 24992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "TUM Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-perioperative-medicine"
+    },
+    {
+      "title": "Graduate Diploma in Biostatistics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-biostatistics"
+    },
+    {
+      "title": "Graduate Diploma in Clinical Research",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 44000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-clinical-research"
+    },
+    {
+      "title": "Master of Environmental Systems Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-environmental-systems-engineering"
+    },
+    {
+      "title": "Master of Finance (Enhanced)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 65984,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-finance-enhanced"
+    },
+    {
+      "title": "Master of Clinical Audiology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 68992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-clinical-audiology"
+    },
+    {
+      "title": "Master of Clinical Research",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 44000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-clinical-research"
+    },
+    {
+      "title": "Master of Biostatistics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-biostatistics"
+    },
+    {
+      "title": "Master of Management (Finance)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2025",
+        "February 2025",
+        "July 2024",
+        "February 2024",
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-management-finance"
+    },
+    {
+      "title": "Master of Nursing Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 44000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2024",
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-nursing-science"
+    },
+    {
+      "title": "Master of Biostatistics (Enhanced)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-biostatistics-enhanced"
+    },
+    {
+      "title": "Master of Information Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 64000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2025",
+        "July 2025",
+        "July 2024",
+        "February 2024",
+        "March 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-information-technology"
+    },
+    {
+      "title": "Master of Finance",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 65984,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "July 2025",
+        "July 2024",
+        "February 2024",
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-finance"
+    },
+    {
+      "title": "Master of Medicine",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-medicine"
+    },
+    {
+      "title": "Graduate Diploma in Sports Medicine",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 36000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "July 2026",
+        "January 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "TUM Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-sports-medicine"
+    },
+    {
+      "title": "Graduate Certificate in Sports Medicine",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 18000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "July 2026",
+        "January 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "TUM Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-sports-medicine"
     },
     {
       "title": "Graduate Diploma in Health and Medical Law",
@@ -784,6 +785,27 @@
       "courseRefId": "the-university-of-melbourne|master-of-biotechnology"
     },
     {
+      "title": "Graduate Diploma in Banking and Finance Law",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 30496,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-banking-and-finance-law"
+    },
+    {
       "title": "Master of Management (Accounting and Finance)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -804,27 +826,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
       "courseRefId": "the-university-of-melbourne|master-of-management-accounting-and-finance"
-    },
-    {
-      "title": "Graduate Diploma in Banking and Finance Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 30496,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-banking-and-finance-law"
     },
     {
       "title": "Master of Banking and Finance Law",
@@ -888,32 +889,7 @@
       "courseRefId": "the-university-of-melbourne|bachelor-of-oral-health"
     },
     {
-      "title": "Master of Management (Marketing)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 37984,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "March 2026",
-        "March 2027",
-        "July 2027",
-        "September 2026"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-management-marketing"
-    },
-    {
-      "title": "Master of Laws",
+      "title": "Master of Private Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -921,9 +897,10 @@
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2024",
+        "February 2026",
         "March 2026",
         "July 2026",
+        "February 2027",
         "March 2027",
         "July 2027"
       ],
@@ -932,24 +909,19 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-laws"
+      "courseRefId": "the-university-of-melbourne|master-of-private-law"
     },
     {
-      "title": "Master of Digital Marketing",
+      "title": "Master of Public and International Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
+      "duration": "12 Months",
       "tuition": 60992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "July 2024",
-        "February 2024",
         "March 2026",
+        "July 2026",
         "March 2027",
         "July 2027"
       ],
@@ -958,123 +930,26 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-digital-marketing"
+      "courseRefId": "the-university-of-melbourne|master-of-public-and-international-law"
     },
     {
-      "title": "Master of Global Media Communication",
+      "title": "Master of Science (Bioinformatics)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 32000,
+      "tuition": 60992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "July 2024",
-        "February 2024",
         "March 2026",
-        "March 2027",
-        "July 2027"
+        "March 2027"
       ],
       "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-global-media-communication"
-    },
-    {
-      "title": "Master of Mechanical Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "36 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "July 2024",
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-mechanical-engineering"
-    },
-    {
-      "title": "Master of Landscape Architecture",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "36 Months",
-      "tuition": 56992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "July 2025",
-        "July 2024",
-        "February 2024",
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-landscape-architecture"
-    },
-    {
-      "title": "Graduate Diploma in Built Environments (Advanced)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 56992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-built-environments-advanced"
-    },
-    {
-      "title": "Graduate Diploma in Corporate Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 30496,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-corporate-law"
+      "courseRefId": "the-university-of-melbourne|master-of-science-bioinformatics"
     },
     {
       "title": "Graduate Diploma in Employment and Labour Relations Law",
@@ -1257,6 +1132,115 @@
       "courseRefId": "the-university-of-melbourne|graduate-diploma-in-built-environments"
     },
     {
+      "title": "Graduate Diploma in Built Environments (Advanced)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 56992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-built-environments-advanced"
+    },
+    {
+      "title": "Graduate Diploma in Corporate Law",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 30496,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-corporate-law"
+    },
+    {
+      "title": "Master of Film and Television",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "TUM Southbank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-film-and-television"
+    },
+    {
+      "title": "Master of Information Systems",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 64000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-information-systems"
+    },
+    {
+      "title": "Master of Intellectual Property Law",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "June 2026",
+        "July 2026",
+        "August 2026",
+        "December 2026",
+        "March 2027",
+        "June 2027",
+        "July 2027",
+        "August 2027",
+        "December 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-intellectual-property-law"
+    },
+    {
       "title": "Master of Commercial Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1278,17 +1262,43 @@
       "courseRefId": "the-university-of-melbourne|master-of-commercial-law"
     },
     {
-      "title": "Master of Architecture",
+      "title": "Master of Management (Marketing)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "36 Months",
-      "tuition": 56992,
+      "duration": "24 Months",
+      "tuition": 37984,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "February 2025",
         "February 2026",
+        "July 2025",
         "July 2026",
-        "February 2027",
+        "March 2026",
+        "March 2027",
+        "July 2027",
+        "September 2026"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-management-marketing"
+    },
+    {
+      "title": "Master of Laws",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2024",
+        "March 2026",
+        "July 2026",
+        "March 2027",
         "July 2027"
       ],
       "campuses": [
@@ -1296,7 +1306,33 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-architecture"
+      "courseRefId": "the-university-of-melbourne|master-of-laws"
+    },
+    {
+      "title": "Master of Digital Marketing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "July 2026",
+        "February 2026",
+        "July 2025",
+        "July 2024",
+        "February 2024",
+        "March 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-digital-marketing"
     },
     {
       "title": "Master of Architecture/Master of Landscape Architecture",
@@ -1320,42 +1356,78 @@
       "courseRefId": "the-university-of-melbourne|master-of-architecture-master-of-landscape-architecture"
     },
     {
-      "title": "Master of Film and Television",
+      "title": "Master of Global Media Communication",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 46976,
+      "tuition": 48992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "February 2025",
         "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "TUM Southbank Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-film-and-television"
-    },
-    {
-      "title": "Master of Environmental Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
+        "July 2026",
+        "July 2025",
+        "July 2024",
+        "February 2024",
         "March 2026",
-        "March 2027"
+        "March 2027",
+        "July 2027"
       ],
       "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-environmental-law"
+      "courseRefId": "the-university-of-melbourne|master-of-global-media-communication"
+    },
+    {
+      "title": "Master of Mechanical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "July 2024",
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-mechanical-engineering"
+    },
+    {
+      "title": "Master of Landscape Architecture",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 56992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "July 2025",
+        "July 2024",
+        "February 2024",
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-landscape-architecture"
     },
     {
       "title": "Master of Law and Development",
@@ -1421,19 +1493,17 @@
       "courseRefId": "the-university-of-melbourne|master-of-marketing-communications"
     },
     {
-      "title": "Master of Private Law",
+      "title": "Master of Architecture",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 60992,
+      "duration": "36 Months",
+      "tuition": 56992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
-        "March 2026",
         "July 2026",
         "February 2027",
-        "March 2027",
         "July 2027"
       ],
       "campuses": [
@@ -1441,47 +1511,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-private-law"
-    },
-    {
-      "title": "Master of Public and International Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-public-and-international-law"
-    },
-    {
-      "title": "Master of Science (Bioinformatics)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-science-bioinformatics"
+      "courseRefId": "the-university-of-melbourne|master-of-architecture"
     },
     {
       "title": "Master of Design and Production",
@@ -1545,28 +1575,7 @@
       "courseRefId": "the-university-of-melbourne|master-of-energy-and-resources-law"
     },
     {
-      "title": "Master of Information Systems",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 64000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-information-systems"
-    },
-    {
-      "title": "Master of Intellectual Property Law",
+      "title": "Master of Environmental Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -1575,22 +1584,14 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "March 2026",
-        "June 2026",
-        "July 2026",
-        "August 2026",
-        "December 2026",
-        "March 2027",
-        "June 2027",
-        "July 2027",
-        "August 2027",
-        "December 2027"
+        "March 2027"
       ],
       "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-intellectual-property-law"
+      "courseRefId": "the-university-of-melbourne|master-of-environmental-law"
     },
     {
       "title": "Master of Commerce (Actuarial Science)",
@@ -1610,6 +1611,27 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
       "courseRefId": "the-university-of-melbourne|master-of-commerce-actuarial-science"
+    },
+    {
+      "title": "Graduate Diploma in International Economic Law",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 30496,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-international-economic-law"
     },
     {
       "title": "Master of Science (Mathematics and Statistics)",
@@ -1632,27 +1654,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
       "courseRefId": "the-university-of-melbourne|master-of-science-mathematics-and-statistics"
-    },
-    {
-      "title": "Graduate Diploma in International Economic Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 30496,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-international-economic-law"
     },
     {
       "title": "Bachelor of Design (Honours)",
@@ -1731,84 +1732,6 @@
       "courseRefId": "the-university-of-melbourne|doctor-of-optometry"
     },
     {
-      "title": "Master of Publishing and Communications",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "July 2024",
-        "March 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-publishing-and-communications"
-    },
-    {
-      "title": "Master of Electrical Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "36 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "July 2024",
-        "February 2024",
-        "March 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-electrical-engineering"
-    },
-    {
-      "title": "Graduate Diploma in Construction Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 30496,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "June 2026",
-        "July 2026",
-        "August 2026",
-        "December 2026",
-        "March 2027",
-        "June 2027",
-        "July 2027",
-        "August 2027",
-        "December 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-construction-law"
-    },
-    {
       "title": "Graduate Diploma in Economics",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1849,46 +1772,31 @@
       "courseRefId": "the-university-of-melbourne|graduate-diploma-in-journalism-advanced"
     },
     {
-      "title": "Graduate Certificate in Journalism (Advanced)",
+      "title": "Graduate Diploma in Construction Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "6 Months",
-      "tuition": 24496,
+      "tuition": 30496,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "March 2026",
+        "June 2026",
         "July 2026",
+        "August 2026",
+        "December 2026",
         "March 2027",
-        "July 2027"
+        "June 2027",
+        "July 2027",
+        "August 2027",
+        "December 2027"
       ],
       "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-journalism-advanced"
-    },
-    {
-      "title": "Graduate Certificate in Publishing and Communications (Advanced)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 24496,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-publishing-and-communications-advanced"
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-construction-law"
     },
     {
       "title": "Master of Construction Law",
@@ -1918,17 +1826,17 @@
       "courseRefId": "the-university-of-melbourne|master-of-construction-law"
     },
     {
-      "title": "Master of Architecture/Master of Construction Management",
+      "title": "Master of International Journalism",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "48 Months",
-      "tuition": 56992,
+      "duration": "24 Months",
+      "tuition": 48992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2026",
+        "March 2026",
         "July 2026",
-        "February 2027",
+        "March 2027",
         "July 2027"
       ],
       "campuses": [
@@ -1936,7 +1844,54 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-architecture-master-of-construction-management"
+      "courseRefId": "the-university-of-melbourne|master-of-international-journalism"
+    },
+    {
+      "title": "Master of Journalism",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-journalism"
+    },
+    {
+      "title": "Master of Electrical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2026",
+        "February 2025",
+        "February 2026",
+        "July 2025",
+        "July 2024",
+        "February 2024",
+        "March 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-electrical-engineering"
     },
     {
       "title": "Master of Biomedical Engineering",
@@ -1981,28 +1936,7 @@
       "courseRefId": "the-university-of-melbourne|master-of-biomedical-science"
     },
     {
-      "title": "Graduate Diploma in Publishing and Communications (Advanced)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 48992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-publishing-and-communications-advanced"
-    },
-    {
-      "title": "Master of Journalism",
+      "title": "Master of Publishing and Communications",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -2010,8 +1944,12 @@
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "March 2026",
+        "February 2026",
+        "February 2025",
+        "July 2025",
         "July 2026",
+        "July 2024",
+        "March 2026",
         "March 2027",
         "July 2027"
       ],
@@ -2020,7 +1958,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-journalism"
+      "courseRefId": "the-university-of-melbourne|master-of-publishing-and-communications"
     },
     {
       "title": "Master of Mechatronics Engineering",
@@ -2044,6 +1982,48 @@
       "courseRefId": "the-university-of-melbourne|master-of-mechatronics-engineering"
     },
     {
+      "title": "Graduate Diploma in Publishing and Communications (Advanced)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 48992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-publishing-and-communications-advanced"
+    },
+    {
+      "title": "Master of Architecture/Master of Construction Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "48 Months",
+      "tuition": 56992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-architecture-master-of-construction-management"
+    },
+    {
       "title": "Master of Economics",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2063,11 +2043,11 @@
       "courseRefId": "the-university-of-melbourne|master-of-economics"
     },
     {
-      "title": "Master of International Journalism",
+      "title": "Graduate Certificate in Journalism (Advanced)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48992,
+      "duration": "6 Months",
+      "tuition": 24496,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -2081,7 +2061,28 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-international-journalism"
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-journalism-advanced"
+    },
+    {
+      "title": "Graduate Certificate in Publishing and Communications (Advanced)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 24496,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-publishing-and-communications-advanced"
     },
     {
       "title": "Graduate Diploma in Veterinary Professional Leadership and Management",
@@ -2126,66 +2127,33 @@
       "courseRefId": "the-university-of-melbourne|bachelor-of-biomedicine-honours"
     },
     {
-      "title": "Graduate Diploma in Science (Advanced)",
+      "title": "Master of Psychology (Clinical Psychology)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 60992,
+      "duration": "24 Months",
+      "tuition": 62976,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "March 2025",
-        "July 2025",
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-science-advanced"
+      "courseRefId": "the-university-of-melbourne|master-of-psychology-clinical-psychology"
     },
     {
-      "title": "Master of Science (Physics)",
+      "title": "Master of Psychology (Educational and Developmental)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 60992,
+      "tuition": 56000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "July 2026",
-        "March 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-science-physics"
-    },
-    {
-      "title": "Master of Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2024",
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "July 2027",
-        "July 2028",
-        "July 2029",
         "March 2026",
         "March 2027"
       ],
@@ -2194,105 +2162,14 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-management"
+      "courseRefId": "the-university-of-melbourne|master-of-psychology-educational-and-developmental"
     },
     {
-      "title": "Master of Education",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 49984,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "July 2025",
-        "July 2024",
-        "February 2024",
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-education"
-    },
-    {
-      "title": "Master of Arts and Cultural Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "July 2024",
-        "February 2024",
-        "March 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-arts-and-cultural-management"
-    },
-    {
-      "title": "Graduate Diploma in Clinical Rehabilitation",
+      "title": "Master of Tax",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 34976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "TUM Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-clinical-rehabilitation"
-    },
-    {
-      "title": "Graduate Diploma in Clinical Ultrasound",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 24992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "TUM Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-clinical-ultrasound"
-    },
-    {
-      "title": "Graduate Diploma in Dispute Resolution",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 30496,
+      "tuition": 60992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -2306,7 +2183,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-dispute-resolution"
+      "courseRefId": "the-university-of-melbourne|master-of-tax"
     },
     {
       "title": "Graduate Diploma in Environment",
@@ -2439,7 +2316,418 @@
       "courseRefId": "the-university-of-melbourne|graduate-diploma-in-arts-and-cultural-management-advanced"
     },
     {
-      "title": "Executive Master of Arts",
+      "title": "Graduate Diploma in Clinical Rehabilitation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 34976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "TUM Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-clinical-rehabilitation"
+    },
+    {
+      "title": "Graduate Diploma in Clinical Ultrasound",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 24992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "TUM Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-clinical-ultrasound"
+    },
+    {
+      "title": "Graduate Diploma in Dispute Resolution",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 30496,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-dispute-resolution"
+    },
+    {
+      "title": "Master of Evaluation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 37984,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "April 2026",
+        "July 2026",
+        "October 2026",
+        "April 2027",
+        "July 2027",
+        "October 2027"
+      ],
+      "campuses": [
+        "TUM Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-evaluation"
+    },
+    {
+      "title": "Master of Genetic Counselling",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 72000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-genetic-counselling"
+    },
+    {
+      "title": "Master of Geography",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-geography"
+    },
+    {
+      "title": "Master of Instructional Leadership",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 52000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-instructional-leadership"
+    },
+    {
+      "title": "Master of Teaching (Primary)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 52000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-teaching-primary"
+    },
+    {
+      "title": "Master of Teaching (Secondary)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 52000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-teaching-secondary"
+    },
+    {
+      "title": "Master of Chemical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-chemical-engineering"
+    },
+    {
+      "title": "Master of Civil Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-civil-engineering"
+    },
+    {
+      "title": "Master of Clinical Rehabilitation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 34976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "TUM Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-clinical-rehabilitation"
+    },
+    {
+      "title": "Master of Clinical Ultrasound",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 24992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "TUM Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-clinical-ultrasound"
+    },
+    {
+      "title": "Master of International Tax",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "June 2026",
+        "July 2026",
+        "August 2026",
+        "December 2026",
+        "March 2027",
+        "June 2027",
+        "July 2027",
+        "August 2027",
+        "December 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-international-tax"
+    },
+    {
+      "title": "Graduate Diploma in Science (Advanced)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2025",
+        "July 2025",
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-science-advanced"
+    },
+    {
+      "title": "Master of Science (Physics)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2026",
+        "March 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-science-physics"
+    },
+    {
+      "title": "Master of Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2024",
+        "February 2026",
+        "February 2025",
+        "July 2025",
+        "July 2026",
+        "July 2027",
+        "July 2028",
+        "July 2029",
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-management"
+    },
+    {
+      "title": "Master of Education",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 49984,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2025",
+        "February 2025",
+        "July 2024",
+        "February 2024",
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-education"
+    },
+    {
+      "title": "Master of Architecture/Master of Urban Design",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "48 Months",
+      "tuition": 56992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-architecture-master-of-urban-design"
+    },
+    {
+      "title": "Master of Art Curatorship",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -2457,14 +2745,99 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|executive-master-of-arts"
+      "courseRefId": "the-university-of-melbourne|master-of-art-curatorship"
     },
     {
-      "title": "Graduate Certificate in Arts",
+      "title": "Master of Arts (Advanced Seminar and Shorter Thesis)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 22992,
+      "duration": "24 Months",
+      "tuition": 50976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-arts-advanced-seminar-and-shorter-thesis"
+    },
+    {
+      "title": "Master of Arts (Thesis only)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 50976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-arts-thesis-only"
+    },
+    {
+      "title": "Master of Arts and Cultural Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2025",
+        "February 2025",
+        "July 2026",
+        "February 2026",
+        "July 2024",
+        "February 2024",
+        "March 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-arts-and-cultural-management"
+    },
+    {
+      "title": "Master of Learning Intervention",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 48992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-learning-intervention"
+    },
+    {
+      "title": "Master of Management (Human Resources)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 60992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -2478,72 +2851,93 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-arts"
+      "courseRefId": "the-university-of-melbourne|master-of-management-human-resources"
     },
     {
-      "title": "Graduate Certificate in Arts (Advanced)",
+      "title": "Master of Management (Supply Chain Management)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 24496,
+      "duration": "24 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-management-supply-chain-management"
+    },
+    {
+      "title": "Graduate Diploma in Psychology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 57240,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2026",
-        "March 2026",
-        "July 2026",
-        "January 2027",
-        "March 2027",
-        "July 2027"
+        "January 2027"
       ],
       "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-arts-advanced"
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-psychology"
     },
     {
-      "title": "Graduate Certificate in Clinical Ultrasound",
+      "title": "Graduate Diploma in Psychology (Advanced)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 12496,
+      "duration": "12 Months",
+      "tuition": 60000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "TUM Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-clinical-ultrasound"
-    },
-    {
-      "title": "Graduate Certificate in Professional Skills for Scientists",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 29696,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
+        "February 2026",
+        "February 2027"
       ],
       "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-professional-skills-for-scientists"
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-psychology-advanced"
+    },
+    {
+      "title": "Graduate Diploma in Tax",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 30496,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "June 2026",
+        "July 2026",
+        "August 2026",
+        "December 2026",
+        "March 2027",
+        "June 2027",
+        "July 2027",
+        "August 2027",
+        "December 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-tax"
     },
     {
       "title": "Master of Actuarial Science",
@@ -2721,489 +3115,6 @@
       "courseRefId": "the-university-of-melbourne|master-of-construction-management"
     },
     {
-      "title": "Master of Architecture/Master of Urban Design",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "48 Months",
-      "tuition": 56992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-architecture-master-of-urban-design"
-    },
-    {
-      "title": "Master of Art Curatorship",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-art-curatorship"
-    },
-    {
-      "title": "Master of Arts (Advanced Seminar and Shorter Thesis)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 50976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-arts-advanced-seminar-and-shorter-thesis"
-    },
-    {
-      "title": "Master of Arts (Thesis only)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 50976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-arts-thesis-only"
-    },
-    {
-      "title": "Master of Chemical Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "36 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-chemical-engineering"
-    },
-    {
-      "title": "Master of Civil Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "36 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-civil-engineering"
-    },
-    {
-      "title": "Master of Clinical Rehabilitation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 34976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "TUM Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-clinical-rehabilitation"
-    },
-    {
-      "title": "Master of Clinical Ultrasound",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 24992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "TUM Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-clinical-ultrasound"
-    },
-    {
-      "title": "Graduate Diploma in Psychology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 57240,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-psychology"
-    },
-    {
-      "title": "Graduate Diploma in Psychology (Advanced)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 60000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-psychology-advanced"
-    },
-    {
-      "title": "Graduate Diploma in Tax",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 30496,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "June 2026",
-        "July 2026",
-        "August 2026",
-        "December 2026",
-        "March 2027",
-        "June 2027",
-        "July 2027",
-        "August 2027",
-        "December 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-tax"
-    },
-    {
-      "title": "Master of Environmental Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "36 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-environmental-engineering"
-    },
-    {
-      "title": "Master of Evaluation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 37984,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2026",
-        "July 2026",
-        "October 2026",
-        "April 2027",
-        "July 2027",
-        "October 2027"
-      ],
-      "campuses": [
-        "TUM Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-evaluation"
-    },
-    {
-      "title": "Graduate Certificate in Educational Research",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 24928,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-educational-research"
-    },
-    {
-      "title": "Graduate Certificate in Environment",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 28496,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-environment"
-    },
-    {
-      "title": "Graduate Certificate in International Education (IB)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 18992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "July 2026",
-        "January 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "TUM Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-international-education-ib"
-    },
-    {
-      "title": "Master of International Tax",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "June 2026",
-        "July 2026",
-        "August 2026",
-        "December 2026",
-        "March 2027",
-        "June 2027",
-        "July 2027",
-        "August 2027",
-        "December 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-international-tax"
-    },
-    {
-      "title": "Master of Learning Intervention",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 48992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-learning-intervention"
-    },
-    {
-      "title": "Master of Management (Human Resources)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-management-human-resources"
-    },
-    {
-      "title": "Master of Management (Supply Chain Management)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-management-supply-chain-management"
-    },
-    {
-      "title": "Master of Psychology (Clinical Psychology)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-psychology-clinical-psychology"
-    },
-    {
-      "title": "Master of Psychology (Educational and Developmental)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 56000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-psychology-educational-and-developmental"
-    },
-    {
-      "title": "Master of Tax",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-tax"
-    },
-    {
       "title": "Master of Digital Infrastructure Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3307,30 +3218,11 @@
       "courseRefId": "the-university-of-melbourne|master-of-environment"
     },
     {
-      "title": "Master of Teaching (Primary)",
+      "title": "Master of Environmental Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 52000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-teaching-primary"
-    },
-    {
-      "title": "Master of Teaching (Secondary)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 52000,
+      "duration": "36 Months",
+      "tuition": 62976,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3344,33 +3236,14 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-teaching-secondary"
+      "courseRefId": "the-university-of-melbourne|master-of-environmental-engineering"
     },
     {
-      "title": "Master of Genetic Counselling",
+      "title": "Executive Master of Arts",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 72000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-genetic-counselling"
-    },
-    {
-      "title": "Master of Geography",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60992,
+      "tuition": 48992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3384,14 +3257,79 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-geography"
+      "courseRefId": "the-university-of-melbourne|executive-master-of-arts"
     },
     {
-      "title": "Master of Instructional Leadership",
+      "title": "Graduate Certificate in Arts",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 52000,
+      "duration": "6 Months",
+      "tuition": 22992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-arts"
+    },
+    {
+      "title": "Graduate Certificate in Arts (Advanced)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 24496,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "March 2026",
+        "July 2026",
+        "January 2027",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-arts-advanced"
+    },
+    {
+      "title": "Graduate Certificate in Clinical Ultrasound",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 12496,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "TUM Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-clinical-ultrasound"
+    },
+    {
+      "title": "Graduate Certificate in Educational Research",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 24928,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3405,7 +3343,70 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-instructional-leadership"
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-educational-research"
+    },
+    {
+      "title": "Graduate Certificate in Environment",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 28496,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-environment"
+    },
+    {
+      "title": "Graduate Certificate in International Education (IB)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 18992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "July 2026",
+        "January 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "TUM Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-international-education-ib"
+    },
+    {
+      "title": "Graduate Certificate in Professional Skills for Scientists",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 29696,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-professional-skills-for-scientists"
     },
     {
       "title": "Master of Indigenous Business Leadership",
@@ -3446,23 +3447,25 @@
       "courseRefId": "the-university-of-melbourne|master-of-speech-pathology"
     },
     {
-      "title": "Graduate Diploma in Disaster and Terror Medicine",
+      "title": "Master of Physiotherapy (Pelvic Health)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 41984,
+      "duration": "18 Months",
+      "tuition": 36768,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2026",
-        "January 2027"
+        "April 2026",
+        "July 2026",
+        "April 2027",
+        "July 2027"
       ],
       "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-disaster-and-terror-medicine"
+      "courseRefId": "the-university-of-melbourne|master-of-physiotherapy-pelvic-health"
     },
     {
       "title": "Graduate Diploma in Genomics and Health",
@@ -3509,51 +3512,30 @@
       "courseRefId": "the-university-of-melbourne|graduate-diploma-in-mental-health-nursing-practice"
     },
     {
-      "title": "Master of Advanced Nursing Practice",
+      "title": "Graduate Diploma in Disaster and Terror Medicine",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 44000,
+      "tuition": 41984,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-advanced-nursing-practice"
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-disaster-and-terror-medicine"
     },
     {
-      "title": "Master of Advanced Nursing Practice/Master of Public Health",
+      "title": "Master of Genomics and Health",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 35328,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2026",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-advanced-nursing-practice-master-of-public-health"
-    },
-    {
-      "title": "Graduate Certificate in Genomics and Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 34000,
+      "tuition": 68000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3565,28 +3547,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-genomics-and-health"
-    },
-    {
-      "title": "Master of Physiotherapy (Pelvic Health)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 36768,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2026",
-        "July 2026",
-        "April 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-physiotherapy-pelvic-health"
+      "courseRefId": "the-university-of-melbourne|master-of-genomics-and-health"
     },
     {
       "title": "Master of Philosophy - MDHS (Dental Science)",
@@ -3646,11 +3607,51 @@
       "courseRefId": "the-university-of-melbourne|master-of-philosophy-mdhs-medicine"
     },
     {
-      "title": "Master of Genomics and Health",
+      "title": "Master of Advanced Nursing Practice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 44000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-advanced-nursing-practice"
+    },
+    {
+      "title": "Master of Advanced Nursing Practice/Master of Public Health",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 68000,
+      "tuition": 35328,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2026",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-advanced-nursing-practice-master-of-public-health"
+    },
+    {
+      "title": "Graduate Certificate in Genomics and Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 34000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3662,7 +3663,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-genomics-and-health"
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-genomics-and-health"
     },
     {
       "title": "Doctor of Philosophy - Medicine, Dentistry and Health Sciences",
@@ -3732,17 +3733,17 @@
       "courseRefId": "the-university-of-melbourne|graduate-diploma-in-human-rights-law"
     },
     {
-      "title": "Master of Architecture/Master of Property",
+      "title": "Master of Human Rights Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "48 Months",
-      "tuition": 56992,
+      "duration": "12 Months",
+      "tuition": 60992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2026",
+        "March 2026",
         "July 2026",
-        "February 2027",
+        "March 2027",
         "July 2027"
       ],
       "campuses": [
@@ -3750,20 +3751,20 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-architecture-master-of-property"
+      "courseRefId": "the-university-of-melbourne|master-of-human-rights-law"
     },
     {
-      "title": "Master of Architecture/Master of Urban Cultural Heritage",
+      "title": "Master of Translation and Interpreting",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "42 Months",
-      "tuition": 56992,
+      "duration": "24 Months",
+      "tuition": 48992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2026",
+        "March 2026",
         "July 2026",
-        "February 2027",
+        "March 2027",
         "July 2027"
       ],
       "campuses": [
@@ -3771,20 +3772,20 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-architecture-master-of-urban-cultural-heritage"
+      "courseRefId": "the-university-of-melbourne|master-of-translation-and-interpreting"
     },
     {
-      "title": "Master of Architecture/Master of Urban Planning",
+      "title": "Master of Urban Design",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "48 Months",
+      "duration": "24 Months",
       "tuition": 56992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2026",
+        "March 2026",
         "July 2026",
-        "February 2027",
+        "March 2027",
         "July 2027"
       ],
       "campuses": [
@@ -3792,7 +3793,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-architecture-master-of-urban-planning"
+      "courseRefId": "the-university-of-melbourne|master-of-urban-design"
     },
     {
       "title": "Master of Urban Planning/Master of Urban Design",
@@ -3856,6 +3857,69 @@
       "courseRefId": "the-university-of-melbourne|master-of-landscape-architecture-master-of-urban-planning"
     },
     {
+      "title": "Master of Architecture/Master of Property",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "48 Months",
+      "tuition": 56992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-architecture-master-of-property"
+    },
+    {
+      "title": "Master of Architecture/Master of Urban Cultural Heritage",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "42 Months",
+      "tuition": 56992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-architecture-master-of-urban-cultural-heritage"
+    },
+    {
+      "title": "Master of Architecture/Master of Urban Planning",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "48 Months",
+      "tuition": 56992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-architecture-master-of-urban-planning"
+    },
+    {
       "title": "Master of Philosophy - Architecture, Building and Planning",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3873,69 +3937,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
       "courseRefId": "the-university-of-melbourne|master-of-philosophy-architecture-building-and-planning"
-    },
-    {
-      "title": "Master of Translation and Interpreting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-translation-and-interpreting"
-    },
-    {
-      "title": "Master of Urban Design",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 56992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-urban-design"
-    },
-    {
-      "title": "Master of Human Rights Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-human-rights-law"
     },
     {
       "title": "Doctor of Education",
@@ -4054,75 +4055,11 @@
       "courseRefId": "the-university-of-melbourne|doctor-of-dental-surgery"
     },
     {
-      "title": "Master of Engineering Management",
-      "level": "master",
+      "title": "Master of Psychology (Educational and Developmental)/Doctor of Philosophy",
+      "level": "phd",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "July 2025",
-        "February 2026",
-        "July 2026",
-        "March 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-engineering-management"
-    },
-    {
-      "title": "Master of Construction Management/Master of Property",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "48 Months",
-      "tuition": 56992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-construction-management-master-of-property"
-    },
-    {
-      "title": "Master of Creative Arts Therapy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 46976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "TUM Southbank Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-creative-arts-therapy"
-    },
-    {
-      "title": "Master of Fine Arts",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 46976,
+      "duration": "60 Months",
+      "tuition": 52000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -4130,11 +4067,11 @@
         "March 2027"
       ],
       "campuses": [
-        "TUM Southbank Campus"
+        "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-fine-arts"
+      "courseRefId": "the-university-of-melbourne|master-of-psychology-educational-and-developmental-doctor-of-philosophy"
     },
     {
       "title": "Master of Environmental Science",
@@ -4156,30 +4093,11 @@
       "courseRefId": "the-university-of-melbourne|master-of-environmental-science"
     },
     {
-      "title": "Master of Psychology (Educational and Developmental)/Doctor of Philosophy",
-      "level": "phd",
-      "sourceLevel": "Postgraduate",
-      "duration": "60 Months",
-      "tuition": 52000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-psychology-educational-and-developmental-doctor-of-philosophy"
-    },
-    {
-      "title": "Master of Philosophy - Education",
+      "title": "Master of Fine Arts",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 52000,
+      "tuition": 46976,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -4187,11 +4105,32 @@
         "March 2027"
       ],
       "campuses": [
+        "TUM Southbank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-fine-arts"
+    },
+    {
+      "title": "Master of Industrial Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-philosophy-education"
+      "courseRefId": "the-university-of-melbourne|master-of-industrial-engineering"
     },
     {
       "title": "Master of Teaching (Early Childhood and Primary)",
@@ -4236,11 +4175,54 @@
       "courseRefId": "the-university-of-melbourne|master-of-teaching-early-childhood"
     },
     {
-      "title": "Master of Industrial Engineering",
+      "title": "Master of Engineering Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "July 2025",
+        "February 2026",
+        "July 2026",
+        "March 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-engineering-management"
+    },
+    {
+      "title": "Master of Philosophy - Education",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 62976,
+      "tuition": 52000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-philosophy-education"
+    },
+    {
+      "title": "Master of Construction Management/Master of Property",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "48 Months",
+      "tuition": 56992,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -4254,7 +4236,26 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-industrial-engineering"
+      "courseRefId": "the-university-of-melbourne|master-of-construction-management-master-of-property"
+    },
+    {
+      "title": "Master of Creative Arts Therapy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "TUM Southbank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-creative-arts-therapy"
     },
     {
       "title": "Doctor of Philosophy - Architecture, Building and Planning",
@@ -4335,6 +4336,25 @@
       "courseRefId": "the-university-of-melbourne|bachelor-of-fine-arts-production"
     },
     {
+      "title": "Master of Psychology (Clinical Neuropsychology)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-psychology-clinical-neuropsychology"
+    },
+    {
       "title": "Master of Music (Performance Teaching)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4358,27 +4378,6 @@
       "courseRefId": "the-university-of-melbourne|master-of-music-performance-teaching"
     },
     {
-      "title": "Graduate Certificate in Modern Languages Education",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 24928,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-modern-languages-education"
-    },
-    {
       "title": "Master of Modern Languages Education",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4400,23 +4399,44 @@
       "courseRefId": "the-university-of-melbourne|master-of-modern-languages-education"
     },
     {
-      "title": "Master of Psychology (Clinical Neuropsychology)",
+      "title": "Graduate Certificate in Modern Languages Education",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 62976,
+      "duration": "6 Months",
+      "tuition": 24928,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2026",
-        "January 2027"
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
       ],
       "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-psychology-clinical-neuropsychology"
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-modern-languages-education"
+    },
+    {
+      "title": "Master of Philosophy - Veterinary Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 58976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2026",
+        "May 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-philosophy-veterinary-science"
     },
     {
       "title": "Doctor of Philosophy - Education",
@@ -4457,25 +4477,6 @@
       "courseRefId": "the-university-of-melbourne|doctor-of-veterinary-medicine"
     },
     {
-      "title": "Master of Philosophy - Veterinary Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 58976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "May 2026",
-        "May 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-philosophy-veterinary-science"
-    },
-    {
       "title": "Bachelor of Fine Arts (Acting)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4495,25 +4496,6 @@
       "courseRefId": "the-university-of-melbourne|bachelor-of-fine-arts-acting"
     },
     {
-      "title": "Bachelor of Fine Arts (Theatre)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 39936,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "TUM Southbank Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|bachelor-of-fine-arts-theatre"
-    },
-    {
       "title": "Bachelor of Fine Arts (Screenwriting)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4531,6 +4513,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
       "courseRefId": "the-university-of-melbourne|bachelor-of-fine-arts-screenwriting"
+    },
+    {
+      "title": "Bachelor of Fine Arts (Theatre)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 39936,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "TUM Southbank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|bachelor-of-fine-arts-theatre"
     },
     {
       "title": "Doctor of Philosophy - Veterinary Science",
@@ -4569,706 +4570,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
       "courseRefId": "the-university-of-melbourne|bachelor-of-fine-arts-music-theatre"
-    },
-    {
-      "title": "Master of TESOL",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "July 2025",
-        "July 2026",
-        "July 2024",
-        "March 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-tesol"
-    },
-    {
-      "title": "Master of Music Therapy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 46976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2024",
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus",
-        "TUM Southbank Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-music-therapy"
-    },
-    {
-      "title": "Master of Science (Chemistry)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "July 2025",
-        "July 2024",
-        "February 2024",
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-science-chemistry"
-    },
-    {
-      "title": "Graduate Diploma in Music (Practical Music)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 46976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-music-practical-music"
-    },
-    {
-      "title": "Graduate Diploma in Music (Tailored Program)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 46976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-music-tailored-program"
-    },
-    {
-      "title": "Graduate Diploma in Food Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 54976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-food-science"
-    },
-    {
-      "title": "Graduate Certificate in Translation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 24496,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2026",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-translation"
-    },
-    {
-      "title": "Graduate Certificate in Wellbeing Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 36000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2026",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-wellbeing-science"
-    },
-    {
-      "title": "Graduate Diploma in Agricultural Sciences",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 54976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2026",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-agricultural-sciences"
-    },
-    {
-      "title": "Graduate Certificate in Agricultural Sciences",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 27488,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-agricultural-sciences"
-    },
-    {
-      "title": "Graduate Certificate in Language and Cultural Literacy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 23168,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-language-and-cultural-literacy"
-    },
-    {
-      "title": "Graduate Certificate in TESOL",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 24496,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-tesol"
-    },
-    {
-      "title": "Graduate Diploma in Music (Composition)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 46976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-music-composition"
-    },
-    {
-      "title": "Graduate Diploma in Music (Ethnomusicology)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 46976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-music-ethnomusicology"
-    },
-    {
-      "title": "Graduate Diploma in Music (Musicology)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 46976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-music-musicology"
-    },
-    {
-      "title": "Master of Advanced Social Work (Research)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-advanced-social-work-research"
-    },
-    {
-      "title": "Master of Agricultural Sciences",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 54976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-agricultural-sciences"
-    },
-    {
-      "title": "Master of Applied Linguistics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-applied-linguistics"
-    },
-    {
-      "title": "Master of Contemporary Art",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 46976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "TUM Southbank Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-contemporary-art"
-    },
-    {
-      "title": "Master of Contemporary Chinese Studies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-contemporary-chinese-studies"
-    },
-    {
-      "title": "Master of Criminology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-criminology"
-    },
-    {
-      "title": "Master of Cultural Materials Conservation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-cultural-materials-conservation"
-    },
-    {
-      "title": "Master of Dance",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 46976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "TUM Southbank Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-dance"
-    },
-    {
-      "title": "Master of Food and Packaging Innovation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 57984,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-food-and-packaging-innovation"
-    },
-    {
-      "title": "Master of Food Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 54976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-food-science"
-    },
-    {
-      "title": "Master of Climate Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-climate-science"
-    },
-    {
-      "title": "Graduate Diploma in Physiotherapy (Paediatrics)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 36768,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "October 2026",
-        "February 2027",
-        "October 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-physiotherapy-paediatrics"
-    },
-    {
-      "title": "Graduate Diploma in Property Valuation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 56992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-property-valuation"
-    },
-    {
-      "title": "Graduate Diploma in Surgical Anatomy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 22976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-surgical-anatomy"
-    },
-    {
-      "title": "Graduate Diploma in Urban Horticulture",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 58976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "TUM Burnley Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-urban-horticulture"
-    },
-    {
-      "title": "Graduate Certificate in Food Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "6 Months",
-      "tuition": 27488,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-food-science"
-    },
-    {
-      "title": "Master of Urban Horticulture",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 58976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "TUM Burnley Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-urban-horticulture"
-    },
-    {
-      "title": "Master of Urban Planning",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 56992,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "July 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-urban-planning"
-    },
-    {
-      "title": "Master of Philosophy - MDHS (Psychological Sciences)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 64000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-philosophy-mdhs-psychological-sciences"
     },
     {
       "title": "Master of Philosophy - Science",
@@ -5496,7 +4797,411 @@
       "courseRefId": "the-university-of-melbourne|master-of-surgery"
     },
     {
-      "title": "Master of Development Studies",
+      "title": "Graduate Diploma in Food Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 54976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-food-science"
+    },
+    {
+      "title": "Graduate Diploma in Music (Composition)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-music-composition"
+    },
+    {
+      "title": "Graduate Diploma in Music (Ethnomusicology)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-music-ethnomusicology"
+    },
+    {
+      "title": "Graduate Diploma in Music (Musicology)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-music-musicology"
+    },
+    {
+      "title": "Graduate Diploma in Music (Practical Music)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-music-practical-music"
+    },
+    {
+      "title": "Graduate Diploma in Music (Tailored Program)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-music-tailored-program"
+    },
+    {
+      "title": "Graduate Diploma in Physiotherapy (Paediatrics)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 36768,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "October 2026",
+        "February 2027",
+        "October 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-physiotherapy-paediatrics"
+    },
+    {
+      "title": "Graduate Certificate in Translation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 24496,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2026",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-translation"
+    },
+    {
+      "title": "Graduate Certificate in Wellbeing Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 36000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2026",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-wellbeing-science"
+    },
+    {
+      "title": "Graduate Diploma in Agricultural Sciences",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 54976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2026",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-agricultural-sciences"
+    },
+    {
+      "title": "Master of Food and Packaging Innovation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 57984,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-food-and-packaging-innovation"
+    },
+    {
+      "title": "Master of Food Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 54976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-food-science"
+    },
+    {
+      "title": "Master of Geoscience",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-geoscience"
+    },
+    {
+      "title": "Master of Theatre (Directing)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "TUM Southbank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-theatre-directing"
+    },
+    {
+      "title": "Master of Theatre (Dramaturgy)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "TUM Southbank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-theatre-dramaturgy"
+    },
+    {
+      "title": "Master of Theatre (Writing)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "TUM Southbank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-theatre-writing"
+    },
+    {
+      "title": "Master of Urban and Cultural Heritage",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 56992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-urban-and-cultural-heritage"
+    },
+    {
+      "title": "Master of Urban Horticulture",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 58976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "TUM Burnley Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-urban-horticulture"
+    },
+    {
+      "title": "Master of Urban Planning",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 56992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-urban-planning"
+    },
+    {
+      "title": "Master of Climate Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 60000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-climate-science"
+    },
+    {
+      "title": "Master of International Relations",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -5514,10 +5219,58 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-development-studies"
+      "courseRefId": "the-university-of-melbourne|master-of-international-relations"
     },
     {
-      "title": "Master of Ecosystem Management and Conservation",
+      "title": "Master of TESOL",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2025",
+        "July 2026",
+        "February 2026",
+        "February 2025",
+        "July 2024",
+        "March 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-tesol"
+    },
+    {
+      "title": "Master of Music Therapy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2024",
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus",
+        "TUM Southbank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-music-therapy"
+    },
+    {
+      "title": "Master of Science (Chemistry)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -5525,34 +5278,21 @@
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Parkville Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-ecosystem-management-and-conservation"
-    },
-    {
-      "title": "Master of Energy Systems",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 62976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
+        "July 2025",
+        "February 2025",
+        "July 2024",
+        "February 2024",
         "March 2026",
-        "March 2027"
+        "July 2026",
+        "March 2027",
+        "July 2027"
       ],
       "campuses": [
         "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-energy-systems"
+      "courseRefId": "the-university-of-melbourne|master-of-science-chemistry"
     },
     {
       "title": "Master of Music (Opera Performance)",
@@ -5669,11 +5409,11 @@
       "courseRefId": "the-university-of-melbourne|master-of-philosophy-engineering-and-it"
     },
     {
-      "title": "Master of Theatre (Directing)",
+      "title": "Master of Philosophy - MDHS (Psychological Sciences)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 46976,
+      "tuition": 64000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -5681,52 +5421,14 @@
         "March 2027"
       ],
       "campuses": [
-        "TUM Southbank Campus"
+        "Parkville Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-theatre-directing"
+      "courseRefId": "the-university-of-melbourne|master-of-philosophy-mdhs-psychological-sciences"
     },
     {
-      "title": "Master of Theatre (Dramaturgy)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 46976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "TUM Southbank Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-theatre-dramaturgy"
-    },
-    {
-      "title": "Master of Theatre (Writing)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 46976,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "TUM Southbank Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-theatre-writing"
-    },
-    {
-      "title": "Master of Urban and Cultural Heritage",
+      "title": "Graduate Diploma in Property Valuation",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -5744,14 +5446,73 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-urban-and-cultural-heritage"
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-property-valuation"
     },
     {
-      "title": "Master of Geoscience",
+      "title": "Graduate Diploma in Surgical Anatomy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 22976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-surgical-anatomy"
+    },
+    {
+      "title": "Graduate Diploma in Urban Horticulture",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 58976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "TUM Burnley Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-diploma-in-urban-horticulture"
+    },
+    {
+      "title": "Master of Advanced Social Work (Research)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
       "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-advanced-social-work-research"
+    },
+    {
+      "title": "Master of Agricultural Sciences",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 54976,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -5765,10 +5526,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-geoscience"
+      "courseRefId": "the-university-of-melbourne|master-of-agricultural-sciences"
     },
     {
-      "title": "Master of International Relations",
+      "title": "Master of Applied Linguistics",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -5786,7 +5547,247 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
-      "courseRefId": "the-university-of-melbourne|master-of-international-relations"
+      "courseRefId": "the-university-of-melbourne|master-of-applied-linguistics"
+    },
+    {
+      "title": "Master of Contemporary Art",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "TUM Southbank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-contemporary-art"
+    },
+    {
+      "title": "Master of Contemporary Chinese Studies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-contemporary-chinese-studies"
+    },
+    {
+      "title": "Master of Criminology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-criminology"
+    },
+    {
+      "title": "Master of Cultural Materials Conservation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-cultural-materials-conservation"
+    },
+    {
+      "title": "Master of Dance",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 46976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "TUM Southbank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-dance"
+    },
+    {
+      "title": "Master of Development Studies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-development-studies"
+    },
+    {
+      "title": "Master of Ecosystem Management and Conservation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 60992,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-ecosystem-management-and-conservation"
+    },
+    {
+      "title": "Master of Energy Systems",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 62976,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|master-of-energy-systems"
+    },
+    {
+      "title": "Graduate Certificate in Agricultural Sciences",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 27488,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-agricultural-sciences"
+    },
+    {
+      "title": "Graduate Certificate in Food Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 27488,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-food-science"
+    },
+    {
+      "title": "Graduate Certificate in Language and Cultural Literacy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 23168,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-language-and-cultural-literacy"
+    },
+    {
+      "title": "Graduate Certificate in TESOL",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 24496,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "July 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "Parkville Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-melbourne",
+      "courseRefId": "the-university-of-melbourne|graduate-certificate-in-tesol"
     },
     {
       "title": "Doctor of Philosophy - Fine Arts and Music",

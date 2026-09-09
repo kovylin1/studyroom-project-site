@@ -3,13 +3,14 @@
   "name": "Buckinghamshire New University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-  "scrapedAt": "2026-07-22T15:42:52.137Z",
+  "scrapedAt": "2026-08-23T13:11:39.787Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "buckinghamshire-new-university",
   "country": "United Kingdom",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -82,25 +83,6 @@
       "courseRefId": "buckinghamshire-new-university|msc-data-science"
     },
     {
-      "title": "MSc Cyber Resilience",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16280,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|msc-cyber-resilience"
-    },
-    {
       "title": "MSc International Business Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -126,6 +108,25 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|msc-international-business-management"
+    },
+    {
+      "title": "MSc Cyber Resilience",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16280,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|msc-cyber-resilience"
     },
     {
       "title": "MSc Cyber Security",
@@ -173,26 +174,6 @@
       "courseRefId": "buckinghamshire-new-university|msc-physician-associate-studies"
     },
     {
-      "title": "MSc Digital Marketing Leadership with Placement Year",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 16280,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2027",
-        "April 2027"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|msc-digital-marketing-leadership-with-placement-year"
-    },
-    {
       "title": "MSc Digital Marketing Leadership",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -215,6 +196,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|msc-digital-marketing-leadership"
+    },
+    {
+      "title": "MSc Digital Marketing Leadership with Placement Year",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 16280,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027",
+        "April 2027"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|msc-digital-marketing-leadership-with-placement-year"
     },
     {
       "title": "MSc Adult Nursing",
@@ -467,24 +468,6 @@
       "courseRefId": "buckinghamshire-new-university|bsc-hons-data-science-with-foundation-year"
     },
     {
-      "title": "MSci (Hons) Cyber Security",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|msci-hons-cyber-security"
-    },
-    {
       "title": "BSc (Hons) Cyber Security",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -523,6 +506,24 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|bsc-hons-cyber-security-with-foundation-year"
+    },
+    {
+      "title": "MSci (Hons) Cyber Security",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|msci-hons-cyber-security"
     },
     {
       "title": "BA (Hons) Business Management",
@@ -643,24 +644,23 @@
       "courseRefId": "buckinghamshire-new-university|ba-hons-finance-and-business-with-foundation-year"
     },
     {
-      "title": "MA Advanced 3D Animation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
+      "title": "BA (Hons) Finance and Business (Top-Up)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
       "duration": "12 Months",
-      "tuition": 16280,
+      "tuition": 15910,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "BNU High Wycombe Campus"
       ],
-      "scholarshipTag": "Scholarship applied!",
+      "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ma-advanced-3-d-animation"
+      "courseRefId": "buckinghamshire-new-university|ba-hons-finance-and-business-top-up"
     },
     {
       "title": "MSc Counselling and Psychotherapy",
@@ -699,6 +699,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|ma-advanced-3-d-game-art"
+    },
+    {
+      "title": "MA Advanced 3D Animation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16280,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ma-advanced-3-d-animation"
     },
     {
       "title": "MSc Artificial Intelligence",
@@ -745,46 +765,6 @@
       "courseRefId": "buckinghamshire-new-university|ma-music-business"
     },
     {
-      "title": "BSc (Hons) Operating Department Practice with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15150,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-operating-department-practice-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Operating Department Practice",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-operating-department-practice"
-    },
-    {
       "title": "BSc (Hons) Paramedic Science with Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
@@ -802,6 +782,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|bsc-hons-paramedic-science-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Sports Therapy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-sports-therapy"
     },
     {
       "title": "BSc (Hons) Paramedic Science",
@@ -826,6 +826,46 @@
       "courseRefId": "buckinghamshire-new-university|bsc-hons-paramedic-science"
     },
     {
+      "title": "BSc (Hons) Operating Department Practice",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-operating-department-practice"
+    },
+    {
+      "title": "BSc (Hons) Operating Department Practice with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15150,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-operating-department-practice-with-foundation-year"
+    },
+    {
       "title": "BSc (Hons) Sports Therapy with Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
@@ -844,46 +884,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|bsc-hons-sports-therapy-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Sports Therapy",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-sports-therapy"
-    },
-    {
-      "title": "MSc Finance and Investment with Placement Year",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 16280,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2027",
-        "April 2027"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|msc-finance-and-investment-with-placement-year"
     },
     {
       "title": "MPH Public Health",
@@ -931,6 +931,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|msc-finance-and-investment"
+    },
+    {
+      "title": "MSc Finance and Investment with Placement Year",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 16280,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027",
+        "April 2027"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|msc-finance-and-investment-with-placement-year"
     },
     {
       "title": "BSc (Hons) Finance and Accounting",
@@ -1155,6 +1175,46 @@
       "courseRefId": "buckinghamshire-new-university|ma-performance-and-digital-media"
     },
     {
+      "title": "BSc (Hons) Architectural Design and Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-architectural-design-and-technology"
+    },
+    {
+      "title": "LLB (Hons) Law with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|llb-hons-law-with-foundation-year"
+    },
+    {
       "title": "BEng (Hons) Mechanical Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1251,27 +1311,7 @@
       "courseRefId": "buckinghamshire-new-university|ba-hons-digital-marketing-with-foundation-year"
     },
     {
-      "title": "LLB (Hons) Law with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|llb-hons-law-with-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Media Production",
+      "title": "BA (Hons) Marketing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -1288,7 +1328,27 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-media-production"
+      "courseRefId": "buckinghamshire-new-university|ba-hons-marketing"
+    },
+    {
+      "title": "BA (Hons) Creative Advertising",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ba-hons-creative-advertising"
     },
     {
       "title": "BA (Hons) Fashion Promotion and Communication",
@@ -1330,66 +1390,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|llb-hons-law"
-    },
-    {
-      "title": "BA (Hons) Marketing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-marketing"
-    },
-    {
-      "title": "BA (Hons) Creative Advertising",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-creative-advertising"
-    },
-    {
-      "title": "BA (Hons) Costume Design and Making",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-costume-design-and-making"
     },
     {
       "title": "BEng (Hons) Engineering Design",
@@ -1449,7 +1449,7 @@
       "courseRefId": "buckinghamshire-new-university|beng-hons-engineering-design-with-placement-year"
     },
     {
-      "title": "BSc (Hons) Architectural Design and Technology",
+      "title": "BA (Hons) Costume Design and Making",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -1457,8 +1457,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
+        "September 2025",
         "September 2026"
       ],
       "campuses": [
@@ -1466,7 +1466,27 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-architectural-design-and-technology"
+      "courseRefId": "buckinghamshire-new-university|ba-hons-costume-design-and-making"
+    },
+    {
+      "title": "BA (Hons) Media Production",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ba-hons-media-production"
     },
     {
       "title": "MSc Hospitality Strategy and Governance",
@@ -1485,25 +1505,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|msc-hospitality-strategy-and-governance"
-    },
-    {
-      "title": "BEng (Hons) Electrical and Electronic Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|beng-hons-electrical-and-electronic-engineering"
     },
     {
       "title": "BEng (Hons) Electrical and Electronic Engineering with Foundation Year",
@@ -1544,24 +1545,23 @@
       "courseRefId": "buckinghamshire-new-university|beng-hons-electrical-and-electronic-engineering-with-placement-year"
     },
     {
-      "title": "BSc (Hons) Computer Science with Artificial Intelligence",
+      "title": "BEng (Hons) Electrical and Electronic Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "36 Months",
       "tuition": 15910,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
+        "September 2026",
+        "January 2027"
       ],
       "campuses": [
         "BNU High Wycombe Campus"
       ],
-      "scholarshipTag": "Scholarship applied!",
+      "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-computer-science-with-artificial-intelligence"
+      "courseRefId": "buckinghamshire-new-university|beng-hons-electrical-and-electronic-engineering"
     },
     {
       "title": "BSc (Hons) Computer Science with Artificial Intelligence with Foundation Year",
@@ -1582,6 +1582,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|bsc-hons-computer-science-with-artificial-intelligence-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Computer Science with Artificial Intelligence",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-computer-science-with-artificial-intelligence"
     },
     {
       "title": "MSc Engineering Management",
@@ -1645,26 +1665,6 @@
       "courseRefId": "buckinghamshire-new-university|ba-hons-hotel-and-events-management"
     },
     {
-      "title": "BA (Hons) Events Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-events-management"
-    },
-    {
       "title": "BA (Hons) Graphic Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1685,7 +1685,7 @@
       "courseRefId": "buckinghamshire-new-university|ba-hons-graphic-design"
     },
     {
-      "title": "BSc (Hons) Computer Games Development",
+      "title": "BA (Hons) Events Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -1702,7 +1702,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-computer-games-development"
+      "courseRefId": "buckinghamshire-new-university|ba-hons-events-management"
     },
     {
       "title": "BSc (Hons) Computer Games Development with Foundation Year",
@@ -1723,6 +1723,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|bsc-hons-computer-games-development-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Computer Games Development",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-computer-games-development"
     },
     {
       "title": "MSc Sustainable Electrical Power Engineering",
@@ -1785,24 +1805,6 @@
       "courseRefId": "buckinghamshire-new-university|ba-hons-3-d-game-art"
     },
     {
-      "title": "BSc (Hons) Counselling and Psychotherapy with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-counselling-and-psychotherapy-with-foundation-year"
-    },
-    {
       "title": "BA (Hons) Visual Effects",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1821,26 +1823,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|ba-hons-visual-effects"
-    },
-    {
-      "title": "BSc (Hons) Psychology with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-psychology-with-foundation-year"
     },
     {
       "title": "BSc (Hons) Psychology",
@@ -1866,6 +1848,26 @@
       "courseRefId": "buckinghamshire-new-university|bsc-hons-psychology"
     },
     {
+      "title": "BSc (Hons) Psychology with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-psychology-with-foundation-year"
+    },
+    {
       "title": "BSc (Hons) Counselling and Psychotherapy",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1882,6 +1884,24 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|bsc-hons-counselling-and-psychotherapy"
+    },
+    {
+      "title": "BSc (Hons) Counselling and Psychotherapy with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-counselling-and-psychotherapy-with-foundation-year"
     },
     {
       "title": "BEng (Hons) Civil Engineering with Foundation Year",
@@ -1987,26 +2007,6 @@
       "courseRefId": "buckinghamshire-new-university|bsc-hons-international-business-studies-with-foundation-year"
     },
     {
-      "title": "BA (Hons) Music Production and Business",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-music-production-and-business"
-    },
-    {
       "title": "BA (Hons) Music Business",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2027,6 +2027,26 @@
       "courseRefId": "buckinghamshire-new-university|ba-hons-music-business"
     },
     {
+      "title": "BA (Hons) Music Production and Business",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ba-hons-music-production-and-business"
+    },
+    {
       "title": "BSc (Hons) Product and Furniture Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2043,6 +2063,24 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|bsc-hons-product-and-furniture-design"
+    },
+    {
+      "title": "BSc (Hons) Public Health with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-public-health-with-foundation-year"
     },
     {
       "title": "BSc (Hons) Public Health",
@@ -2062,24 +2100,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|bsc-hons-public-health"
-    },
-    {
-      "title": "BSc (Hons) Public Health with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-public-health-with-foundation-year"
     },
     {
       "title": "BSc (Hons) Health and Social Science",
@@ -2185,24 +2205,25 @@
       "courseRefId": "buckinghamshire-new-university|bsc-hons-sport-and-exercise-science-with-foundation-year"
     },
     {
-      "title": "BSc (Hons) Criminology and Law with Foundation Year",
-      "level": "foundation",
+      "title": "BA (Hons) Textile Design (Top-up)",
+      "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "12 Months",
       "tuition": 15150,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
-        "September 2026"
+        "September 2025",
+        "September 2026",
+        "February 2025"
       ],
       "campuses": [
         "BNU High Wycombe Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-criminology-and-law-with-foundation-year"
+      "courseRefId": "buckinghamshire-new-university|ba-hons-textile-design-top-up"
     },
     {
       "title": "BSc (Hons) Criminology and Law",
@@ -2225,57 +2246,16 @@
       "courseRefId": "buckinghamshire-new-university|bsc-hons-criminology-and-law"
     },
     {
-      "title": "BA (Hons) Fashion Design",
-      "level": "bachelor",
+      "title": "BSc (Hons) Criminology and Law with Foundation Year",
+      "level": "foundation",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-fashion-design"
-    },
-    {
-      "title": "BA (Hons) Textile Design (Top-up)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
       "tuition": 15150,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
-        "September 2026",
-        "February 2025"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-textile-design-top-up"
-    },
-    {
-      "title": "BA (Hons) Interior and Spatial Design",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
         "September 2024",
-        "September 2025",
         "September 2026"
       ],
       "campuses": [
@@ -2283,7 +2263,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-interior-and-spatial-design"
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-criminology-and-law-with-foundation-year"
     },
     {
       "title": "BA (Hons) Set Design for Stage and Screen",
@@ -2322,16 +2302,16 @@
       "courseRefId": "buckinghamshire-new-university|ba-hons-set-design-for-stage-and-screen-with-foundation-year"
     },
     {
-      "title": "MA Music and Audio Production",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16280,
+      "title": "BA (Hons) Fashion Design",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
+        "September 2025",
         "September 2026"
       ],
       "campuses": [
@@ -2339,7 +2319,27 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ma-music-and-audio-production"
+      "courseRefId": "buckinghamshire-new-university|ba-hons-fashion-design"
+    },
+    {
+      "title": "BA (Hons) Interior and Spatial Design",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ba-hons-interior-and-spatial-design"
     },
     {
       "title": "MA Filmmaking",
@@ -2376,26 +2376,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|ma-special-effects-for-film-tv"
-    },
-    {
-      "title": "MSc Social Work",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 17850,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|msc-social-work"
     },
     {
       "title": "MSc Child Protection and Adult Safeguarding",
@@ -2441,6 +2421,46 @@
       "courseRefId": "buckinghamshire-new-university|msc-physiotherapy-pre-registration"
     },
     {
+      "title": "MSc Social Work",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 17850,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|msc-social-work"
+    },
+    {
+      "title": "MA Music and Audio Production",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16280,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ma-music-and-audio-production"
+    },
+    {
       "title": "BA (Hons) Sports Coaching with Physical Education",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2457,26 +2477,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|ba-hons-sports-coaching-with-physical-education"
-    },
-    {
-      "title": "BA (Hons) Animation",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-animation"
     },
     {
       "title": "BA (Hons) Childhood Studies with Primary Education with Foundation Year",
@@ -2497,26 +2497,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|ba-hons-childhood-studies-with-primary-education-with-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Fine Art",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-fine-art"
     },
     {
       "title": "BSc (Hons) Forensic Psychology",
@@ -2559,6 +2539,26 @@
       "courseRefId": "buckinghamshire-new-university|ba-hons-childhood-studies-with-primary-education"
     },
     {
+      "title": "BA (Hons) Fine Art",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ba-hons-fine-art"
+    },
+    {
       "title": "BSc (Hons) Forensic Psychology with Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
@@ -2577,6 +2577,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|bsc-hons-forensic-psychology-with-foundation-year"
+    },
+    {
+      "title": "BA (Hons) Animation",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ba-hons-animation"
     },
     {
       "title": "BA (Hons) Music and Live Events Management",
@@ -2724,27 +2744,7 @@
       "courseRefId": "buckinghamshire-new-university|bsc-hons-occupational-therapy"
     },
     {
-      "title": "BSc (Hons) Aviation Management with Logistics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-aviation-management-with-logistics"
-    },
-    {
-      "title": "BSc (Hons) Physiotherapy",
+      "title": "BSc (Hons) Global Security with Intelligence Analysis",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -2752,15 +2752,32 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026",
-        "September 2027"
+        "September 2026"
       ],
       "campuses": [
         "BNU High Wycombe Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-physiotherapy"
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security-with-intelligence-analysis"
+    },
+    {
+      "title": "BSc (Hons) Global Security with Intelligence Analysis with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security-with-intelligence-analysis-with-foundation-year"
     },
     {
       "title": "BSc (Hons) Global Security with Investigation",
@@ -2853,197 +2870,6 @@
       "courseRefId": "buckinghamshire-new-university|bsc-hons-social-work-with-foundation-year"
     },
     {
-      "title": "BSc (Hons) Global Security",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security"
-    },
-    {
-      "title": "BSc (Hons) Global Security with Aviation",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security-with-aviation"
-    },
-    {
-      "title": "BSc (Hons) Global Security with Aviation with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security-with-aviation-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Global Security with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Global Security with Intelligence Analysis",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security-with-intelligence-analysis"
-    },
-    {
-      "title": "BSc (Hons) Global Security with Intelligence Analysis with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security-with-intelligence-analysis-with-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Criminology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "April 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "April 2025"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-criminology"
-    },
-    {
-      "title": "BA (Hons) Film Production",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-film-production"
-    },
-    {
-      "title": "BA (Hons) Audio and Music Production",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-audio-and-music-production"
-    },
-    {
-      "title": "BSc (Hons) Social Work",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-social-work"
-    },
-    {
       "title": "BA (Hons) Acting for Stage and Screen",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3082,6 +2908,85 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|ba-hons-dance-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Criminology and Forensic Studies with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15150,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-criminology-and-forensic-studies-with-foundation-year"
+    },
+    {
+      "title": "BA (Hons) Dance",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ba-hons-dance"
+    },
+    {
+      "title": "BSc (Hons) Aviation Management with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15150,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-aviation-management-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Physiotherapy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-physiotherapy"
     },
     {
       "title": "BA (Hons) Music Production and Performance",
@@ -3144,26 +3049,6 @@
       "courseRefId": "buckinghamshire-new-university|ba-hons-photography"
     },
     {
-      "title": "BA (Hons) Film and Television Production",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 15910,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-film-and-television-production"
-    },
-    {
       "title": "BA (Hons) Fashion and Textiles",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3184,7 +3069,7 @@
       "courseRefId": "buckinghamshire-new-university|ba-hons-fashion-and-textiles"
     },
     {
-      "title": "BA (Hons) Illustration",
+      "title": "BSc (Hons) Criminology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3193,41 +3078,24 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
+        "April 2024",
         "September 2025",
-        "September 2026"
+        "September 2026",
+        "January 2025",
+        "April 2025"
       ],
       "campuses": [
         "BNU High Wycombe Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-illustration"
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-criminology"
     },
     {
-      "title": "BSc (Hons) Criminology and Forensic Studies with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15150,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-criminology-and-forensic-studies-with-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Dance",
+      "title": "BSc (Hons) Aviation Management with Logistics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "48 Months",
       "tuition": 15910,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -3241,27 +3109,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|ba-hons-dance"
-    },
-    {
-      "title": "BSc (Hons) Aviation Management with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15150,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "BNU High Wycombe Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
-      "courseRefId": "buckinghamshire-new-university|bsc-hons-aviation-management-with-foundation-year"
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-aviation-management-with-logistics"
     },
     {
       "title": "BSc (Hons) Aviation Management with Logistics with Foundation Year",
@@ -3374,6 +3222,178 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
       "courseRefId": "buckinghamshire-new-university|bsc-hons-criminology-and-forensic-studies"
+    },
+    {
+      "title": "BSc (Hons) Global Security",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security"
+    },
+    {
+      "title": "BSc (Hons) Global Security with Aviation",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security-with-aviation"
+    },
+    {
+      "title": "BSc (Hons) Global Security with Aviation with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security-with-aviation-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Global Security with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-global-security-with-foundation-year"
+    },
+    {
+      "title": "BA (Hons) Audio and Music Production",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ba-hons-audio-and-music-production"
+    },
+    {
+      "title": "BA (Hons) Illustration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ba-hons-illustration"
+    },
+    {
+      "title": "BA (Hons) Film and Television Production",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ba-hons-film-and-television-production"
+    },
+    {
+      "title": "BA (Hons) Film Production",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|ba-hons-film-production"
+    },
+    {
+      "title": "BSc (Hons) Social Work",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 15910,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "BNU High Wycombe Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/buckinghamshire-new-university",
+      "courseRefId": "buckinghamshire-new-university|bsc-hons-social-work"
     },
     {
       "title": "MSc Mental Health Nursing",

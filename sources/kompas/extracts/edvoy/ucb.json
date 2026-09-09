@@ -3,12 +3,13 @@
   "name": "University College Birmingham",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-  "scrapedAt": "2026-07-22T15:42:52.441Z",
+  "scrapedAt": "2026-08-23T13:11:40.022Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-college-birmingham",
   "country": "United Kingdom",
+  "city": null,
   "matchMethod": "as-is/exact-name",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
@@ -85,6 +86,28 @@
       "courseRefId": "university-college-birmingham|pgdip-computer-science"
     },
     {
+      "title": "PGDip International Business Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2024",
+        "February 2025",
+        "September 2025",
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|pgdip-international-business-management"
+    },
+    {
       "title": "MSc Enterprise Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -157,28 +180,6 @@
       "courseRefId": "university-college-birmingham|pgdip-enterprise-management"
     },
     {
-      "title": "PGDip International Business Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2024",
-        "February 2025",
-        "September 2025",
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|pgdip-international-business-management"
-    },
-    {
       "title": "BEng (Hons) Electromechanical Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -223,27 +224,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
       "courseRefId": "university-college-birmingham|bsc-hons-computer-science"
-    },
-    {
-      "title": "BA (Hons) Business Management (Top-Up)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 16000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2024",
-        "February 2026"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|ba-hons-business-management-top-up"
     },
     {
       "title": "BSc (Hons) Cyber Security",
@@ -314,6 +294,27 @@
       "courseRefId": "university-college-birmingham|ba-hons-business-enterprise"
     },
     {
+      "title": "BA (Hons) Business Management (Top-Up)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 16000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2024",
+        "February 2026"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|ba-hons-business-management-top-up"
+    },
+    {
       "title": "BA (Hons) Business Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -381,30 +382,6 @@
       "courseRefId": "university-college-birmingham|fda-business-enterprise"
     },
     {
-      "title": "MSc Finance And Accounting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 20750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "February 2024",
-        "September 2026",
-        "February 2025",
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|msc-finance-and-accounting"
-    },
-    {
       "title": "PGDip Finance And Accounting",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -427,6 +404,30 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
       "courseRefId": "university-college-birmingham|pgdip-finance-and-accounting"
+    },
+    {
+      "title": "MSc Finance And Accounting",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 20750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "February 2024",
+        "September 2026",
+        "February 2025",
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|msc-finance-and-accounting"
     },
     {
       "title": "BSc (Hons) Finance and Accounting",
@@ -479,7 +480,7 @@
       "title": "FdSc Finance and Accounting",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
+      "duration": "36 Months",
       "tuition": 19750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -496,6 +497,28 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
       "courseRefId": "university-college-birmingham|fdsc-finance-and-accounting"
+    },
+    {
+      "title": "BA (Hons) Digital Marketing (Top-up)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 19750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "February 2024",
+        "September 2025",
+        "September 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|ba-hons-digital-marketing-top-up"
     },
     {
       "title": "BA (Hons) Marketing Management (Top-up)",
@@ -521,11 +544,11 @@
       "courseRefId": "university-college-birmingham|ba-hons-marketing-management-top-up"
     },
     {
-      "title": "BA (Hons) Digital Marketing (Top-up)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 19750,
+      "title": "MSc International Hospitality Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -533,6 +556,8 @@
         "February 2024",
         "September 2025",
         "September 2026",
+        "February 2025",
+        "February 2026",
         "February 2027"
       ],
       "campuses": [
@@ -540,7 +565,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|ba-hons-digital-marketing-top-up"
+      "courseRefId": "university-college-birmingham|msc-international-hospitality-management"
     },
     {
       "title": "PGDip International Hospitality Management",
@@ -565,30 +590,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
       "courseRefId": "university-college-birmingham|pgdip-international-hospitality-management"
-    },
-    {
-      "title": "MSc International Hospitality Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "February 2024",
-        "September 2025",
-        "September 2026",
-        "February 2025",
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|msc-international-hospitality-management"
     },
     {
       "title": "BSc (Hons) Health and Social Care (Top-up)",
@@ -722,30 +723,6 @@
       "courseRefId": "university-college-birmingham|fda-events-management"
     },
     {
-      "title": "MA Marketing Management for Events, Hospitality and Tourism",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 17000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "February 2024",
-        "February 2025",
-        "September 2025",
-        "September 2026",
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|ma-marketing-management-for-events-hospitality-and-tourism"
-    },
-    {
       "title": "PGDip Marketing Management for Events, Hospitality and Tourism",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -770,6 +747,30 @@
       "courseRefId": "university-college-birmingham|pgdip-marketing-management-for-events-hospitality-and-tourism"
     },
     {
+      "title": "MA Marketing Management for Events, Hospitality and Tourism",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 17000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "February 2024",
+        "February 2025",
+        "September 2025",
+        "September 2026",
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|ma-marketing-management-for-events-hospitality-and-tourism"
+    },
+    {
       "title": "International Foundation Diploma",
       "level": "foundation",
       "sourceLevel": "Foundation",
@@ -789,6 +790,28 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
       "courseRefId": "university-college-birmingham|international-foundation-diploma"
+    },
+    {
+      "title": "PGDip Hospitality with Tourism Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "February 2024",
+        "September 2025",
+        "September 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|pgdip-hospitality-with-tourism-management"
     },
     {
       "title": "MSc Hospitality with Tourism Management",
@@ -813,28 +836,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
       "courseRefId": "university-college-birmingham|msc-hospitality-with-tourism-management"
-    },
-    {
-      "title": "PGDip Hospitality with Tourism Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "February 2024",
-        "September 2025",
-        "September 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|pgdip-hospitality-with-tourism-management"
     },
     {
       "title": "BA (Hons) Sports Management (Top-up)",
@@ -950,29 +951,10 @@
       "courseRefId": "university-college-birmingham|fda-international-hospitality-and-tourism-management"
     },
     {
-      "title": "MA Culinary Arts Management with Placement Year",
+      "title": "PGDip Culinary Arts Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|ma-culinary-arts-management-with-placement-year"
-    },
-    {
-      "title": "MA Culinary Arts Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
+      "duration": "12 Months",
       "tuition": 17500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -990,7 +972,26 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|ma-culinary-arts-management"
+      "courseRefId": "university-college-birmingham|pgdip-culinary-arts-management"
+    },
+    {
+      "title": "MA Culinary Arts Management with Placement Year",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|ma-culinary-arts-management-with-placement-year"
     },
     {
       "title": "MSc Aviation Management",
@@ -1017,6 +1018,30 @@
       "courseRefId": "university-college-birmingham|msc-aviation-management"
     },
     {
+      "title": "MA Culinary Arts Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 17500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "February 2024",
+        "September 2025",
+        "September 2026",
+        "February 2025",
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|ma-culinary-arts-management"
+    },
+    {
       "title": "PGDip Aviation Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1041,31 +1066,7 @@
       "courseRefId": "university-college-birmingham|pgdip-aviation-management"
     },
     {
-      "title": "PGDip Culinary Arts Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "February 2024",
-        "September 2025",
-        "September 2026",
-        "February 2025",
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|pgdip-culinary-arts-management"
-    },
-    {
-      "title": "BSc (Hons) Bakery and Patisserie Technology",
+      "title": "FdA Culinary Arts Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -1076,7 +1077,7 @@
         "September 2025",
         "September 2024",
         "September 2026",
-        "February 2025",
+        "February 2026",
         "February 2027"
       ],
       "campuses": [
@@ -1084,7 +1085,66 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|bsc-hons-bakery-and-patisserie-technology"
+      "courseRefId": "university-college-birmingham|fda-culinary-arts-management"
+    },
+    {
+      "title": "BA (Hons) International Tourism Management (Top-up)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 19750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2024",
+        "February 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|ba-hons-international-tourism-management-top-up"
+    },
+    {
+      "title": "BA (Hons) Aviation and Airport Management (Top-up)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 19750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2024",
+        "February 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|ba-hons-aviation-and-airport-management-top-up"
+    },
+    {
+      "title": "FdSc Bakery and Patisserie Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 16500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|fdsc-bakery-and-patisserie-technology"
     },
     {
       "title": "BA (Hons) International Tourism Management",
@@ -1111,48 +1171,7 @@
       "courseRefId": "university-college-birmingham|ba-hons-international-tourism-management"
     },
     {
-      "title": "BA (Hons) International Tourism Management (Top-up)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 19750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2024",
-        "February 2027"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|ba-hons-international-tourism-management-top-up"
-    },
-    {
-      "title": "FdA Aviation and Airport Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 16500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "February 2024",
-        "September 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|fda-aviation-and-airport-management"
-    },
-    {
-      "title": "FdA Culinary Arts Management",
+      "title": "BSc (Hons) Bakery and Patisserie Technology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -1163,7 +1182,7 @@
         "September 2025",
         "September 2024",
         "September 2026",
-        "February 2026",
+        "February 2025",
         "February 2027"
       ],
       "campuses": [
@@ -1171,47 +1190,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|fda-culinary-arts-management"
-    },
-    {
-      "title": "FdSc Bakery and Patisserie Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 16500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|fdsc-bakery-and-patisserie-technology"
-    },
-    {
-      "title": "BA (Hons) Aviation and Airport Management (Top-up)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 19750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2024",
-        "February 2027"
-      ],
-      "campuses": [
-        "Richmond House"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
-      "courseRefId": "university-college-birmingham|ba-hons-aviation-and-airport-management-top-up"
+      "courseRefId": "university-college-birmingham|bsc-hons-bakery-and-patisserie-technology"
     },
     {
       "title": "BA (Hons) Aviation and Airport Management",
@@ -1236,6 +1215,28 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
       "courseRefId": "university-college-birmingham|ba-hons-aviation-and-airport-management"
+    },
+    {
+      "title": "FdA Aviation and Airport Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 16500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "February 2024",
+        "September 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|fda-aviation-and-airport-management"
     },
     {
       "title": "BA (Hons) Culinary Arts Management (Top-up)",
@@ -1394,6 +1395,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
       "courseRefId": "university-college-birmingham|ba-hons-criminology"
+    },
+    {
+      "title": "MBA Master of Business Administration",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Richmond House"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-college-birmingham",
+      "courseRefId": "university-college-birmingham|mba-master-of-business-administration"
     },
     {
       "title": "BA (Hons) / FdA Hair and Make - Up Business Management",
@@ -1561,7 +1581,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",
@@ -1596,7 +1615,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",

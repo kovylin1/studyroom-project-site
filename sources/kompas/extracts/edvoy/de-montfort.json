@@ -3,12 +3,13 @@
   "name": "De Montfort University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-  "scrapedAt": "2026-07-22T15:42:52.184Z",
+  "scrapedAt": "2026-08-23T13:11:39.821Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "de-montfort-university",
   "country": "United Kingdom",
+  "city": null,
   "matchMethod": "as-is/exact-name",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
@@ -52,6 +53,49 @@
       "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-data-analytics"
     },
     {
+      "title": "MSc/PG Dip/PG Cert Cyber Security",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 18100,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2024",
+        "September 2025",
+        "January 2026",
+        "February 2025",
+        "September 2026",
+        "January 2027",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-cyber-security"
+    },
+    {
+      "title": "MBA Master of Business Administration",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 20300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|mba-master-of-business-administration"
+    },
+    {
       "title": "MSc International Business Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -77,49 +121,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
       "courseRefId": "de-montfort-university|msc-international-business-management"
-    },
-    {
-      "title": "MBA Master of Business Administration",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 20300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|mba-master-of-business-administration"
-    },
-    {
-      "title": "MSc/PG Dip/PG Cert Cyber Security",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 18100,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2024",
-        "September 2025",
-        "January 2026",
-        "February 2025",
-        "September 2026",
-        "January 2027",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-cyber-security"
     },
     {
       "title": "MSc/PG Dip/PG Cert Software Engineering",
@@ -164,7 +165,7 @@
       "courseRefId": "de-montfort-university|msc-finance-and-banking"
     },
     {
-      "title": "BSc (Hons) Computer Networks and Security",
+      "title": "BSc (Hons) Software Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -172,8 +173,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
+        "September 2025",
         "September 2026",
         "September 2027"
       ],
@@ -182,7 +183,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-computer-networks-and-security"
+      "courseRefId": "de-montfort-university|bsc-hons-software-engineering"
     },
     {
       "title": "BSc (Hons) Computer Science",
@@ -206,7 +207,7 @@
       "courseRefId": "de-montfort-university|bsc-hons-computer-science"
     },
     {
-      "title": "BSc (Hons) Software Engineering",
+      "title": "BSc (Hons) Computer Networks and Security",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -214,8 +215,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
+        "September 2024",
         "September 2026",
         "September 2027"
       ],
@@ -224,7 +225,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-software-engineering"
+      "courseRefId": "de-montfort-university|bsc-hons-computer-networks-and-security"
     },
     {
       "title": "BSc (Hons) Artificial Intelligence",
@@ -246,6 +247,73 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
       "courseRefId": "de-montfort-university|bsc-hons-artificial-intelligence"
+    },
+    {
+      "title": "BSc (Hons) Cyber Security",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-cyber-security"
+    },
+    {
+      "title": "BA (Hons) Business Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "February 2025",
+        "September 2027",
+        "October 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-business-management"
+    },
+    {
+      "title": "BA (Hons) International Business",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-international-business"
     },
     {
       "title": "BA (Hons) Business Management with Placement",
@@ -300,73 +368,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
       "courseRefId": "de-montfort-university|ba-hons-international-business-with-placement"
-    },
-    {
-      "title": "BA (Hons) International Business",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-international-business"
-    },
-    {
-      "title": "BSc (Hons) Cyber Security",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-cyber-security"
-    },
-    {
-      "title": "BA (Hons) Business Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "February 2025",
-        "September 2027",
-        "October 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-business-management"
     },
     {
       "title": "BSc (Hons) Business Data Analytics with Placement",
@@ -508,40 +509,25 @@
       "courseRefId": "de-montfort-university|bmedsci-hons-medical-science-with-placement"
     },
     {
-      "title": "BA (Hons) Business and Marketing with Placement",
+      "title": "BSc (Hons) Business Information Systems",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-business-and-marketing-with-placement"
-    },
-    {
-      "title": "BSc (Hons) Business Information Systems with Placement",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "36 Months",
       "tuition": 17300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026"
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-business-information-systems-with-placement"
+      "courseRefId": "de-montfort-university|bsc-hons-business-information-systems"
     },
     {
       "title": "BSc (Hons) Accounting with Business Management",
@@ -586,109 +572,10 @@
       "courseRefId": "de-montfort-university|ba-hons-business-and-marketing"
     },
     {
-      "title": "BSc (Hons) Business Information Systems",
+      "title": "BA (Hons) Business and Marketing with Placement",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-business-information-systems"
-    },
-    {
-      "title": "MA/MSc Fashion Management with Marketing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ma-msc-fashion-management-with-marketing"
-    },
-    {
-      "title": "MSc/PG Dip/PG Cert Electronic Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18100,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-electronic-engineering"
-    },
-    {
-      "title": "MA/MSc Design Innovation and Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ma-msc-design-innovation-and-management"
-    },
-    {
-      "title": "LLM International Commercial Law and Practice",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|llm-international-commercial-law-and-practice"
-    },
-    {
-      "title": "MA/MSc Digital Design",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "48 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -700,7 +587,49 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ma-msc-digital-design"
+      "courseRefId": "de-montfort-university|ba-hons-business-and-marketing-with-placement"
+    },
+    {
+      "title": "BSc (Hons) Business Information Systems with Placement",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-business-information-systems-with-placement"
+    },
+    {
+      "title": "MSc Advertising and Public Relations Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 19000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "September 2025",
+        "September 2024",
+        "October 2025",
+        "October 2026",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|msc-advertising-and-public-relations-management"
     },
     {
       "title": "MArch Architecture",
@@ -771,7 +700,7 @@
       "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-information-systems-management"
     },
     {
-      "title": "MSc Advertising and Public Relations Management",
+      "title": "LLM International Commercial Law and Practice",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -779,11 +708,7 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "October 2024",
         "September 2025",
-        "September 2024",
-        "October 2025",
-        "October 2026",
         "September 2026",
         "September 2027"
       ],
@@ -792,7 +717,83 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-advertising-and-public-relations-management"
+      "courseRefId": "de-montfort-university|llm-international-commercial-law-and-practice"
+    },
+    {
+      "title": "MA/MSc Design Innovation and Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ma-msc-design-innovation-and-management"
+    },
+    {
+      "title": "MA/MSc Digital Design",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ma-msc-digital-design"
+    },
+    {
+      "title": "MA/MSc Fashion Management with Marketing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ma-msc-fashion-management-with-marketing"
+    },
+    {
+      "title": "MSc/PG Dip/PG Cert Electronic Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18100,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-electronic-engineering"
     },
     {
       "title": "BSc (Hons) Accounting and Finance",
@@ -814,25 +815,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
       "courseRefId": "de-montfort-university|bsc-hons-accounting-and-finance"
-    },
-    {
-      "title": "BSc (Hons) Learning Disability Nursing with NMC registration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-learning-disability-nursing-with-nmc-registration"
     },
     {
       "title": "BSc (Hons) Adult Nursing with NMC registration",
@@ -871,6 +853,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
       "courseRefId": "de-montfort-university|bsc-hons-child-nursing-with-nmc-registration"
+    },
+    {
+      "title": "BSc (Hons) Learning Disability Nursing with NMC registration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-learning-disability-nursing-with-nmc-registration"
     },
     {
       "title": "BSc (Hons) Midwifery",
@@ -917,7 +918,7 @@
       "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-mechatronics-and-robotics"
     },
     {
-      "title": "BA (Hons) Fashion Marketing",
+      "title": "BA (Hons) Architecture",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -925,6 +926,7 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2024",
         "September 2025",
         "September 2026",
         "September 2027"
@@ -934,7 +936,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-fashion-marketing"
+      "courseRefId": "de-montfort-university|ba-hons-architecture"
     },
     {
       "title": "BA (Hons) Marketing with Placement",
@@ -991,22 +993,24 @@
       "courseRefId": "de-montfort-university|beng-meng-hons-mechanical-engineering"
     },
     {
-      "title": "BSc (Hons) Media Production with Placement",
+      "title": "BA (Hons) Fashion Marketing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17300,
+      "duration": "36 Months",
+      "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026"
+        "September 2025",
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-media-production-with-placement"
+      "courseRefId": "de-montfort-university|ba-hons-fashion-marketing"
     },
     {
       "title": "BA (Hons) Creative Design Management (Level 6 Top-up)",
@@ -1029,29 +1033,11 @@
       "courseRefId": "de-montfort-university|ba-hons-creative-design-management-level-6-top-up"
     },
     {
-      "title": "LLB (Hons) Law",
+      "title": "BA (Hons) Film Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
       "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|llb-hons-law"
-    },
-    {
-      "title": "BA (Hons) Concept and Comic Arts",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1065,10 +1051,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-concept-and-comic-arts"
+      "courseRefId": "de-montfort-university|ba-hons-film-studies"
     },
     {
-      "title": "BA (Hons) Advertising and Marketing Communications",
+      "title": "BA (Hons) Media and Communication",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -1078,14 +1064,36 @@
       "intake": [
         "September 2024",
         "September 2025",
-        "September 2026"
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-advertising-and-marketing-communications"
+      "courseRefId": "de-montfort-university|ba-hons-media-and-communication"
+    },
+    {
+      "title": "BSc (Hons) Architectural Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-architectural-technology"
     },
     {
       "title": "BA (Hons) Marketing",
@@ -1172,11 +1180,11 @@
       "courseRefId": "de-montfort-university|ba-hons-footwear-design"
     },
     {
-      "title": "BA (Hons) Architecture",
+      "title": "BA (Hons) Concept and Comic Arts",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 16800,
+      "tuition": 17300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1190,10 +1198,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-architecture"
+      "courseRefId": "de-montfort-university|ba-hons-concept-and-comic-arts"
     },
     {
-      "title": "BA (Hons) Film Studies",
+      "title": "BA (Hons) Advertising and Marketing Communications",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -1203,39 +1211,35 @@
       "intake": [
         "September 2024",
         "September 2025",
-        "September 2026",
-        "September 2027"
+        "September 2026"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-film-studies"
+      "courseRefId": "de-montfort-university|ba-hons-advertising-and-marketing-communications"
     },
     {
-      "title": "BA (Hons) Media and Communication",
+      "title": "BSc (Hons) Media Production with Placement",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
+      "duration": "48 Months",
+      "tuition": 17300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
+        "September 2026"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-media-and-communication"
+      "courseRefId": "de-montfort-university|bsc-hons-media-production-with-placement"
     },
     {
-      "title": "BSc (Hons) Architectural Technology",
+      "title": "LLB (Hons) Law",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -1243,17 +1247,14 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
+        "September 2026"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-architectural-technology"
+      "courseRefId": "de-montfort-university|llb-hons-law"
     },
     {
       "title": "MSc Project Management",
@@ -1363,6 +1364,83 @@
       "courseRefId": "de-montfort-university|msc-project-management-with-sustainability"
     },
     {
+      "title": "BSc (Hons) Product Design",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-product-design"
+    },
+    {
+      "title": "BEng (Hons) Electrical and Electronic Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|beng-hons-electrical-and-electronic-engineering"
+    },
+    {
+      "title": "BA (Hons) Product Design with Placement",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-product-design-with-placement"
+    },
+    {
+      "title": "BSc (Hons) Product Design with Placement",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-product-design-with-placement"
+    },
+    {
       "title": "MEng (Hons) Electrical and Electronic Engineering",
       "level": "master",
       "sourceLevel": "Undergraduate",
@@ -1422,63 +1500,7 @@
       "courseRefId": "de-montfort-university|meng-hons-mechatronics-and-robotics"
     },
     {
-      "title": "BA (Hons) Product Design with Placement",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-product-design-with-placement"
-    },
-    {
-      "title": "BSc (Hons) Product Design with Placement",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-product-design-with-placement"
-    },
-    {
-      "title": "BSc (Hons) Product Design",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-product-design"
-    },
-    {
-      "title": "BEng (Hons) Electrical and Electronic Engineering",
+      "title": "BA (Hons) Graphic Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -1496,7 +1518,49 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|beng-hons-electrical-and-electronic-engineering"
+      "courseRefId": "de-montfort-university|ba-hons-graphic-design"
+    },
+    {
+      "title": "BA (Hons) Journalism",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-journalism"
+    },
+    {
+      "title": "BSc (Hons) Economics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-economics"
     },
     {
       "title": "BA (Hons) Product Design",
@@ -1556,25 +1620,6 @@
       "courseRefId": "de-montfort-university|bsc-hons-biomedical-science-with-placement"
     },
     {
-      "title": "BEng (Hons) Biomedical Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|beng-hons-biomedical-engineering"
-    },
-    {
       "title": "MEng (Hons) Biomedical Engineering",
       "level": "master",
       "sourceLevel": "Undergraduate",
@@ -1594,16 +1639,14 @@
       "courseRefId": "de-montfort-university|meng-hons-biomedical-engineering"
     },
     {
-      "title": "BSc (Hons) Economics",
+      "title": "BEng (Hons) Biomedical Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 16800,
+      "tuition": 17300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2024",
         "September 2026",
         "September 2027"
       ],
@@ -1612,28 +1655,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-economics"
-    },
-    {
-      "title": "BA (Hons) Journalism",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-journalism"
+      "courseRefId": "de-montfort-university|beng-hons-biomedical-engineering"
     },
     {
       "title": "BSc (Hons) Biomedical Science",
@@ -1657,45 +1679,6 @@
       "courseRefId": "de-montfort-university|bsc-hons-biomedical-science"
     },
     {
-      "title": "BA (Hons) Graphic Design",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-graphic-design"
-    },
-    {
-      "title": "MSc Visual Effects and Virtual Production",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-visual-effects-and-virtual-production"
-    },
-    {
       "title": "MA Human Resource Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1717,24 +1700,22 @@
       "courseRefId": "de-montfort-university|ma-human-resource-management"
     },
     {
-      "title": "MSc/PG Dip/PG Cert Health Psychology",
+      "title": "MSc Visual Effects and Virtual Production",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 17300,
+      "tuition": 18600,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
+        "September 2026"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-health-psychology"
+      "courseRefId": "de-montfort-university|msc-visual-effects-and-virtual-production"
     },
     {
       "title": "MA/PG Dip/PG Cert Education Practice",
@@ -1755,6 +1736,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
       "courseRefId": "de-montfort-university|ma-pg-dip-pg-cert-education-practice"
+    },
+    {
+      "title": "MSc/PG Dip/PG Cert Health Psychology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-health-psychology"
     },
     {
       "title": "MSc/PG Dip/PG Cert Artificial Intelligence",
@@ -1812,159 +1813,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
       "courseRefId": "de-montfort-university|msc-social-research-health"
-    },
-    {
-      "title": "BA (Hons) Human Resource Management with Placement",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-human-resource-management-with-placement"
-    },
-    {
-      "title": "BSc (Hons) 3D Animation and Visual Effects with Placement",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-3-d-animation-and-visual-effects-with-placement"
-    },
-    {
-      "title": "BSc (Hons) Psychology with Education Studies with Placement",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-psychology-with-education-studies-with-placement"
-    },
-    {
-      "title": "BSc (Hons) Psychology with Placement",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-psychology-with-placement"
-    },
-    {
-      "title": "BA (Hons) Illustration with Graphic Design",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-illustration-with-graphic-design"
-    },
-    {
-      "title": "BSc (Hons) Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-psychology"
-    },
-    {
-      "title": "BSc (Hons) Quantity Surveying and Construction",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-quantity-surveying-and-construction"
-    },
-    {
-      "title": "BSc (Hons) 3D Animation and Visual Effects",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-3-d-animation-and-visual-effects"
     },
     {
       "title": "BA (Hons) Education Studies with Mandarin",
@@ -2051,6 +1899,27 @@
       "courseRefId": "de-montfort-university|ba-hons-human-resource-management"
     },
     {
+      "title": "BSc (Hons) Psychology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-psychology"
+    },
+    {
       "title": "BSc (Hons) Psychology with Education Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2070,6 +1939,138 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
       "courseRefId": "de-montfort-university|bsc-hons-psychology-with-education-studies"
+    },
+    {
+      "title": "BSc (Hons) Quantity Surveying and Construction",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-quantity-surveying-and-construction"
+    },
+    {
+      "title": "BA (Hons) Human Resource Management with Placement",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-human-resource-management-with-placement"
+    },
+    {
+      "title": "BSc (Hons) 3D Animation and Visual Effects with Placement",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-3-d-animation-and-visual-effects-with-placement"
+    },
+    {
+      "title": "BSc (Hons) Psychology with Education Studies with Placement",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-psychology-with-education-studies-with-placement"
+    },
+    {
+      "title": "BSc (Hons) Psychology with Placement",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-psychology-with-placement"
+    },
+    {
+      "title": "BSc (Hons) 3D Animation and Visual Effects",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-3-d-animation-and-visual-effects"
+    },
+    {
+      "title": "BA (Hons) Illustration with Graphic Design",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-illustration-with-graphic-design"
     },
     {
       "title": "MSc Pharmaceutical Biotechnology",
@@ -2114,16 +2115,18 @@
       "courseRefId": "de-montfort-university|bsc-hons-psychology-with-health-and-wellbeing-in-society"
     },
     {
-      "title": "MSc/PG Dip/PG Cert Pharmaceutical Quality by Design",
+      "title": "MSc Architecture and Sustainability",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 17800,
+      "tuition": 16300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
+        "January 2026",
         "September 2026",
+        "January 2027",
         "September 2027"
       ],
       "campuses": [
@@ -2131,7 +2134,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-pharmaceutical-quality-by-design"
+      "courseRefId": "de-montfort-university|msc-architecture-and-sustainability"
     },
     {
       "title": "MSc Sport Management",
@@ -2156,18 +2159,16 @@
       "courseRefId": "de-montfort-university|msc-sport-management"
     },
     {
-      "title": "MSc Architecture and Sustainability",
+      "title": "MSc/PG Dip/PG Cert Pharmaceutical Quality by Design",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 16300,
+      "tuition": 17800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
-        "January 2026",
         "September 2026",
-        "January 2027",
         "September 2027"
       ],
       "campuses": [
@@ -2175,25 +2176,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-architecture-and-sustainability"
-    },
-    {
-      "title": "BSc (Hons) Finance and Investment with Placement",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-finance-and-investment-with-placement"
+      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-pharmaceutical-quality-by-design"
     },
     {
       "title": "BSc (Hons) Finance and Investment",
@@ -2215,6 +2198,24 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
       "courseRefId": "de-montfort-university|bsc-hons-finance-and-investment"
+    },
+    {
+      "title": "BSc (Hons) Finance and Investment with Placement",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-finance-and-investment-with-placement"
     },
     {
       "title": "BSc (Hons) Health and Wellbeing in Society",
@@ -2275,40 +2276,67 @@
       "courseRefId": "de-montfort-university|bsc-hons-mental-health-nursing-with-nmc-registration"
     },
     {
-      "title": "BA (Hons) Film Studies with Placement",
+      "title": "BA (Hons) Interior Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "36 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026"
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-film-studies-with-placement"
+      "courseRefId": "de-montfort-university|ba-hons-interior-design"
     },
     {
-      "title": "BA (Hons) Interior Design with Placement",
+      "title": "BA (Hons) Fashion Buying with Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "36 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026"
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-interior-design-with-placement"
+      "courseRefId": "de-montfort-university|ba-hons-fashion-buying-with-design"
+    },
+    {
+      "title": "BA (Hons) Fashion Design",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-fashion-design"
     },
     {
       "title": "BA (Hons) Textile Design",
@@ -2390,67 +2418,40 @@
       "courseRefId": "de-montfort-university|ba-hons-design-crafts-with-placement"
     },
     {
-      "title": "BA (Hons) Fashion Buying with Design",
+      "title": "BA (Hons) Film Studies with Placement",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "48 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
+        "September 2026"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-fashion-buying-with-design"
+      "courseRefId": "de-montfort-university|ba-hons-film-studies-with-placement"
     },
     {
-      "title": "BA (Hons) Interior Design",
+      "title": "BA (Hons) Interior Design with Placement",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "48 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
+        "September 2026"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-interior-design"
-    },
-    {
-      "title": "BA (Hons) Fashion Design",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-fashion-design"
+      "courseRefId": "de-montfort-university|ba-hons-interior-design-with-placement"
     },
     {
       "title": "BA (Hons) Design Crafts",
@@ -2516,6 +2517,26 @@
       "courseRefId": "de-montfort-university|msc-engineering-management"
     },
     {
+      "title": "BA (Hons) Arts and Festivals Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-arts-and-festivals-management"
+    },
+    {
       "title": "BA (Hons) International Tourism and Hospitality Management (Level 6 Top-Up)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2536,24 +2557,24 @@
       "courseRefId": "de-montfort-university|ba-hons-international-tourism-and-hospitality-management-level-6-top-up"
     },
     {
-      "title": "BA (Hons) Arts and Festivals Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
+      "title": "LLM Sustainability, Social Justice and Human Rights Law",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 19000,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
-        "September 2026"
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "DMU Leicester Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-arts-and-festivals-management"
+      "courseRefId": "de-montfort-university|llm-sustainability-social-justice-and-human-rights-law"
     },
     {
       "title": "BA (Hons) Creative Writing with Education Studies",
@@ -2596,50 +2617,15 @@
       "courseRefId": "de-montfort-university|ba-hons-history-with-education-studies"
     },
     {
-      "title": "BSc (Hons) Games Production with Placement",
+      "title": "BA (Hons) Criminology with Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-games-production-with-placement"
-    },
-    {
-      "title": "BSc (Hons) Psychology with Criminology with Placement",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "36 Months",
       "tuition": 16800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-psychology-with-criminology-with-placement"
-    },
-    {
-      "title": "LLM Sustainability, Social Justice and Human Rights Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
+        "September 2024",
         "September 2025",
         "September 2026",
         "September 2027"
@@ -2649,7 +2635,28 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|llm-sustainability-social-justice-and-human-rights-law"
+      "courseRefId": "de-montfort-university|ba-hons-criminology-with-psychology"
+    },
+    {
+      "title": "BA (Hons) Fine Art",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-fine-art"
     },
     {
       "title": "BSc (Hons) Psychology with Criminology",
@@ -2715,27 +2722,6 @@
       "courseRefId": "de-montfort-university|bsc-hons-games-production"
     },
     {
-      "title": "BA (Hons) Fine Art",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-fine-art"
-    },
-    {
       "title": "BA (Hons) Fashion Textile Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2757,7 +2743,43 @@
       "courseRefId": "de-montfort-university|ba-hons-fashion-textile-design"
     },
     {
-      "title": "BA (Hons) Criminology with Psychology",
+      "title": "BSc (Hons) Games Production with Placement",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-games-production-with-placement"
+    },
+    {
+      "title": "BSc (Hons) Psychology with Criminology with Placement",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-psychology-with-criminology-with-placement"
+    },
+    {
+      "title": "BA (Hons) Politics and International Relations",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -2765,8 +2787,6 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
         "September 2026",
         "September 2027"
       ],
@@ -2775,7 +2795,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-criminology-with-psychology"
+      "courseRefId": "de-montfort-university|ba-hons-politics-and-international-relations"
     },
     {
       "title": "BA (Hons) English Literature with Education Studies",
@@ -2818,25 +2838,6 @@
       "courseRefId": "de-montfort-university|ba-hons-politics-with-mandarin"
     },
     {
-      "title": "BA (Hons) Politics and International Relations",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-politics-and-international-relations"
-    },
-    {
       "title": "BA (Hons) History, Politics and International Relations",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2856,26 +2857,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
       "courseRefId": "de-montfort-university|ba-hons-history-politics-and-international-relations"
-    },
-    {
-      "title": "MSc/PG Dip/PG Cert Mental Health and Wellbeing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-mental-health-and-wellbeing"
     },
     {
       "title": "MA Interior Design",
@@ -2903,208 +2884,7 @@
       "courseRefId": "de-montfort-university|ma-interior-design"
     },
     {
-      "title": "MSc/PG Dip/PG Cert Energy and Sustainable Development",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "16 Months",
-      "tuition": 18100,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "September 2026",
-        "September 2027",
-        "January 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-energy-and-sustainable-development"
-    },
-    {
-      "title": "LLM in Legal Professional Practice (SQE Preparation Course)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 19000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|llm-in-legal-professional-practice-sqe-preparation-course"
-    },
-    {
-      "title": "MA/MSc Contour Fashion Innovation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ma-msc-contour-fashion-innovation"
-    },
-    {
-      "title": "LLM Criminal Justice",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18450,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|llm-criminal-justice"
-    },
-    {
-      "title": "MSc Cosmetic Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 17800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-cosmetic-science"
-    },
-    {
-      "title": "MSc Sustainable Textile Technologies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-sustainable-textile-technologies"
-    },
-    {
-      "title": "MSc Aeronautical Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18100,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2025",
-        "January 2026",
-        "September 2026",
-        "September 2027",
-        "January 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|msc-aeronautical-engineering"
-    },
-    {
-      "title": "MA/PG Dip/PG Cert International Film Production",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ma-pg-dip-pg-cert-international-film-production"
-    },
-    {
-      "title": "MA Contemporary Art Practice",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ma-contemporary-art-practice"
-    },
-    {
-      "title": "MPH Masters of Public Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "February 2026",
-        "September 2026",
-        "September 2027",
-        "February 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|mph-masters-of-public-health"
-    },
-    {
-      "title": "MA Fashion and Textiles",
+      "title": "MA Creative Writing",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -3125,31 +2905,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ma-fashion-and-textiles"
-    },
-    {
-      "title": "MA International Relations",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "September 2025",
-        "September 2024",
-        "October 2025",
-        "October 2026",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ma-international-relations"
+      "courseRefId": "de-montfort-university|ma-creative-writing"
     },
     {
       "title": "MSc Energy Engineering",
@@ -3202,7 +2958,149 @@
       "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-global-health"
     },
     {
-      "title": "MA Creative Writing",
+      "title": "MA/MSc Contour Fashion Innovation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ma-msc-contour-fashion-innovation"
+    },
+    {
+      "title": "MA Contemporary Art Practice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ma-contemporary-art-practice"
+    },
+    {
+      "title": "MSc Sustainable Textile Technologies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|msc-sustainable-textile-technologies"
+    },
+    {
+      "title": "MSc/PG Dip/PG Cert Energy and Sustainable Development",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "16 Months",
+      "tuition": 18100,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "September 2026",
+        "September 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-energy-and-sustainable-development"
+    },
+    {
+      "title": "LLM Criminal Justice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18450,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|llm-criminal-justice"
+    },
+    {
+      "title": "MPH Masters of Public Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "February 2026",
+        "September 2026",
+        "September 2027",
+        "February 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|mph-masters-of-public-health"
+    },
+    {
+      "title": "MSc/PG Dip/PG Cert Mental Health and Wellbeing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|msc-pg-dip-pg-cert-mental-health-and-wellbeing"
+    },
+    {
+      "title": "MA Fashion and Textiles",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -3223,73 +3121,14 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ma-creative-writing"
+      "courseRefId": "de-montfort-university|ma-fashion-and-textiles"
     },
     {
-      "title": "BA (Hons) Creative Writing and English Literature",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-creative-writing-and-english-literature"
-    },
-    {
-      "title": "BA (Hons) International Tourism and Hospitality Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-international-tourism-and-hospitality-management"
-    },
-    {
-      "title": "MEng (Hons) Automotive Engineering",
+      "title": "LLM in Legal Professional Practice (SQE Preparation Course)",
       "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|meng-hons-automotive-engineering"
-    },
-    {
-      "title": "BA (Hons) History, Heritage and Tourism",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 19000,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3302,10 +3141,113 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-history-heritage-and-tourism"
+      "courseRefId": "de-montfort-university|llm-in-legal-professional-practice-sqe-preparation-course"
     },
     {
-      "title": "BA (Hons) Footwear Innovation (Level 6 Top-up)",
+      "title": "MA/PG Dip/PG Cert International Film Production",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ma-pg-dip-pg-cert-international-film-production"
+    },
+    {
+      "title": "MSc Cosmetic Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 17800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|msc-cosmetic-science"
+    },
+    {
+      "title": "MA International Relations",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "September 2025",
+        "September 2024",
+        "October 2025",
+        "October 2026",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ma-international-relations"
+    },
+    {
+      "title": "MSc Aeronautical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18100,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2025",
+        "January 2026",
+        "September 2026",
+        "September 2027",
+        "January 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|msc-aeronautical-engineering"
+    },
+    {
+      "title": "BA (Hons) Dance",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-dance"
+    },
+    {
+      "title": "BA (Hons) Criminal Investigation and Policing Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "12 Months",
@@ -3313,6 +3255,7 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2024",
         "September 2025",
         "September 2026",
         "September 2027"
@@ -3322,19 +3265,81 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-footwear-innovation-level-6-top-up"
+      "courseRefId": "de-montfort-university|ba-hons-criminal-investigation-and-policing-studies"
     },
     {
-      "title": "MPharm (Hons) Pharmacy",
+      "title": "BA (Hons) Creative Writing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-creative-writing"
+    },
+    {
+      "title": "BA (Hons) Creative Writing and Drama",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-creative-writing-and-drama"
+    },
+    {
+      "title": "BA (Hons) Social Work",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-social-work"
+    },
+    {
+      "title": "BEng (Hons) Aeronautical Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
       "tuition": 17300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
+        "September 2025",
         "September 2026",
         "September 2027"
       ],
@@ -3343,7 +3348,134 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|mpharm-hons-pharmacy"
+      "courseRefId": "de-montfort-university|beng-hons-aeronautical-engineering"
+    },
+    {
+      "title": "BSc (Hons) Pharmaceutical and Cosmetic Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-pharmaceutical-and-cosmetic-science"
+    },
+    {
+      "title": "BA (Hons) Fashion Management (Level 6 Top Up)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-fashion-management-level-6-top-up"
+    },
+    {
+      "title": "BA (Hons) Global Arts Management (Level 6 Top-Up)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-global-arts-management-level-6-top-up"
+    },
+    {
+      "title": "BA (Hons) English Literature",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-english-literature"
+    },
+    {
+      "title": "BA (Hons) History with Mandarin",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-history-with-mandarin"
+    },
+    {
+      "title": "BA (Hons) Photography and Video",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-photography-and-video"
     },
     {
       "title": "BA (Hons) Arts and Festivals Management with Placement",
@@ -3508,7 +3640,28 @@
       "courseRefId": "de-montfort-university|moptom-hons-optometry"
     },
     {
-      "title": "BSc (Hons) Music Production",
+      "title": "MPharm (Hons) Pharmacy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|mpharm-hons-pharmacy"
+    },
+    {
+      "title": "BA (Hons) Music Technology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3526,7 +3679,65 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-music-production"
+      "courseRefId": "de-montfort-university|ba-hons-music-technology"
+    },
+    {
+      "title": "BA (Hons) International Tourism and Hospitality Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-international-tourism-and-hospitality-management"
+    },
+    {
+      "title": "MEng (Hons) Aeronautical Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|meng-hons-aeronautical-engineering"
+    },
+    {
+      "title": "MEng (Hons) Automotive Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|meng-hons-automotive-engineering"
     },
     {
       "title": "BEng (Hons) Automotive Engineering",
@@ -3546,26 +3757,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
       "courseRefId": "de-montfort-university|beng-hons-automotive-engineering"
-    },
-    {
-      "title": "BA (Hons) Filmmaking",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-filmmaking"
     },
     {
       "title": "BA (Hons) Acting",
@@ -3588,173 +3779,7 @@
       "courseRefId": "de-montfort-university|ba-hons-acting"
     },
     {
-      "title": "MEng (Hons) Aeronautical Engineering",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|meng-hons-aeronautical-engineering"
-    },
-    {
-      "title": "BSc (Hons) Pharmaceutical and Cosmetic Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-pharmaceutical-and-cosmetic-science"
-    },
-    {
-      "title": "BSc (Hons) Pharmaceutical Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-pharmaceutical-science"
-    },
-    {
-      "title": "BSc (Hons) Speech and Language Therapy",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|bsc-hons-speech-and-language-therapy"
-    },
-    {
-      "title": "BEng (Hons) Aeronautical Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 17300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|beng-hons-aeronautical-engineering"
-    },
-    {
-      "title": "BA (Hons) History with Mandarin",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-history-with-mandarin"
-    },
-    {
-      "title": "BA (Hons) Photography and Video",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-photography-and-video"
-    },
-    {
-      "title": "BA (Hons) Social Work",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-social-work"
-    },
-    {
-      "title": "BA (Hons) Drama and Theatre Arts",
+      "title": "BA (Hons) Creative Writing and English Literature",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3763,7 +3788,6 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
-        "September 2024",
         "September 2026",
         "September 2027"
       ],
@@ -3772,28 +3796,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-drama-and-theatre-arts"
-    },
-    {
-      "title": "BA (Hons) English Literature",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-english-literature"
+      "courseRefId": "de-montfort-university|ba-hons-creative-writing-and-english-literature"
     },
     {
       "title": "BA (Hons) Contour Fashion",
@@ -3817,7 +3820,7 @@
       "courseRefId": "de-montfort-university|ba-hons-contour-fashion"
     },
     {
-      "title": "BA (Hons) Criminology",
+      "title": "BA (Hons) History, Heritage and Tourism",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3825,7 +3828,6 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
         "September 2026",
         "September 2027"
@@ -3835,10 +3837,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-criminology"
+      "courseRefId": "de-montfort-university|ba-hons-history-heritage-and-tourism"
     },
     {
-      "title": "BA (Hons) Criminal Investigation and Policing Studies",
+      "title": "BA (Hons) Footwear Innovation (Level 6 Top-up)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "12 Months",
@@ -3846,7 +3848,6 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
         "September 2026",
         "September 2027"
@@ -3856,18 +3857,17 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-criminal-investigation-and-policing-studies"
+      "courseRefId": "de-montfort-university|ba-hons-footwear-innovation-level-6-top-up"
     },
     {
-      "title": "BA (Hons) Creative Writing",
+      "title": "BA (Hons) Filmmaking",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 16800,
+      "tuition": 17300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
         "September 2026",
         "September 2027"
@@ -3877,47 +3877,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-creative-writing"
-    },
-    {
-      "title": "BA (Hons) Creative Writing and Drama",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-creative-writing-and-drama"
-    },
-    {
-      "title": "BA (Hons) Dance",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-dance"
+      "courseRefId": "de-montfort-university|ba-hons-filmmaking"
     },
     {
       "title": "BA (Hons) English Literature with Mandarin",
@@ -3962,33 +3922,11 @@
       "courseRefId": "de-montfort-university|ba-hons-history"
     },
     {
-      "title": "BA (Hons) Fashion Management (Level 6 Top Up)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 16800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "DMU Leicester Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-fashion-management-level-6-top-up"
-    },
-    {
-      "title": "BA (Hons) Global Arts Management (Level 6 Top-Up)",
+      "title": "BSc (Hons) Speech and Language Therapy",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 16800,
+      "tuition": 17300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -4002,10 +3940,31 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-global-arts-management-level-6-top-up"
+      "courseRefId": "de-montfort-university|bsc-hons-speech-and-language-therapy"
     },
     {
-      "title": "BA (Hons) Music Technology",
+      "title": "BSc (Hons) Pharmaceutical Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 17300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|bsc-hons-pharmaceutical-science"
+    },
+    {
+      "title": "BSc (Hons) Music Production",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -4023,7 +3982,49 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
-      "courseRefId": "de-montfort-university|ba-hons-music-technology"
+      "courseRefId": "de-montfort-university|bsc-hons-music-production"
+    },
+    {
+      "title": "BA (Hons) Drama and Theatre Arts",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-drama-and-theatre-arts"
+    },
+    {
+      "title": "BA (Hons) Criminology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 16800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "DMU Leicester Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/de-montfort-university",
+      "courseRefId": "de-montfort-university|ba-hons-criminology"
     }
   ]
 }

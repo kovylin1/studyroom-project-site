@@ -3,16 +3,40 @@
   "name": "Southern Alberta Institute of Technology",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-  "scrapedAt": "2026-07-22T15:42:52.381Z",
+  "scrapedAt": "2026-08-23T13:11:39.974Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "southern-alberta-institute-of-technology",
   "country": "Canada",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
+    {
+      "title": "Post-Diploma Data Analytics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "5 Months",
+      "tuition": 20244.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2025",
+        "September 2025",
+        "September 2026",
+        "January 2027",
+        "May 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|post-diploma-data-analytics"
+    },
     {
       "title": "Certificate Business Intelligence Data Analysis And Reporting",
       "level": "bachelor",
@@ -39,44 +63,15 @@
       "courseRefId": "southern-alberta-institute-of-technology|certificate-business-intelligence-data-analysis-and-reporting"
     },
     {
-      "title": "Post-Diploma Data Analytics",
+      "title": "Post-Diploma International Business Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "5 Months",
-      "tuition": 20244.6,
+      "duration": "12 Months",
+      "tuition": 22935.75,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "May 2025",
         "September 2025",
-        "September 2026",
-        "January 2027",
-        "May 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|post-diploma-data-analytics"
-    },
-    {
-      "title": "Diploma Business Administration - Management Major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 21648.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "January 2026",
-        "January 2027",
-        "May 2026",
-        "May 2027",
         "September 2026",
         "September 2027"
       ],
@@ -85,7 +80,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-business-administration-management-major"
+      "courseRefId": "southern-alberta-institute-of-technology|post-diploma-international-business-management"
     },
     {
       "title": "Certificate Business And Entrepreneurship",
@@ -135,35 +130,21 @@
       "courseRefId": "southern-alberta-institute-of-technology|certificate-management-and-leadership"
     },
     {
-      "title": "Post-Diploma International Business Management",
+      "title": "Diploma Business Administration - Management Major",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 22935.75,
+      "duration": "24 Months",
+      "tuition": 21648.6,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|post-diploma-international-business-management"
-    },
-    {
-      "title": "Certificate Dental Assisting",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 26645.4,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
+        "January 2025",
         "May 2025",
+        "September 2025",
+        "January 2026",
+        "January 2027",
+        "May 2026",
+        "May 2027",
         "September 2026",
         "September 2027"
       ],
@@ -172,7 +153,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|certificate-dental-assisting"
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-business-administration-management-major"
     },
     {
       "title": "Diploma Health Information Management",
@@ -193,6 +174,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
       "courseRefId": "southern-alberta-institute-of-technology|diploma-health-information-management"
+    },
+    {
+      "title": "Certificate Dental Assisting",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 26645.4,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|certificate-dental-assisting"
     },
     {
       "title": "Diploma Business Administration - Financial Services Major",
@@ -219,6 +220,49 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
       "courseRefId": "southern-alberta-institute-of-technology|diploma-business-administration-financial-services-major"
+    },
+    {
+      "title": "Diploma Electronics Engineering Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 23898.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2027",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-electronics-engineering-technology"
+    },
+    {
+      "title": "Diploma Legal Assistant",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 17748.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-legal-assistant"
     },
     {
       "title": "Diploma Library Information Technology",
@@ -304,53 +348,6 @@
       "courseRefId": "southern-alberta-institute-of-technology|diploma-radio-television-and-broadcast-news-television-major"
     },
     {
-      "title": "Diploma Business Administration - Marketing Major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 21648.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "January 2026",
-        "January 2027",
-        "May 2026",
-        "May 2027",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-business-administration-marketing-major"
-    },
-    {
-      "title": "Diploma Electronics Engineering Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 23898.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2027",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-electronics-engineering-technology"
-    },
-    {
       "title": "Diploma Business Administration - Accounting Major",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -377,17 +374,21 @@
       "courseRefId": "southern-alberta-institute-of-technology|diploma-business-administration-accounting-major"
     },
     {
-      "title": "Diploma Legal Assistant",
+      "title": "Diploma Business Administration - Marketing Major",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
-      "tuition": 17748.6,
+      "tuition": 21648.6,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2025",
+        "May 2025",
         "September 2025",
         "January 2026",
+        "January 2027",
+        "May 2026",
+        "May 2027",
         "September 2026",
         "September 2027"
       ],
@@ -396,7 +397,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-legal-assistant"
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-business-administration-marketing-major"
     },
     {
       "title": "Diploma Civil Engineering Technology - Virtual Design And Construction Major",
@@ -534,19 +535,14 @@
       "courseRefId": "southern-alberta-institute-of-technology|pre-health-sciences-certificate"
     },
     {
-      "title": "Diploma Business Administration - Human Resource Management Major",
+      "title": "Diploma Early Childhood Education",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
-      "tuition": 21648.6,
+      "tuition": 15168.6,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "January 2026",
-        "January 2027",
         "May 2026",
         "May 2027",
         "September 2026",
@@ -557,33 +553,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-business-administration-human-resource-management-major"
-    },
-    {
-      "title": "Diploma Business Administration - Supply Chain Management Major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 21648.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "January 2026",
-        "January 2027",
-        "May 2026",
-        "May 2027",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-business-administration-supply-chain-management-major"
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-early-childhood-education"
     },
     {
       "title": "Diploma Chemical Engineering Technology",
@@ -674,26 +644,6 @@
       "courseRefId": "southern-alberta-institute-of-technology|diploma-civil-engineering-technology-municipal-major"
     },
     {
-      "title": "Certificate Early Childhood Education",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 15168.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|certificate-early-childhood-education"
-    },
-    {
       "title": "Diploma Geomatics Engineering Technology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -735,14 +685,39 @@
       "courseRefId": "southern-alberta-institute-of-technology|bachelor-of-science-construction-project-management"
     },
     {
-      "title": "Diploma Early Childhood Education",
+      "title": "Certificate Early Childhood Education",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
+      "duration": "12 Months",
       "tuition": 15168.6,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|certificate-early-childhood-education"
+    },
+    {
+      "title": "Diploma Business Administration - Human Resource Management Major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 21648.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "May 2025",
+        "September 2025",
+        "January 2026",
+        "January 2027",
         "May 2026",
         "May 2027",
         "September 2026",
@@ -753,7 +728,33 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-early-childhood-education"
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-business-administration-human-resource-management-major"
+    },
+    {
+      "title": "Diploma Business Administration - Supply Chain Management Major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 21648.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "May 2025",
+        "September 2025",
+        "January 2026",
+        "January 2027",
+        "May 2026",
+        "May 2027",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-business-administration-supply-chain-management-major"
     },
     {
       "title": "Certificate Primary Care Paramedic",
@@ -774,75 +775,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
       "courseRefId": "southern-alberta-institute-of-technology|certificate-primary-care-paramedic"
-    },
-    {
-      "title": "Diploma Hospitality And Tourism Management - Beverage Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 21975.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2027",
-        "May 2027",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-hospitality-and-tourism-management-beverage-management"
-    },
-    {
-      "title": "Diploma Hospitality And Tourism Management - Entrepreneurship And Innovation",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 21798.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2027",
-        "May 2027",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-hospitality-and-tourism-management-entrepreneurship-and-innovation"
-    },
-    {
-      "title": "Diploma Hospitality And Tourism Management - Event Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 21798.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "May 2025",
-        "September 2025",
-        "January 2026",
-        "January 2027",
-        "May 2027",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-hospitality-and-tourism-management-event-management"
     },
     {
       "title": "Diploma Hospitality And Tourism Management - Hotels And Accommodation",
@@ -944,15 +876,17 @@
       "courseRefId": "southern-alberta-institute-of-technology|diploma-hospitality-and-tourism-management-travel-and-tourism"
     },
     {
-      "title": "Diploma Machining Technology",
+      "title": "Diploma Hospitality And Tourism Management - Beverage Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
-      "tuition": 20877.6,
+      "tuition": 21975.6,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
+        "January 2027",
+        "May 2027",
         "September 2026",
         "September 2027"
       ],
@@ -961,7 +895,54 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-machining-technology"
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-hospitality-and-tourism-management-beverage-management"
+    },
+    {
+      "title": "Diploma Hospitality And Tourism Management - Entrepreneurship And Innovation",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 21798.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2027",
+        "May 2027",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-hospitality-and-tourism-management-entrepreneurship-and-innovation"
+    },
+    {
+      "title": "Diploma Hospitality And Tourism Management - Event Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 21798.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "May 2025",
+        "September 2025",
+        "January 2026",
+        "January 2027",
+        "May 2027",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-hospitality-and-tourism-management-event-management"
     },
     {
       "title": "Diploma Environmental Technology",
@@ -1007,25 +988,24 @@
       "courseRefId": "southern-alberta-institute-of-technology|diploma-fitness-and-wellness-management"
     },
     {
-      "title": "Certificate Power And Process Operations",
+      "title": "Diploma Machining Technology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 20208.6,
+      "duration": "24 Months",
+      "tuition": 20877.6,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
         "September 2025",
-        "January 2026",
-        "January 2027"
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "SAIT Calgary Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|certificate-power-and-process-operations"
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-machining-technology"
     },
     {
       "title": "Diploma Welding And Fabrication Technology",
@@ -1071,73 +1051,25 @@
       "courseRefId": "southern-alberta-institute-of-technology|diploma-welding-engineering-technology"
     },
     {
-      "title": "Diploma Optician",
+      "title": "Certificate Power And Process Operations",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 25962.75,
+      "duration": "12 Months",
+      "tuition": 20208.6,
       "currency": "CAD",
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2025",
         "September 2025",
         "January 2026",
-        "January 2027",
-        "September 2026",
-        "September 2027"
+        "January 2027"
       ],
       "campuses": [
         "SAIT Calgary Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-optician"
-    },
-    {
-      "title": "Diploma Petroleum Engineering Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 21048.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "September 2025",
-        "January 2026",
-        "January 2027",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-petroleum-engineering-technology"
-    },
-    {
-      "title": "Diploma Power Engineering Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 23118.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "September 2025",
-        "January 2026",
-        "January 2027",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-power-engineering-technology"
+      "courseRefId": "southern-alberta-institute-of-technology|certificate-power-and-process-operations"
     },
     {
       "title": "Diploma Business Administration Automotive Management",
@@ -1223,6 +1155,160 @@
       "courseRefId": "southern-alberta-institute-of-technology|diploma-film-and-video-production"
     },
     {
+      "title": "Diploma Instrumentation Engineering Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 21828.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2027",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-instrumentation-engineering-technology"
+    },
+    {
+      "title": "Diploma Integrated Water Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 29748.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-integrated-water-management"
+    },
+    {
+      "title": "Diploma Optician",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 25962.75,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "January 2027",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-optician"
+    },
+    {
+      "title": "Diploma Petroleum Engineering Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 21048.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "January 2027",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-petroleum-engineering-technology"
+    },
+    {
+      "title": "Diploma Power Engineering Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 23118.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "January 2027",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-power-engineering-technology"
+    },
+    {
+      "title": "Diploma Respiratory Therapy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 19488.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-respiratory-therapy"
+    },
+    {
+      "title": "Diploma Transport And Heavy Equipment Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 20958.6,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "January 2027",
+        "May 2027",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "SAIT Calgary Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
+      "courseRefId": "southern-alberta-institute-of-technology|diploma-transport-and-heavy-equipment-technology"
+    },
+    {
       "title": "Certificate Non-Destructive Testing Foundations",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1287,91 +1373,6 @@
       "courseRefId": "southern-alberta-institute-of-technology|diploma-baking-and-pastry-arts"
     },
     {
-      "title": "Diploma Instrumentation Engineering Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 21828.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2027",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-instrumentation-engineering-technology"
-    },
-    {
-      "title": "Diploma Integrated Water Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 29748.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-integrated-water-management"
-    },
-    {
-      "title": "Diploma Respiratory Therapy",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 19488.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-respiratory-therapy"
-    },
-    {
-      "title": "Diploma Transport And Heavy Equipment Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 20958.6,
-      "currency": "CAD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "September 2025",
-        "January 2026",
-        "January 2027",
-        "May 2027",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "SAIT Calgary Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-alberta-institute-of-technology",
-      "courseRefId": "southern-alberta-institute-of-technology|diploma-transport-and-heavy-equipment-technology"
-    },
-    {
       "title": "English Language Foundations",
       "level": "language",
       "sourceLevel": "Language",
@@ -1386,7 +1387,6 @@
         "May 2025",
         "August 2025",
         "January 2026",
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",

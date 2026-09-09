@@ -3,13 +3,14 @@
   "name": "Global Banking School",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/global-banking-school",
-  "scrapedAt": "2026-07-22T15:42:52.219Z",
+  "scrapedAt": "2026-08-23T13:11:39.843Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "global-banking-school",
   "country": "United Kingdom",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -44,13 +45,13 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2024",
-        "April 2025",
         "April 2026",
-        "February 2024",
-        "February 2025",
         "February 2026",
+        "April 2025",
+        "February 2025",
         "October 2024",
+        "April 2024",
+        "February 2024",
         "October 2025",
         "October 2026"
       ],
@@ -70,13 +71,13 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2024",
-        "April 2025",
-        "April 2026",
-        "February 2024",
         "February 2025",
-        "February 2026",
         "October 2024",
+        "February 2026",
+        "April 2025",
+        "February 2024",
+        "April 2024",
+        "April 2026",
         "October 2025",
         "October 2026",
         "May 2025",
@@ -90,6 +91,35 @@
       "courseRefId": "global-banking-school|mba-master-of-business-administartion-project-management-gbs-malta"
     },
     {
+      "title": "International Extended Diploma in Business (Level 3) (GBS Dubai)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 40000,
+      "currency": "AED",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "January 2024",
+        "September 2024",
+        "September 2025",
+        "March 2024",
+        "January 2026",
+        "June 2026",
+        "June 2025",
+        "September 2026",
+        "June 2024",
+        "March 2025",
+        "January 2025"
+      ],
+      "campuses": [
+        "GBS Dubai Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/global-banking-school",
+      "courseRefId": "global-banking-school|international-extended-diploma-in-business-level-3-gbs-dubai"
+    },
+    {
       "title": "HND International in Business (GBS Dubai)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -99,17 +129,17 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2024",
-        "January 2025",
-        "January 2026",
-        "June 2024",
-        "June 2025",
         "June 2026",
-        "March 2024",
         "March 2025",
+        "September 2025",
+        "January 2026",
+        "March 2024",
+        "January 2025",
+        "June 2024",
         "March 2026",
         "September 2024",
-        "September 2025",
-        "September 2026"
+        "September 2026",
+        "June 2025"
       ],
       "campuses": [
         "GBS Dubai Campus"
@@ -128,17 +158,17 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2024",
-        "January 2025",
         "January 2026",
-        "June 2024",
-        "June 2025",
         "June 2026",
-        "March 2024",
-        "March 2025",
-        "March 2026",
         "September 2024",
-        "September 2025",
-        "September 2026"
+        "March 2026",
+        "June 2025",
+        "January 2025",
+        "March 2024",
+        "June 2024",
+        "September 2026",
+        "March 2025",
+        "September 2025"
       ],
       "campuses": [
         "GBS Dubai Campus"
@@ -146,35 +176,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/global-banking-school",
       "courseRefId": "global-banking-school|international-diploma-in-business-level-2-gbs-dubai"
-    },
-    {
-      "title": "International Extended Diploma in Business (Level 3) (GBS Dubai)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 40000,
-      "currency": "AED",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2024",
-        "January 2025",
-        "January 2026",
-        "June 2024",
-        "June 2025",
-        "June 2026",
-        "March 2024",
-        "March 2025",
-        "March 2026",
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "GBS Dubai Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/global-banking-school",
-      "courseRefId": "global-banking-school|international-extended-diploma-in-business-level-3-gbs-dubai"
     },
     {
       "title": "HND in Digital Technologies - Artificial Intelligence (AI) Solutions and Applications (GBS Dubai)",
@@ -185,18 +186,18 @@
       "currency": "AED",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2024",
-        "January 2025",
-        "January 2026",
-        "June 2024",
-        "June 2025",
-        "June 2026",
-        "March 2024",
-        "March 2025",
-        "March 2026",
         "September 2024",
         "September 2025",
-        "September 2026"
+        "January 2026",
+        "January 2024",
+        "June 2026",
+        "March 2024",
+        "June 2024",
+        "September 2026",
+        "January 2025",
+        "March 2025",
+        "June 2025",
+        "March 2026"
       ],
       "campuses": [
         "GBS Dubai Campus"
@@ -217,13 +218,13 @@
         "January 2024",
         "January 2025",
         "January 2026",
-        "June 2024",
-        "June 2025",
         "June 2026",
-        "March 2024",
-        "March 2025",
         "March 2026",
         "September 2024",
+        "March 2025",
+        "June 2025",
+        "March 2024",
+        "June 2024",
         "September 2025",
         "September 2026"
       ],
@@ -264,18 +265,18 @@
       "currency": "AED",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2024",
         "January 2024",
-        "January 2025",
-        "January 2026",
-        "June 2024",
         "June 2025",
         "June 2026",
+        "September 2025",
+        "January 2025",
+        "January 2026",
         "March 2024",
         "March 2025",
         "March 2026",
-        "September 2024",
-        "September 2025",
-        "September 2026"
+        "September 2026",
+        "June 2024"
       ],
       "campuses": [
         "GBS Dubai Campus"
@@ -294,17 +295,17 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2024",
-        "January 2025",
-        "January 2026",
-        "June 2024",
-        "June 2025",
-        "June 2026",
         "March 2024",
-        "March 2025",
         "March 2026",
         "September 2024",
+        "September 2026",
         "September 2025",
-        "September 2026"
+        "June 2024",
+        "June 2026",
+        "January 2025",
+        "March 2025",
+        "January 2026",
+        "June 2025"
       ],
       "campuses": [
         "GBS Dubai Campus"
@@ -365,18 +366,18 @@
       "currency": "AED",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2024",
         "January 2025",
-        "January 2026",
-        "June 2024",
-        "June 2025",
         "June 2026",
-        "March 2024",
+        "June 2024",
+        "September 2026",
         "March 2025",
         "March 2026",
-        "September 2024",
+        "March 2024",
+        "January 2026",
+        "June 2025",
         "September 2025",
-        "September 2026"
+        "January 2024",
+        "September 2024"
       ],
       "campuses": [
         "GBS Dubai Campus"

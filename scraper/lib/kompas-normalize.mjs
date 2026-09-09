@@ -35,6 +35,19 @@ export function titleTokens(s) {
   return new Set(normTitle(s).split(' ').filter((t) => t && !STOP.has(t)));
 }
 
+/**
+ * Токены УЖЕ нормализованного текста.
+ *
+ * Нужен отдельно, потому что `normTitle` не идемпотентна: на второй прогон
+ * `stripDegreeCode` съедает «mphil» у «mphil phd law» — перед словом «phd» он
+ * выглядит кодом степени. Из-за этого строка QS «MPHIL/PHD LAW» (там слэш
+ * закрывал разбор, и первый прогон её не трогал) расходилась со страницей
+ * «LAW MPHIL AND PHD» на ровном месте: 0.67 вместо 1.0, и так у 17 строк.
+ */
+export function tokensOfNorm(s) {
+  return new Set(String(s ?? '').split(' ').filter((t) => t && !STOP.has(t)));
+}
+
 // Жаккар по токенам. Порог подобран так, чтобы «BSc Computer Science» и
 // «Computer Science BSc (Hons)» считались одной программой, а «Computer Science»
 // и «Computer Engineering» — разными.

@@ -28,7 +28,9 @@
         "September"
       ],
       "programUrl": "https://www.dldcollege.co.uk/gcse/",
-      "programType": "degree"
+      "programType": "degree",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-08-15"
     },
     {
       "slug": "abbey-dld-london-gcse-one-year",
@@ -41,7 +43,9 @@
         "September"
       ],
       "programUrl": "https://www.dldcollege.co.uk/gcse/",
-      "programType": "pathway"
+      "programType": "pathway",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-08-15"
     },
     {
       "slug": "abbey-dld-london-a-levels",
@@ -54,7 +58,9 @@
         "September"
       ],
       "programUrl": "https://www.dldcollege.co.uk/sixth-form/a-levels/",
-      "programType": "degree"
+      "programType": "degree",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-08-15"
     },
     {
       "slug": "abbey-dld-london-ifp",
@@ -71,7 +77,9 @@
       "programType": "pathway",
       "verifiedBySite": true,
       "source": "official",
-      "checkedAt": "2026-06-08"
+      "checkedAt": "2026-06-08",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-08-15"
     },
     {
       "slug": "abbey-dld-london-academic-preparation",
@@ -100,19 +108,46 @@
         "April"
       ],
       "programUrl": "https://www.dldcollege.co.uk/",
-      "programType": "pathway"
+      "programType": "pathway",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "abbey-dld-london-internatioanl-foundation-program",
+      "title": "Internatioanl Foundation Program",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Подготовка (Foundation)"
+    },
+    {
+      "slug": "gcses-1-or-2-year",
+      "title": "GCSEs (1 or 2 year)",
+      "level": "high-school",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
     }
   ],
   "tuition": {
     "currency": "GBP",
     "byProgram": {
-      "abbey-dld-london-academic-preparation": 11230,
+      "abbey-dld-london-academic-preparation": 30809,
       "abbey-dld-london-a-levels": 39105,
       "abbey-dld-london-bbse": 8000,
       "abbey-dld-london-gcse-two-year": 39105,
-      "abbey-dld-london-year-9": 39105,
+      "abbey-dld-london-year-9": 30809,
       "abbey-dld-london-gcse-one-year": 39105,
-      "abbey-dld-london-ifp": 39105
+      "abbey-dld-london-ifp": 39105,
+      "abbey-dld-london-internatioanl-foundation-program": 30809,
+      "gcses-1-or-2-year": 30809
     }
   },
   "deadlines": {
@@ -258,5 +293,8 @@
     "via": [
       "qs"
     ]
-  }
+  },
+  "officialUrl": "https://dldcollege.co.uk",
+  "officialUrlSource": "выгрузки: 7 ссылок на dldcollege.co.uk",
+  "officialUrlCheckedAt": "2026-09-09"
 }

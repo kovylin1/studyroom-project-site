@@ -3,13 +3,14 @@
   "name": "The University of Queensland",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/the-university-of-queensland",
-  "scrapedAt": "2026-07-22T15:42:52.420Z",
+  "scrapedAt": "2026-08-23T13:11:40.006Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "the-university-of-queensland",
   "country": "Australia",
-  "matchMethod": "as-is/exact-name",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -31,6 +32,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-queensland",
       "courseRefId": "the-university-of-queensland|master-of-civil-engineering-professional"
+    },
+    {
+      "title": "Master of Engineering Science (Management)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 58056,
+      "currency": "CAD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "St Lucia Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-queensland",
+      "courseRefId": "the-university-of-queensland|master-of-engineering-science-management"
     },
     {
       "title": "Foundation Program Accelerated",
@@ -80,29 +100,6 @@
       "courseRefId": "the-university-of-queensland|foundation-program-standard"
     },
     {
-      "title": "Foundation Program Extended",
-      "level": "foundation",
-      "sourceLevel": "Foundation",
-      "duration": "11 Months",
-      "tuition": 41080,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "August 2026",
-        "January 2026",
-        "January 2025",
-        "August 2024",
-        "January 2024"
-      ],
-      "campuses": [
-        "Saint Lucia Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-queensland",
-      "courseRefId": "the-university-of-queensland|foundation-program-extended"
-    },
-    {
       "title": "Master of Speech Pathology Studies",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -149,7 +146,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",

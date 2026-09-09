@@ -5,6 +5,20 @@
   "city": "London",
   "programs": [
     {
+      "slug": "ug-law",
+      "title": "LLB Law",
+      "durationYears": 3,
+      "level": "bachelor",
+      "faculty": "Право",
+      "intakes": [
+        "September"
+      ],
+      "programType": "degree",
+      "programUrl": "https://www.soas.ac.uk/study/undergraduate/bachelor/law",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "ug-economics",
       "title": "BA Economics",
       "durationYears": 3,
@@ -16,7 +30,26 @@
       "programType": "degree",
       "programUrl": "https://www.soas.ac.uk/study/undergraduate/bachelor/economics",
       "confidence": 0.8,
-      "checkedAt": "2026-06-08T05:50:39.962Z"
+      "checkedAt": "2026-06-08T05:50:39.962Z",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Business & Management",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "ug-international-relations",
@@ -31,6 +64,20 @@
       "programUrl": "https://www.soas.ac.uk/study/undergraduate/bachelor/international-relations"
     },
     {
+      "slug": "ug-arabic",
+      "title": "BA Arabic and Middle Eastern Studies",
+      "durationYears": 4,
+      "level": "bachelor",
+      "faculty": "Гуманитарные и языки",
+      "intakes": [
+        "September"
+      ],
+      "programType": "degree",
+      "programUrl": "https://www.soas.ac.uk/study/undergraduate/bachelor/arabic",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "ug-history",
       "title": "BA History",
       "durationYears": 3,
@@ -40,7 +87,54 @@
         "September"
       ],
       "programType": "degree",
-      "programUrl": "https://www.soas.ac.uk/study/undergraduate/bachelor/history"
+      "programUrl": "https://www.soas.ac.uk/study/undergraduate/bachelor/history",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
+    },
+    {
+      "slug": "ug-music",
+      "title": "BMus Music",
+      "durationYears": 3,
+      "level": "bachelor",
+      "faculty": "Гуманитарные и языки",
+      "intakes": [
+        "September"
+      ],
+      "programType": "degree",
+      "programUrl": "https://www.soas.ac.uk/study/undergraduate/bachelor/music",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "pg-global-political-economy",
+      "title": "MA Global Political Economy",
+      "durationYears": 1,
+      "level": "master",
+      "faculty": "Социальные науки",
+      "intakes": [
+        "September"
+      ],
+      "programType": "degree",
+      "programUrl": "https://www.soas.ac.uk/study/postgraduate/master/global-political-economy",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "pg-development-economics",
@@ -52,7 +146,26 @@
         "September"
       ],
       "programType": "degree",
-      "programUrl": "https://www.soas.ac.uk/study/postgraduate/master/development-economics"
+      "programUrl": "https://www.soas.ac.uk/study/postgraduate/master/development-economics",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "pg-international-law",
@@ -64,7 +177,26 @@
         "September"
       ],
       "programType": "degree",
-      "programUrl": "https://www.soas.ac.uk/study/postgraduate/master/law"
+      "programUrl": "https://www.soas.ac.uk/study/postgraduate/master/law",
+      "tuitionVariants": [
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        },
+        {
+          "tuition": 26770,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "pg-african-studies",
@@ -78,6 +210,19 @@
       "programUrl": "https://www.soas.ac.uk/study/postgraduate/master/african-studies"
     },
     {
+      "slug": "phd",
+      "title": "PhD Research Programmes",
+      "durationYears": 3,
+      "level": "phd",
+      "intakes": [
+        "September"
+      ],
+      "programType": "degree",
+      "programUrl": "https://www.soas.ac.uk/study/postgraduate/research",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-bsc-accounting-and-finance",
       "title": "BSc Accounting and Finance",
       "durationYears": 3,
@@ -89,7 +234,90 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/bsc-accounting-and-finance",
       "language": "ru",
       "verified": true,
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Business & Management",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
+    },
+    {
+      "slug": "soas-pg-certificate-in-advanced-research-skills",
+      "title": "PG Certificate in Advanced Research Skills",
+      "durationYears": 1,
+      "level": "short-course",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/postgraduate-certificate-advanced-research-skills",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Short Courses",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mphil-phd-in-african-languages-and-cultures",
+      "title": "MPhil/PhD in African Languages and Cultures",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-african-studies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-ma-african-studies-and-intensive-language",
+      "title": "MA African Studies and Intensive Language",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-african-studies-and-intensive-swahili",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mphil-phd-in-anthropology-and-sociology",
+      "title": "MPhil/PhD in Anthropology and Sociology",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-anthropology-and-sociology",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ma-anthropology-of-food",
@@ -106,6 +334,38 @@
       "faculty": "Социальные науки"
     },
     {
+      "slug": "soas-ma-anthropology-of-food-and-intensive-language",
+      "title": "MA Anthropology of Food and Intensive Language",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-anthropology-food-and-intensive-language",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-ma-anthropology-of-the-environment-and-sustainability",
+      "title": "MA Anthropology of the Environment and Sustainability",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-anthropology-global-futures-and-sustainability",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Наука",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-ba-arabic",
       "title": "BA Arabic",
       "durationYears": 3,
@@ -118,6 +378,22 @@
       "language": "ru",
       "verified": true,
       "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-soas-alphawood-postgraduate-diploma-in-asian-art",
+      "title": "SOAS-Alphawood Postgraduate Diploma in Asian Art",
+      "durationYears": 1,
+      "level": "short-course",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/postgraduate-diploma-asian-art",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Искусство и дизайн",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ma-buddhist-studies",
@@ -133,6 +409,22 @@
       "verified": true
     },
     {
+      "slug": "soas-ba-bsc-business-management-economics-and-law-with-foundation-year",
+      "title": "BA/BSc Business, Management, Economics and Law with Foundation Year",
+      "durationYears": 1,
+      "level": "foundation",
+      "programType": "pathway",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ba/bsc-business-management-economics-law-foundation-year",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Право",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-ba-chinese",
       "title": "BA Chinese",
       "durationYears": 3,
@@ -145,6 +437,22 @@
       "language": "ru",
       "verified": true,
       "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-mphil-phd-in-chinese-and-inner-asian-studies",
+      "title": "MPhil/PhD in Chinese and Inner Asian Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-chinese-and-inner-asian-studies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ma-chinese-studies",
@@ -175,6 +483,38 @@
       "faculty": "Гуманитарные и языки"
     },
     {
+      "slug": "soas-mphil-phd-in-creative-arts-and-cultural-industries",
+      "title": "MPhil/PhD in Creative Arts and Cultural Industries",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-creative-arts-and-cultural-industries",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Искусство и дизайн",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mphil-phd-in-cultural-literary-and-postcolonial-studies",
+      "title": "MPhil/PhD in Cultural, Literary and Postcolonial Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-cultural-literary-and-postcolonial-studies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-ma-cultural-studies",
       "title": "MA Cultural Studies",
       "durationYears": 1,
@@ -200,7 +540,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-curating-cultures",
       "language": "ru",
       "verified": true,
-      "faculty": "Гуманитарные и языки"
+      "faculty": "Гуманитарные и языки",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-bsc-development-economics",
@@ -217,6 +576,22 @@
       "faculty": "Социальные науки"
     },
     {
+      "slug": "soas-mphil-phd-in-development-economics",
+      "title": "MPhil/PhD in Development Economics",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/mphil/phd-development-economics",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-msc-global-development",
       "title": "MSc Global Development",
       "durationYears": 1,
@@ -227,7 +602,58 @@
       ],
       "programUrl": "https://www.soas.ac.uk/study/find-course/msc-development-studies",
       "language": "ru",
-      "verified": true
+      "verified": true,
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
+    },
+    {
+      "slug": "soas-mphil-phd-in-development-studies",
+      "title": "MPhil/PhD in Development Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/mphil/phd-development-studies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-msc-global-development-gender",
+      "title": "MSc Global Development (Gender)",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/msc-development-studies-gender",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ba-east-asian-studies",
@@ -255,7 +681,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/msc-economic-policy",
       "language": "ru",
       "verified": true,
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-bsc-economics",
@@ -269,7 +714,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/bsc-economics",
       "language": "ru",
       "verified": true,
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Business & Management",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-msc-economics",
@@ -283,7 +747,58 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/msc-economics",
       "language": "ru",
       "verified": true,
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
+    },
+    {
+      "slug": "soas-mphil-phd-in-economics",
+      "title": "MPhil/PhD in Economics",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/mphil/phd-economics",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-ba-economics-and",
+      "title": "BA Economics and...",
+      "durationYears": 3,
+      "level": "bachelor",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ba-economics-and",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-msc-environment-politics-and-development",
@@ -311,7 +826,74 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/llm-environmental-law-and-sustainable-development",
       "language": "ru",
       "verified": true,
-      "faculty": "Право"
+      "faculty": "Право",
+      "tuitionVariants": [
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        },
+        {
+          "tuition": 26770,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        }
+      ]
+    },
+    {
+      "slug": "soas-mphil-phd-in-film-studies",
+      "title": "MPhil/PhD in Film Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-film-studies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Искусство и дизайн",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-msc-finance-online",
+      "title": "MSc Finance (Online)",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/msc-finance-economic-policy-distance-learning",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Бизнес",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mphil-phd-in-finance-and-management",
+      "title": "MPhil/PhD in Finance and Management",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-finance-and-management-mphil/phd",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Бизнес",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ma-gender-studies",
@@ -325,7 +907,42 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-gender-studies",
       "language": "ru",
       "verified": true,
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
+    },
+    {
+      "slug": "soas-mphil-phd-in-gender-studies",
+      "title": "MPhil/PhD in Gender Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-gender-studies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ma-creative-and-cultural-industries",
@@ -352,7 +969,41 @@
       ],
       "programUrl": "https://www.soas.ac.uk/study/find-course/ba-global-development",
       "language": "ru",
-      "verified": true
+      "verified": true,
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
+    },
+    {
+      "slug": "soas-ba-global-development-and",
+      "title": "BA Global Development and...",
+      "durationYears": 3,
+      "level": "bachelor",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ba-global-development-and",
+      "language": "ru",
+      "verified": true,
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-msc-global-energy-and-climate-policy",
@@ -366,7 +1017,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/msc-global-energy-and-climate-policy",
       "language": "ru",
       "verified": true,
-      "faculty": "Наука"
+      "faculty": "Наука",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ba-global-liberal-arts",
@@ -380,7 +1050,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ba-global-liberal-arts",
       "language": "ru",
       "verified": true,
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ma-global-media-and-digital-communications",
@@ -394,7 +1083,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-global-media-and-digital-communications",
       "language": "ru",
       "verified": true,
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-history",
@@ -411,6 +1119,38 @@
       "faculty": "Гуманитарные и языки"
     },
     {
+      "slug": "soas-mphil-phd-in-history",
+      "title": "MPhil/PhD in History",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-history",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mphil-phd-in-history-of-art-and-or-archaeology",
+      "title": "MPhil/PhD in History of Art and/or Archaeology",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-history-art-and/or-archaeology",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Искусство и дизайн",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-ma-history-of-art-and-archaeology",
       "title": "MA History of Art and Archaeology",
       "durationYears": 1,
@@ -422,7 +1162,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-history-art-and-archaeology",
       "language": "ru",
       "verified": true,
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia",
@@ -436,7 +1195,74 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-history-art-and-archaeology-east-asia",
       "language": "ru",
       "verified": true,
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language",
+      "title": "MA History of Art and Archaeology of East Asia and Intensive Language",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-history-art-and-archaeology-east-asia-and-intensive-language",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Искусство и дизайн",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-architecture-of-islamic-middle-east",
+      "title": "MA History of Art and Architecture of Islamic Middle East",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-history-art-and-architecture-islamic-middle-east",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Искусство и дизайн",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-inte",
+      "title": "MA History of Art and Architecture of the Islamic Middle East and Intensive Language",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-history-art-and-architecture-islamic-middle-east-and-intensive-language",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Искусство и дизайн",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-msc-humanitarianism-aid-conflict",
@@ -464,7 +1290,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/llm-human-rights-conflict-and-justice",
       "language": "ru",
       "verified": true,
-      "faculty": "Право"
+      "faculty": "Право",
+      "tuitionVariants": [
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        },
+        {
+          "tuition": 26770,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "soas-msc-international-business",
@@ -478,7 +1323,42 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/msc-international-business",
       "language": "ru",
       "verified": true,
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Business & Management",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        },
+        {
+          "tuition": 26770,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        }
+      ]
+    },
+    {
+      "slug": "soas-msc-international-business-online",
+      "title": "MSc International Business (Online)",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/msc-international-business-administration-distance-learning",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Бизнес",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-llm-international-commercial-and-economic-law",
@@ -493,6 +1373,38 @@
       "language": "ru",
       "verified": true,
       "faculty": "Право"
+    },
+    {
+      "slug": "soas-mphil-phd-in-international-development",
+      "title": "MPhil/PhD in International Development",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/mphil/phd-international-development",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-ba-international-relations-and",
+      "title": "BA International Relations and...",
+      "durationYears": 3,
+      "level": "bachelor",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ba-international-relations-and",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ma-international-studies-and-diplomacy",
@@ -533,7 +1445,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/llm-islamic-law",
       "language": "ru",
       "verified": true,
-      "faculty": "Право"
+      "faculty": "Право",
+      "tuitionVariants": [
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        },
+        {
+          "tuition": 26770,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ma-islamic-studies",
@@ -564,6 +1495,22 @@
       "faculty": "Гуманитарные и языки"
     },
     {
+      "slug": "soas-mphil-phd-in-japanese-and-korean-studies",
+      "title": "MPhil/PhD in Japanese and Korean Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-japanese-and-korean-studies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-ma-japanese-studies",
       "title": "MA Japanese Studies",
       "durationYears": 1,
@@ -575,7 +1522,58 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-japanese-studies",
       "language": "ru",
       "verified": true,
-      "faculty": "Гуманитарные и языки"
+      "faculty": "Гуманитарные и языки",
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
+    },
+    {
+      "slug": "soas-ma-japanese-studies-dual-degree-with-sophia-university",
+      "title": "MA Japanese Studies (Dual Degree with Sophia University)",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-japanese-studies-dual-degree-programme",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-ma-japanese-studies-and-intensive-language",
+      "title": "MA Japanese Studies and Intensive Language",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-japanese-studies-and-intensive-language",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ba-korean",
@@ -603,7 +1601,57 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-korean-studies",
       "language": "ru",
       "verified": true,
-      "faculty": "Гуманитарные и языки"
+      "faculty": "Гуманитарные и языки",
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
+    },
+    {
+      "slug": "soas-ma-korean-studies-and-intensive-language",
+      "title": "MA Korean Studies and Intensive Language",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-korean-studies-and-intensive-language",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-msc-global-development-labour-and-activism",
+      "title": "MSc Global Development (Labour and Activism)",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/msc-development-studies-labour-and-activism",
+      "language": "ru",
+      "verified": true,
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia",
@@ -620,6 +1668,38 @@
       "faculty": "Гуманитарные и языки"
     },
     {
+      "slug": "soas-mphil-phd-in-law",
+      "title": "MPhil/PhD in Law",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/law-research-degree-phd",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Право",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mres-law",
+      "title": "MRes Law",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/mres-law",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Право",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-llm-law-and-gender",
       "title": "LLM Law and Gender",
       "durationYears": 1,
@@ -631,7 +1711,42 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/llm-law-and-gender",
       "language": "ru",
       "verified": true,
-      "faculty": "Право"
+      "faculty": "Право",
+      "tuitionVariants": [
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        },
+        {
+          "tuition": 26770,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        }
+      ]
+    },
+    {
+      "slug": "soas-mphil-phd-in-linguistics",
+      "title": "MPhil/PhD in Linguistics",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-linguistics",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ma-linguistics",
@@ -648,6 +1763,22 @@
       "faculty": "Гуманитарные и языки"
     },
     {
+      "slug": "soas-ma-linguistics-and-intensive-language",
+      "title": "MA Linguistics and Intensive Language",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-linguistics-and-intensive-language",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-bsc-management",
       "title": "BSc Management",
       "durationYears": 3,
@@ -659,7 +1790,42 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/bsc-management",
       "language": "ru",
       "verified": true,
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Business & Management",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
+    },
+    {
+      "slug": "soas-mphil-phd-in-media-studies",
+      "title": "MPhil/PhD in Media Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-media-studies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Искусство и дизайн",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ma-medical-anthropology-and-mental-health",
@@ -673,7 +1839,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-medical-anthropology-and-mental-health",
       "language": "ru",
       "verified": true,
-      "faculty": "Здоровье и медицина"
+      "faculty": "Здоровье и медицина",
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-middle-eastern-studies",
@@ -686,7 +1871,26 @@
       ],
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-middle-eastern-studies",
       "language": "ru",
-      "verified": true
+      "verified": true,
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-migration-and-diaspora-studies",
@@ -699,7 +1903,26 @@
       ],
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-migration-and-diaspora-studies",
       "language": "ru",
-      "verified": true
+      "verified": true,
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-msc-migration-mobility-and-development",
@@ -712,7 +1935,26 @@
       ],
       "programUrl": "https://www.soas.ac.uk/study/find-course/msc-migration-mobility-and-development",
       "language": "ru",
-      "verified": true
+      "verified": true,
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-music",
@@ -726,7 +1968,57 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-music",
       "language": "ru",
       "verified": true,
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
+    },
+    {
+      "slug": "soas-mphil-phd-in-music",
+      "title": "MPhil/PhD in Music",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-music",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Искусство и дизайн",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mphil-phd-in-near-and-middle-eastern-studies",
+      "title": "MPhil/PhD in Near and Middle Eastern Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-near-and-middle-eastern-studies",
+      "language": "ru",
+      "verified": true,
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-pg-certificate-in-law",
@@ -740,7 +2032,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/pg-certificate-law",
       "language": "ru",
       "verified": true,
-      "faculty": "Право"
+      "faculty": "Право",
+      "tuitionVariants": [
+        {
+          "tuition": 8925,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ba-politics",
@@ -771,6 +2082,22 @@
       "faculty": "Гуманитарные и языки"
     },
     {
+      "slug": "soas-ba-politics-and",
+      "title": "BA Politics and...",
+      "durationYears": 3,
+      "level": "bachelor",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ba-politics-and",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-ba-politics-and-international-relations",
       "title": "BA Politics and International Relations",
       "durationYears": 3,
@@ -783,6 +2110,22 @@
       "language": "ru",
       "verified": true,
       "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-mphil-phd-in-politics-and-international-studies",
+      "title": "MPhil/PhD in Politics and International Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/phd-degree-politics-and-international-studies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ma-postcolonial-studies",
@@ -809,7 +2152,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/msc-public-policy-and-management",
       "language": "ru",
       "verified": true,
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Business & Management",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        },
+        {
+          "tuition": 26770,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ma-religion-politics-and-society",
@@ -826,6 +2188,38 @@
       "faculty": "Гуманитарные и языки"
     },
     {
+      "slug": "soas-mphil-phd-in-religions",
+      "title": "MPhil/PhD in Religions",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-religions-and-philosophies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-msc-research-for-international-development",
+      "title": "MSc Research for International Development",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/msc-research-international-development",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-ba-social-anthropology",
       "title": "BA Social Anthropology",
       "durationYears": 3,
@@ -837,7 +2231,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ba-social-anthropology",
       "language": "ru",
       "verified": true,
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ma-social-anthropology",
@@ -851,7 +2264,58 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-social-anthropology",
       "language": "ru",
       "verified": true,
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
+    },
+    {
+      "slug": "soas-mres-social-anthropology",
+      "title": "MRes Social Anthropology",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/mres-social-anthropology",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-ba-bsc-social-sciences-arts-and-humanities-with-foundation-year",
+      "title": "BA/BSc Social Sciences, Arts and Humanities with Foundation Year",
+      "durationYears": 1,
+      "level": "foundation",
+      "programType": "pathway",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ba/bsc-social-sciences-arts-humanities-foundation-year",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Подготовка (Foundation)",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ma-south-asian-area-studies",
@@ -864,7 +2328,42 @@
       ],
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-south-asian-area-studies",
       "language": "ru",
-      "verified": true
+      "verified": true,
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
+    },
+    {
+      "slug": "soas-mphil-phd-in-south-asian-studies",
+      "title": "MPhil/PhD in South Asian Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-south-asian-studies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-ma-south-asian-studies-and-intensive-language",
@@ -878,7 +2377,26 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-south-asian-studies-and-intensive-language",
       "language": "ru",
       "verified": true,
-      "faculty": "Гуманитарные и языки"
+      "faculty": "Гуманитарные и языки",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-south-east-and-pacific-asian-studies",
@@ -895,6 +2413,22 @@
       "faculty": "Гуманитарные и языки"
     },
     {
+      "slug": "soas-mphil-phd-in-south-east-asian-studies",
+      "title": "MPhil/PhD in South East Asian Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-south-east-asian-studies",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-ma-taiwan-studies",
       "title": "MA Taiwan Studies",
       "durationYears": 1,
@@ -906,6 +2440,67 @@
       "programUrl": "https://www.soas.ac.uk/study/find-course/ma-taiwan-studies",
       "language": "ru",
       "verified": true
+    },
+    {
+      "slug": "soas-ma-yoga-studies",
+      "title": "MA Yoga Studies",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-traditions-yoga-and-meditation",
+      "language": "ru",
+      "verified": true,
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-ma-translation-and-intercultural-studies",
+      "title": "MA Translation and Intercultural Studies",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-translation",
+      "language": "ru",
+      "verified": true,
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mphil-phd-in-translation-studies",
+      "title": "MPhil/PhD in Translation Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-translation-studies",
+      "language": "ru",
+      "verified": true,
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-ma-gender-and-sexuality",
+      "title": "MA Gender and Sexuality",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-transnational-queer-feminist-politics-special-reference-middle-east",
+      "language": "ru",
+      "verified": true,
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
     },
     {
       "slug": "soas-msc-international-business-with-placement-year",
@@ -920,7 +2515,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Business & Management",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        },
+        {
+          "tuition": 26770,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "soas-msc-finance-with-placement-year",
@@ -935,7 +2549,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Business & Management",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        },
+        {
+          "tuition": 26770,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "soas-msc-finance",
@@ -950,7 +2583,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Business & Management",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        },
+        {
+          "tuition": 26770,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ma-media-in-development",
@@ -965,7 +2617,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-llm-master-of-laws",
@@ -995,7 +2666,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Business & Management",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        },
+        {
+          "tuition": 26770,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "soas-bsc-ba-business-management-economics-and-law-with-foundation",
@@ -1040,7 +2730,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Право"
+      "faculty": "Право",
+      "tuitionVariants": [
+        {
+          "tuition": 21160,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        },
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        }
+      ]
     },
     {
       "slug": "soas-ba-korean-and-law",
@@ -1310,7 +3019,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-eas",
@@ -1325,7 +3053,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-transnational-queer-feminist-politics",
@@ -1340,7 +3087,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ba-arabic-and-law",
@@ -1430,7 +3196,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Право"
+      "faculty": "Право",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-south",
@@ -1865,7 +3650,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-social-anthropology-and-law",
@@ -1895,7 +3699,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-phd-mphil-soas-wits-joint-in-applied-development-economics",
@@ -1925,7 +3748,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-east-asian-studies-and-economics",
@@ -2388,7 +4230,26 @@
       "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
       "language": "ru",
       "verified": true,
-      "source": "edvoy"
+      "source": "edvoy",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-history-and-intensive-language-korean",
@@ -3393,7 +5254,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-history-and-intensive-language-arabic",
@@ -3423,7 +5303,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Гуманитарные и языки"
+      "faculty": "Гуманитарные и языки",
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-linguistics-and-intensive-language-korean",
@@ -3798,7 +5697,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 26330,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-ma-anthropology-of-food-and-intensive-language-with-chinese",
@@ -4131,6 +6049,42 @@
       "faculty": "Социальные науки"
     },
     {
+      "slug": "soas-msc-humanitarianism-aid-and-conflict",
+      "title": "MSc Humanitarianism, Aid and Conflict",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24",
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
+    },
+    {
       "slug": "soas-ma-comparative-literature-and-intensive-language-african-lan",
       "title": "MA Comparative Literature and Intensive Language (African Languages)",
       "durationYears": 3,
@@ -4382,7 +6336,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-east-asian-studies-and-politics",
@@ -4486,7 +6459,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-world-philosophies-and-history-of-art",
@@ -4576,7 +6568,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Гуманитарные и языки"
+      "faculty": "Гуманитарные и языки",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-social-anthropology-and-history",
@@ -4591,7 +6602,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Гуманитарные и языки"
+      "faculty": "Гуманитарные и языки",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-world-philosophies-and-arabic",
@@ -4651,7 +6681,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-social-anthropology-and-linguistics",
@@ -4666,7 +6715,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Гуманитарные и языки"
+      "faculty": "Гуманитарные и языки",
+      "tuitionVariants": [
+        {
+          "tuition": 21160,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        },
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        }
+      ]
     },
     {
       "slug": "soas-ba-world-philosophies",
@@ -4681,7 +6749,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Гуманитарные и языки"
+      "faculty": "Гуманитарные и языки",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-social-anthropology-and-korean",
@@ -4966,7 +7053,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-social-anthropology-and-world-philosophies",
@@ -4981,7 +7087,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-world-philosophies-and-international-relations",
@@ -6060,7 +8185,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Социальные науки"
+      "faculty": "Социальные науки",
+      "tuitionVariants": [
+        {
+          "tuition": 22490,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "PhD",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 31490
+        },
+        {
+          "tuition": 23390,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Doctorate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-arabic-and-development-studies",
@@ -6240,7 +8384,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Искусство и дизайн"
+      "faculty": "Искусство и дизайн",
+      "tuitionVariants": [
+        {
+          "tuition": 21990,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Bachelors",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 30990
+        },
+        {
+          "tuition": 22870,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Undergraduate"
+        }
+      ]
     },
     {
       "slug": "soas-ba-history-and-arabic",
@@ -6648,6 +8811,193 @@
       "faculty": "Гуманитарные и языки"
     },
     {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-with-turkish",
+      "title": "MRes Social Anthropology and Intensive Language with Turkish ",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-with-korean",
+      "title": "MRes Social Anthropology and Intensive Language with Korean ",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-with-persian",
+      "title": "MRes Social Anthropology and Intensive Language with Persian ",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-with-south-e",
+      "title": "MRes Social Anthropology and Intensive Language with South East Asian Languages (Indonesian, Vietnamese)",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-with-swahili",
+      "title": "MRes Social Anthropology and Intensive Language with Swahili ",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-african-lang",
+      "title": "MRes Social Anthropology and Intensive Language (African Languages)",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-near-middle",
+      "title": "MRes Social Anthropology and Intensive Language (Near Middle Eastern Languages)",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-south-east-a",
+      "title": "MRes Social Anthropology and Intensive Language (South East Asian Languages)",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Социальные науки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-with-arabic",
+      "title": "MRes Social Anthropology and Intensive Language with Arabic ",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-with-chinese",
+      "title": "MRes Social Anthropology and Intensive Language with Chinese ",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-with-japanes",
+      "title": "MRes Social Anthropology and Intensive Language with Japanese ",
+      "durationYears": 1,
+      "level": "master",
+      "programType": "degree",
+      "intakes": [
+        "September"
+      ],
+      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
+      "language": "ru",
+      "verified": true,
+      "source": "edvoy",
+      "faculty": "Гуманитарные и языки",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
       "slug": "soas-phd-mphil-research-degrees-in-chinese-and-inner-asian-studie",
       "title": "PhD/MPhil Research Degrees/in Chinese and Inner Asian Studies",
       "durationYears": 3,
@@ -6853,1494 +9203,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Наука"
-    },
-    {
-      "slug": "soas-postgraduate-diploma-in-asian-art",
-      "title": "Postgraduate Diploma in Asian Art",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-intensive-language",
-      "title": "MA History of Art and Architecture of the Islamic Middle East and Intensive Language (Near Middle Eastern Languages)",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-architecture-of-islamic-middle-east-and-intensive-language-turk",
-      "title": "MA History of Art and Architecture of Islamic Middle East and Intensive Language (Turkish)",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-intensive-language-2",
-      "title": "MA History of Art and Architecture of the Islamic Middle East and Intensive Language with Persian",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-intensive-language-3",
-      "title": "MA History of Art and Architecture of the Islamic Middle East and Intensive Language with Turkish",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-economics",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Economics",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-architecture-of-islamic-middle-east-and-intensive-language-arab",
-      "title": "MA History of Art and Architecture of Islamic Middle East and Intensive Language (Arabic)",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-intensive-language-4",
-      "title": "MA History of Art and Architecture of the Islamic Middle East and Intensive Language with Arabic",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-politics",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Politics",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-with-japanese",
-      "title": "MA History of Art and Archaeology of East Asia and Intensive Language with Japanese",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-with-korean",
-      "title": "MA History of Art and Archaeology of East Asia and Intensive Language with Korean",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-swahili",
-      "title": "MA Migration and Diaspora Studies and Intensive Language with Swahili",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-turkish",
-      "title": "MA Migration and Diaspora Studies and Intensive Language with Turkish",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-with-chinese",
-      "title": "MA History of Art and Archaeology of East Asia and Intensive Language with Chinese",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-arabic",
-      "title": "MA Migration and Diaspora Studies and Intensive Language with Arabic",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-chinese",
-      "title": "MA Migration and Diaspora Studies and Intensive Language with Chinese",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-japanese",
-      "title": "MA Migration and Diaspora Studies and Intensive Language with Japanese",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-korean",
-      "title": "MA Migration and Diaspora Studies and Intensive Language with Korean",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-south-east-asian-langua",
-      "title": "MA Migration and Diaspora Studies and Intensive Language with South East Asian Languages",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-japanese",
-      "title": "MA History of Art and Archaeology of East Asia and Intensive Language (Japanese)",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-korean",
-      "title": "MA History of Art and Archaeology of East Asia and Intensive Language (Korean)",
-      "durationYears": 1,
-      "level": "master",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-arabic",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Arabic",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-development",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Development Studies",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-french",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and French",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-history",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and History",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-history-of",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and History of Art",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-internation",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and International Relations",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-linguistics",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Linguistics",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-music",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Music",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-social-anth",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Social Anthropology",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-world-philo",
-      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and World Philosophies",
-      "durationYears": 3,
-      "level": "bachelor",
-      "language": "en",
-      "programType": "degree",
-      "source": "edvoy",
-      "confidence": 0.4,
-      "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "ug-law",
-      "title": "LLB Law",
-      "durationYears": 3,
-      "level": "bachelor",
-      "faculty": "Право",
-      "intakes": [
-        "September"
-      ],
-      "programType": "degree",
-      "programUrl": "https://www.soas.ac.uk/study/undergraduate/bachelor/law",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "ug-arabic",
-      "title": "BA Arabic and Middle Eastern Studies",
-      "durationYears": 4,
-      "level": "bachelor",
-      "faculty": "Гуманитарные и языки",
-      "intakes": [
-        "September"
-      ],
-      "programType": "degree",
-      "programUrl": "https://www.soas.ac.uk/study/undergraduate/bachelor/arabic",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "ug-music",
-      "title": "BMus Music",
-      "durationYears": 3,
-      "level": "bachelor",
-      "faculty": "Гуманитарные и языки",
-      "intakes": [
-        "September"
-      ],
-      "programType": "degree",
-      "programUrl": "https://www.soas.ac.uk/study/undergraduate/bachelor/music",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "pg-global-political-economy",
-      "title": "MA Global Political Economy",
-      "durationYears": 1,
-      "level": "master",
-      "faculty": "Социальные науки",
-      "intakes": [
-        "September"
-      ],
-      "programType": "degree",
-      "programUrl": "https://www.soas.ac.uk/study/postgraduate/master/global-political-economy",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "phd",
-      "title": "PhD Research Programmes",
-      "durationYears": 3,
-      "level": "phd",
-      "intakes": [
-        "September"
-      ],
-      "programType": "degree",
-      "programUrl": "https://www.soas.ac.uk/study/postgraduate/research",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-pg-certificate-in-advanced-research-skills",
-      "title": "PG Certificate in Advanced Research Skills",
-      "durationYears": 1,
-      "level": "short-course",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/postgraduate-certificate-advanced-research-skills",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Short Courses",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-african-languages-and-cultures",
-      "title": "MPhil/PhD in African Languages and Cultures",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-african-studies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-african-studies-and-intensive-language",
-      "title": "MA African Studies and Intensive Language",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-african-studies-and-intensive-swahili",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-anthropology-and-sociology",
-      "title": "MPhil/PhD in Anthropology and Sociology",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-anthropology-and-sociology",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-anthropology-of-food-and-intensive-language",
-      "title": "MA Anthropology of Food and Intensive Language",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-anthropology-food-and-intensive-language",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-anthropology-of-the-environment-and-sustainability",
-      "title": "MA Anthropology of the Environment and Sustainability",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-anthropology-global-futures-and-sustainability",
-      "language": "ru",
-      "verified": true,
       "faculty": "Наука",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-soas-alphawood-postgraduate-diploma-in-asian-art",
-      "title": "SOAS-Alphawood Postgraduate Diploma in Asian Art",
-      "durationYears": 1,
-      "level": "short-course",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/postgraduate-diploma-asian-art",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Искусство и дизайн",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ba-bsc-business-management-economics-and-law-with-foundation-year",
-      "title": "BA/BSc Business, Management, Economics and Law with Foundation Year",
-      "durationYears": 1,
-      "level": "foundation",
-      "programType": "pathway",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ba/bsc-business-management-economics-law-foundation-year",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Право",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-chinese-and-inner-asian-studies",
-      "title": "MPhil/PhD in Chinese and Inner Asian Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-chinese-and-inner-asian-studies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-creative-arts-and-cultural-industries",
-      "title": "MPhil/PhD in Creative Arts and Cultural Industries",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-creative-arts-and-cultural-industries",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Искусство и дизайн",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-cultural-literary-and-postcolonial-studies",
-      "title": "MPhil/PhD in Cultural, Literary and Postcolonial Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-cultural-literary-and-postcolonial-studies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-development-economics",
-      "title": "MPhil/PhD in Development Economics",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/mphil/phd-development-economics",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-development-studies",
-      "title": "MPhil/PhD in Development Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/mphil/phd-development-studies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-msc-global-development-gender",
-      "title": "MSc Global Development (Gender)",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/msc-development-studies-gender",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-economics",
-      "title": "MPhil/PhD in Economics",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/mphil/phd-economics",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ba-economics-and",
-      "title": "BA Economics and...",
-      "durationYears": 3,
-      "level": "bachelor",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ba-economics-and",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-film-studies",
-      "title": "MPhil/PhD in Film Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-film-studies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Искусство и дизайн",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-msc-finance-online",
-      "title": "MSc Finance (Online)",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/msc-finance-economic-policy-distance-learning",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Бизнес",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-finance-and-management",
-      "title": "MPhil/PhD in Finance and Management",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-finance-and-management-mphil/phd",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Бизнес",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-gender-studies",
-      "title": "MPhil/PhD in Gender Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-gender-studies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ba-global-development-and",
-      "title": "BA Global Development and...",
-      "durationYears": 3,
-      "level": "bachelor",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ba-global-development-and",
-      "language": "ru",
-      "verified": true,
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-history",
-      "title": "MPhil/PhD in History",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-history",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-history-of-art-and-or-archaeology",
-      "title": "MPhil/PhD in History of Art and/or Archaeology",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-history-art-and/or-archaeology",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Искусство и дизайн",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language",
-      "title": "MA History of Art and Archaeology of East Asia and Intensive Language",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-history-art-and-archaeology-east-asia-and-intensive-language",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Искусство и дизайн",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-architecture-of-islamic-middle-east",
-      "title": "MA History of Art and Architecture of Islamic Middle East",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-history-art-and-architecture-islamic-middle-east",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Искусство и дизайн",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-inte",
-      "title": "MA History of Art and Architecture of the Islamic Middle East and Intensive Language",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-history-art-and-architecture-islamic-middle-east-and-intensive-language",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Искусство и дизайн",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-msc-international-business-online",
-      "title": "MSc International Business (Online)",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/msc-international-business-administration-distance-learning",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Бизнес",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-international-development",
-      "title": "MPhil/PhD in International Development",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/mphil/phd-international-development",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ba-international-relations-and",
-      "title": "BA International Relations and...",
-      "durationYears": 3,
-      "level": "bachelor",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ba-international-relations-and",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-japanese-and-korean-studies",
-      "title": "MPhil/PhD in Japanese and Korean Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-japanese-and-korean-studies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-japanese-studies-dual-degree-with-sophia-university",
-      "title": "MA Japanese Studies (Dual Degree with Sophia University)",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-japanese-studies-dual-degree-programme",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-japanese-studies-and-intensive-language",
-      "title": "MA Japanese Studies and Intensive Language",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-japanese-studies-and-intensive-language",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-korean-studies-and-intensive-language",
-      "title": "MA Korean Studies and Intensive Language",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-korean-studies-and-intensive-language",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-msc-global-development-labour-and-activism",
-      "title": "MSc Global Development (Labour and Activism)",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/msc-development-studies-labour-and-activism",
-      "language": "ru",
-      "verified": true,
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-law",
-      "title": "MPhil/PhD in Law",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/law-research-degree-phd",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Право",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-law",
-      "title": "MRes Law",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/mres-law",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Право",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-linguistics",
-      "title": "MPhil/PhD in Linguistics",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-linguistics",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-linguistics-and-intensive-language",
-      "title": "MA Linguistics and Intensive Language",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-linguistics-and-intensive-language",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-media-studies",
-      "title": "MPhil/PhD in Media Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-media-studies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Искусство и дизайн",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-music",
-      "title": "MPhil/PhD in Music",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-music",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Искусство и дизайн",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-near-and-middle-eastern-studies",
-      "title": "MPhil/PhD in Near and Middle Eastern Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-near-and-middle-eastern-studies",
-      "language": "ru",
-      "verified": true,
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ba-politics-and",
-      "title": "BA Politics and...",
-      "durationYears": 3,
-      "level": "bachelor",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ba-politics-and",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-politics-and-international-studies",
-      "title": "MPhil/PhD in Politics and International Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/phd-degree-politics-and-international-studies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-religions",
-      "title": "MPhil/PhD in Religions",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-religions-and-philosophies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-msc-research-for-international-development",
-      "title": "MSc Research for International Development",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/msc-research-international-development",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology",
-      "title": "MRes Social Anthropology",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/mres-social-anthropology",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ba-bsc-social-sciences-arts-and-humanities-with-foundation-year",
-      "title": "BA/BSc Social Sciences, Arts and Humanities with Foundation Year",
-      "durationYears": 1,
-      "level": "foundation",
-      "programType": "pathway",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ba/bsc-social-sciences-arts-humanities-foundation-year",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Подготовка (Foundation)",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-south-asian-studies",
-      "title": "MPhil/PhD in South Asian Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-south-asian-studies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-south-east-asian-studies",
-      "title": "MPhil/PhD in South East Asian Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-south-east-asian-studies",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-yoga-studies",
-      "title": "MA Yoga Studies",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-traditions-yoga-and-meditation",
-      "language": "ru",
-      "verified": true,
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-translation-and-intercultural-studies",
-      "title": "MA Translation and Intercultural Studies",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-translation",
-      "language": "ru",
-      "verified": true,
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mphil-phd-in-translation-studies",
-      "title": "MPhil/PhD in Translation Studies",
-      "durationYears": 3,
-      "level": "phd",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/research-degrees-mphil/phd-translation-studies",
-      "language": "ru",
-      "verified": true,
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-ma-gender-and-sexuality",
-      "title": "MA Gender and Sexuality",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://www.soas.ac.uk/study/find-course/ma-transnational-queer-feminist-politics-special-reference-middle-east",
-      "language": "ru",
-      "verified": true,
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-msc-humanitarianism-aid-and-conflict",
-      "title": "MSc Humanitarianism, Aid and Conflict",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology-and-intensive-language-with-turkish",
-      "title": "MRes Social Anthropology and Intensive Language with Turkish ",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology-and-intensive-language-with-korean",
-      "title": "MRes Social Anthropology and Intensive Language with Korean ",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology-and-intensive-language-with-persian",
-      "title": "MRes Social Anthropology and Intensive Language with Persian ",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology-and-intensive-language-with-south-e",
-      "title": "MRes Social Anthropology and Intensive Language with South East Asian Languages (Indonesian, Vietnamese)",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology-and-intensive-language-with-swahili",
-      "title": "MRes Social Anthropology and Intensive Language with Swahili ",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology-and-intensive-language-african-lang",
-      "title": "MRes Social Anthropology and Intensive Language (African Languages)",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology-and-intensive-language-near-middle",
-      "title": "MRes Social Anthropology and Intensive Language (Near Middle Eastern Languages)",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology-and-intensive-language-south-east-a",
-      "title": "MRes Social Anthropology and Intensive Language (South East Asian Languages)",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Социальные науки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology-and-intensive-language-with-arabic",
-      "title": "MRes Social Anthropology and Intensive Language with Arabic ",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology-and-intensive-language-with-chinese",
-      "title": "MRes Social Anthropology and Intensive Language with Chinese ",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
-    },
-    {
-      "slug": "soas-mres-social-anthropology-and-intensive-language-with-japanes",
-      "title": "MRes Social Anthropology and Intensive Language with Japanese ",
-      "durationYears": 1,
-      "level": "master",
-      "programType": "degree",
-      "intakes": [
-        "September"
-      ],
-      "programUrl": "https://edge.edvoy.com/institutions/soas-university-of-london",
-      "language": "ru",
-      "verified": true,
-      "source": "edvoy",
-      "faculty": "Гуманитарные и языки",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
+      "tuitionVariants": [
+        {
+          "tuition": 25320,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ]
     },
     {
       "slug": "soas-access-to-higher-education-diploma-short-course",
@@ -8352,18 +9234,1412 @@
       "checkedAt": "2026-05-31",
       "faculty": "Short Courses",
       "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-08-01"
+      "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "soas-postgraduate-diploma-in-asian-art",
+      "title": "Postgraduate Diploma in Asian Art",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "tuitionVariants": [
+        {
+          "tuition": 24350,
+          "currency": "GBP",
+          "source": "edvoy",
+          "campus": "Bloomsbury Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 26600,
+          "currency": "GBP",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Law, Humanities & Social Sciences",
+          "accommodation": 6000,
+          "other": 3000,
+          "total": 35600
+        }
+      ],
+      "faculty": "Искусство и дизайн"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-intensive-language",
+      "title": "MA History of Art and Architecture of the Islamic Middle East and Intensive Language (Near Middle Eastern Languages)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-architecture-of-islamic-middle-east-and-intensive-language-turk",
+      "title": "MA History of Art and Architecture of Islamic Middle East and Intensive Language (Turkish)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-intensive-language-2",
+      "title": "MA History of Art and Architecture of the Islamic Middle East and Intensive Language with Persian",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-intensive-language-3",
+      "title": "MA History of Art and Architecture of the Islamic Middle East and Intensive Language with Turkish",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-economics",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Economics",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-architecture-of-islamic-middle-east-and-intensive-language-arab",
+      "title": "MA History of Art and Architecture of Islamic Middle East and Intensive Language (Arabic)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-intensive-language-4",
+      "title": "MA History of Art and Architecture of the Islamic Middle East and Intensive Language with Arabic",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-politics",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Politics",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-with-japanese",
+      "title": "MA History of Art and Archaeology of East Asia and Intensive Language with Japanese",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-with-korean",
+      "title": "MA History of Art and Archaeology of East Asia and Intensive Language with Korean",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-swahili",
+      "title": "MA Migration and Diaspora Studies and Intensive Language with Swahili",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-turkish",
+      "title": "MA Migration and Diaspora Studies and Intensive Language with Turkish",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-with-chinese",
+      "title": "MA History of Art and Archaeology of East Asia and Intensive Language with Chinese",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-arabic",
+      "title": "MA Migration and Diaspora Studies and Intensive Language with Arabic",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-chinese",
+      "title": "MA Migration and Diaspora Studies and Intensive Language with Chinese",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-japanese",
+      "title": "MA Migration and Diaspora Studies and Intensive Language with Japanese",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-korean",
+      "title": "MA Migration and Diaspora Studies and Intensive Language with Korean",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-with-south-east-asian-langua",
+      "title": "MA Migration and Diaspora Studies and Intensive Language with South East Asian Languages",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-japanese",
+      "title": "MA History of Art and Archaeology of East Asia and Intensive Language (Japanese)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-korean",
+      "title": "MA History of Art and Archaeology of East Asia and Intensive Language (Korean)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-arabic",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Arabic",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-development",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Development Studies",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-french",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and French",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-history",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and History",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-history-of",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and History of Art",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-internation",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and International Relations",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-linguistics",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Linguistics",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-music",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Music",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-social-anth",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and Social Anthropology",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-world-philo",
+      "title": "BA Languages and Cultures (Middle East, Africa, South and Southeast Asia) and World Philosophies",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "edvoy",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-gender-sexuality-in-global-politics-online",
+      "title": "MA Gender, Sexuality in Global Politics (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-ma-global-diplomacy-online",
+      "title": "MA Global Diplomacy (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-ma-global-diplomacy-east-asia-online",
+      "title": "MA Global Diplomacy: East Asia (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-ma-global-diplomacy-mena-online",
+      "title": "MA Global Diplomacy: MENA (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-ma-global-diplomacy-south-asia-online",
+      "title": "MA Global Diplomacy: South Asia (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-ma-global-media-and-digital-cultures-online",
+      "title": "MA Global Media and Digital Cultures (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-global-security-and-strategy-online",
+      "title": "MA Global Security and Strategy (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-ma-muslim-minorities-in-a-global-context-online",
+      "title": "MA Muslim Minorities in a Global Context (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-msc-global-corporations-and-policy-online",
+      "title": "MSc Global Corporations and Policy (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-msc-global-energy-and-climate-policy-online",
+      "title": "MSc Global Energy and Climate Policy (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-msc-global-public-policy-online",
+      "title": "MSc Global Public Policy (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-msc-humanitarian-action-online",
+      "title": "MSc Humanitarian Action (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-msc-international-development-online",
+      "title": "MSc International Development (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-msc-sustainable-development-cedep-online",
+      "title": "MSc Sustainable Development (CeDEP) (online)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-postgraduate-certificate-in-public-management-distance-learning",
+      "title": "Postgraduate Certificate in Public Management (Distance Learning)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-finance-banking-dl",
+      "title": "MSc Finance (Banking) DL",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-finance-economic-policy-dl",
+      "title": "MSc Finance (Economic Policy) DL",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-finance-financial-sector-management-dl",
+      "title": "MSc Finance (Financial Sector Management) DL",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-finance-quantitative-finance-dl",
+      "title": "MSc Finance (Quantitative Finance) DL",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-finance-and-financial-law-dl",
+      "title": "MSc Finance and Financial Law DL",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-msc-international-business-administration-dl",
+      "title": "MSc International Business Administration DL",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-public-financial-management-dl",
+      "title": "MSc Public Financial Management DL",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-public-policy-and-management-dl",
+      "title": "MSc Public Policy and Management DL",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-literary-and-postcolonial-studies",
+      "title": "Literary and Postcolonial Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-mphil-phd-cultural",
+      "title": "MPhil/PhD Cultural",
+      "durationYears": 3,
+      "level": "phd",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-mphil-phd-in-african-studies",
+      "title": "MPhil/PhD in African Studies",
+      "durationYears": 3,
+      "level": "phd",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-phd-in-law",
+      "title": "PhD in Law",
+      "durationYears": 3,
+      "level": "phd",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-llm-international-and-commercial-economic-law",
+      "title": "LLM International and Commercial Economic Law",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-llm-law",
+      "title": "LLM Law",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-ma-environmental-law-and-sustainable-development",
+      "title": "MA Environmental Law and Sustainable Development",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-ma-gender-studies-and-law",
+      "title": "MA Gender Studies and Law",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-2-years",
+      "title": "MA History of Art and Archaeology of East Asia and Intensive language (2 years)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-intensive-language-5",
+      "title": "MA History of Art and Architecture of the Islamic Middle East and Intensive language (2 years)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-human-rights-law",
+      "title": "MA Human Rights Law",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-ma-international-law",
+      "title": "MA International Law",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-ma-islamic-humanities",
+      "title": "MA Islamic Humanities",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-islamic-law",
+      "title": "MA Islamic Law",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-ma-legal-studies",
+      "title": "MA Legal Studies",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-ma-migration-and-diaspora-studies-and-intensive-language-2-years",
+      "title": "MA Migration and Diaspora Studies and Intensive Language (2 years)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-social-anthropology-and-intensive-language-2-years",
+      "title": "MA Social Anthropology and Intensive Language (2 years)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-ma-translation",
+      "title": "MA Translation",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-ma-transnational-queer-feminist-politics-with-special-reference-to-the-middle-east",
+      "title": "MA Transnational Queer Feminist Politics with special reference to the Middle East",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-ma-pgdip-international-studies-and-diplomacy",
+      "title": "MA/PGDip International Studies and Diplomacy",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-mres-social-anthropology-and-intensive-language-2-years",
+      "title": "MRes Social Anthropology and Intensive Language (2 years)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Гуманитарные и языки"
+    },
+    {
+      "slug": "soas-msc-development-economics-with-work-placement-year-2-years",
+      "title": "MSc Development Economics with Work Placement Year (2 years)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-msc-economic-policy-with-work-placement-year-2-years",
+      "title": "MSc Economic Policy with Work Placement Year (2 years)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-msc-environment",
+      "title": "MSc Environment",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Наука"
+    },
+    {
+      "slug": "soas-msc-global-development-with-work-placement-year-2-years",
+      "title": "MSc Global Development with Work Placement Year (2 years)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-msc-global-political-economy",
+      "title": "MSc Global Political Economy",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-pre-master-s-programme-fdps",
+      "title": "Pre-Master's Programme (FDPS)",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Подготовка (Foundation)"
+    },
+    {
+      "slug": "soas-arts-humanities-with-foundation-year",
+      "title": "Arts & Humanities with Foundation Year",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Подготовка (Foundation)"
+    },
+    {
+      "slug": "soas-ba-social-anthropology-and-arabic-4-years",
+      "title": "BA Social Anthropology and Arabic (4 years)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-ba-social-anthropology-and-chinese-4-years",
+      "title": "BA Social Anthropology and Chinese (4 years)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-ba-social-anthropology-and-global-development",
+      "title": "BA Social Anthropology and Global Development",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-ba-social-anthropology-and-japanese-4-years",
+      "title": "BA Social Anthropology and Japanese (4 years)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-ba-social-anthropology-and-korean-4-years",
+      "title": "BA Social Anthropology and Korean (4 years)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-ba-social-anthropology-and-languages-and-culture-ba-social-anthropology-and-law",
+      "title": "BA Social Anthropology and Languages and Culture BA Social Anthropology and Law",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-ba-bsc-social-sciences",
+      "title": "BA/BSc Social Sciences",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-llb-with-year-abroad-4-years",
+      "title": "LLB with Year Abroad (4 years)",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-senior-status-llb",
+      "title": "Senior Status LLB",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "soas-ba-development-economics",
+      "title": "BA Development Economics",
+      "durationYears": 3,
+      "level": "bachelor",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "soas-bsc-business-management-economics-law-with-foundation-year",
+      "title": "BSc Business, Management, Economics & Law with Foundation Year",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Подготовка (Foundation)"
+    },
+    {
+      "slug": "soas-msc-innovation-entrepreneurship-and-strategy",
+      "title": "MSc Innovation, Entrepreneurship and Strategy",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-mba-30",
+      "title": "MBA 30",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-finance-banking",
+      "title": "MSc Finance (Banking)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-finance-economic-policy",
+      "title": "MSc Finance (Economic Policy)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-finance-financial-sector-management",
+      "title": "MSc Finance (Financial Sector Management)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-finance-quantitative-finance",
+      "title": "MSc Finance (Quantitative Finance)",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-finance-and-financial-law",
+      "title": "MSc Finance and Financial Law",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Право"
+    },
+    {
+      "slug": "soas-msc-innovation-entrepreneurship-and-strategy-with-year-in-industry",
+      "title": "MSc Innovation, Entrepreneurship and Strategy with Year in Industry",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-international-business-administration",
+      "title": "MSc International Business Administration",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-public-financial-management",
+      "title": "MSc Public Financial Management",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-msc-public-policy-and-management-with-placement-year",
+      "title": "MSc Public Policy and Management with Placement Year",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "soas-international-foundation-programme",
+      "title": "International Foundation Programme",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Подготовка (Foundation)"
+    },
+    {
+      "slug": "individual-professional-awards-online-dl",
+      "title": "Individual Professional Awards (online/DL)",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23"
+    },
+    {
+      "slug": "politics-and-development",
+      "title": "Politics and Development",
+      "level": "master",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "faculty": "Социальные науки"
     }
   ],
   "tuition": {
     "currency": "GBP",
     "byProgram": {
+      "ug-law": 21990,
       "ug-economics": 22870,
       "ug-international-relations": 22870,
+      "ug-arabic": 21000,
       "ug-history": 22870,
+      "ug-music": 21000,
+      "pg-global-political-economy": 24000,
       "pg-development-economics": 25320,
       "pg-international-law": 26770,
       "pg-african-studies": 25320,
+      "phd": 18000,
       "soas-bsc-accounting-and-finance": 22870,
       "soas-ma-anthropology-of-food": 26330,
       "soas-ba-arabic": 22870,
@@ -8852,11 +11128,101 @@
       "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-music": 22870,
       "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-social-anth": 22870,
       "soas-ba-languages-and-cultures-middle-east-africa-south-and-southeast-asia-and-world-philo": 22870,
-      "ug-law": 22000,
-      "ug-arabic": 21000,
-      "ug-music": 21000,
-      "pg-global-political-economy": 24000,
-      "phd": 18000
+      "soas-ma-gender-sexuality-in-global-politics-online": 12000,
+      "soas-ma-global-diplomacy-online": 12000,
+      "soas-ma-global-diplomacy-east-asia-online": 12000,
+      "soas-ma-global-diplomacy-mena-online": 12000,
+      "soas-ma-global-diplomacy-south-asia-online": 12000,
+      "soas-ma-global-media-and-digital-cultures-online": 12000,
+      "soas-ma-global-security-and-strategy-online": 12000,
+      "soas-ma-muslim-minorities-in-a-global-context-online": 12000,
+      "soas-msc-global-corporations-and-policy-online": 12000,
+      "soas-msc-global-energy-and-climate-policy-online": 12000,
+      "soas-msc-global-public-policy-online": 12000,
+      "soas-msc-humanitarian-action-online": 12000,
+      "soas-msc-international-development-online": 12000,
+      "soas-msc-sustainable-development-cedep-online": 12000,
+      "soas-postgraduate-certificate-in-public-management-distance-learning": 12000,
+      "soas-msc-finance-banking-dl": 12000,
+      "soas-msc-finance-economic-policy-dl": 12000,
+      "soas-msc-finance-financial-sector-management-dl": 12000,
+      "soas-msc-finance-quantitative-finance-dl": 12000,
+      "soas-msc-finance-and-financial-law-dl": 12000,
+      "soas-msc-international-business-administration-dl": 12000,
+      "soas-msc-public-financial-management-dl": 12000,
+      "soas-msc-public-policy-and-management-dl": 12000,
+      "soas-literary-and-postcolonial-studies": 22490,
+      "soas-mphil-phd-cultural": 22490,
+      "soas-mphil-phd-in-african-studies": 22490,
+      "soas-mphil-phd-in-chinese-and-inner-asian-studies": 22490,
+      "soas-mphil-phd-in-development-studies": 22490,
+      "soas-mphil-phd-in-international-development": 22490,
+      "soas-mphil-phd-in-japanese-and-korean-studies": 22490,
+      "soas-mphil-phd-in-linguistics": 22490,
+      "soas-mphil-phd-in-near-and-middle-eastern-studies": 22490,
+      "soas-mphil-phd-in-south-asian-studies": 22490,
+      "soas-mphil-phd-in-south-east-asian-studies": 22490,
+      "soas-mphil-phd-in-translation-studies": 22490,
+      "soas-phd-in-law": 22490,
+      "soas-llm-international-and-commercial-economic-law": 26600,
+      "soas-llm-law": 26600,
+      "soas-ma-environmental-law-and-sustainable-development": 26600,
+      "soas-ma-gender-studies-and-law": 26600,
+      "soas-ma-history-of-art-and-archaeology-of-east-asia-and-intensive-language-2-years": 26600,
+      "soas-ma-history-of-art-and-architecture-of-the-islamic-middle-east-and-intensive-language-5": 26600,
+      "soas-ma-human-rights-law": 26600,
+      "soas-ma-international-law": 26600,
+      "soas-ma-islamic-humanities": 26600,
+      "soas-ma-islamic-law": 26600,
+      "soas-ma-japanese-studies-and-intensive-language": 26600,
+      "soas-ma-korean-studies-and-intensive-language": 26600,
+      "soas-ma-legal-studies": 26600,
+      "soas-ma-migration-and-diaspora-studies-and-intensive-language-2-years": 26600,
+      "soas-ma-social-anthropology-and-intensive-language-2-years": 26600,
+      "soas-ma-translation": 26600,
+      "soas-ma-transnational-queer-feminist-politics-with-special-reference-to-the-middle-east": 26600,
+      "soas-ma-pgdip-international-studies-and-diplomacy": 26600,
+      "soas-mres-law": 26600,
+      "soas-mres-social-anthropology": 26600,
+      "soas-mres-social-anthropology-and-intensive-language-2-years": 26600,
+      "soas-msc-development-economics-with-work-placement-year-2-years": 26600,
+      "soas-msc-economic-policy-with-work-placement-year-2-years": 26600,
+      "soas-msc-environment": 26600,
+      "soas-msc-global-development-with-work-placement-year-2-years": 26600,
+      "soas-msc-global-political-economy": 26600,
+      "soas-msc-humanitarianism-aid-and-conflict": 25320,
+      "soas-msc-research-for-international-development": 26600,
+      "soas-pre-master-s-programme-fdps": 26600,
+      "soas-arts-humanities-with-foundation-year": 21990,
+      "soas-ba-social-anthropology-and-arabic-4-years": 21990,
+      "soas-ba-social-anthropology-and-chinese-4-years": 21990,
+      "soas-ba-social-anthropology-and-global-development": 21990,
+      "soas-ba-social-anthropology-and-japanese-4-years": 21990,
+      "soas-ba-social-anthropology-and-korean-4-years": 21990,
+      "soas-ba-social-anthropology-and-languages-and-culture-ba-social-anthropology-and-law": 21990,
+      "soas-ba-bsc-social-sciences": 21990,
+      "soas-llb-with-year-abroad-4-years": 21990,
+      "soas-senior-status-llb": 21990,
+      "soas-ba-development-economics": 21990,
+      "soas-bsc-business-management-economics-law-with-foundation-year": 21990,
+      "soas-msc-innovation-entrepreneurship-and-strategy": 26600,
+      "soas-mba-30": 26600,
+      "soas-msc-finance-banking": 26600,
+      "soas-msc-finance-economic-policy": 26600,
+      "soas-msc-finance-financial-sector-management": 26600,
+      "soas-msc-finance-quantitative-finance": 26600,
+      "soas-msc-finance-and-financial-law": 26600,
+      "soas-msc-innovation-entrepreneurship-and-strategy-with-year-in-industry": 26600,
+      "soas-msc-international-business-administration": 26600,
+      "soas-msc-public-financial-management": 26600,
+      "soas-msc-public-policy-and-management-with-placement-year": 26600,
+      "soas-international-foundation-programme": 20790,
+      "soas-mphil-phd-in-creative-arts-and-cultural-industries": 22490,
+      "soas-mphil-phd-in-film-studies": 22490,
+      "soas-mphil-phd-in-history-of-art-and-or-archaeology": 22490,
+      "soas-mphil-phd-in-music": 22490,
+      "individual-professional-awards-online-dl": 12000,
+      "politics-and-development": 26600
     }
   },
   "deadlines": {},
@@ -9222,5 +11588,8 @@
       "qs",
       "edvoy"
     ]
-  }
+  },
+  "officialUrl": "https://soas.ac.uk",
+  "officialUrlSource": "выгрузки: 161 ссылок на soas.ac.uk",
+  "officialUrlCheckedAt": "2026-09-09"
 }

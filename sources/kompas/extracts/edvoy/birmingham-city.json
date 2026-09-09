@@ -3,12 +3,13 @@
   "name": "Birmingham City University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-  "scrapedAt": "2026-07-22T15:42:52.131Z",
+  "scrapedAt": "2026-08-23T13:11:39.781Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "birmingham-city-university",
   "country": "United Kingdom",
+  "city": null,
   "matchMethod": "as-is/exact-name",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
@@ -50,6 +51,48 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|msc-artificial-intelligence-with-professional-placement"
+    },
+    {
+      "title": "MBA International",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20370,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|mba-international"
+    },
+    {
+      "title": "MBA International with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "21 Months",
+      "tuition": 22405,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|mba-international-with-professional-placement"
     },
     {
       "title": "BSc (Hons) Business and Entrepreneurship",
@@ -110,25 +153,23 @@
       "courseRefId": "birmingham-city-university|ma-visual-communication"
     },
     {
-      "title": "BSc (Hons) Computer Networks and Security with a Foundation Year",
-      "level": "foundation",
+      "title": "BSc (Hons) Computing (Level 6 | Top-up)",
+      "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "12 Months",
       "tuition": 18570,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2024",
         "September 2026",
         "September 2027"
       ],
       "campuses": [
         "City Centre Campus"
       ],
-      "scholarshipTag": "Scholarship applied!",
+      "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-computer-networks-and-security-with-a-foundation-year"
+      "courseRefId": "birmingham-city-university|bsc-hons-computing-level-6-top-up"
     },
     {
       "title": "BSc (Hons) Computer Science with a Foundation Year",
@@ -152,23 +193,44 @@
       "courseRefId": "birmingham-city-university|bsc-hons-computer-science-with-a-foundation-year"
     },
     {
-      "title": "BSc (Hons) Computing (Level 6 | Top-up)",
-      "level": "bachelor",
+      "title": "BSc (Hons) Computer Networks and Security with a Foundation Year",
+      "level": "foundation",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
+      "duration": "48 Months",
       "tuition": 18570,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
+        "September 2024",
         "September 2026",
         "September 2027"
       ],
       "campuses": [
         "City Centre Campus"
       ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-computer-networks-and-security-with-a-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Artificial Intelligence with a Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2027",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-computing-level-6-top-up"
+      "courseRefId": "birmingham-city-university|bsc-hons-artificial-intelligence-with-a-foundation-year"
     },
     {
       "title": "BSc (Hons) Computer Science with Artificial Intelligence with a Foundation Year",
@@ -214,25 +276,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|bsc-hons-computer-science-with-artificial-intelligence"
-    },
-    {
-      "title": "BSc (Hons) Artificial Intelligence with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2027",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-artificial-intelligence-with-a-foundation-year"
     },
     {
       "title": "BA (Hons) Business Management with a Foundation Year",
@@ -340,10 +383,10 @@
       "courseRefId": "birmingham-city-university|bsc-hons-computer-networks-and-security"
     },
     {
-      "title": "BA (Hons) Business Administration (Top-up)",
+      "title": "BSc (Hons) Cyber Security",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
+      "duration": "36 Months",
       "tuition": 18570,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -358,7 +401,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-business-administration-top-up"
+      "courseRefId": "birmingham-city-university|bsc-hons-cyber-security"
     },
     {
       "title": "BA (Hons) Business Management",
@@ -383,27 +426,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|ba-hons-business-management"
-    },
-    {
-      "title": "BSc (Hons) Cyber Security",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-cyber-security"
     },
     {
       "title": "BSc (Hons) Cyber Security with a Foundation Year",
@@ -446,10 +468,91 @@
       "courseRefId": "birmingham-city-university|ba-hons-international-business-top-up"
     },
     {
+      "title": "BA (Hons) Business Administration (Top-up)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-business-administration-top-up"
+    },
+    {
+      "title": "MA Luxury Brand Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ma-luxury-brand-management"
+    },
+    {
+      "title": "MSc Management and Marketing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-management-and-marketing"
+    },
+    {
+      "title": "MA Film Distribution and Marketing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ma-film-distribution-and-marketing"
+    },
+    {
       "title": "MA Public Relations",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "18 Months",
       "tuition": 18970,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -486,6 +589,26 @@
       "courseRefId": "birmingham-city-university|ma-media-production"
     },
     {
+      "title": "MA Future Media",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ma-future-media"
+    },
+    {
       "title": "MA Public Relations with Professional Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -502,46 +625,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|ma-public-relations-with-professional-placement"
-    },
-    {
-      "title": "MA Film Distribution and Marketing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-film-distribution-and-marketing"
-    },
-    {
-      "title": "MA Luxury Brand Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-luxury-brand-management"
     },
     {
       "title": "MSc International Professional Accounting (ACCA)",
@@ -566,46 +649,6 @@
       "courseRefId": "birmingham-city-university|msc-international-professional-accounting-acca"
     },
     {
-      "title": "MSc Management and Marketing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-management-and-marketing"
-    },
-    {
-      "title": "MA Future Media",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-future-media"
-    },
-    {
       "title": "MSc International Professional Accounting (ACCA) with Professional Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -622,42 +665,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|msc-international-professional-accounting-acca-with-professional-placement"
-    },
-    {
-      "title": "MA Luxury Brand Management with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-luxury-brand-management-with-professional-placement"
-    },
-    {
-      "title": "MA Media Production with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-media-production-with-professional-placement"
     },
     {
       "title": "MSc Management and Marketing with Professional Placement",
@@ -712,6 +719,42 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|ma-future-media-with-professional-placement"
+    },
+    {
+      "title": "MA Luxury Brand Management with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20865,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ma-luxury-brand-management-with-professional-placement"
+    },
+    {
+      "title": "MA Media Production with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20865,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ma-media-production-with-professional-placement"
     },
     {
       "title": "BSc (Hons) Computing and Information Technology",
@@ -915,24 +958,6 @@
       "courseRefId": "birmingham-city-university|bsc-hons-nursing-adult"
     },
     {
-      "title": "MA Journalism (NCTJ)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-journalism-nctj"
-    },
-    {
       "title": "MA Journalism (NCTJ) with Professional Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -951,25 +976,22 @@
       "courseRefId": "birmingham-city-university|ma-journalism-nctj-with-professional-placement"
     },
     {
-      "title": "BSc (Hons) Architectural Technology with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
+      "title": "MA Journalism (NCTJ)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18970,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
+        "September 2026"
       ],
       "campuses": [
         "City Centre Campus"
       ],
-      "scholarshipTag": "Scholarship applied!",
+      "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-architectural-technology-with-a-foundation-year"
+      "courseRefId": "birmingham-city-university|ma-journalism-nctj"
     },
     {
       "title": "BA (Hons) Media Production with a Foundation Year",
@@ -991,48 +1013,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|ba-hons-media-production-with-a-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Architecture with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-architecture-with-a-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Landscape Architecture with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-landscape-architecture-with-a-foundation-year"
     },
     {
       "title": "BA (Hons) Media and Communication with a Foundation Year",
@@ -1077,6 +1057,69 @@
       "courseRefId": "birmingham-city-university|beng-hons-mechanical-engineering-with-a-foundation-year"
     },
     {
+      "title": "BA (Hons) Architecture with a Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-architecture-with-a-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Architectural Technology with a Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-architectural-technology-with-a-foundation-year"
+    },
+    {
+      "title": "BA (Hons) Landscape Architecture with a Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-landscape-architecture-with-a-foundation-year"
+    },
+    {
       "title": "BSc (Hons) Accounting and Finance",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1096,6 +1139,32 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|bsc-hons-accounting-and-finance"
+    },
+    {
+      "title": "PhD Engineering Research Degrees",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 15420,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "May 2025",
+        "February 2025",
+        "February 2026",
+        "May 2026",
+        "February 2027",
+        "May 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|phd-engineering-research-degrees"
     },
     {
       "title": "PhD Health",
@@ -1125,94 +1194,6 @@
       "courseRefId": "birmingham-city-university|phd-health"
     },
     {
-      "title": "PhD Engineering Research Degrees",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 15420,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "May 2025",
-        "February 2025",
-        "February 2026",
-        "May 2026",
-        "February 2027",
-        "May 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|phd-engineering-research-degrees"
-    },
-    {
-      "title": "BA (Hons) Architecture",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-architecture"
-    },
-    {
-      "title": "BA (Hons) Art and Design",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 19220,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-art-and-design"
-    },
-    {
-      "title": "BA (Hons) Landscape Architecture",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-landscape-architecture"
-    },
-    {
       "title": "BA (Hons) Marketing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1232,6 +1213,27 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|ba-hons-marketing"
+    },
+    {
+      "title": "LLB (Hons) Law",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|llb-hons-law"
     },
     {
       "title": "BA (Hons) Media and Communication",
@@ -1276,6 +1278,150 @@
       "courseRefId": "birmingham-city-university|ba-hons-media-production"
     },
     {
+      "title": "BA (Hons) Landscape Architecture",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-landscape-architecture"
+    },
+    {
+      "title": "BA (Hons) Art and Design Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-art-and-design-foundation-year"
+    },
+    {
+      "title": "BA (Hons) Architecture",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-architecture"
+    },
+    {
+      "title": "BA (Hons) International Marketing (Top-up)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-international-marketing-top-up"
+    },
+    {
+      "title": "BA (Hons) Art and Design",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 19220,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-art-and-design"
+    },
+    {
+      "title": "BA (Hons) Digital Marketing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-digital-marketing"
+    },
+    {
+      "title": "BEng (Hons) Mechanical Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|beng-hons-mechanical-engineering"
+    },
+    {
       "title": "BSc (Hons) Architectural Technology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1318,27 +1464,6 @@
       "courseRefId": "birmingham-city-university|bsc-hons-digital-film-production"
     },
     {
-      "title": "LLB (Hons) Law with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|llb-hons-law-with-a-foundation-year"
-    },
-    {
       "title": "BA (Hons) Marketing with Advertising and Public Relations",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1360,91 +1485,7 @@
       "courseRefId": "birmingham-city-university|ba-hons-marketing-with-advertising-and-public-relations"
     },
     {
-      "title": "BEng (Hons) Mechanical Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|beng-hons-mechanical-engineering"
-    },
-    {
-      "title": "LLB (Hons) Law",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|llb-hons-law"
-    },
-    {
-      "title": "BA (Hons) Digital Marketing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-digital-marketing"
-    },
-    {
-      "title": "BA (Hons) International Marketing (Top-up)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-international-marketing-top-up"
-    },
-    {
-      "title": "BA (Hons) Art and Design Foundation Year",
+      "title": "LLB (Hons) Law with a Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1452,15 +1493,17 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2024",
+        "September 2025",
         "September 2026",
         "September 2027"
       ],
       "campuses": [
         "City Centre Campus"
       ],
-      "scholarshipTag": null,
+      "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-art-and-design-foundation-year"
+      "courseRefId": "birmingham-city-university|llb-hons-law-with-a-foundation-year"
     },
     {
       "title": "BA (Hons) Sport Business Management",
@@ -1484,7 +1527,7 @@
       "courseRefId": "birmingham-city-university|ba-hons-sport-business-management"
     },
     {
-      "title": "MSc Health Psychology",
+      "title": "MA International Human Resource Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -1501,7 +1544,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-health-psychology"
+      "courseRefId": "birmingham-city-university|ma-international-human-resource-management"
     },
     {
       "title": "MSc Quantity Surveying",
@@ -1524,7 +1567,27 @@
       "courseRefId": "birmingham-city-university|msc-quantity-surveying"
     },
     {
-      "title": "MA Arts and Education Practices with Professional Placement",
+      "title": "MSc Health Psychology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-health-psychology"
+    },
+    {
+      "title": "MSc Quantity Surveying with Professional Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "18 Months",
@@ -1539,7 +1602,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-arts-and-education-practices-with-professional-placement"
+      "courseRefId": "birmingham-city-university|msc-quantity-surveying-with-professional-placement"
     },
     {
       "title": "MA Arts and Education Practices",
@@ -1562,16 +1625,14 @@
       "courseRefId": "birmingham-city-university|ma-arts-and-education-practices"
     },
     {
-      "title": "MA International Human Resource Management",
+      "title": "MA Arts and Education Practices with Professional Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
+      "duration": "18 Months",
+      "tuition": 20865,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
         "September 2026"
       ],
       "campuses": [
@@ -1579,7 +1640,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-international-human-resource-management"
+      "courseRefId": "birmingham-city-university|ma-arts-and-education-practices-with-professional-placement"
     },
     {
       "title": "MA International Human Resource Management with Professional Placement",
@@ -1598,24 +1659,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|ma-international-human-resource-management-with-professional-placement"
-    },
-    {
-      "title": "MSc Quantity Surveying with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-quantity-surveying-with-professional-placement"
     },
     {
       "title": "BA (Hons) Journalism with a Foundation Year",
@@ -1660,29 +1703,6 @@
       "courseRefId": "birmingham-city-university|ba-hons-events-management"
     },
     {
-      "title": "PhD Art and Design",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 15420,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "February 2025",
-        "February 2026",
-        "February 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|phd-art-and-design"
-    },
-    {
       "title": "PhD Law",
       "level": "phd",
       "sourceLevel": "Doctorate",
@@ -1707,63 +1727,27 @@
       "courseRefId": "birmingham-city-university|phd-law"
     },
     {
-      "title": "BA (Hons) Journalism",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
+      "title": "PhD Art and Design",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
       "duration": "36 Months",
-      "tuition": 18570,
+      "tuition": 15420,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
         "September 2025",
         "September 2026",
-        "September 2027"
+        "February 2025",
+        "February 2026",
+        "February 2027"
       ],
       "campuses": [
         "City Centre Campus"
       ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-journalism"
-    },
-    {
-      "title": "BSc (Hons) Human Biosciences with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2027",
-        "September 2026"
-      ],
-      "campuses": [
-        "City South Campus"
-      ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-human-biosciences-with-a-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Biomedical Science with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2027",
-        "September 2026"
-      ],
-      "campuses": [
-        "City South Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-biomedical-science-with-foundation-year"
+      "courseRefId": "birmingham-city-university|phd-art-and-design"
     },
     {
       "title": "BSc (Hons) Economics",
@@ -1806,6 +1790,86 @@
       "courseRefId": "birmingham-city-university|bsc-hons-biomedical-science"
     },
     {
+      "title": "BA (Hons) Journalism",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-journalism"
+    },
+    {
+      "title": "BSc (Hons) Biomedical Science with Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2027",
+        "September 2026"
+      ],
+      "campuses": [
+        "City South Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-biomedical-science-with-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Human Biosciences with a Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2027",
+        "September 2026"
+      ],
+      "campuses": [
+        "City South Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-human-biosciences-with-a-foundation-year"
+    },
+    {
+      "title": "BSc (Hons) Construction Management with a Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-construction-management-with-a-foundation-year"
+    },
+    {
       "title": "BSc (Hons) Psychology with a Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
@@ -1825,6 +1889,25 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|bsc-hons-psychology-with-a-foundation-year"
+    },
+    {
+      "title": "BSc Civil Engineering with a Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-civil-engineering-with-a-foundation-year"
     },
     {
       "title": "BA (Hons) Graphic Design",
@@ -1869,46 +1952,6 @@
       "courseRefId": "birmingham-city-university|beng-hons-civil-engineering-with-a-foundation-year"
     },
     {
-      "title": "BSc (Hons) Construction Management with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-construction-management-with-a-foundation-year"
-    },
-    {
-      "title": "BSc Civil Engineering with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-civil-engineering-with-a-foundation-year"
-    },
-    {
       "title": "BA (Hons) Music Business",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1930,6 +1973,91 @@
       "courseRefId": "birmingham-city-university|ba-hons-music-business"
     },
     {
+      "title": "BEng (Hons) Civil Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|beng-hons-civil-engineering"
+    },
+    {
+      "title": "BSc (Hons) Quantity Surveying",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-quantity-surveying"
+    },
+    {
+      "title": "BSc (Hons) Construction Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-construction-management"
+    },
+    {
+      "title": "BA (Hons) Education Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus",
+        "City South Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-education-studies"
+    },
+    {
       "title": "BA (Hons) Interior Architecture and Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1949,6 +2077,86 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|ba-hons-interior-architecture-and-design"
+    },
+    {
+      "title": "BA (Hons) Art and Design with Creative Technologies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2027",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-art-and-design-with-creative-technologies"
+    },
+    {
+      "title": "BSc (Hons) Civil Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-civil-engineering"
+    },
+    {
+      "title": "BSc (Hons) Psychology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-psychology"
+    },
+    {
+      "title": "BA (Hons) Sports Journalism",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-sports-journalism"
     },
     {
       "title": "BA (Hons) Interior Architecture and Design with a Foundation Year",
@@ -2006,171 +2214,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|ba-hons-education-studies-with-a-foundation-year"
-    },
-    {
-      "title": "BEng (Hons) Civil Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|beng-hons-civil-engineering"
-    },
-    {
-      "title": "BA (Hons) Education Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus",
-        "City South Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-education-studies"
-    },
-    {
-      "title": "BA (Hons) Sports Journalism",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-sports-journalism"
-    },
-    {
-      "title": "BSc (Hons) Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-psychology"
-    },
-    {
-      "title": "BSc (Hons) Quantity Surveying",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-quantity-surveying"
-    },
-    {
-      "title": "BSc (Hons) Construction Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-construction-management"
-    },
-    {
-      "title": "BA (Hons) Art and Design with Creative Technologies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2027",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-art-and-design-with-creative-technologies"
-    },
-    {
-      "title": "BSc (Hons) Civil Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-civil-engineering"
     },
     {
       "title": "BSc (Hons) Quantity Surveying with a Foundation Year",
@@ -2293,24 +2336,6 @@
       "courseRefId": "birmingham-city-university|ba-hons-game-design-with-foundation-year"
     },
     {
-      "title": "MA Fine Art with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-fine-art-with-professional-placement"
-    },
-    {
       "title": "PhD Education",
       "level": "phd",
       "sourceLevel": "Doctorate",
@@ -2357,7 +2382,47 @@
       "courseRefId": "birmingham-city-university|ma-fine-art"
     },
     {
-      "title": "BA (Hons) Fashion Design",
+      "title": "MA Fine Art with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20865,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ma-fine-art-with-professional-placement"
+    },
+    {
+      "title": "BA (Hons) Horology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus",
+        "School of Jewellery BCU Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-horology"
+    },
+    {
+      "title": "BA (Hons) Textile Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -2375,7 +2440,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-fashion-design"
+      "courseRefId": "birmingham-city-university|ba-hons-textile-design"
     },
     {
       "title": "BA (Hons) Fashion Design with a Foundation Year",
@@ -2397,6 +2462,27 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|ba-hons-fashion-design-with-a-foundation-year"
+    },
+    {
+      "title": "BA (Hons) Fashion Design",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-fashion-design"
     },
     {
       "title": "BA (Hons) Film and Screenwriting",
@@ -2494,49 +2580,6 @@
       "courseRefId": "birmingham-city-university|ma-fashion-and-textile-design-with-professional-placement"
     },
     {
-      "title": "BA (Hons) Horology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus",
-        "School of Jewellery BCU Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-horology"
-    },
-    {
-      "title": "BA (Hons) Textile Design",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-textile-design"
-    },
-    {
       "title": "BA (Hons) English and Journalism",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2581,7 +2624,7 @@
       "courseRefId": "birmingham-city-university|phd-media-and-cultural-studies"
     },
     {
-      "title": "BSc (Hons) Psychology with Criminology",
+      "title": "BA (Hons) Digital Animation",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -2599,7 +2642,28 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-psychology-with-criminology"
+      "courseRefId": "birmingham-city-university|ba-hons-digital-animation"
+    },
+    {
+      "title": "BA (Hons) Fine Art",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-fine-art"
     },
     {
       "title": "BA (Hons) Applied Theatre (Community and Education)",
@@ -2624,7 +2688,7 @@
       "courseRefId": "birmingham-city-university|ba-hons-applied-theatre-community-and-education"
     },
     {
-      "title": "BA (Hons) Fine Art",
+      "title": "BSc (Hons) Psychology with Criminology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -2642,28 +2706,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-fine-art"
-    },
-    {
-      "title": "BA (Hons) Digital Animation",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-digital-animation"
+      "courseRefId": "birmingham-city-university|bsc-hons-psychology-with-criminology"
     },
     {
       "title": "BA (Hons) Jewellery and Silversmithing - Design for Industry (Level 6 | Top-up)",
@@ -2745,6 +2788,25 @@
       "courseRefId": "birmingham-city-university|bsc-hons-sport-exercise-science"
     },
     {
+      "title": "BSc (Hons) Sport and Exercise Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Alexander Stadium BCU Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-sport-and-exercise-science"
+    },
+    {
       "title": "PhD Sport and Exercise Sciences",
       "level": "phd",
       "sourceLevel": "Doctorate",
@@ -2763,25 +2825,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|phd-sport-and-exercise-sciences"
-    },
-    {
-      "title": "BSc (Hons) Sport and Exercise Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "Alexander Stadium BCU Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-sport-and-exercise-science"
     },
     {
       "title": "PhD Built Environment Research Degrees",
@@ -2810,24 +2853,46 @@
       "courseRefId": "birmingham-city-university|phd-built-environment-research-degrees"
     },
     {
-      "title": "MSc Real Estate Management",
+      "title": "MMus Experimental Performance",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
+      "duration": "24 Months",
+      "tuition": 28460,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
-        "September 2026"
+        "September 2024",
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "City Centre Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-real-estate-management"
+      "courseRefId": "birmingham-city-university|mmus-experimental-performance"
+    },
+    {
+      "title": "PgDip Composition",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 28460,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|pgdip-composition"
     },
     {
       "title": "PgDip Music Technology",
@@ -2851,7 +2916,26 @@
       "courseRefId": "birmingham-city-university|pgdip-music-technology"
     },
     {
-      "title": "PgDip Composition",
+      "title": "BA (Hons) Creative Writing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2027",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-creative-writing"
+    },
+    {
+      "title": "PgDip Experimental Performance",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -2869,7 +2953,128 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|pgdip-composition"
+      "courseRefId": "birmingham-city-university|pgdip-experimental-performance"
+    },
+    {
+      "title": "MSc Real Estate Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-real-estate-management"
+    },
+    {
+      "title": "MMus Music Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 28460,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|mmus-music-technology"
+    },
+    {
+      "title": "MMus Composition",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 28460,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|mmus-composition"
+    },
+    {
+      "title": "MSc Gemmology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus",
+        "School of Jewellery BCU Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-gemmology"
+    },
+    {
+      "title": "MSc Gemmology with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20865,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "School of Jewellery BCU Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-gemmology-with-professional-placement"
+    },
+    {
+      "title": "MA Criminology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ma-criminology"
     },
     {
       "title": "MA Criminology with Professional Placement",
@@ -2908,168 +3113,6 @@
       "courseRefId": "birmingham-city-university|msc-real-estate-management-with-professional-placement"
     },
     {
-      "title": "MA Criminology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-criminology"
-    },
-    {
-      "title": "BA (Hons) Creative Writing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2027",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-creative-writing"
-    },
-    {
-      "title": "MMus Composition",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 28460,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|mmus-composition"
-    },
-    {
-      "title": "MMus Experimental Performance",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 28460,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|mmus-experimental-performance"
-    },
-    {
-      "title": "MSc Gemmology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus",
-        "School of Jewellery BCU Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-gemmology"
-    },
-    {
-      "title": "MMus Music Technology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 28460,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|mmus-music-technology"
-    },
-    {
-      "title": "MSc Gemmology with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "School of Jewellery BCU Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-gemmology-with-professional-placement"
-    },
-    {
-      "title": "PgDip Experimental Performance",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 28460,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|pgdip-experimental-performance"
-    },
-    {
       "title": "BSc (Hons) Game Technology with Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
@@ -3087,6 +3130,47 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|bsc-hons-game-technology-with-foundation-year"
+    },
+    {
+      "title": "BA (Hons) Sociology and Criminology with a Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-sociology-and-criminology-with-a-foundation-year"
+    },
+    {
+      "title": "BA (Hons) Textile Design with a Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-textile-design-with-a-foundation-year"
     },
     {
       "title": "BSc (Hons) Digital Film Production with a Foundation Year",
@@ -3170,47 +3254,6 @@
       "courseRefId": "birmingham-city-university|foundation-course-in-acting-foundation"
     },
     {
-      "title": "BA (Hons) Sociology and Criminology with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-sociology-and-criminology-with-a-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Textile Design with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-textile-design-with-a-foundation-year"
-    },
-    {
       "title": "BSc (Hons) Sociology and Criminology with a Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
@@ -3227,92 +3270,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|bsc-hons-sociology-and-criminology-with-a-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Illustration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-illustration"
-    },
-    {
-      "title": "BA (Hons) English Language and Literature",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-english-language-and-literature"
-    },
-    {
-      "title": "BA (Hons) English and Creative Writing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-english-and-creative-writing"
-    },
-    {
-      "title": "BSc (Hons) Sport and Exercise Science with Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus",
-        "City South Campus",
-        "Alexander Stadium BCU Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-sport-and-exercise-science-with-foundation-year"
     },
     {
       "title": "BSc (Hons) Professional Policing",
@@ -3336,27 +3293,6 @@
       "courseRefId": "birmingham-city-university|bsc-hons-professional-policing"
     },
     {
-      "title": "BA (Hons) Photography",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-photography"
-    },
-    {
       "title": "BA (Hons) Filmmaking",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3376,26 +3312,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|ba-hons-filmmaking"
-    },
-    {
-      "title": "BA (Hons) Criminology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-criminology"
     },
     {
       "title": "BA (Hons) Criminology, Policing and Investigation",
@@ -3418,7 +3334,7 @@
       "courseRefId": "birmingham-city-university|ba-hons-criminology-policing-and-investigation"
     },
     {
-      "title": "BSc (Hons) Real Estate",
+      "title": "BA (Hons) English Language and Literature",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3436,7 +3352,167 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-real-estate"
+      "courseRefId": "birmingham-city-university|ba-hons-english-language-and-literature"
+    },
+    {
+      "title": "BA (Hons) Stage Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 20960,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-stage-management"
+    },
+    {
+      "title": "BA (Hons) Sociology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-sociology"
+    },
+    {
+      "title": "BA (Hons) Photography",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-photography"
+    },
+    {
+      "title": "BA (Hons) Sociology and Criminology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-sociology-and-criminology"
+    },
+    {
+      "title": "BSc (Hons) Criminology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 19220,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-criminology"
+    },
+    {
+      "title": "BSc (Hons) Criminology, Policing and Investigation",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 19220,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-criminology-policing-and-investigation"
+    },
+    {
+      "title": "BA (Hons) Illustration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-illustration"
+    },
+    {
+      "title": "BA (Hons) English and Creative Writing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ba-hons-english-and-creative-writing"
     },
     {
       "title": "BSc (Hons) Gemmology and Jewellery Studies",
@@ -3461,44 +3537,28 @@
       "courseRefId": "birmingham-city-university|bsc-hons-gemmology-and-jewellery-studies"
     },
     {
-      "title": "Higher National Diploma Jewellery and Silversmithing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2027",
-        "September 2026"
-      ],
-      "campuses": [
-        "School of Jewellery BCU Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|higher-national-diploma-jewellery-and-silversmithing"
-    },
-    {
-      "title": "BSc (Hons) Criminology, Policing and Investigation",
+      "title": "BSc (Hons) Real Estate",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 19220,
+      "tuition": 18570,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
         "September 2027"
       ],
       "campuses": [
         "City Centre Campus"
       ],
-      "scholarshipTag": null,
+      "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-criminology-policing-and-investigation"
+      "courseRefId": "birmingham-city-university|bsc-hons-real-estate"
     },
     {
-      "title": "BSc (Hons) Game Programming with Foundation Year",
+      "title": "BSc (Hons) Sport and Exercise Science with Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -3506,70 +3566,19 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2027",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-game-programming-with-foundation-year"
-    },
-    {
-      "title": "BA (Hons) Filmmaking with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2027",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-filmmaking-with-a-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Sociology and Criminology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 19220,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
         "September 2027"
       ],
       "campuses": [
-        "City Centre Campus"
+        "City Centre Campus",
+        "City South Campus",
+        "Alexander Stadium BCU Campus"
       ],
-      "scholarshipTag": null,
+      "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-sociology-and-criminology"
-    },
-    {
-      "title": "BSc (Hons) Sociology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 19220,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-sociology"
+      "courseRefId": "birmingham-city-university|bsc-hons-sport-and-exercise-science-with-foundation-year"
     },
     {
       "title": "BA (Hons) English Literature",
@@ -3615,7 +3624,7 @@
       "courseRefId": "birmingham-city-university|ba-hons-jewellery-and-objects"
     },
     {
-      "title": "BA (Hons) Sociology",
+      "title": "BA (Hons) Criminology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3632,51 +3641,67 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-sociology"
+      "courseRefId": "birmingham-city-university|ba-hons-criminology"
     },
     {
-      "title": "BA (Hons) Sociology and Criminology",
+      "title": "Higher National Diploma Jewellery and Silversmithing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "24 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2027",
+        "September 2026"
+      ],
+      "campuses": [
+        "School of Jewellery BCU Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|higher-national-diploma-jewellery-and-silversmithing"
+    },
+    {
+      "title": "BA (Hons) Filmmaking with a Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
       "tuition": 18570,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
+        "September 2027",
         "September 2026"
       ],
       "campuses": [
         "City Centre Campus"
       ],
-      "scholarshipTag": "Scholarship applied!",
+      "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-sociology-and-criminology"
+      "courseRefId": "birmingham-city-university|ba-hons-filmmaking-with-a-foundation-year"
     },
     {
-      "title": "BA (Hons) Stage Management",
-      "level": "bachelor",
+      "title": "BSc (Hons) Game Programming with Foundation Year",
+      "level": "foundation",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 20960,
+      "duration": "48 Months",
+      "tuition": 18570,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "September 2027"
+        "September 2027",
+        "September 2026"
       ],
       "campuses": [
         "City Centre Campus"
       ],
-      "scholarshipTag": "Scholarship applied!",
+      "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ba-hons-stage-management"
+      "courseRefId": "birmingham-city-university|bsc-hons-game-programming-with-foundation-year"
     },
     {
-      "title": "BSc (Hons) Criminology",
+      "title": "BSc (Hons) Sociology and Criminology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3691,7 +3716,48 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-criminology"
+      "courseRefId": "birmingham-city-university|bsc-hons-sociology-and-criminology"
+    },
+    {
+      "title": "BSc (Hons) Sociology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 19220,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-sociology"
+    },
+    {
+      "title": "PhD Social Sciences",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 15420,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "February 2025",
+        "February 2026",
+        "February 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|phd-social-sciences"
     },
     {
       "title": "PhD Conservatoire Research Degrees",
@@ -3740,27 +3806,27 @@
       "courseRefId": "birmingham-city-university|phd-english-research-degrees"
     },
     {
-      "title": "PhD Social Sciences",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 15420,
+      "title": "MSc Advanced Computer Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 18970,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
         "September 2025",
         "September 2026",
-        "February 2025",
-        "February 2026",
-        "February 2027"
+        "January 2025",
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "City Centre Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|phd-social-sciences"
+      "courseRefId": "birmingham-city-university|msc-advanced-computer-science"
     },
     {
       "title": "MSc Computer Science",
@@ -3787,27 +3853,6 @@
       "courseRefId": "birmingham-city-university|msc-computer-science"
     },
     {
-      "title": "MSc Advanced Computer Science with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2026",
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-advanced-computer-science-with-professional-placement"
-    },
-    {
       "title": "MSc Computer Science with Professional Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3831,19 +3876,17 @@
       "courseRefId": "birmingham-city-university|msc-computer-science-with-professional-placement"
     },
     {
-      "title": "MSc Advanced Computer Science",
+      "title": "MSc Advanced Computer Science with Professional Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
+      "duration": "18 Months",
+      "tuition": 20865,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
-        "September 2026",
-        "January 2025",
         "January 2026",
+        "September 2026",
         "January 2027"
       ],
       "campuses": [
@@ -3851,13 +3894,13 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-advanced-computer-science"
+      "courseRefId": "birmingham-city-university|msc-advanced-computer-science-with-professional-placement"
     },
     {
       "title": "MSc Big Data Analytics",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "18 Months",
       "tuition": 18970,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -3894,25 +3937,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|msc-big-data-analytics-with-professional-placement"
-    },
-    {
-      "title": "MSc Management and International Business with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-management-and-international-business-with-professional-placement"
     },
     {
       "title": "MSc Cyber Security",
@@ -3961,6 +3985,25 @@
       "courseRefId": "birmingham-city-university|msc-cyber-security-with-professional-placement"
     },
     {
+      "title": "MSc Management and International Business with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20865,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-management-and-international-business-with-professional-placement"
+    },
+    {
       "title": "MSc Management and International Business",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3985,27 +4028,7 @@
       "courseRefId": "birmingham-city-university|msc-management-and-international-business"
     },
     {
-      "title": "MBA International MBA",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 20370,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|mba-international-mba"
-    },
-    {
-      "title": "MSc Management and Finance",
+      "title": "MSc User Experience Design",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -4025,7 +4048,71 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-management-and-finance"
+      "courseRefId": "birmingham-city-university|msc-user-experience-design"
+    },
+    {
+      "title": "MSc User Experience Design with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20865,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "January 2026",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-user-experience-design-with-professional-placement"
+    },
+    {
+      "title": "MSc Management and Finance with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20865,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-management-and-finance-with-professional-placement"
+    },
+    {
+      "title": "MSc Finance and Investment",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-finance-and-investment"
     },
     {
       "title": "MPH Master of Public Health",
@@ -4054,93 +4141,6 @@
       "courseRefId": "birmingham-city-university|mph-master-of-public-health"
     },
     {
-      "title": "MSc Management and Finance with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-management-and-finance-with-professional-placement"
-    },
-    {
-      "title": "MSc User Experience Design with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "September 2025",
-        "January 2026",
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-user-experience-design-with-professional-placement"
-    },
-    {
-      "title": "MSc Finance and Investment",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-finance-and-investment"
-    },
-    {
-      "title": "MSc User Experience Design",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-user-experience-design"
-    },
-    {
       "title": "MSc Finance and Investment with Professional Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4158,6 +4158,29 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|msc-finance-and-investment-with-professional-placement"
+    },
+    {
+      "title": "MSc Management and Finance",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-management-and-finance"
     },
     {
       "title": "LLM International Business Law with Professional Placement",
@@ -4222,6 +4245,26 @@
       "courseRefId": "birmingham-city-university|bsc-hons-artificial-intelligence"
     },
     {
+      "title": "MSc Accounting and Finance (Masters Stage)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "6 Months",
+      "tuition": 6325,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2025",
+        "May 2026",
+        "May 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-accounting-and-finance-masters-stage"
+    },
+    {
       "title": "MSc Accounting and Finance",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4264,47 +4307,6 @@
       "courseRefId": "birmingham-city-university|msc-accounting-and-finance-with-professional-placement"
     },
     {
-      "title": "LLM International Law with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 22405,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|llm-international-law-with-professional-placement"
-    },
-    {
-      "title": "LLM International Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 20370,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|llm-international-law"
-    },
-    {
       "title": "MArch Architecture",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4325,11 +4327,29 @@
       "courseRefId": "birmingham-city-university|march-architecture"
     },
     {
-      "title": "MA Fashion Communication",
+      "title": "LLM International Law with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 22405,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|llm-international-law-with-professional-placement"
+    },
+    {
+      "title": "MSc Marketing",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 18970,
+      "tuition": 18600,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -4341,25 +4361,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-fashion-communication"
-    },
-    {
-      "title": "MA Fashion Communication with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-fashion-communication-with-professional-placement"
+      "courseRefId": "birmingham-city-university|msc-marketing"
     },
     {
       "title": "MSc Marketing with Professional Placement",
@@ -4398,11 +4400,11 @@
       "courseRefId": "birmingham-city-university|llm-conversion-in-law"
     },
     {
-      "title": "MSc Marketing",
+      "title": "MA Fashion Communication",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 18600,
+      "tuition": 18970,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -4414,20 +4416,22 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-marketing"
+      "courseRefId": "birmingham-city-university|ma-fashion-communication"
     },
     {
-      "title": "MSc Project Management with Professional Placement",
+      "title": "LLM International Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
+      "duration": "12 Months",
+      "tuition": 20370,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2024",
         "September 2025",
-        "January 2026",
         "September 2026",
+        "January 2025",
+        "January 2026",
         "January 2027"
       ],
       "campuses": [
@@ -4435,7 +4439,25 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-project-management-with-professional-placement"
+      "courseRefId": "birmingham-city-university|llm-international-law"
+    },
+    {
+      "title": "MA Fashion Communication with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20865,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ma-fashion-communication-with-professional-placement"
     },
     {
       "title": "MSc Project Management",
@@ -4460,6 +4482,27 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|msc-project-management"
+    },
+    {
+      "title": "MSc Project Management with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20865,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2026",
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-project-management-with-professional-placement"
     },
     {
       "title": "BA (Hons) Fashion Communication",
@@ -4502,25 +4545,24 @@
       "courseRefId": "birmingham-city-university|ba-hons-fashion-communication-with-a-foundation-year"
     },
     {
-      "title": "MSc Construction Project Management with Professional Placement",
+      "title": "MSc Applied Child Psychology",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
+      "duration": "12 Months",
+      "tuition": 18970,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
-        "January 2026",
-        "September 2026",
-        "January 2027"
+        "September 2024",
+        "September 2026"
       ],
       "campuses": [
         "City Centre Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-construction-project-management-with-professional-placement"
+      "courseRefId": "birmingham-city-university|msc-applied-child-psychology"
     },
     {
       "title": "MSc Construction Project Management",
@@ -4546,24 +4588,25 @@
       "courseRefId": "birmingham-city-university|msc-construction-project-management"
     },
     {
-      "title": "MSc Applied Child Psychology",
+      "title": "MSc Construction Project Management with Professional Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
+      "duration": "18 Months",
+      "tuition": 20865,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
-        "September 2024",
-        "September 2026"
+        "January 2026",
+        "September 2026",
+        "January 2027"
       ],
       "campuses": [
         "City Centre Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-applied-child-psychology"
+      "courseRefId": "birmingham-city-university|msc-construction-project-management-with-professional-placement"
     },
     {
       "title": "MA Education (International Education)",
@@ -4605,26 +4648,6 @@
       "courseRefId": "birmingham-city-university|msc-applied-child-psychology-with-professional-placement"
     },
     {
-      "title": "BEng (Hons) Electrical and Electronic Engineering with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|beng-hons-electrical-and-electronic-engineering-with-a-foundation-year"
-    },
-    {
       "title": "BA (Hons) Product Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4643,6 +4666,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|ba-hons-product-design"
+    },
+    {
+      "title": "BEng (Hons) Electrical and Electronic Engineering with a Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|beng-hons-electrical-and-electronic-engineering-with-a-foundation-year"
     },
     {
       "title": "BEng (Hons) Electrical and Electronic Engineering",
@@ -4728,6 +4771,29 @@
       "courseRefId": "birmingham-city-university|bsc-hons-nursing-mental-health"
     },
     {
+      "title": "MSc Logistics and Supply Chain Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-logistics-and-supply-chain-management"
+    },
+    {
       "title": "MSc Logistics and Supply Chain Management with Professional Placement",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4767,29 +4833,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|msc-forensic-psychology"
-    },
-    {
-      "title": "MSc Logistics and Supply Chain Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-logistics-and-supply-chain-management"
     },
     {
       "title": "BA (Hons) Game Design",
@@ -4851,67 +4894,6 @@
       "courseRefId": "birmingham-city-university|msc-health-data-science-and-clinical-informatics"
     },
     {
-      "title": "MSc Sport and Exercise Nutrition",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "City South Campus",
-        "Alexander Stadium BCU Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-sport-and-exercise-nutrition"
-    },
-    {
-      "title": "MFA Acting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18970,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus",
-        "Bournville BCU Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|mfa-acting"
-    },
-    {
-      "title": "MA Fashion Management with Professional Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-fashion-management-with-professional-placement"
-    },
-    {
       "title": "MSc Automotive Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4935,28 +4917,27 @@
       "courseRefId": "birmingham-city-university|msc-automotive-engineering"
     },
     {
-      "title": "MSc Medical Imaging Technology",
+      "title": "MSc Counselling (Children and Young People)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "15 Months",
-      "tuition": 18970,
+      "duration": "12 Months",
+      "tuition": 11055,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
-        "January 2026",
-        "January 2027"
+        "September 2024",
+        "September 2025",
+        "September 2026"
       ],
       "campuses": [
-        "City Centre Campus",
-        "City South Campus"
+        "City Centre Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-medical-imaging-technology"
+      "courseRefId": "birmingham-city-university|msc-counselling-children-and-young-people"
     },
     {
-      "title": "MA Fashion Management",
+      "title": "MA Jewellery and Related Products",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -4966,17 +4947,15 @@
       "intake": [
         "September 2024",
         "September 2025",
-        "September 2026",
-        "January 2025",
-        "January 2026",
-        "January 2027"
+        "September 2026"
       ],
       "campuses": [
-        "City Centre Campus"
+        "City Centre Campus",
+        "School of Jewellery BCU Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-fashion-management"
+      "courseRefId": "birmingham-city-university|ma-jewellery-and-related-products"
     },
     {
       "title": "MSc Automotive Engineering with Professional Placement",
@@ -5019,63 +4998,6 @@
       "courseRefId": "birmingham-city-university|ma-international-relations-and-security"
     },
     {
-      "title": "MMus Conducting - Brass Brand Conducting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 28460,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|mmus-conducting-brass-brand-conducting"
-    },
-    {
-      "title": "MMus Conducting - Choral Conducting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 28460,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|mmus-conducting-choral-conducting"
-    },
-    {
-      "title": "MMus Conducting - Orchestral Conducting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 28460,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|mmus-conducting-orchestral-conducting"
-    },
-    {
       "title": "PgDip Conducting - Brass Band Conducting",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -5114,25 +5036,6 @@
       "courseRefId": "birmingham-city-university|pgdip-conducting-choral-conducting"
     },
     {
-      "title": "PgDip Conducting - Orchestral Conducting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 28460,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|pgdip-conducting-orchestral-conducting"
-    },
-    {
       "title": "MMus Performance - Instrumental Performance",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -5152,74 +5055,49 @@
       "courseRefId": "birmingham-city-university|mmus-performance-instrumental-performance"
     },
     {
-      "title": "MA Acting",
+      "title": "PgDip Conducting - Orchestral Conducting",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 20960,
+      "tuition": 28460,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
-        "September 2024",
         "September 2026",
         "September 2027"
       ],
       "campuses": [
-        "City Centre Campus",
-        "Bournville BCU Campus"
+        "City Centre Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-acting"
+      "courseRefId": "birmingham-city-university|pgdip-conducting-orchestral-conducting"
     },
     {
-      "title": "MA Jewellery and Related Products",
+      "title": "MMus Performance - Jazz",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 18970,
+      "duration": "24 Months",
+      "tuition": 28460,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus",
-        "School of Jewellery BCU Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-jewellery-and-related-products"
-    },
-    {
-      "title": "MSc Counselling (Children and Young People)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 11055,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "City Centre Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|msc-counselling-children-and-young-people"
+      "courseRefId": "birmingham-city-university|mmus-performance-jazz"
     },
     {
-      "title": "MA International Relations and Security with Professional Placement",
+      "title": "MMus Performance - Orchestral Performance",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 20865,
+      "duration": "24 Months",
+      "tuition": 28460,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -5230,7 +5108,26 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|ma-international-relations-and-security-with-professional-placement"
+      "courseRefId": "birmingham-city-university|mmus-performance-orchestral-performance"
+    },
+    {
+      "title": "MMus Performance - Vocal Performance",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 28460,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|mmus-performance-vocal-performance"
     },
     {
       "title": "PgDip Performance - Instrumental Performance",
@@ -5308,7 +5205,7 @@
       "courseRefId": "birmingham-city-university|pgdip-performance-vocal-performance"
     },
     {
-      "title": "MMus Performance - Jazz",
+      "title": "MMus Conducting - Brass Brand Conducting",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -5324,14 +5221,179 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|mmus-performance-jazz"
+      "courseRefId": "birmingham-city-university|mmus-conducting-brass-brand-conducting"
     },
     {
-      "title": "MMus Performance - Orchestral Performance",
+      "title": "MA Acting",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 20960,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus",
+        "Bournville BCU Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ma-acting"
+    },
+    {
+      "title": "MSc Sport and Exercise Nutrition",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "City South Campus",
+        "Alexander Stadium BCU Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-sport-and-exercise-nutrition"
+    },
+    {
+      "title": "MA Fashion Management with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20865,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ma-fashion-management-with-professional-placement"
+    },
+    {
+      "title": "MA Fashion Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|ma-fashion-management"
+    },
+    {
+      "title": "MSc Medical Imaging Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "15 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "City Centre Campus",
+        "City South Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|msc-medical-imaging-technology"
+    },
+    {
+      "title": "MFA Acting",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18970,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus",
+        "Bournville BCU Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|mfa-acting"
+    },
+    {
+      "title": "MMus Conducting - Orchestral Conducting",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
       "tuition": 28460,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|mmus-conducting-orchestral-conducting"
+    },
+    {
+      "title": "MMus Conducting - Choral Conducting",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 28460,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|mmus-conducting-choral-conducting"
+    },
+    {
+      "title": "MA International Relations and Security with Professional Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 20865,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -5342,26 +5404,25 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|mmus-performance-orchestral-performance"
+      "courseRefId": "birmingham-city-university|ma-international-relations-and-security-with-professional-placement"
     },
     {
-      "title": "MMus Performance - Vocal Performance",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 28460,
+      "title": "BSc (Hons) Mental Health Nursing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 18570,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026",
-        "September 2027"
+        "January 2027"
       ],
       "campuses": [
-        "City Centre Campus"
+        "City South Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|mmus-performance-vocal-performance"
+      "courseRefId": "birmingham-city-university|bsc-hons-mental-health-nursing"
     },
     {
       "title": "BSc (Hons) Sound Engineering with a Foundation Year",
@@ -5382,25 +5443,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|bsc-hons-sound-engineering-with-a-foundation-year"
-    },
-    {
-      "title": "BSc (Hons) Software Engineering with a Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 18570,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2027",
-        "September 2026"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-software-engineering-with-a-foundation-year"
     },
     {
       "title": "BMus Music - Composition",
@@ -5463,10 +5505,10 @@
       "courseRefId": "birmingham-city-university|bmus-music-music-technology"
     },
     {
-      "title": "BSc (Hons) Sound Engineering",
-      "level": "bachelor",
+      "title": "BSc (Hons) Software Engineering with a Foundation Year",
+      "level": "foundation",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "48 Months",
       "tuition": 18570,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -5479,7 +5521,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|bsc-hons-sound-engineering"
+      "courseRefId": "birmingham-city-university|bsc-hons-software-engineering-with-a-foundation-year"
     },
     {
       "title": "BSc (Hons) Software Engineering",
@@ -5499,6 +5541,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|bsc-hons-software-engineering"
+    },
+    {
+      "title": "BSc (Hons) Sound Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 18570,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2027",
+        "September 2026"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|bsc-hons-sound-engineering"
     },
     {
       "title": "BSc (Hons) Building Surveying (Top-Up)",
@@ -5576,41 +5637,6 @@
       "courseRefId": "birmingham-city-university|bsc-hons-human-biosciences"
     },
     {
-      "title": "Pre-sessional English (Online)",
-      "level": "language",
-      "sourceLevel": "PresessionalEnglish",
-      "duration": "0 Variable",
-      "tuition": null,
-      "currency": null,
-      "feeBasis": null,
-      "intake": [
-        "July 2026",
-        "August 2026",
-        "September 2026",
-        "October 2026",
-        "November 2026",
-        "December 2026",
-        "January 2027",
-        "February 2027",
-        "March 2027",
-        "April 2027",
-        "May 2027",
-        "June 2027",
-        "July 2027",
-        "August 2027",
-        "September 2027",
-        "October 2027",
-        "November 2027",
-        "December 2027"
-      ],
-      "campuses": [
-        "City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
-      "courseRefId": "birmingham-city-university|pre-sessional-english-online"
-    },
-    {
       "title": "Pre-sessional English",
       "level": "language",
       "sourceLevel": "PresessionalEnglish",
@@ -5619,7 +5645,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",
@@ -5644,6 +5669,40 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
       "courseRefId": "birmingham-city-university|pre-sessional-english"
+    },
+    {
+      "title": "Pre-sessional English (Online)",
+      "level": "language",
+      "sourceLevel": "PresessionalEnglish",
+      "duration": "0 Variable",
+      "tuition": null,
+      "currency": null,
+      "feeBasis": null,
+      "intake": [
+        "August 2026",
+        "September 2026",
+        "October 2026",
+        "November 2026",
+        "December 2026",
+        "January 2027",
+        "February 2027",
+        "March 2027",
+        "April 2027",
+        "May 2027",
+        "June 2027",
+        "July 2027",
+        "August 2027",
+        "September 2027",
+        "October 2027",
+        "November 2027",
+        "December 2027"
+      ],
+      "campuses": [
+        "City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/birmingham-city-university",
+      "courseRefId": "birmingham-city-university|pre-sessional-english-online"
     }
   ]
 }

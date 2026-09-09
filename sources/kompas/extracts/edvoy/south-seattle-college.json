@@ -3,13 +3,14 @@
   "name": "South Seattle College",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-  "scrapedAt": "2026-07-22T15:42:52.379Z",
+  "scrapedAt": "2026-08-23T13:11:39.971Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "south-seattle-college",
   "country": "United States",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -22,8 +23,8 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
+        "April 2025",
         "September 2025",
         "April 2024",
         "September 2024",
@@ -48,9 +49,9 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
         "September 2025",
+        "April 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -74,9 +75,9 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
         "April 2025",
         "January 2025",
-        "September 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -100,11 +101,11 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
+        "April 2025",
         "September 2025",
-        "April 2024",
         "September 2024",
+        "April 2024",
         "January 2024",
         "April 2026",
         "January 2026",
@@ -129,8 +130,8 @@
         "April 2025",
         "January 2025",
         "September 2025",
-        "April 2024",
         "September 2024",
+        "April 2024",
         "January 2024",
         "April 2026",
         "January 2026",
@@ -144,32 +145,6 @@
       "courseRefId": "south-seattle-college|aa-ab-as-associate-in-accounting"
     },
     {
-      "title": "BAS Bachelor of Applied Science Hospitality Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 19788,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "January 2025",
-        "September 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|bas-bachelor-of-applied-science-hospitality-management"
-    },
-    {
       "title": "Certificate Maintenance and Light Repair",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -179,10 +154,10 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "April 2025",
-        "January 2025",
         "September 2025",
-        "April 2024",
+        "January 2025",
         "September 2024",
+        "April 2024",
         "January 2024",
         "April 2026",
         "January 2026",
@@ -204,8 +179,8 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
+        "April 2025",
         "September 2025",
         "April 2024",
         "September 2024",
@@ -230,9 +205,9 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
-        "January 2025",
         "September 2025",
+        "January 2025",
+        "April 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -256,8 +231,8 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
+        "April 2025",
         "September 2025",
         "April 2024",
         "September 2024",
@@ -300,6 +275,32 @@
       "courseRefId": "south-seattle-college|certificate-restaurant-production"
     },
     {
+      "title": "BAS Bachelor of Applied Science Hospitality Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 19788,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2025",
+        "April 2025",
+        "April 2024",
+        "September 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|bas-bachelor-of-applied-science-hospitality-management"
+    },
+    {
       "title": "Associate of Arts (AA) Education",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -308,11 +309,11 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
         "September 2025",
-        "April 2024",
+        "April 2025",
         "September 2024",
+        "April 2024",
         "January 2024",
         "April 2026",
         "January 2026",
@@ -334,9 +335,9 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
         "April 2025",
         "January 2025",
-        "September 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -360,9 +361,9 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
         "April 2025",
         "January 2025",
-        "September 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -412,11 +413,11 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
+        "April 2025",
         "September 2025",
-        "April 2024",
         "September 2024",
+        "April 2024",
         "January 2024",
         "April 2026",
         "January 2026",
@@ -430,7 +431,7 @@
       "courseRefId": "south-seattle-college|associate-of-arts-aa-humanities-and-cultural-studies"
     },
     {
-      "title": "Associate of Science (AS) Physics and Astronomy",
+      "title": "Associate of Applied Science (AAS) Marketing and Sales of Food and Wine",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
@@ -438,11 +439,11 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
         "April 2025",
         "January 2025",
-        "September 2025",
-        "April 2024",
         "September 2024",
+        "April 2024",
         "January 2024",
         "April 2026",
         "January 2026",
@@ -453,33 +454,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-science-as-physics-and-astronomy"
-    },
-    {
-      "title": "Certificate Marketing and Sales of Food and Wine",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 6923.68,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "January 2025",
-        "September 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|certificate-marketing-and-sales-of-food-and-wine"
+      "courseRefId": "south-seattle-college|associate-of-applied-science-aas-marketing-and-sales-of-food-and-wine"
     },
     {
       "title": "Certificate Welding Fabrication Technology",
@@ -491,10 +466,10 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "April 2025",
-        "January 2025",
         "September 2025",
-        "April 2024",
+        "January 2025",
         "September 2024",
+        "April 2024",
         "January 2024",
         "April 2026",
         "January 2026",
@@ -508,32 +483,6 @@
       "courseRefId": "south-seattle-college|certificate-welding-fabrication-technology"
     },
     {
-      "title": "Associate of Science (AS) Environmental Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 10209,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "January 2025",
-        "September 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-science-as-environmental-science"
-    },
-    {
       "title": "Associate of Arts (AA) Political Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -542,11 +491,11 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
+        "April 2025",
         "September 2025",
-        "April 2024",
         "September 2024",
+        "April 2024",
         "January 2024",
         "April 2026",
         "January 2026",
@@ -560,7 +509,7 @@
       "courseRefId": "south-seattle-college|associate-of-arts-aa-political-science"
     },
     {
-      "title": "Associate of Applied Science (AAS) Marketing and Sales of Food and Wine",
+      "title": "Associate of Applied Science Degree (AAS) Marketing and Sales of Food and Wine",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
@@ -571,8 +520,8 @@
         "April 2025",
         "January 2025",
         "September 2025",
-        "April 2024",
         "September 2024",
+        "April 2024",
         "January 2024",
         "April 2026",
         "January 2026",
@@ -583,7 +532,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-applied-science-aas-marketing-and-sales-of-food-and-wine"
+      "courseRefId": "south-seattle-college|associate-of-applied-science-degree-aas-marketing-and-sales-of-food-and-wine"
     },
     {
       "title": "Associate of Applied Science (AAS) Welding Fabrication Technology",
@@ -612,7 +561,33 @@
       "courseRefId": "south-seattle-college|associate-of-applied-science-aas-welding-fabrication-technology"
     },
     {
-      "title": "Associate of Applied Science Degree (AAS) Marketing and Sales of Food and Wine",
+      "title": "Certificate Marketing and Sales of Food and Wine",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 6923.68,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "April 2025",
+        "January 2025",
+        "September 2025",
+        "September 2024",
+        "April 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|certificate-marketing-and-sales-of-food-and-wine"
+    },
+    {
+      "title": "Associate of Science (AS) Physics and Astronomy",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
@@ -620,9 +595,35 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
         "September 2025",
+        "April 2025",
+        "September 2024",
+        "April 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|associate-of-science-as-physics-and-astronomy"
+    },
+    {
+      "title": "Associate of Science (AS) Environmental Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 10209,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "April 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -635,7 +636,33 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-applied-science-degree-aas-marketing-and-sales-of-food-and-wine"
+      "courseRefId": "south-seattle-college|associate-of-science-as-environmental-science"
+    },
+    {
+      "title": "Associate of Arts (AA) 3D Fine Arts - Ceramics and Sculpture",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 10209,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "April 2025",
+        "April 2024",
+        "September 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|associate-of-arts-aa-3-d-fine-arts-ceramics-and-sculpture"
     },
     {
       "title": "Associate of Arts (AA) 2D Fine Arts - Painting and Drawing",
@@ -664,84 +691,6 @@
       "courseRefId": "south-seattle-college|associate-of-arts-aa-2-d-fine-arts-painting-and-drawing"
     },
     {
-      "title": "Associate of Arts (AA) 3D Fine Arts - Ceramics and Sculpture",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 10209,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "January 2025",
-        "September 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-arts-aa-3-d-fine-arts-ceramics-and-sculpture"
-    },
-    {
-      "title": "BAS Bachelor of Applied Science Sustainable Building Science Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 19788,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "January 2025",
-        "September 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|bas-bachelor-of-applied-science-sustainable-building-science-technology"
-    },
-    {
-      "title": "Certificate Diesel and Heavy Equipment Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 6923.68,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "January 2025",
-        "September 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|certificate-diesel-and-heavy-equipment-technology"
-    },
-    {
       "title": "Certificate Landscape Horticulture",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -751,8 +700,8 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "April 2025",
-        "January 2025",
         "September 2025",
+        "January 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -768,10 +717,10 @@
       "courseRefId": "south-seattle-college|certificate-landscape-horticulture"
     },
     {
-      "title": "Certificate Wine Production",
+      "title": "Certificate Aviation Maintenance Airframe and Powerplant",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
+      "duration": "24 Months",
       "tuition": 6923.68,
       "currency": "USD",
       "feeBasis": "approxAnnual",
@@ -791,7 +740,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|certificate-wine-production"
+      "courseRefId": "south-seattle-college|certificate-aviation-maintenance-airframe-and-powerplant"
     },
     {
       "title": "Associate of Arts (AA) Public Health-Global Health",
@@ -802,9 +751,9 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
         "September 2025",
+        "April 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -820,7 +769,33 @@
       "courseRefId": "south-seattle-college|associate-of-arts-aa-public-health-global-health"
     },
     {
-      "title": "Associate of Science (AS) Biology",
+      "title": "Associate of Arts (AA) Digital Art and Photography",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 10209,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "April 2025",
+        "September 2024",
+        "April 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|associate-of-arts-aa-digital-art-and-photography"
+    },
+    {
+      "title": "Associate of Arts (AA) English, Literature, and Writing Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
@@ -831,6 +806,32 @@
         "April 2025",
         "January 2025",
         "September 2025",
+        "September 2024",
+        "April 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|associate-of-arts-aa-english-literature-and-writing-studies"
+    },
+    {
+      "title": "Associate of Science (AS) Math",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 10209,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "April 2025",
+        "January 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -843,7 +844,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-science-as-biology"
+      "courseRefId": "south-seattle-college|associate-of-science-as-math"
     },
     {
       "title": "Associate of Science (AS) Chemistry",
@@ -854,8 +855,8 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
+        "April 2025",
         "September 2025",
         "April 2024",
         "September 2024",
@@ -872,17 +873,17 @@
       "courseRefId": "south-seattle-college|associate-of-science-as-chemistry"
     },
     {
-      "title": "Associate of Science (AS) Math",
+      "title": "Associate of Applied Science Degree (AAS) Aviation Maintenance Technology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
+      "duration": "36 Months",
       "tuition": 10209,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2025",
         "April 2025",
         "January 2025",
-        "September 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -895,59 +896,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-science-as-math"
-    },
-    {
-      "title": "Associate of Arts (AA) English, Literature, and Writing Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 10209,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "January 2025",
-        "September 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-arts-aa-english-literature-and-writing-studies"
-    },
-    {
-      "title": "Associate of Arts (AA) Environmental Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 10209,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "January 2025",
-        "September 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-arts-aa-environmental-studies"
+      "courseRefId": "south-seattle-college|associate-of-applied-science-degree-aas-aviation-maintenance-technology"
     },
     {
       "title": "Associate of Arts (AA) History",
@@ -984,11 +933,11 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
-        "January 2025",
         "September 2025",
-        "April 2024",
+        "January 2025",
+        "April 2025",
         "September 2024",
+        "April 2024",
         "January 2024",
         "April 2026",
         "January 2026",
@@ -1000,58 +949,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
       "courseRefId": "south-seattle-college|associate-of-arts-aa-kinesiology-sports-and-exercise-science"
-    },
-    {
-      "title": "Associate of Arts (AA) Music",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 10209,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "January 2025",
-        "September 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-arts-aa-music"
-    },
-    {
-      "title": "Associate of Arts (AA) Nutrition Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 10209,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "January 2025",
-        "September 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-arts-aa-nutrition-science"
     },
     {
       "title": "Associate of Applied Science (AAS) Automotive Technology",
@@ -1080,58 +977,6 @@
       "courseRefId": "south-seattle-college|associate-of-applied-science-aas-automotive-technology"
     },
     {
-      "title": "Associate of Applied Science (AAS) Aviation Maintenance Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 10209,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "September 2025",
-        "January 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-applied-science-aas-aviation-maintenance-technology"
-    },
-    {
-      "title": "Associate of Applied Science (AAS) Diesel and Heavy Equipment Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 10209,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "April 2025",
-        "January 2025",
-        "September 2025",
-        "April 2024",
-        "September 2024",
-        "January 2024",
-        "April 2026",
-        "January 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "South Seattle Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-applied-science-aas-diesel-and-heavy-equipment-technology"
-    },
-    {
       "title": "Associate of Applied Science (AAS) Landscape Horticulture",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1140,9 +985,9 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
-        "January 2025",
         "September 2025",
+        "January 2025",
+        "April 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -1156,6 +1001,32 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
       "courseRefId": "south-seattle-college|associate-of-applied-science-aas-landscape-horticulture"
+    },
+    {
+      "title": "Associate of Arts (AA) Nutrition Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 10209,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "April 2025",
+        "January 2025",
+        "April 2024",
+        "September 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|associate-of-arts-aa-nutrition-science"
     },
     {
       "title": "Associate of Applied Science (AAS) Wine Production",
@@ -1184,7 +1055,7 @@
       "courseRefId": "south-seattle-college|associate-of-applied-science-aas-wine-production"
     },
     {
-      "title": "Associate of Arts (AA) Communication Studies",
+      "title": "Associate of Science (AS) Biology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
@@ -1193,8 +1064,60 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "April 2025",
+        "September 2025",
+        "January 2025",
+        "April 2024",
+        "September 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|associate-of-science-as-biology"
+    },
+    {
+      "title": "Certificate Wine Production",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 6923.68,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "April 2025",
+        "September 2025",
+        "January 2025",
+        "April 2024",
+        "September 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|certificate-wine-production"
+    },
+    {
+      "title": "Associate of Arts (AA) Communication Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 10209,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
         "January 2025",
         "September 2025",
+        "April 2025",
         "April 2024",
         "September 2024",
         "January 2024",
@@ -1210,7 +1133,7 @@
       "courseRefId": "south-seattle-college|associate-of-arts-aa-communication-studies"
     },
     {
-      "title": "Associate of Arts (AA) Digital Art and Photography",
+      "title": "Associate of Arts (AA) Environmental Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
@@ -1218,8 +1141,8 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "April 2025",
         "January 2025",
+        "April 2025",
         "September 2025",
         "April 2024",
         "September 2024",
@@ -1233,13 +1156,39 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-arts-aa-digital-art-and-photography"
+      "courseRefId": "south-seattle-college|associate-of-arts-aa-environmental-studies"
     },
     {
-      "title": "Certificate Aviation Maintenance Airframe and Powerplant",
+      "title": "Associate of Arts (AA) Music",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "24 Months",
+      "tuition": 10209,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "April 2025",
+        "January 2025",
+        "April 2024",
+        "September 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|associate-of-arts-aa-music"
+    },
+    {
+      "title": "Certificate Diesel and Heavy Equipment Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
       "tuition": 6923.68,
       "currency": "USD",
       "feeBasis": "approxAnnual",
@@ -1259,19 +1208,19 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|certificate-aviation-maintenance-airframe-and-powerplant"
+      "courseRefId": "south-seattle-college|certificate-diesel-and-heavy-equipment-technology"
     },
     {
-      "title": "Associate of Applied Science Degree (AAS) Aviation Maintenance Technology",
+      "title": "BAS Bachelor of Applied Science Sustainable Building Science Technology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 10209,
+      "duration": "24 Months",
+      "tuition": 19788,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "April 2025",
+        "September 2025",
         "January 2025",
         "April 2024",
         "September 2024",
@@ -1285,7 +1234,59 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
-      "courseRefId": "south-seattle-college|associate-of-applied-science-degree-aas-aviation-maintenance-technology"
+      "courseRefId": "south-seattle-college|bas-bachelor-of-applied-science-sustainable-building-science-technology"
+    },
+    {
+      "title": "Associate of Applied Science (AAS) Diesel and Heavy Equipment Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 10209,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "April 2025",
+        "September 2025",
+        "September 2024",
+        "April 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|associate-of-applied-science-aas-diesel-and-heavy-equipment-technology"
+    },
+    {
+      "title": "Associate of Applied Science (AAS) Aviation Maintenance Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 10209,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2025",
+        "April 2025",
+        "April 2024",
+        "September 2024",
+        "January 2024",
+        "April 2026",
+        "January 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "South Seattle Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/south-seattle-college",
+      "courseRefId": "south-seattle-college|associate-of-applied-science-aas-aviation-maintenance-technology"
     }
   ]
 }

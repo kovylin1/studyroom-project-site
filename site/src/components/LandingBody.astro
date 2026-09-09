@@ -8,6 +8,7 @@ import path from 'node:path';
 import { STUDYROOM_FAQ, CURRENCY_TO_KZT, CURRENCY_SYMBOL, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
 import { CONTACTS, waLink, telLink, AGENCY, yearsOnMarket } from '~/content/studyroom/contacts';
 import { useTranslations, localizeUrl, type Locale } from '~/i18n/utils';
+import { officialSiteOf, programLink } from '~/scripts/program-link';
 
 // Видео-отзывы студентов (ссылки владельца 2026-07-29, Google Drive «anyone with
 // link»). Встраиваются через drive.google.com/file/d/<id>/preview — файлы не
@@ -25,6 +26,7 @@ const TEAM_PHOTO = '/photos/studyroom-team.jpg';
 const hasTeamPhoto = fs.existsSync(path.join(process.cwd(), 'public', 'photos', 'studyroom-team.jpg'));
 import { pickTimeline } from '~/i18n/timelines';
 import LangSwitcher from '~/components/LangSwitcher.astro';
+import { annualTuitionValues } from '../lib/tuition';
 
 interface Props {
   u: CollectionEntry<'universities'>['data'];
@@ -39,6 +41,20 @@ const fill = (key: string, vars: Record<string, string | number>) =>
 
 const TIMELINE = pickTimeline(locale, u.country);
 
+const officialSite = officialSiteOf(u);
+
+// Задача 3.21: обещание подготовки показывалось всем подряд — и вузам, у которых
+// ни Foundation, ни Pre-Master's нет вовсе. Смотрим на программы самой карточки.
+const hasFoundation = u.programs.some((p) => p.level === 'foundation');
+const hasPathway = u.programs.some((p) => p.programType === 'pathway');
+const ieltsHelpKey = hasFoundation && hasPathway
+  ? 'lp.req.ieltsHelpText'
+  : hasFoundation
+    ? 'lp.req.ieltsHelpTextFoundation'
+    : hasPathway
+      ? 'lp.req.ieltsHelpTextPathway'
+      : 'lp.req.ieltsHelpTextNone';
+
 const baseRate = CURRENCY_TO_KZT[u.tuition.currency] ?? DEFAULT_KZT_RATE;
 const sym = CURRENCY_SYMBOL[u.tuition.currency] ?? u.tuition.currency;
 
@@ -48,6 +64,12 @@ interface ProgramRow {
   level: string;
   faculty: string;
   tuition: number | undefined;
+  // 'program' — сумма за весь срок, а не за год (КОМПАС 3.3-a); подпись в progPrice
+  tuitionBasis: 'year' | 'program' | undefined;
+  // своя валюта программы (КОМПАС 3.5-a); когда её нет — валюта карточки
+  tuitionCurrency: string | undefined;
+  // несколько сумм у источника (КОМПАС 3.5-b); в tuition лежит минимальная
+  tuitionVariants: unknown[] | undefined;
   programType: string | undefined;
   unverified: boolean | undefined;
   durationYears: number | undefined;
@@ -64,12 +86,16 @@ const programRows: ProgramRow[] = u.programs.map((p) => ({
   level: p.level,
   faculty: p.faculty ?? t('lp.misc.otherFaculty'),
   tuition: u.tuition.byProgram[p.slug],
+  tuitionBasis: p.tuitionBasis,
+  tuitionCurrency: p.tuitionCurrency,
+  tuitionVariants: p.tuitionVariants,
   programType: p.programType,
   unverified: p.kompasStatus === 'catalog-only' || undefined,
   durationYears: p.durationYears,
   language: p.language,
   intakes: p.intakes,
-  programUrl: p.programUrl,
+  // ссылка на агрегатор подменяется офсайтом вуза, а если офсайта нет — ссылки нет
+  programUrl: programLink(p.programUrl, officialSite),
 }));
 
 const facultyMap = new Map<string, ProgramRow[]>();
@@ -101,7 +127,7 @@ const faculties = Array.from(facultyMap.entries())
   })
   .slice(0, 48);
 
-const tuitionValues = Object.values(u.tuition.byProgram).filter((v) => v > 0);
+const tuitionValues = annualTuitionValues(u.tuition, u.programs);
 const tuitionMin = tuitionValues.length ? Math.min(...tuitionValues) : 0;
 
 function stripKaplan<T extends string | undefined | null>(s: T): T {
@@ -215,6 +241,7 @@ const SCRIPT_STR = {
   lvlFoundation: t('lp.programs.lvlFoundation'),
   lvlPreMaster: t('lp.programs.lvlPreMaster'),
   lvlMaster: t('lp.programs.lvlMaster'),
+  lvlPhd: t('lp.programs.lvlPhd'),
   lvlBachelor: t('lp.programs.lvlBachelor'),
   lvlEnglish: t('lp.programs.lvlEnglish'),
   lvlShort: t('lp.programs.lvlShort'),
@@ -223,7 +250,14 @@ const SCRIPT_STR = {
   tbdLink: t('lp.programs.tbdLink'),
   unverifiedWord: t('lp.programs.unverified'),
   perYear: t('lp.programs.perYear'),
+  perProgram: t('lp.programs.perProgram'),
+  priceFrom: t('lp.programs.priceFrom'),
+  variantsTitle: t('lp.programs.variantsTitle'),
+  varAccommodation: t('lp.programs.variantAccommodation'),
+  varOther: t('lp.programs.variantOther'),
+  varTotal: t('lp.programs.variantTotal'),
   yearsWord: t('lp.programs.yearsWord'),
+  durationTbd: t('lp.programs.durationTbd'),
   intakesWord: t('lp.programs.intakesWord'),
   programsEmpty: t('lp.programs.empty'),
   showAllCount: t('lp.programs.showAllCount'),
@@ -426,6 +460,7 @@ const SCRIPT_STR = {
   .lp .program-row__meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
   .lp .program-row__chip { font-size: 11.5px; line-height: 1; color: var(--ink-3); background: var(--surface-2, #f4f5f4); border: 1px solid var(--line); border-radius: 999px; padding: 4px 8px; white-space: nowrap; }
   .lp .program-row__chip--intake { color: #7a4500; background: #fff4e0; border-color: #ffd591; }
+  .lp .program-row__chip--tbd { color: var(--ink-3); background: transparent; border-style: dashed; }
   .lp .program-row__price { font-weight: 700; color: var(--green); white-space: nowrap; }
   .lp .program-row__price-link { font-weight: 600; font-size: 0.85em; color: var(--green); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
   .lp .program-row__price-link:hover { opacity: 0.75; }
@@ -824,6 +859,7 @@ const SCRIPT_STR = {
         <button class="lvl" type="button" data-level="bachelor">{t('lp.programs.lvlBachelor')}</button>
         <button class="lvl" type="button" data-level="pathway">{t('lp.programs.lvlPreMaster')}</button>
         <button class="lvl" type="button" data-level="master">{t('lp.programs.lvlMaster')}</button>
+        <button class="lvl" type="button" data-level="phd">{t('lp.programs.lvlPhd')}</button>
         <button class="lvl" type="button" data-level="english-language">{t('lp.programs.lvlEnglish')}</button>
         <button class="lvl" type="button" data-level="short-course">{t('lp.programs.lvlShort')}</button>
       </div>
@@ -894,7 +930,7 @@ const SCRIPT_STR = {
         </div>
         <div class="ielts-help">
           <h4>{fill('lp.req.ieltsHelpTitle', { ielts: u.requirements?.language?.ielts != null ? u.requirements.language.ielts : '6.0' })}</h4>
-          <p style="font-size: 14px; color: var(--ink-2);" set:html={fill('lp.req.ieltsHelpText', { ielts: u.requirements?.language?.ielts ?? 5.5 })} />
+          <p style="font-size: 14px; color: var(--ink-2);" set:html={fill(ieltsHelpKey, { ielts: u.requirements?.language?.ielts ?? 5.5 })} />
           {u.requirements?.gpa == null && (
             <p style="font-size: 13px; color: var(--ink-3); margin-top: 8px;">{t('lp.req.gpaNote')}</p>
           )}
@@ -1217,6 +1253,7 @@ const SCRIPT_STR = {
         <button class="lvl" type="button" data-level="bachelor">{t('lp.programs.lvlBachelor')}</button>
         <button class="lvl" type="button" data-level="pathway">{t('lp.programs.lvlPreMaster')}</button>
         <button class="lvl" type="button" data-level="master">{t('lp.programs.lvlMaster')}</button>
+        <button class="lvl" type="button" data-level="phd">{t('lp.programs.lvlPhd')}</button>
         <button class="lvl" type="button" data-level="english-language">{t('lp.programs.lvlEnglish')}</button>
         <button class="lvl" type="button" data-level="short-course">{t('lp.programs.lvlShort')}</button>
       </div>
@@ -1271,6 +1308,7 @@ const SCRIPT_STR = {
   ACCOM_DATA: accom,
   CAMP_DATA: campuses,
   CURRENCY_SYM: sym,
+  CURRENCY_SYM_BY_CODE: CURRENCY_SYMBOL,
   UNI_NAME: u.name,
   UNI_SLUG: u.slug,
   NEXT_DEADLINE: nextDeadlineIso,
@@ -1281,7 +1319,7 @@ const SCRIPT_STR = {
   const $$ = (s, root) => Array.from((root || document).querySelectorAll(s));
   document.body.classList.add('lp-mobile');
 
-  const LEVEL_LABELS = { 'high-school': STR.lvlSchool, 'sixth-form': STR.lvlSixthForm, foundation: STR.lvlFoundation, pathway: STR.lvlPreMaster, master: STR.lvlMaster, bachelor: STR.lvlBachelor, phd: 'PhD', 'english-language': STR.lvlEnglish, 'short-course': STR.lvlShort };
+  const LEVEL_LABELS = { 'high-school': STR.lvlSchool, 'sixth-form': STR.lvlSixthForm, foundation: STR.lvlFoundation, pathway: STR.lvlPreMaster, master: STR.lvlMaster, bachelor: STR.lvlBachelor, phd: STR.lvlPhd, 'english-language': STR.lvlEnglish, 'short-course': STR.lvlShort };
   function levelLabel(level, programType) {
     if (level === 'master' && programType === 'pathway') return STR.lvlPreMaster;
     return LEVEL_LABELS[level] || level;
@@ -1375,6 +1413,7 @@ const SCRIPT_STR = {
   function progMeta(p) {
     const bits = [];
     if (p.durationYears) bits.push('<span class="program-row__chip">' + p.durationYears + ' ' + STR.yearsWord + '</span>');
+    else bits.push('<span class="program-row__chip program-row__chip--tbd">' + STR.durationTbd + '</span>');
     if (p.language) bits.push('<span class="program-row__chip">' + esc(p.language) + '</span>');
     if (p.intakes && p.intakes.length) bits.push('<span class="program-row__chip program-row__chip--intake">' + STR.intakesWord + ' ' + esc(p.intakes.slice(0, 3).join(', ')) + '</span>');
     if (p.unverified) bits.push('<span class="program-row__chip program-row__chip--unverified">' + STR.unverifiedWord + '</span>');
@@ -1389,10 +1428,40 @@ const SCRIPT_STR = {
   // Цена программы; когда цены нет, но есть страница программы у вуза/агрегатора —
   // даём ссылку туда вместо голого «уточняется» (данные не выдумываем, ведём к источнику).
   function progPrice(p) {
-    if (p.tuition) return CURRENCY_SYM + p.tuition.toLocaleString('en') + STR.perYear;
-    return p.programUrl
-      ? '<a class="program-row__price-link" href="' + esc(p.programUrl) + '" target="_blank" rel="noopener">' + STR.tbdLink + '</a>'
-      : STR.tbd;
+    if (!p.tuition) {
+      return p.programUrl
+        ? '<a class="program-row__price-link" href="' + esc(p.programUrl) + '" target="_blank" rel="noopener">' + STR.tbdLink + '</a>'
+        : STR.tbd;
+    }
+    var sym = p.tuitionCurrency ? (CURRENCY_SYM_BY_CODE[p.tuitionCurrency] || p.tuitionCurrency) : CURRENCY_SYM;
+    var suffix = (p.tuitionBasis === 'program' ? STR.perProgram : STR.perYear);
+    var main = sym + p.tuition.toLocaleString('en') + suffix;
+    var vs = p.tuitionVariants;
+    if (!vs || vs.length < 2) return main;
+    // У источника для этой программы несколько сумм: в строке показываем минимальную
+    // как «от …», раскрытие перечисляет все с тем, чем они отличаются.
+    var items = vs.map(function (v) {
+      var vsym = v.currency ? (CURRENCY_SYM_BY_CODE[v.currency] || v.currency) : sym;
+      var marks = [];
+      if (v.campus) marks.push(esc(v.campus));
+      if (v.degreeGroup) marks.push(esc(v.degreeGroup));
+      if (v.level) marks.push(esc(v.level));
+      if (v.source) marks.push(esc(v.source));
+      var costs = [];
+      if (v.accommodation) costs.push(STR.varAccommodation + ' ' + vsym + v.accommodation.toLocaleString('en'));
+      if (v.other) costs.push(STR.varOther + ' ' + vsym + v.other.toLocaleString('en'));
+      if (v.total) costs.push(STR.varTotal + ' ' + vsym + v.total.toLocaleString('en'));
+      return '<li style="margin:0 0 6px">' +
+        '<b>' + vsym + v.tuition.toLocaleString('en') + '</b>' +
+        (marks.length ? '<span style="opacity:.7"> · ' + marks.join(' · ') + '</span>' : '') +
+        (costs.length ? '<div style="opacity:.7;font-size:.9em">' + costs.join(' · ') + '</div>' : '') +
+        '</li>';
+    }).join('');
+    return '<details class="program-row__variants">' +
+      '<summary style="cursor:pointer">' + STR.priceFrom + main + '</summary>' +
+      '<div style="margin-top:6px;font-weight:400;text-align:left">' +
+      '<div style="opacity:.7;font-size:.9em;margin-bottom:4px">' + STR.variantsTitle.replace('{count}', String(vs.length)) + '</div>' +
+      '<ul style="list-style:none;padding:0;margin:0">' + items + '</ul></div></details>';
   }
 
   function renderProgramsCards(facultyKey, lvl) {
@@ -1436,7 +1505,7 @@ const SCRIPT_STR = {
     const filtered = q ? list.filter(p => p.title.toLowerCase().includes(q.toLowerCase())) : list;
     const facHead = $('#lpProgramsModalFaculty');
     if (facHead) {
-      const lvlLabels = { all: '', foundation: STR.lvlFoundation, bachelor: STR.lvlBachelor, pathway: STR.lvlPreMaster, master: STR.lvlMaster };
+      const lvlLabels = { all: '', foundation: STR.lvlFoundation, bachelor: STR.lvlBachelor, pathway: STR.lvlPreMaster, master: STR.lvlMaster, phd: STR.lvlPhd };
       facHead.textContent = facultyKey + (lvl !== 'all' ? ' · ' + (lvlLabels[lvl] || '') : '');
     }
     $$('#lpModalLevelFilter .lvl').forEach(b => b.classList.toggle('is-active', b.dataset.level === lvl));

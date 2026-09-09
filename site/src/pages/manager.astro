@@ -1834,6 +1834,15 @@ const CONTROL_DEFAULT_URL = '';
       kompas_fee_currency_fixed: 'валюта карточки исправлена',
       kompas_fee_currency_reviewed: 'валюта сверена со страной — относок нет',
       kompas_program_foreign_currency: 'программы не заведены: чужая валюта, подозрение на чужой кампус',
+      // КОМПАС, 3.5-g — остаток непривязанного
+      kompas_program_no_level: 'программы не заведены: уровня нет ни у источника, ни в названии',
+      kompas_program_level_unsupported: 'квалификации нет в схеме каталога (certificate / diploma)',
+      kompas_program_ambiguous_twins: 'не привязать: в карточке две программы с одинаковым названием',
+      kompas_program_ambiguous_level: 'не привязать: у строки нет уровня, в карточке кандидаты разных уровней',
+      // КОМПАС — заведение карточек edvoy
+      kompas_card_edvoy_no_city: 'карточка не заведена: источник не назвал город',
+      kompas_card_edvoy_no_programs: 'карточка не заведена: у источника нет ни одной программы',
+      kompas_card_edvoy_card_exists: 'карточка есть, но выгрузка к ней не привязалась',
     };
     return map[issue] || issue;
   }

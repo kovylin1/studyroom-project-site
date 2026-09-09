@@ -5,6 +5,7 @@ import UniversityCardV2 from '~/components/UniversityCardV2.astro';
 import Filters from '~/components/Filters.astro';
 import { CONTACTS } from '~/content/studyroom/contacts';
 import { useTranslations, localizeUrl, type Locale } from '~/i18n/utils';
+import { annualTuitionValues } from '../lib/tuition';
 
 interface Props {
   locale: Locale;
@@ -55,7 +56,7 @@ const faculties = Array.from(
   .filter((f) => f !== 'Прочее')
   .sort((a, b) => a.localeCompare(b, 'ru'));
 
-const tuitionValues = universities.flatMap((u) => Object.values(u.tuition.byProgram)).filter((v) => v > 0);
+const tuitionValues = universities.flatMap((u) => annualTuitionValues(u.tuition, u.programs));
 const tuitionMax = tuitionValues.length ? Math.max(...tuitionValues) : 0;
 const totalPrograms = universities.reduce((acc, u) => acc + u.programs.length, 0);
 

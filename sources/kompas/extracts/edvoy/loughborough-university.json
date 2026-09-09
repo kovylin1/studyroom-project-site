@@ -3,13 +3,14 @@
   "name": "Loughborough University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-  "scrapedAt": "2026-07-22T15:42:52.303Z",
+  "scrapedAt": "2026-08-23T13:11:39.903Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "loughborough-university",
   "country": "United Kingdom",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -119,27 +120,6 @@
       "courseRefId": "loughborough-university|msc-cyber-security-and-data-analytics"
     },
     {
-      "title": "MSc Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 26300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "September 2024"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-management"
-    },
-    {
       "title": "MBA The Loughborough Full-Time",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -181,28 +161,25 @@
       "courseRefId": "loughborough-university|msc-international-business"
     },
     {
-      "title": "MSc Digital Entrepreneurship",
+      "title": "MSc Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 30900,
+      "tuition": 26300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "October 2024",
         "October 2025",
         "October 2026",
-        "February 2025",
-        "February 2026",
-        "February 2027",
         "September 2024"
       ],
       "campuses": [
-        "Loughborough University - London"
+        "Loughborough University Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-digital-entrepreneurship"
+      "courseRefId": "loughborough-university|msc-management"
     },
     {
       "title": "MSc Entrepreneurship and Innovation Management",
@@ -232,6 +209,30 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msc-entrepreneurship-and-innovation-management"
+    },
+    {
+      "title": "MSc Digital Entrepreneurship",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 30900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "February 2025",
+        "February 2026",
+        "February 2027",
+        "September 2024"
+      ],
+      "campuses": [
+        "Loughborough University - London"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-digital-entrepreneurship"
     },
     {
       "title": "MSc Digital Finance and Artificial Intelligence",
@@ -299,28 +300,7 @@
       "courseRefId": "loughborough-university|msc-entrepreneurship-finance-and-innovation"
     },
     {
-      "title": "MSc Musculoskeletal Sport Science and Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 32800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "September 2024"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-musculoskeletal-sport-science-and-health"
-    },
-    {
-      "title": "MSc Finance",
+      "title": "MSc Finance and Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -331,14 +311,16 @@
         "October 2024",
         "October 2025",
         "October 2026",
-        "September 2024"
+        "September 2024",
+        "January 2027"
       ],
       "campuses": [
-        "Loughborough University Campus"
+        "Loughborough University Campus",
+        "Loughborough University London Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-finance"
+      "courseRefId": "loughborough-university|msc-finance-and-management"
     },
     {
       "title": "MSc Systems Engineering",
@@ -362,7 +344,7 @@
       "courseRefId": "loughborough-university|msc-systems-engineering"
     },
     {
-      "title": "MSc Finance and Management",
+      "title": "MSc Finance",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -373,16 +355,35 @@
         "October 2024",
         "October 2025",
         "October 2026",
-        "September 2024",
-        "January 2027"
+        "September 2024"
       ],
       "campuses": [
-        "Loughborough University Campus",
-        "Loughborough University London Campus"
+        "Loughborough University Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-finance-and-management"
+      "courseRefId": "loughborough-university|msc-finance"
+    },
+    {
+      "title": "MSc Musculoskeletal Sport Science and Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 32800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-musculoskeletal-sport-science-and-health"
     },
     {
       "title": "MSc Design Innovation Management",
@@ -536,26 +537,7 @@
       "courseRefId": "loughborough-university|march-architecture"
     },
     {
-      "title": "MA Digital Media and Communication",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 26300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ma-digital-media-and-communication"
-    },
-    {
-      "title": "MSc Service Design Innovation",
+      "title": "MSc Digital Marketing",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -566,14 +548,20 @@
         "October 2024",
         "October 2025",
         "October 2026",
-        "September 2025"
+        "February 2025",
+        "February 2026",
+        "February 2027",
+        "September 2024",
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
-        "Loughborough University - London"
+        "Loughborough University - London",
+        "Loughborough University London Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-service-design-innovation"
+      "courseRefId": "loughborough-university|msc-digital-marketing"
     },
     {
       "title": "MA Communication, Media and DevelopmentManagement",
@@ -600,6 +588,29 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|ma-communication-media-and-developmentmanagement"
+    },
+    {
+      "title": "MA Media and Communication",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 26300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Loughborough University Campus",
+        "Loughborough University London Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ma-media-and-communication"
     },
     {
       "title": "MSc Digital Innovation Management",
@@ -646,6 +657,73 @@
       "courseRefId": "loughborough-university|msc-digital-creative-media"
     },
     {
+      "title": "MA/MSc Design Innovation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 31900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "February 2025",
+        "February 2026",
+        "February 2027",
+        "September 2024",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Loughborough University - London",
+        "Loughborough University London Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ma-msc-design-innovation"
+    },
+    {
+      "title": "MSc Service Design Innovation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 31900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2025"
+      ],
+      "campuses": [
+        "Loughborough University - London"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-service-design-innovation"
+    },
+    {
+      "title": "MA Digital Media and Communication",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 26300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ma-digital-media-and-communication"
+    },
+    {
       "title": "MSc Information Systems and Digital Innovation",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -690,83 +768,6 @@
       "courseRefId": "loughborough-university|ma-design-and-branding"
     },
     {
-      "title": "MA/MSc Design Innovation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 31900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "February 2025",
-        "February 2026",
-        "February 2027",
-        "September 2024",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Loughborough University - London",
-        "Loughborough University London Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ma-msc-design-innovation"
-    },
-    {
-      "title": "MSc Digital Marketing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 31900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "February 2025",
-        "February 2026",
-        "February 2027",
-        "September 2024",
-        "January 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Loughborough University - London",
-        "Loughborough University London Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-digital-marketing"
-    },
-    {
-      "title": "MA Media and Communication",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 26300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "October 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Loughborough University Campus",
-        "Loughborough University London Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ma-media-and-communication"
-    },
-    {
       "title": "MSc Business Psychology",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -786,106 +787,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msc-business-psychology"
-    },
-    {
-      "title": "MSci (Hons) Computer Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msci-hons-computer-science"
-    },
-    {
-      "title": "MSci (Hons) Computer Science (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msci-hons-computer-science-with-placement-year"
-    },
-    {
-      "title": "MSci (Hons) Natural Sciences",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msci-hons-natural-sciences"
-    },
-    {
-      "title": "MSci (Hons) Natural Sciences (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msci-hons-natural-sciences-with-placement-year"
-    },
-    {
-      "title": "MSci (Hons) Computing and Management (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msci-hons-computing-and-management-with-placement-year"
     },
     {
       "title": "BSc (Hons) Computer Science",
@@ -1028,7 +929,7 @@
       "courseRefId": "loughborough-university|bsc-hons-computing-and-management"
     },
     {
-      "title": "BSc (Hons) Computer Science and Artificial Intelligence (with Placement Year)",
+      "title": "MSci (Hons) Computer Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1045,7 +946,87 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-computer-science-and-artificial-intelligence-with-placement-year"
+      "courseRefId": "loughborough-university|msci-hons-computer-science"
+    },
+    {
+      "title": "MSci (Hons) Computer Science (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msci-hons-computer-science-with-placement-year"
+    },
+    {
+      "title": "MSci (Hons) Natural Sciences",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msci-hons-natural-sciences"
+    },
+    {
+      "title": "MSci (Hons) Natural Sciences (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msci-hons-natural-sciences-with-placement-year"
+    },
+    {
+      "title": "MSci (Hons) Computing and Management (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msci-hons-computing-and-management-with-placement-year"
     },
     {
       "title": "BSc (Hons) Computer Science and Artificial Intelligence",
@@ -1086,6 +1067,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msci-hons-computer-science-and-artificial-intelligence-with-placement-year"
+    },
+    {
+      "title": "BSc (Hons) Computer Science and Artificial Intelligence (with Placement Year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-computer-science-and-artificial-intelligence-with-placement-year"
     },
     {
       "title": "MSci (Hons) Computer Science and Artificial Intelligence",
@@ -1148,6 +1149,26 @@
       "courseRefId": "loughborough-university|bsc-hons-management-with-placement-year"
     },
     {
+      "title": "MSc Electronic and Electrical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 30900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-electronic-and-electrical-engineering"
+    },
+    {
       "title": "MSc Advanced Chemical Engineering with Information Technology and Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1167,26 +1188,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msc-advanced-chemical-engineering-with-information-technology-and-management"
-    },
-    {
-      "title": "MSc Electronic and Electrical Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 30900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-electronic-and-electrical-engineering"
     },
     {
       "title": "MSc Sport Business and Innovation",
@@ -1211,6 +1212,46 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msc-sport-business-and-innovation"
+    },
+    {
+      "title": "MSci (Hons) Information Technology Management for Business (ITMB)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msci-hons-information-technology-management-for-business-itmb"
+    },
+    {
+      "title": "BSc (Hons) Information Technology Management for Business (ITMB) (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-information-technology-management-for-business-itmb-with-placement-year"
     },
     {
       "title": "BSc (Hons) Business Analytics (with placement year)",
@@ -1257,13 +1298,14 @@
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 29750,
+      "tuition": 27300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "October 2024",
         "October 2025",
-        "October 2026"
+        "October 2026",
+        "September 2026"
       ],
       "campuses": [
         "Loughborough University Campus"
@@ -1271,67 +1313,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|bsc-hons-information-technology-management-for-business-itmb"
-    },
-    {
-      "title": "MSci (Hons) Information Technology Management for Business (ITMB)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msci-hons-information-technology-management-for-business-itmb"
-    },
-    {
-      "title": "BSc (Hons) Information Technology Management for Business (ITMB) (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-information-technology-management-for-business-itmb-with-placement-year"
-    },
-    {
-      "title": "MSc Biomedical Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 30900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "September 2024"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-biomedical-engineering"
     },
     {
       "title": "MA Graphic Design and Visualisation",
@@ -1353,6 +1334,27 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|ma-graphic-design-and-visualisation"
+    },
+    {
+      "title": "MSc Biomedical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 30900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-biomedical-engineering"
     },
     {
       "title": "MPhys (Hons) Physics with Computing",
@@ -1464,48 +1466,6 @@
       "courseRefId": "loughborough-university|msc-sport-marketing"
     },
     {
-      "title": "MSc Advanced Physics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 30900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "September 2024"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-advanced-physics"
-    },
-    {
-      "title": "MSc Construction Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 26300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "September 2024"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-construction-management"
-    },
-    {
       "title": "MSc Construction Project Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1590,6 +1550,29 @@
       "courseRefId": "loughborough-university|msc-construction-project-management-with-building-information-modelling"
     },
     {
+      "title": "MSc Human Resource Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 26300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024",
+        "January 2027"
+      ],
+      "campuses": [
+        "Loughborough University Campus",
+        "Loughborough University London Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-human-resource-management"
+    },
+    {
       "title": "MSc Work Psychology",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1609,6 +1592,48 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msc-work-psychology"
+    },
+    {
+      "title": "MSc Advanced Physics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 30900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-advanced-physics"
+    },
+    {
+      "title": "MSc Construction Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 26300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-construction-management"
     },
     {
       "title": "MSc International Human Resource Management",
@@ -1687,27 +1712,44 @@
       "courseRefId": "loughborough-university|ma-digital-media-and-creative-industries"
     },
     {
-      "title": "MSc Human Resource Management",
+      "title": "MEng (Hons) Mechanical Engineering (with placement year)",
       "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 26300,
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "October 2024",
         "October 2025",
-        "October 2026",
-        "September 2024",
-        "January 2027"
+        "October 2026"
       ],
       "campuses": [
-        "Loughborough University Campus",
-        "Loughborough University London Campus"
+        "Loughborough University Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-human-resource-management"
+      "courseRefId": "loughborough-university|meng-hons-mechanical-engineering-with-placement-year"
+    },
+    {
+      "title": "MEng (Hons) Product Design Engineering (with placement year)",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|meng-hons-product-design-engineering-with-placement-year"
     },
     {
       "title": "BArch Architecture (with placement year)",
@@ -1769,86 +1811,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|ba-hons-design"
-    },
-    {
-      "title": "BA (Hons) Design (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-design-with-placement-year"
-    },
-    {
-      "title": "MEng (Hons) Mechanical Engineering (with placement year)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-mechanical-engineering-with-placement-year"
-    },
-    {
-      "title": "MEng (Hons) Product Design Engineering (with placement year)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-product-design-engineering-with-placement-year"
-    },
-    {
-      "title": "MEng (Hons) Mechanical Engineering",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-mechanical-engineering"
     },
     {
       "title": "BSc (Hons) Media and Communication",
@@ -1931,6 +1893,46 @@
       "courseRefId": "loughborough-university|bsc-hons-product-design-and-technology-with-placement-year"
     },
     {
+      "title": "BA (Hons) Design (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-design-with-placement-year"
+    },
+    {
+      "title": "MEng (Hons) Mechanical Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|meng-hons-mechanical-engineering"
+    },
+    {
       "title": "BSc (Hons) Media and Communication (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1991,26 +1993,6 @@
       "courseRefId": "loughborough-university|bsc-hons-physics-with-computing-with-placement-year"
     },
     {
-      "title": "MPhys Physics with Computing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mphys-physics-with-computing"
-    },
-    {
       "title": "BSc (Hons) Physics with Computing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2049,6 +2031,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|mphys-physics-with-computing-with-placement-year"
+    },
+    {
+      "title": "MPhys Physics with Computing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|mphys-physics-with-computing"
     },
     {
       "title": "MSc Sustainable Sport Business",
@@ -2116,6 +2118,46 @@
       "courseRefId": "loughborough-university|meng-hons-electronic-and-electrical-engineering"
     },
     {
+      "title": "MEng (Hons) Electronic and Electrical Engineering (with placement year)",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|meng-hons-electronic-and-electrical-engineering-with-placement-year"
+    },
+    {
+      "title": "BEng (Hons) Electronic and Electrical Engineering (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|beng-hons-electronic-and-electrical-engineering-with-placement-year"
+    },
+    {
       "title": "BSc (Hons) Geography and Sport Science (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2156,11 +2198,11 @@
       "courseRefId": "loughborough-university|beng-hons-electronic-and-electrical-engineering"
     },
     {
-      "title": "MEng (Hons) Electronic and Electrical Engineering (with placement year)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
+      "title": "PhD Business and Economics",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 23100,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -2171,29 +2213,9 @@
       "campuses": [
         "Loughborough University Campus"
       ],
-      "scholarshipTag": "Scholarship applied!",
+      "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-electronic-and-electrical-engineering-with-placement-year"
-    },
-    {
-      "title": "BEng (Hons) Electronic and Electrical Engineering (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|beng-hons-electronic-and-electrical-engineering-with-placement-year"
+      "courseRefId": "loughborough-university|phd-business-and-economics"
     },
     {
       "title": "MSc Renewable Energy Systems Technology",
@@ -2236,26 +2258,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msc-financial-mathematics"
-    },
-    {
-      "title": "MEng (Hons) Product Design Engineering",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-product-design-engineering"
     },
     {
       "title": "BSc (Hons) Economics (with placement year)",
@@ -2358,6 +2360,26 @@
       "courseRefId": "loughborough-university|bsc-hons-economics-and-management"
     },
     {
+      "title": "MEng (Hons) Product Design Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|meng-hons-product-design-engineering"
+    },
+    {
       "title": "BSc (Hons) Economics and Management (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2397,36 +2419,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msc-sport-management"
-    },
-    {
-      "title": "MSc Sport Analytics and Technologies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 31750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "April 2025",
-        "April 2026",
-        "April 2027",
-        "January 2025",
-        "January 2026",
-        "January 2027",
-        "July 2025",
-        "July 2026",
-        "July 2027",
-        "September 2024"
-      ],
-      "campuses": [
-        "Loughborough University - London"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-sport-analytics-and-technologies"
     },
     {
       "title": "MSc Diplomacy and Sport",
@@ -2477,6 +2469,36 @@
       "courseRefId": "loughborough-university|msc-sport-business-and-leadership"
     },
     {
+      "title": "MSc Sport Analytics and Technologies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 32800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "April 2025",
+        "April 2026",
+        "April 2027",
+        "January 2025",
+        "January 2026",
+        "January 2027",
+        "July 2025",
+        "July 2026",
+        "July 2027",
+        "September 2024"
+      ],
+      "campuses": [
+        "Loughborough University - London"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-sport-analytics-and-technologies"
+    },
+    {
       "title": "MPhys (Hons) Engineering Physics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2495,6 +2517,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|mphys-hons-engineering-physics"
+    },
+    {
+      "title": "MPhys (Hons) Engineering Physics with Placement Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|mphys-hons-engineering-physics-with-placement-year"
     },
     {
       "title": "MPhys (Hons) Physics with Placement Year",
@@ -2535,26 +2577,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|mphys-hons-physics"
-    },
-    {
-      "title": "MPhys (Hons) Engineering Physics with Placement Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mphys-hons-engineering-physics-with-placement-year"
     },
     {
       "title": "BSc (Hons) Geography with Economics (with placement year)",
@@ -2766,187 +2788,7 @@
       "courseRefId": "loughborough-university|msc-polymer-science-and-engineering"
     },
     {
-      "title": "MPhys Physics with Theoretical Physics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mphys-physics-with-theoretical-physics"
-    },
-    {
-      "title": "MPhys Engineering Physics (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mphys-engineering-physics-with-placement-year"
-    },
-    {
-      "title": "MEng (Hons) Civil Engineering (with placement year)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-civil-engineering-with-placement-year"
-    },
-    {
-      "title": "BEng (Hons) Chemical Engineering (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|beng-hons-chemical-engineering-with-placement-year"
-    },
-    {
-      "title": "BSc (Hons) Geography and Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-geography-and-management"
-    },
-    {
-      "title": "MEng (Hons) Chemical Engineering",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-chemical-engineering"
-    },
-    {
-      "title": "MPhys Engineering Physics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mphys-engineering-physics"
-    },
-    {
-      "title": "MPhys Physics (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mphys-physics-with-placement-year"
-    },
-    {
-      "title": "BSc (Hons) Engineering Physics (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-engineering-physics-with-placement-year"
-    },
-    {
-      "title": "BA (Hons) Geography",
+      "title": "BSc (Hons) Geography",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -2963,10 +2805,10 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-geography"
+      "courseRefId": "loughborough-university|bsc-hons-geography"
     },
     {
-      "title": "BA (Hons) Industrial Design (with placement year)",
+      "title": "BSc (Hons) Geography (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2983,10 +2825,10 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-industrial-design-with-placement-year"
+      "courseRefId": "loughborough-university|bsc-hons-geography-with-placement-year"
     },
     {
-      "title": "BSc (Hons) Commercial Management and Quantity Surveying",
+      "title": "BA (Hons) Industrial Design",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3003,30 +2845,10 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-commercial-management-and-quantity-surveying"
+      "courseRefId": "loughborough-university|ba-hons-industrial-design"
     },
     {
-      "title": "BSc (Hons) Physics (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-physics-with-placement-year"
-    },
-    {
-      "title": "BSc (Hons) Psychology",
+      "title": "BEng (Hons) Civil Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3043,10 +2865,10 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-psychology"
+      "courseRefId": "loughborough-university|beng-hons-civil-engineering"
     },
     {
-      "title": "BSc (Hons) Physics",
+      "title": "BSc (Hons) Geography and Sport Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3063,148 +2885,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-physics"
-    },
-    {
-      "title": "BSc (Hons) Psychology (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-psychology-with-placement-year"
-    },
-    {
-      "title": "BEng (Hons) Architectural Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 30700,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "September 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|beng-hons-architectural-engineering"
-    },
-    {
-      "title": "BA (Hons) Geography (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-geography-with-placement-year"
-    },
-    {
-      "title": "BSc (Hons) Engineering Physics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-engineering-physics"
-    },
-    {
-      "title": "MEng (Hons) Chemical Engineering (with placement year)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-chemical-engineering-with-placement-year"
-    },
-    {
-      "title": "MEng (Hons) Civil Engineering",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-civil-engineering"
-    },
-    {
-      "title": "MPhys Physics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mphys-physics"
+      "courseRefId": "loughborough-university|bsc-hons-geography-and-sport-science"
     },
     {
       "title": "MEng (Hons) Architectural Engineering",
@@ -3327,6 +3008,46 @@
       "courseRefId": "loughborough-university|bsc-hons-geography-and-management-with-placement-year"
     },
     {
+      "title": "BEng (Hons) Chemical Engineering (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|beng-hons-chemical-engineering-with-placement-year"
+    },
+    {
+      "title": "BSc (Hons) Geography and Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-geography-and-management"
+    },
+    {
       "title": "BEng (Hons) Architectural Engineering (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3367,127 +3088,7 @@
       "courseRefId": "loughborough-university|beng-hons-mechanical-engineering-with-placement-year"
     },
     {
-      "title": "BSc (Hons) Geography",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-geography"
-    },
-    {
-      "title": "BSc (Hons) Geography (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-geography-with-placement-year"
-    },
-    {
-      "title": "BA (Hons) Industrial Design",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-industrial-design"
-    },
-    {
-      "title": "BEng (Hons) Civil Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|beng-hons-civil-engineering"
-    },
-    {
-      "title": "BSc (Hons) Geography and Sport Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-geography-and-sport-science"
-    },
-    {
-      "title": "BSc (Hons) Computer Science and Mathematics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-computer-science-and-mathematics"
-    },
-    {
-      "title": "MSci (Hons) Computer Science and Mathematics (with placement year)",
+      "title": "MPhys Physics (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "60 Months",
@@ -3504,7 +3105,388 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msci-hons-computer-science-and-mathematics-with-placement-year"
+      "courseRefId": "loughborough-university|mphys-physics-with-placement-year"
+    },
+    {
+      "title": "BSc (Hons) Engineering Physics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-engineering-physics"
+    },
+    {
+      "title": "BSc (Hons) Engineering Physics (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-engineering-physics-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) Geography",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-geography"
+    },
+    {
+      "title": "BA (Hons) Industrial Design (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-industrial-design-with-placement-year"
+    },
+    {
+      "title": "BSc (Hons) Commercial Management and Quantity Surveying",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-commercial-management-and-quantity-surveying"
+    },
+    {
+      "title": "BSc (Hons) Physics (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-physics-with-placement-year"
+    },
+    {
+      "title": "BSc (Hons) Psychology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-psychology"
+    },
+    {
+      "title": "MEng (Hons) Chemical Engineering (with placement year)",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|meng-hons-chemical-engineering-with-placement-year"
+    },
+    {
+      "title": "MEng (Hons) Civil Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|meng-hons-civil-engineering"
+    },
+    {
+      "title": "MPhys Physics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|mphys-physics"
+    },
+    {
+      "title": "MPhys Physics with Theoretical Physics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|mphys-physics-with-theoretical-physics"
+    },
+    {
+      "title": "MPhys Engineering Physics (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|mphys-engineering-physics-with-placement-year"
+    },
+    {
+      "title": "MEng (Hons) Civil Engineering (with placement year)",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|meng-hons-civil-engineering-with-placement-year"
+    },
+    {
+      "title": "MPhys Engineering Physics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|mphys-engineering-physics"
+    },
+    {
+      "title": "MEng (Hons) Chemical Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|meng-hons-chemical-engineering"
+    },
+    {
+      "title": "BSc (Hons) Physics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-physics"
+    },
+    {
+      "title": "BSc (Hons) Psychology (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-psychology-with-placement-year"
+    },
+    {
+      "title": "BEng (Hons) Architectural Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 30700,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|beng-hons-architectural-engineering"
+    },
+    {
+      "title": "BA (Hons) Geography (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-geography-with-placement-year"
     },
     {
       "title": "MSci (Hons) Computer Science and Mathematics",
@@ -3547,46 +3529,6 @@
       "courseRefId": "loughborough-university|bsc-hons-chemistry-with-computing"
     },
     {
-      "title": "BSc (Hons) Computer Science and Mathematics (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-computer-science-and-mathematics-with-placement-year"
-    },
-    {
-      "title": "MChem (Hons) Chemistry with Computing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mchem-hons-chemistry-with-computing"
-    },
-    {
       "title": "MChem (Hons) Chemistry with Computing (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3627,7 +3569,7 @@
       "courseRefId": "loughborough-university|bsc-hons-chemistry-with-computing-with-placement-year"
     },
     {
-      "title": "BSc (Hons) Sport Science, Coaching and Physical Education",
+      "title": "BSc (Hons) Computer Science and Mathematics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -3644,10 +3586,30 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-sport-science-coaching-and-physical-education"
+      "courseRefId": "loughborough-university|bsc-hons-computer-science-and-mathematics"
     },
     {
-      "title": "BSc (Hons) Sport Science, Coaching and Physical Education (with placement year)",
+      "title": "MSci (Hons) Computer Science and Mathematics (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msci-hons-computer-science-and-mathematics-with-placement-year"
+    },
+    {
+      "title": "BSc (Hons) Computer Science and Mathematics (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -3664,13 +3626,13 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-sport-science-coaching-and-physical-education-with-placement-year"
+      "courseRefId": "loughborough-university|bsc-hons-computer-science-and-mathematics-with-placement-year"
     },
     {
-      "title": "BSc (Hons) Mathematics and Sport Science",
+      "title": "MChem (Hons) Chemistry with Computing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "48 Months",
       "tuition": 29750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -3684,7 +3646,67 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-mathematics-and-sport-science"
+      "courseRefId": "loughborough-university|mchem-hons-chemistry-with-computing"
+    },
+    {
+      "title": "BSc (Hons) Mathematics with Statistics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-mathematics-with-statistics"
+    },
+    {
+      "title": "BSc (Hons) Mathematics with Statistics (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-mathematics-with-statistics-with-placement-year"
+    },
+    {
+      "title": "MEng (Hons) Biomaterials Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|meng-hons-biomaterials-engineering"
     },
     {
       "title": "BA (Hons) English and Sport Science (with placement year)",
@@ -3787,66 +3809,6 @@
       "courseRefId": "loughborough-university|meng-hons-biomaterials-engineering-with-placement-year"
     },
     {
-      "title": "BSc (Hons) Mathematics with Statistics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-mathematics-with-statistics"
-    },
-    {
-      "title": "BSc (Hons) Mathematics with Statistics (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-mathematics-with-statistics-with-placement-year"
-    },
-    {
-      "title": "MEng (Hons) Biomaterials Engineering",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-biomaterials-engineering"
-    },
-    {
       "title": "MEng (Hons) Robotics, Mechatronics and Control Engineering",
       "level": "master",
       "sourceLevel": "Undergraduate",
@@ -3865,6 +3827,66 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|meng-hons-robotics-mechatronics-and-control-engineering"
+    },
+    {
+      "title": "BSc (Hons) Sport Science, Coaching and Physical Education",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-sport-science-coaching-and-physical-education"
+    },
+    {
+      "title": "BSc (Hons) Sport Science, Coaching and Physical Education (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-sport-science-coaching-and-physical-education-with-placement-year"
+    },
+    {
+      "title": "BSc (Hons) Mathematics and Sport Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-mathematics-and-sport-science"
     },
     {
       "title": "MSc Advanced Materials Science and Engineering",
@@ -3907,26 +3929,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msc-sport-management-politics-and-international-development"
-    },
-    {
-      "title": "BSc (Hons) Sport Management (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 26500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-sport-management-with-placement-year"
     },
     {
       "title": "BSc (Hons) Construction Engineering Management",
@@ -3979,7 +3981,9 @@
       "intake": [
         "October 2024",
         "October 2025",
-        "October 2026"
+        "October 2026",
+        "September 2027",
+        "September 2026"
       ],
       "campuses": [
         "Loughborough University Campus"
@@ -4029,6 +4033,26 @@
       "courseRefId": "loughborough-university|ba-hons-textile-design"
     },
     {
+      "title": "BSc (Hons) Sport Management (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 26500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-sport-management-with-placement-year"
+    },
+    {
       "title": "PhD Sport, Exercise and Health Sciences",
       "level": "phd",
       "sourceLevel": "Doctorate",
@@ -4051,27 +4075,6 @@
       "courseRefId": "loughborough-university|phd-sport-exercise-and-health-sciences"
     },
     {
-      "title": "MA Climate Change Politics and Policy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 26300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "September 2024"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ma-climate-change-politics-and-policy"
-    },
-    {
       "title": "MSc Clinical Exercise Physiology",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4091,6 +4094,27 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msc-clinical-exercise-physiology"
+    },
+    {
+      "title": "MA Climate Change Politics and Policy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 26300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ma-climate-change-politics-and-policy"
     },
     {
       "title": "BSc (Hons) Mathematics with Economics",
@@ -4133,10 +4157,10 @@
       "courseRefId": "loughborough-university|bsc-hons-mathematics-with-economics-with-placement-year"
     },
     {
-      "title": "MPhys (Hons) Mathematics and Physics with Placement Year",
+      "title": "MPhys (Hons) Physics with Theoretical Physics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
+      "duration": "48 Months",
       "tuition": 29750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -4150,7 +4174,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mphys-hons-mathematics-and-physics-with-placement-year"
+      "courseRefId": "loughborough-university|mphys-hons-physics-with-theoretical-physics"
     },
     {
       "title": "MPhys (Hons) Physics with Theoretical Physics with Placement Year",
@@ -4193,10 +4217,10 @@
       "courseRefId": "loughborough-university|mphys-hons-mathematics-and-physics"
     },
     {
-      "title": "MPhys (Hons) Physics with Theoretical Physics",
+      "title": "MPhys (Hons) Mathematics and Physics with Placement Year",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "60 Months",
       "tuition": 29750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -4210,7 +4234,27 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mphys-hons-physics-with-theoretical-physics"
+      "courseRefId": "loughborough-university|mphys-hons-mathematics-and-physics-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) English with Business Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-english-with-business-studies"
     },
     {
       "title": "BA (Hons) English with Business Studies (with placement year)",
@@ -4233,10 +4277,10 @@
       "courseRefId": "loughborough-university|ba-hons-english-with-business-studies-with-placement-year"
     },
     {
-      "title": "BA (Hons) English with Business Studies",
+      "title": "BA (Hons) Politics, Philosophy and Economics (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "48 Months",
       "tuition": 23950,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -4250,7 +4294,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-english-with-business-studies"
+      "courseRefId": "loughborough-university|ba-hons-politics-philosophy-and-economics-with-placement-year"
     },
     {
       "title": "BSc (Hons) Sport and Exercise Psychology (with placement year)",
@@ -4293,26 +4337,6 @@
       "courseRefId": "loughborough-university|ba-hons-politics-philosophy-and-economics"
     },
     {
-      "title": "BA (Hons) Politics, Philosophy and Economics (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-politics-philosophy-and-economics-with-placement-year"
-    },
-    {
       "title": "MSc Physiology and Nutrition of Sport and Exercise",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -4332,6 +4356,86 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msc-physiology-and-nutrition-of-sport-and-exercise"
+    },
+    {
+      "title": "BEng (Hons) Engineering Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|beng-hons-engineering-management"
+    },
+    {
+      "title": "BSc (Hons) Physics with Theoretical Physics (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-physics-with-theoretical-physics-with-placement-year"
+    },
+    {
+      "title": "BEng (Hons) Engineering Management (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|beng-hons-engineering-management-with-placement-year"
+    },
+    {
+      "title": "MPhys Physics with Theoretical Physics (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|mphys-physics-with-theoretical-physics-with-placement-year"
     },
     {
       "title": "BSc (Hons) Mathematics and Physics (with placement year)",
@@ -4372,26 +4476,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|mphys-mathematics-and-physics"
-    },
-    {
-      "title": "MPhys Physics with Theoretical Physics (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mphys-physics-with-theoretical-physics-with-placement-year"
     },
     {
       "title": "BA (Hons) Fine Art (with placement year)",
@@ -4474,66 +4558,6 @@
       "courseRefId": "loughborough-university|ba-hons-fine-art"
     },
     {
-      "title": "BEng (Hons) Engineering Management (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|beng-hons-engineering-management-with-placement-year"
-    },
-    {
-      "title": "BSc (Hons) Psychology with Criminology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-psychology-with-criminology"
-    },
-    {
-      "title": "BSc (Hons) Psychology with Criminology (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-psychology-with-criminology-with-placement-year"
-    },
-    {
       "title": "BA (Hons) Politics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4594,7 +4618,7 @@
       "courseRefId": "loughborough-university|mphys-mathematics-and-physics-with-placement-year"
     },
     {
-      "title": "BEng (Hons) Engineering Management",
+      "title": "BSc (Hons) Psychology with Criminology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -4611,10 +4635,10 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|beng-hons-engineering-management"
+      "courseRefId": "loughborough-university|bsc-hons-psychology-with-criminology"
     },
     {
-      "title": "BSc (Hons) Physics with Theoretical Physics (with placement year)",
+      "title": "BSc (Hons) Psychology with Criminology (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -4631,27 +4655,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-physics-with-theoretical-physics-with-placement-year"
-    },
-    {
-      "title": "MChem (Hons) Medicinal and Pharmaceutical Chemistry",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mchem-hons-medicinal-and-pharmaceutical-chemistry"
+      "courseRefId": "loughborough-university|bsc-hons-psychology-with-criminology-with-placement-year"
     },
     {
       "title": "BSc (Hons) Medicinal and Pharmaceutical Chemistry (with placement year)",
@@ -4694,111 +4698,48 @@
       "courseRefId": "loughborough-university|mchem-hons-medicinal-and-pharmaceutical-chemistry-with-placement-year"
     },
     {
-      "title": "MSc Environmental Monitoring, Research and Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 26300,
+      "title": "MChem (Hons) Medicinal and Pharmaceutical Chemistry",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "October 2024",
         "October 2025",
-        "October 2026",
-        "September 2024"
+        "October 2026"
       ],
       "campuses": [
         "Loughborough University Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-environmental-monitoring-research-and-management"
+      "courseRefId": "loughborough-university|mchem-hons-medicinal-and-pharmaceutical-chemistry"
     },
     {
-      "title": "MSc International Financial and Political Relations",
+      "title": "MSc International Sustainable Development",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 26300,
+      "tuition": 21300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "October 2024",
+        "January 2025",
         "October 2025",
-        "October 2026",
-        "September 2024"
+        "January 2026",
+        "September 2026",
+        "January 2027"
       ],
       "campuses": [
-        "Loughborough University Campus"
+        "Loughborough University - London",
+        "Loughborough University London Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-international-financial-and-political-relations"
-    },
-    {
-      "title": "MSc/PGDip/PGCert Pharmaceutical Science and Medicinal Chemistry",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 30900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "September 2024",
-        "September 2025"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-pgdip-pgcert-pharmaceutical-science-and-medicinal-chemistry"
-    },
-    {
-      "title": "MSc Strength and Conditioning",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 31900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "September 2024"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-strength-and-conditioning"
-    },
-    {
-      "title": "MA/PGCert Storytelling",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "September 2024",
-        "September 2025"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ma-pgcert-storytelling"
+      "courseRefId": "loughborough-university|msc-international-sustainable-development"
     },
     {
       "title": "MSc Applied Sport Performance Analysis",
@@ -4907,11 +4848,11 @@
       "courseRefId": "loughborough-university|msc-pgdip-pgcert-analytical-chemistry"
     },
     {
-      "title": "MA Creative Writing and the Writing Industries",
+      "title": "MSc Environmental Monitoring, Research and Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 25000,
+      "tuition": 26300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -4925,7 +4866,71 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ma-creative-writing-and-the-writing-industries"
+      "courseRefId": "loughborough-university|msc-environmental-monitoring-research-and-management"
+    },
+    {
+      "title": "MSc International Financial and Political Relations",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 26300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-international-financial-and-political-relations"
+    },
+    {
+      "title": "MSc/PGDip/PGCert Pharmaceutical Science and Medicinal Chemistry",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 30900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024",
+        "September 2025"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-pgdip-pgcert-pharmaceutical-science-and-medicinal-chemistry"
+    },
+    {
+      "title": "MSc Strength and Conditioning",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 31900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|msc-strength-and-conditioning"
     },
     {
       "title": "MSc/PGDip/PGCert Ergonomics and Human Factors",
@@ -4972,6 +4977,49 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|ma-international-development"
+    },
+    {
+      "title": "MA Creative Writing and the Writing Industries",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ma-creative-writing-and-the-writing-industries"
+    },
+    {
+      "title": "MA/PGCert Storytelling",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024",
+        "September 2025"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ma-pgcert-storytelling"
     },
     {
       "title": "MSc Diplomacy and International Relations",
@@ -5114,30 +5162,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|msc-diplomacy-international-politics-and-trade"
-    },
-    {
-      "title": "MSc International Sustainable Development",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "January 2025",
-        "October 2025",
-        "January 2026",
-        "September 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "Loughborough University - London",
-        "Loughborough University London Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|msc-international-sustainable-development"
     },
     {
       "title": "BA (Hons) Politics and International Relations",
@@ -5320,11 +5344,31 @@
       "courseRefId": "loughborough-university|ba-hons-fashion-design-and-technology-with-placement-year"
     },
     {
-      "title": "BA (Hons) History and International Relations (with placement year)",
+      "title": "MEng (Hons) Sports Technology (with placement year)",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|meng-hons-sports-technology-with-placement-year"
+    },
+    {
+      "title": "MPlan Urban Planning",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 23950,
+      "tuition": 26500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -5337,14 +5381,14 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-history-and-international-relations-with-placement-year"
+      "courseRefId": "loughborough-university|mplan-urban-planning"
     },
     {
-      "title": "BA (Hons) International Relations",
-      "level": "bachelor",
+      "title": "MEng (Hons) Automotive Materials (with placement year)",
+      "level": "master",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 23950,
+      "duration": "60 Months",
+      "tuition": 29750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -5357,11 +5401,31 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-international-relations"
+      "courseRefId": "loughborough-university|meng-hons-automotive-materials-with-placement-year"
     },
     {
-      "title": "BEng (Hons) Aeronautical Engineering (with placement year)",
-      "level": "bachelor",
+      "title": "MEng (Hons) Materials Science and Engineering (with placement year)",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|meng-hons-materials-science-and-engineering-with-placement-year"
+    },
+    {
+      "title": "MEng (Hons) Materials Science and Engineering",
+      "level": "master",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
       "tuition": 29750,
@@ -5377,10 +5441,10 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|beng-hons-aeronautical-engineering-with-placement-year"
+      "courseRefId": "loughborough-university|meng-hons-materials-science-and-engineering"
     },
     {
-      "title": "BA (Hons) International Relations (with placement year)",
+      "title": "BSc (Hons) Mathematics (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -5397,14 +5461,14 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-international-relations-with-placement-year"
+      "courseRefId": "loughborough-university|bsc-hons-mathematics-with-placement-year"
     },
     {
-      "title": "BA (Hons) History and International Relations",
+      "title": "MChem (Hons) Chemistry (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 23950,
+      "duration": "60 Months",
+      "tuition": 29750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -5417,14 +5481,14 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-history-and-international-relations"
+      "courseRefId": "loughborough-university|mchem-hons-chemistry-with-placement-year"
     },
     {
-      "title": "BA (Hons) History (with placement year)",
-      "level": "bachelor",
+      "title": "MEng (Hons) Aeronautical Engineering (with placement year)",
+      "level": "master",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 23950,
+      "duration": "60 Months",
+      "tuition": 29750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -5437,7 +5501,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-history-with-placement-year"
+      "courseRefId": "loughborough-university|meng-hons-aeronautical-engineering-with-placement-year"
     },
     {
       "title": "MEng (Hons) Automotive Engineering (with placement year)",
@@ -5649,11 +5713,11 @@
       "courseRefId": "loughborough-university|mchem-hons-chemistry"
     },
     {
-      "title": "BEng (Hons) Automotive Engineering (with placement year)",
+      "title": "BSc (Hons) Sport and Exercise Science (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 29750,
+      "tuition": 32000,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -5666,27 +5730,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|beng-hons-automotive-engineering-with-placement-year"
-    },
-    {
-      "title": "BEng (Hons) Automotive Materials (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|beng-hons-automotive-materials-with-placement-year"
+      "courseRefId": "loughborough-university|bsc-hons-sport-and-exercise-science-with-placement-year"
     },
     {
       "title": "BEng (Hons) Sports Technology",
@@ -5789,106 +5833,6 @@
       "courseRefId": "loughborough-university|beng-hons-materials-science-and-engineering-with-placement-year"
     },
     {
-      "title": "BSc (Hons) Medicinal and Pharmaceutical Chemistry",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-medicinal-and-pharmaceutical-chemistry"
-    },
-    {
-      "title": "BSc (Hons) Human Biology (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-human-biology-with-placement-year"
-    },
-    {
-      "title": "BSc (Hons) Mathematics (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-mathematics-with-placement-year"
-    },
-    {
-      "title": "MChem (Hons) Chemistry (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mchem-hons-chemistry-with-placement-year"
-    },
-    {
-      "title": "MEng (Hons) Aeronautical Engineering (with placement year)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-aeronautical-engineering-with-placement-year"
-    },
-    {
       "title": "BSc (Hons) Biological Sciences (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -5969,287 +5913,6 @@
       "courseRefId": "loughborough-university|bsc-hons-financial-mathematics-with-placement-year"
     },
     {
-      "title": "BSc (Hons) Criminology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026",
-        "September 2024"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-criminology"
-    },
-    {
-      "title": "BSc (Hons) Financial Mathematics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-financial-mathematics"
-    },
-    {
-      "title": "BSc (Hons) Criminology and Sociology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-criminology-and-sociology"
-    },
-    {
-      "title": "BSc (Hons) Human Biology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-human-biology"
-    },
-    {
-      "title": "BSc (Hons) Mathematics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-mathematics"
-    },
-    {
-      "title": "MEng (Hons) Sports Technology (with placement year)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-sports-technology-with-placement-year"
-    },
-    {
-      "title": "MPlan Urban Planning",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 26500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|mplan-urban-planning"
-    },
-    {
-      "title": "MEng (Hons) Automotive Materials (with placement year)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 29750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-automotive-materials-with-placement-year"
-    },
-    {
-      "title": "BA (Hons) English",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-english"
-    },
-    {
-      "title": "BA (Hons) English with Creative Writing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-english-with-creative-writing"
-    },
-    {
-      "title": "BA (Hons) English with Creative Writing (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-english-with-creative-writing-with-placement-year"
-    },
-    {
-      "title": "BA (Hons) English (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-english-with-placement-year"
-    },
-    {
-      "title": "BA (Hons) English Literature (with placement year)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-english-literature-with-placement-year"
-    },
-    {
-      "title": "BA (Hons) History",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 23950,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2024",
-        "October 2025",
-        "October 2026"
-      ],
-      "campuses": [
-        "Loughborough University Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|ba-hons-history"
-    },
-    {
       "title": "BA (Hons) English and Sport Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -6288,6 +5951,126 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
       "courseRefId": "loughborough-university|ba-hons-english-literature"
+    },
+    {
+      "title": "BA (Hons) History and International Relations (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-history-and-international-relations-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) International Relations",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-international-relations"
+    },
+    {
+      "title": "BEng (Hons) Aeronautical Engineering (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|beng-hons-aeronautical-engineering-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) International Relations (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-international-relations-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) History and International Relations",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-history-and-international-relations"
+    },
+    {
+      "title": "BA (Hons) History (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-history-with-placement-year"
     },
     {
       "title": "BEng (Hons) Automotive Engineering",
@@ -6410,11 +6193,11 @@
       "courseRefId": "loughborough-university|beng-hons-automotive-materials"
     },
     {
-      "title": "BSc (Hons) Sport and Exercise Science (with placement year)",
+      "title": "BEng (Hons) Automotive Engineering (with placement year)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 32000,
+      "tuition": 29750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -6427,7 +6210,27 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|bsc-hons-sport-and-exercise-science-with-placement-year"
+      "courseRefId": "loughborough-university|beng-hons-automotive-engineering-with-placement-year"
+    },
+    {
+      "title": "BEng (Hons) Automotive Materials (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|beng-hons-automotive-materials-with-placement-year"
     },
     {
       "title": "MPlan Urban Planning (with placement year)",
@@ -6510,10 +6313,71 @@
       "courseRefId": "loughborough-university|meng-hons-sports-technology"
     },
     {
-      "title": "MEng (Hons) Materials Science and Engineering (with placement year)",
-      "level": "master",
+      "title": "BSc (Hons) Criminology",
+      "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026",
+        "September 2024"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-criminology"
+    },
+    {
+      "title": "BSc (Hons) Financial Mathematics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-financial-mathematics"
+    },
+    {
+      "title": "BSc (Hons) Criminology and Sociology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-criminology-and-sociology"
+    },
+    {
+      "title": "BSc (Hons) Human Biology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
       "tuition": 29750,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -6527,11 +6391,51 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-materials-science-and-engineering-with-placement-year"
+      "courseRefId": "loughborough-university|bsc-hons-human-biology"
     },
     {
-      "title": "MEng (Hons) Materials Science and Engineering",
-      "level": "master",
+      "title": "BSc (Hons) Mathematics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-mathematics"
+    },
+    {
+      "title": "BSc (Hons) Medicinal and Pharmaceutical Chemistry",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 29750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|bsc-hons-medicinal-and-pharmaceutical-chemistry"
+    },
+    {
+      "title": "BSc (Hons) Human Biology (with placement year)",
+      "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
       "tuition": 29750,
@@ -6547,7 +6451,127 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
-      "courseRefId": "loughborough-university|meng-hons-materials-science-and-engineering"
+      "courseRefId": "loughborough-university|bsc-hons-human-biology-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) English",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-english"
+    },
+    {
+      "title": "BA (Hons) English with Creative Writing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-english-with-creative-writing"
+    },
+    {
+      "title": "BA (Hons) English with Creative Writing (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-english-with-creative-writing-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) English (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-english-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) English Literature (with placement year)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-english-literature-with-placement-year"
+    },
+    {
+      "title": "BA (Hons) History",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 23950,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2024",
+        "October 2025",
+        "October 2026"
+      ],
+      "campuses": [
+        "Loughborough University Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/loughborough-university",
+      "courseRefId": "loughborough-university|ba-hons-history"
     },
     {
       "title": "MSc Project Management",
@@ -6769,7 +6793,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",
@@ -6804,7 +6827,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",
@@ -6839,7 +6861,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",

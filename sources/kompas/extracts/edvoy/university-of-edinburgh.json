@@ -3,13 +3,14 @@
   "name": "University of Edinburgh",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-edinburgh",
-  "scrapedAt": "2026-07-22T15:42:52.475Z",
+  "scrapedAt": "2026-08-23T13:11:40.055Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-edinburgh",
   "country": "United Kingdom",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -74,6 +75,26 @@
       "courseRefId": "university-of-edinburgh|msc-global-strategy-sustainability"
     },
     {
+      "title": "MSc International Human Resource Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 29900,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2026",
+        "September 2025"
+      ],
+      "campuses": [
+        "Edinburgh Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-edinburgh",
+      "courseRefId": "university-of-edinburgh|msc-international-human-resource-management"
+    },
+    {
       "title": "MSc Education",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -112,26 +133,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-edinburgh",
       "courseRefId": "university-of-edinburgh|msc-in-counselling-studies"
-    },
-    {
-      "title": "MSc International Human Resource Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 29900,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2026",
-        "September 2025"
-      ],
-      "campuses": [
-        "Edinburgh Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-edinburgh",
-      "courseRefId": "university-of-edinburgh|msc-international-human-resource-management"
     },
     {
       "title": "MSc Language Education",
@@ -251,26 +252,6 @@
       "courseRefId": "university-of-edinburgh|msc-future-infrastructure-climate-change-and-sustainability"
     },
     {
-      "title": "MSc East Asian Studies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 28800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2024"
-      ],
-      "campuses": [
-        "Edinburgh Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-edinburgh",
-      "courseRefId": "university-of-edinburgh|msc-east-asian-studies"
-    },
-    {
       "title": "MSc International Development",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -309,6 +290,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-edinburgh",
       "courseRefId": "university-of-edinburgh|msc-operational-research-with-computational-optimization"
+    },
+    {
+      "title": "MSc East Asian Studies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 28800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2024"
+      ],
+      "campuses": [
+        "Edinburgh Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-edinburgh",
+      "courseRefId": "university-of-edinburgh|msc-east-asian-studies"
     }
   ]
 }

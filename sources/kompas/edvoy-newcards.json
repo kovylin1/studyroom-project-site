@@ -1,0 +1,171 @@
+{
+ "apply": true,
+ "stats": {
+  "drafts": 16,
+  "created": 3,
+  "noCity": 10,
+  "noPrograms": 0,
+  "cardExists": 3,
+  "linkedToExisting": 0,
+  "slugSuffixed": 0,
+  "programsCarried": 106
+ },
+ "created": [
+  {
+   "slug": "iowa-state-university",
+   "name": "IOWA State University",
+   "country": "United States",
+   "city": "Ames",
+   "programs": 101,
+   "edpRefId": "iowa-state-university",
+   "draftFile": "iowa-state-university.json"
+  },
+  {
+   "slug": "university-of-eastern-finland",
+   "name": "University of Eastern Finland",
+   "country": "Finland",
+   "city": "Joensuu",
+   "programs": 4,
+   "edpRefId": "university-of-eastern-finland",
+   "draftFile": "university-of-eastern-finland.json"
+  },
+  {
+   "slug": "national-research-nuclear-university-mephi",
+   "name": "National Research Nuclear University(MEPhI)",
+   "country": "Russia",
+   "city": "Moscow",
+   "programs": 1,
+   "edpRefId": "national-research-nuclear-university-mephi",
+   "draftFile": "national-research-nuclear-university-mephi.json"
+  }
+ ],
+ "cases": [
+  {
+   "edpRefId": "royal-holloway-university-of-london",
+   "name": "Royal Holloway University of London",
+   "country": "United Kingdom",
+   "programs": 321,
+   "reason": "card-exists",
+   "cards": [
+    "royal-holloway-direct-entry",
+    "royal-holloway"
+   ],
+   "note": "карточка в каталоге есть (royal-holloway-direct-entry, royal-holloway), но привязка не сложилась — привязать вручную"
+  },
+  {
+   "edpRefId": "university-of-victoria",
+   "name": "University of Victoria",
+   "country": "Canada",
+   "programs": 88,
+   "reason": "card-exists",
+   "cards": [
+    "uvic",
+    "victoria"
+   ],
+   "note": "карточка в каталоге есть (uvic, victoria), но привязка не сложилась — привязать вручную"
+  },
+  {
+   "edpRefId": "long-island-university-brooklyn",
+   "name": "Long Island University Brooklyn",
+   "country": "United States",
+   "programs": 66,
+   "reason": "card-exists",
+   "cards": [
+    "liu-brooklyn",
+    "long-island-university-brooklyn-direct-entry"
+   ],
+   "note": "карточка в каталоге есть (liu-brooklyn, long-island-university-brooklyn-direct-entry), но привязка не сложилась — привязать вручную"
+  },
+  {
+   "edpRefId": "ecole-de-management-applique",
+   "name": "Ecole de Management Applique",
+   "country": "France",
+   "programs": 9,
+   "reason": "no-city",
+   "note": "источник города не назвал — карточка не заводится, город не выдумываем"
+  },
+  {
+   "edpRefId": "lincoln-university-college",
+   "name": "Lincoln University College",
+   "country": "Malaysia",
+   "programs": 7,
+   "reason": "country-mismatch",
+   "cards": [
+    "lincoln-nz"
+   ],
+   "note": "карточка с тем же именем есть, но в другой стране — однофамилец, привязывать нельзя"
+  },
+  {
+   "edpRefId": "lincoln-university-college",
+   "name": "Lincoln University College",
+   "country": "Malaysia",
+   "programs": 7,
+   "reason": "no-city",
+   "note": "источник города не назвал — карточка не заводится, город не выдумываем"
+  },
+  {
+   "edpRefId": "cbs-university-of-applied-sciences",
+   "name": "CBS University of Applied Sciences",
+   "country": "Germany",
+   "programs": 2,
+   "reason": "no-city",
+   "note": "источник города не назвал — карточка не заводится, город не выдумываем"
+  },
+  {
+   "edpRefId": "alfa-university-college-auc",
+   "name": "ALFA University College (AUC)",
+   "country": "Malaysia",
+   "programs": 1,
+   "reason": "no-city",
+   "note": "источник города не назвал — карточка не заводится, город не выдумываем"
+  },
+  {
+   "edpRefId": "european-global-institute-of-innovation-and-technology",
+   "name": "European Global Institute of Innovation and Technology",
+   "country": "Malta",
+   "programs": 1,
+   "reason": "no-city",
+   "note": "источник города не назвал — карточка не заводится, город не выдумываем"
+  },
+  {
+   "edpRefId": "mjm-graphic-design",
+   "name": "MJM Graphic Design",
+   "country": "France",
+   "programs": 1,
+   "reason": "no-city",
+   "note": "источник города не назвал — карточка не заводится, город не выдумываем"
+  },
+  {
+   "edpRefId": "rome-business-school",
+   "name": "Rome Business School",
+   "country": "Italy",
+   "programs": 1,
+   "reason": "no-city",
+   "note": "источник города не назвал — карточка не заводится, город не выдумываем"
+  },
+  {
+   "edpRefId": "the-international-university-of-logistics-and-transport",
+   "name": "The International University of Logistics and Transport",
+   "country": "Poland",
+   "programs": 1,
+   "reason": "no-city",
+   "note": "источник города не назвал — карточка не заводится, город не выдумываем"
+  },
+  {
+   "edpRefId": "the-university-of-waterloo",
+   "name": "The University of waterloo",
+   "country": "Canada",
+   "programs": 1,
+   "reason": "no-city",
+   "note": "источник города не назвал — карточка не заводится, город не выдумываем"
+  },
+  {
+   "edpRefId": "widener-university",
+   "name": "Widener University",
+   "country": "United States",
+   "programs": 1,
+   "reason": "no-city",
+   "note": "источник города не назвал — карточка не заводится, город не выдумываем"
+  }
+ ]
+}

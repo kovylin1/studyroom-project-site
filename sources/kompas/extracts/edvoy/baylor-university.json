@@ -3,13 +3,14 @@
   "name": "Baylor University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/baylor-university",
-  "scrapedAt": "2026-07-22T15:42:52.127Z",
+  "scrapedAt": "2026-08-23T13:11:39.778Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "baylor-university",
   "country": "United States",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -135,6 +136,31 @@
       "courseRefId": "baylor-university|bachelors-data-science"
     },
     {
+      "title": "Bachelors Business Fellows",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2025",
+        "August 2026",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-business-fellows"
+    },
+    {
       "title": "Bachelors Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -210,31 +236,6 @@
       "courseRefId": "baylor-university|bachelors-international-business"
     },
     {
-      "title": "Bachelors Business Fellows",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2025",
-        "August 2026",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-business-fellows"
-    },
-    {
       "title": "MS in Electrical and Computer Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -258,31 +259,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
       "courseRefId": "baylor-university|ms-in-electrical-and-computer-engineering"
-    },
-    {
-      "title": "Bachelors Statistics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
-        "January 2026",
-        "August 2024",
-        "August 2025",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-statistics"
     },
     {
       "title": "Bachelors Engineering",
@@ -333,6 +309,31 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
       "courseRefId": "baylor-university|bachelors-finance"
+    },
+    {
+      "title": "Bachelors Statistics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2025",
+        "January 2026",
+        "August 2024",
+        "August 2025",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-statistics"
     },
     {
       "title": "MS in Informational System",
@@ -435,7 +436,7 @@
       "courseRefId": "baylor-university|bachelors-nursing"
     },
     {
-      "title": "Bachelors Communication",
+      "title": "Bachelors Bioinformatics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -443,10 +444,10 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2025",
-        "August 2026",
         "January 2026",
         "August 2025",
+        "August 2026",
+        "January 2025",
         "August 2024",
         "January 2024",
         "January 2027",
@@ -457,7 +458,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-communication"
+      "courseRefId": "baylor-university|bachelors-bioinformatics"
     },
     {
       "title": "Bachelors Communication Specialist",
@@ -485,6 +486,31 @@
       "courseRefId": "baylor-university|bachelors-communication-specialist"
     },
     {
+      "title": "Bachelors Accounting",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2026",
+        "August 2025",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-accounting"
+    },
+    {
       "title": "Bachelors Management Information Systems",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -508,31 +534,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
       "courseRefId": "baylor-university|bachelors-management-information-systems"
-    },
-    {
-      "title": "Bachelors Marketing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2025",
-        "August 2026",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-marketing"
     },
     {
       "title": "Bachelors Film and Digital Media",
@@ -560,7 +561,7 @@
       "courseRefId": "baylor-university|bachelors-film-and-digital-media"
     },
     {
-      "title": "Bachelors Bioinformatics",
+      "title": "Bachelors Marketing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -569,9 +570,9 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "January 2026",
-        "August 2025",
-        "August 2026",
         "January 2025",
+        "August 2026",
+        "August 2025",
         "August 2024",
         "January 2024",
         "January 2027",
@@ -582,10 +583,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-bioinformatics"
+      "courseRefId": "baylor-university|bachelors-marketing"
     },
     {
-      "title": "Bachelors Neuroscience",
+      "title": "Bachelors Communication",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -593,10 +594,10 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
         "January 2025",
+        "August 2026",
+        "January 2026",
+        "August 2025",
         "August 2024",
         "January 2024",
         "January 2027",
@@ -607,32 +608,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-neuroscience"
-    },
-    {
-      "title": "Bachelors Accounting",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2026",
-        "August 2025",
-        "January 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-accounting"
+      "courseRefId": "baylor-university|bachelors-communication"
     },
     {
       "title": "Bachelors Apparel Merchandising",
@@ -660,31 +636,6 @@
       "courseRefId": "baylor-university|bachelors-apparel-merchandising"
     },
     {
-      "title": "Bachelors Mechanical Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
-        "January 2026",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-mechanical-engineering"
-    },
-    {
       "title": "Bachelors Medical Humanities",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -710,6 +661,56 @@
       "courseRefId": "baylor-university|bachelors-medical-humanities"
     },
     {
+      "title": "Bachelors Mechanical Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2025",
+        "January 2026",
+        "August 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-mechanical-engineering"
+    },
+    {
+      "title": "Bachelors Neuroscience",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-neuroscience"
+    },
+    {
       "title": "Bachelors Astrophysics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -733,6 +734,31 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
       "courseRefId": "baylor-university|bachelors-astrophysics"
+    },
+    {
+      "title": "Bachelors Apparel Design and Product Development",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "August 2025",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-apparel-design-and-product-development"
     },
     {
       "title": "Bachelors Humanities Research Fellows",
@@ -810,31 +836,6 @@
       "courseRefId": "baylor-university|bachelors-economics"
     },
     {
-      "title": "Bachelors Apparel Design and Product Development",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "August 2025",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-apparel-design-and-product-development"
-    },
-    {
       "title": "Bachelors Environmental Health Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -860,32 +861,7 @@
       "courseRefId": "baylor-university|bachelors-environmental-health-science"
     },
     {
-      "title": "Bachelors Classics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "August 2025",
-        "January 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-classics"
-    },
-    {
-      "title": "Bachelors Supply Chain Management",
+      "title": "Bachelors University Scholars",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -896,8 +872,8 @@
         "January 2026",
         "January 2025",
         "August 2024",
-        "August 2026",
         "August 2025",
+        "August 2026",
         "January 2024",
         "January 2027",
         "August 2027"
@@ -907,107 +883,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-supply-chain-management"
-    },
-    {
-      "title": "Bachelors Theory",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
-        "January 2026",
-        "August 2024",
-        "August 2025",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-theory"
-    },
-    {
-      "title": "Bachelors Professional Selling",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
-        "August 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-professional-selling"
-    },
-    {
-      "title": "Bachelors Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-psychology"
-    },
-    {
-      "title": "Bachelors Human Resource Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "August 2026",
-        "January 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-human-resource-management"
+      "courseRefId": "baylor-university|bachelors-university-scholars"
     },
     {
       "title": "Bachelors Applied Mathematics",
@@ -1035,6 +911,31 @@
       "courseRefId": "baylor-university|bachelors-applied-mathematics"
     },
     {
+      "title": "Bachelors Education - Middle Grade Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "August 2026",
+        "January 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-education-middle-grade-science"
+    },
+    {
       "title": "Bachelors Great Texts of the Western Tradition",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1060,7 +961,7 @@
       "courseRefId": "baylor-university|bachelors-great-texts-of-the-western-tradition"
     },
     {
-      "title": "Bachelors Physics",
+      "title": "Bachelors Human Resource Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1068,10 +969,10 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "January 2026",
-        "January 2025",
         "August 2025",
         "August 2026",
+        "January 2025",
+        "January 2026",
         "August 2024",
         "January 2024",
         "January 2027",
@@ -1082,7 +983,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-physics"
+      "courseRefId": "baylor-university|bachelors-human-resource-management"
     },
     {
       "title": "Bachelors Education - Elementary Education",
@@ -1110,7 +1011,7 @@
       "courseRefId": "baylor-university|bachelors-education-elementary-education"
     },
     {
-      "title": "Bachelors Education - Middle Grade Science",
+      "title": "Bachelors Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1118,10 +1019,10 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "August 2025",
-        "August 2026",
         "January 2025",
+        "August 2025",
         "January 2026",
+        "August 2026",
         "August 2024",
         "January 2024",
         "January 2027",
@@ -1132,10 +1033,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-education-middle-grade-science"
+      "courseRefId": "baylor-university|bachelors-psychology"
     },
     {
-      "title": "Bachelors University Scholars",
+      "title": "Bachelors Supply Chain Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1146,8 +1047,8 @@
         "January 2026",
         "January 2025",
         "August 2024",
-        "August 2025",
         "August 2026",
+        "August 2025",
         "January 2024",
         "January 2027",
         "August 2027"
@@ -1157,7 +1058,107 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-university-scholars"
+      "courseRefId": "baylor-university|bachelors-supply-chain-management"
+    },
+    {
+      "title": "Bachelors Physics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2025",
+        "August 2025",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-physics"
+    },
+    {
+      "title": "Bachelors Professional Selling",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2025",
+        "August 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-professional-selling"
+    },
+    {
+      "title": "Bachelors Theory",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2025",
+        "January 2026",
+        "August 2024",
+        "August 2025",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-theory"
+    },
+    {
+      "title": "Bachelors Classics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "August 2025",
+        "January 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-classics"
     },
     {
       "title": "Bachelors Health Science Studies",
@@ -1235,7 +1236,7 @@
       "courseRefId": "baylor-university|bachelors-health-kinesiology-and-leisure-studies"
     },
     {
-      "title": "Bachelors Education - Secondary Mathematics",
+      "title": "Bachelors Education - Secondary Life Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1244,133 +1245,8 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "August 2026",
-        "August 2025",
-        "January 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-education-secondary-mathematics"
-    },
-    {
-      "title": "Bachelors Education - Secondary Social Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
         "January 2026",
         "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-education-secondary-social-studies"
-    },
-    {
-      "title": "Bachelors Education - Spanish All Level",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
-        "August 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-education-spanish-all-level"
-    },
-    {
-      "title": "Bachelors Education - Special Education",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "August 2025",
-        "January 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-education-special-education"
-    },
-    {
-      "title": "Bachelors Environmental Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
-        "August 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-environmental-science"
-    },
-    {
-      "title": "Bachelors Political Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "August 2025",
-        "August 2026",
         "January 2025",
         "August 2024",
         "January 2024",
@@ -1382,7 +1258,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-political-science"
+      "courseRefId": "baylor-university|bachelors-education-secondary-life-science"
     },
     {
       "title": "Bachelors Education - Middle Grade Mathematics",
@@ -1410,6 +1286,56 @@
       "courseRefId": "baylor-university|bachelors-education-middle-grade-mathematics"
     },
     {
+      "title": "Bachelors Education - Special Education",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "August 2025",
+        "January 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-education-special-education"
+    },
+    {
+      "title": "Bachelors Education - Secondary Social Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2025",
+        "January 2026",
+        "August 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-education-secondary-social-studies"
+    },
+    {
       "title": "Bachelors Education - Middle Grade Social Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1435,7 +1361,7 @@
       "courseRefId": "baylor-university|bachelors-education-middle-grade-social-studies"
     },
     {
-      "title": "Bachelors Education - Secondary Life Science",
+      "title": "Bachelors Environmental Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1444,8 +1370,83 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "August 2026",
+        "January 2025",
+        "August 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-environmental-science"
+    },
+    {
+      "title": "Bachelors Education - Spanish All Level",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2025",
+        "August 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-education-spanish-all-level"
+    },
+    {
+      "title": "Bachelors Education - Secondary Mathematics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "August 2025",
+        "January 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-education-secondary-mathematics"
+    },
+    {
+      "title": "Bachelors Political Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
         "January 2026",
         "August 2025",
+        "August 2026",
         "January 2025",
         "August 2024",
         "January 2024",
@@ -1457,7 +1458,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-education-secondary-life-science"
+      "courseRefId": "baylor-university|bachelors-political-science"
     },
     {
       "title": "Bachelors Education - Middle Grade English, Language Arts and Reading",
@@ -1535,156 +1536,6 @@
       "courseRefId": "baylor-university|bachelors-exercise-physiology"
     },
     {
-      "title": "Bachelors Church Music",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "August 2025",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-church-music"
-    },
-    {
-      "title": "Bachelors Communication Sciences and Disorders",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2025",
-        "August 2026",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-communication-sciences-and-disorders"
-    },
-    {
-      "title": "Bachelors Composition",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2025",
-        "January 2026",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-composition"
-    },
-    {
-      "title": "Bachelors Earth Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "August 2025",
-        "August 2026",
-        "January 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-earth-science"
-    },
-    {
-      "title": "Bachelors Spanish",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "August 2026",
-        "August 2024",
-        "January 2025",
-        "January 2026",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-spanish"
-    },
-    {
-      "title": "Bachelors Studio Art",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "August 2024",
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-studio-art"
-    },
-    {
       "title": "Bachelors Theatre Arts",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1708,1081 +1559,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
       "courseRefId": "baylor-university|bachelors-theatre-arts"
-    },
-    {
-      "title": "Bachelors Theatre Performance",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "August 2025",
-        "January 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-theatre-performance"
-    },
-    {
-      "title": "Bachelors Education - Secondary Physical Sciences",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "January 2025",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-education-secondary-physical-sciences"
-    },
-    {
-      "title": "Bachelors Education Certification - Music Education",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "August 2025",
-        "January 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-education-certification-music-education"
-    },
-    {
-      "title": "Bachelors Education Certification - Physical Education",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "August 2025",
-        "August 2026",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-education-certification-physical-education"
-    },
-    {
-      "title": "Bachelors Latin American Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "August 2025",
-        "January 2026",
-        "January 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-latin-american-studies"
-    },
-    {
-      "title": "Bachelors Linguistics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
-        "August 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-linguistics"
-    },
-    {
-      "title": "Bachelors Professional Writing and Rhetoric",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "August 2025",
-        "August 2026",
-        "January 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-professional-writing-and-rhetoric"
-    },
-    {
-      "title": "Bachelors Public Health",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2026",
-        "August 2025",
-        "January 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-public-health"
-    },
-    {
-      "title": "Bachelors Recreation and Leisure Services",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "August 2024",
-        "August 2026",
-        "January 2025",
-        "January 2026",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-recreation-and-leisure-services"
-    },
-    {
-      "title": "Bachelors Religion",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2025",
-        "August 2026",
-        "August 2024",
-        "January 2026",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-religion"
-    },
-    {
-      "title": "Bachelors Risk Management and Insurance",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2025",
-        "August 2024",
-        "August 2026",
-        "January 2026",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-risk-management-and-insurance"
-    },
-    {
-      "title": "Bachelors English",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2025",
-        "August 2025",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-english"
-    },
-    {
-      "title": "Bachelors Environmental Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "August 2025",
-        "August 2026",
-        "January 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-environmental-studies"
-    },
-    {
-      "title": "Bachelors Family and Consumer Sciences",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "August 2025",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-family-and-consumer-sciences"
-    },
-    {
-      "title": "Bachelors Russian",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "August 2025",
-        "August 2026",
-        "January 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-russian"
-    },
-    {
-      "title": "Bachelors Science Research Fellows",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "August 2024",
-        "January 2026",
-        "August 2026",
-        "January 2025",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-science-research-fellows"
-    },
-    {
-      "title": "Bachelors Slavic and East European Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
-        "August 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-slavic-and-east-european-studies"
-    },
-    {
-      "title": "Bachelors Social Work",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "August 2024",
-        "January 2025",
-        "January 2026",
-        "August 2026",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-social-work"
-    },
-    {
-      "title": "Bachelors Sociology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "August 2025",
-        "August 2026",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-sociology"
-    },
-    {
-      "title": "Bachelors History",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2025",
-        "August 2025",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-history"
-    },
-    {
-      "title": "Bachelors Instrumental Music",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "August 2026",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-instrumental-music"
-    },
-    {
-      "title": "Bachelors Interior Design",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-interior-design"
-    },
-    {
-      "title": "Bachelors International Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2025",
-        "August 2025",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-international-studies"
-    },
-    {
-      "title": "Bachelors Latin",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2025",
-        "January 2026",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-latin"
-    },
-    {
-      "title": "Bachelors Arabic and Middle East Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-arabic-and-middle-east-studies"
-    },
-    {
-      "title": "Bachelors Art History",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "August 2026",
-        "January 2025",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-art-history"
-    },
-    {
-      "title": "Bachelors Asian Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "August 2026",
-        "January 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-asian-studies"
-    },
-    {
-      "title": "Bachelors Astronomy",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "August 2026",
-        "January 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-astronomy"
-    },
-    {
-      "title": "Bachelors Aviation Administration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2026",
-        "January 2025",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-aviation-administration"
-    },
-    {
-      "title": "Bachelors Aviation Sciences",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "August 2026",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-aviation-sciences"
-    },
-    {
-      "title": "Bachelors Biochemistry",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "August 2026",
-        "August 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-biochemistry"
-    },
-    {
-      "title": "Bachelors Biology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "August 2026",
-        "January 2026",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-biology"
-    },
-    {
-      "title": "Bachelors Chemistry",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
-        "August 2025",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-chemistry"
-    },
-    {
-      "title": "Bachelors Child and Family Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "January 2026",
-        "August 2026",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-child-and-family-studies"
-    },
-    {
-      "title": "Bachelors Choral Music",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "August 2025",
-        "August 2026",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-choral-music"
-    },
-    {
-      "title": "Bachelors French",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-french"
-    },
-    {
-      "title": "Bachelors Geology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
-        "January 2026",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-geology"
-    },
-    {
-      "title": "Bachelors Geophysics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-geophysics"
-    },
-    {
-      "title": "Bachelors German",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026",
-        "January 2025",
-        "January 2026",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-german"
-    },
-    {
-      "title": "Bachelors Greek",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "August 2026",
-        "January 2025",
-        "August 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-greek"
-    },
-    {
-      "title": "Bachelors Greek and Roman Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "August 2025",
-        "August 2026",
-        "January 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-greek-and-roman-studies"
-    },
-    {
-      "title": "Bachelors Music",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "January 2025",
-        "August 2025",
-        "August 2026",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-music"
-    },
-    {
-      "title": "Bachelors Music History and Literature",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 67756,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "August 2026",
-        "January 2026",
-        "January 2025",
-        "August 2024",
-        "January 2024",
-        "January 2027",
-        "August 2027"
-      ],
-      "campuses": [
-        "Baylor Waco Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-music-history-and-literature"
     },
     {
       "title": "Bachelors Nutrition Sciences",
@@ -2810,7 +1586,7 @@
       "courseRefId": "baylor-university|bachelors-nutrition-sciences"
     },
     {
-      "title": "Bachelors Performance",
+      "title": "Bachelors Geology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2818,10 +1594,10 @@
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "August 2025",
+        "August 2026",
         "January 2025",
         "January 2026",
-        "August 2026",
+        "August 2025",
         "August 2024",
         "January 2024",
         "January 2027",
@@ -2832,10 +1608,35 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-performance"
+      "courseRefId": "baylor-university|bachelors-geology"
     },
     {
-      "title": "Bachelors Philosophy",
+      "title": "Bachelors English",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2025",
+        "August 2025",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-english"
+    },
+    {
+      "title": "Bachelors Education - Secondary Physical Sciences",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2844,8 +1645,58 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "August 2025",
-        "August 2026",
+        "January 2026",
         "January 2025",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-education-secondary-physical-sciences"
+    },
+    {
+      "title": "Bachelors Communication Sciences and Disorders",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2025",
+        "August 2026",
+        "August 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-communication-sciences-and-disorders"
+    },
+    {
+      "title": "Bachelors Choral Music",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "August 2025",
+        "August 2026",
         "January 2026",
         "August 2024",
         "January 2024",
@@ -2857,7 +1708,57 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-philosophy"
+      "courseRefId": "baylor-university|bachelors-choral-music"
+    },
+    {
+      "title": "Bachelors Aviation Sciences",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "August 2026",
+        "August 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-aviation-sciences"
+    },
+    {
+      "title": "Bachelors Aviation Administration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2026",
+        "January 2025",
+        "August 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-aviation-administration"
     },
     {
       "title": "Bachelors American Studies",
@@ -2883,6 +1784,956 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
       "courseRefId": "baylor-university|bachelors-american-studies"
+    },
+    {
+      "title": "Bachelors Arabic and Middle East Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-arabic-and-middle-east-studies"
+    },
+    {
+      "title": "Bachelors Asian Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "August 2026",
+        "January 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-asian-studies"
+    },
+    {
+      "title": "Bachelors Latin American Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "August 2025",
+        "January 2026",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-latin-american-studies"
+    },
+    {
+      "title": "Bachelors Latin",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2025",
+        "January 2026",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-latin"
+    },
+    {
+      "title": "Bachelors Greek",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "August 2026",
+        "January 2025",
+        "August 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-greek"
+    },
+    {
+      "title": "Bachelors Earth Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "August 2025",
+        "August 2026",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-earth-science"
+    },
+    {
+      "title": "Bachelors Biology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "August 2026",
+        "January 2026",
+        "August 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-biology"
+    },
+    {
+      "title": "Bachelors Interior Design",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-interior-design"
+    },
+    {
+      "title": "Bachelors Linguistics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2025",
+        "August 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-linguistics"
+    },
+    {
+      "title": "Bachelors French",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-french"
+    },
+    {
+      "title": "Bachelors International Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2025",
+        "August 2025",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-international-studies"
+    },
+    {
+      "title": "Bachelors Instrumental Music",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "August 2026",
+        "August 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-instrumental-music"
+    },
+    {
+      "title": "Bachelors History",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2025",
+        "August 2025",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-history"
+    },
+    {
+      "title": "Bachelors Education Certification - Music Education",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "August 2025",
+        "January 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-education-certification-music-education"
+    },
+    {
+      "title": "Bachelors Astronomy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "August 2026",
+        "January 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-astronomy"
+    },
+    {
+      "title": "Bachelors Family and Consumer Sciences",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "August 2025",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-family-and-consumer-sciences"
+    },
+    {
+      "title": "Bachelors Environmental Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "August 2025",
+        "August 2026",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-environmental-studies"
+    },
+    {
+      "title": "Bachelors Music History and Literature",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "August 2026",
+        "January 2026",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-music-history-and-literature"
+    },
+    {
+      "title": "Bachelors Spanish",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "August 2026",
+        "August 2024",
+        "January 2025",
+        "January 2026",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-spanish"
+    },
+    {
+      "title": "Bachelors Risk Management and Insurance",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2025",
+        "August 2024",
+        "August 2026",
+        "January 2026",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-risk-management-and-insurance"
+    },
+    {
+      "title": "Bachelors Performance",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2025",
+        "January 2026",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-performance"
+    },
+    {
+      "title": "Bachelors Sociology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "August 2025",
+        "August 2026",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-sociology"
+    },
+    {
+      "title": "Bachelors Museum Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "August 2026",
+        "January 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-museum-studies"
+    },
+    {
+      "title": "Bachelors German",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2025",
+        "January 2026",
+        "August 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-german"
+    },
+    {
+      "title": "Bachelors Theatre Performance",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "August 2025",
+        "January 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-theatre-performance"
+    },
+    {
+      "title": "Bachelors Slavic and East European Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2025",
+        "August 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-slavic-and-east-european-studies"
+    },
+    {
+      "title": "Bachelors Professional Writing and Rhetoric",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "August 2025",
+        "August 2026",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-professional-writing-and-rhetoric"
+    },
+    {
+      "title": "Bachelors Russian",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "August 2025",
+        "August 2026",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-russian"
+    },
+    {
+      "title": "Bachelors Social Work",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "August 2024",
+        "January 2025",
+        "January 2026",
+        "August 2026",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-social-work"
+    },
+    {
+      "title": "Bachelors Public Health",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2026",
+        "August 2025",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-public-health"
+    },
+    {
+      "title": "Bachelors Chemistry",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2026",
+        "January 2025",
+        "August 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-chemistry"
+    },
+    {
+      "title": "Bachelors Art History",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "August 2026",
+        "January 2025",
+        "August 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-art-history"
+    },
+    {
+      "title": "Bachelors Geophysics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-geophysics"
+    },
+    {
+      "title": "Bachelors Education Certification - Physical Education",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "August 2025",
+        "August 2026",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-education-certification-physical-education"
+    },
+    {
+      "title": "Bachelors Church Music",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "August 2025",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-church-music"
+    },
+    {
+      "title": "Bachelors Composition",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2025",
+        "January 2026",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-composition"
+    },
+    {
+      "title": "Bachelors Child and Family Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "January 2026",
+        "August 2026",
+        "August 2025",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-child-and-family-studies"
+    },
+    {
+      "title": "Bachelors Biochemistry",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "August 2026",
+        "August 2025",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-biochemistry"
     },
     {
       "title": "Bachelors Anthropology",
@@ -2935,7 +2786,157 @@
       "courseRefId": "baylor-university|bachelors-mathematics"
     },
     {
-      "title": "Bachelors Museum Studies",
+      "title": "Bachelors Greek and Roman Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "August 2025",
+        "August 2026",
+        "January 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-greek-and-roman-studies"
+    },
+    {
+      "title": "Bachelors Science Research Fellows",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "August 2024",
+        "January 2026",
+        "August 2026",
+        "January 2025",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-science-research-fellows"
+    },
+    {
+      "title": "Bachelors Religion",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2025",
+        "August 2026",
+        "August 2024",
+        "January 2026",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-religion"
+    },
+    {
+      "title": "Bachelors Music",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2025",
+        "August 2025",
+        "August 2026",
+        "August 2024",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-music"
+    },
+    {
+      "title": "Bachelors Studio Art",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "August 2024",
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-studio-art"
+    },
+    {
+      "title": "Bachelors Recreation and Leisure Services",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 67756,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "August 2024",
+        "August 2026",
+        "January 2025",
+        "January 2026",
+        "January 2024",
+        "January 2027",
+        "August 2027"
+      ],
+      "campuses": [
+        "Baylor Waco Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
+      "courseRefId": "baylor-university|bachelors-recreation-and-leisure-services"
+    },
+    {
+      "title": "Bachelors Philosophy",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2957,7 +2958,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/baylor-university",
-      "courseRefId": "baylor-university|bachelors-museum-studies"
+      "courseRefId": "baylor-university|bachelors-philosophy"
     }
   ]
 }

@@ -230,7 +230,26 @@
       "language": "ru",
       "verified": true,
       "source": "edvoy",
-      "faculty": "Бизнес"
+      "faculty": "Бизнес",
+      "tuitionVariants": [
+        {
+          "tuition": 2900,
+          "currency": "EUR",
+          "source": "edvoy",
+          "campus": "WWSB Warsaw Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 3800,
+          "currency": "EUR",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Business & Management",
+          "accommodation": 3600,
+          "other": 6000,
+          "total": 13400
+        }
+      ]
     },
     {
       "slug": "warsaw-business-mba-management",
@@ -321,7 +340,7 @@
     },
     {
       "slug": "warsaw-business-master-039-s-data-science-krakow-master",
-      "title": "Master&#039;s - Data Science | KRAKOW",
+      "title": "Master's - Data Science | KRAKOW",
       "durationYears": 1,
       "level": "master",
       "source": "official",
@@ -344,7 +363,7 @@
     },
     {
       "slug": "warsaw-business-bachelor-039-s-degree-bachelor",
-      "title": "Bachelor&#039;s degree",
+      "title": "Bachelor's degree",
       "durationYears": 3,
       "level": "bachelor",
       "source": "official",
@@ -355,7 +374,7 @@
     },
     {
       "slug": "warsaw-business-bachelor-039-s-degree-in-management-warsaw-bachelor",
-      "title": "Bachelor&#039;s Degree in Management | WARSAW",
+      "title": "Bachelor's Degree in Management | WARSAW",
       "durationYears": 3,
       "level": "bachelor",
       "source": "official",
@@ -367,7 +386,7 @@
     },
     {
       "slug": "warsaw-business-master-039-s-degree-master",
-      "title": "Master&#039;s degree",
+      "title": "Master's degree",
       "durationYears": 1,
       "level": "master",
       "source": "official",
@@ -378,7 +397,7 @@
     },
     {
       "slug": "warsaw-business-master-039-s-degree-in-internal-security-warsaw-master",
-      "title": "Master&#039;s Degree in Internal Security | WARSAW",
+      "title": "Master's Degree in Internal Security | WARSAW",
       "durationYears": 1,
       "level": "master",
       "source": "official",
@@ -389,7 +408,7 @@
     },
     {
       "slug": "warsaw-business-bachelor-039-s-programs-bachelor",
-      "title": "Bachelor&#039;s Programs",
+      "title": "Bachelor's Programs",
       "durationYears": 3,
       "level": "bachelor",
       "source": "official",
@@ -400,7 +419,7 @@
     },
     {
       "slug": "warsaw-business-bachelor-039-s-degree-in-management-dabrowa-gornicza-bachelor",
-      "title": "Bachelor&#039;s Degree in Management | DABROWA GORNICZA",
+      "title": "Bachelor's Degree in Management | DABROWA GORNICZA",
       "durationYears": 3,
       "level": "bachelor",
       "source": "official",
@@ -412,7 +431,7 @@
     },
     {
       "slug": "warsaw-business-long-cycle-master-039-s-degree-in-medicine-master",
-      "title": "Long-Cycle Master&#039;s Degree in Medicine",
+      "title": "Long-Cycle Master's Degree in Medicine",
       "durationYears": 1,
       "level": "master",
       "source": "official",
@@ -457,6 +476,39 @@
       "faculty": "Бизнес",
       "kompasStatus": "catalog-only",
       "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "hotel-and-tourism-management",
+      "title": "Hotel and Tourism Management",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "economics",
+      "title": "Economics",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "journalism",
+      "title": "Journalism",
+      "level": "bachelor",
+      "source": "qs",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "faculty": "Социальные науки"
     }
   ],
   "tuition": {
@@ -471,7 +523,10 @@
       "warsaw-business-bachelor-of-business-management": 2900,
       "warsaw-business-bachelor-of-it-management": 2900,
       "warsaw-business-bachelor-of-hotel-tourism-management": 2900,
-      "warsaw-business-bachelor-of-logistics-management": 2900
+      "warsaw-business-bachelor-of-logistics-management": 2900,
+      "hotel-and-tourism-management": 2900,
+      "economics": 2900,
+      "journalism": 2900
     }
   },
   "deadlines": {},
@@ -627,5 +682,8 @@
       "qs",
       "edvoy"
     ]
-  }
+  },
+  "officialUrl": "https://wsb.edu.pl",
+  "officialUrlSource": "выгрузки: 64 ссылок на wsb.edu.pl",
+  "officialUrlCheckedAt": "2026-09-09"
 }

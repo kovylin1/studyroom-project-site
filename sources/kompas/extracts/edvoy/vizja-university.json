@@ -3,13 +3,14 @@
   "name": "VIZJA University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/vizja-university",
-  "scrapedAt": "2026-07-22T15:42:52.577Z",
+  "scrapedAt": "2026-08-23T13:11:40.158Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "vizja-university",
   "country": "Poland",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -52,26 +53,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
       "courseRefId": "vizja-university|master-in-marketing-business-management"
-    },
-    {
-      "title": "Master in Managerial Finance",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 3900,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|master-in-managerial-finance"
     },
     {
       "title": "Master in Emergency Medical Services (EMS)",
@@ -134,6 +115,26 @@
       "courseRefId": "vizja-university|master-in-financial-consulting"
     },
     {
+      "title": "Master in Managerial Finance",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 3900,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|master-in-managerial-finance"
+    },
+    {
       "title": "Master in Computer Science (Informatics)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -194,7 +195,7 @@
       "courseRefId": "vizja-university|bachelor-degree-in-cybersecurity"
     },
     {
-      "title": "Bachelor Degree in Enterprise Management",
+      "title": "Bachelor Degree in Human Capital Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
@@ -211,27 +212,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-enterprise-management"
-    },
-    {
-      "title": "Bachelor Degree in Energy Business",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3900,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-energy-business"
+      "courseRefId": "vizja-university|bachelor-degree-in-human-capital-management"
     },
     {
       "title": "Bachelor in Project Managment",
@@ -254,26 +235,6 @@
       "courseRefId": "vizja-university|bachelor-in-project-managment"
     },
     {
-      "title": "Bachelor Degree in Human Capital Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3700,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-human-capital-management"
-    },
-    {
       "title": "Bachelor in Cybersecurity",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -292,6 +253,46 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
       "courseRefId": "vizja-university|bachelor-in-cybersecurity"
+    },
+    {
+      "title": "Bachelor Degree in Energy Business",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3900,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-energy-business"
+    },
+    {
+      "title": "Bachelor Degree in Enterprise Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3700,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-enterprise-management"
     },
     {
       "title": "Bachelor Degree in Business Finance",
@@ -314,26 +315,6 @@
       "courseRefId": "vizja-university|bachelor-degree-in-business-finance"
     },
     {
-      "title": "Bachelor Degree in Emergency Medical Services (EMS)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3400,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-emergency-medical-services-ems"
-    },
-    {
       "title": "Bachelor Degree in Financial Technology (FinTech)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -352,26 +333,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
       "courseRefId": "vizja-university|bachelor-degree-in-financial-technology-fintech"
-    },
-    {
-      "title": "Bachelor Degree in Medical Coding",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3600,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-medical-coding"
     },
     {
       "title": "Bachelor Degree in International Finance",
@@ -414,6 +375,46 @@
       "courseRefId": "vizja-university|bachelor-degree-in-medical-technologies"
     },
     {
+      "title": "Bachelor Degree in Medical Coding",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3600,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-medical-coding"
+    },
+    {
+      "title": "Bachelor Degree in Emergency Medical Services (EMS)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3400,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-emergency-medical-services-ems"
+    },
+    {
       "title": "Bachelor Degree in Film and Television Production Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -432,26 +433,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
       "courseRefId": "vizja-university|bachelor-degree-in-film-and-television-production-management"
-    },
-    {
-      "title": "Master in New Media",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 3800,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|master-in-new-media"
     },
     {
       "title": "Master in Social Communication and PR",
@@ -474,11 +455,11 @@
       "courseRefId": "vizja-university|master-in-social-communication-and-pr"
     },
     {
-      "title": "Master in Corporate Accounting",
+      "title": "Master in Architecture Architecture",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 3900,
+      "duration": "18 Months",
+      "tuition": 4100,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -491,7 +472,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|master-in-corporate-accounting"
+      "courseRefId": "vizja-university|master-in-architecture-architecture"
     },
     {
       "title": "Master in Audit and Controlling",
@@ -514,11 +495,11 @@
       "courseRefId": "vizja-university|master-in-audit-and-controlling"
     },
     {
-      "title": "Master in ESG Audit",
+      "title": "Master in Corporate Accounting",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 4000,
+      "tuition": 3900,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -531,7 +512,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|master-in-esg-audit"
+      "courseRefId": "vizja-university|master-in-corporate-accounting"
     },
     {
       "title": "Master in Cosmetic Technology and Formulation Design",
@@ -554,11 +535,11 @@
       "courseRefId": "vizja-university|master-in-cosmetic-technology-and-formulation-design"
     },
     {
-      "title": "Master in Architecture Architecture",
+      "title": "Master in ESG Audit",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 4100,
+      "duration": "24 Months",
+      "tuition": 4000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -571,7 +552,27 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|master-in-architecture-architecture"
+      "courseRefId": "vizja-university|master-in-esg-audit"
+    },
+    {
+      "title": "Master in New Media",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 3800,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|master-in-new-media"
     },
     {
       "title": "Master in Psychology of Business",
@@ -592,6 +593,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
       "courseRefId": "vizja-university|master-in-psychology-of-business"
+    },
+    {
+      "title": "Bachelor Degree in Accounting, Audit and Controlling",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3800,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-accounting-audit-and-controlling"
     },
     {
       "title": "Bachelor Degree in Cognitive Science",
@@ -634,11 +655,11 @@
       "courseRefId": "vizja-university|bachelor-degree-in-cosmetic-technology-and-formulation-design"
     },
     {
-      "title": "Bachelor Degree in Social Communication and Public Relations",
+      "title": "Bachelor in Architecture",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3400,
+      "duration": "48 Months",
+      "tuition": 4000,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -651,47 +672,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-social-communication-and-public-relations"
-    },
-    {
-      "title": "Bachelor Degree in Social Media and Digital Marketing",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3400,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-social-media-and-digital-marketing"
-    },
-    {
-      "title": "Bachelor Degree in Accounting, Audit and Controlling",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3800,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-accounting-audit-and-controlling"
+      "courseRefId": "vizja-university|bachelor-in-architecture"
     },
     {
       "title": "Bachelor in Designing Mobile Applications",
@@ -774,11 +755,11 @@
       "courseRefId": "vizja-university|bachelor-degree-in-marketing-and-advertising"
     },
     {
-      "title": "Bachelor in Architecture",
+      "title": "Bachelor Degree in Social Communication and Public Relations",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 4000,
+      "duration": "36 Months",
+      "tuition": 3400,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -791,7 +772,27 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-in-architecture"
+      "courseRefId": "vizja-university|bachelor-degree-in-social-communication-and-public-relations"
+    },
+    {
+      "title": "Bachelor Degree in Social Media and Digital Marketing",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3400,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-social-media-and-digital-marketing"
     },
     {
       "title": "Master in Process and Project Management",
@@ -875,26 +876,6 @@
       "courseRefId": "vizja-university|master-in-applied-economics"
     },
     {
-      "title": "Bachelor Degree in Economics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3800,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-economics"
-    },
-    {
       "title": "Bachelor Degree in Gastronomy and Hotel Industry",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -933,6 +914,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
       "courseRefId": "vizja-university|bachelor-degree-in-journalism"
+    },
+    {
+      "title": "Bachelor Degree in Economics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3800,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-economics"
     },
     {
       "title": "Master in Psychodietetics",
@@ -993,6 +994,46 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
       "courseRefId": "vizja-university|master-in-clinical-psychology"
+    },
+    {
+      "title": "Bachelor Degree in Animal upbringing and training",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3800,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-animal-upbringing-and-training"
+    },
+    {
+      "title": "Bachelor Degree in Chillout Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3900,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-chillout-studies"
     },
     {
       "title": "Bachelor Degree in Correctional Rehabilitation",
@@ -1075,46 +1116,6 @@
       "courseRefId": "vizja-university|bachelor-degree-in-psychology"
     },
     {
-      "title": "Bachelor Degree in Animal upbringing and training",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3800,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-animal-upbringing-and-training"
-    },
-    {
-      "title": "Bachelor Degree in Chillout Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3900,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-chillout-studies"
-    },
-    {
       "title": "Bachelor in Artificial Intelligence",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1155,6 +1156,26 @@
       "courseRefId": "vizja-university|bachelor-degree-in-e-commerce-logistics"
     },
     {
+      "title": "Bachelor Degree in Banking and Insurance",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3800,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-banking-and-insurance"
+    },
+    {
       "title": "Bachelor Degree in Cosmetology, Beauty and Health Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1193,26 +1214,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
       "courseRefId": "vizja-university|bachelor-degree-in-sports-performance-diagnostics"
-    },
-    {
-      "title": "Bachelor Degree in Banking and Insurance",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3800,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-banking-and-insurance"
     },
     {
       "title": "Master in Quantitative Methods in Economics",
@@ -1395,6 +1396,66 @@
       "courseRefId": "vizja-university|master-in-road-transport-and-forwarding-logistics"
     },
     {
+      "title": "Master in Sports Dietetics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 3800,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|master-in-sports-dietetics"
+    },
+    {
+      "title": "Master in Sustainability Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 4000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|master-in-sustainability-management"
+    },
+    {
+      "title": "Master in Warehouse Logistics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 3800,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|master-in-warehouse-logistics"
+    },
+    {
       "title": "Master in Clinical Dietetics",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1413,26 +1474,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
       "courseRefId": "vizja-university|master-in-clinical-dietetics"
-    },
-    {
-      "title": "Master in Criminology and Forensic Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 3500,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|master-in-criminology-and-forensic-science"
     },
     {
       "title": "Master in Correctional Rehabilitation",
@@ -1495,6 +1536,26 @@
       "courseRefId": "vizja-university|master-in-english-studies"
     },
     {
+      "title": "Master in Criminology and Forensic Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 3500,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|master-in-criminology-and-forensic-science"
+    },
+    {
       "title": "Master in International Relations",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1513,206 +1574,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
       "courseRefId": "vizja-university|master-in-international-relations"
-    },
-    {
-      "title": "Master in Sports Dietetics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 3800,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|master-in-sports-dietetics"
-    },
-    {
-      "title": "Master in Sustainability Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 4000,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|master-in-sustainability-management"
-    },
-    {
-      "title": "Master in Warehouse Logistics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 3800,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|master-in-warehouse-logistics"
-    },
-    {
-      "title": "Bachelor Degree in Criminology and Forensic Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3400,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-criminology-and-forensic-science"
-    },
-    {
-      "title": "Bachelor Degree in Dietetics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3700,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-dietetics"
-    },
-    {
-      "title": "Bachelor Degree in English Philology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3600,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-english-philology"
-    },
-    {
-      "title": "Bachelor Degree in Epidemiological and Sanitary Surveillance",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3600,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-epidemiological-and-sanitary-surveillance"
-    },
-    {
-      "title": "Bachelor Degree in European Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3400,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-european-studies"
-    },
-    {
-      "title": "Bachelor Degree in Spanish Philology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3400,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-spanish-philology"
-    },
-    {
-      "title": "Bachelor Degree in Transport and Forwarding Logistics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 3700,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2026",
-        "October 2027"
-      ],
-      "campuses": [
-        "Vizja Park Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-degree-in-transport-and-forwarding-logistics"
     },
     {
       "title": "Bachelor Degree in American Studies",
@@ -1755,11 +1616,11 @@
       "courseRefId": "vizja-university|bachelor-degree-in-animal-therapy"
     },
     {
-      "title": "Bachelor in Urban planning and development",
+      "title": "Bachelor Degree in Criminology and Forensic Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "36 Months",
-      "tuition": 4000,
+      "tuition": 3400,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1772,7 +1633,67 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
-      "courseRefId": "vizja-university|bachelor-in-urban-planning-and-development"
+      "courseRefId": "vizja-university|bachelor-degree-in-criminology-and-forensic-science"
+    },
+    {
+      "title": "Bachelor Degree in Dietetics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3700,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-dietetics"
+    },
+    {
+      "title": "Bachelor Degree in Epidemiological and Sanitary Surveillance",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3600,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-epidemiological-and-sanitary-surveillance"
+    },
+    {
+      "title": "Bachelor Degree in European Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3400,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-european-studies"
     },
     {
       "title": "Bachelor Degree in German Philology",
@@ -1873,6 +1794,86 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
       "courseRefId": "vizja-university|bachelor-degree-in-italian-studies"
+    },
+    {
+      "title": "Bachelor in Urban planning and development",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 4000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-in-urban-planning-and-development"
+    },
+    {
+      "title": "Bachelor Degree in Transport and Forwarding Logistics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3700,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-transport-and-forwarding-logistics"
+    },
+    {
+      "title": "Bachelor Degree in Spanish Philology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3400,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-spanish-philology"
+    },
+    {
+      "title": "Bachelor Degree in English Philology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 3600,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "Vizja Park Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/vizja-university",
+      "courseRefId": "vizja-university|bachelor-degree-in-english-philology"
     }
   ]
 }

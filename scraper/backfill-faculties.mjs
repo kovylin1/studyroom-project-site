@@ -7,7 +7,11 @@ import { fileURLToPath } from 'node:url';
 import { canonicalizeFaculty, loadTaxonomy } from './lib/canonicalize-faculty.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DIR = path.join(__dirname, '..', 'site', 'src', 'content', 'universities');
+// Тот же переключатель, что у kompas-diff-core: прогнать таксономию по рабочей копии,
+// а не по живому каталогу. Нужен, чтобы зеркалить правку в copy (правило 3 плана).
+const DIR = process.env.KOMPAS_WORK_DIR
+  ? path.resolve(process.env.KOMPAS_WORK_DIR)
+  : path.join(__dirname, '..', 'site', 'src', 'content', 'universities');
 const DRY = process.argv.includes('--dry-run');
 const tax = loadTaxonomy();
 

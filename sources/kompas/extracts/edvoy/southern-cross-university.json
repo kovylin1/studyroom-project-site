@@ -3,41 +3,17 @@
   "name": "Southern Cross University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-  "scrapedAt": "2026-07-22T15:42:52.382Z",
+  "scrapedAt": "2026-08-23T13:11:39.975Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "southern-cross-university",
   "country": "Australia",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
-    {
-      "title": "Master of Business Administration",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 26000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2025",
-        "June 2025",
-        "October 2025",
-        "March 2026",
-        "June 2026",
-        "October 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "SCU Gold Coast Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|master-of-business-administration"
-    },
     {
       "title": "Graduate Diploma of Business",
       "level": "master",
@@ -64,7 +40,7 @@
       "courseRefId": "southern-cross-university|graduate-diploma-of-business"
     },
     {
-      "title": "Master of Information Technology",
+      "title": "Master of Business Administration",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -72,6 +48,9 @@
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "March 2025",
+        "June 2025",
+        "October 2025",
         "March 2026",
         "June 2026",
         "October 2026",
@@ -83,29 +62,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|master-of-information-technology"
-    },
-    {
-      "title": "Graduate Diploma of Information Technology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 26000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2026",
-        "June 2026",
-        "October 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "SCU Gold Coast Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|graduate-diploma-of-information-technology"
+      "courseRefId": "southern-cross-university|master-of-business-administration"
     },
     {
       "title": "Master of Osteopathic Medicine",
@@ -196,6 +153,75 @@
       "courseRefId": "southern-cross-university|master-of-engineering"
     },
     {
+      "title": "Master of Information Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 26000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "June 2026",
+        "October 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "SCU Gold Coast Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
+      "courseRefId": "southern-cross-university|master-of-information-technology"
+    },
+    {
+      "title": "Graduate Diploma of Information Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 26000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2026",
+        "June 2026",
+        "October 2026",
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "SCU Gold Coast Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
+      "courseRefId": "southern-cross-university|graduate-diploma-of-information-technology"
+    },
+    {
+      "title": "Bachelor of Business",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 26000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2025",
+        "June 2025",
+        "October 2025",
+        "March 2026",
+        "June 2026",
+        "October 2026",
+        "July 2027",
+        "March 2027"
+      ],
+      "campuses": [
+        "SCU Gold Coast Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
+      "courseRefId": "southern-cross-university|bachelor-of-business"
+    },
+    {
       "title": "Diploma of Business",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -221,31 +247,6 @@
       "courseRefId": "southern-cross-university|diploma-of-business"
     },
     {
-      "title": "Bachelor of Business",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 26000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2025",
-        "June 2025",
-        "October 2025",
-        "March 2026",
-        "June 2026",
-        "October 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "SCU Gold Coast Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|bachelor-of-business"
-    },
-    {
       "title": "Bachelor of Information Technology, Bachelor of Business",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -266,6 +267,27 @@
       "courseRefId": "southern-cross-university|bachelor-of-information-technology-bachelor-of-business"
     },
     {
+      "title": "Bachelor of Midwifery",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 26000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2025",
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "SCU Coffs Harbour Campus",
+        "SCU Gold Coast Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
+      "courseRefId": "southern-cross-university|bachelor-of-midwifery"
+    },
+    {
       "title": "Diploma of Information Technology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -284,6 +306,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
       "courseRefId": "southern-cross-university|diploma-of-information-technology"
+    },
+    {
+      "title": "Bachelor of Clinical Sciences (Osteopathic Studies)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 26000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2025",
+        "March 2026",
+        "March 2027"
+      ],
+      "campuses": [
+        "SCU Gold Coast Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
+      "courseRefId": "southern-cross-university|bachelor-of-clinical-sciences-osteopathic-studies"
     },
     {
       "title": "Bachelor of Health Science (Health and Lifestyle)",
@@ -361,24 +403,27 @@
       "courseRefId": "southern-cross-university|bachelor-of-nursing"
     },
     {
-      "title": "Bachelor of Clinical Sciences (Osteopathic Studies)",
+      "title": "Diploma of Health",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
+      "duration": "12 Months",
       "tuition": 26000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "March 2025",
+        "June 2025",
         "March 2026",
-        "March 2027"
+        "June 2026",
+        "March 2027",
+        "July 2027"
       ],
       "campuses": [
         "SCU Gold Coast Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|bachelor-of-clinical-sciences-osteopathic-studies"
+      "courseRefId": "southern-cross-university|diploma-of-health"
     },
     {
       "title": "Diploma of Engineering",
@@ -403,50 +448,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
       "courseRefId": "southern-cross-university|diploma-of-engineering"
-    },
-    {
-      "title": "Diploma of Health",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 26000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2025",
-        "June 2025",
-        "March 2026",
-        "June 2026",
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "SCU Gold Coast Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|diploma-of-health"
-    },
-    {
-      "title": "Bachelor of Midwifery",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 26000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2025",
-        "March 2026",
-        "March 2027"
-      ],
-      "campuses": [
-        "SCU Coffs Harbour Campus",
-        "SCU Gold Coast Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|bachelor-of-midwifery"
     },
     {
       "title": "Bachelor of Information Technology, Bachelor of Business (Accounting)",
@@ -511,14 +512,18 @@
       "courseRefId": "southern-cross-university|bachelor-of-laws-bachelor-of-business"
     },
     {
-      "title": "Bachelor of Engineering (Honours) - Mechanical Engineering",
+      "title": "Associate Degree of Law (Paralegal Studies)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
+      "duration": "24 Months",
       "tuition": 26000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "March 2025",
+        "June 2025",
+        "March 2026",
+        "June 2026",
         "March 2027",
         "July 2027"
       ],
@@ -527,7 +532,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|bachelor-of-engineering-honours-mechanical-engineering"
+      "courseRefId": "southern-cross-university|associate-degree-of-law-paralegal-studies"
     },
     {
       "title": "Bachelor of Laws",
@@ -576,18 +581,14 @@
       "courseRefId": "southern-cross-university|diploma-of-legal-studies"
     },
     {
-      "title": "Associate Degree of Law (Paralegal Studies)",
+      "title": "Bachelor of Engineering (Honours) - Mechanical Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
+      "duration": "48 Months",
       "tuition": 26000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "March 2025",
-        "June 2025",
-        "March 2026",
-        "June 2026",
         "March 2027",
         "July 2027"
       ],
@@ -596,7 +597,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|associate-degree-of-law-paralegal-studies"
+      "courseRefId": "southern-cross-university|bachelor-of-engineering-honours-mechanical-engineering"
     },
     {
       "title": "Bachelor of Psychological Science, Bachelor of Business (Accounting Specialisation)",
@@ -730,25 +731,6 @@
       "courseRefId": "southern-cross-university|master-of-teaching-secondary-specialisation"
     },
     {
-      "title": "Bachelor of Engineering (Honours) - Civil Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 26000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2027",
-        "July 2027"
-      ],
-      "campuses": [
-        "SCU Gold Coast Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|bachelor-of-engineering-honours-civil-engineering"
-    },
-    {
       "title": "Diploma of Education",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -806,8 +788,8 @@
         "June 2025",
         "March 2026",
         "June 2026",
-        "March 2027",
-        "July 2027"
+        "July 2027",
+        "March 2027"
       ],
       "campuses": [
         "SCU Gold Coast Campus"
@@ -884,6 +866,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
       "courseRefId": "southern-cross-university|bachelor-of-education-secondary-specialisation"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours) - Civil Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 26000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2027",
+        "July 2027"
+      ],
+      "campuses": [
+        "SCU Gold Coast Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
+      "courseRefId": "southern-cross-university|bachelor-of-engineering-honours-civil-engineering"
     },
     {
       "title": "Bachelor of Psychological Science",
@@ -995,8 +996,8 @@
         "June 2025",
         "March 2026",
         "June 2026",
-        "March 2027",
-        "July 2027"
+        "July 2027",
+        "March 2027"
       ],
       "campuses": [
         "SCU Gold Coast Campus"
@@ -1071,7 +1072,26 @@
       "courseRefId": "southern-cross-university|master-of-social-work-professional-qualifying"
     },
     {
-      "title": "Bachelor of Physiotherapy",
+      "title": "Bachelor of Science - Agriculture",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 26000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2027"
+      ],
+      "campuses": [
+        "SCU Lismore Campus",
+        "SCU Coffs Harbour Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
+      "courseRefId": "southern-cross-university|bachelor-of-science-agriculture"
+    },
+    {
+      "title": "Bachelor of Occupational Therapy",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1079,6 +1099,7 @@
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "March 2025",
         "March 2026",
         "March 2027"
       ],
@@ -1088,7 +1109,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|bachelor-of-physiotherapy"
+      "courseRefId": "southern-cross-university|bachelor-of-occupational-therapy"
     },
     {
       "title": "Bachelor of Social Work",
@@ -1126,8 +1147,8 @@
         "June 2025",
         "March 2026",
         "June 2026",
-        "March 2027",
-        "July 2027"
+        "July 2027",
+        "March 2027"
       ],
       "campuses": [
         "SCU Gold Coast Campus"
@@ -1181,7 +1202,7 @@
       "courseRefId": "southern-cross-university|bachelor-of-legal-and-justice-studies"
     },
     {
-      "title": "Bachelor of Occupational Therapy",
+      "title": "Bachelor of Physiotherapy",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1189,7 +1210,6 @@
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "March 2025",
         "March 2026",
         "March 2027"
       ],
@@ -1199,7 +1219,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|bachelor-of-occupational-therapy"
+      "courseRefId": "southern-cross-university|bachelor-of-physiotherapy"
     },
     {
       "title": "Bachelor of Science - Environment",
@@ -1238,25 +1258,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
       "courseRefId": "southern-cross-university|bachelor-of-science-marine"
-    },
-    {
-      "title": "Bachelor of Science - Agriculture",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 26000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2027"
-      ],
-      "campuses": [
-        "SCU Lismore Campus",
-        "SCU Coffs Harbour Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/southern-cross-university",
-      "courseRefId": "southern-cross-university|bachelor-of-science-agriculture"
     }
   ]
 }

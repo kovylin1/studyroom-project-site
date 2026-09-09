@@ -1,149 +1,912 @@
 {
   "slug": "beykent-university",
-  "name": "Beykent University",
-  "source": "official-direct",
-  "sourceUrl": "https://www.beykent.edu.tr",
-  "scrapedAt": "2026-07-31T03:49:11.806Z",
-  "discovery": "crawl",
-  "feePagesFetched": 1,
-  "feeRowsFound": 0,
-  "feeRowsMatched": 0,
-  "feeTable": [],
-  "urlsSeen": 80,
-  "courseUrlsFound": 18,
-  "pagesFetched": 16,
-  "pageCap": 160,
-  "capped": false,
-  "titlesRejected": 1,
-  "programsKept": 14,
-  "withPrice": 0,
-  "withFeeAudience": 0,
+  "source": "official",
+  "sourceKind": "kompas-direct-a1",
+  "site": "https://www.beykent.edu.tr/",
+  "checkedAt": "2026-09-02",
+  "note": "Пересбор 02.09.2026: в карточке лежал мусор общего сборщика. Цены на этих страницах не подписаны — не собраны.",
+  "gaps": [
+    {
+      "slug": "beykent-university",
+      "unit": "dis-hekimligi-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/dis-hekimligi-fakultesi",
+      "why": "на странице факультета нет ни одной ссылки на программу"
+    },
+    {
+      "slug": "beykent-university",
+      "unit": "hukuk-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/hukuk-fakultesi",
+      "why": "на странице факультета нет ни одной ссылки на программу"
+    },
+    {
+      "slug": "beykent-university",
+      "unit": "tip-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/tip-fakultesi",
+      "why": "на странице факультета нет ни одной ссылки на программу"
+    }
+  ],
   "programs": [
     {
-      "title": "Bölümler & Programlar",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "Bilişim Sistemleri ve Teknolojileri",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/bilisim-sistemleri-ve-teknolojileri",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "Meslek Yüksekokulu",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/on-lisans",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "İngiliz Dili ve Edebiyatı",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/ingiliz-dili-ve-edebiyati",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "Lisans",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "Matematik",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/matematik",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "Lisansüstü",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "Matematik ve Bilgisayar Bilimleri",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/matematik-ve-bilgisayar-bilimleri",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "Özel Yetenek",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/ozel-yetenek",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "İngilizce Mütercim ve Tercümanlık",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/ingilizce-mutercim-ve-tercumanlik",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "Yabancı Diller Yüksekokulu",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/yabanci-dil-hazirlik-sinifi",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "İstatistik ve Bilgisayar Bilimleri",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/istatistik-ve-bilgisayar-bilimleri",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "Mühendislik",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "Rusça Mütercim ve Tercümanlık",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/rusca-mutercim-ve-tercumanlik",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "İktisadi ve İdari Bilimler Fakültesi",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "Psikoloji",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/psikoloji",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "İletişim Fakültesi",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iletisim-fakultesi",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "Psikoloji (İngilizce)",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/psikoloji-(i-ngilizce)",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "Güzel Sanatlar Fakültesi",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/guzel-sanatlar-fakultesi",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "Sosyoloji",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/sosyoloji",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "Sağlık Bilimleri Fakültesi",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/saglik-bilimleri-fakultesi",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "Tarih",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/tarih",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "Hukuk Fakültesi",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/hukuk-fakultesi",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "Türk Dili ve Edebiyatı",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/turk-dili-ve-edebiyati",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "Tıp Fakültesi",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/tip-fakultesi",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "Yazılım Geliştirme",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/yazilim-gelistirme",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
     },
     {
-      "title": "Diş Hekimliği Fakültesi",
-      "level": null,
-      "programUrl": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/dis-hekimligi-fakultesi",
-      "source": "official",
-      "sourceKind": "kompas-direct",
+      "title": "Yapay Zeka Ve Makine Öğrenmesi",
+      "level": "bachelor",
+      "unit": "fen-edebiyat-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/fen-edebiyat-fakultesi/yapay-zeka-ve-makine-ogrenmesi-bolumu",
       "verifiedBySite": true,
-      "checkedAt": "2026-07-31"
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Gastronomi ve Mutfak Sanatları",
+      "level": "bachelor",
+      "unit": "guzel-sanatlar-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/guzel-sanatlar-fakultesi/gastronomi-ve-mutfak-sanatlari",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Grafik Tasarımı",
+      "level": "bachelor",
+      "unit": "guzel-sanatlar-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/guzel-sanatlar-fakultesi/grafik-tasarimi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Grafik Tasarımı (İngilizce)",
+      "level": "bachelor",
+      "unit": "guzel-sanatlar-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/guzel-sanatlar-fakultesi/grafik-tasarımı-(ingilizce)",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İletişim ve Tasarımı",
+      "level": "bachelor",
+      "unit": "guzel-sanatlar-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/guzel-sanatlar-fakultesi/iletisim-ve-tasarimi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Radyo, Televizyon ve Sinema",
+      "level": "bachelor",
+      "unit": "guzel-sanatlar-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/guzel-sanatlar-fakultesi/radyo-televizyon-ve-sinema",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Radyo, Televizyon ve Sinema (İngilizce)",
+      "level": "bachelor",
+      "unit": "guzel-sanatlar-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/guzel-sanatlar-fakultesi/radyo-televizyon-ve-sinema-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Tekstil ve Moda Tasarımı",
+      "level": "bachelor",
+      "unit": "guzel-sanatlar-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/guzel-sanatlar-fakultesi/tekstil-ve-moda-tasarimi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Oyunculuk",
+      "level": "bachelor",
+      "unit": "guzel-sanatlar-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/guzel-sanatlar-fakultesi/oyunculuk",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Finans ve Bankacılık",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/finans-ve-bankacilik",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Finans ve Bankacılık (İngilizce)",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/finans-ve-bankacilik-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İktisat",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/iktisat",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İktisat (İngilizce)",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/iktisat-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İşletme",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/isletme",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İşletme (İngilizce)",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/isletme-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Sermaye Piyasası",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/sermaye-piyasasi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Siyaset Bilimi ve Kamu Yönetimi",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/siyaset-bilimi-ve-kamu-yonetimi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Siyaset Bilimi ve Kamu Yönetimi (İngilizce)",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/siyaset-bilimi-ve-kamu-yonetimi-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Turizm İşletmeciliği",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/turizm-isletmeciligi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Uluslararası İlişkiler (İngilizce)",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/uluslararasi-iliskiler-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Lojistik Yönetimi",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/uluslararasi-lojistik-ve-tasimacilik",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Uluslararası Ticaret ve Finansman",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/uluslararasi-ticaret-ve-finansman",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Uluslararası Ticaret ve Finansman (İngilizce)",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/uluslararasi-ticaret-ve-finansman-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Yönetim Bilişim Sistemleri",
+      "level": "bachelor",
+      "unit": "iktisadi-ve-idari-bilimler-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iktisadi-ve-idari-bilimler-fakultesi/yonetim-bilisim-sistemleri",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Dijital Oyun Tasarımı",
+      "level": "bachelor",
+      "unit": "iletisim-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iletisim-fakultesi/dijital-oyun-tasarimi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Dijital Oyun Tasarımı (İngilizce)",
+      "level": "bachelor",
+      "unit": "iletisim-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iletisim-fakultesi/dijital-oyun-tasarımı-(i-ngilizce)",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Görsel İletişim Tasarımı",
+      "level": "bachelor",
+      "unit": "iletisim-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iletisim-fakultesi/gorsel-iletisim-tasarimi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Halkla İlişkiler ve Reklamcılık",
+      "level": "bachelor",
+      "unit": "iletisim-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iletisim-fakultesi/halkla-iliskiler-ve-reklamcilik",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Medya ve İletişim",
+      "level": "bachelor",
+      "unit": "iletisim-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iletisim-fakultesi/medya-ve-iletisim",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Yeni Medya",
+      "level": "bachelor",
+      "unit": "iletisim-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iletisim-fakultesi/yeni-medya",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Yeni Medya (İngilizce)",
+      "level": "bachelor",
+      "unit": "iletisim-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/iletisim-fakultesi/yeni-medya-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Bilgisayar Mühendisliği",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/bilgisayar-muhendisligi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Bilgisayar Mühendisliği (İngilizce)",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/bilgisayar-muhendisligi-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Elektrik - Elektronik Mühendisliği",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/elektrik-elektronik-muhendisligi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Endüstri Mühendisliği",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/endustri-muhendisligi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Endüstri Mühendisliği (İngilizce)",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/endustri-muhendisligi-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Endüstriyel Tasarım",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/endustriyel-tasarim",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Endüstriyel Tasarım (İngilizce)",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/endustriyel-tasarim-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İç Mimarlık",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/ic-mimarlik",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İç Mimarlık (İngilizce)",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/ic-mimarlik-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İnşaat Mühendisliği (İngilizce)",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/insaat-muhendisligi-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Kimya Mühendisliği",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/kimya-muhendisligi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Makine Mühendisliği (İngilizce)",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/makine-muhendisligi-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Mimarlık",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/mimarlik",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Mimarlık (İngilizce)",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/mimarlik-ingilizce",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Yazılım Mühendisliği",
+      "level": "bachelor",
+      "unit": "muhendislik-mimarlik-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/muhendislik-mimarlik-fakultesi/yazilim-muhendisligi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Beslenme ve Diyetetik",
+      "level": "bachelor",
+      "unit": "saglik-bilimleri-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/saglik-bilimleri-fakultesi/beslenme-ve-diyetetik",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Çocuk Gelişimi",
+      "level": "bachelor",
+      "unit": "saglik-bilimleri-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/saglik-bilimleri-fakultesi/cocuk-gelisimi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Ebelik",
+      "level": "bachelor",
+      "unit": "saglik-bilimleri-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/saglik-bilimleri-fakultesi/ebelik",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Fizyoterapi ve Rehabilitasyon",
+      "level": "bachelor",
+      "unit": "saglik-bilimleri-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/saglik-bilimleri-fakultesi/fizyoterapi-ve-rehabilitasyon",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Hemşirelik",
+      "level": "bachelor",
+      "unit": "saglik-bilimleri-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/saglik-bilimleri-fakultesi/hemsirelik",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Sağlık Yönetimi",
+      "level": "bachelor",
+      "unit": "saglik-bilimleri-fakultesi",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisans/saglik-bilimleri-fakultesi/saglik-yonetimi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Bilgisayar Mühendisliği ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/bilgisayar-muhendisligi-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Endüstri Mühendisliği ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/endustri-muhendisligi-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Gastronomi ve Mutfak Sanatları ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/gastronomi-ve-mutfak-sanatlari-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Grafik Tasarımı ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/grafik-tasarimi-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Halkla İlişkiler ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/halkla-iliskiler-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İç Mimarlık ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/ic-mimarlik-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İktisat ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/iktisat-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İletişim ve Tasarım ABD (MA)",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/iletisim-ve-tasarim-asd-ma",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İngiliz Dili ve Edebiyatı ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/ingiliz-dili-ve-edebiyati-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İnşaat Mühendisliği ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/insaat-muhendisligi-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İş Sağlığı ve Güvenliği Disiplinlerarası ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/is-sagligi-ve-guvenligi-disiplinlerarasi-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İşletme ABD (MBA)",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/isletme-abd-mba",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Kamu Hukuku ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/hukuk-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Matematik ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/matematik-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Makine Mühendisliği ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/makine-muhendisligi-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Medya ve İletişim ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/medya-ve-iletisim-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Mimarlık ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/mimarlik-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Psikoloji ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/psikoloji-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Siyaset Bilimi ve Kamu Yönetimi ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/siyaset-bilimi-ve-kamu-yonetimi-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Sinema ve Televizyon ASD (MA)",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/sinema-ve-televizyon-asd-ma",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Sosyoloji ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/sosyoloji-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Tarih ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/tarih-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Tekstil ve Moda Tasarımı ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/tekstil-tasarimi-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Türk Dili ve Edebiyatı ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/turk-dili-ve-edebiyati-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Uluslararası İlişkiler ABD",
+      "level": "master",
+      "unit": "yuksek-lisans",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/yuksek-lisans/uluslararasi-iliskiler-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Bilgisayar Mühendisliği ABD",
+      "level": "phd",
+      "unit": "doktora",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/doktora/bilgisayar-muhendisligi-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "İşletme Yönetimi Doktora Programı",
+      "level": "phd",
+      "unit": "doktora",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/doktora/isletme-yonetimi-doktora-programi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Mimarlık ABD",
+      "level": "phd",
+      "unit": "doktora",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/doktora/mimarlik-abd",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Sinema TV Sanatta Yeterlik Programı",
+      "level": "phd",
+      "unit": "doktora",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/doktora/sinema-tv-sanatta-yeterlik-programi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Siyaset Bilimi ve Uluslararası İlişkiler Doktora Programı",
+      "level": "phd",
+      "unit": "doktora",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/doktora/siyaset-bilimi-ve-uluslararasi-iliskiler-doktora-programi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Sosyoloji Doktora Programı",
+      "level": "phd",
+      "unit": "doktora",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/doktora/sosyoloji-doktora-programi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Medya ve İletişim Doktora Programı",
+      "level": "phd",
+      "unit": "doktora",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/doktora/medya-ve-iletisim-doktora-programi",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "title": "Matematik (Doktora)",
+      "level": "phd",
+      "unit": "doktora",
+      "url": "https://www.beykent.edu.tr/aday-ogrenci/bolumler-programlar/lisansustu-egitim-enstitusu/doktora/matematik-(doktora)",
+      "verifiedBySite": true,
+      "source": "official",
+      "checkedAt": "2026-09-02"
     }
   ]
 }

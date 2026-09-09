@@ -1,14 +1,14 @@
 {
   "_meta": {
     "plan": "КОМПАС сессия 1",
-    "generatedAt": "2026-07-22",
-    "catalogSize": 807,
+    "generatedAt": "2026-08-21",
+    "catalogSize": 853,
     "network": "не использовалась"
   },
   "counts": {
     "direct": 32,
     "aggregator": 682,
-    "none": 93
+    "none": 139
   },
   "perAggregator": [
     {
@@ -279,28 +279,28 @@
       "label": "QA Higher Education",
       "rule": "list",
       "access": "open",
-      "members": 4,
-      "matched": 4,
+      "members": 6,
+      "matched": 6,
       "byMethod": {
-        "exact-name": 3,
-        "manual": 1
+        "manual": 4,
+        "exact-name": 2
       },
       "matches": [
         {
           "from": "Northumbria University",
-          "method": "exact-name",
+          "method": "manual",
           "to": "northumbria",
           "catalogName": "Northumbria University"
         },
         {
           "from": "Ulster University",
-          "method": "exact-name",
+          "method": "manual",
           "to": "ulster",
           "catalogName": "Ulster University"
         },
         {
           "from": "Oxford Brookes University",
-          "method": "exact-name",
+          "method": "manual",
           "to": "oxford-brookes",
           "catalogName": "Oxford Brookes University"
         },
@@ -309,6 +309,18 @@
           "method": "manual",
           "to": "solent",
           "catalogName": "Southampton Solent University"
+        },
+        {
+          "from": "London Metropolitan University",
+          "method": "exact-name",
+          "to": "london-met",
+          "catalogName": "London Metropolitan University"
+        },
+        {
+          "from": "Swansea University",
+          "method": "exact-name",
+          "to": "swansea",
+          "catalogName": "Swansea University"
         }
       ],
       "unmatched": []
@@ -5815,6 +5827,16 @@
       ]
     },
     {
+      "slug": "swansea",
+      "name": "Swansea University",
+      "via": [
+        "qahe",
+        "navitas",
+        "qs",
+        "edvoy"
+      ]
+    },
+    {
       "slug": "ulster",
       "name": "Ulster University",
       "via": [
@@ -5996,6 +6018,15 @@
       ]
     },
     {
+      "slug": "london-met",
+      "name": "London Metropolitan University",
+      "via": [
+        "qahe",
+        "qs",
+        "edvoy"
+      ]
+    },
+    {
       "slug": "manchester-met",
       "name": "Manchester Metropolitan University",
       "via": [
@@ -6108,15 +6139,6 @@
       "name": "University of Sussex",
       "via": [
         "studygroup",
-        "qs",
-        "edvoy"
-      ]
-    },
-    {
-      "slug": "swansea",
-      "name": "Swansea University",
-      "via": [
-        "navitas",
         "qs",
         "edvoy"
       ]
@@ -6735,14 +6757,6 @@
       ]
     },
     {
-      "slug": "london-met",
-      "name": "London Metropolitan University",
-      "via": [
-        "qs",
-        "edvoy"
-      ]
-    },
-    {
       "slug": "london-south-bank",
       "name": "London South Bank University",
       "via": [
@@ -7301,8 +7315,24 @@
       "name": "Advanced Placement (AP) Exams"
     },
     {
+      "slug": "american-university-of-ras-al-khaimah-aurak",
+      "name": "American University of Ras Al Khaimah (AURAK)"
+    },
+    {
+      "slug": "anglican-schools-commission-asc-western-australia-victoria-and-new-south-wales",
+      "name": "Anglican Schools Commission (ASC)- Western Australia, Victoria and New South Wales"
+    },
+    {
+      "slug": "avila-arizona",
+      "name": "Avila University Arizona"
+    },
+    {
       "slug": "bau-global",
       "name": "Bahçeşehir University (BAU)"
+    },
+    {
+      "slug": "bentley-university",
+      "name": "Bentley University"
     },
     {
       "slug": "berk-alyeni",
@@ -7321,12 +7351,20 @@
       "name": "University of Canberra"
     },
     {
+      "slug": "catholic-university-of-america",
+      "name": "The Catholic University of America"
+    },
+    {
       "slug": "cctb",
       "name": "Canadian College of Technology and Business"
     },
     {
       "slug": "centennial-college",
       "name": "Centennial College"
+    },
+    {
+      "slug": "charles-darwin-university-international-college",
+      "name": "Charles Darwin University International College"
     },
     {
       "slug": "charles-university",
@@ -7365,6 +7403,10 @@
       "name": "Edith Cowan University Sri Lanka"
     },
     {
+      "slug": "elmira-college",
+      "name": "Elmira College"
+    },
+    {
       "slug": "epita-school-of-engineering-and-computer-science",
       "name": "EPITA - School of Engineering and Computer Science"
     },
@@ -7373,16 +7415,48 @@
       "name": "Exam Prep"
     },
     {
+      "slug": "falmouth-university",
+      "name": "Falmouth University"
+    },
+    {
+      "slug": "fleming-college-toronto",
+      "name": "Fleming College Toronto"
+    },
+    {
+      "slug": "florida-memorial-university",
+      "name": "Florida Memorial University"
+    },
+    {
       "slug": "fontys-university",
       "name": "Fontys University of Applied Sciences"
+    },
+    {
+      "slug": "george-brown",
+      "name": "George Brown Polytechnic"
     },
     {
       "slug": "gre-gmat-exams",
       "name": "GRE - GMAT Exams"
     },
     {
+      "slug": "hartpury",
+      "name": "Hartpury University"
+    },
+    {
       "slug": "humber-college",
       "name": "Humber Polytechnic"
+    },
+    {
+      "slug": "icn-international-college-paris",
+      "name": "ICN International College Paris"
+    },
+    {
+      "slug": "ilac-international-language-academy-of-canada",
+      "name": "ILAC International Language Academy of Canada"
+    },
+    {
+      "slug": "into-manchester-in-partnership-with-manchester-metropolitan-university",
+      "name": "INTO Manchester in partnership with Manchester Metropolitan University"
     },
     {
       "slug": "istanbul",
@@ -7429,6 +7503,10 @@
       "name": "KU Leuven"
     },
     {
+      "slug": "kwantlen-polytechnic-university",
+      "name": "Kwantlen Polytechnic University"
+    },
+    {
       "slug": "langara-college",
       "name": "Langara College"
     },
@@ -7441,12 +7519,20 @@
       "name": "Lazarski University"
     },
     {
+      "slug": "london-school-of-business-and-finance",
+      "name": "London School of Business and Finance"
+    },
+    {
       "slug": "make-a-comment",
       "name": "Make a comment"
     },
     {
       "slug": "manitoba",
       "name": "University of Manitoba"
+    },
+    {
+      "slug": "marshall-university",
+      "name": "Marshall University"
     },
     {
       "slug": "masaryk-university-czech",
@@ -7469,8 +7555,20 @@
       "name": "Medical Degrees in Europe"
     },
     {
+      "slug": "medical-university-of-the-americas",
+      "name": "Medical University of the Americas"
+    },
+    {
       "slug": "medipol-university",
       "name": "Istanbul Medipol University"
+    },
+    {
+      "slug": "mercy-university",
+      "name": "Mercy University"
+    },
+    {
+      "slug": "metropolitan-college-of-new-york",
+      "name": "Metropolitan College of New York"
     },
     {
       "slug": "montpellier-business-school",
@@ -7481,12 +7579,40 @@
       "name": "MPhiI - Master Of Philosophy"
     },
     {
+      "slug": "mpw",
+      "name": "MPW"
+    },
+    {
       "slug": "murdoch",
       "name": "Murdoch University"
     },
     {
       "slug": "naba-milano",
       "name": "NABA — Nuova Accademia di Belle Arti"
+    },
+    {
+      "slug": "niagara-college-toronto",
+      "name": "Niagara College - Toronto"
+    },
+    {
+      "slug": "northumbria-university-london-campus-qahe",
+      "name": "Northumbria University London campus (QAHE)"
+    },
+    {
+      "slug": "oncampus-aston-foundation",
+      "name": "OnCampus Aston – Foundation"
+    },
+    {
+      "slug": "oncampus-hull-foundation",
+      "name": "OnCampus Hull - Foundation"
+    },
+    {
+      "slug": "oncampus-southampton-pathway",
+      "name": "OnCampus Southampton - Pathway"
+    },
+    {
+      "slug": "oncampus-sunderland-foundation",
+      "name": "OnCampus Sunderland - Foundation"
     },
     {
       "slug": "open-consent-form",
@@ -7507,6 +7633,18 @@
     {
       "slug": "partner-with-us",
       "name": "Partner With Us"
+    },
+    {
+      "slug": "peking-university-hsbc-business-school",
+      "name": "Peking University HSBC Business School"
+    },
+    {
+      "slug": "penn-state-dickinson-law",
+      "name": "Penn State Dickinson Law"
+    },
+    {
+      "slug": "pepperdine-university",
+      "name": "Pepperdine University"
     },
     {
       "slug": "prague-university-of-economics",
@@ -7549,6 +7687,14 @@
       "name": "SRH International College"
     },
     {
+      "slug": "st-james-catholic-middle-school",
+      "name": "St. James Catholic Middle School"
+    },
+    {
+      "slug": "swinburne-university-foundation",
+      "name": "Swinburne University - Foundation"
+    },
+    {
       "slug": "swps-university",
       "name": "SWPS University"
     },
@@ -7565,8 +7711,16 @@
       "name": "TED University"
     },
     {
+      "slug": "tedi-london",
+      "name": "TEDI - London"
+    },
+    {
       "slug": "the-campus-bio-medico-university-of-rome-ucbm",
       "name": "Università Campus Bio-Medico di Roma"
+    },
+    {
+      "slug": "the-hague-university-of-applied-science-foundation",
+      "name": "The Hague University of Applied Science - Foundation"
     },
     {
       "slug": "toefl-exam",
@@ -7579,6 +7733,10 @@
     {
       "slug": "toronto-met",
       "name": "Toronto Metropolitan University"
+    },
+    {
+      "slug": "toronto-school-of-management",
+      "name": "Toronto School of Management"
     },
     {
       "slug": "trebas",
@@ -7613,16 +7771,40 @@
       "name": "Ghent University"
     },
     {
+      "slug": "university-of-gloucestershire",
+      "name": "University of Gloucestershire"
+    },
+    {
       "slug": "university-of-helsinki",
       "name": "University of Helsinki"
+    },
+    {
+      "slug": "university-of-lethbridge-international-college-calgary-foundation",
+      "name": "University of Lethbridge International College Calgary (Foundation)"
     },
     {
       "slug": "university-of-pecs",
       "name": "University of Pécs"
     },
     {
+      "slug": "university-of-tasmania-melbourne-campus",
+      "name": "University of Tasmania, Melbourne Campus"
+    },
+    {
+      "slug": "university-of-the-west-of-england-bristol-international-college-uwe-bristol-foun",
+      "name": "University of the West of England, Bristol International College (UWE Bristol) - Foundation"
+    },
+    {
       "slug": "university-of-warsaw",
       "name": "University of Warsaw"
+    },
+    {
+      "slug": "university-of-worcester",
+      "name": "University of Worcester"
+    },
+    {
+      "slug": "university-of-york-international-pathway-college-foundation",
+      "name": "University of York International Pathway College - Foundation"
     },
     {
       "slug": "victoria",
@@ -7641,8 +7823,24 @@
       "name": "Western University"
     },
     {
+      "slug": "westminster-international-university-in-tashkent",
+      "name": "Westminster International University in Tashkent"
+    },
+    {
       "slug": "wilfrid-laurier",
       "name": "Wilfrid Laurier University"
+    },
+    {
+      "slug": "wycombe-abbey-international-school",
+      "name": "Wycombe Abbey International School"
+    },
+    {
+      "slug": "wycombe-abbey-international-school-bangkok",
+      "name": "Wycombe Abbey International School, Bangkok"
+    },
+    {
+      "slug": "wycombe-abbey-international-school-hong-kong",
+      "name": "Wycombe Abbey International School, Hong kong"
     }
   ],
   "partnersWithoutCatalogCard": [

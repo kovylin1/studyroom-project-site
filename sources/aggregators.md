@@ -25,7 +25,7 @@
 
 - **Base URL:** `https://www.navitas.com/`
 - **Catalog index:** `https://www.navitas.com/study/colleges-campuses/` (flat list of all pathway colleges grouped by destination country)
-- **Per-destination page pattern:** `https://www.navitas.com/study/destinations/{country}/` (curated partner shortlist per country — AU, CA, DE, ID, NL, NZ, SG, LK, AE, UK, USA)
+- **Per-destination page pattern:** `https://www.navitas.com/study/destinations/{country}/` (curated partner shortlist per country). Слаги — полные имена стран, не коды: `australia`, `canada`, `germany`, `indonesia`, `netherlands`, `new-zealand`, `singapore`, `sri-lanka`, `uae`, `united-kingdom`, `usa` (проверено 24.08.2026). Старый `…/destinations/uk/` отдаёт 404.
 - **University-mapping note:** Navitas runs a *pathway college* per partner university on its own brand domain (e.g. `curtincollege.edu.au`, `deakincollege.edu.au`, `griffithcollege.edu.au`). We list the **parent university** (Curtin, Deakin, …) in `universities.list.md` and use the pathway-college URL as the `aggregator_url`.
 - **Rendering:** static HTML for college landing/intro/fees pages. No SPA observed across the AU pathway colleges sampled (2026-05-15).
 - **Data spread across sub-pages (typical per pathway college):**

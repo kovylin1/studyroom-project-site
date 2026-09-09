@@ -3,13 +3,14 @@
   "name": "University of Sheffield",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-sheffield",
-  "scrapedAt": "2026-07-22T15:42:52.544Z",
+  "scrapedAt": "2026-08-23T13:11:40.124Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-sheffield",
   "country": "United Kingdom",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -94,6 +95,26 @@
       "courseRefId": "university-of-sheffield|msc-management"
     },
     {
+      "title": "MSc International Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 34340,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Western Bank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-sheffield",
+      "courseRefId": "university-of-sheffield|msc-international-management"
+    },
+    {
       "title": "MSc Management and International Business",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -113,24 +134,25 @@
       "courseRefId": "university-of-sheffield|msc-management-and-international-business"
     },
     {
-      "title": "MSc International Management",
+      "title": "MSc Business Finance and Economics",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 34340,
+      "tuition": 24400,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
         "September 2025",
-        "September 2026"
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "Western Bank Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-sheffield",
-      "courseRefId": "university-of-sheffield|msc-international-management"
+      "courseRefId": "university-of-sheffield|msc-business-finance-and-economics"
     },
     {
       "title": "MSc Finance and Accounting",
@@ -173,26 +195,6 @@
       "courseRefId": "university-of-sheffield|ba-business-management"
     },
     {
-      "title": "MA Digital Media and Society",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 26310,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Western Bank Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-sheffield",
-      "courseRefId": "university-of-sheffield|ma-digital-media-and-society"
-    },
-    {
       "title": "MSc/PGDip/PGCert Information Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -211,6 +213,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-sheffield",
       "courseRefId": "university-of-sheffield|msc-pgdip-pgcert-information-management"
+    },
+    {
+      "title": "MA Digital Media and Society",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 26310,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Western Bank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-sheffield",
+      "courseRefId": "university-of-sheffield|ma-digital-media-and-society"
     },
     {
       "title": "LLM Corporate and Commercial Law",
@@ -254,11 +276,51 @@
       "courseRefId": "university-of-sheffield|ba-digital-media-and-society"
     },
     {
+      "title": "BEng Mechatronic and Robotic Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 32100,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Western Bank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-sheffield",
+      "courseRefId": "university-of-sheffield|beng-mechatronic-and-robotic-engineering"
+    },
+    {
+      "title": "MSc Human Resource Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 32905,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Western Bank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-sheffield",
+      "courseRefId": "university-of-sheffield|msc-human-resource-management"
+    },
+    {
       "title": "MSc Psychology and Education - Conversion",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 22000,
+      "tuition": 26230,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -294,26 +356,6 @@
       "courseRefId": "university-of-sheffield|ma-education"
     },
     {
-      "title": "MSc Human Resource Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 32905,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Western Bank Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-sheffield",
-      "courseRefId": "university-of-sheffield|msc-human-resource-management"
-    },
-    {
       "title": "MSc Logistics and Supply Chain Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -332,6 +374,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-sheffield",
       "courseRefId": "university-of-sheffield|msc-logistics-and-supply-chain-management"
+    },
+    {
+      "title": "MA Applied Linguistics and TESOL",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 26320,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Western Bank Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-sheffield",
+      "courseRefId": "university-of-sheffield|ma-applied-linguistics-and-tesol"
     },
     {
       "title": "MSc Financial Economics",
@@ -438,7 +499,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",
@@ -473,7 +533,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",
@@ -508,7 +567,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "July 2026",
         "August 2026",
         "September 2026",
         "October 2026",

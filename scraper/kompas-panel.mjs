@@ -26,6 +26,12 @@ const PARTS = [
   // P4: стипендии — замер достоверности и сверка каталога с собранными офсайтами
   'scholarship-review.json', 'scholarship-diff-review.json', 'scholarship-clean-review.json',
   'sito-review.json',
+  // хвост после сбора QS: привязка выгрузок, брак кампусов у коллекторов
+  'qs-relink-review.json', 'campus-backfill-review.json',
+  // 3.5-g: остаток непривязанного после перепривязки по уровню
+  'unmatched-review.json',
+  // заведение карточек edvoy: кого завести не вышло
+  'edvoy-newcards-review.json',
 ];
 
 const ORPHANS = path.join(KOMPAS_DIR, 'panel-orphan-decisions.json');
@@ -115,18 +121,32 @@ async function main() {
 
   // Решение, которому не нашлось кейса, не должно исчезнуть без следа: кейс мог
   // сменить id (свёртка прайса 2026-08-03) или уйти из выборки. Складываем рядом.
-  if (orphans.length) {
+  const prevOrphans = (await readJson(ORPHANS))?.items ?? [];
+  const decidedNow = new Set(unique.filter((i) => i.decision).map((i) => i.slug + '||' + (i.issue ?? '')));
+  // Файл накопительный. Раньше он писался начисто, и очередная сборка панели стирала
+  // осиротевшие решения прошлой (замер 23.08: 163 записи от 15.08 против 10 свежих,
+  // 18 из них до сих пор без места). Прошлая запись уходит только тогда, когда
+  // в свежей панели у того же вуза и той же беды кейс УЖЕ решён.
+  const merged = [];
+  const takenIds = new Set();
+  for (const o of [...prevOrphans.filter((o) => !decidedNow.has(o.slug + '||' + (o.issue ?? ''))), ...orphans]) {
+    if (takenIds.has(o.id)) continue;
+    takenIds.add(o.id);
+    merged.push(o);
+  }
+  if (merged.length) {
     await fs.writeFile(ORPHANS, JSON.stringify({
       generatedAt: new Date().toISOString(),
-      note: 'Решения оператора, которым в свежей сборке панели не нашлось кейса с тем же id. Не потеряны — разобрать вручную.',
-      items: orphans,
+      note: 'Решения оператора, которым в сборке панели не нашлось кейса с тем же id. Не потеряны — разобрать вручную. Файл накопительный: запись уходит, только когда та же беда у того же вуза решена в панели.',
+      items: merged,
     }, null, 2) + '\n', 'utf8');
   }
 
   log(`в панель ${unique.length} кейсов${dupes.length ? `, отброшено дублей ${dupes.length}` : ''}`);
   log(`решений: в частях ${unique.filter((i) => i.decision).length - carried}, перенесено из панели ${carried}` +
     `${conflicts ? `, расхождений ${conflicts} (взято из панели)` : ''}` +
-    `${orphans.length ? `, осиротело ${orphans.length} → ${path.relative(ROOT, ORPHANS)}` : ''}`);
+    `${orphans.length ? `, осиротело ${orphans.length}` : ''}` +
+    `${merged.length ? `, всего без места ${merged.length} → ${path.relative(ROOT, ORPHANS)}` : ''}`);
   console.log('PANEL DONE', JSON.stringify({ total: unique.length, sources }));
 }
 

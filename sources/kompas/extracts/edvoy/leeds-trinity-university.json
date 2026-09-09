@@ -3,13 +3,14 @@
   "name": "Leeds Trinity University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/leeds-trinity-university",
-  "scrapedAt": "2026-07-22T15:42:52.291Z",
+  "scrapedAt": "2026-08-23T13:11:39.894Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "leeds-trinity-university",
   "country": "United Kingdom",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -77,6 +78,26 @@
       "courseRefId": "leeds-trinity-university|msc-data-science-and-artificial-intelligence"
     },
     {
+      "title": "MBA Master of Business Administration with Placement Year",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18250,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "January 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "LTU Leeds City Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/leeds-trinity-university",
+      "courseRefId": "leeds-trinity-university|mba-master-of-business-administration-with-placement-year"
+    },
+    {
       "title": "MA International Business",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -99,26 +120,6 @@
       "courseRefId": "leeds-trinity-university|ma-international-business"
     },
     {
-      "title": "MBA Master of Business Administration with Placement Year",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18250,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "January 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "LTU Leeds City Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/leeds-trinity-university",
-      "courseRefId": "leeds-trinity-university|mba-master-of-business-administration-with-placement-year"
-    },
-    {
       "title": "BA (Hons) Business Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -127,13 +128,13 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
+        "September 2024",
         "September 2026"
       ],
       "campuses": [
-        "LTU Leeds City Campus",
-        "LTU Horsforth Main Campus"
+        "LTU Horsforth Main Campus",
+        "LTU Leeds City Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/leeds-trinity-university",
@@ -317,8 +318,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
+        "September 2024",
         "September 2026"
       ],
       "campuses": [
@@ -403,6 +404,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/leeds-trinity-university",
       "courseRefId": "leeds-trinity-university|bsc-hons-nursing-child"
+    },
+    {
+      "title": "BSc (Hons) Biomedical Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 12000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "LTU Horsforth Main Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/leeds-trinity-university",
+      "courseRefId": "leeds-trinity-university|bsc-hons-biomedical-science"
     },
     {
       "title": "BSc (Hons) Computer Science with Cyber Security with Foundation Year",

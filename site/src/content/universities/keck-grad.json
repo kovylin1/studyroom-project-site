@@ -390,7 +390,26 @@
       "programUrl": "https://www.kgi.edu/degrees-and-programs/biotechnology/master-of-engineering-in-biopharmaceutical-processing.html",
       "language": "ru",
       "verified": true,
-      "faculty": "Инженерия и IT"
+      "faculty": "Инженерия и IT",
+      "tuitionVariants": [
+        {
+          "tuition": 37000,
+          "currency": "USD",
+          "source": "edvoy",
+          "campus": "KGI California Campus",
+          "level": "Postgraduate"
+        },
+        {
+          "tuition": 42200,
+          "currency": "USD",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Engineering & Technology",
+          "accommodation": 28308,
+          "other": 3748,
+          "total": 74256
+        }
+      ]
     },
     {
       "slug": "keck-grad-master-of-science-in-biopharmaceutical-process-engineering",
@@ -418,7 +437,26 @@
       "programUrl": "https://www.kgi.edu/degrees-and-programs/biotechnology/master-of-science-in-human-genetics-and-genomic-data-analytics.html",
       "language": "ru",
       "verified": true,
-      "faculty": "Инженерия и IT"
+      "faculty": "Инженерия и IT",
+      "tuitionVariants": [
+        {
+          "tuition": 42200,
+          "currency": "USD",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Pharmacy, Health & Life Sciences",
+          "accommodation": 28308,
+          "other": 3748,
+          "total": 74256
+        },
+        {
+          "tuition": 48000,
+          "currency": "USD",
+          "source": "edvoy",
+          "campus": "KGI California Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "keck-grad-master-of-science-in-medical-device-engineering",
@@ -432,7 +470,26 @@
       "programUrl": "https://www.kgi.edu/degrees-and-programs/biotechnology/master-of-science-in-medical-device-engineering.html",
       "language": "ru",
       "verified": true,
-      "faculty": "Образование"
+      "faculty": "Образование",
+      "tuitionVariants": [
+        {
+          "tuition": 42200,
+          "currency": "USD",
+          "source": "qs",
+          "level": "Masters",
+          "degreeGroup": "Engineering & Technology",
+          "accommodation": 28308,
+          "other": 3748,
+          "total": 74256
+        },
+        {
+          "tuition": 44900,
+          "currency": "USD",
+          "source": "edvoy",
+          "campus": "KGI California Campus",
+          "level": "Postgraduate"
+        }
+      ]
     },
     {
       "slug": "keck-grad-master-of-science-in-human-genetics-and-genetic-counseling",
@@ -913,18 +970,6 @@
       "faculty": "Здоровье и медицина"
     },
     {
-      "slug": "keck-grad-discover-kgi-s-biotechnology-master-s-programs-master",
-      "title": "Discover KGI’s Biotechnology Master's Programs",
-      "durationYears": 1,
-      "level": "master",
-      "source": "official",
-      "verifiedBySite": true,
-      "checkedAt": "2026-05-31",
-      "faculty": "Наука",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
       "slug": "keck-grad-the-chan-family-master-of-science-in-pa-studies-master",
       "title": "The Chan Family Master of Science in PA Studies",
       "durationYears": 1,
@@ -938,7 +983,7 @@
     },
     {
       "slug": "keck-grad-master-of-science-in-human-genetics-amp-genetic-counseling-master",
-      "title": "Master of Science in Human Genetics &amp; Genetic Counseling",
+      "title": "Master of Science in Human Genetics & Genetic Counseling",
       "durationYears": 1,
       "level": "master",
       "source": "official",
@@ -970,7 +1015,8 @@
       "source": "edvoy",
       "confidence": 0.4,
       "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Здоровье и медицина"
     },
     {
       "slug": "keck-grad-master-of-science-in-human-genetics-and-genomic-data-analytics-assay-development",
@@ -982,7 +1028,47 @@
       "source": "edvoy",
       "confidence": 0.4,
       "kompasStatus": "source-added",
-      "kompasCheckedAt": "2026-07-24"
+      "kompasCheckedAt": "2026-07-24",
+      "faculty": "Инженерия и IT"
+    },
+    {
+      "slug": "keck-grad-master-of-business-and-science",
+      "title": "Master of Business and Science",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Бизнес"
+    },
+    {
+      "slug": "keck-grad-master-of-science-in-applied-life-science",
+      "title": "Master of Science in Applied Life Science",
+      "durationYears": 1,
+      "level": "master",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Наука"
+    },
+    {
+      "slug": "keck-grad-occupational-therapy-doctorate",
+      "title": "Occupational Therapy Doctorate",
+      "durationYears": 3,
+      "level": "phd",
+      "language": "en",
+      "programType": "degree",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Здоровье и медицина"
     }
   ],
   "tuition": {
@@ -990,16 +1076,16 @@
     "byProgram": {
       "keck-grad-mbs-biotechnology": 44900,
       "keck-grad-meng-biopharmaceutical-processing": 44900,
-      "keck-grad-msbpe-biopharmaceutical-process-engineering": 44900,
+      "keck-grad-msbpe-biopharmaceutical-process-engineering": 42200,
       "keck-grad-msgda-human-genetics-genomic-data-analytics": 44900,
       "keck-grad-msmde-medical-device-engineering": 44900,
-      "keck-grad-ms-applied-life-sciences": 44900,
+      "keck-grad-ms-applied-life-sciences": 44000,
       "keck-grad-phd-applied-life-sciences": 34100,
       "keck-grad-dmsc-medical-science": 32700,
-      "keck-grad-pharmd-pharmacy": 51000,
+      "keck-grad-pharmd-pharmacy": 42200,
       "keck-grad-otd-occupational-therapy": 43200,
       "keck-grad-mha-health-administration": 32700,
-      "keck-grad-msgc-human-genetics-genetic-counseling": 43200,
+      "keck-grad-msgc-human-genetics-genetic-counseling": 42200,
       "keck-grad-mspa-physician-associate-studies": 56499,
       "keck-grad-mspmm-pharmaceutical-marketing-management": 43200,
       "keck-grad-msps-pharmaceutical-sciences": 43200,
@@ -1010,7 +1096,7 @@
       "keck-grad-cert-leadership": 10000,
       "keck-grad-cert-regulatory-affairs": 12000,
       "keck-grad-cert-postbacc-physician-associate": 18000,
-      "keck-grad-cert-postbacc-premedical": 18000,
+      "keck-grad-cert-postbacc-premedical": 42200,
       "keck-grad-master-of-engineering-in-biopharmaceutical-processing": 37000,
       "keck-grad-master-of-science-in-biopharmaceutical-process-engineering": 37700,
       "keck-grad-master-of-science-in-human-genetics-and-genomic-data-analytics": 48000,
@@ -1036,7 +1122,10 @@
       "keck-grad-doctor-of-occupational-therapy": 43500,
       "keck-grad-doctor-of-pharmacy": 51000,
       "keck-grad-master-of-science-in-human-genetics-and-genomic-data-analytics-clinical-decision": 48000,
-      "keck-grad-master-of-science-in-human-genetics-and-genomic-data-analytics-assay-development": 48000
+      "keck-grad-master-of-science-in-human-genetics-and-genomic-data-analytics-assay-development": 48000,
+      "keck-grad-master-of-business-and-science": 42200,
+      "keck-grad-master-of-science-in-applied-life-science": 42200,
+      "keck-grad-occupational-therapy-doctorate": 49200
     }
   },
   "deadlines": {
@@ -1198,5 +1287,8 @@
       "qs",
       "edvoy"
     ]
-  }
+  },
+  "officialUrl": "https://kgi.edu",
+  "officialUrlSource": "выгрузки: 73 ссылок на kgi.edu",
+  "officialUrlCheckedAt": "2026-09-09"
 }

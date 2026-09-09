@@ -3,13 +3,14 @@
   "name": "University of Massachusetts Lowell",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-  "scrapedAt": "2026-07-22T15:42:52.514Z",
+  "scrapedAt": "2026-08-23T13:11:40.095Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-massachusetts-lowell",
   "country": "United States",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -951,29 +952,6 @@
       "courseRefId": "university-of-massachusetts-lowell|ba-psychology-major-health-psychology-concentration"
     },
     {
-      "title": "BS Physics Major - Radiological Health Physics Option",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 36610,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|bs-physics-major-radiological-health-physics-option"
-    },
-    {
       "title": "BS Applied Mathematics and Statistics Major",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1018,6 +996,29 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
       "courseRefId": "university-of-massachusetts-lowell|bs-applied-mathematics-and-statistics-major-statistics-option"
+    },
+    {
+      "title": "BS Physics Major - Radiological Health Physics Option",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 36610,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|bs-physics-major-radiological-health-physics-option"
     },
     {
       "title": "BS Bachelor of Science in Business Administration - Management Information Systems",
@@ -1179,6 +1180,54 @@
       "courseRefId": "university-of-massachusetts-lowell|med-masters-in-education-administration-higher-education-option"
     },
     {
+      "title": "Master of Science in Civil Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 28398,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Online Campus",
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|master-of-science-in-civil-engineering"
+    },
+    {
+      "title": "Master of Science in Civil Engineering - Geoenvironmental Option",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 28398,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Lowell Campus",
+        "UMASS Online Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|master-of-science-in-civil-engineering-geoenvironmental-option"
+    },
+    {
       "title": "Master of Science in Civil Engineering - Geotechnical Engineering Option",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1271,54 +1320,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
       "courseRefId": "university-of-massachusetts-lowell|master-of-science-in-mathematics-mathematics-for-teachers-option"
-    },
-    {
-      "title": "Master of Science in Civil Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 28398,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Online Campus",
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|master-of-science-in-civil-engineering"
-    },
-    {
-      "title": "Master of Science in Civil Engineering - Geoenvironmental Option",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 28398,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus",
-        "UMASS Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|master-of-science-in-civil-engineering-geoenvironmental-option"
     },
     {
       "title": "Master of Science in Physics - General Option, Thesis or Non-Thesis",
@@ -1715,30 +1716,6 @@
       "courseRefId": "university-of-massachusetts-lowell|ms-master-of-science-in-biological-sciences-biotechnology-option"
     },
     {
-      "title": "Master of Science in Civil Engineering - Environmental Engineering Option",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 28398,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus",
-        "UMASS Online Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|master-of-science-in-civil-engineering-environmental-engineering-option"
-    },
-    {
       "title": "MS Master of Science in Biological Sciences - Bioinformatics Option",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1762,11 +1739,11 @@
       "courseRefId": "university-of-massachusetts-lowell|ms-master-of-science-in-biological-sciences-bioinformatics-option"
     },
     {
-      "title": "BS Exercise Science Major - Pre-Physician Assistant Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 36610,
+      "title": "Master of Science in Civil Engineering - Environmental Engineering Option",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 28398,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1778,11 +1755,12 @@
         "September 2027"
       ],
       "campuses": [
-        "UMASS Lowell Campus"
+        "UMASS Lowell Campus",
+        "UMASS Online Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|bs-exercise-science-major-pre-physician-assistant-concentration"
+      "courseRefId": "university-of-massachusetts-lowell|master-of-science-in-civil-engineering-environmental-engineering-option"
     },
     {
       "title": "BA American Studies Major - Sports Studies Concentration",
@@ -1808,6 +1786,29 @@
       "courseRefId": "university-of-massachusetts-lowell|ba-american-studies-major-sports-studies-concentration"
     },
     {
+      "title": "BS Exercise Science Major - Pre-Physician Assistant Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 36610,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|bs-exercise-science-major-pre-physician-assistant-concentration"
+    },
+    {
       "title": "BS Biology Major - Biotechnology Option",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1829,26 +1830,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
       "courseRefId": "university-of-massachusetts-lowell|bs-biology-major-biotechnology-option"
-    },
-    {
-      "title": "PhD in Education",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "60 Months",
-      "tuition": 28398,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|phd-in-education"
     },
     {
       "title": "PhD in Education - Leadership in Education option",
@@ -1931,6 +1912,26 @@
       "courseRefId": "university-of-massachusetts-lowell|phd-in-physics-general-option"
     },
     {
+      "title": "PhD in Education",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "60 Months",
+      "tuition": 28398,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|phd-in-education"
+    },
+    {
       "title": "BS Physics Major - Astronomy and Astrophysics Option",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1954,29 +1955,6 @@
       "courseRefId": "university-of-massachusetts-lowell|bs-physics-major-astronomy-and-astrophysics-option"
     },
     {
-      "title": "BS Biology Major - Bioinformatics Option",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 36610,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|bs-biology-major-bioinformatics-option"
-    },
-    {
       "title": "BS Pharmaceutical Sciences Major - Pharmaceutical Marketing and Management Option",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1998,6 +1976,29 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
       "courseRefId": "university-of-massachusetts-lowell|bs-pharmaceutical-sciences-major-pharmaceutical-marketing-and-management-option"
+    },
+    {
+      "title": "BS Biology Major - Bioinformatics Option",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 36610,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|bs-biology-major-bioinformatics-option"
     },
     {
       "title": "MPH Master of Science in Pharmaceutical Sciences - Master of Public Health Dietetics applicants",
@@ -2044,6 +2045,29 @@
       "courseRefId": "university-of-massachusetts-lowell|ba-english-major-journalism-and-professional-writing-concentration"
     },
     {
+      "title": "MS Master of Science in Biological Sciences - Education, Communication and Outreach Option",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 28398,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|ms-master-of-science-in-biological-sciences-education-communication-and-outreach-option"
+    },
+    {
       "title": "MEd Curriculum & Instruction - Applied Behavior Analysis and Education Option Online",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2065,6 +2089,75 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
       "courseRefId": "university-of-massachusetts-lowell|med-curriculum-instruction-applied-behavior-analysis-and-education-option-online"
+    },
+    {
+      "title": "Master of Music in Music Education",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 28398,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|master-of-music-in-music-education"
+    },
+    {
+      "title": "Master of Music in Music Education - Community Music Option",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 28398,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|master-of-music-in-music-education-community-music-option"
+    },
+    {
+      "title": "Master of Music in Music Education - Research Thesis/Project Option",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 28398,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|master-of-music-in-music-education-research-thesis-project-option"
     },
     {
       "title": "Master of Science in Civil Engineering - Transportation Engineering Option",
@@ -2089,29 +2182,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
       "courseRefId": "university-of-massachusetts-lowell|master-of-science-in-civil-engineering-transportation-engineering-option"
-    },
-    {
-      "title": "Master of Music in Music Education - Research Thesis/Project Option",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 28398,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|master-of-music-in-music-education-research-thesis-project-option"
     },
     {
       "title": "Master of Science in Physics - Photonics Option",
@@ -2181,75 +2251,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
       "courseRefId": "university-of-massachusetts-lowell|master-of-science-in-radiological-sciences-and-protection-medical-physics-option"
-    },
-    {
-      "title": "MS Master of Science in Biological Sciences - Education, Communication and Outreach Option",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 28398,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|ms-master-of-science-in-biological-sciences-education-communication-and-outreach-option"
-    },
-    {
-      "title": "Master of Music in Music Education",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 28398,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|master-of-music-in-music-education"
-    },
-    {
-      "title": "Master of Music in Music Education - Community Music Option",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 28398,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|master-of-music-in-music-education-community-music-option"
     },
     {
       "title": "PhD in Physics - Energy Engineering Option",
@@ -2555,6 +2556,29 @@
       "courseRefId": "university-of-massachusetts-lowell|doctor-of-philosophy-in-global-studies-international-political-economy-trade-and-development"
     },
     {
+      "title": "MS Master of Science in Biological Sciences",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 28398,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|ms-master-of-science-in-biological-sciences"
+    },
+    {
       "title": "MS Master of Science in Biological Sciences - General Option",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2762,11 +2786,11 @@
       "courseRefId": "university-of-massachusetts-lowell|master-of-science-in-radiological-sciences-and-protection-thesis-option"
     },
     {
-      "title": "MS Master of Science in Biological Sciences",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 28398,
+      "title": "BA American Studies Major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 36610,
       "currency": "USD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -2782,7 +2806,102 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|ms-master-of-science-in-biological-sciences"
+      "courseRefId": "university-of-massachusetts-lowell|ba-american-studies-major"
+    },
+    {
+      "title": "BA American Studies Major - General Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 36610,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|ba-american-studies-major-general-concentration"
+    },
+    {
+      "title": "BA English Major",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 36610,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Online Campus",
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|ba-english-major"
+    },
+    {
+      "title": "BA English Major - Creative Writing Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 36610,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Online Campus",
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|ba-english-major-creative-writing-concentration"
+    },
+    {
+      "title": "BA English Major - Literature Concentration",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 36610,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "September 2025",
+        "January 2027",
+        "January 2028",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UMASS Online Campus",
+        "UMASS Lowell Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
+      "courseRefId": "university-of-massachusetts-lowell|ba-english-major-literature-concentration"
     },
     {
       "title": "BA English Major - Theatre Arts Concentration",
@@ -2947,75 +3066,6 @@
       "courseRefId": "university-of-massachusetts-lowell|ba-sociology-major-general-concentration"
     },
     {
-      "title": "BS Exercise Science Major - Exercise & Fitness Management Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 36610,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|bs-exercise-science-major-exercise-fitness-management-concentration"
-    },
-    {
-      "title": "BS Exercise Science Major - Strength & Conditioning Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 36610,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|bs-exercise-science-major-strength-conditioning-concentration"
-    },
-    {
-      "title": "BS Pharmaceutical Sciences Major",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 36610,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|bs-pharmaceutical-sciences-major"
-    },
-    {
       "title": "BA Sociology Major - Policy and Social Problems Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3131,7 +3181,7 @@
       "courseRefId": "university-of-massachusetts-lowell|bm-music-performance-major-voice-option"
     },
     {
-      "title": "BA American Studies Major",
+      "title": "BS Exercise Science Major - Clinical Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -3151,10 +3201,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|ba-american-studies-major"
+      "courseRefId": "university-of-massachusetts-lowell|bs-exercise-science-major-clinical-concentration"
     },
     {
-      "title": "BA American Studies Major - General Concentration",
+      "title": "BS Exercise Science Major - Exercise & Fitness Management Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -3174,10 +3224,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|ba-american-studies-major-general-concentration"
+      "courseRefId": "university-of-massachusetts-lowell|bs-exercise-science-major-exercise-fitness-management-concentration"
     },
     {
-      "title": "BA English Major",
+      "title": "BS Exercise Science Major - Strength & Conditioning Concentration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -3193,15 +3243,14 @@
         "September 2027"
       ],
       "campuses": [
-        "UMASS Online Campus",
         "UMASS Lowell Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|ba-english-major"
+      "courseRefId": "university-of-massachusetts-lowell|bs-exercise-science-major-strength-conditioning-concentration"
     },
     {
-      "title": "BA English Major - Creative Writing Concentration",
+      "title": "BS Pharmaceutical Sciences Major",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -3217,36 +3266,11 @@
         "September 2027"
       ],
       "campuses": [
-        "UMASS Online Campus",
         "UMASS Lowell Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|ba-english-major-creative-writing-concentration"
-    },
-    {
-      "title": "BA English Major - Literature Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 36610,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Online Campus",
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|ba-english-major-literature-concentration"
+      "courseRefId": "university-of-massachusetts-lowell|bs-pharmaceutical-sciences-major"
     },
     {
       "title": "BS Biology Major - Ecology, Evolution and Organismal Biology Option",
@@ -3408,29 +3432,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
       "courseRefId": "university-of-massachusetts-lowell|bs-exercise-science-major"
-    },
-    {
-      "title": "BS Exercise Science Major - Clinical Concentration",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 36610,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2026",
-        "September 2025",
-        "January 2027",
-        "January 2028",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UMASS Lowell Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-massachusetts-lowell",
-      "courseRefId": "university-of-massachusetts-lowell|bs-exercise-science-major-clinical-concentration"
     },
     {
       "title": "PhD in Applied Biology",

@@ -3,16 +3,59 @@
   "name": "Queen's University Belfast",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-  "scrapedAt": "2026-07-22T15:42:52.353Z",
+  "scrapedAt": "2026-08-23T13:11:39.946Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "queens-university-belfast",
   "country": "United Kingdom",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
+    {
+      "title": "MPhil Computer Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-computer-science"
+    },
+    {
+      "title": "PhD Computer Science",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-computer-science"
+    },
     {
       "title": "MSc Data Analytics",
       "level": "master",
@@ -34,24 +77,6 @@
       "courseRefId": "queens-university-belfast|msc-data-analytics"
     },
     {
-      "title": "Master of Business Administration (with Internship)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 25000,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|master-of-business-administration-with-internship"
-    },
-    {
       "title": "Master of Business Administration",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -63,7 +88,8 @@
         "September 2024",
         "September 2025",
         "September 2026",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Belfast City Centre Campus"
@@ -71,6 +97,111 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|master-of-business-administration"
+    },
+    {
+      "title": "MSc AI in Business",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2025",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-ai-in-business"
+    },
+    {
+      "title": "MSc Digital Business",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "March 2025",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-digital-business"
+    },
+    {
+      "title": "Master of Business Administration (with Internship)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|master-of-business-administration-with-internship"
+    },
+    {
+      "title": "MSc Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-management"
+    },
+    {
+      "title": "MSc Applied Cyber Security",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-applied-cyber-security"
     },
     {
       "title": "MSc Applied Cyber Security with Professional Internship",
@@ -104,7 +235,8 @@
         "September 2024",
         "September 2025",
         "September 2026",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Belfast City Centre Campus"
@@ -112,47 +244,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|msc-international-business"
-    },
-    {
-      "title": "MSc Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-management"
-    },
-    {
-      "title": "MSc Applied Cyber Security",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-applied-cyber-security"
     },
     {
       "title": "MSc Software Development",
@@ -186,7 +277,8 @@
         "September 2024",
         "September 2025",
         "September 2026",
-        "January 2026"
+        "January 2026",
+        "January 2027"
       ],
       "campuses": [
         "Belfast City Centre Campus"
@@ -214,6 +306,105 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|msc-res-cancer-medicine"
+    },
+    {
+      "title": "MSc Financial Analytics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "January 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-financial-analytics"
+    },
+    {
+      "title": "MPhil Dentistry",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 28000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-dentistry"
+    },
+    {
+      "title": "PhD Dentistry",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 28000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-dentistry"
+    },
+    {
+      "title": "MPhil Medicine",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-medicine"
+    },
+    {
+      "title": "MD Medicine",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|md-medicine"
     },
     {
       "title": "MSc Net Zero Engineering with Year in Industry",
@@ -256,27 +447,6 @@
       "courseRefId": "queens-university-belfast|msc-net-zero-engineering"
     },
     {
-      "title": "MSc Financial Analytics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "January 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-financial-analytics"
-    },
-    {
       "title": "MSc Finance",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -295,6 +465,27 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|msc-finance"
+    },
+    {
+      "title": "PhD Medicine",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-medicine"
     },
     {
       "title": "BEng Computer Engineering",
@@ -337,8 +528,8 @@
       "courseRefId": "queens-university-belfast|meng-computer-engineering"
     },
     {
-      "title": "MEng Computer Engineering with Year in Industry",
-      "level": "master",
+      "title": "BEng Computer Engineering with Year in Industry",
+      "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
       "tuition": 25300,
@@ -354,7 +545,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|meng-computer-engineering-with-year-in-industry"
+      "courseRefId": "queens-university-belfast|beng-computer-engineering-with-year-in-industry"
     },
     {
       "title": "MEng Computer Science",
@@ -397,8 +588,8 @@
       "courseRefId": "queens-university-belfast|meng-computer-science-incl-professional-experience"
     },
     {
-      "title": "BEng Computer Engineering with Year in Industry",
-      "level": "bachelor",
+      "title": "MEng Computer Engineering with Year in Industry",
+      "level": "master",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
       "tuition": 25300,
@@ -414,7 +605,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|beng-computer-engineering-with-year-in-industry"
+      "courseRefId": "queens-university-belfast|meng-computer-engineering-with-year-in-industry"
     },
     {
       "title": "LLM International Commercial and Business Law",
@@ -538,25 +729,6 @@
       "courseRefId": "queens-university-belfast|msc-accounting-and-finance"
     },
     {
-      "title": "BSc Professional Nursing Adult Nursing - Feb intake",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 26600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "February 2027"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|bsc-professional-nursing-adult-nursing-feb-intake"
-    },
-    {
       "title": "MB Medicine",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -577,185 +749,23 @@
       "courseRefId": "queens-university-belfast|mb-medicine"
     },
     {
-      "title": "MA in Media and Broadcast Production",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
+      "title": "BSc Professional Nursing Adult Nursing - Feb intake",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 26600,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
-        "September 2026"
+        "February 2027"
       ],
       "campuses": [
         "Belfast City Centre Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|ma-in-media-and-broadcast-production"
-    },
-    {
-      "title": "MSc Electronics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-electronics"
-    },
-    {
-      "title": "MLaw Masters in Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 22850,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mlaw-masters-in-law"
-    },
-    {
-      "title": "LLM Law and Technology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|llm-law-and-technology"
-    },
-    {
-      "title": "LLM Law",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|llm-law"
-    },
-    {
-      "title": "MArch Architecture",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|march-architecture"
-    },
-    {
-      "title": "MSc Electronics with Professional Internship",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-electronics-with-professional-internship"
-    },
-    {
-      "title": "MA Interpreting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|ma-interpreting"
-    },
-    {
-      "title": "MSc Marketing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-marketing"
+      "courseRefId": "queens-university-belfast|bsc-professional-nursing-adult-nursing-feb-intake"
     },
     {
       "title": "BA Media and Broadcast Production",
@@ -777,6 +787,27 @@
       "courseRefId": "queens-university-belfast|ba-media-and-broadcast-production"
     },
     {
+      "title": "PhD Interpreting",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-interpreting"
+    },
+    {
       "title": "LLM Intellectual Property Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -795,6 +826,26 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|llm-intellectual-property-law"
+    },
+    {
+      "title": "MLaw Masters in Law",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 22850,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mlaw-masters-in-law"
     },
     {
       "title": "PgDip Media and Broadcast Production",
@@ -877,9 +928,173 @@
       "courseRefId": "queens-university-belfast|pgdip-mechanical-engineering-with-management"
     },
     {
-      "title": "PhD Computer Science",
+      "title": "LLM Law and Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|llm-law-and-technology"
+    },
+    {
+      "title": "LLM Law",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|llm-law"
+    },
+    {
+      "title": "MArch Architecture",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|march-architecture"
+    },
+    {
+      "title": "MSc Electronics with Professional Internship",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-electronics-with-professional-internship"
+    },
+    {
+      "title": "MA Interpreting",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|ma-interpreting"
+    },
+    {
+      "title": "MPhil Architecture",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-architecture"
+    },
+    {
+      "title": "PhD Media and Broadcast",
       "level": "phd",
-      "sourceLevel": "Doctorate",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-media-and-broadcast"
+    },
+    {
+      "title": "MA in Media and Broadcast Production",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|ma-in-media-and-broadcast-production"
+    },
+    {
+      "title": "PhD Architecture",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
       "duration": "36 Months",
       "tuition": 25600,
       "currency": "GBP",
@@ -887,34 +1102,55 @@
       "intake": [
         "September 2025",
         "September 2024",
-        "September 2026"
+        "September 2026",
+        "October 2026"
       ],
       "campuses": [
         "Belfast City Centre Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-computer-science"
+      "courseRefId": "queens-university-belfast|phd-architecture"
     },
     {
-      "title": "MPhil Computer Science",
+      "title": "MSc Marketing",
       "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 25600,
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2024",
+        "September 2025",
         "September 2026"
       ],
       "campuses": [
         "Belfast City Centre Campus"
       ],
-      "scholarshipTag": null,
+      "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-computer-science"
+      "courseRefId": "queens-university-belfast|msc-marketing"
+    },
+    {
+      "title": "MSc Electronics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-electronics"
     },
     {
       "title": "PhD Management",
@@ -937,26 +1173,6 @@
       "courseRefId": "queens-university-belfast|phd-management"
     },
     {
-      "title": "BSc Professional Nursing (Learning Disabilities)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 20800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|bsc-professional-nursing-learning-disabilities"
-    },
-    {
       "title": "BSc Professional Nursing (Adult)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -977,50 +1193,29 @@
       "courseRefId": "queens-university-belfast|bsc-professional-nursing-adult"
     },
     {
-      "title": "MSc Digital Business",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
+      "title": "BSc Professional Nursing (Learning Disabilities)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 20800,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "March 2025",
         "September 2025",
-        "September 2026",
-        "January 2026"
+        "September 2024",
+        "September 2026"
       ],
       "campuses": [
         "Belfast City Centre Campus"
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-digital-business"
+      "courseRefId": "queens-university-belfast|bsc-professional-nursing-learning-disabilities"
     },
     {
-      "title": "FdEng Mechanical Engineering",
-      "level": "foundation",
-      "sourceLevel": "Foundation",
-      "duration": "24 Months",
-      "tuition": 16867,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|fdeng-mechanical-engineering"
-    },
-    {
-      "title": "MPhil Medicine",
+      "title": "MPhil Electrical and Electronic Engineering",
       "level": "master",
-      "sourceLevel": "Doctorate",
+      "sourceLevel": "Postgraduate",
       "duration": "24 Months",
       "tuition": 25600,
       "currency": "GBP",
@@ -1028,54 +1223,55 @@
       "intake": [
         "September 2025",
         "September 2024",
-        "September 2026"
+        "September 2026",
+        "October 2026"
       ],
       "campuses": [
         "Belfast City Centre Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-medicine"
+      "courseRefId": "queens-university-belfast|mphil-electrical-and-electronic-engineering"
     },
     {
-      "title": "PhD Finance",
+      "title": "PhD Electrical and Electronic Engineering",
       "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-finance"
-    },
-    {
-      "title": "PhD Medicine",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
+      "sourceLevel": "Postgraduate",
       "duration": "36 Months",
       "tuition": 25600,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
-        "September 2026"
+        "September 2024",
+        "September 2026",
+        "October 2026"
       ],
       "campuses": [
         "Belfast City Centre Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-medicine"
+      "courseRefId": "queens-university-belfast|phd-electrical-and-electronic-engineering"
+    },
+    {
+      "title": "MSc Data Science and Artificial Intelligence (AI)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 27600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-data-science-and-artificial-intelligence-ai"
     },
     {
       "title": "LLB Law with French",
@@ -1138,6 +1334,26 @@
       "courseRefId": "queens-university-belfast|meng-mechanical-engineering"
     },
     {
+      "title": "FdEng Mechanical Engineering",
+      "level": "foundation",
+      "sourceLevel": "Foundation",
+      "duration": "24 Months",
+      "tuition": 16867,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|fdeng-mechanical-engineering"
+    },
+    {
       "title": "BEng Mechanical Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1159,11 +1375,11 @@
       "courseRefId": "queens-university-belfast|beng-mechanical-engineering"
     },
     {
-      "title": "MD Medicine",
-      "level": null,
+      "title": "PhD Finance",
+      "level": "phd",
       "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 25600,
+      "duration": "36 Months",
+      "tuition": 20500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1176,7 +1392,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|md-medicine"
+      "courseRefId": "queens-university-belfast|phd-finance"
     },
     {
       "title": "BSc Games Technologies",
@@ -1196,6 +1412,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|bsc-games-technologies"
+    },
+    {
+      "title": "MSc Robotics and Artificial Intelligence",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 27600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-robotics-and-artificial-intelligence"
     },
     {
       "title": "BEng Electrical and Electronic Engineering with Placement Year Year",
@@ -1236,6 +1471,46 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|beng-electrical-and-electronic-engineering"
+    },
+    {
+      "title": "BEng Product Design Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 25300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|beng-product-design-engineering"
+    },
+    {
+      "title": "BEng Product Design Engineering with Placement Year Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|beng-product-design-engineering-with-placement-year-year"
     },
     {
       "title": "MEng Electrical and Electronic Engineering",
@@ -1318,46 +1593,6 @@
       "courseRefId": "queens-university-belfast|meng-product-design-engineering-with-placement-year-year"
     },
     {
-      "title": "BEng Product Design Engineering with Placement Year Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|beng-product-design-engineering-with-placement-year-year"
-    },
-    {
-      "title": "BEng Product Design Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 25300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|beng-product-design-engineering"
-    },
-    {
       "title": "PhD Nursing and Midwifery",
       "level": "phd",
       "sourceLevel": "Doctorate",
@@ -1418,86 +1653,6 @@
       "courseRefId": "queens-university-belfast|msc-construction-and-project-management-with-industrial-internship"
     },
     {
-      "title": "PhD Law",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-law"
-    },
-    {
-      "title": "PhD Media and Broadcast",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-media-and-broadcast"
-    },
-    {
-      "title": "PhD Accounting",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-accounting"
-    },
-    {
-      "title": "PhD Translation",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-translation"
-    },
-    {
       "title": "MPhil Law",
       "level": "master",
       "sourceLevel": "Doctorate",
@@ -1518,66 +1673,6 @@
       "courseRefId": "queens-university-belfast|mphil-law"
     },
     {
-      "title": "PhD Interpreting",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-interpreting"
-    },
-    {
-      "title": "PhD Architecture",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-architecture"
-    },
-    {
-      "title": "MPhil Architecture",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-architecture"
-    },
-    {
       "title": "PhD Mechanical Engineering",
       "level": "phd",
       "sourceLevel": "Doctorate",
@@ -1596,6 +1691,46 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|phd-mechanical-engineering"
+    },
+    {
+      "title": "PhD Law",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-law"
+    },
+    {
+      "title": "PhD Accounting",
+      "level": "phd",
+      "sourceLevel": "Doctorate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-accounting"
     },
     {
       "title": "MEng Structural Engineering with Architecture with a year in industry",
@@ -1658,6 +1793,215 @@
       "courseRefId": "queens-university-belfast|msc-actuarial-science"
     },
     {
+      "title": "MEd Educational Studies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|med-educational-studies"
+    },
+    {
+      "title": "MPhil Physics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-physics"
+    },
+    {
+      "title": "PhD Chemical Engineering",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-chemical-engineering"
+    },
+    {
+      "title": "PhD Civil Engineering",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-civil-engineering"
+    },
+    {
+      "title": "PhD Geography",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-geography"
+    },
+    {
+      "title": "PhD Physics",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-physics"
+    },
+    {
+      "title": "MPhil Chemical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-chemical-engineering"
+    },
+    {
+      "title": "PhD Education",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-education"
+    },
+    {
+      "title": "MPhil Civil Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-civil-engineering"
+    },
+    {
+      "title": "MSc Applied Developmental Psychology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-applied-developmental-psychology"
+    },
+    {
       "title": "PGCE Education (Religious Education)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1696,6 +2040,86 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|pgce-education-science"
+    },
+    {
+      "title": "MSc One Health Parasitology and Infection Biology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 27600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-one-health-parasitology-and-infection-biology"
+    },
+    {
+      "title": "MSc Human Resource Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-human-resource-management"
+    },
+    {
+      "title": "MSc Educational Leadership",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-educational-leadership"
+    },
+    {
+      "title": "MSc Construction and Project Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-construction-and-project-management"
     },
     {
       "title": "MSc Clinical Health Psychology",
@@ -1738,127 +2162,6 @@
       "courseRefId": "queens-university-belfast|msc-psychological-science"
     },
     {
-      "title": "MSc Construction and Project Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-construction-and-project-management"
-    },
-    {
-      "title": "MEd Educational Studies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|med-educational-studies"
-    },
-    {
-      "title": "MSc Educational Leadership",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-educational-leadership"
-    },
-    {
-      "title": "MSc One Health Parasitology and Infection Biology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 27600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-one-health-parasitology-and-infection-biology"
-    },
-    {
-      "title": "MSc Human Resource Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-human-resource-management"
-    },
-    {
-      "title": "MSc Applied Developmental Psychology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-applied-developmental-psychology"
-    },
-    {
       "title": "MSc Artificial Intelligence",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1877,46 +2180,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|msc-artificial-intelligence"
-    },
-    {
-      "title": "PhD Electrical and Electronic Engineering",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-electrical-and-electronic-engineering"
-    },
-    {
-      "title": "MPhil Electrical and Electronic Engineering",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-electrical-and-electronic-engineering"
     },
     {
       "title": "BSc Agricultural Sciences with Professional Studies",
@@ -1955,6 +2218,24 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|ma-linguistics"
+    },
+    {
+      "title": "MSc Advanced Healthcare Practice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 23000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-advanced-healthcare-practice"
     },
     {
       "title": "PhD Economics",
@@ -1996,6 +2277,26 @@
       "courseRefId": "queens-university-belfast|msc-accounting-finance-and-analytics"
     },
     {
+      "title": "BEng Chemical Engineering with a Year in Industry",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|beng-chemical-engineering-with-a-year-in-industry"
+    },
+    {
       "title": "MEng Civil Engineering with a year in industry",
       "level": "master",
       "sourceLevel": "Undergraduate",
@@ -2014,66 +2315,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|meng-civil-engineering-with-a-year-in-industry"
-    },
-    {
-      "title": "FD Chemical Sciences",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "24 Months",
-      "tuition": 16867,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|fd-chemical-sciences"
-    },
-    {
-      "title": "MEng Environmental and Civil Engineering",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|meng-environmental-and-civil-engineering"
-    },
-    {
-      "title": "MEng Environmental and Civil Engineering with a year in industry",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 25300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|meng-environmental-and-civil-engineering-with-a-year-in-industry"
     },
     {
       "title": "MEng Chemical Engineering",
@@ -2136,26 +2377,6 @@
       "courseRefId": "queens-university-belfast|meng-civil-engineering"
     },
     {
-      "title": "BEng Chemical Engineering with a Year in Industry",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|beng-chemical-engineering-with-a-year-in-industry"
-    },
-    {
       "title": "BEng Chemical Engineering",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2216,6 +2437,66 @@
       "courseRefId": "queens-university-belfast|beng-civil-engineering-year-in-industry"
     },
     {
+      "title": "MEng Environmental and Civil Engineering with a year in industry",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 25300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|meng-environmental-and-civil-engineering-with-a-year-in-industry"
+    },
+    {
+      "title": "FD Chemical Sciences",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "24 Months",
+      "tuition": 16867,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|fd-chemical-sciences"
+    },
+    {
+      "title": "MEng Environmental and Civil Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|meng-environmental-and-civil-engineering"
+    },
+    {
       "title": "MSc Advanced Healthcare and Clinical Practice",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2273,6 +2554,27 @@
       "courseRefId": "queens-university-belfast|msc-digital-marketing-and-analytics"
     },
     {
+      "title": "MSc City Planning And Design",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-city-planning-and-design"
+    },
+    {
       "title": "LLM International Human Rights Law",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2291,26 +2593,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|llm-international-human-rights-law"
-    },
-    {
-      "title": "MSc Bioinformatics and Computational Genomics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-bioinformatics-and-computational-genomics"
     },
     {
       "title": "PgCert City Planning and Design",
@@ -2334,7 +2616,28 @@
       "courseRefId": "queens-university-belfast|pgcert-city-planning-and-design"
     },
     {
-      "title": "MSc City Planning And Design",
+      "title": "PhD Film Studies",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-film-studies"
+    },
+    {
+      "title": "MSc Bioinformatics and Computational Genomics",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -2343,7 +2646,6 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
-        "January 2024",
         "September 2025",
         "September 2026"
       ],
@@ -2352,25 +2654,7 @@
       ],
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-city-planning-and-design"
-    },
-    {
-      "title": "MSc Data Science and Artificial Intelligence (AI)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": null,
-      "currency": null,
-      "feeBasis": null,
-      "intake": [
-        "January 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-data-science-and-artificial-intelligence-ai"
+      "courseRefId": "queens-university-belfast|msc-bioinformatics-and-computational-genomics"
     },
     {
       "title": "BSc Professional Nursing Children and Young People",
@@ -2452,187 +2736,6 @@
       "courseRefId": "queens-university-belfast|phd-psychology"
     },
     {
-      "title": "MPhil Physics",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-physics"
-    },
-    {
-      "title": "PhD Chemical Engineering",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-chemical-engineering"
-    },
-    {
-      "title": "PhD Civil Engineering",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-civil-engineering"
-    },
-    {
-      "title": "PhD Geography",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-geography"
-    },
-    {
-      "title": "PhD Physics",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-physics"
-    },
-    {
-      "title": "MPhil Chemical Engineering",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-chemical-engineering"
-    },
-    {
-      "title": "PhD Education",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-education"
-    },
-    {
-      "title": "MPhil Civil Engineering",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-civil-engineering"
-    },
-    {
-      "title": "MSc AI in Business",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "March 2025",
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-ai-in-business"
-    },
-    {
       "title": "MSc Applied Digital Construction Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2712,6 +2815,27 @@
       "courseRefId": "queens-university-belfast|msc-molecular-biology-and-biotechnology"
     },
     {
+      "title": "MPhil Food Safety and Biotechnology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-food-safety-and-biotechnology"
+    },
+    {
       "title": "MSc Sustainable Energy Systems with Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2729,26 +2853,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|msc-sustainable-energy-systems-with-management"
-    },
-    {
-      "title": "MPhil Food Safety and Biotechnology",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "12 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-food-safety-and-biotechnology"
     },
     {
       "title": "PGCE Education (Mathematics)",
@@ -2769,6 +2873,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|pgce-education-mathematics"
+    },
+    {
+      "title": "PgDip Politics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 14333,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|pgdip-politics"
     },
     {
       "title": "PGCE Education (English)",
@@ -2811,26 +2935,6 @@
       "courseRefId": "queens-university-belfast|pgce-education-modern-languages"
     },
     {
-      "title": "PgDip Politics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 14333,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|pgdip-politics"
-    },
-    {
       "title": "PGCE Education (Social Science)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2849,6 +2953,24 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|pgce-education-social-science"
+    },
+    {
+      "title": "PhD Games Technologies",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 22500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-games-technologies"
     },
     {
       "title": "MSc Environmental Engineering",
@@ -2889,26 +3011,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|pgdip-environmental-engineering"
-    },
-    {
-      "title": "PhD Film Studies",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-film-studies"
     },
     {
       "title": "BSc Actuarial Science and Risk Management",
@@ -2989,6 +3091,820 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|ba-anthropology-and-politics"
+    },
+    {
+      "title": "MSc Pharmaceutical Analysis with Industrial Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-pharmaceutical-analysis-with-industrial-placement"
+    },
+    {
+      "title": "MSc Pharmaceutical Analysis with International Industrial Placement",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-pharmaceutical-analysis-with-international-industrial-placement"
+    },
+    {
+      "title": "MA Irish Studies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|ma-irish-studies"
+    },
+    {
+      "title": "MA Global Security and Borders",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|ma-global-security-and-borders"
+    },
+    {
+      "title": "MA Anthropology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|ma-anthropology"
+    },
+    {
+      "title": "MA Arts Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|ma-arts-management"
+    },
+    {
+      "title": "MA English - Creative Writing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|ma-english-creative-writing"
+    },
+    {
+      "title": "MA Conflict Transformation and Social Justice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|ma-conflict-transformation-and-social-justice"
+    },
+    {
+      "title": "MPH Global Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mph-global-health"
+    },
+    {
+      "title": "MSc Advanced Food Safety",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-advanced-food-safety"
+    },
+    {
+      "title": "MSc Advanced Professional Practice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-advanced-professional-practice"
+    },
+    {
+      "title": "MSc Advanced Professional and Clinical Practice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "January 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-advanced-professional-and-clinical-practice"
+    },
+    {
+      "title": "MSc Industrial Pharmaceutics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-industrial-pharmaceutics"
+    },
+    {
+      "title": "MSc Leadership for Sustainable Development",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-leadership-for-sustainable-development"
+    },
+    {
+      "title": "MSc Clinical Anatomy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-clinical-anatomy"
+    },
+    {
+      "title": "MSc Children's Rights",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-childrens-rights"
+    },
+    {
+      "title": "MSc Caring for Children and Young People with Complex Needs",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-caring-for-children-and-young-people-with-complex-needs"
+    },
+    {
+      "title": "MSc Ecological Management and Conservation Biology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-ecological-management-and-conservation-biology"
+    },
+    {
+      "title": "MSc Leadership for Sustainable Rural Development",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-leadership-for-sustainable-rural-development"
+    },
+    {
+      "title": "MSc Parasitology and Pathogen Biology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-parasitology-and-pathogen-biology"
+    },
+    {
+      "title": "MA Philosophy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|ma-philosophy"
+    },
+    {
+      "title": "PgCert Planning and Development",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 7166,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "January 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|pgcert-planning-and-development"
+    },
+    {
+      "title": "PhD Archaeology and Palaeoecology",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-archaeology-palaeoecology"
+    },
+    {
+      "title": "PhD French",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-french"
+    },
+    {
+      "title": "PhD Linguistics",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-linguistics"
+    },
+    {
+      "title": "PhD Biological Sciences",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-biological-sciences"
+    },
+    {
+      "title": "PhD Chemistry",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-chemistry"
+    },
+    {
+      "title": "PhD Drama",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-drama"
+    },
+    {
+      "title": "PhD Arts Management and Cultural Policy",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-arts-management-and-cultural-policy"
+    },
+    {
+      "title": "PhD English",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-english"
+    },
+    {
+      "title": "PhD Irish and Celtic",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-irish-and-celtic"
+    },
+    {
+      "title": "MPhil Planning",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-planning"
+    },
+    {
+      "title": "PhD Mathematics",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-mathematics"
+    },
+    {
+      "title": "MPhil Archaeology and Palaeoecology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-archaeology-and-palaeoecology"
+    },
+    {
+      "title": "PgDip Philosophy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 14333,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|pgdip-philosophy"
+    },
+    {
+      "title": "PhD Criminology",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-criminology"
+    },
+    {
+      "title": "PhD Social Policy",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-social-policy"
+    },
+    {
+      "title": "MSc Climate Change",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 25800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2025",
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-climate-change"
+    },
+    {
+      "title": "MSc Global Advanced Professional Practice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 23000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-global-advanced-professional-practice"
+    },
+    {
+      "title": "MSc Global Advanced Professional and Clinical Practice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "16 Months",
+      "tuition": 23000,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "January 2027"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-global-advanced-professional-and-clinical-practice"
     },
     {
       "title": "MSc Pharmaceutical Analysis",
@@ -3092,6 +4008,255 @@
       "courseRefId": "queens-university-belfast|pgdip-english-poetry"
     },
     {
+      "title": "MSc Youth Justice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 21500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": "Scholarship applied!",
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|msc-youth-justice"
+    },
+    {
+      "title": "PgDip Social Science Research",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 14333,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|pgdip-social-science-research"
+    },
+    {
+      "title": "PgDip International Public Policy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 15400,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|pgdip-international-public-policy"
+    },
+    {
+      "title": "PhD Translation",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-translation"
+    },
+    {
+      "title": "PhD Social Work",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-social-work"
+    },
+    {
+      "title": "PhD Spanish",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-spanish"
+    },
+    {
+      "title": "PhD Lusophone",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-lusophone"
+    },
+    {
+      "title": "PhD Music",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-music"
+    },
+    {
+      "title": "PhD Planning",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-planning"
+    },
+    {
+      "title": "PhD Sociology",
+      "level": "phd",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|phd-sociology"
+    },
+    {
+      "title": "MPhil Mathematics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 20500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-mathematics"
+    },
+    {
+      "title": "MPhil Chemistry",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 25600,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026",
+        "October 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mphil-chemistry"
+    },
+    {
       "title": "MA Film",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3112,11 +4277,11 @@
       "courseRefId": "queens-university-belfast|ma-film"
     },
     {
-      "title": "MA Global Security and Borders",
+      "title": "PgDip International Relations",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 21500,
+      "tuition": 14333,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3127,109 +4292,9 @@
       "campuses": [
         "Belfast City Centre Campus"
       ],
-      "scholarshipTag": "Scholarship applied!",
+      "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|ma-global-security-and-borders"
-    },
-    {
-      "title": "MA Anthropology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|ma-anthropology"
-    },
-    {
-      "title": "MA Arts Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|ma-arts-management"
-    },
-    {
-      "title": "MA English - Creative Writing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|ma-english-creative-writing"
-    },
-    {
-      "title": "MA Conflict Transformation and Social Justice",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|ma-conflict-transformation-and-social-justice"
-    },
-    {
-      "title": "MA Irish Studies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|ma-irish-studies"
+      "courseRefId": "queens-university-belfast|pgdip-international-relations"
     },
     {
       "title": "MA Geopolitics",
@@ -3250,27 +4315,6 @@
       "scholarshipTag": "Scholarship applied!",
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|ma-geopolitics"
-    },
-    {
-      "title": "PgCert Planning and Development",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 7166,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "January 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|pgcert-planning-and-development"
     },
     {
       "title": "MA Public History",
@@ -3353,133 +4397,32 @@
       "courseRefId": "queens-university-belfast|msc-animal-behaviour-and-welfare"
     },
     {
-      "title": "MPH Global Health",
+      "title": "MPhil Biological Sciences",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
+      "duration": "24 Months",
+      "tuition": 25600,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
         "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mph-global-health"
-    },
-    {
-      "title": "MSc Advanced Food Safety",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
         "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-advanced-food-safety"
-    },
-    {
-      "title": "MSc Advanced Professional Practice",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
         "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-advanced-professional-practice"
-    },
-    {
-      "title": "MSc Advanced Professional and Clinical Practice",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026",
-        "January 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-advanced-professional-and-clinical-practice"
-    },
-    {
-      "title": "MSc Youth Justice",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-youth-justice"
-    },
-    {
-      "title": "PgDip Social Science Research",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 14333,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
+        "October 2026"
       ],
       "campuses": [
         "Belfast City Centre Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|pgdip-social-science-research"
+      "courseRefId": "queens-university-belfast|mphil-biological-sciences"
     },
     {
-      "title": "PgDip International Public Policy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 15400,
+      "title": "BEng Aerospace Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 25300,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3492,288 +4435,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|pgdip-international-public-policy"
-    },
-    {
-      "title": "PgDip International Relations",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 14333,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|pgdip-international-relations"
-    },
-    {
-      "title": "MSc Industrial Pharmaceutics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-industrial-pharmaceutics"
-    },
-    {
-      "title": "MSc Leadership for Sustainable Development",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-leadership-for-sustainable-development"
-    },
-    {
-      "title": "MSc Clinical Anatomy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-clinical-anatomy"
-    },
-    {
-      "title": "MSc Children's Rights",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-childrens-rights"
-    },
-    {
-      "title": "MA Philosophy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|ma-philosophy"
-    },
-    {
-      "title": "PgDip Philosophy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 14333,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|pgdip-philosophy"
-    },
-    {
-      "title": "MSc Climate Change",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "January 2025",
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-climate-change"
-    },
-    {
-      "title": "MSc Caring for Children and Young People with Complex Needs",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-caring-for-children-and-young-people-with-complex-needs"
-    },
-    {
-      "title": "MSc Ecological Management and Conservation Biology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-ecological-management-and-conservation-biology"
-    },
-    {
-      "title": "MSc Leadership for Sustainable Rural Development",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 21500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-leadership-for-sustainable-rural-development"
-    },
-    {
-      "title": "MSc Parasitology and Pathogen Biology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-parasitology-and-pathogen-biology"
-    },
-    {
-      "title": "MSc Pharmaceutical Analysis with Industrial Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-pharmaceutical-analysis-with-industrial-placement"
-    },
-    {
-      "title": "MSc Pharmaceutical Analysis with International Industrial Placement",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 25800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": "Scholarship applied!",
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|msc-pharmaceutical-analysis-with-international-industrial-placement"
+      "courseRefId": "queens-university-belfast|beng-aerospace-engineering"
     },
     {
       "title": "MChem Medicinal Chemistry",
@@ -3794,6 +4456,46 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|mchem-medicinal-chemistry"
+    },
+    {
+      "title": "MChem Medicinal Chemistry with a Year in Industry",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 25300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mchem-medicinal-chemistry-with-a-year-in-industry"
+    },
+    {
+      "title": "MEng Aerospace Engineering",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|meng-aerospace-engineering"
     },
     {
       "title": "MEng Aerospace Engineering with Placement Year Year",
@@ -3834,6 +4536,85 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|mchem-chemistry-with-a-year-in-industry"
+    },
+    {
+      "title": "MLibArts Liberal Arts",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 20800,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mlibarts-liberal-arts"
+    },
+    {
+      "title": "BEng Aerospace Engineering with Placement Year Year",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|beng-aerospace-engineering-with-placement-year-year"
+    },
+    {
+      "title": "MPharm Pharmacy",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 25300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|mpharm-pharmacy"
+    },
+    {
+      "title": "BSc Biological Sciences",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 28500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Belfast City Centre Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
+      "courseRefId": "queens-university-belfast|bsc-biological-sciences"
     },
     {
       "title": "MChem Chemistry with Study Abroad",
@@ -3976,145 +4757,6 @@
       "courseRefId": "queens-university-belfast|ba-anthropology"
     },
     {
-      "title": "MChem Medicinal Chemistry with a Year in Industry",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 25300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mchem-medicinal-chemistry-with-a-year-in-industry"
-    },
-    {
-      "title": "MEng Aerospace Engineering",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|meng-aerospace-engineering"
-    },
-    {
-      "title": "MLibArts Liberal Arts",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 20800,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mlibarts-liberal-arts"
-    },
-    {
-      "title": "BEng Aerospace Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 25300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|beng-aerospace-engineering"
-    },
-    {
-      "title": "BEng Aerospace Engineering with Placement Year Year",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|beng-aerospace-engineering-with-placement-year-year"
-    },
-    {
-      "title": "MPharm Pharmacy",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 25300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mpharm-pharmacy"
-    },
-    {
-      "title": "BSc Biological Sciences",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 28500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|bsc-biological-sciences"
-    },
-    {
       "title": "MPlan European Planning",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4135,7 +4777,7 @@
       "courseRefId": "queens-university-belfast|mplan-european-planning"
     },
     {
-      "title": "PhD Arts Management and Cultural Policy",
+      "title": "PhD International Studies",
       "level": "phd",
       "sourceLevel": "Doctorate",
       "duration": "36 Months",
@@ -4152,13 +4794,13 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-arts-management-and-cultural-policy"
+      "courseRefId": "queens-university-belfast|phd-international-studies"
     },
     {
-      "title": "PhD English",
-      "level": "phd",
+      "title": "MPhil Philosophy",
+      "level": "master",
       "sourceLevel": "Doctorate",
-      "duration": "36 Months",
+      "duration": "24 Months",
       "tuition": 20500,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
@@ -4172,27 +4814,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-english"
-    },
-    {
-      "title": "PhD Irish and Celtic",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-irish-and-celtic"
+      "courseRefId": "queens-university-belfast|mphil-philosophy"
     },
     {
       "title": "PhD Aerospace Engineering",
@@ -4235,46 +4857,6 @@
       "courseRefId": "queens-university-belfast|phd-history"
     },
     {
-      "title": "MPhil Planning",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-planning"
-    },
-    {
-      "title": "PhD Mathematics",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-mathematics"
-    },
-    {
       "title": "PhD Philosophy",
       "level": "phd",
       "sourceLevel": "Doctorate",
@@ -4293,146 +4875,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
       "courseRefId": "queens-university-belfast|phd-philosophy"
-    },
-    {
-      "title": "PhD Social Work",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-social-work"
-    },
-    {
-      "title": "PhD Spanish",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-spanish"
-    },
-    {
-      "title": "PhD Lusophone",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-lusophone"
-    },
-    {
-      "title": "PhD Music",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-music"
-    },
-    {
-      "title": "PhD Pharmacy",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-pharmacy"
-    },
-    {
-      "title": "PhD Planning",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-planning"
-    },
-    {
-      "title": "PhD Sociology",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-sociology"
     },
     {
       "title": "PhD Archaeology and Palaeoecology",
@@ -4455,7 +4897,7 @@
       "courseRefId": "queens-university-belfast|phd-archaeology-and-palaeoecology"
     },
     {
-      "title": "PhD Criminology",
+      "title": "PhD Cognition and Culture",
       "level": "phd",
       "sourceLevel": "Doctorate",
       "duration": "36 Months",
@@ -4472,110 +4914,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-criminology"
+      "courseRefId": "queens-university-belfast|phd-cognition-and-culture"
     },
     {
-      "title": "PhD Social Policy",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-social-policy"
-    },
-    {
-      "title": "MPhil Biological Sciences",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-biological-sciences"
-    },
-    {
-      "title": "MPhil Pharmacy",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-pharmacy"
-    },
-    {
-      "title": "PhD Linguistics",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-linguistics"
-    },
-    {
-      "title": "MPhil Philosophy",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-philosophy"
-    },
-    {
-      "title": "PhD Biological Sciences",
+      "title": "PhD Pharmacy",
       "level": "phd",
       "sourceLevel": "Doctorate",
       "duration": "36 Months",
@@ -4592,67 +4934,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-biological-sciences"
-    },
-    {
-      "title": "PhD Chemistry",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-chemistry"
-    },
-    {
-      "title": "PhD Drama",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-drama"
-    },
-    {
-      "title": "MPhil Mathematics",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-mathematics"
+      "courseRefId": "queens-university-belfast|phd-pharmacy"
     },
     {
       "title": "PhD Anthropological Studies",
@@ -4675,67 +4957,7 @@
       "courseRefId": "queens-university-belfast|phd-anthropological-studies"
     },
     {
-      "title": "PhD Archaeology & Palaeoecology",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-archaeology-palaeoecology"
-    },
-    {
-      "title": "PhD French",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-french"
-    },
-    {
-      "title": "PhD International Studies",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-international-studies"
-    },
-    {
-      "title": "MPhil Chemistry",
+      "title": "MPhil Pharmacy",
       "level": "master",
       "sourceLevel": "Doctorate",
       "duration": "24 Months",
@@ -4752,47 +4974,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-chemistry"
-    },
-    {
-      "title": "PhD Cognition and Culture",
-      "level": "phd",
-      "sourceLevel": "Doctorate",
-      "duration": "36 Months",
-      "tuition": 20500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|phd-cognition-and-culture"
-    },
-    {
-      "title": "MPhil Archaeology and Palaeoecology",
-      "level": "master",
-      "sourceLevel": "Doctorate",
-      "duration": "24 Months",
-      "tuition": 25600,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Belfast City Centre Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/queens-university-belfast",
-      "courseRefId": "queens-university-belfast|mphil-archaeology-and-palaeoecology"
+      "courseRefId": "queens-university-belfast|mphil-pharmacy"
     }
   ]
 }

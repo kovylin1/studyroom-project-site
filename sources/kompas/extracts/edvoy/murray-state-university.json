@@ -3,13 +3,14 @@
   "name": "Murray State University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-  "scrapedAt": "2026-07-22T15:42:52.325Z",
+  "scrapedAt": "2026-08-23T13:11:39.922Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "murray-state-university",
   "country": "United States",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -77,27 +78,6 @@
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-computer-science-data-science-track"
     },
     {
-      "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Management/Entrepreneurship Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-management-entrepreneurship-track"
-    },
-    {
       "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Management",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -117,6 +97,27 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-management"
+    },
+    {
+      "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Management/Entrepreneurship Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-management-entrepreneurship-track"
     },
     {
       "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Finance/Commercial Banking Track",
@@ -182,27 +183,6 @@
       "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-finance"
     },
     {
-      "title": "(BSN: Bachelor of Science in Nursing) Nursing/RN to BSN",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bsn-bachelor-of-science-in-nursing-nursing-rn-to-bsn"
-    },
-    {
       "title": "(BSN: Bachelor of Science in Nursing) Nursing",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -266,7 +246,7 @@
       "courseRefId": "murray-state-university|bs-bachelor-of-science-public-and-community-health"
     },
     {
-      "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Accounting/Financial Planning Track",
+      "title": "(BSN: Bachelor of Science in Nursing) Nursing/RN to BSN",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -284,7 +264,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-accounting-financial-planning-track"
+      "courseRefId": "murray-state-university|bsn-bachelor-of-science-in-nursing-nursing-rn-to-bsn"
     },
     {
       "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Accounting/Finance Track",
@@ -308,7 +288,7 @@
       "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-accounting-finance-track"
     },
     {
-      "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Accounting",
+      "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Accounting/Financial Planning Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -326,7 +306,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-accounting"
+      "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-accounting-financial-planning-track"
     },
     {
       "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Marketing/Entrepreneurship Track",
@@ -369,6 +349,27 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-marketing"
+    },
+    {
+      "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Accounting",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-accounting"
     },
     {
       "title": "(MPA: Master of Public Administration) Public Administration/Health Administration Concentration",
@@ -421,69 +422,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|mpa-master-of-public-administration-public-administration-public-and-community-health-concentration"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Advertising",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-advertising"
-    },
-    {
-      "title": "(BS: Bachelor of Science) Design Engineering Technology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bs-bachelor-of-science-design-engineering-technology"
-    },
-    {
-      "title": "(BS: Bachelor of Science) Graphic Communications Media",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bs-bachelor-of-science-graphic-communications-media"
     },
     {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Organizational Communication",
@@ -547,6 +485,69 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-television-production"
+    },
+    {
+      "title": "(BS: Bachelor of Science) Graphic Communications Media",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bs-bachelor-of-science-graphic-communications-media"
+    },
+    {
+      "title": "(BS: Bachelor of Science) Design Engineering Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bs-bachelor-of-science-design-engineering-technology"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Advertising",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-advertising"
     },
     {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Mathematics/Data Science Track",
@@ -685,6 +686,27 @@
       "courseRefId": "murray-state-university|mpa-master-of-public-administration-public-administration"
     },
     {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Mathematics/Pre-MS in Biostatistics Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-mathematics-pre-ms-in-biostatistics-track"
+    },
+    {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Health and Physical Education/Non-Certification Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -725,27 +747,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-health-and-physical-education-p-12-certification-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Mathematics/Pre-MS in Biostatistics Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-mathematics-pre-ms-in-biostatistics-track"
     },
     {
       "title": "(BS: Bachelor of Science) Career and Technical Education/Engineering and Technology Education/5-12 Certification Track",
@@ -895,6 +896,27 @@
       "courseRefId": "murray-state-university|msis-master-of-science-in-information-systems-information-systems-business-analytics-concentration"
     },
     {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Journalism",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-journalism"
+    },
+    {
       "title": "(BS: Bachelor of Science) Construction Management and Architecture/Construction Management Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -958,27 +980,6 @@
       "courseRefId": "murray-state-university|bs-bachelor-of-science-electromechanical-engineering-technology"
     },
     {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Journalism",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-journalism"
-    },
-    {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Computer Science/Game Development",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1021,7 +1022,7 @@
       "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-accounting-information-systems-track"
     },
     {
-      "title": "(MS: Master of Science) Mathematics",
+      "title": "(MS: Master of Science) Career and Technical Education",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -1039,10 +1040,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ms-master-of-science-mathematics"
+      "courseRefId": "murray-state-university|ms-master-of-science-career-and-technical-education"
     },
     {
-      "title": "(MA: Master of Arts) Mathematics/Mathematics Teaching",
+      "title": "(MA/MS: Master of Arts or Master of Science) Clinical Psychology",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -1060,10 +1061,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ma-master-of-arts-mathematics-mathematics-teaching"
+      "courseRefId": "murray-state-university|ma-ms-master-of-arts-or-master-of-science-clinical-psychology"
     },
     {
-      "title": "(EDS: Specialist in Education) Education Administration",
+      "title": "(EDS: Specialist in Education) Counseling/School Counseling Concentration",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -1077,14 +1078,15 @@
         "January 2027"
       ],
       "campuses": [
-        "MSU Murray Campus"
+        "MSU Murray Campus",
+        "MSU Madisonville Regional Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|eds-specialist-in-education-education-administration"
+      "courseRefId": "murray-state-university|eds-specialist-in-education-counseling-school-counseling-concentration"
     },
     {
-      "title": "(MA/MS: Master of Arts or Master of Science) General Experimental Psychology",
+      "title": "(EDS: Specialist in Education) Counseling",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -1098,11 +1100,12 @@
         "January 2027"
       ],
       "campuses": [
-        "MSU Murray Campus"
+        "MSU Murray Campus",
+        "MSU Madisonville Regional Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ma-ms-master-of-arts-or-master-of-science-general-experimental-psychology"
+      "courseRefId": "murray-state-university|eds-specialist-in-education-counseling"
     },
     {
       "title": "(MA: Master of Arts) Higher Education and Student Affairs",
@@ -1190,7 +1193,7 @@
       "courseRefId": "murray-state-university|maed-master-of-arts-in-education-special-education-moderate-to-severe-disabilities-p-12-certification"
     },
     {
-      "title": "(MS: Master of Science) Career and Technical Education",
+      "title": "(EDS: Specialist in Education) Education Administration",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -1208,10 +1211,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ms-master-of-science-career-and-technical-education"
+      "courseRefId": "murray-state-university|eds-specialist-in-education-education-administration"
     },
     {
-      "title": "(MA/MS: Master of Arts or Master of Science) Clinical Psychology",
+      "title": "(MA/MS: Master of Arts or Master of Science) General Experimental Psychology",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -1229,10 +1232,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ma-ms-master-of-arts-or-master-of-science-clinical-psychology"
+      "courseRefId": "murray-state-university|ma-ms-master-of-arts-or-master-of-science-general-experimental-psychology"
     },
     {
-      "title": "(EDS: Specialist in Education) Counseling/School Counseling Concentration",
+      "title": "(MS: Master of Science) Mathematics",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -1246,15 +1249,14 @@
         "January 2027"
       ],
       "campuses": [
-        "MSU Murray Campus",
-        "MSU Madisonville Regional Campus"
+        "MSU Murray Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|eds-specialist-in-education-counseling-school-counseling-concentration"
+      "courseRefId": "murray-state-university|ms-master-of-science-mathematics"
     },
     {
-      "title": "(EDS: Specialist in Education) Counseling",
+      "title": "(MA: Master of Arts) Mathematics/Mathematics Teaching",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -1268,12 +1270,11 @@
         "January 2027"
       ],
       "campuses": [
-        "MSU Murray Campus",
-        "MSU Madisonville Regional Campus"
+        "MSU Murray Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|eds-specialist-in-education-counseling"
+      "courseRefId": "murray-state-university|ma-master-of-arts-mathematics-mathematics-teaching"
     },
     {
       "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Marketing/Hospitality and Tourism Track",
@@ -1386,7 +1387,7 @@
       "courseRefId": "murray-state-university|ms-master-of-science-speech-language-pathology"
     },
     {
-      "title": "(BGS: Bachelor of General Studies) General Studies",
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Physics/Secondary Certification (Grades 8-12) Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1404,10 +1405,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bgs-bachelor-of-general-studies-general-studies"
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-physics-secondary-certification-grades-8-12-track"
     },
     {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Elementary Education",
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Physics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1425,10 +1426,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-elementary-education"
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-physics"
     },
     {
-      "title": "(BSE: Bachelor of Science in Engineering) Engineering Physics",
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Psychology",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1446,49 +1447,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bse-bachelor-of-science-in-engineering-engineering-physics"
-    },
-    {
-      "title": "(BIS: Bachelor of Integrated Studies) Integrated Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bis-bachelor-of-integrated-studies-integrated-studies"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Interdisciplinary Early Childhood Education (Birth to Primary)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-interdisciplinary-early-childhood-education-birth-to-primary"
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-psychology"
     },
     {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Mathematics/Secondary Certification (Grades 8-12) Track",
@@ -1554,69 +1513,6 @@
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-mathematics-actuarial-science-track"
     },
     {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Physics/Secondary Certification (Grades 8-12) Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-physics-secondary-certification-grades-8-12-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Physics",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-physics"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Psychology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-psychology"
-    },
-    {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Middle School Education/5-9 Certification Track (1 concentration)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1636,27 +1532,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-middle-school-education-5-9-certification-track-1-concentration"
-    },
-    {
-      "title": "(BS: Bachelor of Science) Career and Technical Education/Occupation-Based Option Rank 1 Program",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bs-bachelor-of-science-career-and-technical-education-occupation-based-option-rank-1-program"
     },
     {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Art/Art Education P-12 Certification Track",
@@ -1680,7 +1555,7 @@
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-art-art-education-p-12-certification-track"
     },
     {
-      "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Logistics and Supply Chain Management",
+      "title": "(BIS: Bachelor of Integrated Studies) Integrated Studies",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1698,7 +1573,112 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-logistics-and-supply-chain-management"
+      "courseRefId": "murray-state-university|bis-bachelor-of-integrated-studies-integrated-studies"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Interdisciplinary Early Childhood Education (Birth to Primary)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-interdisciplinary-early-childhood-education-birth-to-primary"
+    },
+    {
+      "title": "(BGS: Bachelor of General Studies) General Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bgs-bachelor-of-general-studies-general-studies"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Elementary Education",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-elementary-education"
+    },
+    {
+      "title": "(BSE: Bachelor of Science in Engineering) Engineering Physics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bse-bachelor-of-science-in-engineering-engineering-physics"
+    },
+    {
+      "title": "(BS: Bachelor of Science) Career and Technical Education/Occupation-Based Option Rank 1 Program",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bs-bachelor-of-science-career-and-technical-education-occupation-based-option-rank-1-program"
     },
     {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Applied Physics/Pre-MBA Track",
@@ -1720,6 +1700,27 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-applied-physics-pre-mba-track"
+    },
+    {
+      "title": "(BAB/BSB: Bachelor of Arts in Business or Bachelor of Science in Business) Logistics and Supply Chain Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bab-bsb-bachelor-of-arts-in-business-or-bachelor-of-science-in-business-logistics-and-supply-chain-management"
     },
     {
       "title": "(BS: Bachelor of Science) Music Business",
@@ -1785,111 +1786,6 @@
       "courseRefId": "murray-state-university|msis-master-of-science-in-information-systems-information-systems"
     },
     {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Biology/Pre-Physical Therapy Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-biology-pre-physical-therapy-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Biology/Pre-Physician Assistant Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-biology-pre-physician-assistant-track"
-    },
-    {
-      "title": "(BS: Bachelor of Science) Exercise Science/Pre-Health Professional Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bs-bachelor-of-science-exercise-science-pre-health-professional-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Chemistry/Pre-Dental Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-chemistry-pre-dental-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Chemistry/Pre-Medical Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-chemistry-pre-medical-track"
-    },
-    {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Biology/Pre-Dental Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1951,6 +1847,111 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-biology-pre-optometry-track"
+    },
+    {
+      "title": "(BS: Bachelor of Science) Exercise Science/Pre-Health Professional Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bs-bachelor-of-science-exercise-science-pre-health-professional-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Biology/Pre-Physical Therapy Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-biology-pre-physical-therapy-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Biology/Pre-Physician Assistant Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-biology-pre-physician-assistant-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Chemistry/Pre-Dental Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-chemistry-pre-dental-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Chemistry/Pre-Medical Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-chemistry-pre-medical-track"
     },
     {
       "title": "(MPA: Master of Public Administration) Public Administration/Economic Development Concentration",
@@ -2047,28 +2048,6 @@
       "courseRefId": "murray-state-university|bfa-bachelor-of-fine-arts-art-graphic-design-track"
     },
     {
-      "title": "(MAED: Master of Arts in Education) Reading and Writing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 17805,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus",
-        "MSU Madisonville Regional Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|maed-master-of-arts-in-education-reading-and-writing"
-    },
-    {
       "title": "(EDS: Specialist in Education) Counseling/Clinical Mental Health Counseling Concentration",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2089,6 +2068,28 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|eds-specialist-in-education-counseling-clinical-mental-health-counseling-concentration"
+    },
+    {
+      "title": "(MAED: Master of Arts in Education) Reading and Writing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 17805,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus",
+        "MSU Madisonville Regional Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|maed-master-of-arts-in-education-reading-and-writing"
     },
     {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Biology/Biomedical Sciences Track",
@@ -2133,6 +2134,111 @@
       "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-animal-health-pre-veterinary-medicine"
     },
     {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Political Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-political-science"
+    },
+    {
+      "title": "(BS: Bachelor of Science) Manufacturing Engineering Technology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bs-bachelor-of-science-manufacturing-engineering-technology"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Mathematics/Applied Mathematics Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-mathematics-applied-mathematics-track"
+    },
+    {
+      "title": "(BM: Bachelor of Music) Music/Music Education P-12 Certification Track Instrumental",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bm-bachelor-of-music-music-music-education-p-12-certification-track-instrumental"
+    },
+    {
+      "title": "(BM: Bachelor of Music) Music/Music Education P-12 Certification Track Vocal",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bm-bachelor-of-music-music-music-education-p-12-certification-track-vocal"
+    },
+    {
       "title": "(BSA: Bachelor of Science in Agriculture) Agricultural Science/Agricultural Education Certification (5-12) Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2154,7 +2260,7 @@
       "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-agricultural-science-agricultural-education-certification-5-12-track"
     },
     {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) English/English Education-Secondary Certification (Grades 8-12) Track",
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Applied Physics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2172,28 +2278,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-english-english-education-secondary-certification-grades-8-12-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) English/Professional Writing Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-english-professional-writing-track"
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-applied-physics"
     },
     {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Learning and Behavior Disorders/Elementary Track",
@@ -2259,7 +2344,7 @@
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-learning-and-behavior-disorders-moderate-to-severe-disabilities-track"
     },
     {
-      "title": "(BS: Bachelor of Science) Manufacturing Engineering Technology",
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) English/English Education-Secondary Certification (Grades 8-12) Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2277,10 +2362,10 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bs-bachelor-of-science-manufacturing-engineering-technology"
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-english-english-education-secondary-certification-grades-8-12-track"
     },
     {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Mathematics/Applied Mathematics Track",
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) English/Professional Writing Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2298,70 +2383,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-mathematics-applied-mathematics-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Political Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-political-science"
-    },
-    {
-      "title": "(BM: Bachelor of Music) Music/Music Education P-12 Certification Track Instrumental",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bm-bachelor-of-music-music-music-education-p-12-certification-track-instrumental"
-    },
-    {
-      "title": "(BM: Bachelor of Music) Music/Music Education P-12 Certification Track Vocal",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bm-bachelor-of-music-music-music-education-p-12-certification-track-vocal"
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-english-professional-writing-track"
     },
     {
       "title": "(BS: Bachelor of Science) Career and Technical Education/Family and Consumer Sciences Education/5-12 Certification Track",
@@ -2406,7 +2428,7 @@
       "courseRefId": "murray-state-university|bse-bachelor-of-science-in-engineering-civil-and-sustainability-engineering"
     },
     {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Applied Physics",
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Wildlife and Conservation Biology/Conservation Law Enforcement Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2424,7 +2446,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-applied-physics"
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-wildlife-and-conservation-biology-conservation-law-enforcement-track"
     },
     {
       "title": "(BS: Bachelor of Science) Earth and Environmental Sciences/Geography and GIS Track",
@@ -2446,27 +2468,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|bs-bachelor-of-science-earth-and-environmental-sciences-geography-and-gis-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Wildlife and Conservation Biology/Conservation Law Enforcement Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-wildlife-and-conservation-biology-conservation-law-enforcement-track"
     },
     {
       "title": "(MS: Master of Science) Earth and Environmental Sciences/Geoinformatics Concentration",
@@ -2595,6 +2596,90 @@
       "courseRefId": "murray-state-university|ms-master-of-science-earth-and-environmental-sciences-watershed-science-concentration"
     },
     {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Political Science/Pre-Professional Legal Studies Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-political-science-pre-professional-legal-studies-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Wildlife and Conservation Biology/Conservation Education and Interpretation Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-wildlife-and-conservation-biology-conservation-education-and-interpretation-track"
+    },
+    {
+      "title": "(BFA: Bachelor of Fine Arts) Art/Studio Art Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bfa-bachelor-of-fine-arts-art-studio-art-track"
+    },
+    {
+      "title": "(BA: Bachelor of Arts) Global Language/Spanish Teaching Certification Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bachelor-of-arts-global-language-spanish-teaching-certification-track"
+    },
+    {
       "title": "(BS: Bachelor of Science) Earth and Environmental Sciences/Earth Science Secondary Certification (Grades 8-12) Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2637,7 +2722,7 @@
       "courseRefId": "murray-state-university|bs-bachelor-of-science-earth-and-environmental-sciences-environmental-sciences-track"
     },
     {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Wildlife and Conservation Biology/Conservation Education and Interpretation Track",
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Political Science/Social Studies Certification (Grades 8-12) Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2655,70 +2740,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-wildlife-and-conservation-biology-conservation-education-and-interpretation-track"
-    },
-    {
-      "title": "(BA: Bachelor of Arts) Global Language/Spanish Teaching Certification Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bachelor-of-arts-global-language-spanish-teaching-certification-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Political Science/Pre-Professional Legal Studies Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-political-science-pre-professional-legal-studies-track"
-    },
-    {
-      "title": "(BFA: Bachelor of Fine Arts) Art/Studio Art Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bfa-bachelor-of-fine-arts-art-studio-art-track"
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-political-science-social-studies-certification-grades-8-12-track"
     },
     {
       "title": "(BSA: Bachelor of Science in Agriculture) Animal Health/Veterinary Technology",
@@ -2784,7 +2806,7 @@
       "courseRefId": "murray-state-university|bs-bachelor-of-science-earth-and-environmental-sciences-geology-track"
     },
     {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Political Science/Social Studies Certification (Grades 8-12) Track",
+      "title": "(BFA: Bachelor of Fine Arts) Art/Studio Art/Enhanced Art History Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -2802,7 +2824,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-political-science-social-studies-certification-grades-8-12-track"
+      "courseRefId": "murray-state-university|bfa-bachelor-of-fine-arts-art-studio-art-enhanced-art-history-track"
     },
     {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) English/Creative Writing Track",
@@ -2826,28 +2848,7 @@
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-english-creative-writing-track"
     },
     {
-      "title": "(BFA: Bachelor of Fine Arts) Art/Studio Art/Enhanced Art History Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bfa-bachelor-of-fine-arts-art-studio-art-enhanced-art-history-track"
-    },
-    {
-      "title": "(MS: Master of Science) Economic Development/Agribusiness",
+      "title": "(MS: Master of Science) Chemistry",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -2865,49 +2866,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ms-master-of-science-economic-development-agribusiness"
-    },
-    {
-      "title": "(MS: Master of Science) Economic Development",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 17805,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ms-master-of-science-economic-development"
-    },
-    {
-      "title": "(MA: Master of Arts) English",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 17805,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ma-master-of-arts-english"
+      "courseRefId": "murray-state-university|ms-master-of-science-chemistry"
     },
     {
       "title": "(MS: Master of Science) Nonprofit Leadership Studies",
@@ -2994,6 +2953,69 @@
       "courseRefId": "murray-state-university|ma-master-of-arts-teaching-english-to-speakers-of-other-languages"
     },
     {
+      "title": "(MS: Master of Science) Economic Development/Agribusiness",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 17805,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ms-master-of-science-economic-development-agribusiness"
+    },
+    {
+      "title": "(MS: Master of Science) Economic Development",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 17805,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ms-master-of-science-economic-development"
+    },
+    {
+      "title": "(MA: Master of Arts) English",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 17805,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ma-master-of-arts-english"
+    },
+    {
       "title": "(MA: Master of Arts) History",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3034,573 +3056,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|ms-master-of-science-human-development-and-leadership"
-    },
-    {
-      "title": "(MS: Master of Science) Chemistry",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 17805,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ms-master-of-science-chemistry"
-    },
-    {
-      "title": "(BSA: Bachelor of Science in Agriculture) Agricultural Science/AgriScience Technology Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-agricultural-science-agriscience-technology-track"
-    },
-    {
-      "title": "(BSA: Bachelor of Science in Agriculture) Agricultural Science/Agribusiness Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-agricultural-science-agribusiness-track"
-    },
-    {
-      "title": "(BSA: Bachelor of Science in Agriculture) Agricultural Science/Crop and Soil Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-agricultural-science-crop-and-soil-management"
-    },
-    {
-      "title": "(BSA: Bachelor of Science in Agriculture) Agricultural Science/Horticulture Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-agricultural-science-horticulture-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Agricultural Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-agricultural-science"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Criminal Justice/Research Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-criminal-justice-research-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Criminal Justice",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-criminal-justice"
-    },
-    {
-      "title": "(BA: Bachelor of Arts) Culture and Language Studies/Chinese Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bachelor-of-arts-culture-and-language-studies-chinese-track"
-    },
-    {
-      "title": "(BA: Bachelor of Arts) Culture and Language Studies/French Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bachelor-of-arts-culture-and-language-studies-french-track"
-    },
-    {
-      "title": "(BA: Bachelor of Arts) Culture and Language Studies/German Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bachelor-of-arts-culture-and-language-studies-german-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Biology/Pre-Pharmacy Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-biology-pre-pharmacy-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Wildlife and Conservation Biology/Conservation Biology Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-wildlife-and-conservation-biology-conservation-biology-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Wildlife and Conservation Biology/Wildlife Biology Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-wildlife-and-conservation-biology-wildlife-biology-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Wildlife and Conservation Biology/Zoological Conservation Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-wildlife-and-conservation-biology-zoological-conservation-track"
-    },
-    {
-      "title": "(BA: Bachelor of Arts) English/Teaching English to Speakers of Other Languages Track (Non-Certification)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bachelor-of-arts-english-teaching-english-to-speakers-of-other-languages-track-non-certification"
-    },
-    {
-      "title": "(BS: Bachelor of Science) Exercise Science/Exercise Physiology Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bs-bachelor-of-science-exercise-science-exercise-physiology-track"
-    },
-    {
-      "title": "(BA: Bachelor of Arts) Global Language/Spanish Translation & Interpretation Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bachelor-of-arts-global-language-spanish-translation-interpretation-track"
-    },
-    {
-      "title": "(BA: Bachelor of Arts) Global Language/Spanish Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bachelor-of-arts-global-language-spanish-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) English/Literature Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-english-literature-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) English/Philosophy Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-english-philosophy-track"
-    },
-    {
-      "title": "(BS: Bachelor of Science) English/Rhetoric and Philosophy Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bs-bachelor-of-science-english-rhetoric-and-philosophy-track"
-    },
-    {
-      "title": "(BA: Bachelor of Arts) English/Teaching English to Speakers of Other Languages (P-12) Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bachelor-of-arts-english-teaching-english-to-speakers-of-other-languages-p-12-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) History/Social Studies Certification (Grades 8-12)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-history-social-studies-certification-grades-8-12"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) History",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-history"
-    },
-    {
-      "title": "(BA: Bachelor of Arts) International Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bachelor-of-arts-international-studies"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Nonprofit Leadership Studies",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-nonprofit-leadership-studies"
     },
     {
       "title": "(BS: Bachelor of Science) Nutrition and Dietetics/Dietetics Track",
@@ -3771,6 +3226,27 @@
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-theatre"
     },
     {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Wildlife and Conservation Biology/Conservation Biology Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-wildlife-and-conservation-biology-conservation-biology-track"
+    },
+    {
       "title": "(BM: Bachelor of Music) Music/Composition Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3853,6 +3329,594 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
       "courseRefId": "murray-state-university|bm-bachelor-of-music-music-performance-vocal-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Nonprofit Leadership Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-nonprofit-leadership-studies"
+    },
+    {
+      "title": "(BSA: Bachelor of Science in Agriculture) Agricultural Science/Agribusiness Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-agricultural-science-agribusiness-track"
+    },
+    {
+      "title": "(BSA: Bachelor of Science in Agriculture) Agricultural Science/Crop and Soil Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-agricultural-science-crop-and-soil-management"
+    },
+    {
+      "title": "(BSA: Bachelor of Science in Agriculture) Agricultural Science/Horticulture Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-agricultural-science-horticulture-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Agricultural Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-agricultural-science"
+    },
+    {
+      "title": "(BSA: Bachelor of Science in Agriculture) Animal and Equine Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-animal-and-equine-science"
+    },
+    {
+      "title": "(BA: Bachelor of Arts) Art/Studio Art/Enhanced Art History Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bachelor-of-arts-art-studio-art-enhanced-art-history-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Art/Studio Art Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-art-studio-art-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Biology/Fisheries and Aquatic Biology Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-biology-fisheries-and-aquatic-biology-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Wildlife and Conservation Biology/Wildlife Biology Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-wildlife-and-conservation-biology-wildlife-biology-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Wildlife and Conservation Biology/Zoological Conservation Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-wildlife-and-conservation-biology-zoological-conservation-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) History/Social Studies Certification (Grades 8-12)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-history-social-studies-certification-grades-8-12"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) History",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-history"
+    },
+    {
+      "title": "(BA: Bachelor of Arts) International Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bachelor-of-arts-international-studies"
+    },
+    {
+      "title": "(BA: Bachelor of Arts) English/Teaching English to Speakers of Other Languages Track (Non-Certification)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bachelor-of-arts-english-teaching-english-to-speakers-of-other-languages-track-non-certification"
+    },
+    {
+      "title": "(BS: Bachelor of Science) Exercise Science/Exercise Physiology Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bs-bachelor-of-science-exercise-science-exercise-physiology-track"
+    },
+    {
+      "title": "(BA: Bachelor of Arts) Global Language/Spanish Translation & Interpretation Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bachelor-of-arts-global-language-spanish-translation-interpretation-track"
+    },
+    {
+      "title": "(BA: Bachelor of Arts) Global Language/Spanish Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bachelor-of-arts-global-language-spanish-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Criminal Justice/Research Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-criminal-justice-research-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Criminal Justice",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-criminal-justice"
+    },
+    {
+      "title": "(BA: Bachelor of Arts) Culture and Language Studies/Chinese Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bachelor-of-arts-culture-and-language-studies-chinese-track"
+    },
+    {
+      "title": "(BA: Bachelor of Arts) Culture and Language Studies/French Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bachelor-of-arts-culture-and-language-studies-french-track"
+    },
+    {
+      "title": "(BA: Bachelor of Arts) Culture and Language Studies/German Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bachelor-of-arts-culture-and-language-studies-german-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) English/Literature Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-english-literature-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) English/Philosophy Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-english-philosophy-track"
+    },
+    {
+      "title": "(BS: Bachelor of Science) English/Rhetoric and Philosophy Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|bs-bachelor-of-science-english-rhetoric-and-philosophy-track"
+    },
+    {
+      "title": "(BA: Bachelor of Arts) English/Teaching English to Speakers of Other Languages (P-12) Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bachelor-of-arts-english-teaching-english-to-speakers-of-other-languages-p-12-track"
+    },
+    {
+      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Biology/Pre-Pharmacy Track",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 15036,
+      "currency": "USD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "August 2025",
+        "January 2026",
+        "August 2026",
+        "January 2027"
+      ],
+      "campuses": [
+        "MSU Murray Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
+      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-biology-pre-pharmacy-track"
     },
     {
       "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Biology/Secondary Certification (Grades 8-12) Track",
@@ -4065,7 +4129,7 @@
       "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-communication-disorders"
     },
     {
-      "title": "(BSA: Bachelor of Science in Agriculture) Animal and Equine Science",
+      "title": "(BSA: Bachelor of Science in Agriculture) Agricultural Science/AgriScience Technology Track",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -4083,70 +4147,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-animal-and-equine-science"
-    },
-    {
-      "title": "(BA: Bachelor of Arts) Art/Studio Art/Enhanced Art History Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bachelor-of-arts-art-studio-art-enhanced-art-history-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Art/Studio Art Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-art-studio-art-track"
-    },
-    {
-      "title": "(BA/BS: Bachelor of Arts or Bachelor of Science) Biology/Fisheries and Aquatic Biology Track",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 15036,
-      "currency": "USD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2025",
-        "January 2026",
-        "August 2026",
-        "January 2027"
-      ],
-      "campuses": [
-        "MSU Murray Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/murray-state-university",
-      "courseRefId": "murray-state-university|ba-bs-bachelor-of-arts-or-bachelor-of-science-biology-fisheries-and-aquatic-biology-track"
+      "courseRefId": "murray-state-university|bsa-bachelor-of-science-in-agriculture-agricultural-science-agriscience-technology-track"
     }
   ]
 }

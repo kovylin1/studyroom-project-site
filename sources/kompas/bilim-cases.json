@@ -1,0 +1,34 @@
+{
+  "ranAt": "2026-09-02T02:41:03.096Z",
+  "cases": [
+    {
+      "issue": "bilim_fee_tier_unclear",
+      "slug": "demiroglu-bilim-university",
+      "count": 11,
+      "question": "Цены вуза подписаны стипендиальными квотами: «TAM BURSLU» (бесплатно), «% 50 İNDİRİMLİ» (место со скидкой 50 %), «ÜCRETLİ» (полная цена). Полная цена опубликована только у двух программ из двадцати и ровно вдвое больше скидочной. Записывать ли скидочную цену как цену программы, или ждать полного прайса?",
+      "evidence": "sources\\kompas\\extracts\\direct\\demiroglu-bilim-university.json"
+    },
+    {
+      "issue": "bilim_currency_missing",
+      "slug": "demiroglu-bilim-university",
+      "question": "Турецкой лиры (TRY) нет в CURRENCY_CODES схемы сайта — без неё цены этого вуза записать нельзя в принципе. Добавлять, как добавляли CHF, BHD, MYR и SGD?"
+    },
+    {
+      "issue": "bilim_onlisans_skipped",
+      "slug": "demiroglu-bilim-university",
+      "count": 9,
+      "question": "Не заведено 9 программ önlisans (двухлетний Sağlık Hizmetleri Meslek Yüksekokulu): такого уровня в схеме нет, уровень не выдумываем. Заводить их отдельным уровнем или каталогу они не нужны?",
+      "titles": [
+        "AMELİYATHANE HİZMETLERİ",
+        "ANESTEZİ",
+        "DİYALİZ",
+        "FİZYOTERAPİ",
+        "İLK VE ACİL YARDIM",
+        "TELE-SAĞLIK",
+        "TIBBİ DÖKÜMANTASYON VE SEKRETERLİK",
+        "TIBBİ GÖRÜNTÜLEME TEKNİKLERİ",
+        "TIBBİ LABORATUVAR TEKNİKLERİ"
+      ]
+    }
+  ]
+}

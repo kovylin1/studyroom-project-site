@@ -3,13 +3,14 @@
   "name": "Federation University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/federation-university",
-  "scrapedAt": "2026-07-22T15:42:52.208Z",
+  "scrapedAt": "2026-08-23T13:11:39.839Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "federation-university",
   "country": "Australia",
-  "matchMethod": "as-is/exact-slug",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -214,6 +215,29 @@
       "courseRefId": "federation-university|bachelor-of-information-technology-business-analysis"
     },
     {
+      "title": "Bachelor of Digital Transformation (IT)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 41400,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2026",
+        "March 2026",
+        "November 2026",
+        "July 2027",
+        "March 2027",
+        "November 2027"
+      ],
+      "campuses": [
+        "Melbourne Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/federation-university",
+      "courseRefId": "federation-university|bachelor-of-digital-transformation-it"
+    },
+    {
       "title": "Bachelor of Engineering (Mining) (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -258,29 +282,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/federation-university",
       "courseRefId": "federation-university|bachelor-of-nursing"
-    },
-    {
-      "title": "Bachelor of Digital Transformation (IT)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 41400,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2026",
-        "March 2026",
-        "November 2026",
-        "July 2027",
-        "March 2027",
-        "November 2027"
-      ],
-      "campuses": [
-        "Melbourne Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/federation-university",
-      "courseRefId": "federation-university|bachelor-of-digital-transformation-it"
     },
     {
       "title": "Bachelor of Business (Accounting)",
@@ -539,11 +540,11 @@
       "courseRefId": "federation-university|master-of-forensic-cyber-security"
     },
     {
-      "title": "Bachelor of Engineering (Civil) (Honours)",
+      "title": "Bachelor of Education (Early Childhood Education)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 43500,
+      "duration": "36 Months",
+      "tuition": 31800,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -553,11 +554,11 @@
         "March 2027"
       ],
       "campuses": [
-        "Mt Helen Campus"
+        "Berwick Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/federation-university",
-      "courseRefId": "federation-university|bachelor-of-engineering-civil-honours"
+      "courseRefId": "federation-university|bachelor-of-education-early-childhood-education"
     },
     {
       "title": "Bachelor of Psychological Science",
@@ -604,11 +605,11 @@
       "courseRefId": "federation-university|bachelor-of-psychological-science-honours"
     },
     {
-      "title": "Bachelor of Education (Early Childhood Education)",
+      "title": "Bachelor of Engineering (Civil) (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 31800,
+      "duration": "48 Months",
+      "tuition": 43500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -618,11 +619,11 @@
         "March 2027"
       ],
       "campuses": [
-        "Berwick Campus"
+        "Mt Helen Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/federation-university",
-      "courseRefId": "federation-university|bachelor-of-education-early-childhood-education"
+      "courseRefId": "federation-university|bachelor-of-engineering-civil-honours"
     },
     {
       "title": "Bachelor of Speech Pathology (Honours)",
@@ -688,6 +689,28 @@
       "courseRefId": "federation-university|master-of-teaching-early-childhood"
     },
     {
+      "title": "Bachelor of Education (Early Childhood and Primary)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 31800,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2026",
+        "March 2026",
+        "July 2027",
+        "March 2027"
+      ],
+      "campuses": [
+        "Berwick Campus",
+        "Mt Helen Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/federation-university",
+      "courseRefId": "federation-university|bachelor-of-education-early-childhood-and-primary"
+    },
+    {
       "title": "Bachelor of Science in Environmental Restoration",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -711,28 +734,6 @@
       "courseRefId": "federation-university|bachelor-of-science-in-environmental-restoration"
     },
     {
-      "title": "Bachelor of Education (Early Childhood and Primary)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 31800,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2026",
-        "March 2026",
-        "July 2027",
-        "March 2027"
-      ],
-      "campuses": [
-        "Berwick Campus",
-        "Mt Helen Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/federation-university",
-      "courseRefId": "federation-university|bachelor-of-education-early-childhood-and-primary"
-    },
-    {
       "title": "Master of Social Work (Qualifying)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -754,52 +755,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/federation-university",
       "courseRefId": "federation-university|master-of-social-work-qualifying"
-    },
-    {
-      "title": "Bachelor of Science in Laboratory Bioscience",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 38900,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2026",
-        "March 2026",
-        "July 2027",
-        "March 2027"
-      ],
-      "campuses": [
-        "Berwick Campus",
-        "Gippsland Campus",
-        "Mt Helen Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/federation-university",
-      "courseRefId": "federation-university|bachelor-of-science-in-laboratory-bioscience"
-    },
-    {
-      "title": "Bachelor of Science in Microbiology",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 38900,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2026",
-        "March 2026",
-        "July 2027",
-        "March 2027"
-      ],
-      "campuses": [
-        "Berwick Campus",
-        "Gippsland Campus",
-        "Mt Helen Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/federation-university",
-      "courseRefId": "federation-university|bachelor-of-science-in-microbiology"
     },
     {
       "title": "Bachelor of Physiotherapy",
@@ -911,6 +866,52 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/federation-university",
       "courseRefId": "federation-university|bachelor-of-science-in-ecology"
+    },
+    {
+      "title": "Bachelor of Science in Laboratory Bioscience",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 38900,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2026",
+        "March 2026",
+        "July 2027",
+        "March 2027"
+      ],
+      "campuses": [
+        "Berwick Campus",
+        "Gippsland Campus",
+        "Mt Helen Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/federation-university",
+      "courseRefId": "federation-university|bachelor-of-science-in-laboratory-bioscience"
+    },
+    {
+      "title": "Bachelor of Science in Microbiology",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 38900,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2026",
+        "March 2026",
+        "July 2027",
+        "March 2027"
+      ],
+      "campuses": [
+        "Berwick Campus",
+        "Gippsland Campus",
+        "Mt Helen Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/federation-university",
+      "courseRefId": "federation-university|bachelor-of-science-in-microbiology"
     },
     {
       "title": "Graduate Diploma of Mining",

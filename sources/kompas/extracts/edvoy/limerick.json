@@ -3,12 +3,13 @@
   "name": "University of Limerick",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-  "scrapedAt": "2026-07-22T15:42:52.506Z",
+  "scrapedAt": "2026-08-23T13:11:40.088Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-limerick",
   "country": "Ireland",
+  "city": null,
   "matchMethod": "as-is/exact-name",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
@@ -54,6 +55,26 @@
       "courseRefId": "university-of-limerick|graddip-devops-and-continuous-software-engineering"
     },
     {
+      "title": "MSc Software Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 20800,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-software-engineering"
+    },
+    {
       "title": "MSc Data Science and Statistical Learning",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -72,26 +93,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
       "courseRefId": "university-of-limerick|msc-data-science-and-statistical-learning"
-    },
-    {
-      "title": "MSc Software Development: International Systems,",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 15044,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-software-development-international-systems"
     },
     {
       "title": "MSc Artificial Intelligence & Machine Learning",
@@ -114,6 +115,26 @@
       "courseRefId": "university-of-limerick|msc-artificial-intelligence-machine-learning"
     },
     {
+      "title": "MSc Software Development: International Systems,",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 15044,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-software-development-international-systems"
+    },
+    {
       "title": "MEng Computer Vision and Artificial Intelligence",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -122,8 +143,8 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2025",
         "September 2026",
+        "September 2025",
         "September 2024"
       ],
       "campuses": [
@@ -194,26 +215,6 @@
       "courseRefId": "university-of-limerick|bachelor-master-of-science-in-artificial-intelligence-and-machine-learning"
     },
     {
-      "title": "MSc Design for Health and Wellbeing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 15044,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-design-for-health-and-wellbeing"
-    },
-    {
       "title": "MA Technical Communication & E-Learning",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -232,6 +233,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
       "courseRefId": "university-of-limerick|ma-technical-communication-e-learning"
+    },
+    {
+      "title": "MSc Design for Health and Wellbeing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 15044,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-design-for-health-and-wellbeing"
     },
     {
       "title": "MSc Nursing",
@@ -254,7 +275,7 @@
       "courseRefId": "university-of-limerick|msc-nursing"
     },
     {
-      "title": "MSc Nursing (Dementia Care)",
+      "title": "MSc Nursing (Perioperative Care)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -271,27 +292,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-nursing-dementia-care"
-    },
-    {
-      "title": "MSc Nursing (Older Person)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 11734,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-nursing-older-person"
+      "courseRefId": "university-of-limerick|msc-nursing-perioperative-care"
     },
     {
       "title": "MSc Nursing (Palliative Care)",
@@ -314,7 +315,7 @@
       "courseRefId": "university-of-limerick|msc-nursing-palliative-care"
     },
     {
-      "title": "MSc Nursing (Perioperative Care)",
+      "title": "MSc Nursing (Respiratory Care)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -331,7 +332,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-nursing-perioperative-care"
+      "courseRefId": "university-of-limerick|msc-nursing-respiratory-care"
     },
     {
       "title": "MSc Nursing (Psychosocial Interventions in Mental Health Care)",
@@ -354,7 +355,7 @@
       "courseRefId": "university-of-limerick|msc-nursing-psychosocial-interventions-in-mental-health-care"
     },
     {
-      "title": "MSc Nursing (Respiratory Care)",
+      "title": "MSc Nursing (Older Person)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
@@ -371,7 +372,27 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-nursing-respiratory-care"
+      "courseRefId": "university-of-limerick|msc-nursing-older-person"
+    },
+    {
+      "title": "MSc Nursing (Dementia Care)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 11734,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-nursing-dementia-care"
     },
     {
       "title": "Postgraduate Diploma Economics and Public Policy",
@@ -514,6 +535,26 @@
       "courseRefId": "university-of-limerick|bachelor-master-of-engineering-in-mechanical-engineering-engineering-common-entry"
     },
     {
+      "title": "BA Economics",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 12514,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ba-economics"
+    },
+    {
       "title": "MSc Project Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -532,26 +573,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
       "courseRefId": "university-of-limerick|msc-project-management"
-    },
-    {
-      "title": "Bachelor of Engineering in Biomedical Engineering - Engineering (Common Entry)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16794,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|bachelor-of-engineering-in-biomedical-engineering-engineering-common-entry"
     },
     {
       "title": "GradDip Public Administration",
@@ -574,11 +595,11 @@
       "courseRefId": "university-of-limerick|graddip-public-administration"
     },
     {
-      "title": "BA Economics",
+      "title": "Bachelor of Engineering in Biomedical Engineering - Engineering (Common Entry)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 12514,
+      "tuition": 16794,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -591,7 +612,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ba-economics"
+      "courseRefId": "university-of-limerick|bachelor-of-engineering-in-biomedical-engineering-engineering-common-entry"
     },
     {
       "title": "Bachelor of Science Computer Games Development - Computer Science Common Entry",
@@ -614,11 +635,11 @@
       "courseRefId": "university-of-limerick|bachelor-of-science-computer-games-development-computer-science-common-entry"
     },
     {
-      "title": "MSc Psychological Science (Psychology)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 12596,
+      "title": "BA Geography",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 12514,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -631,67 +652,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-psychological-science-psychology"
-    },
-    {
-      "title": "MSc Civil Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 20100,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-civil-engineering"
-    },
-    {
-      "title": "MSc Human Resource Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 14512,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-human-resource-management"
-    },
-    {
-      "title": "MSc Work & Organisational Psychology/Work & Organisational Behaviour",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 14512,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-work-organisational-psychology-work-organisational-behaviour"
+      "courseRefId": "university-of-limerick|ba-geography"
     },
     {
       "title": "Bachelor of Engineering in Design and Manufacture - Engineering (Common Entry)",
@@ -734,6 +695,46 @@
       "courseRefId": "university-of-limerick|bachelor-of-science-in-applied-physics-physics-common-entry"
     },
     {
+      "title": "MSc Human Resource Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 14512,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-human-resource-management"
+    },
+    {
+      "title": "MSc Civil Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 20100,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-civil-engineering"
+    },
+    {
       "title": "MSc Applied Physics",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -752,26 +753,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
       "courseRefId": "university-of-limerick|msc-applied-physics"
-    },
-    {
-      "title": "BE/MEng in Civil Engineering - Engineering (Common Entry)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 20900,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|be-meng-in-civil-engineering-engineering-common-entry"
     },
     {
       "title": "GradDip Chemical Engineering",
@@ -794,11 +775,11 @@
       "courseRefId": "university-of-limerick|graddip-chemical-engineering"
     },
     {
-      "title": "BA Geography",
-      "level": "bachelor",
+      "title": "BE/MEng in Civil Engineering - Engineering (Common Entry)",
+      "level": "master",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 12514,
+      "tuition": 20900,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -811,7 +792,47 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ba-geography"
+      "courseRefId": "university-of-limerick|be-meng-in-civil-engineering-engineering-common-entry"
+    },
+    {
+      "title": "MSc Psychological Science (Psychology)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 12596,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-psychological-science-psychology"
+    },
+    {
+      "title": "MSc Work & Organisational Psychology/Work & Organisational Behaviour",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 14512,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-work-organisational-psychology-work-organisational-behaviour"
     },
     {
       "title": "MSc Energy Science and Engineering",
@@ -823,8 +844,8 @@
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2024",
-        "September 2025",
-        "September 2026"
+        "September 2026",
+        "September 2025"
       ],
       "campuses": [
         "Limerick Campus"
@@ -929,6 +950,46 @@
       "courseRefId": "university-of-limerick|bachelor-of-laws-in-law-and-cyber-security"
     },
     {
+      "title": "MA Songwriting",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 13140,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-songwriting"
+    },
+    {
+      "title": "BA Digital Culture and Communications",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 12514,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ba-digital-culture-and-communications"
+    },
+    {
       "title": "MSc Sport, Exercise and Performance Psychology",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -973,46 +1034,6 @@
       "courseRefId": "university-of-limerick|msc-sports-performance"
     },
     {
-      "title": "MA Songwriting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13140,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-songwriting"
-    },
-    {
-      "title": "BA Digital Culture and Communications",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 12514,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ba-digital-culture-and-communications"
-    },
-    {
       "title": "Bachelor of Laws (Law Plus)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1030,26 +1051,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
       "courseRefId": "university-of-limerick|bachelor-of-laws-law-plus"
-    },
-    {
-      "title": "MSc Economics & Policy Analysis",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 14228,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-economics-policy-analysis"
     },
     {
       "title": "BA Public Administration and Leadership",
@@ -1072,6 +1073,26 @@
       "courseRefId": "university-of-limerick|ba-public-administration-and-leadership"
     },
     {
+      "title": "Bachelor of Science in Economics and Mathematics - Mathematics (Common Entry)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16794,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|bachelor-of-science-in-economics-and-mathematics-mathematics-common-entry"
+    },
+    {
       "title": "MSc Biomedical Device Materials",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1092,11 +1113,11 @@
       "courseRefId": "university-of-limerick|msc-biomedical-device-materials"
     },
     {
-      "title": "Bachelor of Science in Economics and Mathematics - Mathematics (Common Entry)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16794,
+      "title": "MSc Economics & Policy Analysis",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 14228,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1109,7 +1130,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|bachelor-of-science-in-economics-and-mathematics-mathematics-common-entry"
+      "courseRefId": "university-of-limerick|msc-economics-policy-analysis"
     },
     {
       "title": "Bachelor of Science in Cyber Security and IT Forensics",
@@ -1159,7 +1180,8 @@
       "intake": [
         "September 2024",
         "September 2025",
-        "September 2026"
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "Limerick Campus"
@@ -1167,26 +1189,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
       "courseRefId": "university-of-limerick|bachelor-of-science-in-bioscience-biological-and-chemical-sciences-common-entry"
-    },
-    {
-      "title": "MA Politics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13140,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-politics"
     },
     {
       "title": "Bachelor of Science in Environmental Science - Biological and Chemical Sciences (Common Entry)",
@@ -1227,6 +1229,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
       "courseRefId": "university-of-limerick|bachelor-of-science-in-mathematics-and-physics-mathematics-common-entry"
+    },
+    {
+      "title": "MA Politics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 13140,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-politics"
     },
     {
       "title": "Bachelor/Master of Engineering in Electrical Engineering",
@@ -1347,406 +1369,6 @@
       "courseRefId": "university-of-limerick|ba-politics-and-international-relations"
     },
     {
-      "title": "MSc Mathematical Modelling",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 15044,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-mathematical-modelling"
-    },
-    {
-      "title": "MSc Perinatal Mental Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 11734,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-perinatal-mental-health"
-    },
-    {
-      "title": "MSc Public Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 12240,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2024",
-        "August 2025",
-        "August 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-public-health"
-    },
-    {
-      "title": "MA International Studies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13140,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-international-studies"
-    },
-    {
-      "title": "MA Irish Traditional Music Performance",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13140,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-irish-traditional-music-performance"
-    },
-    {
-      "title": "MA Music Therapy",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 11508,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-music-therapy"
-    },
-    {
-      "title": "MSc Human Nutrition and Dietetics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 18540,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-human-nutrition-and-dietetics"
-    },
-    {
-      "title": "MSc Infection Prevention and Control Leadership",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 11966,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-infection-prevention-and-control-leadership"
-    },
-    {
-      "title": "MA Applied Linguistics (International)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13140,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-applied-linguistics-international"
-    },
-    {
-      "title": "MA Classical String Performance",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 11508,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-classical-string-performance"
-    },
-    {
-      "title": "MA Community Music",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13140,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-community-music"
-    },
-    {
-      "title": "MA Community Research",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13140,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-community-research"
-    },
-    {
-      "title": "MA Composition and Creative Music Practice",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13140,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-composition-and-creative-music-practice"
-    },
-    {
-      "title": "MSc Risk Management and Insurance",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 14512,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-risk-management-and-insurance"
-    },
-    {
-      "title": "BA Spanish",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 12514,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ba-spanish"
-    },
-    {
-      "title": "MSc Aeronautical Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 15044,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|msc-aeronautical-engineering"
-    },
-    {
-      "title": "MA Peace and Development Studies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13140,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-peace-and-development-studies"
-    },
-    {
-      "title": "MA Ritual Chant & Song",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13142,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-ritual-chant-song"
-    },
-    {
-      "title": "MA Sociology (Youth, Community & Social Regeneration)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13140,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-sociology-youth-community-social-regeneration"
-    },
-    {
-      "title": "MA Creative Writing",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 13140,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-creative-writing"
-    },
-    {
       "title": "MA Dance Performance",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1807,6 +1429,46 @@
       "courseRefId": "university-of-limerick|ma-ethnochoreology"
     },
     {
+      "title": "MA History of Family",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 8590,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-history-of-family"
+    },
+    {
+      "title": "MA Creative Writing",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 13140,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-creative-writing"
+    },
+    {
       "title": "MA Ethnomusicology",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -1827,7 +1489,7 @@
       "courseRefId": "university-of-limerick|ma-ethnomusicology"
     },
     {
-      "title": "MA Gaeilge",
+      "title": "MA International Studies",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -1844,7 +1506,27 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-gaeilge"
+      "courseRefId": "university-of-limerick|ma-international-studies"
+    },
+    {
+      "title": "MA Irish Traditional Music Performance",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 13140,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-irish-traditional-music-performance"
     },
     {
       "title": "MA History",
@@ -1867,11 +1549,11 @@
       "courseRefId": "university-of-limerick|ma-history"
     },
     {
-      "title": "MA History of Family",
+      "title": "MA Gaeilge",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 8590,
+      "tuition": 13140,
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1884,27 +1566,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ma-history-of-family"
-    },
-    {
-      "title": "Bachelor of Science in Mathematical Sciences - Mathematics (Common Entry)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 16794,
-      "currency": "EUR",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Limerick Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|bachelor-of-science-in-mathematical-sciences-mathematics-common-entry"
+      "courseRefId": "university-of-limerick|ma-gaeilge"
     },
     {
       "title": "BA French",
@@ -1927,7 +1589,67 @@
       "courseRefId": "university-of-limerick|ba-french"
     },
     {
-      "title": "BA Linguistics with TESOL",
+      "title": "MSc Infection Prevention and Control Leadership",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 11966,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-infection-prevention-and-control-leadership"
+    },
+    {
+      "title": "MSc Perinatal Mental Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 11734,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-perinatal-mental-health"
+    },
+    {
+      "title": "MSc Risk Management and Insurance",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 14512,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-risk-management-and-insurance"
+    },
+    {
+      "title": "BA Spanish",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -1944,7 +1666,247 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
-      "courseRefId": "university-of-limerick|ba-linguistics-with-tesol"
+      "courseRefId": "university-of-limerick|ba-spanish"
+    },
+    {
+      "title": "Bachelor of Science in Mathematical Sciences - Mathematics (Common Entry)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 16794,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|bachelor-of-science-in-mathematical-sciences-mathematics-common-entry"
+    },
+    {
+      "title": "MSc Aeronautical Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 15044,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-aeronautical-engineering"
+    },
+    {
+      "title": "MA Community Research",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 13140,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-community-research"
+    },
+    {
+      "title": "MA Classical String Performance",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 11508,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-classical-string-performance"
+    },
+    {
+      "title": "MA Applied Linguistics (International)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 13140,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-applied-linguistics-international"
+    },
+    {
+      "title": "MA Community Music",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 13140,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-community-music"
+    },
+    {
+      "title": "MA Music Therapy",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 11508,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-music-therapy"
+    },
+    {
+      "title": "MA Ritual Chant & Song",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 13142,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-ritual-chant-song"
+    },
+    {
+      "title": "MA Sociology (Youth, Community & Social Regeneration)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 13140,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-sociology-youth-community-social-regeneration"
+    },
+    {
+      "title": "MA Peace and Development Studies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 13140,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-peace-and-development-studies"
+    },
+    {
+      "title": "MA Composition and Creative Music Practice",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 13140,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ma-composition-and-creative-music-practice"
+    },
+    {
+      "title": "MSc Human Nutrition and Dietetics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 18540,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-human-nutrition-and-dietetics"
     },
     {
       "title": "BA Mathematics",
@@ -1965,6 +1927,46 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
       "courseRefId": "university-of-limerick|ba-mathematics"
+    },
+    {
+      "title": "BA Linguistics with TESOL",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 12514,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|ba-linguistics-with-tesol"
+    },
+    {
+      "title": "MSc Mathematical Modelling",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 15044,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Limerick Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-limerick",
+      "courseRefId": "university-of-limerick|msc-mathematical-modelling"
     },
     {
       "title": "BSc in Speech and Language Therapy",

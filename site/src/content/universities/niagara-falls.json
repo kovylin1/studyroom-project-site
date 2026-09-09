@@ -96,7 +96,8 @@
         "May"
       ],
       "programUrl": "https://unfc.ca/programs/",
-      "programType": "pathway"
+      "programType": "pathway",
+      "tuitionCurrency": "GBP"
     },
     {
       "slug": "niagara-falls-master-of-health-care-management-mhcm-online-on-campus",
@@ -720,31 +721,6 @@
       "kompasCheckedAt": "2026-07-24"
     },
     {
-      "slug": "niagara-falls-what-is-an-honours-bachelor-of-business-administration-degree-bachelor",
-      "title": "What is an Honours Bachelor of Business Administration degree?",
-      "durationYears": 3,
-      "level": "bachelor",
-      "source": "official",
-      "verifiedBySite": true,
-      "checkedAt": "2026-05-31",
-      "faculty": "Бизнес",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "niagara-falls-what-courses-do-i-need-to-qualify-for-admission-to-the-honours-bachelor-of-business-ad",
-      "title": "What courses do I need to qualify for admission to the Honours Bachelor of Business Administration program?",
-      "durationYears": 3,
-      "level": "bachelor",
-      "source": "official",
-      "verifiedBySite": true,
-      "checkedAt": "2026-05-31",
-      "faculty": "Бизнес",
-      "programType": "pathway",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
       "slug": "niagara-falls-will-i-gain-practical-experience-in-the-honours-bachelor-of-business-administration-ba",
       "title": "Will I gain practical experience in the Honours Bachelor of Business Administration?",
       "durationYears": 3,
@@ -753,42 +729,6 @@
       "verifiedBySite": true,
       "checkedAt": "2026-05-31",
       "faculty": "Бизнес",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "niagara-falls-what-is-an-honours-bachelor-of-science-in-biomedical-sciences-degree-bachelor",
-      "title": "What is an Honours Bachelor of Science in Biomedical Sciences degree?",
-      "durationYears": 3,
-      "level": "bachelor",
-      "source": "official",
-      "verifiedBySite": true,
-      "checkedAt": "2026-05-31",
-      "faculty": "Здоровье и медицина",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "niagara-falls-what-research-opportunities-are-available-in-the-honours-bachelor-of-sciences-in-biome",
-      "title": "What research opportunities are available in the Honours Bachelor of Sciences in Biomedical Sciences program?",
-      "durationYears": 3,
-      "level": "bachelor",
-      "source": "official",
-      "verifiedBySite": true,
-      "checkedAt": "2026-05-31",
-      "faculty": "Здоровье и медицина",
-      "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-07-24"
-    },
-    {
-      "slug": "niagara-falls-what-is-the-honours-bachelor-of-science-in-bioveterinary-science-bachelor",
-      "title": "What is the Honours Bachelor of Science in Bioveterinary Science?",
-      "durationYears": 3,
-      "level": "bachelor",
-      "source": "official",
-      "verifiedBySite": true,
-      "checkedAt": "2026-05-31",
-      "faculty": "Здоровье и медицина",
       "kompasStatus": "catalog-only",
       "kompasCheckedAt": "2026-07-24"
     },
@@ -819,6 +759,50 @@
       "faculty": "Подготовка (Foundation)",
       "kompasStatus": "catalog-only",
       "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "honours-bachelor-of-science-biomedical-sciences",
+      "title": "Honours Bachelor of Science - Biomedical Sciences",
+      "level": "bachelor",
+      "source": "iapro",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "faculty": "Здоровье и медицина"
+    },
+    {
+      "slug": "master-of-arts-in-digital-media-and-global-communication",
+      "title": "Master of Arts in Digital Media and Global Communication",
+      "level": "master",
+      "source": "iapro",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "master-of-arts-applied-social-psychology",
+      "title": "Master of Arts: Applied Social Psychology",
+      "level": "master",
+      "source": "iapro",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "faculty": "Социальные науки"
+    },
+    {
+      "slug": "master-of-computer-science-applied-artificial-intelligence",
+      "title": "Master of Computer Science: Applied Artificial Intelligence",
+      "level": "master",
+      "source": "iapro",
+      "verifiedBySite": false,
+      "confidence": 0.6,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-23",
+      "faculty": "Инженерия и IT"
     }
   ],
   "tuition": {
@@ -829,7 +813,7 @@
       "niagara-falls-hospitality": 20000,
       "niagara-falls-health-sciences": 22000,
       "niagara-falls-mba": 28000,
-      "niagara-falls-eap": 8000,
+      "niagara-falls-eap": 3500,
       "niagara-falls-master-of-data-analytics": 32000,
       "niagara-falls-master-of-management": 28500,
       "niagara-falls-bba-hons-bachelor-of-business-administration": 20010,
@@ -1069,11 +1053,13 @@
   "partnerSource": {
     "type": "aggregator",
     "via": [
-      "qs",
-      "edvoy"
+      "qs"
     ]
   },
   "mergedFrom": [
     "university-of-niagara-falls"
-  ]
+  ],
+  "officialUrl": "https://unfc.ca",
+  "officialUrlSource": "выгрузки: 69 ссылок на unfc.ca",
+  "officialUrlCheckedAt": "2026-09-09"
 }

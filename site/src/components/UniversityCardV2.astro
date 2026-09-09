@@ -6,6 +6,7 @@ import { CURRENCY_TO_KZT, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
 import { ruSynonymsFor } from '~/scripts/search-synonyms';
 import { fieldsFor, fieldSearchTokens } from '~/scripts/fields';
 import { useTranslations, localizeUrl, type Locale } from '~/i18n/utils';
+import { annualTuitionValues } from '../lib/tuition';
 
 interface Props {
   locale?: Locale;
@@ -17,7 +18,7 @@ const { locale = 'ru', data, whatsAppDeepLinkTemplate } = Astro.props;
 
 const t = useTranslations(locale);
 
-const tuitionValuesAll = Object.values(data.tuition.byProgram).filter((v) => v > 0);
+const tuitionValuesAll = annualTuitionValues(data.tuition, data.programs);
 const tuitionMinGbp = tuitionValuesAll.length ? Math.min(...tuitionValuesAll) : 0;
 const tuitionMaxGbp = tuitionValuesAll.length ? Math.max(...tuitionValuesAll) : 0;
 const rate = CURRENCY_TO_KZT[data.tuition.currency] ?? DEFAULT_KZT_RATE;

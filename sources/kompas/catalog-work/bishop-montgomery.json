@@ -9,14 +9,18 @@
       "title": "High School Diploma",
       "durationYears": 4,
       "level": "high-school",
-      "programType": "degree"
+      "programType": "degree",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-08-15"
     },
     {
       "slug": "bishop-montgomery-ap-program",
       "title": "Advanced Placement (AP) Program",
       "durationYears": 4,
       "level": "high-school",
-      "programType": "degree"
+      "programType": "degree",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-08-15"
     },
     {
       "slug": "bishop-montgomery-steam-pathway",
@@ -24,12 +28,85 @@
       "durationYears": 4,
       "level": "high-school",
       "programType": "degree",
+      "faculty": "Подготовка (Foundation)",
+      "kompasStatus": "catalog-only",
+      "kompasCheckedAt": "2026-08-15"
+    },
+    {
+      "slug": "bishop-montgomery-arts-media-entertainment-pathway",
+      "title": "Arts, Media & Entertainment Pathway",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Подготовка (Foundation)"
+    },
+    {
+      "slug": "bishop-montgomery-engineering-pathway",
+      "title": "Engineering Pathway",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Подготовка (Foundation)"
+    },
+    {
+      "slug": "bishop-montgomery-legal-pathway",
+      "title": "Legal Pathway",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Подготовка (Foundation)"
+    },
+    {
+      "slug": "bishop-montgomery-social-justice-advocacy-pathway",
+      "title": "Social Justice & Advocacy Pathway",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
+      "faculty": "Подготовка (Foundation)"
+    },
+    {
+      "slug": "bishop-montgomery-sports-medicine-pathway",
+      "title": "Sports Medicine Pathway",
+      "durationYears": 1,
+      "level": "foundation",
+      "language": "en",
+      "programType": "pathway",
+      "source": "qs",
+      "confidence": 0.4,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-08-15",
       "faculty": "Подготовка (Foundation)"
     }
   ],
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "bishop-montgomery-arts-media-entertainment-pathway": 20000,
+      "bishop-montgomery-engineering-pathway": 20000,
+      "bishop-montgomery-legal-pathway": 20000,
+      "bishop-montgomery-social-justice-advocacy-pathway": 20000,
+      "bishop-montgomery-sports-medicine-pathway": 20000
+    }
   },
   "deadlines": {},
   "requirements": {

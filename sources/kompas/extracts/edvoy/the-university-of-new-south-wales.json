@@ -3,13 +3,14 @@
   "name": "The University of New South Wales",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-  "scrapedAt": "2026-07-22T15:42:52.417Z",
+  "scrapedAt": "2026-08-23T13:11:40.004Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "the-university-of-new-south-wales",
   "country": "Australia",
-  "matchMethod": "as-is/exact-name",
+  "city": null,
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
   "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
@@ -112,88 +113,6 @@
       "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-data-science-and-decisions"
     },
     {
-      "title": "AGSM Master of Business Administration",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 86760,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|agsm-master-of-business-administration"
-    },
-    {
-      "title": "Master of International Business",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 62000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "May 2025",
-        "May 2024",
-        "September 2024",
-        "February 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Main Campus",
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-international-business"
-    },
-    {
-      "title": "Master of Commerce",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "19 Months",
-      "tuition": 62000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "February 2025",
-        "February 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-commerce"
-    },
-    {
       "title": "Graduate Certificate in Commerce",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -272,15 +191,47 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-master-of-commerce"
     },
     {
-      "title": "Master of Health Leadership and Management",
+      "title": "Master of Commerce",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 60500,
+      "duration": "19 Months",
+      "tuition": 62000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "September 2025",
+        "September 2024",
+        "February 2025",
+        "February 2024",
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-commerce"
+    },
+    {
+      "title": "Master of International Business",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 62000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2025",
+        "February 2025",
+        "May 2024",
         "September 2024",
         "February 2024",
         "February 2026",
@@ -299,7 +250,27 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-health-leadership-and-management"
+      "courseRefId": "the-university-of-new-south-wales|master-of-international-business"
+    },
+    {
+      "title": "AGSM Master of Business Administration",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 86760,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|agsm-master-of-business-administration"
     },
     {
       "title": "Master of Information Technology/Master of Commerce",
@@ -310,8 +281,8 @@
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2025",
         "February 2026",
+        "February 2025",
         "July 2025",
         "July 2026",
         "July 2024",
@@ -331,110 +302,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|master-of-information-technology-master-of-commerce"
-    },
-    {
-      "title": "Master of Health Leadership and Management/Master of Public Health (Extension)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-health-leadership-and-management-master-of-public-health-extension"
-    },
-    {
-      "title": "Graduate Certificate in Business Analytics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "7 Months",
-      "tuition": 31000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-business-analytics"
-    },
-    {
-      "title": "Master of Health Leadership and Management/Master of Global Health (Extension)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 60500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-health-leadership-and-management-master-of-global-health-extension"
-    },
-    {
-      "title": "Master of Health Leadership and Management/Master of Public Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "19 Months",
-      "tuition": 60500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-health-leadership-and-management-master-of-public-health"
     },
     {
       "title": "Graduate Certificate in Health Leadership and Management",
@@ -567,10 +434,10 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-health-leadership-and-management-extension-master-of-public-health"
     },
     {
-      "title": "Master of Public Health",
+      "title": "Master of Health Leadership and Management/Master of Global Health (Extension)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "24 Months",
       "tuition": 60500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
@@ -590,24 +457,98 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-public-health"
+      "courseRefId": "the-university-of-new-south-wales|master-of-health-leadership-and-management-master-of-global-health-extension"
     },
     {
-      "title": "Master of Finance",
+      "title": "Master of Health Leadership and Management/Master of Public Health",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 62000,
+      "duration": "19 Months",
+      "tuition": 60500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "November 2025",
-        "November 2024",
-        "June 2025",
-        "February 2025",
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-health-leadership-and-management-master-of-public-health"
+    },
+    {
+      "title": "Master of Health Leadership and Management/Master of Public Health (Extension)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 60500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-health-leadership-and-management-master-of-public-health-extension"
+    },
+    {
+      "title": "Graduate Certificate in Business Analytics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "7 Months",
+      "tuition": 31000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-business-analytics"
+    },
+    {
+      "title": "Master of Health Leadership and Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 60500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
         "September 2025",
-        "June 2024",
         "September 2024",
+        "February 2024",
         "February 2026",
         "June 2026",
         "September 2026",
@@ -624,7 +565,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-finance"
+      "courseRefId": "the-university-of-new-south-wales|master-of-health-leadership-and-management"
     },
     {
       "title": "Master of Information Technology",
@@ -657,39 +598,18 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-information-technology"
     },
     {
-      "title": "Graduate Diploma in Health Data Science",
+      "title": "Master of Science in Health Data Science",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 51500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-health-data-science"
-    },
-    {
-      "title": "Master of Science in Health Data Science (Extension)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
+      "duration": "19 Months",
       "tuition": 52000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2026",
         "September 2026",
+        "September 2025",
+        "September 2024",
+        "February 2026",
         "February 2027",
         "September 2027",
         "February 2028",
@@ -700,14 +620,46 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-science-in-health-data-science-extension"
+      "courseRefId": "the-university-of-new-south-wales|master-of-science-in-health-data-science"
     },
     {
-      "title": "Graduate Certificate in Information Technology",
+      "title": "Master of Statistics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "19 Months",
+      "tuition": 60500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "May 2025",
+        "September 2026",
+        "May 2026",
+        "September 2025",
+        "February 2025",
+        "May 2024",
+        "September 2024",
+        "June 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-statistics"
+    },
+    {
+      "title": "Master of Public Health",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 63000,
+      "tuition": 60500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -726,7 +678,157 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-information-technology"
+      "courseRefId": "the-university-of-new-south-wales|master-of-public-health"
+    },
+    {
+      "title": "Graduate Certificate in Global Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "7 Months",
+      "tuition": 30500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-global-health"
+    },
+    {
+      "title": "Graduate Certificate in Public Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "7 Months",
+      "tuition": 30500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-public-health"
+    },
+    {
+      "title": "Graduate Diploma in Global Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "8 Months",
+      "tuition": 45500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-global-health"
+    },
+    {
+      "title": "Graduate Diploma in Public Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "7 Months",
+      "tuition": 45500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-public-health"
+    },
+    {
+      "title": "Master of Clinical Optometry",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 52500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-clinical-optometry"
+    },
+    {
+      "title": "Master of Global Health",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 60500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-global-health"
     },
     {
       "title": "Master of Global Health (Extension)",
@@ -882,135 +984,57 @@
       "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-health-data-science"
     },
     {
-      "title": "Graduate Certificate in Global Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "7 Months",
-      "tuition": 30500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-global-health"
-    },
-    {
-      "title": "Graduate Certificate in Public Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "7 Months",
-      "tuition": 30500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-public-health"
-    },
-    {
-      "title": "Graduate Diploma in Global Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "8 Months",
-      "tuition": 45500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-global-health"
-    },
-    {
-      "title": "Graduate Diploma in Public Health",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "7 Months",
-      "tuition": 45500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-public-health"
-    },
-    {
-      "title": "Master of Clinical Optometry",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 52500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-clinical-optometry"
-    },
-    {
-      "title": "Master of Global Health",
+      "title": "Graduate Diploma in Health Data Science",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 60500,
+      "tuition": 51500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-health-data-science"
+    },
+    {
+      "title": "Master of Science in Health Data Science (Extension)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 52000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-science-in-health-data-science-extension"
+    },
+    {
+      "title": "Graduate Certificate in Information Technology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 63000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -1029,7 +1053,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-global-health"
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-information-technology"
     },
     {
       "title": "Master of Financial Analysis",
@@ -1058,71 +1082,21 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-financial-analysis"
     },
     {
-      "title": "Master of Statistics",
+      "title": "Master of Finance",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "19 Months",
-      "tuition": 60500,
+      "duration": "12 Months",
+      "tuition": 62000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "November 2025",
+        "November 2024",
+        "June 2025",
         "February 2025",
-        "February 2026",
-        "May 2025",
-        "May 2026",
         "September 2025",
-        "September 2026",
-        "May 2024",
         "September 2024",
-        "June 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-statistics"
-    },
-    {
-      "title": "Master of Science in Health Data Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "19 Months",
-      "tuition": 52000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2024",
-        "February 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-science-in-health-data-science"
-    },
-    {
-      "title": "Bachelor of Advanced Computer Science (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 61000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
+        "June 2024",
         "February 2026",
         "June 2026",
         "September 2026",
@@ -1134,11 +1108,12 @@
         "September 2028"
       ],
       "campuses": [
+        "UNSW Main Campus",
         "kensington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-advanced-computer-science-honours"
+      "courseRefId": "the-university-of-new-south-wales|master-of-finance"
     },
     {
       "title": "Bachelor of Advanced Science (Honours)/Computer Science",
@@ -1323,6 +1298,32 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-science-science-computer-science"
     },
     {
+      "title": "Bachelor of Advanced Computer Science (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 61000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-advanced-computer-science-honours"
+    },
+    {
       "title": "Bachelor of Data Science and Decisions",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -1376,58 +1377,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-commerce-computer-science"
-    },
-    {
-      "title": "Bachelor of Commerce",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 56500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "February 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Main Campus",
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-commerce"
-    },
-    {
-      "title": "Bachelor of Cyber Security (Sydney)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 60000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028",
-        "July 2026"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-cyber-security-sydney"
     },
     {
       "title": "Bachelor of Commerce (Honours)",
@@ -1581,6 +1530,58 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-commerce"
+    },
+    {
+      "title": "Bachelor of Commerce",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 56500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "May 2024",
+        "February 2024",
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "UNSW Main Campus",
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-commerce"
+    },
+    {
+      "title": "Bachelor of Cyber Security (Sydney)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 60000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028",
+        "July 2026"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-cyber-security-sydney"
     },
     {
       "title": "Bachelor of Engineering (Honours) (Software)",
@@ -1850,17 +1851,24 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-commerce-design"
     },
     {
-      "title": "Master of Engineering Science (Telecommunications)",
+      "title": "Master of Engineering Science (Robotics)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "24 Months",
       "tuition": 61000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "May 2025",
+        "February 2025",
+        "May 2026",
         "February 2026",
-        "June 2026",
+        "September 2025",
         "September 2026",
+        "September 2024",
+        "May 2024",
+        "February 2024",
+        "June 2026",
         "February 2027",
         "June 2027",
         "September 2027",
@@ -1873,7 +1881,36 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-telecommunications"
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-robotics"
+    },
+    {
+      "title": "Master of Design",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2024",
+        "February 2026",
+        "June 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "UNSW Main Campus",
+        "UNSW Paddington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-design"
     },
     {
       "title": "Master of Taxation",
@@ -1902,160 +1939,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|master-of-taxation"
-    },
-    {
-      "title": "Graduate Certificate in Taxation",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "7 Months",
-      "tuition": 31000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-taxation"
-    },
-    {
-      "title": "Master of Professional Accounting (Extension)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 62000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-professional-accounting-extension"
-    },
-    {
-      "title": "Master of Engineering (Telecommunications)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 61000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "February 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Main Campus",
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-telecommunications"
-    },
-    {
-      "title": "Master of Laws",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 59000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "November 2025",
-        "November 2024",
-        "February 2025",
-        "February 2026",
-        "May 2025",
-        "May 2026",
-        "September 2025",
-        "September 2026",
-        "May 2024",
-        "September 2024",
-        "February 2024",
-        "June 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Main Campus",
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-laws"
-    },
-    {
-      "title": "Master of Professional Accounting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "21 Months",
-      "tuition": 62000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "February 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Main Campus",
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-professional-accounting"
     },
     {
       "title": "Master of City Planning",
@@ -2102,58 +1985,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|master-of-landscape-architecture"
-    },
-    {
-      "title": "Master of Interpreting",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "19 Months",
-      "tuition": 49500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-interpreting"
-    },
-    {
-      "title": "Master of Public Relations and Advertising",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 51000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-public-relations-and-advertising"
     },
     {
       "title": "Graduate Certificate in City Planning",
@@ -2223,6 +2054,84 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|master-of-architecture"
+    },
+    {
+      "title": "Master of Engineering Science (Telecommunications)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 61000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-telecommunications"
+    },
+    {
+      "title": "Master of Interpreting",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "19 Months",
+      "tuition": 49500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-interpreting"
+    },
+    {
+      "title": "Master of Public Relations and Advertising",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 51000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-public-relations-and-advertising"
     },
     {
       "title": "Graduate Certificate in Design",
@@ -2303,68 +2212,6 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-public-relations-and-advertising-master-of-design"
     },
     {
-      "title": "Master of Design",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2024",
-        "February 2026",
-        "June 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Main Campus",
-        "UNSW Paddington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-design"
-    },
-    {
-      "title": "Master of Engineering Science (Robotics)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 61000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "May 2025",
-        "May 2026",
-        "September 2025",
-        "September 2026",
-        "May 2024",
-        "September 2024",
-        "February 2024",
-        "June 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-robotics"
-    },
-    {
       "title": "Master of Engineering (Mechanical Engineering)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2389,6 +2236,160 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|master-of-engineering-mechanical-engineering"
+    },
+    {
+      "title": "Graduate Certificate in Taxation",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "7 Months",
+      "tuition": 31000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-taxation"
+    },
+    {
+      "title": "Master of Professional Accounting (Extension)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 62000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-professional-accounting-extension"
+    },
+    {
+      "title": "Master of Laws",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 59000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "November 2025",
+        "November 2024",
+        "May 2025",
+        "February 2025",
+        "September 2026",
+        "May 2026",
+        "September 2025",
+        "February 2026",
+        "May 2024",
+        "September 2024",
+        "February 2024",
+        "June 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "UNSW Main Campus",
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-laws"
+    },
+    {
+      "title": "Master of Professional Accounting",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "21 Months",
+      "tuition": 62000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "May 2025",
+        "September 2025",
+        "September 2024",
+        "May 2024",
+        "February 2024",
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "UNSW Main Campus",
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-professional-accounting"
+    },
+    {
+      "title": "Master of Engineering (Telecommunications)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 61000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "May 2025",
+        "September 2025",
+        "May 2024",
+        "September 2024",
+        "February 2024",
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "UNSW Main Campus",
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-telecommunications"
     },
     {
       "title": "Bachelor of Biotechnology (Honours)",
@@ -2469,26 +2470,6 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-commerce-economics"
     },
     {
-      "title": "Master of Financial Mathematics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "19 Months",
-      "tuition": 60500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-financial-mathematics"
-    },
-    {
       "title": "Graduate Certificate in Mathematics and Statistics",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -2538,22 +2519,42 @@
       "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-mathematics-and-statistics"
     },
     {
-      "title": "Bachelor of Engineering (Honours) (Telecommunications)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 61500,
+      "title": "Master of Financial Mathematics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "19 Months",
+      "tuition": 60500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
-        "June 2026",
-        "September 2026",
         "February 2027",
-        "June 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-financial-mathematics"
+    },
+    {
+      "title": "Bachelor of Architectural Studies",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 52000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "February 2026",
+        "September 2026",
+        "September 2025",
+        "September 2024",
+        "February 2027",
         "September 2027",
         "February 2028",
-        "June 2028",
         "September 2028"
       ],
       "campuses": [
@@ -2561,7 +2562,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-telecommunications"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-architectural-studies"
     },
     {
       "title": "Bachelor of Engineering (Honours) (Mechanical Engineering)",
@@ -2588,72 +2589,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-mechanical-engineering"
-    },
-    {
-      "title": "Bachelor of Information Systems",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 56500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-information-systems"
-    },
-    {
-      "title": "Bachelor of Advanced Science (Honours)/Law",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "72 Months",
-      "tuition": 57000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-advanced-science-honours-law"
-    },
-    {
-      "title": "Bachelor of Arts/Law",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 52500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-arts-law"
     },
     {
       "title": "Bachelor of City Planning (Honours)/Law",
@@ -2700,6 +2635,141 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-bioinformatics"
+    },
+    {
+      "title": "Bachelor of Architectural Studies (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 52000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-architectural-studies-honours"
+    },
+    {
+      "title": "Bachelor of City Planning (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 51000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-city-planning-honours"
+    },
+    {
+      "title": "Bachelor of Interior Architecture (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 51000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-interior-architecture-honours"
+    },
+    {
+      "title": "Bachelor of Landscape Architecture (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 50500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-landscape-architecture-honours"
+    },
+    {
+      "title": "Bachelor of Information Systems",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 56500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-information-systems"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours) (Telecommunications)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 61500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-telecommunications"
     },
     {
       "title": "Bachelor of Media",
@@ -2814,89 +2884,6 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-media-law"
     },
     {
-      "title": "Bachelor of Architectural Studies (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 52000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-architectural-studies-honours"
-    },
-    {
-      "title": "Bachelor of City Planning (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 51000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-city-planning-honours"
-    },
-    {
-      "title": "Bachelor of Interior Architecture (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 51000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-interior-architecture-honours"
-    },
-    {
-      "title": "Bachelor of Landscape Architecture (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 50500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-landscape-architecture-honours"
-    },
-    {
       "title": "Bachelor of Computational Design (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -2963,30 +2950,44 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-design-media"
     },
     {
-      "title": "Bachelor of Architectural Studies",
+      "title": "Bachelor of Advanced Science (Honours)/Law",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 52000,
+      "duration": "72 Months",
+      "tuition": 57000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2025",
         "February 2026",
-        "September 2025",
-        "September 2026",
-        "September 2024",
         "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
+        "February 2028"
       ],
       "campuses": [
         "kensington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-architectural-studies"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-advanced-science-honours-law"
+    },
+    {
+      "title": "Bachelor of Arts/Law",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 52500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-arts-law"
     },
     {
       "title": "Bachelor of Engineering (Honours)/Law",
@@ -3075,19 +3076,22 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-science-advanced-mathematics-honours-science-computer-science"
     },
     {
-      "title": "Bachelor of Commerce/Education (Secondary)",
+      "title": "Bachelor of Science (Advanced Mathematics) (Honours)/Commerce",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 55000,
+      "duration": "60 Months",
+      "tuition": 59500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
+        "June 2026",
         "September 2026",
         "February 2027",
+        "June 2027",
         "September 2027",
         "February 2028",
+        "June 2028",
         "September 2028"
       ],
       "campuses": [
@@ -3095,7 +3099,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-commerce-education-secondary"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-science-advanced-mathematics-honours-commerce"
     },
     {
       "title": "Bachelor of Actuarial Studies/Commerce",
@@ -3124,11 +3128,34 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-actuarial-studies-commerce"
     },
     {
-      "title": "Bachelor of Science (Advanced Mathematics) (Honours)/Commerce",
+      "title": "Bachelor of Commerce/Education (Secondary)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 59500,
+      "duration": "48 Months",
+      "tuition": 55000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-commerce-education-secondary"
+    },
+    {
+      "title": "Master of Engineering (Biomedical Engineering)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 61000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3147,7 +3174,66 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-science-advanced-mathematics-honours-commerce"
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-biomedical-engineering"
+    },
+    {
+      "title": "Master of Engineering Science (Biomedical Engineering)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 61000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-biomedical-engineering"
+    },
+    {
+      "title": "Master of Engineering (Electrical Engineering)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 61000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "May 2025",
+        "May 2026",
+        "September 2025",
+        "February 2025",
+        "September 2026",
+        "May 2024",
+        "September 2024",
+        "February 2024",
+        "June 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-electrical-engineering"
     },
     {
       "title": "Master of Engineering Science (Project Management)",
@@ -3176,72 +3262,6 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-project-management"
     },
     {
-      "title": "Master of Journalism and Communication",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 50000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "February 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Main Campus",
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-journalism-and-communication"
-    },
-    {
-      "title": "Master of Engineering (Electrical Engineering)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 61000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "May 2025",
-        "May 2026",
-        "September 2025",
-        "September 2026",
-        "September 2024",
-        "May 2024",
-        "February 2024",
-        "June 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-electrical-engineering"
-    },
-    {
       "title": "Master of Engineering Science (Electrical Engineering)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3266,32 +3286,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-electrical-engineering"
-    },
-    {
-      "title": "Master of Engineering (Biomedical Engineering)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 61000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-biomedical-engineering"
     },
     {
       "title": "Graduate Certificate in Economics",
@@ -3337,14 +3331,20 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-economics"
     },
     {
-      "title": "Master of Engineering Science (Biomedical Engineering)",
+      "title": "Master of Journalism and Communication",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 61000,
+      "duration": "24 Months",
+      "tuition": 50000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "May 2025",
+        "February 2025",
+        "September 2025",
+        "May 2024",
+        "September 2024",
+        "February 2024",
         "February 2026",
         "June 2026",
         "September 2026",
@@ -3356,11 +3356,12 @@
         "September 2028"
       ],
       "campuses": [
+        "UNSW Main Campus",
         "kensington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-biomedical-engineering"
+      "courseRefId": "the-university-of-new-south-wales|master-of-journalism-and-communication"
     },
     {
       "title": "Bachelor of Information Technology (Software Development)",
@@ -3399,24 +3400,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|master-of-education-educational-psychology"
-    },
-    {
-      "title": "Standard Foundation Program -Commerce or Actuarial Studies",
-      "level": "foundation",
-      "sourceLevel": "Foundation",
-      "duration": "9 Months",
-      "tuition": 42700,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "August 2026"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|standard-foundation-program-commerce-or-actuarial-studies"
     },
     {
       "title": "Bachelor of Engineering (Honours) (Robotics and Mechatronics)",
@@ -3468,26 +3451,6 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-economics-law"
     },
     {
-      "title": "Bachelor of Psychology (Honours)/Law",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "72 Months",
-      "tuition": 60500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-psychology-honours-law"
-    },
-    {
       "title": "Bachelor of Economics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3513,104 +3476,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-economics"
-    },
-    {
-      "title": "Bachelor of Design/Education (Secondary)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 48500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-design-education-secondary"
-    },
-    {
-      "title": "Bachelor of Engineering (Honours) (Electrical)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 61500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-electrical"
-    },
-    {
-      "title": "Bachelor of Engineering (Honours)/Master of Engineering (Electrical Engineering)",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 61500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-master-of-engineering-electrical-engineering"
-    },
-    {
-      "title": "Bachelor of Actuarial Studies/Information Systems",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 58500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-actuarial-studies-information-systems"
     },
     {
       "title": "Bachelor of Engineering (Civil Engineering with Architecture) (Honours)",
@@ -3728,6 +3593,124 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-science-advanced-mathematics-honours-law"
     },
     {
+      "title": "Bachelor of Psychology (Honours)/Law",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "72 Months",
+      "tuition": 60500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-psychology-honours-law"
+    },
+    {
+      "title": "Bachelor of Actuarial Studies/Information Systems",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 58500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-actuarial-studies-information-systems"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours)/Master of Engineering (Electrical Engineering)",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 61500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-master-of-engineering-electrical-engineering"
+    },
+    {
+      "title": "Bachelor of Economics (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 57000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-economics-honours"
+    },
+    {
+      "title": "Bachelor of Economics/Advanced Science (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 56500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-economics-advanced-science-honours"
+    },
+    {
       "title": "Bachelor of Economics/Arts",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -3780,11 +3763,11 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-economics-science"
     },
     {
-      "title": "Bachelor of Economics (Honours)",
+      "title": "Bachelor of Design/Education (Secondary)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 57000,
+      "duration": "48 Months",
+      "tuition": 48500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3800,14 +3783,14 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-economics-honours"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-design-education-secondary"
     },
     {
-      "title": "Bachelor of Economics/Advanced Science (Honours)",
+      "title": "Bachelor of Engineering (Honours) (Electrical)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 56500,
+      "duration": "48 Months",
+      "tuition": 61500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -3826,7 +3809,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-economics-advanced-science-honours"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-electrical"
     },
     {
       "title": "Bachelor of Science (Computer Science)/Fine Arts",
@@ -3881,6 +3864,210 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-commerce-fine-arts"
     },
     {
+      "title": "Master of Education",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 47000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "May 2026",
+        "September 2025",
+        "May 2025",
+        "September 2026",
+        "February 2025",
+        "September 2024",
+        "May 2024",
+        "February 2024",
+        "June 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-education"
+    },
+    {
+      "title": "Master of Actuarial Studies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "18 Months",
+      "tuition": 62000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "May 2024",
+        "January 2024",
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-actuarial-studies"
+    },
+    {
+      "title": "Master of Mathematics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "19 Months",
+      "tuition": 60500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "February 2025",
+        "May 2025",
+        "September 2024",
+        "May 2024",
+        "February 2026",
+        "June 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-mathematics"
+    },
+    {
+      "title": "Master of Applied Economics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 62000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "July 2024",
+        "September 2024",
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-applied-economics"
+    },
+    {
+      "title": "Master of Engineering Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 61000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "February 2024",
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "UNSW Main Campus",
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science"
+    },
+    {
+      "title": "Master of Construction Project Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 49000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "February 2025",
+        "September 2024",
+        "February 2024",
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "UNSW Main Campus",
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-construction-project-management"
+    },
+    {
+      "title": "Master of Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 61000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "May 2024",
+        "September 2024",
+        "February 2024",
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering"
+    },
+    {
       "title": "Master of Engineering Science (Nuclear Engineering)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -3905,6 +4092,75 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-nuclear-engineering"
+    },
+    {
+      "title": "Master of Psychology (Clinical)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 58500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-psychology-clinical"
+    },
+    {
+      "title": "Graduate Certificate in Engineering Science",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 61000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-engineering-science"
+    },
+    {
+      "title": "Graduate Certificate in Simulation and Immersive Technologies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "7 Months",
+      "tuition": 24500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "UNSW Paddington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-simulation-and-immersive-technologies"
     },
     {
       "title": "Graduate Certificate in Social Impact",
@@ -4153,11 +4409,115 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-simulation-and-immersive-technologies"
     },
     {
-      "title": "Master of Psychology (Clinical)",
+      "title": "Master of Engineering Science (Mechanical and Advanced Manufacturing Engineering)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 58500,
+      "duration": "12 Months",
+      "tuition": 61000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-mechanical-and-advanced-manufacturing-engineering"
+    },
+    {
+      "title": "Graduate Certificate in Education",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "7 Months",
+      "tuition": 23500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-education"
+    },
+    {
+      "title": "Graduate Certificate in Educational Leadership",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "7 Months",
+      "tuition": 23500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-educational-leadership"
+    },
+    {
+      "title": "Master of Educational Leadership",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 47000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-educational-leadership"
+    },
+    {
+      "title": "Master of Teaching (Primary)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "15 Months",
+      "tuition": 47000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -4170,207 +4530,27 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-psychology-clinical"
+      "courseRefId": "the-university-of-new-south-wales|master-of-teaching-primary"
     },
     {
-      "title": "Master of Construction Project Management",
+      "title": "Master of Teaching (Secondary)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 49000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "September 2025",
-        "September 2024",
-        "February 2024",
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Main Campus",
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-construction-project-management"
-    },
-    {
-      "title": "Master of Applied Economics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 62000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "July 2024",
-        "September 2024",
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-applied-economics"
-    },
-    {
-      "title": "Master of Engineering Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 61000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "February 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Main Campus",
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science"
-    },
-    {
-      "title": "Master of Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 61000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "May 2024",
-        "September 2024",
-        "February 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering"
-    },
-    {
-      "title": "Master of Education",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "15 Months",
       "tuition": 47000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "February 2025",
         "February 2026",
-        "May 2025",
-        "May 2026",
-        "September 2025",
-        "September 2026",
-        "May 2024",
-        "September 2024",
-        "February 2024",
-        "June 2026",
         "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
+        "February 2028"
       ],
       "campuses": [
         "kensington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-education"
-    },
-    {
-      "title": "Master of Actuarial Studies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "18 Months",
-      "tuition": 62000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "May 2024",
-        "September 2024",
-        "January 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-actuarial-studies"
-    },
-    {
-      "title": "Master of Engineering (Mining Engineering)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 61000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-mining-engineering"
+      "courseRefId": "the-university-of-new-south-wales|master-of-teaching-secondary"
     },
     {
       "title": "Master of Engineering Science (Civil Engineering)",
@@ -4638,10 +4818,10 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-engineering-environmental-engineering"
     },
     {
-      "title": "Master of Engineering Science (Mechanical and Advanced Manufacturing Engineering)",
+      "title": "Master of Engineering (Mining Engineering)",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
+      "duration": "24 Months",
       "tuition": 61000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
@@ -4661,174 +4841,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-mechanical-and-advanced-manufacturing-engineering"
-    },
-    {
-      "title": "Graduate Certificate in Engineering Science",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 61000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-engineering-science"
-    },
-    {
-      "title": "Graduate Certificate in Simulation and Immersive Technologies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "7 Months",
-      "tuition": 24500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Paddington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-simulation-and-immersive-technologies"
-    },
-    {
-      "title": "Graduate Certificate in Education",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "7 Months",
-      "tuition": 23500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-education"
-    },
-    {
-      "title": "Graduate Certificate in Educational Leadership",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "7 Months",
-      "tuition": 23500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-educational-leadership"
-    },
-    {
-      "title": "Master of Educational Leadership",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 47000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-educational-leadership"
-    },
-    {
-      "title": "Master of Teaching (Primary)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "15 Months",
-      "tuition": 47000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-teaching-primary"
-    },
-    {
-      "title": "Master of Teaching (Secondary)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "15 Months",
-      "tuition": 47000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-teaching-secondary"
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-mining-engineering"
     },
     {
       "title": "Graduate Certificate in Actuarial Analytics",
@@ -4883,36 +4896,6 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-actuarial-studies-extension"
     },
     {
-      "title": "Master of Mathematics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "19 Months",
-      "tuition": 60500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "May 2025",
-        "September 2026",
-        "May 2024",
-        "September 2024",
-        "February 2026",
-        "June 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-mathematics"
-    },
-    {
       "title": "Bachelor of Information Systems/Computer Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -4939,19 +4922,22 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-information-systems-computer-science"
     },
     {
-      "title": "Bachelor of Economics/Education (Secondary)",
+      "title": "Bachelor of Actuarial Studies/Economics",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 54000,
+      "tuition": 58000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
+        "June 2026",
         "September 2026",
         "February 2027",
+        "June 2027",
         "September 2027",
         "February 2028",
+        "June 2028",
         "September 2028"
       ],
       "campuses": [
@@ -4959,7 +4945,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-economics-education-secondary"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-actuarial-studies-economics"
     },
     {
       "title": "Bachelor of Economics/Science (Advanced Mathematics) (Honours)",
@@ -4988,22 +4974,19 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-economics-science-advanced-mathematics-honours"
     },
     {
-      "title": "Bachelor of Actuarial Studies/Economics",
+      "title": "Bachelor of Economics/Education (Secondary)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 58000,
+      "tuition": 54000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
-        "June 2026",
         "September 2026",
         "February 2027",
-        "June 2027",
         "September 2027",
         "February 2028",
-        "June 2028",
         "September 2028"
       ],
       "campuses": [
@@ -5011,7 +4994,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-actuarial-studies-economics"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-economics-education-secondary"
     },
     {
       "title": "Master of Health Leadership and Management/Master of Infectious Diseases Intelligence",
@@ -5090,32 +5073,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|master-of-infectious-disease-intelligence"
-    },
-    {
-      "title": "Master of Engineering Science (Space Systems Engineering)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 61000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-space-systems-engineering"
     },
     {
       "title": "Master of Global Health (Extension)/Master of Infectious Diseases Intelligence",
@@ -5222,11 +5179,11 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-public-health-master-of-infectious-diseases-intelligence"
     },
     {
-      "title": "Bachelor of Engineering (Honours) (Nuclear Engineering)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 61500,
+      "title": "Master of Engineering Science (Space Systems Engineering)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 61000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -5245,7 +5202,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-nuclear-engineering"
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-space-systems-engineering"
     },
     {
       "title": "Bachelor of Education (Primary) (Honours)",
@@ -5349,7 +5306,7 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-actuarial-studies"
     },
     {
-      "title": "Bachelor of Engineering (Honours) (Chemical Engineering)",
+      "title": "Bachelor of Engineering (Honours) (Nuclear Engineering)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -5372,111 +5329,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-chemical-engineering"
-    },
-    {
-      "title": "Bachelor of Engineering (Honours) (Chemical Product Engineering)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 61500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-chemical-product-engineering"
-    },
-    {
-      "title": "Bachelor of Engineering (Honours) (Civil)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 61500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-civil"
-    },
-    {
-      "title": "Bachelor of Engineering (Honours) (Civil)/Surveying",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 62000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-civil-surveying"
-    },
-    {
-      "title": "Bachelor of Engineering (Honours) (Surveying)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 61500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-surveying"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-nuclear-engineering"
     },
     {
       "title": "Bachelor of Industrial Design (Honours)",
@@ -5502,7 +5355,53 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-industrial-design-honours"
     },
     {
-      "title": "Bachelor of Engineering (Honours) (Mechanical and Manufacturing Engineering)",
+      "title": "Bachelor of Fine Arts/Law",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 50500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-fine-arts-law"
+    },
+    {
+      "title": "Bachelor of Fine Arts/Media",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 47500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-fine-arts-media"
+    },
+    {
+      "title": "Bachelor of Advanced Science (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
@@ -5525,7 +5424,180 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-mechanical-and-manufacturing-engineering"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-advanced-science-honours"
+    },
+    {
+      "title": "Bachelor of Advanced Science (Honours)/Arts",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 55000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-advanced-science-honours-arts"
+    },
+    {
+      "title": "Bachelor of Advanced Science (Honours)/Engineering (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "72 Months",
+      "tuition": 62000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-advanced-science-honours-engineering-honours"
+    },
+    {
+      "title": "Bachelor of Art Theory (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "12 Months",
+      "tuition": 49500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "UNSW Paddington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-art-theory-honours"
+    },
+    {
+      "title": "Bachelor of Arts",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 51000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-arts"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours) (Geoenergy and Geostorage)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 61500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-geoenergy-and-geostorage"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours) (Mining)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 61500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-mining"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours) (Photovoltaics and Solar Energy)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 61500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-photovoltaics-and-solar-energy"
     },
     {
       "title": "Bachelor of Engineering (Honours) (Quantum Engineering)",
@@ -5753,251 +5825,6 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-science-arts"
     },
     {
-      "title": "Bachelor of Advanced Science (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 61500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-advanced-science-honours"
-    },
-    {
-      "title": "Bachelor of Advanced Science (Honours)/Arts",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 55000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-advanced-science-honours-arts"
-    },
-    {
-      "title": "Bachelor of Advanced Science (Honours)/Engineering (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "72 Months",
-      "tuition": 62000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-advanced-science-honours-engineering-honours"
-    },
-    {
-      "title": "Bachelor of Art Theory (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 49500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "UNSW Paddington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-art-theory-honours"
-    },
-    {
-      "title": "Bachelor of Arts",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 51000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-arts"
-    },
-    {
-      "title": "Bachelor of Engineering (Honours) (Geoenergy and Geostorage)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 61500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-geoenergy-and-geostorage"
-    },
-    {
-      "title": "Bachelor of Engineering (Honours) (Mining)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 61500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-mining"
-    },
-    {
-      "title": "Bachelor of Engineering (Honours) (Photovoltaics and Solar Energy)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 61500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-photovoltaics-and-solar-energy"
-    },
-    {
-      "title": "Bachelor of Fine Arts/Law",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 50500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-fine-arts-law"
-    },
-    {
-      "title": "Bachelor of Fine Arts/Media",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 47500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-fine-arts-media"
-    },
-    {
       "title": "Bachelor of Arts/Education (Secondary)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -6067,11 +5894,11 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-science-education-secondary"
     },
     {
-      "title": "Bachelor of Science (Advanced Mathematics)(Honours)/Arts",
+      "title": "Bachelor of Engineering (Honours) (Mechanical and Manufacturing Engineering)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 62500,
+      "duration": "48 Months",
+      "tuition": 61500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -6090,7 +5917,137 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-science-advanced-mathematics-honours-arts"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-mechanical-and-manufacturing-engineering"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours) (Chemical Engineering)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 61500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-chemical-engineering"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours) (Chemical Product Engineering)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 61500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-chemical-product-engineering"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours) (Civil)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 61500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-civil"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours) (Civil)/Surveying",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 62000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-civil-surveying"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours) (Surveying)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 61500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-surveying"
     },
     {
       "title": "Bachelor of Science Advanced Mathematics (Honours)/Bachelor of Engineering (Honours)",
@@ -6165,6 +6122,32 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-science-advanced-mathematics-honours"
     },
     {
+      "title": "Bachelor of Science (Advanced Mathematics)(Honours)/Arts",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 62500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-science-advanced-mathematics-honours-arts"
+    },
+    {
       "title": "Bachelor of Actuarial Studies/Computer Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -6217,22 +6200,27 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-commerce-aviation-management"
     },
     {
-      "title": "Standard Foundation Program - Arts and Social Sciences",
-      "level": "foundation",
-      "sourceLevel": "Foundation",
-      "duration": "9 Months",
-      "tuition": 42700,
+      "title": "Master of Architecture/Master of Property and Development",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "36 Months",
+      "tuition": 49000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "August 2026"
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
       ],
       "campuses": [
         "kensington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|standard-foundation-program-arts-and-social-sciences"
+      "courseRefId": "the-university-of-new-south-wales|master-of-architecture-master-of-property-and-development"
     },
     {
       "title": "Graduate Certificate in Translation and Interpreting",
@@ -6359,29 +6347,6 @@
       "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-animation-and-visual-effects"
     },
     {
-      "title": "Master of Architecture/Master of Property and Development",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "36 Months",
-      "tuition": 49000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-architecture-master-of-property-and-development"
-    },
-    {
       "title": "Graduate Diploma in Animation and Visual Effects",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -6432,55 +6397,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|master-of-animation-and-visual-effects"
-    },
-    {
-      "title": "Bachelor of Media/Social Sciences",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 48500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-media-social-sciences"
-    },
-    {
-      "title": "Bachelor of Fine Arts/Education (Secondary)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 48500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-fine-arts-education-secondary"
     },
     {
       "title": "Bachelor of Politics, Philosophy and Economics/Law",
@@ -6541,6 +6457,55 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-social-sciences-law"
+    },
+    {
+      "title": "Bachelor of Media/Social Sciences",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 48500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-media-social-sciences"
+    },
+    {
+      "title": "Bachelor of Fine Arts/Education (Secondary)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 48500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-fine-arts-education-secondary"
     },
     {
       "title": "Master of Engineering Science (Sustainable Systems)",
@@ -6621,6 +6586,26 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-materials-science-and-engineering-commerce"
     },
     {
+      "title": "Master of Psychology (Forensic)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 58500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-psychology-forensic"
+    },
+    {
       "title": "Master of Construction Project Management/Master of Property and Development",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -6645,26 +6630,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|master-of-construction-project-management-master-of-property-and-development"
-    },
-    {
-      "title": "Master of Psychology (Forensic)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 58500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-psychology-forensic"
     },
     {
       "title": "Master of Engineering Science (Geotechnical Engineering and Engineering Geology)",
@@ -6736,25 +6701,6 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-politics-philosophy-and-economics"
     },
     {
-      "title": "Diploma of Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 48480,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "May 2026",
-        "August 2026"
-      ],
-      "campuses": [
-        "UNSW Main Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|diploma-of-engineering"
-    },
-    {
       "title": "Bachelor of Medicinal Chemistry (Honours)/Law",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -6816,78 +6762,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-construction-management-and-property-honours"
-    },
-    {
-      "title": "Bachelor of Actuarial Studies/Science",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 58500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-actuarial-studies-science"
-    },
-    {
-      "title": "Bachelor of Actuarial Studies/Science (Advanced Mathematics) (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 59000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-actuarial-studies-science-advanced-mathematics-honours"
-    },
-    {
-      "title": "Bachelor of Criminology and Criminal Justice/Law",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 51000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-criminology-and-criminal-justice-law"
     },
     {
       "title": "Bachelor of Advanced Science (Honours)/Fine Arts",
@@ -7014,6 +6888,78 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-science-fine-arts"
     },
     {
+      "title": "Bachelor of Actuarial Studies/Science",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 58500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-actuarial-studies-science"
+    },
+    {
+      "title": "Bachelor of Actuarial Studies/Science (Advanced Mathematics) (Honours)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 59000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-actuarial-studies-science-advanced-mathematics-honours"
+    },
+    {
+      "title": "Bachelor of Criminology and Criminal Justice/Law",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 51000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-criminology-and-criminal-justice-law"
+    },
+    {
       "title": "Master of Engineering Science (Systems and Control)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -7086,14 +7032,41 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-criminology-and-criminal-justice-psychology-honours"
     },
     {
-      "title": "Master of Engineering Science (Transport Engineering)",
+      "title": "Master of Public Policy and Governance",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 61000,
+      "duration": "24 Months",
+      "tuition": 47500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
+        "September 2024",
+        "February 2025",
+        "September 2026",
+        "February 2026",
+        "September 2025",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-public-policy-and-governance"
+    },
+    {
+      "title": "Graduate Diploma in Cultural Leadership",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 48500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
         "February 2026",
         "June 2026",
         "September 2026",
@@ -7105,11 +7078,73 @@
         "September 2028"
       ],
       "campuses": [
+        "kensington Campus",
+        "UNSW Paddington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-cultural-leadership"
+    },
+    {
+      "title": "Master of International Relations",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 47000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "February 2025",
+        "February 2026",
+        "September 2026",
+        "September 2024",
+        "February 2024",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
         "kensington Campus"
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-transport-engineering"
+      "courseRefId": "the-university-of-new-south-wales|master-of-international-relations"
+    },
+    {
+      "title": "Master of Curating and Cultural Leadership",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "May 2025",
+        "February 2025",
+        "September 2026",
+        "September 2025",
+        "May 2026",
+        "September 2024",
+        "May 2024",
+        "February 2024",
+        "June 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "UNSW Main Campus",
+        "UNSW Paddington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-curating-and-cultural-leadership"
     },
     {
       "title": "Graduate Diploma in Physical Oceanography",
@@ -7161,11 +7196,11 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-property-and-development"
     },
     {
-      "title": "Master of Engineering (Renewable Energy)",
+      "title": "Graduate Certificate in Infectious Diseases Intelligence",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 61000,
+      "duration": "7 Months",
+      "tuition": 30500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -7184,14 +7219,14 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-renewable-energy"
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-infectious-diseases-intelligence"
     },
     {
-      "title": "Master of Engineering Science (Renewable Energy)",
+      "title": "Graduate Diploma in Infectious Diseases Intelligence",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 61000,
+      "duration": "8 Months",
+      "tuition": 45500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -7210,170 +7245,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-renewable-energy"
-    },
-    {
-      "title": "Master of Space Engineering",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 50500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "July 2026",
-        "February 2027",
-        "July 2027",
-        "February 2028",
-        "July 2028"
-      ],
-      "campuses": [
-        "UNSW Canberra at ADFA Campus",
-        "UNSW Canberra City Precinct Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-space-engineering"
-    },
-    {
-      "title": "Graduate Diploma in Cultural Leadership",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 48500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus",
-        "UNSW Paddington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-cultural-leadership"
-    },
-    {
-      "title": "Master of International Relations",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 47000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "September 2025",
-        "September 2026",
-        "September 2024",
-        "February 2024",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-international-relations"
-    },
-    {
-      "title": "Master of Environmental Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 51500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2024",
-        "February 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Main Campus",
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-environmental-management"
-    },
-    {
-      "title": "Master of Curating and Cultural Leadership",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2026",
-        "May 2025",
-        "May 2026",
-        "September 2025",
-        "September 2026",
-        "May 2024",
-        "September 2024",
-        "February 2024",
-        "June 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Main Campus",
-        "UNSW Paddington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-curating-and-cultural-leadership"
-    },
-    {
-      "title": "Master of Clinical Neuropsychology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 58500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-clinical-neuropsychology"
+      "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-infectious-diseases-intelligence"
     },
     {
       "title": "Graduate Certificate in Environmental Management",
@@ -7454,11 +7326,11 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-water-wastewater-and-waste-engineering"
     },
     {
-      "title": "Graduate Certificate in Infectious Diseases Intelligence",
+      "title": "Graduate Certificate in Food Science",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "7 Months",
-      "tuition": 30500,
+      "duration": "12 Months",
+      "tuition": 61000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -7477,105 +7349,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-infectious-diseases-intelligence"
-    },
-    {
-      "title": "Graduate Diploma in Infectious Diseases Intelligence",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "8 Months",
-      "tuition": 45500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-diploma-in-infectious-diseases-intelligence"
-    },
-    {
-      "title": "Graduate Certificate in Cultural Leadership",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "7 Months",
-      "tuition": 24500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "UNSW Paddington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-cultural-leadership"
-    },
-    {
-      "title": "Master of Development Studies",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 47000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-development-studies"
-    },
-    {
-      "title": "Master of Arts and Social Sciences (Combined)",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 48000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-arts-and-social-sciences-combined"
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-food-science"
     },
     {
       "title": "Graduate Diploma in Food Science",
@@ -7656,7 +7430,7 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-food-process-engineering"
     },
     {
-      "title": "Graduate Certificate in Food Science",
+      "title": "Master of Engineering Science (Transport Engineering)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
@@ -7679,21 +7453,68 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-food-science"
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-transport-engineering"
     },
     {
-      "title": "Master of Public Policy and Governance",
+      "title": "Graduate Certificate in Cultural Leadership",
       "level": "master",
       "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 47500,
+      "duration": "7 Months",
+      "tuition": 24500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2024",
-        "February 2025",
         "February 2026",
-        "September 2025",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "UNSW Paddington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|graduate-certificate-in-cultural-leadership"
+    },
+    {
+      "title": "Master of Space Engineering",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 50500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "July 2026",
+        "February 2027",
+        "July 2027",
+        "February 2028",
+        "July 2028"
+      ],
+      "campuses": [
+        "UNSW Canberra at ADFA Campus",
+        "UNSW Canberra City Precinct Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-space-engineering"
+    },
+    {
+      "title": "Master of Arts and Social Sciences (Combined)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 48000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
         "September 2026",
         "February 2027",
         "September 2027",
@@ -7705,14 +7526,14 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-public-policy-and-governance"
+      "courseRefId": "the-university-of-new-south-wales|master-of-arts-and-social-sciences-combined"
     },
     {
-      "title": "Master of Applied Linguistics",
+      "title": "Master of Engineering (Renewable Energy)",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "24 Months",
-      "tuition": 47000,
+      "tuition": 61000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -7731,7 +7552,56 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|master-of-applied-linguistics"
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-renewable-energy"
+    },
+    {
+      "title": "Master of Engineering Science (Renewable Energy)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 61000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-engineering-science-renewable-energy"
+    },
+    {
+      "title": "Master of Development Studies",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 47000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "September 2026",
+        "February 2027",
+        "September 2027",
+        "February 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-development-studies"
     },
     {
       "title": "Master of Translation",
@@ -7809,6 +7679,162 @@
       "courseRefId": "the-university-of-new-south-wales|master-of-materials-technology"
     },
     {
+      "title": "Master of Clinical Neuropsychology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 58500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-clinical-neuropsychology"
+    },
+    {
+      "title": "Master of Applied Linguistics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 47000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-applied-linguistics"
+    },
+    {
+      "title": "Master of Environmental Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 51500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2024",
+        "February 2024",
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "UNSW Main Campus",
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|master-of-environmental-management"
+    },
+    {
+      "title": "Bachelor of Aviation (Management)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 61000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-aviation-management"
+    },
+    {
+      "title": "Bachelor of Environmental Management",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 60500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "February 2025",
+        "May 2025",
+        "May 2024",
+        "September 2024",
+        "February 2024",
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-environmental-management"
+    },
+    {
+      "title": "Bachelor of Nutrition/Master of Dietetics and Food Innovation",
+      "level": "master",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 63000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2025",
+        "February 2024",
+        "February 2026",
+        "February 2027",
+        "February 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-nutrition-master-of-dietetics-and-food-innovation"
+    },
+    {
       "title": "Bachelor of Medicinal Chemistry (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -7881,60 +7907,6 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-renewable-energy"
     },
     {
-      "title": "Bachelor of Environmental Management",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 60500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "May 2025",
-        "September 2025",
-        "May 2024",
-        "September 2024",
-        "February 2024",
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-environmental-management"
-    },
-    {
-      "title": "Bachelor of Nutrition/Master of Dietetics and Food Innovation",
-      "level": "master",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 63000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2025",
-        "February 2024",
-        "February 2026",
-        "February 2027",
-        "February 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-nutrition-master-of-dietetics-and-food-innovation"
-    },
-    {
       "title": "Bachelor of Environmental Management/Arts",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
@@ -7981,37 +7953,11 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-applied-exercise-science-master-of-clinical-exercise-physiology"
     },
     {
-      "title": "Bachelor of Criminology and Criminal Justice",
-      "level": "bachelor",
+      "title": "Bachelor of Exercise Science/Master of Physiotherapy and Exercise Physiology",
+      "level": "master",
       "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 50500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "September 2026",
-        "February 2027",
-        "June 2027",
-        "September 2027",
-        "February 2028",
-        "June 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-criminology-and-criminal-justice"
-    },
-    {
-      "title": "Bachelor of Criminology and Criminal Justice (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "12 Months",
-      "tuition": 49500,
+      "duration": "60 Months",
+      "tuition": 64000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -8024,37 +7970,14 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-criminology-and-criminal-justice-honours"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-exercise-science-master-of-physiotherapy-and-exercise-physiology"
     },
     {
-      "title": "Bachelor of Criminology and Criminal Justice/Psychological Science",
+      "title": "Bachelor of Food Science (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 49500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "September 2026",
-        "February 2027",
-        "September 2027",
-        "February 2028",
-        "September 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-criminology-and-criminal-justice-psychological-science"
-    },
-    {
-      "title": "Bachelor of Aviation (Management)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 61000,
+      "tuition": 62000,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -8073,7 +7996,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-aviation-management"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-food-science-honours"
     },
     {
       "title": "Bachelor of Engineering (Honours) (Environmental)",
@@ -8100,75 +8023,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-environmental"
-    },
-    {
-      "title": "Bachelor of Social Work (Honours)",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "48 Months",
-      "tuition": 50000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "February 2027",
-        "June 2027",
-        "February 2028",
-        "June 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-social-work-honours"
-    },
-    {
-      "title": "Bachelor of Social Work (Honours)/Arts",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "67 Months",
-      "tuition": 52000,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "February 2027",
-        "June 2027",
-        "February 2028",
-        "June 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-social-work-honours-arts"
-    },
-    {
-      "title": "Bachelor of Social Work (Honours)/Criminology and Criminal Justice",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 47500,
-      "currency": "AUD",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "February 2026",
-        "June 2026",
-        "February 2027",
-        "June 2027",
-        "February 2028",
-        "June 2028"
-      ],
-      "campuses": [
-        "kensington Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-social-work-honours-criminology-and-criminal-justice"
     },
     {
       "title": "Bachelor of Social Work (Honours)/Social Sciences",
@@ -8312,11 +8166,80 @@
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-social-sciences"
     },
     {
-      "title": "Bachelor of Food Science (Honours)",
+      "title": "Bachelor of Social Work (Honours)",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 62000,
+      "tuition": 50000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "February 2027",
+        "June 2027",
+        "February 2028",
+        "June 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-social-work-honours"
+    },
+    {
+      "title": "Bachelor of Social Work (Honours)/Arts",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "67 Months",
+      "tuition": 52000,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "February 2027",
+        "June 2027",
+        "February 2028",
+        "June 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-social-work-honours-arts"
+    },
+    {
+      "title": "Bachelor of Social Work (Honours)/Criminology and Criminal Justice",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 47500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "February 2027",
+        "June 2027",
+        "February 2028",
+        "June 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-social-work-honours-criminology-and-criminal-justice"
+    },
+    {
+      "title": "Bachelor of Criminology and Criminal Justice",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 50500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -8335,14 +8258,14 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-food-science-honours"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-criminology-and-criminal-justice"
     },
     {
-      "title": "Bachelor of Exercise Science/Master of Physiotherapy and Exercise Physiology",
-      "level": "master",
+      "title": "Bachelor of Criminology and Criminal Justice (Honours)",
+      "level": "bachelor",
       "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 64000,
+      "duration": "12 Months",
+      "tuition": 49500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -8355,25 +8278,22 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-exercise-science-master-of-physiotherapy-and-exercise-physiology"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-criminology-and-criminal-justice-honours"
     },
     {
-      "title": "Bachelor of Engineering (Honours) (Aerospace Engineering)",
+      "title": "Bachelor of Criminology and Criminal Justice/Psychological Science",
       "level": "bachelor",
       "sourceLevel": "Undergraduate",
       "duration": "48 Months",
-      "tuition": 61500,
+      "tuition": 49500,
       "currency": "AUD",
       "feeBasis": "approxAnnual",
       "intake": [
         "February 2026",
-        "June 2026",
         "September 2026",
         "February 2027",
-        "June 2027",
         "September 2027",
         "February 2028",
-        "June 2028",
         "September 2028"
       ],
       "campuses": [
@@ -8381,7 +8301,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
-      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-aerospace-engineering"
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-criminology-and-criminal-justice-psychological-science"
     },
     {
       "title": "Bachelor of Engineering (Honours) (Materials Science and Engineering)",
@@ -8434,6 +8354,32 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
       "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-materials-science-and-engineering-engineering-science"
+    },
+    {
+      "title": "Bachelor of Engineering (Honours) (Aerospace Engineering)",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "48 Months",
+      "tuition": 61500,
+      "currency": "AUD",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "February 2026",
+        "June 2026",
+        "September 2026",
+        "February 2027",
+        "June 2027",
+        "September 2027",
+        "February 2028",
+        "June 2028",
+        "September 2028"
+      ],
+      "campuses": [
+        "kensington Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/the-university-of-new-south-wales",
+      "courseRefId": "the-university-of-new-south-wales|bachelor-of-engineering-honours-aerospace-engineering"
     }
   ]
 }
