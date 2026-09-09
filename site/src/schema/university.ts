@@ -266,7 +266,14 @@ export const kompasBuildTraceSchema = z.object({
   builtAt: z.string().min(1).optional(),
   source: z.string().min(1).optional(),
   edpRefId: z.string().min(1).optional(),
+  // Слаг записи НА СТОРОНЕ АГРЕГАТОРА. У edvoy ту же роль играет edpRefId; для
+  // oxford-international своего идентификатора нет, слаг — единственная улика,
+  // по которой карточка сводится с выгрузкой (kompas-oi-newcards.mjs, 08.09).
+  aggregatorSlug: z.string().min(1).optional(),
   city: z.object({ value: z.string().min(1), source: z.string().min(1) }).optional(),
+  // Страна с уликой — так же, как город. У OI страна выводится из валюты выгрузки,
+  // и без записи откуда она взялась проверить решение потом нечем.
+  country: z.object({ value: z.string().min(1), source: z.string().min(1) }).optional(),
   rule: z.string().optional(),
   programsExpected: z.number().nonnegative().optional(),
 });
