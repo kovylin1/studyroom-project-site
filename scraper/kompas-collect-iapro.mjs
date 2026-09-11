@@ -27,9 +27,18 @@ const AGG = 'iapro';
 const LOGIN_URL = 'https://iapro.my.site.com/agentportals/s/login/?language=en_US';
 const FINDER_URL = 'https://iapro.my.site.com/agentportals/s/create-application';
 
+// Локально пароли лежат в scraper/.env, в CI — в секретах Actions, где файла нет
+// вовсе. Раньше чтение было жёстким и роняло коллектор на ENOENT до входа в портал.
+// Файл главнее окружения: на своей машине .env — источник правды.
 async function loadEnv() {
-  const raw = await fs.readFile(path.join(ROOT, 'scraper', '.env'), 'utf8');
-  return Object.fromEntries([...raw.matchAll(/^\s*([A-Z0-9_]+)\s*=\s*(.*)$/gm)].map((m) => [m[1], m[2].trim()]));
+  let fromFile = {};
+  try {
+    const raw = await fs.readFile(path.join(ROOT, 'scraper', '.env'), 'utf8');
+    fromFile = Object.fromEntries(
+      [...raw.matchAll(/^\s*([A-Z0-9_]+)\s*=\s*(.*)$/gm)].map((m) => [m[1], m[2].trim()]),
+    );
+  } catch { /* нет файла — значит CI, берём из окружения */ }
+  return { ...process.env, ...fromFile };
 }
 
 async function main() {

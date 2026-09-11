@@ -81,8 +81,15 @@ async function say(msg) {
   await fs.appendFile(LOGFILE, `${new Date().toISOString()} ${msg}\n`).catch(() => {});
 }
 
+// В CI файла scraper/.env нет — логин и пароль приезжают секретами Actions.
+// Жёсткое чтение файла роняло коллектор на ENOENT ещё до попытки входа.
 async function loadEnv() {
-  const raw = await fs.readFile(path.join(ROOT, 'scraper', '.env'), 'utf8');
+  let raw;
+  try {
+    raw = await fs.readFile(path.join(ROOT, 'scraper', '.env'), 'utf8');
+  } catch {
+    return; // нет файла — работаем на том, что уже в окружении
+  }
   for (const line of raw.split(/\r?\n/)) {
     const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)$/);
     if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();

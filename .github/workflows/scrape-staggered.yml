@@ -1,12 +1,25 @@
 name: Staggered scrape (per-aggregator)
 
 # Один агрегатор каждые ~3 дня. Каждый обновляется ровно 1 раз в месяц.
-# Система не перегружается — 804 университета не парсятся все разом.
+# Система не перегружается — 1 076 карточек не парсятся все разом.
 #
 # Маппинг «день месяца → агрегатор» — единый источник: scraper/sources/aggregator-schedules.json
 # (поле dayOfMonth). Шаг detect читает его, отдельной bash-таблицы больше нет.
 # ВАЖНО: список дней в cron ниже статичен (YAML не читает JSON) — держать синхронным
 # с dayOfMonth в JSON вручную. Сейчас: 1,3,6,9,12,15,18,21,24,27,30.
+#
+# ДВА ПОКОЛЕНИЯ КОЛЛЕКТОРОВ (разбор — HANDOFF-2026-09-11.md).
+#   kompas-collect-*.mjs — поколение КОМПАСа (июль–август 2026): перечисляет состав
+#     агрегатора живьём, меряет себя («заявлено источником / собрано» в
+#     sources/kompas/membership/<агрегатор>.json), пишет выгрузки в песочницу
+#     sources/kompas/extracts/<агрегатор>/. В ЖИВОЙ КАТАЛОГ НЕ ПИШЕТ.
+#   scrape-*-all.mjs, seed-*.mjs — поколение мая: пишет в scraper/sources/<x>-extracts/,
+#     оттуда merge-programs.mjs вливает в живой каталог.
+# До 11.09.2026 здесь вызывалось только майское поколение, и половина вызовов
+# была мертва: Edvoy падал на переверстанном логине, IAPro — на кнопке входа,
+# Study Group не запускался без SG_*, а вместо коллектора QS звалась разведка
+# discover-qs-partners.mjs, которой не давали секретов. Все вызовы шли через
+# `|| true`, поэтому прогон оставался зелёным, а lastRunAt обновлялся и при нуле.
 
 on:
   schedule:
@@ -42,7 +55,7 @@ concurrency:
 jobs:
   run-aggregator:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
 
     steps:
       - uses: actions/checkout@v5
@@ -54,7 +67,6 @@ jobs:
           if [ -z "$AGG" ]; then
             DOM=$(date -u +%-d)
             # Единый источник дня прогона — dayOfMonth в aggregator-schedules.json.
-            # (Раньше тут дублировалась bash-таблица; теперь читаем JSON через предустановленный node.)
             AGG=$(node -e "const fs=require('fs');const d=JSON.parse(fs.readFileSync('scraper/sources/aggregator-schedules.json','utf8'));const dom=Number(process.argv[1]);const hit=Object.entries(d).find(([,v])=>v&&v.dayOfMonth===dom);process.stdout.write(hit?hit[0]:'');" "$DOM")
             if [ -z "$AGG" ]; then
               echo "Нет агрегатора для дня $DOM — пропуск"
@@ -64,6 +76,23 @@ jobs:
           fi
           echo "aggregator=$AGG" >> $GITHUB_OUTPUT
           echo "Агрегатор: $AGG"
+
+      - name: Какое поколение коллектора у этого агрегатора
+        id: gen
+        if: steps.detect.outputs.aggregator != ''
+        run: |
+          # kompas — выгрузка уходит в песочницу, каталог не трогается (нужен kompas-diff);
+          # legacy — выгрузка уходит в scraper/sources/*-extracts, дальше merge-programs.
+          case "${{ steps.detect.outputs.aggregator }}" in
+            navitas-pathways|qahe|studygroup|oxford-international|edvoy|iapro|qs-topuniversities)
+              echo "kind=kompas" >> $GITHUB_OUTPUT ;;
+            cats)
+              # CATS особый: программы даёт только майский коллектор (kompas-collect-cats
+              # собирает живой состав школ, но не программы), поэтому гоняются оба.
+              echo "kind=both" >> $GITHUB_OUTPUT ;;
+            *)
+              echo "kind=legacy" >> $GITHUB_OUTPUT ;;
+          esac
 
       - uses: actions/setup-node@v5
         if: steps.detect.outputs.aggregator != ''
@@ -78,72 +107,102 @@ jobs:
         if: steps.detect.outputs.aggregator != ''
         run: cd scraper && npm ci && cd ../site && npm ci
 
-      - name: Install Playwright (только для Edvoy и IAPro)
+      - name: Install Playwright (порталы под логином + сайты за Cloudflare)
+        # Edvoy больше не требует браузера: kompas-collect-edvoy ходит в GraphQL
+        # анонимно. Остались два портала с настоящим входом — IAPro (Salesforce Aura)
+        # и QS Apply (Appian SAIL), плюс GEDU: сайты брендов холдинга закрыты
+        # Cloudflare и JS-рендером, без браузера обход отдаёт втрое меньше программ
+        # (englishpath 13→3, GBS 14→2) — а браузер для него тут не ставили ни разу.
         if: |
-          steps.detect.outputs.aggregator == 'edvoy' ||
-          steps.detect.outputs.aggregator == 'iapro'
+          steps.detect.outputs.aggregator == 'iapro' ||
+          steps.detect.outputs.aggregator == 'qs-topuniversities' ||
+          steps.detect.outputs.aggregator == 'gedu'
         run: cd scraper && npx playwright install chromium --with-deps
 
       - name: Запустить коллектор
         if: steps.detect.outputs.aggregator != ''
         env:
-          EDVOY_LOGIN: ${{ secrets.EDVOY_LOGIN }}
-          EDVOY_PASS:  ${{ secrets.EDVOY_PASS }}
-          IAPRO_LOGIN: ${{ secrets.IAPRO_LOGIN }}
-          IAPRO_PASS:  ${{ secrets.IAPRO_PASS }}
+          IAPRO_LOGIN:    ${{ secrets.IAPRO_LOGIN }}
+          IAPRO_PASS:     ${{ secrets.IAPRO_PASS }}
+          IAPRO_PASS_ALT: ${{ secrets.IAPRO_PASS_ALT }}
+          QS_LOGIN:       ${{ secrets.QS_LOGIN }}
+          QS_PASS:        ${{ secrets.QS_PASS }}
+        # БЕЗ `|| true`. Коллектор, вернувший ошибку, обязан валить прогон: иначе
+        # поломка маскируется, а шаг lastRunAt ниже пишет «обновлено» при нуле.
+        # Коллекторы КОМПАСа сами падают на пустой выдаче («источник вернул 0 курсов»).
         run: |
           AGG="${{ steps.detect.outputs.aggregator }}"
           echo "=== Коллектор: $AGG ==="
           case $AGG in
             kaplan-pathways)
-              node scraper/scrape-kaplan-all.mjs || true
+              # Вся база Kaplan встроена в страницу degree-finder одним JS-литералом.
+              node scraper/scrape-kaplan-all.mjs
               ;;
             navitas-pathways)
-              for region in uk au ca nz us de nl; do
-                node scraper/seed-navitas-${region}.mjs || true
-              done
+              # seed-navitas-*.mjs убраны: цены в них заданы литеральной таблицей
+              # UK_FEE_BAND_BASE, это не данные источника. Здесь — живой состав сети.
+              node scraper/kompas-collect-navitas.mjs
               ;;
             qahe)
-              node scraper/scrape-qahe-all.mjs || true
+              # Программы уехали с /partner-institutions/ на поддомены партнёров;
+              # майский коллектор скрёб пустые страницы и давал 17 строк-заголовков.
+              node scraper/kompas-collect-qahe.mjs
               ;;
             studygroup)
-              node scraper/scrape-studygroup-all.mjs || true
+              # Контент-сервис поиска курсов открыт: SG_LOGIN/SG_PASS больше не нужны.
+              node scraper/kompas-collect-studygroup.mjs
               ;;
             cats)
-              node scraper/scrape-cats-all.mjs || true
+              node scraper/scrape-cats-all.mjs
+              node scraper/kompas-collect-cats.mjs
               ;;
             oxford-international)
-              node scraper/seed-oxfordintl-uk.mjs || true
+              # WP REST partner/course + настоящая строка Tuition fee со страницы курса.
+              node scraper/kompas-collect-oxford-international.mjs
               ;;
             edvoy)
-              node scraper/scrape-edvoy-all.mjs || true
+              # api-prod.edvoy.com/edp/graphql отвечает без токена. Логина с паролем
+              # у Edvoy больше нет вовсе — только OTP на почту и Google SSO.
+              node scraper/kompas-collect-edvoy.mjs
               ;;
             iapro)
-              node scraper/scrape-iapro-all.mjs || true
+              node scraper/kompas-collect-iapro.mjs
               ;;
             qs-topuniversities)
-              node scraper/discover-qs-partners.mjs || true
+              # Раньше тут звалась разведка discover-qs-partners.mjs без секретов.
+              node scraper/kompas-collect-qs.mjs
               ;;
             gedu)
-              node scraper/scrape-gedu-all.mjs || true
+              node scraper/scrape-gedu-all.mjs
               ;;
             volk)
-              node scraper/scrape-volk-collab-v3.mjs || true
+              node scraper/scrape-volk-collab-v3.mjs
               ;;
           esac
 
-      - name: Merge + detect-gaps
-        if: steps.detect.outputs.aggregator != ''
+      - name: Слить в каталог (майское поколение)
+        if: steps.gen.outputs.kind == 'legacy' || steps.gen.outputs.kind == 'both'
         run: |
-          node scraper/detect-gaps.mjs    || true
+          node scraper/detect-gaps.mjs || true
           node scraper/merge-programs.mjs
 
+      - name: Пересвести сверку и панель (поколение КОМПАСа)
+        # Выгрузка легла в песочницу; живой каталог не трогаем. Здесь только замер
+        # расхождений и пересборка кейсов для панели /manager — решение о переносе
+        # в каталог принимает владелец (kompas-apply-workcopy.mjs).
+        if: steps.gen.outputs.kind == 'kompas' || steps.gen.outputs.kind == 'both'
+        run: |
+          KOMPAS_WORK_DIR=site/src/content/universities node scraper/kompas-diff.mjs || true
+          node scraper/kompas-panel.mjs || true
+
       - name: Auto-revizor (только свежеспарсенные)
-        if: steps.detect.outputs.aggregator != ''
+        if: steps.gen.outputs.kind == 'legacy' || steps.gen.outputs.kind == 'both'
         run: |
           node scraper/revizor.mjs --aggregator=${{ steps.detect.outputs.aggregator }} || true
 
       - name: Обновить lastRunAt в aggregator-schedules.json
+        # Шаг выполняется только если коллектор отработал без ошибки: `|| true` снят,
+        # а шаги по умолчанию не запускаются после падения предыдущего.
         if: steps.detect.outputs.aggregator != ''
         run: |
           AGG="${{ steps.detect.outputs.aggregator }}"
@@ -167,7 +226,7 @@ jobs:
           AGG="${{ steps.detect.outputs.aggregator }}"
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add site/src/content/universities/ scraper/sources/ site/public/api/
+          git add site/src/content/universities/ scraper/sources/ site/public/api/ sources/kompas/
           git diff --staged --quiet || git commit -m "chore: staggered — ${AGG} $(date -u +%Y-%m-%d)"
           attempt=0
           until git push; do
