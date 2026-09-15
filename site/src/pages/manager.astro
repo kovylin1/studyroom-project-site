@@ -127,11 +127,11 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
       </div>
 
 
-      <details class="card card--flush card--registry" id="registry-card" open>
-        <summary class="registry-summary">
+      <article class="card card--flush card--registry" id="registry-card">
+        <header class="registry-head">
           <span class="card__title">Реестр университетов</span>
-          <span class="muted registry-summary__hint">свернуть</span>
-        </summary>
+          <button id="registry-toggle" class="link-btn registry-head__toggle" type="button" aria-expanded="true" aria-controls="registry-body">свернуть список</button>
+        </header>
           <div class="filterbar-mini">
             <label class="filterbar-mini__search">
               <span aria-hidden="true" class="filterbar-mini__search-icon">🔍</span>
@@ -209,15 +209,16 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
             </div>
           </div>
   
+          <div id="registry-body">
           <div class="table-wrap">
             <table class="manager__table">
               <thead>
                 <tr>
-                  <th>Слаг</th>
+                  <th>Каталог</th>
                   <th>Университет</th>
                   <th>Город</th>
                   <th>Сайт</th>
-                  <th>Тир</th>
+                  <th>Тип</th>
                   <th>Агрегатор</th>
                   <th>В каталоге</th>
                   <th>Последняя проверка</th>
@@ -232,7 +233,8 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
               </tbody>
             </table>
           </div>
-      </details>
+        </div>
+      </article>
 
       <article class="card card--agg-schedules" id="agg-schedules-card">
         <header class="card__head">
@@ -415,19 +417,18 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
   .filter-box--off input { cursor: default; }
   .filter-panel__boxes--wide { max-height: none; }
   .filter-panel__group--narrow { max-width: 150px; }
+  @media (max-width: 1100px) {
+    .filter-panel__inner { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  }
   #filter-price { width: 100%; max-width: 280px; accent-color: var(--color-primary); }
 
   /* Реестр сворачивается: он длинный, а нужен не в каждую сессию. */
   .card--registry { margin-bottom: 24px; }
-  .registry-summary {
+  .registry-head {
     display: flex; align-items: center; justify-content: space-between;
-    gap: 12px; padding: 16px 20px; cursor: pointer; list-style: none;
+    gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--color-border);
   }
-  .registry-summary::-webkit-details-marker { display: none; }
-  .registry-summary__hint { font-size: 0.78rem; }
-  .card--registry[open] .registry-summary { border-bottom: 1px solid var(--color-border); }
-  .card--registry:not([open]) .registry-summary__hint::after { content: " ▾"; }
-  .card--registry[open] .registry-summary__hint::after { content: " ▴"; }
+  .registry-head__toggle { font-size: 0.8rem; }
 
 
   .status-pill {
@@ -506,7 +507,8 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
   }
   .filter-panel__inner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Источнику и странам нужно вдвое больше места, чем полю IELTS. */
+    grid-template-columns: 2.2fr 1.6fr 1.4fr 0.7fr 1fr;
     gap: 16px 24px;
     padding: 16px 20px 20px;
   }
@@ -538,18 +540,22 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
   }
   .chip:hover:not(.chip--active) { border-color: var(--color-primary); color: var(--color-primary); }
   .chip--active {
-    background: var(--color-primary-soft);
+    background: var(--color-primary);
     border-color: var(--color-primary);
-    color: var(--color-primary-dark);
+    color: #fff;
     font-weight: 600;
   }
+  .chip--active:hover { background: var(--color-primary-dark); border-color: var(--color-primary-dark); }
 
   .table-wrap { overflow-x: auto; }
-  .manager__table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  .manager__table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
   .manager__table th, .manager__table td {
-    padding: 12px 16px; text-align: left;
+    padding: 7px 10px; text-align: left;
     border-bottom: 1px solid var(--color-border); vertical-align: middle;
+    white-space: nowrap;
   }
+  /* Длинное имя вуза переносим, остальные колонки держим в одну строку. */
+  .manager__table td:nth-child(2) { white-space: normal; min-width: 180px; }
   .manager__table th {
     background: var(--color-bg-soft);
     font-weight: 700; font-size: 0.74rem;
@@ -735,6 +741,18 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
     return '';
   }
 
+  const SCOPE_ATTR = (() => {
+    const el = document.querySelector('.manager__table');
+    if (!el) return null;
+    return Array.from(el.attributes).map((a) => a.name).find((n) => n.startsWith('data-astro-cid-')) || null;
+  })();
+
+  function applyScope(root) {
+    if (!SCOPE_ATTR || !root) return;
+    if (root.setAttribute) root.setAttribute(SCOPE_ATTR, '');
+    if (root.querySelectorAll) root.querySelectorAll('*').forEach((el) => el.setAttribute(SCOPE_ATTR, ''));
+  }
+
   function escapeHtml(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
@@ -892,6 +910,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
         '<td><button class="btn btn-ghost btn-sm" data-run-slug="' + escapeHtml(row.slug) + '"' + disabledAttr + '>обновить</button></td>' +
         '</tr>';
     }).join('');
+    applyScope(tbody);
     updateResultCount(filtered.length, lastRegistry.length);
   }
 
@@ -943,6 +962,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
       btn.dataset.filter = 'aggregator';
       btn.dataset.value = agg.slug;
       btn.textContent = agg.name;
+      applyScope(btn);
       container.appendChild(btn);
       existing.add(agg.slug);
     }
@@ -956,6 +976,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
         btn.dataset.filter = 'aggregator';
         btn.dataset.value = slug;
         btn.textContent = slug;
+        applyScope(btn);
         container.appendChild(btn);
         existing.add(slug);
       }
@@ -985,6 +1006,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
     box.innerHTML = countries
       .map((c) => '<label class="filter-box"><input type="checkbox" value="' + escapeHtml(c) + '"><span>' + escapeHtml(c) + '</span></label>')
       .join('');
+    applyScope(box);
     syncCountryBoxState();
   }
 
@@ -1655,6 +1677,15 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
     applyFiltersAndRerender();
   });
 
+  // Прячем только список: поиск и фильтры нужны и в свёрнутом виде.
+  document.getElementById('registry-toggle').addEventListener('click', (e) => {
+    const body = document.getElementById('registry-body');
+    const btn = e.currentTarget;
+    body.hidden = !body.hidden;
+    btn.setAttribute('aria-expanded', String(!body.hidden));
+    btn.textContent = body.hidden ? 'показать список' : 'свернуть список';
+  });
+
   document.getElementById('filter-reset').addEventListener('click', () => {
     filters.search = '';
     filters.aggregators.clear();
@@ -1682,6 +1713,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
     const list = aggregators || [];
     if (list.length === 0) {
       tbody.innerHTML = '<tr><td colspan="6" class="table-loading">Нет данных</td></tr>';
+      applyScope(tbody);
       return;
     }
     let overdueCount = 0;
@@ -1718,6 +1750,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
         '<td><span class="' + statusCls + '">' + statusLabel + '</span></td>' +
         '</tr>';
     }).join('');
+    applyScope(tbody);
     if (pill) {
       pill.textContent = overdueCount > 0 ? overdueCount + ' просрочено' : 'все актуальны';
       pill.className = overdueCount > 0 ? 'agg-status--due' : 'agg-status--ok';
