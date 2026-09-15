@@ -1,5 +1,9 @@
 ---
 import Base from '~/layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { FIELDS, fieldsFor } from '~/scripts/fields';
+import { annualTuitionValues } from '../lib/tuition';
+import { CURRENCY_TO_KZT, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
 
 // Default control URL is empty string = relative path. On the public deploy,
 // `${''}/api/status` resolves to `/api/status` and hits the static snapshot
@@ -7,6 +11,31 @@ import Base from '~/layouts/Base.astro';
 // to point at the local control panel (e.g. `http://localhost:5174`) when
 // running it to trigger scrapes manually.
 const CONTROL_DEFAULT_URL = '';
+
+// Цены, IELTS и направления фильтруются по каталогу: в снимке реестра этих
+// полей нет вовсе. Карта компактная — три значения на вуз — и уезжает
+// в клиентский скрипт рядом с остальным состоянием. Цена приведена к тенге,
+// иначе суммы разных стран несравнимы.
+const uniEntries = await getCollection('universities');
+const FACETS = Object.fromEntries(uniEntries.map((entry) => {
+  const u = entry.data;
+  const annual = annualTuitionValues(u.tuition, u.programs);
+  const rate = CURRENCY_TO_KZT[u.tuition.currency] ?? DEFAULT_KZT_RATE;
+  // Одна склейка названий на вуз вместо вызова на каждую из 124 тысяч программ.
+  const titles = u.programs.map((p) => p.title || '').join(' ').toLowerCase();
+  return [u.slug, {
+    kzt: annual.length ? Math.round(Math.min(...annual) * rate) : null,
+    ielts: u.requirements?.language?.ielts ?? null,
+    fields: fieldsFor(titles),
+  }];
+}));
+const FIELD_OPTIONS = FIELDS.map((x) => ({ id: x.id, label: x.label }));
+// Верхняя граница ползунка — 95-й процентиль, а не максимум: одна карточка
+// с ценой под сто миллионов растягивает шкалу так, что весь каталог сминается
+// в первую пятую её часть. Крайнее правое положение значит «любая».
+const priceValues = Object.values(FACETS).map((x) => x.kzt).filter((x) => x).sort((a, b) => a - b);
+const p95 = priceValues[Math.floor(priceValues.length * 0.95)] || 1;
+const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
 ---
 
 <Base
@@ -147,6 +176,34 @@ const CONTROL_DEFAULT_URL = '';
                   <span class="filter-panel__hint" id="filter-country-hint">не более 5</span>
                 </span>
                 <div class="filter-panel__boxes" id="filter-country-boxes"></div>
+              </div>
+
+              <div class="filter-panel__group">
+                <span class="filter-panel__label">
+                  Специальность
+                  <span class="filter-panel__hint" id="filter-field-hint">любая</span>
+                </span>
+                <div class="filter-panel__boxes filter-panel__boxes--wide" id="filter-field-boxes">
+                  {FIELD_OPTIONS.map((x) => (
+                    <label class="filter-box">
+                      <input type="checkbox" value={x.id} />
+                      <span>{x.label}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div class="filter-panel__group filter-panel__group--narrow">
+                <span class="filter-panel__label">IELTS не выше</span>
+                <input id="filter-ielts" class="filter-panel__select" type="number" min="0" max="9" step="0.5" placeholder="любой" />
+              </div>
+
+              <div class="filter-panel__group">
+                <span class="filter-panel__label">
+                  Цена за год
+                  <span class="filter-panel__hint" id="filter-price-hint">любая</span>
+                </span>
+                <input id="filter-price" type="range" min="0" max={TUITION_MAX_KZT} step="500000" value={TUITION_MAX_KZT} data-max={TUITION_MAX_KZT} />
               </div>
   
             </div>
@@ -356,6 +413,9 @@ const CONTROL_DEFAULT_URL = '';
   .filter-box input { width: 15px; height: 15px; accent-color: var(--color-primary); cursor: pointer; }
   .filter-box--off { opacity: 0.4; cursor: default; }
   .filter-box--off input { cursor: default; }
+  .filter-panel__boxes--wide { max-height: none; }
+  .filter-panel__group--narrow { max-width: 150px; }
+  #filter-price { width: 100%; max-width: 280px; accent-color: var(--color-primary); }
 
   /* Реестр сворачивается: он длинный, а нужен не в каждую сессию. */
   .card--registry { margin-bottom: 24px; }
@@ -588,7 +648,7 @@ const CONTROL_DEFAULT_URL = '';
   .log__empty { padding: 24px 0; text-align: center; color: #888; font-style: italic; display: block; }
 </style>
 
-<script define:vars={{ controlDefaultUrl: CONTROL_DEFAULT_URL }}>
+<script define:vars={{ controlDefaultUrl: CONTROL_DEFAULT_URL, FACETS, TUITION_MAX_KZT }}>
   const STORAGE_KEY = 'studyroom.manager.controlUrl';
   const POLL_INTERVAL_RUNNING_MS = 1500;
   const POLL_INTERVAL_IDLE_MS = 8000;
@@ -607,6 +667,9 @@ const CONTROL_DEFAULT_URL = '';
     search: '',
     aggregators: new Set(),
     countries: new Set(),
+    fields: new Set(),
+    maxIelts: null,
+    maxKzt: null,
   };
 
   function getControlUrl() {
@@ -737,6 +800,15 @@ const CONTROL_DEFAULT_URL = '';
       if (!row.slug.toLowerCase().includes(q) && !row.name.toLowerCase().includes(q)) return false;
     }
     if (filters.countries.size > 0 && !filters.countries.has(row.country)) return false;
+    // Цена, IELTS и направления живут в каталоге; у вуза без нужного значения
+    // строка при активном фильтре не проходит — иначе фильтр ничего не сужает.
+    if (filters.fields.size > 0 || filters.maxIelts !== null || filters.maxKzt !== null) {
+      const facet = FACETS[row.slug];
+      if (!facet) return false;
+      if (filters.maxKzt !== null && !(facet.kzt !== null && facet.kzt <= filters.maxKzt)) return false;
+      if (filters.maxIelts !== null && !(facet.ielts !== null && facet.ielts <= filters.maxIelts)) return false;
+      if (filters.fields.size > 0 && !facet.fields.some((id) => filters.fields.has(id))) return false;
+    }
     // '__direct' — не агрегатор, а вузы, с которыми работаем напрямую:
     // строка проходит, если совпал хоть один из выбранных источников.
     if (filters.aggregators.size > 0) {
@@ -834,6 +906,9 @@ const CONTROL_DEFAULT_URL = '';
     if (filters.search) n++;
     if (filters.aggregators.size > 0) n++;
     if (filters.countries.size > 0) n++;
+    if (filters.fields.size > 0) n++;
+    if (filters.maxIelts !== null) n++;
+    if (filters.maxKzt !== null) n++;
     return n;
   }
 
@@ -931,6 +1006,46 @@ const CONTROL_DEFAULT_URL = '';
         : filters.countries.size + ' из ' + COUNTRY_LIMIT;
     }
   }
+
+  // Тенге в подписи: миллионами, чтобы семизначные числа не съедали строку.
+  function kztShort(v) {
+    return v >= 1000000 ? (v / 1000000).toFixed(1).replace('.', ',').replace(',0', '') + ' млн ₸' : Math.round(v / 1000) + ' тыс ₸';
+  }
+
+  function syncFieldHint() {
+    const hint = document.getElementById('filter-field-hint');
+    if (hint) hint.textContent = filters.fields.size === 0 ? 'любая' : 'выбрано: ' + filters.fields.size;
+  }
+
+  function syncPriceHint() {
+    const hint = document.getElementById('filter-price-hint');
+    if (!hint) return;
+    hint.textContent = filters.maxKzt === null ? 'любая' : 'не дороже ' + kztShort(filters.maxKzt);
+  }
+
+  document.getElementById('filter-price').addEventListener('input', (e) => {
+    const v = Number(e.target.value);
+    const max = Number(e.target.dataset.max);
+    filters.maxKzt = v >= max ? null : v;
+    syncPriceHint();
+    applyFiltersAndRerender();
+  });
+
+  document.getElementById('filter-ielts').addEventListener('input', (e) => {
+    const v = parseFloat(e.target.value);
+    filters.maxIelts = Number.isFinite(v) ? v : null;
+    applyFiltersAndRerender();
+  });
+
+  document.addEventListener('change', (e) => {
+    const box = e.target;
+    if (!(box instanceof HTMLInputElement) || box.type !== 'checkbox') return;
+    if (!box.closest('#filter-field-boxes')) return;
+    if (box.checked) filters.fields.add(box.value);
+    else filters.fields.delete(box.value);
+    syncFieldHint();
+    applyFiltersAndRerender();
+  });
 
   document.addEventListener('change', (e) => {
     const cb = e.target;
@@ -1544,10 +1659,19 @@ const CONTROL_DEFAULT_URL = '';
     filters.search = '';
     filters.aggregators.clear();
     filters.countries.clear();
+    filters.fields.clear();
+    filters.maxIelts = null;
+    filters.maxKzt = null;
 
     document.getElementById('filter-search').value = '';
+    document.getElementById('filter-ielts').value = '';
+    const price = document.getElementById('filter-price');
+    price.value = price.dataset.max;
+    document.querySelectorAll('#filter-field-boxes input').forEach((cb) => { cb.checked = false; });
     syncAggregatorChipState();
     syncCountryBoxState();
+    syncFieldHint();
+    syncPriceHint();
     applyFiltersAndRerender();
   });
 
