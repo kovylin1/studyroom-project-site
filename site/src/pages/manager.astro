@@ -210,6 +210,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
           </div>
   
           <div id="registry-body">
+          <div class="table-scroll-top" id="registry-scroll-top" aria-hidden="true"><div></div></div>
           <div class="table-wrap">
             <table class="manager__table">
               <thead>
@@ -548,6 +549,9 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
   .chip--active:hover { background: var(--color-primary-dark); border-color: var(--color-primary-dark); }
 
   .table-wrap { overflow-x: auto; }
+  /* Нижнюю полосу не видно, пока не долистаешь тысячу строк, — дублируем сверху. */
+  .table-scroll-top { overflow-x: auto; overflow-y: hidden; }
+  .table-scroll-top > div { height: 1px; }
   .manager__table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
   .manager__table th, .manager__table td {
     padding: 7px 10px; text-align: left;
@@ -556,6 +560,8 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
   }
   /* Длинное имя вуза переносим, остальные колонки держим в одну строку. */
   .manager__table td:nth-child(2) { white-space: normal; min-width: 180px; }
+  /* Слаг нужен, чтобы опознать строку, читать его целиком незачем. */
+  .manager__table td:first-child { max-width: 130px; overflow: hidden; text-overflow: ellipsis; }
   .manager__table th {
     background: var(--color-bg-soft);
     font-weight: 700; font-size: 0.74rem;
@@ -895,7 +901,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
       const checkedCls = fmt.stalenessClass(checked);
       const disabledAttr = isOnline ? '' : ' disabled';
       const aggCell = aggregatorCell(row);
-      const slugLink = '<a href="/' + escapeHtml(row.slug) + '" target="_blank" rel="noopener" class="table-link"><code>' + escapeHtml(row.slug) + '</code></a>';
+      const slugLink = '<a href="/' + escapeHtml(row.slug) + '" target="_blank" rel="noopener" class="table-link" title="' + escapeHtml(row.slug) + '"><code>' + escapeHtml(row.slug) + '</code></a>';
       const nameLink = '<a href="/' + escapeHtml(row.slug) + '" target="_blank" rel="noopener" class="table-link">' + escapeHtml(row.name || '—') + '</a>';
       return '<tr>' +
         '<td>' + slugLink + '</td>' +
@@ -911,6 +917,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
         '</tr>';
     }).join('');
     applyScope(tbody);
+    if (scrollSync) scrollSync();
     updateResultCount(filtered.length, lastRegistry.length);
   }
 
@@ -1678,6 +1685,31 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
   });
 
   // Прячем только список: поиск и фильтры нужны и в свёрнутом виде.
+  let scrollSync = null;
+
+  function wireTopScroll() {
+    const wrap = document.querySelector('.card--registry .table-wrap');
+    const top = document.getElementById('registry-scroll-top');
+    if (!wrap || !top) return;
+    const inner = top.firstElementChild;
+    const sync = () => {
+      inner.style.width = wrap.scrollWidth + 'px';
+      top.style.display = wrap.scrollWidth > wrap.clientWidth + 1 ? 'block' : 'none';
+    };
+    sync();
+    if (window.ResizeObserver) new ResizeObserver(sync).observe(wrap);
+    let lock = false;
+    const link = (from, to) => from.addEventListener('scroll', () => {
+      if (lock) return;
+      lock = true;
+      to.scrollLeft = from.scrollLeft;
+      lock = false;
+    });
+    link(top, wrap);
+    link(wrap, top);
+    scrollSync = sync;
+  }
+
   document.getElementById('registry-toggle').addEventListener('click', (e) => {
     const body = document.getElementById('registry-body');
     const btn = e.currentTarget;
@@ -1845,4 +1877,5 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
   refreshGithubConn();
   fetchStatus();
   refreshVerifySummary();
+  wireTopScroll();
 </script>
