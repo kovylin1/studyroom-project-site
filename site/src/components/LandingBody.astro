@@ -246,8 +246,8 @@ const SCRIPT_STR = {
   lvlEnglish: t('lp.programs.lvlEnglish'),
   lvlShort: t('lp.programs.lvlShort'),
   lvlAll: t('lp.programs.lvlAll'),
-  tbd: t('lp.programs.tbd'),
   tbdLink: t('lp.programs.tbdLink'),
+  waProgramPrice: t('lp.misc.waProgramPrice'),
   unverifiedWord: t('lp.programs.unverified'),
   perYear: t('lp.programs.perYear'),
   perProgram: t('lp.programs.perProgram'),
@@ -1310,6 +1310,7 @@ const SCRIPT_STR = {
   CURRENCY_SYM: sym,
   CURRENCY_SYM_BY_CODE: CURRENCY_SYMBOL,
   UNI_NAME: u.name,
+  WA_PHONE: CONTACTS.whatsappNumber,
   UNI_SLUG: u.slug,
   NEXT_DEADLINE: nextDeadlineIso,
   STR: SCRIPT_STR,
@@ -1419,19 +1420,27 @@ const SCRIPT_STR = {
     if (p.unverified) bits.push('<span class="program-row__chip program-row__chip--unverified">' + STR.unverifiedWord + '</span>');
     return bits.length ? '<div class="program-row__meta">' + bits.join('') + '</div>' : '';
   }
+  // Диалог в WhatsApp про конкретную программу: имя вуза и программы уже в тексте,
+  // менеджеру не приходится переспрашивать.
+  function waProgramHref(p) {
+    var text = STR.waProgramPrice.replace('{uni}', UNI_NAME).replace('{program}', p.title);
+    return 'https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(text);
+  }
+  // programUrl остаётся в данных — он нужен сайту менеджера, — но на витрине
+  // программа без цены ведёт в WhatsApp: цену назовёт менеджер, а уход на чужой
+  // сайт теряет заявку.
   function progTitle(p) {
-    return p.programUrl
-      ? '<a class="program-row__title" href="' + esc(p.programUrl) + '" target="_blank" rel="noopener">' + p.title + '</a>'
+    var href = p.tuition ? p.programUrl : waProgramHref(p);
+    return href
+      ? '<a class="program-row__title" href="' + esc(href) + '" target="_blank" rel="noopener">' + p.title + '</a>'
       : '<div class="program-row__title">' + p.title + '</div>';
   }
 
-  // Цена программы; когда цены нет, но есть страница программы у вуза/агрегатора —
-  // даём ссылку туда вместо голого «уточняется» (данные не выдумываем, ведём к источнику).
+  // Цена программы; когда цены нет — не выдумываем и не отправляем на чужой сайт,
+  // а зовём в WhatsApp: цену назовёт менеджер.
   function progPrice(p) {
     if (!p.tuition) {
-      return p.programUrl
-        ? '<a class="program-row__price-link" href="' + esc(p.programUrl) + '" target="_blank" rel="noopener">' + STR.tbdLink + '</a>'
-        : STR.tbd;
+      return '<a class="program-row__price-link" href="' + esc(waProgramHref(p)) + '" target="_blank" rel="noopener">' + STR.tbdLink + '</a>';
     }
     var sym = p.tuitionCurrency ? (CURRENCY_SYM_BY_CODE[p.tuitionCurrency] || p.tuitionCurrency) : CURRENCY_SYM;
     var suffix = (p.tuitionBasis === 'program' ? STR.perProgram : STR.perYear);

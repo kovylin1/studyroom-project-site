@@ -151,12 +151,16 @@ const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
     </div>
 
     <div class="uni-card-v2__price">
-      <span class="uni-card-v2__price-main">{formatKzt(tuitionMinKzt)}{t('card.perYear')}</span>
-      {tuitionMinGbp > 0 && (
-        <span class="uni-card-v2__price-sub">
-          ~{tuitionMinGbp.toLocaleString('ru-RU')} {data.tuition.currency}
-          {tuitionMaxGbp > tuitionMinGbp && ' · до ' + tuitionMaxGbp.toLocaleString('ru-RU')}
-        </span>
+      {tuitionMinGbp > 0 ? (
+        <>
+          <span class="uni-card-v2__price-main">{formatKzt(tuitionMinKzt)}{t('card.perYear')}</span>
+          <span class="uni-card-v2__price-sub">
+            ~{tuitionMinGbp.toLocaleString('ru-RU')} {data.tuition.currency}
+            {tuitionMaxGbp > tuitionMinGbp && ' · до ' + tuitionMaxGbp.toLocaleString('ru-RU')}
+          </span>
+        </>
+      ) : (
+        <span class="uni-card-v2__price-ask" data-wa-href={whatsAppHref}>💬 {t('card.priceTbd')}</span>
       )}
     </div>
 
@@ -296,6 +300,16 @@ const whatsAppHref = whatsAppDeepLinkTemplate(data.slug, data.name);
     font-size: 1.15rem; font-weight: 800;
     color: var(--color-primary-dark);
     letter-spacing: -0.01em;
+  }
+  /* Цены нет — вместо тупика зовём в WhatsApp. Карточка целиком уже ссылка,
+     поэтому это span, а клик перехватывает catalog-v2.ts. */
+  .uni-card-v2__price-ask {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
   .uni-card-v2__price-sub {
     font-size: 0.78rem; color: var(--color-text-muted);

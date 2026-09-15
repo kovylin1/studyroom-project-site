@@ -18,6 +18,10 @@ const numLocale = locale === 'ru' ? 'ru-RU' : 'en-US';
 
 const WHATSAPP_NUMBER = CONTACTS.whatsappNumber;
 
+// Нет цены — зовём в WhatsApp, а не показываем тупик «уточняется».
+const waAskPrice = (name: string): string =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t('compare.waAsk').replace('{uni}', name))}`;
+
 const CURRENCY_TO_KZT: Record<string, number> = {
   GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290, CHF: 545,
 };
@@ -187,7 +191,7 @@ const SCRIPT_STR = {
                   <strong>{t('compare.from')} {formatKzt(row.minKzt)}</strong>
                   <span class="muted compare-col__sub">~{row.minGbp.toLocaleString(numLocale)} {row.currency}{row.maxGbp > row.minGbp && ` · ${t('compare.upTo')} ${row.maxGbp.toLocaleString(numLocale)}`}</span>
                 </>
-              ) : <span class="muted">{t('compare.tbd')}</span>}
+              ) : <a class="muted compare-col__ask" href={waAskPrice(row.name)} target="_blank" rel="noopener">{t('compare.tbd')}</a>}
             </dd></div>
 
             <div><dt>{t('compare.gpaThreshold')}</dt><dd>

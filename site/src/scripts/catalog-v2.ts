@@ -259,6 +259,20 @@ function syncCheckboxes(list: ComparePayload[]): void {
   });
 }
 
+// Карточка целиком — ссылка на лендинг вуза, вложить <a> в цену нельзя.
+// Поэтому цена без суммы — span, и клик по ней уводим в WhatsApp вручную.
+function wirePriceAsk(): void {
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement | null;
+    const ask = target?.closest<HTMLElement>('.uni-card-v2__price-ask');
+    const href = ask?.dataset.waHref;
+    if (!href) return;
+    e.preventDefault();
+    e.stopPropagation();
+    window.open(href, '_blank', 'noopener');
+  });
+}
+
 function wireCompare(): void {
   let list = readCompare();
   renderCompareBar(list);
@@ -309,6 +323,7 @@ function init(): void {
   applyFilters(form);
   wireToggle();
   wireCompare();
+  wirePriceAsk();
 
   const initial = readState(form);
   if (countActive(initial, form) > 0) {
