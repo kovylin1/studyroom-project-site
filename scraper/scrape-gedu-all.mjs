@@ -60,6 +60,15 @@ const BRANDS = [
   // ICN — 8 программ, GlobalU — 3; со своих сайтов доберём больше.
   { domain: 'icn-artem.com',       name: 'ICN Creactive Business School', catalogSlug: 'icn-creactive-business-school', country: 'France',            city: 'Nancy',      feeCurrency: 'EUR', isNew: false },
   { domain: 'globalu.com',         name: 'GlobalU',               catalogSlug: 'globalu',                          country: 'United Arab Emirates',  city: 'Ajman',      feeCurrency: 'USD', isNew: false },
+  // Решение владельца 15.09.2026: завести все три оставшихся домена портфеля.
+  // Замер до этого показал, что двое из них не вузы (корпоративное обучение и
+  // платформа ученичества) — если программ у них нет, выгрузка выйдет пустой,
+  // и это не поломка, а честный ответ источника.
+  // Карточки автоматически не заводятся ни одному: города нет, а город не выдумываем.
+  // INR в перечне валют схемы нет, поэтому цены Lokmani не выписываются (как у GBS Dubai).
+  { domain: 'lokmani.com',         name: 'Lokmani Memorial Degree College', catalogSlug: 'lokmani-memorial-degree-college', country: 'India',      city: null,         feeCurrency: null,  isNew: false },
+  { domain: 'globalbankingtraining.com', name: 'Global Banking Training',   catalogSlug: 'global-banking-training',         country: 'United Kingdom', city: null,        feeCurrency: 'GBP', isNew: false },
+  { domain: 'metagedu.io',         name: 'Meta Gedu',             catalogSlug: 'meta-gedu',                        country: null,                    city: null,         feeCurrency: null,  isNew: false },
 ];
 
 // ---- живой состав холдинга ----
