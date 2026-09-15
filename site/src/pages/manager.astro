@@ -131,11 +131,22 @@ const CONTROL_DEFAULT_URL = '';
           <div id="filter-panel" class="filter-panel" data-open="false">
             <div class="filter-panel__inner">
               <div class="filter-panel__group">
-                <span class="filter-panel__label">Агрегатор</span>
+                <span class="filter-panel__label">
+                  Источник
+                  <span class="filter-panel__hint" id="filter-aggregator-hint">выбрано: все</span>
+                </span>
                 <div class="filter-panel__chips" id="filter-aggregator-chips">
                   <button class="chip chip--active" type="button" data-filter="aggregator" data-value="">Все</button>
                   <button class="chip" type="button" data-filter="aggregator" data-value="__direct">Прямые партнёры</button>
                 </div>
+              </div>
+
+              <div class="filter-panel__group">
+                <span class="filter-panel__label">
+                  Страна
+                  <span class="filter-panel__hint" id="filter-country-hint">не более 5</span>
+                </span>
+                <div class="filter-panel__boxes" id="filter-country-boxes"></div>
               </div>
   
             </div>
@@ -335,6 +346,16 @@ const CONTROL_DEFAULT_URL = '';
   .source-match--ok { color: var(--color-primary-dark); }
   .source-match--warn { color: #8a4b00; }
   .source-match--fail { color: #c83232; }
+
+  .filter-panel__hint { margin-left: 8px; font-weight: 400; color: var(--color-text-muted); font-size: 0.76rem; }
+  .filter-panel__boxes {
+    display: flex; flex-wrap: wrap; gap: 6px 14px;
+    max-height: 168px; overflow-y: auto; padding: 4px 2px;
+  }
+  .filter-box { display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; cursor: pointer; }
+  .filter-box input { width: 15px; height: 15px; accent-color: var(--color-primary); cursor: pointer; }
+  .filter-box--off { opacity: 0.4; cursor: default; }
+  .filter-box--off input { cursor: default; }
 
   /* Реестр сворачивается: он длинный, а нужен не в каждую сессию. */
   .card--registry { margin-bottom: 24px; }
@@ -579,9 +600,13 @@ const CONTROL_DEFAULT_URL = '';
   let lastAggregators = [];
   let lastSchedule = null;
   let sourceSelectWired = false;
+  // Источников и стран можно выбрать несколько; страны ограничены пятью,
+  // иначе фильтр перестаёт что-либо сужать.
+  const COUNTRY_LIMIT = 5;
   const filters = {
     search: '',
-    aggregator: '',
+    aggregators: new Set(),
+    countries: new Set(),
   };
 
   function getControlUrl() {
@@ -711,9 +736,15 @@ const CONTROL_DEFAULT_URL = '';
       const q = filters.search.toLowerCase();
       if (!row.slug.toLowerCase().includes(q) && !row.name.toLowerCase().includes(q)) return false;
     }
-    // '__direct' — не агрегатор, а вузы, с которыми работаем напрямую.
-    if (filters.aggregator === DIRECT_FILTER) return row.partnerType === 'direct';
-    if (filters.aggregator && !rowAggregatorSlugs(row).includes(filters.aggregator)) return false;
+    if (filters.countries.size > 0 && !filters.countries.has(row.country)) return false;
+    // '__direct' — не агрегатор, а вузы, с которыми работаем напрямую:
+    // строка проходит, если совпал хоть один из выбранных источников.
+    if (filters.aggregators.size > 0) {
+      const slugs = rowAggregatorSlugs(row);
+      const hit = Array.from(filters.aggregators).some((v) =>
+        v === DIRECT_FILTER ? row.partnerType === 'direct' : slugs.includes(v));
+      if (!hit) return false;
+    }
     return true;
   }
 
@@ -801,7 +832,8 @@ const CONTROL_DEFAULT_URL = '';
   function countActiveFilters() {
     let n = 0;
     if (filters.search) n++;
-    if (filters.aggregator) n++;
+    if (filters.aggregators.size > 0) n++;
+    if (filters.countries.size > 0) n++;
     return n;
   }
 
@@ -853,8 +885,66 @@ const CONTROL_DEFAULT_URL = '';
         existing.add(slug);
       }
     }
+    syncAggregatorChipState();
   }
 
+  // Вид чипов повторяет набор: «Все» подсвечен, когда не выбрано ничего.
+  function syncAggregatorChipState() {
+    const container = document.getElementById('filter-aggregator-chips');
+    if (!container) return;
+    const picked = filters.aggregators;
+    container.querySelectorAll('.chip').forEach((chip) => {
+      const v = chip.dataset.value || '';
+      chip.classList.toggle('chip--active', v === '' ? picked.size === 0 : picked.has(v));
+    });
+    const hint = document.getElementById('filter-aggregator-hint');
+    if (hint) hint.textContent = picked.size === 0 ? 'выбрано: все' : 'выбрано: ' + picked.size;
+  }
+
+  // Страны — чекбоксы: их полсотни, чипами такой список не читается.
+  function syncCountryOptions(registry) {
+    const box = document.getElementById('filter-country-boxes');
+    if (!box || box.childElementCount > 0) return;
+    const countries = Array.from(new Set((registry || []).map((r) => r.country).filter(Boolean)))
+      .sort((a, b) => a.localeCompare(b, 'ru'));
+    box.innerHTML = countries
+      .map((c) => '<label class="filter-box"><input type="checkbox" value="' + escapeHtml(c) + '"><span>' + escapeHtml(c) + '</span></label>')
+      .join('');
+    syncCountryBoxState();
+  }
+
+  // Больше пяти стран разом фильтр не сужает, поэтому лишние гасим.
+  function syncCountryBoxState() {
+    const box = document.getElementById('filter-country-boxes');
+    if (!box) return;
+    const atLimit = filters.countries.size >= COUNTRY_LIMIT;
+    box.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
+      cb.checked = filters.countries.has(cb.value);
+      cb.disabled = atLimit && !cb.checked;
+      const label = cb.closest('.filter-box');
+      if (label) label.classList.toggle('filter-box--off', cb.disabled);
+    });
+    const hint = document.getElementById('filter-country-hint');
+    if (hint) {
+      hint.textContent = filters.countries.size === 0
+        ? 'не более ' + COUNTRY_LIMIT
+        : filters.countries.size + ' из ' + COUNTRY_LIMIT;
+    }
+  }
+
+  document.addEventListener('change', (e) => {
+    const cb = e.target;
+    if (!(cb instanceof HTMLInputElement) || cb.type !== 'checkbox') return;
+    if (!cb.closest('#filter-country-boxes')) return;
+    if (cb.checked) {
+      if (filters.countries.size >= COUNTRY_LIMIT) { cb.checked = false; return; }
+      filters.countries.add(cb.value);
+    } else {
+      filters.countries.delete(cb.value);
+    }
+    syncCountryBoxState();
+    applyFiltersAndRerender();
+  });
 
   function renderSchedule(schedule) {
     lastSchedule = schedule;
@@ -1014,6 +1104,7 @@ const CONTROL_DEFAULT_URL = '';
       renderRunStatus(data.run);
       renderAggregatorSchedules(data.aggregators || []);
       syncAggregatorChips(data.aggregators || [], data.registry);
+      syncCountryOptions(data.registry);
       setupSourceSelector(data.aggregators || []);
       renderRegistry(data.registry);
       renderLog(data.run.log);
@@ -1287,6 +1378,7 @@ const CONTROL_DEFAULT_URL = '';
         renderSource(data.sourceProfile, data.registry.length, catalogCount);
         renderAggregatorSchedules(data.aggregators || []);
         syncAggregatorChips(data.aggregators || [], data.registry);
+      syncCountryOptions(data.registry);
         setupSourceSelector(data.aggregators || []);
           renderRegistry(data.registry);
       }
@@ -1440,23 +1532,22 @@ const CONTROL_DEFAULT_URL = '';
     const value = target.dataset.value || '';
     if (!kind) return;
 
-    filters[kind] = value;
-    const group = target.parentElement;
-    if (group) {
-      group.querySelectorAll('.chip').forEach((c) => c.classList.remove('chip--active'));
-    }
-    target.classList.add('chip--active');
+    if (kind !== 'aggregator') return;
+    if (value === '') filters.aggregators.clear();
+    else if (filters.aggregators.has(value)) filters.aggregators.delete(value);
+    else filters.aggregators.add(value);
+    syncAggregatorChipState();
     applyFiltersAndRerender();
   });
 
   document.getElementById('filter-reset').addEventListener('click', () => {
     filters.search = '';
-    filters.aggregator = '';
+    filters.aggregators.clear();
+    filters.countries.clear();
 
     document.getElementById('filter-search').value = '';
-    document.querySelectorAll('#filter-panel .chip').forEach((chip) => {
-      chip.classList.toggle('chip--active', chip.dataset.value === '');
-    });
+    syncAggregatorChipState();
+    syncCountryBoxState();
     applyFiltersAndRerender();
   });
 
