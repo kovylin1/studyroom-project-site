@@ -1,5 +1,9 @@
 ---
 import Base from '~/layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { FIELDS, fieldsFor } from '~/scripts/fields';
+import { annualTuitionValues } from '../lib/tuition';
+import { CURRENCY_TO_KZT, DEFAULT_KZT_RATE } from '~/content/studyroom/static';
 
 // Default control URL is empty string = relative path. On the public deploy,
 // `${''}/api/status` resolves to `/api/status` and hits the static snapshot
@@ -7,6 +11,31 @@ import Base from '~/layouts/Base.astro';
 // to point at the local control panel (e.g. `http://localhost:5174`) when
 // running it to trigger scrapes manually.
 const CONTROL_DEFAULT_URL = '';
+
+// Цены, IELTS и направления фильтруются по каталогу: в снимке реестра этих
+// полей нет вовсе. Карта компактная — три значения на вуз — и уезжает
+// в клиентский скрипт рядом с остальным состоянием. Цена приведена к тенге,
+// иначе суммы разных стран несравнимы.
+const uniEntries = await getCollection('universities');
+const FACETS = Object.fromEntries(uniEntries.map((entry) => {
+  const u = entry.data;
+  const annual = annualTuitionValues(u.tuition, u.programs);
+  const rate = CURRENCY_TO_KZT[u.tuition.currency] ?? DEFAULT_KZT_RATE;
+  // Одна склейка названий на вуз вместо вызова на каждую из 124 тысяч программ.
+  const titles = u.programs.map((p) => p.title || '').join(' ').toLowerCase();
+  return [u.slug, {
+    kzt: annual.length ? Math.round(Math.min(...annual) * rate) : null,
+    ielts: u.requirements?.language?.ielts ?? null,
+    fields: fieldsFor(titles),
+  }];
+}));
+const FIELD_OPTIONS = FIELDS.map((x) => ({ id: x.id, label: x.label }));
+// Верхняя граница ползунка — 95-й процентиль, а не максимум: одна карточка
+// с ценой под сто миллионов растягивает шкалу так, что весь каталог сминается
+// в первую пятую её часть. Крайнее правое положение значит «любая».
+const priceValues = Object.values(FACETS).map((x) => x.kzt).filter((x) => x).sort((a, b) => a - b);
+const p95 = priceValues[Math.floor(priceValues.length * 0.95)] || 1;
+const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
 ---
 
 <Base
@@ -66,6 +95,19 @@ const CONTROL_DEFAULT_URL = '';
             <div><dt>UTC</dt><dd id="next-run-utc">—</dd></div>
             <div><dt>Источник</dt><dd id="schedule-source">—</dd></div>
           </dl>
+          <div class="card__footer">
+            <span class="source-match" id="source-match" title="Доля проверенных программ, где наша карточка совпала с живым сайтом источника">
+              <strong id="source-match-pct">—</strong>
+              <span class="muted" id="source-match-note">совпадение с сайтом источника</span>
+            </span>
+            <span class="card__footer-actions">
+              <span id="run-status" class="status-pill status-pill--idle">
+                <span class="status-pill__dot"></span>
+                <span id="run-status-text">Ожидание</span>
+              </span>
+              <button id="run-all-btn" class="btn btn-primary" type="button">Запустить сейчас</button>
+            </span>
+          </div>
         </article>
 
         <article class="card">
@@ -84,29 +126,113 @@ const CONTROL_DEFAULT_URL = '';
         </article>
       </div>
 
-      <article class="card card--directors" id="directors-card">
-        <header class="card__head">
-          <h2 class="card__title">Директора (task hierarchy)</h2>
-          <span id="gaps-pill" class="muted" style="font-size:0.8rem"></span>
+
+      <article class="card card--flush card--registry" id="registry-card">
+        <header class="registry-head">
+          <span class="card__title">Реестр университетов</span>
+          <button id="registry-toggle" class="link-btn registry-head__toggle" type="button" aria-expanded="true" aria-controls="registry-body">свернуть список</button>
         </header>
-        <div class="directors-grid" id="directors-grid">
-          <div class="director-item" id="dir-pauk">
-            <span class="director-item__name">ПАУК</span>
-            <span class="director-item__domain muted">programs</span>
-            <span class="director-item__pill status-pill status-pill--idle"><span class="status-pill__dot"></span>—</span>
-            <button id="pauk-run-btn" class="btn btn-ghost btn-sm" type="button" style="margin-top:8px">Запустить</button>
+          <div class="filterbar-mini">
+            <label class="filterbar-mini__search">
+              <span aria-hidden="true" class="filterbar-mini__search-icon">🔍</span>
+              <input
+                id="filter-search"
+                type="search"
+                placeholder="Поиск по слагу или названию…"
+                autocomplete="off"
+              />
+            </label>
+            <button
+              id="filter-toggle"
+              class="btn btn-ghost btn-sm filterbar-mini__toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="filter-panel"
+            >
+              <span>Фильтры</span>
+              <span id="filter-count" class="filterbar-mini__count" hidden></span>
+              <span aria-hidden="true" class="filterbar-mini__chev">▾</span>
+            </button>
+            <button id="filter-reset" class="btn btn-ghost btn-sm" type="button">Сбросить</button>
+            <span id="filter-result-count" class="filterbar-mini__result muted"></span>
           </div>
-          <div class="director-item" id="dir-bobr">
-            <span class="director-item__name">БОБР</span>
-            <span class="director-item__domain muted">campuses</span>
-            <span class="director-item__pill status-pill status-pill--idle"><span class="status-pill__dot"></span>—</span>
-            <button id="bobr-run-btn" class="btn btn-ghost btn-sm" type="button" style="margin-top:8px">Запустить</button>
+  
+          <div id="filter-panel" class="filter-panel" data-open="false">
+            <div class="filter-panel__inner">
+              <div class="filter-panel__group">
+                <span class="filter-panel__label">
+                  Источник
+                  <span class="filter-panel__hint" id="filter-aggregator-hint">выбрано: все</span>
+                </span>
+                <div class="filter-panel__chips" id="filter-aggregator-chips">
+                  <button class="chip chip--active" type="button" data-filter="aggregator" data-value="">Все</button>
+                  <button class="chip" type="button" data-filter="aggregator" data-value="__direct">Прямые партнёры</button>
+                </div>
+              </div>
+
+              <div class="filter-panel__group">
+                <span class="filter-panel__label">
+                  Страна
+                  <span class="filter-panel__hint" id="filter-country-hint">не более 5</span>
+                </span>
+                <div class="filter-panel__boxes" id="filter-country-boxes"></div>
+              </div>
+
+              <div class="filter-panel__group">
+                <span class="filter-panel__label">
+                  Специальность
+                  <span class="filter-panel__hint" id="filter-field-hint">любая</span>
+                </span>
+                <div class="filter-panel__boxes filter-panel__boxes--wide" id="filter-field-boxes">
+                  {FIELD_OPTIONS.map((x) => (
+                    <label class="filter-box">
+                      <input type="checkbox" value={x.id} />
+                      <span>{x.label}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div class="filter-panel__group filter-panel__group--narrow">
+                <span class="filter-panel__label">IELTS не выше</span>
+                <input id="filter-ielts" class="filter-panel__select" type="number" min="0" max="9" step="0.5" placeholder="любой" />
+              </div>
+
+              <div class="filter-panel__group">
+                <span class="filter-panel__label">
+                  Цена за год
+                  <span class="filter-panel__hint" id="filter-price-hint">любая</span>
+                </span>
+                <input id="filter-price" type="range" min="0" max={TUITION_MAX_KZT} step="500000" value={TUITION_MAX_KZT} data-max={TUITION_MAX_KZT} />
+              </div>
+  
+            </div>
           </div>
-          <div class="director-item" id="dir-orel">
-            <span class="director-item__name">ОРЁЛ</span>
-            <span class="director-item__domain muted">photos</span>
-            <span class="director-item__pill status-pill status-pill--idle"><span class="status-pill__dot"></span>—</span>
-            <button id="orel-run-btn" class="btn btn-ghost btn-sm" type="button" style="margin-top:8px">Запустить</button>
+  
+          <div id="registry-body">
+          <div class="table-scroll-top" id="registry-scroll-top" aria-hidden="true"><div></div></div>
+          <div class="table-wrap">
+            <table class="manager__table">
+              <thead>
+                <tr>
+                  <th>Каталог</th>
+                  <th>Университет</th>
+                  <th>Город</th>
+                  <th>Сайт</th>
+                  <th>Тип</th>
+                  <th>Агрегатор</th>
+                  <th>В каталоге</th>
+                  <th>Последняя проверка</th>
+                  <th>Gap</th>
+                  <th aria-label="Действие"></th>
+                </tr>
+              </thead>
+              <tbody id="registry-tbody">
+                <tr>
+                  <td colspan="10" class="table-loading">Загрузка реестра…</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </article>
@@ -135,94 +261,6 @@ const CONTROL_DEFAULT_URL = '';
         </div>
       </article>
 
-      <article class="card manager__run">
-        <header class="card__head">
-          <h2 class="card__title">Ручной запуск</h2>
-          <span id="run-status" class="status-pill status-pill--idle">
-            <span class="status-pill__dot"></span>
-            <span id="run-status-text">Ожидание</span>
-          </span>
-        </header>
-        <p class="card__sub" id="run-summary">
-          Скрапер ещё не запускался. Нажмите кнопку — обновятся все университеты каталога.
-        </p>
-        <div class="manager__actions">
-          <button id="run-all-btn" class="btn btn-primary" type="button">
-            Запустить скрапинг сейчас
-          </button>
-          <div class="verify-dropdown" id="verify-dropdown">
-            <button id="verify-btn" class="btn btn-secondary verify-dropdown__trigger" type="button" aria-expanded="false" aria-haspopup="true">
-              Проверить актуальность <span class="verify-dropdown__chevron">▾</span>
-            </button>
-            <div id="verify-menu" class="verify-menu" hidden role="menu">
-              <button class="verify-menu-item" type="button" data-verify-scope="critical" role="menuitem">
-                <span class="verify-menu-item__icon">🔍</span>
-                <span class="verify-menu-item__body">
-                  <span class="verify-menu-item__label">Критические</span>
-                  <span class="verify-menu-item__desc">Топ-100 проблемных · ~10 мин</span>
-                </span>
-              </button>
-              <button class="verify-menu-item" type="button" data-verify-scope="all" role="menuitem">
-                <span class="verify-menu-item__icon">📋</span>
-                <span class="verify-menu-item__body">
-                  <span class="verify-menu-item__label">Все (804 вуза)</span>
-                  <span class="verify-menu-item__desc">Полная проверка · ~25 мин</span>
-                </span>
-              </button>
-            </div>
-          </div>
-          <div class="verify-dropdown" id="fix-dropdown">
-            <button id="fix-freshness-btn" class="btn btn-secondary verify-dropdown__trigger" type="button" aria-expanded="false" aria-haspopup="true">
-              Исправить <span class="verify-dropdown__chevron">▾</span>
-            </button>
-            <div id="fix-menu" class="verify-menu" hidden role="menu">
-              <button class="verify-menu-item" type="button" data-fix-scope="critical" role="menuitem">
-                <span class="verify-menu-item__icon">⚡</span>
-                <span class="verify-menu-item__body">
-                  <span class="verify-menu-item__label">Критические</span>
-                  <span class="verify-menu-item__desc">Топ-100 · авто-удалить 404 + shmel · ~20 мин</span>
-                </span>
-              </button>
-              <button class="verify-menu-item" type="button" data-fix-scope="all" role="menuitem">
-                <span class="verify-menu-item__icon">🔧</span>
-                <span class="verify-menu-item__body">
-                  <span class="verify-menu-item__label">Все (804 вуза)</span>
-                  <span class="verify-menu-item__desc">Полный ремонт · авто-удалить 404 + shmel · ~40 мин</span>
-                </span>
-              </button>
-            </div>
-          </div>
-          <button id="orel-btn" class="btn btn-secondary" type="button">
-            Обновить фото (ОРЁЛ)
-          </button>
-          <span class="muted manager__hint">
-            или нажмите «обновить» в строке таблицы ниже, чтобы пересобрать один университет.
-          </span>
-        </div>
-        <p class="card__sub manager__verify-summary" id="verify-summary" hidden>
-          <span id="verify-summary-text"></span>
-          <button id="verify-details-toggle" class="link-btn" type="button" hidden>
-            подробности
-          </button>
-        </p>
-        <details id="verify-details" class="manager__verify-details" hidden>
-          <summary class="muted">Точность по университетам</summary>
-          <ul id="verify-details-list" class="manager__verify-list"></ul>
-        </details>
-
-        <details id="review-panel" class="manager__review-panel" hidden>
-          <summary id="review-panel-summary" class="manager__review-summary">
-            <span id="review-panel-title">Аудит каталога: проблемные кейсы</span>
-            <span id="review-panel-badge" class="status-pill status-pill--warn" hidden></span>
-          </summary>
-          <ul id="review-items-list" class="manager__review-list"></ul>
-          <p id="review-feedback" class="manager__review-feedback" role="status" aria-live="polite" hidden></p>
-          <div class="manager__review-actions" id="review-actions" hidden>
-            <button id="review-apply-btn" class="btn btn-primary" type="button">Применить решения</button>
-            <span class="muted" id="review-apply-hint">Решения сохраняются автоматически при нажатии кнопок</span>
-          </div>
-        </details>
-      </article>
 
       <article id="remote-run" class="card manager__remote-run" hidden>
         <header class="card__head">
@@ -239,101 +277,6 @@ const CONTROL_DEFAULT_URL = '';
         </div>
       </article>
 
-      <article class="card card--flush">
-        <div class="filterbar-mini">
-          <label class="filterbar-mini__search">
-            <span aria-hidden="true" class="filterbar-mini__search-icon">🔍</span>
-            <input
-              id="filter-search"
-              type="search"
-              placeholder="Поиск по слагу или названию…"
-              autocomplete="off"
-            />
-          </label>
-          <button
-            id="filter-toggle"
-            class="btn btn-ghost btn-sm filterbar-mini__toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="filter-panel"
-          >
-            <span>Фильтры</span>
-            <span id="filter-count" class="filterbar-mini__count" hidden></span>
-            <span aria-hidden="true" class="filterbar-mini__chev">▾</span>
-          </button>
-          <button id="filter-reset" class="btn btn-ghost btn-sm" type="button">Сбросить</button>
-          <span id="filter-result-count" class="filterbar-mini__result muted"></span>
-        </div>
-
-        <div id="filter-panel" class="filter-panel" data-open="false">
-          <div class="filter-panel__inner">
-            <div class="filter-panel__group">
-              <span class="filter-panel__label">Агрегатор</span>
-              <div class="filter-panel__chips" id="filter-aggregator-chips">
-                <button class="chip chip--active" type="button" data-filter="aggregator" data-value="">Все</button>
-              </div>
-            </div>
-
-            <div class="filter-panel__group">
-              <span class="filter-panel__label">Тир</span>
-              <div class="filter-panel__chips">
-                <button class="chip" type="button" data-filter="tier" data-value="partner">partner</button>
-                <button class="chip" type="button" data-filter="tier" data-value="official">official</button>
-                <button class="chip" type="button" data-filter="tier" data-value="aggregator">aggregator</button>
-              </div>
-            </div>
-
-            <div class="filter-panel__group">
-              <span class="filter-panel__label">Страна</span>
-              <select id="filter-country" class="filter-panel__select">
-                <option value="">Все</option>
-              </select>
-            </div>
-
-            <div class="filter-panel__group">
-              <span class="filter-panel__label">В каталоге</span>
-              <div class="filter-panel__chips">
-                <button class="chip chip--active" type="button" data-filter="status" data-value="">Все</button>
-                <button class="chip" type="button" data-filter="status" data-value="in">Да</button>
-                <button class="chip" type="button" data-filter="status" data-value="out">Нет</button>
-              </div>
-            </div>
-
-            <div class="filter-panel__group">
-              <span class="filter-panel__label">Свежесть</span>
-              <div class="filter-panel__chips">
-                <button class="chip chip--active" type="button" data-filter="freshness" data-value="">Все</button>
-                <button class="chip" type="button" data-filter="freshness" data-value="fresh">Свежие (&le;35д)</button>
-                <button class="chip" type="button" data-filter="freshness" data-value="stale">Устарели</button>
-                <button class="chip" type="button" data-filter="freshness" data-value="never">Никогда</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="table-wrap">
-          <table class="manager__table">
-            <thead>
-              <tr>
-                <th>Слаг</th>
-                <th>Университет</th>
-                <th>Город</th>
-                <th>Тир</th>
-                <th>Агрегатор</th>
-                <th>В каталоге</th>
-                <th>Последняя проверка</th>
-                <th>Gap</th>
-                <th aria-label="Действие"></th>
-              </tr>
-            </thead>
-            <tbody id="registry-tbody">
-              <tr>
-                <td colspan="8" class="table-loading">Загрузка реестра…</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
 
       <article class="card card--flush log-card">
         <header class="log-card__head">
@@ -451,64 +394,43 @@ const CONTROL_DEFAULT_URL = '';
   .meta dt { color: var(--color-text-muted); margin: 0; }
   .meta dd { margin: 0; text-align: right; }
 
-  .manager__run { margin-bottom: 24px; }
-  .verify-dropdown { position: relative; display: inline-block; }
-  .verify-dropdown__chevron { font-size: 0.7rem; transition: transform 180ms ease; }
-  .verify-dropdown__trigger[aria-expanded="true"] .verify-dropdown__chevron { transform: rotate(180deg); }
-  .verify-menu {
-    position: absolute; top: calc(100% + 6px); left: 0; z-index: 200;
-    background: var(--color-bg); border: 1px solid var(--color-border);
-    border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    min-width: 240px; overflow: hidden;
+  /* Подвал карточки расписания: слева совпадение с источником, справа запуск. */
+  .card__footer {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-top: 16px;
+    padding-top: 14px; border-top: 1px solid var(--color-border);
   }
-  .verify-menu-item {
-    display: flex; align-items: flex-start; gap: 10px; width: 100%;
-    padding: 12px 16px; background: none; border: none; cursor: pointer;
-    border-bottom: 1px solid var(--color-border); text-align: left; font: inherit;
-  }
-  .verify-menu-item:last-child { border-bottom: none; }
-  .verify-menu-item:hover { background: var(--color-bg-soft); }
-  .verify-menu-item__icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
-  .verify-menu-item__body { display: flex; flex-direction: column; gap: 2px; }
-  .verify-menu-item__label { font-weight: 600; font-size: 0.9rem; }
-  .verify-menu-item__desc { font-size: 0.78rem; color: var(--color-text-muted); }
-  .manager__actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 16px; }
-  .manager__hint { font-size: 0.88rem; max-width: 480px; }
-  .manager__verify-summary { margin-top: 12px; }
-  .manager__verify-details { margin-top: 8px; }
-  .manager__verify-details summary { cursor: pointer; font-size: 0.9rem; }
-  .manager__verify-list { list-style: none; padding: 8px 0 0; margin: 0; display: grid; gap: 4px; }
-  .verify-row { display: flex; justify-content: space-between; gap: 12px; padding: 4px 8px; border-radius: 4px; font-size: 0.9rem; }
-  .verify-row__pct { font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .verify-row--ok { background: rgba(34, 139, 34, 0.08); }
-  .verify-row--warn { background: rgba(225, 165, 0, 0.12); }
-  .verify-row--fail { background: rgba(200, 50, 50, 0.12); }
+  .card__footer-actions { display: inline-flex; align-items: center; gap: 10px; margin-left: auto; flex: 0 0 auto; }
+  .source-match { display: flex; flex-direction: column; gap: 2px; font-size: 0.82rem; min-width: 0; }
+  .source-match strong { font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+  .source-match--ok { color: var(--color-primary-dark); }
+  .source-match--warn { color: #8a4b00; }
+  .source-match--fail { color: #c83232; }
 
-  .manager__review-panel { margin-top: 12px; border: 1px solid var(--border, #e0e0e0); border-radius: 8px; padding: 0; }
-  .manager__review-summary { cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 10px 14px; font-size: 0.95rem; font-weight: 600; list-style: none; }
-  .manager__review-summary::-webkit-details-marker { display: none; }
-  .manager__review-list { list-style: none; padding: 0 0 8px; margin: 0; display: grid; gap: 6px; }
-  .review-item { border-top: 1px solid var(--border, #e0e0e0); padding: 10px 14px; display: grid; gap: 4px; overflow: hidden; }
-  .review-item--critical { border-left: 3px solid #c83232; }
-  .review-item--warning { border-left: 3px solid #e1a500; }
-  .review-item--decided { opacity: 0.5; }
-  .review-item--alldone { color: #00950f; font-size: 0.85rem; font-weight: 600; }
-  .review-item--exiting { transform: translateX(110%); opacity: 0; transition: transform 260ms ease, opacity 260ms ease; }
-  .review-item--collapsing { max-height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; transition: max-height 180ms ease, padding 180ms ease; }
-  .review-item__head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-  .review-item__name { font-weight: 600; font-size: 0.9rem; }
-  .review-item__issue { font-size: 0.8rem; color: var(--muted, #666); }
-  .review-item__detail { font-size: 0.82rem; color: var(--muted, #666); }
-  .review-item__actions { display: flex; gap: 8px; margin-top: 6px; }
-  .review-btn { font-size: 0.8rem; padding: 3px 10px; border-radius: 4px; border: 1px solid var(--border, #ccc); background: transparent; cursor: pointer; }
-  .review-btn:hover { background: rgba(0,0,0,0.05); }
-  .review-btn--danger { border-color: #c83232; color: #c83232; }
-  .review-btn--danger:hover { background: rgba(200,50,50,0.08); }
-  .review-btn--active { background: #f0f0f0; font-weight: 600; }
-  .manager__review-actions { padding: 10px 14px; display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--border, #e0e0e0); }
-  .manager__review-feedback { margin: 0; padding: 8px 14px; font-size: 0.85rem; border-radius: 6px; }
-  .manager__review-feedback--ok { color: var(--color-primary-dark, #00750c); background: var(--color-primary-soft, #e7f7e9); }
-  .manager__review-feedback--warn { color: #8a4b00; background: #fff1dc; }
+  .filter-panel__hint { margin-left: 8px; font-weight: 400; color: var(--color-text-muted); font-size: 0.76rem; }
+  .filter-panel__boxes {
+    display: flex; flex-wrap: wrap; gap: 6px 14px;
+    max-height: 168px; overflow-y: auto; padding: 4px 2px;
+  }
+  .filter-box { display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; cursor: pointer; }
+  .filter-box input { width: 15px; height: 15px; accent-color: var(--color-primary); cursor: pointer; }
+  .filter-box--off { opacity: 0.4; cursor: default; }
+  .filter-box--off input { cursor: default; }
+  .filter-panel__boxes--wide { max-height: none; }
+  .filter-panel__group--narrow { max-width: 150px; }
+  @media (max-width: 1100px) {
+    .filter-panel__inner { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  }
+  #filter-price { width: 100%; max-width: 280px; accent-color: var(--color-primary); }
+
+  /* Реестр сворачивается: он длинный, а нужен не в каждую сессию. */
+  .card--registry { margin-bottom: 24px; }
+  .registry-head {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--color-border);
+  }
+  .registry-head__toggle { font-size: 0.8rem; }
+
 
   .status-pill {
     display: inline-flex; align-items: center; gap: 8px;
@@ -586,7 +508,8 @@ const CONTROL_DEFAULT_URL = '';
   }
   .filter-panel__inner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Источнику и странам нужно вдвое больше места, чем полю IELTS. */
+    grid-template-columns: 2.2fr 1.6fr 1.4fr 0.7fr 1fr;
     gap: 16px 24px;
     padding: 16px 20px 20px;
   }
@@ -618,18 +541,27 @@ const CONTROL_DEFAULT_URL = '';
   }
   .chip:hover:not(.chip--active) { border-color: var(--color-primary); color: var(--color-primary); }
   .chip--active {
-    background: var(--color-primary-soft);
+    background: var(--color-primary);
     border-color: var(--color-primary);
-    color: var(--color-primary-dark);
+    color: #fff;
     font-weight: 600;
   }
+  .chip--active:hover { background: var(--color-primary-dark); border-color: var(--color-primary-dark); }
 
   .table-wrap { overflow-x: auto; }
-  .manager__table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  /* Нижнюю полосу не видно, пока не долистаешь тысячу строк, — дублируем сверху. */
+  .table-scroll-top { overflow-x: auto; overflow-y: hidden; }
+  .table-scroll-top > div { height: 1px; }
+  .manager__table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
   .manager__table th, .manager__table td {
-    padding: 12px 16px; text-align: left;
+    padding: 7px 10px; text-align: left;
     border-bottom: 1px solid var(--color-border); vertical-align: middle;
+    white-space: nowrap;
   }
+  /* Длинное имя вуза переносим, остальные колонки держим в одну строку. */
+  .manager__table td:nth-child(2) { white-space: normal; min-width: 180px; }
+  /* Слаг нужен, чтобы опознать строку, читать его целиком незачем. */
+  .manager__table td:first-child { max-width: 130px; overflow: hidden; text-overflow: ellipsis; }
   .manager__table th {
     background: var(--color-bg-soft);
     font-weight: 700; font-size: 0.74rem;
@@ -663,18 +595,6 @@ const CONTROL_DEFAULT_URL = '';
   .table-link code { transition: color 120ms ease; }
   .table-link:hover code { color: var(--color-primary-dark); }
 
-  .card--directors { margin-bottom: 24px; }
-  .card--agg-schedules { margin-bottom: 24px; padding: 0; overflow: hidden; }
-  .card--agg-schedules .card__head { padding: 16px 20px 0; }
-  .agg-table td, .agg-table th { padding: 10px 16px; }
-  .agg-status--ok { color: var(--color-primary-dark); font-weight: 600; }
-  .agg-status--due { color: #c47a30; font-weight: 600; }
-  .agg-status--never { color: var(--color-text-faint); font-style: italic; }
-  .directors-grid { display: flex; gap: 16px; flex-wrap: wrap; }
-  .director-item { flex: 1 1 160px; display: flex; flex-direction: column; gap: 4px; padding: 14px; background: var(--color-bg-soft); border: 1px solid var(--color-border); border-radius: 12px; }
-  .director-item__name { font-weight: 700; font-size: 1rem; }
-  .director-item__domain { font-size: 0.78rem; }
-  .director-item__pill { margin-top: 8px; font-size: 0.78rem; padding: 3px 10px; }
   .gap-critical { color: #c43030; font-weight: 700; font-size: 0.8rem; }
   .gap-high { color: #c47a30; font-weight: 600; font-size: 0.8rem; }
   .gap-medium { color: var(--color-text-muted); font-size: 0.8rem; }
@@ -740,7 +660,7 @@ const CONTROL_DEFAULT_URL = '';
   .log__empty { padding: 24px 0; text-align: center; color: #888; font-style: italic; display: block; }
 </style>
 
-<script define:vars={{ controlDefaultUrl: CONTROL_DEFAULT_URL }}>
+<script define:vars={{ controlDefaultUrl: CONTROL_DEFAULT_URL, FACETS, TUITION_MAX_KZT }}>
   const STORAGE_KEY = 'studyroom.manager.controlUrl';
   const POLL_INTERVAL_RUNNING_MS = 1500;
   const POLL_INTERVAL_IDLE_MS = 8000;
@@ -752,13 +672,16 @@ const CONTROL_DEFAULT_URL = '';
   let lastAggregators = [];
   let lastSchedule = null;
   let sourceSelectWired = false;
+  // Источников и стран можно выбрать несколько; страны ограничены пятью,
+  // иначе фильтр перестаёт что-либо сужать.
+  const COUNTRY_LIMIT = 5;
   const filters = {
     search: '',
-    aggregator: '',
-    tiers: new Set(),
-    country: '',
-    status: '',
-    freshness: '',
+    aggregators: new Set(),
+    countries: new Set(),
+    fields: new Set(),
+    maxIelts: null,
+    maxKzt: null,
   };
 
   function getControlUrl() {
@@ -824,6 +747,18 @@ const CONTROL_DEFAULT_URL = '';
     return '';
   }
 
+  const SCOPE_ATTR = (() => {
+    const el = document.querySelector('.manager__table');
+    if (!el) return null;
+    return Array.from(el.attributes).map((a) => a.name).find((n) => n.startsWith('data-astro-cid-')) || null;
+  })();
+
+  function applyScope(root) {
+    if (!SCOPE_ATTR || !root) return;
+    if (root.setAttribute) root.setAttribute(SCOPE_ATTR, '');
+    if (root.querySelectorAll) root.querySelectorAll('*').forEach((el) => el.setAttribute(SCOPE_ATTR, ''));
+  }
+
   function escapeHtml(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
@@ -847,12 +782,9 @@ const CONTROL_DEFAULT_URL = '';
   function renderRunStatus(run) {
     const pill = document.getElementById('run-status');
     const txt = document.getElementById('run-status-text');
-    const summary = document.getElementById('run-summary');
     const btn = document.getElementById('run-all-btn');
-    const verifyBtn = document.getElementById('verify-btn');
-    const isVerify = run.currentTarget === 'verify';
 
-    // When a verify run just finished, refresh the snapshot in the UI.
+    // Прогон проверки закончился — обновляем процент совпадения.
     if (lastRunRunning && !run.running && lastRunTarget === 'verify') {
       refreshVerifySummary();
     }
@@ -863,71 +795,52 @@ const CONTROL_DEFAULT_URL = '';
 
     if (run.running) {
       pill.classList.add('status-pill--running');
-      if (isVerify) {
-        txt.textContent = 'Идёт проверка';
-        summary.textContent =
-          'Проверяем актуальность ссылок. Запущено ' + fmt.ago(run.startedAt) + '. Кнопки отключены до завершения.';
-        verifyBtn.disabled = true;
-        verifyBtn.textContent = 'Проверяем…';
-        btn.disabled = true;
-        btn.textContent = 'Запустить скрапинг сейчас';
-      } else {
-        txt.textContent = 'Идёт скрапинг';
-        const target = run.currentTarget === 'all' ? 'все университеты' : run.currentTarget;
-        summary.textContent = 'Цель: ' + target + '. Запущено ' + fmt.ago(run.startedAt) + '. Кнопки отключены до завершения.';
-        btn.disabled = true;
-        btn.textContent = 'Идёт скрапинг…';
-        verifyBtn.disabled = true;
-        verifyBtn.textContent = 'Проверить актуальность';
-      }
+      txt.textContent = run.currentTarget === 'verify' ? 'Идёт проверка' : 'Идёт скрапинг';
+      btn.disabled = true;
+      btn.textContent = 'Идёт…';
     } else if (run.exitCode === null) {
       pill.classList.add('status-pill--idle');
       txt.textContent = 'Ожидание';
-      summary.textContent =
-        'Скрапер не запускался в этой сессии. Нажмите кнопку — обновятся все ' +
-        (lastRegistry.length || '—') +
-        ' университетов.';
       btn.disabled = !isOnline;
-      btn.textContent = 'Запустить скрапинг сейчас';
+      btn.textContent = 'Запустить сейчас';
     } else if (run.exitCode === 0) {
       pill.classList.add('status-pill--ok');
-      txt.textContent = 'Успешно';
-      summary.textContent = 'Завершено ' + fmt.ago(run.finishedAt) + '. Цель: ' + (run.currentTarget === 'all' ? 'все' : run.currentTarget) + '. Можно запустить снова.';
+      txt.textContent = 'Успешно · ' + fmt.ago(run.finishedAt);
       btn.disabled = !isOnline;
-      btn.textContent = 'Запустить ещё раз';
+      btn.textContent = 'Запустить снова';
     } else {
       pill.classList.add('status-pill--fail');
       txt.textContent = 'Ошибка (код ' + run.exitCode + ')';
-      summary.textContent = 'Последний запуск завершился с ошибкой ' + fmt.ago(run.finishedAt) + '. Смотрите лог ниже.';
       btn.disabled = !isOnline;
       btn.textContent = 'Повторить';
     }
-
-    // Verify-btn shares the same online lock + run lock as the scrape btn.
-    if (!run.running) {
-      verifyBtn.disabled = !isOnline;
-      verifyBtn.textContent = 'Проверить актуальность';
-    }
   }
 
-  function rowFreshness(row) {
-    const iso = row.catalog && row.catalog.lastChecked;
-    if (!iso) return 'never';
-    const days = (new Date() - new Date(iso)) / (1000 * 60 * 60 * 24);
-    return days <= 35 ? 'fresh' : 'stale';
-  }
+  const DIRECT_FILTER = '__direct';
 
   function rowMatchesFilters(row) {
     if (filters.search) {
       const q = filters.search.toLowerCase();
       if (!row.slug.toLowerCase().includes(q) && !row.name.toLowerCase().includes(q)) return false;
     }
-    if (filters.aggregator && !rowAggregatorSlugs(row).includes(filters.aggregator)) return false;
-    if (filters.tiers.size > 0 && !filters.tiers.has(row.tier)) return false;
-    if (filters.country && row.country !== filters.country) return false;
-    if (filters.status === 'in' && !row.catalog) return false;
-    if (filters.status === 'out' && row.catalog) return false;
-    if (filters.freshness && rowFreshness(row) !== filters.freshness) return false;
+    if (filters.countries.size > 0 && !filters.countries.has(row.country)) return false;
+    // Цена, IELTS и направления живут в каталоге; у вуза без нужного значения
+    // строка при активном фильтре не проходит — иначе фильтр ничего не сужает.
+    if (filters.fields.size > 0 || filters.maxIelts !== null || filters.maxKzt !== null) {
+      const facet = FACETS[row.slug];
+      if (!facet) return false;
+      if (filters.maxKzt !== null && !(facet.kzt !== null && facet.kzt <= filters.maxKzt)) return false;
+      if (filters.maxIelts !== null && !(facet.ielts !== null && facet.ielts <= filters.maxIelts)) return false;
+      if (filters.fields.size > 0 && !facet.fields.some((id) => filters.fields.has(id))) return false;
+    }
+    // '__direct' — не агрегатор, а вузы, с которыми работаем напрямую:
+    // строка проходит, если совпал хоть один из выбранных источников.
+    if (filters.aggregators.size > 0) {
+      const slugs = rowAggregatorSlugs(row);
+      const hit = Array.from(filters.aggregators).some((v) =>
+        v === DIRECT_FILTER ? row.partnerType === 'direct' : slugs.includes(v));
+      if (!hit) return false;
+    }
     return true;
   }
 
@@ -957,17 +870,27 @@ const CONTROL_DEFAULT_URL = '';
     return chips.length ? '<span class="agg-chips">' + chips.join('') + '</span>' : '<span class="muted">—</span>';
   }
 
+  // Ссылка на официальный сайт вуза: менеджеру она нужна чаще всего, чтобы
+  // проверить цену глазами. Домен короче полного URL и читается в узкой ячейке.
+  function siteCell(row) {
+    const url = row.officialUrl;
+    if (!url) return '<span class="muted">—</span>';
+    let host = url;
+    try { host = new URL(url).hostname.replace(/^www./, ''); } catch {}
+    return '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="table-link">' + escapeHtml(host) + '</a>';
+  }
+
   function renderRegistry(registry) {
     lastRegistry = registry || [];
     const tbody = document.getElementById('registry-tbody');
     if (lastRegistry.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="8" class="table-loading">Реестр пуст. Проверьте sources/universities.list.md</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="10" class="table-loading">Реестр пуст. Проверьте sources/universities.list.md</td></tr>';
       updateResultCount(0, 0);
       return;
     }
     const filtered = lastRegistry.filter(rowMatchesFilters);
     if (filtered.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="8" class="table-loading">Ничего не найдено. Попробуйте сбросить фильтры.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="10" class="table-loading">Ничего не найдено. Попробуйте сбросить фильтры.</td></tr>';
       updateResultCount(0, lastRegistry.length);
       return;
     }
@@ -978,12 +901,13 @@ const CONTROL_DEFAULT_URL = '';
       const checkedCls = fmt.stalenessClass(checked);
       const disabledAttr = isOnline ? '' : ' disabled';
       const aggCell = aggregatorCell(row);
-      const slugLink = '<a href="/' + escapeHtml(row.slug) + '" target="_blank" rel="noopener" class="table-link"><code>' + escapeHtml(row.slug) + '</code></a>';
+      const slugLink = '<a href="/' + escapeHtml(row.slug) + '" target="_blank" rel="noopener" class="table-link" title="' + escapeHtml(row.slug) + '"><code>' + escapeHtml(row.slug) + '</code></a>';
       const nameLink = '<a href="/' + escapeHtml(row.slug) + '" target="_blank" rel="noopener" class="table-link">' + escapeHtml(row.name || '—') + '</a>';
       return '<tr>' +
         '<td>' + slugLink + '</td>' +
         '<td>' + nameLink + '</td>' +
         '<td>' + escapeHtml(row.city) + '</td>' +
+        '<td>' + siteCell(row) + '</td>' +
         '<td><span class="tier tier--' + escapeHtml(row.tier) + '">' + escapeHtml(row.tier) + '</span></td>' +
         '<td>' + aggCell + '</td>' +
         '<td>' + inCatalog + '</td>' +
@@ -992,6 +916,8 @@ const CONTROL_DEFAULT_URL = '';
         '<td><button class="btn btn-ghost btn-sm" data-run-slug="' + escapeHtml(row.slug) + '"' + disabledAttr + '>обновить</button></td>' +
         '</tr>';
     }).join('');
+    applyScope(tbody);
+    if (scrollSync) scrollSync();
     updateResultCount(filtered.length, lastRegistry.length);
   }
 
@@ -1004,11 +930,11 @@ const CONTROL_DEFAULT_URL = '';
   function countActiveFilters() {
     let n = 0;
     if (filters.search) n++;
-    if (filters.aggregator) n++;
-    if (filters.tiers.size > 0) n++;
-    if (filters.country) n++;
-    if (filters.status) n++;
-    if (filters.freshness) n++;
+    if (filters.aggregators.size > 0) n++;
+    if (filters.countries.size > 0) n++;
+    if (filters.fields.size > 0) n++;
+    if (filters.maxIelts !== null) n++;
+    if (filters.maxKzt !== null) n++;
     return n;
   }
 
@@ -1043,6 +969,7 @@ const CONTROL_DEFAULT_URL = '';
       btn.dataset.filter = 'aggregator';
       btn.dataset.value = agg.slug;
       btn.textContent = agg.name;
+      applyScope(btn);
       container.appendChild(btn);
       existing.add(agg.slug);
     }
@@ -1056,26 +983,112 @@ const CONTROL_DEFAULT_URL = '';
         btn.dataset.filter = 'aggregator';
         btn.dataset.value = slug;
         btn.textContent = slug;
+        applyScope(btn);
         container.appendChild(btn);
         existing.add(slug);
       }
     }
+    syncAggregatorChipState();
   }
 
-  function syncCountryOptions(registry) {
-    const select = document.getElementById('filter-country');
-    if (!select) return;
-    const countries = Array.from(new Set((registry || []).map((r) => r.country))).sort((a, b) => a.localeCompare(b, 'ru'));
-    const current = filters.country;
-    const existing = new Set(Array.from(select.options).map((o) => o.value));
-    for (const c of countries) {
-      if (existing.has(c)) continue;
-      const opt = document.createElement('option');
-      opt.value = c; opt.textContent = c;
-      select.appendChild(opt);
-    }
-    if (current) select.value = current;
+  // Вид чипов повторяет набор: «Все» подсвечен, когда не выбрано ничего.
+  function syncAggregatorChipState() {
+    const container = document.getElementById('filter-aggregator-chips');
+    if (!container) return;
+    const picked = filters.aggregators;
+    container.querySelectorAll('.chip').forEach((chip) => {
+      const v = chip.dataset.value || '';
+      chip.classList.toggle('chip--active', v === '' ? picked.size === 0 : picked.has(v));
+    });
+    const hint = document.getElementById('filter-aggregator-hint');
+    if (hint) hint.textContent = picked.size === 0 ? 'выбрано: все' : 'выбрано: ' + picked.size;
   }
+
+  // Страны — чекбоксы: их полсотни, чипами такой список не читается.
+  function syncCountryOptions(registry) {
+    const box = document.getElementById('filter-country-boxes');
+    if (!box || box.childElementCount > 0) return;
+    const countries = Array.from(new Set((registry || []).map((r) => r.country).filter(Boolean)))
+      .sort((a, b) => a.localeCompare(b, 'ru'));
+    box.innerHTML = countries
+      .map((c) => '<label class="filter-box"><input type="checkbox" value="' + escapeHtml(c) + '"><span>' + escapeHtml(c) + '</span></label>')
+      .join('');
+    applyScope(box);
+    syncCountryBoxState();
+  }
+
+  // Больше пяти стран разом фильтр не сужает, поэтому лишние гасим.
+  function syncCountryBoxState() {
+    const box = document.getElementById('filter-country-boxes');
+    if (!box) return;
+    const atLimit = filters.countries.size >= COUNTRY_LIMIT;
+    box.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
+      cb.checked = filters.countries.has(cb.value);
+      cb.disabled = atLimit && !cb.checked;
+      const label = cb.closest('.filter-box');
+      if (label) label.classList.toggle('filter-box--off', cb.disabled);
+    });
+    const hint = document.getElementById('filter-country-hint');
+    if (hint) {
+      hint.textContent = filters.countries.size === 0
+        ? 'не более ' + COUNTRY_LIMIT
+        : filters.countries.size + ' из ' + COUNTRY_LIMIT;
+    }
+  }
+
+  // Тенге в подписи: миллионами, чтобы семизначные числа не съедали строку.
+  function kztShort(v) {
+    return v >= 1000000 ? (v / 1000000).toFixed(1).replace('.', ',').replace(',0', '') + ' млн ₸' : Math.round(v / 1000) + ' тыс ₸';
+  }
+
+  function syncFieldHint() {
+    const hint = document.getElementById('filter-field-hint');
+    if (hint) hint.textContent = filters.fields.size === 0 ? 'любая' : 'выбрано: ' + filters.fields.size;
+  }
+
+  function syncPriceHint() {
+    const hint = document.getElementById('filter-price-hint');
+    if (!hint) return;
+    hint.textContent = filters.maxKzt === null ? 'любая' : 'не дороже ' + kztShort(filters.maxKzt);
+  }
+
+  document.getElementById('filter-price').addEventListener('input', (e) => {
+    const v = Number(e.target.value);
+    const max = Number(e.target.dataset.max);
+    filters.maxKzt = v >= max ? null : v;
+    syncPriceHint();
+    applyFiltersAndRerender();
+  });
+
+  document.getElementById('filter-ielts').addEventListener('input', (e) => {
+    const v = parseFloat(e.target.value);
+    filters.maxIelts = Number.isFinite(v) ? v : null;
+    applyFiltersAndRerender();
+  });
+
+  document.addEventListener('change', (e) => {
+    const box = e.target;
+    if (!(box instanceof HTMLInputElement) || box.type !== 'checkbox') return;
+    if (!box.closest('#filter-field-boxes')) return;
+    if (box.checked) filters.fields.add(box.value);
+    else filters.fields.delete(box.value);
+    syncFieldHint();
+    applyFiltersAndRerender();
+  });
+
+  document.addEventListener('change', (e) => {
+    const cb = e.target;
+    if (!(cb instanceof HTMLInputElement) || cb.type !== 'checkbox') return;
+    if (!cb.closest('#filter-country-boxes')) return;
+    if (cb.checked) {
+      if (filters.countries.size >= COUNTRY_LIMIT) { cb.checked = false; return; }
+      filters.countries.add(cb.value);
+    } else {
+      filters.countries.delete(cb.value);
+    }
+    syncCountryBoxState();
+    applyFiltersAndRerender();
+  });
 
   function renderSchedule(schedule) {
     lastSchedule = schedule;
@@ -1144,6 +1157,7 @@ const CONTROL_DEFAULT_URL = '';
         ? agg.name + ': ' + agg.dayOfMonth + ' число месяца'
         : agg.lastRunAt ? agg.name + ': каждые ' + days + ' дн.' : agg.name + ': при следующем scrape-monthly',
     );
+    renderSourceMatch();
     document.getElementById('cron-pill').innerHTML = agg.dayOfMonth
       ? '<code>' + agg.dayOfMonth + ' числа</code>'
       : agg.lastRunAt
@@ -1187,7 +1201,6 @@ const CONTROL_DEFAULT_URL = '';
     const staticBanner = document.getElementById('static-banner');
     pill.className = 'status-pill';
     const runBtn = document.getElementById('run-all-btn');
-    const verifyBtn = document.getElementById('verify-btn');
     if (state === 'online') {
       isOnline = true;
       pill.classList.add('status-pill--ok');
@@ -1195,7 +1208,6 @@ const CONTROL_DEFAULT_URL = '';
       offlineBanner.hidden = true;
       staticBanner.hidden = true;
       runBtn.disabled = false;
-      verifyBtn.disabled = false;
     } else if (state === 'static') {
       // Static-snapshot mode: both buttons now work via GitHub Actions.
       isOnline = true;
@@ -1204,7 +1216,6 @@ const CONTROL_DEFAULT_URL = '';
       offlineBanner.hidden = true;
       staticBanner.hidden = false;
       runBtn.disabled = false;
-      verifyBtn.disabled = false;
     } else {
       isOnline = false;
       pill.classList.add('status-pill--fail');
@@ -1212,7 +1223,6 @@ const CONTROL_DEFAULT_URL = '';
       offlineBanner.hidden = false;
       staticBanner.hidden = true;
       runBtn.disabled = true;
-      verifyBtn.disabled = true;
     }
   }
 
@@ -1236,11 +1246,10 @@ const CONTROL_DEFAULT_URL = '';
       const catalogCount = data.registry.filter((r) => r.catalog).length;
       renderSource(data.sourceProfile, data.registry.length, catalogCount);
       renderRunStatus(data.run);
-      renderDirectors(data.directors, data.gaps);
       renderAggregatorSchedules(data.aggregators || []);
       syncAggregatorChips(data.aggregators || [], data.registry);
-      setupSourceSelector(data.aggregators || []);
       syncCountryOptions(data.registry);
+      setupSourceSelector(data.aggregators || []);
       renderRegistry(data.registry);
       renderLog(data.run.log);
       renderLogSummary(data.run);
@@ -1287,7 +1296,6 @@ const CONTROL_DEFAULT_URL = '';
   const BOBR_WORKFLOW          = 'bobr-on-demand.yml';
   const BUMBLEBEE_WORKFLOW     = 'bumblebee-on-demand.yml';
   const SCRAPE_WORKFLOW        = 'scrape-monthly.yml';
-  const FIX_FRESHNESS_WORKFLOW = 'fix-freshness.yml';
   const GITHUB_TOKEN_KEY = 'studyroom.manager.githubToken';
   const RAW_BASE =
     'https://raw.githubusercontent.com/' + GITHUB_REPO + '/' + GITHUB_REF;
@@ -1514,9 +1522,9 @@ const CONTROL_DEFAULT_URL = '';
         renderSource(data.sourceProfile, data.registry.length, catalogCount);
         renderAggregatorSchedules(data.aggregators || []);
         syncAggregatorChips(data.aggregators || [], data.registry);
+      syncCountryOptions(data.registry);
         setupSourceSelector(data.aggregators || []);
-        syncCountryOptions(data.registry);
-        renderRegistry(data.registry);
+          renderRegistry(data.registry);
       }
     } catch (err) {
       console.warn('refreshDataFromRaw status.json failed', err);
@@ -1535,593 +1543,68 @@ const CONTROL_DEFAULT_URL = '';
     openRunSelector();
   });
 
-  // ── Dropdown helpers ─────────────────────────────────────────────────────
-  function toggleMenu(triggerId, menuId) {
-    const trigger = document.getElementById(triggerId);
-    const menu = document.getElementById(menuId);
-    if (!trigger || !menu) return;
-    const open = !menu.hidden;
-    menu.hidden = open;
-    trigger.setAttribute('aria-expanded', String(!open));
-  }
-
-  function closeAllMenus() {
-    [['verify-btn','verify-menu'],['fix-freshness-btn','fix-menu']].forEach(([t,m]) => {
-      const menu = document.getElementById(m);
-      const trigger = document.getElementById(t);
-      if (menu) menu.hidden = true;
-      if (trigger) trigger.setAttribute('aria-expanded', 'false');
-    });
-  }
-
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.verify-dropdown')) closeAllMenus();
-  });
-
-  document.getElementById('verify-btn').addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleMenu('verify-btn', 'verify-menu');
-    document.getElementById('fix-menu').hidden = true;
-  });
-
-  document.getElementById('verify-menu').addEventListener('click', async (e) => {
-    const item = e.target.closest('[data-verify-scope]');
-    if (!item) return;
-    const scope = item.dataset.verifyScope;
-    closeAllMenus();
-    const btn = document.getElementById('verify-btn');
-    btn.disabled = true;
-    const orig = btn.innerHTML;
-    btn.innerHTML = 'Проверяем…';
-    const inputs = scope === 'all' ? { scope: 'all' } : { scope: 'critical' };
-    const ok = await runRemoteWorkflow({
-      workflowFile: VERIFY_WORKFLOW,
-      label: 'Проверка актуальности (' + scope + ')',
-      expectedMin: scope === 'all' ? 25 : 10,
-      inputs,
-    });
-    btn.disabled = false;
-    btn.innerHTML = orig;
-    if (ok) fetchStatus();
-  });
-
-  document.getElementById('fix-freshness-btn').addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleMenu('fix-freshness-btn', 'fix-menu');
-    document.getElementById('verify-menu').hidden = true;
-  });
-
-  document.getElementById('fix-menu').addEventListener('click', async (e) => {
-    const item = e.target.closest('[data-fix-scope]');
-    if (!item) return;
-    const scope = item.dataset.fixScope;
-    closeAllMenus();
-    const btn = document.getElementById('fix-freshness-btn');
-    btn.disabled = true;
-    const orig = btn.innerHTML;
-    btn.innerHTML = 'Исправляем…';
-    const inputs = { scope };
-    await runRemoteWorkflow({
-      workflowFile: FIX_FRESHNESS_WORKFLOW,
-      label: 'Исправить актуальность (' + scope + ')',
-      expectedMin: scope === 'all' ? 40 : 20,
-      inputs,
-    });
-    btn.disabled = false;
-    btn.innerHTML = orig;
-    fetchStatus();
-  });
-
-  for (const [id, wf, label, mins] of [
-    ['pauk-run-btn', PAUK_WORKFLOW, 'ПАУК (программы)', 30],
-    ['bobr-run-btn', BOBR_WORKFLOW, 'БОБР (кампусы)', 20],
-    ['orel-run-btn', OREL_WORKFLOW, 'ОРЁЛ (фото)', 40],
-  ]) {
-    document.getElementById(id)?.addEventListener('click', async (e) => {
-      const btn = e.currentTarget;
-      btn.disabled = true;
-      const orig = btn.textContent;
-      btn.textContent = 'Запускаем…';
-      await runRemoteWorkflow({ workflowFile: wf, label, expectedMin: mins });
-      btn.disabled = false;
-      btn.textContent = orig;
-    });
-  }
-
-  document.getElementById('orel-btn').addEventListener('click', async () => {
-    const btn = document.getElementById('orel-btn');
-    btn.disabled = true;
-    const orig = btn.textContent;
-    btn.textContent = 'Запускаем ОРЁЛ…';
-    await runRemoteWorkflow({ workflowFile: OREL_WORKFLOW, label: 'Обновление фото (ОРЁЛ)', expectedMin: 30 });
-    btn.disabled = false;
-    btn.textContent = orig;
-  });
-
   document.getElementById('github-conn-btn').addEventListener('click', () => {
     promptForGithubToken();
   });
+
+  let lastVerify = null;
 
   async function refreshVerifySummary() {
     try {
       const res = await fetch('/api/verify.json?ts=' + Date.now(), { cache: 'no-store' });
       if (!res.ok) return;
-      const data = await res.json();
-      renderVerifySummary(data);
+      lastVerify = await res.json();
+      renderSourceMatch();
     } catch {
-      // No verify.json yet — leave summary hidden.
+      // verify.json ещё нет — процент останется прочерком.
     }
   }
 
-  function renderVerifySummary(data) {
-    const summary = document.getElementById('verify-summary');
-    const text = document.getElementById('verify-summary-text');
-    const toggle = document.getElementById('verify-details-toggle');
-    const details = document.getElementById('verify-details');
-    const list = document.getElementById('verify-details-list');
-    if (!data || !Number.isFinite(data.totalSampled) || data.totalSampled === 0) {
-      summary.hidden = true;
-      details.hidden = true;
+  // Совпадение каталога с живым сайтом источника: берём последний прогон
+  // РЕВИЗОРа и считаем по вузам ВЫБРАННОГО источника — общий процент о нём
+  // ничего не говорит. Когда по источнику никого не проверяли, честно
+  // показываем цифру по всем и так и подписываем.
+  function renderSourceMatch() {
+    const pctEl = document.getElementById('source-match-pct');
+    const noteEl = document.getElementById('source-match-note');
+    if (!pctEl || !noteEl) return;
+    const data = lastVerify;
+    const reports = (data && Array.isArray(data.reports)) ? data.reports : [];
+    if (reports.length === 0) {
+      pctEl.textContent = '—';
+      pctEl.className = '';
+      noteEl.textContent = 'совпадение ещё не проверялось';
       return;
     }
+    const sel = document.getElementById('source-select');
+    const slug = sel ? sel.value : '';
+    const inSource = new Set(
+      (lastRegistry || [])
+        .filter((r) => (slug === DIRECT_FILTER
+          ? r.partnerType === 'direct'
+          : rowAggregatorSlugs(r).includes(slug)))
+        .map((r) => r.slug),
+    );
+    const mine = reports.filter((r) => inSource.has(r.slug));
+    const scope = mine.length ? mine : reports;
+    const alive = scope.reduce((n, r) => n + (r.alive || 0), 0);
+    const sampled = scope.reduce((n, r) => n + (r.sampled || 0), 0);
+    if (sampled === 0) {
+      pctEl.textContent = '—';
+      pctEl.className = '';
+      noteEl.textContent = 'совпадение ещё не проверялось';
+      return;
+    }
+    const pct = Math.round((alive / sampled) * 100);
+    pctEl.textContent = pct + '%';
+    pctEl.className = pct >= 80 ? 'source-match--ok' : pct >= 50 ? 'source-match--warn' : 'source-match--fail';
     const ago = fmt.ago(data.generatedAt) || '—';
-    text.textContent =
-      'Проверено ' + data.totalSampled + ' программ из ' + (data.reports?.length || 0) +
-      ' университетов. Актуальность: ' + data.overallFreshnessPct + '%. Последняя проверка: ' + ago + '.';
-    summary.hidden = false;
-    toggle.hidden = false;
-    const reports = (data.reports || []).slice().sort((a, b) => a.freshnessPct - b.freshnessPct);
-    list.innerHTML = reports
-      .map((r) => {
-        const cls = r.freshnessPct >= 80 ? 'ok' : r.freshnessPct >= 50 ? 'warn' : 'fail';
-        const issues = [];
-        if (r.dead) issues.push(r.dead + ' битых');
-        if (r.mismatch) issues.push(r.mismatch + ' несовпадений');
-        if (r.errors) issues.push(r.errors + ' ошибок');
-        const tail = issues.length ? ' · ' + issues.join(', ') : '';
-        return '<li class="verify-row verify-row--' + cls + '">' +
-          '<span class="verify-row__name">' + r.name + '</span>' +
-          '<span class="verify-row__pct">' + r.freshnessPct + '% (' + r.alive + '/' + r.sampled + ')' + tail + '</span>' +
-          '</li>';
-      })
-      .join('');
+    noteEl.textContent = (mine.length ? '' : 'по всем: ') + alive + ' из ' + sampled + ' · ' + ago;
+    noteEl.title = (mine.length
+      ? 'Совпало ' + alive + ' из ' + sampled + ' проверенных программ этого источника'
+      : 'По этому источнику проверок ещё не было — цифра по всем источникам')
+      + '. Последняя проверка: ' + ago + '.';
   }
-
-  document.getElementById('verify-details-toggle').addEventListener('click', (e) => {
-    e.preventDefault();
-    const details = document.getElementById('verify-details');
-    details.hidden = !details.hidden;
-    if (!details.hidden) details.setAttribute('open', '');
-    else details.removeAttribute('open');
-  });
-
-  // ── РЕВИЗОР decisions panel ──────────────────────────────────────────────
-
-  // Источники кейсов аудита. Формат items идентичен (РЕВИЗОР-схема), поэтому
-  // рендер общий; различаются только файл, apply-workflow и localStorage-ключ.
-  const REVIEW_SRCS = [
-    {
-      key: 'revizor', title: 'РЕВИЗОР',
-      api: '/api/revizor-review.json',
-      contentPath: 'site/public/api/revizor-review.json',
-      workflow: REVIZOR_APPLY_WORKFLOW,
-      lsKey: 'studyroom.revizor.decisions',
-    },
-    {
-      key: 'soroka', title: 'СОРОКА',
-      api: '/api/soroka-review.json',
-      contentPath: 'site/public/api/soroka-review.json',
-      workflow: SOROKA_APPLY_WORKFLOW,
-      lsKey: 'studyroom.soroka.decisions',
-    },
-    {
-      key: 'bobr', title: 'БОБР',
-      api: '/api/bobr-review.json',
-      contentPath: 'site/public/api/bobr-review.json',
-      workflow: BOBR_APPLY_WORKFLOW,
-      lsKey: 'studyroom.bobr.decisions',
-    },
-    {
-      key: 'orel', title: 'ОРЁЛ',
-      api: '/api/orel-review.json',
-      contentPath: 'site/public/api/orel-review.json',
-      workflow: OREL_APPLY_WORKFLOW,
-      lsKey: 'studyroom.orel.decisions',
-    },
-    {
-      // КОМПАС: кейсы сессий 3.5 и 4. Это ЗАМЕР, а не правка — apply-workflow
-      // сознательно нет: по правилу 5 плана каталог меняется только в сессии 5,
-      // на копии и целиком. Решения оператора здесь копятся до этого момента.
-      key: 'kompas', title: 'КОМПАС',
-      api: '/api/kompas-review.json',
-      contentPath: 'site/public/api/kompas-review.json',
-      workflow: null,
-      lsKey: 'studyroom.kompas.decisions',
-    },
-  ];
-  const srcState = {};   // key → { cfg, data }  (data = полный JSON источника)
-  let reviewData = null; // объединённый вид { items: [...] } для рендера
-
-  const srcOf = (item) => srcState[item && item.__src];
-
-  async function loadReviewData() {
-    const merged = [];
-    for (const cfg of REVIEW_SRCS) {
-      try {
-        const ts = Date.now();
-        const res = await fetch(cfg.api + '?ts=' + ts, { cache: 'no-store' });
-        if (!res.ok) continue;
-        const data = await res.json();
-        srcState[cfg.key] = { cfg, data };
-        // Восстанавливаем локальные решения поверх данных с сервера
-        const local = loadDecisionsLocal(cfg.lsKey);
-        // Чистим решения с прошлых запусков: их кейсов больше нет в свежем review.
-        const currentIds = new Set((data.items || []).map(i => i.id));
-        let prunedLocal = false;
-        for (const id of Object.keys(local)) {
-          if (!currentIds.has(id)) { delete local[id]; prunedLocal = true; }
-        }
-        if (prunedLocal) { try { localStorage.setItem(cfg.lsKey, JSON.stringify(local)); } catch {} }
-        for (const item of (data.items || [])) {
-          item.__src = cfg.key;
-          if (local[item.id] && item.decision === null) {
-            item.decision = local[item.id].decision;
-            item.decidedAt = local[item.id].decidedAt;
-          }
-          merged.push(item);
-        }
-      } catch {}
-    }
-    reviewData = { items: merged };
-    renderReviewPanel();
-  }
-
-  function issueLabel(issue) {
-    const map = {
-      missing_on_site: 'не найдены на официальном сайте',
-      broken_url: '404 — битая ссылка',
-      tuition_mismatch: 'расхождение стоимости обучения',
-      ielts_changed: 'изменились требования IELTS',
-      tuition_zero: 'цена обучения не заполнена (0)',
-      tuition_outlier: 'цена обучения вне диапазона',
-      ielts_implausible: 'неправдоподобный балл IELTS',
-      orel_needs_eyes: 'фото найдено — нужен просмотр глазами',
-      // КОМПАС, сессия 3.5 — прямые партнёры
-      direct_fee_unlinked: 'цена офсайта не привязана к программе',
-      direct_zero_programs: 'офсайт не отдал ни одной программы',
-      direct_capped: 'обход упёрся в потолок, часть программ не собрана',
-      direct_no_official_site: 'офсайт неизвестен — в карточке адрес агрегатора',
-      direct_site_unreachable: 'сайт вуза не ответил',
-      // КОМПАС, сессия 4 — замер расхождений
-      kompas_programs_missing: 'у источника есть программы, которых нет в карточке',
-      kompas_programs_extra: 'в карточке есть программы, которых нет у источника',
-      kompas_fee_mismatch: 'цена расходится с источником',
-      kompas_fee_mismatch_rest: 'остальные расхождения цены (свод)',
-      kompas_fee_absent: 'у источника цена есть, в карточке нет',
-      kompas_fee_currency: 'валюта не совпадает с источником',
-      kompas_campus_missing: 'кампусы источника отсутствуют в карточке',
-      kompas_no_extract: 'источник собран, но выгрузки по вузу нет',
-      kompas_source_blocked: 'источник за логином — сверить не с чем',
-      kompas_source_empty: 'источник не отдаёт программы',
-      // КОМПАС, сессия 4.5 — карточки, дубли, дыры сбора
-      kompas_gap_collectable: 'вуз есть в источнике, выгрузки нет — чинится прогоном',
-      kompas_gap_source_no_programs: 'партнёрство есть, программ источник не отдаёт',
-      kompas_gap_dupe_card: 'бренд источника привязан к другой карточке — дубль в каталоге',
-      kompas_dupe_candidate: 'похоже на один вуз под двумя карточками',
-      // КОМПАС P4 — стипендии
-      kompas_scholarship_untraceable: 'стипендии в карточке нечем проверить',
-      kompas_scholarship_absent: 'стипендий нет ни одной — нужен сбор с офсайтов',
-      // КОМПАС, сессия 6 — сверка стипендий каталога с офсайтами
-      kompas_scholarship_offsite_new: 'на сайте вуза есть стипендии, которых нет в карточке',
-      kompas_scholarship_not_on_site: 'стипендии карточки не подтвердились сайтом вуза',
-      kompas_scholarship_amount_diff: 'сумма стипендии расходится с сайтом вуза',
-      kompas_scholarship_diff_summary: 'свод сверки стипендий с офсайтами',
-      kompas_scholarship_parse_junk: 'брак разбора стипендий отброшен (свод)',
-      kompas_scholarship_parse_junk_uni: 'разбор страницы стипендий давал не стипендии',
-      kompas_gap_merged: 'источник слил запись в другую карточку',
-      kompas_card_merged: 'карточка слита в другую (решение владельца)',
-      kompas_card_new_iapro: 'карточка заведена из IAPro — цен у источника нет',
-      kompas_card_city_not_from_source: 'город/страна проставлены не источником',
-      kompas_card_empty_contract_hub: 'договор есть, программ у источника нет вовсе',
-      kompas_card_filled_offsite: 'карточка заполнена с офсайта — проверить состав',
-      kompas_dupe_merged: 'дубль слит в эту карточку',
-      kompas_dupe_dropped: 'карточка-дубль, слита в другую — удаление в сессии 5',
-      kompas_mark_removed_stale_mark: 'метка партнёрства снята (решение владельца)',
-      kompas_mark_removed_not_a_uni: 'не вуз — метка партнёрства снята',
-      // КОМПАС, сессия 5 — P0–P2
-      kompas_navitas_price_fabricated: 'сняты фабрикованные цены Navitas',
-      kompas_oxfordintl_price_fabricated: 'сняты сид-цены Oxford International',
-      kompas_fee_currency_fixed: 'валюта карточки исправлена',
-      kompas_fee_currency_reviewed: 'валюта сверена со страной — относок нет',
-      kompas_program_foreign_currency: 'программы не заведены: чужая валюта, подозрение на чужой кампус',
-      // КОМПАС, 3.5-g — остаток непривязанного
-      kompas_program_no_level: 'программы не заведены: уровня нет ни у источника, ни в названии',
-      kompas_program_level_unsupported: 'квалификации нет в схеме каталога (certificate / diploma)',
-      kompas_program_ambiguous_twins: 'не привязать: в карточке две программы с одинаковым названием',
-      kompas_program_ambiguous_level: 'не привязать: у строки нет уровня, в карточке кандидаты разных уровней',
-      // КОМПАС — заведение карточек edvoy
-      kompas_card_edvoy_no_city: 'карточка не заведена: источник не назвал город',
-      kompas_card_edvoy_no_programs: 'карточка не заведена: у источника нет ни одной программы',
-      kompas_card_edvoy_card_exists: 'карточка есть, но выгрузка к ней не привязалась',
-    };
-    return map[issue] || issue;
-  }
-
-  // Кейс ОРЛА показывает САМО ФОТО: решить «здание это или реклама» по тексту
-  // нельзя. В пилоте мимо всех фильтров прошли рекламная плашка, ИИ-портрет
-  // и SVG-логотип — каждый раз это было видно только глазами.
-  function candidateHtml(item) {
-    const c = item.candidate;
-    if (!c || !c.img) return '';
-    const esc = (s) => String(s == null ? '' : s)
-      .replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
-    const lic = c.imgLicense === 'official-site' ? 'офсайт вуза' : esc(c.imgLicense || 'лицензия неизвестна');
-    const author = c.imgAuthor ? esc(c.imgAuthor) : 'автор неизвестен';
-    const src = c.imgSource
-      ? `<a href="${esc(c.imgSource)}" target="_blank" rel="noopener">источник</a>`
-      : 'источник не указан';
-    return `<div class="review-item__detail" style="display:flex;gap:12px;align-items:flex-start;margin-top:6px">
-      <img src="${esc(c.img)}" alt="" loading="lazy"
-           style="width:200px;height:134px;object-fit:cover;border-radius:6px;background:#eee;flex:none">
-      <span class="muted">${lic} · ${author} · ${src}<br>${c.width || '?'}×${c.height || '?'}</span>
-    </div>`;
-  }
-
-  function decisionActions(item) {
-    const decided = item.decision;
-    const btn = (a) =>
-      `<button class="review-btn${a.danger ? ' review-btn--danger' : ''}${decided === a.value ? ' review-btn--active' : ''}" data-id="${item.id}" data-decision="${a.value}">${a.label}</button>`;
-    // Кейсы без авто-фикса значения (СОРОКА: неправдоподобный IELTS) — только
-    // «Игнорировать»; реальное значение правится руками (пункт B).
-    // КОМПАС меряет, а не правит: «Удалить» здесь было бы кнопкой, за которой
-    // ничего не стоит (apply-workflow нет, правки идут в сессии 5 целиком).
-    if (String(item.issue || '').startsWith('kompas_') || String(item.issue || '').startsWith('direct_')) {
-      return [
-        { value: 'accept', label: 'В работу', danger: false },
-        { value: 'ignore', label: 'Игнорировать', danger: false },
-      ].map(btn).join('');
-    }
-    if (item.issue === 'ielts_implausible') {
-      return [{ value: 'ignore', label: 'Игнорировать', danger: false }].map(btn).join('');
-    }
-    const isMismatch = item.issue === 'tuition_mismatch' || item.issue === 'ielts_changed';
-    if (isMismatch) {
-      return [
-        { value: 'update', label: 'Обновить', danger: false },
-        { value: 'ignore', label: 'Игнорировать', danger: false },
-      ].map(btn).join('');
-    }
-    return [
-      { value: 'delete', label: 'Удалить', danger: true },
-      { value: 'ignore', label: 'Игнорировать', danger: false },
-    ].map(btn).join('');
-  }
-
-  function renderReviewPanel() {
-    if (!reviewData) return;
-    const panel = document.getElementById('review-panel');
-    const badge = document.getElementById('review-panel-badge');
-    const list = document.getElementById('review-items-list');
-    const actions = document.getElementById('review-actions');
-
-    const pending = (reviewData.items || []).filter(i => !i.applied);
-    if (!pending.length) { panel.hidden = true; return; }
-
-    panel.hidden = false;
-    // Show only cases that still need a decision — once decided, a case drops out
-    // of the list so the operator isn't confused by already-handled items.
-    const open = pending.filter(i => i.decision === null);
-    const decidedCount = pending.length - open.length;
-    badge.textContent = open.length + ' требуют решения';
-    badge.hidden = false;
-
-    if (open.length === 0) {
-      list.innerHTML = `<li class="review-item review-item--alldone">Все кейсы обработаны (${decidedCount}). Нажмите «Применить решения».</li>`;
-    } else {
-      list.innerHTML = open.map(item => {
-        const severity = item.severity === 'critical' ? 'critical' : 'warning';
-        const programsHtml = (item.programs || []).slice(0, 5).map(p => `<span class="muted">${p.title}</span>`).join(', ');
-        return `<li class="review-item review-item--${severity}">
-          <div class="review-item__head">
-            <span class="review-item__name">${item.name}</span>
-            <span class="review-item__issue">${(srcOf(item)?.cfg.title ? srcOf(item).cfg.title + ' · ' : '')}${issueLabel(item.issue)}</span>
-          </div>
-          ${programsHtml ? `<div class="review-item__detail">${programsHtml}</div>` : ''}
-          ${item.detail ? `<div class="review-item__detail">${item.detail}</div>` : ''}
-          ${candidateHtml(item)}
-          <div class="review-item__actions">${decisionActions(item)}</div>
-        </li>`;
-      }).join('');
-    }
-
-    actions.hidden = decidedCount === 0;
-  }
-
-  function saveDecisionLocal() {
-    try {
-      for (const cfg of REVIEW_SRCS) {
-        const st = srcState[cfg.key];
-        if (!st) continue;
-        const decisions = {};
-        for (const item of (st.data.items || [])) {
-          if (item.decision !== null) decisions[item.id] = { decision: item.decision, decidedAt: item.decidedAt };
-        }
-        try { localStorage.setItem(cfg.lsKey, JSON.stringify(decisions)); } catch {}
-      }
-    } catch {}
-  }
-
-  function loadDecisionsLocal(lsKey) {
-    try {
-      return JSON.parse(localStorage.getItem(lsKey) || '{}');
-    } catch { return {}; }
-  }
-
-  // Сохраняет решение — сначала в localStorage, потом пробует GitHub Contents API
-  // Возвращает статус синхронизации: { synced, onlyLocal, reason }.
-  //  synced=true     → решение записано и локально, и в GitHub.
-  //  onlyLocal=true  → записано только в localStorage (нет токена / нет прав / сеть).
-  async function saveDecision(itemId, decision, { skipRender = false } = {}) {
-    const item = (reviewData?.items || []).find(i => i.id === itemId);
-    if (!item) return { synced: false, onlyLocal: true, reason: 'not-found' };
-    const src = srcOf(item);
-    if (!src) return { synced: false, onlyLocal: true, reason: 'no-src' };
-    item.decision = decision;
-    item.decidedAt = new Date().toISOString();
-
-    const pending = (src.data.items || []).filter(i => i.decision === null).length;
-    src.data.summary = { ...src.data.summary, pending };
-
-    // Сохраняем локально сразу — решение не потеряется даже без GitHub
-    saveDecisionLocal();
-    if (!skipRender) renderReviewPanel();
-
-    // Пробуем синхронизировать с GitHub (нужно Contents: Read and write)
-    const token = getGithubToken();
-    if (!token) return { synced: false, onlyLocal: true, reason: 'no-token' };
-
-    const tag = src.cfg.key;
-    const apiBase = 'https://api.github.com/repos/' + GITHUB_REPO + '/contents/' + src.cfg.contentPath;
-    try {
-      const shaRes = await fetch(apiBase + '?ref=' + GITHUB_REF, {
-        headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
-      });
-      if (!shaRes.ok) {
-        console.warn(tag + ': не удалось получить SHA файла (' + shaRes.status + '). Решение сохранено локально.');
-        return { synced: false, onlyLocal: true, reason: 'no-sha-' + shaRes.status };
-      }
-      const shaData = await shaRes.json();
-      const sha = shaData.sha;
-      if (!sha) {
-        console.warn(tag + ': SHA файла пустой. Решение сохранено локально.');
-        return { synced: false, onlyLocal: true, reason: 'empty-sha' };
-      }
-      // Пишем JSON конкретного источника (без служебного поля __src).
-      const payload = { ...src.data, items: (src.data.items || []).map(({ __src, ...rest }) => rest) };
-      const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2) + '\n')));
-      const putRes = await fetch(apiBase, {
-        method: 'PUT',
-        headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json', 'X-GitHub-Api-Version': '2022-11-28' },
-        body: JSON.stringify({ message: 'chore: ' + tag + ' decision ' + decision + ' for ' + item.slug, content, sha, branch: GITHUB_REF }),
-      });
-      if (!putRes.ok) {
-        const status = putRes.status;
-        if (status === 403 || status === 404) {
-          console.warn(tag + ': нет прав Contents API (нужен scope «Contents: Read and write»). Решение сохранено локально.');
-        } else {
-          console.warn(tag + ': GitHub API ' + status + '. Решение сохранено локально.');
-        }
-        return { synced: false, onlyLocal: true, reason: 'put-' + status };
-      }
-      return { synced: true, onlyLocal: false };
-    } catch (e) {
-      console.warn(tag + ': ошибка GitHub API:', e.message, '— решение сохранено локально.');
-      return { synced: false, onlyLocal: true, reason: 'network' };
-    }
-  }
-
-  const REVIEW_DECISION_LABEL = { delete: 'удалить', update: 'обновить', ignore: 'игнорировать' };
-  function showReviewFeedback(message, kind) {
-    const el = document.getElementById('review-feedback');
-    if (!el) return;
-    el.textContent = message;
-    el.className = 'manager__review-feedback manager__review-feedback--' + (kind || 'ok');
-    el.hidden = false;
-    if (showReviewFeedback._t) clearTimeout(showReviewFeedback._t);
-    showReviewFeedback._t = setTimeout(() => { el.hidden = true; }, kind === 'warn' ? 8000 : 4000);
-  }
-
-  // Клики по кнопкам решений (event delegation)
-  document.getElementById('review-items-list').addEventListener('click', async (e) => {
-    const btn = e.target.closest('[data-decision]');
-    if (!btn) return;
-    const itemId = btn.dataset.id;
-    const decision = btn.dataset.decision;
-    if (btn.disabled) return; // уже в обработке — без двойных кликов
-    // Блокируем ВСЕ кнопки этого кейса, не только нажатую
-    const li = btn.closest('li.review-item');
-    const itemBtns = li ? Array.from(li.querySelectorAll('[data-decision]')) : [btn];
-    itemBtns.forEach(b => { b.disabled = true; });
-    // Защитный таймаут: если сеть зависнет, разблокируем кнопки
-    const safety = setTimeout(() => { itemBtns.forEach(b => { b.disabled = false; }); }, 12000);
-
-    try {
-      // Анимация: выезд вправо → схлопывание (оптимистично — локально решение уже не потеряется)
-      if (li) {
-        const h = li.offsetHeight;
-        li.style.maxHeight = h + 'px';
-        li.classList.add('review-item--exiting');
-        await new Promise(r => setTimeout(r, 270));
-        li.classList.add('review-item--collapsing');
-        await new Promise(r => setTimeout(r, 190));
-      }
-
-      const result = await saveDecision(itemId, decision, { skipRender: true });
-      clearTimeout(safety);
-
-      if (result && result.reason === 'not-found') {
-        // Кейс пропал из данных — откат анимации и разблокировка
-        if (li) {
-          li.classList.remove('review-item--exiting', 'review-item--collapsing');
-          li.style.maxHeight = '';
-        }
-        itemBtns.forEach(b => { b.disabled = false; });
-        showReviewFeedback('Кейс не найден — обновите панель', 'warn');
-        return;
-      }
-
-      const label = REVIEW_DECISION_LABEL[decision] || decision;
-      if (result && result.synced) {
-        showReviewFeedback('Решение «' + label + '» сохранено и в GitHub', 'ok');
-      } else if (result && result.onlyLocal && result.reason !== 'no-token') {
-        showReviewFeedback('Решение «' + label + '» сохранено локально, но НЕ в GitHub (проверь токен/права). Нажми «Применить решения» позже.', 'warn');
-      }
-      renderReviewPanel();
-    } catch (err) {
-      clearTimeout(safety);
-      itemBtns.forEach(b => { b.disabled = false; });
-      showReviewFeedback('Ошибка сохранения решения: ' + (err && err.message ? err.message : err), 'warn');
-    }
-  });
-
-  // "Применить решения" → revizor-apply.yml
-  document.getElementById('review-apply-btn').addEventListener('click', async () => {
-    const btn = document.getElementById('review-apply-btn');
-    btn.disabled = true;
-    btn.textContent = 'Запускаем…';
-    try {
-      // Запускаем apply-workflow каждого источника, у которого есть принятые,
-      // но ещё не применённые решения (РЕВИЗОР и/или СОРОКА).
-      const ready = REVIEW_SRCS.filter(cfg => {
-        const st = srcState[cfg.key];
-        return st && (st.data.items || []).some(i => i.decision !== null && !i.applied);
-      });
-      // Источник без apply-workflow (КОМПАС) применять нечем: решения копятся
-      // до сессии 5. Молча пропустить нельзя — оператор решит, что применилось.
-      const toRun = ready.filter(cfg => cfg.workflow);
-      const held = ready.filter(cfg => !cfg.workflow).map(cfg => cfg.title);
-      if (!ready.length) {
-        showReviewFeedback('Нет решений для применения', 'warn');
-        return;
-      }
-      if (!toRun.length) {
-        showReviewFeedback('Решения сохранены (' + held.join(', ') + '), но применять их нечем: авто-применение у этого источника не заведено.', 'warn');
-        return;
-      }
-      if (held.length) {
-        showReviewFeedback('Решения ' + held.join(', ') + ' сохранены, но не применяются автоматически.', 'warn');
-      }
-      for (const cfg of toRun) {
-        await runRemoteWorkflow({ workflowFile: cfg.workflow, label: cfg.title + ' Apply', expectedMin: 5 });
-      }
-    } finally {
-      btn.disabled = false;
-      btn.textContent = 'Применить решения';
-    }
-  });
-
-  // Загрузка при старте
-  loadReviewData();
 
   document.addEventListener('click', async (e) => {
     const target = e.target;
@@ -2185,11 +1668,6 @@ const CONTROL_DEFAULT_URL = '';
     btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
   });
 
-  document.getElementById('filter-country').addEventListener('change', (e) => {
-    filters.country = e.target.value;
-    applyFiltersAndRerender();
-  });
-
   document.addEventListener('click', (e) => {
     const target = e.target;
     if (!(target instanceof HTMLElement)) return;
@@ -2198,34 +1676,65 @@ const CONTROL_DEFAULT_URL = '';
     const value = target.dataset.value || '';
     if (!kind) return;
 
-    if (kind === 'tier') {
-      if (filters.tiers.has(value)) filters.tiers.delete(value);
-      else filters.tiers.add(value);
-      target.classList.toggle('chip--active');
-    } else {
-      filters[kind] = value;
-      const group = target.parentElement;
-      if (group) {
-        group.querySelectorAll('.chip').forEach((c) => c.classList.remove('chip--active'));
-      }
-      target.classList.add('chip--active');
-    }
+    if (kind !== 'aggregator') return;
+    if (value === '') filters.aggregators.clear();
+    else if (filters.aggregators.has(value)) filters.aggregators.delete(value);
+    else filters.aggregators.add(value);
+    syncAggregatorChipState();
     applyFiltersAndRerender();
+  });
+
+  // Прячем только список: поиск и фильтры нужны и в свёрнутом виде.
+  let scrollSync = null;
+
+  function wireTopScroll() {
+    const wrap = document.querySelector('.card--registry .table-wrap');
+    const top = document.getElementById('registry-scroll-top');
+    if (!wrap || !top) return;
+    const inner = top.firstElementChild;
+    const sync = () => {
+      inner.style.width = wrap.scrollWidth + 'px';
+      top.style.display = wrap.scrollWidth > wrap.clientWidth + 1 ? 'block' : 'none';
+    };
+    sync();
+    if (window.ResizeObserver) new ResizeObserver(sync).observe(wrap);
+    let lock = false;
+    const link = (from, to) => from.addEventListener('scroll', () => {
+      if (lock) return;
+      lock = true;
+      to.scrollLeft = from.scrollLeft;
+      lock = false;
+    });
+    link(top, wrap);
+    link(wrap, top);
+    scrollSync = sync;
+  }
+
+  document.getElementById('registry-toggle').addEventListener('click', (e) => {
+    const body = document.getElementById('registry-body');
+    const btn = e.currentTarget;
+    body.hidden = !body.hidden;
+    btn.setAttribute('aria-expanded', String(!body.hidden));
+    btn.textContent = body.hidden ? 'показать список' : 'свернуть список';
   });
 
   document.getElementById('filter-reset').addEventListener('click', () => {
     filters.search = '';
-    filters.aggregator = '';
-    filters.tiers.clear();
-    filters.country = '';
-    filters.status = '';
-    filters.freshness = '';
+    filters.aggregators.clear();
+    filters.countries.clear();
+    filters.fields.clear();
+    filters.maxIelts = null;
+    filters.maxKzt = null;
 
     document.getElementById('filter-search').value = '';
-    document.getElementById('filter-country').value = '';
-    document.querySelectorAll('#filter-panel .chip').forEach((chip) => {
-      chip.classList.toggle('chip--active', chip.dataset.value === '');
-    });
+    document.getElementById('filter-ielts').value = '';
+    const price = document.getElementById('filter-price');
+    price.value = price.dataset.max;
+    document.querySelectorAll('#filter-field-boxes input').forEach((cb) => { cb.checked = false; });
+    syncAggregatorChipState();
+    syncCountryBoxState();
+    syncFieldHint();
+    syncPriceHint();
     applyFiltersAndRerender();
   });
 
@@ -2236,6 +1745,7 @@ const CONTROL_DEFAULT_URL = '';
     const list = aggregators || [];
     if (list.length === 0) {
       tbody.innerHTML = '<tr><td colspan="6" class="table-loading">Нет данных</td></tr>';
+      applyScope(tbody);
       return;
     }
     let overdueCount = 0;
@@ -2272,27 +1782,10 @@ const CONTROL_DEFAULT_URL = '';
         '<td><span class="' + statusCls + '">' + statusLabel + '</span></td>' +
         '</tr>';
     }).join('');
+    applyScope(tbody);
     if (pill) {
       pill.textContent = overdueCount > 0 ? overdueCount + ' просрочено' : 'все актуальны';
       pill.className = overdueCount > 0 ? 'agg-status--due' : 'agg-status--ok';
-    }
-  }
-
-  function renderDirectors(directors, gaps) {
-    const STATUS_LABEL = { done: 'Готов', planned: 'Запланирован', 'in-progress': 'В работе' };
-    const STATUS_PILL = { done: 'status-pill--ok', planned: 'status-pill--idle', 'in-progress': 'status-pill--running' };
-    for (const [key, id] of [['pauk','dir-pauk'],['bobr','dir-bobr'],['orel','dir-orel']]) {
-      const d = directors?.[key];
-      if (!d) continue;
-      const pill = document.querySelector('#' + id + ' .director-item__pill');
-      if (!pill) continue;
-      const st = d.status || 'planned';
-      pill.className = 'director-item__pill status-pill ' + (STATUS_PILL[st] || 'status-pill--idle');
-      pill.innerHTML = '<span class="status-pill__dot"></span>' + escapeHtml(STATUS_LABEL[st] || st);
-    }
-    if (gaps) {
-      const el = document.getElementById('gaps-pill');
-      if (el) el.textContent = 'Gaps: ' + (gaps.byPriority?.critical || 0) + ' critical · ' + (gaps.byPriority?.high || 0) + ' high · ' + (gaps.byPriority?.medium || 0) + ' medium';
     }
   }
 
@@ -2375,7 +1868,6 @@ const CONTROL_DEFAULT_URL = '';
       if (!ok) break;
     }
     fetchStatus();
-    loadReviewData(); // подтянуть свежие кейсы аудита (СОРОКА/РЕВИЗОР) без релоада
   }
 
   // Initial label: empty default URL = static snapshot. Match the fallback
@@ -2385,4 +1877,5 @@ const CONTROL_DEFAULT_URL = '';
   refreshGithubConn();
   fetchStatus();
   refreshVerifySummary();
+  wireTopScroll();
 </script>
