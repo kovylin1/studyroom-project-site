@@ -55,7 +55,63 @@ const BRANDS = [
   { domain: 'englishpath.com',     name: 'EnglishPath',           catalogSlug: 'englishpath',                      country: 'United Kingdom',        city: 'Manchester', feeCurrency: 'GBP', isNew: true, isLanguageSchool: true },
   { domain: 'apac.edu.au',         name: 'APAC',                  catalogSlug: 'apac',                             country: 'Australia',             city: 'Sydney',     feeCurrency: 'AUD', isNew: true },
   { domain: 'ema.education',       name: 'EMA',                   catalogSlug: 'ema',                              country: 'France',                city: 'Paris',      feeCurrency: 'EUR', isNew: true },
+  // Добраны перечислением состава 11.09.2026 (см. discoverBrandDomains ниже).
+  // Карточки у обоих уже есть — пришли из Edvoy, поэтому isNew: false, заводить нечего:
+  // ICN — 8 программ, GlobalU — 3; со своих сайтов доберём больше.
+  { domain: 'icn-artem.com',       name: 'ICN Creactive Business School', catalogSlug: 'icn-creactive-business-school', country: 'France',            city: 'Nancy',      feeCurrency: 'EUR', isNew: false },
+  { domain: 'globalu.com',         name: 'GlobalU',               catalogSlug: 'globalu',                          country: 'United Arab Emirates',  city: 'Ajman',      feeCurrency: 'USD', isNew: false },
 ];
+
+// ---- живой состав холдинга ----
+// Реестр выше был снят замером домашней страницы gedu.global 09.06.2026 и с тех пор
+// жил в коде неподвижно. К 11.09.2026 сайт переехал на Next: старый WP REST отдаёт 404,
+// а на главной осталась ссылка ровно на один бренд. Портфель холдинга публикуется
+// на sales.gedu.global/our-portfolio — перечисляем оттуда, чтобы «весь состав собран»
+// проверялось замером, а не подразумевалось.
+//
+// Найденное, но не покрытое, НЕ скребётся вслепую: домен из портфеля может оказаться
+// не учебным заведением (платформа, корпоративное обучение), и слепой обход завёл бы
+// в каталог мусор. Такие домены уходят в отчёт членства на решение владельца.
+const PORTFOLIO_URL = 'https://sales.gedu.global/our-portfolio';
+const NOT_A_BRAND = /gedu\.global|facebook|linkedin|instagram|twitter|youtube|google|tiktok|x\.com|w3\.org|schema\.org|vercel|cloudflare|blob\.core|userway|gstatic|jsdelivr|whatsapp|apple\.com/i;
+const MEMBERSHIP_FILE = path.join(__dirname, '..', 'sources', 'kompas', 'membership', 'gedu.json');
+
+async function discoverBrandDomains() {
+  const page = await fetchText(PORTFOLIO_URL);
+  if (!page?.html) return null;                 // источник недоступен — молча не врём про состав
+  const hosts = new Set();
+  for (const m of page.html.matchAll(/https?:\/\/([a-z0-9.-]+\.[a-z]{2,})/gi)) {
+    const h = m[1].replace(/^www\./, '').toLowerCase();
+    if (!NOT_A_BRAND.test(h)) hosts.add(h);
+  }
+  return [...hosts].sort();
+}
+
+async function reportMembership(liveDomains) {
+  const known = new Set(BRANDS.map((b) => b.domain));
+  const covered = liveDomains.filter((d) => known.has(d));
+  const uncovered = liveDomains.filter((d) => !known.has(d));
+  const gone = [...known].filter((d) => !liveDomains.includes(d));
+  log(`состав холдинга: в портфеле ${liveDomains.length}, покрыто коллектором ${covered.length}`);
+  if (uncovered.length) log(`  НЕ ПОКРЫТО (решение владельца — учебное заведение или нет): ${uncovered.join(' ')}`);
+  if (gone.length) log(`  в реестре есть, в портфеле нет: ${gone.join(' ')}`);
+  await fs.mkdir(path.dirname(MEMBERSHIP_FILE), { recursive: true });
+  await fs.writeFile(MEMBERSHIP_FILE, JSON.stringify({
+    _meta: {
+      aggregator: 'gedu',
+      label: 'GEDU Global Education',
+      source: PORTFOLIO_URL,
+      collectedAt: new Date().toISOString(),
+      rule: 'all',
+      notes: [
+        'Состав перечисляется живьём: реестр брендов в коде — только метаданные (страна, город, валюта).',
+        'Непокрытые домены не скребутся автоматически: в портфеле есть неучебные проекты.',
+      ],
+      counts: { live: liveDomains.length, covered: covered.length, uncovered: uncovered.length },
+    },
+    live: liveDomains, covered, uncovered, inRegistryNotInPortfolio: gone,
+  }, null, 2) + '\n');
+}
 
 const PROG_MARKERS = /\b(BSc|BA|BEng|BBA|MSc|MA|MBA|MEng|MRes|LLB|LLM|PhD|Bachelor|Master|Foundation|Diploma|Certificate|Pre-?Master|Pre-?Sessional|Doctor)\b/i;
 
@@ -292,6 +348,12 @@ if (USE_PLAYWRIGHT) {
   catch (e) { log('WARN: Playwright unavailable -> fetch-only', e.message?.slice(0, 80)); }
 }
 
+// Сверка состава идёт ДО обхода: даже если обход упадёт, отчёт о том,
+// что холдинг объявляет сегодня, уже записан.
+const liveDomains = await discoverBrandDomains();
+if (liveDomains) await reportMembership(liveDomains);
+else log('WARN: портфель gedu недоступен — состав сегодня не проверен');
+
 const targets = BRANDS.filter(b => !ONLY_BRAND || b.catalogSlug === ONLY_BRAND);
 const summary = [];
 for (const brand of targets) {
@@ -306,6 +368,13 @@ for (const brand of targets) {
       data = brand.restCpt ? await harvestViaRest(brand, browser) : await harvestViaPages(brand, browser);
       if (brand.restCpt && data.programs.length === 0) { log(`  REST empty -> pages fallback`); data = await harvestViaPages(brand, browser); }
     } catch (e) { log(`  ERROR ${brand.catalogSlug}: ${e.message}`); data = { programs: [], photos: [], campus: [], accommodation: [] }; }
+    // Голая квалификация вместо названия («Master's», «Certificate») — это заголовок
+    // раздела на странице, а не программа. Такие строки ловит гейт каталога как
+    // мусорное название и роняет деплой, поэтому в выгрузку они не попадают вовсе.
+    const BARE_TITLE = /^(master'?s?|bachelor'?s?|certificate|diploma|foundation|postgraduate|undergraduate|courses?|programmes?|programs?|degrees?)$/i;
+    const beforeFilter = data.programs.length;
+    data.programs = data.programs.filter((p) => !BARE_TITLE.test(String(p.title || '').trim()));
+    if (data.programs.length !== beforeFilter) log(`  снято строк с общим названием: ${beforeFilter - data.programs.length}`);
     extract = {
       slug: brand.catalogSlug, name: brand.name, source: 'gedu', sourceUrl: `https://${brand.domain}`,
       scrapedAt: new Date().toISOString(), currency: brand.feeCurrency || null,
