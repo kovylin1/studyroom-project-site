@@ -60,7 +60,7 @@ const BARE_TITLE = /^((under|post)graduate(\s+(study|courses?|programmes?|progra
 // Служебные страницы раздела «Учёба» проходят проверку уровня («Postgraduate Entry
 // Requirements» — это master по правилам), но программой не являются. Первый прогон
 // по lancasterleipzig.de принёс пять таких из шестнадцати — ловим по названию.
-const NOT_A_PROGRAM_TITLE = /\b(entry requirements?|academic calendar|term dates|how to apply|application process|fees? (and|&) funding|tuition fees?|student life|why choose|our campus|open days?|admissions?|scholarships?|accommodation|visa|english language requirements?|coming soon)\b/i;
+const NOT_A_PROGRAM_TITLE = /\b(entry requirements?|academic calendar|term dates|how to apply|application process|fees? (and|&) funding|tuition fees?|student life|why choose|our campus|open days?|admissions?|scholarships?|accommodation|visa|english language requirements?|coming soon|masterclass|recordings?|webinars?|open lectures?|taster sessions?)\b/i;
 // Сводная страница факультета («Law Undergraduate Courses», «School of Psychology
 // Undergraduate Courses») — перечень программ, а не программа. Swansea, самый
 // крупный сайт сети, принёс таких десятками.
@@ -125,11 +125,21 @@ function extractFee(html, countryCurrency) {
 // Уровень берём общей картой правил проекта, а не своей. Две квалификации в названии
 // («BEng (Hons) / MEng (Hons)») — законное совместное название, и модуль молчит:
 // первый прогон без этого записал такие строки магистратурой.
+// MEng/MSci/MPharm — интегрированная степень: первое высшее со входом как у бакалавра,
+// магистратурой она не считается. Общая карта правил на таких названиях молчит
+// («мнения нет»), и без этой ветки запасные правила записывали «BEng (Hons) / MEng (Hons)»
+// магистратурой — первый прогон дал 48 таких строк.
+const INTEGRATED_FIRST_DEGREE = /\b(m\.?eng|msci|mpharm|mchem|mphys|march)\b/i;
+
 function levelOf(title) {
   const fams = qualificationFamilies(title);
   if (fams.length === 1) return fams[0];
-  if (fams.length > 1) return null;
-  return mapLevel(title);    // квалификация не названа — общие правила (foundation, pathway, diploma)
+  if (fams.length > 1) return null;                       // две квалификации — не гадаем
+  if (INTEGRATED_FIRST_DEGREE.test(title)) return 'bachelor';
+  // Квалификация не названа вовсе. Тогда запасные правила отвечают только за
+  // неградусные уровни: «Masterclass recordings» степенью быть не должно.
+  const soft = mapLevel(title);
+  return soft && !['bachelor', 'master', 'phd'].includes(soft) ? soft : null;
 }
 
 function extractTitle(html) {
@@ -307,7 +317,10 @@ for (const dom of domains) {
 let written = 0; let totalPrograms = 0; let withFee = 0;
 for (const b of bySlug.values()) {
   const seen = new Set();
-  const programs = b.programs.filter((p) => {
+  // Уровень пересчитывается здесь же, а не берётся из кэша: правила уточняются
+  // чаще, чем хочется заново выкачивать тысячу страниц.
+  const programs = b.programs.map((p) => ({ ...p, level: levelOf(p.title) })).filter((p) => {
+    if (!p.level) return false;
     if (!isProgramTitle(p.title)) return false;   // переотбор уже собранного из кэша
     const k = `${p.level}::${p.title.toLowerCase()}`;
     if (seen.has(k)) return false;
