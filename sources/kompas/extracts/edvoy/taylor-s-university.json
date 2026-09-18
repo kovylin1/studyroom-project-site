@@ -3,18 +3,16 @@
   "name": "Taylor's University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/taylors-university",
-  "scrapedAt": "2026-08-23T13:11:40.199Z",
+  "scrapedAt": "2026-09-18T08:14:00.175Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "taylors-university",
   "country": "Malaysia",
   "city": "Selangor",
-  "catalogSlug": "taylor-s-university",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "as-is/exact-name",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Master of Teaching and Learning",
@@ -73,6 +71,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/taylors-university",
       "courseRefId": "taylors-university|bachelor-of-business-honours"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

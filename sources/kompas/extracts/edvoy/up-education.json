@@ -3,18 +3,16 @@
   "name": "UP Education",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/up-education",
-  "scrapedAt": "2026-08-23T13:11:40.182Z",
+  "scrapedAt": "2026-09-18T08:14:00.165Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "up-education",
   "country": "New Zealand",
   "city": "Auckland",
-  "catalogSlug": "up-education",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Graduate Certificate in Business Studies - International (University of Tasmania)",
@@ -638,6 +636,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/up-education",
       "courseRefId": "up-education|english-for-academic-purposes-3-charles-darwin-university"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

@@ -3,18 +3,16 @@
   "name": "Dublin Business School",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/dublin-business-school",
-  "scrapedAt": "2026-08-23T13:11:40.185Z",
+  "scrapedAt": "2026-09-18T08:14:00.167Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "dublin-business-school",
   "country": "Ireland",
   "city": "Dublin",
-  "catalogSlug": "dublin-business-school",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "MSc Business Analytics",
@@ -73,7 +71,8 @@
         "September 2025",
         "September 2024",
         "January 2024",
-        "September 2026"
+        "September 2026",
+        "January 2027"
       ],
       "campuses": [
         "Dublin City Campus",
@@ -265,6 +264,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/dublin-business-school",
       "courseRefId": "dublin-business-school|llb-hons-bachelor-of-laws"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

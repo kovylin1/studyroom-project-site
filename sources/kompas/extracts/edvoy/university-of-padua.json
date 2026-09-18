@@ -3,18 +3,16 @@
   "name": "University of Padua",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-padua",
-  "scrapedAt": "2026-08-23T13:11:40.189Z",
+  "scrapedAt": "2026-09-18T08:14:00.170Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-padua",
   "country": "Italy",
   "city": "Padova",
-  "catalogSlug": "university-of-padua",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Master's Degree in Data Science",
@@ -162,6 +160,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/university-of-padua",
       "courseRefId": "university-of-padua|bachelors-degree-in-earth-and-climate-dynamics"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

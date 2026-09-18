@@ -3,18 +3,16 @@
   "name": "Universidad Europea",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/universidad-europea",
-  "scrapedAt": "2026-08-23T13:11:40.205Z",
+  "scrapedAt": "2026-09-18T08:14:00.178Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "universidad-europea",
   "country": "Spain",
   "city": "Abuja",
-  "catalogSlug": "universidad-europea",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Bachelor's Degree in Physical Activity and Sports Sciences",
@@ -52,6 +50,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/universidad-europea",
       "courseRefId": "universidad-europea|bachelors-degree-in-economics"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

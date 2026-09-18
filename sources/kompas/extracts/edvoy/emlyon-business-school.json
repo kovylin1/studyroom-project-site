@@ -3,18 +3,16 @@
   "name": "Emlyon Business School",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/emlyon-business-school",
-  "scrapedAt": "2026-08-23T13:11:40.278Z",
+  "scrapedAt": "2026-09-18T08:14:00.236Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "emlyon-business-school",
   "country": "France",
   "city": "Lyon",
-  "catalogSlug": "emlyon-business-school",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "MSc in International Marketing & Business Development (CGE)",
@@ -43,7 +41,8 @@
       "currency": "EUR",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026"
+        "September 2026",
+        "September 2027"
       ],
       "campuses": [
         "EBS Lyon Campus"
@@ -70,6 +69,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/emlyon-business-school",
       "courseRefId": "emlyon-business-school|msc-in-branding-and-communication-cge"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

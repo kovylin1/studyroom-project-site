@@ -3,18 +3,16 @@
   "name": "Rennes School of Business",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/esc-rennes-school-of-business",
-  "scrapedAt": "2026-08-23T13:11:40.197Z",
+  "scrapedAt": "2026-09-18T08:14:00.174Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "esc-rennes-school-of-business",
   "country": "France",
   "city": "Rennes",
-  "catalogSlug": "rennes-school-of-business",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "as-is/exact-slug",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "MSc in Data Analytics, Intelligence and Security - Data and Business Analytics (Two Years)",
@@ -93,6 +91,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/esc-rennes-school-of-business",
       "courseRefId": "esc-rennes-school-of-business|masters-in-management-rncp-certified"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

@@ -3,18 +3,16 @@
   "name": "University of Jyväskylä",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-jyvaskyla",
-  "scrapedAt": "2026-08-23T13:11:40.222Z",
+  "scrapedAt": "2026-09-18T08:14:00.192Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-jyvaskyla",
   "country": "Finland",
   "city": "Yliopistonmaeki",
-  "catalogSlug": "university-of-jyv-skyl",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "as-is/exact-name",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Master's Programme in Artificial Intelligence",
@@ -35,6 +33,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/university-of-jyvaskyla",
       "courseRefId": "university-of-jyvaskyla|masters-programme-in-artificial-intelligence"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

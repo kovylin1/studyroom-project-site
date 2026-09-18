@@ -3,18 +3,16 @@
   "name": "Manipal Academy of Higher Education Dubai",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/manipal-academy-of-higher-education",
-  "scrapedAt": "2026-08-23T13:11:40.176Z",
+  "scrapedAt": "2026-09-18T08:14:00.160Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "manipal-academy-of-higher-education",
   "country": "United Arab Emirates",
   "city": "Dubai",
-  "catalogSlug": "manipal-academy-of-higher-education-dubai",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "as-is/exact-slug",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "PG Diploma Data Science",
@@ -51,24 +49,6 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/manipal-academy-of-higher-education",
       "courseRefId": "manipal-academy-of-higher-education|mtech-computer-science-and-engineering-information-security"
-    },
-    {
-      "title": "Post Graduate Diploma Business Administration",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 44625,
-      "currency": "AED",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "Manipal Dubai Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/manipal-academy-of-higher-education",
-      "courseRefId": "manipal-academy-of-higher-education|post-graduate-diploma-business-administration"
     },
     {
       "title": "MBA International Business (Evening/Weekend)",
@@ -123,6 +103,24 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/manipal-academy-of-higher-education",
       "courseRefId": "manipal-academy-of-higher-education|pg-diploma-cyber-security"
+    },
+    {
+      "title": "Post Graduate Diploma Business Administration",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 44625,
+      "currency": "AED",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "Manipal Dubai Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/manipal-academy-of-higher-education",
+      "courseRefId": "manipal-academy-of-higher-education|post-graduate-diploma-business-administration"
     },
     {
       "title": "PG Diploma Data Science - Business and Data Analytics",
@@ -885,24 +883,6 @@
       "courseRefId": "manipal-academy-of-higher-education|ma-media-and-communication-graphics-and-animation"
     },
     {
-      "title": "MSc Applied Psychology - Counselling Psychology",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "24 Months",
-      "tuition": 42525,
-      "currency": "AED",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026"
-      ],
-      "campuses": [
-        "Manipal Dubai Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/manipal-academy-of-higher-education",
-      "courseRefId": "manipal-academy-of-higher-education|msc-applied-psychology-counselling-psychology"
-    },
-    {
       "title": "MSc Applied Psychology - School and Educational Psychology",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -955,6 +935,24 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/manipal-academy-of-higher-education",
       "courseRefId": "manipal-academy-of-higher-education|mtech-civil-engineering-construction-engineering-and-management"
+    },
+    {
+      "title": "MSc Applied Psychology - Counselling Psychology",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 42525,
+      "currency": "AED",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026"
+      ],
+      "campuses": [
+        "Manipal Dubai Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/manipal-academy-of-higher-education",
+      "courseRefId": "manipal-academy-of-higher-education|msc-applied-psychology-counselling-psychology"
     },
     {
       "title": "BTech Robotics and Artificial Intelligence",
@@ -1320,6 +1318,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/manipal-academy-of-higher-education",
       "courseRefId": "manipal-academy-of-higher-education|bsc-food-and-nutrition-science"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

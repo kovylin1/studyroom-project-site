@@ -3,18 +3,16 @@
   "name": "NEOMA Business School",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/neoma-business-school",
-  "scrapedAt": "2026-08-23T13:11:40.185Z",
+  "scrapedAt": "2026-09-18T08:14:00.167Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "neoma-business-school",
   "country": "France",
   "city": "Le Mont-Saint-Adrien",
-  "catalogSlug": "neoma-business-school",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Masters in Management",
@@ -154,6 +152,25 @@
       "courseRefId": "neoma-business-school|msc-in-international-business-development-2-years-rncp-certified"
     },
     {
+      "title": "MSc Marketing - International Brand Management ( 2 years ) (RNCP Certified)",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "24 Months",
+      "tuition": 11000,
+      "currency": "EUR",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2026",
+        "October 2027"
+      ],
+      "campuses": [
+        "NEOMA Business School - Rouen"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/neoma-business-school",
+      "courseRefId": "neoma-business-school|msc-marketing-international-brand-management-2-years-rncp-certified"
+    },
+    {
       "title": "MSc in ArtificiaI Intelligence for Business (15 months) (RNCP Certified)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -249,6 +266,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/neoma-business-school",
       "courseRefId": "neoma-business-school|master-of-science-in-supply-chain-management-15-months"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

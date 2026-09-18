@@ -3,18 +3,16 @@
   "name": "Johnson & Wales University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/johnson-wales-university-rhode-island",
-  "scrapedAt": "2026-08-23T13:11:40.177Z",
+  "scrapedAt": "2026-09-18T08:14:00.161Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "johnson-wales-university-rhode-island",
   "country": "United States",
   "city": "Rhode Island",
-  "catalogSlug": "johnson-and-wales-university",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "as-is/exact-slug",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "MS Data Analytics",
@@ -1605,6 +1603,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/johnson-wales-university-rhode-island",
       "courseRefId": "johnson-wales-university-rhode-island|bs-applied-food-science"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

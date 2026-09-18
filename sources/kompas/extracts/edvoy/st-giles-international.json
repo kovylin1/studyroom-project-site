@@ -3,18 +3,16 @@
   "name": "St Giles International",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/st-giles-international",
-  "scrapedAt": "2026-08-23T13:11:40.303Z",
+  "scrapedAt": "2026-09-18T08:14:00.251Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "st-giles-international",
   "country": "United Kingdom",
   "city": "Holborn",
-  "catalogSlug": "st-giles-international",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "General English Group Course In Brighton",
@@ -25,7 +23,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "August 2026",
         "September 2026",
         "October 2026",
         "November 2026",
@@ -50,6 +47,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/st-giles-international",
       "courseRefId": "st-giles-international|general-english-group-course-in-brighton"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

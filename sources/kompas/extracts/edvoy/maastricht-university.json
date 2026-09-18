@@ -3,18 +3,16 @@
   "name": "Maastricht University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/maastricht-university",
-  "scrapedAt": "2026-08-23T13:11:40.298Z",
+  "scrapedAt": "2026-09-18T08:14:00.248Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "maastricht-university",
   "country": "Netherlands",
   "city": "Maastricht",
-  "catalogSlug": "maastricht-university",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Master in Management",
@@ -36,6 +34,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/maastricht-university",
       "courseRefId": "maastricht-university|master-in-management"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

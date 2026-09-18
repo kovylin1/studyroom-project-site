@@ -3,18 +3,16 @@
   "name": "University of Wisconsin-Milwaukee",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-wisconsin-milwaukee",
-  "scrapedAt": "2026-08-23T13:11:40.248Z",
+  "scrapedAt": "2026-09-18T08:14:00.218Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-wisconsin-milwaukee",
   "country": "United States",
   "city": "Milwaukee",
-  "catalogSlug": "university-of-wisconsin-milwaukee",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "GradCert Enterprise Resource Planning",
@@ -615,6 +613,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/university-of-wisconsin-milwaukee",
       "courseRefId": "university-of-wisconsin-milwaukee|gradcert-organizational-leadership-in-diversity-equity-and-inclusion"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

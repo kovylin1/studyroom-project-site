@@ -3,18 +3,16 @@
   "name": "Radboud University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/radboud-university",
-  "scrapedAt": "2026-08-23T13:11:40.270Z",
+  "scrapedAt": "2026-09-18T08:14:00.232Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "radboud-university",
   "country": "Netherlands",
   "city": "Nijmegen",
-  "catalogSlug": "radboud-university",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Master of Economics - Corporate Finance and Control",
@@ -129,6 +127,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/radboud-university",
       "courseRefId": "radboud-university|msc-in-strategic-management"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

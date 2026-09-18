@@ -3,18 +3,16 @@
   "name": "Northern College",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/northern-college",
-  "scrapedAt": "2026-08-23T13:11:40.301Z",
+  "scrapedAt": "2026-09-18T08:14:00.250Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "northern-college",
   "country": "Canada",
   "city": "Timmins",
-  "catalogSlug": "northern-college",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Diploma in Computer Engineering Technician",
@@ -36,6 +34,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/northern-college",
       "courseRefId": "northern-college|diploma-in-computer-engineering-technician"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

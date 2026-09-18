@@ -3,18 +3,16 @@
   "name": "University of Turku",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-turku",
-  "scrapedAt": "2026-08-23T13:11:40.223Z",
+  "scrapedAt": "2026-09-18T08:14:00.193Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-turku",
   "country": "Finland",
   "city": "Turku",
-  "catalogSlug": "university-of-turku",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Master's Degree Programme in Information and Communication Technology: Software Engineering",
@@ -35,6 +33,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/university-of-turku",
       "courseRefId": "university-of-turku|masters-degree-programme-in-information-and-communication-technology-software-engineering"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

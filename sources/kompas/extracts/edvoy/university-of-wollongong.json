@@ -3,18 +3,16 @@
   "name": "University of Wollongong",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-wollongong",
-  "scrapedAt": "2026-08-23T13:11:40.195Z",
+  "scrapedAt": "2026-09-18T08:14:00.173Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-wollongong",
   "country": "Australia",
   "city": "Wollongong",
-  "catalogSlug": "university-of-wollongong",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "MBA Master of Business Administration",
@@ -116,6 +114,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/university-of-wollongong",
       "courseRefId": "university-of-wollongong|foundation-studies-2-sessions"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

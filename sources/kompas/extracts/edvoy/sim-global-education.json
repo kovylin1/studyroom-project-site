@@ -3,18 +3,16 @@
   "name": "SIM Global Education",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/sim-global-education",
-  "scrapedAt": "2026-08-23T13:11:40.205Z",
+  "scrapedAt": "2026-09-18T08:14:00.178Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "sim-global-education",
   "country": "Singapore",
   "city": "Yio Chu Kang",
-  "catalogSlug": "sim-global-education",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Master of Science International Business (University of Birmingham)",
@@ -53,6 +51,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/sim-global-education",
       "courseRefId": "sim-global-education|bachelor-of-science-honours-in-business-and-management-university-of-london"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

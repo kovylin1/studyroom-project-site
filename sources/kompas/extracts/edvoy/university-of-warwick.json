@@ -3,18 +3,16 @@
   "name": "University of Warwick",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
-  "scrapedAt": "2026-08-23T13:11:40.181Z",
+  "scrapedAt": "2026-09-18T08:14:00.165Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-warwick",
   "country": "United Kingdom",
   "city": "Coventry",
-  "catalogSlug": "university-of-warwick",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "MSc Big Data and Digital Futures",
@@ -77,26 +75,6 @@
       "courseRefId": "university-of-warwick|msc-innovation-and-entrepreneurship"
     },
     {
-      "title": "MSc Cyber Security Management",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 37460,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2024",
-        "September 2026"
-      ],
-      "campuses": [
-        "Warwick Coventry Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
-      "courseRefId": "university-of-warwick|msc-cyber-security-management"
-    },
-    {
       "title": "MSc International Business",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -156,6 +134,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
       "courseRefId": "university-of-warwick|msc-e-business-management"
+    },
+    {
+      "title": "MSc Cyber Security Management",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 37460,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2024",
+        "September 2026"
+      ],
+      "campuses": [
+        "Warwick Coventry Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
+      "courseRefId": "university-of-warwick|msc-cyber-security-management"
     },
     {
       "title": "MSc Business and Finance",
@@ -278,26 +276,6 @@
       "courseRefId": "university-of-warwick|msc-behavioural-and-economic-science-economics-track"
     },
     {
-      "title": "MA Education",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 26110,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2025",
-        "September 2024"
-      ],
-      "campuses": [
-        "Warwick Coventry Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
-      "courseRefId": "university-of-warwick|ma-education"
-    },
-    {
       "title": "MSc Supply Chain and Logistics Management (SCLM)",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -336,6 +314,26 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
       "courseRefId": "university-of-warwick|ma-educational-leadership-and-management"
+    },
+    {
+      "title": "MA Education",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 26110,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2025",
+        "September 2024"
+      ],
+      "campuses": [
+        "Warwick Coventry Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
+      "courseRefId": "university-of-warwick|ma-education"
     },
     {
       "title": "MSc Polymer Chemistry",
@@ -377,26 +375,6 @@
       "courseRefId": "university-of-warwick|msc-electrical-power-engineering"
     },
     {
-      "title": "MA Childhood in Society",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 26110,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2025",
-        "September 2026",
-        "September 2024"
-      ],
-      "campuses": [
-        "Warwick Coventry Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
-      "courseRefId": "university-of-warwick|ma-childhood-in-society"
-    },
-    {
       "title": "MSc Games Engineering",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -417,32 +395,11 @@
       "courseRefId": "university-of-warwick|msc-games-engineering"
     },
     {
-      "title": "MSc International Trade, Strategy and Operations",
+      "title": "MA Childhood in Society",
       "level": "master",
       "sourceLevel": "Postgraduate",
       "duration": "12 Months",
-      "tuition": 37460,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "October 2025",
-        "October 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "Warwick Coventry Campus"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
-      "courseRefId": "university-of-warwick|msc-international-trade-strategy-and-operations"
-    },
-    {
-      "title": "MSc Economics and International Financial Economics",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 31090,
+      "tuition": 26110,
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
@@ -455,7 +412,7 @@
       ],
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
-      "courseRefId": "university-of-warwick|msc-economics-and-international-financial-economics"
+      "courseRefId": "university-of-warwick|ma-childhood-in-society"
     },
     {
       "title": "MA International Relations",
@@ -496,7 +453,47 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
       "courseRefId": "university-of-warwick|ma-teaching-english-to-speakers-of-other-languages-tesol"
+    },
+    {
+      "title": "MSc Economics and International Financial Economics",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 31090,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2025",
+        "September 2026",
+        "September 2024"
+      ],
+      "campuses": [
+        "Warwick Coventry Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
+      "courseRefId": "university-of-warwick|msc-economics-and-international-financial-economics"
+    },
+    {
+      "title": "MSc International Trade, Strategy and Operations",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 37460,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "October 2025",
+        "October 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "Warwick Coventry Campus"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-warwick",
+      "courseRefId": "university-of-warwick|msc-international-trade-strategy-and-operations"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

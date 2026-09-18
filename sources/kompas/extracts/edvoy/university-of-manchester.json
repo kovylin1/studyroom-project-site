@@ -3,18 +3,16 @@
   "name": "University of Manchester",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
-  "scrapedAt": "2026-08-23T13:11:40.169Z",
+  "scrapedAt": "2026-09-18T08:14:00.153Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "university-of-manchester",
   "country": "United Kingdom",
   "city": "Manchester",
-  "catalogSlug": "university-of-manchester",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "MSc Innovation Management and Entrepreneurship",
@@ -142,8 +140,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026",
         "September 2025",
+        "September 2026",
         "September 2024"
       ],
       "campuses": [
@@ -172,6 +170,46 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
       "courseRefId": "university-of-manchester|baecon-finance"
+    },
+    {
+      "title": "MSc Human Resource Management and Industrial Relations",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 30750,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "UoM South of Manchester City Centre"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
+      "courseRefId": "university-of-manchester|msc-human-resource-management-and-industrial-relations"
+    },
+    {
+      "title": "MSc Green Infrastructure",
+      "level": "master",
+      "sourceLevel": "Postgraduate",
+      "duration": "12 Months",
+      "tuition": 31500,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UoM South of Manchester City Centre"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
+      "courseRefId": "university-of-manchester|msc-green-infrastructure"
     },
     {
       "title": "MA Educational Leadership",
@@ -232,46 +270,6 @@
       "courseRefId": "university-of-manchester|msc-social-research-methods-and-statistics"
     },
     {
-      "title": "MSc Green Infrastructure",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 31500,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UoM South of Manchester City Centre"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
-      "courseRefId": "university-of-manchester|msc-green-infrastructure"
-    },
-    {
-      "title": "MSc Human Resource Management and Industrial Relations",
-      "level": "master",
-      "sourceLevel": "Postgraduate",
-      "duration": "12 Months",
-      "tuition": 30750,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "UoM South of Manchester City Centre"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
-      "courseRefId": "university-of-manchester|msc-human-resource-management-and-industrial-relations"
-    },
-    {
       "title": "MSc International Development: Public Policy and Management",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -280,8 +278,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026",
         "September 2025",
+        "September 2026",
         "September 2024"
       ],
       "campuses": [
@@ -320,8 +318,8 @@
       "currency": "GBP",
       "feeBasis": "approxAnnual",
       "intake": [
-        "September 2026",
         "September 2025",
+        "September 2026",
         "September 2024"
       ],
       "campuses": [
@@ -352,25 +350,6 @@
       "courseRefId": "university-of-manchester|msc-human-resource-management-international-development"
     },
     {
-      "title": "BEng Mechanical Engineering",
-      "level": "bachelor",
-      "sourceLevel": "Undergraduate",
-      "duration": "36 Months",
-      "tuition": 35700,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2026",
-        "September 2027"
-      ],
-      "campuses": [
-        "UoM South of Manchester City Centre"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
-      "courseRefId": "university-of-manchester|beng-mechanical-engineering"
-    },
-    {
       "title": "MA Education for a Sustainable Environment",
       "level": "master",
       "sourceLevel": "Postgraduate",
@@ -389,6 +368,25 @@
       "scholarshipTag": null,
       "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
       "courseRefId": "university-of-manchester|ma-education-for-a-sustainable-environment"
+    },
+    {
+      "title": "BEng Mechanical Engineering",
+      "level": "bachelor",
+      "sourceLevel": "Undergraduate",
+      "duration": "36 Months",
+      "tuition": 35700,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2026",
+        "September 2027"
+      ],
+      "campuses": [
+        "UoM South of Manchester City Centre"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
+      "courseRefId": "university-of-manchester|beng-mechanical-engineering"
     },
     {
       "title": "BEng Chemical Engineering",
@@ -468,26 +466,6 @@
       "courseRefId": "university-of-manchester|msc-petroleum-geoscience"
     },
     {
-      "title": "BEng/MEng Aerospace Engineering with an Integrated Foundation Year",
-      "level": "foundation",
-      "sourceLevel": "Undergraduate",
-      "duration": "60 Months",
-      "tuition": 26300,
-      "currency": "GBP",
-      "feeBasis": "approxAnnual",
-      "intake": [
-        "September 2024",
-        "September 2025",
-        "September 2026"
-      ],
-      "campuses": [
-        "UoM South of Manchester City Centre"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
-      "courseRefId": "university-of-manchester|beng-meng-aerospace-engineering-with-an-integrated-foundation-year"
-    },
-    {
       "title": "BSc Biosciences with a Foundation Year",
       "level": "foundation",
       "sourceLevel": "Undergraduate",
@@ -526,6 +504,26 @@
       "courseRefId": "university-of-manchester|bsc-earth-and-planetary-sciences"
     },
     {
+      "title": "BEng/MEng Aerospace Engineering with an Integrated Foundation Year",
+      "level": "foundation",
+      "sourceLevel": "Undergraduate",
+      "duration": "60 Months",
+      "tuition": 26300,
+      "currency": "GBP",
+      "feeBasis": "approxAnnual",
+      "intake": [
+        "September 2024",
+        "September 2025",
+        "September 2026"
+      ],
+      "campuses": [
+        "UoM South of Manchester City Centre"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
+      "courseRefId": "university-of-manchester|beng-meng-aerospace-engineering-with-an-integrated-foundation-year"
+    },
+    {
       "title": "PhD Cell Biology",
       "level": "phd",
       "sourceLevel": "Doctorate",
@@ -552,7 +550,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "August 2026",
         "September 2026",
         "October 2026",
         "November 2026",
@@ -578,6 +575,39 @@
       "courseRefId": "university-of-manchester|pre-sessional-course"
     },
     {
+      "title": "Academic Success Programme",
+      "level": "language",
+      "sourceLevel": "Language",
+      "duration": null,
+      "tuition": null,
+      "currency": null,
+      "feeBasis": null,
+      "intake": [
+        "September 2026",
+        "October 2026",
+        "November 2026",
+        "December 2026",
+        "January 2027",
+        "February 2027",
+        "March 2027",
+        "April 2027",
+        "May 2027",
+        "June 2027",
+        "July 2027",
+        "August 2027",
+        "September 2027",
+        "October 2027",
+        "November 2027",
+        "December 2027"
+      ],
+      "campuses": [
+        "UoM South of Manchester City Centre"
+      ],
+      "scholarshipTag": null,
+      "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
+      "courseRefId": "university-of-manchester|academic-success-programme"
+    },
+    {
       "title": "English for Academic Purposes Pre-sessional",
       "level": "language",
       "sourceLevel": "PresessionalEnglish",
@@ -586,7 +616,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "August 2026",
         "September 2026",
         "October 2026",
         "November 2026",
@@ -620,7 +649,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "August 2026",
         "September 2026",
         "October 2026",
         "November 2026",
@@ -646,40 +674,6 @@
       "courseRefId": "university-of-manchester|english-summer-programme"
     },
     {
-      "title": "Academic Success Programme",
-      "level": "language",
-      "sourceLevel": "Language",
-      "duration": null,
-      "tuition": null,
-      "currency": null,
-      "feeBasis": null,
-      "intake": [
-        "August 2026",
-        "September 2026",
-        "October 2026",
-        "November 2026",
-        "December 2026",
-        "January 2027",
-        "February 2027",
-        "March 2027",
-        "April 2027",
-        "May 2027",
-        "June 2027",
-        "July 2027",
-        "August 2027",
-        "September 2027",
-        "October 2027",
-        "November 2027",
-        "December 2027"
-      ],
-      "campuses": [
-        "UoM South of Manchester City Centre"
-      ],
-      "scholarshipTag": null,
-      "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
-      "courseRefId": "university-of-manchester|academic-success-programme"
-    },
-    {
       "title": "Presessional English",
       "level": "language",
       "sourceLevel": "PresessionalEnglish",
@@ -688,7 +682,6 @@
       "currency": null,
       "feeBasis": null,
       "intake": [
-        "August 2026",
         "September 2026",
         "October 2026",
         "November 2026",
@@ -713,6 +706,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/university-of-manchester",
       "courseRefId": "university-of-manchester|presessional-english"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }

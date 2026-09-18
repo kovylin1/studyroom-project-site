@@ -3,18 +3,16 @@
   "name": "Macquarie University",
   "source": "edvoy",
   "sourceUrl": "https://edge.edvoy.com/institutions/macquarie-university",
-  "scrapedAt": "2026-08-23T13:11:40.275Z",
+  "scrapedAt": "2026-09-18T08:14:00.235Z",
   "aggregator": "Edvoy",
   "aggregatorEndpoint": "https://api-prod.edvoy.com/edp/graphql",
   "access": "public",
   "edpRefId": "macquarie-university",
   "country": "Australia",
   "city": "Sydney",
-  "catalogSlug": "macquarie-university",
-  "newCard": false,
-  "matchMethod": "no-match",
+  "matchMethod": "ref-id/ref-id",
   "feeNote": "approxAnnualFee — примерная годовая стоимость по данным Edvoy; аудитория цены источником не указана",
-  "schemaNote": "карточки в каталоге нет: выгрузка отложена под заведение карточки",
+  "schemaNote": "findOneEdp из схемы удалён (переименован в Hta) — профиль вуза этим запросом недоступен",
   "programs": [
     {
       "title": "Master of Business Administration",
@@ -104,6 +102,5 @@
       "programUrl": "https://edge.edvoy.com/institutions/macquarie-university",
       "courseRefId": "macquarie-university|bachelor-of-engineering-honours"
     }
-  ],
-  "builtAt": "2026-08-23"
+  ]
 }
