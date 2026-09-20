@@ -15,7 +15,7 @@ const ROOT = path.resolve(HERE, '..');
 const SNAPSHOTS = [
   { key: 'edvoy', dir: path.join(ROOT, 'sources/edvoy-extracts') },
   { key: 'studygroup', dir: path.join(ROOT, 'sources/studygroup-extracts') },
-  { key: 'gedu', dir: path.join(ROOT, 'scraper/sources/gedu-extracts') },
+  { key: 'gedu', dir: path.join(ROOT, 'sources/kompas/extracts/gedu') },
 ];
 
 const CATALOG = path.join(ROOT, 'site/src/content/universities');

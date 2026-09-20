@@ -26,7 +26,6 @@ const SOURCES = [
   { dir: 'edvoy-extracts', name: 'edvoy', isOfficial: false },
   { dir: 'iapro-extracts', name: 'iapro', isOfficial: false },
   { dir: 'qahe-extracts', name: 'qahe', isOfficial: false },
-  { dir: 'gedu-extracts', name: 'gedu', isOfficial: false },
   { dir: 'studygroup-extracts', name: 'studygroup', isOfficial: false },
   { dir: 'navitas-extracts', name: 'navitas', isOfficial: false },
   { dir: 'oxfordintl-extracts', name: 'oxfordintl', isOfficial: false },

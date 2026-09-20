@@ -39,7 +39,7 @@ const REPORT_OUT = path.join(AUDIT_DIR, 'soroka-report.json');
 const APPLIED_OUT = path.join(AUDIT_DIR, 'soroka-applied.json');
 
 // Каталоги extracts с programs[].tuition (если каталога нет на диске — молча пропускаем).
-const EXTRACT_DIRS = ['edvoy-extracts', 'qahe-extracts', 'gedu-extracts', 'iapro-extracts', 'official-extracts'];
+const EXTRACT_DIRS = ['edvoy-extracts', 'qahe-extracts', 'iapro-extracts', 'official-extracts'];
 
 // Карта алиасов слагов (каталог → extract): вузы с расходящимися слагами
 // (abertay ↔ abertay-university) тоже кросс-сверяются. Генерится build-slug-aliases.mjs.

@@ -13,7 +13,7 @@ import { KOMPAS_DIR } from './kompas-collect.mjs';
 import { normProgram, normCatalogProgram, similarity, isSubsetPair, SIM_THRESHOLD } from './kompas-normalize.mjs';
 
 const EXTRACTS = path.join(KOMPAS_DIR, 'extracts');
-const GEDU_DIR = path.join(KOMPAS_DIR, '..', '..', 'scraper', 'sources', 'gedu-extracts');
+const GEDU_DIR = path.join(EXTRACTS, 'gedu');
 
 // KOMPAS_WORK_DIR: месячный CI меряет дрейф ЖИВОГО каталога (site/src/content/
 // universities), локальные сессии — рабочую копию catalog-work (по умолчанию).

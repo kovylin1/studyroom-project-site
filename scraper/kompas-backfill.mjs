@@ -22,7 +22,7 @@ const log = logger('backfill');
 const APPLY = args.has('apply');
 const WORK = path.join(KOMPAS_DIR, 'catalog-work');
 const EXTRACTS = path.join(KOMPAS_DIR, 'extracts');
-const GEDU_DIR = path.join(KOMPAS_DIR, '..', '..', 'scraper', 'sources', 'gedu-extracts');
+const GEDU_DIR = path.join(KOMPAS_DIR, 'extracts', 'gedu');
 const now = new Date().toISOString();
 
 const SOURCES = {
