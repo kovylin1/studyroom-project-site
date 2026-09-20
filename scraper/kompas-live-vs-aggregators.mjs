@@ -25,7 +25,7 @@ const WORK = path.join(ROOT, 'sources/kompas/catalog-work');
 const OUT_MD = path.join(ROOT, 'sources/kompas/LIVE-VS-AGGREGATORS.md');
 const OUT_JSON = path.join(ROOT, 'sources/kompas/live-vs-aggregators.json');
 
-const AGGREGATORS = ['qs', 'edvoy', 'kaplan', 'studygroup', 'oxford-international', 'iapro', 'qahe'];
+const AGGREGATORS = ['qs', 'edvoy', 'kaplan', 'studygroup', 'oxford-international', 'iapro', 'qahe', 'gedu', 'collab'];
 const TOL = 0.02;
 const feeOf = (p) => {
   const v = typeof p.tuition === 'number' ? p.tuition
