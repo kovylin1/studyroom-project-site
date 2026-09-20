@@ -36,7 +36,7 @@ export const SOURCES = {
   // 2026-08-01: доступ получен, портал обойдён целиком (512 вузов / 35 303 программы).
   qs: { dir: path.join(EXTRACTS, 'qs'), state: 'ready' },
   navitas: { dir: null, state: 'empty', why: 'у сайтов колледжей нет типа записи «курс», сбор не дал программ' },
-  cats: { dir: null, state: 'empty', why: 'у CATS школы, а не программы в единой форме' },
+  cats: { dir: null, state: 'empty', why: 'у CATS школы, а не программы в единой форме; страницы прозаические, выгрузок нет' },
 };
 
 export const FEE_TOLERANCE = 0.02;   // ниже — округление источника, не расхождение
