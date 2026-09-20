@@ -52,6 +52,10 @@ for (const rule of FOREIGN) {
         for (const s of dropSlugs) if (s in v.byProgram) { delete v.byProgram[s]; if (k === 'tuition') pricesDropped++; }
       }
     }
+    // `deadlines` лежит прямо на карточке и тоже ключуется слагом программы; схема
+    // сайта требует, чтобы программа существовала (урок 20.09: деплой упал на
+    // «deadlines reference unknown program slug» — гейт каталога этого не ловит).
+    if (card.deadlines && typeof card.deadlines === 'object') for (const s of dropSlugs) delete card.deadlines[s];
     let out = JSON.stringify(card, null, 2) + '\n';
     if (crlf) out = out.replace(/\n/g, '\r\n');
     fs.writeFileSync(file, out);
