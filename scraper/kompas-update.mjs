@@ -65,15 +65,20 @@ const MAX_CHANGE = Number(arg('max-change', '5'));
 const log = (...a) => process.stderr.write(`[update] ${new Date().toISOString().slice(11, 19)} ${a.join(' ')}\n`);
 
 // Реестр: чем собирать и под каким именем источник лежит в данных.
-//   kind: 'kompas' — выгрузка идёт в песочницу, дальше применяется в рабочую копию;
-//         'legacy' — коллектор пишет в scraper/sources/*-extracts, дальше merge-programs
-//                    сам дозаполняет живой каталог (versions КОМПАСа для них ещё нет).
+//   kind: 'kompas' — выгрузка идёт в песочницу, дальше применяется в рабочую копию.
+//   С 20.09.2026 все 11 агрегаторов — 'kompas'. Ветка 'legacy' (merge-programs
+//   дозаполняет каталог напрямую) оставлена в коде на случай нового источника,
+//   но расписанием не используется.
 const AGGREGATORS = {
   'kaplan-pathways': { kind: 'kompas', source: 'kaplan', collect: ['kompas-collect-kaplan.mjs'] },
   'navitas-pathways': { kind: 'kompas', source: 'navitas', collect: ['kompas-collect-navitas.mjs', 'kompas-collect-navitas-programs.mjs'] },
   qahe: { kind: 'kompas', source: 'qahe', collect: ['kompas-collect-qahe.mjs'] },
   studygroup: { kind: 'kompas', source: 'studygroup', collect: ['kompas-collect-studygroup.mjs'] },
-  cats: { kind: 'legacy', source: 'cats', collect: ['scrape-cats-all.mjs', 'kompas-collect-cats.mjs'] },
+  // CATS: только состав сети (12 школ живьём). Программ у источника в единой форме
+  // нет — страницы школ прозаические, половина адресов мертва; выгрузок не будет,
+  // и прогон честно скажет «менять нечего». Майский путь через expand-cats-programs
+  // писал в каталог напрямую и удалён 20.09.2026.
+  cats: { kind: 'kompas', source: 'cats', collect: ['kompas-collect-cats.mjs'] },
   'oxford-international': { kind: 'kompas', source: 'oxford-international', collect: ['kompas-collect-oxford-international.mjs'] },
   edvoy: { kind: 'kompas', source: 'edvoy', collect: ['kompas-collect-edvoy.mjs'] },
   iapro: { kind: 'kompas', source: 'iapro', collect: ['kompas-collect-iapro.mjs'] },

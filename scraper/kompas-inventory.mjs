@@ -169,9 +169,9 @@ async function membersOf(agg) {
     case 'edvoy':     return dirMembers('sources/edvoy-extracts');
     case 'studygroup':return dirMembers('sources/studygroup-extracts');
     case 'cats': {
-      const j = await readJson(path.join(ROOT, 'sources/cats-collected.json'));
-      return Object.entries(j).filter(([k]) => k !== '_meta')
-        .map(([slug, v]) => ({ slug, name: (v && v.name) || null }));
+      // cats-collected.json удалён 20.09.2026; состав — из замера kompas-collect-cats.mjs.
+      const j = await readJson(path.join(ROOT, 'sources/kompas/membership/cats.json'));
+      return (j.schools || []).filter((s) => s.collectorSlug).map((s) => ({ slug: s.collectorSlug, name: s.name || null }));
     }
     case 'navitas': {
       // Раньше список читался из seed-navitas-uk.mjs (10 британских вузов сида).
