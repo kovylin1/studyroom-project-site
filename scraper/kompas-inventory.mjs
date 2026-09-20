@@ -174,8 +174,11 @@ async function membersOf(agg) {
         .map(([slug, v]) => ({ slug, name: (v && v.name) || null }));
     }
     case 'navitas': {
-      const src = await fs.readFile(path.join(ROOT, 'scraper/seed-navitas-uk.mjs'), 'utf8');
-      return [...src.matchAll(/slug:\s*'([^']+)'/g)].map(m => ({ slug: m[1], name: null }));
+      // Раньше список читался из seed-navitas-uk.mjs (10 британских вузов сида).
+      // Сид удалён 2026-09-20; живой состав сети пишет kompas-collect-navitas.mjs.
+      const j = await readJson(path.join(ROOT, 'sources/kompas/membership/navitas.json'));
+      const slugs = [...new Set((j.colleges || []).map(c => c.catalogSlug).filter(Boolean))];
+      return slugs.map(slug => ({ slug, name: null }));
     }
     case 'oxford-international':
       return (agg.knownPartners || []).map(name => ({ slug: null, name }));

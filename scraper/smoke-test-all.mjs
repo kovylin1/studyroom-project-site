@@ -20,19 +20,15 @@ if (existsSync(envFile)) {
 }
 const log = (...a) => process.stderr.write(`[smoke] ${a.join(' ')}\n`);
 
+// Здесь только майские коллекторы, у которых ещё нет замены в КОМПАСе (Kaplan, CATS,
+// GEDU, volk). Edvoy, IAPro, QS, Study Group, QAHE, Navitas и Oxford International
+// собирает поколение КОМПАСа — kompas-collect-*.mjs; их майские скрипты и сиды
+// с выдуманными ценами удалены 2026-09-20.
 const COLLECTORS = [
-  // Сидеры пишут прямо в живой каталог и собирают карточку с нуля — без --dry-run
-  // проверка «а запускается ли» переписала бы 10 вузов сидом поверх выгрузок партнёров.
-  { name: 'navitas-uk',      script: 'seed-navitas-uk.mjs',           args: ['--dry-run'],  needsEnv: [] },
-  { name: 'oxford-intl',     script: 'seed-oxfordintl-uk.mjs',        args: ['--dry-run'],  needsEnv: [] },
-  { name: 'qahe',            script: 'scrape-qahe-all.mjs',           args: ['--limit=1'],  needsEnv: [] },
+  { name: 'kaplan',          script: 'scrape-kaplan-all.mjs',         args: ['--limit=1'],  needsEnv: [] },
   { name: 'cats',            script: 'scrape-cats-all.mjs',           args: ['--dry-run'],  needsEnv: [] },
   { name: 'volk',            script: 'scrape-volk-collab-v3.mjs',     args: ['--limit=1'],  needsEnv: [] },
   { name: 'gedu',            script: 'scrape-gedu-all.mjs',           args: ['--limit=1'],  needsEnv: [] },
-  { name: 'edvoy',           script: 'scrape-edvoy-all.mjs',          args: ['--limit=1'],  needsEnv: ['EDVOY_LOGIN', 'EDVOY_PASS'] },
-  { name: 'studygroup',      script: 'scrape-studygroup-all.mjs',     args: ['--limit=1'],  needsEnv: ['SG_LOGIN', 'SG_PASS'] },
-  { name: 'iapro',           script: 'scrape-iapro-all.mjs',          args: ['--limit=1'],  needsEnv: ['IAPRO_LOGIN', 'IAPRO_PASS'] },
-  { name: 'qs-topuniversities', script: 'discover-qs-partners.mjs',  args: ['--limit=1'],  needsEnv: ['QS_LOGIN', 'QS_PASS'] },
 ];
 
 function run(script, args, env) {

@@ -22,7 +22,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const UNI_DIR = path.join(ROOT, 'site/src/content/universities');
 const EXTRACT_DIR = path.join(ROOT, 'sources/kompas/extracts');
-const SEED_FILE = path.join(ROOT, 'scraper/seed-navitas-uk.mjs');
+// Сам сид удалён 2026-09-20; его литеральная таблица цен сохранена как данные,
+// чтобы этот замер по-прежнему находил выдуманные суммы в каталоге.
+const SEED_FILE = path.join(ROOT, 'sources/kompas/navitas/legacy-seed-fee-bands.json');
 
 const LIST = process.argv.includes('--list-unbacked');
 
@@ -39,18 +41,9 @@ export const normTitle = (s) => String(s || '')
   .trim();
 
 export async function readSeedBands(slugs = NAVITAS_UK_SLUGS) {
-  const src = await fs.readFile(SEED_FILE, 'utf8');
-  const base = {};
-  const baseBlock = src.match(/const UK_FEE_BAND_BASE = \{([\s\S]*?)\n\};/);
-  if (baseBlock) for (const m of baseBlock[1].matchAll(/'?([\w-]+)'?:\s*(\d+)/g)) base[m[1]] = Number(m[2]);
+  const j = JSON.parse(await fs.readFile(SEED_FILE, 'utf8'));
   const bands = {};
-  for (const slug of slugs) {
-    const at = src.indexOf(`slug: '${slug}'`);
-    const fb = at < 0 ? null : src.slice(at).match(/feeBand: \{([\s\S]*?)\n {4}\},/);
-    const band = { ...base };
-    if (fb) for (const m of fb[1].matchAll(/'?([\w-]+)'?:\s*(\d+)/g)) band[m[1]] = Number(m[2]);
-    bands[slug] = band;
-  }
+  for (const slug of slugs) bands[slug] = { ...(j.base || {}), ...(j.bands?.[slug] || {}) };
   return bands;
 }
 

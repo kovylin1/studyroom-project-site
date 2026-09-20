@@ -1,8 +1,14 @@
 name: Monthly consolidation rebuild
 
 # Запускается 1-го числа каждого месяца — после того как staggered за месяц
-# обновил все агрегаторы. Не скрейпит заново — только merge + rebuild + deploy.
+# обновил все агрегаторы. Не скрейпит заново и в каталог НЕ пишет — только
+# пересчитывает отчёты (СОРОКА, КОМПАС-сверка, панель), собирает и деплоит сайт.
 # Используется также как ручной "пересобрать всё" из manager UI.
+#
+# Шаг merge-programs убран 2026-09-20: он заново вливал в живой каталог майские
+# выгрузки scraper/sources/*-extracts без порога и гейта по карточкам, в обход
+# kompas-update.mjs. Запись в каталог теперь идёт только по расписанию
+# scrape-staggered.yml, по одному агрегатору в свой день.
 
 on:
   schedule:
@@ -34,11 +40,6 @@ jobs:
 
       - name: Install deps
         run: cd scraper && npm ci && cd ../site && npm ci
-
-      - name: Merge programs + detect gaps
-        run: |
-          node scraper/detect-gaps.mjs  || true
-          node scraper/merge-programs.mjs
 
       - name: СОРОКА — проверка цифр (cross-check, без live)
         # Полный кросс-чек цифр каталога после merge. --skip-live: детерминированно,
