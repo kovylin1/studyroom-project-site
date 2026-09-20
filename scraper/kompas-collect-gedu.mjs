@@ -1,5 +1,12 @@
 #!/usr/bin/env node
-// scrape-gedu-all.mjs — GEDU Global meta-collector.
+// kompas-collect-gedu.mjs — КОМПАС. GEDU Global (холдинг брендов).
+//
+// До 20.09.2026 жил как scrape-gedu-all.mjs майского поколения и писал в
+// scraper/sources/gedu-extracts, откуда merge-programs дозаполнял живой каталог
+// напрямую. Теперь выгрузка ложится в песочницу КОМПАСа sources/kompas/extracts/gedu,
+// а в каталог её несёт kompas-update.mjs через рабочую копию, порог и гейт —
+// тем же путём, что у остальных агрегаторов. Замер состава холдинга
+// (sources/kompas/membership/gedu.json) этот скрипт писал и раньше.
 //
 // GEDU.global is a HOLDING GROUP, not a course catalog: its own WP REST exposes
 // only 1 `course` + 9 "Study in <country>" pages. The real programs/fees/photos/
@@ -16,11 +23,11 @@
 //      for Cloudflare / JS-rendered sites).
 //
 // Output:
-//   scraper/sources/gedu-extracts/<catalogSlug>.json   (merge-programs format + photos/campus/accommodation)
+//   sources/kompas/extracts/gedu/<catalogSlug>.json    (формат Kaplan: feePerYear/currency/level + photos/campus/accommodation)
 //   site/src/content/universities/<catalogSlug>.json    (NEW brands only, when --create-cards and >=1 program)
 //
 // Usage:
-//   node scraper/scrape-gedu-all.mjs [--brand=mla-college] [--limit=N] [--create-cards] [--no-playwright]
+//   node scraper/kompas-collect-gedu.mjs [--brand=mla-college] [--limit=N] [--create-cards] [--no-playwright]
 //
 // Catalog-safe: never overwrites an existing uni card; extracts are additive.
 
@@ -29,7 +36,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUT_DIR = path.join(__dirname, 'sources', 'gedu-extracts');
+const OUT_DIR = path.join(__dirname, '..', 'sources', 'kompas', 'extracts', 'gedu');
 const CARDS_DIR = path.join(__dirname, '..', 'site', 'src', 'content', 'universities');
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 const PAGE_TIMEOUT = 15000;
@@ -408,8 +415,11 @@ for (const brand of targets) {
 }
 
 if (browser) await browser.close();
-console.log(JSON.stringify({ ok: true, brands: summary.length,
-  totalPrograms: summary.reduce((s, r) => s + r.programs, 0),
+const totalPrograms = summary.reduce((s, r) => s + r.programs, 0);
+console.log(JSON.stringify({ ok: totalPrograms > 0, brands: summary.length,
+  totalPrograms,
   totalFees: summary.reduce((s, r) => s + r.fees, 0),
   cardsCreated: summary.filter(r => r.cardCreated).length, summary }, null, 2));
-process.exit(0);
+// Ноль программ по всем брендам — это поломка обхода, а не «состав пуст»: прогон
+// обязан упасть, иначе kompas-update запишет lastRunAt при пустой выгрузке.
+process.exit(totalPrograms > 0 ? 0 : 1);

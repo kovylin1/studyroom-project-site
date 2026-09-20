@@ -24,7 +24,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const CATALOG_DIR = path.join(PROJECT_ROOT, 'site/src/content/universities');
 const SOURCES_ROOTS = [path.join(PROJECT_ROOT, 'scraper/sources'), path.join(PROJECT_ROOT, 'sources')];
-const EXTRACT_DIRS = ['edvoy-extracts', 'qahe-extracts', 'gedu-extracts', 'iapro-extracts', 'official-extracts'];
+const EXTRACT_DIRS = ['edvoy-extracts', 'qahe-extracts', 'iapro-extracts', 'official-extracts'];
 const OUT = path.join(PROJECT_ROOT, 'scraper/sources/slug-aliases.json');
 const DRY_RUN = process.argv.includes('--dry-run');
 const log = (...a) => process.stderr.write(`[slug-aliases] ${a.join(' ')}\n`);

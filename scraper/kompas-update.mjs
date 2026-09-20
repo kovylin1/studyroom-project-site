@@ -78,7 +78,7 @@ const AGGREGATORS = {
   edvoy: { kind: 'kompas', source: 'edvoy', collect: ['kompas-collect-edvoy.mjs'] },
   iapro: { kind: 'kompas', source: 'iapro', collect: ['kompas-collect-iapro.mjs'] },
   'qs-topuniversities': { kind: 'kompas', source: 'qs', collect: ['kompas-collect-qs.mjs'] },
-  gedu: { kind: 'legacy', source: 'gedu', collect: ['scrape-gedu-all.mjs'] },
+  gedu: { kind: 'kompas', source: 'gedu', collect: ['kompas-collect-gedu.mjs'] },
   volk: { kind: 'legacy', source: 'collab', collect: ['scrape-volk-collab-v3.mjs'] },
 };
 

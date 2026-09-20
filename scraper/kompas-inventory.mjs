@@ -165,7 +165,7 @@ async function membersOf(agg) {
     case 'qahe':      return agg.list.map(e => typeof e === 'string'
                         ? { slug: null, name: e }
                         : { slug: null, name: e.name, catalogSlug: e.catalogSlug, note: e.note });
-    case 'gedu':      return dirMembers('scraper/sources/gedu-extracts');
+    case 'gedu':      return dirMembers('sources/kompas/extracts/gedu');
     case 'edvoy':     return dirMembers('sources/edvoy-extracts');
     case 'studygroup':return dirMembers('sources/studygroup-extracts');
     case 'cats': {

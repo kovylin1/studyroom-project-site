@@ -85,9 +85,9 @@ if (!SKIP_COLLECTORS) {
   log('=== Phase 1: Collectors ===');
   // QAHE, Edvoy и IAPro отсюда убраны 2026-09-20: их майские коллекторы удалены,
   // источники собирает поколение КОМПАСа (kompas-collect-*.mjs) через
-  // kompas-update.mjs по расписанию. Здесь остался только GEDU — единственный
-  // из прежних, у кого замены в КОМПАСе пока нет.
-  report['scrape-gedu-all'] = await S('scrape-gedu-all.mjs');
+  // kompas-update.mjs по расписанию. GEDU с 20.09 тоже поколения КОМПАСа, но
+  // pauk его по-прежнему зовёт: у холдинга собираются ещё фото и кампусы.
+  report['kompas-collect-gedu'] = await S('kompas-collect-gedu.mjs');
 } else {
   log('=== Phase 1: Collectors SKIPPED ===');
 }
