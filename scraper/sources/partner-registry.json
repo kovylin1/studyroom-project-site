@@ -36,8 +36,8 @@
       "url": "https://www.kaplanpathways.com/degree-finder/",
       "access": "open",
       "rule": "all",
-      "coverageSource": "scraper/sources/kaplan-extracts",
-      "coverageNote": "25 вузов в выгрузке от 2026-07-01. В сессии 2 берём свежий фид degree_finder_object (один fetch = вся база)."
+      "coverageSource": "sources/kompas/extracts/kaplan",
+      "coverageNote": "Коллектор КОМПАСа kompas-collect-kaplan.mjs (с 20.09.2026): фид degree_finder_object, один fetch = вся база. Замер — sources/kompas/membership/kaplan.json."
     },
     {
       "key": "cats",

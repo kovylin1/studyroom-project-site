@@ -66,7 +66,6 @@ const EXTRACT_DIRS = [
   path.join(PROJECT_ROOT, 'sources/studygroup-extracts'),
   path.join(PROJECT_ROOT, 'sources/direct-partners-extracts'),
   path.join(__dirname, 'sources/official-extracts'),
-  path.join(__dirname, 'sources/kaplan-extracts'),
   path.join(__dirname, 'sources/qahe-extracts'),
 ];
 

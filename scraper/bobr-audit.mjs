@@ -56,7 +56,7 @@ async function tryPaths(base, paths) {
 }
 
 // Выгрузки источников нужны только ради edvoy.website в резолвере офсайта.
-const EXTRACT_DIRS = ['edvoy-extracts', 'official-extracts', 'gedu-extracts', 'qahe-extracts', 'kaplan-extracts'];
+const EXTRACT_DIRS = ['edvoy-extracts', 'official-extracts', 'gedu-extracts', 'qahe-extracts'];
 async function loadExtracts(slug) {
   const out = [];
   for (const dir of EXTRACT_DIRS) {

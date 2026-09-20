@@ -20,12 +20,12 @@ if (existsSync(envFile)) {
 }
 const log = (...a) => process.stderr.write(`[smoke] ${a.join(' ')}\n`);
 
-// Здесь только майские коллекторы, у которых ещё нет замены в КОМПАСе (Kaplan, CATS,
-// GEDU, volk). Edvoy, IAPro, QS, Study Group, QAHE, Navitas и Oxford International
+// Здесь майские коллекторы, у которых ещё нет замены в КОМПАСе (CATS, GEDU, volk),
+// и Kaplan поколения КОМПАСа (сухой прогон — фид качается, ничего не пишется). Edvoy, IAPro, QS, Study Group, QAHE, Navitas и Oxford International
 // собирает поколение КОМПАСа — kompas-collect-*.mjs; их майские скрипты и сиды
 // с выдуманными ценами удалены 2026-09-20.
 const COLLECTORS = [
-  { name: 'kaplan',          script: 'scrape-kaplan-all.mjs',         args: ['--limit=1'],  needsEnv: [] },
+  { name: 'kaplan',          script: 'kompas-collect-kaplan.mjs',     args: ['--dry-run'],  needsEnv: [] },
   { name: 'cats',            script: 'scrape-cats-all.mjs',           args: ['--dry-run'],  needsEnv: [] },
   { name: 'volk',            script: 'scrape-volk-collab-v3.mjs',     args: ['--limit=1'],  needsEnv: [] },
   { name: 'gedu',            script: 'scrape-gedu-all.mjs',           args: ['--limit=1'],  needsEnv: [] },

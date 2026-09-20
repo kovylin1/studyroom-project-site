@@ -28,7 +28,6 @@ const SOURCES = [
   { dir: 'qahe-extracts', name: 'qahe', isOfficial: false },
   { dir: 'gedu-extracts', name: 'gedu', isOfficial: false },
   { dir: 'studygroup-extracts', name: 'studygroup', isOfficial: false },
-  { dir: 'kaplan-extracts', name: 'kaplan', isOfficial: false },
   { dir: 'navitas-extracts', name: 'navitas', isOfficial: false },
   { dir: 'oxfordintl-extracts', name: 'oxfordintl', isOfficial: false },
   { dir: 'qs-extracts', name: 'qs', isOfficial: false },

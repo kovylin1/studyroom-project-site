@@ -1,47 +1,20 @@
 {
   "slug": "pace",
-  "name": "Pace University, New York",
+  "name": "Pace University",
   "source": "kaplan",
   "sourceUrl": "https://www.kaplanpathways.com/degree-finder/",
-  "scrapedAt": "2026-07-22T10:09:12.569Z",
+  "scrapedAt": "2026-09-20T04:54:14.448Z",
   "currency": "USD",
+  "aggregator": "Kaplan Pathways",
+  "access": "public",
+  "countryCode": "USA",
+  "sourceNames": [
+    "Pace University, Westchester",
+    "Pace University, New York"
+  ],
+  "matchMethod": "as-is/exact-name + as-is+strip-campus/exact-name",
+  "feeNote": "current_fees_per_year — цена за год из degree-finder Kaplan; аудитория — международные студенты (finder для них)",
   "programs": [
-    {
-      "title": "BA Art",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/art-ba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BFA Art",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/art-bfa",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BA Art History",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/art-history-ba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
     {
       "title": "BA Biology",
       "level": "bachelor",
@@ -51,211 +24,37 @@
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/biology-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
       "title": "BS Biology",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/biology-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "BS Biochemistry",
+      "title": "BA Biological Psychology",
       "level": "bachelor",
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/biochemistry-bs",
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/biological-psychology-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MBA Strategy and International Business",
-      "level": "master",
-      "duration": "18 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/strategy-international-business-mba",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Management: Hospitality and Tourism Management",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/management-hospitality-and-tourism-management-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Management: International Management",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/international-management-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MBA General Business",
-      "level": "master",
-      "duration": "18 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/business-general-mba-0",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Management: Business Management",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/management-business-management-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Management: Entrepreneurship",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/management-entrepreneurship-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Management: Human Resources Management",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/management-human-resources-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Marketing: Advertising and Integrated Marketing Communications",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/marketing-advertising-and-integrated-marketing-communications-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MS Social Media and Mobile Marketing",
-      "level": "master",
-      "duration": "1.5 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/marketing-social-media-and-mobile-marketing-ms",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "MBA Marketing Management",
-      "level": "master",
-      "duration": "18 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/marketing-management-mba",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Marketing: Global Marketing Management",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/marketing-global-marketing-management-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MS Marketing Analytics",
-      "level": "master",
-      "duration": "1.5 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/marketing-analytics-ms",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Business Analytics",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/business-analytics-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Arts and Entertainment Management",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/management%E2%80%93arts-and-entertainment-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BS Chemistry",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/chemistry-bs",
-      "feePerYear": 52924,
       "currency": "USD"
     },
     {
@@ -267,113 +66,50 @@
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/computer-science-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
       "title": "BS Computer Science",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/computer-science-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MS Computer Science",
-      "level": "master",
-      "duration": "2 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/computer-science-ms",
-      "feePerYear": 30060,
-      "currency": "USD"
-    },
-    {
-      "title": "BS Information Systems",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/information-systems-bs",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MS Information Systems",
-      "level": "master",
-      "duration": "15 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/information-systems-ms",
-      "feePerYear": 50100,
       "currency": "USD"
     },
     {
       "title": "BS Information Technology",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/information-technology-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MS Software Development and Engineering",
-      "level": "master",
-      "duration": "2 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/software-development-and-engineering-ms",
-      "feePerYear": 30060,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Information Systems",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/information-systems-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MBA Information Systems",
-      "level": "master",
-      "duration": "18 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/information-systems-mba",
-      "feePerYear": 28080,
       "currency": "USD"
     },
     {
       "title": "BS Environmental Science",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/environmental-science-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
@@ -386,6 +122,8 @@
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/environmental-studies-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
@@ -398,54 +136,64 @@
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/accounting-cpa-preparation-mba",
-      "feePerYear": 28080,
+      "campus": "Westchester",
+      "directEntry": true,
+      "feePerYear": 28708.33,
       "currency": "USD"
     },
     {
       "title": "MS Accounting: CPA Preparation",
-      "level": "master",
+      "level": null,
       "duration": "2 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/accounting-cpa-preparation-ms",
-      "feePerYear": 28080,
+      "campus": "Westchester",
+      "directEntry": true,
+      "feePerYear": 24375,
       "currency": "USD"
     },
     {
       "title": "BBA Accounting: General",
-      "level": "master",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/accounting-bba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
       "title": "BBA Accounting: Public Accounting",
-      "level": "master",
+      "level": null,
       "duration": "5 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/program/accounting-public-cpa-prep-bba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
       "title": "BS Business Economics",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/business-economics-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
@@ -458,54 +206,22 @@
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/economics-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
       "title": "BBA Finance",
-      "level": "master",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/finance-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MBA Investment Management",
-      "level": "master",
-      "duration": "18 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/investment-management-mba",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "MS Financial Risk Management",
-      "level": "master",
-      "duration": "1.5 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/financial-risk-management-ms",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "BA History",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/history-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
@@ -518,90 +234,50 @@
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/political-science-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "BA Film and Screen Studies",
+      "title": "BA Digital Journalism",
       "level": "bachelor",
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/film-and-screen-studies-ba",
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/digital-journalism-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "BA Communication and Media Studies",
+      "title": "BA Communications",
       "level": "bachelor",
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
-      "programUrl": "https://www.pace.edu/program/communication-and-media-studies-ba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MS Publishing",
-      "level": "master",
-      "duration": "2 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/publishing-ms",
-      "feePerYear": 26460,
-      "currency": "USD"
-    },
-    {
-      "title": "BA English Language and Literature",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/english-language-and-literature-ba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BA Language, Culture, and World Trade",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/language-culture-and-world-trade-ba",
+      "programUrl": "https://www.pace.edu/program/communications-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
       "title": "BS Criminal Justice",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/criminal-justice-bs",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BS Forensic Science",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/forensic-science-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
@@ -614,18 +290,22 @@
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/mathematics-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
       "title": "BS Mathematics",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/mathematics-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
@@ -638,6 +318,8 @@
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/applied-psychology-and-human-relations-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
@@ -650,413 +332,174 @@
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/psychology-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "MA Psychology",
-      "level": "master",
-      "duration": "2 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/psychology-ma",
-      "feePerYear": 26910,
-      "currency": "USD"
-    },
-    {
-      "title": "MPA Public Administration: Government Management",
-      "level": "master",
-      "duration": "2 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/public-administration-mpa",
-      "feePerYear": 22320,
-      "currency": "USD"
-    },
-    {
-      "title": "MPA Public Administration: Healthcare Management",
-      "level": "master",
-      "duration": "2 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/public-administration-mpa",
-      "feePerYear": 22320,
-      "currency": "USD"
-    },
-    {
-      "title": "MPA Public Administration: Nonprofit Management",
-      "level": "master",
-      "duration": "2 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/public-administration-mpa",
-      "feePerYear": 22320,
-      "currency": "USD"
-    },
-    {
-      "title": "BA Sociology and Anthropology",
+      "title": "BA Personality and Social Psychology",
       "level": "bachelor",
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/sociology-anthropology-ba",
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/personality-and-social-psychology-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "BA Women's and Gender Studies",
-      "level": "bachelor",
+      "title": "BS Digital Cinema and Filmmaking",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/womens-and-gender-studies-ba",
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/digital-cinema-and-filmmaking-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "BA Modern Languages and Cultures",
-      "level": "bachelor",
+      "title": "BS Public Relations",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/modern-languages-and-cultures-ba",
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/public-relations-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BA Philosophy and Religious Studies",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/philosophy-and-religious-studies-ba",
-      "feePerYear": 52924,
-      "currency": "USD"
-    },
-    {
-      "title": "BA Global Asia Studies",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/global-asia-studies-ba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Marketing: Sports Marketing",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/marketing-sports-marketing-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MS Biochemistry and Molecular Biology",
-      "level": "master",
-      "duration": "12 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/biochemistry-and-molecular-biology-ms",
-      "feePerYear": 52360,
       "currency": "USD"
     },
     {
       "title": "MS Accounting Data Analytics and Technologies",
-      "level": "master",
+      "level": null,
       "duration": "1 year",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/accounting-data-analytics-and-technologies-ms",
-      "feePerYear": 46800,
+      "campus": "Westchester",
+      "directEntry": true,
+      "feePerYear": 24375,
       "currency": "USD"
     },
     {
-      "title": "BS Behavioral Neuroscience",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/behavioral-neuroscience-bs",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MBA Business Analytics",
-      "level": "master",
-      "duration": "18 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/business-analytics-mba",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "MBA Corporate Finance",
-      "level": "master",
-      "duration": "18 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/corporate-finance-mba",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "MBA Marketing Analytics",
-      "level": "master",
-      "duration": "18 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/marketing-analytics-mba",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "MBA Human Resources Management",
-      "level": "master",
-      "duration": "18 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/talent-management-mba",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "MS Cybersecurity",
-      "level": "master",
-      "duration": "12 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/cybersecurity-ms",
-      "feePerYear": 50100,
-      "currency": "USD"
-    },
-    {
-      "title": "MS Data Science",
-      "level": "master",
+      "title": "MS Environmental Science and Policy",
+      "level": null,
       "duration": "2 years",
       "intake": [
-        "September",
-        "January"
+        "September"
       ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/data-science-ms",
-      "feePerYear": 30060,
+      "programUrl": "https://www.pace.edu/program/environmental-science-and-policy-ms",
+      "campus": "Westchester",
+      "directEntry": true,
+      "feePerYear": 22050,
       "currency": "USD"
     },
     {
-      "title": "MS Arts and Entertainment Management",
-      "level": "master",
-      "duration": "1.5 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/arts-and-entertainment-management-ms",
-      "feePerYear": 28080,
-      "currency": "USD"
-    },
-    {
-      "title": "BA Peace and Justice Studies",
+      "title": "BA English, Writing and Rhetoric",
       "level": "bachelor",
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
-      "programUrl": "https://www.pace.edu/academics/undergraduate-students/peace-and-justice-studies-ba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "MS Human Centered Design",
-      "level": "master",
-      "duration": "2 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/human-centered-design-ms",
-      "feePerYear": 30060,
-      "currency": "USD"
-    },
-    {
-      "title": "BA Writing for Diversity and Equity in Theater and Media",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/writing-diversity-and-equity-theater-and-media-ba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BBA Marketing: Digital Marketing",
-      "level": "master",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/marketing-digital-marketing-bba",
-      "feePerYear": 55040,
-      "currency": "USD"
-    },
-    {
-      "title": "BS Computational Economics",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/computational-economics-bs",
+      "programUrl": "https://www.pace.edu/program/writing-and-rhetoric-ba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
       "title": "BS Game Development",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/program/game-development-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "MS Financial Operations and Technology",
-      "level": "master",
-      "duration": "1.5 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/financial-operations-and-technology-ms",
-      "feePerYear": 24375,
-      "currency": "USD"
-    },
-    {
-      "title": "MBA Arts and Entertainment Management",
-      "level": "master",
-      "duration": "1.5 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/arts-and-entertainment-management-mba",
-      "feePerYear": 31687.5,
-      "currency": "USD"
-    },
-    {
       "title": "BBA Business Technology",
-      "level": "master",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/program/business-technology-bba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
       "title": "BS Cybersecurity",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/program/cybersecurity-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "BA International Relations and Global Studies",
-      "level": "bachelor",
+      "title": "BS Chemical Biology",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
-      "programUrl": "https://www.pace.edu/program/international-relations-and-global-studies-ba",
+      "programUrl": "https://www.pace.edu/program/chemical-biology-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "MS Accounting",
-      "level": "master",
-      "duration": "1 year",
+      "title": "BBA Management: Business Management",
+      "level": null,
+      "duration": "4 years",
       "intake": [
+        "January",
         "September"
       ],
-      "programUrl": "https://catalog.pace.edu/graduate/schools/lubin-school-business/graduate-degree-programs/ms-lubin-degrees/accounting-ms/",
-      "feePerYear": 28080,
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/management-business-management-bba",
+      "campus": "Westchester",
+      "directEntry": true,
+      "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "MS Applied Artificial Intelligence",
-      "level": "master",
-      "duration": "2 years",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/applied-artificial-intelligence-ms",
-      "feePerYear": 31140,
-      "currency": "USD"
-    },
-    {
-      "title": "BS Artificial Intelligence",
-      "level": "bachelor",
+      "title": "BBA Marketing: Sports Marketing",
+      "level": null,
       "duration": "4 years",
       "intake": [
-        "September",
         "January"
       ],
-      "programUrl": "https://www.pace.edu/program/artificial-intelligence-bs",
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/marketing-sports-marketing-bba",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
@@ -1069,132 +512,1481 @@
         "January"
       ],
       "programUrl": "https://catalog.pace.edu/undergraduate/schools/dyson-college-arts-sciences/undergraduate-degree-programs/liberal-studies-major-ba/",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "MS Forensic Science",
-      "level": "master",
-      "duration": "2 years",
+      "title": "MS Mental Health Counseling",
+      "level": null,
+      "duration": "2.5 years",
       "intake": [
         "September",
         "January"
       ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/forensic-science-ms",
-      "feePerYear": 30900,
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/mental-health-counseling-ms",
+      "campus": "Westchester",
+      "directEntry": true,
+      "feePerYear": 31300,
       "currency": "USD"
     },
     {
       "title": "BS Health Science",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/academics/undergraduate-students/health-science-bs",
+      "campus": "Westchester",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
-      "title": "MS Economic Analysis and Data Science",
-      "level": "master",
-      "duration": "12 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/applied-quantitative-economic-analysis-and-policy-ms",
-      "feePerYear": 24375,
-      "currency": "USD"
-    },
-    {
-      "title": "MPH Public Health",
-      "level": "master",
-      "duration": "16 months",
-      "intake": [
-        "September",
-        "January"
-      ],
-      "programUrl": "https://www.pace.edu/program/public-health-mph",
-      "feePerYear": 34440,
-      "currency": "USD"
-    },
-    {
-      "title": "BFA Acting",
-      "level": "bachelor",
-      "duration": "4 years",
+      "title": "MS Nutrition and Dietetics",
+      "level": null,
+      "duration": "24 months",
       "intake": [
         "September"
       ],
-      "programUrl": "https://www.pace.edu/program/acting-bfa",
-      "feePerYear": 62040,
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/nutrition-and-dietetics-ms",
+      "campus": "Westchester",
+      "directEntry": true,
+      "feePerYear": 26370,
       "currency": "USD"
     },
     {
-      "title": "BFA Acting for Film and Media",
-      "level": "bachelor",
-      "duration": "4 years",
+      "title": "MS Accounting",
+      "level": null,
+      "duration": "1 year",
       "intake": [
         "September"
       ],
-      "programUrl": "https://www.pace.edu/program/acting-film-and-media-bfa",
-      "feePerYear": 62040,
-      "currency": "USD"
-    },
-    {
-      "title": "BFA Commercial Dance",
-      "level": "bachelor",
-      "duration": "4 years",
-      "intake": [
-        "September"
-      ],
-      "programUrl": "https://www.pace.edu/program/commercial-dance-bfa",
-      "feePerYear": 62040,
+      "programUrl": "https://catalog.pace.edu/graduate/schools/lubin-school-business/graduate-degree-programs/ms-lubin-degrees/accounting-ms/",
+      "campus": "Westchester",
+      "directEntry": true,
+      "feePerYear": 28080,
       "currency": "USD"
     },
     {
       "title": "BS Computer Engineering",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/program/computer-engineering-bs",
+      "campus": "Westchester",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Pharmaceutical Sciences",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/pharmaceutical-sciences-bs",
+      "campus": "Westchester",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Art",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/art-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BFA Art",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/art-bfa",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Art History",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/art-history-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Biology",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/biology-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Biology",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/biology-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Biochemistry",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/biochemistry-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MBA Strategy and International Business",
+      "level": "master",
+      "duration": "18 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/strategy-international-business-mba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Management: Hospitality and Tourism Management",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/management-hospitality-and-tourism-management-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Management: International Management",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/international-management-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MBA General Business",
+      "level": "master",
+      "duration": "18 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/business-general-mba-0",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Management: Business Management",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/management-business-management-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Management: Entrepreneurship",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/management-entrepreneurship-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Management: Human Resources Management",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/management-human-resources-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Marketing: Advertising and Integrated Marketing Communications",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/marketing-advertising-and-integrated-marketing-communications-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Social Media and Mobile Marketing",
+      "level": null,
+      "duration": "1.5 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/marketing-social-media-and-mobile-marketing-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "MBA Marketing Management",
+      "level": "master",
+      "duration": "18 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/marketing-management-mba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Marketing: Global Marketing Management",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/marketing-global-marketing-management-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Marketing Analytics",
+      "level": null,
+      "duration": "1.5 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/marketing-analytics-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Business Analytics",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/business-analytics-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Arts and Entertainment Management",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/management%E2%80%93arts-and-entertainment-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Chemistry",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/chemistry-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 52924,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Computer Science",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/computer-science-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Computer Science",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/computer-science-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Computer Science",
+      "level": null,
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/computer-science-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 30060,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Information Systems",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/information-systems-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Information Systems",
+      "level": null,
+      "duration": "15 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/information-systems-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 50100,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Information Technology",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/information-technology-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Software Development and Engineering",
+      "level": null,
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/software-development-and-engineering-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 30060,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Information Systems",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/information-systems-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MBA Information Systems",
+      "level": "master",
+      "duration": "18 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/information-systems-mba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Environmental Science",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/environmental-science-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Environmental Studies",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/environmental-studies-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MBA Accounting: CPA Preparation",
+      "level": "master",
+      "duration": "2.5 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/accounting-cpa-preparation-mba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Accounting: CPA Preparation",
+      "level": null,
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/accounting-cpa-preparation-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Accounting: General",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/accounting-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Accounting: Public Accounting",
+      "level": null,
+      "duration": "5 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/accounting-public-cpa-prep-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Business Economics",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/business-economics-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Economics",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/economics-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Finance",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/finance-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MBA Investment Management",
+      "level": "master",
+      "duration": "18 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/investment-management-mba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Financial Risk Management",
+      "level": null,
+      "duration": "1.5 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/financial-risk-management-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "BA History",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/history-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Political Science",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/political-science-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Film and Screen Studies",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/film-and-screen-studies-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Communication and Media Studies",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/communication-and-media-studies-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Publishing",
+      "level": null,
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/publishing-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 26460,
+      "currency": "USD"
+    },
+    {
+      "title": "BA English Language and Literature",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/english-language-and-literature-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Language, Culture, and World Trade",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/language-culture-and-world-trade-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Criminal Justice",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/criminal-justice-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Forensic Science",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/forensic-science-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Mathematics",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/mathematics-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Mathematics",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/mathematics-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Applied Psychology and Human Relations",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/applied-psychology-and-human-relations-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Psychology",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/psychology-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MA Psychology",
+      "level": "master",
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/psychology-ma",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 26910,
+      "currency": "USD"
+    },
+    {
+      "title": "MPA Public Administration: Government Management",
+      "level": null,
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/public-administration-mpa",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 22320,
+      "currency": "USD"
+    },
+    {
+      "title": "MPA Public Administration: Healthcare Management",
+      "level": null,
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/public-administration-mpa",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 22320,
+      "currency": "USD"
+    },
+    {
+      "title": "MPA Public Administration: Nonprofit Management",
+      "level": null,
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/public-administration-mpa",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 22320,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Sociology and Anthropology",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/sociology-anthropology-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Women's and Gender Studies",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/womens-and-gender-studies-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Modern Languages and Cultures",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/modern-languages-and-cultures-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Philosophy and Religious Studies",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/philosophy-and-religious-studies-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 52924,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Global Asia Studies",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/global-asia-studies-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Marketing: Sports Marketing",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/marketing-sports-marketing-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Biochemistry and Molecular Biology",
+      "level": null,
+      "duration": "12 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/biochemistry-and-molecular-biology-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 52360,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Accounting Data Analytics and Technologies",
+      "level": null,
+      "duration": "1 year",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/accounting-data-analytics-and-technologies-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 46800,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Behavioral Neuroscience",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/majors-minors/behavioral-neuroscience-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MBA Business Analytics",
+      "level": "master",
+      "duration": "18 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/business-analytics-mba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "MBA Corporate Finance",
+      "level": "master",
+      "duration": "18 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/corporate-finance-mba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "MBA Marketing Analytics",
+      "level": "master",
+      "duration": "18 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/marketing-analytics-mba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "MBA Human Resources Management",
+      "level": "master",
+      "duration": "18 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/talent-management-mba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Cybersecurity",
+      "level": null,
+      "duration": "12 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/cybersecurity-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 50100,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Data Science",
+      "level": null,
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/data-science-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 30060,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Arts and Entertainment Management",
+      "level": null,
+      "duration": "1.5 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/arts-and-entertainment-management-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Peace and Justice Studies",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/peace-and-justice-studies-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Human Centered Design",
+      "level": null,
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/human-centered-design-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 30060,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Writing for Diversity and Equity in Theater and Media",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/writing-diversity-and-equity-theater-and-media-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Marketing: Digital Marketing",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/marketing-digital-marketing-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Computational Economics",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/computational-economics-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Game Development",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/game-development-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Financial Operations and Technology",
+      "level": null,
+      "duration": "1.5 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/financial-operations-and-technology-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 24375,
+      "currency": "USD"
+    },
+    {
+      "title": "MBA Arts and Entertainment Management",
+      "level": "master",
+      "duration": "1.5 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/arts-and-entertainment-management-mba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 31687.5,
+      "currency": "USD"
+    },
+    {
+      "title": "BBA Business Technology",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/business-technology-bba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Cybersecurity",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/cybersecurity-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA International Relations and Global Studies",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/international-relations-and-global-studies-ba",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Accounting",
+      "level": null,
+      "duration": "1 year",
+      "intake": [
+        "September"
+      ],
+      "programUrl": "https://catalog.pace.edu/graduate/schools/lubin-school-business/graduate-degree-programs/ms-lubin-degrees/accounting-ms/",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28080,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Applied Artificial Intelligence",
+      "level": null,
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/applied-artificial-intelligence-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 31140,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Artificial Intelligence",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/artificial-intelligence-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "BA Liberal Studies",
+      "level": "bachelor",
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://catalog.pace.edu/undergraduate/schools/dyson-college-arts-sciences/undergraduate-degree-programs/liberal-studies-major-ba/",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Forensic Science",
+      "level": null,
+      "duration": "2 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/forensic-science-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 30900,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Health Science",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/undergraduate-students/health-science-bs",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 55040,
+      "currency": "USD"
+    },
+    {
+      "title": "MS Economic Analysis and Data Science",
+      "level": null,
+      "duration": "12 months",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/academics/graduate-students/degrees/applied-quantitative-economic-analysis-and-policy-ms",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 24375,
+      "currency": "USD"
+    },
+    {
+      "title": "MPH Public Health",
+      "level": null,
+      "duration": "16 months",
+      "intake": [
+        "September"
+      ],
+      "programUrl": "https://www.pace.edu/program/public-health-mph",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 28530,
+      "currency": "USD"
+    },
+    {
+      "title": "BFA Acting",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September"
+      ],
+      "programUrl": "https://www.pace.edu/program/acting-bfa",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 62040,
+      "currency": "USD"
+    },
+    {
+      "title": "BFA Acting for Film and Media",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September"
+      ],
+      "programUrl": "https://www.pace.edu/program/acting-film-and-media-bfa",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 62040,
+      "currency": "USD"
+    },
+    {
+      "title": "BFA Commercial Dance",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September"
+      ],
+      "programUrl": "https://www.pace.edu/program/commercial-dance-bfa",
+      "campus": "New York",
+      "directEntry": true,
+      "feePerYear": 62040,
+      "currency": "USD"
+    },
+    {
+      "title": "BS Computer Engineering",
+      "level": null,
+      "duration": "4 years",
+      "intake": [
+        "September",
+        "January"
+      ],
+      "programUrl": "https://www.pace.edu/program/computer-engineering-bs",
+      "campus": "New York",
+      "directEntry": true,
       "feePerYear": 55040,
       "currency": "USD"
     },
     {
       "title": "BFA Musical Theater",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September"
       ],
       "programUrl": "https://www.pace.edu/program/musical-theater-bfa",
+      "campus": "New York",
+      "directEntry": true,
       "feePerYear": 62040,
       "currency": "USD"
     },
     {
       "title": "BFA Performance Making",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September"
       ],
       "programUrl": "https://www.pace.edu/program/performance-making-bfa",
+      "campus": "New York",
+      "directEntry": true,
       "feePerYear": 62040,
       "currency": "USD"
     },
     {
       "title": "BFA Production and Design for Stage and Screen",
-      "level": "bachelor",
+      "level": null,
       "duration": "4 years",
       "intake": [
         "September"
       ],
       "programUrl": "https://www.pace.edu/program/production-and-design-stage-and-screen-bfa",
+      "campus": "New York",
+      "directEntry": true,
       "feePerYear": 62040,
       "currency": "USD"
     },
@@ -1206,23 +1998,24 @@
         "September"
       ],
       "programUrl": "https://www.pace.edu/program/stage-management-ba",
+      "campus": "New York",
+      "directEntry": true,
       "feePerYear": 62040,
       "currency": "USD"
     },
     {
       "title": "MS Artificial Intelligence",
-      "level": "master",
+      "level": null,
       "duration": "2 years",
       "intake": [
         "September",
         "January"
       ],
       "programUrl": "https://www.pace.edu/program/artificial-intelligence-ms",
+      "campus": "New York",
+      "directEntry": true,
       "feePerYear": 30060,
       "currency": "USD"
     }
-  ],
-  "aggregatorSlug": "pace",
-  "catalogSlug": "pace",
-  "matchMethod": "as-is+strip-campus/exact-name"
+  ]
 }
