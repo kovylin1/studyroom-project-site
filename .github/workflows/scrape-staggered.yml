@@ -77,23 +77,6 @@ jobs:
           echo "aggregator=$AGG" >> $GITHUB_OUTPUT
           echo "Агрегатор: $AGG"
 
-      - name: Какое поколение коллектора у этого агрегатора
-        id: gen
-        if: steps.detect.outputs.aggregator != ''
-        run: |
-          # kompas — выгрузка уходит в песочницу, каталог не трогается (нужен kompas-diff);
-          # legacy — выгрузка уходит в scraper/sources/*-extracts, дальше merge-programs.
-          case "${{ steps.detect.outputs.aggregator }}" in
-            navitas-pathways|qahe|studygroup|oxford-international|edvoy|iapro|qs-topuniversities)
-              echo "kind=kompas" >> $GITHUB_OUTPUT ;;
-            cats)
-              # CATS особый: программы даёт только майский коллектор (kompas-collect-cats
-              # собирает живой состав школ, но не программы), поэтому гоняются оба.
-              echo "kind=both" >> $GITHUB_OUTPUT ;;
-            *)
-              echo "kind=legacy" >> $GITHUB_OUTPUT ;;
-          esac
-
       - uses: actions/setup-node@v5
         if: steps.detect.outputs.aggregator != ''
         with:
@@ -119,7 +102,7 @@ jobs:
           steps.detect.outputs.aggregator == 'gedu'
         run: cd scraper && npx playwright install chromium --with-deps
 
-      - name: Запустить коллектор
+      - name: Обновить каталог агрегатором
         if: steps.detect.outputs.aggregator != ''
         env:
           IAPRO_LOGIN:    ${{ secrets.IAPRO_LOGIN }}
@@ -127,76 +110,23 @@ jobs:
           IAPRO_PASS_ALT: ${{ secrets.IAPRO_PASS_ALT }}
           QS_LOGIN:       ${{ secrets.QS_LOGIN }}
           QS_PASS:        ${{ secrets.QS_PASS }}
-        # БЕЗ `|| true`. Коллектор, вернувший ошибку, обязан валить прогон: иначе
-        # поломка маскируется, а шаг lastRunAt ниже пишет «обновлено» при нуле.
-        # Коллекторы КОМПАСа сами падают на пустой выдаче («источник вернул 0 курсов»).
-        run: |
-          AGG="${{ steps.detect.outputs.aggregator }}"
-          echo "=== Коллектор: $AGG ==="
-          case $AGG in
-            kaplan-pathways)
-              # Вся база Kaplan встроена в страницу degree-finder одним JS-литералом.
-              node scraper/scrape-kaplan-all.mjs
-              ;;
-            navitas-pathways)
-              # seed-navitas-*.mjs убраны: цены в них заданы литеральной таблицей
-              # UK_FEE_BAND_BASE, это не данные источника. Здесь — живой состав сети.
-              node scraper/kompas-collect-navitas.mjs
-              ;;
-            qahe)
-              # Программы уехали с /partner-institutions/ на поддомены партнёров;
-              # майский коллектор скрёб пустые страницы и давал 17 строк-заголовков.
-              node scraper/kompas-collect-qahe.mjs
-              ;;
-            studygroup)
-              # Контент-сервис поиска курсов открыт: SG_LOGIN/SG_PASS больше не нужны.
-              node scraper/kompas-collect-studygroup.mjs
-              ;;
-            cats)
-              node scraper/scrape-cats-all.mjs
-              node scraper/kompas-collect-cats.mjs
-              ;;
-            oxford-international)
-              # WP REST partner/course + настоящая строка Tuition fee со страницы курса.
-              node scraper/kompas-collect-oxford-international.mjs
-              ;;
-            edvoy)
-              # api-prod.edvoy.com/edp/graphql отвечает без токена. Логина с паролем
-              # у Edvoy больше нет вовсе — только OTP на почту и Google SSO.
-              node scraper/kompas-collect-edvoy.mjs
-              ;;
-            iapro)
-              node scraper/kompas-collect-iapro.mjs
-              ;;
-            qs-topuniversities)
-              # Раньше тут звалась разведка discover-qs-partners.mjs без секретов.
-              node scraper/kompas-collect-qs.mjs
-              ;;
-            gedu)
-              node scraper/scrape-gedu-all.mjs
-              ;;
-            volk)
-              node scraper/scrape-volk-collab-v3.mjs
-              ;;
-          esac
+        # Одна команда на агрегатор: сбор -> рабочая копия -> цены и программы
+        # этого агрегатора -> порог изменения -> перенос в живой каталог -> гейт.
+        # Разбор шагов и причин порядка — в шапке scraper/kompas-update.mjs.
+        # Прогон падает, если коллектор вернул ошибку, изменение вышло за порог
+        # или гейт каталога покраснел: тогда lastRunAt ниже НЕ обновляется и
+        # деплой не идёт. Отчёт прогона ложится в site/public/api/update-runs.json
+        # и оттуда его читает панель менеджера.
+        run: node scraper/kompas-update.mjs --agg=${{ steps.detect.outputs.aggregator }} --apply
 
-      - name: Слить в каталог (майское поколение)
-        if: steps.gen.outputs.kind == 'legacy' || steps.gen.outputs.kind == 'both'
-        run: |
-          node scraper/detect-gaps.mjs || true
-          node scraper/merge-programs.mjs
-
-      - name: Пересвести сверку и панель (поколение КОМПАСа)
-        # Выгрузка легла в песочницу; живой каталог не трогаем. Здесь только замер
-        # расхождений и пересборка кейсов для панели /manager — решение о переносе
-        # в каталог принимает владелец (kompas-apply-workcopy.mjs).
-        if: steps.gen.outputs.kind == 'kompas' || steps.gen.outputs.kind == 'both'
+      - name: Сверка и панель КОМПАСа
+        if: steps.detect.outputs.aggregator != ''
         run: |
           KOMPAS_WORK_DIR=site/src/content/universities node scraper/kompas-diff.mjs || true
           node scraper/kompas-panel.mjs || true
 
       - name: Auto-revizor (только свежеспарсенные)
-        if: steps.gen.outputs.kind == 'legacy' || steps.gen.outputs.kind == 'both'
+        if: steps.detect.outputs.aggregator != ''
         run: |
           node scraper/revizor.mjs --aggregator=${{ steps.detect.outputs.aggregator }} || true
 

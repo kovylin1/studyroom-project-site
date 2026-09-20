@@ -1,0 +1,54 @@
+{
+  "qahe": {
+    "aggregator": "qahe",
+    "kind": "kompas",
+    "startedAt": "2026-09-15T12:18:32.854Z",
+    "applied": false,
+    "dryRun": true,
+    "steps": [
+      {
+        "name": "сбор",
+        "ok": true,
+        "detail": "пропущен по --skip-collect"
+      },
+      {
+        "name": "рабочая копия ← каталог",
+        "ok": true
+      },
+      {
+        "name": "цены агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "программы агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "сравнение копии с каталогом",
+        "ok": true,
+        "detail": "свои карточки 6, изменились 6 (0.6% каталога)"
+      },
+      {
+        "name": "порог изменения",
+        "ok": true,
+        "detail": "0.6% ≤ 5%"
+      },
+      {
+        "name": "перенос в каталог",
+        "ok": true,
+        "detail": "сухой прогон, ничего не записано"
+      },
+      {
+        "name": "гейт каталога",
+        "ok": true
+      }
+    ],
+    "changedCards": 6,
+    "ownCards": 6,
+    "error": null,
+    "hold": null,
+    "finishedAt": "2026-09-15T12:18:42.139Z"
+  }
+}
