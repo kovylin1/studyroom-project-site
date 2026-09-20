@@ -83,19 +83,11 @@ const report = {};
 // Phase 1: Collectors
 if (!SKIP_COLLECTORS) {
   log('=== Phase 1: Collectors ===');
-  // Fetch-based (parallel — no browser contention)
-  const [qahe, gedu] = await Promise.all([S('scrape-qahe-all.mjs'), S('scrape-gedu-all.mjs')]);
-  report['scrape-qahe-all'] = qahe;
-  report['scrape-gedu-all'] = gedu;
-
-  // Playwright-based (sequential)
-  if (process.env.EDVOY_LOGIN && process.env.EDVOY_PASS) {
-    report['scrape-edvoy-all'] = await S('scrape-edvoy-all.mjs', ...(HEADED ? ['--headed'] : []));
-  } else { log('SKIP edvoy: EDVOY_LOGIN not set'); }
-
-  if (process.env.IAPRO_LOGIN && process.env.IAPRO_PASS) {
-    report['scrape-iapro-all'] = await S('scrape-iapro-all.mjs', ...(HEADED ? ['--headed'] : []));
-  } else { log('SKIP iapro: IAPRO_LOGIN not set'); }
+  // QAHE, Edvoy и IAPro отсюда убраны 2026-09-20: их майские коллекторы удалены,
+  // источники собирает поколение КОМПАСа (kompas-collect-*.mjs) через
+  // kompas-update.mjs по расписанию. Здесь остался только GEDU — единственный
+  // из прежних, у кого замены в КОМПАСе пока нет.
+  report['scrape-gedu-all'] = await S('scrape-gedu-all.mjs');
 } else {
   log('=== Phase 1: Collectors SKIPPED ===');
 }

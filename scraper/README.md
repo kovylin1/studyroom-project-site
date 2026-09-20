@@ -32,4 +32,4 @@ For now: hand-curate the missing fields in `site/src/content/universities/{slug}
 
 ## Scheduled run
 
-`.github/workflows/scrape-monthly.yml` runs `npm run scrape -- --all` on the 1st of each month at 03:00 UTC and opens a PR with the diff. Manager reviews via Decap CMS at `/admin`.
+`.github/workflows/scrape-staggered.yml` обновляет каталог по одному агрегатору в свой день месяца через `kompas-update.mjs` (сбор → рабочая копия → порог 5 % → перенос → гейт). `.github/workflows/scrape-monthly.yml` 1-го числа только пересчитывает отчёты и пересобирает сайт, в каталог не пишет.
