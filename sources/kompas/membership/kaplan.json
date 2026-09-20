@@ -1,0 +1,454 @@
+{
+  "_meta": {
+    "aggregator": "kaplan",
+    "label": "Kaplan Pathways",
+    "source": "https://www.kaplanpathways.com/degree-finder/",
+    "collectedAt": "2026-09-20T04:54:14.457Z",
+    "rule": "all",
+    "access": "public",
+    "notes": [
+      "Вся база Kaplan лежит в странице degree-finder одним JS-литералом; браузер не нужен.",
+      "Цена — current_fees_per_year, за год, в валюте строки (GBP/USD/CAD).",
+      "Уровень: level только по однозначному названию (program-level.mjs); иначе sourceLevel по коду фида 120/150.",
+      "Привязка через общий резолвер со сверкой страны; результат по хвосту после запятой отвергается (там кампус).",
+      "Заявленные без программ — подготовительные колледжи и вузы без степеней в finder; карточек не заводим."
+    ],
+    "counts": {
+      "institutions": 63,
+      "universities": 49,
+      "colleges": 14,
+      "withPrograms": 37,
+      "declaredWithoutPrograms": 26,
+      "sourcePrograms": 4787,
+      "matched": 37,
+      "unmatched": 0,
+      "catalogCards": 23,
+      "programs": 4784,
+      "withPrice": 4784,
+      "duplicatesDropped": 3,
+      "staleExtracts": 2
+    }
+  },
+  "mergedSlugs": [
+    {
+      "slug": "nottingham-trent",
+      "from": [
+        "Nottingham Trent University",
+        "NTU London"
+      ],
+      "programs": 210
+    },
+    {
+      "slug": "pace",
+      "from": [
+        "Pace University, Westchester",
+        "Pace University, New York"
+      ],
+      "programs": 144
+    },
+    {
+      "slug": "arizona-state",
+      "from": [
+        "Arizona State University, Tempe Campus",
+        "Arizona State University, West Valley Campus",
+        "Arizona State University, Downtown Phoenix Campus",
+        "Arizona State University, Polytechnic Campus",
+        "Arizona State University, Mesa City Center",
+        "Arizona State University, California Center"
+      ],
+      "programs": 745
+    },
+    {
+      "slug": "simmons",
+      "from": [
+        "Simmons University",
+        "Simmons University, Eric Carle Museum of Picture Book Art",
+        "Simmons University, SLIS West Campus"
+      ],
+      "programs": 74
+    },
+    {
+      "slug": "uconn",
+      "from": [
+        "University of Connecticut, Storrs Campus",
+        "University of Connecticut, Avery Point Campus",
+        "University of Connecticut, Hartford Campus",
+        "University of Connecticut, Stamford Campus",
+        "University of Connecticut, Waterbury Campus"
+      ],
+      "programs": 164
+    },
+    {
+      "slug": "alberta",
+      "from": [
+        "University of Alberta, North Campus",
+        "University of Alberta, Augustana Campus"
+      ],
+      "programs": 120
+    }
+  ],
+  "matched": [
+    {
+      "from": "University of Liverpool",
+      "to": "liverpool",
+      "method": "as-is/exact-name",
+      "programs": 267
+    },
+    {
+      "from": "University of Glasgow",
+      "to": "glasgow",
+      "method": "as-is/exact-name",
+      "programs": 225
+    },
+    {
+      "from": "Bournemouth University",
+      "to": "bournemouth",
+      "method": "as-is/exact-name",
+      "programs": 135
+    },
+    {
+      "from": "University of Brighton",
+      "to": "brighton",
+      "method": "as-is/exact-name",
+      "programs": 162
+    },
+    {
+      "from": "City St George's, University of London",
+      "to": "city-london",
+      "method": "as-is/exact-name",
+      "programs": 169
+    },
+    {
+      "from": "Cranfield University",
+      "to": "cranfield",
+      "method": "as-is/exact-name",
+      "programs": 35
+    },
+    {
+      "from": "Nottingham Trent University",
+      "to": "nottingham-trent",
+      "method": "as-is/exact-name",
+      "programs": 197
+    },
+    {
+      "from": "University of the West of England, Bristol",
+      "to": "uwe-bristol",
+      "method": "manual",
+      "reason": "хвост «Bristol» ловит Бристольский университет; это UWE",
+      "programs": 120
+    },
+    {
+      "from": "University of Westminster",
+      "to": "westminster",
+      "method": "as-is/exact-name",
+      "programs": 157
+    },
+    {
+      "from": "University of York",
+      "to": "york",
+      "method": "as-is/exact-name",
+      "programs": 343
+    },
+    {
+      "from": "University of Birmingham",
+      "to": "birmingham",
+      "method": "as-is/exact-name",
+      "programs": 339
+    },
+    {
+      "from": "University of Nottingham",
+      "to": "nottingham",
+      "method": "as-is/exact-name",
+      "programs": 287
+    },
+    {
+      "from": "University of Essex",
+      "to": "essex",
+      "method": "as-is/exact-name",
+      "programs": 518
+    },
+    {
+      "from": "Pace University, Westchester",
+      "to": "pace",
+      "method": "as-is/exact-name",
+      "programs": 42
+    },
+    {
+      "from": "Pace University, New York",
+      "to": "pace",
+      "method": "as-is+strip-campus/exact-name",
+      "programs": 102
+    },
+    {
+      "from": "Arizona State University, Tempe Campus",
+      "to": "arizona-state",
+      "method": "as-is/exact-name",
+      "programs": 381
+    },
+    {
+      "from": "Arizona State University, West Valley Campus",
+      "to": "arizona-state",
+      "method": "as-is/exact-name",
+      "programs": 104
+    },
+    {
+      "from": "Arizona State University, Downtown Phoenix Campus",
+      "to": "arizona-state",
+      "method": "as-is/exact-name",
+      "programs": 134
+    },
+    {
+      "from": "Arizona State University, Polytechnic Campus",
+      "to": "arizona-state",
+      "method": "as-is/exact-name",
+      "programs": 116
+    },
+    {
+      "from": "University of Bristol",
+      "to": "bristol",
+      "method": "as-is/exact-name",
+      "programs": 217
+    },
+    {
+      "from": "Queen Mary University of London",
+      "to": "queen-mary-london",
+      "method": "as-is/exact-name",
+      "programs": 182
+    },
+    {
+      "from": "Simmons University",
+      "to": "simmons",
+      "method": "as-is/exact-name",
+      "programs": 64
+    },
+    {
+      "from": "University of Connecticut, Storrs Campus",
+      "to": "uconn",
+      "method": "as-is/exact-name",
+      "programs": 113
+    },
+    {
+      "from": "University of Connecticut, Avery Point Campus",
+      "to": "uconn",
+      "method": "as-is/exact-name",
+      "programs": 4
+    },
+    {
+      "from": "University of Connecticut, Hartford Campus",
+      "to": "uconn",
+      "method": "as-is/exact-name",
+      "programs": 11
+    },
+    {
+      "from": "University of Connecticut, Stamford Campus",
+      "to": "uconn",
+      "method": "as-is/exact-name",
+      "programs": 24
+    },
+    {
+      "from": "University of Connecticut, Waterbury Campus",
+      "to": "uconn",
+      "method": "as-is/exact-name",
+      "programs": 12
+    },
+    {
+      "from": "ASU London",
+      "to": "asu-london",
+      "method": "as-is/exact-slug",
+      "programs": 7
+    },
+    {
+      "from": "University of Victoria",
+      "to": "uvic",
+      "method": "manual",
+      "reason": "две карточки одного вуза, uvic — основная",
+      "programs": 92
+    },
+    {
+      "from": "Arizona State University, Mesa City Center",
+      "to": "arizona-state",
+      "method": "as-is/exact-name",
+      "programs": 2
+    },
+    {
+      "from": "University of Oregon",
+      "to": "oregon",
+      "method": "as-is/exact-name",
+      "programs": 73
+    },
+    {
+      "from": "University of Alberta, North Campus",
+      "to": "alberta",
+      "method": "as-is/exact-name",
+      "programs": 107
+    },
+    {
+      "from": "University of Alberta, Augustana Campus",
+      "to": "alberta",
+      "method": "as-is/exact-name",
+      "programs": 13
+    },
+    {
+      "from": "Arizona State University, California Center",
+      "to": "arizona-state",
+      "method": "as-is/exact-name",
+      "programs": 10
+    },
+    {
+      "from": "NTU London",
+      "to": "nottingham-trent",
+      "method": "manual",
+      "reason": "лондонский кампус Nottingham Trent University",
+      "programs": 13
+    },
+    {
+      "from": "Simmons University, Eric Carle Museum of Picture Book Art",
+      "to": "simmons",
+      "method": "as-is/exact-name",
+      "programs": 4
+    },
+    {
+      "from": "Simmons University, SLIS West Campus",
+      "to": "simmons",
+      "method": "as-is/exact-name",
+      "programs": 6
+    }
+  ],
+  "unmatched": [],
+  "declaredWithoutPrograms": [
+    {
+      "name": "Bournemouth University International College",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "University of Brighton International College",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "University of the West of England, Bristol's International College",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "University of Essex International College",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "Glasgow International College",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "University of Liverpool International College",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "Kaplan International College London",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "University of Nottingham International College",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "Nottingham Trent International College",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "University of York International Pathway College",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "Nottingham Foundation Academy",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "University of Aberdeen",
+      "type": "university",
+      "country": "GBR"
+    },
+    {
+      "name": "University of Salford",
+      "type": "university",
+      "country": "GBR"
+    },
+    {
+      "name": "Aston University",
+      "type": "university",
+      "country": "GBR"
+    },
+    {
+      "name": "University of Liverpool in London",
+      "type": "university",
+      "country": "GBR"
+    },
+    {
+      "name": "Northeastern University, Boston",
+      "type": "university",
+      "country": "USA"
+    },
+    {
+      "name": "The University of Tulsa",
+      "type": "university",
+      "country": "USA"
+    },
+    {
+      "name": "Northeastern University, Seattle",
+      "type": "university",
+      "country": "USA"
+    },
+    {
+      "name": "Pace University, White Plains",
+      "type": "university",
+      "country": "USA"
+    },
+    {
+      "name": "Northeastern University, Silicon Valley",
+      "type": "university",
+      "country": "USA"
+    },
+    {
+      "name": "Arizona State University, Lake Havasu Campus",
+      "type": "university",
+      "country": "USA"
+    },
+    {
+      "name": "Centre for Academic Language and Development, University of Bristol",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "University of Birmingham Foundation Pathways",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "Kaplan International Pathways",
+      "type": "college",
+      "country": "GBR"
+    },
+    {
+      "name": "MPP BUINTCOL PSE UNIVERSITY",
+      "type": "university",
+      "country": "GBR"
+    },
+    {
+      "name": "Emily Carr University of Art + Design",
+      "type": "university",
+      "country": "CAN"
+    }
+  ],
+  "staleExtracts": [
+    "chester",
+    "hartford"
+  ]
+}

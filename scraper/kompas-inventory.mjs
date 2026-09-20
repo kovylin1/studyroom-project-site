@@ -161,7 +161,7 @@ const dirMembers = async (rel) => {
 
 async function membersOf(agg) {
   switch (agg.key) {
-    case 'kaplan':    return dirMembers('scraper/sources/kaplan-extracts');
+    case 'kaplan':    return dirMembers('sources/kompas/extracts/kaplan');
     case 'qahe':      return agg.list.map(e => typeof e === 'string'
                         ? { slug: null, name: e }
                         : { slug: null, name: e.name, catalogSlug: e.catalogSlug, note: e.note });

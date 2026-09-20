@@ -69,7 +69,7 @@ const log = (...a) => process.stderr.write(`[update] ${new Date().toISOString().
 //         'legacy' — коллектор пишет в scraper/sources/*-extracts, дальше merge-programs
 //                    сам дозаполняет живой каталог (versions КОМПАСа для них ещё нет).
 const AGGREGATORS = {
-  'kaplan-pathways': { kind: 'legacy', source: 'kaplan', collect: ['scrape-kaplan-all.mjs'] },
+  'kaplan-pathways': { kind: 'kompas', source: 'kaplan', collect: ['kompas-collect-kaplan.mjs'] },
   'navitas-pathways': { kind: 'kompas', source: 'navitas', collect: ['kompas-collect-navitas.mjs', 'kompas-collect-navitas-programs.mjs'] },
   qahe: { kind: 'kompas', source: 'qahe', collect: ['kompas-collect-qahe.mjs'] },
   studygroup: { kind: 'kompas', source: 'studygroup', collect: ['kompas-collect-studygroup.mjs'] },

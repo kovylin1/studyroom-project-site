@@ -60,9 +60,15 @@ export function stripAward(title) {
 // когда источник уровень не проставил, но в названии он написан прямо
 // («MSc Data Science», «Bachelor of Arts»), это улика источника, а не догадка.
 // Прецедент от 20.08: при противоречии уровень берётся из названия — оно конкретнее.
+// Американские аббревиатуры добавлены 20.09.2026 по замеру Kaplan: 646 строк из 4 784
+// (ASU, UConn, Pace, Simmons, Oregon) шли без уровня и без sourceLevel только потому,
+// что название начинается с «BS …», «MS …», «BSE …», «MPA …». Список — только
+// первое слово, поэтому «MS» здесь не спутать ни с чем внутри названия.
 const LEVEL_BY_AWARD = [
-  [['bachelor', 'bachelors', 'bsc', 'ba', 'bba', 'beng', 'bcom', 'bed', 'bfa', 'barch', 'llb'], 'bachelor'],
-  [['master', 'masters', 'msc', 'ma', 'mba', 'meng', 'mres', 'mphil', 'llm', 'med', 'mfa', 'march'], 'master'],
+  [['bachelor', 'bachelors', 'bsc', 'ba', 'bba', 'beng', 'bcom', 'bed', 'bfa', 'barch', 'llb',
+    'bs', 'bse', 'bsba', 'bsn', 'bsw', 'bsd', 'bsla', 'bmus', 'bmgt', 'bgm', 'bis', 'bae', 'bsed'], 'bachelor'],
+  [['master', 'masters', 'msc', 'ma', 'mba', 'meng', 'mres', 'mphil', 'llm', 'med', 'mfa', 'march',
+    'ms', 'mse', 'mpa', 'msw', 'mpp', 'mla', 'mph', 'mpm', 'mm', 'mgm', 'mns', 'mc', 'mas', 'mps', 'mhi', 'mls'], 'master'],
   [['phd', 'doctor'], 'phd'],
   [['foundation'], 'foundation'],
 ];
