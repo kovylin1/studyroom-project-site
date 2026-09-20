@@ -30,6 +30,7 @@ export const SOURCES = {
   studygroup: { dir: path.join(EXTRACTS, 'studygroup'), state: 'ready' },
   edvoy: { dir: path.join(EXTRACTS, 'edvoy'), state: 'ready' },
   gedu: { dir: GEDU_DIR, state: 'ready' },
+  collab: { dir: path.join(EXTRACTS, 'collab'), state: 'ready' },
   direct: { dir: path.join(EXTRACTS, 'direct'), state: 'ready' },
   iapro: { dir: path.join(EXTRACTS, 'iapro'), state: 'ready' },
   // 2026-08-01: доступ получен, портал обойдён целиком (512 вузов / 35 303 программы).

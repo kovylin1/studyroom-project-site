@@ -79,7 +79,7 @@ const AGGREGATORS = {
   iapro: { kind: 'kompas', source: 'iapro', collect: ['kompas-collect-iapro.mjs'] },
   'qs-topuniversities': { kind: 'kompas', source: 'qs', collect: ['kompas-collect-qs.mjs'] },
   gedu: { kind: 'kompas', source: 'gedu', collect: ['kompas-collect-gedu.mjs'] },
-  volk: { kind: 'legacy', source: 'collab', collect: ['scrape-volk-collab-v3.mjs'] },
+  volk: { kind: 'kompas', source: 'collab', collect: ['kompas-collect-collab.mjs'] },
 };
 
 if (has('list')) {
@@ -106,6 +106,11 @@ function run(script, args = []) {
     p.on('close', (code) => resolve({ code, out, err }));
   });
 }
+
+const sameJson = (a, b) => {
+  if (a === b) return true;
+  try { return JSON.stringify(JSON.parse(a)) === JSON.stringify(JSON.parse(b)); } catch { return false; }
+};
 
 const readCards = async (dir) => {
   const out = new Map();
@@ -188,7 +193,11 @@ if (CFG.kind === 'legacy') {
     if (rawLive === undefined) continue;                    // новых карточек прогон не заводит
     if (!belongsTo(rawLive, CFG.source) && !belongsTo(rawWork, CFG.source)) continue;
     own++;
-    if (rawWork !== rawLive) changed.push(slug);
+    // Сравниваем содержимое, а не текст: живой каталог лежит с CRLF, рабочая копия
+    // пишется с LF, и до 20.09.2026 каждая своя карточка считалась изменённой
+    // (Kaplan 25 из 25, GEDU 10 из 10, Collab 76 из 76 при 25 настоящих) —
+    // порог 5 % срабатывал на переводах строк.
+    if (!sameJson(rawWork, rawLive)) changed.push(slug);
   }
   report.ownCards = own;
   report.changedCards = changed.length;

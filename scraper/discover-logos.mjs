@@ -62,7 +62,6 @@ function getOfficialRoot(uni) {
 const norm = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '');
 const EXTRACT_DIRS = [
   path.join(PROJECT_ROOT, 'sources/edvoy-extracts'),
-  path.join(PROJECT_ROOT, 'sources/collab-extracts'),
   path.join(PROJECT_ROOT, 'sources/studygroup-extracts'),
   path.join(PROJECT_ROOT, 'sources/direct-partners-extracts'),
   path.join(__dirname, 'sources/official-extracts'),

@@ -1,0 +1,3067 @@
+{
+  "_meta": {
+    "aggregator": "collab",
+    "label": "Collab International",
+    "source": "https://www.collabinternational.com",
+    "collectedAt": "2026-09-20T06:23:26.229Z",
+    "rule": "all",
+    "access": "public",
+    "partnersPdf": {
+      "snapshot": "collab-partners-list-updated-oct-2025.pdf",
+      "snapshotDate": "2025-10",
+      "live": "https://www.collabinternational.com/yuklemeler/universiteler/collab-partners-list-updated-oct-2025.pdf",
+      "stale": false
+    },
+    "notes": [
+      "Состав — официальный PDF «Partner Institutions List» (снимок sources/kompas/collab/partners-list.txt; в CI нет pdftotext).",
+      "Страницы вузов найдены через страницы «Study in <страна>» — страна оттуда, не по имени.",
+      "Со страниц берётся только структурное: списки под заголовком уровня и таблицы цен. Проза не разбирается.",
+      "Цены — минимум диапазона, feeBasis from; аудитория источником не указана.",
+      "Вузы из PDF, которых нет в каталоге, НЕ заводятся — список declaredUnmatched на решение владельца."
+    ],
+    "counts": {
+      "declared": 335,
+      "declaredInCatalog": 149,
+      "declaredWeakMatch": 5,
+      "declaredNotInCatalog": 181,
+      "pages": 81,
+      "matched": 80,
+      "unmatched": 1,
+      "noStructure": 39,
+      "extracts": 41,
+      "programs": 556,
+      "withPrice": 367
+    }
+  },
+  "declaredMatched": [
+    {
+      "name": "Adelphi University",
+      "country": "United States",
+      "to": "adelphi",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "American University",
+      "country": "United States",
+      "to": "american-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Arizona State University",
+      "country": "United States",
+      "to": "arizona-state",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Auburn University",
+      "country": "United States",
+      "to": "auburn",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Cal State Fullerton",
+      "country": "United States",
+      "to": "cal-state-fullerton",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Cleveland State University",
+      "country": "United States",
+      "to": "cleveland-state",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Florida International (UG Only)",
+      "country": "United States",
+      "to": "florida-international",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "George Mason University (UG)",
+      "country": "United States",
+      "to": "george-mason",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Gonzaga University",
+      "country": "United States",
+      "to": "gonzaga",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Hofstra University",
+      "country": "United States",
+      "to": "hofstra",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Illinois State University",
+      "country": "United States",
+      "to": "illinois-state",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Johns Hopkins University",
+      "country": "United States",
+      "to": "johns-hopkins",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Lynn University",
+      "country": "United States",
+      "to": "lynn",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Florida Atlantic University",
+      "country": "United States",
+      "to": "florida-atlantic-university-direct-entry",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Wyoming",
+      "country": "United States",
+      "to": "wyoming",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "New York Film Academy",
+      "country": "United States",
+      "to": "new-york-film-academy",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Oregon State University",
+      "country": "United States",
+      "to": "oregon-state",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Pace University",
+      "country": "United States",
+      "to": "pace",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "San Francisco State University",
+      "country": "United States",
+      "to": "sf-state",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Queens College CUNY",
+      "country": "United States",
+      "to": "queens-college-cuny",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Central Florida",
+      "country": "United States",
+      "to": "ucf",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Illinois, Chicago",
+      "country": "United States",
+      "to": "uic",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Southern Utah University",
+      "country": "United States",
+      "to": "southern-utah-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Dayton",
+      "country": "United States",
+      "to": "dayton",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of South Carolina",
+      "country": "United States",
+      "to": "south-carolina",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Utah",
+      "country": "United States",
+      "to": "utah",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Schiller International University",
+      "country": "United States",
+      "to": "schiller-international-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Northeastern University",
+      "country": "United States",
+      "to": "northeastern-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Utah Tech University",
+      "country": "United States",
+      "to": "utah-tech-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Louisiana State University",
+      "country": "United States",
+      "to": "lsu",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Colorado State University",
+      "country": "United States",
+      "to": "colorado-state-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Constructor University",
+      "country": "Germany",
+      "to": "constructor",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "EU Business School-Munich",
+      "country": "Germany",
+      "to": "eu-business-school-germany",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "SRH University (Berlin & Hamburg & Heidelberg)",
+      "country": "Germany",
+      "to": "srh-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Munich Business School",
+      "country": "Germany",
+      "to": "munich-business-school",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Brock University",
+      "country": "Canada",
+      "to": "brock",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Capilano University",
+      "country": "Canada",
+      "to": "capilano",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Centennial College",
+      "country": "Canada",
+      "to": "centennial-college",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Conestoga College",
+      "country": "Canada",
+      "to": "conestoga-college",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Fanshawe College",
+      "country": "Canada",
+      "to": "fanshawe-college",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Fleming College Toronto",
+      "country": "Canada",
+      "to": "fleming-college-toronto",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Fraser International College (SFU)",
+      "country": "Canada",
+      "to": "fraser-international-college",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Humber College",
+      "country": "Canada",
+      "to": "humber-college",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "ILAC College",
+      "country": "Canada",
+      "to": "ilac",
+      "method": "strip-suffix/exact-slug"
+    },
+    {
+      "name": "Kwantlen Polytechnic University",
+      "country": "Canada",
+      "to": "kwantlen-polytechnic-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Lakehead University",
+      "country": "Canada",
+      "to": "lakehead-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Langara College",
+      "country": "Canada",
+      "to": "langara-college",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "International Business University(IBU) - Toronto",
+      "country": "Canada",
+      "to": "ibu-canada",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Alberta",
+      "country": "Canada",
+      "to": "alberta",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Mount Allison University",
+      "country": "Canada",
+      "to": "mount-allison",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Niagara College Toronto",
+      "country": "Canada",
+      "to": "niagara-college-toronto",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Ontario Tech. University",
+      "country": "Canada",
+      "to": "ontario-tech",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Seneca College (Polytechnic)",
+      "country": "Canada",
+      "to": "seneca",
+      "method": "strip-suffix/exact-slug"
+    },
+    {
+      "name": "Sheridan College",
+      "country": "Canada",
+      "to": "sheridan",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Toronto Film School",
+      "country": "Canada",
+      "to": "toronto-film-school",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Toronto Metropolitan University",
+      "country": "Canada",
+      "to": "toronto-met",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Trebas Institute",
+      "country": "Canada",
+      "to": "trebas",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Trent University",
+      "country": "Canada",
+      "to": "trent",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University Canada West",
+      "country": "Canada",
+      "to": "university-canada-west",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Lethbridge",
+      "country": "Canada",
+      "to": "lethbridge",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Manitoba (international college)",
+      "country": "Canada",
+      "to": "manitoba",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Regina",
+      "country": "Canada",
+      "to": "university-of-regina",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Windsor",
+      "country": "Canada",
+      "to": "windsor",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Wilfrid Laurier University (UG)",
+      "country": "Canada",
+      "to": "wilfrid-laurier",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Yorkville University",
+      "country": "Canada",
+      "to": "yorkville",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Universidad Europea de Madrid",
+      "country": "Spain",
+      "to": "universidad-europea-de-madrid",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Anglia Ruskin University",
+      "country": "United Kingdom",
+      "to": "anglia-ruskin",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Bangor University",
+      "country": "United Kingdom",
+      "to": "bangor",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Bournemouth University",
+      "country": "United Kingdom",
+      "to": "bournemouth",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Coventry University",
+      "country": "United Kingdom",
+      "to": "coventry",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "De Montfort University",
+      "country": "United Kingdom",
+      "to": "de-montfort",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "London South Bank University",
+      "country": "United Kingdom",
+      "to": "london-south-bank",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Kingston University",
+      "country": "United Kingdom",
+      "to": "kingston-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Chichester",
+      "country": "United Kingdom",
+      "to": "university-of-chichester",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of East London",
+      "country": "United Kingdom",
+      "to": "university-of-east-london",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Edinburgh",
+      "country": "United Kingdom",
+      "to": "university-of-edinburgh",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "London Metropolitan University",
+      "country": "United Kingdom",
+      "to": "london-met",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Istituto Marangoni London",
+      "country": "United Kingdom",
+      "to": "marangoni-london",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Middlesex University",
+      "country": "United Kingdom",
+      "to": "middlesex-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Nottingham Trent University",
+      "country": "United Kingdom",
+      "to": "nottingham-trent",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Oxford Brookes University",
+      "country": "United Kingdom",
+      "to": "oxford-brookes",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Essex",
+      "country": "United Kingdom",
+      "to": "essex",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Greenwich",
+      "country": "United Kingdom",
+      "to": "greenwich",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Surrey",
+      "country": "United Kingdom",
+      "to": "surrey",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Sussex",
+      "country": "United Kingdom",
+      "to": "sussex",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "UWE Bristol",
+      "country": "United Kingdom",
+      "to": "uwe-bristol",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Kent",
+      "country": "United Kingdom",
+      "to": "kent",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Roehampton",
+      "country": "United Kingdom",
+      "to": "roehampton",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Sheffield",
+      "country": "United Kingdom",
+      "to": "university-of-sheffield",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Stirling",
+      "country": "United Kingdom",
+      "to": "stirling",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Sunderland",
+      "country": "United Kingdom",
+      "to": "sunderland",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "MLA College",
+      "country": "United Kingdom",
+      "to": "mla-college",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Northumbria University",
+      "country": "United Kingdom",
+      "to": "northumbria",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Swansea University",
+      "country": "United Kingdom",
+      "to": "swansea",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Law (ULaw)",
+      "country": "United Kingdom",
+      "to": "university-of-law",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Dublin Business School",
+      "country": "Ireland",
+      "to": "dublin-business-school",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Dublin City University",
+      "country": "Ireland",
+      "to": "dublin-city-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "National College of Ireland",
+      "country": "Ireland",
+      "to": "nci-ireland",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Trinity College Dublin",
+      "country": "Ireland",
+      "to": "trinity-dublin",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University College Dublin",
+      "country": "Ireland",
+      "to": "university-college-dublin",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Galway (NUI)",
+      "country": "Ireland",
+      "to": "galway",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Limerick",
+      "country": "Ireland",
+      "to": "limerick",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University College Cork",
+      "country": "Ireland",
+      "to": "ucc",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Istituto Marangoni",
+      "country": "Italy",
+      "to": "istituto-marangoni",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "NABA Milano",
+      "country": "Italy",
+      "to": "naba-milano",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "POLIMI Graduate School of Management",
+      "country": "Italy",
+      "to": "polimi-gsom",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Rome University of Fine Arts (RUFA)",
+      "country": "Italy",
+      "to": "rome-university-of-fine-arts",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Aalto University",
+      "country": "Finland",
+      "to": "aalto-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Turku",
+      "country": "Finland",
+      "to": "university-of-turku",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "GBS Malta",
+      "country": "Malta",
+      "to": "gbs-malta",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "IDEA College",
+      "country": "Malta",
+      "to": "idea-college",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Prague University of Economics & Business",
+      "country": "Czech Republic",
+      "to": "prague-university-of-economics",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Charles University",
+      "country": "Czech Republic",
+      "to": "charles-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Budapest Metropolitan University",
+      "country": "Hungary",
+      "to": "metropolitan-budapest",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "IBS Budapest",
+      "country": "Hungary",
+      "to": "ibs-budapest",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Pecs",
+      "country": "Hungary",
+      "to": "university-of-pecs",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Szeged",
+      "country": "Hungary",
+      "to": "szeged-university",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Fontys University",
+      "country": "Netherlands",
+      "to": "fontys-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Amsterdam - ONCAMPUS Foundation Programs",
+      "country": "Netherlands",
+      "to": "amsterdam",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Montpellier Business School",
+      "country": "France",
+      "to": "montpellier-business-school",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Toulouse Business School",
+      "country": "France",
+      "to": "toulouse-business-school",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "College de Paris",
+      "country": "France",
+      "to": "college-de-paris",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Paris School of Business",
+      "country": "France",
+      "to": "psb-paris",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "KEDGE Business School",
+      "country": "France",
+      "to": "kedge-business-school",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Rennes School of Business",
+      "country": "France",
+      "to": "rennes-school-of-business",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "EDC Paris Business School",
+      "country": "France",
+      "to": "edc-paris-business-school",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Kaunas University of Technology",
+      "country": "Lithuania",
+      "to": "kaunas-university-of-technology",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Istanbul Medipol University",
+      "country": "Turkey",
+      "to": "medipol-university",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Istanbul Bilgi University",
+      "country": "Turkey",
+      "to": "bilgi-university",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Altinbas University",
+      "country": "Turkey",
+      "to": "istanbul-altinbas-university",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Istinye University",
+      "country": "Turkey",
+      "to": "istinye-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Isik University",
+      "country": "Turkey",
+      "to": "istanbul-isik-university",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Sabanci University",
+      "country": "Turkey",
+      "to": "sabanci",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Atilim University",
+      "country": "Turkey",
+      "to": "atilim",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Charles Darwin University",
+      "country": "Australia",
+      "to": "charles-darwin-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "The University of Western Australia",
+      "country": "Australia",
+      "to": "the-university-of-western-australia",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "The University of Notre Dame",
+      "country": "Australia",
+      "to": "university-of-notre-dame",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Western Sydney University",
+      "country": "Australia",
+      "to": "western-sydney",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Charles Sturt University",
+      "country": "Australia",
+      "to": "charles-sturt",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Southern Cross University",
+      "country": "Australia",
+      "to": "southern-cross-university",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "The University of Newcastle,",
+      "country": "Australia",
+      "to": "university-of-newcastle",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Wollongong",
+      "country": "Australia",
+      "to": "university-of-wollongong",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Kaplan Business School",
+      "country": "Australia",
+      "to": "kaplan-business-school",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Adelaide",
+      "country": "Australia",
+      "to": "the-university-of-adelaide",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "Edith Cowan University",
+      "country": "Australia",
+      "to": "edith-cowan",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "University of Tasmania (UTAS)",
+      "country": "Australia",
+      "to": "tasmania",
+      "method": "as-is/exact-name"
+    },
+    {
+      "name": "GBS Dubai",
+      "country": "United Arab Emirates",
+      "to": "gbs-dubai",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "Istituto Marangoni Dubai",
+      "country": "United Arab Emirates",
+      "to": "istituto-marangoni-dubai",
+      "method": "as-is/exact-slug"
+    },
+    {
+      "name": "University of Nicosia",
+      "country": "Cyprus",
+      "to": "nicosia",
+      "method": "as-is/exact-name"
+    }
+  ],
+  "declaredWeak": [
+    {
+      "name": "Lancaster Leipzig University",
+      "country": "Germany",
+      "to": "lancaster-leipzig",
+      "method": "as-is/core-name"
+    },
+    {
+      "name": "Birmingham University",
+      "country": "United Kingdom",
+      "to": "ucb",
+      "method": "as-is/core-name"
+    },
+    {
+      "name": "Regent University London",
+      "country": "United Kingdom",
+      "to": "regent-college-london",
+      "method": "as-is/core-name"
+    },
+    {
+      "name": "Deakin College",
+      "country": "Australia",
+      "to": "deakin",
+      "method": "as-is/core-name"
+    },
+    {
+      "name": "Griffith College",
+      "country": "Australia",
+      "to": "griffith",
+      "method": "as-is/core-name"
+    }
+  ],
+  "declaredUnmatched": [
+    {
+      "name": "American Collegiate LA & WA",
+      "country": "United States",
+      "tried": [
+        "as-is:American Collegiate LA & WA=no-match"
+      ]
+    },
+    {
+      "name": "Arts University of San Francisco",
+      "country": "United States",
+      "tried": [
+        "as-is:Arts University of San Francisco=no-match"
+      ]
+    },
+    {
+      "name": "Connecticut University",
+      "country": "United States",
+      "tried": [
+        "as-is:Connecticut University=no-match"
+      ]
+    },
+    {
+      "name": "Montclair State University, New Jersey",
+      "country": "United States",
+      "tried": [
+        "after-comma:New Jersey=no-match",
+        "as-is:Montclair State University, New Jersey=no-match"
+      ]
+    },
+    {
+      "name": "University of California, Riverside",
+      "country": "United States",
+      "tried": [
+        "after-comma:Riverside=no-match",
+        "as-is:University of California, Riverside=no-match"
+      ]
+    },
+    {
+      "name": "SUNY Oswego",
+      "country": "United States",
+      "tried": [
+        "as-is:SUNY Oswego=no-match"
+      ]
+    },
+    {
+      "name": "Texas University - San Antonio",
+      "country": "United States",
+      "tried": [
+        "as-is:Texas University=no-match"
+      ]
+    },
+    {
+      "name": "Augustana College",
+      "country": "United States",
+      "tried": [
+        "as-is:Augustana College=no-match",
+        "strip-suffix:Augustana=no-match"
+      ]
+    },
+    {
+      "name": "St. George’s University",
+      "country": "United States",
+      "tried": [
+        "as-is:St. George’s University=country-mismatch-core-name"
+      ]
+    },
+    {
+      "name": "University of Wisconsin",
+      "country": "United States",
+      "tried": [
+        "as-is:University of Wisconsin=no-match"
+      ]
+    },
+    {
+      "name": "University of Nevada, Reno",
+      "country": "United States",
+      "tried": [
+        "after-comma:Reno=no-match",
+        "as-is:University of Nevada, Reno=no-match"
+      ]
+    },
+    {
+      "name": "Washington University of Science and Technology",
+      "country": "United States",
+      "tried": [
+        "as-is:Washington University of Science and Technology=no-match"
+      ]
+    },
+    {
+      "name": "Rutgers University - Camden",
+      "country": "United States",
+      "tried": [
+        "as-is:Rutgers University=no-match"
+      ]
+    },
+    {
+      "name": "Rutgers University - New Brunswick",
+      "country": "United States",
+      "tried": [
+        "as-is:Rutgers University=no-match"
+      ]
+    },
+    {
+      "name": "Roosevelt University",
+      "country": "United States",
+      "tried": [
+        "as-is:Roosevelt University=no-match"
+      ]
+    },
+    {
+      "name": "Simmons University Boston",
+      "country": "United States",
+      "tried": [
+        "as-is:Simmons University Boston=no-match"
+      ]
+    },
+    {
+      "name": "Suffolk University Boston",
+      "country": "United States",
+      "tried": [
+        "as-is:Suffolk University Boston=no-match"
+      ]
+    },
+    {
+      "name": "U-Mass Amherst (Graduate)",
+      "country": "United States",
+      "tried": [
+        "as-is:U-Mass Amherst=no-match"
+      ]
+    },
+    {
+      "name": "U-Mass Boston (UG)",
+      "country": "United States",
+      "tried": [
+        "as-is:U-Mass Boston=no-match"
+      ]
+    },
+    {
+      "name": "Uni. Of the Pacific, Stockton, California",
+      "country": "United States",
+      "tried": [
+        "after-comma:Stockton, California=no-match",
+        "as-is:Uni. Of the Pacific, Stockton, California=no-match"
+      ]
+    },
+    {
+      "name": "University of Buffalo (UG)",
+      "country": "United States",
+      "tried": [
+        "as-is:University of Buffalo=no-match"
+      ]
+    },
+    {
+      "name": "University of Idaho",
+      "country": "United States",
+      "tried": [
+        "as-is:University of Idaho=no-match"
+      ]
+    },
+    {
+      "name": "University of Palm Beach Atlantic",
+      "country": "United States",
+      "tried": [
+        "as-is:University of Palm Beach Atlantic=no-match"
+      ]
+    },
+    {
+      "name": "St. George's University (SGU)",
+      "country": "United States",
+      "tried": [
+        "as-is:St. George's University=country-mismatch-core-name"
+      ]
+    },
+    {
+      "name": "Alliant International University",
+      "country": "United States",
+      "tried": [
+        "as-is:Alliant International University=no-match"
+      ]
+    },
+    {
+      "name": "Berlin School of Business",
+      "country": "Germany",
+      "tried": [
+        "as-is:Berlin School of Business=no-match"
+      ]
+    },
+    {
+      "name": "Innovation",
+      "country": "Germany",
+      "tried": [
+        "as-is:Innovation=no-match"
+      ]
+    },
+    {
+      "name": "Cologne Business School",
+      "country": "Germany",
+      "tried": [
+        "as-is:Cologne Business School=no-match"
+      ]
+    },
+    {
+      "name": "GISMA Business",
+      "country": "Germany",
+      "tried": [
+        "as-is:GISMA Business=no-match"
+      ]
+    },
+    {
+      "name": "Macromedia University",
+      "country": "Germany",
+      "tried": [
+        "as-is:Macromedia University=no-match"
+      ]
+    },
+    {
+      "name": "IU - International University of Applied Sciences",
+      "country": "Germany",
+      "tried": []
+    },
+    {
+      "name": "UE (University of Europe for Applied",
+      "country": "Germany",
+      "tried": [
+        "as-is:UE (University of Europe for Applied=no-match"
+      ]
+    },
+    {
+      "name": "Sciences)",
+      "country": "Germany",
+      "tried": [
+        "as-is:Sciences)=no-match"
+      ]
+    },
+    {
+      "name": "XU Exponential University",
+      "country": "Germany",
+      "tried": [
+        "as-is:XU Exponential University=no-match"
+      ]
+    },
+    {
+      "name": "PFH Private University of Applied",
+      "country": "Germany",
+      "tried": [
+        "as-is:PFH Private University of Applied=no-match"
+      ]
+    },
+    {
+      "name": "Sciences",
+      "country": "Germany",
+      "tried": [
+        "as-is:Sciences=no-match"
+      ]
+    },
+    {
+      "name": "Munich University of Digital",
+      "country": "Germany",
+      "tried": [
+        "as-is:Munich University of Digital=no-match"
+      ]
+    },
+    {
+      "name": "Technologies (MUDT)",
+      "country": "Germany",
+      "tried": [
+        "as-is:Technologies=no-match"
+      ]
+    },
+    {
+      "name": "Algonquin College",
+      "country": "Canada",
+      "tried": [
+        "as-is:Algonquin College=no-match",
+        "strip-suffix:Algonquin=no-match"
+      ]
+    },
+    {
+      "name": "British Columbia Institute of Tech. (BCIT)",
+      "country": "Canada",
+      "tried": [
+        "as-is:British Columbia Institute of Tech.=no-match"
+      ]
+    },
+    {
+      "name": "Canadian College of Tech. And Business",
+      "country": "Canada",
+      "tried": [
+        "as-is:Canadian College of Tech. And Business=no-match"
+      ]
+    },
+    {
+      "name": "Centre of Entertainment Arts (Calgary and Vancouver)",
+      "country": "Canada",
+      "tried": [
+        "as-is:Centre of Entertainment Arts=no-match"
+      ]
+    },
+    {
+      "name": "CLLC Language & Pathways",
+      "country": "Canada",
+      "tried": [
+        "as-is:CLLC Language & Pathways=no-match"
+      ]
+    },
+    {
+      "name": "Douglas College",
+      "country": "Canada",
+      "tried": [
+        "as-is:Douglas College=no-match",
+        "strip-suffix:Douglas=no-match"
+      ]
+    },
+    {
+      "name": "Georgian College",
+      "country": "Canada",
+      "tried": [
+        "as-is:Georgian College=no-match",
+        "strip-suffix:Georgian=no-match"
+      ]
+    },
+    {
+      "name": "ILAC Pathways",
+      "country": "Canada",
+      "tried": [
+        "as-is:ILAC Pathways=no-match"
+      ]
+    },
+    {
+      "name": "La Salle College Montreal",
+      "country": "Canada",
+      "tried": [
+        "as-is:La Salle College Montreal=no-match"
+      ]
+    },
+    {
+      "name": "Memorial University",
+      "country": "Canada",
+      "tried": [
+        "as-is:Memorial University=no-match"
+      ]
+    },
+    {
+      "name": "Mount St. Vincent University",
+      "country": "Canada",
+      "tried": [
+        "as-is:Mount St. Vincent University=no-match"
+      ]
+    },
+    {
+      "name": "Northeastern University",
+      "country": "Canada",
+      "tried": [
+        "as-is:Northeastern University=country-mismatch-core-name"
+      ]
+    },
+    {
+      "name": "New York Institute of Technology- Vancouver",
+      "country": "Canada",
+      "tried": [
+        "as-is:New York Institute of Technology- Vancouver=no-match",
+        "as-is+strip-campus:New York Institute of Technology-=country-mismatch-core-name"
+      ]
+    },
+    {
+      "name": "NorQuest College",
+      "country": "Canada",
+      "tried": [
+        "as-is:NorQuest College=no-match",
+        "strip-suffix:NorQuest=no-match"
+      ]
+    },
+    {
+      "name": "Prince Edward Island University",
+      "country": "Canada",
+      "tried": [
+        "as-is:Prince Edward Island University=no-match"
+      ]
+    },
+    {
+      "name": "St. Clair College Windsor",
+      "country": "Canada",
+      "tried": [
+        "as-is:St. Clair College Windsor=no-match"
+      ]
+    },
+    {
+      "name": "University of Victoria",
+      "country": "Canada",
+      "tried": [
+        "as-is:University of Victoria=ambiguous-core-name"
+      ]
+    },
+    {
+      "name": "Vancouver Film School",
+      "country": "Canada",
+      "tried": [
+        "as-is:Vancouver Film School=no-match"
+      ]
+    },
+    {
+      "name": "York University School of Continuing",
+      "country": "Canada",
+      "tried": [
+        "as-is:York University School of Continuing=no-match"
+      ]
+    },
+    {
+      "name": "Studies",
+      "country": "Canada",
+      "tried": [
+        "as-is:Studies=no-match"
+      ]
+    },
+    {
+      "name": "Barcelona Executive Business",
+      "country": "Spain",
+      "tried": [
+        "as-is:Barcelona Executive Business=no-match"
+      ]
+    },
+    {
+      "name": "School (BEBS)",
+      "country": "Spain",
+      "tried": [
+        "as-is:School=no-match"
+      ]
+    },
+    {
+      "name": "EAE Business School",
+      "country": "Spain",
+      "tried": [
+        "as-is:EAE Business School=no-match"
+      ]
+    },
+    {
+      "name": "ESE Madrid",
+      "country": "Spain",
+      "tried": [
+        "as-is:ESE Madrid=no-match"
+      ]
+    },
+    {
+      "name": "ESEI Barcelona",
+      "country": "Spain",
+      "tried": [
+        "as-is:ESEI Barcelona=no-match"
+      ]
+    },
+    {
+      "name": "Ascencia Valencia",
+      "country": "Spain",
+      "tried": [
+        "as-is:Ascencia Valencia=no-match"
+      ]
+    },
+    {
+      "name": "EU Business Barcelona",
+      "country": "Spain",
+      "tried": [
+        "as-is:EU Business Barcelona=no-match"
+      ]
+    },
+    {
+      "name": "INSA Business School",
+      "country": "Spain",
+      "tried": [
+        "as-is:INSA Business School=no-match"
+      ]
+    },
+    {
+      "name": "TBS Barcelona",
+      "country": "Spain",
+      "tried": [
+        "as-is:TBS Barcelona=no-match"
+      ]
+    },
+    {
+      "name": "UCAM(Murcia-Cartagena)",
+      "country": "Spain",
+      "tried": [
+        "as-is:UCAM=no-match"
+      ]
+    },
+    {
+      "name": "University Politecnica Valencia (w. Spanish Pathway)",
+      "country": "Spain",
+      "tried": [
+        "as-is:University Politecnica Valencia=no-match"
+      ]
+    },
+    {
+      "name": "Barcelona Flight School",
+      "country": "Spain",
+      "tried": [
+        "as-is:Barcelona Flight School=no-match"
+      ]
+    },
+    {
+      "name": "Aberdeen University",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Aberdeen University=no-match"
+      ]
+    },
+    {
+      "name": "Brighton University",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Brighton University=no-match"
+      ]
+    },
+    {
+      "name": "Brunel University",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Brunel University=no-match"
+      ]
+    },
+    {
+      "name": "Goldsmiths University London",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Goldsmiths University London=no-match",
+        "as-is+strip-campus:Goldsmiths University=no-match"
+      ]
+    },
+    {
+      "name": "Hult Business School London",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Hult Business School London=no-match",
+        "as-is+strip-campus:Hult Business School=no-match"
+      ]
+    },
+    {
+      "name": "INTO UK Centers",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:INTO UK Centers=no-match"
+      ]
+    },
+    {
+      "name": "Kaplan International Colleges",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Kaplan International Colleges=no-match"
+      ]
+    },
+    {
+      "name": "Liverpool University",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Liverpool University=no-match"
+      ]
+    },
+    {
+      "name": "Southampton University",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Southampton University=no-match"
+      ]
+    },
+    {
+      "name": "Northeastern University",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Northeastern University=country-mismatch-core-name"
+      ]
+    },
+    {
+      "name": "European School of Economics - London",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:European School of Economics=no-match"
+      ]
+    },
+    {
+      "name": "Navitas UK Centers",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Navitas UK Centers=no-match"
+      ]
+    },
+    {
+      "name": "ONCAMPUS UK Centers",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:ONCAMPUS UK Centers=no-match"
+      ]
+    },
+    {
+      "name": "Reading University",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Reading University=no-match"
+      ]
+    },
+    {
+      "name": "Royal Holloway University",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Royal Holloway University=no-match"
+      ]
+    },
+    {
+      "name": "Study Group UK Centers",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:Study Group UK Centers=no-match"
+      ]
+    },
+    {
+      "name": "St. George’s University",
+      "country": "United Kingdom",
+      "tried": [
+        "as-is:St. George’s University=country-mismatch-core-name"
+      ]
+    },
+    {
+      "name": "Dublin International",
+      "country": "Ireland",
+      "tried": [
+        "as-is:Dublin International=no-match"
+      ]
+    },
+    {
+      "name": "Foundation College (DIFC)",
+      "country": "Ireland",
+      "tried": [
+        "as-is:Foundation College=no-match",
+        "strip-suffix:Foundation=no-match"
+      ]
+    },
+    {
+      "name": "Griffith College Dublin",
+      "country": "Ireland",
+      "tried": [
+        "as-is:Griffith College Dublin=no-match"
+      ]
+    },
+    {
+      "name": "TU Dublin",
+      "country": "Ireland",
+      "tried": [
+        "as-is:TU Dublin=no-match"
+      ]
+    },
+    {
+      "name": "European School of Economics (ESE)- Florence & Milano",
+      "country": "Italy",
+      "tried": [
+        "as-is:European School of Economics=no-match"
+      ]
+    },
+    {
+      "name": "Ferrari Fashion School",
+      "country": "Italy",
+      "tried": [
+        "as-is:Ferrari Fashion School=no-match"
+      ]
+    },
+    {
+      "name": "University of Rome, Campus Bio- Medico",
+      "country": "Italy",
+      "tried": [
+        "after-comma:Campus Bio- Medico=no-match",
+        "as-is:University of Rome, Campus Bio- Medico=no-match"
+      ]
+    },
+    {
+      "name": "Rome Business School",
+      "country": "Italy",
+      "tried": [
+        "as-is:Rome Business School=no-match"
+      ]
+    },
+    {
+      "name": "Scuola Politecnica di Design - Milano (SPD)",
+      "country": "Italy",
+      "tried": [
+        "as-is:Scuola Politecnica di Design=no-match"
+      ]
+    },
+    {
+      "name": "St.Louis Music College",
+      "country": "Italy",
+      "tried": [
+        "as-is:St.Louis Music College=no-match",
+        "strip-suffix:St.Louis Music=no-match"
+      ]
+    },
+    {
+      "name": "Arcada University",
+      "country": "Finland",
+      "tried": [
+        "as-is:Arcada University=no-match"
+      ]
+    },
+    {
+      "name": "Hanken School of Economics",
+      "country": "Finland",
+      "tried": [
+        "as-is:Hanken School of Economics=no-match"
+      ]
+    },
+    {
+      "name": "SASKY Municipal Education and Training Consortium",
+      "country": "Finland",
+      "tried": [
+        "as-is:SASKY Municipal Education and Training Consortium=no-match"
+      ]
+    },
+    {
+      "name": "Helsinki University",
+      "country": "Finland",
+      "tried": [
+        "as-is:Helsinki University=no-match"
+      ]
+    },
+    {
+      "name": "Lappeenranta Uni of Tech",
+      "country": "Finland",
+      "tried": [
+        "as-is:Lappeenranta Uni of Tech=no-match"
+      ]
+    },
+    {
+      "name": "Metropolia University",
+      "country": "Finland",
+      "tried": [
+        "as-is:Metropolia University=no-match"
+      ]
+    },
+    {
+      "name": "School of Business & Management Malta",
+      "country": "Malta",
+      "tried": [
+        "as-is:School of Business & Management Malta=no-match"
+      ]
+    },
+    {
+      "name": "Ascencia Malta",
+      "country": "Malta",
+      "tried": [
+        "as-is:Ascencia Malta=no-match"
+      ]
+    },
+    {
+      "name": "South Europe College",
+      "country": "Malta",
+      "tried": [
+        "as-is:South Europe College=no-match",
+        "strip-suffix:South Europe=no-match"
+      ]
+    },
+    {
+      "name": "Czech University of Life Sciences with Czech and English Pathways",
+      "country": "Czech Republic",
+      "tried": [
+        "as-is:Czech University of Life Sciences with Czech and English Pathways=no-match"
+      ]
+    },
+    {
+      "name": "Univerzita Hradec Králové",
+      "country": "Czech Republic",
+      "tried": [
+        "as-is:Univerzita Hradec Králové=no-match"
+      ]
+    },
+    {
+      "name": "Západočeská univerzita v Plzni",
+      "country": "Czech Republic",
+      "tried": [
+        "as-is:Západočeská univerzita v Plzni=no-match"
+      ]
+    },
+    {
+      "name": "VŠCHT (Chemistry & Technology)",
+      "country": "Czech Republic",
+      "tried": [
+        "as-is:VŠCHT=no-match"
+      ]
+    },
+    {
+      "name": "ČVUT (Czech Technical University)",
+      "country": "Czech Republic",
+      "tried": [
+        "as-is:ČVUT=no-match"
+      ]
+    },
+    {
+      "name": "Palacky University",
+      "country": "Czech Republic",
+      "tried": [
+        "as-is:Palacky University=no-match"
+      ]
+    },
+    {
+      "name": "Brno University of Technology",
+      "country": "Czech Republic",
+      "tried": [
+        "as-is:Brno University of Technology=no-match"
+      ]
+    },
+    {
+      "name": "Ostrava Technical University",
+      "country": "Czech Republic",
+      "tried": [
+        "as-is:Ostrava Technical University=no-match"
+      ]
+    },
+    {
+      "name": "Technical University of Liberec",
+      "country": "Czech Republic",
+      "tried": [
+        "as-is:Technical University of Liberec=no-match"
+      ]
+    },
+    {
+      "name": "VŠKK (University of Creative",
+      "country": "Czech Republic",
+      "tried": [
+        "as-is:VŠKK (University of Creative=no-match"
+      ]
+    },
+    {
+      "name": "Communication)",
+      "country": "Czech Republic",
+      "tried": [
+        "as-is:Communication)=no-match"
+      ]
+    },
+    {
+      "name": "Corvinus University",
+      "country": "Hungary",
+      "tried": [
+        "as-is:Corvinus University=no-match"
+      ]
+    },
+    {
+      "name": "Mc Daniel College",
+      "country": "Hungary",
+      "tried": [
+        "as-is:Mc Daniel College=no-match",
+        "strip-suffix:Mc Daniel=no-match"
+      ]
+    },
+    {
+      "name": "University of Veterinary Medicine",
+      "country": "Hungary",
+      "tried": [
+        "as-is:University of Veterinary Medicine=no-match"
+      ]
+    },
+    {
+      "name": "Budapest",
+      "country": "Hungary",
+      "tried": [
+        "as-is:Budapest=no-match"
+      ]
+    },
+    {
+      "name": "Hungarian University of Sports Science",
+      "country": "Hungary",
+      "tried": [
+        "as-is:Hungarian University of Sports Science=no-match"
+      ]
+    },
+    {
+      "name": "Grigol Robakidze University",
+      "country": "Georgia",
+      "tried": [
+        "as-is:Grigol Robakidze University=no-match"
+      ]
+    },
+    {
+      "name": "Caucasus University",
+      "country": "Georgia",
+      "tried": [
+        "as-is:Caucasus University=no-match"
+      ]
+    },
+    {
+      "name": "Georgian Aviation University",
+      "country": "Georgia",
+      "tried": [
+        "as-is:Georgian Aviation University=no-match"
+      ]
+    },
+    {
+      "name": "SRH University Haarlem Campus",
+      "country": "Netherlands",
+      "tried": [
+        "as-is:SRH University Haarlem Campus=no-match",
+        "as-is+strip-campus:SRH University Haarlem=no-match"
+      ]
+    },
+    {
+      "name": "The Hague University Pathway",
+      "country": "Netherlands",
+      "tried": [
+        "as-is:The Hague University Pathway=no-match"
+      ]
+    },
+    {
+      "name": "College",
+      "country": "Netherlands",
+      "tried": [
+        "as-is:College=no-match"
+      ]
+    },
+    {
+      "name": "Twente University- Pathway College",
+      "country": "Netherlands",
+      "tried": [
+        "as-is:Twente University- Pathway College=no-match",
+        "strip-suffix:Twente University-=no-match"
+      ]
+    },
+    {
+      "name": "Webster University Leiden",
+      "country": "Netherlands",
+      "tried": [
+        "as-is:Webster University Leiden=no-match"
+      ]
+    },
+    {
+      "name": "Wittenborg University",
+      "country": "Netherlands",
+      "tried": [
+        "as-is:Wittenborg University=no-match"
+      ]
+    },
+    {
+      "name": "EPITA (Engineering and Technology)",
+      "country": "France",
+      "tried": [
+        "as-is:EPITA=no-match"
+      ]
+    },
+    {
+      "name": "Le Cordon Bleu",
+      "country": "France",
+      "tried": [
+        "as-is:Le Cordon Bleu=no-match"
+      ]
+    },
+    {
+      "name": "Vatel Hotel & Tourism Business",
+      "country": "France",
+      "tried": [
+        "as-is:Vatel Hotel & Tourism Business=no-match"
+      ]
+    },
+    {
+      "name": "School",
+      "country": "France",
+      "tried": [
+        "as-is:School=no-match"
+      ]
+    },
+    {
+      "name": "Aivancity School for Technology,",
+      "country": "France",
+      "tried": [
+        "as-is:Aivancity School for Technology,=no-match"
+      ]
+    },
+    {
+      "name": "Business & Society",
+      "country": "France",
+      "tried": [
+        "as-is:Business & Society=no-match"
+      ]
+    },
+    {
+      "name": "IMT Atlantique",
+      "country": "France",
+      "tried": [
+        "as-is:IMT Atlantique=no-match"
+      ]
+    },
+    {
+      "name": "ECOLE - Conte",
+      "country": "France",
+      "tried": [
+        "as-is:ECOLE=no-match"
+      ]
+    },
+    {
+      "name": "Top Tech College",
+      "country": "France",
+      "tried": [
+        "as-is:Top Tech College=no-match",
+        "strip-suffix:Top Tech=no-match"
+      ]
+    },
+    {
+      "name": "ECEMA Business School",
+      "country": "France",
+      "tried": [
+        "as-is:ECEMA Business School=no-match"
+      ]
+    },
+    {
+      "name": "KEYCE Business School",
+      "country": "France",
+      "tried": [
+        "as-is:KEYCE Business School=no-match"
+      ]
+    },
+    {
+      "name": "Ecole de Management Applique, Paris",
+      "country": "France",
+      "tried": [
+        "after-comma:Paris=no-match",
+        "as-is:Ecole de Management Applique, Paris=no-match"
+      ]
+    },
+    {
+      "name": "CY Tech",
+      "country": "France",
+      "tried": [
+        "as-is:CY Tech=no-match"
+      ]
+    },
+    {
+      "name": "Sup de Luxe Paris",
+      "country": "France",
+      "tried": [
+        "as-is:Sup de Luxe Paris=no-match"
+      ]
+    },
+    {
+      "name": "Transportation and Telecommunication Institute(TSI) - Riga",
+      "country": "Latvia",
+      "tried": [
+        "as-is:Transportation and Telecommunication Institute=no-match"
+      ]
+    },
+    {
+      "name": "EKA University of Applied Sciences",
+      "country": "Latvia",
+      "tried": [
+        "as-is:EKA University of Applied Sciences=no-match"
+      ]
+    },
+    {
+      "name": "Ankara Medipol University",
+      "country": "Turkey",
+      "tried": [
+        "as-is:Ankara Medipol University=no-match"
+      ]
+    },
+    {
+      "name": "Ozyegin University Istanbul",
+      "country": "Turkey",
+      "tried": [
+        "as-is:Ozyegin University Istanbul=no-match"
+      ]
+    },
+    {
+      "name": "Bahcesehir University",
+      "country": "Turkey",
+      "tried": [
+        "as-is:Bahcesehir University=no-match"
+      ]
+    },
+    {
+      "name": "TED University Ankara",
+      "country": "Turkey",
+      "tried": [
+        "as-is:TED University Ankara=no-match"
+      ]
+    },
+    {
+      "name": "Fenerbahce University",
+      "country": "Turkey",
+      "tried": [
+        "as-is:Fenerbahce University=no-match"
+      ]
+    },
+    {
+      "name": "Aydin University",
+      "country": "Turkey",
+      "tried": [
+        "as-is:Aydin University=no-match"
+      ]
+    },
+    {
+      "name": "Uskudar University",
+      "country": "Turkey",
+      "tried": [
+        "as-is:Uskudar University=no-match"
+      ]
+    },
+    {
+      "name": "Istanbul Ticaret University",
+      "country": "Turkey",
+      "tried": [
+        "as-is:Istanbul Ticaret University=no-match"
+      ]
+    },
+    {
+      "name": "Eastern Mediterranean",
+      "country": "Turkey",
+      "tried": [
+        "as-is:Eastern Mediterranean=country-mismatch-core-name"
+      ]
+    },
+    {
+      "name": "University",
+      "country": "Turkey",
+      "tried": [
+        "as-is:University=no-match"
+      ]
+    },
+    {
+      "name": "Istanbul Okan University",
+      "country": "Turkey",
+      "tried": [
+        "as-is:Istanbul Okan University=no-match"
+      ]
+    },
+    {
+      "name": "Torrens University Australia",
+      "country": "Australia",
+      "tried": [
+        "as-is:Torrens University Australia=no-match"
+      ]
+    },
+    {
+      "name": "Australia",
+      "country": "Australia",
+      "tried": [
+        "as-is:Australia=no-match"
+      ]
+    },
+    {
+      "name": "Central Queensland University",
+      "country": "Australia",
+      "tried": [
+        "as-is:Central Queensland University=no-match"
+      ]
+    },
+    {
+      "name": "Australia",
+      "country": "Australia",
+      "tried": [
+        "as-is:Australia=no-match"
+      ]
+    },
+    {
+      "name": "JCU Brisbane",
+      "country": "Australia",
+      "tried": [
+        "as-is:JCU Brisbane=no-match",
+        "as-is+strip-campus:JCU=no-match"
+      ]
+    },
+    {
+      "name": "UTS College",
+      "country": "Australia",
+      "tried": [
+        "as-is:UTS College=no-match",
+        "strip-suffix:UTS=no-match"
+      ]
+    },
+    {
+      "name": "UNSW College",
+      "country": "Australia",
+      "tried": [
+        "as-is:UNSW College=no-match",
+        "strip-suffix:UNSW=no-match"
+      ]
+    },
+    {
+      "name": "King's Own Institute",
+      "country": "Australia",
+      "tried": [
+        "as-is:King's Own Institute=no-match"
+      ]
+    },
+    {
+      "name": "National Academy of Professional",
+      "country": "Australia",
+      "tried": [
+        "as-is:National Academy of Professional=no-match"
+      ]
+    },
+    {
+      "name": "Studies",
+      "country": "Australia",
+      "tried": [
+        "as-is:Studies=no-match"
+      ]
+    },
+    {
+      "name": "Australian Performing Arts",
+      "country": "Australia",
+      "tried": [
+        "as-is:Australian Performing Arts=no-match"
+      ]
+    },
+    {
+      "name": "Conservatory (APAC)",
+      "country": "Australia",
+      "tried": [
+        "as-is:Conservatory=no-match"
+      ]
+    },
+    {
+      "name": "Australian Catholic University",
+      "country": "Australia",
+      "tried": [
+        "as-is:Australian Catholic University=no-match"
+      ]
+    },
+    {
+      "name": "College of Art Design (CAD)",
+      "country": "Belgium",
+      "tried": [
+        "as-is:College of Art Design=no-match"
+      ]
+    },
+    {
+      "name": "UC Leuven-Limburg University of Applied Sciences (UCLL)",
+      "country": "Belgium",
+      "tried": [
+        "as-is:UC Leuven-Limburg University of Applied Sciences=no-match"
+      ]
+    },
+    {
+      "name": "Ajman University",
+      "country": "United Arab Emirates",
+      "tried": [
+        "as-is:Ajman University=no-match"
+      ]
+    },
+    {
+      "name": "University of Europe for Applied Rochester Institute of Sciences (UE) Dubai",
+      "country": "United Arab Emirates",
+      "tried": [
+        "as-is:University of Europe for Applied Rochester Institute of Sciences (UE) Dubai=no-match",
+        "as-is+strip-campus:University of Europe for Applied Rochester Institute of Sciences (UE)=no-match"
+      ]
+    },
+    {
+      "name": "Technology of Dubai",
+      "country": "United Arab Emirates",
+      "tried": [
+        "as-is:Technology of Dubai=no-match",
+        "as-is+strip-campus:Technology of=no-match"
+      ]
+    },
+    {
+      "name": "Akademia Techniczno Artystyczna",
+      "country": "Poland",
+      "tried": [
+        "as-is:Akademia Techniczno Artystyczna=no-match"
+      ]
+    },
+    {
+      "name": "University of Information Technology and Management",
+      "country": "Poland",
+      "tried": [
+        "as-is:University of Information Technology and Management=no-match"
+      ]
+    },
+    {
+      "name": "Geneva Business School",
+      "country": "Switzerland",
+      "tried": [
+        "as-is:Geneva Business School=no-match"
+      ]
+    },
+    {
+      "name": "Business and Hotel Management School - BHMS",
+      "country": "Switzerland",
+      "tried": [
+        "as-is:Business and Hotel Management School=no-match"
+      ]
+    },
+    {
+      "name": "PSB Academy",
+      "country": "Singapore",
+      "tried": [
+        "as-is:PSB Academy=no-match"
+      ]
+    }
+  ],
+  "matched": [
+    {
+      "from": "Fontys University",
+      "slug": "fontys-university",
+      "to": "fontys-university",
+      "method": "ref-id/ref-id",
+      "programs": 58,
+      "levelFees": 2
+    },
+    {
+      "from": "Wittenborg University",
+      "slug": "wittenborg-university",
+      "to": "wittenborg",
+      "method": "manual",
+      "programs": 20,
+      "levelFees": 2
+    },
+    {
+      "from": "University College Dublin",
+      "slug": "university-college-dublin",
+      "to": "university-college-dublin",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 2
+    },
+    {
+      "from": "University of Limerick",
+      "slug": "university-of-limerick",
+      "to": "limerick",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 2
+    },
+    {
+      "from": "University of Galway",
+      "slug": "university-of-galway",
+      "to": "galway",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 2
+    },
+    {
+      "from": "Technological University of Dublin – TU Dublin",
+      "slug": "technological-university-of-dublin-tu-dublin",
+      "to": "technological-university-of-dublin-tu-dublin",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 2
+    },
+    {
+      "from": "Trinity College Dublin",
+      "slug": "trinity-college-dublin",
+      "to": "trinity-dublin",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 1
+    },
+    {
+      "from": "Dublin City University",
+      "slug": "dublin-city-university",
+      "to": "dublin-city-university",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 1
+    },
+    {
+      "from": "Semmelweis University",
+      "slug": "semmelweis-university",
+      "to": "semmelweis-university",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 2
+    },
+    {
+      "from": "McDaniel College Budapest",
+      "slug": "mcdaniel-college-budapest",
+      "to": "mcdaniel-college-budapest",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 2
+    },
+    {
+      "from": "Corvinus University of Budapest",
+      "slug": "corvinus-university-of-budapest",
+      "to": "corvinus-university-of-budapest",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 2
+    },
+    {
+      "from": "International Business School, Budapest",
+      "slug": "international-business-school-budapest",
+      "to": "ibs-budapest",
+      "method": "as-is/exact-name",
+      "programs": 9,
+      "levelFees": 0
+    },
+    {
+      "from": "University of Pecs",
+      "slug": "pecs-university",
+      "to": "university-of-pecs",
+      "method": "as-is/exact-slug",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Debrecen University",
+      "slug": "debrecen-university",
+      "to": "debrecen",
+      "method": "manual",
+      "programs": 1,
+      "levelFees": 0
+    },
+    {
+      "from": "Budapest Metropolitan University",
+      "slug": "budapest-metropolitan-university",
+      "to": "metropolitan-budapest",
+      "method": "as-is/exact-name",
+      "programs": 4,
+      "levelFees": 0
+    },
+    {
+      "from": "Szeged University",
+      "slug": "szeged-university",
+      "to": "szeged-university",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Masaryk University, Czech",
+      "slug": "masaryk-university-czech",
+      "to": "masaryk-university-czech",
+      "method": "ref-id/ref-id",
+      "programs": 15,
+      "levelFees": 0
+    },
+    {
+      "from": "Czech University of Life Sciences",
+      "slug": "czech-university-of-life-sciences",
+      "to": "czech-university-of-life-sciences",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Czech Technical University",
+      "slug": "czech-technical-university",
+      "to": "czech-technical-university",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Charles University",
+      "slug": "charles-university",
+      "to": "charles-university",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Prague University of Economics",
+      "slug": "prague-university-of-economics",
+      "to": "prague-university-of-economics",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "University of Nottingham",
+      "slug": "university-of-nottingham",
+      "to": "nottingham",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Royal Holloway University",
+      "slug": "royal-holloway-university",
+      "to": "royal-holloway",
+      "method": "manual",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Liverpool University",
+      "slug": "liverpool-university",
+      "to": "liverpool",
+      "method": "manual",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "University of Westminster",
+      "slug": "university-of-westminster",
+      "to": "westminster",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 2
+    },
+    {
+      "from": "University of Strathclyde",
+      "slug": "university-of-strathclyde",
+      "to": "strathclyde",
+      "method": "as-is/exact-name",
+      "programs": 10,
+      "levelFees": 0
+    },
+    {
+      "from": "De Montfort University",
+      "slug": "de-montfort-university",
+      "to": "de-montfort",
+      "method": "as-is/exact-name",
+      "programs": 6,
+      "levelFees": 0
+    },
+    {
+      "from": "Brunel University",
+      "slug": "brunel-university",
+      "to": "brunel",
+      "method": "manual",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Anglia Ruskin University",
+      "slug": "anglia-ruskin-university",
+      "to": "anglia-ruskin",
+      "method": "as-is/exact-name",
+      "programs": 12,
+      "levelFees": 0
+    },
+    {
+      "from": "Warsaw University of Technology",
+      "slug": "warsaw-university-of-technology",
+      "to": "warsaw-university-of-technology",
+      "method": "ref-id/ref-id",
+      "programs": 36,
+      "levelFees": 0
+    },
+    {
+      "from": "SWPS University",
+      "slug": "swps-university",
+      "to": "swps-university",
+      "method": "ref-id/ref-id",
+      "programs": 14,
+      "levelFees": 0
+    },
+    {
+      "from": "University of Warsaw",
+      "slug": "university-of-warsaw",
+      "to": "university-of-warsaw",
+      "method": "ref-id/ref-id",
+      "programs": 31,
+      "levelFees": 0
+    },
+    {
+      "from": "Lazarski University",
+      "slug": "lazarski-university",
+      "to": "lazarski-university",
+      "method": "ref-id/ref-id",
+      "programs": 17,
+      "levelFees": 0
+    },
+    {
+      "from": "Jagiellonian University",
+      "slug": "jagiellonian-university",
+      "to": "jagiellonian-university",
+      "method": "ref-id/ref-id",
+      "programs": 38,
+      "levelFees": 0
+    },
+    {
+      "from": "The Campus Bio-Medico University of Rome (UCBM)",
+      "slug": "campus-biomedico-university-of-rome",
+      "to": "the-campus-bio-medico-university-of-rome-ucbm",
+      "method": "manual",
+      "programs": 0,
+      "levelFees": 2
+    },
+    {
+      "from": "Rome University of Fine Arts",
+      "slug": "rome-university-of-fine-arts",
+      "to": "rome-university-of-fine-arts",
+      "method": "ref-id/ref-id",
+      "programs": 43,
+      "levelFees": 2
+    },
+    {
+      "from": "IED",
+      "slug": "ied",
+      "to": "istituto-europeo-di-design-ied",
+      "method": "manual",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "NABA Milano",
+      "slug": "naba-milano",
+      "to": "naba-milano",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Istituto Marangoni",
+      "slug": "istituto-marangoni",
+      "to": "istituto-marangoni",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "University of Regina",
+      "slug": "university-of-regina",
+      "to": "university-of-regina",
+      "method": "ref-id/ref-id",
+      "programs": 45,
+      "levelFees": 2
+    },
+    {
+      "from": "University of Lethbridge",
+      "slug": "university-of-lethbridge",
+      "to": "lethbridge",
+      "method": "as-is/exact-name",
+      "programs": 42,
+      "levelFees": 2
+    },
+    {
+      "from": "Centennial College",
+      "slug": "centennial-college",
+      "to": "centennial-college",
+      "method": "ref-id/ref-id",
+      "programs": 20,
+      "levelFees": 0
+    },
+    {
+      "from": "Seneca College",
+      "slug": "seneca-college",
+      "to": "seneca",
+      "method": "strip-suffix/exact-slug",
+      "programs": 0,
+      "levelFees": 2
+    },
+    {
+      "from": "The University of Manitoba",
+      "slug": "the-university-of-manitoba",
+      "to": "manitoba",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 1
+    },
+    {
+      "from": "Sheridan College",
+      "slug": "sheridan-college",
+      "to": "sheridan",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "University of Windsor",
+      "slug": "university-of-windsor",
+      "to": "windsor",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Langara College",
+      "slug": "langara-college",
+      "to": "langara-college",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Brock University",
+      "slug": "brock-university",
+      "to": "brock",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Fanshawe College",
+      "slug": "fanshawe-college",
+      "to": "fanshawe-college",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Humber College",
+      "slug": "humber-college",
+      "to": "humber-college",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "British Columbia Institute of Technology",
+      "slug": "british-columbia-institute-of-technology",
+      "to": "bcit",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Western University (Ontario)",
+      "slug": "western-university-ontario",
+      "to": "western-ontario",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "University of Canada West",
+      "slug": "university-of-canada-west",
+      "to": "university-of-canada-west",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "TED University",
+      "slug": "ted-university",
+      "to": "ted-university",
+      "method": "ref-id/ref-id",
+      "programs": 46,
+      "levelFees": 2
+    },
+    {
+      "from": "Istinye University",
+      "slug": "istinye-university",
+      "to": "istinye-university",
+      "method": "ref-id/ref-id",
+      "programs": 29,
+      "levelFees": 2
+    },
+    {
+      "from": "Eastern Mediterranean University",
+      "slug": "eastern-mediterranean-university",
+      "to": "eastern-mediterranean-university",
+      "method": "manual",
+      "programs": 0,
+      "levelFees": 2
+    },
+    {
+      "from": "Sabanci University",
+      "slug": "sabanci-university",
+      "to": "sabanci",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Ozyegin University",
+      "slug": "ozyegin-university",
+      "to": "ozyegin-university",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Medipol University",
+      "slug": "medipol-university",
+      "to": "medipol-university",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Izmir Economics University",
+      "slug": "izmir-economics-university",
+      "to": "izmir-economics-university",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Bilgi University",
+      "slug": "bilgi-university",
+      "to": "bilgi-university",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Atilim University",
+      "slug": "atilim-university",
+      "to": "atilim",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Acıbadem University",
+      "slug": "acibadem-university",
+      "to": "ac-badem-university",
+      "method": "manual",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "BAU Global",
+      "slug": "bau-global",
+      "to": "bau-global",
+      "method": "ref-id/ref-id",
+      "programs": 14,
+      "levelFees": 0
+    },
+    {
+      "from": "Lappeenranta University of Technology (LUT)",
+      "slug": "lappeenranta-university-of-technology-lut",
+      "to": "lappeenranta-university-of-technology-lut",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "University of Helsinki",
+      "slug": "university-of-helsinki",
+      "to": "university-of-helsinki",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Aalto University",
+      "slug": "aalto-university",
+      "to": "aalto-university",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Southern Denmark University",
+      "slug": "southern-denmark-university",
+      "to": "southern-denmark-university",
+      "method": "ref-id/ref-id",
+      "programs": 21,
+      "levelFees": 2
+    },
+    {
+      "from": "Aarhus University",
+      "slug": "aarhus-university",
+      "to": "aarhus-university",
+      "method": "ref-id/ref-id",
+      "programs": 3,
+      "levelFees": 2
+    },
+    {
+      "from": "Kaunas University of Technology",
+      "slug": "kaunas-university-of-technology",
+      "to": "kaunas-university-of-technology",
+      "method": "ref-id/ref-id",
+      "programs": 6,
+      "levelFees": 0
+    },
+    {
+      "from": "Berlin School of Business and Innovation (BSBI)",
+      "slug": "berlin-school-of-business-and-innovation",
+      "to": "bsbi",
+      "method": "as-is/exact-name",
+      "programs": 3,
+      "levelFees": 0
+    },
+    {
+      "from": "Constructor University",
+      "slug": "jacobs-university-bremen",
+      "to": "constructor",
+      "method": "as-is/exact-name",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "SRH University",
+      "slug": "srh-university",
+      "to": "srh-university",
+      "method": "ref-id/ref-id",
+      "programs": 6,
+      "levelFees": 0
+    },
+    {
+      "from": "Montpellier Business School",
+      "slug": "montpellier-business-school",
+      "to": "montpellier-business-school",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Toulouse Business School",
+      "slug": "toulouse-business-school",
+      "to": "toulouse-business-school",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "EPITA - School of Engineering and Computer Science",
+      "slug": "epita-school-of-engineering-and-computer-science",
+      "to": "epita-school-of-engineering-and-computer-science",
+      "method": "ref-id/ref-id",
+      "programs": 7,
+      "levelFees": 0
+    },
+    {
+      "from": "Universitat Politècnica de València (UPV)",
+      "slug": "universitat-politecnica-de-valencia-upv",
+      "to": "universitat-politecnica-de-valencia-upv",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "Universidad Europea de Madrid",
+      "slug": "universidad-europea-de-madrid",
+      "to": "universidad-europea-de-madrid",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "UCAM Catholic University of Murcia",
+      "slug": "ucam-catholic-university-of-murcia",
+      "to": "ucam-catholic-university-of-murcia",
+      "method": "ref-id/ref-id",
+      "programs": 0,
+      "levelFees": 0
+    },
+    {
+      "from": "EU Business School",
+      "slug": "eu-business-school",
+      "to": "eu-business-school-spain",
+      "method": "manual",
+      "programs": 0,
+      "levelFees": 0
+    }
+  ],
+  "unmatched": [
+    {
+      "from": "Niels Brock Copenhagen Business College",
+      "slug": "niels-brock-copenhagen-business-college",
+      "country": "Denmark",
+      "tried": [
+        "карточки нет; «brock» в каталоге — Brock University в Канаде, не путать"
+      ]
+    }
+  ],
+  "noStructure": [
+    {
+      "slug": "pecs-university",
+      "to": "university-of-pecs"
+    },
+    {
+      "slug": "szeged-university",
+      "to": "szeged-university"
+    },
+    {
+      "slug": "czech-university-of-life-sciences",
+      "to": "czech-university-of-life-sciences"
+    },
+    {
+      "slug": "czech-technical-university",
+      "to": "czech-technical-university"
+    },
+    {
+      "slug": "charles-university",
+      "to": "charles-university"
+    },
+    {
+      "slug": "prague-university-of-economics",
+      "to": "prague-university-of-economics"
+    },
+    {
+      "slug": "university-of-nottingham",
+      "to": "nottingham"
+    },
+    {
+      "slug": "royal-holloway-university",
+      "to": "royal-holloway"
+    },
+    {
+      "slug": "liverpool-university",
+      "to": "liverpool"
+    },
+    {
+      "slug": "brunel-university",
+      "to": "brunel"
+    },
+    {
+      "slug": "ied",
+      "to": "istituto-europeo-di-design-ied"
+    },
+    {
+      "slug": "naba-milano",
+      "to": "naba-milano"
+    },
+    {
+      "slug": "istituto-marangoni",
+      "to": "istituto-marangoni"
+    },
+    {
+      "slug": "sheridan-college",
+      "to": "sheridan"
+    },
+    {
+      "slug": "university-of-windsor",
+      "to": "windsor"
+    },
+    {
+      "slug": "langara-college",
+      "to": "langara-college"
+    },
+    {
+      "slug": "brock-university",
+      "to": "brock"
+    },
+    {
+      "slug": "fanshawe-college",
+      "to": "fanshawe-college"
+    },
+    {
+      "slug": "humber-college",
+      "to": "humber-college"
+    },
+    {
+      "slug": "british-columbia-institute-of-technology",
+      "to": "bcit"
+    },
+    {
+      "slug": "western-university-ontario",
+      "to": "western-ontario"
+    },
+    {
+      "slug": "university-of-canada-west",
+      "to": "university-of-canada-west"
+    },
+    {
+      "slug": "sabanci-university",
+      "to": "sabanci"
+    },
+    {
+      "slug": "ozyegin-university",
+      "to": "ozyegin-university"
+    },
+    {
+      "slug": "medipol-university",
+      "to": "medipol-university"
+    },
+    {
+      "slug": "izmir-economics-university",
+      "to": "izmir-economics-university"
+    },
+    {
+      "slug": "bilgi-university",
+      "to": "bilgi-university"
+    },
+    {
+      "slug": "atilim-university",
+      "to": "atilim"
+    },
+    {
+      "slug": "acibadem-university",
+      "to": "ac-badem-university"
+    },
+    {
+      "slug": "lappeenranta-university-of-technology-lut",
+      "to": "lappeenranta-university-of-technology-lut"
+    },
+    {
+      "slug": "university-of-helsinki",
+      "to": "university-of-helsinki"
+    },
+    {
+      "slug": "aalto-university",
+      "to": "aalto-university"
+    },
+    {
+      "slug": "jacobs-university-bremen",
+      "to": "constructor"
+    },
+    {
+      "slug": "montpellier-business-school",
+      "to": "montpellier-business-school"
+    },
+    {
+      "slug": "toulouse-business-school",
+      "to": "toulouse-business-school"
+    },
+    {
+      "slug": "universitat-politecnica-de-valencia-upv",
+      "to": "universitat-politecnica-de-valencia-upv"
+    },
+    {
+      "slug": "universidad-europea-de-madrid",
+      "to": "universidad-europea-de-madrid"
+    },
+    {
+      "slug": "ucam-catholic-university-of-murcia",
+      "to": "ucam-catholic-university-of-murcia"
+    },
+    {
+      "slug": "eu-business-school",
+      "to": "eu-business-school-spain"
+    }
+  ]
+}

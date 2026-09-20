@@ -32,7 +32,7 @@ const REPORT_MD = path.join(ROOT, 'sources/kompas/PROGRAMS-BACKFILL.md');
 const TODAY = '2026-08-23';
 
 const DRY = process.argv.includes('--dry');
-const SOURCES = (process.argv.find((a) => a.startsWith('--sources=')) || '--sources=qs,edvoy,kaplan,studygroup,oxford-international,qahe,iapro')
+const SOURCES = (process.argv.find((a) => a.startsWith('--sources=')) || '--sources=qs,edvoy,kaplan,studygroup,oxford-international,qahe,iapro,gedu,collab')
   .slice(10).split(',').map((x) => x.trim()).filter(Boolean);
 
 // Карты уровней переехали в lib/program-match.mjs (задача 3.5-g): уровень строки

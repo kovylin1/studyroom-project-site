@@ -13,7 +13,12 @@ import fs from 'fs/promises';
 import path from 'path';
 import { CATALOG_DIR } from './kompas-collect.mjs';
 
+// Буквы, которые NFKD не раскладывает на базу и диакритику: турецкая ı, датская ø,
+// польская ł и родня. Без этого «Sabancı University» не сходится с «Sabanci University»
+// (замер Collab 20.09.2026: два турецких вуза и один датский уходили в «не привязано»).
+const FOLD = { ı: 'i', ø: 'o', ł: 'l', đ: 'd', ß: 'ss', æ: 'ae', œ: 'oe', þ: 'th' };
 export const norm = (s) => (s || '').toLowerCase()
+  .replace(/[ıøłđßæœþ]/g, (c) => FOLD[c])
   .normalize('NFKD').replace(/[̀-ͯ]/g, '')
   .replace(/&/g, ' and ').replace(/[’'`]/g, '')
   .replace(/\bthe\b/g, ' ')

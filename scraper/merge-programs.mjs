@@ -31,7 +31,6 @@ const SOURCES = [
   { dir: 'oxfordintl-extracts', name: 'oxfordintl', isOfficial: false },
   { dir: 'qs-extracts', name: 'qs', isOfficial: false },
   { dir: 'cats-extracts', name: 'cats', isOfficial: false },
-  { dir: 'volk-extracts', name: 'collab', isOfficial: false },
 ];
 
 // Алиасы слагов (каталог → extract): вузы с расходящимися слагами

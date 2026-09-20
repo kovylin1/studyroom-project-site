@@ -64,11 +64,11 @@
     { "slug": "iapro", "codeword": null, "aggregator": "iapro agent portal", "url": "https://iapro.my.site.com/agentportals/login", "access": "login", "env": ["IAPRO_LOGIN","IAPRO_PASS"], "domainsFed": ["programs", "photos"], "extractsTo": "sources/kompas/extracts/iapro", "script": "scraper/kompas-collect-iapro.mjs", "scheduleDay": 8, "status": "done", "note": "Salesforce Experience Cloud; ~11 partners in Marketing Hub tab" },
     { "slug": "qahe", "codeword": null, "aggregator": "QA Higher Education", "url": "https://qahighereducation.com/partner-institutions/", "materials": "https://qahighereducation.com/marketing-materials/", "access": "open", "env": [], "domainsFed": ["programs", "photos"], "extractsTo": "sources/kompas/extracts/qahe", "script": "scraper/kompas-collect-qahe.mjs", "scheduleDay": 9, "status": "done", "partners": ["Northumbria", "Ulster", "Oxford Brookes", "Solent"] },
     { "slug": "gedu", "codeword": null, "aggregator": "GEDU", "url": "https://gedu.global", "access": "open?", "env": [], "domainsFed": ["programs"], "extractsTo": "sources/kompas/extracts/gedu", "script": "scraper/kompas-collect-gedu.mjs", "scheduleDay": 10, "status": "new" },
-    { "slug": "collab", "codeword": "ВОЛК", "aggregator": "collabinternational", "url": "https://www.collabinternational.com", "access": "open", "env": [], "domainsFed": ["programs"], "extractsTo": "sources/volk-extracts", "script": "scraper/scrape-volk-collab-v3.mjs", "scheduleDay": 11, "status": "exists", "note": "10-vs-11 question: keep or drop?" }
+    { "slug": "collab", "codeword": "ВОЛК", "aggregator": "collabinternational", "url": "https://www.collabinternational.com", "access": "open", "env": [], "domainsFed": ["programs"], "extractsTo": "sources/kompas/extracts/collab", "script": "scraper/kompas-collect-collab.mjs", "scheduleDay": 11, "status": "done", "note": "10-vs-11 question: keep or drop?" }
   ],
   "openItems": [
     "SPEED codeword -> which aggregator (or a 12th)?",
-    "collab/ВОЛК in or out (10 vs 11)?",
+    "collab/ВОЛК: партнёр, подтверждено владельцем 20.09.2026 — in.",
     "QA Higher Ed login (assumed elmira email - confirm)"
   ]
 }
