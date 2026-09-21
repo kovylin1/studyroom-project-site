@@ -252,10 +252,11 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
                 <th>Интервал</th>
                 <th>Последний прогон</th>
                 <th>Статус</th>
+                <th>Прогон КОМПАСа</th>
               </tr>
             </thead>
             <tbody id="agg-schedules-tbody">
-              <tr><td colspan="6" class="table-loading">Загрузка…</td></tr>
+              <tr><td colspan="7" class="table-loading">Загрузка…</td></tr>
             </tbody>
           </table>
         </div>
@@ -587,6 +588,20 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
   .tier--official { background: #fff4cc; color: #6b4d00; }
   .tier--aggregator { background: var(--color-bg-soft); color: var(--color-text-muted); }
   .agg-chips { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+  .agg-status--ok { color: var(--color-primary-dark); font-weight: 600; }
+  .agg-status--due { color: #c47a30; font-weight: 600; }
+  .agg-status--never { color: var(--color-text-faint); font-style: italic; }
+  /* Итог последнего прогона kompas-update (site/public/api/update-runs.json). */
+  .run-pill {
+    display: inline-block; padding: 2px 9px; white-space: nowrap;
+    border-radius: var(--radius-pill);
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em;
+  }
+  .run-pill--applied { background: var(--color-primary-soft); color: var(--color-primary-dark); }
+  .run-pill--dry { background: var(--color-bg-soft); color: var(--color-text-muted); }
+  .run-pill--hold { background: #fff4cc; color: #6b4d00; }
+  .run-pill--error { background: #fde8e8; color: #9b1c1c; }
+  .run-cell__meta { display: block; font-size: 0.75rem; color: var(--color-text-muted); margin-top: 2px; }
   .checked-fresh { color: var(--color-primary-dark); font-weight: 600; }
   .checked-stale { color: #c47a30; font-weight: 600; }
   .checked-never { color: var(--color-text-faint); font-style: italic; }
@@ -671,6 +686,10 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
   let lastRegistry = [];
   let lastAggregators = [];
   let lastSchedule = null;
+  // Отчёты kompas-update по агрегаторам (ключ — слаг расписания) и список строк
+  // таблицы агрегаторов, чтобы перерисовать её, когда отчёты приедут позже статуса.
+  let lastUpdateRuns = {};
+  let lastScheduleRows = [];
   let sourceSelectWired = false;
   // Источников и стран можно выбрать несколько; страны ограничены пятью,
   // иначе фильтр перестаёт что-либо сужать.
@@ -1226,6 +1245,25 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
     }
   }
 
+  // update-runs.json пишет scraper/kompas-update.mjs после каждого прогона
+  // (по расписанию и вручную). Панель читает его отдельно от status.json:
+  // локальная панель управления этот файл не отдаёт, а на сайте он лежит рядом
+  // со снимком статуса. Отсутствие файла — не ошибка: колонка остаётся пустой.
+  async function fetchUpdateRuns(rawBase) {
+    const src = rawBase
+      ? rawBase + '/site/public/api/update-runs.json?ts=' + Date.now()
+      : '/api/update-runs.json?ts=' + Date.now();
+    try {
+      const res = await fetch(src, { cache: 'no-store' });
+      if (!res.ok) return;
+      const data = await res.json();
+      lastUpdateRuns = data && typeof data === 'object' ? data : {};
+      renderAggregatorSchedules(lastScheduleRows);
+    } catch (err) {
+      console.warn('update-runs.json недоступен', err);
+    }
+  }
+
   async function fetchStatus() {
     const url = getControlUrl();
     // Empty url = static-snapshot mode. Cloudflare Pages serves
@@ -1247,6 +1285,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
       renderSource(data.sourceProfile, data.registry.length, catalogCount);
       renderRunStatus(data.run);
       renderAggregatorSchedules(data.aggregators || []);
+      fetchUpdateRuns('');
       syncAggregatorChips(data.aggregators || [], data.registry);
       syncCountryOptions(data.registry);
       setupSourceSelector(data.aggregators || []);
@@ -1521,6 +1560,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
         const catalogCount = data.registry.filter((r) => r.catalog).length;
         renderSource(data.sourceProfile, data.registry.length, catalogCount);
         renderAggregatorSchedules(data.aggregators || []);
+        fetchUpdateRuns(RAW_BASE);
         syncAggregatorChips(data.aggregators || [], data.registry);
       syncCountryOptions(data.registry);
         setupSourceSelector(data.aggregators || []);
@@ -1738,13 +1778,43 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
     applyFiltersAndRerender();
   });
 
+  // Итог последнего прогона kompas-update для агрегатора. Отчёт хранит шаги
+  // (сбор -> копия -> цены -> программы -> порог -> перенос -> гейт); падение
+  // любого шага — красная пилюля с именем шага, остановка порогом — жёлтая,
+  // запись в каталог — зелёная, сухой прогон — серая.
+  function updateRunCell(run) {
+    if (!run) return '<span class="muted">—</span>';
+    const steps = Array.isArray(run.steps) ? run.steps : [];
+    const failed = steps.find((s) => s && s.ok === false);
+    let cls, label;
+    if (run.hold) {
+      cls = 'run-pill--hold'; label = 'порог';
+    } else if (run.error || failed) {
+      cls = 'run-pill--error'; label = failed ? 'сбой: ' + failed.name : 'ошибка';
+    } else if (run.applied) {
+      cls = 'run-pill--applied';
+      label = run.changedCards ? 'записано ' + run.changedCards : 'без изменений';
+    } else {
+      cls = 'run-pill--dry'; label = run.dryRun ? 'сухой прогон' : 'без записи';
+    }
+    const when = fmt.ago(run.finishedAt || run.startedAt) || '';
+    const own = typeof run.ownCards === 'number' ? 'свои ' + run.ownCards : '';
+    const changed = typeof run.changedCards === 'number' ? 'изменились ' + run.changedCards : '';
+    const detail = (run.hold && run.hold.reason) || (failed && failed.detail) || run.error || [own, changed].filter(Boolean).join(', ');
+    const meta = [when, detail].filter(Boolean).join(' · ');
+    const title = steps.map((s) => (s.ok ? '✓ ' : '✗ ') + s.name + (s.detail ? ' — ' + s.detail : '')).join('\n');
+    return '<span class="run-pill ' + cls + '" title="' + escapeHtml(title) + '">' + escapeHtml(label) + '</span>' +
+      (meta ? '<span class="run-cell__meta">' + escapeHtml(meta) + '</span>' : '');
+  }
+
   function renderAggregatorSchedules(aggregators) {
     const tbody = document.getElementById('agg-schedules-tbody');
     const pill = document.getElementById('agg-overdue-pill');
     if (!tbody) return;
     const list = aggregators || [];
+    lastScheduleRows = list;
     if (list.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="6" class="table-loading">Нет данных</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="7" class="table-loading">Нет данных</td></tr>';
       applyScope(tbody);
       return;
     }
@@ -1780,6 +1850,7 @@ const TUITION_MAX_KZT = Math.ceil(p95 / 1_000_000) * 1_000_000;
         '<td>' + (interval ? interval + ' дн' : '—') + '</td>' +
         '<td>' + escapeHtml(lastLabel) + '</td>' +
         '<td><span class="' + statusCls + '">' + statusLabel + '</span></td>' +
+        '<td>' + updateRunCell(lastUpdateRuns[agg.slug]) + '</td>' +
         '</tr>';
     }).join('');
     applyScope(tbody);
