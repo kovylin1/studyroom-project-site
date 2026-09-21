@@ -1,6 +1,6 @@
 # КОМПАС — сессия 4: расхождения «каталог vs источник»
 
-**Дата:** 2026-09-18 · сети нет, каталог не тронут (только чтение).
+**Дата:** 2026-09-21 · сети нет, каталог не тронут (только чтение).
 
 ## Сводка
 
@@ -12,17 +12,17 @@
 | Сверить не с чем: источник за логином | 0 (QS, IAPro) |
 | Сверить не с чем: источник без программ | 11 (Navitas, CATS) |
 | Сверить не с чем: источник готов, выгрузки по вузу нет | 121 |
-| Программ в каталоге (сверенные вузы) | 113875 |
-| Программ у источников (объединение) | 79644 |
-| Совпало названий | 76051 (из них по написанию: 179) |
-| Есть в каталоге, нет у источника | 37824 |
-| Есть у источника, нет в каталоге | 3593 |
-| Цена расходится | 1104 |
-| **Валюта расходится** | **2337** |
-| У источника цена есть, в каталоге нет | 189 |
+| Программ в каталоге (сверенные вузы) | 113442 |
+| Программ у источников (объединение) | 79573 |
+| Совпало названий | 75871 (из них по написанию: 179) |
+| Есть в каталоге, нет у источника | 37571 |
+| Есть у источника, нет в каталоге | 3702 |
+| Цена расходится | 1541 |
+| **Валюта расходится** | **2295** |
+| У источника цена есть, в каталоге нет | 191 |
 | Кампусы источника, которых нет в карточке | 410 |
 
-Кейсов в панель: **1817** — kompas_no_extract 121, kompas_programs_missing 184, kompas_programs_extra 518, kompas_campus_missing 241, kompas_fee_currency 80, kompas_fee_absent 45, kompas_fee_mismatch 616, kompas_fee_mismatch_rest 11, kompas_source_empty 1.
+Кейсов в панель: **1872** — kompas_no_extract 121, kompas_programs_missing 190, kompas_programs_extra 518, kompas_campus_missing 241, kompas_fee_currency 79, kompas_fee_absent 46, kompas_fee_mismatch 663, kompas_fee_mismatch_rest 13, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -35,13 +35,14 @@
 | University of Roehampton (`roehampton`) | qs+edvoy | 586 | 575 | 496 | 90 | 79 | 10 | 189 |
 | Middlesex University Dubai (`middlesex-dubai`) | direct+qs+edvoy | 346 | 201 | 182 | 164 | 19 | 0 | 138 |
 | Asia Pacific University of Technology and Innovation (`apu-malaysia`) | direct+qs+edvoy | 233 | 186 | 181 | 52 | 5 | 0 | 142 |
-| University of Chester (`chester`) | kaplan+qs+edvoy | 1342 | 596 | 596 | 746 | 0 | 0 | 42 |
+| Arizona State University (`arizona-state`) | kaplan+qs+edvoy | 949 | 768 | 696 | 253 | 72 | 359 | 6 |
 | University of Birmingham, Dubai (`birmingham-dubai`) | qs | 236 | 103 | 103 | 133 | 0 | 0 | 103 |
 | KAPLAN (`kaplan`) | edvoy | 1237 | 921 | 558 | 679 | 363 | 0 | 8 |
 | University College London (UCL) (`ucl`) | qs | 977 | 11 | 11 | 966 | 0 | 0 | 0 |
 | VIZJA University (`vizja-university`) | edvoy | 93 | 93 | 93 | 0 | 0 | 0 | 93 |
 | University of Nottingham Malaysia (`university-of-nottingham-malaysia`) | edvoy | 82 | 78 | 78 | 4 | 0 | 0 | 78 |
 | University of Debrecen (`debrecen`) | qs | 109 | 69 | 68 | 41 | 1 | 0 | 68 |
+| University of Chester (`chester`) | kaplan+qs+edvoy | 1274 | 554 | 554 | 720 | 0 | 0 | 0 |
 | Murdoch University Dubai (`murdoch-dubai`) | qs | 110 | 59 | 59 | 51 | 0 | 0 | 59 |
 | De Montfort University Dubai (`de-montfort-dubai`) | qs+edvoy | 294 | 38 | 38 | 256 | 0 | 0 | 38 |
 | Rutgers University Camden (`rutgers-university-camden`) | edvoy | 59 | 61 | 59 | 0 | 2 | 0 | 59 |
@@ -60,12 +61,11 @@
 | University of Central Florida (`ucf`) | qs+edvoy | 577 | 147 | 144 | 433 | 3 | 0 | 0 |
 | University of South Wales (`south-wales`) | qs+edvoy | 893 | 514 | 506 | 387 | 8 | 12 | 0 |
 | Heriot-Watt University Malaysia (`heriot-watt-malaysia`) | qs+edvoy | 110 | 40 | 36 | 74 | 4 | 0 | 35 |
-| University of Liverpool (`liverpool`) | kaplan+qs+edvoy | 1100 | 767 | 735 | 365 | 32 | 10 | 0 |
-| Bournemouth University (`bournemouth`) | kaplan+qs+edvoy | 311 | 458 | 245 | 66 | 213 | 43 | 0 |
+| Bournemouth University (`bournemouth`) | kaplan+qs+edvoy | 311 | 458 | 245 | 66 | 213 | 45 | 0 |
+| University of Glasgow (`glasgow`) | kaplan+oxford-international+qs+edvoy | 928 | 814 | 807 | 121 | 7 | 94 | 0 |
 | Fairleigh Dickinson University, Vancouver (`fairleigh-dickinson-university-vancouver`) | edvoy | 231 | 19 | 19 | 212 | 0 | 0 | 19 |
 | Seneca Polytechnic (`seneca`) | qs+edvoy | 357 | 218 | 88 | 269 | 130 | 0 | 0 |
-| Arizona State University (`arizona-state`) | kaplan+qs+edvoy | 949 | 743 | 708 | 241 | 35 | 17 | 6 |
-| University of Glasgow (`glasgow`) | kaplan+oxford-international+qs+edvoy | 928 | 809 | 809 | 119 | 0 | 89 | 0 |
+| University of Liverpool (`liverpool`) | kaplan+qs+edvoy | 1051 | 775 | 737 | 314 | 38 | 11 | 0 |
 | University of Brighton (`brighton`) | kaplan+qs+edvoy | 781 | 398 | 398 | 383 | 0 | 0 | 0 |
 | Abu Dhabi University (`abu-dhabi-university`) | direct+qs | 111 | 30 | 30 | 81 | 0 | 0 | 30 |
 | Rochester Institute of Technology — Dubai (`rit-dubai`) | qs | 191 | 21 | 20 | 171 | 1 | 0 | 20 |
@@ -88,7 +88,6 @@
 | Rutgers University Camden (`rutgers-university-camden`) | 59 | edvoy |
 | University of Wollongong in Dubai (`wollongong-dubai`) | 52 | direct+qs |
 | University of Wollongong Malaysia (`wollongong-malaysia`) | 50 | qs |
-| University of Chester (`chester`) | 42 | kaplan+qs+edvoy |
 | East Asia Institute of Management (EAIM) (`eaim`) | 40 | qs |
 | De Montfort University Dubai (`de-montfort-dubai`) | 38 | qs+edvoy |
 | Heriot-Watt University Malaysia (`heriot-watt-malaysia`) | 35 | qs+edvoy |

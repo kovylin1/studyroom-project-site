@@ -50,5 +50,56 @@
     "error": null,
     "hold": null,
     "finishedAt": "2026-09-15T12:18:42.139Z"
+  },
+  "iapro": {
+    "aggregator": "iapro",
+    "kind": "kompas",
+    "startedAt": "2026-09-21T08:31:02.406Z",
+    "applied": true,
+    "dryRun": false,
+    "steps": [
+      {
+        "name": "сбор kompas-collect-iapro.mjs",
+        "ok": true
+      },
+      {
+        "name": "рабочая копия ← каталог",
+        "ok": true
+      },
+      {
+        "name": "цены агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "программы агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "сравнение копии с каталогом",
+        "ok": true,
+        "detail": "свои карточки 31, изменились 7 (0.7% каталога)"
+      },
+      {
+        "name": "порог изменения",
+        "ok": true,
+        "detail": "0.7% ≤ 5%"
+      },
+      {
+        "name": "перенос в каталог",
+        "ok": true,
+        "detail": "карточек 7"
+      },
+      {
+        "name": "гейт каталога",
+        "ok": true
+      }
+    ],
+    "changedCards": 7,
+    "ownCards": 31,
+    "error": null,
+    "hold": null,
+    "finishedAt": "2026-09-21T08:33:32.779Z"
   }
 }
