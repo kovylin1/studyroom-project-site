@@ -62,16 +62,25 @@ async function main() {
   });
 
   try {
-    await page.goto(LOGIN_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
-    await page.waitForTimeout(3000);
-    await page.locator('input[type=email], input[type=text]').first().fill(env.IAPRO_LOGIN);
-    await page.locator('input[type=password]').first().fill(env.IAPRO_PASS_ALT || env.IAPRO_PASS);
-    const terms = page.locator('input[type=checkbox]').first();
-    if (await terms.count()) await terms.check({ timeout: 5000 }).catch(() => {});
-    await page.locator('button:has-text("Sign in"), button[type=submit]').first().click({ timeout: 10000 }).catch(() => {});
-    await page.waitForLoadState('networkidle', { timeout: 45000 }).catch(() => {});
-    await page.waitForTimeout(5000);
-    if (/\/s\/login/.test(page.url())) throw new Error('вход не прошёл');
+    // Вход не всегда проходит с первого раза: 21.09.2026 при верном пароле одна
+    // из четырёх попыток подряд осталась на странице входа — форма Salesforce
+    // не успевает принять клик. По расписанию попытка одна и прогон целиком
+    // падает, поэтому пробуем до трёх раз, каждый раз с чистой страницы входа.
+    let loggedIn = false;
+    for (let attempt = 1; attempt <= 3 && !loggedIn; attempt++) {
+      await page.goto(LOGIN_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await page.waitForTimeout(3000);
+      await page.locator('input[type=email], input[type=text]').first().fill(env.IAPRO_LOGIN);
+      await page.locator('input[type=password]').first().fill(env.IAPRO_PASS_ALT || env.IAPRO_PASS);
+      const terms = page.locator('input[type=checkbox]').first();
+      if (await terms.count()) await terms.check({ timeout: 5000 }).catch(() => {});
+      await page.locator('button:has-text("Sign in"), button[type=submit]').first().click({ timeout: 10000 }).catch(() => {});
+      await page.waitForLoadState('networkidle', { timeout: 45000 }).catch(() => {});
+      await page.waitForTimeout(5000);
+      loggedIn = !/\/s\/login/.test(page.url());
+      if (!loggedIn) log(`попытка входа ${attempt} из 3 не прошла`);
+    }
+    if (!loggedIn) throw new Error('вход не прошёл');
 
     await page.goto(FINDER_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
     await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
@@ -121,6 +130,11 @@ async function main() {
     log(`объявлено источником: ${declaredStr}`);
     const best = Math.max(0, ...[...declared.values()]);
     if (best > programmes.size) log(`НЕДОБОР: получено ${programmes.size} из объявленных ${best}`);
+    // Пустая выдача — не результат, а сбой: 21.09.2026 вторая попытка входа
+    // увела со страницы логина, но финдер не ответил ни разу, и коллектор
+    // отчитался «программ 0» с кодом 0. По расписанию такой прогон выглядел бы
+    // зелёным. Как у GEDU: ноль программ — код возврата 1, каталог не трогаем.
+    if (programmes.size === 0) throw new Error('портал не отдал ни одной программы');
 
     // Сырая выгрузка ВСЕХ программ, как их отдал портал. Заведена в сессии 4.5.
     // Причина: прошлый прогон записывал только те бренды, у которых уже была карточка
