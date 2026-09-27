@@ -101,5 +101,56 @@
     "error": null,
     "hold": null,
     "finishedAt": "2026-09-21T08:33:32.779Z"
+  },
+  "gedu": {
+    "aggregator": "gedu",
+    "kind": "kompas",
+    "startedAt": "2026-09-27T08:53:05.072Z",
+    "applied": true,
+    "dryRun": false,
+    "steps": [
+      {
+        "name": "сбор kompas-collect-gedu.mjs",
+        "ok": true
+      },
+      {
+        "name": "рабочая копия ← каталог",
+        "ok": true
+      },
+      {
+        "name": "цены агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "программы агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "сравнение копии с каталогом",
+        "ok": true,
+        "detail": "свои карточки 10, изменились 7 (0.7% каталога)"
+      },
+      {
+        "name": "порог изменения",
+        "ok": true,
+        "detail": "0.7% ≤ 5%"
+      },
+      {
+        "name": "перенос в каталог",
+        "ok": true,
+        "detail": "карточек 7"
+      },
+      {
+        "name": "гейт каталога",
+        "ok": true
+      }
+    ],
+    "changedCards": 7,
+    "ownCards": 10,
+    "error": null,
+    "hold": null,
+    "finishedAt": "2026-09-27T08:57:24.501Z"
   }
 }

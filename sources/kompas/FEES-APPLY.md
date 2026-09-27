@@ -1,27 +1,27 @@
 # Применение цен агрегаторов
 
-Источники: `iapro`.
+Источники: `gedu`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | iapro |
-| extracts | 34 |
-| linked | 33 |
-| candidates | 0 |
+| sources | gedu |
+| extracts | 13 |
+| linked | 10 |
+| candidates | 53 |
 | skippedCurrency | 0 |
 | skippedBucket | 0 |
-| skippedNoMatch | 0 |
-| skippedNoCard | 0 |
+| skippedNoMatch | 3 |
+| skippedNoCard | 3 |
 | skippedAudience | 0 |
 | skippedPartTime | 0 |
 | matchedByAward | 0 |
 | ambiguousMatch | 0 |
-| programsWritten | 0 |
-| cardsTouched | 0 |
-| overwritten | 0 |
+| programsWritten | 52 |
+| cardsTouched | 5 |
+| overwritten | 49 |
 | ownCurrency | 0 |
-| variantPrograms | 0 |
-| variantSums | 0 |
+| variantPrograms | 1 |
+| variantSums | 2 |
 | foreignQuoteDemoted | 0 |
 | skippedPathwayFee | 0 |
 | campusDemoted | 0 |
@@ -31,5 +31,6 @@
 
 | Причина | Штук |
 |---|---:|
+| `no-match` | 3 |
 
 Подробности: `fees-apply-cases.json`, откат: `fees-apply-backup.json`.

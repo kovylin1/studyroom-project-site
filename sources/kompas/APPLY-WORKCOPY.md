@@ -2,7 +2,7 @@
 
 Скрипт `scraper/kompas-apply-workcopy.mjs`. Режим: **запись**.
 Выбор: карточки по списку, всего 7.
-Снято 2026-09-21 08:33 UTC.
+Снято 2026-09-27 08:57 UTC.
 
 | Что | Карточек |
 |---|---:|
@@ -11,8 +11,8 @@
 | Уже совпадало | 0 |
 | Не перенесено (нарушили бы гейт) | 0 |
 
-Откат: `node scraper/kompas-apply-workcopy.mjs --rollback=backups/live_pre-3.1_2026-09-21-08-33`
+Откат: `node scraper/kompas-apply-workcopy.mjs --rollback=backups/live_pre-3.1_2026-09-27-08-57`
 
 ## Обновлены
 
-`avila-arizona`, `avila`, `canterbury-christ-church`, `florida-memorial-university`, `george-brown`, `metropolitan-college-of-new-york`, `university-of-law`
+`englishpath`, `gbs-malta`, `global-banking-school`, `globalu`, `icn-creactive-business-school`, `mla-college`, `schiller-international-university`

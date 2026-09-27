@@ -1,6 +1,6 @@
 # КОМПАС — сессия 4: расхождения «каталог vs источник»
 
-**Дата:** 2026-09-21 · сети нет, каталог не тронут (только чтение).
+**Дата:** 2026-09-27 · сети нет, каталог не тронут (только чтение).
 
 ## Сводка
 
@@ -12,17 +12,17 @@
 | Сверить не с чем: источник за логином | 0 (QS, IAPro) |
 | Сверить не с чем: источник без программ | 11 (Navitas, CATS) |
 | Сверить не с чем: источник готов, выгрузки по вузу нет | 121 |
-| Программ в каталоге (сверенные вузы) | 113442 |
-| Программ у источников (объединение) | 79573 |
-| Совпало названий | 75871 (из них по написанию: 179) |
+| Программ в каталоге (сверенные вузы) | 113450 |
+| Программ у источников (объединение) | 79576 |
+| Совпало названий | 75879 (из них по написанию: 179) |
 | Есть в каталоге, нет у источника | 37571 |
-| Есть у источника, нет в каталоге | 3702 |
-| Цена расходится | 1541 |
+| Есть у источника, нет в каталоге | 3697 |
+| Цена расходится | 1535 |
 | **Валюта расходится** | **2295** |
-| У источника цена есть, в каталоге нет | 191 |
-| Кампусы источника, которых нет в карточке | 410 |
+| У источника цена есть, в каталоге нет | 194 |
+| Кампусы источника, которых нет в карточке | 412 |
 
-Кейсов в панель: **1872** — kompas_no_extract 121, kompas_programs_missing 190, kompas_programs_extra 518, kompas_campus_missing 241, kompas_fee_currency 79, kompas_fee_absent 46, kompas_fee_mismatch 663, kompas_fee_mismatch_rest 13, kompas_source_empty 1.
+Кейсов в панель: **1869** — kompas_no_extract 121, kompas_programs_missing 188, kompas_programs_extra 518, kompas_campus_missing 243, kompas_fee_currency 79, kompas_fee_absent 49, kompas_fee_mismatch 657, kompas_fee_mismatch_rest 13, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -130,7 +130,7 @@
 | Universidade Europeia (`universidade-europeia`) | 5 | edvoy |
 | The University College of Enterprise and Administration (`the-university-college-of-enterprise-and-administration`) | 4 | edvoy |
 | Cesar Ritz Colleges (`cesar-ritz-colleges`) | 3 | edvoy |
-| GlobalU (`globalu`) | 3 | edvoy |
+| GlobalU (`globalu`) | 3 | edvoy+gedu |
 | Les Roches Crans-Montana (`les-roches-crans-montana`) | 3 | qs |
 | Universiti Kuala Lumpur (`universiti-kuala-lumpur`) | 3 | edvoy |
 | University of Wollongong (`university-of-wollongong`) | 3 | edvoy |

@@ -1,30 +1,28 @@
 # Добор программ агрегаторов
 
-Источники: `iapro`.
+Источники: `gedu`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | iapro |
-| rows | 1488 |
-| unmatched | 60 |
+| sources | gedu |
+| rows | 90 |
+| unmatched | 8 |
 | ambiguous | 0 |
-| levelFromSource | 45 |
-| levelFromSourceLevel | 1 |
+| levelFromSource | 8 |
+| levelFromSourceLevel | 0 |
 | levelFromTitle | 0 |
-| noLevel | 9 |
-| levelUnsupported | 5 |
+| noLevel | 0 |
+| levelUnsupported | 0 |
 | duplicatesInSource | 0 |
-| created | 46 |
-| cardsTouched | 7 |
-| withDuration | 0 |
-| withUrl | 0 |
+| created | 8 |
+| cardsTouched | 4 |
+| withDuration | 7 |
+| withUrl | 8 |
 | urlShared | 0 |
 
 ## Не заведено
 
 | Причина | Штук |
 |---|---:|
-| `no-level` | 9 |
-| `level-unsupported` | 5 |
 
 Подробности: `programs-backfill-cases.json`, откат: `programs-backfill-backup.json`.

@@ -1,6 +1,6 @@
 # КОМПАС, сессия 1 — разметка и инвентаризация
 
-**Дата:** 2026-09-21  •  **Каталог:** 1076 вузов  •  **Сеть не использовалась**
+**Дата:** 2026-09-27  •  **Каталог:** 1076 вузов  •  **Сеть не использовалась**
 
 Живой каталог не изменён. Разметка лежит в рабочей копии `sources/kompas/catalog-work/`.
 
@@ -106,9 +106,9 @@
 | `british-school-of-marketing-international` | British School of Marketing International | United Kingdom | 65 |
 | `oxford-international-language-school` | Oxford International Language School | United Kingdom | 62 |
 | `rutgers-university-camden` | Rutgers University Camden | United States | 59 |
+| `george-brown` | George Brown Polytechnic | Canada | 58 |
 | `elmira-college` | Elmira College | United States | 57 |
 | `ted-university` | TED University | Turkey | 56 |
-| `george-brown` | George Brown Polytechnic | Canada | 55 |
 | `northumbria-university-london-campus-qahe` | Northumbria University London campus (QAHE) | United Kingdom | 50 |
 | `universidad-europea-de-madrid` | Universidad Europea de Madrid | Spain | 50 |
 | `ara-institute-of-canterbury` | Ara Institute of Canterbury | New Zealand | 47 |
@@ -153,10 +153,10 @@
 | `london-school-of-english` | London School of English | United Kingdom | 27 |
 | `universitat-politecnica-de-valencia-upv` | Universitat Politècnica de València (UPV) | Spain | 27 |
 | `bentley-university` | Bentley University | United States | 26 |
+| `florida-memorial-university` | Florida Memorial University | United States | 26 |
 | `university-of-wisconsin-milwaukee` | University of Wisconsin-Milwaukee | United States | 26 |
 | `anglolang-academy-of-english` | Anglolang Academy of English | United Kingdom | 25 |
 | `arden-university-hybrid` | Arden University (Hybrid) | Germany | 25 |
-| `florida-memorial-university` | Florida Memorial University | United States | 25 |
 | `istanbul-aydin-university` | Istanbul Aydın University | Turkey | 25 |
 | `medipol-university` | Istanbul Medipol University | Turkey | 25 |
 | `north-island-college` | North Island College | Canada | 25 |
@@ -172,6 +172,7 @@
 | `dld-college-london` | DLD College London | United Kingdom | 21 |
 | `aalto-university` | Aalto University | Finland | 20 |
 | `kaunas-university-of-technology` | Kaunas University of Technology | Lithuania | 20 |
+| `metropolitan-college-of-new-york` | Metropolitan College of New York | United States | 20 |
 | `ac-badem-university` | Acıbadem Mehmet Ali Aydınlar University | Turkey | 19 |
 | `cctb` | Canadian College of Technology and Business | Canada | 19 |
 | `istituto-marangoni-paris` | Istituto Marangoni Paris | France | 19 |
@@ -183,7 +184,6 @@
 | `mediadesign-university-of-applied-sciences` | Mediadesign University of Applied Sciences | Germany | 18 |
 | `university-of-gloucestershire` | University of Gloucestershire | United Kingdom | 18 |
 | `jagiellonian-university` | Jagiellonian University | Poland | 17 |
-| `metropolitan-college-of-new-york` | Metropolitan College of New York | United States | 17 |
 | `northbrook-college` | Northbrook College | United Kingdom | 17 |
 | `aarhus-university` | Aarhus University | Denmark | 16 |
 | `charles-university` | Charles University | Czech Republic | 16 |
@@ -240,6 +240,7 @@
 | `niagara-college-toronto` | Niagara College - Toronto | Canada | 8 |
 | `university-of-padua` | University of Padua | Italy | 8 |
 | `academia-international` | Academia International | Australia | 7 |
+| `avila-arizona` | Avila University Arizona | United States | 7 |
 | `de-vinci-higher-education` | De Vinci Higher Education | France | 7 |
 | `leeds-language-college` | Leeds Language College | United Kingdom | 7 |
 | `on-campus-paris` | On Campus Paris | France | 7 |
@@ -263,7 +264,6 @@
 | `southern-ontario-collegiate` | Southern Ontario Collegiate | Canada | 6 |
 | `university-of-strathclyde-bahrain` | University of Strathclyde, Bahrain | Bahrain | 6 |
 | `york-st-john-university` | York St John University | United Kingdom | 6 |
-| `avila-arizona` | Avila University Arizona | United States | 5 |
 | `concordia-university-texas` | Concordia University Texas | United States | 5 |
 | `flinders-university` | Flinders University | Australia | 5 |
 | `istituto-marangoni` | Istituto Marangoni | Italy | 5 |
