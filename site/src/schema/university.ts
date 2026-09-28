@@ -90,6 +90,12 @@ export const programSchema = z.object({
     other: z.number().nonnegative().optional(),
     total: z.number().nonnegative().optional(),
   })).min(2).optional(),
+  // Цена прямого партнёра с его офсайта (scraper/kompas-direct-fees.mjs, 28.09.2026).
+  // level — вуз объявил одну цену на уровень обучения, а не на эту программу
+  // (решение 23.07.2026: привязывать можно, но с пометкой). Без объявления здесь
+  // zod срезал бы оба поля, как было с kompasStatus и officialUrl.
+  feeScope: z.enum(['program', 'level']).optional(),
+  feeSourceUrl: z.string().url().optional(),
   kompasCheckedAt: isoDate.optional(),
   checkedAt: isoDate.optional(),
   brokenLink: z.boolean().optional(),

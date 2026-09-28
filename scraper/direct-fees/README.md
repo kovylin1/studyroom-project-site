@@ -1,0 +1,59 @@
+# Парсеры цен прямых партнёров — один файл на домен
+
+Гоняет их `scraper/kompas-direct-fees.mjs`. Почему на домен: общий сборщик на этих
+сайтах приносил профили преподавателей и новости вместо программ и ни одной цены (A1, 02.09.2026).
+
+## Файл `scraper/direct-fees/<slug>.mjs`
+
+`<slug>` — ровно имя карточки в `site/src/content/universities/<slug>.json`.
+
+```js
+import { get, getBrowser, text, anchors, tableRows, sleep } from './_lib.mjs';
+
+export default {
+  slug: 'inti-international-university',
+  site: 'https://newinti.edu.my',
+  // Разведка (дата, что где лежит, чего на сайте нет) — комментарием здесь.
+  async collect({ log }) {
+    return {
+      programs: [ /* { title, level, url } — что вуз сам перечисляет; можно пусто */ ],
+      fees: [ /* строки цены, формат ниже */ ],
+      gaps: [ /* { why, url } — чего нет или что не взять, по-русски */ ],
+    };
+  },
+};
+```
+
+## Строка цены
+
+| поле | что |
+|---|---|
+| `amount` | число, **буквально стоящее на странице** (без пересчёта, без сложения семестров) |
+| `currency` | ISO-код со страницы: USD EUR GBP TRY MYR AED CNY CZK PLN … (список — `SCHEMA_CURRENCIES` в `lib/country-currency.mjs`) |
+| `basis` | `year` — за учебный год; `program` — за весь курс; `semester` / `credit` / `other` — такие в каталог не едут, но их полезно отдать для отчёта |
+| `audience` | `international` / `domestic` / `eu` / `null`, если страница не различает |
+| `scope` | `program` — цена названа для конкретной программы; `level` — одна цена на уровень, **подпись прямо называет уровень** («Undergraduate tuition for international students») |
+| `title` | для `scope: 'program'` — название программы как на сайте |
+| `level` | foundation / bachelor / master / phd / diploma / english-language — обязателен для `scope: 'level'`, желателен для `program` |
+| `programUrl` | ссылка на страницу программы, если есть — по ней сопоставление надёжнее |
+| `url` | страница, где стоит цена |
+| `raw` | сырой текст ячейки/строки, где стоит сумма, — сумма обязана в нём читаться |
+
+## Правила (из решений владельца, нарушать нельзя)
+
+1. **Ничего не выдумывать.** Нет цены на сайте — нет строки, пишем `gaps`. Не делить годовую на семестры и не умножать семестровую на два, если основа не написана прямым текстом (тогда `basis: 'semester'`).
+2. **Сумма общежития, депозита, сбора за заявку, визы — не цена обучения.** Подписи accommodation / deposit / application fee / registration fee — мимо.
+3. Когда у программы есть цена для иностранцев и для местных — отдать обе с `audience`. Скидки «early bird», «scholarship» — не отдавать, берём полную цену.
+4. Уровневую цену (`scope: 'level'`) — только если подпись называет уровень. «Tuition fee: 12 000 USD» без уровня — это `gaps`, не цена.
+5. Не трогать каталог, git и другие файлы: только свой `<slug>.mjs`.
+6. Вежливо к сайту: `sleep(500)` между запросами, не больше ~150 запросов на домен.
+
+## Проверка своего парсера
+
+```
+node scraper/kompas-direct-fees.mjs --slug=<slug>
+```
+
+Печатает одну строку: сколько строк цены, сколько новых цен сядет на программы карточки,
+сколько отбито и не сопоставлено. Подробности — `sources/kompas/direct-fees-report-<slug>.json`,
+выгрузка — `sources/kompas/extracts/direct-fees/<slug>.json`. Каталог не меняется.

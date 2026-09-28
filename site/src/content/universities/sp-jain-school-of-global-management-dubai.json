@@ -10,7 +10,9 @@
       "level": "bachelor",
       "source": "official",
       "programUrl": "https://www.spjain.org/programs/undergraduate/bba",
-      "kompasStatus": "source-added"
+      "kompasStatus": "source-added",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.spjain.org/programs/undergraduate/bba/fees"
     },
     {
       "slug": "bachelor-of-business-communication",
@@ -34,7 +36,10 @@
       "level": "bachelor",
       "source": "official",
       "programUrl": "https://www.spjain.org/programs/undergraduate/bachelor-of-data-science",
-      "kompasStatus": "source-added"
+      "kompasStatus": "source-added",
+      "tuitionCurrency": "AUD",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.spjain.org/programs/undergraduate/bachelor-of-data-science/fees"
     },
     {
       "slug": "business-management-program",
@@ -66,7 +71,10 @@
       "level": "master",
       "source": "official",
       "programUrl": "https://www.spjain.org/programs/postgraduate/mgb",
-      "kompasStatus": "source-added"
+      "kompasStatus": "source-added",
+      "tuitionBasis": "program",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.spjain.org/programs/postgraduate/mgb/fees"
     },
     {
       "slug": "global-mba",
@@ -74,7 +82,10 @@
       "level": "master",
       "source": "official",
       "programUrl": "https://www.spjain.org/programs/postgraduate/gmba",
-      "kompasStatus": "source-added"
+      "kompasStatus": "source-added",
+      "tuitionBasis": "program",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.spjain.org/programs/postgraduate/gmba/fees"
     },
     {
       "slug": "executive-mba",
@@ -90,7 +101,9 @@
       "level": "master",
       "source": "official",
       "programUrl": "https://www.spjain.org/programs/postgraduate/master-of-artificial-intelligence-in-business",
-      "kompasStatus": "source-added"
+      "kompasStatus": "source-added",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.spjain.org/programs/postgraduate/master-of-artificial-intelligence-in-business/fees"
     },
     {
       "slug": "master-of-applied-finance-and-wealth-management",
@@ -98,7 +111,10 @@
       "level": "master",
       "source": "official",
       "programUrl": "https://www.spjain.org/programs/postgraduate/master-of-applied-finance-and-wealth-management",
-      "kompasStatus": "source-added"
+      "kompasStatus": "source-added",
+      "tuitionBasis": "program",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.spjain.org/programs/postgraduate/master-of-applied-finance-and-wealth-management/fees"
     },
     {
       "slug": "master-of-management",
@@ -106,7 +122,10 @@
       "level": "master",
       "source": "official",
       "programUrl": "https://www.spjain.org/programs/postgraduate/master-of-management",
-      "kompasStatus": "source-added"
+      "kompasStatus": "source-added",
+      "tuitionCurrency": "AUD",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.spjain.org/programs/postgraduate/master-of-management/fees"
     },
     {
       "slug": "global-luxury-goods-services-management-mgluxm-program",
@@ -138,7 +157,11 @@
       "level": "phd",
       "source": "official",
       "programUrl": "https://www.spjain.org/programs/doctorate-business-administration",
-      "kompasStatus": "source-added"
+      "kompasStatus": "source-added",
+      "tuitionBasis": "program",
+      "tuitionCurrency": "AUD",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.spjain.org/programs/doctorate-business-administration/fees"
     }
   ],
   "sourceUrl": "https://www.spjain.org/",
@@ -148,7 +171,16 @@
   "lastChecked": "2026-09-02",
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "bachelor-of-business-administration": 28300,
+      "bachelor-of-data-science": 42100,
+      "master-of-global-business": 38430,
+      "global-mba": 42120,
+      "master-of-artificial-intelligence-in-business": 18040,
+      "master-of-applied-finance-and-wealth-management": 20300,
+      "master-of-management": 26200,
+      "doctorate-of-business-administration": 44170
+    }
   },
   "deadlines": {},
   "requirements": {

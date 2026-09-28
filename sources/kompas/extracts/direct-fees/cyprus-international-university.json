@@ -1,0 +1,19 @@
+{
+  "slug": "cyprus-international-university",
+  "site": "https://www.ciu.edu.tr/",
+  "source": "official-direct-fees",
+  "scrapedAt": "2026-09-28T11:46:44.193Z",
+  "seconds": 0,
+  "programs": [],
+  "fees": [],
+  "gaps": [
+    {
+      "why": "страница fees-and-scholarships называет только проценты стипендий, ни одной суммы в USD/EUR/TRY; сами цифры считает sis.ciu.edu.tr/service/fee-calculator — Vue-приложение за Google reCAPTCHA v3 и CSRF-токеном сессии, без браузера с решённой капчой ни один из его /fetch-эндпоинтов данные не отдаёт (проверено: POST без токена уходит в бесконечный редирект)",
+      "url": "https://www.ciu.edu.tr/en/become-student/international/fees-and-scholarships"
+    },
+    {
+      "why": "ни PDF, ни текстового прайс-листа на сайте не нашлось (sitemap.xml пуст, проверены страницы отдельных программ — везде та же вкладка «Fees» со ссылкой на калькулятор)",
+      "url": "https://sis.ciu.edu.tr/service/fee-calculator/en"
+    }
+  ]
+}
