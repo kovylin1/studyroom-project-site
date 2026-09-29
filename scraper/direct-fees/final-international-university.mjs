@@ -33,12 +33,24 @@
 // таблица ниже — не эвристика, а перепись. Два ID (39, 40) — «(2 YILLIK)»,
 // двухгодичный ассоциированный диплом, уровня «associate» в схеме нет, пропущены.
 // Магистратура (Tezli/Tezsiz) в форме робота не встречается вовсе — гэп.
+//
+// СПИСОК ПРОГРАММ (добавлено 29.09.2026). Переиспользован разбор из A1-пересбора
+// (kompas-collect-a1.mjs, 02.09.2026, SITES['final-international-university']):
+// одна сводная страница https://www.final.edu.tr/tum-programlar со ссылками вида
+// `f-<N>-<unit>/i-<N>-programlar/b-<N>-<slug>`, где `unit` (в самом адресе) и есть
+// ступень: `fakultesi`/`yuksekokul` → bachelor, `enstitu` → уровень по тексту
+// ссылки (trLevel: Doktora → phd, Yüksek Lisans/Tezli/Tezsiz → master), `meslek`
+// (Meslek Yüksekokulu, 2 yıllık) → уровня в схеме нет, пропускаем. Названия здесь —
+// ровно как на сайте (с диакритикой), в отличие от формы робота (см. выше, там
+// заглавными без диакритики) — то есть точнее совпадают с карточкой.
 
-import { get, text, sleep } from './_lib.mjs';
+import { get, text, anchors, sleep } from './_lib.mjs';
 
 const SITE = 'https://www.final.edu.tr/';
 const FORM_URL = 'https://www.final.edu.tr/ucretrobotu/';
 const JS_URL = 'https://www.final.edu.tr/ucretrobotu/atotalpricingTCdev1son1.js';
+const ALL_PROGRAMS_URL = 'https://www.final.edu.tr/tum-programlar';
+const trLevel = (s) => (/doktora/i.test(s) ? 'phd' : /y[uü]ksek\s*lisans|tezli|tezsiz/i.test(s) ? 'master' : null);
 
 // pr id → точное название программы бакалавриата в карточке.
 const TITLE_BY_ID = {
@@ -107,6 +119,28 @@ export default {
     log(`строк цены: ${fees.length}`);
     gaps.push({ why: 'вся цена только в TRY — сайт не публикует USD/EUR-эквивалент; валюта TRY схемой каталога не принимается', url: JS_URL });
     gaps.push({ why: 'магистратура (Tezli/Tezsiz) в калькуляторе не считается вовсе — цены нет ни для одной программы магистратуры', url: FORM_URL });
-    return { programs: [], fees, gaps };
+
+    // Список программ — сводная страница «tum-programlar» (см. комментарий выше).
+    const listHtml = get(ALL_PROGRAMS_URL);
+    await sleep(500);
+    const programs = [];
+    let associateSkipped = 0;
+    for (const a of anchors(listHtml, ALL_PROGRAMS_URL)) {
+      const m = a.href.match(/f-\d+-([a-z-]+)\/i-\d+-programlar\/b-\d+-/i);
+      if (!m || !a.text) continue;
+      const unit = m[1];
+      const level = /meslek/i.test(unit) ? null
+        : /enstitu/i.test(unit) ? trLevel(a.text)
+          : /fakultesi|yuksekokul/i.test(unit) ? 'bachelor' : null;
+      if (!level) { if (/meslek/i.test(unit)) associateSkipped++; continue; }
+      programs.push({ title: a.text, level, url: a.href });
+    }
+    const dedup = new Map();
+    for (const p of programs) dedup.set(`${p.title}||${p.level}`, p);
+    const sitePrograms = [...dedup.values()];
+    log(`программ на сайте: ${sitePrograms.length}, meslek (associate) пропущено: ${associateSkipped}`);
+    if (associateSkipped) gaps.push({ why: `${associateSkipped} строк Meslek Yüksekokulu (2 yıllık, associate) — такого уровня нет в схеме каталога, пропущены`, url: ALL_PROGRAMS_URL });
+
+    return { programs: sitePrograms, fees, gaps };
   },
 };

@@ -21,14 +21,39 @@
 // У бакалаврских программ карточки programUrl у всех один и тот же (общая страница
 // /study/undergraduate), поэтому сопоставление по ссылке не работает — это ожидаемо,
 // уровневая цена сядет на все бакалаврские программы разом через сопоставление по уровню.
+//
+// Разведка 29.09.2026 (список бакалавриата и докторантуры). У обоих уровней есть
+// английский каталог-хаб с собственной страницей на каждую программу:
+// https://www.xjtlu.edu.cn/en/study/undergraduate (52 ссылки вида .../undergraduate/<slug>,
+// текст ссылки уже содержит квалификацию — «Accounting BA (Hons)», «Architecture BEng
+// (Hons)» и т.п., её и берём как title, второй проход по странице программы не нужен)
+// и https://www.xjtlu.edu.cn/en/study/phd (18 ссылок вида .../doctoral/<slug> —
+// «Architecture PhD», «Doctor of Education EdD» и т.п.; EdD и PhD оба — уровень 'phd'
+// схемы каталога, тот же вывод что и раньше по ценам). Магистратуру для `programs`
+// по-прежнему берём со страницы цены /admissions/master/fees-and-scholarships — там
+// уже готовый список ~70 именованных программ построчно, отдельного каталога-хаба со
+// своими URL на каждую магистерскую программу на сайте нет (только служебная ссылка
+// «Master's Programmes» на тот же /study/postgraduate — общая, не по программам).
 
-import { get, text, tableRows, sleep } from './_lib.mjs';
+import { get, text, anchors, tableRows, sleep } from './_lib.mjs';
 
 const PAGES = {
   bachelor: 'https://www.xjtlu.edu.cn/en/admissions/global/fees-and-scholarships',
   master: 'https://www.xjtlu.edu.cn/en/admissions/master/fees-and-scholarships',
   doctoral: 'https://www.xjtlu.edu.cn/en/admissions/doctoral/programme-fees',
 };
+const CATALOG_HUBS = {
+  bachelor: { url: 'https://www.xjtlu.edu.cn/en/study/undergraduate', re: /^https:\/\/www\.xjtlu\.edu\.cn\/en\/study\/undergraduate\/[a-z0-9-]+$/ },
+  phd: { url: 'https://www.xjtlu.edu.cn/en/study/phd', re: /^https:\/\/www\.xjtlu\.edu\.cn\/en\/study\/doctoral\/[a-z0-9-]+$/ },
+};
+
+async function hubPrograms(level, { url, re }) {
+  const html = get(url);
+  await sleep(500);
+  const out = new Map(); // url -> title
+  for (const a of anchors(html, url)) if (re.test(a.href) && a.text && !out.has(a.href)) out.set(a.href, a.text);
+  return [...out].map(([programUrl, title]) => ({ title, level, url: programUrl }));
+}
 
 export default {
   slug: 'xi-an-jiaotong-liverpool-university',
@@ -37,6 +62,16 @@ export default {
     const fees = [];
     const programs = [];
     const gaps = [];
+
+    for (const [level, hub] of Object.entries(CATALOG_HUBS)) {
+      try {
+        const found = await hubPrograms(level, hub);
+        programs.push(...found);
+        log(`${level} catalog: ${found.length} программ`);
+      } catch (e) {
+        gaps.push({ why: `каталог-хаб ${level} не открылся: ${e.message}`, url: hub.url });
+      }
+    }
 
     // Бакалавриат — уровневая цена для международных студентов.
     const ugHtml = get(PAGES.bachelor);

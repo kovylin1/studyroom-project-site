@@ -28,29 +28,76 @@
 //   - HBL (spjain.co.in) — местная часть в INR, партнёрская (Glion) часть в CHF
 //     разбита по рассрочкам за несколько лет без единой суммы за год или программу —
 //     без сложения строк не собрать честную цифру.
+//
+// Разведка 29.09.2026 (список программ, только Dubai-кампус). Полный каталог —
+// хаб-страница https://www.spjain.org/programs/undergraduate (в её меню и бакалаврские,
+// и магистерские ссылки разом) плюс отдельная /programs/doctorate-business-administration.
+// spjain.org — сайт «глобальной» школы (единая программа читается в Дубае, Сингапуре
+// и Сиднее по семестрам, кампусы не разделены по доменам); spjain.co.in — индийский
+// (Мумбаи) кампус, отдельный домен, в список НЕ идёт (правило «только список
+// кампуса-партнёра»). Так же исключена /programs/partnership/master-of-arts-in-hospitality-
+// and-tourism-entrepreneurship — её h1 «Hospitality Business Leadership (HBL) Program
+// by SP Jain and Glion»: это зеркало того же HBL, что уже в gaps под spjain.co.in
+// (индийская программа), просто с другим URL на spjain.org — не отдельная Dubai-программа.
+// /programs/undergraduate/bbc и /programs/undergraduate/bec (старый слаг) у самой базовой
+// страницы (не только /fees) отдают общий шаблон-баннер «UNDERGRADUATE Programs» —
+// это мягкий 404 сайта, а не программа; у BEC есть отдельная действующая страница по
+// новому слагу /undergraduate/bachelor-of-economics (у неё уже нашлась настоящая
+// таблица цены). /programs/postgraduate-certificate/graduate-certificate-of-global-management —
+// это Graduate Certificate, квалификации вне схемы каталога — не отдаём (правило про
+// diploma/certificate). Business Management Program, Data Science Program и Executive
+// MBA — настоящие страницы (свой h1), но их /fees по-прежнему мягкий 404 — они идут в
+// `programs`, а цена для них остаётся в gaps.
 
 import { get, text, sleep } from './_lib.mjs';
 
-const PROGRAMS = [
-  { base: 'https://www.spjain.org/programs/undergraduate/bba', level: 'bachelor', title: 'Bachelor of Business Administration' },
-  { base: 'https://www.spjain.org/programs/undergraduate/bachelor-of-data-science', level: 'bachelor', title: 'Bachelor of Data Science' },
-  { base: 'https://www.spjain.org/programs/postgraduate/mgb', level: 'master', title: 'Master of Global Business' },
-  { base: 'https://www.spjain.org/programs/postgraduate/gmba', level: 'master', title: 'Global MBA' },
-  { base: 'https://www.spjain.org/programs/postgraduate/master-of-artificial-intelligence-in-business', level: 'master', title: 'Master of Artificial Intelligence in Business' },
-  { base: 'https://www.spjain.org/programs/postgraduate/master-of-applied-finance-and-wealth-management', level: 'master', title: 'Master of Applied Finance and Wealth Management' },
-  { base: 'https://www.spjain.org/programs/postgraduate/master-of-management', level: 'master', title: 'Master of Management' },
-  { base: 'https://www.spjain.org/programs/doctorate-business-administration', level: 'phd', title: 'Doctorate of Business Administration', totalCostPattern: true },
-];
+const HUB_URL = 'https://www.spjain.org/programs/undergraduate';
+const HUB_LINK_RE = /^https:\/\/www\.spjain\.org\/programs\/(undergraduate|postgraduate)\/([a-z0-9-]+)$/;
+const HUB_LEVEL = { undergraduate: 'bachelor', postgraduate: 'master' };
+// Мягкий 404: базовая страница отдаёт общий баннер каталога вместо своей программы.
+const SOFT_404_TITLE = /^(undergraduate|postgraduate) programs$/i;
 
-const NOFEES = [
-  { url: 'https://www.spjain.org/programs/undergraduate/bbc/fees', why: 'страница 404 — у BBC нет своей fees-подстраницы' },
-  { url: 'https://www.spjain.org/programs/undergraduate/bec/fees', why: 'мягкий 404 — отдаёт общий шаблон "Undergraduate Programs" без таблицы цены' },
-  { url: 'https://www.spjain.org/programs/undergraduate/business-management-program/fees', why: 'страница 404' },
-  { url: 'https://www.spjain.org/programs/undergraduate/data-science-program/fees', why: 'страница 404' },
-  { url: 'https://www.spjain.org/programs/postgraduate/executive-mba/fees', why: 'страница 404' },
-  { url: 'https://www.spjain.co.in/programs/postgraduate/mgluxm/fees', why: 'цена только в INR, не входит в схему каталога' },
-  { url: 'https://www.spjain.co.in/programs/postgraduate/hospitality-business-leadership/fees', why: 'местная часть в INR, партнёрская — в CHF по рассрочкам за несколько лет без общей суммы; без сложения строк цену не собрать' },
-];
+const DBA = { base: 'https://www.spjain.org/programs/doctorate-business-administration', level: 'phd', title: 'Doctor of Business Administration', totalCostPattern: true };
+
+function firstH1(html) {
+  for (const m of html.matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/gi)) {
+    const t = text(m[1]);
+    if (t) return t;
+  }
+  return null;
+}
+
+/** Обходит хаб-меню, отсеивает мягкий 404, возвращает найденные программы с их h1. */
+async function discoverPrograms(log) {
+  const html = get(HUB_URL);
+  await sleep(500);
+  const seen = new Set();
+  const found = [];
+  const gaps = [];
+  for (const m of html.matchAll(/href\s*=\s*["']([^"'#]+)["']/gi)) {
+    const href = m[1].split(/[?#]/)[0];
+    const hm = href.match(HUB_LINK_RE);
+    if (!hm || seen.has(href)) continue;
+    seen.add(href);
+    let page;
+    try {
+      page = get(href);
+    } catch (e) {
+      gaps.push({ why: `страница программы не открылась: ${e.message}`, url: href });
+      await sleep(500);
+      continue;
+    }
+    await sleep(500);
+    const h1 = firstH1(page);
+    if (!h1 || SOFT_404_TITLE.test(h1)) {
+      gaps.push({ why: `мягкий 404 — у ссылки ${href} нет своей страницы программы (h1: ${h1 ?? 'нет'})`, url: href });
+      continue;
+    }
+    found.push({ base: href, level: HUB_LEVEL[hm[1]], title: h1 });
+  }
+  log(`hub: ${found.length} программ, ${gaps.length} мягких 404 / ошибок`);
+  return { found, gaps };
+}
 
 const stripComments = (html) => html.replace(/<!--[\s\S]*?-->/g, ' ');
 
@@ -127,9 +174,15 @@ export default {
   slug: 'sp-jain-school-of-global-management-dubai',
   site: 'https://www.spjain.org/',
   async collect({ log }) {
-    const fees = [];
-    const gaps = [];
+    const { found, gaps } = await discoverPrograms(log);
+    const PROGRAMS = [...found, DBA];
+    // Партнёрская HBL-зеркало на spjain.org — не Dubai-программа, см. разведку выше.
+    gaps.push({ why: 'HBL Program (SP Jain и Glion) — та же программа, что уже пропущена под spjain.co.in, зеркало не по Dubai-кампусу', url: 'https://www.spjain.org/programs/partnership/master-of-arts-in-hospitality-and-tourism-entrepreneurship' });
+    gaps.push({ why: 'MGLuxM (spjain.co.in) — цена только в INR, не входит в схему каталога', url: 'https://www.spjain.co.in/programs/postgraduate/mgluxm/fees' });
+    gaps.push({ why: 'HBL (spjain.co.in) — местная часть в INR, партнёрская — в CHF по рассрочкам за несколько лет без общей суммы; без сложения строк цену не собрать', url: 'https://www.spjain.co.in/programs/postgraduate/hospitality-business-leadership/fees' });
 
+    const programs = PROGRAMS.map((p) => ({ title: p.title, level: p.level, url: p.base }));
+    const fees = [];
     for (const prog of PROGRAMS) {
       const feesUrl = `${prog.base}/fees`;
       let html;
@@ -158,8 +211,6 @@ export default {
       await sleep(500);
     }
 
-    for (const g of NOFEES) gaps.push(g);
-
-    return { programs: [], fees, gaps };
+    return { programs, fees, gaps };
   },
 };

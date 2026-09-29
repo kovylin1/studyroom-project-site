@@ -19,32 +19,67 @@
 // на странице ровно то же значение («Total fees: AED 84,000»), формат подтверждён этим же
 // прогоном.
 //
-// Список программ, которые запрашиваем, берём из карточки (по её programUrl), а не
-// общим листингом сайта: пять карточных программ (Bachelor of Business Administration,
-// три специализации Bachelor of Commerce) указывают на один и тот же хаб
-// /business-and-management/ без собственной страницы — у хаба нет таблицы Fees,
-// они остаются пробелом.
+// Список программ, которые запрашиваем, раньше брали из карточки (по её programUrl) —
+// это годилось только для цен уже известных программ, но пять карточных программ
+// (Bachelor of Business Administration, три специализации Bachelor of Commerce)
+// указывали на один и тот же хаб /business-and-management/ без собственной страницы.
+//
+// Разведка 29.09.2026 (список программ): полный каталог — страница
+// https://curtindubai.ac.ae/courses/, на ней ссылки на все программы кампуса, сгруппированные
+// по факультетам-хабам (arts-and-design, built-environment, business-and-management,
+// engineering, it-and-computing, arts-humanities-and-health-sciences — бакалавриат;
+// postgraduate-programs — магистратура; doctoral-programs — докторантура). У хаба
+// самого по себе (напр. /business-and-management/) страницы Fees нет — только у
+// программ на два сегмента пути внутри хаба (/business-and-management/finance/ и т.п.),
+// их и берём. Так нашлись настоящие страницы у Accounting, Finance, International
+// Business, Marketing, Accounting and Finance (Double Major), Mechanical Engineering
+// (Honours), Information Technology, Cyber Security — раньше их программные ссылки в
+// карточке не было вовсе (только пять хаб-ссылок неспециализированного BBA/BCom, для
+// которых своей страницы по-прежнему нет — остаются пробелом).
+// /postgraduate-business/<slug>/ — старый путь тех же двух магистратур
+// (MBA International Business, Master of Engineering Management), 200 редиректит на
+// /postgraduate-programs/<slug>/ — берём только канонический, чтобы не задвоить.
+// «Graduate Certificate in Business Fundamentals» (postgraduate-programs/business-fundamentals/)
+// — это сертификат, не квалификация схемы (foundation/bachelor/master/phd/…) — в gaps,
+// программой не отдаём, даже вопреки тому что раньше в карточке было записано как
+// «master» (ошибочно, до этой разведки).
+// Curtin Dubai Foundation Program — одна страница на все пять профилей (Business /
+// Design / Hard Sciences and Engineering / Health Sciences / Information Technology,
+// см. правило «отдельные строки только если своя страница») — отдаём ОДНОЙ программой
+// уровня foundation с этим общим URL, профили внутри не разбиваем.
 
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { get, text, sleep } from './_lib.mjs';
+import { get, text, anchors, sleep } from './_lib.mjs';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const CARD = path.join(__dirname, '../../site/src/content/universities/curtin-university-dubai.json');
+const BASE = 'https://curtindubai.ac.ae';
+const COURSES_URL = `${BASE}/courses/`;
+const FOUNDATION_URL = `${BASE}/curtin-dubai-foundation-program/`;
+const BACHELOR_HUBS = new Set(['arts-and-design', 'built-environment', 'business-and-management',
+  'engineering', 'it-and-computing', 'health-sciences', 'arts-humanities-and-health-sciences']);
+const MASTER_HUBS = new Set(['postgraduate-programs']);
+const PHD_HUBS = new Set(['doctoral-programs']);
+// Квалификации вне схемы каталога — своя страница есть, но уровня для неё нет.
+const NOT_A_SCHEMA_LEVEL = new Set(['postgraduate-programs/business-fundamentals']);
+const PROGRAM_PAGE_RE = /^https:\/\/curtindubai\.ac\.ae\/([a-z0-9-]+)\/([a-z0-9-]+)\/$/;
 
-const HUBS = new Set([
-  'https://curtindubai.ac.ae/business-and-management/',
-  'https://curtindubai.ac.ae/arts-and-design/',
-]);
+function levelForHref(href) {
+  const m = href.match(PROGRAM_PAGE_RE);
+  if (!m) return null;
+  const [, hub, slug] = m;
+  if (hub === 'postgraduate-business') return null; // дубль postgraduate-programs, тот же контент по редиректу
+  if (NOT_A_SCHEMA_LEVEL.has(`${hub}/${slug}`)) return null;
+  if (BACHELOR_HUBS.has(hub)) return 'bachelor';
+  if (MASTER_HUBS.has(hub)) return 'master';
+  if (PHD_HUBS.has(hub)) return 'phd';
+  return null;
+}
 
-function ownPrograms() {
-  const card = JSON.parse(fs.readFileSync(CARD, 'utf8').replace(/^﻿/, ''));
-  const out = new Map(); // url -> { title, level }
-  for (const p of card.programs || []) {
-    if (!p.programUrl || !p.programUrl.startsWith('https://curtindubai.ac.ae/')) continue;
-    if (HUBS.has(p.programUrl)) continue;
-    if (!out.has(p.programUrl)) out.set(p.programUrl, { title: p.title, level: p.level });
+async function coursesPrograms() {
+  const html = get(COURSES_URL);
+  await sleep(500);
+  const out = new Map(); // url -> level
+  for (const a of anchors(html, COURSES_URL)) {
+    const level = levelForHref(a.href);
+    if (level && !out.has(a.href)) out.set(a.href, level);
   }
   return out;
 }
@@ -106,11 +141,22 @@ export default {
   slug: 'curtin-university-dubai',
   site: 'https://curtindubai.ac.ae',
   async collect({ log }) {
-    const programs = ownPrograms();
-    const fees = [];
     const gaps = [];
+    let hrefLevels;
+    try {
+      hrefLevels = await coursesPrograms();
+    } catch (e) {
+      gaps.push({ why: `страница /courses/ не открылась: ${e.message}`, url: COURSES_URL });
+      hrefLevels = new Map();
+    }
+    // Программа-фундамент — одна страница на все профили (см. разведку выше).
+    if (!hrefLevels.has(FOUNDATION_URL)) hrefLevels.set(FOUNDATION_URL, 'foundation');
+    log(`courses: ${hrefLevels.size} страниц программ`);
+
+    const programs = [];
+    const fees = [];
     let i = 0;
-    for (const [url, meta] of programs) {
+    for (const [url, level] of hrefLevels) {
       i += 1;
       let html;
       try {
@@ -120,6 +166,11 @@ export default {
         await sleep(500);
         continue;
       }
+      const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+      const title = h1 ? text(h1[1]) : null;
+      if (!title) { gaps.push({ why: 'на странице программы нет h1', url }); await sleep(500); continue; }
+      programs.push({ title, level, url });
+
       const section = feesSection(html);
       if (!section) {
         gaps.push({ why: 'на странице нет аккордеона Fees', url });
@@ -135,14 +186,13 @@ export default {
       for (const r of rows) {
         fees.push({
           amount: r.amount, currency: r.currency, basis: r.basis, audience: null,
-          scope: 'program', title: meta.title, level: meta.level,
-          programUrl: url, url, raw: r.raw,
+          scope: 'program', title, level, programUrl: url, url, raw: r.raw,
         });
       }
-      log(`${meta.title}: ${rows.length} строк`);
+      if (i % 10 === 0) log(`${i}/${hrefLevels.size} страниц программ`);
       await sleep(500);
     }
-    gaps.push({ why: 'Bachelor of Business Administration и три специализации Bachelor of Commerce в карточке ведут на общий хаб /business-and-management/ без своей таблицы Fees', url: 'https://curtindubai.ac.ae/business-and-management/' });
-    return { programs: [], fees, gaps };
+    gaps.push({ why: 'Bachelor of Business Administration и три специализации Bachelor of Commerce в карточке ведут на общий хаб /business-and-management/ без своей страницы', url: 'https://curtindubai.ac.ae/business-and-management/' });
+    return { programs, fees, gaps };
   },
 };

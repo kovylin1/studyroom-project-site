@@ -126,9 +126,14 @@ function plan(extract, card) {
     });
   }
 
-  const cardTitles = new Set(programs.map((p) => p.title.toLowerCase().trim()));
+  // Покрытие: что вуз публикует и чего нет в карточке, и наоборот. Сопоставление то же,
+  // что у цен (program-match), в обе стороны.
   const sitePrograms = extract.programs || [];
-  const siteOnly = sitePrograms.filter((p) => !cardTitles.has(String(p.title).toLowerCase().trim()));
+  const siteOnly = sitePrograms.filter((sp) => !matchProgram(idx, { title: sp.title, level: sp.level, programUrl: sp.url }).program);
+  const siteIdx = buildIndex(sitePrograms.map((sp) => ({ ...sp, slug: sp.title, programUrl: sp.url })));
+  const cardOnly = sitePrograms.length
+    ? programs.filter((p) => !matchProgram(siteIdx, { title: p.title, level: p.level, programUrl: p.programUrl }).program)
+    : [];
 
   return {
     slug: extract.slug,
@@ -145,6 +150,8 @@ function plan(extract, card) {
     sitePrograms: sitePrograms.length,
     siteProgramsNotInCard: siteOnly.length,
     siteProgramsNotInCardSample: siteOnly.slice(0, 8).map((p) => p.title),
+    cardProgramsNotOnSite: cardOnly.length,
+    cardProgramsNotOnSiteSample: cardOnly.slice(0, 8).map((p) => p.title),
     gaps: extract.gaps || [],
   };
 }
@@ -211,10 +218,10 @@ function applyToCard(file, card, p, backup) {
 function mdReport(plans, errors) {
   const L = [`# Цены прямых партнёров с офсайтов — ${TODAY}`, '',
     'Скрипт `scraper/kompas-direct-fees.mjs`, парсеры `scraper/direct-fees/<slug>.mjs`.', '',
-    '| вуз | программ | цен было | строк цены | новых цен | программных | уровневых | отбито | не сопоставлено | вне диапазона |',
-    '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|'];
+    '| вуз | в карточке | на сайте | с сайта нет в карточке | из карточки нет на сайте | цен было | строк цены | новых цен | уровневых | отбито | не сопоставлено |',
+    '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|'];
   for (const p of plans) {
-    L.push(`| ${p.slug} | ${p.cardPrograms} | ${p.cardPricedBefore} | ${p.feeRows} | ${p.newPrices} | ${p.byScope.program} | ${p.byScope.level} | ${p.rejected.length} | ${p.unmatched.length} | ${p.implausible} |`);
+    L.push(`| ${p.slug} | ${p.cardPrograms} | ${p.sitePrograms || '—'} | ${p.sitePrograms ? p.siteProgramsNotInCard : '—'} | ${p.sitePrograms ? p.cardProgramsNotOnSite : '—'} | ${p.cardPricedBefore} | ${p.feeRows} | ${p.newPrices} | ${p.byScope.level} | ${p.rejected.length} | ${p.unmatched.length} |`);
   }
   for (const e of errors) L.push(`| ${e.slug} | — | — | — | ОШИБКА: ${e.error.slice(0, 80)} | | | | | |`);
   L.push('');

@@ -22,21 +22,38 @@
 //   formats»: там простая HTML-таблица «Tuition Fee 2026/2027 Acad. Year» —
 //   строка «Duration», строка «Tuition fee EUR/year» — без EU/international, audience
 //   не проставлен.
+//
+// Разведка 29.09.2026 (список программ): все 18 страниц из study_programmes-sitemap.xml —
+// это и есть полный список сайта (бакалавриат/магистратура/докторантура, включая
+// double-degree с UWE Bristol и три страницы без блока Tuition). `level` раньше почти
+// нигде не читался: регэксп «Study Level …» использовал прямой апостроф ', а сайт
+// пишет «Bachelor’s» типографским U+2019 — символ вне класса [A-Za-z' ] обрывал матч.
+// Добавили U+2019 в класс. Три страницы без виджета Study Level уровень отдельным
+// полем не пишут — берём его из «Awarded academic degree: Doctoral Degree of
+// Science…» / «MSc …» той же страницы. Теперь все 18 программ уходят в `programs`
+// с уровнем.
 
 import { get, text, tableRows, sleep } from './_lib.mjs';
 
 const SITEMAP = 'https://tsi.lv/study_programmes-sitemap.xml';
 const PAGE_RE = /^https:\/\/tsi\.lv\/study_programmes\/[a-z0-9-]+\/$/;
 
-const LEVEL_WORDS = [[/doctoral|phd/i, 'phd'], [/master/i, 'master'], [/bachelor/i, 'bachelor']];
+const LEVEL_WORDS = [[/doctoral|phd|\bd\.?sc\b/i, 'phd'], [/master|\bmsc\b/i, 'master'], [/bachelor|\bbsc\b/i, 'bachelor']];
 const MODE_LABELS = ['Full-time', 'Part-time', 'Blended Learning', 'Online', 'Weekend', 'Evening', 'Distance Learning'];
 
 const GLOBE = /[\u{1F30D}-\u{1F30F}]/u;
 const FLAG = /[\u{1F1E6}-\u{1F1FF}]/u;
 
 function studyLevel(pageText) {
-  const m = pageText.match(/Study Level\s*([A-Za-z' ]+?)(?:Study Form|Language|$)/);
-  const label = m ? m[1] : '';
+  // Виджет «Study Level» — апостроф в «Bachelor’s» типографский (U+2019), не '.
+  let m = pageText.match(/Study Level\s*([A-Za-z‘’' ]+?)(?:Study Form|Language|$)/);
+  let label = m ? m[1] : '';
+  if (!label) {
+    // Страницы без виджета (digital-economy-and-business, telematics-and-logistics,
+    // transport-and-logistics) называют степень в «Awarded academic degree: …».
+    m = pageText.match(/Awarded academic degree:?\s*([^.]{0,80})/i);
+    label = m ? m[1] : '';
+  }
   for (const [re, level] of LEVEL_WORDS) if (re.test(label)) return level;
   return null;
 }

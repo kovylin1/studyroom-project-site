@@ -28,11 +28,33 @@
 // Названия программ в таблице (ЗАГЛАВНЫМИ) совпадают с карточкой побуквенно
 // (там тоже ЗАГЛАВНЫМИ — «TIP», «PSİKOLOJİ», «HEMŞİRELİK (TÜRKÇE)» …), кроме
 // хвоста « BÖLÜMÜ»/«FAKÜLTESİ» и суффикса тарифа — их срезаем.
+//
+// СПИСОК ПРОГРАММ (добавлено 29.09.2026). Бакалавриат — ровно те же 11 строк, что
+// и цена (таблица «% 50 İNDİRİMLİ» выше): у каждого факультета (Tıp Fakültesi,
+// Fen-Edebiyat, İşletme ve Yönetim Bilimleri, Sağlık Bilimleri, Florence
+// Nightingale Hemşirelik Yüksekokulu) нет отдельной страницы «bölümler» со
+// списком — факультет и есть программа (Tıp Fakültesi → «Tıp» и т.п.), сверено
+// содержимым страниц факультетов (в навигации только «Hakkında/İdari Kadro»,
+// ссылок на программы нет). Sağlık Hizmetleri Meslek Yüksekokulu (Ön lisans,
+// «ÜCRETLİ»-строки таблицы) — associate, уровня нет в схеме, не берём.
+// Магистратура и докторантура — на страницах двух институтов (в HTML главной
+// страницы каждого инстиута лежат прямые ссылки на «program-tanitimi» каждой
+// программы, у halk-sagligi-anabilim-dali ссылка без хвоста «/program-tanitimi»,
+// но ведёт на ту же карточку программы — берём как есть):
+//   saglik-bilimleri-enstitusu  — 9 Yüksek Lisans + 2 Doktora (Hemşirelik, Tıbbi
+//                                  Biyoloji ve Genetik)
+//   sosyal-bilimler-enstitusu   — 3 Yüksek Lisans (Psikoloji, Uygulamalı
+//                                  Psikoloji, Sağlık Kurumları Yöneticiliği)
+// Итого сайт публикует 11 бакалавриат + 12 магистратура + 2 докторантура = 25
+// программ; в карточке сейчас только 11 (все бакалавриат) — 14 магистерских/
+// докторских программ уйдут в «на сайте есть, в карточке нет», это не ошибка.
 
-import { get, tableRows, sleep } from './_lib.mjs';
+import { get, text, anchors, tableRows, sleep } from './_lib.mjs';
 
 const SITE = 'https://demiroglu.bilim.edu.tr/';
 const URL = 'https://demiroglu.bilim.edu.tr/ogrenci/burslar-ve-ucretler';
+const HEALTH_INST = 'https://demiroglu.bilim.edu.tr/akademik-birimler/saglik-bilimleri-enstitusu';
+const SOCIAL_INST = 'https://demiroglu.bilim.edu.tr/akademik-birimler/sosyal-bilimler-enstitusu';
 
 // Срезать тариф в скобках и хвостовое «BÖLÜMÜ»/«FAKÜLTESİ» — оставить голое имя программы.
 function cleanTitle(cell) {
@@ -51,16 +73,24 @@ export default {
     const rows = tableRows(html);
     // rows[0] — заголовок таблицы (одна ячейка), rows[1] — шапка колонок.
     const fees = [];
+    const bachelorTitles = new Map(); // title (lower) -> title, дедуп бакалавриата.
     let discountRows = 0, fullRows = 0, zeroRows = 0;
     for (const r of rows) {
       if (r.length < 4) continue;
-      const [, program, , ucret] = r;
+      const [unit, program, , ucret] = r;
       if (!/İNDİRİML|BURSLU|ÜCRETL/i.test(program)) continue;
+      const isDiscount = /İ?NDİR[İI]ML/i.test(program);
+      const isFull = /ÜCRETL[İI]/i.test(program);
+      // «MESLEK YÜKSEKOKULU» (MYO) — Ön lisans (associate), не бакалавриат, хотя
+      // тоже даёт «İNDİRİMLİ»-строку; отличаем по колонке факультета/школы.
+      const isMYO = /MESLEK\s+Y[ÜU]KSEKOKULU/i.test(unit);
+      if (isDiscount && !isMYO) {
+        const title = cleanTitle(program);
+        bachelorTitles.set(title.toLowerCase(), title);
+      }
       const amountMatch = ucret.match(/([\d.]+)\s*TL/);
       if (!amountMatch) { zeroRows++; continue; } // «TAM BURSLU» — цены нет («---»).
       const amount = Number(amountMatch[1].replace(/\./g, ''));
-      const isDiscount = /İ?NDİR[İI]ML/i.test(program);
-      const isFull = /ÜCRETL[İI]/i.test(program);
       if (isFull) fullRows++; // относится только к Ön lisans-программам МYO — не в карточке, но фиксируем для отчёта.
       if (isDiscount) discountRows++;
       const title = cleanTitle(program);
@@ -72,13 +102,31 @@ export default {
       });
     }
     log(`строк с ценой: ${fees.length} (скидочных: ${discountRows}, полных: ${fullRows}, без цены: ${zeroRows})`);
+
+    // Список программ. Бакалавриат — из таблицы цены (11 строк, см. комментарий выше).
+    const programs = [...bachelorTitles.values()].map((title) => ({ title, level: 'bachelor', url: URL }));
+
+    // Магистратура/докторантура — со страниц двух институтов, ссылки на «program-tanitimi».
+    for (const [instUrl, unit] of [[HEALTH_INST, 'saglik-bilimleri-enstitusu'], [SOCIAL_INST, 'sosyal-bilimler-enstitusu']]) {
+      const instHtml = get(instUrl);
+      await sleep(500);
+      for (const a of anchors(instHtml, instUrl)) {
+        if (!a.href.includes(`/akademik-birimler/${unit}/programlar/`)) continue;
+        const level = /doktora/i.test(a.href) ? 'phd' : /y[üu]ksek.?lisans/i.test(a.href) ? 'master' : null;
+        if (!level || !a.text) continue;
+        programs.push({ title: a.text, level, url: a.href });
+      }
+    }
+    log(`программ на сайте: ${programs.length} (бакалавриат ${bachelorTitles.size}, остальное — институты)`);
+
     return {
-      programs: [],
+      programs,
       fees,
       gaps: [
         { why: 'для программ карточки на сайте есть только 50%-скидочная цена «ek yerleştirme»: 100%-стипендийная строка везде «---», полной (list) цены нет нигде на сайте', url: URL },
         { why: 'таблица — это цены дополнительного зачисления (ek yerleştirme) 2026-2027, не общий годовой прайс-лист; другой страницы с ценами на сайте не найдено', url: URL },
         { why: 'валюта только TRY — USD/EUR-эквивалента сайт не публикует, хотя карточка изначально настроена на USD', url: URL },
+        { why: 'Sağlık Hizmetleri Meslek Yüksekokulu — Ön lisans (associate), уровня нет в схеме каталога, эти программы (Anestezi, İlk ve Acil Yardım и др.) пропущены целиком', url: URL },
       ],
     };
   },

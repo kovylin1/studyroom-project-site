@@ -1,4 +1,4 @@
-import { get, text, sleep } from './_lib.mjs';
+import { get, text, anchors, sleep } from './_lib.mjs';
 
 // Разведка 28.09.2026 (lanecollege.edu, Jackson, Tennessee — частный HBCU-колледж).
 //
@@ -25,6 +25,37 @@ import { get, text, sleep } from './_lib.mjs';
 // - Прочие суммы на странице (Text Book Fee, Matriculation, Technology, Student Activity,
 //   Housing, Meal Plan, Health Service, Commuter Fees, Parking, Graduation Fee и т.д.) —
 //   не обучение, пропущены по правилу.
+//
+// СПИСОК ПРОГРАММ (добавлено 29.09.2026). Три страницы отделений (academics/departments/
+// business-social-and-behavioral-science, liberal-studies-and-education,
+// natural-and-physical-science) — их даёт academics/departments — каждая перечисляет
+// свои специальности карточками «Read more» без текста названия в самой ссылке, но
+// адрес каждой (…/<department>/<major>) и есть страница программы (<title>Lane
+// College | <Название></title> подтверждает: department = program). Название беру
+// человекочитаемым из слага (business → Business, criminal-justice → Criminal
+// Justice) — сверено с уже заведёнными 17 программами карточки, совпадает
+// побуквенно. Итого 19 специальностей одним уровнем (bachelor, других на сайте
+// нет вовсе — см. выше): 4 (business/criminal-justice/history/sociology) + 10
+// (art/english/french/interdisciplinary-studies/mass-communication/music/
+// physical-education/religion/spanish/teacher-education) + 5 (biology/chemistry/
+// computer-science/mathematics/physics). «Art» и «Spanish» на сайте есть, в
+// карточке — нет; «BA Concentration Requirements», «Bachelor's Degrees»,
+// «Bachelor's of Science» карточки — не программы (служебные страницы из
+// прежнего пересбора), с сайта не переподтверждаются. Отдельно: «Teacher
+// Education» карточками отделения liberal-studies-and-education не выводится
+// (там 9 «Read more», не 10), но собственная страница у неё есть (…/liberal-
+// studies-and-education/teacher-education, curl: 200, видна в меню сайта) —
+// добавлена вручную, это прямая проверка URL, не догадка.
+
+const DEPT_GROUPS = [
+  'business-social-and-behavioral-science',
+  'liberal-studies-and-education',
+  'natural-and-physical-science',
+];
+const EXTRA_PROGRAMS = [
+  { title: 'Teacher Education', level: 'bachelor', url: 'https://lanecollege.edu/academics/departments/liberal-studies-and-education/teacher-education' },
+];
+const titleCase = (slug) => slug.split('-').map((w) => w[0].toUpperCase() + w.slice(1)).join(' ');
 
 export default {
   slug: 'lane-college',
@@ -54,6 +85,25 @@ export default {
       gaps.push({ why: 'на странице college-costs не нашлась строка "Total Tuition (12-16 hours)" — вёрстка могла измениться', url });
     }
 
-    return { programs: [], fees, gaps };
+    // Список программ — обход трёх отделений.
+    const programs = [];
+    for (const dept of DEPT_GROUPS) {
+      const deptUrl = `https://lanecollege.edu/academics/departments/${dept}`;
+      let deptHtml;
+      try { deptHtml = get(deptUrl); } catch (e) { gaps.push({ why: `не удалось загрузить отделение ${dept}: ${e.message}`, url: deptUrl }); continue; }
+      await sleep(500);
+      const seen = new Set();
+      for (const a of anchors(deptHtml, deptUrl)) {
+        if (!a.href.startsWith(`${deptUrl}/`) || a.href === deptUrl) continue;
+        const slug = a.href.split('/').filter(Boolean).pop();
+        if (seen.has(slug)) continue;
+        seen.add(slug);
+        programs.push({ title: titleCase(slug), level: 'bachelor', url: a.href });
+      }
+    }
+    for (const p of EXTRA_PROGRAMS) if (!programs.some((q) => q.url === p.url)) programs.push(p);
+    log(`программ на сайте: ${programs.length}`);
+
+    return { programs, fees, gaps };
   },
 };

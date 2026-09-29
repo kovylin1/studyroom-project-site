@@ -1,11 +1,43 @@
-import { get, text, tableRows, sleep } from './_lib.mjs';
+import { get, text, anchors, tableRows, sleep } from './_lib.mjs';
 
 // Разведка 28.09.2026 (csudh.edu, US public CSU campus).
 //
 // Карточка: 4 программы (Certificate/BA/MS/MA), все со ссылками на общий
 // university-catalog / certificate-programs, цен нет.
 //
-// Что нашлось:
+// СПИСОК ПРОГРАММ (добавлено 29.09.2026). Бакалавриат — со страниц пяти колледжей
+// («Explore» → «Majors and Programs», по одной на колледж):
+//   /future-students/explore/majors-and-programs/{cah,cbapp,chhsn,cnbs,coe}
+// Каждая — аккордеон `<div class="accTitle">Название B.A./B.S.: Специализация</div>`.
+// Специализации внутри одной программы («Business Administration B.S.: Accounting»,
+// «…: Finance», «…: Marketing» — 12 штук) ведут на ОДНУ и ту же страницу отдела
+// (`/business-administration/`) — своей страницы у специализации нет, поэтому по
+// правилу README они не отдельные программы: берём название до двоеточия один раз
+// («Business Administration», B.S.), специализации — не заводим построчно. Так
+// вышло 48 уникальных бакалаврских программ (34+20+16+28+1 строка аккордеона
+// схлопнулись по base-названию). Ссылку берём из первого найденного «Learn more»
+// внутри аккордеона; у части программ (Art, Audio Engineering, Dance, Design,
+// Film and Television Production, Journalism, Behavioral Science, Chemistry,
+// Earth Science, Organizational Leadership Studies) ссылки на сайте нет вовсе —
+// url не отдаём.
+// Магистратура — сводная страница /gsr/graduate-studies/ (Graduate Studies &
+// Research): в её HTML — прямые ссылки вида «MS …»/«MA …»/«Occupational Therapy
+// Doctorate» на 21 магистерскую программу (Accounting, Biology, Computer Science,
+// Cyber Security, Counseling, Education, English, Environmental Science, Health
+// Science — Orthotics and Prosthetics, Marital Family and Therapy, Negotiation
+// Conflict Resolution and Peacebuilding, Nursing, Occupational Therapy,
+// Psychology, Quality Assurance, School Leadership, Sociology, Systems
+// Engineering, Special Education, Radiology and Imaging Sciences, TESOL) и одну
+// докторскую (Occupational Therapy Doctorate — профессиональная докторская
+// степень последипломного уровня, ближайший уровень схемы каталога — phd).
+// Проверено выборочно: две программы карточки («MA Humanities», «MS Criminal
+// Justice Administration») на этой витрине не значатся, но страницы у них на
+// сайте есть (csudh.edu/humanities/, csudh.edu/criminal-justice-administration/,
+// 200) — единого открытого реестра ВСЕХ магистратур по ВСЕМ департаментам на
+// сайте нет (только PDF university-catalog), эта витрина — самый полный
+// доступный список, но не исчерпывающий; гэп об этом ниже.
+//
+// Что нашлось (цены):
 // - https://www.csudh.edu/ceie-intl/intl-student-info/future-students/sample-fees/
 //   (ссылка "Tuition & Fees" на странице ceie-intl) отдаёт 404 — мёртвая ссылка,
 //   несмотря на то что она есть в навигации сайта.
@@ -100,6 +132,52 @@ export default {
       url: 'https://www.csudh.edu/future-students/international/financial-certification',
     });
 
-    return { programs: [], fees, gaps };
+    // Список программ.
+    const programs = [];
+    const COLLEGES = ['cah', 'cbapp', 'chhsn', 'cnbs', 'coe'];
+    const seen = new Map(); // title||level -> program (для схлопывания специализаций)
+    for (const c of COLLEGES) {
+      const url = `https://www.csudh.edu/future-students/explore/majors-and-programs/${c}`;
+      let html;
+      try { html = get(url); } catch (e) { gaps.push({ why: `не удалось загрузить колледж ${c}: ${e.message}`, url }); continue; }
+      await sleep(500);
+      const re = /<div class="accTitle"[^>]*>([\s\S]*?)<\/div><div class="accContent">([\s\S]*?)<\/div><\/div>/g;
+      for (const m of html.matchAll(re)) {
+        const rawTitle = text(m[1]);
+        const degM = rawTitle.match(/(?:^|\s)(B\.A\.|B\.S\.|B\.F\.A\.|B\.M\.)(?=\s|:|$)/);
+        if (!degM) continue; // не бакалаврская строка (не встречалось, но на всякий случай).
+        const level = 'bachelor';
+        const baseTitle = rawTitle.split(':')[0].replace(degM[0], '').trim();
+        const key = `${baseTitle}||${level}`;
+        if (seen.has(key)) continue;
+        const linkm = m[2].match(/href="([^"#]+)"/);
+        const progUrl = linkm ? (linkm[1].startsWith('http') ? linkm[1] : `https://www.csudh.edu${linkm[1]}`) : undefined;
+        const p = { title: baseTitle, level, ...(progUrl ? { url: progUrl } : {}) };
+        seen.set(key, p);
+        programs.push(p);
+      }
+    }
+    log(`бакалавриат на сайте: ${programs.length} (5 колледжей)`);
+
+    // Магистратура — витрина /gsr/graduate-studies/.
+    const gsrUrl = 'https://www.csudh.edu/gsr/graduate-studies/';
+    try {
+      const gsrHtml = get(gsrUrl);
+      await sleep(500);
+      let gradCount = 0;
+      for (const a of anchors(gsrHtml, gsrUrl)) {
+        const t = a.text.trim();
+        if (!t || !/^(MS|MA|MSN|MFA|MBA|MEd|MPA)\s+/.test(t) && !/Doctorate/i.test(t)) continue;
+        const level = /Doctorate/i.test(t) ? 'phd' : 'master';
+        programs.push({ title: t, level, url: a.href });
+        gradCount++;
+      }
+      log(`магистратура/докторантура на витрине gsr: ${gradCount}`);
+      gaps.push({ why: '/gsr/graduate-studies/ — самая полная доступная витрина (21 магистерская программа + Occupational Therapy Doctorate), но не гарантированно полный список всех магистратур по всем департаментам (единого открытого реестра на сайте нет, только PDF university-catalog); минимум 2 программы карточки («MA Humanities», «MS Criminal Justice Administration») существуют на сайте отдельными страницами, но на этой витрине не перечислены', url: gsrUrl });
+    } catch (e) {
+      gaps.push({ why: `не удалось загрузить ${gsrUrl}: ${e.message}`, url: gsrUrl });
+    }
+
+    return { programs, fees, gaps };
   },
 };

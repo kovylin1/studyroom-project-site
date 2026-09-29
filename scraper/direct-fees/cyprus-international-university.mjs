@@ -25,14 +25,64 @@
 // проверены сайт-мап (пуст) и страницы всех разведанных программ (у каждой вкладка
 // «Fees» отправляет на тот же калькулятор, ни цифры). Строк цены нет — честный GAP,
 // а не «не нашли с первого раза»: изобретать сумму по правилу 1 нельзя.
+//
+// СПИСОК ПРОГРАММ (добавлено 29.09.2026). Две сводные страницы дают полный каталог:
+//   https://www.ciu.edu.tr/en/programs/undergraduate  — 59 ссылок (включая
+//     параллельные варианты одной специальности: «Architecture» и «Architecture
+//     (BSc)», «Pharmacy (MPharm)» и «Pharmacy (PharmD)», «Law» и «Law (English)» —
+//     каждая ведёт на свою страницу программы, это разные записи, а не дубли);
+//   https://www.ciu.edu.tr/en/programs/postgraduate — 66 ссылок, магистратура и
+//     докторантура вперемешку.
+// Уровень не пришлось угадывать: текст ссылки на этих страницах сам подписан
+// хвостом «(Undergraduate)» / «(Master)» / «(PhD)» / «(Professional Doctorate)» —
+// сверено с <h1> самих программ (например «Architecture (BSc)», без хвоста
+// уровня) — поэтому хвост уровня срезаем, а внутренняя аббревиатура степени
+// (BSc/MSc/MA/PhD/MPharm/PharmD/DBA/DHM/MID/MFA/MAF/MArch/MA-LLM) остаётся
+// частью названия, как на самой странице программы. «Professional Doctorate»
+// (DBA, DBA German, DHM) — по существу докторская степень практика, ближайший
+// уровень схемы каталога — phd.
+// Карточка (24 «программы») почти целиком мусор старого пересбора: реальных
+// совпадений с сайтом по названию мало, «Başvuru Portalı», «Direct», «Direct-Entry
+// PhD», «Double Minor / Major Programs», «Pedagogical Formation» — не программы
+// (портал заявки, отдельный вступительный трек, зачётный минор, сертификат
+// педформации) и уйдут в cardProgramsNotOnSite — это ожидаемо, не недосбор.
+
+import { get, anchors, sleep } from './_lib.mjs';
+
+const UG_URL = 'https://www.ciu.edu.tr/en/programs/undergraduate';
+const PG_URL = 'https://www.ciu.edu.tr/en/programs/postgraduate';
+
+function stripLevelTag(title) {
+  return title.replace(/\s*\((Undergraduate|Master|PhD|Professional Doctorate)\)\s*$/i, '').trim();
+}
 
 export default {
   slug: 'cyprus-international-university',
   site: 'https://www.ciu.edu.tr/',
   async collect({ log }) {
     log('цены за платным JS-калькулятором sis.ciu.edu.tr с обязательной reCAPTCHA — без него ни одной суммы на сайте нет, см. комментарий в начале файла');
+
+    const programs = [];
+    for (const [url, defaultLevel] of [[UG_URL, 'bachelor'], [PG_URL, null]]) {
+      const html = get(url);
+      await sleep(500);
+      const seen = new Set();
+      for (const a of anchors(html, url)) {
+        const m = a.href.match(/\/en\/programs\/(undergraduate|postgraduate)\/([a-z0-9-]+)$/i);
+        if (!m || !a.text || seen.has(a.href)) continue;
+        seen.add(a.href);
+        let level = defaultLevel;
+        if (/\(Undergraduate\)/i.test(a.text)) level = 'bachelor';
+        else if (/\(Master\)/i.test(a.text)) level = 'master';
+        else if (/\(PhD\)/i.test(a.text) || /\(Professional Doctorate\)/i.test(a.text)) level = 'phd';
+        if (!level) continue;
+        programs.push({ title: stripLevelTag(a.text), level, url: a.href });
+      }
+    }
+    log(`программ на сайте: ${programs.length}`);
+
     return {
-      programs: [],
+      programs,
       fees: [],
       gaps: [
         {

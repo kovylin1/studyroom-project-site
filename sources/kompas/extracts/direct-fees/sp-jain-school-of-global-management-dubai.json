@@ -2,9 +2,70 @@
   "slug": "sp-jain-school-of-global-management-dubai",
   "site": "https://www.spjain.org/",
   "source": "official-direct-fees",
-  "scrapedAt": "2026-09-28T11:51:36.543Z",
-  "seconds": 5,
-  "programs": [],
+  "scrapedAt": "2026-09-29T05:37:21.798Z",
+  "seconds": 41,
+  "programs": [
+    {
+      "title": "Bachelor of Business Administration",
+      "level": "bachelor",
+      "url": "https://www.spjain.org/programs/undergraduate/bba"
+    },
+    {
+      "title": "Bachelor of Data Science",
+      "level": "bachelor",
+      "url": "https://www.spjain.org/programs/undergraduate/bachelor-of-data-science"
+    },
+    {
+      "title": "Bachelor of Economics",
+      "level": "bachelor",
+      "url": "https://www.spjain.org/programs/undergraduate/bachelor-of-economics"
+    },
+    {
+      "title": "Master of Global Business",
+      "level": "master",
+      "url": "https://www.spjain.org/programs/postgraduate/mgb"
+    },
+    {
+      "title": "Global MBA",
+      "level": "master",
+      "url": "https://www.spjain.org/programs/postgraduate/gmba"
+    },
+    {
+      "title": "Executive MBA",
+      "level": "master",
+      "url": "https://www.spjain.org/programs/postgraduate/executive-mba"
+    },
+    {
+      "title": "Master of Artificial Intelligence in Business",
+      "level": "master",
+      "url": "https://www.spjain.org/programs/postgraduate/master-of-artificial-intelligence-in-business"
+    },
+    {
+      "title": "Master of Applied Finance and Wealth Management",
+      "level": "master",
+      "url": "https://www.spjain.org/programs/postgraduate/master-of-applied-finance-and-wealth-management"
+    },
+    {
+      "title": "Master of Management",
+      "level": "master",
+      "url": "https://www.spjain.org/programs/postgraduate/master-of-management"
+    },
+    {
+      "title": "Business Management Program",
+      "level": "bachelor",
+      "url": "https://www.spjain.org/programs/undergraduate/business-management-program"
+    },
+    {
+      "title": "Data Science Program (DSP)",
+      "level": "bachelor",
+      "url": "https://www.spjain.org/programs/undergraduate/data-science-program"
+    },
+    {
+      "title": "Doctor of Business Administration",
+      "level": "phd",
+      "url": "https://www.spjain.org/programs/doctorate-business-administration"
+    }
+  ],
   "fees": [
     {
       "amount": 28300,
@@ -113,6 +174,42 @@
       "programUrl": "https://www.spjain.org/programs/undergraduate/bachelor-of-data-science",
       "url": "https://www.spjain.org/programs/undergraduate/bachelor-of-data-science/fees",
       "raw": "Total Compulsory Tuition Fees (2028-2029): AUD 43,700"
+    },
+    {
+      "amount": 60400,
+      "currency": "AUD",
+      "basis": "year",
+      "audience": null,
+      "scope": "program",
+      "title": "Bachelor of Economics",
+      "level": "bachelor",
+      "programUrl": "https://www.spjain.org/programs/undergraduate/bachelor-of-economics",
+      "url": "https://www.spjain.org/programs/undergraduate/bachelor-of-economics/fees",
+      "raw": "Total Compulsory Tuition Fees (Jan to Dec 2027): AUD 60,400"
+    },
+    {
+      "amount": 59040,
+      "currency": "AUD",
+      "basis": "year",
+      "audience": null,
+      "scope": "program",
+      "title": "Bachelor of Economics",
+      "level": "bachelor",
+      "programUrl": "https://www.spjain.org/programs/undergraduate/bachelor-of-economics",
+      "url": "https://www.spjain.org/programs/undergraduate/bachelor-of-economics/fees",
+      "raw": "Total Compulsory Tuition Fees (Jan to Dec 2028): AUD 59,040"
+    },
+    {
+      "amount": 10560,
+      "currency": "AUD",
+      "basis": "year",
+      "audience": null,
+      "scope": "program",
+      "title": "Bachelor of Economics",
+      "level": "bachelor",
+      "programUrl": "https://www.spjain.org/programs/undergraduate/bachelor-of-economics",
+      "url": "https://www.spjain.org/programs/undergraduate/bachelor-of-economics/fees",
+      "raw": "Total Compulsory Tuition Fees (Jan to April 2029): AUD 10,560"
     },
     {
       "amount": 38430,
@@ -276,7 +373,7 @@
       "basis": "program",
       "audience": null,
       "scope": "program",
-      "title": "Doctorate of Business Administration",
+      "title": "Doctor of Business Administration",
       "level": "phd",
       "programUrl": "https://www.spjain.org/programs/doctorate-business-administration",
       "url": "https://www.spjain.org/programs/doctorate-business-administration/fees",
@@ -288,7 +385,7 @@
       "basis": "program",
       "audience": null,
       "scope": "program",
-      "title": "Doctorate of Business Administration",
+      "title": "Doctor of Business Administration",
       "level": "phd",
       "programUrl": "https://www.spjain.org/programs/doctorate-business-administration",
       "url": "https://www.spjain.org/programs/doctorate-business-administration/fees",
@@ -300,7 +397,7 @@
       "basis": "program",
       "audience": null,
       "scope": "program",
-      "title": "Doctorate of Business Administration",
+      "title": "Doctor of Business Administration",
       "level": "phd",
       "programUrl": "https://www.spjain.org/programs/doctorate-business-administration",
       "url": "https://www.spjain.org/programs/doctorate-business-administration/fees",
@@ -309,32 +406,36 @@
   ],
   "gaps": [
     {
-      "url": "https://www.spjain.org/programs/undergraduate/bbc/fees",
-      "why": "страница 404 — у BBC нет своей fees-подстраницы"
+      "why": "мягкий 404 — у ссылки https://www.spjain.org/programs/undergraduate/bbc нет своей страницы программы (h1: UNDERGRADUATE Programs)",
+      "url": "https://www.spjain.org/programs/undergraduate/bbc"
     },
     {
-      "url": "https://www.spjain.org/programs/undergraduate/bec/fees",
-      "why": "мягкий 404 — отдаёт общий шаблон \"Undergraduate Programs\" без таблицы цены"
+      "why": "мягкий 404 — у ссылки https://www.spjain.org/programs/undergraduate/bec нет своей страницы программы (h1: UNDERGRADUATE Programs)",
+      "url": "https://www.spjain.org/programs/undergraduate/bec"
     },
     {
-      "url": "https://www.spjain.org/programs/undergraduate/business-management-program/fees",
-      "why": "страница 404"
+      "why": "HBL Program (SP Jain и Glion) — та же программа, что уже пропущена под spjain.co.in, зеркало не по Dubai-кампусу",
+      "url": "https://www.spjain.org/programs/partnership/master-of-arts-in-hospitality-and-tourism-entrepreneurship"
     },
     {
-      "url": "https://www.spjain.org/programs/undergraduate/data-science-program/fees",
-      "why": "страница 404"
+      "why": "MGLuxM (spjain.co.in) — цена только в INR, не входит в схему каталога",
+      "url": "https://www.spjain.co.in/programs/postgraduate/mgluxm/fees"
     },
     {
-      "url": "https://www.spjain.org/programs/postgraduate/executive-mba/fees",
-      "why": "страница 404"
+      "why": "HBL (spjain.co.in) — местная часть в INR, партнёрская — в CHF по рассрочкам за несколько лет без общей суммы; без сложения строк цену не собрать",
+      "url": "https://www.spjain.co.in/programs/postgraduate/hospitality-business-leadership/fees"
     },
     {
-      "url": "https://www.spjain.co.in/programs/postgraduate/mgluxm/fees",
-      "why": "цена только в INR, не входит в схему каталога"
+      "why": "на странице fees не нашлась ни таблица \"Currency/Total Compulsory Tuition Fees\", ни \"Total Program Cost\"",
+      "url": "https://www.spjain.org/programs/postgraduate/executive-mba/fees"
     },
     {
-      "url": "https://www.spjain.co.in/programs/postgraduate/hospitality-business-leadership/fees",
-      "why": "местная часть в INR, партнёрская — в CHF по рассрочкам за несколько лет без общей суммы; без сложения строк цену не собрать"
+      "why": "на странице fees не нашлась ни таблица \"Currency/Total Compulsory Tuition Fees\", ни \"Total Program Cost\"",
+      "url": "https://www.spjain.org/programs/undergraduate/business-management-program/fees"
+    },
+    {
+      "why": "на странице fees не нашлась ни таблица \"Currency/Total Compulsory Tuition Fees\", ни \"Total Program Cost\"",
+      "url": "https://www.spjain.org/programs/undergraduate/data-science-program/fees"
     }
   ]
 }
