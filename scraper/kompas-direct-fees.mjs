@@ -52,7 +52,10 @@ const TODAY = new Date().toISOString().slice(0, 10);
 
 const BASES = new Set(['year', 'program']);
 const SKIP_AUDIENCE = new Set(['domestic', 'eu']);
-const LEVELS = new Set(['foundation', 'bachelor', 'master', 'phd', 'diploma', 'english-language', 'short-course', 'pathway']);
+// Уровни схемы сайта (programLevel в site/src/schema/university.ts). diploma/associate в схеме нет.
+const LEVELS = new Set(['foundation', 'bachelor', 'master', 'phd', 'english-language', 'short-course']);
+const ADD_PROGRAMS = argv.includes('--add-programs');
+const PLACEHOLDER = /contact studyroom/i;
 
 const readJson = (f) => JSON.parse(fs.readFileSync(f, 'utf8').replace(/^﻿/, ''));
 const digits = (s) => String(s ?? '').replace(/[^\d]/g, '');
@@ -64,6 +67,8 @@ function rejectReason(f) {
   if (!SCHEMA_CURRENCIES.has(f.currency)) return `currency-${f.currency ?? 'none'}`;
   if (!BASES.has(f.basis)) return `basis-${f.basis ?? 'none'}`;
   if (SKIP_AUDIENCE.has(f.audience)) return `audience-${f.audience}`;
+  // Цена со скидкой — не цена программы (Demiroğlu Bilim даёт только «% 50 İNDİRİMLİ»).
+  if (/[iİı]nd[iİı]r[iİı]m|discount|scholarship|early[- ]bird/i.test(f.raw)) return 'discounted-price';
   // Заочная/дистанционная цена дешевле очной, и по правилу минимума она подменяла
   // бы цену программы (TSI: «Part time: 3800 EUR» вместо очной). Студенты из
   // Казахстана едут на очное — такие строки не едут (28.09.2026).
@@ -142,6 +147,37 @@ function plan(extract, card) {
     siteProgramsNotInCardSample: siteOnly.slice(0, 8).map((p) => p.title),
     gaps: extract.gaps || [],
   };
+}
+
+const slugify = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .replace(/ı/g, 'i').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 90).replace(/-+$/, '');
+
+/**
+ * Заводит в карточку программы с сайта вуза, которых в ней нет (--add-programs).
+ * Уровень обязателен и должен быть из схемы — без него программа не создаётся.
+ * Заглушка «Programmes — contact StudyRoom» снимается, если завелась хоть одна.
+ */
+function addPrograms(card, extract) {
+  const programs = card.programs || [];
+  const idx = buildIndex(programs);
+  const taken = new Set(programs.map((p) => p.slug));
+  const added = [], skipped = [];
+  for (const sp of extract.programs || []) {
+    if (!sp.title || !LEVELS.has(sp.level)) { skipped.push({ title: sp.title, why: `level-${sp.level ?? 'none'}` }); continue; }
+    if (matchProgram(idx, { title: sp.title, level: sp.level, programUrl: sp.url }).how !== 'none') continue;
+    if (added.some((a) => a.title.toLowerCase() === sp.title.toLowerCase())) continue;
+    let slug = slugify(`${card.slug}-${sp.title}`), n = 2;
+    while (taken.has(slug)) slug = `${slugify(`${card.slug}-${sp.title}`)}-${n++}`;
+    taken.add(slug);
+    added.push({ slug, title: sp.title, level: sp.level, ...(sp.url ? { programUrl: sp.url } : {}),
+      source: 'official', verifiedBySite: true, kompasStatus: 'source-added', kompasCheckedAt: TODAY });
+  }
+  if (added.length) {
+    const drop = programs.filter((p) => PLACEHOLDER.test(p.title));
+    for (const p of drop) delete card.tuition?.byProgram?.[p.slug];
+    card.programs = [...programs.filter((p) => !PLACEHOLDER.test(p.title)), ...added];
+  }
+  return { added, skipped };
 }
 
 /** Пишет назначенные цены в карточку. Только туда, где цены ещё не было. */
@@ -228,9 +264,15 @@ async function main() {
       continue;
     }
     const card = readJson(cardFile);
+    let addedPrograms = null;
+    if (ADD_PROGRAMS) {
+      addedPrograms = addPrograms(card, extract);
+      if (APPLY && addedPrograms.added.length) fs.writeFileSync(cardFile, JSON.stringify(card, null, 2) + '\n', 'utf8');
+    }
     const p = plan(extract, card);
+    if (addedPrograms) p.addedPrograms = addedPrograms.added.length, p.addedProgramsSample = addedPrograms.added.slice(0, 8).map((a) => a.title), p.skippedPrograms = addedPrograms.skipped;
     plans.push(p);
-    console.log(`${slug}: строк ${p.feeRows}, новых цен ${p.newPrices} (программных ${p.byScope.program}, уровневых ${p.byScope.level}), отбито ${p.rejected.length}, не сопоставлено ${p.unmatched.length}, вне диапазона ${p.implausible}`);
+    console.log(`${slug}: ${p.addedPrograms != null ? `программ заведено ${p.addedPrograms}, ` : ''}строк ${p.feeRows}, новых цен ${p.newPrices} (программных ${p.byScope.program}, уровневых ${p.byScope.level}), отбито ${p.rejected.length}, не сопоставлено ${p.unmatched.length}, вне диапазона ${p.implausible}`);
     if (APPLY) written += applyToCard(cardFile, card, p, backup);
   }
   await closeBrowser();

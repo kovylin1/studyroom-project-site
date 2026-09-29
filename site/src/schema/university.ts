@@ -24,7 +24,7 @@ export type ProgramLevel = z.infer<typeof programLevel>;
 
 // Валюты, которые принимает каталог. Один список на цену карточки и цену программы.
 export const CURRENCY_CODES = ['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF',
-  'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD'] as const;
+  'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD', 'TRY'] as const;
 const CURRENCY_CODES_SCHEMA = z.enum(CURRENCY_CODES);
 
 export const programSchema = z.object({

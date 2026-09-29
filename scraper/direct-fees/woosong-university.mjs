@@ -75,8 +75,10 @@ export default {
       if (row.length === 1 && /ESTIMATED ADDITIONAL COSTS/i.test(row[0])) { level = null; continue; } // дальше — не обучение
       if (!level) continue;
       if (row.length !== 2) continue;
-      const [title, cell] = row;
-      if (title === 'Program' || /Annual Tuition/i.test(title)) continue;
+      const [rawTitle, cell] = row;
+      // Пометки сайта в названии — не часть названия программы (29.09.2026).
+      const title = rawTitle.replace(/\s*\((AACSB accredited|formerly known as [^)]*)\)/gi, '').replace(/\*+$/, '').trim();
+      if (rawTitle === 'Program' || /Annual Tuition/i.test(title)) continue;
       const m = cell.match(/\$([\d,]+)/);
       if (!m) continue;
       const amount = Number(m[1].replace(/,/g, ''));
@@ -84,18 +86,14 @@ export default {
       sawAny = true;
       fees.push({
         title, level, amount, currency: 'USD', basis: 'year', audience: 'international', scope: 'program',
-        url: TUITION_URL, raw: `${title} ${cell}`,
+        url: TUITION_URL, raw: `${rawTitle} ${cell}`,
       });
     }
 
     if (!sawAny) gaps.push({ why: 'таблица ANNUAL TUITION FEE не распозналась — вёрстка могла измениться', url: TUITION_URL });
-    gaps.push({
-      why: 'карточка Woosong пока содержит только программу-заглушку "Programmes — contact '
-        + 'StudyRoom" без реальной программной сетки — программные цены выше почти наверняка '
-        + 'не сопоставятся ни с одной программой карточки (это ожидаемо, не баг парсера).',
-      url: TUITION_URL,
-    });
-
-    return { programs: [], fees, gaps };
+    // Своей программной сетки у карточки не было (заглушка «contact StudyRoom»):
+    // состав программ берём из той же таблицы — каждая строка это программа вуза.
+    const programs = fees.map((x) => ({ title: x.title, level: x.level, url: TUITION_URL }));
+    return { programs, fees, gaps };
   },
 };

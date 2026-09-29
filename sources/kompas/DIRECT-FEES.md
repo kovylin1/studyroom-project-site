@@ -1,25 +1,25 @@
-# Цены прямых партнёров с офсайтов — 2026-09-28
+# Цены прямых партнёров с офсайтов — 2026-09-29
 
 Скрипт `scraper/kompas-direct-fees.mjs`, парсеры `scraper/direct-fees/<slug>.mjs`.
 
 | вуз | программ | цен было | строк цены | новых цен | программных | уровневых | отбито | не сопоставлено | вне диапазона |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| anglo-american-university | 66 | 0 | 24 | 53 | 0 | 53 | 20 | 0 | 0 |
-| beykent-university | 96 | 0 | 156 | 84 | 84 | 0 | 0 | 50 | 0 |
-| burgundy-school-of-business | 37 | 0 | 20 | 19 | 19 | 0 | 0 | 1 | 0 |
+| anglo-american-university | 49 | 48 | 24 | 1 | 0 | 1 | 20 | 0 | 0 |
+| beykent-university | 96 | 84 | 156 | 0 | 0 | 0 | 0 | 50 | 0 |
+| burgundy-school-of-business | 38 | 19 | 20 | 1 | 1 | 0 | 1 | 0 | 0 |
 | california-state-university-dominguez-hills | 4 | 0 | 5 | 0 | 0 | 0 | 5 | 0 | 0 |
-| curtin-university-dubai | 47 | 1 | 25 | 16 | 16 | 0 | 2 | 0 | 0 |
+| curtin-university-dubai | 47 | 17 | 25 | 0 | 0 | 0 | 2 | 0 | 0 |
 | cyprus-international-university | 24 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| demiroglu-bilim-university | 11 | 0 | 21 | 0 | 0 | 0 | 21 | 0 | 0 |
-| final-international-university | 51 | 0 | 23 | 0 | 0 | 0 | 23 | 0 | 0 |
+| demiroglu-bilim-university | 11 | 0 | 21 | 0 | 0 | 0 | 19 | 2 | 0 |
+| final-international-university | 51 | 0 | 23 | 23 | 23 | 0 | 0 | 0 | 0 |
 | gedu-global-education | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| inti-international-university | 141 | 0 | 212 | 85 | 85 | 0 | 107 | 0 | 0 |
-| karelia-university-of-applied-sciences | 6 | 1 | 4 | 2 | 2 | 0 | 0 | 2 | 0 |
-| lane-college | 20 | 0 | 1 | 20 | 0 | 20 | 0 | 0 | 0 |
-| sp-jain-school-of-global-management-dubai | 17 | 0 | 25 | 8 | 8 | 0 | 2 | 0 | 0 |
-| transport-and-telecommunication-institute | 31 | 0 | 51 | 10 | 10 | 0 | 33 | 8 | 0 |
-| woosong-university | 1 | 0 | 32 | 0 | 0 | 0 | 0 | 32 | 0 |
-| xi-an-jiaotong-liverpool-university | 57 | 0 | 58 | 54 | 0 | 54 | 0 | 55 | 0 |
+| inti-international-university | 141 | 85 | 212 | 0 | 0 | 0 | 107 | 0 | 0 |
+| karelia-university-of-applied-sciences | 6 | 3 | 4 | 0 | 0 | 0 | 0 | 2 | 0 |
+| lane-college | 20 | 20 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| sp-jain-school-of-global-management-dubai | 17 | 8 | 25 | 0 | 0 | 0 | 2 | 0 | 0 |
+| transport-and-telecommunication-institute | 33 | 10 | 51 | 2 | 2 | 0 | 33 | 6 | 0 |
+| woosong-university | 28 | 0 | 32 | 28 | 28 | 0 | 0 | 4 | 0 |
+| xi-an-jiaotong-liverpool-university | 112 | 54 | 58 | 55 | 55 | 0 | 0 | 0 | 0 |
 
 ## anglo-american-university
 
@@ -61,7 +61,7 @@
 - пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-management-rse-developpement-durable-alternance
 - пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-strategy-consulting-business-transformation-alternance
 - пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-data-management-business-analytics-alternance
-- не сопоставлено (none): Master of Science MSc Global Marketing & Brand Strategy — 16500 EUR
+- отбито discounted-price: 1
 
 ## california-state-university-dominguez-hills
 
@@ -85,13 +85,14 @@
 - пробел: для программ карточки на сайте есть только 50%-скидочная цена «ek yerleştirme»: 100%-стипендийная строка везде «---», полной (list) цены нет нигде на сайте — https://demiroglu.bilim.edu.tr/ogrenci/burslar-ve-ucretler
 - пробел: таблица — это цены дополнительного зачисления (ek yerleştirme) 2026-2027, не общий годовой прайс-лист; другой страницы с ценами на сайте не найдено — https://demiroglu.bilim.edu.tr/ogrenci/burslar-ve-ucretler
 - пробел: валюта только TRY — USD/EUR-эквивалента сайт не публикует, хотя карточка изначально настроена на USD — https://demiroglu.bilim.edu.tr/ogrenci/burslar-ve-ucretler
-- отбито currency-TRY: 21
+- не сопоставлено (none): ANESTEZİ — 900000 TRY
+- не сопоставлено (none): İLK VE ACİL YARDIM — 900000 TRY
+- отбито discounted-price: 19
 
 ## final-international-university
 
 - пробел: вся цена только в TRY — сайт не публикует USD/EUR-эквивалент; валюта TRY схемой каталога не принимается — https://www.final.edu.tr/ucretrobotu/atotalpricingTCdev1son1.js
 - пробел: магистратура (Tezli/Tezsiz) в калькуляторе не считается вовсе — цены нет ни для одной программы магистратуры — https://www.final.edu.tr/ucretrobotu/
-- отбито currency-TRY: 23
 
 ## gedu-global-education
 
@@ -119,8 +120,6 @@
 
 ## transport-and-telecommunication-institute
 
-- не сопоставлено (none): Computer Science: Artificial Intelligence Double Degree with UWE Bristol — 6500 EUR
-- не сопоставлено (none): Aviation Management and Sustainability Double Degree with UWE Bristol — 6500 EUR
 - не сопоставлено (ambiguous): Computer Engineering and Electronics — 3900 EUR
 - не сопоставлено (ambiguous): Business and Management — 4500 EUR
 - не сопоставлено (none): Smart Electronic Systems and Robotics — 4500 EUR
@@ -132,28 +131,8 @@
 
 ## woosong-university
 
-- пробел: карточка Woosong пока содержит только программу-заглушку "Programmes — contact StudyRoom" без реальной программной сетки — программные цены выше почти наверняка не сопоставятся ни с одной программой карточки (это ожидаемо, не баг парсера). — https://english.wsu.ac.kr/page/index.jsp?code=eng0302
-- не сопоставлено (none): AI and Big Data — 7794 USD
-- не сопоставлено (none): Business Administration (AACSB accredited) — 12592 USD
-- не сопоставлено (none): Global Hospitality (formerly known as Global Hotel Management) — 6792 USD
-- не сопоставлено (none): AI Management (formerly known as Global Management) — 6792 USD
-- не сопоставлено (none): Media and Communication Arts — 7794 USD
-- не сопоставлено (none): Global Culinary Arts — 8442 USD
-- не сопоставлено (none): Global Restaurant Management (formerly known as Restaurant Entrepreneurship) — 8442 USD
-- не сопоставлено (none): Artificial Intelligence (AI) — 10494 USD
-- не сопоставлено (none): Data Science — 10494 USD
-- не сопоставлено (none): K-Beauty Design — 7998 USD
-
-## xi-an-jiaotong-liverpool-university
-
-- не сопоставлено (none): Advanced Intelligent Manufacturing Technology MRes — 200000 CNY
-- не сопоставлено (none): Advanced Microelectronic Technology and Materials MRes — 200000 CNY
-- не сопоставлено (none): Advanced Robotics Systems MSc — 200000 CNY
-- не сопоставлено (none): Applied Linguistics (with specialisation in multilingualism) MA — 180000 CNY
-- не сопоставлено (none): Applied Mathematics MSc — 180000 CNY
-- не сопоставлено (none): Actuarial Science MSc — 150000 CNY
-- не сопоставлено (none): Applied Statistics MSc — 200000 CNY
-- не сопоставлено (none): Advanced Chemical Sciences MRes — 200000 CNY
-- не сопоставлено (none): Applied Informatics MSc — 180000 CNY
-- не сопоставлено (none): Architectural Design MArchDes — 200000 CNY
+- не сопоставлено (none): Baking and Pastry — 7754 USD
+- не сопоставлено (none): Culinary Arts — 7754 USD
+- не сопоставлено (none): K-Beauty Makeup — 5706 USD
+- не сопоставлено (none): K-Pop Music and Dance — 5706 USD
 
