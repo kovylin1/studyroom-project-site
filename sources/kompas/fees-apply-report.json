@@ -1,27 +1,27 @@
 {
  "dry": false,
  "sources": [
-  "gedu"
+  "collab"
  ],
  "stats": {
-  "sources": "gedu",
-  "extracts": 13,
-  "linked": 10,
-  "candidates": 53,
+  "sources": "collab",
+  "extracts": 41,
+  "linked": 41,
+  "candidates": 134,
   "skippedCurrency": 0,
   "skippedBucket": 0,
-  "skippedNoMatch": 3,
-  "skippedNoCard": 3,
+  "skippedNoMatch": 233,
+  "skippedNoCard": 0,
   "skippedAudience": 0,
   "skippedPartTime": 0,
-  "matchedByAward": 0,
+  "matchedByAward": 8,
   "ambiguousMatch": 0,
-  "programsWritten": 52,
-  "cardsTouched": 5,
-  "overwritten": 49,
+  "programsWritten": 134,
+  "cardsTouched": 14,
+  "overwritten": 27,
   "ownCurrency": 0,
-  "variantPrograms": 1,
-  "variantSums": 2,
+  "variantPrograms": 0,
+  "variantSums": 0,
   "foreignQuoteDemoted": 0,
   "skippedPathwayFee": 0,
   "campusDemoted": 0,
@@ -29,421 +29,1076 @@
  },
  "changes": [
   {
-   "catalogSlug": "ema",
-   "program": "ema-bachelor-applied-management-and-economics-bachelor",
-   "fee": 9000,
-   "currency": "EUR",
-   "source": "gedu",
-   "prev": 9000
-  },
-  {
-   "catalogSlug": "ema",
-   "program": "ema-mba-sustainable-leadership-master",
+   "catalogSlug": "aarhus-university",
+   "program": "aarhus-university-economics-and-business-administration-bsc",
    "fee": 10000,
    "currency": "EUR",
-   "source": "gedu",
-   "prev": 10000
-  },
-  {
-   "catalogSlug": "gbs-malta",
-   "program": "gbs-malta-bsc-hons-business-management-bachelor",
-   "fee": 6000,
-   "currency": "EUR",
-   "source": "gedu",
-   "prev": 6000
-  },
-  {
-   "catalogSlug": "gbs-malta",
-   "program": "gbs-malta-master-of-business-administration-master",
-   "fee": 10000,
-   "currency": "EUR",
-   "source": "gedu",
-   "prev": 10000
-  },
-  {
-   "catalogSlug": "gbs-malta",
-   "program": "gbs-malta-bsc-hons-computer-science-and-information-technology-bachelor",
-   "fee": 6000,
-   "currency": "EUR",
-   "source": "gedu",
-   "prev": 6000
-  },
-  {
-   "catalogSlug": "gbs-malta",
-   "program": "gbs-malta-msc-information-technology-management-master",
-   "fee": 10000,
-   "currency": "EUR",
-   "source": "gedu",
-   "prev": 10000
-  },
-  {
-   "catalogSlug": "gbs-malta",
-   "program": "gbs-malta-bsc-hons-health-social-care-and-wellbeing-bachelor",
-   "fee": 6000,
-   "currency": "EUR",
-   "source": "gedu",
-   "prev": 18000
-  },
-  {
-   "catalogSlug": "gbs-malta",
-   "program": "gbs-malta-master-of-public-health-master",
-   "fee": 10000,
-   "currency": "EUR",
-   "source": "gedu",
-   "prev": 10000
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-ba-hons-global-business-and-entrepreneurship-with-foundation-year-bachelor",
-   "fee": 5760,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 5760
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-bsc-hons-business-tourism-management-bachelor",
-   "fee": 5760,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 5760
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-ba-hons-global-business-business-management-with-foundation-year-bachelor",
-   "fee": 5760,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 5760
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-bsc-hons-project-management-with-foundation-year-bachelor",
-   "fee": 5760,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 5760
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-msc-global-business-master",
-   "fee": 8595,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 8595
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-bsc-hons-health-wellbeing-and-social-care-with-foundation-year-bachelor",
-   "fee": 9355,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 9535
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-bsc-hons-computing-with-foundation-year-bachelor",
-   "fee": 9535,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 9535
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-bsc-hons-construction-management-with-foundation-year-bachelor",
-   "fee": 9535,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 9535
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-bsc-hons-accounting-financial-management-bachelor",
-   "fee": 5760,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 5760
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-ba-hons-business-and-management-level-6-top-bachelor",
-   "fee": 9535,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 9535
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-bsc-hons-health-wellbeing-and-social-care-level-6-direct-entry-bachelor",
-   "fee": 9535,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 9535
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-bsc-hons-construction-management-level-6-top-bachelor",
-   "fee": 9535,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 9535
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-msc-project-management-master",
-   "fee": 9535,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 9535
-  },
-  {
-   "catalogSlug": "global-banking-school",
-   "program": "global-banking-school-bsc-hons-psychology-with-counselling-with-foundation-year-bachelor",
-   "fee": 9535,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 9535
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-msc-global-sustainable-development-full-time-master",
-   "fee": 10700,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 10700
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-pgdip-engineering-management-master",
-   "fee": 8300,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 8300
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-mba-capital-markets-finance-master",
-   "fee": 4000,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 8700
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-mba-marketing-master",
-   "fee": 4000,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 8700
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-mba-financial-technology-fintech-master",
-   "fee": 4000,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 8700
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-mba-maritime-operations-master",
-   "fee": 4000,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 8700
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-mba-entrepreneurship-innovation-master",
-   "fee": 4000,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 8700
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-bsc-sustainable-maritime-operations-bachelor",
-   "fee": 8300,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 8300
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-msc-sustainability-in-practice-master",
-   "fee": 7200,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 7200
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-msc-advanced-oceanography-for-professionals-master",
-   "fee": 7200,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 7200
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-msc-advanced-navigation-for-professionals-master",
-   "fee": 7200,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 7200
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-msc-advanced-meteorology-for-professionals-master",
-   "fee": 7200,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 7200
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-bsc-hons-global-sustainable-development-bachelor",
-   "fee": 9535,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 9535
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-msc-advanced-hydrography-for-professionals-master",
-   "fee": 7200,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 7200
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-msc-sustainable-maritime-operations-master-2-2",
-   "fee": 7200,
-   "currency": "GBP",
-   "source": "gedu",
-   "variants": 2,
-   "prev": 7200
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-msc-engineering-for-marine-professionals-master",
-   "fee": 7200,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 7200
-  },
-  {
-   "catalogSlug": "mla-college",
-   "program": "mla-college-bsc-hons-sustainable-maritime-operations-bachelor",
-   "fee": 9535,
-   "currency": "GBP",
-   "source": "gedu",
-   "prev": 9535
-  },
-  {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-bachelor-of-arts-ininternational-relations-and-diplomacy-bachelor",
-   "fee": 3420,
-   "currency": "USD",
-   "source": "gedu",
-   "prev": 3420
-  },
-  {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-bachelor-of-science-in-international-business-bachelor",
-   "fee": 17610,
-   "currency": "USD",
-   "source": "gedu",
-   "prev": 17610
-  },
-  {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-bsc-in-international-hospitality-tourism-management-degree",
-   "fee": 17610,
-   "currency": "USD",
-   "source": "gedu",
+   "source": "collab",
    "prev": null
   },
   {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-bachelor-of-science-in-international-marketing-degree",
-   "fee": 17610,
+   "catalogSlug": "bau-global",
+   "program": "bau-global-pilotage",
+   "fee": 7900,
    "currency": "USD",
-   "source": "gedu",
-   "prev": 17610
-  },
-  {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-bsc-in-computer-science",
-   "fee": 17610,
-   "currency": "USD",
-   "source": "gedu",
+   "source": "collab",
    "prev": null
   },
   {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-bs-in-business-analytics",
-   "fee": 17610,
-   "currency": "USD",
-   "source": "gedu",
+   "catalogSlug": "bsbi",
+   "program": "bsbi-information-technology-it",
+   "fee": 12000,
+   "currency": "EUR",
+   "source": "collab",
    "prev": null
   },
   {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-master-of-arts-in-international-relations-and-diplomacy",
-   "fee": 19620,
-   "currency": "USD",
-   "source": "gedu",
-   "prev": 19560
+   "catalogSlug": "epita-school-of-engineering-and-computer-science",
+   "program": "epita-school-of-engineering-and-computer-science-msc-artificial-intelligence-marketing-strategy",
+   "fee": 19000,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": 19450
   },
   {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-master-of-science-in-digital-marketing-and-e-master",
-   "fee": 19620,
-   "currency": "USD",
-   "source": "gedu",
-   "prev": 19620
+   "catalogSlug": "epita-school-of-engineering-and-computer-science",
+   "program": "epita-school-of-engineering-and-computer-science-msc-artificial-intelligence-systems",
+   "fee": 18000,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": 18050
   },
   {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-master-of-science-in-global-finance",
-   "fee": 19620,
-   "currency": "USD",
-   "source": "gedu",
-   "prev": 16560
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-international-business",
+   "fee": 9031,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
   },
   {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-master-of-science-in-sustainability-management",
-   "fee": 19410,
-   "currency": "USD",
-   "source": "gedu",
-   "prev": 16300
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-marketing-management",
+   "fee": 9031,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
   },
   {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-master-of-science-in-data-science",
-   "fee": 19410,
-   "currency": "USD",
-   "source": "gedu",
-   "prev": 16300
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-logistics-management",
+   "fee": 9031,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
   },
   {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-master-of-business-administration-mba-master",
-   "fee": 19620,
-   "currency": "USD",
-   "source": "gedu",
-   "prev": 19620
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-mechanical-engineering",
+   "fee": 9031,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
   },
   {
-   "catalogSlug": "schiller-international-university",
-   "program": "schiller-international-university-mba-in-international-business-degree-program",
-   "fee": 24525,
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-electrical-and-electronic-engineering",
+   "fee": 9031,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-automotive-engineering",
+   "fee": 9031,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-industrial-engineering-and-management",
+   "fee": 9031,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-physiotherapy",
+   "fee": 9031,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-master-of-business-administration",
+   "fee": 8986,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-information-technology",
+   "fee": 8986,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-master-of-music",
+   "fee": 8986,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-for-the-specific-master-s-program-to-which-they-are-applying",
+   "fee": 8986,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-applicants-to-some-master-s-programs-may-require-relevant-jo",
+   "fee": 8986,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "fontys-university",
+   "program": "fontys-university-a-personal-statement-of-purpose-expressing-your-rationale-fo",
+   "fee": 8986,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ibs-budapest",
+   "program": "ibs-budapest-financial-management",
+   "fee": 7400,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ibs-budapest",
+   "program": "ibs-budapest-business-and-diplomacy",
+   "fee": 7400,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ibs-budapest",
+   "program": "ibs-budapest-marketing-management",
+   "fee": 7400,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ibs-budapest",
+   "program": "ibs-budapest-management-and-human-resources-business-psychology",
+   "fee": 7400,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ibs-budapest",
+   "program": "ibs-budapest-management-and-tourism",
+   "fee": 7400,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ibs-budapest",
+   "program": "ibs-budapest-international-management",
+   "fee": 4700,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ibs-budapest",
+   "program": "ibs-budapest-human-resources-management",
+   "fee": 4700,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "istinye-university",
+   "program": "istinye-university-a-bachelor-s-degree-or-international-equivalent-at-least-lower-second-class-or-co",
+   "fee": 5296,
    "currency": "USD",
-   "source": "gedu",
-   "prev": 24525
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "lethbridge",
+   "program": "lethbridge-bachelor-of-science-biochemistry",
+   "fee": 20000,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": 23500
+  },
+  {
+   "catalogSlug": "lethbridge",
+   "program": "lethbridge-bachelor-of-science-computer-science",
+   "fee": 20000,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": 23500
+  },
+  {
+   "catalogSlug": "lethbridge",
+   "program": "lethbridge-bachelor-of-arts-economics",
+   "fee": 20000,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": 21500
+  },
+  {
+   "catalogSlug": "lethbridge",
+   "program": "lethbridge-bachelor-of-arts-psychology",
+   "fee": 20000,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": 21500
+  },
+  {
+   "catalogSlug": "lethbridge",
+   "program": "lethbridge-master-of-science-health-sciences",
+   "fee": 14208,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": 19500
+  },
+  {
+   "catalogSlug": "lethbridge",
+   "program": "lethbridge-master-of-nursing",
+   "fee": 14208,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": 19500
+  },
+  {
+   "catalogSlug": "lethbridge",
+   "program": "lethbridge-master-of-arts-political-science",
+   "fee": 14208,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": 16500
+  },
+  {
+   "catalogSlug": "masaryk-university-czech",
+   "program": "masaryk-university-czech-general-medicine",
+   "fee": 11760,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "masaryk-university-czech",
+   "program": "masaryk-university-czech-english-language-and-literature-bachelor",
+   "fee": 2500,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "masaryk-university-czech",
+   "program": "masaryk-university-czech-international-relations-and-european-politics-bachelor",
+   "fee": 2200,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": 3000
+  },
+  {
+   "catalogSlug": "masaryk-university-czech",
+   "program": "masaryk-university-czech-business-management-master",
+   "fee": 3500,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "masaryk-university-czech",
+   "program": "masaryk-university-czech-computer-systems-communication-and-security",
+   "fee": 3000,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": 4500
+  },
+  {
+   "catalogSlug": "masaryk-university-czech",
+   "program": "masaryk-university-czech-visual-informatics-master",
+   "fee": 3000,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": 4500
+  },
+  {
+   "catalogSlug": "masaryk-university-czech",
+   "program": "masaryk-university-czech-software-systems-and-services-management-master",
+   "fee": 3000,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": 4500
+  },
+  {
+   "catalogSlug": "masaryk-university-czech",
+   "program": "masaryk-university-czech-cultural-sociology",
+   "fee": 3000,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": 3000
+  },
+  {
+   "catalogSlug": "masaryk-university-czech",
+   "program": "masaryk-university-czech-conflict-and-democracy-studies",
+   "fee": 3000,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": 3000
+  },
+  {
+   "catalogSlug": "masaryk-university-czech",
+   "program": "masaryk-university-czech-energy-policy-studies",
+   "fee": 3000,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": 3000
+  },
+  {
+   "catalogSlug": "masaryk-university-czech",
+   "program": "masaryk-university-czech-public-and-social-policy-and-human-resources-master",
+   "fee": 3000,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": 3000
+  },
+  {
+   "catalogSlug": "rome-university-of-fine-arts",
+   "program": "rome-university-of-fine-arts-painting",
+   "fee": 6500,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "rome-university-of-fine-arts",
+   "program": "rome-university-of-fine-arts-ma-visual-and-innovation-design",
+   "fee": 6500,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "rome-university-of-fine-arts",
+   "program": "rome-university-of-fine-arts-cinema",
+   "fee": 6500,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "rome-university-of-fine-arts",
+   "program": "rome-university-of-fine-arts-graphic-design",
+   "fee": 6500,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "rome-university-of-fine-arts",
+   "program": "rome-university-of-fine-arts-set-design",
+   "fee": 6500,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "rome-university-of-fine-arts",
+   "program": "rome-university-of-fine-arts-ma-fine-arts",
+   "fee": 520,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "southern-denmark-university",
+   "program": "southern-denmark-university-diploma-and-transcript-of-the-last-three-years",
+   "fee": 6500,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "southern-denmark-university",
+   "program": "southern-denmark-university-explanation-of-the-grade-scale-used-in-the-undergraduate-dip",
+   "fee": 6500,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-business-administration",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": 11800
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-economics",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": 11800
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-computer-engineering",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": 11800
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-electrical-and-electronics-engineering",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": 11800
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-industrial-engineering",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": 11800
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-mechanical-engineering",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": 11800
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-civil-engineering",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": 11800
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-architecture",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": 11800
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-psychology",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": 11800
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-mathematics",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": 11800
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-master-of-business-administration-mba",
+   "fee": 4000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-master-of-arts-in-economics",
+   "fee": 4000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-master-of-arts-in-history",
+   "fee": 4000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-master-of-science-in-computer-engineering",
+   "fee": 4000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-master-of-science-in-industrial-engineering",
+   "fee": 4000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-master-of-science-in-mathematics",
+   "fee": 4000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-you-should-have-a-minimum-of-60-on-the-attestat-diploma-or-a-gpa-of-at-least-3-out-of",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "ted-university",
+   "program": "ted-university-you-must-have-a-bachelor-s-degree-from-a-recognized-college",
+   "fee": 7000,
+   "currency": "USD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-accounting",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-art-performance",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-biology",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-business-administration",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-chemistry",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-classical-and-medieval-studies",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-computer-science",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-economics",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-electronic-systems-engineering",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-english",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-film-production-film-production",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-film-studies",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-finance",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-health-promotion",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-health-studies",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-industrial-systems-engineering",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-international-studies",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-journalism",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-marketing",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-mathematics-and-statistics",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-clinical-psychology",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-experimental-and-applied-psychology",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-political-science",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-human-resource-administration",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-electronic-systems-engineering-ese",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-industrial-systems-engineering-ise",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-petroleum-systems-engineering-pse",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-software-systems-engineering-sse-software-systems-engineerin",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-public-administration",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-economic-analysis-for-public-policy",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-executive-mba",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-human-resource",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-film-media-studies",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-music-voice",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-collaborative-nurse-practitioner",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-mathematics-statistics",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-physics",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-high-school-transcripts",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-letter-of-intent",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-portfolio-components-if-required-by-the-program",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-ielts-6-5-in-each-section-6-0-and-above",
+   "fee": 21690,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-online-application-form",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-gpa-3-3-4",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-university-transcript",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "university-of-regina",
+   "program": "university-of-regina-language-proficiency-certificate-toefl-ibt-83-in-each-sectio",
+   "fee": 16420,
+   "currency": "CAD",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-bachelor-of-business-administration-bba-with-various-special",
+   "fee": 9800,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-bachelor-of-international-business-administration-iba",
+   "fee": 9800,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-bachelor-of-science-bsc-in-event-management",
+   "fee": 9800,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-bachelor-of-science-bsc-in-international-tourism-management",
+   "fee": 9800,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-bachelor-of-science-bsc-in-international-hospitality-managem",
+   "fee": 9800,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-bachelor-of-science-bsc-in-sport-business-management",
+   "fee": 9800,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-master-of-business-administration-mba-with-various-specializ",
+   "fee": 18300,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-master-of-science-msc-in-international-event-management",
+   "fee": 18300,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-master-of-science-msc-in-international-tourism-management",
+   "fee": 18300,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-master-of-science-msc-in-international-hospitality-managemen",
+   "fee": 18300,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-you-ll-need-to-demonstrate-english-language-competency-throu",
+   "fee": 9800,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-transcripts-from-previous-academic-institutions-including-yo",
+   "fee": 9800,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-international-students-who-do-not-reside-in-the-european-uni",
+   "fee": 18300,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-bachelor-s-degree-or-hnd-equivalent-is-required-as-well-as-a",
+   "fee": 9800,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-prior-to-beginning-the-course-if-you-are-a-student-with-non",
+   "fee": 9800,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-you-must-provide-a-cv-or-resume-detailing-your-academic-and",
+   "fee": 9800,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-you-should-complete-the-university-s-online-application-form",
+   "fee": 18300,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
+  },
+  {
+   "catalogSlug": "wittenborg",
+   "program": "wittenborg-you-should-have-work-experience-for-mba-programs",
+   "fee": 18300,
+   "currency": "EUR",
+   "source": "collab",
+   "prev": null
   }
  ]
 }

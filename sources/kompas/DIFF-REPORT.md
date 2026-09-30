@@ -1,6 +1,6 @@
 # КОМПАС — сессия 4: расхождения «каталог vs источник»
 
-**Дата:** 2026-09-27 · сети нет, каталог не тронут (только чтение).
+**Дата:** 2026-09-30 · сети нет, каталог не тронут (только чтение).
 
 ## Сводка
 
@@ -12,17 +12,17 @@
 | Сверить не с чем: источник за логином | 0 (QS, IAPro) |
 | Сверить не с чем: источник без программ | 11 (Navitas, CATS) |
 | Сверить не с чем: источник готов, выгрузки по вузу нет | 121 |
-| Программ в каталоге (сверенные вузы) | 113450 |
-| Программ у источников (объединение) | 79576 |
-| Совпало названий | 75879 (из них по написанию: 179) |
-| Есть в каталоге, нет у источника | 37571 |
-| Есть у источника, нет в каталоге | 3697 |
-| Цена расходится | 1535 |
+| Программ в каталоге (сверенные вузы) | 113477 |
+| Программ у источников (объединение) | 79477 |
+| Совпало названий | 75874 (из них по написанию: 178) |
+| Есть в каталоге, нет у источника | 37603 |
+| Есть у источника, нет в каталоге | 3603 |
+| Цена расходится | 1534 |
 | **Валюта расходится** | **2295** |
-| У источника цена есть, в каталоге нет | 194 |
+| У источника цена есть, в каталоге нет | 191 |
 | Кампусы источника, которых нет в карточке | 412 |
 
-Кейсов в панель: **1869** — kompas_no_extract 121, kompas_programs_missing 188, kompas_programs_extra 518, kompas_campus_missing 243, kompas_fee_currency 79, kompas_fee_absent 49, kompas_fee_mismatch 657, kompas_fee_mismatch_rest 13, kompas_source_empty 1.
+Кейсов в панель: **1867** — kompas_no_extract 121, kompas_programs_missing 188, kompas_programs_extra 518, kompas_campus_missing 243, kompas_fee_currency 79, kompas_fee_absent 48, kompas_fee_mismatch 656, kompas_fee_mismatch_rest 13, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -41,7 +41,7 @@
 | University College London (UCL) (`ucl`) | qs | 977 | 11 | 11 | 966 | 0 | 0 | 0 |
 | VIZJA University (`vizja-university`) | edvoy | 93 | 93 | 93 | 0 | 0 | 0 | 93 |
 | University of Nottingham Malaysia (`university-of-nottingham-malaysia`) | edvoy | 82 | 78 | 78 | 4 | 0 | 0 | 78 |
-| University of Debrecen (`debrecen`) | qs | 109 | 69 | 68 | 41 | 1 | 0 | 68 |
+| University of Debrecen (`debrecen`) | qs | 110 | 69 | 68 | 42 | 1 | 0 | 68 |
 | University of Chester (`chester`) | kaplan+qs+edvoy | 1274 | 554 | 554 | 720 | 0 | 0 | 0 |
 | Murdoch University Dubai (`murdoch-dubai`) | qs | 110 | 59 | 59 | 51 | 0 | 0 | 59 |
 | De Montfort University Dubai (`de-montfort-dubai`) | qs+edvoy | 294 | 38 | 38 | 256 | 0 | 0 | 38 |
