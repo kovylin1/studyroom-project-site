@@ -1,4 +1,4 @@
-# Цены прямых партнёров с офсайтов — 2026-09-29
+# Цены прямых партнёров с офсайтов — 2026-09-30
 
 Скрипт `scraper/kompas-direct-fees.mjs`, парсеры `scraper/direct-fees/<slug>.mjs`.
 
@@ -6,40 +6,40 @@
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | abu-dhabi-university | 111 | — | — | — | 64 | 0 | 0 | 0 | 0 | 0 |
 | american-university-of-ras-al-khaimah-aurak | 38 | 24 | 0 | 7 | 18 | 24 | 14 | 0 | 5 | 0 |
-| amity-university-dubai | 66 | 25 | 0 | 37 | 29 | 50 | 1 | 0 | 48 | 0 |
-| anglo-american-university | 49 | 23 | 0 | 26 | 49 | 24 | 0 | 0 | 20 | 0 |
-| apu-malaysia | 242 | 120 | 1 | 113 | 175 | 220 | 36 | 0 | 110 | 1 |
+| amity-university-dubai | 66 | 25 | 0 | 35 | 29 | 50 | 1 | 0 | 48 | 0 |
+| anglo-american-university | 49 | 23 | 0 | 19 | 49 | 24 | 0 | 0 | 16 | 0 |
+| apu-malaysia | 238 | 120 | 2 | 71 | 175 | 220 | 32 | 0 | 110 | 2 |
 | beykent-university | 96 | 98 | 0 | 0 | 84 | 156 | 0 | 0 | 0 | 50 |
-| bsbi | 270 | 85 | 1 | 154 | 84 | 9 | 6 | 0 | 0 | 0 |
+| bsbi | 261 | 85 | 1 | 160 | 84 | 9 | 6 | 0 | 0 | 0 |
 | burgundy-school-of-business | 38 | 37 | 0 | 1 | 20 | 20 | 0 | 0 | 1 | 0 |
 | california-state-university-dominguez-hills | 73 | 70 | 0 | 3 | 0 | 5 | 0 | 0 | 5 | 0 |
-| curtin-university-dubai | 55 | 26 | 0 | 20 | 17 | 33 | 8 | 0 | 2 | 0 |
-| cyprus-international-university | 130 | 125 | 0 | 5 | 0 | 0 | 0 | 0 | 0 | 0 |
-| demiroglu-bilim-university | 25 | 25 | 0 | 0 | 0 | 21 | 0 | 0 | 19 | 2 |
+| curtin-university-dubai | 51 | 26 | 0 | 16 | 17 | 33 | 8 | 0 | 2 | 0 |
+| cyprus-international-university | 129 | 125 | 0 | 5 | 0 | 0 | 0 | 0 | 0 | 0 |
+| demiroglu-bilim-university | 25 | 25 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 2 |
 | domus-academy | 134 | 37 | 0 | 96 | 46 | 65 | 14 | 0 | 26 | 0 |
 | final-international-university | 51 | 51 | 0 | 0 | 23 | 23 | 0 | 0 | 0 | 0 |
 | gedu-global-education | 11 | 5 | 0 | 6 | 0 | 10 | 5 | 0 | 1 | 0 |
-| gisma | 137 | 52 | 0 | 79 | 63 | 6 | 74 | 74 | 0 | 0 |
-| heriot-watt-dubai | 277 | 82 | 0 | 187 | 94 | 103 | 18 | 0 | 33 | 0 |
-| ibs-budapest | 59 | 24 | 0 | 27 | 17 | 12 | 1 | 0 | 11 | 0 |
-| inti-international-university | 147 | 83 | 0 | 64 | 85 | 186 | 40 | 0 | 93 | 0 |
+| gisma | 135 | 52 | 0 | 77 | 63 | 6 | 72 | 72 | 0 | 0 |
+| heriot-watt-dubai | 277 | 82 | 0 | 184 | 94 | 103 | 18 | 0 | 33 | 0 |
+| ibs-budapest | 59 | 24 | 0 | 27 | 17 | 12 | 40 | 37 | 0 | 0 |
+| inti-international-university | 146 | 83 | 0 | 63 | 85 | 186 | 39 | 0 | 93 | 0 |
 | karelia-university-of-applied-sciences | 9 | 4 | 0 | 5 | 3 | 4 | 3 | 0 | 0 | 0 |
 | lane-college | 22 | 19 | 0 | 3 | 20 | 1 | 2 | 2 | 0 | 0 |
-| metropolitan-budapest | 88 | 29 | 0 | 58 | 50 | 50 | 0 | 0 | 50 | 0 |
-| middlesex-dubai | 349 | 72 | 0 | 257 | 165 | 2 | 1 | 0 | 0 | 0 |
-| modul-university-vienna | 38 | 16 | 0 | 22 | 15 | 13 | 0 | 0 | 13 | 0 |
+| metropolitan-budapest | 69 | 29 | 5 | 30 | 50 | 50 | 5 | 0 | 25 | 5 |
+| middlesex-dubai | 348 | 72 | 1 | 215 | 165 | 2 | 1 | 0 | 0 | 0 |
+| modul-university-vienna | 38 | 16 | 0 | 22 | 15 | 13 | 0 | 0 | 0 | 0 |
 | northland-institute | 4 | 4 | 0 | 0 | 0 | 4 | 4 | 0 | 0 | 0 |
 | sp-jain-school-of-global-management-dubai | 17 | 12 | 0 | 3 | 8 | 28 | 1 | 0 | 2 | 0 |
 | srh-germany | 165 | 7 | 0 | 156 | 140 | 7 | 4 | 0 | 0 | 0 |
-| srh-haarlem-university-of-applied-sciences | 9 | 7 | 0 | 2 | 4 | 6 | 4 | 0 | 0 | 0 |
-| srh-hochschule-berlin | 113 | 42 | 0 | 74 | 81 | 28 | 0 | 0 | 28 | 0 |
-| srh-university | 38 | 28 | 0 | 10 | 2 | 12 | 0 | 0 | 12 | 0 |
+| srh-haarlem-university-of-applied-sciences | 7 | 7 | 0 | 1 | 4 | 6 | 3 | 0 | 0 | 0 |
+| srh-hochschule-berlin | 103 | 42 | 0 | 65 | 81 | 28 | 15 | 0 | 0 | 0 |
+| srh-university | 38 | 28 | 0 | 10 | 2 | 12 | 11 | 0 | 0 | 0 |
 | transport-and-telecommunication-institute | 37 | 18 | 0 | 19 | 12 | 53 | 6 | 0 | 35 | 0 |
-| university-of-new-york-in-prague | 51 | 12 | 0 | 37 | 10 | 14 | 30 | 27 | 9 | 0 |
-| webster-university | 191 | 88 | 0 | 103 | 113 | 41 | 35 | 0 | 0 | 0 |
-| wollongong-dubai | 98 | 59 | 0 | 40 | 76 | 57 | 11 | 0 | 27 | 1 |
-| woosong-university | 38 | 38 | 0 | 1 | 28 | 28 | 1 | 0 | 0 | 0 |
-| xi-an-jiaotong-liverpool-university | 182 | 125 | 0 | 57 | 109 | 58 | 70 | 70 | 0 | 0 |
+| university-of-new-york-in-prague | 51 | 12 | 1 | 37 | 10 | 14 | 29 | 27 | 9 | 1 |
+| webster-university | 165 | 88 | 0 | 77 | 113 | 41 | 16 | 0 | 0 | 0 |
+| wollongong-dubai | 89 | 59 | 0 | 32 | 76 | 57 | 4 | 0 | 27 | 1 |
+| woosong-university | 31 | 38 | 1 | 1 | 28 | 28 | 1 | 0 | 0 | 0 |
+| xi-an-jiaotong-liverpool-university | 142 | 125 | 0 | 17 | 109 | 58 | 30 | 30 | 0 | 0 |
 
 ## abu-dhabi-university
 
@@ -61,8 +61,7 @@
 ## anglo-american-university
 
 - отбито currency-CZK: 8
-- отбито audience-eu: 4
-- отбито basis-semester: 8
+- отбито audience-eu: 8
 
 ## apu-malaysia
 
@@ -89,6 +88,7 @@
 - пробел: diploma/certificate — нет такого уровня в схеме каталога:  — https://www.apu.edu.my/course/pg-diploma-education-learning-design-technology-odl
 - пробел: diploma/certificate — нет такого уровня в схеме каталога:  — https://www.apu.edu.my/course/pg-certificate-education-learning-design-technology-odl
 - не сопоставлено (ambiguous): Doctor of Philosophy in Computing — 50800 MYR
+- не сопоставлено (ambiguous): Master of Business Administration with a specialism in Artificial Intelligence (MBAi) (ODL) — 33000 MYR
 - отбито audience-domestic: 110
 
 ## beykent-university
@@ -181,12 +181,12 @@
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-visual-communication
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-photography
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-global-logistics-and-supply-chain-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-global-human-resources-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-project-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-user-experience-design
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-game-design
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-in-sports-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-artificial-intelligence
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-global-human-resources-management
 - пробел: Foundation/Pre-MBA/German и English Language Pathway из карточки — своей страницы на berlinsbi.com у них нет (нет в /programme-sitemap.xml) — https://www.berlinsbi.com/programme-sitemap.xml
 
 ## burgundy-school-of-business
@@ -230,13 +230,12 @@
 
 ## demiroglu-bilim-university
 
-- пробел: для программ карточки на сайте есть только 50%-скидочная цена «ek yerleştirme»: 100%-стипендийная строка везде «---», полной (list) цены нет нигде на сайте — https://demiroglu.bilim.edu.tr/ogrenci/burslar-ve-ucretler
+- пробел: БЕЗ ЦЕНЫ по решению владельца 30.09.2026: для программ карточки на сайте есть только 50%-скидочная цена «ek yerleştirme»: 100%-стипендийная строка везде «---», полной (list) цены нет нигде на сайте — https://demiroglu.bilim.edu.tr/ogrenci/burslar-ve-ucretler
 - пробел: таблица — это цены дополнительного зачисления (ek yerleştirme) 2026-2027, не общий годовой прайс-лист; другой страницы с ценами на сайте не найдено — https://demiroglu.bilim.edu.tr/ogrenci/burslar-ve-ucretler
 - пробел: валюта только TRY — USD/EUR-эквивалента сайт не публикует, хотя карточка изначально настроена на USD — https://demiroglu.bilim.edu.tr/ogrenci/burslar-ve-ucretler
 - пробел: Sağlık Hizmetleri Meslek Yüksekokulu — Ön lisans (associate), уровня нет в схеме каталога, эти программы (Anestezi, İlk ve Acil Yardım и др.) пропущены целиком — https://demiroglu.bilim.edu.tr/ogrenci/burslar-ve-ucretler
 - не сопоставлено (none): ANESTEZİ — 900000 TRY
 - не сопоставлено (none): İLK VE ACİL YARDIM — 900000 TRY
-- отбито discounted-price: 19
 
 ## domus-academy
 
@@ -294,7 +293,6 @@
 
 - пробел: ссылка на программу из меню сайта ведёт на 404 (страница удалена/перенесена, но пункт меню остался) — https://www.ibs-b.hu/en/programmes/master-in-business-administration/
 - пробел: Public Policy Management Postgraduate Programme: на странице нет суммы в EUR — https://www.ibs-b.hu/en/programmes/policy-management/
-- отбито basis-semester: 11
 
 ## inti-international-university
 
@@ -321,7 +319,12 @@
 - пробел: на главной нет суммы в EUR, только описание программы — https://metropolitan.hu/en
 - пробел: на главной нет суммы в EUR, только описание программы (направления Business и Communication одним текстом) — https://metropolitan.hu/en
 - пробел: на главной нет суммы в EUR, только описание программы — https://metropolitan.hu/en
-- отбито basis-semester: 50
+- не сопоставлено (ambiguous): Finance and Accounting BSc — 3500 EUR
+- не сопоставлено (ambiguous): Commerce and Marketing BSc — 3500 EUR
+- не сопоставлено (ambiguous): Tourism Management MSc — 3600 EUR
+- не сопоставлено (ambiguous): Management and Leadership MSc — 3600 EUR
+- не сопоставлено (ambiguous): Communication and Media Studies MA — 3900 EUR
+- отбито audience-eu: 25
 
 ## middlesex-dubai
 
@@ -333,7 +336,6 @@
 - пробел: строка тарифа «BBA in Tourism, Hotel Management & Operations» не нашла программы в /programs
 - пробел: строка тарифа «BBA / BSc Mobility Agreement Vienna & Hong Kong» не нашла программы в /programs
 - пробел: строка тарифа «Master of Business Administration (MBA)» не нашла программы в /programs
-- отбито basis-semester: 13
 
 ## northland-institute
 
@@ -375,7 +377,6 @@
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/product-design/d/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/soziale-arbeit-social-work/s/
 - пробел: цены даны «в месяц», не за год/программу — basis: other, в каталог не попадает по правилам README — https://www.srh-university.de/en/our-campuses/berlin/
-- отбито basis-other: 28
 
 ## srh-university
 
@@ -397,7 +398,6 @@
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/urbanism-concepts-for-the-built-environment/a/
 - пробел: цены на страницах программы даны «в месяц» (Costs: from €…per month), не за год и не за программу — basis: other, в каталог не попадает по правилам README, но зафиксировано в отчёте — https://www.srh-university.de/en/our-campuses/heidelberg/
 - пробел: часть этих программ также в кампусах Berlin/Dresden/Leipzig — карточка srh-hochschule-berlin может содержать те же URL (пересечение ожидаемо, см. её парсер) — https://www.srh-university.de/en/our-campuses/heidelberg/
-- отбито basis-other: 12
 
 ## transport-and-telecommunication-institute
 
@@ -407,6 +407,7 @@
 ## university-of-new-york-in-prague
 
 - пробел: Foundation program: цена не публикуется на /tuition-fees/ — https://www.unyp.cz/tuition-fees/
+- не сопоставлено (none): Master of Psychology (Admissions Closed) — 16961 EUR
 - отбито audience-eu: 2
 - отбито currency-CZK: 7
 

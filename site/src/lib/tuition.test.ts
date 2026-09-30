@@ -7,7 +7,17 @@ describe('annualTuitionValues', () => {
     { slug: 'bachelor-design', tuitionBasis: 'year' as const },
     { slug: 'bachelor-package', tuitionBasis: 'program' as const },
     { slug: 'bachelor-dubai', tuitionBasis: undefined, tuitionCurrency: 'AED' as const },
+    { slug: 'bachelor-semester', tuitionBasis: 'semester' as const },
+    { slug: 'bachelor-month', tuitionBasis: 'month' as const },
   ];
+
+  it('выбрасывает цену за семестр и в месяц — они не годовые (30.09.2026)', () => {
+    const values = annualTuitionValues(
+      { currency: 'EUR' as const, byProgram: { 'bachelor-business': 12000, 'bachelor-semester': 4500, 'bachelor-month': 690 } },
+      programs,
+    );
+    expect(values).toEqual([12000]);
+  });
 
   it('оставляет суммы без признака основы — по умолчанию она годовая', () => {
     const values = annualTuitionValues(

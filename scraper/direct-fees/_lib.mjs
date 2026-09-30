@@ -82,3 +82,16 @@ export async function closeBrowser() { if (browser) { await browser.close(); bro
 
 /** Пауза между запросами к одному домену. */
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Название страницы, когда <title> не подошёл: og:title → <h1> → слаг адреса словами.
+// Путь или слаг в поле title матчер не узнаёт, и программа уезжает в «новые» дублем.
+const AWARD_WORDS = new Set(['ba', 'bs', 'bsc', 'bfa', 'bba', 'ma', 'ms', 'msc', 'mba', 'mha', 'phd', 'llb', 'llm', 'rncp']);
+export function fallbackTitle(html, url) {
+  const og = String(html || '').match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i);
+  if (og) return text(og[1]).replace(/\s*\|.*$/, '').trim();
+  const h1 = String(html || '').match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
+  if (h1 && text(h1[1])) return text(h1[1]);
+  const slug = String(url).split(/[?#]/)[0].replace(/\/+$/, '').split('/').pop().replace(/\.\w+$/, '');
+  return slug.split('-').filter(Boolean)
+    .map((w) => (AWARD_WORDS.has(w) ? w.toUpperCase() : w[0].toUpperCase() + w.slice(1))).join(' ');
+}

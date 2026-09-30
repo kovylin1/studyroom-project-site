@@ -13,7 +13,8 @@
 // Что проверяется у каждой строки цены (нарушившая не едет, а уходит в отчёт):
 //   - сумма буквально стоит в сырой ячейке `raw` — число не выдумано;
 //   - валюта из списка схемы сайта;
-//   - основа 'year' или 'program' — семестровые и покредитные суммы не пересчитываем;
+//   - основа 'year', 'program', 'semester' или 'month' — период пишется как есть
+//     (решение владельца 30.09.2026), покредитные и прочие суммы не едут;
 //   - аудитория не 'domestic' и не 'eu' — каталог для студентов из Казахстана;
 //   - scope 'program' садится только на программу, найденную program-match
 //     (точно по ссылке или названию, без нечёткого сравнения);
@@ -31,7 +32,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { buildIndex, matchProgram } from './lib/program-match.mjs';
+import { buildIndex, matchProgram, stripAward } from './lib/program-match.mjs';
+// Прямые партнёры: сайт вуза пишет названия иначе, чем карточка — включаем канонический ключ.
+const MATCH = { canon: true };
 import { SCHEMA_CURRENCIES } from './lib/country-currency.mjs';
 import { tuitionPlausible } from './lib/numbers.mjs';
 import { closeBrowser } from './direct-fees/_lib.mjs';
@@ -50,7 +53,12 @@ const FROM_EXTRACTS = argv.includes('--from-extracts');
 const ONLY = (argv.find((a) => a.startsWith('--slug=')) || '').slice(7);
 const TODAY = new Date().toISOString().slice(0, 10);
 
-const BASES = new Set(['year', 'program']);
+// semester / month — решение владельца 30.09.2026: в год не пересчитываем, пишем как есть,
+// витрина подписывает «за семестр» / «в месяц». Покредитные (credit) и прочие — не едут.
+const BASES = new Set(['year', 'program', 'semester', 'month']);
+const BASE_RANK = { year: 0, program: 1, semester: 2, month: 3 };
+// Для проверки правдоподобия период приводится к году только в уме — в карточку не пишется.
+const PER_YEAR = { year: 1, semester: 2, month: 12 };
 const SKIP_AUDIENCE = new Set(['domestic', 'eu']);
 // Уровни схемы сайта (programLevel в site/src/schema/university.ts). diploma/associate в схеме нет.
 const LEVELS = new Set(['foundation', 'bachelor', 'master', 'phd', 'english-language', 'short-course']);
@@ -83,7 +91,9 @@ function rejectReason(f) {
 
 /** Лучший кандидат программы: программная цена важнее уровневой, международная — прочих, затем минимум. */
 function pick(cands) {
-  const rank = (c) => [c.scope === 'program' ? 0 : 1, c.audience === 'international' ? 0 : 1, c.amount];
+  // основа раньше суммы: семестровая сумма меньше годовой и по «минимуму» подменила бы её
+  const rank = (c) => [c.scope === 'program' ? 0 : 1, c.audience === 'international' ? 0 : 1,
+    BASE_RANK[c.basis] ?? 9, c.amount];
   return [...cands].sort((a, b) => {
     const ra = rank(a), rb = rank(b);
     for (let i = 0; i < ra.length; i++) if (ra[i] !== rb[i]) return ra[i] - rb[i];
@@ -103,7 +113,7 @@ function plan(extract, card) {
     const why = rejectReason(f);
     if (why) { rejected.push({ why, raw: f.raw, title: f.title ?? f.level }); continue; }
     if (f.scope === 'program') {
-      const m = matchProgram(idx, { title: f.title, level: f.level, programUrl: f.programUrl });
+      const m = matchProgram(idx, { title: f.title, level: f.level, programUrl: f.programUrl }, MATCH);
       if (m.program) add(m.program, { ...f, how: m.how });
       else unmatched.push({ title: f.title, how: m.how, amount: f.amount, currency: f.currency });
     } else {
@@ -122,17 +132,17 @@ function plan(extract, card) {
       amount: best.amount, currency: best.currency, basis: best.basis, scope: best.scope,
       audience: best.audience ?? null, how: best.how, url: best.url, raw: best.raw,
       variants: list.length, alreadyPriced: priced.has(slug),
-      plausible: best.basis === 'year' ? tuitionPlausible(best.amount, best.currency, program.level) : null,
+      plausible: PER_YEAR[best.basis] ? tuitionPlausible(best.amount * PER_YEAR[best.basis], best.currency, program.level) : null,
     });
   }
 
   // Покрытие: что вуз публикует и чего нет в карточке, и наоборот. Сопоставление то же,
   // что у цен (program-match), в обе стороны.
   const sitePrograms = extract.programs || [];
-  const siteOnly = sitePrograms.filter((sp) => !matchProgram(idx, { title: sp.title, level: sp.level, programUrl: sp.url }).program);
+  const siteOnly = sitePrograms.filter((sp) => !matchProgram(idx, { title: sp.title, level: sp.level, programUrl: sp.url }, MATCH).program);
   const siteIdx = buildIndex(sitePrograms.map((sp) => ({ ...sp, slug: sp.title, programUrl: sp.url })));
   const cardOnly = sitePrograms.length
-    ? programs.filter((p) => !matchProgram(siteIdx, { title: p.title, level: p.level, programUrl: p.programUrl }).program)
+    ? programs.filter((p) => !matchProgram(siteIdx, { title: p.title, level: p.level, programUrl: p.programUrl }, MATCH).program)
     : [];
 
   return {
@@ -156,6 +166,32 @@ function plan(extract, card) {
   };
 }
 
+/**
+ * Название программы с сайта без обёрток, которые туда кладёт вёрстка вуза (30.09.2026):
+ * «Berlin School of Popular Arts | B.A. Audio Design» — слева школа; «Python Programming - BSBI»,
+ * «… at BSBI» — хвост с именем вуза; «(Full-time)» — форма обучения.
+ * Чистое имя нужно и сопоставлению, и карточке: иначе в каталог уехала бы строка вёрстки.
+ */
+export function cleanSiteTitle(title) {
+  let t = String(title || '').trim();
+  const bar = t.split(/\s+\|\s+/);
+  if (bar.length > 1 && /\b(school|faculty|campus|college)\b/i.test(bar[0])) t = bar.slice(1).join(' | ');
+  return t
+    .replace(/\s+(?:-|–|at)\s+(?:BSBI|UNYP|SRH|GISMA)\s*$/i, '')
+    .replace(/\s*\((?:full[- ]time)\)\s*/gi, ' ')
+    .replace(/\s+/g, ' ').trim();
+}
+
+/** Почему строку сайта нельзя заводить программой — или null. */
+function notAProgram(title) {
+  if (/admissions? closed|no longer (?:accepting|available)|discontinued/i.test(title)) return 'closed';
+  // рекламный <title> вместо названия: «MBA in Germany ▶ … ▶ Apply now»
+  if (/▶|\bapply now\b/i.test(title)) return 'marketing-title';
+  // голая степень без предмета: «Master of Science», «Bachelor»
+  if (!stripAward(title)) return 'award-only';
+  return null;
+}
+
 const slugify = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/ı/g, 'i').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 90).replace(/-+$/, '');
 
@@ -171,7 +207,9 @@ function addPrograms(card, extract) {
   const added = [], skipped = [];
   for (const sp of extract.programs || []) {
     if (!sp.title || !LEVELS.has(sp.level)) { skipped.push({ title: sp.title, why: `level-${sp.level ?? 'none'}` }); continue; }
-    if (matchProgram(idx, { title: sp.title, level: sp.level, programUrl: sp.url }).how !== 'none') continue;
+    const why = notAProgram(sp.title);
+    if (why) { skipped.push({ title: sp.title, why }); continue; }
+    if (matchProgram(idx, { title: sp.title, level: sp.level, programUrl: sp.url }, MATCH).how !== 'none') continue;
     if (added.some((a) => a.title.toLowerCase() === sp.title.toLowerCase())) continue;
     let slug = slugify(`${card.slug}-${sp.title}`), n = 2;
     while (taken.has(slug)) slug = `${slugify(`${card.slug}-${sp.title}`)}-${n++}`;
@@ -205,7 +243,7 @@ function applyToCard(file, card, p, backup) {
     before.programs[a.slug] = Object.fromEntries(['tuitionBasis', 'tuitionCurrency', 'feeScope', 'feeSourceUrl']
       .map((k) => [k, prog[k] ?? null]));
     card.tuition.byProgram[a.slug] = a.amount;
-    if (a.basis === 'program') prog.tuitionBasis = 'program'; else delete prog.tuitionBasis;
+    if (a.basis !== 'year') prog.tuitionBasis = a.basis; else delete prog.tuitionBasis;
     if (a.currency !== card.tuition.currency) prog.tuitionCurrency = a.currency; else delete prog.tuitionCurrency;
     prog.feeScope = a.scope;
     prog.feeSourceUrl = a.url;
@@ -270,6 +308,9 @@ async function main() {
       console.error(`[${slug}] ОШИБКА`, e?.message || e);
       continue;
     }
+    // выгрузка хранит названия как на сайте; чистим в памяти — и для сопоставления, и для карточки
+    for (const sp of extract.programs || []) sp.title = cleanSiteTitle(sp.title);
+    for (const f of extract.fees || []) if (f.title) f.title = cleanSiteTitle(f.title);
     const card = readJson(cardFile);
     let addedPrograms = null;
     if (ADD_PROGRAMS) {

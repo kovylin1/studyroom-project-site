@@ -65,7 +65,7 @@ interface ProgramRow {
   faculty: string;
   tuition: number | undefined;
   // 'program' — сумма за весь срок, а не за год (КОМПАС 3.3-a); подпись в progPrice
-  tuitionBasis: 'year' | 'program' | undefined;
+  tuitionBasis: 'year' | 'program' | 'semester' | 'month' | undefined;
   // своя валюта программы (КОМПАС 3.5-a); когда её нет — валюта карточки
   tuitionCurrency: string | undefined;
   // несколько сумм у источника (КОМПАС 3.5-b); в tuition лежит минимальная
@@ -251,6 +251,8 @@ const SCRIPT_STR = {
   unverifiedWord: t('lp.programs.unverified'),
   perYear: t('lp.programs.perYear'),
   perProgram: t('lp.programs.perProgram'),
+  perSemester: t('lp.programs.perSemester'),
+  perMonth: t('lp.programs.perMonth'),
   priceFrom: t('lp.programs.priceFrom'),
   variantsTitle: t('lp.programs.variantsTitle'),
   varAccommodation: t('lp.programs.variantAccommodation'),
@@ -1443,7 +1445,9 @@ const SCRIPT_STR = {
       return '<a class="program-row__price-link" href="' + esc(waProgramHref(p)) + '" target="_blank" rel="noopener">' + STR.tbdLink + '</a>';
     }
     var sym = p.tuitionCurrency ? (CURRENCY_SYM_BY_CODE[p.tuitionCurrency] || p.tuitionCurrency) : CURRENCY_SYM;
-    var suffix = (p.tuitionBasis === 'program' ? STR.perProgram : STR.perYear);
+    var suffix = p.tuitionBasis === 'program' ? STR.perProgram
+      : p.tuitionBasis === 'semester' ? STR.perSemester
+      : p.tuitionBasis === 'month' ? STR.perMonth : STR.perYear;
     var main = sym + p.tuition.toLocaleString('en') + suffix;
     var vs = p.tuitionVariants;
     if (!vs || vs.length < 2) return main;

@@ -67,7 +67,7 @@ export default {
       const fm = t.match(/Costs:\s*from\s*€\s*([\d,.]+)\s*per\s*month/i);
       if (fm) {
         fees.push({
-          amount: Number(fm[1].replace(/,/g, '')), currency: 'EUR', basis: 'other', audience: null,
+          amount: Number(fm[1].replace(/,/g, '')), currency: 'EUR', basis: 'month', audience: null,
           scope: 'program', title, level, programUrl: url, url, raw: fm[0],
         });
       } else {
@@ -76,7 +76,7 @@ export default {
       if (i % 10 === 0) log(`${i}/${links.size} программ обработано`);
       await sleep(500);
     }
-    gaps.push({ why: 'цены даны «в месяц», не за год/программу — basis: other, в каталог не попадает по правилам README', url: CAMPUS_URL });
+    gaps.push({ why: 'цены даны «в месяц», не за год/программу — basis: month — с 30.09.2026 едет в каталог с подписью «в месяц» (решение владельца)', url: CAMPUS_URL });
 
     return { programs, fees, gaps };
   },

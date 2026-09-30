@@ -13,7 +13,7 @@
 // audience international/EU/expat вместе — не разделяет их, поэтому audience: null.
 // Название программы — из <title>…| BSBI</title>.
 
-import { get, text, sleep } from './_lib.mjs';
+import { get, text, sleep, fallbackTitle } from './_lib.mjs';
 
 const BASE = 'https://www.berlinsbi.com';
 
@@ -55,7 +55,8 @@ export default {
         continue;
       }
       const tm = html.match(/<title>([^<]+)<\/title>/i);
-      let title = tm ? text(tm[1]) : url.split('/').pop();
+      // Без <title> раньше падал слаг «msc-data-analytics-hamburg» — теперь og:title, <h1>, слаг.
+      let title = tm ? text(tm[1]) : fallbackTitle(html, url);
       title = title.replace(/\s*\|\s*BSBI\s*$/i, '').trim();
       programs.push({ title, level, url });
 

@@ -42,7 +42,7 @@
 //     кредит-час в год/программу (правило — не выдумывать основу цены), поэтому
 //     магистратура/докторантура/сертификаты остаются без цены — тоже gaps.
 
-import { get, text, sleep } from './_lib.mjs';
+import { get, text, sleep, fallbackTitle } from './_lib.mjs';
 
 const BASE = 'https://www.webster.edu';
 const UG_LISTING = `${BASE}/academics/undergraduate/majors-minors.php`;
@@ -116,7 +116,9 @@ export default {
         continue;
       }
       const titleMatch = html.match(/<title>([^<]*?)\s*\|\s*Webster University/i);
-      const title = titleMatch ? text(titleMatch[1]) : path;
+      // У части страниц <title> без « | Webster University» — тогда og:title, <h1>,
+      // и только в крайнем случае слаг (раньше сюда падал путь «/communications/ba-….php»).
+      const title = titleMatch ? text(titleMatch[1]) : fallbackTitle(html, path);
       programs.push({ title, level, url });
       if (i % 20 === 0) log(`${i}/${paths.size} страниц программ`);
       await sleep(500);

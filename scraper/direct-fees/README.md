@@ -47,7 +47,7 @@ export default {
 |---|---|
 | `amount` | число, **буквально стоящее на странице** (без пересчёта, без сложения семестров) |
 | `currency` | ISO-код со страницы: USD EUR GBP TRY MYR AED CNY CZK PLN … (список — `SCHEMA_CURRENCIES` в `lib/country-currency.mjs`) |
-| `basis` | `year` — за учебный год; `program` — за весь курс; `semester` / `credit` / `other` — такие в каталог не едут, но их полезно отдать для отчёта |
+| `basis` | `year` — за учебный год; `program` — за весь курс; `semester` — за семестр, `month` — в месяц (едут как есть, витрина подписывает период — решение владельца 30.09.2026); `credit` / `other` — в каталог не едут, но их полезно отдать для отчёта |
 | `audience` | `international` / `domestic` / `eu` / `null`, если страница не различает |
 | `scope` | `program` — цена названа для конкретной программы; `level` — одна цена на уровень, **подпись прямо называет уровень** («Undergraduate tuition for international students») |
 | `title` | для `scope: 'program'` — название программы как на сайте |

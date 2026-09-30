@@ -72,7 +72,7 @@ export default {
       const fm = t.match(/Costs:\s*from\s*€\s*([\d,.]+)\s*per\s*month/i);
       if (fm) {
         fees.push({
-          amount: Number(fm[1].replace(/,/g, '')), currency: 'EUR', basis: 'other', audience: null,
+          amount: Number(fm[1].replace(/,/g, '')), currency: 'EUR', basis: 'month', audience: null,
           scope: 'program', title, level, programUrl: url, url, raw: fm[0],
         });
       } else {
@@ -81,7 +81,7 @@ export default {
       if (i % 10 === 0) log(`${i}/${links.size} программ обработано`);
       await sleep(500);
     }
-    gaps.push({ why: 'цены на страницах программы даны «в месяц» (Costs: from €…per month), не за год и не за программу — basis: other, в каталог не попадает по правилам README, но зафиксировано в отчёте', url: CAMPUS_URL });
+    gaps.push({ why: 'цены на страницах программы даны «в месяц» (Costs: from €…per month), не за год и не за программу — basis: month — с 30.09.2026 едет в каталог с подписью «в месяц» (решение владельца), но зафиксировано в отчёте', url: CAMPUS_URL });
     gaps.push({ why: 'часть этих программ также в кампусах Berlin/Dresden/Leipzig — карточка srh-hochschule-berlin может содержать те же URL (пересечение ожидаемо, см. её парсер)', url: CAMPUS_URL });
 
     return { programs, fees, gaps };
