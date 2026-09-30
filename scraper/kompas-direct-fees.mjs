@@ -41,7 +41,13 @@ import { closeBrowser } from './direct-fees/_lib.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PARSERS = path.join(ROOT, 'scraper/direct-fees');
-const CATALOG = path.join(ROOT, 'site/src/content/universities');
+const LIVE_CATALOG = path.join(ROOT, 'site/src/content/universities');
+// --catalog=<папка> — писать не в живой каталог, а в рабочую копию (так зовёт kompas-update.mjs --agg=direct)
+const CATALOG_ARG = (process.argv.find((a) => a.startsWith('--catalog=')) || '').slice(10);
+const CATALOG = CATALOG_ARG ? path.resolve(ROOT, CATALOG_ARG) : LIVE_CATALOG;
+// Вердикты проверки вузов (DIRECT-FEES-REVIEW.md): программы заводятся только у 'ok'.
+// Вуза нет в файле — считается 'ok'. Цены вердикт не трогает, у них свои проверки.
+const VERDICTS = path.join(ROOT, 'scraper/direct-fees/verdicts.json');
 const OUT = path.join(ROOT, 'sources/kompas/extracts/direct-fees');
 const REPORT_JSON = path.join(ROOT, 'sources/kompas/direct-fees-report.json');
 const REPORT_MD = path.join(ROOT, 'sources/kompas/DIRECT-FEES.md');
@@ -314,7 +320,8 @@ async function main() {
     const card = readJson(cardFile);
     let addedPrograms = null;
     if (ADD_PROGRAMS) {
-      addedPrograms = addPrograms(card, extract);
+      const verdict = fs.existsSync(VERDICTS) ? readJson(VERDICTS)[slug]?.verdict ?? 'ok' : 'ok';
+      addedPrograms = verdict === 'ok' ? addPrograms(card, extract) : { added: [], skipped: [{ title: '*', why: `verdict-${verdict}` }] };
       if (APPLY && addedPrograms.added.length) fs.writeFileSync(cardFile, JSON.stringify(card, null, 2) + '\n', 'utf8');
     }
     const p = plan(extract, card);
@@ -329,7 +336,8 @@ async function main() {
   const suffix = ONLY ? `-${ONLY}` : '';
   fs.writeFileSync(REPORT_JSON.replace('.json', `${suffix}.json`), JSON.stringify({ generatedAt: new Date().toISOString(), applied: APPLY, written, plans, errors }, null, 2) + '\n', 'utf8');
   if (!ONLY) fs.writeFileSync(REPORT_MD, mdReport(plans, errors) + '\n', 'utf8');
-  if (APPLY) fs.writeFileSync(BACKUP, JSON.stringify({ at: new Date().toISOString(), cards: backup }, null, 2) + '\n', 'utf8');
+  // бэкап — только при записи в живой каталог; у рабочей копии свои бэкапы в kompas-apply-workcopy
+  if (APPLY && CATALOG === LIVE_CATALOG) fs.writeFileSync(BACKUP, JSON.stringify({ at: new Date().toISOString(), cards: backup }, null, 2) + '\n', 'utf8');
   console.log(JSON.stringify({ parsers: slugs.length, ok: plans.length, errors: errors.length,
     newPrices: plans.reduce((s, p) => s + p.newPrices, 0), written, applied: APPLY }));
   console.log('DIRECT-FEES DONE');
