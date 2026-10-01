@@ -3,7 +3,7 @@
     "aggregator": "kaplan",
     "label": "Kaplan Pathways",
     "source": "https://www.kaplanpathways.com/degree-finder/",
-    "collectedAt": "2026-09-20T04:54:14.457Z",
+    "collectedAt": "2026-10-01T09:43:10.609Z",
     "rule": "all",
     "access": "public",
     "notes": [
@@ -17,16 +17,16 @@
       "institutions": 63,
       "universities": 49,
       "colleges": 14,
-      "withPrograms": 37,
-      "declaredWithoutPrograms": 26,
-      "sourcePrograms": 4787,
+      "withPrograms": 38,
+      "declaredWithoutPrograms": 25,
+      "sourcePrograms": 4688,
       "matched": 37,
-      "unmatched": 0,
+      "unmatched": 1,
       "catalogCards": 23,
-      "programs": 4784,
-      "withPrice": 4784,
-      "duplicatesDropped": 3,
-      "staleExtracts": 2
+      "programs": 4686,
+      "withPrice": 4678,
+      "duplicatesDropped": 2,
+      "staleExtracts": 0
     }
   },
   "mergedSlugs": [
@@ -36,7 +36,7 @@
         "Nottingham Trent University",
         "NTU London"
       ],
-      "programs": 210
+      "programs": 209
     },
     {
       "slug": "pace",
@@ -44,7 +44,7 @@
         "Pace University, Westchester",
         "Pace University, New York"
       ],
-      "programs": 144
+      "programs": 140
     },
     {
       "slug": "arizona-state",
@@ -56,7 +56,7 @@
         "Arizona State University, Mesa City Center",
         "Arizona State University, California Center"
       ],
-      "programs": 745
+      "programs": 743
     },
     {
       "slug": "simmons",
@@ -76,7 +76,7 @@
         "University of Connecticut, Stamford Campus",
         "University of Connecticut, Waterbury Campus"
       ],
-      "programs": 164
+      "programs": 163
     },
     {
       "slug": "alberta",
@@ -92,7 +92,7 @@
       "from": "University of Liverpool",
       "to": "liverpool",
       "method": "as-is/exact-name",
-      "programs": 267
+      "programs": 263
     },
     {
       "from": "University of Glasgow",
@@ -104,19 +104,19 @@
       "from": "Bournemouth University",
       "to": "bournemouth",
       "method": "as-is/exact-name",
-      "programs": 135
+      "programs": 133
     },
     {
       "from": "University of Brighton",
       "to": "brighton",
       "method": "as-is/exact-name",
-      "programs": 162
+      "programs": 160
     },
     {
       "from": "City St George's, University of London",
       "to": "city-london",
       "method": "as-is/exact-name",
-      "programs": 169
+      "programs": 168
     },
     {
       "from": "Cranfield University",
@@ -128,7 +128,7 @@
       "from": "Nottingham Trent University",
       "to": "nottingham-trent",
       "method": "as-is/exact-name",
-      "programs": 197
+      "programs": 196
     },
     {
       "from": "University of the West of England, Bristol",
@@ -141,73 +141,73 @@
       "from": "University of Westminster",
       "to": "westminster",
       "method": "as-is/exact-name",
-      "programs": 157
+      "programs": 154
     },
     {
       "from": "University of York",
       "to": "york",
       "method": "as-is/exact-name",
-      "programs": 343
+      "programs": 330
     },
     {
       "from": "University of Birmingham",
       "to": "birmingham",
       "method": "as-is/exact-name",
-      "programs": 339
+      "programs": 317
     },
     {
       "from": "University of Nottingham",
       "to": "nottingham",
       "method": "as-is/exact-name",
-      "programs": 287
+      "programs": 267
     },
     {
       "from": "University of Essex",
       "to": "essex",
       "method": "as-is/exact-name",
-      "programs": 518
+      "programs": 521
     },
     {
       "from": "Pace University, Westchester",
       "to": "pace",
       "method": "as-is/exact-name",
-      "programs": 42
+      "programs": 41
     },
     {
       "from": "Pace University, New York",
       "to": "pace",
       "method": "as-is+strip-campus/exact-name",
-      "programs": 102
+      "programs": 99
     },
     {
       "from": "Arizona State University, Tempe Campus",
       "to": "arizona-state",
       "method": "as-is/exact-name",
-      "programs": 381
+      "programs": 383
     },
     {
       "from": "Arizona State University, West Valley Campus",
       "to": "arizona-state",
       "method": "as-is/exact-name",
-      "programs": 104
+      "programs": 102
     },
     {
       "from": "Arizona State University, Downtown Phoenix Campus",
       "to": "arizona-state",
       "method": "as-is/exact-name",
-      "programs": 134
+      "programs": 133
     },
     {
       "from": "Arizona State University, Polytechnic Campus",
       "to": "arizona-state",
       "method": "as-is/exact-name",
-      "programs": 116
+      "programs": 115
     },
     {
       "from": "University of Bristol",
       "to": "bristol",
       "method": "as-is/exact-name",
-      "programs": 217
+      "programs": 204
     },
     {
       "from": "Queen Mary University of London",
@@ -243,7 +243,7 @@
       "from": "University of Connecticut, Stamford Campus",
       "to": "uconn",
       "method": "as-is/exact-name",
-      "programs": 24
+      "programs": 23
     },
     {
       "from": "University of Connecticut, Waterbury Campus",
@@ -262,7 +262,7 @@
       "to": "uvic",
       "method": "manual",
       "reason": "две карточки одного вуза, uvic — основная",
-      "programs": 92
+      "programs": 70
     },
     {
       "from": "Arizona State University, Mesa City Center",
@@ -314,7 +314,17 @@
       "programs": 6
     }
   ],
-  "unmatched": [],
+  "unmatched": [
+    {
+      "from": "Emily Carr University of Art + Design",
+      "country": "CAN",
+      "programs": 8,
+      "tried": [
+        "as-is:Emily Carr University of Art + Design=no-match",
+        "as-is:Emily Carr University of Art + Design=no-match"
+      ]
+    }
+  ],
   "declaredWithoutPrograms": [
     {
       "name": "Bournemouth University International College",
@@ -440,15 +450,7 @@
       "name": "MPP BUINTCOL PSE UNIVERSITY",
       "type": "university",
       "country": "GBR"
-    },
-    {
-      "name": "Emily Carr University of Art + Design",
-      "type": "university",
-      "country": "CAN"
     }
   ],
-  "staleExtracts": [
-    "chester",
-    "hartford"
-  ]
+  "staleExtracts": []
 }
