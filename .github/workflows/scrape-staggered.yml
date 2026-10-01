@@ -6,7 +6,7 @@ name: Staggered scrape (per-aggregator)
 # Маппинг «день месяца → агрегатор» — единый источник: scraper/sources/aggregator-schedules.json
 # (поле dayOfMonth). Шаг detect читает его, отдельной bash-таблицы больше нет.
 # ВАЖНО: список дней в cron ниже статичен (YAML не читает JSON) — держать синхронным
-# с dayOfMonth в JSON вручную. Сейчас: 1,3,6,9,12,15,18,21,24,27,30.
+# с dayOfMonth в JSON вручную. Сейчас: 1,3,4,6,9,12,15,18,21,24,27,30 (4 — прямые партнёры, в PR).
 #
 # ДВА ПОКОЛЕНИЯ КОЛЛЕКТОРОВ (разбор — HANDOFF-2026-09-11.md).
 #   kompas-collect-*.mjs — поколение КОМПАСа (июль–август 2026): перечисляет состав
@@ -23,7 +23,7 @@ name: Staggered scrape (per-aggregator)
 
 on:
   schedule:
-    - cron: '0 3 1,3,6,9,12,15,18,21,24,27,30 * *'
+    - cron: '0 3 1,3,4,6,9,12,15,18,21,24,27,30 * *'
   workflow_dispatch:
     inputs:
       aggregator:
@@ -44,9 +44,12 @@ on:
           - qs-topuniversities
           - gedu
           - volk
+          - direct
 
 permissions:
   contents: write
+  # direct идёт не в main, а в PR на проверку владельцем (решение 30.09.2026)
+  pull-requests: write
 
 concurrency:
   group: staggered
@@ -99,7 +102,8 @@ jobs:
         if: |
           steps.detect.outputs.aggregator == 'iapro' ||
           steps.detect.outputs.aggregator == 'qs-topuniversities' ||
-          steps.detect.outputs.aggregator == 'gedu'
+          steps.detect.outputs.aggregator == 'gedu' ||
+          steps.detect.outputs.aggregator == 'direct'
         run: cd scraper && npx playwright install chromium --with-deps
 
       - name: Обновить каталог агрегатором
@@ -151,7 +155,7 @@ jobs:
         run: cd site && npm run build
 
       - name: Commit + push
-        if: steps.detect.outputs.aggregator != ''
+        if: steps.detect.outputs.aggregator != '' && steps.detect.outputs.aggregator != 'direct'
         run: |
           AGG="${{ steps.detect.outputs.aggregator }}"
           git config user.name  "github-actions[bot]"
@@ -165,8 +169,28 @@ jobs:
             git pull --rebase origin main
           done
 
+      # Прямые партнёры (34 офсайта): владелец смотрит прогон глазами до прода —
+      # ветка auto/direct-<дата> и PR в main, деплоя нет. Смержит владелец — задеплоит
+      # обычный путь main. Решение 30.09.2026.
+      - name: Commit + PR (direct)
+        if: steps.detect.outputs.aggregator == 'direct'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BR="auto/direct-$(date -u +%Y-%m-%d)"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BR"
+          git add site/src/content/universities/ scraper/sources/ site/public/api/ sources/kompas/
+          if git diff --staged --quiet; then echo "Менять нечего — PR не нужен"; exit 0; fi
+          git commit -m "chore: прямые партнёры — $(date -u +%Y-%m-%d)"
+          git push -u origin "$BR"
+          gh pr create --base main --head "$BR" \
+            --title "Прямые партнёры: прогон $(date -u +%Y-%m-%d)" \
+            --body "Ежемесячный прогон офсайтов 34 вузов (kompas-update --agg=direct). Что изменилось — sources/kompas/DIRECT-FEES.md и site/public/api/update-runs.json. Деплой после мержа."
+
       - name: Deploy
-        if: steps.detect.outputs.aggregator != ''
+        if: steps.detect.outputs.aggregator != '' && steps.detect.outputs.aggregator != 'direct'
         run: |
           cd site && npx wrangler pages deploy dist \
             --project-name=studyroom-project-site \

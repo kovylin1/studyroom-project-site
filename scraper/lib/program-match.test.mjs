@@ -95,3 +95,71 @@ test('уровень из названия — только по явной пр
   assert.equal(levelFromTitle('Doctor of Philosophy in Physics'), 'phd');
   assert.equal(levelFromTitle('Doctor of Medicine'), null);
 });
+
+// --- четвёртая ступень: канонический ключ (прямые партнёры, 30.09.2026) ---
+import { canonTitle } from './program-match.mjs';
+
+const DIRECT = buildIndex([
+  { title: 'BA Media Design', level: 'bachelor' },
+  { title: 'MA Media Design', level: 'master' },
+  { title: 'BS Finance', level: 'bachelor' },
+  { title: 'Bachelor of Computer Science and Technology', level: 'bachelor' },
+  { title: 'Civil Engineering MSc', level: 'master' },
+  { title: 'Bachelor of Engineering (Hons) - Mechatronic Engineering', level: 'bachelor' },
+  { title: 'Master of HR Management', level: 'master' },
+  { title: 'MEng Engineering and Sustainable Technology Management - Mobility and Automotive Industry', level: 'master' },
+  { title: 'BA Advertising and Brand Design', level: 'bachelor' },
+  { title: 'Bachelor of Commerce (BCom) - Accounting', level: 'bachelor' },
+  { title: 'MS Cybersecurity Operations (STEM)', level: 'master' },
+  { title: 'Global Master of Luxury Management', level: 'master' },
+]);
+const hit = (title, level) => matchProgram(DIRECT, { title, level }, { canon: true });
+
+test('канон: степень в конце и в начале — одна программа', () => {
+  assert.equal(hit('Media Design BA', 'bachelor').program.title, 'BA Media Design');
+  assert.equal(hit('Media Design MA', 'master').program.title, 'MA Media Design');
+  assert.equal(hit('Finance BS', 'bachelor').how, 'canon');
+  assert.equal(hit('Computer Science and Technology BEng (Hons)', 'bachelor').program.title,
+    'Bachelor of Computer Science and Technology');
+});
+
+test('канон: Honours/Hons, HR, точки в степени, &, «Focus on», школа через «|»', () => {
+  assert.ok(hit('Bachelor of Engineering (Honours) - Mechatronic Engineering', 'bachelor').program);
+  assert.ok(hit('Master of Human Resource Management', 'master').program);
+  assert.ok(hit('M.Eng. Engineering and Sustainable Technology Management - Focus on Mobility & Automotive Industry', 'master').program);
+  assert.ok(hit('Berlin School of Design and Communication | B.A. Advertising & Brand Design', 'bachelor').program);
+  assert.ok(hit('Bachelor of Commerce (Accounting)', 'bachelor').program);
+  assert.ok(hit('Cybersecurity Operations (MS)', 'master').program);
+  assert.ok(hit('Global Master Luxury Management', 'master').program);
+});
+
+test('канон: чужой уровень не привязывается', () => {
+  assert.equal(hit('Civil Engineering PhD', 'phd').program, null);
+  assert.equal(hit('Civil Engineering BEng (Hons)', 'bachelor').program, null);
+  assert.equal(hit('Finance MS', 'master').program, null);
+});
+
+test('канон: без уровня с обеих сторон не привязывает', () => {
+  assert.equal(hit('Media Design', null).program, null);
+});
+
+test('канон выключен по умолчанию — агрегаторы считают как раньше', () => {
+  assert.equal(matchProgram(DIRECT, { title: 'Finance BS', level: 'bachelor' }).how, 'none');
+});
+
+test('canonTitle снимает степень и отдаёт её уровень', () => {
+  assert.deepEqual(canonTitle('Actuarial Science BSc (Hons)'), { key: 'actuarial science', level: 'bachelor' });
+  assert.deepEqual(canonTitle('MBA with a specialism in AI (ODL)'), { key: 'ai', level: 'master' });
+});
+
+test('канон: BFA полностью, Degree/Major, хвост XJTLU', () => {
+  const i = buildIndex([
+    { title: 'BFA Acting', level: 'bachelor' },
+    { title: 'BA Biology (STEM)', level: 'bachelor' },
+    { title: 'Bachelor of Intelligent Robotics Engineering', level: 'bachelor' },
+  ]);
+  const m = (title) => matchProgram(i, { title, level: 'bachelor' }, { canon: true }).program;
+  assert.ok(m('Bachelor of Fine Arts in Acting'));
+  assert.ok(m('Biology Major (BA)'));
+  assert.ok(m('Intelligent Robotics Engineering with Contemporary Entrepreneurialism BEng (Hons)'));
+});

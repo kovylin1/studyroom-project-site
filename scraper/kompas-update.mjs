@@ -85,7 +85,18 @@ const AGGREGATORS = {
   'qs-topuniversities': { kind: 'kompas', source: 'qs', collect: ['kompas-collect-qs.mjs'] },
   gedu: { kind: 'kompas', source: 'gedu', collect: ['kompas-collect-gedu.mjs'] },
   volk: { kind: 'kompas', source: 'collab', collect: ['kompas-collect-collab.mjs'] },
+  // Прямые партнёры (30.09.2026): не агрегатор, а 34 офсайта вузов, парсер на домен
+  // (scraper/direct-fees/). Сбор — запускалка без --apply (пишет выгрузки), применение —
+  // она же с --catalog=<рабочая копия>. «Свои» карточки — те, у кого есть парсер.
+  // Владелец решил: прогон по расписанию идёт в PR на проверку, не сразу в прод.
+  direct: { kind: 'direct', source: 'official', collect: ['kompas-direct-fees.mjs'] },
 };
+
+// Слаги прямых партнёров — по файлам парсеров.
+const DIRECT_SLUGS = new Set(
+  (await fs.readdir(path.join(__dirname, 'direct-fees')))
+    .filter((f) => f.endsWith('.mjs') && !f.startsWith('_')).map((f) => f.replace(/\.mjs$/, '')),
+);
 
 if (has('list')) {
   const sch = JSON.parse(readFileSync(SCHEDULES, 'utf8'));
@@ -182,10 +193,17 @@ if (CFG.kind === 'legacy') {
   if (inv.code !== 0) { report.error = 'не удалось обновить рабочую копию с живого каталога'; step('рабочая копия ← каталог', false, report.error); await finish(1); }
   step('рабочая копия ← каталог', true);
 
-  const fees = await run('kompas-fees-apply.mjs', [`--sources=${CFG.source}`]);
-  step('цены агрегатора в рабочую копию', fees.code === 0, fees.code === 0 ? '' : `код ${fees.code}`);
-  const progs = await run('kompas-programs-backfill.mjs', [`--sources=${CFG.source}`]);
-  step('программы агрегатора в рабочую копию', progs.code === 0, progs.code === 0 ? '' : `код ${progs.code}`);
+  if (CFG.kind === 'direct') {
+    const d = await run('kompas-direct-fees.mjs', ['--from-extracts', '--add-programs', '--apply',
+      `--catalog=${path.relative(ROOT, WORK)}`]);
+    step('цены и программы офсайтов в рабочую копию', d.code === 0, d.code === 0 ? '' : `код ${d.code}`);
+    if (d.code !== 0) { report.error = 'запускалка прямых партнёров упала'; await finish(1); }
+  } else {
+    const fees = await run('kompas-fees-apply.mjs', [`--sources=${CFG.source}`]);
+    step('цены агрегатора в рабочую копию', fees.code === 0, fees.code === 0 ? '' : `код ${fees.code}`);
+    const progs = await run('kompas-programs-backfill.mjs', [`--sources=${CFG.source}`]);
+    step('программы агрегатора в рабочую копию', progs.code === 0, progs.code === 0 ? '' : `код ${progs.code}`);
+  }
 
   // ------------------------------------------- 4. что изменилось и порог ----
   if (!existsSync(WORK)) { report.error = 'рабочей копии нет'; step('сравнение копии с каталогом', false, report.error); await finish(1); }
@@ -196,7 +214,8 @@ if (CFG.kind === 'legacy') {
   for (const [slug, rawWork] of work) {
     const rawLive = live.get(slug);
     if (rawLive === undefined) continue;                    // новых карточек прогон не заводит
-    if (!belongsTo(rawLive, CFG.source) && !belongsTo(rawWork, CFG.source)) continue;
+    if (CFG.kind === 'direct' ? !DIRECT_SLUGS.has(slug)
+      : (!belongsTo(rawLive, CFG.source) && !belongsTo(rawWork, CFG.source))) continue;
     own++;
     // Сравниваем содержимое, а не текст: живой каталог лежит с CRLF, рабочая копия
     // пишется с LF, и до 20.09.2026 каждая своя карточка считалась изменённой

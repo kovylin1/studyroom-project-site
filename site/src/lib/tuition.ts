@@ -21,8 +21,9 @@ export function annualTuitionValues(
   tuition: Pick<Tuition, 'byProgram' | 'currency'>,
   programs: readonly Pick<Program, 'slug' | 'tuitionBasis' | 'tuitionCurrency'>[],
 ): number[] {
+  // не годовые: за весь срок ('program'), за семестр, в месяц (30.09.2026)
   const wholeTerm = new Set(
-    programs.filter((p) => p.tuitionBasis === 'program').map((p) => p.slug),
+    programs.filter((p) => p.tuitionBasis && p.tuitionBasis !== 'year').map((p) => p.slug),
   );
   const ownCurrency = new Map(
     programs.filter((p) => p.tuitionCurrency).map((p) => [p.slug, p.tuitionCurrency as string]),
