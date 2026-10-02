@@ -1,4 +1,4 @@
-# Цены прямых партнёров с офсайтов — 2026-09-30
+# Цены прямых партнёров с офсайтов — 2026-10-02
 
 Скрипт `scraper/kompas-direct-fees.mjs`, парсеры `scraper/direct-fees/<slug>.mjs`.
 
@@ -10,7 +10,7 @@
 | anglo-american-university | 49 | 23 | 0 | 19 | 49 | 24 | 0 | 0 | 16 | 0 |
 | apu-malaysia | 238 | 120 | 2 | 71 | 175 | 220 | 32 | 0 | 110 | 2 |
 | beykent-university | 96 | 98 | 0 | 0 | 84 | 156 | 0 | 0 | 0 | 50 |
-| bsbi | 261 | 85 | 1 | 160 | 84 | 9 | 6 | 0 | 0 | 0 |
+| bsbi | 262 | 85 | 1 | 161 | 85 | 9 | 6 | 0 | 0 | 0 |
 | burgundy-school-of-business | 38 | 37 | 0 | 1 | 20 | 20 | 0 | 0 | 1 | 0 |
 | california-state-university-dominguez-hills | 73 | 70 | 0 | 3 | 0 | 5 | 0 | 0 | 5 | 0 |
 | curtin-university-dubai | 51 | 26 | 0 | 16 | 17 | 33 | 8 | 0 | 2 | 0 |
@@ -21,22 +21,22 @@
 | gedu-global-education | 11 | 5 | 0 | 6 | 0 | 10 | 5 | 0 | 1 | 0 |
 | gisma | 135 | 52 | 0 | 77 | 63 | 6 | 72 | 72 | 0 | 0 |
 | heriot-watt-dubai | 277 | 82 | 0 | 184 | 94 | 103 | 18 | 0 | 33 | 0 |
-| ibs-budapest | 59 | 24 | 0 | 27 | 17 | 12 | 40 | 37 | 0 | 0 |
+| ibs-budapest | 61 | 24 | 0 | 29 | 24 | 12 | 34 | 31 | 0 | 0 |
 | inti-international-university | 146 | 83 | 0 | 63 | 85 | 186 | 39 | 0 | 93 | 0 |
 | karelia-university-of-applied-sciences | 9 | 4 | 0 | 5 | 3 | 4 | 3 | 0 | 0 | 0 |
 | lane-college | 22 | 19 | 0 | 3 | 20 | 1 | 2 | 2 | 0 | 0 |
-| metropolitan-budapest | 69 | 29 | 5 | 30 | 50 | 50 | 5 | 0 | 25 | 5 |
+| metropolitan-budapest | 71 | 29 | 5 | 32 | 50 | 50 | 5 | 0 | 25 | 5 |
 | middlesex-dubai | 348 | 72 | 1 | 215 | 165 | 2 | 1 | 0 | 0 | 0 |
 | modul-university-vienna | 38 | 16 | 0 | 22 | 15 | 13 | 0 | 0 | 0 | 0 |
 | northland-institute | 4 | 4 | 0 | 0 | 0 | 4 | 4 | 0 | 0 | 0 |
 | sp-jain-school-of-global-management-dubai | 17 | 12 | 0 | 3 | 8 | 28 | 1 | 0 | 2 | 0 |
 | srh-germany | 165 | 7 | 0 | 156 | 140 | 7 | 4 | 0 | 0 | 0 |
 | srh-haarlem-university-of-applied-sciences | 7 | 7 | 0 | 1 | 4 | 6 | 3 | 0 | 0 | 0 |
-| srh-hochschule-berlin | 103 | 42 | 0 | 65 | 81 | 28 | 15 | 0 | 0 | 0 |
-| srh-university | 38 | 28 | 0 | 10 | 2 | 12 | 11 | 0 | 0 | 0 |
+| srh-hochschule-berlin | 103 | 42 | 0 | 64 | 81 | 28 | 15 | 0 | 0 | 0 |
+| srh-university | 39 | 28 | 0 | 11 | 2 | 12 | 11 | 0 | 0 | 0 |
 | transport-and-telecommunication-institute | 37 | 18 | 0 | 19 | 12 | 53 | 6 | 0 | 35 | 0 |
 | university-of-new-york-in-prague | 51 | 12 | 1 | 37 | 10 | 14 | 29 | 27 | 9 | 1 |
-| webster-university | 165 | 88 | 0 | 77 | 113 | 41 | 16 | 0 | 0 | 0 |
+| webster-university | 152 | 88 | 0 | 64 | 113 | 41 | 8 | 0 | 0 | 0 |
 | wollongong-dubai | 89 | 59 | 0 | 32 | 76 | 57 | 4 | 0 | 27 | 1 |
 | woosong-university | 31 | 38 | 1 | 1 | 28 | 28 | 1 | 0 | 0 | 0 |
 | xi-an-jiaotong-liverpool-university | 142 | 125 | 0 | 17 | 109 | 58 | 30 | 30 | 0 | 0 |

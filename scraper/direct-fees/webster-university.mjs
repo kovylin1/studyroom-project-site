@@ -17,7 +17,7 @@
 //   /academics/certificates/index.php          — сертификаты (5 страниц, все
 //     non-degree — уровня "certificate" в схеме нет, ближайшее — short-course).
 // У каждой программы своя страница /<school>/<award>-<slug>.php, заголовок берём
-// из <title> (обрезаем " | Webster University").
+// из <h1 class="hero-title"> (<title> рекламный), запасной — <title>.
 //
 // Уровень по префиксу файла: bs-/ba-/bfa-/bm-/bed- -> bachelor; ms-/ma-/mba-/mha-/
 // msn- -> master; edd- -> phd; gcrt-/cert-/ucrt- -> short-course.
@@ -115,10 +115,15 @@ export default {
         await sleep(500);
         continue;
       }
+      // <title> и og:title у Webster рекламные («Top-Ranked … BA», «Flexible Master's in …»),
+      // настоящее название — в <h1 class="hero-title">: «Criminal Justice (MS)». Формат обучения
+      // в начале («In Person, Online or Hybrid …», «Online …») срезаем.
+      const heroMatch = html.match(/<h1[^>]*class="[^"]*hero-title[^"]*"[^>]*>([\s\S]*?)<\/h1>/i);
+      const hero = heroMatch
+        ? text(heroMatch[1]).replace(/^(?:(?:in[\s-]person|online|hybrid|or|and)[\s,]+)+/i, '').trim()
+        : '';
       const titleMatch = html.match(/<title>([^<]*?)\s*\|\s*Webster University/i);
-      // У части страниц <title> без « | Webster University» — тогда og:title, <h1>,
-      // и только в крайнем случае слаг (раньше сюда падал путь «/communications/ba-….php»).
-      const title = titleMatch ? text(titleMatch[1]) : fallbackTitle(html, path);
+      const title = hero || (titleMatch ? text(titleMatch[1]) : fallbackTitle(html, path));
       programs.push({ title, level, url });
       if (i % 20 === 0) log(`${i}/${paths.size} страниц программ`);
       await sleep(500);

@@ -185,20 +185,20 @@ export function rowLevel(row) {
 const CANON_AWARD_TOKENS = new Set([
   'ba', 'bsc', 'bs', 'beng', 'bba', 'bcom', 'bed', 'bfa', 'barch', 'llb', 'bsba', 'bmus',
   'ma', 'msc', 'ms', 'meng', 'mba', 'mres', 'mphil', 'mdes', 'march', 'mfa', 'llm', 'med', 'mm', 'maf',
-  'phd', 'dba', 'edd', 'hons', 'honours',
+  'phd', 'dba', 'edd', 'hons', 'honours', 'bm', 'msn', 'mha', 'gcrt',
 ]);
 const CANON_LEVEL = {
   ba: 'bachelor', bsc: 'bachelor', bs: 'bachelor', beng: 'bachelor', bba: 'bachelor', bcom: 'bachelor',
   bed: 'bachelor', bfa: 'bachelor', barch: 'bachelor', llb: 'bachelor', bsba: 'bachelor', bmus: 'bachelor',
   ma: 'master', msc: 'master', ms: 'master', meng: 'master', mba: 'master', mres: 'master', mphil: 'master',
   mdes: 'master', march: 'master', mfa: 'master', llm: 'master', med: 'master', mm: 'master', maf: 'master',
-  phd: 'phd', dba: 'phd', edd: 'phd',
+  phd: 'phd', dba: 'phd', edd: 'phd', bm: 'bachelor', msn: 'master', mha: 'master', gcrt: 'short-course',
 };
 // Хвосты формы обучения и языка: одна программа, не отдельная.
 // «with Contemporary Entrepreneurialism» — так XJTLU называет на сайте программы кампуса
 // Тайцана, в карточке они же без хвоста («Bachelor of Intelligent Robotics Engineering»).
 const CANON_TAIL = [/\b(odl|online learning|online|full time|part time|stem)\b/g,
-  /\bwith contemporary entrepreneurialism\b/g, /\b(en|tr|de)$/];
+  /\bwith contemporary entrepreneurialism\b/g, /\bin st louis$/g, /\b(en|tr|de)$/];
 // «Degree», «Major», «Bachelor’s/Master’s» внутри названия — обёртка, не программа.
 const CANON_STOP = new Set(['of', 'in', 'the', 'a', 'an', 'degree', 'major', 'bachelors', 'masters']);
 
@@ -212,9 +212,11 @@ export function canonTitle(title) {
     .replace(/&/g, ' and ')
     .replace(/^\s*(new|top-ranked)\s+/i, '')
     .replace(/\bfocus on\b/gi, ' ')
-    .replace(/\bwith an? specialism in\b/gi, ' ')
+    .replace(/\bwith an? (specialism|emphasis) in\b/gi, ' ') // Webster: «X with an Emphasis in Y» = «X - Y»
+    .replace(/^\s*graduate certificate in\b/i, 'gcrt ')
     .replace(/\bspecialism in\b/gi, ' ');
   let n = norm(s).replace(/\bhr\b/g, 'human resource').replace(/\btv\b/g, 'television')
+    .replace(/\bartificial intelligence\b/g, 'ai').replace(/\bcommunications\b/g, 'communication')
     .replace(/^bachelor of fine arts\b/, 'bfa').replace(/^master of fine arts\b/, 'mfa')
     .replace(/^bachelor of education\b/, 'bed');
   for (const re of CANON_TAIL) n = n.replace(re, ' ');

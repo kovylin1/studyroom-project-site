@@ -163,3 +163,18 @@ test('канон: BFA полностью, Degree/Major, хвост XJTLU', () =>
   assert.ok(m('Biology Major (BA)'));
   assert.ok(m('Intelligent Robotics Engineering with Contemporary Entrepreneurialism BEng (Hons)'));
 });
+
+test('канон: Webster «with an Emphasis in», AI, Communications, GCRT', () => {
+  const i = buildIndex([
+    { title: 'BS Computer Science - Cybersecurity (STEM)', level: 'bachelor' },
+    { title: 'MS Cybersecurity - Artificial Intelligence (STEM)', level: 'master' },
+    { title: 'BA Sports Communication', level: 'bachelor' },
+    { title: 'Graduate Certificate in Project Management', level: 'short-course' },
+  ]);
+  const m = (title, level) => matchProgram(i, { title, level }, { canon: true }).program;
+  assert.ok(m('Computer Science with an Emphasis in Cybersecurity (BS)', 'bachelor'));
+  assert.ok(m('Cybersecurity with an Emphasis in AI (MS)', 'master'));
+  assert.ok(m('Bachelor of Arts in Sports Communications', 'bachelor'));
+  assert.ok(m('Project Management (GCRT)', 'short-course'));
+  assert.ok(!m('Computer Science with an Emphasis in Cybersecurity (BS)', 'master'));
+});
