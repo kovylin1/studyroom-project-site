@@ -1,24 +1,24 @@
 # Применение цен агрегаторов
 
-Источники: `gedu`.
+Источники: `kaplan`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | gedu |
-| extracts | 13 |
-| linked | 10 |
-| candidates | 53 |
+| sources | kaplan |
+| extracts | 23 |
+| linked | 23 |
+| candidates | 4588 |
 | skippedCurrency | 0 |
 | skippedBucket | 0 |
-| skippedNoMatch | 3 |
-| skippedNoCard | 3 |
+| skippedNoMatch | 90 |
+| skippedNoCard | 0 |
 | skippedAudience | 0 |
 | skippedPartTime | 0 |
-| matchedByAward | 0 |
-| ambiguousMatch | 0 |
-| programsWritten | 52 |
-| cardsTouched | 5 |
-| overwritten | 49 |
+| matchedByAward | 4 |
+| ambiguousMatch | 1 |
+| programsWritten | 4419 |
+| cardsTouched | 23 |
+| overwritten | 4414 |
 | ownCurrency | 0 |
 | variantPrograms | 1 |
 | variantSums | 2 |
@@ -31,6 +31,7 @@
 
 | Причина | Штук |
 |---|---:|
-| `no-match` | 3 |
+| `no-match` | 89 |
+| `match-ambiguous` | 1 |
 
 Подробности: `fees-apply-cases.json`, откат: `fees-apply-backup.json`.

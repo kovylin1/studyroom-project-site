@@ -1,6 +1,6 @@
 # КОМПАС, сессия 1 — разметка и инвентаризация
 
-**Дата:** 2026-09-27  •  **Каталог:** 1076 вузов  •  **Сеть не использовалась**
+**Дата:** 2026-10-01  •  **Каталог:** 1076 вузов  •  **Сеть не использовалась**
 
 Живой каталог не изменён. Разметка лежит в рабочей копии `sources/kompas/catalog-work/`.
 
@@ -79,11 +79,11 @@
 | `oxford` | University of Oxford | United Kingdom | 215 |
 | `catholic-university-of-america` | The Catholic University of America | United States | 191 |
 | `university-of-worcester` | University of Worcester | United Kingdom | 179 |
+| `centennial-college` | Centennial College | Canada | 145 |
 | `international-house` | International House | United Kingdom | 142 |
 | `ec-english` | EC English | United Kingdom | 139 |
 | `mercy-university` | Mercy University | United States | 133 |
 | `the-university-of-texas-at-arlington` | The University of Texas at Arlington | United States | 131 |
-| `centennial-college` | Centennial College | Canada | 127 |
 | `simon-fraser` | Simon Fraser University | Canada | 112 |
 | `stony-brook-university` | Stony Brook University | United States | 110 |
 | `kwantlen-polytechnic-university` | Kwantlen Polytechnic University | Canada | 108 |
@@ -92,9 +92,11 @@
 | `stafford-house` | Stafford House | United Kingdom | 100 |
 | `victoria` | University of Victoria | Canada | 99 |
 | `falmouth-university` | Falmouth University | United Kingdom | 98 |
+| `fontys-university` | Fontys University of Applied Sciences | Netherlands | 89 |
 | `anglo-continental` | Anglo-Continental | United Kingdom | 86 |
 | `marshall-university` | Marshall University | United States | 85 |
 | `university-of-essex-online` | University of Essex (Online) | United Kingdom | 85 |
+| `ted-university` | TED University | Turkey | 84 |
 | `centre-of-english-studies` | Centre of English Studies | United Kingdom | 78 |
 | `seattle-university` | Seattle University | United States | 75 |
 | `hartpury` | Hartpury University | United Kingdom | 74 |
@@ -102,25 +104,28 @@
 | `kings-education` | Kings Education | United Kingdom | 72 |
 | `manipal-academy-of-higher-education-dubai` | Manipal Academy of Higher Education Dubai | United Arab Emirates | 72 |
 | `naba-milano` | NABA — Nuova Accademia di Belle Arti | Italy | 72 |
+| `istinye-university` | İstinye University | Turkey | 70 |
 | `johnson-and-wales-university` | Johnson & Wales University | United States | 70 |
+| `university-of-warsaw` | University of Warsaw | Poland | 68 |
 | `british-school-of-marketing-international` | British School of Marketing International | United Kingdom | 65 |
+| `rome-university-of-fine-arts` | Rome University of Fine Arts (RUFA) | Italy | 65 |
 | `oxford-international-language-school` | Oxford International Language School | United Kingdom | 62 |
 | `rutgers-university-camden` | Rutgers University Camden | United States | 59 |
+| `warsaw-university-of-technology` | Warsaw University of Technology | Poland | 59 |
 | `george-brown` | George Brown Polytechnic | Canada | 58 |
 | `elmira-college` | Elmira College | United States | 57 |
-| `ted-university` | TED University | Turkey | 56 |
 | `northumbria-university-london-campus-qahe` | Northumbria University London campus (QAHE) | United Kingdom | 50 |
 | `universidad-europea-de-madrid` | Universidad Europea de Madrid | Spain | 50 |
+| `jagiellonian-university` | Jagiellonian University | Poland | 49 |
+| `southern-denmark-university` | University of Southern Denmark | Denmark | 48 |
 | `ara-institute-of-canterbury` | Ara Institute of Canterbury | New Zealand | 47 |
-| `fontys-university` | Fontys University of Applied Sciences | Netherlands | 45 |
+| `masaryk-university-czech` | Masaryk University | Czech Republic | 47 |
+| `lazarski-university` | Lazarski University | Poland | 46 |
 | `ilsc` | ILSC | United Kingdom | 45 |
 | `lappeenranta-university-of-technology-lut` | LUT University (Lappeenranta-Lahti University of Technology) | Finland | 44 |
 | `new-college-group` | New College Group | United Kingdom | 44 |
-| `masaryk-university-czech` | Masaryk University | Czech Republic | 43 |
-| `warsaw-university-of-technology` | Warsaw University of Technology | Poland | 43 |
-| `istinye-university` | İstinye University | Turkey | 42 |
 | `corvinus-university-of-budapest` | Corvinus University of Budapest | Hungary | 41 |
-| `university-of-warsaw` | University of Warsaw | Poland | 41 |
+| `bau-global` | Bahçeşehir University (BAU) | Turkey | 40 |
 | `oxford-school-of-english` | Oxford School of English | United Kingdom | 40 |
 | `czech-technical-university` | Czech Technical University in Prague | Czech Republic | 38 |
 | `trebas` | Trebas Institute | Canada | 38 |
@@ -144,16 +149,13 @@
 | `the-campus-bio-medico-university-of-rome-ucbm` | Università Campus Bio-Medico di Roma | Italy | 30 |
 | `czech-university-of-life-sciences` | Czech University of Life Sciences Prague | Czech Republic | 29 |
 | `istanbul-gelisim-university` | Istanbul Gelişim University | Turkey | 29 |
-| `lazarski-university` | Lazarski University | Poland | 29 |
-| `southern-denmark-university` | University of Southern Denmark | Denmark | 29 |
 | `eurocentres` | Eurocentres | United Kingdom | 28 |
-| `rome-university-of-fine-arts` | Rome University of Fine Arts (RUFA) | Italy | 28 |
 | `topup-learning-london` | TopUp Learning London | United Kingdom | 28 |
-| `bau-global` | Bahçeşehir University (BAU) | Turkey | 27 |
 | `london-school-of-english` | London School of English | United Kingdom | 27 |
 | `universitat-politecnica-de-valencia-upv` | Universitat Politècnica de València (UPV) | Spain | 27 |
 | `bentley-university` | Bentley University | United States | 26 |
 | `florida-memorial-university` | Florida Memorial University | United States | 26 |
+| `swps-university` | SWPS University | Poland | 26 |
 | `university-of-wisconsin-milwaukee` | University of Wisconsin-Milwaukee | United States | 26 |
 | `anglolang-academy-of-english` | Anglolang Academy of English | United Kingdom | 25 |
 | `arden-university-hybrid` | Arden University (Hybrid) | Germany | 25 |
@@ -163,6 +165,7 @@
 | `college-of-english-language` | College of English Language | United States | 24 |
 | `university-of-warwick` | University of Warwick | United Kingdom | 24 |
 | `american-university-of-ras-al-khaimah-aurak` | American University of Ras Al Khaimah (AURAK) | United Arab Emirates | 23 |
+| `epita-school-of-engineering-and-computer-science` | EPITA - School of Engineering and Computer Science | France | 23 |
 | `prague-university-of-economics` | Prague University of Economics and Business | Czech Republic | 23 |
 | `up-education` | UP Education | New Zealand | 23 |
 | `montpellier-business-school` | Montpellier Business School | France | 22 |
@@ -179,20 +182,17 @@
 | `izmir-economics-university` | Izmir University of Economics | Turkey | 19 |
 | `mcdaniel-college-budapest` | McDaniel College Budapest | Hungary | 19 |
 | `university-of-southampton-malaysia` | University of Southampton Malaysia | Malaysia | 19 |
-| `epita-school-of-engineering-and-computer-science` | EPITA - School of Engineering and Computer Science | France | 18 |
+| `aarhus-university` | Aarhus University | Denmark | 18 |
 | `kaplan-international-college-adelaide` | Kaplan International College Adelaide | Australia | 18 |
 | `mediadesign-university-of-applied-sciences` | Mediadesign University of Applied Sciences | Germany | 18 |
 | `university-of-gloucestershire` | University of Gloucestershire | United Kingdom | 18 |
-| `jagiellonian-university` | Jagiellonian University | Poland | 17 |
 | `northbrook-college` | Northbrook College | United Kingdom | 17 |
-| `aarhus-university` | Aarhus University | Denmark | 16 |
 | `charles-university` | Charles University | Czech Republic | 16 |
 | `we-bridge-academy` | WE Bridge Academy | United Kingdom | 16 |
 | `university-of-canada-west` | University Canada West | Canada | 15 |
 | `university-of-stirling-uae` | University of Stirling (UAE) | United Arab Emirates | 15 |
 | `istanbul` | Istanbul University | Turkey | 14 |
 | `oncampus-aston-foundation` | OnCampus Aston – Foundation | United Kingdom | 14 |
-| `swps-university` | SWPS University | Poland | 14 |
 | `victoria-university` | Victoria University | Australia | 14 |
 | `westminster-international-university-in-tashkent` | Westminster International University in Tashkent | Uzbekistan | 14 |
 | `toronto-school-of-management` | Toronto School of Management | Canada | 13 |

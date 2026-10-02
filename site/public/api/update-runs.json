@@ -152,5 +152,107 @@
     "error": null,
     "hold": null,
     "finishedAt": "2026-09-27T08:57:24.501Z"
+  },
+  "volk": {
+    "aggregator": "volk",
+    "kind": "kompas",
+    "startedAt": "2026-09-30T09:14:56.881Z",
+    "applied": true,
+    "dryRun": false,
+    "steps": [
+      {
+        "name": "сбор kompas-collect-collab.mjs",
+        "ok": true
+      },
+      {
+        "name": "рабочая копия ← каталог",
+        "ok": true
+      },
+      {
+        "name": "цены агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "программы агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "сравнение копии с каталогом",
+        "ok": true,
+        "detail": "свои карточки 76, изменились 25 (2.3% каталога)"
+      },
+      {
+        "name": "порог изменения",
+        "ok": true,
+        "detail": "2.3% ≤ 5%"
+      },
+      {
+        "name": "перенос в каталог",
+        "ok": true,
+        "detail": "карточек 25"
+      },
+      {
+        "name": "гейт каталога",
+        "ok": true
+      }
+    ],
+    "changedCards": 25,
+    "ownCards": 76,
+    "error": null,
+    "hold": null,
+    "finishedAt": "2026-09-30T09:16:18.096Z"
+  },
+  "kaplan-pathways": {
+    "aggregator": "kaplan-pathways",
+    "kind": "kompas",
+    "startedAt": "2026-10-01T09:43:07.234Z",
+    "applied": true,
+    "dryRun": false,
+    "steps": [
+      {
+        "name": "сбор kompas-collect-kaplan.mjs",
+        "ok": true
+      },
+      {
+        "name": "рабочая копия ← каталог",
+        "ok": true
+      },
+      {
+        "name": "цены агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "программы агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "сравнение копии с каталогом",
+        "ok": true,
+        "detail": "свои карточки 25, изменились 24 (2.2% каталога)"
+      },
+      {
+        "name": "порог изменения",
+        "ok": true,
+        "detail": "2.2% ≤ 5%"
+      },
+      {
+        "name": "перенос в каталог",
+        "ok": true,
+        "detail": "карточек 24"
+      },
+      {
+        "name": "гейт каталога",
+        "ok": true
+      }
+    ],
+    "changedCards": 24,
+    "ownCards": 25,
+    "error": null,
+    "hold": null,
+    "finishedAt": "2026-10-01T09:43:18.546Z"
   }
 }

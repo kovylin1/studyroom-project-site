@@ -1,13 +1,23 @@
 {
-  "generatedAt": "2026-07-01T09:44:02.915Z",
+  "generatedAt": "2026-10-01T12:29:55.245Z",
   "totalSampled": 6,
-  "overallFreshnessPct": 0,
+  "overallFreshnessPct": 33,
   "gapSummary": {
     "critical": 38,
     "high": 68,
-    "medium": 539
+    "medium": 540
   },
   "reports": [
+    {
+      "slug": "birmingham",
+      "name": "University of Birmingham",
+      "freshnessPct": 0,
+      "alive": 0,
+      "sampled": 1,
+      "dead": 1,
+      "mismatch": 0,
+      "errors": 0
+    },
     {
       "slug": "asu-london",
       "name": "ASU London",
@@ -19,8 +29,8 @@
       "errors": 0
     },
     {
-      "slug": "bristol",
-      "name": "University of Bristol",
+      "slug": "sf-state",
+      "name": "San Francisco State University",
       "freshnessPct": 0,
       "alive": 0,
       "sampled": 1,
@@ -39,12 +49,22 @@
       "errors": 0
     },
     {
-      "slug": "sf-state",
-      "name": "San Francisco State University",
-      "freshnessPct": 0,
-      "alive": 0,
-      "sampled": 3,
-      "dead": 3,
+      "slug": "bristol",
+      "name": "University of Bristol",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
+      "mismatch": 0,
+      "errors": 0
+    },
+    {
+      "slug": "uwe-bristol",
+      "name": "UWE Bristol",
+      "freshnessPct": 100,
+      "alive": 1,
+      "sampled": 1,
+      "dead": 0,
       "mismatch": 0,
       "errors": 0
     }
