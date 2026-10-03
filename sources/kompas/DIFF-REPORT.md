@@ -1,28 +1,28 @@
 # КОМПАС — сессия 4: расхождения «каталог vs источник»
 
-**Дата:** 2026-10-01 · сети нет, каталог не тронут (только чтение).
+**Дата:** 2026-10-03 · сети нет, каталог не тронут (только чтение).
 
 ## Сводка
 
 | Показатель | Значение |
 |---|---|
 | Карточек в рабочей копии | 1076 |
-| Из них партнёрских | 962 (не партнёры: 114) |
-| **Сверено с источником** | **830** |
+| Из них партнёрских | 969 (не партнёры: 107) |
+| **Сверено с источником** | **831** |
 | Сверить не с чем: источник за логином | 0 (QS, IAPro) |
-| Сверить не с чем: источник без программ | 11 (Navitas, CATS) |
-| Сверить не с чем: источник готов, выгрузки по вузу нет | 121 |
-| Программ в каталоге (сверенные вузы) | 113559 |
-| Программ у источников (объединение) | 79394 |
-| Совпало названий | 75855 (из них по написанию: 181) |
-| Есть в каталоге, нет у источника | 37704 |
+| Сверить не с чем: источник без программ | 18 (Navitas, CATS) |
+| Сверить не с чем: источник готов, выгрузки по вузу нет | 120 |
+| Программ в каталоге (сверенные вузы) | 113911 |
+| Программ у источников (объединение) | 79471 |
+| Совпало названий | 75932 (из них по написанию: 181) |
+| Есть в каталоге, нет у источника | 37979 |
 | Есть у источника, нет в каталоге | 3539 |
-| Цена расходится | 775 |
+| Цена расходится | 800 |
 | **Валюта расходится** | **2295** |
 | У источника цена есть, в каталоге нет | 268 |
 | Кампусы источника, которых нет в карточке | 412 |
 
-Кейсов в панель: **1720** — kompas_no_extract 121, kompas_programs_missing 185, kompas_programs_extra 518, kompas_campus_missing 243, kompas_fee_currency 79, kompas_fee_absent 60, kompas_fee_mismatch 506, kompas_fee_mismatch_rest 7, kompas_source_empty 1.
+Кейсов в панель: **1745** — kompas_no_extract 120, kompas_programs_missing 185, kompas_programs_extra 519, kompas_campus_missing 243, kompas_fee_currency 79, kompas_fee_absent 60, kompas_fee_mismatch 531, kompas_fee_mismatch_rest 7, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -31,7 +31,7 @@
 | Вуз | Источник | Каталог | Источник, программ | Совпало | Только каталог | Только источник | Цена ≠ | Валюта ≠ |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
 | INTO Partnerships (`into-partnerships`) | edvoy | 1721 | 832 | 804 | 917 | 28 | 0 | 416 |
-| Navitas (`navitas`) | edvoy | 507 | 572 | 291 | 216 | 281 | 0 | 183 |
+| Navitas (`navitas`) | edvoy | 512 | 572 | 291 | 221 | 281 | 0 | 183 |
 | University of Roehampton (`roehampton`) | qs+edvoy | 586 | 575 | 496 | 90 | 79 | 10 | 189 |
 | Middlesex University Dubai (`middlesex-dubai`) | direct+qs+edvoy | 346 | 201 | 182 | 164 | 19 | 0 | 138 |
 | Asia Pacific University of Technology and Innovation (`apu-malaysia`) | direct+qs+edvoy | 233 | 186 | 181 | 52 | 5 | 0 | 142 |
@@ -42,7 +42,7 @@
 | University of Nottingham Malaysia (`university-of-nottingham-malaysia`) | edvoy | 82 | 78 | 78 | 4 | 0 | 0 | 78 |
 | University of Debrecen (`debrecen`) | qs | 110 | 69 | 68 | 42 | 1 | 0 | 68 |
 | University of Chester (`chester`) | qs+edvoy | 1274 | 554 | 554 | 720 | 0 | 0 | 0 |
-| Murdoch University Dubai (`murdoch-dubai`) | qs | 110 | 59 | 59 | 51 | 0 | 0 | 59 |
+| Murdoch University Dubai (`murdoch-dubai`) | qs | 111 | 59 | 59 | 52 | 0 | 0 | 59 |
 | De Montfort University Dubai (`de-montfort-dubai`) | qs+edvoy | 294 | 38 | 38 | 256 | 0 | 0 | 38 |
 | Rutgers University Camden (`rutgers-university-camden`) | edvoy | 59 | 61 | 59 | 0 | 2 | 0 | 59 |
 | Massey University (`massey`) | qs+edvoy | 903 | 397 | 397 | 506 | 0 | 23 | 0 |

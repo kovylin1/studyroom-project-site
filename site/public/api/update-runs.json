@@ -254,5 +254,60 @@
     "error": null,
     "hold": null,
     "finishedAt": "2026-10-01T09:43:18.546Z"
+  },
+  "navitas-pathways": {
+    "aggregator": "navitas-pathways",
+    "kind": "kompas",
+    "startedAt": "2026-10-03T08:48:52.450Z",
+    "applied": true,
+    "dryRun": false,
+    "steps": [
+      {
+        "name": "сбор kompas-collect-navitas.mjs",
+        "ok": true
+      },
+      {
+        "name": "сбор kompas-collect-navitas-programs.mjs",
+        "ok": true
+      },
+      {
+        "name": "рабочая копия ← каталог",
+        "ok": true
+      },
+      {
+        "name": "цены агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "программы агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "сравнение копии с каталогом",
+        "ok": true,
+        "detail": "свои карточки 41, изменились 38 (3.5% каталога)"
+      },
+      {
+        "name": "порог изменения",
+        "ok": true,
+        "detail": "3.5% ≤ 5%"
+      },
+      {
+        "name": "перенос в каталог",
+        "ok": true,
+        "detail": "карточек 38"
+      },
+      {
+        "name": "гейт каталога",
+        "ok": true
+      }
+    ],
+    "changedCards": 38,
+    "ownCards": 41,
+    "error": null,
+    "hold": null,
+    "finishedAt": "2026-10-03T08:49:01.924Z"
   }
 }

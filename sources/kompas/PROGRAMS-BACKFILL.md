@@ -1,29 +1,29 @@
 # Добор программ агрегаторов
 
-Источники: `kaplan`.
+Источники: `navitas`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | kaplan |
-| rows | 4678 |
-| unmatched | 83 |
-| ambiguous | 1 |
-| levelFromSource | 45 |
-| levelFromSourceLevel | 6 |
-| levelFromTitle | 31 |
-| noLevel | 1 |
-| levelUnsupported | 0 |
+| sources | navitas |
+| rows | 373 |
+| unmatched | 198 |
+| ambiguous | 0 |
+| levelFromSource | 190 |
+| levelFromSourceLevel | 0 |
+| levelFromTitle | 0 |
+| noLevel | 0 |
+| levelUnsupported | 8 |
 | duplicatesInSource | 0 |
-| created | 82 |
-| cardsTouched | 15 |
-| withDuration | 82 |
-| withUrl | 72 |
-| urlShared | 7 |
+| created | 190 |
+| cardsTouched | 21 |
+| withDuration | 155 |
+| withUrl | 190 |
+| urlShared | 0 |
 
 ## Не заведено
 
 | Причина | Штук |
 |---|---:|
-| `no-level` | 1 |
+| `level-unsupported` | 8 |
 
 Подробности: `programs-backfill-cases.json`, откат: `programs-backfill-backup.json`.

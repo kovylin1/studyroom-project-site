@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-01T12:29:46.957Z",
+  "generatedAt": "2026-10-03T08:49:02.819Z",
   "scope": "kompas-session4",
   "summary": {
     "catalogFiles": 1076,
-    "notPartner": 114,
-    "partners": 962,
-    "compared": 830,
+    "notPartner": 107,
+    "partners": 969,
+    "compared": 831,
     "sourceBlocked": 0,
-    "sourceEmpty": 11,
-    "noExtract": 121,
-    "programsCatalog": 113559,
-    "programsSource": 79394,
-    "matched": 75855,
+    "sourceEmpty": 18,
+    "noExtract": 120,
+    "programsCatalog": 113911,
+    "programsSource": 79471,
+    "matched": 75932,
     "matchedFuzzy": 181,
-    "catalogOnly": 37704,
+    "catalogOnly": 37979,
     "sourceOnly": 3539,
-    "feeMismatch": 775,
+    "feeMismatch": 800,
     "feeMissingInCatalog": 268,
     "feeCurrency": 2295,
     "campusMissing": 412,
@@ -38,16 +38,23 @@
   },
   "blockedSlugs": [],
   "emptySlugs": [
+    "acap",
     "bosworth-independent-school",
     "bournemouth-collegiate-school",
+    "canberra",
     "cats-academy-boston",
     "cats-cambridge",
     "cats-college-china",
     "csvpa-china",
+    "dli-bandung",
+    "edith-cowan-sl",
     "forest-city-international-school",
     "guildhouse-school-london",
+    "manitoba",
     "st-michaels-school",
     "stafford-house",
+    "toronto-met",
+    "western-ontario",
     "worthgate-school"
   ],
   "noExtractSlugs": [
@@ -146,7 +153,6 @@
     "singapore-vwa",
     "sobey-smu",
     "sprott-carleton",
-    "srh-germany",
     "st-andrews-cambridge",
     "st-bees",
     "st-francis-xavier",
@@ -702,6 +708,22 @@
       "empty": [],
       "status": "no-extract",
       "catalogPrograms": 20,
+      "sourcePrograms": 0
+    },
+    {
+      "slug": "acap",
+      "name": "ACAP University College",
+      "type": "aggregator",
+      "assigned": [
+        "navitas"
+      ],
+      "ready": [],
+      "blocked": [],
+      "empty": [
+        "navitas"
+      ],
+      "status": "source-empty",
+      "catalogPrograms": 40,
       "sourcePrograms": 0
     },
     {
@@ -3849,11 +3871,11 @@
         "navitas"
       ],
       "status": "compared",
-      "catalogPrograms": 356,
+      "catalogPrograms": 357,
       "sourcePrograms": 277,
       "matched": 276,
       "matchedFuzzy": 0,
-      "catalogOnly": 80,
+      "catalogOnly": 81,
       "sourceOnly": 1,
       "catalogWithFee": 314,
       "sourceWithFee": 275,
@@ -5016,11 +5038,11 @@
         "navitas"
       ],
       "status": "compared",
-      "catalogPrograms": 237,
+      "catalogPrograms": 239,
       "sourcePrograms": 190,
       "matched": 179,
       "matchedFuzzy": 0,
-      "catalogOnly": 58,
+      "catalogOnly": 60,
       "sourceOnly": 11,
       "catalogWithFee": 189,
       "sourceWithFee": 190,
@@ -5885,6 +5907,22 @@
       }
     },
     {
+      "slug": "canberra",
+      "name": "University of Canberra",
+      "type": "aggregator",
+      "assigned": [
+        "navitas"
+      ],
+      "ready": [],
+      "blocked": [],
+      "empty": [
+        "navitas"
+      ],
+      "status": "source-empty",
+      "catalogPrograms": 81,
+      "sourcePrograms": 0
+    },
+    {
       "slug": "canterbury-christ-church",
       "name": "Canterbury Christ Church University",
       "type": "aggregator",
@@ -5933,21 +5971,24 @@
       "name": "University of Canterbury",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "edvoy"
       ],
       "ready": [
         "edvoy"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 107,
+      "catalogPrograms": 108,
       "sourcePrograms": 2,
       "matched": 1,
       "matchedFuzzy": 0,
-      "catalogOnly": 106,
+      "catalogOnly": 107,
       "sourceOnly": 1,
-      "catalogWithFee": 100,
+      "catalogWithFee": 102,
       "sourceWithFee": 2,
       "feeMismatch": 0,
       "feeMissingInCatalog": 0,
@@ -6810,19 +6851,22 @@
       "name": "Charles Sturt University",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "edvoy"
       ],
       "ready": [
         "edvoy"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 94,
+      "catalogPrograms": 95,
       "sourcePrograms": 45,
       "matched": 45,
       "matchedFuzzy": 0,
-      "catalogOnly": 49,
+      "catalogOnly": 50,
       "sourceOnly": 0,
       "catalogWithFee": 93,
       "sourceWithFee": 45,
@@ -8157,19 +8201,22 @@
       "name": "Curtin College",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs"
       ],
       "ready": [
         "qs"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 42,
+      "catalogPrograms": 43,
       "sourcePrograms": 6,
       "matched": 6,
       "matchedFuzzy": 0,
-      "catalogOnly": 36,
+      "catalogOnly": 37,
       "sourceOnly": 0,
       "catalogWithFee": 14,
       "sourceWithFee": 6,
@@ -8199,19 +8246,22 @@
       "name": "Curtin Singapore",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs"
       ],
       "ready": [
         "qs"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 77,
+      "catalogPrograms": 79,
       "sourcePrograms": 17,
       "matched": 17,
       "matchedFuzzy": 0,
-      "catalogOnly": 60,
+      "catalogOnly": 62,
       "sourceOnly": 0,
       "catalogWithFee": 56,
       "sourceWithFee": 17,
@@ -8794,6 +8844,7 @@
       "type": "aggregator",
       "assigned": [
         "studygroup",
+        "navitas",
         "edvoy"
       ],
       "ready": [
@@ -8801,15 +8852,17 @@
         "edvoy"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 205,
+      "catalogPrograms": 206,
       "sourcePrograms": 145,
       "matched": 145,
       "matchedFuzzy": 0,
-      "catalogOnly": 60,
+      "catalogOnly": 61,
       "sourceOnly": 0,
-      "catalogWithFee": 197,
+      "catalogWithFee": 198,
       "sourceWithFee": 145,
       "feeMismatch": 0,
       "feeMissingInCatalog": 0,
@@ -9219,6 +9272,22 @@
         "feeMismatch": [],
         "fuzzyPairs": []
       }
+    },
+    {
+      "slug": "dli-bandung",
+      "name": "Deakin Lancaster Indonesia",
+      "type": "aggregator",
+      "assigned": [
+        "navitas"
+      ],
+      "ready": [],
+      "blocked": [],
+      "empty": [
+        "navitas"
+      ],
+      "status": "source-empty",
+      "catalogPrograms": 26,
+      "sourcePrograms": 0
     },
     {
       "slug": "domus-academy",
@@ -10129,11 +10198,28 @@
       }
     },
     {
+      "slug": "edith-cowan-sl",
+      "name": "Edith Cowan University Sri Lanka",
+      "type": "aggregator",
+      "assigned": [
+        "navitas"
+      ],
+      "ready": [],
+      "blocked": [],
+      "empty": [
+        "navitas"
+      ],
+      "status": "source-empty",
+      "catalogPrograms": 336,
+      "sourcePrograms": 0
+    },
+    {
       "slug": "edith-cowan",
       "name": "Edith Cowan University",
       "type": "aggregator",
       "assigned": [
         "oxford-international",
+        "navitas",
         "edvoy"
       ],
       "ready": [
@@ -10141,9 +10227,11 @@
         "edvoy"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "no-extract",
-      "catalogPrograms": 89,
+      "catalogPrograms": 91,
       "sourcePrograms": 0
     },
     {
@@ -11350,23 +11438,26 @@
       "name": "Eynesbury College",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs"
       ],
       "ready": [
         "qs"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 31,
+      "catalogPrograms": 32,
       "sourcePrograms": 4,
       "matched": 4,
       "matchedFuzzy": 0,
-      "catalogOnly": 27,
+      "catalogOnly": 28,
       "sourceOnly": 0,
       "catalogWithFee": 23,
       "sourceWithFee": 4,
-      "feeMismatch": 0,
+      "feeMismatch": 1,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -11383,7 +11474,19 @@
           "Diploma of Business Studies — Stage 2",
           "Diploma of Computing & IT Studies — Stage 1"
         ],
-        "feeMismatch": [],
+        "feeMismatch": [
+          {
+            "program": "Foundation Studies Program",
+            "slug": "eynesbury-foundation-studies",
+            "catalog": 36200,
+            "source": 32800,
+            "currency": "AUD",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 9.4
+          }
+        ],
         "fuzzyPairs": []
       }
     },
@@ -12080,13 +12183,16 @@
       "name": "Fraser International College",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs"
       ],
       "ready": [
         "qs"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
       "catalogPrograms": 21,
       "sourcePrograms": 1,
@@ -13339,13 +13445,16 @@
       "name": "Griffith University",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "edvoy"
       ],
       "ready": [
         "edvoy"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
       "catalogPrograms": 981,
       "sourcePrograms": 915,
@@ -13408,15 +13517,18 @@
       "name": "The Hague University of Applied Sciences",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs"
       ],
       "ready": [
         "qs"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "no-extract",
-      "catalogPrograms": 64,
+      "catalogPrograms": 65,
       "sourcePrograms": 0
     },
     {
@@ -17702,11 +17814,11 @@
         "navitas"
       ],
       "status": "compared",
-      "catalogPrograms": 537,
+      "catalogPrograms": 538,
       "sourcePrograms": 636,
       "matched": 506,
       "matchedFuzzy": 1,
-      "catalogOnly": 31,
+      "catalogOnly": 32,
       "sourceOnly": 130,
       "catalogWithFee": 507,
       "sourceWithFee": 636,
@@ -18186,6 +18298,7 @@
       "name": "La Trobe University",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs",
         "edvoy"
       ],
@@ -18194,7 +18307,9 @@
         "edvoy"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
       "catalogPrograms": 743,
       "sourcePrograms": 699,
@@ -18324,21 +18439,24 @@
       "name": "Lancaster University Leipzig",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs"
       ],
       "ready": [
         "qs"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 71,
+      "catalogPrograms": 86,
       "sourcePrograms": 19,
       "matched": 19,
       "matchedFuzzy": 0,
-      "catalogOnly": 52,
+      "catalogOnly": 67,
       "sourceOnly": 0,
-      "catalogWithFee": 62,
+      "catalogWithFee": 64,
       "sourceWithFee": 19,
       "feeMismatch": 0,
       "feeMissingInCatalog": 0,
@@ -20681,7 +20799,6 @@
       "name": "Manchester Metropolitan University",
       "type": "aggregator",
       "assigned": [
-        "navitas",
         "qs",
         "edvoy"
       ],
@@ -20690,9 +20807,7 @@
         "edvoy"
       ],
       "blocked": [],
-      "empty": [
-        "navitas"
-      ],
+      "empty": [],
       "status": "compared",
       "catalogPrograms": 474,
       "sourcePrograms": 482,
@@ -20800,6 +20915,22 @@
         "feeMismatch": [],
         "fuzzyPairs": []
       }
+    },
+    {
+      "slug": "manitoba",
+      "name": "University of Manitoba",
+      "type": "aggregator",
+      "assigned": [
+        "navitas"
+      ],
+      "ready": [],
+      "blocked": [],
+      "empty": [
+        "navitas"
+      ],
+      "status": "source-empty",
+      "catalogPrograms": 106,
+      "sourcePrograms": 0
     },
     {
       "slug": "marangoni-london",
@@ -21957,13 +22088,16 @@
       "name": "Manchester Metropolitan University International College",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs"
       ],
       "ready": [
         "qs"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
       "catalogPrograms": 11,
       "sourcePrograms": 6,
@@ -22496,19 +22630,22 @@
       "name": "Murdoch University Dubai",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs"
       ],
       "ready": [
         "qs"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 110,
+      "catalogPrograms": 111,
       "sourcePrograms": 59,
       "matched": 59,
       "matchedFuzzy": 0,
-      "catalogOnly": 51,
+      "catalogOnly": 52,
       "sourceOnly": 0,
       "catalogWithFee": 95,
       "sourceWithFee": 59,
@@ -22698,19 +22835,22 @@
       "name": "Navitas",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "edvoy"
       ],
       "ready": [
         "edvoy"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 507,
+      "catalogPrograms": 512,
       "sourcePrograms": 572,
       "matched": 291,
       "matchedFuzzy": 6,
-      "catalogOnly": 216,
+      "catalogOnly": 221,
       "sourceOnly": 281,
       "catalogWithFee": 477,
       "sourceWithFee": 570,
@@ -25931,11 +26071,11 @@
         "navitas"
       ],
       "status": "compared",
-      "catalogPrograms": 472,
+      "catalogPrograms": 474,
       "sourcePrograms": 405,
       "matched": 404,
       "matchedFuzzy": 0,
-      "catalogOnly": 68,
+      "catalogOnly": 70,
       "sourceOnly": 1,
       "catalogWithFee": 436,
       "sourceWithFee": 405,
@@ -26080,11 +26220,11 @@
         "navitas"
       ],
       "status": "compared",
-      "catalogPrograms": 854,
+      "catalogPrograms": 855,
       "sourcePrograms": 819,
       "matched": 814,
       "matchedFuzzy": 0,
-      "catalogOnly": 40,
+      "catalogOnly": 41,
       "sourceOnly": 5,
       "catalogWithFee": 811,
       "sourceWithFee": 815,
@@ -26475,13 +26615,16 @@
       "name": "Queens College, CUNY",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs"
       ],
       "ready": [
         "qs"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
       "catalogPrograms": 164,
       "sourcePrograms": 30,
@@ -27259,11 +27402,11 @@
         "navitas"
       ],
       "status": "compared",
-      "catalogPrograms": 211,
+      "catalogPrograms": 216,
       "sourcePrograms": 166,
       "matched": 165,
       "matchedFuzzy": 4,
-      "catalogOnly": 46,
+      "catalogOnly": 51,
       "sourceOnly": 1,
       "catalogWithFee": 167,
       "sourceWithFee": 166,
@@ -27801,23 +27944,26 @@
       "name": "SAE University College",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs"
       ],
       "ready": [
         "qs"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 73,
+      "catalogPrograms": 79,
       "sourcePrograms": 22,
       "matched": 22,
       "matchedFuzzy": 0,
-      "catalogOnly": 51,
+      "catalogOnly": 57,
       "sourceOnly": 0,
       "catalogWithFee": 55,
       "sourceWithFee": 22,
-      "feeMismatch": 1,
+      "feeMismatch": 3,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -27836,15 +27982,37 @@
         ],
         "feeMismatch": [
           {
-            "program": "Master of Information Technology",
-            "slug": "sae-master-of-information-technology",
-            "catalog": 24000,
+            "program": "Graduate Certificate of Software Development",
+            "slug": "sae-graduate-certificate-of-software-development",
+            "catalog": 22136,
             "source": 12000,
             "currency": "AUD",
             "basis": "campusLevelStated",
             "audience": null,
             "via": "qs",
-            "rel": 50
+            "rel": 45.8
+          },
+          {
+            "program": "Diploma of Cyber Security",
+            "slug": "sae-diploma-of-cyber-security",
+            "catalog": 23992,
+            "source": 27960,
+            "currency": "AUD",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 14.2
+          },
+          {
+            "program": "Master of Information Technology",
+            "slug": "sae-master-of-information-technology",
+            "catalog": 22136,
+            "source": 12000,
+            "currency": "AUD",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 45.8
           }
         ],
         "fuzzyPairs": []
@@ -29765,18 +29933,103 @@
     {
       "slug": "srh-germany",
       "name": "SRH International College",
-      "type": "direct",
+      "type": "aggregator",
       "assigned": [
-        "direct"
+        "navitas",
+        "qs"
       ],
       "ready": [
-        "direct"
+        "qs"
       ],
       "blocked": [],
-      "empty": [],
-      "status": "no-extract",
+      "empty": [
+        "navitas"
+      ],
+      "status": "compared",
       "catalogPrograms": 165,
-      "sourcePrograms": 0
+      "sourcePrograms": 77,
+      "matched": 77,
+      "matchedFuzzy": 0,
+      "catalogOnly": 88,
+      "sourceOnly": 0,
+      "catalogWithFee": 140,
+      "sourceWithFee": 77,
+      "feeMismatch": 12,
+      "feeMissingInCatalog": 0,
+      "feeCurrency": 0,
+      "catalogCampuses": 6,
+      "sourceCampuses": 0,
+      "campusMissing": 0,
+      "hasDescription": true,
+      "scholarships": 6,
+      "samples": {
+        "sourceOnly": [],
+        "catalogOnly": [
+          "Foundation Year — Business",
+          "Foundation Year — Computing & IT",
+          "Foundation Year — Design & Media",
+          "Foundation Year — Engineering",
+          "Foundation Year — Health & Psychology"
+        ],
+        "feeMismatch": [
+          {
+            "program": "B.A. Film and Motion Design",
+            "slug": "srh-germany-b-a-film-and-motion-design",
+            "catalog": 13800,
+            "source": 31421,
+            "currency": "EUR",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 56.1
+          },
+          {
+            "program": "M.Eng Sustainable Battery Production Engineering - Dual",
+            "slug": "m-eng-sustainable-battery-production-engineering-dual",
+            "catalog": 24510,
+            "source": 25840,
+            "currency": "EUR",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 5.1
+          },
+          {
+            "program": "M.Eng. Engineering and Int. Business – Renewable Energy, Water, and Waste Management",
+            "slug": "m-eng-engineering-and-int-business-renewable-energy-water-and-waste-management",
+            "catalog": 24510,
+            "source": 25840,
+            "currency": "EUR",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 5.1
+          },
+          {
+            "program": "M.Eng. Engineering and Sustainable Technology Management - Industry",
+            "slug": "m-eng-engineering-and-sustainable-technology-management-industry",
+            "catalog": 24510,
+            "source": 25840,
+            "currency": "EUR",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 5.1
+          },
+          {
+            "program": "M.Eng. Engineering and Sustainable Technology Management - Mobility and Automotive Industry",
+            "slug": "m-eng-engineering-and-sustainable-technology-management-mobility-and-automotive-industry",
+            "catalog": 24510,
+            "source": 25840,
+            "currency": "EUR",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 5.1
+          }
+        ],
+        "fuzzyPairs": []
+      }
     },
     {
       "slug": "srh-haarlem-university-of-applied-sciences",
@@ -31391,11 +31644,11 @@
         "navitas"
       ],
       "status": "compared",
-      "catalogPrograms": 569,
+      "catalogPrograms": 700,
       "sourcePrograms": 532,
       "matched": 532,
       "matchedFuzzy": 1,
-      "catalogOnly": 37,
+      "catalogOnly": 168,
       "sourceOnly": 0,
       "catalogWithFee": 537,
       "sourceWithFee": 531,
@@ -31587,13 +31840,16 @@
       "name": "Sydney Institute of Business and Technology",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "edvoy"
       ],
       "ready": [
         "edvoy"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
       "catalogPrograms": 8,
       "sourcePrograms": 7,
@@ -31603,7 +31859,7 @@
       "sourceOnly": 0,
       "catalogWithFee": 8,
       "sourceWithFee": 7,
-      "feeMismatch": 0,
+      "feeMismatch": 6,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 1,
@@ -31616,7 +31872,63 @@
         "catalogOnly": [
           "Foundation Program"
         ],
-        "feeMismatch": [],
+        "feeMismatch": [
+          {
+            "program": "Diploma of Business",
+            "slug": "sydney-institute-of-business-and-technology-diploma-of-business",
+            "catalog": 26000,
+            "source": 35500,
+            "currency": "AUD",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 26.8
+          },
+          {
+            "program": "Diploma of Health",
+            "slug": "sydney-institute-of-business-and-technology-diploma-of-health",
+            "catalog": 26000,
+            "source": 33500,
+            "currency": "AUD",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 22.4
+          },
+          {
+            "program": "Diploma of Information Technology",
+            "slug": "sydney-institute-of-business-and-technology-diploma-of-information-technology",
+            "catalog": 26700,
+            "source": 36500,
+            "currency": "AUD",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 26.8
+          },
+          {
+            "program": "Diploma of Social Science",
+            "slug": "sydney-institute-of-business-and-technology-diploma-of-social-science",
+            "catalog": 25000,
+            "source": 31700,
+            "currency": "AUD",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 21.1
+          },
+          {
+            "program": "Diploma of Engineering",
+            "slug": "sydney-institute-of-business-and-technology-diploma-of-engineering",
+            "catalog": 27200,
+            "source": 40500,
+            "currency": "AUD",
+            "basis": "approxAnnual",
+            "audience": null,
+            "via": "edvoy",
+            "rel": 32.8
+          }
+        ],
         "fuzzyPairs": []
       }
     },
@@ -32808,6 +33120,22 @@
       "sourcePrograms": 0
     },
     {
+      "slug": "toronto-met",
+      "name": "Toronto Metropolitan University",
+      "type": "aggregator",
+      "assigned": [
+        "navitas"
+      ],
+      "ready": [],
+      "blocked": [],
+      "empty": [
+        "navitas"
+      ],
+      "status": "source-empty",
+      "catalogPrograms": 114,
+      "sourcePrograms": 0
+    },
+    {
       "slug": "toulouse-business-school",
       "name": "Toulouse Business School",
       "type": "aggregator",
@@ -33322,13 +33650,16 @@
       "name": "University of Twente",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "edvoy"
       ],
       "ready": [
         "edvoy"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
       "catalogPrograms": 88,
       "sourcePrograms": 15,
@@ -38895,6 +39226,7 @@
       "name": "University of Waikato",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs",
         "edvoy"
       ],
@@ -38903,7 +39235,9 @@
         "edvoy"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
       "catalogPrograms": 656,
       "sourcePrograms": 576,
@@ -39391,10 +39725,27 @@
       }
     },
     {
+      "slug": "western-ontario",
+      "name": "Western University",
+      "type": "aggregator",
+      "assigned": [
+        "navitas"
+      ],
+      "ready": [],
+      "blocked": [],
+      "empty": [
+        "navitas"
+      ],
+      "status": "source-empty",
+      "catalogPrograms": 121,
+      "sourcePrograms": 0
+    },
+    {
       "slug": "western-sydney",
       "name": "Western Sydney University",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs",
         "edvoy"
       ],
@@ -39403,17 +39754,19 @@
         "edvoy"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 169,
+      "catalogPrograms": 170,
       "sourcePrograms": 72,
       "matched": 71,
       "matchedFuzzy": 0,
-      "catalogOnly": 98,
+      "catalogOnly": 99,
       "sourceOnly": 1,
-      "catalogWithFee": 148,
+      "catalogWithFee": 149,
       "sourceWithFee": 72,
-      "feeMismatch": 0,
+      "feeMismatch": 4,
       "feeMissingInCatalog": 0,
       "feeCurrency": 0,
       "catalogCampuses": 5,
@@ -39432,7 +39785,52 @@
           "Diploma of Commerce",
           "Diploma of Accounting"
         ],
-        "feeMismatch": [],
+        "feeMismatch": [
+          {
+            "program": "Diploma in Arts",
+            "slug": "western-sydney-diploma-in-arts-short-course",
+            "catalog": 34650,
+            "source": 31158,
+            "currency": "AUD",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 10.1
+          },
+          {
+            "program": "Diploma in Engineering",
+            "slug": "western-sydney-diploma-in-engineering-short-course",
+            "catalog": 35100,
+            "source": 31158,
+            "currency": "AUD",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 11.2
+          },
+          {
+            "program": "Diploma in Business",
+            "slug": "diploma-in-business",
+            "catalog": 28000,
+            "source": 31158,
+            "currency": "AUD",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 10.1
+          },
+          {
+            "program": "Diploma in Information and Communications Technology",
+            "slug": "diploma-in-information-and-communications-technology",
+            "catalog": 32200,
+            "source": 31158,
+            "currency": "AUD",
+            "basis": "campusLevelStated",
+            "audience": null,
+            "via": "qs",
+            "rel": 3.2
+          }
+        ],
         "fuzzyPairs": []
       }
     },
@@ -39571,19 +39969,22 @@
       "name": "Wilfrid Laurier International College",
       "type": "aggregator",
       "assigned": [
+        "navitas",
         "qs"
       ],
       "ready": [
         "qs"
       ],
       "blocked": [],
-      "empty": [],
+      "empty": [
+        "navitas"
+      ],
       "status": "compared",
-      "catalogPrograms": 12,
+      "catalogPrograms": 21,
       "sourcePrograms": 9,
       "matched": 9,
       "matchedFuzzy": 0,
-      "catalogOnly": 3,
+      "catalogOnly": 12,
       "sourceOnly": 0,
       "catalogWithFee": 12,
       "sourceWithFee": 9,
@@ -39600,7 +40001,9 @@
         "catalogOnly": [
           "University Pathway — Business",
           "University Pathway — Arts and Sciences",
-          "English for Academic Purposes"
+          "English for Academic Purposes",
+          "International Year One (UTP II) Human and Social Sciences",
+          "International Year One (UTP II) Liberal Arts"
         ],
         "feeMismatch": [],
         "fuzzyPairs": []

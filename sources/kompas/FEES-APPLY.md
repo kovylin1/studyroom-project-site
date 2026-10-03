@@ -1,27 +1,27 @@
 # Применение цен агрегаторов
 
-Источники: `kaplan`.
+Источники: `navitas`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | kaplan |
-| extracts | 23 |
-| linked | 23 |
-| candidates | 4588 |
+| sources | navitas |
+| extracts | 29 |
+| linked | 29 |
+| candidates | 39 |
 | skippedCurrency | 0 |
 | skippedBucket | 0 |
-| skippedNoMatch | 90 |
+| skippedNoMatch | 134 |
 | skippedNoCard | 0 |
 | skippedAudience | 0 |
 | skippedPartTime | 0 |
-| matchedByAward | 4 |
-| ambiguousMatch | 1 |
-| programsWritten | 4419 |
-| cardsTouched | 23 |
-| overwritten | 4414 |
+| matchedByAward | 0 |
+| ambiguousMatch | 0 |
+| programsWritten | 39 |
+| cardsTouched | 8 |
+| overwritten | 33 |
 | ownCurrency | 0 |
-| variantPrograms | 1 |
-| variantSums | 2 |
+| variantPrograms | 0 |
+| variantSums | 0 |
 | foreignQuoteDemoted | 0 |
 | skippedPathwayFee | 0 |
 | campusDemoted | 0 |
@@ -31,7 +31,6 @@
 
 | Причина | Штук |
 |---|---:|
-| `no-match` | 89 |
-| `match-ambiguous` | 1 |
+| `no-match` | 134 |
 
 Подробности: `fees-apply-cases.json`, откат: `fees-apply-backup.json`.
