@@ -1,29 +1,28 @@
 # Добор программ агрегаторов
 
-Источники: `navitas`.
+Источники: `qahe`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | navitas |
-| rows | 373 |
-| unmatched | 198 |
-| ambiguous | 0 |
-| levelFromSource | 190 |
+| sources | qahe |
+| rows | 101 |
+| unmatched | 2 |
+| ambiguous | 2 |
+| levelFromSource | 2 |
 | levelFromSourceLevel | 0 |
 | levelFromTitle | 0 |
 | noLevel | 0 |
-| levelUnsupported | 8 |
+| levelUnsupported | 0 |
 | duplicatesInSource | 0 |
-| created | 190 |
-| cardsTouched | 21 |
-| withDuration | 155 |
-| withUrl | 190 |
+| created | 2 |
+| cardsTouched | 2 |
+| withDuration | 2 |
+| withUrl | 2 |
 | urlShared | 0 |
 
 ## Не заведено
 
 | Причина | Штук |
 |---|---:|
-| `level-unsupported` | 8 |
 
 Подробности: `programs-backfill-cases.json`, откат: `programs-backfill-backup.json`.

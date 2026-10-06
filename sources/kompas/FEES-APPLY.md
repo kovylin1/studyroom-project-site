@@ -1,27 +1,27 @@
 # Применение цен агрегаторов
 
-Источники: `navitas`.
+Источники: `qahe`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | navitas |
-| extracts | 29 |
-| linked | 29 |
-| candidates | 39 |
+| sources | qahe |
+| extracts | 4 |
+| linked | 4 |
+| candidates | 78 |
 | skippedCurrency | 0 |
 | skippedBucket | 0 |
-| skippedNoMatch | 134 |
+| skippedNoMatch | 3 |
 | skippedNoCard | 0 |
-| skippedAudience | 0 |
+| skippedAudience | 20 |
 | skippedPartTime | 0 |
 | matchedByAward | 0 |
-| ambiguousMatch | 0 |
-| programsWritten | 39 |
-| cardsTouched | 8 |
-| overwritten | 33 |
+| ambiguousMatch | 1 |
+| programsWritten | 61 |
+| cardsTouched | 2 |
+| overwritten | 61 |
 | ownCurrency | 0 |
-| variantPrograms | 0 |
-| variantSums | 0 |
+| variantPrograms | 1 |
+| variantSums | 2 |
 | foreignQuoteDemoted | 0 |
 | skippedPathwayFee | 0 |
 | campusDemoted | 0 |
@@ -31,6 +31,8 @@
 
 | Причина | Штук |
 |---|---:|
-| `no-match` | 134 |
+| `fee-audience` | 20 |
+| `no-match` | 2 |
+| `match-ambiguous` | 1 |
 
 Подробности: `fees-apply-cases.json`, откат: `fees-apply-backup.json`.
