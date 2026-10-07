@@ -33,7 +33,7 @@ export const LOCAL_CURRENCY = {
 // Валюты, которые принимает схема каталога (site/src/schema/university.ts).
 // Значения вне списка zod отвергает на сборке сайта — включая null.
 export const SCHEMA_CURRENCIES = new Set(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD',
-  'NZD', 'CHF', 'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD']);
+  'NZD', 'CHF', 'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD', 'TRY']);
 
 // Справочные курсы к тенге. НЕ котировки: тем же приближением считает витрина
 // (site/src/content/studyroom/static.ts, CURRENCY_TO_KZT) — при правке двигать обе.
@@ -41,7 +41,7 @@ export const SCHEMA_CURRENCIES = new Set(['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CA
 // сравнить величину: правило минимума из всех агрегаторов и замер расхождений.
 export const KZT_RATES = {
   GBP: 600, USD: 480, EUR: 520, CAD: 350, AUD: 320, NZD: 290, CHF: 545,
-  AED: 131, HKD: 62, THB: 14, CNY: 66, BHD: 1276, MYR: 108, SGD: 369, KZT: 1, RUB: 6,
+  AED: 131, HKD: 62, THB: 14, CNY: 66, BHD: 1276, MYR: 108, SGD: 369, TRY: 11, KZT: 1, RUB: 6,
 };
 export const DEFAULT_KZT_RATE = 500;
 export const inKzt = (v, cur) => v * (KZT_RATES[cur] || DEFAULT_KZT_RATE);

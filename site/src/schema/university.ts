@@ -24,7 +24,7 @@ export type ProgramLevel = z.infer<typeof programLevel>;
 
 // Валюты, которые принимает каталог. Один список на цену карточки и цену программы.
 export const CURRENCY_CODES = ['USD', 'EUR', 'GBP', 'KZT', 'RUB', 'CAD', 'AUD', 'NZD', 'CHF',
-  'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD'] as const;
+  'AED', 'HKD', 'THB', 'CNY', 'BHD', 'MYR', 'SGD', 'TRY'] as const;
 const CURRENCY_CODES_SCHEMA = z.enum(CURRENCY_CODES);
 
 export const programSchema = z.object({
@@ -61,7 +61,10 @@ export const programSchema = z.object({
   // Признак попрограммный, а не на карточку: у 54 вузов QS основа внутри одной
   // карточки разная. Такие суммы обязаны быть исключены из «от … в год»
   // (см. site/src/lib/tuition.ts), иначе завышают ценник вуза в 2-4 раза.
-  tuitionBasis: z.enum(['year', 'program']).optional(),
+  // semester / month — решение владельца 30.09.2026: вуз даёт цену за семестр или
+  // в месяц (Modul, Metropolitan, IBS, Anglo-American, SRH) — не пересчитываем в год,
+  // а подписываем как есть («за семестр», «в месяц»). В «от … в год» не входят.
+  tuitionBasis: z.enum(['year', 'program', 'semester', 'month']).optional(),
   // Валюта цены ЭТОЙ программы (КОМПАС 3.5-a). Когда поля нет — валюта карточки.
   // Карточка держит одну валюту на все программы, а у кампусов в Дубае, Малайзии,
   // Сингапуре и Швейцарии агрегатор даёт местную (AED, MYR, SGD, CHF) при карточке
@@ -90,6 +93,12 @@ export const programSchema = z.object({
     other: z.number().nonnegative().optional(),
     total: z.number().nonnegative().optional(),
   })).min(2).optional(),
+  // Цена прямого партнёра с его офсайта (scraper/kompas-direct-fees.mjs, 28.09.2026).
+  // level — вуз объявил одну цену на уровень обучения, а не на эту программу
+  // (решение 23.07.2026: привязывать можно, но с пометкой). Без объявления здесь
+  // zod срезал бы оба поля, как было с kompasStatus и officialUrl.
+  feeScope: z.enum(['program', 'level']).optional(),
+  feeSourceUrl: z.string().url().optional(),
   kompasCheckedAt: isoDate.optional(),
   checkedAt: isoDate.optional(),
   brokenLink: z.boolean().optional(),

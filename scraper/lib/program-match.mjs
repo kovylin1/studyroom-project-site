@@ -171,6 +171,70 @@ export function rowLevel(row) {
   return { level: null, from: null };
 }
 
+// Четвёртая ступень — «канонический ключ» (30.09.2026, прямые партнёры).
+// Сайт вуза и карточка пишут одну программу по-разному: «Finance BS» и «BS Finance»,
+// «Media Design BA» и «BA Media Design», «M.Sc. X» и «MSc X», «X BEng (Hons)» и
+// «Bachelor of X», «(Hons)» и «(Honours)», «HR» и «Human Resource», хвосты «(STEM)»,
+// «(ODL)», «Focus on …», префикс школы «Berlin School of … | B.A. …».
+// Замер 30.09: из 557 «новых» у 34 вузов так выглядела заметная часть (Wollongong,
+// Metropolitan, Webster, XJTLU, SRH Berlin).
+// Ступень включается флагом `{ canon: true }` — агрегаторы без флага считают как раньше,
+// иначе следующий их прогон разом привязал бы новые цены и упёрся в порог 5 %.
+// Уровень строго обязан совпасть: у ключа степень снята отовсюду, и «Civil Engineering PhD»
+// с «Civil Engineering MSc» дают один ключ.
+const CANON_AWARD_TOKENS = new Set([
+  'ba', 'bsc', 'bs', 'beng', 'bba', 'bcom', 'bed', 'bfa', 'barch', 'llb', 'bsba', 'bmus',
+  'ma', 'msc', 'ms', 'meng', 'mba', 'mres', 'mphil', 'mdes', 'march', 'mfa', 'llm', 'med', 'mm', 'maf',
+  'phd', 'dba', 'edd', 'hons', 'honours', 'bm', 'msn', 'mha', 'gcrt',
+]);
+const CANON_LEVEL = {
+  ba: 'bachelor', bsc: 'bachelor', bs: 'bachelor', beng: 'bachelor', bba: 'bachelor', bcom: 'bachelor',
+  bed: 'bachelor', bfa: 'bachelor', barch: 'bachelor', llb: 'bachelor', bsba: 'bachelor', bmus: 'bachelor',
+  ma: 'master', msc: 'master', ms: 'master', meng: 'master', mba: 'master', mres: 'master', mphil: 'master',
+  mdes: 'master', march: 'master', mfa: 'master', llm: 'master', med: 'master', mm: 'master', maf: 'master',
+  phd: 'phd', dba: 'phd', edd: 'phd', bm: 'bachelor', msn: 'master', mha: 'master', gcrt: 'short-course',
+};
+// Хвосты формы обучения и языка: одна программа, не отдельная.
+// «with Contemporary Entrepreneurialism» — так XJTLU называет на сайте программы кампуса
+// Тайцана, в карточке они же без хвоста («Bachelor of Intelligent Robotics Engineering»).
+const CANON_TAIL = [/\b(odl|online learning|online|full time|part time|stem)\b/g,
+  /\bwith contemporary entrepreneurialism\b/g, /\bin st louis$/g, /\b(en|tr|de)$/];
+// «Degree», «Major», «Bachelor’s/Master’s» внутри названия — обёртка, не программа.
+const CANON_STOP = new Set(['of', 'in', 'the', 'a', 'an', 'degree', 'major', 'bachelors', 'masters']);
+
+/** Канонический ключ и уровень, который назвала снятая степень: { key, level }. */
+export function canonTitle(title) {
+  let s = String(title || '');
+  // «School of … | B.A. X» — слева название школы, не программы
+  const bar = s.split(/\s+\|\s+/);
+  if (bar.length > 1 && /\b(school|faculty|campus|college)\b/i.test(bar[0])) s = bar.slice(1).join(' ');
+  s = s.replace(/\.(?=[A-Za-z])/g, '')            // M.Sc. → MSc., Ph.D. → PhD.
+    .replace(/&/g, ' and ')
+    .replace(/^\s*(new|top-ranked)\s+/i, '')
+    .replace(/\bfocus on\b/gi, ' ')
+    .replace(/\bwith an? (specialism|emphasis) in\b/gi, ' ') // Webster: «X with an Emphasis in Y» = «X - Y»
+    .replace(/^\s*graduate certificate in\b/i, 'gcrt ')
+    .replace(/\bspecialism in\b/gi, ' ');
+  let n = norm(s).replace(/\bhr\b/g, 'human resource').replace(/\btv\b/g, 'television')
+    .replace(/\bartificial intelligence\b/g, 'ai').replace(/\bcommunications\b/g, 'communication')
+    .replace(/^bachelor of fine arts\b/, 'bfa').replace(/^master of fine arts\b/, 'mfa')
+    .replace(/^bachelor of education\b/, 'bed');
+  for (const re of CANON_TAIL) n = n.replace(re, ' ');
+  n = n.replace(/\s+/g, ' ').trim();
+  // приставка степени спереди — тем же списком, что у третьей ступени
+  const lead = levelFromTitle(n);
+  const stripped = stripAward(n) || n;
+  let level = lead;
+  const words = [];
+  for (const w of stripped.split(' ')) {
+    if (!w) continue;
+    if (CANON_AWARD_TOKENS.has(w)) { if (!level && CANON_LEVEL[w]) level = CANON_LEVEL[w]; continue; }
+    if (CANON_STOP.has(w)) continue;
+    words.push(w);
+  }
+  return { key: words.join(' '), level };
+}
+
 /** Индексы по программам карточки. Строится один раз на карточку. */
 export function buildIndex(programs) {
   const list = programs || [];
@@ -182,8 +246,13 @@ export function buildIndex(programs) {
   for (const p of list) {
     if (p.programUrl) urlCount.set(p.programUrl, (urlCount.get(p.programUrl) || 0) + 1);
   }
-  const byUrl = new Map(), byTitle = new Map(), byStripped = new Map();
+  const byUrl = new Map(), byTitle = new Map(), byStripped = new Map(), byCanon = new Map();
   for (const p of list) {
+    const c = canonTitle(p.title);
+    if (c.key) {
+      if (!byCanon.has(c.key)) byCanon.set(c.key, []);
+      byCanon.get(c.key).push({ p, level: p.level || c.level || null });
+    }
     if (p.programUrl && urlCount.get(p.programUrl) === 1 && !byUrl.has(p.programUrl)) byUrl.set(p.programUrl, p);
     const k = norm(p.title);
     if (k && !byTitle.has(k)) byTitle.set(k, p);
@@ -193,14 +262,36 @@ export function buildIndex(programs) {
       byStripped.get(st).push(p);
     }
   }
-  return { byUrl, byTitle, byStripped };
+  return { byUrl, byTitle, byStripped, byCanon };
+}
+
+// Четвёртая ступень: ключ совпал ТОЧНО, уровень известен с обеих сторон и равен,
+// кандидат один. Без уровня хоть с одной стороны — не привязываем.
+function matchCanon(idx, row, lvl) {
+  const c = canonTitle(row.title);
+  if (!c.key) return null;
+  const level = lvl || c.level;
+  if (!level) return null;
+  const fit = (idx.byCanon.get(c.key) || []).filter((e) => e.level === level);
+  if (fit.length === 1) return { program: fit[0].p, how: 'canon' };
+  if (fit.length > 1) return { program: null, how: 'ambiguous' };
+  return null;
 }
 
 /**
  * Ищет программу карточки под строку выгрузки.
  * Возвращает { program, how } либо { program: null, how: 'none' | 'ambiguous' }.
+ * `opts.canon` включает четвёртую ступень (канонический ключ) — см. canonTitle.
  */
-export function matchProgram(idx, row) {
+export function matchProgram(idx, row, opts = {}) {
+  const r = matchStrict(idx, row);
+  if (r.how !== 'none' || !opts.canon) return r;
+  const lv = rowLevel(row);
+  if (lv.from === 'unsupported') return r;
+  return matchCanon(idx, row, lv.level) || r;
+}
+
+function matchStrict(idx, row) {
   if (row.programUrl) {
     const hit = idx.byUrl.get(row.programUrl);
     if (hit) return { program: hit, how: 'url' };
