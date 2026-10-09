@@ -308,5 +308,56 @@
     "error": null,
     "hold": null,
     "finishedAt": "2026-10-03T08:49:01.924Z"
+  },
+  "studygroup": {
+    "aggregator": "studygroup",
+    "kind": "kompas",
+    "startedAt": "2026-10-09T09:43:26.379Z",
+    "applied": true,
+    "dryRun": false,
+    "steps": [
+      {
+        "name": "сбор kompas-collect-studygroup.mjs",
+        "ok": true
+      },
+      {
+        "name": "рабочая копия ← каталог",
+        "ok": true
+      },
+      {
+        "name": "цены агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "программы агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "сравнение копии с каталогом",
+        "ok": true,
+        "detail": "свои карточки 49, изменились 16 (1.5% каталога)"
+      },
+      {
+        "name": "порог изменения",
+        "ok": true,
+        "detail": "1.5% ≤ 5%"
+      },
+      {
+        "name": "перенос в каталог",
+        "ok": true,
+        "detail": "карточек 16"
+      },
+      {
+        "name": "гейт каталога",
+        "ok": true
+      }
+    ],
+    "changedCards": 16,
+    "ownCards": 49,
+    "error": null,
+    "hold": null,
+    "finishedAt": "2026-10-09T09:43:38.072Z"
   }
 }

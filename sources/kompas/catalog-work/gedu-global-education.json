@@ -19,7 +19,10 @@
       "programUrl": "https://gedu.global/course-listing-page/",
       "faculty": "Бизнес",
       "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-07-24"
+      "kompasCheckedAt": "2026-07-24",
+      "tuitionCurrency": "EUR",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.schiller.edu/programs/bachelor-of-science-in-international-business/"
     },
     {
       "slug": "gedu-global-education-bsc-hons-accounting-financial-management",
@@ -36,7 +39,10 @@
       "programUrl": "https://gedu.global/course-listing-page/",
       "faculty": "Бизнес",
       "kompasStatus": "catalog-only",
-      "kompasCheckedAt": "2026-07-24"
+      "kompasCheckedAt": "2026-07-24",
+      "tuitionCurrency": "GBP",
+      "feeScope": "program",
+      "feeSourceUrl": "https://globalbanking.ac.uk/courses/bsc-hons-accounting-and-financial-management/"
     },
     {
       "slug": "gedu-global-education-ma-marketing-and-brand-management",
@@ -137,6 +143,46 @@
       "faculty": "Бизнес",
       "kompasStatus": "catalog-only",
       "kompasCheckedAt": "2026-07-24"
+    },
+    {
+      "slug": "gedu-global-education-msc-brand-and-marketing-management",
+      "title": "MSc Brand and Marketing Management",
+      "level": "master",
+      "programUrl": "https://www.icn-artem.com/formation/msc-brand-and-marketing-management/",
+      "source": "official",
+      "verifiedBySite": true,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-10-02",
+      "tuitionCurrency": "EUR",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.icn-artem.com/formation/msc-brand-and-marketing-management/"
+    },
+    {
+      "slug": "gedu-global-education-bachelor-en-management",
+      "title": "Bachelor en Management",
+      "level": "bachelor",
+      "programUrl": "https://www.icn-artem.com/formation/bachelor-en-management/",
+      "source": "official",
+      "verifiedBySite": true,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-10-02",
+      "tuitionCurrency": "EUR",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.icn-artem.com/formation/bachelor-en-management/"
+    },
+    {
+      "slug": "gedu-global-education-bsc-hons-sustainable-maritime-operations",
+      "title": "BSc (Hons) Sustainable Maritime Operations",
+      "level": "bachelor",
+      "programUrl": "https://www.mla.ac.uk/programmes/degrees/bsc-hons-sustainable-maritime-operations/",
+      "source": "official",
+      "verifiedBySite": true,
+      "kompasStatus": "source-added",
+      "kompasCheckedAt": "2026-10-02",
+      "tuitionBasis": "program",
+      "tuitionCurrency": "GBP",
+      "feeScope": "program",
+      "feeSourceUrl": "https://www.mla.ac.uk/programmes/degrees/bsc-hons-sustainable-maritime-operations/"
     }
   ],
   "sourceUrl": "https://gedu.global/",
@@ -146,7 +192,13 @@
   "lastChecked": "2026-05-24",
   "tuition": {
     "currency": "USD",
-    "byProgram": {}
+    "byProgram": {
+      "gedu-global-education-bachelor-of-science-in-international-business": 15420,
+      "gedu-global-education-bsc-hons-accounting-financial-management": 9535,
+      "gedu-global-education-msc-brand-and-marketing-management": 13000,
+      "gedu-global-education-bachelor-en-management": 8900,
+      "gedu-global-education-bsc-hons-sustainable-maritime-operations": 9535
+    }
   },
   "deadlines": {},
   "requirements": {

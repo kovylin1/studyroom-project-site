@@ -1,27 +1,27 @@
 {
  "dry": false,
  "sources": [
-  "qahe"
+  "studygroup"
  ],
  "stats": {
-  "sources": "qahe",
-  "extracts": 4,
-  "linked": 4,
-  "candidates": 78,
+  "sources": "studygroup",
+  "extracts": 31,
+  "linked": 31,
+  "candidates": 144,
   "skippedCurrency": 0,
   "skippedBucket": 0,
-  "skippedNoMatch": 3,
+  "skippedNoMatch": 14,
   "skippedNoCard": 0,
-  "skippedAudience": 20,
+  "skippedAudience": 0,
   "skippedPartTime": 0,
   "matchedByAward": 0,
-  "ambiguousMatch": 1,
-  "programsWritten": 61,
-  "cardsTouched": 2,
-  "overwritten": 61,
+  "ambiguousMatch": 0,
+  "programsWritten": 133,
+  "cardsTouched": 31,
+  "overwritten": 133,
   "ownCurrency": 0,
-  "variantPrograms": 1,
-  "variantSums": 2,
+  "variantPrograms": 10,
+  "variantSums": 21,
   "foreignQuoteDemoted": 0,
   "skippedPathwayFee": 0,
   "campusDemoted": 0,
@@ -29,493 +29,1078 @@
  },
  "changes": [
   {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-bsc-hons-accounting-and-finance-top-up",
+   "catalogSlug": "aberdeen",
+   "program": "aberdeen-business-economics-accounting-and-real-estate",
+   "fee": 18900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18900
+  },
+  {
+   "catalogSlug": "aberdeen",
+   "program": "aberdeen-humanities-law-and-social-science",
+   "fee": 18900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18900
+  },
+  {
+   "catalogSlug": "aberdeen",
+   "program": "aberdeen-life-sciences",
+   "fee": 19750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 19750
+  },
+  {
+   "catalogSlug": "aberdeen",
+   "program": "aberdeen-physical-sciences-and-engineering",
+   "fee": 19900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 19900
+  },
+  {
+   "catalogSlug": "aberdeen",
+   "program": "aberdeen-business-management-and-finance",
+   "fee": 18900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18900
+  },
+  {
+   "catalogSlug": "aberdeen",
+   "program": "aberdeen-computing-science",
+   "fee": 19900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 19900
+  },
+  {
+   "catalogSlug": "aberdeen",
+   "program": "aberdeen-medical-sciences",
+   "fee": 19750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 19750
+  },
+  {
+   "catalogSlug": "aberdeen",
+   "program": "aberdeen-business-law",
+   "fee": 12250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 12250
+  },
+  {
+   "catalogSlug": "aberdeen",
+   "program": "aberdeen-pre-masters-in-science-engineering",
+   "fee": 13250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 13250
+  },
+  {
+   "catalogSlug": "bath",
+   "program": "bath-business-finance-and-management",
+   "fee": 25250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 25250
+  },
+  {
+   "catalogSlug": "bath",
+   "program": "bath-engineering-science-and-computing",
+   "fee": 23250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 23250
+  },
+  {
+   "catalogSlug": "bath",
+   "program": "bath-health-and-life-sciences",
+   "fee": 27250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 27250
+  },
+  {
+   "catalogSlug": "bath",
+   "program": "bath-social-sciences",
+   "fee": 25250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "variants": 2,
+   "prev": 25250
+  },
+  {
+   "catalogSlug": "bath",
+   "program": "bath-business-and-economics",
+   "fee": 25250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 25250
+  },
+  {
+   "catalogSlug": "california-state-university-san-marcos",
+   "program": "california-state-university-san-marcos-direct-entry-graduate",
+   "fee": 8950,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 8950
+  },
+  {
+   "catalogSlug": "california-state-university-san-marcos",
+   "program": "california-state-university-san-marcos-direct-entry-undergraduate",
+   "fee": 4500,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 4500
+  },
+  {
+   "catalogSlug": "cardiff",
+   "program": "cardiff-business-economics-accounting-and-finance-accelerated",
+   "fee": 19500,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 19500
+  },
+  {
+   "catalogSlug": "cardiff",
+   "program": "cardiff-engineering-physical-science-and-computer-science-accelerated",
+   "fee": 19900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 19900
+  },
+  {
+   "catalogSlug": "cardiff",
+   "program": "cardiff-business-management",
+   "fee": 21900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 21900
+  },
+  {
+   "catalogSlug": "cardiff",
+   "program": "cardiff-computer-science-and-cyber-security",
+   "fee": 23250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 23250
+  },
+  {
+   "catalogSlug": "cardiff",
+   "program": "cardiff-journalism-media-and-culture",
+   "fee": 21900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 21900
+  },
+  {
+   "catalogSlug": "cardiff",
+   "program": "cardiff-psychology",
+   "fee": 21900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 21900
+  },
+  {
+   "catalogSlug": "cardiff",
+   "program": "cardiff-accounting-and-finance",
    "fee": 21500,
    "currency": "GBP",
-   "source": "qahe",
+   "source": "studygroup",
    "prev": 21500
   },
   {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-bsc-hons-business-enterprise-and-innovation-management-top-up",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-bsc-hons-computing-with-cyber-security-technology",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-bsc-hons-computing-with-technology",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-bsc-hons-global-business-management-human-resources-top-up",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 19850
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-bsc-hons-global-business-management-logistics-and-supply-chain-top-up",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-bsc-hons-global-business-management-marketing-top-up",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-bsc-hons-international-banking-and-finance-top-up",
-   "fee": 9790,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 9790
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-bsc-hons-international-tourism-hospitality-and-events-top-up",
-   "fee": 9790,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 9790
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-graduate-certificate-in-business",
-   "fee": 6750,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 6750
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-international-foundation-in-business-management",
-   "fee": 17250,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 17250
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-ifp-applied-science",
-   "fee": 21250,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21250
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-ifp-art-design",
-   "fee": 21250,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21250
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-ifp-business-law",
-   "fee": 21250,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21250
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-ifp-computing",
-   "fee": 21250,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21250
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-ifp-engineering",
-   "fee": 21250,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21250
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-ifp-humanities",
-   "fee": 21250,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21250
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-international-medical-foundation-diploma-st-george-s-university",
+   "catalogSlug": "cardiff",
+   "program": "cardiff-engineering",
    "fee": 22250,
    "currency": "GBP",
-   "source": "qahe",
+   "source": "studygroup",
    "prev": 22250
   },
   {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-iy1-business",
-   "fee": 17250,
+   "catalogSlug": "cardiff",
+   "program": "cardiff-international-relations",
+   "fee": 21900,
    "currency": "GBP",
-   "source": "qahe",
-   "prev": 17250
+   "source": "studygroup",
+   "prev": 21900
   },
   {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-ma-luxury-brand-management-with-advanced-practice",
-   "fee": 21500,
+   "catalogSlug": "cardiff",
+   "program": "cardiff-law",
+   "fee": 22750,
    "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
+   "source": "studygroup",
+   "prev": 22750
   },
   {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-ma-msc-innovation-and-creative-strategy",
-   "fee": 19350,
+   "catalogSlug": "cardiff",
+   "program": "cardiff-business-economics-social-sciences-and-humanities",
+   "fee": 20250,
    "currency": "GBP",
-   "source": "qahe",
-   "prev": 19350
+   "source": "studygroup",
+   "prev": 20250
   },
   {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-big-data-and-data-science-technology-with-advanced-practice",
-   "fee": 21500,
+   "catalogSlug": "cardiff",
+   "program": "cardiff-science-and-computing",
+   "fee": 22250,
    "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
+   "source": "studygroup",
+   "prev": 22250
   },
   {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-business-with-business-analytics-with-advanced-practice-2",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
+   "catalogSlug": "depaul",
+   "program": "depaul-direct-admit-graduate",
+   "fee": 24912,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 17352
   },
   {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-business-with-entrepreneurship-with-advanced-practice",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
+   "catalogSlug": "depaul",
+   "program": "depaul-direct-admit-undergraduate",
+   "fee": 48180,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 46776
   },
   {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-business-with-financial-management-with-advanced-practice",
-   "fee": 21500,
+   "catalogSlug": "durham",
+   "program": "durham-business-economics-accounting-and-finance",
+   "fee": 19750,
    "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
+   "source": "studygroup",
+   "variants": 3,
+   "prev": 19750
   },
   {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-business-with-hospitality-and-tourism-management-with-advanced-practice",
-   "fee": 21500,
+   "catalogSlug": "durham",
+   "program": "durham-humanities-and-social-sciences",
+   "fee": 19750,
    "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
+   "source": "studygroup",
+   "prev": 19750
   },
   {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-business-with-human-resource-management-with-advanced-practice",
-   "fee": 21500,
+   "catalogSlug": "durham",
+   "program": "durham-humanities-law-and-social-science",
+   "fee": 25500,
    "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-business-with-international-management-with-advanced-practice",
-   "fee": 12660,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 12660
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-business-with-marketing-management-with-advanced-practice",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-computing-and-technology-with-advanced-practice",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-cyber-security-with-advanced-practice",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-cyber-security-technology-with-advanced-practice",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21500
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-digital-marketing-with-advanced-practice",
-   "fee": 21500,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 20950
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-global-logistics-operations-and-supply-chain-management-with-advanced-prac",
-   "fee": 20950,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 20950
-  },
-  {
-   "catalogSlug": "northumbria",
-   "program": "northumbria-msc-international-project-management-with-advanced-practice-2",
-   "fee": 11250,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 11250
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-international-tourism-and-hospitality-management-with-advanced-practice",
-   "fee": 20800,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 17810
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-international-tourism-and-hospitality-management",
-   "fee": 16200,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 16200
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-communication-and-public-relations",
-   "fee": 16200,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 16200
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-bsc-hons-global-business",
-   "fee": 13350,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 13350
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-bsc-hons-accounting-with-management",
-   "fee": 13350,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 13350
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-bsc-hons-computing-systems",
-   "fee": 13350,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 13350
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-extended-msc-international-business",
-   "fee": 21200,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21200
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-extended-msc-international-business-with-advanced-practice",
-   "fee": 25800,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 25800
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-extended-msc-international-business-with-data-analytics",
-   "fee": 21200,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21200
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-extended-msc-international-business-with-data-analytics-with-advanced-practice",
-   "fee": 25800,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 25800
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-extended-msc-international-business-with-human-resource-management",
-   "fee": 21200,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21200
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-extended-msc-international-business-with-human-resource-management-with-advanced-pr",
-   "fee": 25800,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 25800
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-extended-msc-marketing",
-   "fee": 21200,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21200
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-extended-msc-marketing-with-advanced-practice",
-   "fee": 25800,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 25800
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-graduate-certificate",
-   "fee": 5750,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 5750
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-mba",
-   "fee": 16750,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 16750
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-mba-with-advanced-practice",
-   "fee": 21350,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 21350
-  },
-  {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-human-resource-management",
-   "fee": 16750,
-   "currency": "GBP",
-   "source": "qahe",
+   "source": "studygroup",
    "variants": 2,
-   "prev": 16750
+   "prev": 25500
   },
   {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-international-business",
-   "fee": 16200,
+   "catalogSlug": "durham",
+   "program": "durham-science-and-engineering",
+   "fee": 27250,
    "currency": "GBP",
-   "source": "qahe",
-   "prev": 16200
+   "source": "studygroup",
+   "variants": 2,
+   "prev": 27250
   },
   {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-international-business-with-advanced-practice",
-   "fee": 20800,
+   "catalogSlug": "durham",
+   "program": "durham-business-and-management",
+   "fee": 27500,
    "currency": "GBP",
-   "source": "qahe",
-   "prev": 20800
+   "source": "studygroup",
+   "prev": 27500
   },
   {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-international-business-with-data-analytics",
-   "fee": 16200,
+   "catalogSlug": "durham",
+   "program": "durham-computer-science",
+   "fee": 28500,
    "currency": "GBP",
-   "source": "qahe",
-   "prev": 16200
+   "source": "studygroup",
+   "prev": 28500
   },
   {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-international-business-with-data-analytics-with-advanced-practice",
-   "fee": 20800,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 20800
+   "catalogSlug": "erc-institute-direct-entry",
+   "program": "erc-institute-direct-entry-deakin-university-undergraduate",
+   "fee": 45000,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 45000
   },
   {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-international-business-with-human-resource-management",
-   "fee": 16200,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 16200
+   "catalogSlug": "erc-institute-direct-entry",
+   "program": "erc-institute-direct-entry-direct-entry-university-of-chichester-undergraduate",
+   "fee": 18450,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 18450
   },
   {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-international-business-with-human-resource-management-with-advanced-practice",
-   "fee": 20800,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 20800
+   "catalogSlug": "florida-atlantic-university-direct-entry",
+   "program": "florida-atlantic-university-direct-entry-direct-admit-graduate",
+   "fee": 9600,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 18483
   },
   {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-marketing",
-   "fee": 16200,
-   "currency": "GBP",
-   "source": "qahe",
-   "prev": 16200
+   "catalogSlug": "florida-atlantic-university-direct-entry",
+   "program": "florida-atlantic-university-direct-entry-direct-admit-undergraduate",
+   "fee": 19193,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 17324
   },
   {
-   "catalogSlug": "ulster",
-   "program": "ulster-msc-marketing-with-advanced-practice",
-   "fee": 20800,
+   "catalogSlug": "hartford",
+   "program": "hartford-direct-admit-graduate",
+   "fee": 11772,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 11772
+  },
+  {
+   "catalogSlug": "hartford",
+   "program": "hartford-direct-admit-undergraduate",
+   "fee": 46865,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 46865
+  },
+  {
+   "catalogSlug": "hartford",
+   "program": "hartford-international-year",
+   "fee": 45500,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 45500
+  },
+  {
+   "catalogSlug": "hartford",
+   "program": "hartford-master-s-international-year",
+   "fee": 31500,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 31500
+  },
+  {
+   "catalogSlug": "james-madison",
+   "program": "james-madison-direct-admit-undergraduate",
+   "fee": 25918,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 25918
+  },
+  {
+   "catalogSlug": "james-madison",
+   "program": "james-madison-international-year",
+   "fee": 14500,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 14500
+  },
+  {
+   "catalogSlug": "kingston-university",
+   "program": "kingston-university-international-business-economics-accounting-and-finance",
+   "fee": 15900,
    "currency": "GBP",
-   "source": "qahe",
-   "prev": 18500
+   "source": "studygroup",
+   "prev": 15900
+  },
+  {
+   "catalogSlug": "kingston-university",
+   "program": "kingston-university-law-social-sciences-and-humanities",
+   "fee": 15900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15900
+  },
+  {
+   "catalogSlug": "kingston-university",
+   "program": "kingston-university-engineering-science-and-computing",
+   "fee": 16250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 16250
+  },
+  {
+   "catalogSlug": "kingston-university",
+   "program": "kingston-university-accounting-and-finance",
+   "fee": 15900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15900
+  },
+  {
+   "catalogSlug": "kingston-university",
+   "program": "kingston-university-business-management",
+   "fee": 15900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15900
+  },
+  {
+   "catalogSlug": "kingston-university",
+   "program": "kingston-university-marketing-and-advertising",
+   "fee": 15900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15900
+  },
+  {
+   "catalogSlug": "kingston-university",
+   "program": "kingston-university-business-and-management",
+   "fee": 8900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 8900
+  },
+  {
+   "catalogSlug": "leeds-beckett",
+   "program": "leeds-beckett-business-management",
+   "fee": 15250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15250
+  },
+  {
+   "catalogSlug": "leeds-beckett",
+   "program": "leeds-beckett-computer-science-and-cyber-security",
+   "fee": 15250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15250
+  },
+  {
+   "catalogSlug": "leeds-beckett",
+   "program": "leeds-beckett-hospitality-and-tourism",
+   "fee": 15250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15250
+  },
+  {
+   "catalogSlug": "leeds-beckett",
+   "program": "leeds-beckett-sport-and-exercise-science",
+   "fee": 15250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15250
+  },
+  {
+   "catalogSlug": "liu-brooklyn",
+   "program": "direct-admit-undergraduate-brooklyn",
+   "fee": 10120,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 43276
+  },
+  {
+   "catalogSlug": "liu-brooklyn",
+   "program": "direct-admit-graduate-brooklyn",
+   "fee": 10120,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 26514
+  },
+  {
+   "catalogSlug": "liu-post",
+   "program": "direct-admit-graduate-post",
+   "fee": 10120,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 26514
+  },
+  {
+   "catalogSlug": "liu-post",
+   "program": "direct-admit-undergraduate-post",
+   "fee": 10120,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 43276
+  },
+  {
+   "catalogSlug": "liverpool-john-moores-university",
+   "program": "liverpool-john-moores-university-business-law-and-social-sciences",
+   "fee": 15750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15750
+  },
+  {
+   "catalogSlug": "liverpool-john-moores-university",
+   "program": "liverpool-john-moores-university-engineering-computing-and-life-sciences",
+   "fee": 15750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15750
+  },
+  {
+   "catalogSlug": "liverpool-john-moores-university",
+   "program": "liverpool-john-moores-university-business",
+   "fee": 16900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 16900
+  },
+  {
+   "catalogSlug": "liverpool-john-moores-university",
+   "program": "liverpool-john-moores-university-engineering",
+   "fee": 16900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 16900
+  },
+  {
+   "catalogSlug": "liverpool-john-moores-university",
+   "program": "liverpool-john-moores-university-business-management-law",
+   "fee": 8900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 8900
+  },
+  {
+   "catalogSlug": "liverpool-john-moores-university",
+   "program": "liverpool-john-moores-university-engineering-and-computing",
+   "fee": 8900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 8900
+  },
+  {
+   "catalogSlug": "mercer",
+   "program": "mercer-direct-admit-graduate",
+   "fee": 15930,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 15930
+  },
+  {
+   "catalogSlug": "new-jersey-institute-of-technology",
+   "program": "new-jersey-institute-of-technology-direct-admit-graduate",
+   "fee": 42534,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 40734
+  },
+  {
+   "catalogSlug": "new-jersey-institute-of-technology",
+   "program": "new-jersey-institute-of-technology-direct-admit-undergraduate",
+   "fee": 42300,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 39912
+  },
+  {
+   "catalogSlug": "royal-holloway",
+   "program": "royal-holloway-business-finance-and-management",
+   "fee": 20750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20750
+  },
+  {
+   "catalogSlug": "royal-holloway",
+   "program": "royal-holloway-engineering-science-and-computing",
+   "fee": 20500,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20500
+  },
+  {
+   "catalogSlug": "royal-holloway",
+   "program": "royal-holloway-health-and-life-sciences",
+   "fee": 20500,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20500
+  },
+  {
+   "catalogSlug": "royal-holloway",
+   "program": "royal-holloway-law-social-sciences-and-humanities",
+   "fee": 20750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20750
+  },
+  {
+   "catalogSlug": "royal-holloway",
+   "program": "royal-holloway-business-and-management",
+   "fee": 20250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 17500
+  },
+  {
+   "catalogSlug": "royal-holloway",
+   "program": "royal-holloway-economics",
+   "fee": 20250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20250
+  },
+  {
+   "catalogSlug": "royal-holloway",
+   "program": "royal-holloway-electronic-engineering",
+   "fee": 20250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20250
+  },
+  {
+   "catalogSlug": "royal-holloway",
+   "program": "royal-holloway-computer-science-cyber-security-ai",
+   "fee": 20250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20250
+  },
+  {
+   "catalogSlug": "strathclyde",
+   "program": "strathclyde-business-and-social-sciences",
+   "fee": 13900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "variants": 2,
+   "prev": 13900
+  },
+  {
+   "catalogSlug": "strathclyde",
+   "program": "strathclyde-engineering-and-sciences",
+   "fee": 14250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "variants": 2,
+   "prev": 14250
+  },
+  {
+   "catalogSlug": "strathclyde",
+   "program": "strathclyde-computer-science",
+   "fee": 19250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 19250
+  },
+  {
+   "catalogSlug": "strathclyde",
+   "program": "strathclyde-business",
+   "fee": 18250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18250
+  },
+  {
+   "catalogSlug": "surrey",
+   "program": "surrey-business-finance-and-management",
+   "fee": 19500,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 19500
+  },
+  {
+   "catalogSlug": "surrey",
+   "program": "surrey-engineering-science-and-computing",
+   "fee": 20250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20250
+  },
+  {
+   "catalogSlug": "surrey",
+   "program": "surrey-health-and-life-sciences",
+   "fee": 20250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20250
+  },
+  {
+   "catalogSlug": "surrey",
+   "program": "surrey-hospitality-and-tourism-management",
+   "fee": 19900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 19900
+  },
+  {
+   "catalogSlug": "surrey",
+   "program": "surrey-management-finance-hospitality-and-tourism",
+   "fee": 15250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15250
+  },
+  {
+   "catalogSlug": "surrey",
+   "program": "surrey-law-social-sciences-and-humanities",
+   "fee": 20250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20250
+  },
+  {
+   "catalogSlug": "sussex",
+   "program": "sussex-business-and-management",
+   "fee": 20750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20750
+  },
+  {
+   "catalogSlug": "sussex",
+   "program": "sussex-computer-science",
+   "fee": 21900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 21900
+  },
+  {
+   "catalogSlug": "sussex",
+   "program": "sussex-engineering",
+   "fee": 21900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 21900
+  },
+  {
+   "catalogSlug": "sussex",
+   "program": "sussex-film-and-media",
+   "fee": 20750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20750
+  },
+  {
+   "catalogSlug": "sussex",
+   "program": "sussex-finance-and-accounting",
+   "fee": 20750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20750
+  },
+  {
+   "catalogSlug": "sussex",
+   "program": "sussex-international-relations-and-international-development",
+   "fee": 20750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 20750
+  },
+  {
+   "catalogSlug": "sussex",
+   "program": "sussex-business-humanities-science-and-engineering",
+   "fee": 13900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "variants": 2,
+   "prev": 13900
+  },
+  {
+   "catalogSlug": "sussex",
+   "program": "sussex-finance-and-technology",
+   "fee": 21900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 21900
+  },
+  {
+   "catalogSlug": "tamucc",
+   "program": "direct-admit-graduate",
+   "fee": 16031,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 16031
+  },
+  {
+   "catalogSlug": "tamucc",
+   "program": "direct-admit-undergraduate",
+   "fee": 24469,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 24469
+  },
+  {
+   "catalogSlug": "towson",
+   "program": "towson-direct-admit-undergraduate",
+   "fee": 25622,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 25622
+  },
+  {
+   "catalogSlug": "towson",
+   "program": "towson-direct-admit-graduate",
+   "fee": 11466,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 11466
+  },
+  {
+   "catalogSlug": "university-college-dublin",
+   "program": "business-economics-social-science-arts-and-humanities",
+   "fee": 21750,
+   "currency": "EUR",
+   "source": "studygroup",
+   "prev": 21750
+  },
+  {
+   "catalogSlug": "university-college-dublin",
+   "program": "engineering-and-sciences",
+   "fee": 25900,
+   "currency": "EUR",
+   "source": "studygroup",
+   "prev": 25900
+  },
+  {
+   "catalogSlug": "university-of-huddersfield-london",
+   "program": "university-of-huddersfield-london-computing-msc",
+   "fee": 18700,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18700
+  },
+  {
+   "catalogSlug": "university-of-huddersfield-london",
+   "program": "university-of-huddersfield-london-international-business-msc",
+   "fee": 18700,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18700
+  },
+  {
+   "catalogSlug": "university-of-huddersfield-london",
+   "program": "university-of-huddersfield-london-management-msc",
+   "fee": 18700,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18700
+  },
+  {
+   "catalogSlug": "university-of-huddersfield-london",
+   "program": "university-of-huddersfield-london-management-with-entrepreneurship-msc",
+   "fee": 18700,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18700
+  },
+  {
+   "catalogSlug": "university-of-huddersfield-london",
+   "program": "university-of-huddersfield-london-management-with-international-business-msc",
+   "fee": 18700,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18700
+  },
+  {
+   "catalogSlug": "university-of-huddersfield-london",
+   "program": "university-of-huddersfield-london-management-with-marketing-msc",
+   "fee": 18700,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18700
+  },
+  {
+   "catalogSlug": "university-of-huddersfield-london",
+   "program": "university-of-huddersfield-london-accounting-and-finance-msc",
+   "fee": 18700,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18700
+  },
+  {
+   "catalogSlug": "university-of-huddersfield-london",
+   "program": "university-of-huddersfield-london-fintech-msc",
+   "fee": 18700,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 18700
+  },
+  {
+   "catalogSlug": "university-of-huddersfield",
+   "program": "university-of-huddersfield-art-media-architecture",
+   "fee": 16250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 16250
+  },
+  {
+   "catalogSlug": "university-of-huddersfield",
+   "program": "university-of-huddersfield-business-management-law",
+   "fee": 16250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 16250
+  },
+  {
+   "catalogSlug": "university-of-huddersfield",
+   "program": "university-of-huddersfield-engineering-computing-science",
+   "fee": 16250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 16250
+  },
+  {
+   "catalogSlug": "university-of-huddersfield",
+   "program": "university-of-huddersfield-human-science-and-humanities",
+   "fee": 15900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15900
+  },
+  {
+   "catalogSlug": "university-of-huddersfield",
+   "program": "university-of-huddersfield-computing",
+   "fee": 9500,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 9500
+  },
+  {
+   "catalogSlug": "university-of-huddersfield",
+   "program": "university-of-huddersfield-health-science",
+   "fee": 15900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 15900
+  },
+  {
+   "catalogSlug": "university-of-huddersfield",
+   "program": "university-of-huddersfield-business-management-marketing",
+   "fee": 9250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "variants": 2,
+   "prev": 9250
+  },
+  {
+   "catalogSlug": "university-of-huddersfield",
+   "program": "university-of-huddersfield-engineering-computer-science",
+   "fee": 16250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 16250
+  },
+  {
+   "catalogSlug": "university-of-leeds",
+   "program": "university-of-leeds-biological-sciences",
+   "fee": 27500,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 27500
+  },
+  {
+   "catalogSlug": "university-of-leeds",
+   "program": "university-of-leeds-business-management",
+   "fee": 25250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 25250
+  },
+  {
+   "catalogSlug": "university-of-leeds",
+   "program": "university-of-leeds-international-relations-and-global-development",
+   "fee": 24250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 24250
+  },
+  {
+   "catalogSlug": "university-of-leeds",
+   "program": "university-of-leeds-business",
+   "fee": 27250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 27250
+  },
+  {
+   "catalogSlug": "university-of-nebraska-omaha",
+   "program": "university-of-nebraska-omaha-direct-entry-graduate",
+   "fee": 18648,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 18648
+  },
+  {
+   "catalogSlug": "university-of-nebraska-omaha",
+   "program": "university-of-nebraska-omaha-direct-entry-undergraduate",
+   "fee": 21624,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 21624
+  },
+  {
+   "catalogSlug": "university-of-sheffield",
+   "program": "university-of-sheffield-business-social-sciences-and-humanities",
+   "fee": 20250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "variants": 2,
+   "prev": 20250
+  },
+  {
+   "catalogSlug": "university-of-sheffield",
+   "program": "university-of-sheffield-science-and-engineering",
+   "fee": 22250,
+   "currency": "GBP",
+   "source": "studygroup",
+   "variants": 2,
+   "prev": 22250
+  },
+  {
+   "catalogSlug": "university-of-sheffield",
+   "program": "university-of-sheffield-business-management-and-accounting",
+   "fee": 22750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 22750
+  },
+  {
+   "catalogSlug": "university-of-sheffield",
+   "program": "university-of-sheffield-economics",
+   "fee": 22750,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 22750
+  },
+  {
+   "catalogSlug": "university-of-sheffield",
+   "program": "university-of-sheffield-psychology",
+   "fee": 23900,
+   "currency": "GBP",
+   "source": "studygroup",
+   "prev": 23900
+  },
+  {
+   "catalogSlug": "university-of-wisconsin-stout",
+   "program": "university-of-wisconsin-stout-direct-entry-graduate",
+   "fee": 21388,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 21388
+  },
+  {
+   "catalogSlug": "university-of-wisconsin-stout",
+   "program": "university-of-wisconsin-stout-direct-entry-undergraduate",
+   "fee": 21785,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 21785
+  },
+  {
+   "catalogSlug": "western-washington",
+   "program": "western-washington-direct-admit-graduate",
+   "fee": 25296,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 25296
+  },
+  {
+   "catalogSlug": "western-washington",
+   "program": "western-washington-direct-admit-undergraduate",
+   "fee": 26613,
+   "currency": "USD",
+   "source": "studygroup",
+   "prev": 26613
   }
  ]
 }

@@ -1,27 +1,27 @@
 # Применение цен агрегаторов
 
-Источники: `qahe`.
+Источники: `studygroup`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | qahe |
-| extracts | 4 |
-| linked | 4 |
-| candidates | 78 |
+| sources | studygroup |
+| extracts | 31 |
+| linked | 31 |
+| candidates | 144 |
 | skippedCurrency | 0 |
 | skippedBucket | 0 |
-| skippedNoMatch | 3 |
+| skippedNoMatch | 14 |
 | skippedNoCard | 0 |
-| skippedAudience | 20 |
+| skippedAudience | 0 |
 | skippedPartTime | 0 |
 | matchedByAward | 0 |
-| ambiguousMatch | 1 |
-| programsWritten | 61 |
-| cardsTouched | 2 |
-| overwritten | 61 |
+| ambiguousMatch | 0 |
+| programsWritten | 133 |
+| cardsTouched | 31 |
+| overwritten | 133 |
 | ownCurrency | 0 |
-| variantPrograms | 1 |
-| variantSums | 2 |
+| variantPrograms | 10 |
+| variantSums | 21 |
 | foreignQuoteDemoted | 0 |
 | skippedPathwayFee | 0 |
 | campusDemoted | 0 |
@@ -31,8 +31,6 @@
 
 | Причина | Штук |
 |---|---:|
-| `fee-audience` | 20 |
-| `no-match` | 2 |
-| `match-ambiguous` | 1 |
+| `no-match` | 14 |
 
 Подробности: `fees-apply-cases.json`, откат: `fees-apply-backup.json`.

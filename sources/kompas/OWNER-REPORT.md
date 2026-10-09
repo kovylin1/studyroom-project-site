@@ -1,6 +1,6 @@
 # КОМПАС, сессия 1 — разметка и инвентаризация
 
-**Дата:** 2026-10-06  •  **Каталог:** 1076 вузов  •  **Сеть не использовалась**
+**Дата:** 2026-10-09  •  **Каталог:** 1076 вузов  •  **Сеть не использовалась**
 
 Живой каталог не изменён. Разметка лежит в рабочей копии `sources/kompas/catalog-work/`.
 
@@ -127,6 +127,7 @@
 | `corvinus-university-of-budapest` | Corvinus University of Budapest | Hungary | 41 |
 | `bau-global` | Bahçeşehir University (BAU) | Turkey | 40 |
 | `oxford-school-of-english` | Oxford School of English | United Kingdom | 40 |
+| `american-university-of-ras-al-khaimah-aurak` | American University of Ras Al Khaimah (AURAK) | United Arab Emirates | 38 |
 | `czech-technical-university` | Czech Technical University in Prague | Czech Republic | 38 |
 | `trebas` | Trebas Institute | Canada | 38 |
 | `trinity-laban-conservatoire-of-music-and-dance` | Trinity Laban Conservatoire of Music and Dance | United Kingdom | 38 |
@@ -159,12 +160,12 @@
 | `university-of-wisconsin-milwaukee` | University of Wisconsin-Milwaukee | United States | 26 |
 | `anglolang-academy-of-english` | Anglolang Academy of English | United Kingdom | 25 |
 | `arden-university-hybrid` | Arden University (Hybrid) | Germany | 25 |
+| `demiroglu-bilim-university` | Demiroğlu Bilim University | Turkey | 25 |
 | `istanbul-aydin-university` | Istanbul Aydın University | Turkey | 25 |
 | `medipol-university` | Istanbul Medipol University | Turkey | 25 |
 | `north-island-college` | North Island College | Canada | 25 |
 | `college-of-english-language` | College of English Language | United States | 24 |
 | `university-of-warwick` | University of Warwick | United Kingdom | 24 |
-| `american-university-of-ras-al-khaimah-aurak` | American University of Ras Al Khaimah (AURAK) | United Arab Emirates | 23 |
 | `epita-school-of-engineering-and-computer-science` | EPITA - School of Engineering and Computer Science | France | 23 |
 | `prague-university-of-economics` | Prague University of Economics and Business | Czech Republic | 23 |
 | `up-education` | UP Education | New Zealand | 23 |
@@ -210,7 +211,6 @@
 | `bromsgrove-school` | Bromsgrove School | United Kingdom | 11 |
 | `brooke-house-college` | Brooke House College | United Kingdom | 11 |
 | `colchester-english-study-centre` | Colchester English Study Centre | United Kingdom | 11 |
-| `demiroglu-bilim-university` | Demiroğlu Bilim University | Turkey | 11 |
 | `dublin-business-school` | Dublin Business School | Ireland | 11 |
 | `international-school-of-creative-arts` | International School of Creative Arts | United Kingdom | 11 |
 | `mander-portman-woodward` | Mander Portman Woodward | United Kingdom | 11 |

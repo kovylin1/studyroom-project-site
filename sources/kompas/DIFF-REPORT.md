@@ -1,6 +1,6 @@
 # КОМПАС — сессия 4: расхождения «каталог vs источник»
 
-**Дата:** 2026-10-06 · сети нет, каталог не тронут (только чтение).
+**Дата:** 2026-10-09 · сети нет, каталог не тронут (только чтение).
 
 ## Сводка
 
@@ -8,21 +8,21 @@
 |---|---|
 | Карточек в рабочей копии | 1076 |
 | Из них партнёрских | 969 (не партнёры: 107) |
-| **Сверено с источником** | **831** |
+| **Сверено с источником** | **830** |
 | Сверить не с чем: источник за логином | 0 (QS, IAPro) |
 | Сверить не с чем: источник без программ | 18 (Navitas, CATS) |
-| Сверить не с чем: источник готов, выгрузки по вузу нет | 120 |
-| Программ в каталоге (сверенные вузы) | 113913 |
+| Сверить не с чем: источник готов, выгрузки по вузу нет | 121 |
+| Программ в каталоге (сверенные вузы) | 114398 |
 | Программ у источников (объединение) | 79470 |
-| Совпало названий | 75930 (из них по написанию: 181) |
-| Есть в каталоге, нет у источника | 37983 |
-| Есть у источника, нет в каталоге | 3540 |
+| Совпало названий | 75934 (из них по написанию: 181) |
+| Есть в каталоге, нет у источника | 38464 |
+| Есть у источника, нет в каталоге | 3536 |
 | Цена расходится | 798 |
-| **Валюта расходится** | **2295** |
-| У источника цена есть, в каталоге нет | 270 |
-| Кампусы источника, которых нет в карточке | 412 |
+| **Валюта расходится** | **2299** |
+| У источника цена есть, в каталоге нет | 280 |
+| Кампусы источника, которых нет в карточке | 411 |
 
-Кейсов в панель: **1746** — kompas_no_extract 120, kompas_programs_missing 186, kompas_programs_extra 519, kompas_campus_missing 243, kompas_fee_currency 79, kompas_fee_absent 62, kompas_fee_mismatch 529, kompas_fee_mismatch_rest 7, kompas_source_empty 1.
+Кейсов в панель: **1756** — kompas_no_extract 121, kompas_programs_missing 186, kompas_programs_extra 525, kompas_campus_missing 242, kompas_fee_currency 79, kompas_fee_absent 66, kompas_fee_mismatch 529, kompas_fee_mismatch_rest 7, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -33,8 +33,8 @@
 | INTO Partnerships (`into-partnerships`) | edvoy | 1721 | 832 | 804 | 917 | 28 | 0 | 416 |
 | Navitas (`navitas`) | edvoy | 512 | 572 | 291 | 221 | 281 | 0 | 183 |
 | University of Roehampton (`roehampton`) | qs+edvoy | 586 | 575 | 496 | 90 | 79 | 10 | 189 |
-| Middlesex University Dubai (`middlesex-dubai`) | direct+qs+edvoy | 346 | 201 | 182 | 164 | 19 | 0 | 138 |
-| Asia Pacific University of Technology and Innovation (`apu-malaysia`) | direct+qs+edvoy | 233 | 186 | 181 | 52 | 5 | 0 | 142 |
+| Middlesex University Dubai (`middlesex-dubai`) | direct+qs+edvoy | 348 | 201 | 182 | 166 | 19 | 0 | 138 |
+| Asia Pacific University of Technology and Innovation (`apu-malaysia`) | direct+qs+edvoy | 238 | 186 | 181 | 57 | 5 | 0 | 142 |
 | University of Birmingham, Dubai (`birmingham-dubai`) | qs | 236 | 103 | 103 | 133 | 0 | 0 | 103 |
 | KAPLAN (`kaplan`) | edvoy | 1237 | 921 | 558 | 679 | 363 | 0 | 8 |
 | University College London (UCL) (`ucl`) | qs | 977 | 11 | 11 | 966 | 0 | 0 | 0 |
@@ -47,12 +47,12 @@
 | Rutgers University Camden (`rutgers-university-camden`) | edvoy | 59 | 61 | 59 | 0 | 2 | 0 | 59 |
 | Massey University (`massey`) | qs+edvoy | 903 | 397 | 397 | 506 | 0 | 23 | 0 |
 | University of Wollongong Malaysia (`wollongong-malaysia`) | qs | 113 | 51 | 51 | 62 | 0 | 0 | 50 |
-| University of Wollongong in Dubai (`wollongong-dubai`) | direct+qs | 78 | 52 | 52 | 26 | 0 | 0 | 52 |
+| University of Wollongong in Dubai (`wollongong-dubai`) | direct+qs | 89 | 52 | 52 | 37 | 0 | 0 | 52 |
 | The University of Western Australia (`the-university-of-western-australia`) | edvoy | 859 | 316 | 316 | 543 | 0 | 0 | 0 |
 | Swinburne University of Technology (`swinburne-university-of-technology`) | edvoy | 542 | 1 | 1 | 541 | 0 | 0 | 0 |
 | Victoria University of Wellington (`victoria-wellington`) | qs+edvoy | 961 | 483 | 481 | 480 | 2 | 18 | 0 |
 | University of Reading Malaysia (`reading-malaysia`) | qs | 400 | 14 | 14 | 386 | 0 | 0 | 14 |
-| Royal Holloway, University of London (`royal-holloway`) | studygroup+qs+edvoy | 499 | 11 | 11 | 488 | 0 | 1 | 0 |
+| Royal Holloway, University of London (`royal-holloway`) | studygroup+qs+edvoy | 499 | 11 | 11 | 488 | 0 | 0 | 0 |
 | INTO University of East Anglia (`into-uea`) | qs | 493 | 8 | 8 | 485 | 0 | 0 | 0 |
 | East Asia Institute of Management (EAIM) (`eaim`) | qs | 112 | 40 | 40 | 72 | 0 | 0 | 40 |
 | INSEEC Business School (`inseec-business-school`) | edvoy | 476 | 8 | 8 | 468 | 0 | 0 | 0 |
@@ -126,6 +126,7 @@
 | Culinary Arts Academy Switzerland (`culinary-arts-academy-switzerland`) | 6 | edvoy |
 | Glion Institute of Higher Education (`glion-switzerland`) | 6 | qs |
 | Oxford International (`oxford-international`) | 6 | edvoy |
+| Curtin University Dubai (`curtin-university-dubai`) | 5 | direct |
 | UE - University of Europe for Applied Sciences (`ue-university-of-europe-for-applied-sciences`) | 5 | edvoy |
 | Universidade Europeia (`universidade-europeia`) | 5 | edvoy |
 | The University College of Enterprise and Administration (`the-university-college-of-enterprise-and-administration`) | 4 | edvoy |
@@ -138,7 +139,6 @@
 | HIM Business School (`him-business-school`) | 2 | edvoy |
 | St George's University (Grenada) (`st-georges-grenada`) | 2 | qs |
 | Taylor's University (`taylor-s-university`) | 2 | edvoy |
-| Curtin University Dubai (`curtin-university-dubai`) | 1 | direct |
 | Dublin Business School (`dublin-business-school`) | 1 | edvoy |
 | Dublin City University (`dublin-city-university`) | 1 | edvoy |
 | EM Normandie Business School — Dubai (`em-normandie-dubai`) | 1 | qs |
