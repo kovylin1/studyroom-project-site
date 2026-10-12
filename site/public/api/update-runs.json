@@ -359,5 +359,56 @@
     "error": null,
     "hold": null,
     "finishedAt": "2026-10-09T09:43:38.072Z"
+  },
+  "cats": {
+    "aggregator": "cats",
+    "kind": "kompas",
+    "startedAt": "2026-10-12T09:54:07.939Z",
+    "applied": true,
+    "dryRun": false,
+    "steps": [
+      {
+        "name": "сбор kompas-collect-cats.mjs",
+        "ok": true
+      },
+      {
+        "name": "рабочая копия ← каталог",
+        "ok": true
+      },
+      {
+        "name": "цены агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "программы агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "сравнение копии с каталогом",
+        "ok": true,
+        "detail": "свои карточки 12, изменились 3 (0.3% каталога)"
+      },
+      {
+        "name": "порог изменения",
+        "ok": true,
+        "detail": "0.3% ≤ 5%"
+      },
+      {
+        "name": "перенос в каталог",
+        "ok": true,
+        "detail": "карточек 3"
+      },
+      {
+        "name": "гейт каталога",
+        "ok": true
+      }
+    ],
+    "changedCards": 3,
+    "ownCards": 12,
+    "error": null,
+    "hold": null,
+    "finishedAt": "2026-10-12T09:54:18.581Z"
   }
 }

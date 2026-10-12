@@ -1,24 +1,24 @@
 # Добор программ агрегаторов
 
-Источники: `studygroup`.
+Источники: `cats`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | studygroup |
-| rows | 162 |
-| unmatched | 14 |
+| sources | cats |
+| rows | 0 |
+| unmatched | 0 |
 | ambiguous | 0 |
-| levelFromSource | 14 |
+| levelFromSource | 0 |
 | levelFromSourceLevel | 0 |
 | levelFromTitle | 0 |
 | noLevel | 0 |
 | levelUnsupported | 0 |
 | duplicatesInSource | 0 |
-| created | 14 |
-| cardsTouched | 4 |
+| created | 0 |
+| cardsTouched | 0 |
 | withDuration | 0 |
 | withUrl | 0 |
-| urlShared | 14 |
+| urlShared | 0 |
 
 ## Не заведено
 

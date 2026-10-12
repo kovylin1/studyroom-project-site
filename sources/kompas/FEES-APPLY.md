@@ -1,27 +1,27 @@
 # Применение цен агрегаторов
 
-Источники: `studygroup`.
+Источники: `cats`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | studygroup |
-| extracts | 31 |
-| linked | 31 |
-| candidates | 144 |
+| sources | cats |
+| extracts | 0 |
+| linked | 0 |
+| candidates | 0 |
 | skippedCurrency | 0 |
 | skippedBucket | 0 |
-| skippedNoMatch | 14 |
+| skippedNoMatch | 0 |
 | skippedNoCard | 0 |
 | skippedAudience | 0 |
 | skippedPartTime | 0 |
 | matchedByAward | 0 |
 | ambiguousMatch | 0 |
-| programsWritten | 133 |
-| cardsTouched | 31 |
-| overwritten | 133 |
+| programsWritten | 0 |
+| cardsTouched | 0 |
+| overwritten | 0 |
 | ownCurrency | 0 |
-| variantPrograms | 10 |
-| variantSums | 21 |
+| variantPrograms | 0 |
+| variantSums | 0 |
 | foreignQuoteDemoted | 0 |
 | skippedPathwayFee | 0 |
 | campusDemoted | 0 |
@@ -31,6 +31,5 @@
 
 | Причина | Штук |
 |---|---:|
-| `no-match` | 14 |
 
 Подробности: `fees-apply-cases.json`, откат: `fees-apply-backup.json`.
