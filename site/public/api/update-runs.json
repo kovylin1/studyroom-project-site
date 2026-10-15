@@ -410,5 +410,56 @@
     "error": null,
     "hold": null,
     "finishedAt": "2026-10-12T09:54:18.581Z"
+  },
+  "oxford-international": {
+    "aggregator": "oxford-international",
+    "kind": "kompas",
+    "startedAt": "2026-10-15T07:47:25.249Z",
+    "applied": true,
+    "dryRun": false,
+    "steps": [
+      {
+        "name": "сбор kompas-collect-oxford-international.mjs",
+        "ok": true
+      },
+      {
+        "name": "рабочая копия ← каталог",
+        "ok": true
+      },
+      {
+        "name": "цены агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "программы агрегатора в рабочую копию",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "сравнение копии с каталогом",
+        "ok": true,
+        "detail": "свои карточки 36, изменились 18 (1.7% каталога)"
+      },
+      {
+        "name": "порог изменения",
+        "ok": true,
+        "detail": "1.7% ≤ 5%"
+      },
+      {
+        "name": "перенос в каталог",
+        "ok": true,
+        "detail": "карточек 18"
+      },
+      {
+        "name": "гейт каталога",
+        "ok": true
+      }
+    ],
+    "changedCards": 18,
+    "ownCards": 36,
+    "error": null,
+    "hold": null,
+    "finishedAt": "2026-10-15T08:29:03.040Z"
   }
 }
