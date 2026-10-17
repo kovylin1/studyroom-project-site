@@ -58,7 +58,9 @@ concurrency:
 jobs:
   run-aggregator:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    # QS обходит портал по кругу 240 минут (kompas-update.mjs) — ему окно шире,
+    # остальным хватает 75 минут на шаг обновления (лимит шага ниже).
+    timeout-minutes: 330
 
     steps:
       - uses: actions/checkout@v5
@@ -108,12 +110,17 @@ jobs:
 
       - name: Обновить каталог агрегатором
         if: steps.detect.outputs.aggregator != ''
+        timeout-minutes: ${{ steps.detect.outputs.aggregator == 'qs-topuniversities' && 300 || 75 }}
         env:
           IAPRO_LOGIN:    ${{ secrets.IAPRO_LOGIN }}
           IAPRO_PASS:     ${{ secrets.IAPRO_PASS }}
           IAPRO_PASS_ALT: ${{ secrets.IAPRO_PASS_ALT }}
           QS_LOGIN:       ${{ secrets.QS_LOGIN }}
           QS_PASS:        ${{ secrets.QS_PASS }}
+          # EDVOY_* сюда не передаются намеренно: Edvoy читается без входа, а вход
+          # с октября 2026 только по коду на почту (OTP) или через Google — паролем
+          # не автоматизировать. Вузы, у которых выдача «обвалилась», сохраняют
+          # прошлую выгрузку (в сентябре таких было 56 из 656).
         # Одна команда на агрегатор: сбор -> рабочая копия -> цены и программы
         # этого агрегатора -> порог изменения -> перенос в живой каталог -> гейт.
         # Разбор шагов и причин порядка — в шапке scraper/kompas-update.mjs.

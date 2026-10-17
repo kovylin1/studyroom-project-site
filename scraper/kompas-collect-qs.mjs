@@ -27,6 +27,15 @@
 //   node scraper/kompas-collect-qs.mjs --workers=4        # параллельные вкладки
 //   node scraper/kompas-collect-qs.mjs --extract-only     # только разбор дампов
 //   node scraper/kompas-collect-qs.mjs --list-only        # только список вузов
+//   node scraper/kompas-collect-qs.mjs --stale-days=20 --budget-min=240
+//        # обновление по кругу (так зовёт расписание): переобходит дампы старше 20 дней,
+//        # самые старые первыми, и перестаёт брать новые через 240 минут. Список вузов
+//        # тоже перечитывается, если он старше 20 дней.
+//
+// До 17.10.2026 расписание звало коллектор без флагов, а без --refresh стадия 2
+// пропускает всё, что лежит на диске. Дампы 31.07–01.08 лежат в git, поэтому каждый
+// прогон заново разбирал их и с портала не брал ничего. Полный --refresh (512 вузов,
+// ~200 в час) в окно Actions не помещается — отсюда круг с бюджетом.
 
 import fs from 'fs/promises';
 import path from 'path';
@@ -48,6 +57,9 @@ const LIMIT = args.num('limit', 0);
 const WORKERS = Math.max(1, Math.min(6, args.num('workers', 3)));
 const HEADED = args.has('headed');
 const REFRESH = args.has('refresh');
+const STALE_DAYS = args.num('stale-days', 0);
+const BUDGET_MIN = args.num('budget-min', 0);
+const isStale = (iso) => !iso || Date.now() - Date.parse(iso) > STALE_DAYS * 86400000;
 const EXTRACT_ONLY = args.has('extract-only');
 const LIST_ONLY = args.has('list-only');
 const MAX_GRID_PAGES = args.num('max-grid-pages', 80);
@@ -479,8 +491,21 @@ async function stageRecords(browserCtx, list) {
   await fs.mkdir(RECORDS, { recursive: true });
   const done = new Set(REFRESH ? [] : (await fs.readdir(RECORDS).catch(() => [])).map((f) => f.replace(/\.json$/, '')));
   let queue = list.institutions.filter((i) => REFRESH || !done.has(idOf(i)));
+  if (STALE_DAYS && !REFRESH) {
+    // Устаревшие дампы — в очередь после отсутствующих, самые старые первыми.
+    const aged = [];
+    for (const inst of list.institutions) {
+      if (!done.has(idOf(inst))) continue;
+      const at = await fs.readFile(path.join(RECORDS, `${idOf(inst)}.json`), 'utf8')
+        .then((t) => JSON.parse(t).collectedAt).catch(() => null);
+      if (isStale(at)) aged.push({ inst, at: at || '' });
+    }
+    aged.sort((a, b) => a.at.localeCompare(b.at));
+    queue = queue.concat(aged.map((a) => a.inst));
+    await say(`устарели (старше ${STALE_DAYS} дн.): ${aged.length}`);
+  }
   if (LIMIT) queue = queue.slice(0, LIMIT);
-  await say(`к обходу ${queue.length} из ${list.institutions.length} (на диске ${done.size}), вкладок ${WORKERS}`);
+  await say(`к обходу ${queue.length} из ${list.institutions.length} (на диске ${done.size}), вкладок ${WORKERS}${BUDGET_MIN ? `, бюджет ${BUDGET_MIN} мин` : ''}`);
 
   let cursor = 0; let ok = 0; let fail = 0;
   const t0 = Date.now();
@@ -490,6 +515,7 @@ async function stageRecords(browserCtx, list) {
     page.setDefaultTimeout(30000);
     try {
       for (;;) {
+        if (BUDGET_MIN && Date.now() - t0 > BUDGET_MIN * 60000) break;
         const n = cursor++;
         if (n >= queue.length) break;
         const inst = queue[n];
@@ -529,6 +555,7 @@ async function stageRecords(browserCtx, list) {
 
   await Promise.all(Array.from({ length: WORKERS }, (_, i) => worker(i + 1)));
   await say(`карточки: ок ${ok}, ошибок ${fail}`);
+  if (cursor < queue.length) await say(`бюджет вышел: не дошли ${queue.length - cursor} — возьмёт следующий прогон`);
   return { ok, fail };
 }
 
@@ -829,6 +856,7 @@ async function main() {
     const listPath = path.join(OUT, 'institutions.json');
     let list = null;
     if (!REFRESH) list = await fs.readFile(listPath, 'utf8').then(JSON.parse).catch(() => null);
+    if (list && STALE_DAYS && isStale(list._meta?.collectedAt)) list = null;
     if (!list || !list.institutions?.length) list = await stageList(page);
     else await say(`список взят с диска: ${list.institutions.length} вузов`);
 

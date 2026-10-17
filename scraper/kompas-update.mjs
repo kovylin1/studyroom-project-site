@@ -82,7 +82,10 @@ const AGGREGATORS = {
   'oxford-international': { kind: 'kompas', source: 'oxford-international', collect: ['kompas-collect-oxford-international.mjs'] },
   edvoy: { kind: 'kompas', source: 'edvoy', collect: ['kompas-collect-edvoy.mjs'] },
   iapro: { kind: 'kompas', source: 'iapro', collect: ['kompas-collect-iapro.mjs'] },
-  'qs-topuniversities': { kind: 'kompas', source: 'qs', collect: ['kompas-collect-qs.mjs'] },
+  // QS: без флагов коллектор не ходит на портал, а разбирает дампы с диска (они в git).
+  // Круг: переобход дампов старше 20 дней, самые старые первыми, 240 минут на обход —
+  // всё, что не успели, возьмёт следующий прогон. Таймаут шага — в scrape-staggered.yml.
+  'qs-topuniversities': { kind: 'kompas', source: 'qs', collect: [['kompas-collect-qs.mjs', '--stale-days=20', '--budget-min=240']] },
   gedu: { kind: 'kompas', source: 'gedu', collect: ['kompas-collect-gedu.mjs'] },
   volk: { kind: 'kompas', source: 'collab', collect: ['kompas-collect-collab.mjs'] },
   // Прямые партнёры (30.09.2026): не агрегатор, а 34 офсайта вузов, парсер на домен
@@ -167,8 +170,9 @@ async function finish(code) {
 
 // ---------------------------------------------------------------- 1. сбор ----
 if (!SKIP_COLLECT) {
-  for (const script of CFG.collect) {
-    const r = await run(script);
+  for (const entry of CFG.collect) {
+    const [script, ...collectArgs] = [].concat(entry);
+    const r = await run(script, collectArgs);
     if (r.code !== 0) {
       report.error = `коллектор ${script} завершился с кодом ${r.code}`;
       step(`сбор ${script}`, false, report.error);
