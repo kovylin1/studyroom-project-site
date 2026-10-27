@@ -1,29 +1,29 @@
 # Применение цен агрегаторов
 
-Источники: `oxford-international`.
+Источники: `gedu`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | oxford-international |
-| extracts | 39 |
-| linked | 24 |
-| candidates | 1237 |
+| sources | gedu |
+| extracts | 13 |
+| linked | 10 |
+| candidates | 54 |
 | skippedCurrency | 0 |
 | skippedBucket | 0 |
-| skippedNoMatch | 22 |
-| skippedNoCard | 15 |
+| skippedNoMatch | 0 |
+| skippedNoCard | 3 |
 | skippedAudience | 0 |
-| skippedPartTime | 4 |
-| matchedByAward | 302 |
-| ambiguousMatch | 20 |
-| programsWritten | 1201 |
-| cardsTouched | 22 |
-| overwritten | 1201 |
+| skippedPartTime | 0 |
+| matchedByAward | 0 |
+| ambiguousMatch | 0 |
+| programsWritten | 53 |
+| cardsTouched | 6 |
+| overwritten | 50 |
 | ownCurrency | 0 |
-| variantPrograms | 16 |
-| variantSums | 32 |
+| variantPrograms | 1 |
+| variantSums | 2 |
 | foreignQuoteDemoted | 0 |
-| skippedPathwayFee | 108 |
+| skippedPathwayFee | 0 |
 | campusDemoted | 0 |
 | annualLooseWritten | 0 |
 
@@ -31,9 +31,5 @@
 
 | Причина | Штук |
 |---|---:|
-| `pathway-stage-fee` | 108 |
-| `match-ambiguous` | 20 |
-| `part-time` | 4 |
-| `no-match` | 2 |
 
 Подробности: `fees-apply-cases.json`, откат: `fees-apply-backup.json`.

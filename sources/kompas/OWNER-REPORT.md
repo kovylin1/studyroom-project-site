@@ -1,6 +1,6 @@
 # КОМПАС, сессия 1 — разметка и инвентаризация
 
-**Дата:** 2026-10-15  •  **Каталог:** 1076 вузов  •  **Сеть не использовалась**
+**Дата:** 2026-10-27  •  **Каталог:** 1076 вузов  •  **Сеть не использовалась**
 
 Живой каталог не изменён. Разметка лежит в рабочей копии `sources/kompas/catalog-work/`.
 
@@ -262,6 +262,7 @@
 | `pepperdine-university` | Pepperdine University | United States | 6 |
 | `radboud-university` | Radboud University | Netherlands | 6 |
 | `southern-ontario-collegiate` | Southern Ontario Collegiate | Canada | 6 |
+| `universal-higher-education-uk` | Universal Higher Education, UK | United Kingdom | 6 |
 | `university-of-strathclyde-bahrain` | University of Strathclyde, Bahrain | Bahrain | 6 |
 | `york-st-john-university` | York St John University | United Kingdom | 6 |
 | `concordia-university-texas` | Concordia University Texas | United States | 5 |
@@ -271,7 +272,6 @@
 | `limerick-language-centre` | Limerick Language Centre | Ireland | 5 |
 | `mda-college` | MDA College | United Kingdom | 5 |
 | `medical-university-of-the-americas` | Medical University of the Americas | Saint Kitts and Nevis | 5 |
-| `universal-higher-education-uk` | Universal Higher Education, UK | United Kingdom | 5 |
 | `university-bridge` | University Bridge | United States | 5 |
 | `university-of-technology-sydney` | University of Technology Sydney | Australia | 5 |
 | `university-of-wollongong` | University of Wollongong | Australia | 5 |
