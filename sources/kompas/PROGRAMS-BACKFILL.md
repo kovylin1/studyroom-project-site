@@ -1,17 +1,17 @@
 # Добор программ агрегаторов
 
-Источники: `gedu`.
+Источники: `collab`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | gedu |
-| rows | 88 |
-| unmatched | 0 |
+| sources | collab |
+| rows | 556 |
+| unmatched | 29 |
 | ambiguous | 0 |
 | levelFromSource | 0 |
 | levelFromSourceLevel | 0 |
 | levelFromTitle | 0 |
-| noLevel | 0 |
+| noLevel | 29 |
 | levelUnsupported | 0 |
 | duplicatesInSource | 0 |
 | created | 0 |
@@ -24,5 +24,6 @@
 
 | Причина | Штук |
 |---|---:|
+| `no-level` | 29 |
 
 Подробности: `programs-backfill-cases.json`, откат: `programs-backfill-backup.json`.
