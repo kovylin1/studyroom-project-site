@@ -1,27 +1,27 @@
 # Применение цен агрегаторов
 
-Источники: `collab`.
+Источники: `kaplan`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | collab |
-| extracts | 41 |
-| linked | 41 |
-| candidates | 355 |
+| sources | kaplan |
+| extracts | 23 |
+| linked | 23 |
+| candidates | 4715 |
 | skippedCurrency | 0 |
 | skippedBucket | 0 |
-| skippedNoMatch | 12 |
+| skippedNoMatch | 19 |
 | skippedNoCard | 0 |
 | skippedAudience | 0 |
 | skippedPartTime | 0 |
-| matchedByAward | 8 |
-| ambiguousMatch | 0 |
-| programsWritten | 355 |
-| cardsTouched | 17 |
-| overwritten | 134 |
+| matchedByAward | 4 |
+| ambiguousMatch | 1 |
+| programsWritten | 4541 |
+| cardsTouched | 23 |
+| overwritten | 4458 |
 | ownCurrency | 0 |
-| variantPrograms | 0 |
-| variantSums | 0 |
+| variantPrograms | 2 |
+| variantSums | 4 |
 | foreignQuoteDemoted | 0 |
 | skippedPathwayFee | 0 |
 | campusDemoted | 0 |
@@ -31,6 +31,7 @@
 
 | Причина | Штук |
 |---|---:|
-| `no-match` | 12 |
+| `no-match` | 18 |
+| `match-ambiguous` | 1 |
 
 Подробности: `fees-apply-cases.json`, откат: `fees-apply-backup.json`.

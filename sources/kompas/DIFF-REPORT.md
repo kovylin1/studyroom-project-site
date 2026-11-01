@@ -1,6 +1,6 @@
 # КОМПАС — сессия 4: расхождения «каталог vs источник»
 
-**Дата:** 2026-10-30 · сети нет, каталог не тронут (только чтение).
+**Дата:** 2026-11-01 · сети нет, каталог не тронут (только чтение).
 
 ## Сводка
 
@@ -12,17 +12,17 @@
 | Сверить не с чем: источник за логином | 0 (QS, IAPro) |
 | Сверить не с чем: источник без программ | 16 (Navitas, CATS) |
 | Сверить не с чем: источник готов, выгрузки по вузу нет | 121 |
-| Программ в каталоге (сверенные вузы) | 114265 |
-| Программ у источников (объединение) | 79413 |
-| Совпало названий | 75877 (из них по написанию: 181) |
-| Есть в каталоге, нет у источника | 38388 |
-| Есть у источника, нет в каталоге | 3536 |
-| Цена расходится | 816 |
+| Программ в каталоге (сверенные вузы) | 114281 |
+| Программ у источников (объединение) | 79458 |
+| Совпало названий | 75921 (из них по написанию: 181) |
+| Есть в каталоге, нет у источника | 38360 |
+| Есть у источника, нет в каталоге | 3537 |
+| Цена расходится | 807 |
 | **Валюта расходится** | **2299** |
-| У источника цена есть, в каталоге нет | 277 |
+| У источника цена есть, в каталоге нет | 214 |
 | Кампусы источника, которых нет в карточке | 411 |
 
-Кейсов в панель: **1759** — kompas_no_extract 121, kompas_programs_missing 186, kompas_programs_extra 524, kompas_campus_missing 242, kompas_fee_currency 79, kompas_fee_absent 63, kompas_fee_mismatch 535, kompas_fee_mismatch_rest 8, kompas_source_empty 1.
+Кейсов в панель: **1739** — kompas_no_extract 121, kompas_programs_missing 187, kompas_programs_extra 524, kompas_campus_missing 242, kompas_fee_currency 79, kompas_fee_absent 51, kompas_fee_mismatch 526, kompas_fee_mismatch_rest 8, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -62,13 +62,13 @@
 | Heriot-Watt University Malaysia (`heriot-watt-malaysia`) | qs+edvoy | 110 | 40 | 36 | 74 | 4 | 0 | 35 |
 | Fairleigh Dickinson University, Vancouver (`fairleigh-dickinson-university-vancouver`) | edvoy | 231 | 19 | 19 | 212 | 0 | 0 | 19 |
 | Seneca Polytechnic (`seneca`) | qs+edvoy | 357 | 218 | 88 | 269 | 130 | 0 | 0 |
-| University of Brighton (`brighton`) | kaplan+qs+edvoy | 781 | 396 | 396 | 385 | 0 | 0 | 0 |
+| University of Brighton (`brighton`) | kaplan+qs+edvoy | 783 | 398 | 398 | 385 | 0 | 0 | 0 |
 | Abu Dhabi University (`abu-dhabi-university`) | direct+qs | 111 | 30 | 30 | 81 | 0 | 0 | 30 |
 | Arizona State University (`arizona-state`) | kaplan+qs+edvoy | 992 | 772 | 734 | 258 | 38 | 6 | 6 |
 | Rochester Institute of Technology — Dubai (`rit-dubai`) | qs | 191 | 21 | 20 | 171 | 1 | 0 | 20 |
 | Arden University (`arden`) | qs+edvoy | 122 | 27 | 27 | 95 | 0 | 0 | 27 |
 | Coventry University (`coventry`) | qs+edvoy | 916 | 889 | 870 | 46 | 19 | 99 | 0 |
-| University of Liverpool (`liverpool`) | kaplan+qs+edvoy | 1053 | 774 | 738 | 315 | 36 | 1 | 0 |
+| University of Liverpool (`liverpool`) | kaplan+qs+edvoy | 1054 | 775 | 739 | 315 | 36 | 1 | 0 |
 | University of Lancashire (`university-of-lancashire`) | edvoy | 675 | 329 | 328 | 347 | 1 | 2 | 0 |
 
 ## Расхождение валюты (недостоверность на сайте)
