@@ -3,7 +3,7 @@
     "aggregator": "navitas",
     "label": "Navitas",
     "source": "https://www.navitas.com/study/colleges-campuses/",
-    "collectedAt": "2026-10-03T08:48:54.027Z",
+    "collectedAt": "2026-11-03T10:12:55.734Z",
     "rule": "all",
     "notes": [
       "Живой состав сети на 2026-07-22. До этой сессии локально было известно только 10 британских вузов из seed-navitas-uk.mjs.",
@@ -12,11 +12,11 @@
       "Имя вуза выведено из имени колледжа снятием сетевых суффиксов — каждую строку видно вместе с methodом, проверять глазами."
     ],
     "counts": {
-      "colleges": 71,
+      "colleges": 72,
       "matchedToCatalog": 68,
       "uniqueUniversities": 40,
       "noCardByReview": 3,
-      "unresolved": 0
+      "unresolved": 1
     }
   },
   "colleges": [
@@ -308,6 +308,18 @@
       "matchMethod": "as-is/core-name",
       "triedCandidates": [
         "as-is:Griffith College=core-name"
+      ]
+    },
+    {
+      "college": "Griffith English Language Institute",
+      "collegeUrl": "https://www.griffithenglish.edu.au/",
+      "collegeCountry": "Australia",
+      "derivedUniversityName": "Griffith English Language Institute",
+      "catalogSlug": null,
+      "catalogName": null,
+      "matchMethod": "no-match",
+      "triedCandidates": [
+        "as-is:Griffith English Language Institute=no-match"
       ]
     },
     {
@@ -934,9 +946,16 @@
       "why": "Подготовительный колледж Taylors — карточки в каталоге нет."
     }
   ],
-  "unresolved": [],
+  "unresolved": [
+    {
+      "college": "Griffith English Language Institute",
+      "derived": "Griffith English Language Institute",
+      "method": "no-match",
+      "url": "https://www.griffithenglish.edu.au/"
+    }
+  ],
   "programsRun": {
-    "collectedAt": "2026-10-03T08:48:54.107Z",
+    "collectedAt": "2026-11-03T10:12:55.812Z",
     "domainsProbed": 48,
     "domainsWalked": 44,
     "domainsWithoutHook": [
