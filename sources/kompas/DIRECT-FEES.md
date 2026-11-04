@@ -1,45 +1,45 @@
-# Цены прямых партнёров с офсайтов — 2026-10-02
+# Цены прямых партнёров с офсайтов — 2026-11-04
 
 Скрипт `scraper/kompas-direct-fees.mjs`, парсеры `scraper/direct-fees/<slug>.mjs`.
 
 | вуз | в карточке | на сайте | с сайта нет в карточке | из карточки нет на сайте | цен было | строк цены | новых цен | уровневых | отбито | не сопоставлено |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | abu-dhabi-university | 111 | — | — | — | 64 | 0 | 0 | 0 | 0 | 0 |
-| american-university-of-ras-al-khaimah-aurak | 38 | 24 | 0 | 7 | 18 | 24 | 14 | 0 | 5 | 0 |
-| amity-university-dubai | 66 | 25 | 0 | 35 | 29 | 50 | 1 | 0 | 48 | 0 |
+| american-university-of-ras-al-khaimah-aurak | 38 | 24 | 0 | 7 | 32 | 24 | 0 | 0 | 5 | 0 |
+| amity-university-dubai | 66 | 25 | 0 | 35 | 30 | 50 | 0 | 0 | 48 | 0 |
 | anglo-american-university | 49 | 23 | 0 | 19 | 49 | 24 | 0 | 0 | 16 | 0 |
-| apu-malaysia | 238 | 120 | 2 | 71 | 175 | 220 | 32 | 0 | 110 | 2 |
+| apu-malaysia | 238 | 120 | 2 | 71 | 207 | 220 | 0 | 0 | 110 | 2 |
 | beykent-university | 96 | 98 | 0 | 0 | 84 | 156 | 0 | 0 | 0 | 50 |
-| bsbi | 262 | 85 | 1 | 161 | 85 | 9 | 6 | 0 | 0 | 0 |
-| burgundy-school-of-business | 38 | 37 | 0 | 1 | 20 | 20 | 0 | 0 | 1 | 0 |
+| bsbi | 262 | 85 | 1 | 161 | 92 | 9 | 0 | 0 | 0 | 0 |
+| burgundy-school-of-business | 39 | 36 | 0 | 3 | 20 | 19 | 1 | 0 | 1 | 1 |
 | california-state-university-dominguez-hills | 73 | 70 | 0 | 3 | 0 | 5 | 0 | 0 | 5 | 0 |
-| curtin-university-dubai | 51 | 26 | 0 | 16 | 17 | 33 | 8 | 0 | 2 | 0 |
+| curtin-university-dubai | 51 | 26 | 0 | 16 | 25 | 33 | 0 | 0 | 2 | 0 |
 | cyprus-international-university | 129 | 125 | 0 | 5 | 0 | 0 | 0 | 0 | 0 | 0 |
 | demiroglu-bilim-university | 25 | 25 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 2 |
-| domus-academy | 134 | 37 | 0 | 96 | 46 | 65 | 14 | 0 | 26 | 0 |
-| final-international-university | 51 | 51 | 0 | 0 | 23 | 23 | 0 | 0 | 0 | 0 |
-| gedu-global-education | 11 | 5 | 0 | 6 | 0 | 10 | 5 | 0 | 1 | 0 |
-| gisma | 135 | 52 | 0 | 77 | 63 | 6 | 72 | 72 | 0 | 0 |
-| heriot-watt-dubai | 277 | 82 | 0 | 184 | 94 | 103 | 18 | 0 | 33 | 0 |
-| ibs-budapest | 61 | 24 | 0 | 29 | 24 | 12 | 34 | 31 | 0 | 0 |
-| inti-international-university | 146 | 83 | 0 | 63 | 85 | 186 | 39 | 0 | 93 | 0 |
-| karelia-university-of-applied-sciences | 9 | 4 | 0 | 5 | 3 | 4 | 3 | 0 | 0 | 0 |
-| lane-college | 22 | 19 | 0 | 3 | 20 | 1 | 2 | 2 | 0 | 0 |
-| metropolitan-budapest | 71 | 29 | 5 | 32 | 50 | 50 | 5 | 0 | 25 | 5 |
-| middlesex-dubai | 348 | 72 | 1 | 215 | 165 | 2 | 1 | 0 | 0 | 0 |
+| domus-academy | 136 | 39 | 0 | 96 | 60 | 120 | 2 | 0 | 79 | 0 |
+| final-international-university | 51 | — | — | — | 23 | 0 | 0 | 0 | 0 | 0 |
+| gedu-global-education | 11 | 5 | 0 | 6 | 5 | 6 | 0 | 0 | 1 | 0 |
+| gisma | 135 | 52 | 0 | 77 | 135 | 6 | 0 | 0 | 0 | 0 |
+| heriot-watt-dubai | 279 | 81 | 0 | 187 | 112 | 103 | 0 | 0 | 33 | 0 |
+| ibs-budapest | 67 | 29 | 0 | 31 | 60 | 1 | 0 | 0 | 0 | 0 |
+| inti-international-university | 150 | 80 | 0 | 70 | 124 | 180 | 4 | 0 | 90 | 0 |
+| karelia-university-of-applied-sciences | 9 | 4 | 0 | 5 | 6 | 4 | 0 | 0 | 0 | 0 |
+| lane-college | 22 | 19 | 0 | 3 | 22 | 1 | 0 | 0 | 0 | 0 |
+| metropolitan-budapest | 71 | 28 | 5 | 33 | 57 | 48 | 0 | 0 | 24 | 5 |
+| middlesex-dubai | 348 | 72 | 1 | 215 | 166 | 2 | 0 | 0 | 0 | 0 |
 | modul-university-vienna | 38 | 16 | 0 | 22 | 15 | 13 | 0 | 0 | 0 | 0 |
-| northland-institute | 4 | 4 | 0 | 0 | 0 | 4 | 4 | 0 | 0 | 0 |
-| sp-jain-school-of-global-management-dubai | 17 | 12 | 0 | 3 | 8 | 28 | 1 | 0 | 2 | 0 |
-| srh-germany | 165 | 7 | 0 | 156 | 140 | 7 | 4 | 0 | 0 | 0 |
-| srh-haarlem-university-of-applied-sciences | 7 | 7 | 0 | 1 | 4 | 6 | 3 | 0 | 0 | 0 |
-| srh-hochschule-berlin | 103 | 42 | 0 | 64 | 81 | 28 | 15 | 0 | 0 | 0 |
-| srh-university | 39 | 28 | 0 | 11 | 2 | 12 | 11 | 0 | 0 | 0 |
-| transport-and-telecommunication-institute | 37 | 18 | 0 | 19 | 12 | 53 | 6 | 0 | 35 | 0 |
-| university-of-new-york-in-prague | 51 | 12 | 1 | 37 | 10 | 14 | 29 | 27 | 9 | 1 |
-| webster-university | 152 | 88 | 0 | 64 | 113 | 41 | 8 | 0 | 0 | 0 |
-| wollongong-dubai | 89 | 59 | 0 | 32 | 76 | 57 | 4 | 0 | 27 | 1 |
-| woosong-university | 31 | 38 | 1 | 1 | 28 | 28 | 1 | 0 | 0 | 0 |
-| xi-an-jiaotong-liverpool-university | 142 | 125 | 0 | 17 | 109 | 58 | 30 | 30 | 0 | 0 |
+| northland-institute | 4 | 4 | 0 | 0 | 4 | 4 | 0 | 0 | 0 | 0 |
+| sp-jain-school-of-global-management-dubai | 18 | 13 | 0 | 3 | 9 | 27 | 0 | 0 | 2 | 0 |
+| srh-germany | 165 | 7 | 0 | 156 | 144 | 7 | 0 | 0 | 0 | 0 |
+| srh-haarlem-university-of-applied-sciences | 7 | 7 | 0 | 1 | 7 | 6 | 0 | 0 | 0 | 0 |
+| srh-hochschule-berlin | 104 | 38 | 0 | 70 | 96 | 26 | 0 | 0 | 0 | 0 |
+| srh-university | 39 | 28 | 0 | 11 | 14 | 12 | 0 | 0 | 0 | 0 |
+| transport-and-telecommunication-institute | 37 | 18 | 0 | 19 | 18 | 55 | 0 | 0 | 37 | 0 |
+| university-of-new-york-in-prague | 51 | 12 | 1 | 37 | 39 | 14 | 0 | 0 | 9 | 1 |
+| webster-university | 152 | 88 | 0 | 64 | 121 | 54 | 6 | 0 | 0 | 0 |
+| wollongong-dubai | 89 | 7 | 0 | 82 | 80 | 0 | 0 | 0 | 0 | 0 |
+| woosong-university | 35 | 40 | 1 | 2 | 29 | 28 | 2 | 0 | 0 | 0 |
+| xi-an-jiaotong-liverpool-university | 142 | 125 | 0 | 17 | 139 | 58 | 0 | 0 | 0 | 0 |
 
 ## abu-dhabi-university
 
@@ -85,6 +85,7 @@
 - пробел: diploma/certificate — нет такого уровня в схеме каталога:  — https://www.apu.edu.my/course/diploma-in-psychology
 - пробел: diploma/certificate — нет такого уровня в схеме каталога:  — https://www.apu.edu.my/course/cert-in-business-administrative
 - пробел: diploma/certificate — нет такого уровня в схеме каталога:  — https://www.apu.edu.my/course/cert-in-ICT
+- пробел: неизвестный тип программы по URL (не удалось определить уровень):  — https://www.apu.edu.my/course/grad-cert-in-computer-science-cybersecurity
 - пробел: diploma/certificate — нет такого уровня в схеме каталога:  — https://www.apu.edu.my/course/pg-diploma-education-learning-design-technology-odl
 - пробел: diploma/certificate — нет такого уровня в схеме каталога:  — https://www.apu.edu.my/course/pg-certificate-education-learning-design-technology-odl
 - не сопоставлено (ambiguous): Doctor of Philosophy in Computing — 50800 MYR
@@ -120,9 +121,6 @@
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/certificate-programmes/iot-for-business-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/certificate-programmes/conversational-ai-and-chatbot-systems
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-finance-and-investment
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-in-psychological-science-uninettuno
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/doctorate/dba-doctorate-in-business-administration
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-finance-investment
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/certificate-programmes/business-plan-formulation-and-implementation
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/certificate-programmes/character-development
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/certificate-programmes/digital-marketing-strategy
@@ -134,80 +132,84 @@
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/rncp-ppa-master-finance-bsbi
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-global-mba
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/rncp-ppa-master-in-digital-marketing-bsbi
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/rncp-l7-ppa-global-mba-bsbi
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/executive-mba-hamburg
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-international-health-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-tourism-hospitality-and-event-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-digital-marketing
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/rncp-esgi-master-data-analytics-bsbi
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/rncp-esgi-master-it-management-bsbi
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-engineering-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/data-analytics-professional-master
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-information-technology-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-maritime-and-shipping-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-artificial-intelligence
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/mba
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/undergraduate/bsc-hons-computer-science
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-in-energy-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/undergraduate/rncp-l6-bsc-hons-international-business-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/undergraduate/ba-hons-game-design
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/undergraduate/rncp-titre-l6-esgi-bsc-hons-computer-science-and-digitisation
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-in-international-health-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-in-innovation-and-entrepreneurship
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-in-real-estate-and-asset-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-tourism-hospitality-and-event-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-data-analytics-hamburg
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/mba-in-maritime-and-shipping-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-in-engineering-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-international-business
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/executive-mba
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-fashion-and-luxury-brand-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-logistics
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/rncp-ppa-master-in-tourism-hospitality-and-event-management-bsbi
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-data-analytics
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-health-psychology
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/global-mba-uca
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/global-mba-hamburg-chichester
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-of-business-administration-mba-in-maritime-and-shipping-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-international-health-management-hamburg
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-logistics
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-cybersecurity-with-roehampton
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-tourism-hospitality-and-event-management-3
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-information-technology-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-digital-marketing
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-of-arts-ma-in-fashion-and-luxury-brand-management-chichester
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-cybersecurity-with-roehampton
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-global-logistics-and-supply-chain-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-global-human-resources-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-project-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/undergraduate/ba-hons-photography
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/undergraduate/ba-hons-comic-and-concept-art
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-visual-communication
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-photography
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-global-logistics-and-supply-chain-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-project-management
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-user-experience-design
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-game-design
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/undergraduate/ba-hons-game-design
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-in-engineering-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-international-business
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-health-psychology
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/executive-mba
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-digital-marketing
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-in-sports-management
 - пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-artificial-intelligence
-- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-global-human-resources-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-in-real-estate-and-asset-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-international-health-management-hamburg
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-in-international-health-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/mba
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-tourism-hospitality-and-event-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-in-energy-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-in-innovation-and-entrepreneurship
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/global-mba-uca
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-finance-investment
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-information-technology-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-data-analytics
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-in-psychological-science-uninettuno
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-data-analytics-hamburg
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/global-mba-hamburg-chichester
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-of-business-administration-mba-in-maritime-and-shipping-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/executive-mba-hamburg
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/msc-logistics
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-of-arts-ma-in-fashion-and-luxury-brand-management-chichester
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/mba-in-maritime-and-shipping-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-user-experience-design
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-photography
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-game-design
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/ma-visual-communication
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/doctorate/dba-doctorate-in-business-administration
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/master-in-tourism-hospitality-and-event-management
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/rncp-l7-ppa-global-mba-bsbi
+- пробел: на странице не нашлась строка PRICE …€…/year — https://www.berlinsbi.com/programmes/postgraduate/rncp-esgi-master-it-management-bsbi
 - пробел: Foundation/Pre-MBA/German и English Language Pathway из карточки — своей страницы на berlinsbi.com у них нет (нет в /programme-sitemap.xml) — https://www.berlinsbi.com/programme-sitemap.xml
 
 ## burgundy-school-of-business
 
-- пробел: английская страница про другую программу («Bachelor International Business Management») — https://www.bsb-education.com/en/programme/bachelor-wine-tourism
-- пробел: альтернанс — обучение оплачивает работодатель, цены нет — https://www.bsb-education.com/fr/formation/bachelor-3-alternance
 - пробел: альтернанс — обучение оплачивает работодатель, цены нет — https://www.bsb-education.com/fr/formation/master-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/msc-data-science-organisational-behaviour
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-audit-expertise-conseil-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-banque-ingenierie-financiere-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-finance-entreprise-controle-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-marketing-communication-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-communication-evenementielle-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-strategie-commerciale-retail-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-management-vins-spiritueux-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-entrepreneuriat-management-pme-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-management-ressources-humaines-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-audit-international-business-management-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-management-rse-developpement-durable-alternance
-- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-strategy-consulting-business-transformation-alternance
+- пробел: альтернанс — обучение оплачивает работодатель, цены нет — https://www.bsb-education.com/fr/formation/bachelor-3-alternance
+- пробел: английская страница про другую программу («Bachelor Finance») — https://www.bsb-education.com/en/programme/bachelor-negotiation-for-business
+- пробел: английская страница про другую программу («Bachelor International Business Management») — https://www.bsb-education.com/en/programme/bachelor-wine-tourism
 - пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-data-management-business-analytics-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-strategy-consulting-business-transformation-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-management-rse-developpement-durable-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-audit-international-business-management-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-management-ressources-humaines-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-entrepreneuriat-management-pme-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-management-vins-spiritueux-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-strategie-commerciale-retail-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-communication-evenementielle-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-marketing-communication-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-finance-entreprise-controle-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-banque-ingenierie-financiere-alternance
+- пробел: на странице программы нет блока «What are the tuition fees» — https://www.bsb-education.com/en/programme/master-audit-expertise-conseil-alternance
+- не сопоставлено (none): Bachelor Customer Strategy and Business Development — 800 EUR
 - отбито discounted-price: 1
 
 ## california-state-university-dominguez-hills
@@ -244,18 +246,37 @@
 - пробел: на странице нет блока TUITION FEES (или узнаваемой подписи суммы) — https://www.domusacademy.com/courses/fashion/summer-course-in-fashion-buying-techniques/
 - пробел: на странице нет блока TUITION FEES (или узнаваемой подписи суммы) — https://www.domusacademy.com/courses/fashion/summer-course-in-digital-communication-social-media-for-fashion/
 - пробел: на странице нет блока TUITION FEES (или узнаваемой подписи суммы) — https://www.domusacademy.com/courses/design/summer-course-augmented-reality-boot-camp/
-- пробел: на странице нет блока TUITION FEES (или узнаваемой подписи суммы) — https://www.domusacademy.com/courses/design/2-year-master-of-arts-in-design-innovation/
-- пробел: на странице нет блока TUITION FEES (или узнаваемой подписи суммы) — https://www.domusacademy.com/courses/fashion/2-year-master-in-fashion-design-art-technology/
-- пробел: на странице нет блока TUITION FEES (или узнаваемой подписи суммы) — https://www.domusacademy.com/courses/business/2-year-master-of-arts-in-design-leadership-strategy/
-- пробел: на странице нет блока TUITION FEES (или узнаваемой подписи суммы) — https://www.domusacademy.com/courses/fashion/summer-course-milano-fashion-lab/
 - пробел: на странице нет блока TUITION FEES (или узнаваемой подписи суммы) — https://www.domusacademy.com/courses/design/summer-course-milano-design-lab/
-- отбито audience-eu: 26
+- пробел: на странице нет блока TUITION FEES (или узнаваемой подписи суммы) — https://www.domusacademy.com/courses/fashion/summer-course-milano-fashion-lab/
+- отбито audience-eu: 79
 
 ## final-international-university
 
+- пробел: программа id=1 (Rehberlik ve Psikolojik Danışmanlık (Türkçe)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=2 (Okul Öncesi Öğretmenliği (Türkçe)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=4 (Türkçe Öğretmenliği (Türkçe)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=5 (İngilizce Öğretmenliği (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=6 (Özel Eğitim Öğretmenliği (Türkçe)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=7 (Bilgisayar Mühendisliği (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=8 (Elektrik ve Elektronik Mühendisliği (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=9 (İnşaat Mühendisliği (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=10 (Yazılım Mühendisliği (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=13 (Uluslararası Finans ve Bankacılık (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=14 (İşletme (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=17 (Mimarlık (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=19 (Psikoloji (Türkçe)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=20 (Psikoloji (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=21 (Hukuk (Türkçe)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=24 (Fizyoterapi ve Rehabilitasyon (Türkçe)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=25 (Beden Eğitimi ve Spor Öğretmenliği (Türkçe)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=26 (Antrenörlük Eğitimi (Türkçe)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=27 (Turizm İşletmeciliği (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=28 (Gastronomi ve Mutfak Sanatları (Türkçe)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=38 (Beslenme ve Diyetetik (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=41 (Siyaset Bilimi ve Uluslararası İlişkiler (İngilizce)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
+- пробел: программа id=42 (Diş Hekimliği (Türkçe)) пропала из формы робота — https://www.final.edu.tr/ucretrobotu/
 - пробел: вся цена только в TRY — сайт не публикует USD/EUR-эквивалент; валюта TRY схемой каталога не принимается — https://www.final.edu.tr/ucretrobotu/atotalpricingTCdev1son1.js
 - пробел: магистратура (Tezli/Tezsiz) в калькуляторе не считается вовсе — цены нет ни для одной программы магистратуры — https://www.final.edu.tr/ucretrobotu/
-- пробел: 11 строк Meslek Yüksekokulu (2 yıllık, associate) — такого уровня нет в схеме каталога, пропущены — https://www.final.edu.tr/tum-programlar
 
 ## gedu-global-education
 
@@ -277,16 +298,15 @@
 - пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/design
 - пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/doctor-of-business-administration
 - пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/energy-engd
-- пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/energy-geoscience-infrastructure-and-society
 - пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/management-languages-phd
 - пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/mathematical-and-computer-sciences
 - пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/mathematics
-- пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/mobile-urban-imaginarium-participatory-ai-and-smart-mobility-in-dubai
 - пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/phd-civil-engineering
+- пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/phd-construction
 - пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/phd-electrical-engineering
 - пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/phd-mechanical-engineering
+- пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/postgraduate-research
 - пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/psychology
-- пробел: на странице программы нет секции с ценой (feesFunding пуста или отсутствует) — https://www.hw.ac.uk/dubai/study/research/robotic-vision-phd
 - отбито mode-not-full-time: 33
 
 ## ibs-budapest
@@ -306,9 +326,8 @@
 - пробел: Diploma — квалификация вне схемы каталога (foundation/bachelor/master/phd/english-language/short-course) — https://newinti.edu.my/programme/diploma-in-information-technology-fully-online-learning-simplified/
 - пробел: Diploma — квалификация вне схемы каталога (foundation/bachelor/master/phd/english-language/short-course) — https://newinti.edu.my/programme/diploma-in-mass-communication/
 - пробел: Diploma — квалификация вне схемы каталога (foundation/bachelor/master/phd/english-language/short-course) — https://newinti.edu.my/programme/diploma-in-mechanical-engineering/
-- пробел: Diploma — квалификация вне схемы каталога (foundation/bachelor/master/phd/english-language/short-course) — https://newinti.edu.my/programme/diploma-in-quantity-surveying/
 - пробел: на странице программы нет таблицы Fees — https://newinti.edu.my/programme/ielts-training-course/
-- отбито audience-domestic: 93
+- отбито audience-domestic: 90
 
 ## metropolitan-budapest
 
@@ -324,7 +343,7 @@
 - не сопоставлено (ambiguous): Tourism Management MSc — 3600 EUR
 - не сопоставлено (ambiguous): Management and Leadership MSc — 3600 EUR
 - не сопоставлено (ambiguous): Communication and Media Studies MA — 3900 EUR
-- отбито audience-eu: 25
+- отбито audience-eu: 24
 
 ## middlesex-dubai
 
@@ -340,8 +359,6 @@
 ## northland-institute
 
 - пробел: программа уровня Diploma — нет такого уровня в схеме каталога — https://northlandinstitute.com/programs-curriculum/hospitality-hotel-operations-management-diploma/
-- пробел: программа уровня Diploma — нет такого уровня в схеме каталога — https://northlandinstitute.com/programs-curriculum/tourism-and-hospitality-management-diploma/
-- пробел: программа уровня Diploma — нет такого уровня в схеме каталога — https://northlandinstitute.com/programs-curriculum/food-and-beverage-management-restaurant-management-diploma/
 
 ## sp-jain-school-of-global-management-dubai
 
@@ -353,6 +370,7 @@
 - пробел: на странице fees не нашлась ни таблица "Currency/Total Compulsory Tuition Fees", ни "Total Program Cost" — https://www.spjain.org/programs/postgraduate/executive-mba/fees
 - пробел: на странице fees не нашлась ни таблица "Currency/Total Compulsory Tuition Fees", ни "Total Program Cost" — https://www.spjain.org/programs/undergraduate/business-management-program/fees
 - пробел: на странице fees не нашлась ни таблица "Currency/Total Compulsory Tuition Fees", ни "Total Program Cost" — https://www.spjain.org/programs/undergraduate/data-science-program/fees
+- пробел: на странице fees не нашлась ни таблица "Currency/Total Compulsory Tuition Fees", ни "Total Program Cost" — https://www.spjain.org/programs/postgraduate/ai-in-business-program/fees
 - отбито currency-INR: 2
 
 ## srh-haarlem-university-of-applied-sciences
@@ -364,19 +382,17 @@
 - пробел: srh-berlin.de больше не существует отдельно — 301 на srh-university.de/de/; SRH Berlin University of Applied Sciences стала одним из кампусов «SRH University» — https://www.srh-berlin.de/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/advertising-brand-design/c/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/artificial-intelligence-ai-in-business/b/
-- пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/classical-music/m/
-- пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/classical-music/m/
+- пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/chemical-engineering/e/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/communication-design/v/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/creative-industries-management/c/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/cybermacs/i/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/fashion-design/v/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/health-informatics/e/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/interior-design-scenography/c/
-- пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/law-economics-and-governance/l/
-- пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/engineering-and-sustainable-technology-management-mobility-and-automotive-industry/e/
+- пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/sustainable-technology-engineering-mobility-and-automotive-industry/e/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/product-design/d/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/soziale-arbeit-social-work/s/
-- пробел: цены даны «в месяц», не за год/программу — basis: other, в каталог не попадает по правилам README — https://www.srh-university.de/en/our-campuses/berlin/
+- пробел: цены даны «в месяц», не за год/программу — basis: month — с 30.09.2026 едет в каталог с подписью «в месяц» (решение владельца) — https://www.srh-university.de/en/our-campuses/berlin/
 
 ## srh-university
 
@@ -392,17 +408,17 @@
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/virtual-reality-game-development-game-design/d/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/information-technology-information-technology/i/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/information-technology-and-business-transformation/b/
-- пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/engineering-and-sustainable-technology-management-mobility-and-automotive-industry/e/
+- пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/sustainable-technology-engineering-mobility-and-automotive-industry/e/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/music-therapy/t/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/bachelor/soziale-arbeit-social-work/s/
 - пробел: на странице не нашлась строка Costs: from €…per month — https://www.srh-university.de/en/master/urbanism-concepts-for-the-built-environment/a/
-- пробел: цены на страницах программы даны «в месяц» (Costs: from €…per month), не за год и не за программу — basis: other, в каталог не попадает по правилам README, но зафиксировано в отчёте — https://www.srh-university.de/en/our-campuses/heidelberg/
+- пробел: цены на страницах программы даны «в месяц» (Costs: from €…per month), не за год и не за программу — basis: month — с 30.09.2026 едет в каталог с подписью «в месяц» (решение владельца), но зафиксировано в отчёте — https://www.srh-university.de/en/our-campuses/heidelberg/
 - пробел: часть этих программ также в кампусах Berlin/Dresden/Leipzig — карточка srh-hochschule-berlin может содержать те же URL (пересечение ожидаемо, см. её парсер) — https://www.srh-university.de/en/our-campuses/heidelberg/
 
 ## transport-and-telecommunication-institute
 
-- отбито audience-eu: 29
-- отбито mode-not-full-time: 6
+- отбито mode-not-full-time: 5
+- отбито audience-eu: 32
 
 ## university-of-new-york-in-prague
 
@@ -413,19 +429,6 @@
 
 ## webster-university
 
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/bfa-acting.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/ba-art-art-history.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/bfa-art-illustration.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/bfa-art-studio-emphasis.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/ba-bfa-dance.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/bfa-design-technical-theatre.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/ba-directing.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/bfa-graphic-design.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/ba-music.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/bm-composition.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/bm-performance.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/bfa-musical-theatre.php
-- пробел: программа Leigh Gerdine College of Fine Arts (Conservatory) — тариф выше общего, но страница не даёт разбивку по программам, поэтому цену не берём — https://www.webster.edu/fine-arts/bfa-stage-management.php
 - пробел: тариф только за кредит-час (год/полная цена программы не публикуется) — не пересчитываем — https://www.webster.edu/admissions/graduate/tuition.php
 - пробел: тариф только за кредит-час (год/полная цена программы не публикуется) — не пересчитываем — https://www.webster.edu/admissions/graduate/tuition.php
 - пробел: тариф только за кредит-час (год/полная цена программы не публикуется) — не пересчитываем — https://www.webster.edu/admissions/graduate/tuition.php
@@ -468,10 +471,9 @@
 - пробел: Graduate Diploma in Applied Artificial Intelligence — диплом вне схемы уровней каталога — https://www.uowdubai.ac.ae/degrees/masters/computer-science/graduate-diploma-applied-artificial-intelligence
 - пробел: Graduate Diploma in Educational Studies — диплом вне схемы уровней каталога — https://www.uowdubai.ac.ae/degrees/masters/education/graduate-diploma-educational-studies
 - пробел: Graduate Foundation Course — постдипломный мостик к магистратуре без собственной страницы, уровень по схеме каталога не определить однозначно (foundation обычно значит довузовский год); только цена за 1 предмет AED 2,205, не за программу целиком — https://www.uowdubai.ac.ae/join-uowd/fees/masters-degree
-- пробел: Global English Skills также продаётся модулями (AED 8,000 за 8 недель, AED 4,000 за 4 недели) — берём только полную очную программу (12 недель, AED 11,760), модульные варианты не отдельная программа — https://www.uowdubai.ac.ae/study-english
-- не сопоставлено (none): Bachelor of Nursing (Conversion) — 42466 AED
-- отбито basis-other: 26
-- отбито amount-not-in-raw: 1
+- пробел: на странице PhD не нашёлся блок Total Fees — https://www.uowdubai.ac.ae/degrees/doctorate/business/doctor-philosophy
+- пробел: на странице International Foundation Year не нашёлся блок Total Fees — https://www.uowdubai.ac.ae/degrees/international-foundation-year
+- пробел: на странице /study-english не нашёлся список Course fees — https://www.uowdubai.ac.ae/study-english
 
 ## woosong-university
 
