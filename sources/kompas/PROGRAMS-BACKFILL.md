@@ -1,29 +1,28 @@
 # Добор программ агрегаторов
 
-Источники: `qahe`.
+Источники: `studygroup`.
 
 | Показатель | Значение |
 |---|---:|
-| sources | qahe |
-| rows | 101 |
-| unmatched | 3 |
-| ambiguous | 2 |
-| levelFromSource | 2 |
+| sources | studygroup |
+| rows | 158 |
+| unmatched | 4 |
+| ambiguous | 0 |
+| levelFromSource | 4 |
 | levelFromSourceLevel | 0 |
 | levelFromTitle | 0 |
-| noLevel | 1 |
+| noLevel | 0 |
 | levelUnsupported | 0 |
 | duplicatesInSource | 0 |
-| created | 2 |
-| cardsTouched | 1 |
-| withDuration | 2 |
-| withUrl | 2 |
-| urlShared | 0 |
+| created | 4 |
+| cardsTouched | 3 |
+| withDuration | 0 |
+| withUrl | 0 |
+| urlShared | 4 |
 
 ## Не заведено
 
 | Причина | Штук |
 |---|---:|
-| `no-level` | 1 |
 
 Подробности: `programs-backfill-cases.json`, откат: `programs-backfill-backup.json`.

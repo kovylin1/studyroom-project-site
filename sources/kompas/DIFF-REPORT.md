@@ -1,6 +1,6 @@
 # КОМПАС — сессия 4: расхождения «каталог vs источник»
 
-**Дата:** 2026-11-06 · сети нет, каталог не тронут (только чтение).
+**Дата:** 2026-11-09 · сети нет, каталог не тронут (только чтение).
 
 ## Сводка
 
@@ -12,17 +12,17 @@
 | Сверить не с чем: источник за логином | 0 (QS, IAPro) |
 | Сверить не с чем: источник без программ | 16 (Navitas, CATS) |
 | Сверить не с чем: источник готов, выгрузки по вузу нет | 121 |
-| Программ в каталоге (сверенные вузы) | 114283 |
-| Программ у источников (объединение) | 79457 |
-| Совпало названий | 75919 (из них по написанию: 181) |
-| Есть в каталоге, нет у источника | 38364 |
+| Программ в каталоге (сверенные вузы) | 114287 |
+| Программ у источников (объединение) | 79452 |
+| Совпало названий | 75914 (из них по написанию: 181) |
+| Есть в каталоге, нет у источника | 38373 |
 | Есть у источника, нет в каталоге | 3538 |
-| Цена расходится | 807 |
+| Цена расходится | 808 |
 | **Валюта расходится** | **2299** |
-| У источника цена есть, в каталоге нет | 214 |
+| У источника цена есть, в каталоге нет | 204 |
 | Кампусы источника, которых нет в карточке | 411 |
 
-Кейсов в панель: **1739** — kompas_no_extract 121, kompas_programs_missing 188, kompas_programs_extra 524, kompas_campus_missing 242, kompas_fee_currency 79, kompas_fee_absent 50, kompas_fee_mismatch 526, kompas_fee_mismatch_rest 8, kompas_source_empty 1.
+Кейсов в панель: **1738** — kompas_no_extract 121, kompas_programs_missing 188, kompas_programs_extra 524, kompas_campus_missing 242, kompas_fee_currency 79, kompas_fee_absent 48, kompas_fee_mismatch 527, kompas_fee_mismatch_rest 8, kompas_source_empty 1.
 
 Потолок поштучных кейсов на вуз — 20; остаток сведён в кейс `kompas_fee_mismatch_rest`, полный список расхождений — в `diff-report.json` (ничего не срезано молча).
 
@@ -52,7 +52,7 @@
 | Swinburne University of Technology (`swinburne-university-of-technology`) | edvoy | 542 | 1 | 1 | 541 | 0 | 0 | 0 |
 | Victoria University of Wellington (`victoria-wellington`) | qs+edvoy | 961 | 483 | 481 | 480 | 2 | 18 | 0 |
 | University of Reading Malaysia (`reading-malaysia`) | qs | 400 | 14 | 14 | 386 | 0 | 0 | 14 |
-| Royal Holloway, University of London (`royal-holloway`) | studygroup+qs+edvoy | 499 | 11 | 11 | 488 | 0 | 0 | 0 |
+| Royal Holloway, University of London (`royal-holloway`) | studygroup+qs+edvoy | 500 | 10 | 10 | 490 | 0 | 1 | 0 |
 | INTO University of East Anglia (`into-uea`) | qs | 493 | 8 | 8 | 485 | 0 | 0 | 0 |
 | East Asia Institute of Management (EAIM) (`eaim`) | qs | 112 | 40 | 40 | 72 | 0 | 0 | 40 |
 | INSEEC Business School (`inseec-business-school`) | edvoy | 476 | 8 | 8 | 468 | 0 | 0 | 0 |

@@ -3,7 +3,7 @@
     "aggregator": "studygroup",
     "label": "Study Group",
     "source": "https://kentico-content-services.studygroup.com/course-search/search/?language=en",
-    "collectedAt": "2026-10-09T09:43:27.797Z",
+    "collectedAt": "2026-11-09T10:30:32.200Z",
     "rule": "all",
     "access": "public",
     "notes": [
@@ -13,13 +13,13 @@
       "Центры сети Bellerbys названы «Город - Партнёр» — это подготовительные центры, не вузы; в MANUAL с причиной."
     ],
     "counts": {
-      "groups": 28,
+      "groups": 33,
       "matched": 22,
       "unmatched": 0,
-      "skipped": 6,
+      "skipped": 11,
       "catalogCards": 21,
-      "programs": 154,
-      "withPrice": 137
+      "programs": 164,
+      "withPrice": 133
     }
   },
   "mergedSlugs": [
@@ -41,12 +41,6 @@
       "courses": 2
     },
     {
-      "from": "Cardiff University",
-      "to": "cardiff",
-      "method": "as-is/exact-name",
-      "courses": 16
-    },
-    {
       "from": "Durham University",
       "to": "durham",
       "method": "as-is/exact-name",
@@ -59,10 +53,16 @@
       "courses": 6
     },
     {
+      "from": "Cardiff University",
+      "to": "cardiff",
+      "method": "as-is/exact-name",
+      "courses": 13
+    },
+    {
       "from": "University of Huddersfield - London",
       "to": "university-of-huddersfield-london",
       "method": "as-is/exact-slug",
-      "courses": 8
+      "courses": 10
     },
     {
       "from": "Long Island University Brooklyn Direct Entry",
@@ -104,7 +104,7 @@
       "from": "University of Aberdeen",
       "to": "aberdeen",
       "method": "as-is/exact-name",
-      "courses": 9
+      "courses": 8
     },
     {
       "from": "University of Surrey",
@@ -122,7 +122,7 @@
       "from": "University of Leeds",
       "to": "university-of-leeds",
       "method": "as-is/exact-slug",
-      "courses": 9
+      "courses": 8
     },
     {
       "from": "University of Sheffield International College",
@@ -134,7 +134,7 @@
       "from": "University of Strathclyde",
       "to": "strathclyde",
       "method": "as-is/exact-name",
-      "courses": 6
+      "courses": 7
     },
     {
       "from": "Liverpool John Moores University",
@@ -152,7 +152,7 @@
       "from": "Kingston University London",
       "to": "kingston-university",
       "method": "as-is+strip-campus/exact-slug",
-      "courses": 8
+      "courses": 6
     },
     {
       "from": "Royal Holloway",
@@ -170,9 +170,19 @@
   "unmatched": [],
   "skippedNotUniversity": [
     {
+      "from": "Eastbourne - TWIN",
+      "reason": "центр Bellerbys в Истборне, не вуз",
+      "courses": 3
+    },
+    {
       "from": "London - TWIN",
       "reason": "центр Bellerbys в Лондоне, не вуз",
       "courses": 3
+    },
+    {
+      "from": "Harbin - NOVO",
+      "reason": "центр Bellerbys в Харбине, не вуз",
+      "courses": 2
     },
     {
       "from": "Zhuhai - BNBU",
@@ -187,11 +197,26 @@
     {
       "from": "Singapore - VWA",
       "reason": "центр Bellerbys в Сингапуре, не вуз",
-      "courses": 2
+      "courses": 4
+    },
+    {
+      "from": "Shanghai - ECUST",
+      "reason": "центр Bellerbys в Шанхае при ECUST, не вуз",
+      "courses": 4
+    },
+    {
+      "from": "Beijing - NOVO",
+      "reason": "центр Bellerbys в Пекине (партнёр NOVO), не вуз",
+      "courses": 1
     },
     {
       "from": "Seoul - GEC",
       "reason": "центр Bellerbys в Сеуле, не вуз",
+      "courses": 2
+    },
+    {
+      "from": "Xian - Eurasia",
+      "reason": "центр Bellerbys в Сиане при Xian Eurasia, не вуз",
       "courses": 2
     },
     {
