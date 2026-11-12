@@ -363,8 +363,8 @@
   "cats": {
     "aggregator": "cats",
     "kind": "kompas",
-    "startedAt": "2026-10-12T09:54:07.939Z",
-    "applied": true,
+    "startedAt": "2026-11-12T10:25:33.971Z",
+    "applied": false,
     "dryRun": false,
     "steps": [
       {
@@ -388,28 +388,19 @@
       {
         "name": "сравнение копии с каталогом",
         "ok": true,
-        "detail": "свои карточки 12, изменились 3 (0.3% каталога)"
+        "detail": "свои карточки 9, изменились 0 (0.0% каталога)"
       },
       {
-        "name": "порог изменения",
+        "name": "перенос",
         "ok": true,
-        "detail": "0.3% ≤ 5%"
-      },
-      {
-        "name": "перенос в каталог",
-        "ok": true,
-        "detail": "карточек 3"
-      },
-      {
-        "name": "гейт каталога",
-        "ok": true
+        "detail": "менять нечего"
       }
     ],
-    "changedCards": 3,
-    "ownCards": 12,
+    "changedCards": 0,
+    "ownCards": 9,
     "error": null,
     "hold": null,
-    "finishedAt": "2026-10-12T09:54:18.581Z"
+    "finishedAt": "2026-11-12T10:25:41.333Z"
   },
   "oxford-international": {
     "aggregator": "oxford-international",
